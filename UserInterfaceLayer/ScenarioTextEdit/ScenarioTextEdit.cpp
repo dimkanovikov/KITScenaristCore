@@ -90,7 +90,8 @@ void ScenarioTextEdit::setScenarioDocument(ScenarioTextDocument* _document)
 
 void ScenarioTextEdit::addScenarioBlock(ScenarioBlockStyle::Type _blockType)
 {
-    textCursor().beginEditBlock();
+    QTextCursor cursor = textCursor();
+    cursor.beginEditBlock();
 
     //
     // Если работаем в режиме поэпизодника и добавляется заголовок новой сцены, группы сцен,
@@ -101,22 +102,22 @@ void ScenarioTextEdit::addScenarioBlock(ScenarioBlockStyle::Type _blockType)
         && (_blockType == ScenarioBlockStyle::SceneHeading
             || _blockType == ScenarioBlockStyle::FolderHeader)) {
         ScenarioBlockStyle::Type currentBlockType = scenarioBlockType();
-        while (!textCursor().atEnd()
+        while (!cursor.atEnd()
                && currentBlockType != ScenarioBlockStyle::SceneHeading
                && currentBlockType != ScenarioBlockStyle::FolderFooter
                && currentBlockType != ScenarioBlockStyle::FolderHeader) {
-            moveCursor(QTextCursor::NextBlock);
-            moveCursor(QTextCursor::EndOfBlock);
+            cursor.movePosition(QTextCursor::NextBlock);
+            cursor.movePosition(QTextCursor::EndOfBlock);
             currentBlockType = scenarioBlockType();
         }
         //
         // Если дошли не до конца документа, а до начала новой сцены,
         // возвращаем курсор в конец предыдущего блока
         //
-        if (!textCursor().atEnd()
+        if (!cursor.atEnd()
             || currentBlockType == ScenarioBlockStyle::FolderFooter) {
-            moveCursor(QTextCursor::PreviousBlock);
-            moveCursor(QTextCursor::EndOfBlock);
+            cursor.movePosition(QTextCursor::PreviousBlock);
+            cursor.movePosition(QTextCursor::EndOfBlock);
         }
     }
 
@@ -126,19 +127,20 @@ void ScenarioTextEdit::addScenarioBlock(ScenarioBlockStyle::Type _blockType)
     //
     if (!outlineMode()
         && _blockType != ScenarioBlockStyle::SceneDescription) {
-        ScenarioBlockStyle::Type nextBlockType = ScenarioBlockStyle::forBlock(textCursor().block().next());
-        while (!textCursor().atEnd()
+        ScenarioBlockStyle::Type nextBlockType = ScenarioBlockStyle::forBlock(cursor.block().next());
+        while (!cursor.atEnd()
                && nextBlockType == ScenarioBlockStyle::SceneDescription) {
-            moveCursor(QTextCursor::NextBlock);
-            moveCursor(QTextCursor::EndOfBlock);
-            nextBlockType = ScenarioBlockStyle::forBlock(textCursor().block().next());
+            cursor.movePosition(QTextCursor::NextBlock);
+            cursor.movePosition(QTextCursor::EndOfBlock);
+            nextBlockType = ScenarioBlockStyle::forBlock(cursor.block().next());
         }
     }
 
     //
     // Вставим блок
     //
-    textCursor().insertBlock();
+    cursor.insertBlock();
+    setTextCursorReimpl(cursor);
 
     //
     // Применим стиль к новому блоку
@@ -150,7 +152,7 @@ void ScenarioTextEdit::addScenarioBlock(ScenarioBlockStyle::Type _blockType)
     //
     emit currentStyleChanged();
 
-    textCursor().endEditBlock();
+    cursor.endEditBlock();
 }
 
 void ScenarioTextEdit::changeScenarioBlockType(ScenarioBlockStyle::Type _blockType, bool _forced)
