@@ -114,6 +114,56 @@
     </message>
 </context>
 <context>
+    <name>BusinessLayer::FountainExporter</name>
+    <message>
+        <source>INT</source>
+        <translation type="unfinished">ІНТ</translation>
+    </message>
+    <message>
+        <source>EXT</source>
+        <translation type="unfinished">НАТ</translation>
+    </message>
+    <message>
+        <source>EST</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INT./EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INT/EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BusinessLayer::FountainImporter</name>
+    <message>
+        <source>INT</source>
+        <translation type="unfinished">ІНТ</translation>
+    </message>
+    <message>
+        <source>EXT</source>
+        <translation type="unfinished">НАТ</translation>
+    </message>
+    <message>
+        <source>EST</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INT./EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INT/EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I/E</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BusinessLogic::AbstractExporter</name>
     <message>
         <source>(MORE)</source>
@@ -153,6 +203,10 @@
     </message>
     <message>
         <source>Final Draft template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fountain Text</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -906,6 +960,10 @@
     <message>
         <source>Choose File to Export Script:</source>
         <translation>Виберіть файл для експорту сценарію:</translation>
+    </message>
+    <message>
+        <source>Fountain</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2907,6 +2965,10 @@ Paragraph</source>
         <source>Save As...</source>
         <translation>Зберегти як...</translation>
     </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Налаштування</translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -3784,7 +3846,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>On/off fullscreen mode (F5)</source>
-        <translation>Вкл/Викл повноекранний режим (F5)</translation>
+        <translation type="vanished">Вкл/Викл повноекранний режим (F5)</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -3817,6 +3879,10 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Print cards</source>
         <translation>Друк карток</translation>
+    </message>
+    <message>
+        <source>On/off Fullscreen Mode</source>
+        <translation>Вкл/викл Повноекранний режим</translation>
     </message>
 </context>
 <context>
@@ -4257,6 +4323,10 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Duration, minutes</source>
         <translation>Тривалість, хвилин</translation>
+    </message>
+    <message>
+        <source>Statistics</source>
+        <translation type="unfinished">Статистика</translation>
     </message>
 </context>
 <context>

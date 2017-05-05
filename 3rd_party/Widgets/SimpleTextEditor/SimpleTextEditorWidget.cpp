@@ -70,7 +70,7 @@ SimpleTextEditorWidget::SimpleTextEditorWidget(QWidget *parent) :
     //
     QFont defaultFont;
 #ifdef Q_OS_WIN
-    defaultFont.setFamily("Calibry");
+    defaultFont.setFamily("Calibri");
     defaultFont.setPointSize(11);
 #elif defined(Q_OS_MAC)
     defaultFont.setFamily("Helvetica");

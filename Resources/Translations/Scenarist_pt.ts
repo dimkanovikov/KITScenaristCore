@@ -118,6 +118,56 @@
     </message>
 </context>
 <context>
+    <name>BusinessLayer::FountainExporter</name>
+    <message>
+        <source>INT</source>
+        <translation type="unfinished">INT</translation>
+    </message>
+    <message>
+        <source>EXT</source>
+        <translation type="unfinished">EXT</translation>
+    </message>
+    <message>
+        <source>EST</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INT./EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INT/EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BusinessLayer::FountainImporter</name>
+    <message>
+        <source>INT</source>
+        <translation type="unfinished">INT</translation>
+    </message>
+    <message>
+        <source>EXT</source>
+        <translation type="unfinished">EXT</translation>
+    </message>
+    <message>
+        <source>EST</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INT./EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>INT/EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I/E</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BusinessLogic::AbstractExporter</name>
     <message>
         <source>(MORE)</source>
@@ -157,6 +207,10 @@
     </message>
     <message>
         <source>Final Draft template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fountain Text</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -920,6 +974,10 @@
     <message>
         <source>Additional (Numbering, Title Page etc.)</source>
         <translation>Adicional ( Numeração,  Título, Páginas, etc. )</translation>
+    </message>
+    <message>
+        <source>Fountain</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2815,6 +2873,10 @@ Parágrafo</translation>
         <source>Save As...</source>
         <translation>Salvar como...</translation>
     </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Configurar</translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -3690,7 +3752,7 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>On/off fullscreen mode (F5)</source>
-        <translation>On/Off modo de tela cheia(f5)</translation>
+        <translation type="vanished">On/Off modo de tela cheia(f5)</translation>
     </message>
     <message>
         <source>Cards.png</source>
@@ -3723,6 +3785,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Print cards</source>
         <translation>Imprimir cartões</translation>
+    </message>
+    <message>
+        <source>On/off Fullscreen Mode</source>
+        <translation>Ligar/Desligar modo de tela cheia</translation>
     </message>
 </context>
 <context>
@@ -4159,6 +4225,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Duration, minutes</source>
         <translation>Duração, minutos</translation>
+    </message>
+    <message>
+        <source>Statistics</source>
+        <translation type="unfinished">Estatisticas</translation>
     </message>
 </context>
 <context>
