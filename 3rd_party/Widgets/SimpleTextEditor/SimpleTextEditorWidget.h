@@ -49,6 +49,11 @@ public:
     void setPageSettings(QPageSize::PageSizeId _pageSize, const QMarginsF& _margins, Qt::Alignment _numberingAlign);
 
     /**
+     * @brief Установить текущий шрифт
+     */
+    void setDefaultFont(const QFont& _font);
+
+    /**
      * @brief Пуст ли документ в редакторе
      */
     bool isEmpty() const;

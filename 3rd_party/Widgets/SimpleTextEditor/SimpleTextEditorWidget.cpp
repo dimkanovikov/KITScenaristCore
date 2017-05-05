@@ -64,6 +64,21 @@ SimpleTextEditorWidget::SimpleTextEditorWidget(QWidget *parent) :
         }
     }
     s_editorWidgets.append(this);
+
+    //
+    // Установить шрифт умолчальный для системы
+    //
+    QFont defaultFont;
+#ifdef Q_OS_WIN
+    defaultFont.setFamily("Calibry");
+    defaultFont.setPointSize(11);
+#elif defined(Q_OS_MAC)
+    defaultFont.setFamily("Helvetica");
+    defaultFont.setPointSize(12);
+#else
+    defaultFont.setPointSize(12);
+#endif
+    setFont(defaultFont);
 }
 
 SimpleTextEditorWidget::~SimpleTextEditorWidget()
@@ -93,6 +108,14 @@ void SimpleTextEditorWidget::setPageSettings(QPageSize::PageSizeId _pageSize, co
     m_editor->setPageFormat(_pageSize);
     m_editor->setPageMargins(_margins);
     m_editor->setPageNumbersAlignment(_numberingAlign);
+}
+
+void SimpleTextEditorWidget::setDefaultFont(const QFont& _font)
+{
+    m_textFont->setCurrentText(_font.family());
+    m_textFontSize->setCurrentText(QString::number(_font.pointSize()));
+    m_editor->document()->setDefaultFont(_font);
+    m_editor->setTextFont(_font);
 }
 
 bool SimpleTextEditorWidget::isEmpty() const
