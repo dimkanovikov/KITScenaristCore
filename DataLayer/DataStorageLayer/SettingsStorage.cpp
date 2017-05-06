@@ -533,8 +533,8 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("scenario-editor/folder-background-color-dark", "#8D2DC4");
     m_defaultValues.insert("scenario-editor/capitalize-first-word", "1");
     m_defaultValues.insert("scenario-editor/correct-double-capitals", "1");
-    m_defaultValues.insert("scenario-editor/replace-three-dots", "1");
-    m_defaultValues.insert("scenario-editor/smart-quotes", "1");
+    m_defaultValues.insert("scenario-editor/replace-three-dots", "0");
+    m_defaultValues.insert("scenario-editor/smart-quotes", "0");
     m_defaultValues.insert("scenario-editor/auto-styles-jumping", "1");
     m_defaultValues.insert("scenario-editor/show-suggestions-in-empty-blocks", "1");
     m_defaultValues.insert("scenario-editor/spell-checking", "0");

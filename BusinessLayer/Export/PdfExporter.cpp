@@ -74,12 +74,12 @@ namespace {
         //
         if (_document->property(PRINT_PAGE_NUMBERS_KEY).toBool()) {
             //
-            // Если печатается титульная страница
+            // На титульной и на первой странице сценария
             //
-            if (_document->property(PRINT_TITLE_KEY).toBool()
-                && _pageNumber == 1) {
+            if ((_document->property(PRINT_TITLE_KEY).toBool() && _pageNumber < 3)
+                || _pageNumber == 1) {
                 //
-                // Не печатаем номер на первой странице
+                // ... не печатаем номер
                 //
             }
             //
@@ -87,7 +87,7 @@ namespace {
             //
             else {
                 _painter->save();
-                _painter->setFont(QFont("Courier New", 12));
+                _painter->setFont(QFont("Courier Prime", 12));
 
                 //
                 // Середины верхнего и нижнего полей
@@ -126,7 +126,7 @@ namespace {
                 int titleDelta = _document->property(PRINT_TITLE_KEY).toBool() ? -1 : 0;
                 _painter->setClipRect(numberingRect);
                 _painter->drawText(numberingRect, numberingAlignment,
-                                 QString::number(_pageNumber + titleDelta));
+                                   QString("%1.").arg(_pageNumber + titleDelta));
                 _painter->restore();
             }
         }

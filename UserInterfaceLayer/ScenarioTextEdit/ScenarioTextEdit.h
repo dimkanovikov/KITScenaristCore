@@ -130,11 +130,6 @@ namespace UserInterface
         QString shortcut(BusinessLogic::ScenarioBlockStyle::Type _forType) const;
 
         /**
-         * @brief Переопределяем для корректировки вызова отмены/повтора последнего действия
-         */
-        QMenu* createContextMenu(const QPoint &_pos, QWidget* _parent = 0);
-
-        /**
          * @brief Установить список дополнительных курсоров для отрисовки
          */
         void setAdditionalCursors(const QMap<QString, int>& _cursors);
@@ -200,71 +195,71 @@ namespace UserInterface
         void mouseDoubleClickEvent(QMouseEvent* _event);
         /** @} */
 
-		/**
-		 * @brief Переопределяется, для того, чтобы блокировать выделение текста мышкой
-		 */
-		void mouseMoveEvent(QMouseEvent* _event);
+        /**
+         * @brief Переопределяется, для того, чтобы блокировать выделение текста мышкой
+         */
+        void mouseMoveEvent(QMouseEvent* _event);
 
-		/**
-		 * @brief Переопределяем работу с буфером обмена для использования собственного майм типа данных
-		 */
-		/** @{ */
-		bool canInsertFromMimeData(const QMimeData* _source) const;
-		QMimeData* createMimeDataFromSelection() const;
-		void insertFromMimeData(const QMimeData* _source);
-		/** @} */
+        /**
+         * @brief Переопределяем работу с буфером обмена для использования собственного майм типа данных
+         */
+        /** @{ */
+        bool canInsertFromMimeData(const QMimeData* _source) const;
+        QMimeData* createMimeDataFromSelection() const;
+        void insertFromMimeData(const QMimeData* _source);
+        /** @} */
 
-		/**
-		 * @brief Переопределяем, чтобы запрещать дополнять в пустых блоках при установке
-		 *		  соответствующего флага
-		 */
-		bool canComplete() const;
+        /**
+         * @brief Переопределяем, чтобы запрещать дополнять в пустых блоках при установке
+         *		  соответствующего флага
+         */
+        bool canComplete() const;
 
-	private slots:
-		/**
-		 * @brief Скорректировать позиции курсоров соавторов
-		 */
-		void aboutCorrectAdditionalCursors(int _position, int _charsRemoved, int _charsAdded);
+    private slots:
+        /**
+         * @brief Скорректировать позиции курсоров соавторов
+         */
+        void aboutCorrectAdditionalCursors(int _position, int _charsRemoved, int _charsAdded);
 
-		/**
-		 * @brief Обработки изменения выделения
-		 */
-		void aboutSelectionChanged();
+        /**
+         * @brief Обработки изменения выделения
+         */
+        void aboutSelectionChanged();
 
-		/**
-		 * @brief Сохранить состояние редактора
-		 */
-		void aboutSaveEditorState();
+        /**
+         * @brief Сохранить состояние редактора
+         */
+        void aboutSaveEditorState();
 
-		/**
-		 * @brief Загрузить состояние редактора
-		 */
-		void aboutLoadEditorState();
+        /**
+         * @brief Загрузить состояние редактора
+         */
+        void aboutLoadEditorState();
 
-	private:
-		/**
-		 * @brief Очистить текущий блок от установленного в нём типа
-		 */
-		void cleanScenarioTypeFromBlock();
+    private:
+        /**
+         * @brief Очистить текущий блок от установленного в нём типа
+         */
+        void cleanScenarioTypeFromBlock();
 
-		/**
-		 * @brief Применить заданный тип к текущему блоку редактора
-		 * @param Тип блока
-		 */
+        /**
+         * @brief Применить заданный тип к текущему блоку редактора
+         * @param Тип блока
+         */
         void applyScenarioTypeToBlock(BusinessLogic::ScenarioBlockStyle::Type _blockType);
 
-		/**
-		 * @brief Скорректировать введённый текст
-		 *
-		 * - изменить регистр текста в начале предложения, если это необходимо
-		 * - иправить проблему ДВойных ЗАглавных
-		 * - убрать лишние пробелы
-		 */
-		void updateEnteredText(QKeyEvent* _event);
+        /**
+         * @brief Скорректировать введённый текст
+         *
+         * - изменить регистр текста в начале предложения, если это необходимо
+         * - иправить проблему ДВойных ЗАглавных
+         * - убрать лишние пробелы
+         */
+        void updateEnteredText(QKeyEvent* _event);
 
-		/**
-		 * @brief Оканчивается ли строка сокращением
-		 */
+        /**
+         * @brief Оканчивается ли строка сокращением
+         */
         bool stringEndsWithAbbrev(const QString& _text);
         /**
          * @brief Выделить блок при тройном клике

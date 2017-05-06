@@ -7,110 +7,110 @@ class QTextDocument;
 
 namespace BusinessLogic
 {
-	class ScenarioDocument;
+    class ScenarioDocument;
 
 
-	/**
-	 * @brief Параметры экспорта
-	 */
-	class ExportParameters
-	{
-	public:
-		ExportParameters() :
-			outline(false),
-			checkPageBreaks(false),
-			printTilte(false),
-			printPagesNumbers(false),
-			printScenesNumbers(false),
+    /**
+     * @brief Параметры экспорта
+     */
+    class ExportParameters
+    {
+    public:
+        ExportParameters() :
+            outline(false),
+            checkPageBreaks(false),
+            printTilte(true),
+            printPagesNumbers(true),
+            printScenesNumbers(true),
             saveReviewMarks(true),
             saveInvisible(false)
-		{}
+        {}
 
-		/**
-		 * @brief Режим текста: true - поэпизодник, false - сценарий
-		 */
-		bool outline;
+        /**
+         * @brief Режим текста: true - поэпизодник, false - сценарий
+         */
+        bool outline;
 
-		/**
-		 * @brief Путь к файлу
-		 */
-		QString filePath;
+        /**
+         * @brief Путь к файлу
+         */
+        QString filePath;
 
-		/**
-		 * @brief Проверять ли переносы страниц
-		 */
-		bool checkPageBreaks;
+        /**
+         * @brief Проверять ли переносы страниц
+         */
+        bool checkPageBreaks;
 
-		/**
-		 * @brief Название стиля экспорта
-		 */
-		QString style;
+        /**
+         * @brief Название стиля экспорта
+         */
+        QString style;
 
-		/**
-		 * @brief Печатать титульную страницу
-		 */
-		bool printTilte;
+        /**
+         * @brief Печатать титульную страницу
+         */
+        bool printTilte;
 
-		/**
-		 * @brief Информация с титульного листа
-		 */
-		/** @{ */
-		QString scenarioName;
-		QString scenarioAdditionalInfo;
-		QString scenarioGenre;
-		QString scenarioAuthor;
-		QString scenarioContacts;
-		QString scenarioYear;
-		/** @} */
+        /**
+         * @brief Информация с титульного листа
+         */
+        /** @{ */
+        QString scenarioName;
+        QString scenarioAdditionalInfo;
+        QString scenarioGenre;
+        QString scenarioAuthor;
+        QString scenarioContacts;
+        QString scenarioYear;
+        /** @} */
 
-		/**
-		 * @brief Печатать номера страниц
-		 */
-		bool printPagesNumbers;
+        /**
+         * @brief Печатать номера страниц
+         */
+        bool printPagesNumbers;
 
-		/**
-		 * @brief Печатать номера сцен
-		 */
-		bool printScenesNumbers;
+        /**
+         * @brief Печатать номера сцен
+         */
+        bool printScenesNumbers;
 
-		/**
-		 * @brief Приставка сцен
-		 */
-		QString scenesPrefix;
+        /**
+         * @brief Приставка сцен
+         */
+        QString scenesPrefix;
 
-		/**
-		 * @brief Сохранять редакторские пометки
-		 */
-		bool saveReviewMarks;
+        /**
+         * @brief Сохранять редакторские пометки
+         */
+        bool saveReviewMarks;
 
         /**
          * @brief Сохранять ли непечатаемые комментарии
          */
         bool saveInvisible;
-	};
+    };
 
 
-	/**
-	 * @brief Базовый класс экспортера
-	 */
-	class AbstractExporter
-	{
-	public:
-		/**
-		 * @brief Сформировать из сценария документ, готовый для экспорта
-		 * @note Вызывающий получает владение над новым сформированным документом
-		 */
-		static QTextDocument* prepareDocument(const ScenarioDocument* _scenario,
-			const ExportParameters& _exportParameters);
+    /**
+     * @brief Базовый класс экспортера
+     */
+    class AbstractExporter
+    {
+    public:
+        /**
+         * @brief Сформировать из сценария документ, готовый для экспорта
+         * @note Вызывающий получает владение над новым сформированным документом
+         */
+        static QTextDocument* prepareDocument(const ScenarioDocument* _scenario,
+            const ExportParameters& _exportParameters);
 
-	public:
-		virtual ~AbstractExporter() {}
+    public:
+        virtual ~AbstractExporter() {}
 
-		/**
-		 * @brief Экспорт заданного документа в файл
-		 */
-		virtual void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const = 0;
-	};
+        /**
+         * @brief Экспорт заданного документа в файл
+         */
+        virtual void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const = 0;
+    };
 }
 
 #endif // ABSTRACTEXPORTER_H

@@ -83,8 +83,6 @@ void ScenarioTextEdit::setScenarioDocument(ScenarioTextDocument* _document)
 
     if (m_document != 0) {
         initEditor();
-
-        TextEditHelper::beautifyDocument(m_document, m_replaceThreeDots, m_smartQuotes);
     }
 }
 
@@ -401,28 +399,6 @@ void ScenarioTextEdit::updateShortcuts()
 QString ScenarioTextEdit::shortcut(ScenarioBlockStyle::Type _forType) const
 {
     return m_shortcutsManager->shortcut(_forType);
-}
-
-QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
-{
-    //
-    // Формируем стандартное меню, чтобы добраться до действий отмены и повтора последнего действия
-    // и присоединить их к собственным функциям повтора/отмены послденего действия
-    //
-    QMenu* menu = CompletableTextEdit::createContextMenu(_pos, _parent);
-    foreach (QAction* menuAction, menu->findChildren<QAction*>()) {
-        if (menuAction->text().endsWith(QKeySequence(QKeySequence::Undo).toString(QKeySequence::NativeText))) {
-            menuAction->disconnect();
-            connect(menuAction, &QAction::triggered, this, &ScenarioTextEdit::undoRequest);
-            menuAction->setEnabled(m_document->isUndoAvailableReimpl());
-        } else if (menuAction->text().endsWith(QKeySequence(QKeySequence::Redo).toString(QKeySequence::NativeText))) {
-            menuAction->disconnect();
-            connect(menuAction, &QAction::triggered, this, &ScenarioTextEdit::redoRequest);
-            menuAction->setEnabled(m_document->isRedoAvailableReimpl());
-        }
-    }
-
-    return menu;
 }
 
 void ScenarioTextEdit::setAdditionalCursors(const QMap<QString, int>& _cursors)
