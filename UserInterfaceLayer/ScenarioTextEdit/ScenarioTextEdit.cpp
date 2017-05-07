@@ -453,6 +453,29 @@ void ScenarioTextEdit::scrollToAdditionalCursor(int _additionalCursorIndex)
     ensureCursorVisible(cursor);
 }
 
+void ScenarioTextEdit::setAdditionalContextMenuActions(const QList<QAction*>& _actions)
+{
+    if (m_additionalContextMenuActions != _actions) {
+        m_additionalContextMenuActions = _actions;
+    }
+}
+
+QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
+{
+    QMenu* menu = CompletableTextEdit::createContextMenu(_pos, _parent);
+
+    //
+    // Добавляем дополнительные действия в меню
+    //
+    if (!m_additionalContextMenuActions.isEmpty()) {
+        QAction* firstAction = menu->actions().first();
+        menu->insertActions(firstAction, m_additionalContextMenuActions);
+        menu->insertSeparator(firstAction);
+    }
+
+    return menu;
+}
+
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 {
     //
@@ -1533,7 +1556,9 @@ bool ScenarioTextEdit::selectBlockOnTripleClick(QMouseEvent* _event)
         cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
         setTextCursor(cursor);
         _event->accept();
-        return true;
+        if (_event->button() != Qt::RightButton) {
+            return true;
+        }
     }
 
     return false;

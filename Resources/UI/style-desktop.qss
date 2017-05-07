@@ -582,6 +582,23 @@ QHeaderView::section {
 }
 
 /*
+ * Меню
+ */
+QMenu::item {
+    padding: 8px 25px 8px 30px;
+}
+
+QMenu::item:selected {
+    color: palette(highlighted-text);
+    background-color: palette(highlight);
+    border-color: palette(highlight);
+}
+
+QMenu::icon {
+    padding: 8px;
+}
+
+/*
  * Виджет заголовок списка отчётов
  */
 ctkCollapsibleButton[reportButton=true] {

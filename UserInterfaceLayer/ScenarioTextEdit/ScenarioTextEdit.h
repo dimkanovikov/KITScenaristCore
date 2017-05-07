@@ -139,6 +139,17 @@ namespace UserInterface
          */
         void scrollToAdditionalCursor(int _index);
 
+        /**
+         * @brief Установить список дополнительных действий для контекстного меню
+         */
+        void setAdditionalContextMenuActions(const QList<QAction*>& _actions);
+
+        /**
+         * @brief Создать контекстное меню, чтобы добавить в него дополнительные действия
+         * @note Управление памятью передаётся вызывающему метод
+         */
+        QMenu* createContextMenu(const QPoint& _pos, QWidget* _parent = 0);
+
     signals:
         /**
          * @brief Запрос на отмену последнего действия
@@ -338,6 +349,11 @@ namespace UserInterface
          * @brief Управляющий шорткатами
          */
         ShortcutsManager* m_shortcutsManager;
+
+        /**
+         * @brief Список дополнительных действий для контекстного меню
+         */
+        QList<QAction*> m_additionalContextMenuActions;
     };
 }
 
