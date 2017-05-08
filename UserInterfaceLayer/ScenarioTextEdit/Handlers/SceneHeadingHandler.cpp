@@ -134,8 +134,9 @@ void SceneHeadingHandler::handleEnter(QKeyEvent* _event)
             //! Есть выделение
 
             //
-            // Ни чего не делаем
+            // Удаляем всё, но оставляем стилем блока текущий
             //
+            editor()->addScenarioBlock(ScenarioBlockStyle::SceneHeading);
         } else {
             //! Нет выделения
 

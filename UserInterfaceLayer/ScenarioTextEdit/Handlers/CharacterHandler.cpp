@@ -154,13 +154,14 @@ void CharacterHandler::handleEnter(QKeyEvent* _event)
 	} else {
 		//! Подстановщик закрыт
 
-		if (cursor.hasSelection()) {
-			//! Есть выделение
+        if (cursor.hasSelection()) {
+            //! Есть выделение
 
-			//
-			// Ни чего не делаем
-			//
-		} else {
+            //
+            // Удаляем всё, но оставляем стилем блока текущий
+            //
+            editor()->addScenarioBlock(ScenarioBlockStyle::Character);
+        } else {
 			//! Нет выделения
 
 			if (cursorBackwardText.isEmpty()

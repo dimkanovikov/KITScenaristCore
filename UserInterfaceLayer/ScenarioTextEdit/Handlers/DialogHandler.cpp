@@ -47,9 +47,10 @@ void DialogHandler::handleEnter(QKeyEvent*)
 		if (cursor.hasSelection()) {
 			//! Есть выделение
 
-			//
-			// Ни чего не делаем
-			//
+            //
+            // Удаляем всё, но оставляем стилем блока текущий
+            //
+            editor()->addScenarioBlock(ScenarioBlockStyle::Dialogue);
 		} else {
 			//! Нет выделения
 

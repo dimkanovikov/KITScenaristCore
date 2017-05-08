@@ -48,32 +48,33 @@ void ActionHandler::handleEnter(QKeyEvent*)
 	} else {
 		//! Подстановщик закрыт
 
-		if (cursor.hasSelection()) {
-			//! Есть выделение
+        if (cursor.hasSelection()) {
+            //! Есть выделение
 
-			//
-			// Ни чего не делаем
-			//
-		} else {
-			//! Нет выделения
+            //
+            // Удаляем всё, но оставляем стилем блока текущий
+            //
+            editor()->addScenarioBlock(ScenarioBlockStyle::Action);
+        } else {
+            //! Нет выделения
 
-			if (cursorBackwardText.isEmpty()
-				&& cursorForwardText.isEmpty()) {
-				//! Текст пуст
+            if (cursorBackwardText.isEmpty()
+                && cursorForwardText.isEmpty()) {
+                //! Текст пуст
 
-				//
-				// Меняем стиль на место и время
-				//
-				editor()->changeScenarioBlockType(changeForEnter(ScenarioBlockStyle::Action));
-			} else {
-				//! Текст не пуст
+                //
+                // Меняем стиль на место и время
+                //
+                editor()->changeScenarioBlockType(changeForEnter(ScenarioBlockStyle::Action));
+            } else {
+                //! Текст не пуст
 
-				//
-				// Вставляем блок и применяем ему стиль описания действия
-				//
-				editor()->addScenarioBlock(jumpForEnter(ScenarioBlockStyle::Action));
-			}
-		}
+                //
+                // Вставляем блок и применяем ему стиль описания действия
+                //
+                editor()->addScenarioBlock(jumpForEnter(ScenarioBlockStyle::Action));
+            }
+        }
 	}
 }
 

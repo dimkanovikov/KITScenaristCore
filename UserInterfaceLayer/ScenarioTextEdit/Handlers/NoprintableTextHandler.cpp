@@ -45,9 +45,10 @@ void NoprintableTextHandler::handleEnter(QKeyEvent*)
 		if (cursor.hasSelection()) {
 			//! Есть выделение
 
-			//
-			// Ни чего не делаем
-			//
+            //
+            // Удаляем всё, но оставляем стилем блока текущий
+            //
+            editor()->addScenarioBlock(ScenarioBlockStyle::NoprintableText);
 		} else {
 			//! Нет выделения
 
