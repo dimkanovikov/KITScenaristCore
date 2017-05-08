@@ -585,7 +585,7 @@ QHeaderView::section {
  * Меню
  */
 QMenu::item {
-    padding: 8px 25px 8px 30px;
+    padding: 8px 25px 8px 34px;
 }
 
 QMenu::item:selected {

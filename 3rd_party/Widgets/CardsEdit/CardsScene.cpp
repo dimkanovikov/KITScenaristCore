@@ -787,6 +787,11 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent* _event)
     QMenu* menu = new QMenu(views().value(0, nullptr));
 
     //
+    // Перейти к элементу
+    //
+    QAction* goToText = menu->addAction(tr("Go to text"));
+
+    //
     // Возможность конвертирования
     //
     QAction* convertToSceneAction = menu->addAction(tr("Convert to scene"));
@@ -857,6 +862,7 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent* _event)
     // Определим видимые
     //
     if (!hasSelectedItem) {
+        goToText->setVisible(false);
         convertToSceneAction->setVisible(false);
         convertToFolderAction->setVisible(false);
         color->setVisible(false);
@@ -909,9 +915,19 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent* _event)
     //
     if (triggered != nullptr) {
         //
+        // Пользователь хочет перейти к тексту
+        //
+        if (triggered == goToText) {
+            if (act != nullptr) {
+                emit goToActRequest(act->uuid());
+            } else if (card != nullptr) {
+                emit goToCardRequest(card->uuid());
+            }
+        }
+        //
         // Пользователь хочет добавить карточку
         //
-        if (triggered == addAction) {
+        else if (triggered == addAction) {
             const QPointF insertPosition = fixCollidesForCardPosition(_event->scenePos());
             emit cardAddRequest(insertPosition);
         }

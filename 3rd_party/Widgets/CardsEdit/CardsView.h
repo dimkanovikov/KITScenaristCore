@@ -157,6 +157,14 @@ public:
 
 signals:
     /**
+     * @brief Пользователь хочет перейти к тексту выбранного элемента
+     */
+    /** @{ */
+    void goToActRequest(const QString& _uuid);
+    void goToCardRequest(const QString& _uuid);
+    /** @} */
+
+    /**
      * @brief Пользователь хочет добавить элемент в заданной позиции
      */
     /** @{ */

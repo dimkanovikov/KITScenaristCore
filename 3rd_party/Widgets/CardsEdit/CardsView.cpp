@@ -233,6 +233,8 @@ void CardsView::initView()
 
 void CardsView::initConnections()
 {
+    connect(m_scene, &CardsScene::goToActRequest, this, &CardsView::goToActRequest);
+    connect(m_scene, &CardsScene::goToCardRequest, this, &CardsView::goToCardRequest);
     connect(m_scene, &CardsScene::actAddRequest, this, &CardsView::actAddRequest);
     connect(m_scene, &CardsScene::cardAddRequest, this, &CardsView::cardAddRequest);
     connect(m_scene, &CardsScene::cardAddCopyRequest, this, &CardsView::cardAddCopyRequest);
