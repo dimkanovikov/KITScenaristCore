@@ -106,7 +106,7 @@ namespace ManagementLayer
 		/**
 		 * @brief Установить для всех проектов из облака флаг о недоступной синхронизации
 		 */
-		void setRemoteProjectsSyncUnavailable();
+        void setRemoteProjectsSyncAvailable(bool _syncAvailable);
 
 	signals:
 		/**

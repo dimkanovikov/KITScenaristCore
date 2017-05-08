@@ -370,10 +370,12 @@ void ProjectsManager::setRemoteProjects(const QString& _xml)
     emit remoteProjectsUpdated();
 }
 
-void ProjectsManager::setRemoteProjectsSyncUnavailable()
+void ProjectsManager::setRemoteProjectsSyncAvailable(bool _syncAvailable)
 {
     for (int projectIndex = 0; projectIndex < m_remoteProjects.size(); ++projectIndex) {
-        m_remoteProjects[projectIndex].setSyncAvailable(false);
+        if (m_remoteProjects[projectIndex].isUserOwner()) {
+            m_remoteProjects[projectIndex].setSyncAvailable(_syncAvailable);
+        }
     }
 }
 
