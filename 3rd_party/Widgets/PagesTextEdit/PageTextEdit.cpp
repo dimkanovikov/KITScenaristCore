@@ -1813,7 +1813,7 @@ void PageTextEditPrivate::paintPageNumber(QPainter* _painter, const QRectF& _rec
         //
         if (m_pageNumbersAlignment.testFlag(Qt::AlignTop)) {
             _painter->drawText(_rect, Qt::AlignVCenter | (m_pageNumbersAlignment ^ Qt::AlignTop),
-                QString::number(_number));
+                QString("%1.").arg(_number));
         }
     }
     //
@@ -1825,7 +1825,7 @@ void PageTextEditPrivate::paintPageNumber(QPainter* _painter, const QRectF& _rec
         //
         if (m_pageNumbersAlignment.testFlag(Qt::AlignBottom)) {
             _painter->drawText(_rect, Qt::AlignVCenter | (m_pageNumbersAlignment ^ Qt::AlignBottom),
-                QString::number(_number));
+                QString("%1.").arg(_number));
         }
     }
 }
