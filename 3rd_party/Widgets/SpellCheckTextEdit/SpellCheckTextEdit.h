@@ -83,6 +83,11 @@ private slots:
 	 */
 	void aboutReplaceWordOnSuggestion();
 
+    /**
+     * @brief Сменилась позиция курсора
+     */
+    void cursorChanged();
+
 private:
 	/**
 	 * @brief Найти слово в позиции
@@ -120,6 +125,10 @@ private:
 	 * @brief Последняя позиция курсора, при открытии контекстного меню
 	 */
 	QPoint m_lastCursorPosition;
+
+    /**
+     * @brief Предыдущий блок, на котором был курсор
+     */
     QTextBlock m_prevBlock;
 };
 

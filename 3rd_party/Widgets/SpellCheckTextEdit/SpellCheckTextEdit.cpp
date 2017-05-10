@@ -30,17 +30,8 @@ SpellCheckTextEdit::SpellCheckTextEdit(QWidget *_parent) :
     // Настраиваем подсветку слов не прошедших проверку орфографии
     //
     m_spellCheckHighlighter = new SpellCheckHighlighter(0, m_spellChecker);
-    connect(this, &SpellCheckTextEdit::cursorPositionChanged, [this] {
-        m_spellCheckHighlighter->setCursorPosition(textCursor().positionInBlock());
-        if (m_prevBlock.isValid()) {
-            if (m_prevBlock != textCursor().block()) {
-                m_spellCheckHighlighter->setOtherBlock(true);
-            }
-            m_spellCheckHighlighter->rehighlightBlock(m_prevBlock);
-            m_spellCheckHighlighter->setOtherBlock(false);
-        }
-        m_prevBlock = textCursor().block();
-    });
+    connect(this, &SpellCheckTextEdit::cursorPositionChanged,
+            this, &SpellCheckTextEdit::cursorChanged);
 
     //
     // Настраиваем действия контекстного меню для слов не прошедших проверку орфографии
@@ -303,6 +294,17 @@ void SpellCheckTextEdit::aboutReplaceWordOnSuggestion()
         setTextCursor(cursor);
         cursor.endEditBlock();
     }
+}
+
+void SpellCheckTextEdit::cursorChanged()
+{
+    QTextCursor cursor = textCursor();
+    cursor.movePosition(QTextCursor::StartOfWord);
+    m_spellCheckHighlighter->setCursorPosition(cursor.positionInBlock());
+    if (m_prevBlock.isValid()) {
+        m_spellCheckHighlighter->rehighlightBlock(m_prevBlock);
+    }
+    m_prevBlock = textCursor().block();
 }
 
 QString SpellCheckTextEdit::wordOnPosition(const QPoint& _position) const

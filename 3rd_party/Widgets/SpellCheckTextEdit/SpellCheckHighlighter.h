@@ -41,11 +41,6 @@ public:
 	 */
 	void highlightBlock(const QString& _text);
 
-    /**
-     * @brief Относится ли курсор к другому блоку
-     */
-    void setOtherBlock(bool _otherBlock);
-
 private:
 	/**
 	 * @brief Проверяющий орфографию
@@ -71,12 +66,6 @@ private:
      * @brief Позиция курсора в блоке
      */
     int m_cursorPosition;
-
-    /**
-     * @brief Проверяем ли мы сейчас другой блок,
-     * 		  не тот, на который указывает курсор
-     */
-    bool m_otherBlock;
 };
 
 #endif // SPELLCHECKHIGHLIGHTER_H
