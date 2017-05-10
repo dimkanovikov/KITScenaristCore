@@ -31,11 +31,20 @@ public:
 	 */
 	bool useSpellChecker() const;
 
-protected:
+    /**
+     * @brief Задать позицию курсора
+     */
+    void setCursorPosition(int position);
+
 	/**
 	 * @brief Подсветить текст не прошедший проверку орфографии
 	 */
 	void highlightBlock(const QString& _text);
+
+    /**
+     * @brief Относится ли курсор к другому блоку
+     */
+    void setOtherBlock(bool _otherBlock);
 
 private:
 	/**
@@ -57,6 +66,17 @@ private:
 	 * @brief Слово для очистки подсветки
 	 */
 	QString m_wordForClean;
+
+    /**
+     * @brief Позиция курсора в блоке
+     */
+    int m_cursorPosition;
+
+    /**
+     * @brief Проверяем ли мы сейчас другой блок,
+     * 		  не тот, на который указывает курсор
+     */
+    bool m_otherBlock;
 };
 
 #endif // SPELLCHECKHIGHLIGHTER_H

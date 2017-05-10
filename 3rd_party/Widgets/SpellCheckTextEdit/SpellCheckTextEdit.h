@@ -2,6 +2,7 @@
 #define SPELLCHECKTEXTEDIT_H
 
 #include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
+#include <QTextBlock>
 
 #include "SpellChecker.h"
 
@@ -119,6 +120,7 @@ private:
 	 * @brief Последняя позиция курсора, при открытии контекстного меню
 	 */
 	QPoint m_lastCursorPosition;
+    QTextBlock m_prevBlock;
 };
 
 #endif // SPELLCHECKTEXTEDIT_H

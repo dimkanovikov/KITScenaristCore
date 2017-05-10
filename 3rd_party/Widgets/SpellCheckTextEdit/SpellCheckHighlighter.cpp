@@ -7,7 +7,8 @@
 SpellCheckHighlighter::SpellCheckHighlighter(QTextDocument* _parent, SpellChecker* _checker) :
 	SyntaxHighlighter(_parent),
 	m_spellChecker(_checker),
-	m_useSpellChecker(true)
+    m_useSpellChecker(true),
+    m_otherBlock(false)
 {
 	Q_ASSERT(_checker);
 
@@ -40,7 +41,12 @@ void SpellCheckHighlighter::setUseSpellChecker(bool _use)
 
 bool SpellCheckHighlighter::useSpellChecker() const
 {
-	return m_useSpellChecker;
+    return m_useSpellChecker;
+}
+
+void SpellCheckHighlighter::setCursorPosition(int _position)
+{
+    m_cursorPosition = _position;
 }
 
 void SpellCheckHighlighter::highlightBlock(const QString& _text)
@@ -57,14 +63,26 @@ void SpellCheckHighlighter::highlightBlock(const QString& _text)
 			QStringList wordsToCheck =
 					textToCheck.split(QRegExp("([^\\w,^\\\\]|(?=\\\\))+"),
 									  QString::SkipEmptyParts);
+            QRegExp notWord("([^\\w,^\\\\]|(?=\\\\))+");
+            notWord.indexIn(textToCheck);
 			//
 			// Проверяем каждое слово
 			//
-			foreach (const QString wordToCheck, wordsToCheck) {
+            int wordPos = 0;
+            int notWordPos = notWord.pos(0);
+            //while (wordPos != -1) {
+            for (wordPos = 0; wordPos < textToCheck.length(); wordPos = notWordPos + 1) {
+            //foreach (const QString wordToCheck, wordsToCheck) {
 				//
 				// Убираем знаки препинания окружающие слово
 				//
-				QString wordWithoutPunct = wordToCheck.trimmed();
+                notWord.indexIn(textToCheck, wordPos + 1);
+                notWordPos = notWord.pos(0);
+                if (notWordPos == -1) {
+                    notWordPos = textToCheck.length();
+                }
+                QString wordToCheck = textToCheck.mid(wordPos, notWordPos - wordPos);
+                QString wordWithoutPunct = wordToCheck.trimmed();
 				while (!wordWithoutPunct.isEmpty()
 					   && (wordWithoutPunct.at(0).isPunct()
 						   || wordWithoutPunct.at(wordWithoutPunct.length()-1).isPunct())) {
@@ -79,7 +97,13 @@ void SpellCheckHighlighter::highlightBlock(const QString& _text)
 				// Проверяем слова длинной более одного символа
 				//
 				if (wordWithoutPunct.length() > 1) {
-					//
+                    int positionInText = wordPos; //_text.indexOf(wordWithoutPunct, 0);
+                    if (!m_otherBlock
+                            && positionInText <= m_cursorPosition
+                            && positionInText + wordWithoutPunct.length() > m_cursorPosition) {
+                        continue;
+                    }
+                    //
 					// Корректируем регистр слова
 					//
 					QString wordWithoutPunctInCorrectRegister =
@@ -93,7 +117,6 @@ void SpellCheckHighlighter::highlightBlock(const QString& _text)
 						// Проходим по всем вхождения этого слова в тексте
 						//
 						const int wordWithoutPunctLength = wordWithoutPunct.length();
-						int positionInText = _text.indexOf(wordWithoutPunct, 0);
 						while (positionInText != -1) {
 							setFormat(positionInText, wordWithoutPunctLength, m_misspeledCharFormat);
 							positionInText = _text.indexOf(wordWithoutPunct, positionInText + 1);
@@ -101,6 +124,11 @@ void SpellCheckHighlighter::highlightBlock(const QString& _text)
 					}
 				}
 			}
-		}
-	}
+        }
+    }
+}
+
+void SpellCheckHighlighter::setOtherBlock(bool _otherBlock)
+{
+    m_otherBlock = _otherBlock;
 }
