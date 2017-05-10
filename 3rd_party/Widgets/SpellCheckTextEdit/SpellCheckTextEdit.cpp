@@ -31,7 +31,7 @@ SpellCheckTextEdit::SpellCheckTextEdit(QWidget *_parent) :
     //
     m_spellCheckHighlighter = new SpellCheckHighlighter(0, m_spellChecker);
     connect(this, &SpellCheckTextEdit::cursorPositionChanged,
-            this, &SpellCheckTextEdit::cursorChanged);
+            this, &SpellCheckTextEdit::rehighlighWithNewCursor);
 
     //
     // Настраиваем действия контекстного меню для слов не прошедших проверку орфографии
@@ -296,7 +296,7 @@ void SpellCheckTextEdit::aboutReplaceWordOnSuggestion()
     }
 }
 
-void SpellCheckTextEdit::cursorChanged()
+void SpellCheckTextEdit::rehighlighWithNewCursor()
 {
     QTextCursor cursor = textCursor();
     cursor.movePosition(QTextCursor::StartOfWord);

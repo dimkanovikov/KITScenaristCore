@@ -86,7 +86,7 @@ private slots:
     /**
      * @brief Сменилась позиция курсора
      */
-    void cursorChanged();
+    void rehighlighWithNewCursor();
 
 private:
 	/**

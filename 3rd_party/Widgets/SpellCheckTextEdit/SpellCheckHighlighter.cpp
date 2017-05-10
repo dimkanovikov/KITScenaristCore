@@ -60,7 +60,7 @@ void SpellCheckHighlighter::highlightBlock(const QString& _text)
 		//
 		QString textToCheck = _text.simplified();
 		if (!textToCheck.isEmpty()) {
-            QRegExp notWord("([^\\w,^\\\\]|(?=\\\\))+");
+            QRegExp notWord("([^\\w,^\\'\\-])+");
             notWord.indexIn(textToCheck);
 			//
 			// Проверяем каждое слово
