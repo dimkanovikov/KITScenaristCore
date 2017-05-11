@@ -68,48 +68,44 @@ void SpellCheckHighlighter::highlightBlock(const QString& _text)
             int wordPos = 0;
             int notWordPos = notWord.pos(0);
             for (wordPos = 0; wordPos < textToCheck.length(); wordPos = notWordPos + 1) {
-				//
-				// Убираем знаки препинания окружающие слово
-				//
-                notWord.indexIn(textToCheck, wordPos + 1);
+                //
+                // Получим окончание слова
+                //
+                notWord.indexIn(textToCheck, wordPos);
                 notWordPos = notWord.pos(0);
                 if (notWordPos == -1) {
                     notWordPos = textToCheck.length();
                 }
+
+                //
+                // Получим само слово
+                //
                 QString wordToCheck = textToCheck.mid(wordPos, notWordPos - wordPos);
-                QString wordWithoutPunct = wordToCheck.trimmed();
-				while (!wordWithoutPunct.isEmpty()
-					   && (wordWithoutPunct.at(0).isPunct()
-						   || wordWithoutPunct.at(wordWithoutPunct.length()-1).isPunct())) {
-					if (wordWithoutPunct.at(0).isPunct()) {
-						wordWithoutPunct = wordWithoutPunct.mid(1);
-					} else {
-						wordWithoutPunct = wordWithoutPunct.left(wordWithoutPunct.length()-1);
-					}
-				}
 
 				//
 				// Проверяем слова длинной более одного символа
 				//
-				if (wordWithoutPunct.length() > 1) {
-                    int positionInText = wordPos; //_text.indexOf(wordWithoutPunct, 0);
+                if (wordToCheck.length() > 1) {
+                    int positionInText = wordPos;
+                    //
+                    // Не проверяем слово, которое сейчас пишется
                     if (m_edited
                             && positionInText <= m_cursorPosition
-                            && positionInText + wordWithoutPunct.length() > m_cursorPosition) {
+                            && positionInText + wordToCheck.length() > m_cursorPosition) {
                         continue;
                     }
                     //
 					// Корректируем регистр слова
 					//
-					QString wordWithoutPunctInCorrectRegister =
-							wordWithoutPunct[0] + wordWithoutPunct.mid(1).toLower();
+                    QString wordWithoutInCorrectRegister =
+                            wordToCheck[0] + wordToCheck.mid(1).toLower();
 
 					//
 					// Если слово не прошло проверку
 					//
-					if (!m_spellChecker->spellCheckWord(wordWithoutPunctInCorrectRegister)) {
-						const int wordWithoutPunctLength = wordWithoutPunct.length();
-                        setFormat(positionInText, wordWithoutPunctLength, m_misspeledCharFormat);
+                    if (!m_spellChecker->spellCheckWord(wordWithoutInCorrectRegister)) {
+                        const int wordLength = wordToCheck.length();
+                        setFormat(positionInText, wordLength, m_misspeledCharFormat);
 					}
 				}
 			}
