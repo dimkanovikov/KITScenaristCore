@@ -759,6 +759,10 @@
         <source>Stamp:</source>
         <translation>Carimbo:</translation>
     </message>
+    <message>
+        <source>Go to text</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChangePasswordDialog</name>
@@ -1576,6 +1580,14 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>local</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in cloud</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2877,6 +2889,10 @@ Parágrafo</translation>
         <source>Settings</source>
         <translation type="unfinished">Configurar</translation>
     </message>
+    <message>
+        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -4107,6 +4123,11 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>Swedish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
+but if you work with no terminations it saves project every %1 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

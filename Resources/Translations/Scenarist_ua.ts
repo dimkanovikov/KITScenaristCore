@@ -746,6 +746,10 @@
         <source>Stamp:</source>
         <translation>Штамп:</translation>
     </message>
+    <message>
+        <source>Go to text</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChangePasswordDialog</name>
@@ -963,7 +967,7 @@
     </message>
     <message>
         <source>Fountain</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1642,6 +1646,14 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>local</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in cloud</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2969,6 +2981,10 @@ Paragraph</source>
         <source>Settings</source>
         <translation type="unfinished">Налаштування</translation>
     </message>
+    <message>
+        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -4201,6 +4217,11 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>Swedish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
+but if you work with no terminations it saves project every %1 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
