@@ -98,6 +98,12 @@ private:
 //	Q_PRIVATE_SLOT(d, void _q_delayedRehighlight())
 
 	SyntaxHighlighterPrivate* d;
+
+protected:
+    /**
+     * @brief Изменялся ли документ с момента последней проверки
+     */
+    bool m_edited;
 };
 
 
