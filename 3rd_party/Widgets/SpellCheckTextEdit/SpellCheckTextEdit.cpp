@@ -301,16 +301,19 @@ void SpellCheckTextEdit::rehighlighWithNewCursor()
     QTextCursor cursor = textCursor();
     cursor.movePosition(QTextCursor::StartOfWord);
     QString text = cursor.block().text();
-    while (cursor.positionInBlock() > 1 &&
+
+    //
+    // Цикл ниже необходим, потому что movePosition(StartOfWord)
+    // считает - и ' другими словами
+    // Примеры "кт-" - еще не закончив печатать слово, получим
+    // его подсветку
+    //
+    while (cursor.positionInBlock() > 0 &&
            (text[cursor.positionInBlock()] == '\''
-           || text[cursor.positionInBlock()] == '-')) {
-            cursor.movePosition(QTextCursor::Left, QTextCursor::MoveAnchor, 1);
-            cursor.movePosition(QTextCursor::StartOfWord);
-    }
-    while (cursor.positionInBlock() > 2 &&
-           (text[cursor.positionInBlock() - 1] == '\''
+           || text[cursor.positionInBlock()] == '-'
+           || text[cursor.positionInBlock() - 1] == '\''
             || text[cursor.positionInBlock() - 1] == '-')) {
-            cursor.movePosition(QTextCursor::Left, QTextCursor::MoveAnchor, 2);
+            cursor.movePosition(QTextCursor::PreviousCharacter);
             cursor.movePosition(QTextCursor::StartOfWord);
     }
     m_spellCheckHighlighter->setCursorPosition(cursor.positionInBlock());

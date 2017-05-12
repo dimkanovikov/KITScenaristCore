@@ -97,13 +97,13 @@ void SpellCheckHighlighter::highlightBlock(const QString& _text)
                     //
 					// Корректируем регистр слова
 					//
-                    QString wordWithoutInCorrectRegister =
+                    QString wordInCorrectRegister =
                             wordToCheck[0] + wordToCheck.mid(1).toLower();
 
 					//
 					// Если слово не прошло проверку
 					//
-                    if (!m_spellChecker->spellCheckWord(wordWithoutInCorrectRegister)) {
+                    if (!m_spellChecker->spellCheckWord(wordInCorrectRegister)) {
                         const int wordLength = wordToCheck.length();
                         setFormat(positionInText, wordLength, m_misspeledCharFormat);
 					}
