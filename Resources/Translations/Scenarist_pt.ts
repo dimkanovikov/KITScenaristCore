@@ -1583,11 +1583,11 @@ O projeto não foi sincronizado.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>local</source>
+        <source>in cloud</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>in cloud</source>
+        <source>on local computer</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -2150,12 +2150,12 @@ Le projet n&apos;a pas été synchronisé.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2095"/>
-        <source>local</source>
+        <source>in cloud</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2095"/>
-        <source>in cloud</source>
+        <source>on local computer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

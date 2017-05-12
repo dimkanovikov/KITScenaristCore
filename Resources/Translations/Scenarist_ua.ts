@@ -1649,11 +1649,11 @@ Project didn&apos;t synchronized.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>local</source>
+        <source>in cloud</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>in cloud</source>
+        <source>on local computer</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
