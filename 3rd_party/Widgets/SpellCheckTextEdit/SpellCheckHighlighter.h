@@ -41,6 +41,7 @@ public:
 	 */
 	void highlightBlock(const QString& _text);
 
+
 private:
 	/**
 	 * @brief Проверяющий орфографию

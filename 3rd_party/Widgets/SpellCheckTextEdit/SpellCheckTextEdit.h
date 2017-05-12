@@ -101,6 +101,16 @@ private:
      */
     QString removePunctutaion(const QString& _word) const;
 
+    /**
+     * @brief Перемещает курсор в начало слова (с учетом - и ')
+     */
+    QTextCursor moveCursorToStartWord(QTextCursor cursor);
+
+    /**
+     * @brief Перемещает курсор в конец слова (с учетом - и ')
+     */
+    QTextCursor moveCursorToEndWord(QTextCursor cursor);
+
 private:
 	/**
 	 * @brief Проверяющий орфографию
