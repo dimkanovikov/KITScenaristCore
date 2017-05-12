@@ -300,6 +300,22 @@ void SpellCheckTextEdit::rehighlighWithNewCursor()
 {
     QTextCursor cursor = textCursor();
     cursor.movePosition(QTextCursor::StartOfWord);
+    QString text = cursor.block().text();
+
+    //
+    // Цикл ниже необходим, потому что movePosition(StartOfWord)
+    // считает - и ' другими словами
+    // Примеры "кт-" - еще не закончив печатать слово, получим
+    // его подсветку
+    //
+    while (cursor.positionInBlock() > 0 &&
+           (text[cursor.positionInBlock()] == '\''
+           || text[cursor.positionInBlock()] == '-'
+           || text[cursor.positionInBlock() - 1] == '\''
+            || text[cursor.positionInBlock() - 1] == '-')) {
+            cursor.movePosition(QTextCursor::PreviousCharacter);
+            cursor.movePosition(QTextCursor::StartOfWord);
+    }
     m_spellCheckHighlighter->setCursorPosition(cursor.positionInBlock());
     if (m_prevBlock.isValid()) {
         m_spellCheckHighlighter->rehighlightBlock(m_prevBlock);
