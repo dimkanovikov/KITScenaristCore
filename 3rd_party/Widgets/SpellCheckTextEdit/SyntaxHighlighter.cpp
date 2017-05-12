@@ -417,6 +417,16 @@ void SyntaxHighlighter::rehighlightBlock(const QTextBlock &block)
         d->rehighlightPending = rehighlightPending;
 }
 
+bool SyntaxHighlighter::isEdited() const
+{
+    return m_edited;
+}
+
+void SyntaxHighlighter::setEdited(bool _edited)
+{
+    m_edited = _edited;
+}
+
 /*!
     \fn void QSyntaxHighlighter::highlightBlock(const QString &text)
 

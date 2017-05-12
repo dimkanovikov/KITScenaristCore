@@ -58,29 +58,28 @@ void SpellCheckHighlighter::highlightBlock(const QString& _text)
 		//
 		// Убираем пустоты из проверяемого текста
 		//
-		QString textToCheck = _text.simplified();
-		if (!textToCheck.isEmpty()) {
+        if (!_text.isEmpty()) {
             QRegExp notWord("[^\\w'-]+");
-            notWord.indexIn(textToCheck);
+            notWord.indexIn(_text);
 			//
 			// Проверяем каждое слово
 			//
             int wordPos = 0;
             int notWordPos = notWord.pos(0);
-            for (wordPos = 0; wordPos < textToCheck.length(); wordPos = notWordPos + 1) {
+            for (wordPos = 0; wordPos < _text.length(); wordPos = notWordPos + 1) {
                 //
                 // Получим окончание слова
                 //
-                notWord.indexIn(textToCheck, wordPos);
+                notWord.indexIn(_text, wordPos);
                 notWordPos = notWord.pos(0);
                 if (notWordPos == -1) {
-                    notWordPos = textToCheck.length();
+                    notWordPos = _text.length();
                 }
 
                 //
                 // Получим само слово
                 //
-                QString wordToCheck = textToCheck.mid(wordPos, notWordPos - wordPos);
+                QString wordToCheck = _text.mid(wordPos, notWordPos - wordPos);
 
 				//
 				// Проверяем слова длинной более одного символа

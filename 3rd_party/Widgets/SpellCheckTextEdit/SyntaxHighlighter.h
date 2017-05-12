@@ -75,6 +75,9 @@ public Q_SLOTS:
 	void rehighlight();
 	void rehighlightBlock(const QTextBlock &block);
 
+    bool isEdited() const;
+    void setEdited(bool _edited);
+
 protected:
 	virtual void highlightBlock(const QString &text) = 0;
 

@@ -111,27 +111,27 @@ QMenu* SpellCheckTextEdit::createContextMenu(const QPoint& _pos, QWidget* _paren
         //
         // Определим слово под курсором
         //
-        QString wordUnderCursor = wordOnPosition(m_lastCursorPosition);
+        QTextCursor cursorWordStart = moveCursorToStartWord(cursorForPosition(m_lastCursorPosition));
+        QTextCursor cursorWordEnd = moveCursorToEndWord(cursorWordStart);
 
-        //
-        // Уберем пунктуацию в слове
-        //
-        QString wordWithoutPunct = removePunctutaion(wordUnderCursor);
+        QString text = cursorWordStart.block().text();
 
-        QString wordWithoutPunctInCorrectRegister = wordWithoutPunct;
+        QString wordUnderCursor = text.mid(cursorWordStart.positionInBlock(), cursorWordEnd.positionInBlock() - cursorWordStart.positionInBlock());
+
+        QString wordInCorrectRegister = wordUnderCursor;
         if (cursorForPosition(_pos).charFormat().fontCapitalization() == QFont::AllUppercase) {
             //
             // Приведем к верхнему регистру
             //
-            wordWithoutPunctInCorrectRegister = wordWithoutPunct.toUpper();
+            wordInCorrectRegister = wordUnderCursor.toUpper();
         }
 
         //
         // Если слово не проходит проверку орфографии добавим дополнительные действия в контекстное меню
         //
-        if (!m_spellChecker->spellCheckWord(wordWithoutPunctInCorrectRegister)) {
+        if (!m_spellChecker->spellCheckWord(wordInCorrectRegister)) {
             // ... действие, перед которым вставляем дополнительные пункты
-            QStringList suggestions = m_spellChecker->suggestionsForWord(wordWithoutPunct);
+            QStringList suggestions = m_spellChecker->suggestionsForWord(wordUnderCursor);
             // ... вставляем варианты
             QAction* actionInsertBefore = menu->actions().first();
             int addedSuggestionsCount = 0;
@@ -287,18 +287,30 @@ void SpellCheckTextEdit::aboutReplaceWordOnSuggestion()
 {
     if (QAction* suggestAction = qobject_cast<QAction*>(sender())) {
         QTextCursor cursor = cursorForPosition(m_lastCursorPosition);
-        cursor.beginEditBlock();
-        cursor.select(QTextCursor::WordUnderCursor);
+        cursor = moveCursorToStartWord(cursor);
+        QTextCursor endCursor = moveCursorToEndWord(cursor);
+        cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, endCursor.positionInBlock() - cursor.positionInBlock());
         cursor.removeSelectedText();
         cursor.insertText(suggestAction->text());
         setTextCursor(cursor);
         cursor.endEditBlock();
+
+        //
+        // Немного магии. Мы хотим перепроверить блок, в котором изменили слово.
+        // Беда в том, что SpellCheckHighlighter не будет проверять слово в блоке,
+        // если оно сейчас редактировалось. Причем, эта проверка идет по позиции.
+        // А значит при проверке другого блока, слово на этой позиции не проверится.
+        // Поэтому, мы ему говорим, что слово не редактировалось, проверяй весь абзац
+        // а затем восстанавливаем в прежнее состояние
+        //
+        bool isEdited = m_spellCheckHighlighter->isEdited();
+        m_spellCheckHighlighter->rehighlightBlock(cursor.block());
+        m_spellCheckHighlighter->setEdited(isEdited);
     }
 }
 
-void SpellCheckTextEdit::rehighlighWithNewCursor()
+QTextCursor SpellCheckTextEdit::moveCursorToStartWord(QTextCursor cursor)
 {
-    QTextCursor cursor = textCursor();
     cursor.movePosition(QTextCursor::StartOfWord);
     QString text = cursor.block().text();
 
@@ -316,6 +328,25 @@ void SpellCheckTextEdit::rehighlighWithNewCursor()
             cursor.movePosition(QTextCursor::PreviousCharacter);
             cursor.movePosition(QTextCursor::StartOfWord);
     }
+    return cursor;
+}
+
+QTextCursor SpellCheckTextEdit::moveCursorToEndWord(QTextCursor cursor)
+{
+    QRegExp splitWord("[^\\w'-]");
+    splitWord.indexIn(cursor.block().text(), cursor.positionInBlock());
+    int pos = splitWord.pos();
+    if (pos == -1) {
+        pos= cursor.block().text().length();
+    }
+    cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::MoveAnchor, pos - cursor.positionInBlock());
+    return cursor;
+}
+
+void SpellCheckTextEdit::rehighlighWithNewCursor()
+{
+    QTextCursor cursor = textCursor();
+    cursor = moveCursorToStartWord(cursor);
     m_spellCheckHighlighter->setCursorPosition(cursor.positionInBlock());
     if (m_prevBlock.isValid()) {
         m_spellCheckHighlighter->rehighlightBlock(m_prevBlock);
