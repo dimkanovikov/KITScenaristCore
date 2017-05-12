@@ -290,6 +290,7 @@ void SpellCheckTextEdit::aboutReplaceWordOnSuggestion()
         cursor = moveCursorToStartWord(cursor);
         QTextCursor endCursor = moveCursorToEndWord(cursor);
         cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, endCursor.positionInBlock() - cursor.positionInBlock());
+        cursor.beginEditBlock();
         cursor.removeSelectedText();
         cursor.insertText(suggestAction->text());
         setTextCursor(cursor);
