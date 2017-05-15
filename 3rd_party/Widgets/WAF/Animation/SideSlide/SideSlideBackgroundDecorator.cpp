@@ -26,8 +26,8 @@ SideSlideBackgroundDecorator::SideSlideBackgroundDecorator(QWidget* _parent) :
 {
 	resize(maximumSize());
 
-	m_timeline.setDuration(300);
-	m_timeline.setUpdateInterval(80);
+    m_timeline.setDuration(200);
+    m_timeline.setUpdateInterval(50);
 	m_timeline.setCurveShape(QTimeLine::EaseInOutCurve);
 	m_timeline.setStartFrame(0);
 	m_timeline.setEndFrame(100);
