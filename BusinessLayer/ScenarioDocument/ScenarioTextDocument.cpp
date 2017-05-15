@@ -184,7 +184,7 @@ void ScenarioTextDocument::insertFromMime(int _insertPosition, const QString& _m
     }
 }
 
-void ScenarioTextDocument::applyPatch(const QString& _patch)
+QTextCursor ScenarioTextDocument::applyPatch(const QString& _patch)
 {
     updateScenarioXml();
     saveChanges();
@@ -218,6 +218,7 @@ void ScenarioTextDocument::applyPatch(const QString& _patch)
     // ... собственно выделение
     //
     setCursorPosition(cursor, selectionStartPos);
+    QTextCursor startPosition = cursor;
     setCursorPosition(cursor, selectionEndPos, QTextCursor::KeepAnchor);
 
 #ifdef PATCH_DEBUG
@@ -257,6 +258,8 @@ void ScenarioTextDocument::applyPatch(const QString& _patch)
     // отсутствию одного патча в истории изменений
     //
     cursor.endEditBlock();
+
+    return startPosition;
 }
 
 void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
@@ -364,10 +367,11 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
     return change;
 }
 
-void ScenarioTextDocument::undoReimpl()
+QTextCursor ScenarioTextDocument::undoReimpl()
 {
     saveChanges();
 
+    QTextCursor pos;
     if (!m_undoStack.isEmpty()) {
         Domain::ScenarioChange* change = m_undoStack.takeLast();
 
@@ -377,7 +381,7 @@ void ScenarioTextDocument::undoReimpl()
 #endif
 
         m_redoStack.append(change);
-        applyPatch(change->undoPatch());
+        pos = applyPatch(change->undoPatch());
 
         //
         // Сохраним изменения
@@ -385,10 +389,12 @@ void ScenarioTextDocument::undoReimpl()
         Domain::ScenarioChange* newChange = ::saveChange(change->redoPatch(), change->undoPatch());
         newChange->setIsDraft(change->isDraft());
     }
+    return pos;
 }
 
-void ScenarioTextDocument::redoReimpl()
+QTextCursor ScenarioTextDocument::redoReimpl()
 {
+    QTextCursor pos;
     if (!m_redoStack.isEmpty()) {
         Domain::ScenarioChange* change = m_redoStack.takeLast();
 
@@ -398,7 +404,7 @@ void ScenarioTextDocument::redoReimpl()
 #endif
 
         m_undoStack.append(change);
-        applyPatch(change->redoPatch());
+        pos = applyPatch(change->redoPatch());
 
         //
         // Сохраним изменения
@@ -406,6 +412,7 @@ void ScenarioTextDocument::redoReimpl()
         Domain::ScenarioChange* newChange = ::saveChange(change->undoPatch(), change->redoPatch());
         newChange->setIsDraft(change->isDraft());
     }
+    return pos;
 }
 
 bool ScenarioTextDocument::isUndoAvailableReimpl() const
