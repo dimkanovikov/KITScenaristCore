@@ -184,7 +184,7 @@ void ScenarioTextDocument::insertFromMime(int _insertPosition, const QString& _m
     }
 }
 
-QTextCursor ScenarioTextDocument::applyPatch(const QString& _patch)
+int ScenarioTextDocument::applyPatch(const QString& _patch)
 {
     updateScenarioXml();
     saveChanges();
@@ -218,7 +218,7 @@ QTextCursor ScenarioTextDocument::applyPatch(const QString& _patch)
     // ... собственно выделение
     //
     setCursorPosition(cursor, selectionStartPos);
-    QTextCursor startPosition = cursor;
+    int startPosition = cursor.position();
     setCursorPosition(cursor, selectionEndPos, QTextCursor::KeepAnchor);
 
 #ifdef PATCH_DEBUG
@@ -367,11 +367,11 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
     return change;
 }
 
-QTextCursor ScenarioTextDocument::undoReimpl()
+int ScenarioTextDocument::undoReimpl()
 {
     saveChanges();
 
-    QTextCursor pos;
+    int pos;
     if (!m_undoStack.isEmpty()) {
         Domain::ScenarioChange* change = m_undoStack.takeLast();
 
@@ -392,9 +392,9 @@ QTextCursor ScenarioTextDocument::undoReimpl()
     return pos;
 }
 
-QTextCursor ScenarioTextDocument::redoReimpl()
+int ScenarioTextDocument::redoReimpl()
 {
-    QTextCursor pos;
+    int pos;
     if (!m_redoStack.isEmpty()) {
         Domain::ScenarioChange* change = m_redoStack.takeLast();
 

@@ -70,7 +70,7 @@ namespace BusinessLogic
         /**
          * @brief Применить патч
          */
-        QTextCursor applyPatch(const QString& _patch);
+        int applyPatch(const QString& _patch);
 
         /**
          * @brief Применить множество патчей
@@ -87,8 +87,8 @@ namespace BusinessLogic
          * @brief Собственные реализации отмены/повтора последнего действия
          */
         /** @{ */
-        QTextCursor undoReimpl();
-        QTextCursor redoReimpl();
+        int undoReimpl();
+        int redoReimpl();
         /** @} */
 
         /**
