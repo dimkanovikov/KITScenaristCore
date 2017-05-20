@@ -218,7 +218,6 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     // ... собственно выделение
     //
     setCursorPosition(cursor, selectionStartPos);
-    int startPosition = cursor.position();
     setCursorPosition(cursor, selectionEndPos, QTextCursor::KeepAnchor);
 
 #ifdef PATCH_DEBUG
@@ -259,7 +258,7 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     //
     cursor.endEditBlock();
 
-    return startPosition;
+    return selectionStartPos;
 }
 
 void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
@@ -371,7 +370,7 @@ int ScenarioTextDocument::undoReimpl()
 {
     saveChanges();
 
-    int pos;
+    int pos = -1;
     if (!m_undoStack.isEmpty()) {
         Domain::ScenarioChange* change = m_undoStack.takeLast();
 
@@ -394,7 +393,7 @@ int ScenarioTextDocument::undoReimpl()
 
 int ScenarioTextDocument::redoReimpl()
 {
-    int pos;
+    int pos = -1;
     if (!m_redoStack.isEmpty()) {
         Domain::ScenarioChange* change = m_redoStack.takeLast();
 
