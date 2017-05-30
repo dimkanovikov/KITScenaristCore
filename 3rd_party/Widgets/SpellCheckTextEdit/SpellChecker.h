@@ -34,7 +34,8 @@ public:
         ArmenianWestern,
         Portuguese,
         PortugueseBrazilian,
-        Swedish
+        Swedish,
+        Farsi
     };
 
     /**
