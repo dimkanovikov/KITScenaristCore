@@ -34,11 +34,11 @@ SideSlideAnimator::SideSlideAnimator(QWidget* _widgetForSlide) :
 	Q_ASSERT(_widgetForSlide);
 	_widgetForSlide->parentWidget()->installEventFilter(this);
 
-	m_animation->setDuration(420);
+    m_animation->setDuration(260);
 
 	m_decorator->hide();
 
-	connect(m_animation, &QPropertyAnimation::finished, [=](){
+    connect(m_animation, &QPropertyAnimation::finished, [=] {
 		setAnimatedStopped();
 		if (m_animation->direction() == QPropertyAnimation::Backward) {
 			widgetForSlide()->hide();

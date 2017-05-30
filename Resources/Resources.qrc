@@ -134,6 +134,8 @@
         <file>Images/cards-print-portrait-2.png</file>
         <file>Images/cards-print-portrait-1.png</file>
         <file>Icons/Editing/account-multiple.png</file>
+        <file>Icons/Mobile/close.png</file>
+        <file>Icons/Mobile/lock-reset.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/Scenarist_ru.qm</file>

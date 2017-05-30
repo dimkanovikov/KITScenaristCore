@@ -17,16 +17,14 @@ CircleFillAnimator::CircleFillAnimator(QWidget* _widgetForFill) :
 {
     Q_ASSERT(_widgetForFill);
 
-    m_animation->setDuration(800);
+    m_animation->setDuration(500);
 
     m_decorator->setAttribute(Qt::WA_TransparentForMouseEvents);
     m_decorator->hide();
 
     connect(m_animation, &QPropertyAnimation::finished, [=] {
         setAnimatedStopped();
-        if (isAnimatedBackward()) {
-            m_decorator->hide();
-        } else {
+        if (m_hideAfterFinish) {
             hideDecorator();
         }
     });
@@ -40,6 +38,11 @@ void CircleFillAnimator::setStartPoint(const QPoint& _point)
 void CircleFillAnimator::setFillColor(const QColor& _color)
 {
     m_decorator->setFillColor(_color);
+}
+
+void CircleFillAnimator::setHideAfterFinish(bool _hide)
+{
+    m_hideAfterFinish = _hide;
 }
 
 int CircleFillAnimator::animationDuration() const
