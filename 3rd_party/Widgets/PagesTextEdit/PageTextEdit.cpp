@@ -1706,6 +1706,13 @@ void PageTextEditPrivate::paintPagesView(QPainter *_painter)
             _painter->drawLine(x - horizontalDelta, curHeight - pageHeight, x - horizontalDelta, curHeight - 8);
 
             curHeight += pageHeight;
+
+            //
+            // Если страница всего одна не рисуем больше ничего
+            //
+            if (control->document()->pageCount() == 1) {
+                break;
+            }
         }
 
         //
@@ -1796,6 +1803,13 @@ void PageTextEditPrivate::paintPageNumbers(QPainter* _painter)
             paintPageNumber(_painter, topMarginRect, true, pageNumber);
 
             curHeight += pageSize.height();
+
+            //
+            // Если страница всего одна не рисуем больше ничего
+            //
+            if (control->document()->pageCount() == 1) {
+                break;
+            }
         }
 
         _painter->restore();
