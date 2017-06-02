@@ -79,7 +79,7 @@ void SpellCheckHighlighter::highlightBlock(const QString& _text)
                 //
                 // Получим само слово
                 //
-                QString wordToCheck = _text.mid(wordPos, notWordPos - wordPos);
+                const QString wordToCheck = _text.mid(wordPos, notWordPos - wordPos);
 
 				//
 				// Проверяем слова длинной более одного символа
@@ -93,16 +93,11 @@ void SpellCheckHighlighter::highlightBlock(const QString& _text)
                             && positionInText + wordToCheck.length() > m_cursorPosition) {
                         continue;
                     }
-                    //
-					// Корректируем регистр слова
-					//
-                    QString wordInCorrectRegister =
-                            wordToCheck[0] + wordToCheck.mid(1).toLower();
 
 					//
 					// Если слово не прошло проверку
 					//
-                    if (!m_spellChecker->spellCheckWord(wordInCorrectRegister)) {
+                    if (!m_spellChecker->spellCheckWord(wordToCheck)) {
                         const int wordLength = wordToCheck.length();
                         setFormat(positionInText, wordLength, m_misspeledCharFormat);
 					}
