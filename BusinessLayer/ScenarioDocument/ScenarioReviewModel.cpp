@@ -421,7 +421,7 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
     //
     int startMarkIndex = 0;
     for (; startMarkIndex < m_reviewMarks.size(); ++startMarkIndex) {
-        if (m_reviewMarks.at(startMarkIndex).endPosition() >= _position) {
+        if (m_reviewMarks.at(startMarkIndex).endPosition() > _position) {
             break;
         }
     }
