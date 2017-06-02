@@ -24,7 +24,7 @@ SimpleTextEditor::SimpleTextEditor(QWidget *parent) :
 	setAddSpaceToBottom(false);
 	setTabChangesFocus(true);
 	setUsePageMode(false);
-    setPageMargins(QMarginsF(2, 2, 2, 2));
+    setPageMargins(QMarginsF(2, 2, 6, 2));
 
     connect(document(), &QTextDocument::contentsChange, this, &SimpleTextEditor::correctLineSpacing);
 }
