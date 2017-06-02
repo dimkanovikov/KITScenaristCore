@@ -224,6 +224,7 @@ void SpellCheckTextEdit::contextMenuEvent(QContextMenuEvent* _event)
 
 void SpellCheckTextEdit::setHighlighterDocument(QTextDocument* _document)
 {
+    m_prevBlock = QTextBlock();
     m_spellCheckHighlighter->setDocument(_document);
 }
 
