@@ -1663,18 +1663,18 @@ void PageTextEditPrivate::paintPagesView(QPainter *_painter)
         qreal pageWidth = m_pageMetrics.pxPageSize().width();
         qreal pageHeight = m_pageMetrics.pxPageSize().height();
 
-        QPen spacePen(control->palette().window(), 8);
+        QPen spacePen(control->palette().window(), 1);
         QPen borderPen(control->palette().dark(), 1);
 
         qreal curHeight = pageHeight - (vbar->value() % (int)pageHeight);
         //
         // Корректируем позицию правой границы
         //
-        const int x = pageWidth + (q->width() % 2 == 0 ? 2 : 1);
+        const qreal x = floor(pageWidth) + 3 + (q->width() % 2);
         //
         // Смещение по горизонтали, если есть полоса прокрутки
         //
-        const int horizontalDelta = hbar->value();
+        const qreal horizontalDelta = hbar->value();
 
         //
         // Нарисовать верхнюю границу
@@ -1682,7 +1682,7 @@ void PageTextEditPrivate::paintPagesView(QPainter *_painter)
         if (curHeight - pageHeight >= 0) {
             _painter->setPen(borderPen);
             // ... верхняя
-            _painter->drawLine(0, curHeight - pageHeight, x, curHeight - pageHeight);
+            _painter->drawLine(QLineF(0, curHeight - pageHeight, x, curHeight - pageHeight));
         }
 
         while (curHeight <= q->height()) {
@@ -1690,22 +1690,19 @@ void PageTextEditPrivate::paintPagesView(QPainter *_painter)
             // Фон разрыва страниц
             //
             _painter->setPen(spacePen);
-            _painter->drawLine(0, curHeight-4, q->width(), curHeight-4);
+            _painter->setBrush(spacePen.color());
+            _painter->drawRect(QRectF(QPointF(0, curHeight - 8), QPointF(x, curHeight)));
 
             //
             // Границы страницы
             //
             _painter->setPen(borderPen);
             // ... нижняя
-            _painter->drawLine(0, curHeight-8, x, curHeight-8);
-            // ... верхняя следующей страницы
-            _painter->drawLine(0, curHeight, x, curHeight);
+            _painter->drawLine(QLineF(0, curHeight - 8, x, curHeight - 8));
             // ... левая
-            _painter->drawLine(0 - horizontalDelta, curHeight - pageHeight, 0 - horizontalDelta, curHeight - 8);
+            _painter->drawLine(QLineF(0 - horizontalDelta, curHeight - pageHeight, 0 - horizontalDelta, curHeight - 8));
             // ... правая
-            _painter->drawLine(x - horizontalDelta, curHeight - pageHeight, x - horizontalDelta, curHeight - 8);
-
-            curHeight += pageHeight;
+            _painter->drawLine(QLineF(x - horizontalDelta, curHeight - pageHeight, x - horizontalDelta, curHeight - 8));
 
             //
             // Если страница всего одна не рисуем больше ничего
@@ -1713,6 +1710,11 @@ void PageTextEditPrivate::paintPagesView(QPainter *_painter)
             if (control->document()->pageCount() == 1) {
                 break;
             }
+
+            // ... верхняя следующей страницы
+            _painter->drawLine(QLineF(0, curHeight, x, curHeight));
+
+            curHeight += pageHeight;
         }
 
         //
@@ -1724,9 +1726,9 @@ void PageTextEditPrivate::paintPagesView(QPainter *_painter)
             //
             _painter->setPen(borderPen);
             // ... левая
-            _painter->drawLine(0 - horizontalDelta, curHeight-pageHeight, 0 - horizontalDelta, q->height());
+            _painter->drawLine(QLineF(0 - horizontalDelta, curHeight - pageHeight, 0 - horizontalDelta, q->height()));
             // ... правая
-            _painter->drawLine(x - horizontalDelta, curHeight-pageHeight, x - horizontalDelta, q->height());
+            _painter->drawLine(QLineF(x - horizontalDelta, curHeight - pageHeight, x - horizontalDelta, q->height()));
         }
 
         _painter->restore();
@@ -1907,16 +1909,10 @@ void PageTextEditPrivate::clipPageDecorationRegions(QPainter* _painter)
         //
         while (curHeight < q->height()) {
             //
-            // Определить прямоугольник нижнего поля
+            // Определить прямоугольник начинающийся от начала нижнего поля и до конца верхнего поля следующей страницы
             //
-            QRect bottomMarginRect(leftMarginPosition, curHeight - pageMargins.bottom(), marginWidth, pageMargins.bottom());
+            QRect bottomMarginRect(leftMarginPosition, curHeight - pageMargins.bottom(), marginWidth, pageMargins.bottom() + pageMargins.top());
             clipPath = clipPath.xored(bottomMarginRect);
-
-            //
-            // Определить прямоугольник верхнего поля следующей страницы
-            //
-            QRect topMarginRect(leftMarginPosition, curHeight, marginWidth, pageMargins.top());
-            clipPath = clipPath.xored(topMarginRect);
 
             curHeight += pageSize.height();
         }
