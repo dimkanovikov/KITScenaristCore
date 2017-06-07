@@ -621,25 +621,25 @@ ctkBasePopupWidget {
 /*
  * Общие стили для элементов верхней панели
  */
-*[topPanelLeftBordered=true] {
+QWidget[topPanelLeftBordered=true] {
     border-left-width: 1px;
     border-left-style: solid;
     border-left-color: palette(dark);
 }
 
-*[topPanelTopBordered=true] {
+QWidget[topPanelTopBordered=true] {
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: palette(dark);
 }
 
-*[topPanelRightBordered=true] {
+QWidget[topPanelRightBordered=true] {
     border-right-width: 1px;
     border-right-style: solid;
     border-right-color: palette(dark);
 }
 
-*[topPanelBottomBordered=true] {
+QWidget[topPanelBottomBordered=true] {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: palette(dark);
@@ -648,7 +648,7 @@ ctkBasePopupWidget {
 /*
  * Основные виджеты формы
  */
-*[mainContainer=true], *[mainContainer=true]:focus {
+QWidget[mainContainer=true], QWidget[mainContainer=true]:focus {
     border: none;
     border-top-width: 1px;
     border-top-style: solid;
@@ -658,21 +658,21 @@ ctkBasePopupWidget {
 /*
  * Виджет без рамок
  */
-*[nobordersContainer=true], *[nobordersContainer=true]:focus {
+QWidget[nobordersContainer=true], QWidget[nobordersContainer=true]:focus {
     border: none;
 }
 
 /*
  * Сделать фон виджета цветом base из палитры
  */
-*[baseForeground=true] {
+QWidget[baseForeground=true] {
     background-color: palette(base);
 }
 
 /*
  * Стиль панели быстрого форматирования
  */
-*[fastFormatWidget=true] {
+QWidget[fastFormatWidget=true] {
     border: none;
     border-top-width: 1px;
     border-top-style: solid;
@@ -685,37 +685,37 @@ ctkBasePopupWidget {
 /*
  * Редактор строки маскирующийся под метку, когда он не в фокусе
  */
-[editableLabel=true] {
+QWidget[editableLabel=true] {
     font-weight: 800;
 }
 
-[editableLabel=true]::!hover::!focus {
+QWidget[editableLabel=true]::!hover::!focus {
     border: none;
     padding: 2px 1px 1px 0px;
     background-color: transparent;
 }
 
-[editableLabel=true]::hover, [editableLabel=true]::focus {
+QWidget[editableLabel=true]::hover, QWidget[editableLabel=true]::focus {
     background-color: palette(base);
 }
 
 /*
  * Стили лайтбокса
  */
-[lightBoxDialogTitle=true] {
+QWidget[lightBoxDialogTitle=true] {
     font-weight: 700;
     background-color: palette(window);
     padding: 11px 20px 11px 20px;
     border: 1px solid palette(dark);
 }
 
-[lightBoxDialogCentralWidget=true] {
+QWidget[lightBoxDialogCentralWidget=true] {
     background-color: palette(window);
     border: 1px solid palette(dark);
     padding: 8px 18px 10px 18px;
 }
 
-[lightBoxProgressTitle=true] {
+QWidget[lightBoxProgressTitle=true] {
     font-size: 24pt;
     font-weight: 500;
     background-color: transparent;
@@ -724,13 +724,13 @@ ctkBasePopupWidget {
     margin: 12px 0px 0px 12px;
 }
 
-[lightBoxProgressIndicator=true] {
+QWidget[lightBoxProgressIndicator=true] {
     background-color: transparent;
     color: white;
     border: none;
 }
 
-[lightBoxProgressDescription=true] {
+QWidget[lightBoxProgressDescription=true] {
     background-color: transparent;
     color: white;
     border: none;
