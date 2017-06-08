@@ -1016,7 +1016,8 @@ void SynchronizationManager::aboutFullSyncScenario()
 
 void SynchronizationManager::aboutWorkSyncScenario()
 {
-    if (isCanSync()) {
+    if (isCanSync()
+        && !m_lastChangesSyncDatetime.isEmpty()) {
         //
         // Защитимся от множественных выховов
         //
@@ -1024,7 +1025,6 @@ void SynchronizationManager::aboutWorkSyncScenario()
         if (s_isInWorkSync) {
             return;
         }
-
         s_isInWorkSync = true;
 
         //
@@ -1223,9 +1223,16 @@ void SynchronizationManager::aboutFullSyncData()
 
 void SynchronizationManager::aboutWorkSyncData()
 {
-    static bool s_inWorkSyncData = false;
-    if (isCanSync() && !s_inWorkSyncData) {
-        s_inWorkSyncData = true;
+    if (isCanSync()
+        && !m_lastDataSyncDatetime.isEmpty()) {
+        //
+        // Защитимся от множественных выховов
+        //
+        static bool s_isInWorkSyncData = false;
+        if (s_isInWorkSyncData) {
+            return;
+        }
+        s_isInWorkSyncData = true;
 
         //
         // Отправляем новые изменения
@@ -1268,7 +1275,7 @@ void SynchronizationManager::aboutWorkSyncData()
 
             QXmlStreamReader changesReader(response);
             if (!isOperationSucceed(changesReader)) {
-                s_inWorkSyncData = false;
+                s_isInWorkSyncData = false;
                 return;
             }
 
@@ -1307,7 +1314,7 @@ void SynchronizationManager::aboutWorkSyncData()
             downloadAndSaveScenarioData(changesForDownload.join(";"));
         }
 
-        s_inWorkSyncData = false;
+        s_isInWorkSyncData = false;
     }
 }
 
@@ -1465,7 +1472,7 @@ bool SynchronizationManager::isCanSync() const
             && !m_sessionKey.isEmpty()
             && m_sessionKey != INCORRECT_SESSION_KEY;
 }
-
+#include <QDebug>
 bool SynchronizationManager::uploadScenarioChanges(const QList<QString>& _changesUuids)
 {
     bool changesUploaded = false;
@@ -1512,7 +1519,10 @@ bool SynchronizationManager::uploadScenarioChanges(const QList<QString>& _change
         loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
         loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
         loader.addRequestAttribute(KEY_CHANGES, changesXml);
+        qDebug() << "******************************************************";
+        qDebug() << changesXml;
         const QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_SAVE);
+        qDebug() << "\n\n\n\n" << response;
 
         //
         // Изменения отправлены, если сервер это подтвердил
@@ -1646,6 +1656,10 @@ bool SynchronizationManager::uploadScenarioData(const QList<QString>& _dataUuids
         loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
         loader.addRequestAttribute(KEY_CHANGES, dataChangesXml);
         const QByteArray response = loader.loadSync(URL_SCENARIO_DATA_SAVE);
+
+        qDebug() << "++++++++++++++++++++++++++++++++++++++++++++++++++";
+        qDebug() << dataChangesXml;
+        qDebug() << "\n\n\n\n" << response;
 
         //
         // Данные отправлены, если сервер это подтвердил
