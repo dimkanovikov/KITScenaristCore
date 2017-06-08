@@ -883,6 +883,12 @@ void SynchronizationManager::unshareProject(int _projectId, const QString& _user
     loadProjects();
 }
 
+void SynchronizationManager::prepareToFullSynchronization()
+{
+    m_lastChangesSyncDatetime.clear();
+    m_lastDataSyncDatetime.clear();
+}
+
 void SynchronizationManager::aboutFullSyncScenario()
 {
     if (isCanSync()) {
@@ -1016,6 +1022,9 @@ void SynchronizationManager::aboutFullSyncScenario()
 
 void SynchronizationManager::aboutWorkSyncScenario()
 {
+    //
+    // Синхроинизируем, если есть такая возможность и закончена полная синхронизация
+    //
     if (isCanSync()
         && !m_lastChangesSyncDatetime.isEmpty()) {
         //
@@ -1223,6 +1232,9 @@ void SynchronizationManager::aboutFullSyncData()
 
 void SynchronizationManager::aboutWorkSyncData()
 {
+    //
+    // Синхроинизируем, если есть такая возможность и закончена полная синхронизация
+    //
     if (isCanSync()
         && !m_lastDataSyncDatetime.isEmpty()) {
         //
@@ -1390,6 +1402,7 @@ void SynchronizationManager::restartSession()
     // А если текущий проект - удаленный, то синхронизуем и его
     //
     if (ProjectsManager::currentProject().isRemote()) {
+        prepareToFullSynchronization();
         aboutFullSyncScenario();
         aboutFullSyncData();
     }

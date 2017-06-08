@@ -142,6 +142,10 @@ namespace ManagementLayer
         // Методы работы с конкретным проектом
         //
     public slots:
+        /**
+         * @brief Подготовить менеджер к синхронизации
+         */
+        void prepareToFullSynchronization();
 
         /**
          * @brief Полная синхронизация сценария
