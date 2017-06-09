@@ -281,15 +281,23 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
                             DataStorageLayer::StorageFacade::settingsStorage()->value(
                                 "application/subscriptionExpiredDate",
                                 DataStorageLayer::SettingsStorage::ApplicationSettings);
-                int paymentMonth =
+                const int paymentMonth =
                             DataStorageLayer::StorageFacade::settingsStorage()->value(
                                 "application/subscriptionPaymentMonth",
                                 DataStorageLayer::SettingsStorage::ApplicationSettings).toInt();
+                const quint64 usedSpace =
+                            DataStorageLayer::StorageFacade::settingsStorage()->value(
+                                "application/subscriptionUsedSpace",
+                                DataStorageLayer::SettingsStorage::ApplicationSettings).toULongLong();
+                const quint64 availableSpace =
+                            DataStorageLayer::StorageFacade::settingsStorage()->value(
+                                "application/subscriptionAvailableSpace",
+                                DataStorageLayer::SettingsStorage::ApplicationSettings).toULongLong();
 
                 //
                 // Уведомим об этом
                 //
-                emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date));
+                emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date), usedSpace, availableSpace);
                 emit loginAccepted(userName, m_userEmail, paymentMonth);
 
                 //
@@ -304,6 +312,8 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     QString userName;
     QString date;
     int paymentMonth = -1;
+    quint64 usedSpace = 0;
+    quint64 availableSpace = 0;
 
     //
     // Найдем наш ключ сессии, имя пользователя, информацию о подписке
@@ -332,6 +342,14 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
         } else if (responseReader.name().toString() == "payment_month") {
             responseReader.readNext();
             paymentMonth = responseReader.text().toInt();
+            responseReader.readNext();
+        } else if (responseReader.name().toString() == "used_space") {
+            responseReader.readNext();
+            usedSpace = responseReader.text().toULongLong();
+            responseReader.readNext();
+        } else if (responseReader.name().toString() == "available_space") {
+            responseReader.readNext();
+            availableSpace = responseReader.text().toULongLong();
             responseReader.readNext();
         }
     }
@@ -374,15 +392,21 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
                 "application/subscriptionIsActive",
                 QString::number(m_isSubscriptionActive),
                 SettingsStorage::ApplicationSettings);
-
     StorageFacade::settingsStorage()->setValue(
                 "application/subscriptionExpiredDate",
                 dateTransform(date),
                 SettingsStorage::ApplicationSettings);
-
     StorageFacade::settingsStorage()->setValue(
                 "application/subscriptionPaymentMonth",
                 QString::number(paymentMonth),
+                SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue(
+                "application/subscriptionUsedSpace",
+                QString::number(usedSpace),
+                SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue(
+                "application/subscriptionAvailableSpace",
+                QString::number(availableSpace),
                 SettingsStorage::ApplicationSettings);
 
     //
@@ -390,7 +414,7 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     //
     m_userEmail = _email;
 
-    emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date));
+    emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date), usedSpace, availableSpace);
     emit loginAccepted(userName, m_userEmail, paymentMonth);
 
     //
@@ -629,6 +653,8 @@ void SynchronizationManager::loadSubscriptionInfo()
     //
     QString date;
     bool isActiveFind = false;
+    quint64 usedSpace = 0;
+    quint64 availableSpace = 0;
     while (!responseReader.atEnd()) {
         responseReader.readNext();
         if (responseReader.name().toString() == "subscribe_is_active") {
@@ -639,6 +665,14 @@ void SynchronizationManager::loadSubscriptionInfo()
         } else if (responseReader.name().toString() == "subscribe_end") {
             responseReader.readNext();
             date = responseReader.text().toString();
+            responseReader.readNext();
+        } else if (responseReader.name().toString() == "used_space") {
+            responseReader.readNext();
+            usedSpace = responseReader.text().toULongLong();
+            responseReader.readNext();
+        } else if (responseReader.name().toString() == "available_space") {
+            responseReader.readNext();
+            availableSpace = responseReader.text().toULongLong();
             responseReader.readNext();
         }
     }
@@ -652,13 +686,20 @@ void SynchronizationManager::loadSubscriptionInfo()
                 "application/subscriptionIsActive",
                 QString::number(m_isSubscriptionActive),
                 SettingsStorage::ApplicationSettings);
-
     StorageFacade::settingsStorage()->setValue(
                 "application/subscriptionExpiredDate",
                 dateTransform(date),
                 SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue(
+                "application/subscriptionUsedSpace",
+                QString::number(usedSpace),
+                SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue(
+                "application/subscriptionAvailableSpace",
+                QString::number(availableSpace),
+                SettingsStorage::ApplicationSettings);
 
-    emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date));
+    emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date), usedSpace, availableSpace);
 }
 
 void SynchronizationManager::changePassword(const QString& _password,

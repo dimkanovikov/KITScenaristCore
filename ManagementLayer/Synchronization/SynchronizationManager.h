@@ -212,7 +212,7 @@ namespace ManagementLayer
         /**
          * @brief Успешно запрошена информация о подписке
          */
-        void subscriptionInfoLoaded(bool _isActive, const QString& _expiredDate);
+        void subscriptionInfoLoaded(bool _isActive, const QString& _expiredDate, quint64 _usedSpace, quint64 _availableSpace);
 
         /**
          * @brief Успешно изменен пароль
