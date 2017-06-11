@@ -1118,6 +1118,7 @@ void SynchronizationManager::aboutWorkSyncScenario()
 
             QXmlStreamReader changesReader(response);
             if (!isOperationSucceed(changesReader)) {
+                s_isInWorkSync = false;
                 return;
             }
 
@@ -1526,7 +1527,7 @@ bool SynchronizationManager::isCanSync() const
             && !m_sessionKey.isEmpty()
             && m_sessionKey != INCORRECT_SESSION_KEY;
 }
-#include <QDebug>
+
 bool SynchronizationManager::uploadScenarioChanges(const QList<QString>& _changesUuids)
 {
     bool changesUploaded = false;
@@ -1573,15 +1574,13 @@ bool SynchronizationManager::uploadScenarioChanges(const QList<QString>& _change
         loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
         loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
         loader.addRequestAttribute(KEY_CHANGES, changesXml);
-        qDebug() << "******************************************************";
-        qDebug() << changesXml;
         const QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_SAVE);
-        qDebug() << "\n\n\n\n" << response;
 
         //
         // Изменения отправлены, если сервер это подтвердил
         //
-        changesUploaded = !response.isEmpty();
+        QXmlStreamReader responseReader(response);
+        changesUploaded = isOperationSucceed(responseReader);
     }
 
     return changesUploaded;
@@ -1711,14 +1710,11 @@ bool SynchronizationManager::uploadScenarioData(const QList<QString>& _dataUuids
         loader.addRequestAttribute(KEY_CHANGES, dataChangesXml);
         const QByteArray response = loader.loadSync(URL_SCENARIO_DATA_SAVE);
 
-        qDebug() << "++++++++++++++++++++++++++++++++++++++++++++++++++";
-        qDebug() << dataChangesXml;
-        qDebug() << "\n\n\n\n" << response;
-
         //
         // Данные отправлены, если сервер это подтвердил
         //
-        dataUploaded = !response.isEmpty();
+        QXmlStreamReader responseReader(response);
+        dataUploaded = isOperationSucceed(responseReader);
     }
 
     return dataUploaded;
