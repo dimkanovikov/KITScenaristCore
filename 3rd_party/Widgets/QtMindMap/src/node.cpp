@@ -66,20 +66,21 @@ void Node::deleteEdge(Node *otherEnd)
     {
         if ((it->edge->sourceNode() == otherEnd &&
              it->edge->destNode() == this)
-         || (it->edge->sourceNode() == this &&
-             it->edge->destNode() == otherEnd))
-        {
+            || (it->edge->sourceNode() == this &&
+                it->edge->destNode() == otherEnd)) {
             delete it->edge;
             it->edge = nullptr;
-            return;
+            break;
         }
     }
 }
 
 void Node::deleteEdges()
 {
-    foreach (EdgeElement element, m_edgeList)
+    for (EdgeElement& element : m_edgeList) {
         delete element.edge;
+        element.edge = nullptr;
+    }
 }
 
 void Node::removeEdge(Edge *edge)
