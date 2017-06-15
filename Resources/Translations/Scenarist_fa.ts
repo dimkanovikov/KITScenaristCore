@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fa_IR">
+<TS version="2.0" language="fa_IR">
 <context>
     <name>AcceptebleLineEdit</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../../3rd_party/Widgets/AcceptebleLineEdit/AcceptebleLineEdit.cpp" line="98"/>
         <source>was changed from &lt;b&gt;%1&lt;/b&gt; to &lt;b&gt;%2&lt;/b&gt;. Apply changes?</source>
-        <translation>از &lt;b&gt;%1&lt;/b&gt; به &lt;b&gt;%2&lt;/b&gt; تغییر یافت. تغغیرات را اعمال کن؟</translation>
+        <translation>از &lt;b&gt;٪ 1 &lt;/ b&gt; به &lt;B&gt;٪ 2 &lt;/ B&gt; تغییر یافت. تغغیرات را اعمال کن؟</translation>
     </message>
 </context>
 <context>
@@ -675,7 +675,7 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="160"/>
         <source>Characters with/without spaces</source>
-        <translation>شخصیت های با / بدون فاصله</translation>
+        <translation>حروف با / بدون فاصله</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="171"/>
