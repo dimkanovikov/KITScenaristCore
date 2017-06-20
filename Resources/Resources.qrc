@@ -166,7 +166,7 @@
         <file>Translations/Scenarist_fa.qm</file>
     </qresource>
     <qresource prefix="/Interface">
-        <file>UI/style-mobile.qss</file>
+        <file>UI/style-android.qss</file>
         <file>UI/style-desktop.qss</file>
         <file>UI/downarrow.png</file>
         <file>UI/downarrow-dark.png</file>

@@ -189,6 +189,16 @@ QTabBar::tab:!selected:hover {
     border-bottom-color: palette(dark);
 }
 
+/*
+ * Иконка индикатора в меню
+ */
+QLabel[indicatorIcon=true] {
+    width: 16dp;
+    height: 16dp;
+    padding-left: 20dp;
+    padding-right: 11dp;
+}
+
 
 /*
  * Стили лайтбокса
