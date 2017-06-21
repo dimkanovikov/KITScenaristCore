@@ -1009,6 +1009,7 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
                 if (openedScenesGroups == 0
                     && openedFolders == 0) {
                     footer = cursor.block().text();
+                    --openedFolders;
                 } else {
                     --openedFolders;
                     if (openedScenesGroups == 0
