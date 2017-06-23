@@ -52,8 +52,11 @@ void ProjectsList::setModel(QAbstractItemModel* _model, bool _isRemote)
 
                 ProjectFileWidget* project = new ProjectFileWidget;
                 project->setProjectName(projectName);
-                project->setProjectInfo(projectPath);
+#ifdef MOBILE_OS
                 project->setProjectInfo(editDateTime.toString());
+#else
+                project->setProjectInfo(projectPath);
+#endif
                 project->configureOptions(_isRemote, isOwner);
                 for (const QString& user : users) {
                     if (!user.simplified().isEmpty()) {

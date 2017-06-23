@@ -708,10 +708,14 @@ QWidget[nobordersContainer=true], QWidget[nobordersContainer=true]:focus {
 }
 
 /*
- * Сделать фон виджета цветом base из палитры
+ * Сделать фон виджета цветом из палитры
  */
 QWidget[baseForeground=true] {
     background-color: palette(base);
+}
+
+QWidget[windowForeground=true] {
+    background-color: palette(window);
 }
 
 /*

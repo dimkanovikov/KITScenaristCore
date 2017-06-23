@@ -74,7 +74,8 @@ QAbstractItemModel* ProjectsManager::remoteProjects()
     foreach (const Project& project, m_remoteProjects) {
         QStandardItem* item = new QStandardItem;
         item->setData(project.displayName(), Qt::DisplayRole);
-        item->setData(project.displayPath(), Qt::WhatsThisRole);
+        item->setData(project.displayPath(), Qt::StatusTipRole);
+        item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
         item->setData(project.users(), Qt::UserRole);
         item->setData(project.isUserOwner(), Qt::UserRole + 1);
         remoteProjectsModel->appendRow(item);
