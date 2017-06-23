@@ -746,6 +746,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
     if (m_highlightCurrentLine) {
         QPainter painter(viewport());
         int opacity = 10;
+        const int verticalMargin = 5;
+        const int horizontalMargin = 10;
         const int width = viewport()->width();
         const int bottom = verticalScrollBar()->maximum() + viewport()->height();
 
@@ -768,7 +770,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     }
                 }
                 const QRect topCursorRect = cursorRect(cursor);
-                const QRect topNoizeRect(0, 0, width, topCursorRect.top());
+                const QRect topNoizeRect(horizontalMargin*2, 0, width - horizontalMargin*4, topCursorRect.top() - verticalMargin);
                 QColor noizeColor = textColor();
                 noizeColor.setAlpha(opacity);
                 painter.fillRect(topNoizeRect, noizeColor);
@@ -785,8 +787,16 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                 }
                 cursor.movePosition(QTextCursor::EndOfBlock);
                 const QRect bottomCursorRect = cursorRect(cursor);
-                const QRect bottomNoizeRect(0, bottomCursorRect.bottom(), width, bottom);
+                const QRect bottomNoizeRect(horizontalMargin*2, bottomCursorRect.bottom() + verticalMargin, width - horizontalMargin*4, bottom);
                 painter.fillRect(bottomNoizeRect, noizeColor);
+
+                //
+                // Соединяем бока
+                //
+                const QRect leftNoizeRect(0, 0, horizontalMargin*2, bottom);
+                painter.fillRect(leftNoizeRect, noizeColor);
+                const QRect rightNoizeRect(width - horizontalMargin*2, 0, horizontalMargin*2, bottom);
+                painter.fillRect(rightNoizeRect, noizeColor);
             }
             //
             // В противном случае увеличиваем прозрачность закраски области вокруг сцены, чтобы она
@@ -804,16 +814,18 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             const QVector<ScenarioBlockStyle::Type> borderTypes = { ScenarioBlockStyle::SceneHeading,
                                                                     ScenarioBlockStyle::FolderHeader,
                                                                     ScenarioBlockStyle::FolderFooter };
-            if (!borderTypes.contains(scenarioBlockType())) {
+            {
                 //
                 // Идём до начала блока сцены
                 //
                 QTextCursor cursor = textCursor();
-                while (cursor.movePosition(QTextCursor::PreviousBlock)
-                       && !borderTypes.contains(ScenarioBlockStyle::forBlock(cursor.block()))) {
+                if (!borderTypes.contains(scenarioBlockType())) {
+                    while (cursor.movePosition(QTextCursor::PreviousBlock)
+                           && !borderTypes.contains(ScenarioBlockStyle::forBlock(cursor.block()))) {
+                    }
                 }
                 const QRect topCursorRect = cursorRect(cursor);
-                const QRect topNoizeRect(0, 0, width, topCursorRect.top());
+                const QRect topNoizeRect(0, 0, width, topCursorRect.top() - verticalMargin);
                 QColor noizeColor = textColor();
                 noizeColor.setAlpha(opacity);
                 painter.fillRect(topNoizeRect, noizeColor);
@@ -830,8 +842,18 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                 }
                 cursor.movePosition(QTextCursor::EndOfBlock);
                 const QRect bottomCursorRect = cursorRect(cursor);
-                const QRect bottomNoizeRect(0, bottomCursorRect.bottom(), width, bottom);
+                const QRect bottomNoizeRect(0, bottomCursorRect.bottom() + verticalMargin, width, bottom);
                 painter.fillRect(bottomNoizeRect, noizeColor);
+
+                //
+                // Соединяем бока
+                //
+                const QRect leftNoizeRect(QPoint(0, topCursorRect.top() - verticalMargin),
+                                          QPoint(horizontalMargin, bottomCursorRect.bottom() + verticalMargin));
+                painter.fillRect(leftNoizeRect, noizeColor);
+                const QRect rightNoizeRect(QPoint(width - horizontalMargin, topCursorRect.top() - verticalMargin),
+                                           QPoint(width, bottomCursorRect.bottom() + verticalMargin));
+                painter.fillRect(rightNoizeRect, noizeColor);
             }
         }
 
