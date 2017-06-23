@@ -498,6 +498,8 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("application/save-backups", "1");
     m_defaultValues.insert("application/save-backups-folder",
         QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + "/KITScenarist/backups");
+    m_defaultValues.insert("application/compact-mode-auto-enable", "1");
+    m_defaultValues.insert("application/compact-mode", "0");
     m_defaultValues.insert("application/modules/research", "1");
     m_defaultValues.insert("application/modules/cards", "1");
     m_defaultValues.insert("application/modules/scenario", "1");

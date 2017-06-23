@@ -30,9 +30,9 @@ QPushButton[leftAlignedText=true] {
 QFrame[inTopPanel=true] {
     background: palette(button);
     color: palette(button-text);
-    padding-top: 2px;
-    padding-bottom: 2px;
-    min-height: 30px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    min-height: 26px;
 }
 
 /*
@@ -42,10 +42,10 @@ QLabel[inTopPanel=true] {
     background: palette(button);
     color: palette(button-text);
     padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 5px;
-    padding-right: 3px;
-    min-height: 33px;
+    padding-bottom: 1px;
+    padding-left: 3px;
+    padding-right: 1px;
+    min-height: 26px;
 }
 
 /*
@@ -58,9 +58,9 @@ QToolButton[inTopPanel=true] {
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: palette(dark);
-    padding-left: 13px;
-    padding-right: 13px;
-    height: 34px;
+    padding-left: 6px;
+    padding-right: 6px;
+    height: 26px;
 }
 
 QToolButton:hover[inTopPanel=true] {
@@ -82,10 +82,10 @@ QToolButton::menu-button[inTopPanel=true] {
     border-right-width: 1px;
     border-right-style: solid;
     border-right-color: palette(dark);
-    width: 6px;
-    padding-top: 6px;
-    padding-bottom: 5px;
-    padding-right: 14px;
+    width: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 8px;
 }
 
 QToolButton::menu-button:hover[inTopPanel=true],
@@ -101,8 +101,8 @@ QToolButton[projectAction=true] {
     background: palette(alternate-base);
     color: palette(button-text);
     border: none;
-    padding-left: 13px;
-    padding-right: 13px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 QToolButton:hover[projectAction=true] {
@@ -114,11 +114,15 @@ QToolButton:pressed[projectAction=true] {
     padding-top: 1px;
 }
 
+QToolButton::menu-arrow[noArrow=true] {
+    image: none;
+}
+
 /*
  * Стиль кнопок "Обзор"
  */
 QToolButton[isBrowseButton=true] {
-    padding: 2px 6px;
+    padding: 1px 3px;
 }
 
 QToolButton[isBrowseButton=true]:hover {
@@ -126,8 +130,8 @@ QToolButton[isBrowseButton=true]:hover {
 }
 
 QToolButton:pressed[isBrowseButton=true] {
-    padding-top: 3px;
-    padding-bottom: 1px;
+    padding-top: 2px;
+    padding-bottom: 0px;
 }
 
 /*
@@ -135,7 +139,7 @@ QToolButton:pressed[isBrowseButton=true] {
  */
 QToolButton:hover[isUpdateButton=true] {
     border: 1px solid transparent;
-    border-radius: 12px;
+    border-radius: 10px;
     background-color: palette(dark);
 }
 
@@ -147,8 +151,8 @@ QToolButton:pressed[isUpdateButton=true] {
  *
  */
 FlatButton[hasMenu=true] {
-    padding-left: 6px;
-    padding-right: 22px;
+    padding-left: 4px;
+    padding-right: 12px;
 }
 
 FlatButton:pressed[hasMenu=true] {
@@ -163,7 +167,7 @@ FlatButton::checked[inTopPanel=true] {
 }
 
 FlatButton::menu-button[inTopPanel=true] {
-    padding-right: 10px;
+    padding-right: 6px;
     border-right: none;
 }
 
@@ -171,9 +175,9 @@ FlatButton::menu-button[inTopPanel=true] {
  *
  */
 ColoredToolButton[inTopPanel=true] {
-    padding-left: 6px;
-    padding-right: 22px;
-    min-width: 20px;
+    padding-left: 4px;
+    padding-right: 14px;
+    min-width: 16px;
 }
 
 ColoredToolButton:hover[inTopPanel=true] {
@@ -181,7 +185,7 @@ ColoredToolButton:hover[inTopPanel=true] {
 }
 
 ColoredToolButton::menu-button[inTopPanel=true] {
-    padding-right: 10px;
+    padding-right: 6px;
     border-right: none;
 }
 
@@ -193,8 +197,8 @@ ColoredToolButton::menu-button:hover[inTopPanel=true] {
  *
  */
 ColoredToolButton[itemDialog=true] {
-    padding: 2px 14px 2px 2px;
-    min-width: 20px;
+    padding: 1px 10px 1px 1px;
+    min-width: 16px;
     background-color: palette(button);
     border: 1px solid palette(dark);
 }
@@ -214,7 +218,7 @@ ColoredToolButton:!checked:hover[itemDialog=true], ColoredToolButton:!checked:pr
 }
 
 ColoredToolButton::menu-button[itemDialog=true] {
-    padding-right: 6px;
+    padding-right: 4px;
     border-right: none;
 }
 
@@ -226,11 +230,11 @@ ColoredToolButton::menu-button:hover[itemDialog=true] {
  * Выпадающий список
  */
 QComboBox  {
-    padding: 1px 16px 1px 10px;
+    padding: 1px 10px 1px 6px;
     background: palette(button);
     color: palette(button-text);
     border: 1px solid palette(dark);
-    min-height: 28px;
+    min-height: 24px;
     min-width: 70px;
 }
 
@@ -254,10 +258,10 @@ QComboBox::drop-down {
     background: transparent;
     subcontrol-origin: padding;
     subcontrol-position: top right;
-    width: 15px;
+    width: 12px;
     border-width: 0px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 QComboBox::down-arrow {
@@ -292,9 +296,9 @@ QComboBox[inTopPanel=true]  {
  */
 QLineEdit {
     border: 1px solid palette(dark);
-    min-height: 30px;
+    min-height: 23px;
     min-width: 70px;
-    padding-left: 10px;
+    padding-left: 6px;
 }
 
 QLineEdit:focus {
@@ -306,20 +310,20 @@ QLineEdit:focus {
  */
 QAbstractSpinBox {
     border: 1px solid palette(dark);
-    min-height: 30px;
+    min-height: 23px;
     min-width: 70px;
-    padding-left: 10px;
+    padding-left: 6px;
 }
 
 QAbstractSpinBox::up-button {
-    height: 16px;
+    height: 12px;
     background: palette(button);
     border: none;
     border-left: 1px solid palette(dark);
 }
 
 QAbstractSpinBox::down-button {
-    height: 16px;
+    height: 11px;
     background: palette(button);
     border: none;
     border-left: 1px solid palette(dark);
@@ -379,7 +383,7 @@ QGroupBox::title {
  */
 QTabBar[inTopPanel=true] {
     background-color: palette(button);
-    min-height: 33px;
+    min-height: 26px;
 }
 
 QTabBar::tab[inTopPanel=true] {
@@ -388,8 +392,8 @@ QTabBar::tab[inTopPanel=true] {
     border-top-color: palette(dark);
     background: palette(button);
     color: palette(button-text);
-    padding-top: 4px;
-    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-bottom: 1px;
     padding-left: 11px;
     padding-right: 11px;
 }
@@ -401,19 +405,19 @@ QTabBar::tab:last[topPanelRightBordered=true] {
 }
 
 QTabBar::tab:selected[inTopPanel=true] {
-    border-bottom-width: 4px;
+    border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: palette(highlight);
 }
 
 QTabBar::tab:!selected[inTopPanel=true] {
-    border-bottom-width: 4px;
+    border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: palette(button);
 }
 
 QTabBar::tab:!selected:hover[inTopPanel=true] {
-    border-bottom-width: 4px;
+    border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: palette(dark);
 }
@@ -461,7 +465,7 @@ QScrollBar::sub-line {
 }
 
 QScrollBar::sub-line:vertical {
-    height: 24px;
+    height: 18px;
     border: none;
 }
 
@@ -470,7 +474,7 @@ QScrollBar::sub-line:vertical:hover {
 }
 
 QScrollBar::add-line:vertical {
-    height: 24px;
+    height: 18px;
     border: none;
 }
 
@@ -520,7 +524,7 @@ QRadioButton:checked[inTopPanel=true] {
 
 QRadioButton[inStartUpView=true] {
     spacing: 0px;
-    padding: 4px 12px 4px 12px;
+    padding: 2px 6px 2px 6px;
     background-color: palette(window);
     border: 1px solid palette(dark);
 }
@@ -543,7 +547,7 @@ QRadioButton[inStartUpView=true]:indicator {
 
 QRadioButton[chevron=true] {
     spacing: 0px;
-    padding: 10px 10px 10px 10px;
+    padding: 2px 6px 2px 6px;
     background-color: palette(base);
     border: none;
 }
@@ -567,9 +571,9 @@ QRadioButton[chevron=true]:indicator {
  * Кнопка
  */
 QPushButton {
-    padding: 3px 14px 3px 14px;
+    padding: 2px 7px 2px 7px;
     min-width: 70px;
-    min-height: 25px;
+    min-height: 23px;
     background-color: palette(button);
     border: 1px solid palette(dark);
 }
@@ -619,14 +623,14 @@ QHeaderView {
 }
 
 QHeaderView::section {
-    min-height: 33px;
+    min-height: 24px;
 }
 
 /*
  * Меню
  */
 QMenu::item {
-    padding: 8px 25px 8px 34px;
+    padding: 5px 17px 5px 22px;
 }
 
 QMenu::item:selected {
@@ -643,7 +647,7 @@ QMenu::icon {
  * Виджет заголовок списка отчётов
  */
 ctkCollapsibleButton[reportButton=true] {
-    padding: 12px 12px 12px 12px;
+    padding: 4px 6px 4px 6px;
     background-color: palette(button);
     border: none;
     font-weight: bold;

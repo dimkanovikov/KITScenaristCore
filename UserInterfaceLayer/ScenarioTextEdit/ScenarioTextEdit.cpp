@@ -741,29 +741,112 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
 void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
 {
     //
-    // Ширина области курсора, для отображения имени автора курсора
-    //
-    const unsigned cursorAreaWidth = 20;
-
-    //
     // Подсветка строки
     //
     if (m_highlightCurrentLine) {
+        QPainter painter(viewport());
+        int opacity = 10;
         const int width = viewport()->width();
+        const int bottom = verticalScrollBar()->maximum() + viewport()->height();
+
+        //
+        // Если курсор в блоке реплики, закрасить всё вокруг блока диалога
+        //
+        {
+            const QVector<ScenarioBlockStyle::Type> dialogueTypes = { ScenarioBlockStyle::Character,
+                                                                      ScenarioBlockStyle::Parenthetical,
+                                                                      ScenarioBlockStyle::Dialogue };
+            if (dialogueTypes.contains(scenarioBlockType())) {
+                //
+                // Идём до начала блока диалога
+                //
+                QTextCursor cursor = textCursor();
+                while (cursor.movePosition(QTextCursor::PreviousBlock)) {
+                    if (!dialogueTypes.contains(ScenarioBlockStyle::forBlock(cursor.block()))) {
+                        cursor.movePosition(QTextCursor::NextBlock);
+                        break;
+                    }
+                }
+                const QRect topCursorRect = cursorRect(cursor);
+                const QRect topNoizeRect(0, 0, width, topCursorRect.top());
+                QColor noizeColor = textColor();
+                noizeColor.setAlpha(opacity);
+                painter.fillRect(topNoizeRect, noizeColor);
+
+                //
+                // Идём до конца блока диалога
+                //
+                cursor = textCursor();
+                while (cursor.movePosition(QTextCursor::NextBlock)) {
+                    if (!dialogueTypes.contains(ScenarioBlockStyle::forBlock(cursor.block()))) {
+                        cursor.movePosition(QTextCursor::PreviousBlock);
+                        break;
+                    }
+                }
+                cursor.movePosition(QTextCursor::EndOfBlock);
+                const QRect bottomCursorRect = cursorRect(cursor);
+                const QRect bottomNoizeRect(0, bottomCursorRect.bottom(), width, bottom);
+                painter.fillRect(bottomNoizeRect, noizeColor);
+            }
+            //
+            // В противном случае увеличиваем прозрачность закраски области вокруг сцены, чтобы она
+            // была такой же, как и в случае с диалогом
+            //
+            else {
+                opacity *= 2;
+            }
+        }
+
+        //
+        // Закрасить всё вокруг сцены
+        //
+        {
+            const QVector<ScenarioBlockStyle::Type> borderTypes = { ScenarioBlockStyle::SceneHeading,
+                                                                    ScenarioBlockStyle::FolderHeader,
+                                                                    ScenarioBlockStyle::FolderFooter };
+            if (!borderTypes.contains(scenarioBlockType())) {
+                //
+                // Идём до начала блока сцены
+                //
+                QTextCursor cursor = textCursor();
+                while (cursor.movePosition(QTextCursor::PreviousBlock)
+                       && !borderTypes.contains(ScenarioBlockStyle::forBlock(cursor.block()))) {
+                }
+                const QRect topCursorRect = cursorRect(cursor);
+                const QRect topNoizeRect(0, 0, width, topCursorRect.top());
+                QColor noizeColor = textColor();
+                noizeColor.setAlpha(opacity);
+                painter.fillRect(topNoizeRect, noizeColor);
+
+                //
+                // Идём до конца блока сцены
+                //
+                cursor = textCursor();
+                while (cursor.movePosition(QTextCursor::NextBlock)) {
+                    if (borderTypes.contains(ScenarioBlockStyle::forBlock(cursor.block()))) {
+                        cursor.movePosition(QTextCursor::PreviousBlock);
+                        break;
+                    }
+                }
+                cursor.movePosition(QTextCursor::EndOfBlock);
+                const QRect bottomCursorRect = cursorRect(cursor);
+                const QRect bottomNoizeRect(0, bottomCursorRect.bottom(), width, bottom);
+                painter.fillRect(bottomNoizeRect, noizeColor);
+            }
+        }
+
+        //
+        // Подсветка строки
+        //
         const QRect cursorR = cursorRect();
         const QRect highlightRect(0, cursorR.top(), width, cursorR.height());
         QColor lineColor = palette().highlight().color().lighter();
-        lineColor.setAlpha(100);
-
-        QPainter painter(viewport());
-        painter.save();
+        lineColor.setAlpha(40);
         painter.fillRect(highlightRect, lineColor);
-        painter.restore();
     }
 
 
     CompletableTextEdit::paintEvent(_event);
-
 
     //
     // Прорисовка дополнительных элементов редактора
@@ -895,6 +978,11 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
         // Курсоры соавторов
         //
         {
+            //
+            // Ширина области курсора, для отображения имени автора курсора
+            //
+            const unsigned cursorAreaWidth = 20;
+
             if (!m_additionalCursors.isEmpty()
                 && m_document != 0) {
                 QPainter painter(viewport());
