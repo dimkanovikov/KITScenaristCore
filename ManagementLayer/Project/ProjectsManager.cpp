@@ -57,7 +57,8 @@ QAbstractItemModel* ProjectsManager::recentProjects()
     foreach (const Project& project, m_recentProjects) {
         QStandardItem* item = new QStandardItem;
         item->setData(project.displayName(), Qt::DisplayRole);
-        item->setData(project.displayPath(), Qt::WhatsThisRole);
+        item->setData(project.displayPath(), Qt::StatusTipRole);
+        item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
         recentProjectsModel->appendRow(item);
     }
 

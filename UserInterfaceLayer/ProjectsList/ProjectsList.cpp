@@ -3,6 +3,7 @@
 #include "ProjectFileWidget.h"
 
 #include <QAbstractItemModel>
+#include <QDateTime>
 #include <QVBoxLayout>
 
 using UserInterface::ProjectsList;
@@ -44,13 +45,15 @@ void ProjectsList::setModel(QAbstractItemModel* _model, bool _isRemote)
             for (int row = 0; row < m_model->rowCount(); ++row) {
                 const QModelIndex projectIndex = m_model->index(row, 0);
                 const QString projectName = projectIndex.data(Qt::DisplayRole).toString();
-                const QString projectPath = projectIndex.data(Qt::WhatsThisRole).toString();
+                const QString projectPath = projectIndex.data(Qt::StatusTipRole).toString();
+                const QDateTime editDateTime = projectIndex.data(Qt::WhatsThisRole).toDateTime();
                 const QStringList users = projectIndex.data(Qt::UserRole).toStringList();
                 const bool isOwner = projectIndex.data(Qt::UserRole + 1).toBool();
 
                 ProjectFileWidget* project = new ProjectFileWidget;
                 project->setProjectName(projectName);
-                project->setFilePath(projectPath);
+                project->setProjectInfo(projectPath);
+                project->setProjectInfo(editDateTime.toString());
                 project->configureOptions(_isRemote, isOwner);
                 for (const QString& user : users) {
                     if (!user.simplified().isEmpty()) {

@@ -18,12 +18,52 @@ QToolButton:pressed, QPushButton:pressed {
     background-color: palette(dark);
 }
 
+/*
+ * Плавающая кнопка действия
+ */
 QToolButton[fab=true] {
     border: 1px solid palette(button);
     border-radius: 28dp;
     background-color: palette(button);
 }
 
+/*
+ * Кнопки действий проекта из списка
+ */
+QToolButton[projectAction=true] {
+    background: palette(alternate-base);
+    color: palette(button-text);
+    border: none;
+    min-width: 40dp;
+    padding-top: 1dp;
+    padding-bottom: 1dp;
+}
+
+QToolButton:pressed[projectAction=true] {
+    padding-top: 2dp;
+    padding-bottom: 0dp;
+}
+
+/*
+ * Кнопки раскрытия меню в списке проектов
+ */
+QToolButton[projectActionMenu=true] {
+    background: palette(window);
+    border: none;
+    min-width: 40dp;
+    margin-left: 0dp;
+    margin-right: 0dp;
+    padding-top: 1dp;
+    padding-bottom: 1dp;
+}
+
+QToolButton:checked[projectActionMenu=true] {
+    background: palette(alternate-base);
+}
+
+/*
+ * Полоса загрузки
+ */
 QProgressBar {
     border-radius: 0dp;
     border: none;
@@ -142,6 +182,9 @@ QPushButton:checked[flat=true], QPushButton:checked[flat-black=true] {
     background-color: palette(dark);
 }
 
+/*
+ * Панели инструментов
+ */
 QFrame[toolbar=true] {
     background-color: palette(button);
 }

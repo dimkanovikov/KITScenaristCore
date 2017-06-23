@@ -31,9 +31,9 @@ namespace UserInterface
         void setProjectName(const QString& _projectName);
 
         /**
-         * @brief Установить путь к файлу проекта
+         * @brief Установить дополнительную информацию о проекте
          */
-        void setFilePath(const QString& _filePath);
+        void setProjectInfo(const QString& _projectInfo);
 
         /**
          * @brief Настроить опции проекта в зависимости от того находится ли проект в облаке
@@ -82,6 +82,7 @@ namespace UserInterface
          */
         void removeUserRequested(const QString& _email);
 
+#ifndef MOBILE_OS
     protected:
         /**
          * @brief Переопределяем, чтобы изменять внешний вид виджета, в моменты входа/выхода
@@ -96,6 +97,7 @@ namespace UserInterface
          * @brief Переопределяем, чтобы сигналить о нажатии
          */
         void mouseReleaseEvent(QMouseEvent* _event);
+#endif
 
     private:
         /**

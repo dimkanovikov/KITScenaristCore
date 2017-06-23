@@ -7,6 +7,7 @@
 #include <3rd_party/Widgets/WAF/Animation/Animation.h>
 
 #include <QLabel>
+#include <QTimer>
 #include <QVBoxLayout>
 
 using UserInterface::ProjectFileWidget;
@@ -29,9 +30,9 @@ void ProjectFileWidget::setProjectName(const QString& _projectName)
     m_ui->projectName->setText(_projectName);
 }
 
-void ProjectFileWidget::setFilePath(const QString& _filePath)
+void ProjectFileWidget::setProjectInfo(const QString& _projectInfo)
 {
-    m_ui->filePath->setText(_filePath);
+    m_ui->projectInfo->setText(_projectInfo);
 }
 
 void ProjectFileWidget::configureOptions(bool _isRemote, bool _isOwner)
@@ -64,16 +65,19 @@ void ProjectFileWidget::setMouseHover(bool _hover)
     if (_hover) {
         styleSheet = "QFrame { background-color: palette(alternate-base); }";
     } else {
-        styleSheet = "QFrame { background-color: palette(base); }";
+        styleSheet = "QFrame { background-color: palette(window); }";
     }
     setStyleSheet(styleSheet);
 
+#ifndef MOBILE_OS
     //
     // Показываем, или скрываем кнопки параметров
     //
     m_ui->optionsPanel->setVisible(_hover);
+#endif
 }
 
+#ifndef MOBILE_OS
 void ProjectFileWidget::enterEvent(QEvent* _event)
 {
     setMouseHover(true);
@@ -91,20 +95,28 @@ void ProjectFileWidget::mouseReleaseEvent(QMouseEvent* _event)
     emit clicked();
     QWidget::mousePressEvent(_event);
 }
+#endif
 
 void ProjectFileWidget::initView()
 {
     setMouseTracking(true);
     setMouseHover(false);
 
-    m_ui->filePath->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    m_ui->filePath->setElideMode(Qt::ElideLeft);
+    m_ui->projectInfo->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    m_ui->projectInfo->setElideMode(Qt::ElideLeft);
 
     m_ui->change->setIcons(m_ui->change->icon());
     m_ui->remove->setIcons(m_ui->remove->icon());
     m_ui->hide->setIcons(m_ui->hide->icon());
     m_ui->share->setIcons(m_ui->share->icon());
     m_ui->shareDetails->setIcons(m_ui->shareDetails->icon());
+    m_ui->openMenu->setIcons(m_ui->openMenu->icon());
+
+#ifdef MOBILE_OS
+    m_ui->optionsPanel->hide();
+#else
+    m_ui->openMenu->hide();
+#endif
 
     m_ui->users->hide();
 }
@@ -118,17 +130,38 @@ void ProjectFileWidget::initConnections()
     connect(m_ui->shareDetails, &FlatButton::toggled, [=] (bool _toggled) {
         const bool FIX = true;
         if (m_ui->usersLayout->count() > 0) {
-            WAF::Animation::slide(m_ui->users, WAF::FromBottomToTop, !FIX, !FIX, _toggled);
+            WAF::Animation::slide(m_ui->users, WAF::FromBottomToTop, FIX, !FIX, _toggled);
         }
     });
+
+#ifdef MOBILE_OS
+    connect(m_ui->openMenu, &FlatButton::toggled, [=] (bool _show) {
+        //
+        // Если опции скрываются, скорем и пользователей
+        //
+        if (_show == false) {
+            m_ui->shareDetails->setChecked(_show);
+        }
+        //
+        // Скроем опции, и отожмём выделение проекта
+        //
+        const bool FIX = true;
+        int duration = WAF::Animation::slide(m_ui->optionsPanel, WAF::FromRightToLeft, FIX, FIX, _show);
+        if (_show) {
+            duration = 0;
+        }
+        QTimer::singleShot(duration, [=] { setMouseHover(_show); });
+    });
+#endif
 }
 
 void ProjectFileWidget::initStylesheet()
 {
-    m_ui->filePath->setStyleSheet("color: palette(mid);");
+    m_ui->projectInfo->setStyleSheet("color: palette(mid);");
     m_ui->change->setProperty("projectAction", true);
     m_ui->remove->setProperty("projectAction", true);
     m_ui->hide->setProperty("projectAction", true);
     m_ui->share->setProperty("projectAction", true);
     m_ui->shareDetails->setProperty("projectAction", true);
+    m_ui->openMenu->setProperty("projectActionMenu", true);
 }
