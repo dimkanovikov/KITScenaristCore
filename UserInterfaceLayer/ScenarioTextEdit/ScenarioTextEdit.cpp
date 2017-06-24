@@ -808,53 +808,77 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
         }
 
         //
-        // Закрасить всё вокруг сцены
+        // Закрасить всё вокруг сцены/папки
         //
         {
-            const QVector<ScenarioBlockStyle::Type> borderTypes = { ScenarioBlockStyle::SceneHeading,
-                                                                    ScenarioBlockStyle::FolderHeader,
-                                                                    ScenarioBlockStyle::FolderFooter };
-            {
-                //
-                // Идём до начала блока сцены
-                //
-                QTextCursor cursor = textCursor();
-                if (!borderTypes.contains(scenarioBlockType())) {
-                    while (cursor.movePosition(QTextCursor::PreviousBlock)
-                           && !borderTypes.contains(ScenarioBlockStyle::forBlock(cursor.block()))) {
+            //
+            // Идём до начала блока сцены, считая по пути вложенные папки
+            //
+            QTextCursor cursor = textCursor();
+            int closedFolders = 0;
+            bool isScene = scenarioBlockType() == ScenarioBlockStyle::SceneHeading;
+            if (scenarioBlockType() != ScenarioBlockStyle::SceneHeading
+                && scenarioBlockType() != ScenarioBlockStyle::FolderHeader) {
+                while (cursor.movePosition(QTextCursor::PreviousBlock)) {
+                    const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(cursor.block());
+                    if (blockType == ScenarioBlockStyle::SceneHeading) {
+                        isScene = true;
+                        break;
+                    } else if (blockType == ScenarioBlockStyle::FolderFooter) {
+                        ++closedFolders;
+                    } else if (blockType == ScenarioBlockStyle::FolderHeader) {
+                        if (closedFolders > 0) {
+                            --closedFolders;
+                        } else {
+                            break;
+                        }
                     }
                 }
-                const QRect topCursorRect = cursorRect(cursor);
-                const QRect topNoizeRect(0, 0, width, topCursorRect.top() - verticalMargin);
-                QColor noizeColor = textColor();
-                noizeColor.setAlpha(opacity);
-                painter.fillRect(topNoizeRect, noizeColor);
+            }
+            const QRect topCursorRect = cursorRect(cursor);
+            const QRect topNoizeRect(0, 0, width, topCursorRect.top() - verticalMargin);
+            QColor noizeColor = textColor();
+            noizeColor.setAlpha(opacity);
+            painter.fillRect(topNoizeRect, noizeColor);
 
-                //
-                // Идём до конца блока сцены
-                //
-                cursor = textCursor();
-                while (cursor.movePosition(QTextCursor::NextBlock)) {
-                    if (borderTypes.contains(ScenarioBlockStyle::forBlock(cursor.block()))) {
-                        cursor.movePosition(QTextCursor::PreviousBlock);
+            //
+            // Идём до конца блока сцены, считая по пути вложенные папки
+            //
+            cursor = textCursor();
+            int openedFolders = 0;
+            while (cursor.movePosition(QTextCursor::NextBlock)) {
+                const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(cursor.block());
+                if (isScene
+                    && blockType == ScenarioBlockStyle::SceneHeading) {
+                    cursor.movePosition(QTextCursor::PreviousBlock);
+                    break;
+                } else if (blockType == ScenarioBlockStyle::FolderHeader) {
+                    ++openedFolders;
+                } else if (blockType == ScenarioBlockStyle::FolderFooter) {
+                    if (openedFolders > 0) {
+                        --openedFolders;
+                    } else {
+                        if (isScene) {
+                            cursor.movePosition(QTextCursor::PreviousBlock);
+                        }
                         break;
                     }
                 }
-                cursor.movePosition(QTextCursor::EndOfBlock);
-                const QRect bottomCursorRect = cursorRect(cursor);
-                const QRect bottomNoizeRect(0, bottomCursorRect.bottom() + verticalMargin, width, bottom);
-                painter.fillRect(bottomNoizeRect, noizeColor);
-
-                //
-                // Соединяем бока
-                //
-                const QRect leftNoizeRect(QPoint(0, topCursorRect.top() - verticalMargin),
-                                          QPoint(horizontalMargin, bottomCursorRect.bottom() + verticalMargin));
-                painter.fillRect(leftNoizeRect, noizeColor);
-                const QRect rightNoizeRect(QPoint(width - horizontalMargin, topCursorRect.top() - verticalMargin),
-                                           QPoint(width, bottomCursorRect.bottom() + verticalMargin));
-                painter.fillRect(rightNoizeRect, noizeColor);
             }
+            cursor.movePosition(QTextCursor::EndOfBlock);
+            const QRect bottomCursorRect = cursorRect(cursor);
+            const QRect bottomNoizeRect(0, bottomCursorRect.bottom() + verticalMargin, width, bottom);
+            painter.fillRect(bottomNoizeRect, noizeColor);
+
+            //
+            // Соединяем бока
+            //
+            const QRect leftNoizeRect(QPoint(0, topCursorRect.top() - verticalMargin),
+                                      QPoint(horizontalMargin, bottomCursorRect.bottom() + verticalMargin));
+            painter.fillRect(leftNoizeRect, noizeColor);
+            const QRect rightNoizeRect(QPoint(width - horizontalMargin, topCursorRect.top() - verticalMargin),
+                                       QPoint(width, bottomCursorRect.bottom() + verticalMargin));
+            painter.fillRect(rightNoizeRect, noizeColor);
         }
 
         //
