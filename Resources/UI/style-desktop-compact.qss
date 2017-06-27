@@ -573,7 +573,7 @@ QRadioButton[chevron=true]:indicator {
 QPushButton {
     padding: 2px 7px 2px 7px;
     min-width: 70px;
-    min-height: 23px;
+    min-height: 20px;
     background-color: palette(button);
     border: 1px solid palette(dark);
 }
