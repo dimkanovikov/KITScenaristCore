@@ -42,10 +42,10 @@ QLabel[inTopPanel=true] {
     background: palette(button);
     color: palette(button-text);
     padding-top: 2px;
-    padding-bottom: 1px;
+    padding-bottom: 2px;
     padding-left: 3px;
     padding-right: 1px;
-    min-height: 26px;
+    min-height: 25px;
 }
 
 /*
@@ -58,8 +58,8 @@ QToolButton[inTopPanel=true] {
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: palette(dark);
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
     height: 26px;
 }
 
@@ -82,10 +82,10 @@ QToolButton::menu-button[inTopPanel=true] {
     border-right-width: 1px;
     border-right-style: solid;
     border-right-color: palette(dark);
-    width: 4px;
+    width: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
-    padding-right: 8px;
+    padding-right: 7px;
 }
 
 QToolButton::menu-button:hover[inTopPanel=true],
@@ -177,7 +177,7 @@ FlatButton::menu-button[inTopPanel=true] {
 ColoredToolButton[inTopPanel=true] {
     padding-left: 4px;
     padding-right: 14px;
-    min-width: 16px;
+    min-width: 20px;
 }
 
 ColoredToolButton:hover[inTopPanel=true] {
@@ -185,7 +185,7 @@ ColoredToolButton:hover[inTopPanel=true] {
 }
 
 ColoredToolButton::menu-button[inTopPanel=true] {
-    padding-right: 6px;
+    padding-right: 3px;
     border-right: none;
 }
 
