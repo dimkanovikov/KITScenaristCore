@@ -146,11 +146,17 @@ void ProjectFileWidget::initConnections()
         // Скроем опции, и отожмём выделение проекта
         //
         const bool FIX = true;
-        int duration = WAF::Animation::slide(m_ui->optionsPanel, WAF::FromRightToLeft, FIX, FIX, _show);
         if (_show) {
-            duration = 0;
+            m_ui->openMenu->setProperty("projectActionMenu", false);
+            setMouseHover(true);
         }
-        QTimer::singleShot(duration, [=] { setMouseHover(_show); });
+        const int duration = WAF::Animation::slide(m_ui->optionsPanel, WAF::FromRightToLeft, FIX, FIX, _show);
+        if (!_show) {
+            QTimer::singleShot(duration, [=] {
+                m_ui->openMenu->setProperty("projectActionMenu", true);
+                setMouseHover(false);
+            });
+        }
     });
 #endif
 }

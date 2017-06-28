@@ -35,6 +35,7 @@ QToolButton[projectAction=true] {
     color: palette(button-text);
     border: none;
     min-width: 40dp;
+    icon-size: 24dp;
     padding-top: 1dp;
     padding-bottom: 1dp;
 }
@@ -51,14 +52,22 @@ QToolButton[projectActionMenu=true] {
     background: palette(window);
     border: none;
     min-width: 40dp;
+    icon-size: 24dp;
     margin-left: 0dp;
     margin-right: 0dp;
     padding-top: 1dp;
     padding-bottom: 1dp;
 }
 
-QToolButton:checked[projectActionMenu=true] {
+QToolButton[projectActionMenu=false] {
     background: palette(alternate-base);
+    border: none;
+    min-width: 40dp;
+    icon-size: 24dp;
+    margin-left: 0dp;
+    margin-right: 0dp;
+    padding-top: 1dp;
+    padding-bottom: 1dp;
 }
 
 /*
@@ -149,37 +158,35 @@ QPushButton[side-nav-subheader=true] {
 
 QPushButton[flat=true] {
     min-width: 88dp;
-    height: 48dp;
+    height: 40dp;
     border: none;
     background-color: transparent;
     color: palette(highlight);
     font-weight: 500;
     padding: 0dp 8dp 0 8dp;
+    margin: 4dp;
 }
 
 QPushButton[flat-black=true] {
     min-width: 40dp;
-    height: 56dp;
+    height: 40dp;
     border: none;
     background-color: transparent;
     color: black;
     font-weight: 500;
     padding: 0dp 8dp 0 8dp;
+    margin: 4dp;
 }
 
 QPushButton[raised=true] {
     min-width: 88dp;
-    height: 48dp;
+    height: 40dp;
     background-color: palette(highlight);
     color: palette(highlighted-text);
     border: none;
     font-weight: 500;
     padding: 0dp 8dp 0 8dp;
-}
-
-QPushButton:hover[flat=true], QPushButton:hover[flat-black=true],
-QPushButton:checked[flat=true], QPushButton:checked[flat-black=true] {
-    background-color: palette(dark);
+    margin: 4dp;
 }
 
 /*
