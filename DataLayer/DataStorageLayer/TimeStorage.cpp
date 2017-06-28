@@ -3,7 +3,7 @@
 #include <DataLayer/DataMappingLayer/MapperFacade.h>
 #include <DataLayer/DataMappingLayer/TimeMapper.h>
 
-#include <Domain/Time.h>
+#include <Domain/SceneTime.h>
 
 using namespace DataStorageLayer;
 using namespace DataMappingLayer;

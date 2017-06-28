@@ -8,7 +8,7 @@
 #include <Domain/Place.h>
 #include <Domain/Research.h>
 #include <Domain/ScenarioDay.h>
-#include <Domain/Time.h>
+#include <Domain/SceneTime.h>
 
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/PlaceStorage.h>

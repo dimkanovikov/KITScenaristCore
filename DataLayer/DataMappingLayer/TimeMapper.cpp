@@ -1,6 +1,6 @@
 #include "TimeMapper.h"
 
-#include <Domain/Time.h>
+#include <Domain/SceneTime.h>
 
 using namespace DataMappingLayer;
 

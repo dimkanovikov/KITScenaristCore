@@ -5,8 +5,8 @@
 #include "MapperFacade.h"
 
 namespace Domain {
-	class Time;
-	class TimesTable;
+	class SceneTime;
+	class SceneTimesTable;
 }
 
 using namespace Domain;
@@ -17,10 +17,10 @@ namespace DataMappingLayer
 	class TimeMapper : public AbstractMapper
 	{
 	public:
-		Time* find(const Identifier& _id);
-		TimesTable* findAll();
-		void insert(Time* _time);
-		void update(Time* _time);
+		SceneTime* find(const Identifier& _id);
+		SceneTimesTable* findAll();
+		void insert(SceneTime* _time);
+		void update(SceneTime* _time);
 
 	protected:
 		QString findStatement(const Identifier& _id) const;
