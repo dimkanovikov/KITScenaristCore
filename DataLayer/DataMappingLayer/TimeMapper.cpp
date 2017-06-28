@@ -10,22 +10,22 @@ namespace {
 	const QString TABLE_NAME = " times ";
 }
 
-Time* TimeMapper::find(const Identifier& _id)
+SceneTime* TimeMapper::find(const Identifier& _id)
 {
-	return dynamic_cast<Time*>(abstractFind(_id));
+    return dynamic_cast<SceneTime*>(abstractFind(_id));
 }
 
-TimesTable* TimeMapper::findAll()
+SceneTimesTable* TimeMapper::findAll()
 {
-	return qobject_cast<TimesTable*>(abstractFindAll());
+    return qobject_cast<SceneTimesTable*>(abstractFindAll());
 }
 
-void TimeMapper::insert(Time* _time)
+void TimeMapper::insert(SceneTime* _time)
 {
 	abstractInsert(_time);
 }
 
-void TimeMapper::update(Time* _time)
+void TimeMapper::update(SceneTime* _time)
 {
 	abstractUpdate(_time);
 }
@@ -54,7 +54,7 @@ QString TimeMapper::insertStatement(DomainObject* _subject, QVariantList& _inser
 					" VALUES(?, ?) "
 					);
 
-	Time* time = dynamic_cast<Time*>(_subject );
+    SceneTime* time = dynamic_cast<SceneTime*>(_subject );
 	_insertValues.clear();
 	_insertValues.append(time->id().value());
 	_insertValues.append(time->name());
@@ -70,7 +70,7 @@ QString TimeMapper::updateStatement(DomainObject* _subject, QVariantList& _updat
 					" WHERE id = ? "
 					);
 
-	Time* time = dynamic_cast<Time*>(_subject);
+    SceneTime* time = dynamic_cast<SceneTime*>(_subject);
 	_updateValues.clear();
 	_updateValues.append(time->name());
 	_updateValues.append(time->id().value());
@@ -92,12 +92,12 @@ DomainObject* TimeMapper::doLoad(const Identifier& _id, const QSqlRecord& _recor
 {
 	const QString name = _record.value("name").toString();
 
-	return new Time(_id, name);
+    return new SceneTime(_id, name);
 }
 
 void TimeMapper::doLoad(DomainObject* _domainObject, const QSqlRecord& _record)
 {
-	if (Time* time = dynamic_cast<Time*>(_domainObject)) {
+    if (SceneTime* time = dynamic_cast<SceneTime*>(_domainObject)) {
 		const QString name = _record.value("name").toString();
 		time->setName(name);
 	}
@@ -105,7 +105,7 @@ void TimeMapper::doLoad(DomainObject* _domainObject, const QSqlRecord& _record)
 
 DomainObjectsItemModel* TimeMapper::modelInstance()
 {
-	return new TimesTable;
+    return new SceneTimesTable;
 }
 
 TimeMapper::TimeMapper()
