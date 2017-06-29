@@ -82,21 +82,21 @@ namespace UserInterface
          */
         void removeUserRequested(const QString& _email);
 
-#ifndef MOBILE_OS
     protected:
+        /**
+         * @brief Переопределяем, чтобы сигналить о нажатии
+         */
+        void mouseReleaseEvent(QMouseEvent* _event) override;
+
+#ifndef MOBILE_OS
         /**
          * @brief Переопределяем, чтобы изменять внешний вид виджета, в моменты входа/выхода
          *		  курсора мышки в границы виджета
          */
         /** @{ */
-        void enterEvent(QEvent* _event);
-        void leaveEvent(QEvent* _event);
+        void enterEvent(QEvent* _event) override;
+        void leaveEvent(QEvent* _event) override;
         /** @} */
-
-        /**
-         * @brief Переопределяем, чтобы сигналить о нажатии
-         */
-        void mouseReleaseEvent(QMouseEvent* _event);
 #endif
 
     private:

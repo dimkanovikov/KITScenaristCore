@@ -7,6 +7,7 @@
 #include <3rd_party/Widgets/WAF/Animation/Animation.h>
 
 #include <QLabel>
+#include <QMouseEvent>
 #include <QTimer>
 #include <QVBoxLayout>
 
@@ -77,6 +78,17 @@ void ProjectFileWidget::setMouseHover(bool _hover)
 #endif
 }
 
+void ProjectFileWidget::mouseReleaseEvent(QMouseEvent* _event)
+{
+    //
+    // Выполняем событие, только если курсор так и остался на виджете
+    //
+    if (rect().contains(_event->pos())) {
+        emit clicked();
+        QWidget::mousePressEvent(_event);
+    }
+}
+
 #ifndef MOBILE_OS
 void ProjectFileWidget::enterEvent(QEvent* _event)
 {
@@ -88,12 +100,6 @@ void ProjectFileWidget::leaveEvent(QEvent* _event)
 {
     setMouseHover(false);
     QWidget::leaveEvent(_event);
-}
-
-void ProjectFileWidget::mouseReleaseEvent(QMouseEvent* _event)
-{
-    emit clicked();
-    QWidget::mousePressEvent(_event);
 }
 #endif
 
