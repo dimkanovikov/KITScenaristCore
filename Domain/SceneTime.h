@@ -1,5 +1,5 @@
-#ifndef TIME_H
-#define TIME_H
+#ifndef SCENETIME_H
+#define SCENETIME_H
 
 #include "DomainObject.h"
 
@@ -11,10 +11,10 @@ namespace Domain
 	/**
 	 * @brief Класс времени съёмок
 	 */
-	class Time : public DomainObject
+    class SceneTime : public DomainObject
 	{
 	public:
-		Time(const Identifier& _id, const QString& _name);
+        SceneTime(const Identifier& _id, const QString& _name);
 
 		/**
 		 * @brief Получить название времени
@@ -35,12 +35,12 @@ namespace Domain
 
 	// ****
 
-	class TimesTable : public DomainObjectsItemModel
+    class SceneTimesTable : public DomainObjectsItemModel
 	{
 		Q_OBJECT
 
 	public:
-		explicit TimesTable(QObject* _parent = 0);
+        explicit SceneTimesTable(QObject* _parent = 0);
 
 	public:
 		enum Column {
@@ -58,4 +58,4 @@ namespace Domain
 	};
 }
 
-#endif // TIME_H
+#endif // SCENETIME_H

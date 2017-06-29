@@ -1,20 +1,20 @@
-#include "Time.h"
+#include "SceneTime.h"
 
 using namespace Domain;
 
 
-Time::Time(const Identifier& _id, const QString& _name) :
+SceneTime::SceneTime(const Identifier& _id, const QString& _name) :
 	DomainObject(_id),
 	m_name(_name)
 {
 }
 
-QString Time::name() const
+QString SceneTime::name() const
 {
 	return m_name;
 }
 
-void Time::setName(const QString& _name)
+void SceneTime::setName(const QString& _name)
 {
 	if (m_name != _name) {
 		m_name = _name;
@@ -29,24 +29,24 @@ namespace {
 	const int COLUMN_COUNT = 1;
 }
 
-TimesTable::TimesTable(QObject* _parent) :
+SceneTimesTable::SceneTimesTable(QObject* _parent) :
 	DomainObjectsItemModel(_parent)
 {
 }
 
-int TimesTable::columnCount(const QModelIndex&) const
+int SceneTimesTable::columnCount(const QModelIndex&) const
 {
 	return COLUMN_COUNT;
 }
 
-QVariant TimesTable::data(const QModelIndex& _index, int _role) const
+QVariant SceneTimesTable::data(const QModelIndex& _index, int _role) const
 {
 	QVariant resultData;
 
 	if (_role ==  Qt::DisplayRole
 		|| _role == Qt::EditRole) {
 		DomainObject *domainObject = domainObjects().value(_index.row());
-		Time* time = dynamic_cast<Time*>(domainObject);
+		SceneTime* time = dynamic_cast<SceneTime*>(domainObject);
 		Column column = sectionToColumn(_index.column());
 		switch (column) {
 			case Name: {
@@ -63,7 +63,7 @@ QVariant TimesTable::data(const QModelIndex& _index, int _role) const
 	return resultData;
 }
 
-TimesTable::Column TimesTable::sectionToColumn(int _section) const
+SceneTimesTable::Column SceneTimesTable::sectionToColumn(int _section) const
 {
 	Column column = Undefined;
 
