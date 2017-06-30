@@ -334,9 +334,9 @@ void PdfExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
     // Настроим принтер
     //
 #ifndef MOBILE_OS
-    QPrinter* printer = preparePrinter(_exportParameters.filePath);
+    QScopedPointer<QPrinter> printer(preparePrinter(_exportParameters.filePath));
 #else
-    QPdfWriter* printer = new QPdfWriter(_exportParameters.filePath);
+    QScopedPointer<QPdfWriter> printer(new QPdfWriter(_exportParameters.filePath));
     printer->setPageSize(QPageSize(::exportStyle().pageSizeId()));
     QMarginsF margins = ::exportStyle().pageMargins();
     printer->setPageMargins(margins, QPageLayout::Millimeter);
@@ -352,15 +352,7 @@ void PdfExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
     //
     // Печатаем документ
     //
-    ::printDocument(preparedDocument, printer);
-
-    //
-    // Освобождаем память
-    //
-    delete printer;
-    printer = 0;
-    delete preparedDocument;
-    preparedDocument = 0;
+    ::printDocument(preparedDocument, printer.data());
 }
 
 #ifndef MOBILE_OS
