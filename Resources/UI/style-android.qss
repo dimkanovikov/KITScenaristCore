@@ -272,3 +272,84 @@ QLabel[indicatorIcon=true] {
     border: none;
     padding: 0dp 24dp 24dp 24dp;
 }
+
+/*
+ * Стиль материального поля ввода
+ */
+[materialLineEditLabel=true] {
+    margin-left: 1dp;
+    font-size: 11dp;
+    color: palette(mid);
+}
+
+[materialLineEdit=true] {
+    font-size: 14dp;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1dp solid palette(text);
+    margin: 0;
+    margin-bottom: 1dp;
+    padding: 0;
+}
+
+[materialLineEdit=true]:disabled {
+    font-size: 14dp;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1dp dashed palette(dark);
+    margin: 0;
+    margin-bottom: 1dp;
+    padding: 0;
+}
+
+[materialLineEdit=true]:hover {
+    font-size: 14dp;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2dp solid palette(text);
+    margin: 0;
+    margin-bottom: 0dp;
+    padding: 0;
+}
+
+[materialLineEdit=true]:focus {
+    font-size: 14dp;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2dp solid palette(highlight);
+    margin: 0;
+    margin-bottom: 0dp;
+    padding: 0;
+}
+
+[materialLineEditHelper=true] {
+    margin-left: 1dp;
+    font-size: 11dp;
+    color: palette(mid);
+}
+
+[materialLineEditHelper=false], [materialLineEditLabel=false] {
+    color: #ff1744;
+    margin-left: 1dp;
+    font-size: 11dp;
+}
+
+[materialLineEdit=false] {
+    font-size: 14dp;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1dp solid #ff1744;
+    margin: 0;
+    margin-bottom: 1dp;
+    padding: 0;
+}
+
+[materialLineEdit=false]:hover, [materialLineEdit=false]:focus {
+    font-size: 14dp;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2dp solid #ff1744;
+    margin: 0;
+    margin-bottom: 0dp;
+    padding: 0;
+}
