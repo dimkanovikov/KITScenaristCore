@@ -15,8 +15,10 @@
 #include <QString>
 #include <QPainter>
 #include <QPdfWriter>
+#ifndef MOBILE_OS
 #include <QPrinter>
 #include <QPrintPreviewDialog>
+#endif
 #include <QScrollArea>
 #include <QScrollBar>
 #include <QTextDocument>
@@ -281,7 +283,7 @@ namespace {
             QSizeF scaledPageSize = _document->pageSize();
             scaledPageSize.rwidth() *= dpiScaleX;
             scaledPageSize.rheight() *= dpiScaleY;
-            const QSizeF printerPageSize(_printer->pageSize());
+            const QSizeF printerPageSize(_printer->pageLayout().fullRect().size());
             // scale to page
             painter.scale(printerPageSize.width() / scaledPageSize.width(),
                     printerPageSize.height() / scaledPageSize.height());
