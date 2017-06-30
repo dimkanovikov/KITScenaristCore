@@ -223,6 +223,34 @@ namespace {
                 _printer->newPage();
         }
     }
+
+    /**
+     * @brief Прокрутить диалог предпросмотра к заданной позиции
+     */
+    static bool setPrintPreviewScrollValue(QPrintPreviewDialog& _dialog, int _value) {
+        foreach (QAbstractScrollArea* child, _dialog.findChildren<QAbstractScrollArea*>()) {
+            if (QString(child->metaObject()->className()) == "GraphicsView") {
+                qDebug() << _value << child->verticalScrollBar()->maximum();
+                child->verticalScrollBar()->setValue(_value);
+                break;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * @brief Получить позиции прокрутки диалога предпросмотра печати
+     */
+    static int printPreviewScrollValue(const QPrintPreviewDialog& _dialog) {
+        int value = 0;
+        foreach (const QAbstractScrollArea* child, _dialog.findChildren<QAbstractScrollArea*>()) {
+            if (QString(child->metaObject()->className()) == "GraphicsView") {
+                value = child->verticalScrollBar()->value();
+                break;
+            }
+        }
+        return value;
+    }
 #else
     /**
      * @brief Напечатать документ
@@ -288,34 +316,6 @@ namespace {
         }
     }
 #endif
-
-    /**
-     * @brief Прокрутить диалог предпросмотра к заданной позиции
-     */
-    static bool setPrintPreviewScrollValue(QPrintPreviewDialog& _dialog, int _value) {
-        foreach (QAbstractScrollArea* child, _dialog.findChildren<QAbstractScrollArea*>()) {
-            if (QString(child->metaObject()->className()) == "GraphicsView") {
-                qDebug() << _value << child->verticalScrollBar()->maximum();
-                child->verticalScrollBar()->setValue(_value);
-                break;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * @brief Получить позиции прокрутки диалога предпросмотра печати
-     */
-    static int printPreviewScrollValue(const QPrintPreviewDialog& _dialog) {
-        int value = 0;
-        foreach (const QAbstractScrollArea* child, _dialog.findChildren<QAbstractScrollArea*>()) {
-            if (QString(child->metaObject()->className()) == "GraphicsView") {
-                value = child->verticalScrollBar()->value();
-                break;
-            }
-        }
-        return value;
-    }
 }
 
 
