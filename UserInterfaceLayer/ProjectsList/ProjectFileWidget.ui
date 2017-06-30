@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>372</width>
-    <height>73</height>
+    <height>55</height>
    </rect>
   </property>
   <property name="cursor">
@@ -271,7 +271,23 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QVBoxLayout" name="usersLayout"/>
+     <layout class="QVBoxLayout" name="usersLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+     </layout>
     </widget>
    </item>
   </layout>
@@ -289,7 +305,6 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../Resources/Resources.qrc"/>
   <include location="../../Resources/Resources.qrc"/>
  </resources>
  <connections/>

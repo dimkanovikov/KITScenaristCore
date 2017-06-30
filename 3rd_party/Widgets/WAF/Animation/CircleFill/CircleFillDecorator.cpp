@@ -14,12 +14,17 @@ CircleFillDecorator::CircleFillDecorator(QWidget* _parent) :
 
 }
 
-void CircleFillDecorator::setStartPoint(const QPoint& _point)
+void CircleFillDecorator::setStartPoint(const QPoint& _globalPoint)
 {
-    QPoint localStartPoint = mapFromGlobal(_point);
+    QPoint localStartPoint = mapFromGlobal(_globalPoint);
     if (m_startPoint != localStartPoint) {
         m_startPoint = localStartPoint;
     }
+}
+
+QPoint CircleFillDecorator::startPoint() const
+{
+    return mapToGlobal(m_startPoint);
 }
 
 int CircleFillDecorator::radius() const

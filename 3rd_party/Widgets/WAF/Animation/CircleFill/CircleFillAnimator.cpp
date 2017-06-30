@@ -17,7 +17,8 @@ CircleFillAnimator::CircleFillAnimator(QWidget* _widgetForFill) :
 {
     Q_ASSERT(_widgetForFill);
 
-    m_animation->setDuration(500);
+    m_animation->setEasingCurve(QEasingCurve::InCubic);
+    m_animation->setDuration(400);
 
     m_decorator->setAttribute(Qt::WA_TransparentForMouseEvents);
     m_decorator->hide();
@@ -30,9 +31,9 @@ CircleFillAnimator::CircleFillAnimator(QWidget* _widgetForFill) :
     });
 }
 
-void CircleFillAnimator::setStartPoint(const QPoint& _point)
+void CircleFillAnimator::setStartPoint(const QPoint& _globalPoint)
 {
-    m_decorator->setStartPoint(_point);
+    m_decorator->setStartPoint(_globalPoint);
 }
 
 void CircleFillAnimator::setFillColor(const QColor& _color)
@@ -66,8 +67,12 @@ void CircleFillAnimator::fillIn()
     //
     // Определим стартовые и финальные позиции для декораций
     //
-    int startRadius = 0;
-    int finalRadius = sqrt(widgetForFill()->height()*widgetForFill()->height() + widgetForFill()->width()*widgetForFill()->width());
+    const int startRadius = 0;
+    //
+    const QPoint startPoint = widgetForFill()->mapFromGlobal(m_decorator->startPoint());
+    const int w = qMax(startPoint.x(), widgetForFill()->width() - startPoint.x());
+    const int h = qMax(startPoint.y(), widgetForFill()->height() - startPoint.y());
+    const int finalRadius = sqrt(w*w + h*h);
 
     //
     // Позиционируем декораторы
@@ -115,7 +120,8 @@ void CircleFillAnimator::fillOut()
     //
     // Определим стартовые и финальные позиции для декораций
     //
-    int startRadius = sqrt(widgetForFill()->height()*widgetForFill()->height() + widgetForFill()->width()*widgetForFill()->width());
+    int startRadius = sqrt(widgetForFill()->height() * widgetForFill()->height()
+                           + widgetForFill()->width() * widgetForFill()->width());
     int finalRadius = 0;
 
     //
@@ -158,7 +164,7 @@ void CircleFillAnimator::hideDecorator()
     hideEffect->setOpacity(1.);
 
     QPropertyAnimation* hideAnimation = new QPropertyAnimation(hideEffect, "opacity", m_decorator);
-    hideAnimation->setDuration(400);
+    hideAnimation->setDuration(200);
     hideAnimation->setStartValue(1.);
     hideAnimation->setEndValue(0.);
     connect(hideAnimation, &QPropertyAnimation::finished, [=] {

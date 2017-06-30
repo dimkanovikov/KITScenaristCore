@@ -88,12 +88,19 @@ void ProjectFileWidget::setMouseHover(bool _hover)
 
 void ProjectFileWidget::mouseReleaseEvent(QMouseEvent* _event)
 {
+
     //
     // Выполняем событие, только если курсор так и остался на виджете
     //
     if (rect().contains(_event->pos())) {
         emit clicked();
         QWidget::mousePressEvent(_event);
+
+#ifdef MOBILE_OS
+        QColor color = palette().text().color();
+        color.setAlphaF(0.05);
+        WAF::Animation::circleFillIn(this, _event->globalPos(), color);
+#endif
     }
 }
 

@@ -43,7 +43,7 @@ namespace WAF
         /**
          * @brief Установить точку начала анимации
          */
-        void setStartPoint(const QPoint& _point);
+        void setStartPoint(const QPoint& _globalPoint);
 
         /**
          * @brief Установить цвет заливки

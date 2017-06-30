@@ -41,7 +41,12 @@ namespace WAF
 		/**
 		 * @brief Установить точку центра круга
 		 */
-		void setStartPoint(const QPoint& _point);
+        void setStartPoint(const QPoint& _globalPoint);
+
+        /**
+         * @brief Получить точку центра круга в глобальных координатах
+         */
+        QPoint startPoint() const;
 
 		/**
 		 * @brief Радиус рисуемой окружности
