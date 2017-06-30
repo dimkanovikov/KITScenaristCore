@@ -104,6 +104,8 @@ void QLightBoxMessage::initView()
 
 #ifndef MOBILE_OS
     setMinimumWidth(500);
+#else
+    setMinimumWidth(260);
 #endif
 }
 

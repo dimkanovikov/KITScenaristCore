@@ -157,7 +157,7 @@ QPushButton[side-nav-subheader=true] {
 }
 
 QPushButton[flat=true] {
-    min-width: 88dp;
+    min-width: 40dp;
     height: 40dp;
     border: none;
     background-color: transparent;
@@ -179,7 +179,7 @@ QPushButton[flat-black=true] {
 }
 
 QPushButton[raised=true] {
-    min-width: 88dp;
+    min-width: 40dp;
     height: 40dp;
     background-color: palette(highlight);
     color: palette(highlighted-text);

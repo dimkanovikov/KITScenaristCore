@@ -38,12 +38,20 @@ void ProjectFileWidget::setProjectInfo(const QString& _projectInfo)
 
 void ProjectFileWidget::configureOptions(bool _isRemote, bool _isOwner)
 {
+#ifndef MOBILE_OS
     m_ui->change->setVisible(_isRemote && _isOwner);
     m_ui->remove->setVisible(_isRemote);
     m_ui->share->setVisible(_isRemote && _isOwner);
     m_ui->shareDetails->setVisible(_isRemote);
 
     m_ui->hide->setVisible(!_isRemote);
+#else
+    m_ui->change->setVisible(_isOwner);
+    m_ui->share->setVisible(_isRemote && _isOwner);
+    m_ui->shareDetails->setVisible(_isRemote);
+
+    m_ui->hide->hide();
+#endif
 }
 
 void ProjectFileWidget::addCollaborator(const QString& _email, const QString& _name, const QString& _role, bool _isOwner)

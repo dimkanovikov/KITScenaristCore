@@ -59,6 +59,7 @@ QAbstractItemModel* ProjectsManager::recentProjects()
         item->setData(project.displayName(), Qt::DisplayRole);
         item->setData(project.displayPath(), Qt::StatusTipRole);
         item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
+        item->setData(true, Qt::UserRole + 1);
         recentProjectsModel->appendRow(item);
     }
 
