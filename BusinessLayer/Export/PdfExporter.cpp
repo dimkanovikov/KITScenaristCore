@@ -14,6 +14,7 @@
 #include <QApplication>
 #include <QString>
 #include <QPainter>
+#include <QPdfWriter>
 #include <QPrinter>
 #include <QPrintPreviewDialog>
 #include <QScrollArea>
@@ -133,6 +134,7 @@ namespace {
         _painter->restore();
     }
 
+#ifndef MOBILE_OS
     /**
      * @brief Напечатать документ
      * @note Адаптация функции QTextDocument::print
@@ -221,6 +223,71 @@ namespace {
                 _printer->newPage();
         }
     }
+#else
+    /**
+     * @brief Напечатать документ
+     * @note Адаптация функции QTextDocument::print
+     */
+    static void printDocument(QTextDocument* _document, QPdfWriter* _printer)
+    {
+        QPainter painter(_printer);
+        // Check that there is a valid device to print to.
+        if (!painter.isActive())
+            return;
+        QScopedPointer<QTextDocument> clonedDoc;
+        (void)_document->documentLayout(); // make sure that there is a layout
+        QRectF body = QRectF(QPointF(0, 0), _document->pageSize());
+
+        {
+            qreal sourceDpiX = painter.device()->logicalDpiX();
+            qreal sourceDpiY = sourceDpiX;
+            QPaintDevice *dev = _document->documentLayout()->paintDevice();
+            if (dev) {
+                sourceDpiX = dev->logicalDpiX();
+                sourceDpiY = dev->logicalDpiY();
+            }
+            const qreal dpiScaleX = qreal(_printer->logicalDpiX()) / sourceDpiX;
+            const qreal dpiScaleY = qreal(_printer->logicalDpiY()) / sourceDpiY;
+            // scale to dpi
+            painter.scale(dpiScaleX, dpiScaleY);
+            QSizeF scaledPageSize = _document->pageSize();
+            scaledPageSize.rwidth() *= dpiScaleX;
+            scaledPageSize.rheight() *= dpiScaleY;
+            const QSizeF printerPageSize(_printer->pageSize());
+            // scale to page
+            painter.scale(printerPageSize.width() / scaledPageSize.width(),
+                    printerPageSize.height() / scaledPageSize.height());
+        }
+
+        int docCopies = 1;
+        int pageCopies = 1;
+        int fromPage = 1;
+        int toPage = _document->pageCount();
+        bool ascending = true;
+        // paranoia check
+        fromPage = qMax(1, fromPage);
+        toPage = qMin(_document->pageCount(), toPage);
+        for (int i = 0; i < docCopies; ++i) {
+            int page = fromPage;
+            while (true) {
+                for (int j = 0; j < pageCopies; ++j) {
+                    printPage(page, &painter, _document, body, _printer->margins());
+                    if (j < pageCopies - 1)
+                        _printer->newPage();
+                }
+                if (page == toPage)
+                    break;
+                if (ascending)
+                    ++page;
+                else
+                    --page;
+                _printer->newPage();
+            }
+            if ( i < docCopies - 1)
+                _printer->newPage();
+        }
+    }
+#endif
 
     /**
      * @brief Прокрутить диалог предпросмотра к заданной позиции
@@ -266,7 +333,14 @@ void PdfExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
     //
     // Настроим принтер
     //
+#ifndef MOBILE_OS
     QPrinter* printer = preparePrinter(_exportParameters.filePath);
+#else
+    QPdfWriter* printer = new QPdfWriter(_exportParameters.filePath);
+    printer->setPageSize(QPageSize(::exportStyle().pageSizeId()));
+    QMarginsF margins = ::exportStyle().pageMargins();
+    printer->setPageMargins(margins, QPageLayout::Millimeter);
+#endif
 
     //
     // Сформируем документ
@@ -289,6 +363,7 @@ void PdfExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
     preparedDocument = 0;
 }
 
+#ifndef MOBILE_OS
 void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParameters& _exportParameters)
 {
     //
@@ -369,3 +444,4 @@ QPrinter* PdfExporter::preparePrinter(const QString& _forFile) const
 
     return printer;
 }
+#endif

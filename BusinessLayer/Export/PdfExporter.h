@@ -30,10 +30,12 @@ namespace BusinessLogic
 		 */
 		void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const;
 
+#ifndef MOBILE_OS
 		/**
 		 * @brief Предварительный просмотр и печать
 		 */
 		void printPreview(ScenarioDocument* _scenario, const ExportParameters& _exportParameters);
+#endif
 
     signals:
         /**
@@ -41,11 +43,12 @@ namespace BusinessLogic
          */
         void printed();
 
+#ifndef MOBILE_OS
 	private slots:
 		/**
 		 * @brief Печатать
 		 */
-		void aboutPrint(QPrinter* _printer);
+        void aboutPrint(QPrinter* _printer);
 
 	private:
 		/**
@@ -54,6 +57,7 @@ namespace BusinessLogic
 		 * @note Вызывающий получает владение над новым сформированным документом
 		 */
 		QPrinter* preparePrinter(const QString& _forFile = QString::null) const;
+#endif
 
 	private:
 		/**
