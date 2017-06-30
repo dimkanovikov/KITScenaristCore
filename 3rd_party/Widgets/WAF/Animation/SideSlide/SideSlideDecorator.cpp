@@ -30,7 +30,7 @@ SideSlideDecorator::SideSlideDecorator(QWidget* _parent) :
     m_timeline.setUpdateInterval(40);
     m_timeline.setEasingCurve(QEasingCurve::OutQuad);
     m_timeline.setStartFrame(0);
-    m_timeline.setEndFrame(10000);
+    m_timeline.setEndFrame(16000);
 
     m_decorationColor = QColor(0, 0, 0, 0);
 
