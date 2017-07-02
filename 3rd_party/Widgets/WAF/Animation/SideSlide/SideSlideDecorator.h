@@ -30,7 +30,7 @@ namespace WAF
         /**
          * @brief Сохранить изображение родительского виджета
          */
-        void grabParent();
+        void grabParentSize();
 
         /**
          * @brief Задекорировать фон

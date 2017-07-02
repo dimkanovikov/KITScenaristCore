@@ -32,15 +32,16 @@ QToolButton[fab=true] {
  */
 QToolButton[projectAction=true] {
     background: palette(alternate-base);
-    color: palette(button-text);
     border: none;
     min-width: 40dp;
     icon-size: 24dp;
+    margin-left: 0dp;
+    margin-right: 0dp;
     padding-top: 1dp;
     padding-bottom: 1dp;
 }
 
-QToolButton:pressed[projectAction=true] {
+QToolButton[projectAction=true]:pressed {
     padding-top: 2dp;
     padding-bottom: 0dp;
 }
@@ -256,19 +257,19 @@ QLabel[indicatorIcon=true] {
 [lightBoxDialogTitle=true] {
     font-weight: 500;
     font-size: 20pt;
-    background-color: palette(base);
+    background-color: palette(window);
     border: none;
     padding: 24dp 24dp 0dp 24dp;
 }
 
 [lightBoxDialogCentralWidget=true] {
-    background-color: palette(base);
+    background-color: palette(window);
     border: none;
     padding: 20dp 0dp 8dp 0dp;
 }
 
 [lightBoxMessageText=true] {
-    background-color: palette(base);
+    background-color: palette(window);
     border: none;
     padding: 0dp 24dp 24dp 24dp;
 }
@@ -278,22 +279,22 @@ QLabel[indicatorIcon=true] {
  */
 [materialLineEditLabel=true] {
     margin-left: 1dp;
-    font-size: 11dp;
     color: palette(mid);
+    font-size: 12pt;
 }
 
 [materialLineEdit=true] {
-    font-size: 14dp;
     background-color: transparent;
     border: none;
     border-bottom: 1dp solid palette(text);
+    font-size: 16pt;
+    height: 40dp;
     margin: 0;
     margin-bottom: 1dp;
     padding: 0;
 }
 
 [materialLineEdit=true]:disabled {
-    font-size: 14dp;
     background-color: transparent;
     border: none;
     border-bottom: 1dp dashed palette(dark);
@@ -303,7 +304,6 @@ QLabel[indicatorIcon=true] {
 }
 
 [materialLineEdit=true]:hover {
-    font-size: 14dp;
     background-color: transparent;
     border: none;
     border-bottom: 2dp solid palette(text);
@@ -313,7 +313,6 @@ QLabel[indicatorIcon=true] {
 }
 
 [materialLineEdit=true]:focus {
-    font-size: 14dp;
     background-color: transparent;
     border: none;
     border-bottom: 2dp solid palette(highlight);
@@ -324,28 +323,28 @@ QLabel[indicatorIcon=true] {
 
 [materialLineEditHelper=true] {
     margin-left: 1dp;
-    font-size: 11dp;
     color: palette(mid);
+    font-size: 12pt;
 }
 
 [materialLineEditHelper=false], [materialLineEditLabel=false] {
     color: #ff1744;
     margin-left: 1dp;
-    font-size: 11dp;
+    font-size: 12pt;
 }
 
 [materialLineEdit=false] {
-    font-size: 14dp;
     background-color: transparent;
     border: none;
     border-bottom: 1dp solid #ff1744;
+    height: 40dp;
     margin: 0;
     margin-bottom: 1dp;
     padding: 0;
+    font-size: 16pt;
 }
 
 [materialLineEdit=false]:hover, [materialLineEdit=false]:focus {
-    font-size: 14dp;
     background-color: transparent;
     border: none;
     border-bottom: 2dp solid #ff1744;

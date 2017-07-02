@@ -61,7 +61,7 @@ protected:
     /**
      * @brief Переопределяем, чтобы перехватывать событие фокуса поля ввода
      */
-    bool eventFilter(QObject* _watched, QEvent* _event);
+    bool eventFilter(QObject* _watched, QEvent* _event) override;
 
 private:
     /**

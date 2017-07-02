@@ -43,6 +43,8 @@ SideSlideAnimator::SideSlideAnimator(QWidget* _widgetForSlide) :
         setAnimatedStopped();
         if (isAnimatedForward()) {
             widgetForSlide()->move(m_decorator->slidePos());
+            widgetForSlide()->raise();
+            widgetForSlide()->show();
         } else {
             m_decorator->hide();
         }
@@ -87,8 +89,6 @@ void SideSlideAnimator::slideIn()
     // Прячем виджет для анимирования
     //
     widgetForSlide()->lower();
-    widgetForSlide()->move(-widgetForSlide()->width(), -widgetForSlide()->height());
-    widgetForSlide()->show();
     widgetForSlide()->resize(widgetForSlide()->sizeHint());
 
     //
@@ -142,7 +142,7 @@ void SideSlideAnimator::slideIn()
     if (m_decorateBackground) {
         m_decorator->setParent(topWidget);
         m_decorator->move(0, 0);
-        m_decorator->grabParent();
+        m_decorator->grabParentSize();
         m_decorator->show();
         m_decorator->raise();
     }
@@ -312,14 +312,10 @@ bool SideSlideAnimator::eventFilter(QObject* _object, QEvent* _event)
         //
         m_decorator->grabSlideWidget(widgetForSlide());
 
-#if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
         //
-        // В андройде нужно перерисовать фоновое изображение
+        // Обновим размер декоратора
         //
-        m_decorator->hide();
-        m_decorator->grabParent();
-        m_decorator->show();
-#endif
+        m_decorator->grabParentSize();
     }
 
     return QObject::eventFilter(_object, _event);

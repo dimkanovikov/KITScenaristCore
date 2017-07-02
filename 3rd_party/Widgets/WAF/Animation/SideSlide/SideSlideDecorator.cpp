@@ -24,7 +24,7 @@ using WAF::SideSlideDecorator;
 SideSlideDecorator::SideSlideDecorator(QWidget* _parent) :
     QWidget(_parent)
 {
-    resize(maximumSize());
+    resize(_parent->size());
 
     m_timeline.setDuration(260);
     m_timeline.setUpdateInterval(40);
@@ -48,15 +48,9 @@ void SideSlideDecorator::grabSlideWidget(QWidget* _slideWidget)
     m_slideWidgetPixmap = _slideWidget->grab();
 }
 
-void SideSlideDecorator::grabParent()
+void SideSlideDecorator::grabParentSize()
 {
-#if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
-    //
-    // В андройде Qt не умеет рисовать прозрачные виджеты https://bugreports.qt.io/browse/QTBUG-43635
-    // поэтому сохранем картинку с изображением подложки
-    //
-    m_backgroundPixmap = parentWidget()->grab();
-#endif
+    resize(parentWidget()->size());
 }
 
 void SideSlideDecorator::decorate(bool _dark)

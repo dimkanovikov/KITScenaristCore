@@ -1,6 +1,7 @@
 #include "MaterialLineEdit.h"
 
 #include <QEvent>
+#include <QInputMethodEvent>
 #include <QLabel>
 #include <QLineEdit>
 #include <QVBoxLayout>
@@ -74,10 +75,18 @@ void MaterialLineEdit::setEchoMode(QLineEdit::EchoMode _mode)
 
 bool MaterialLineEdit::eventFilter(QObject* _watched, QEvent* _event)
 {
-    if (_watched == m_lineEdit
-        && (_event->type() == QEvent::FocusIn
-            || _event->type() == QEvent::FocusOut)) {
-        updatePlaceholder();
+    if (_watched == m_lineEdit) {
+        if (_event->type() == QEvent::FocusIn
+            || _event->type() == QEvent::FocusOut) {
+            updatePlaceholder();
+        } else if (_event->type() == QEvent::InputMethod) {
+            QInputMethodEvent* event = static_cast<QInputMethodEvent*>(_event);
+            QString text = m_lineEdit->text();
+            if (event->replacementStart() >= 0) {
+                text += event->preeditString();
+            }
+            emit textChanged(text);
+        }
     }
 
     return QWidget::eventFilter(_watched, _event);
@@ -99,7 +108,7 @@ void MaterialLineEdit::updatePlaceholder()
         m_lineEdit->setPlaceholderText(m_placeholder);
         m_label->clear();
     } else {
-        m_lineEdit->setPlaceholderText(QString::null);
+        m_lineEdit->setPlaceholderText(QString());
         m_label->setText(m_placeholder);
     }
 }
