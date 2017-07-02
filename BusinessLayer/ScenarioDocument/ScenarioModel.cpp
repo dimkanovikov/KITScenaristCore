@@ -6,6 +6,7 @@
 
 #include <3rd_party/Helpers/TextEditHelper.h>
 
+#include <QApplication>
 #include <QMimeData>
 
 using namespace BusinessLogic;
@@ -230,6 +231,13 @@ QVariant ScenarioModel::data(const QModelIndex& _index, int _role) const
 
         case Qt::DecorationRole: {
             result = QVariant::fromValue(item->icon());
+            break;
+        }
+
+        case Qt::ToolTipRole: {
+            if (QApplication::keyboardModifiers().testFlag(Qt::ControlModifier)) {
+                result = item->fullText();
+            }
             break;
         }
 
