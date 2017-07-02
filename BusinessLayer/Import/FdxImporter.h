@@ -6,19 +6,19 @@
 
 namespace BusinessLogic
 {
-	/**
-	 * @brief Импортер FDX-документов
-	 */
-	class FdxImporter : public AbstractImporter
-	{
-	public:
-		FdxImporter();
+    /**
+     * @brief Импортер FDX-документов
+     */
+    class FdxImporter : public AbstractImporter
+    {
+    public:
+        FdxImporter();
 
-		/**
-		 * @brief Импорт сценария из документа
-		 */
-		QString importScenario(const ImportParameters& _importParameters) const;
-	};
+        /**
+         * @brief Импорт сценария из документа
+         */
+        QString importScenario(const ImportParameters& _importParameters) const override;
+    };
 }
 
 #endif // FDXIMPORTER_H
