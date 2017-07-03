@@ -9,6 +9,7 @@
 #include <QFileInfo>
 #include <QList>
 #include <QStandardItemModel>
+#include <QStandardPaths>
 #include <QXmlStreamReader>
 
 using ManagementLayer::ProjectsManager;
@@ -289,6 +290,11 @@ void ProjectsManager::hideProjectFromLocal(const QModelIndex& _index)
 {
     m_recentProjects.removeAt(_index.row());
     emit recentProjectsUpdated();
+}
+
+QString ProjectsManager::defaultLocation()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 }
 
 void ProjectsManager::refreshProjects()
