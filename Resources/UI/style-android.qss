@@ -274,6 +274,20 @@ QLabel[indicatorIcon=true] {
     padding: 0dp 24dp 24dp 24dp;
 }
 
+[lightBoxProgressTitle=true] {
+    font-weight: 500;
+    font-size: 20pt;
+    color: palette(window);
+    border: none;
+    padding: 24dp 24dp 0dp 24dp;
+}
+
+[lightBoxProgressDescription=true] {
+    color: palette(window);
+    border: none;
+    padding: 0dp 24dp 24dp 24dp;
+}
+
 /*
  * Стиль материального поля ввода
  */

@@ -77,7 +77,6 @@ void CircleFillAnimator::fillIn()
     //
     // Позиционируем декораторы
     //
-    m_decorator->resize(widgetForFill()->size());
     m_decorator->move(0, 0);
     m_decorator->show();
     m_decorator->raise();
@@ -127,7 +126,6 @@ void CircleFillAnimator::fillOut()
     //
     // Позиционируем декораторы
     //
-    m_decorator->resize(widgetForFill()->size());
     m_decorator->move(0, 0);
     m_decorator->show();
     m_decorator->raise();

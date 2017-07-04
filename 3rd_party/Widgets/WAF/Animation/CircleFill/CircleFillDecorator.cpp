@@ -50,6 +50,11 @@ void CircleFillDecorator::setFillColor(const QColor& _fillColor)
 
 void CircleFillDecorator::paintEvent(QPaintEvent* _event)
 {
+    if (size() != parentWidget()->size()) {
+        resize(parentWidget()->size());
+        return;
+    }
+
     QPainter painter(this);
     painter.setPen(m_fillColor);
     painter.setBrush(m_fillColor);
