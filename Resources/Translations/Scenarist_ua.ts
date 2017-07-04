@@ -112,6 +112,10 @@
         <source>File exists. It will be replaced after creating.</source>
         <translation>Файл існує. Він буде замінений після створення.</translation>
     </message>
+    <message>
+        <source>Sorry, but you need to have active internet connection for creating new projects in cloud.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLayer::FountainExporter</name>
@@ -1177,6 +1181,10 @@
         <source>Português</source>
         <translation></translation>
     </message>
+    <message>
+        <source>فارْسِى</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LocationsDataEdit</name>
@@ -2087,7 +2095,7 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>/file/path</source>
-        <translation>/файл/шлях</translation>
+        <translation type="vanished">/файл/шлях</translation>
     </message>
     <message>
         <source>Change project name</source>
@@ -2107,6 +2115,10 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>Show cowriters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project Info</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2985,6 +2997,10 @@ Paragraph</source>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Compact Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -3128,6 +3144,10 @@ Paragraph</source>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Used 0 Gb from 0 Gb</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3601,6 +3621,10 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Choose file to import</source>
         <translation>Виберіть файл для імпорту</translation>
+    </message>
+    <message>
+        <source>New Project</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4224,6 +4248,10 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
 but if you work with no terminations it saves project every %1 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Farsi</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ShareDialog</name>
@@ -4253,6 +4281,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Used %1 Gb from %2 Gb</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

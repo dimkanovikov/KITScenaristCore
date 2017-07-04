@@ -116,6 +116,10 @@
         <source>Advanced</source>
         <translation>Avançado</translation>
     </message>
+    <message>
+        <source>Sorry, but you need to have active internet connection for creating new projects in cloud.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLayer::FountainExporter</name>
@@ -1189,6 +1193,10 @@
         <source>Português</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>فارْسِى</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LocationsDataEdit</name>
@@ -1994,7 +2002,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>/file/path</source>
-        <translation>/arquivo/caminho</translation>
+        <translation type="vanished">/arquivo/caminho</translation>
     </message>
     <message>
         <source>Change project name</source>
@@ -2014,6 +2022,10 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Show cowriters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project Info</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2893,6 +2905,10 @@ Parágrafo</translation>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Compact Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -3033,6 +3049,10 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     <message>
         <source>Projects from kitscenarist.ru</source>
         <translation>Projetos de kitscenarist.ru</translation>
+    </message>
+    <message>
+        <source>Used 0 Gb from 0 Gb</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3507,6 +3527,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Choose file to import</source>
         <translation>Escolha o arquivo a ser importado</translation>
+    </message>
+    <message>
+        <source>New Project</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4130,6 +4154,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
 but if you work with no terminations it saves project every %1 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Farsi</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ShareDialog</name>
@@ -4155,6 +4183,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Used %1 Gb from %2 Gb</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
