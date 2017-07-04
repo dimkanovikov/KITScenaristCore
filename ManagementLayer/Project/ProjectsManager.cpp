@@ -31,6 +31,15 @@ const ManagementLayer::Project& ProjectsManager::currentProject()
     return s_currentProject;
 }
 
+QString ProjectsManager::defaultLocation()
+{
+#ifdef MOBILE_OS
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+#else
+    return QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+#endif
+}
+
 Project ProjectsManager::s_currentProject;
 
 
@@ -290,11 +299,6 @@ void ProjectsManager::hideProjectFromLocal(const QModelIndex& _index)
 {
     m_recentProjects.removeAt(_index.row());
     emit recentProjectsUpdated();
-}
-
-QString ProjectsManager::defaultLocation()
-{
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 }
 
 void ProjectsManager::refreshProjects()

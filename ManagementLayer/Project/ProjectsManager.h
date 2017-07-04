@@ -29,6 +29,11 @@ namespace ManagementLayer
 		 */
 		static const Project& currentProject();
 
+        /**
+         * @brief Получить директорию для проектов
+         */
+        static QString defaultLocation();
+
 	private:
 		/**
 		 * @brief Текущий проект
@@ -90,12 +95,7 @@ namespace ManagementLayer
 		/**
 		 * @brief Скрыть проект из списка локальных проектов
 		 */
-		void hideProjectFromLocal(const QModelIndex& _index);
-
-        /**
-         * @brief Получить директорию для проектов
-         */
-        static QString defaultLocation();
+        void hideProjectFromLocal(const QModelIndex& _index);
 
 	public slots:
 		/**
