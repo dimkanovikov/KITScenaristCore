@@ -295,6 +295,14 @@ ManagementLayer::Project ProjectsManager::project(const QModelIndex& _index, boo
             : m_remoteProjects.value(_index.row());
 }
 
+ManagementLayer::Project& ProjectsManager::project(const QModelIndex& _index, bool _isLocal)
+{
+    return
+            _isLocal
+            ? m_recentProjects[_index.row()]
+            : m_remoteProjects[_index.row()];
+}
+
 void ProjectsManager::hideProjectFromLocal(const QModelIndex& _index)
 {
     m_recentProjects.removeAt(_index.row());

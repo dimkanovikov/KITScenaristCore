@@ -1,6 +1,7 @@
 #include "qlightboxinputdialog.h"
 
 #include <3rd_party/Helpers/ScrollerHelper.h>
+#include <3rd_party/Widgets/MaterialLineEdit/MaterialLineEdit.h>
 #include <3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.h>
 
 #include <QDialogButtonBox>
@@ -20,7 +21,11 @@ QString QLightBoxInputDialog::getText(QWidget* _parent, const QString& _title, c
 {
     QLightBoxInputDialog dialog(_parent);
     dialog.setWindowTitle(_title);
+#ifndef MOBILE_OS
     dialog.m_label->setText(_label);
+#else
+    dialog.m_lineEdit->setLabel(_label);
+#endif
     dialog.m_lineEdit->setText(_text);
     dialog.m_lineEdit->setProperty(::focusProperty, true);
     dialog.m_textEdit->hide();
@@ -93,7 +98,12 @@ QString QLightBoxInputDialog::getItem(QWidget* _parent, const QString& _title, c
 QLightBoxInputDialog::QLightBoxInputDialog(QWidget* _parent, bool _isContentStretchable) :
     QLightBoxDialog(_parent, true, _isContentStretchable),
     m_label(new QLabel(this)),
+#ifndef MOBILE_OS
     m_lineEdit(new QLineEdit(this)),
+#else
+    m_lineEdit(new MaterialLineEdit(this)),
+#endif
+
     m_textEdit(new SimpleTextEditorWidget(this)),
     m_listWidget(new QListWidget(this)),
     m_buttons(new QDialogButtonBox(this))

@@ -5,7 +5,11 @@
 
 class QDialogButtonBox;
 class QLabel;
+#ifndef MOBILE_OS
 class QLineEdit;
+#else
+class MaterialLineEdit;
+#endif
 class QListWidget;
 class SimpleTextEditorWidget;
 
@@ -58,27 +62,31 @@ private:
     /**
      * @brief Текстовая метка
      */
-    QLabel* m_label;
+    QLabel* m_label = nullptr;
 
     /**
      * @brief Поле для текстового ввода
      */
-    QLineEdit* m_lineEdit;
+#ifndef MOBILE_OS
+    QLineEdit* m_lineEdit = nullptr;
+#else
+    MaterialLineEdit* m_lineEdit = nullptr;
+#endif
 
     /**
      * @brief Поле для ввода большого кол-ва текста
      */
-    SimpleTextEditorWidget* m_textEdit;
+    SimpleTextEditorWidget* m_textEdit = nullptr;
 
     /**
      * @brief Виджет для обработки списковых операций
      */
-    QListWidget* m_listWidget;
+    QListWidget* m_listWidget = nullptr;
 
     /**
      * @brief Кнопки диалога
      */
-    QDialogButtonBox* m_buttons;
+    QDialogButtonBox* m_buttons = nullptr;
 };
 
 #endif // QLIGHTBOXINPUTDIALOG_H

@@ -146,7 +146,14 @@ QString Project::displayPath() const
 
 QString Project::path() const
 {
-	return m_path;
+    return m_path;
+}
+
+void Project::setPath(const QString& _path)
+{
+    if (m_path != _path) {
+        m_path = _path;
+    }
 }
 
 QDateTime Project::lastEditDatetime() const

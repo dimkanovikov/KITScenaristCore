@@ -91,6 +91,7 @@ namespace ManagementLayer
 		 * @brief Получить проект
 		 */
 		Project project(const QModelIndex& _index, bool _isLocal = true) const;
+        Project& project(const QModelIndex& _index, bool _isLocal = true);
 
 		/**
 		 * @brief Скрыть проект из списка локальных проектов
