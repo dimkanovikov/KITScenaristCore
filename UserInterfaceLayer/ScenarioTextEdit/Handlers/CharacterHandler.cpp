@@ -380,15 +380,17 @@ void CharacterHandler::storeCharacter() const
 		// Получим необходимые значения
 		//
 		// ... курсор в текущем положении
-		QTextCursor cursor = editor()->textCursor();
+        const QTextCursor cursor = editor()->textCursor();
 		// ... блок текста в котором находится курсор
-		QTextBlock currentBlock = cursor.block();
+        const QTextBlock currentBlock = cursor.block();
 		// ... текст блока
-		QString currentBlockText = currentBlock.text();
+        const QString currentBlockText = currentBlock.text();
+        // ... текст до курсора
+        const QString cursorBackwardText = currentBlockText.left(cursor.positionInBlock());
 		// ... имя персонажа
-		QString characterName = CharacterParser::name(currentBlockText);
+        const QString characterName = CharacterParser::name(cursorBackwardText);
 		// ... состояние персонажа
-		QString characterState = CharacterParser::state(currentBlockText);
+        const QString characterState = CharacterParser::state(cursorBackwardText);
 
 		//
 		// Сохраняем персонажа

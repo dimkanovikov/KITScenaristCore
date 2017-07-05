@@ -402,34 +402,36 @@ void SceneHeadingHandler::storeSceneParameters() const
         // Получим необходимые значения
         //
         // ... курсор в текущем положении
-        QTextCursor cursor = editor()->textCursor();
+        const QTextCursor cursor = editor()->textCursor();
         // ... блок текста в котором находится курсор
-        QTextBlock currentBlock = cursor.block();
+        const QTextBlock currentBlock = cursor.block();
         // ... текст блока
-        QString currentBlockText = currentBlock.text();
+        const QString currentBlockText = currentBlock.text();
+        // ... текст до курсора
+        const QString cursorBackwardText = currentBlockText.left(cursor.positionInBlock());
 
         //
         // Сохраняем время
         //
-        QString placeName = SceneHeadingParser::placeName(currentBlockText);
+        const QString placeName = SceneHeadingParser::placeName(cursorBackwardText);
         StorageFacade::placeStorage()->storePlace(placeName);
 
         //
         // Сохраняем локацию
         //
-        QString locationName = SceneHeadingParser::locationName(currentBlockText);
+        const QString locationName = SceneHeadingParser::locationName(cursorBackwardText);
         StorageFacade::researchStorage()->storeLocation(locationName);
 
         //
         // Сохраняем место
         //
-        QString timeName = SceneHeadingParser::timeName(currentBlockText);
+        const QString timeName = SceneHeadingParser::timeName(cursorBackwardText);
         StorageFacade::timeStorage()->storeTime(timeName);
 
         //
         // Сохраняем сценарный день
         //
-        QString scenarioDayName = SceneHeadingParser::scenarioDayName(currentBlockText);
+        const QString scenarioDayName = SceneHeadingParser::scenarioDayName(cursorBackwardText);
         StorageFacade::scenarioDayStorage()->storeScenarioDay(scenarioDayName);
     }
 }
