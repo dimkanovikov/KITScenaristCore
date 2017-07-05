@@ -73,6 +73,13 @@ void MaterialLineEdit::setEchoMode(QLineEdit::EchoMode _mode)
     m_lineEdit->setEchoMode(_mode);
 }
 
+void MaterialLineEdit::setUseEmailKeyboard(bool _use)
+{
+    if (_use) {
+        m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints() | Qt::ImhEmailCharactersOnly);
+    }
+}
+
 bool MaterialLineEdit::eventFilter(QObject* _watched, QEvent* _event)
 {
     if (_watched == m_lineEdit) {

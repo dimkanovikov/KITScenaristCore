@@ -51,6 +51,11 @@ public:
      */
     void setEchoMode(QLineEdit::EchoMode _mode);
 
+    /**
+     * @brief Установить необходимость использовать специальную клавиатуру для ввода email-адреса
+     */
+    void setUseEmailKeyboard(bool _use);
+
 signals:
     /**
      * @brief Изменился текст в поле ввода
