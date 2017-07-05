@@ -42,8 +42,10 @@ public slots:
 	/**
 	 * @brief Применить выбранный в подстановщике элемент
 	 */
+    /** @{ */
 	void applyCompletion();
 	void applyCompletion(const QString& _completion);
+    /** @} */
 
 	/**
 	 * @brief Закрыть подстановщика, если открыт

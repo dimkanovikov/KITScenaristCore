@@ -1,30 +1,125 @@
 #include "CompletableTextEdit.h"
 
+#include <3rd_party/Helpers/StyleSheetHelper.h>
+#include <3rd_party/Widgets/WAF/Animation/Animation.h>
+
 #include <QAbstractItemView>
+#include <QApplication>
 #include <QCompleter>
 #include <QEvent>
+#include <QListView>
 #include <QScrollBar>
+#include <QStyledItemDelegate>
 
 namespace {
+#ifdef MOBILE_OS
+    /**
+     * @brief Делегат для отрисовки текста по центру
+     */
+    class CenteredTextDelegate : public QStyledItemDelegate
+    {
+    public:
+        CenteredTextDelegate(QObject* _parent) : QStyledItemDelegate(_parent) {}
+
+        void paint(QPainter* _painter, const QStyleOptionViewItem& _option, const QModelIndex& _index) const{
+            QStyleOptionViewItem myOption = _option;
+            myOption.displayAlignment = Qt::AlignCenter;
+            QStyledItemDelegate::paint(_painter, myOption, _index);
+        }
+    };
+
+    const int COMPLETER_MAX_ITEMS = 3;
+    const int COMPLETER_ITEM_HEIGHT = 40;
+
+    /**
+     * @brief Переопределяем комплитер, чтобы показывать список красиво
+     */
 	class MyCompleter : public QCompleter
 	{
 	public:
-		explicit MyCompleter(QObject* _p = 0) : QCompleter(_p) {}
+        explicit MyCompleter(QObject* _p = 0) :
+            QCompleter(_p),
+            m_popup(new QListView),
+            m_popupDelegate(new CenteredTextDelegate(m_popup))
+        {
+            m_popup->installEventFilter(this);
+            m_popup->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+            m_popup->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+            const QString styleSheet =
+                    QString("QListView { show-decoration-selected: 0; }"
+                            "QListView::item, QListView::item:selected { text-align: center; height: %1px; "
+                            "border: none; border-bottom: 1dp solid palette(highlighted-text); "
+                            "background-color: palette(highlight); color: palette(highlighted-text); }")
+                    .arg(StyleSheetHelper::dpToPx(COMPLETER_ITEM_HEIGHT));
+            m_popup->setStyleSheet(styleSheet);
+
+            setPopup(m_popup);
+            setMaxVisibleItems(COMPLETER_MAX_ITEMS);
+        }
 
 		/**
 		 * @brief Переопределяется для отображения подсказки по глобальной координате
 		 *		  левого верхнего угла области для отображения
 		 */
 		void completeReimpl(const QRect& _rect) {
-			complete(_rect);
-			popup()->move(_rect.topLeft());
+            complete(_rect);
+            m_popup->setWindowFlags(Qt::Widget);
+            m_popup->setItemDelegate(m_popupDelegate);
+            m_popup->setParent(qobject_cast<QWidget*>(parent()));
+            m_popup->setFixedHeight(
+                        qMin(completionCount(),
+                             COMPLETER_MAX_ITEMS) * StyleSheetHelper::dpToPx(COMPLETER_ITEM_HEIGHT));
+            m_popup->setFixedWidth(m_popup->parentWidget()->width());
+            WAF::Animation::sideSlideIn(m_popup, WAF::TopSide, false);
 		}
+
+    protected:
+        /**
+         * @brief Переопределяем, чтобы скрывать декорации, во время закрытия попапа
+         */
+        bool eventFilter(QObject* _watched, QEvent* _event) {
+            if (_watched == m_popup
+                && m_popup->parentWidget() != nullptr
+                && _event->type() == QEvent::Hide) {
+                WAF::Animation::sideSlideOut(m_popup, WAF::TopSide, false);
+            }
+            return QCompleter::eventFilter(_watched, _event);
+        }
+
+    private:
+        /**
+         * @brief Виджет со списком автоподстановки
+         */
+        QListView* m_popup = nullptr;
+
+        /**
+         * @brief Делегат для отрисовки элементов списка
+         */
+        QStyledItemDelegate* m_popupDelegate = nullptr;
 	};
+#else
+    class MyCompleter : public QCompleter
+    {
+    public:
+        explicit MyCompleter(QObject* _p = 0) : QCompleter(_p) {}
+
+        /**
+         * @brief Переопределяется для отображения подсказки по глобальной координате
+         *		  левого верхнего угла области для отображения
+         */
+        void completeReimpl(const QRect& _rect) {
+            complete(_rect);
+            popup()->move(_rect.topLeft());
+        }
+    };
+#endif
 }
 
 
 CompletableTextEdit::CompletableTextEdit(QWidget* _parent) :
-	SpellCheckTextEdit(_parent), m_useCompleter(true), m_completer(new MyCompleter(this))
+    SpellCheckTextEdit(_parent),
+    m_useCompleter(true),
+    m_completer(new MyCompleter(this))
 {
 	m_completer->setWidget(this);
 	connect(m_completer, SIGNAL(activated(QString)), this, SLOT(applyCompletion(QString)));

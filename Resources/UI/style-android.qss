@@ -250,7 +250,6 @@ QLabel[indicatorIcon=true] {
     padding-right: 11dp;
 }
 
-
 /*
  * Стили лайтбокса
  */

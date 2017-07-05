@@ -83,6 +83,8 @@ namespace UserInterface
         void removeUserRequested(const QString& _email);
 
     protected:
+        void mousePressEvent(QMouseEvent* _event) override;
+
         /**
          * @brief Переопределяем, чтобы сигналить о нажатии
          */

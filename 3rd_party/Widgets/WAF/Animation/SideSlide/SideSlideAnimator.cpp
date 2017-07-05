@@ -139,13 +139,11 @@ void SideSlideAnimator::slideIn()
     //
     // Позиционируем декоратор
     //
-    if (m_decorateBackground) {
-        m_decorator->setParent(topWidget);
-        m_decorator->move(0, 0);
-        m_decorator->grabParentSize();
-        m_decorator->show();
-        m_decorator->raise();
-    }
+    m_decorator->setParent(topWidget);
+    m_decorator->move(0, 0);
+    m_decorator->grabParentSize();
+    m_decorator->show();
+    m_decorator->raise();
 
     //
     // Позиционируем виджет для анимации в исходное положение и настраиваем его размер
@@ -202,7 +200,8 @@ void SideSlideAnimator::slideOut()
     if (isAnimated() && isAnimatedBackward()) return;
     setAnimatedBackward();
 
-    if (widgetForSlide()->isVisible()) {
+    if (widgetForSlide()->isVisible()
+        || m_decorator->isVisible()) {
         //
         // Определим самый верхний виджет
         //
