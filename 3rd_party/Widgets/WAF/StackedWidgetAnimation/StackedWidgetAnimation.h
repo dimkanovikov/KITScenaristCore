@@ -44,7 +44,7 @@ namespace WAF
         /**
          * @brief Выкатить заданный виджет, смещая текущий активный
          */
-        static void slide(QStackedWidget* _container, QWidget* _widget, AnimationDirection _direction);
+        static int slide(QStackedWidget* _container, QWidget* _widget, AnimationDirection _direction);
 
         /****/
 

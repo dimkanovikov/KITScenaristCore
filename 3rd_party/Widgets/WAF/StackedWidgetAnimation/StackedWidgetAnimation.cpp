@@ -33,10 +33,10 @@ using WAF::StackedWidgetSlideOverAnimator;
 using WAF::StackedWidgetFadeInAnimator;
 
 
-void StackedWidgetAnimation::slide(QStackedWidget* _container, QWidget* _widget, WAF::AnimationDirection _direction)
+int StackedWidgetAnimation::slide(QStackedWidget* _container, QWidget* _widget, WAF::AnimationDirection _direction)
 {
     if (_container->currentWidget() == _widget)
-        return;
+        return 0;
 
     const StackedWidgetAnimationPrivate::AnimatorType animatorType = StackedWidgetAnimationPrivate::Slide;
     AbstractAnimator* animator = 0;
@@ -54,6 +54,8 @@ void StackedWidgetAnimation::slide(QStackedWidget* _container, QWidget* _widget,
     }
 
     animator->animateForward();
+
+    return animator->animationDuration();
 }
 
 void StackedWidgetAnimation::slideOverIn(QStackedWidget* _container, QWidget* _widget, WAF::AnimationDirection _direction)
