@@ -6,6 +6,7 @@
 #include <3rd_party/Widgets/ElidedLabel/ElidedLabel.h>
 #include <3rd_party/Widgets/WAF/Animation/Animation.h>
 
+#include <QDateTime>
 #include <QLabel>
 #include <QMouseEvent>
 #include <QTimer>
@@ -88,11 +89,11 @@ void ProjectFileWidget::setMouseHover(bool _hover)
 
 void ProjectFileWidget::mousePressEvent(QMouseEvent* _event)
 {
-#ifdef MOBILE_OS
     QColor color = palette().text().color();
     color.setAlphaF(0.05);
+    m_clickedAt = QDateTime::currentMSecsSinceEpoch();
     WAF::Animation::circleFillIn(this, _event->globalPos(), color);
-#endif
+
     QWidget::mousePressEvent(_event);
 }
 
@@ -102,7 +103,8 @@ void ProjectFileWidget::mouseReleaseEvent(QMouseEvent* _event)
     // Выполняем событие, только если курсор так и остался на виджете
     //
     if (rect().contains(_event->pos())) {
-        emit clicked();
+        const int delay = qMax(m_clickedAt + 400 - QDateTime::currentMSecsSinceEpoch(), quint64(0));
+        QTimer::singleShot(delay, this, &ProjectFileWidget::clicked);
     }
     QWidget::mouseReleaseEvent(_event);
 }

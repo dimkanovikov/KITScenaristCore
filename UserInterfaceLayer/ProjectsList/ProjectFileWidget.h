@@ -127,6 +127,12 @@ namespace UserInterface
          * @brief Название проекта
          */
         QVector<ProjectUserWidget*> m_users;
+
+        /**
+         * @brief В какой момент времени кликнули на виджете
+         * @note Используется для определения в какой момент испускать сигнал о клике
+         */
+        quint64 m_clickedAt = 0;
     };
 }
 
