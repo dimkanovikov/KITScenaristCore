@@ -247,6 +247,11 @@ void SideSlideAnimator::slideOut()
         }
 
         //
+        // Сохраним изображение выкатываемого виджета в декораторе
+        //
+        m_decorator->grabSlideWidget(widgetForSlide());
+
+        //
         // Анимируем закатывание виджета
         //
         if (m_animation->state() == QPropertyAnimation::Running) {
