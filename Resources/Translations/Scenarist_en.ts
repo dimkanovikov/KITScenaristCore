@@ -2880,7 +2880,7 @@ You can try to reload update.</source>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="81"/>
         <source>In whoole document</source>
-        <translation></translation>
+        <translation>In whole document</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="82"/>
