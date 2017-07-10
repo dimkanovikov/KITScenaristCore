@@ -69,11 +69,12 @@ namespace {
 
             m_popup->setWindowFlags(Qt::Widget);
             m_popup->setItemDelegate(m_popupDelegate);
-            m_popup->setParent(qobject_cast<QWidget*>(parent()));
+            m_popup->setParent(QApplication::activeWindow());
             m_popup->setFixedHeight(
                         qMin(completionCount(),
                              COMPLETER_MAX_ITEMS) * StyleSheetHelper::dpToPx(COMPLETER_ITEM_HEIGHT));
             m_popup->setFixedWidth(m_popup->parentWidget()->width());
+            m_popup->raise();
             WAF::Animation::sideSlideIn(m_popup, WAF::TopSide, false);
 		}
 
