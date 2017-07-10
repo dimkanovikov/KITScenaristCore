@@ -54,6 +54,17 @@ namespace UserInterface {
         * @brief Высота поля для отображения описания сцены
         */
         int m_sceneDescriptionHeight;
+
+        /**
+         * @brief Константы для вью.
+         * Нельзя инициализировать хелпером статически
+         */
+        /** @{ */
+        const int m_iconSize;
+        const int m_topMargin;
+        const int m_bottomMargin;
+        const int m_itemsSpacing;
+        /** @} */
     };
 }
 

@@ -10,13 +10,6 @@
 
 using UserInterface::ScenarioNavigatorItemDelegate;
 
-namespace {
-    static int s_iconSize = StyleSheetHelper::dpToPx(20);
-    static int s_topMargin = StyleSheetHelper::dpToPx(8);
-    static int s_bottomMargin = StyleSheetHelper::dpToPx(8);
-    static int s_itemsSpacing = StyleSheetHelper::dpToPx(6);
-}
-
 
 ScenarioNavigatorItemDelegate::ScenarioNavigatorItemDelegate(QObject* _parent) :
     QStyledItemDelegate(_parent),
@@ -24,7 +17,11 @@ ScenarioNavigatorItemDelegate::ScenarioNavigatorItemDelegate(QObject* _parent) :
     m_showSceneTitle(false),
     m_showSceneDescription(true),
     m_sceneDescriptionIsSceneText(true),
-    m_sceneDescriptionHeight(StyleSheetHelper::dpToPx(1))
+    m_sceneDescriptionHeight(StyleSheetHelper::dpToPx(1)),
+    m_iconSize(StyleSheetHelper::dpToPx(20)),
+    m_topMargin(StyleSheetHelper::dpToPx(8)),
+    m_bottomMargin(StyleSheetHelper::dpToPx(8)),
+    m_itemsSpacing(StyleSheetHelper::dpToPx(6))
 {
 }
 
@@ -108,7 +105,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     //
     // ... иконка
     //
-    const QRect iconRect(0, s_topMargin, s_iconSize, s_iconSize);
+    const QRect iconRect(0, m_topMargin, m_iconSize, m_iconSize);
     QPixmap icon = _index.data(Qt::DecorationRole).value<QPixmap>();
     QIcon iconColorized(icon);
     QColor iconColor = textBrush.color();
@@ -126,7 +123,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     const QString colorsNames = _index.data(BusinessLogic::ScenarioModel::ColorIndex).toString();
     QStringList colorsNamesList = colorsNames.split(";", QString::SkipEmptyParts);
     int colorsCount = colorsNamesList.size();
-    int colorRectX = TREE_INDICATOR_WIDTH + opt.rect.width() - COLOR_RECT_WIDTH - s_itemsSpacing - RIGHT_MARGIN;
+    int colorRectX = TREE_INDICATOR_WIDTH + opt.rect.width() - COLOR_RECT_WIDTH - m_itemsSpacing - RIGHT_MARGIN;
     if (colorsCount > 0) {
         //
         // Если цвет один, то просто рисуем его
@@ -188,10 +185,10 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
             : "";
     const int chronometryRectWidth = _painter->fontMetrics().width(chronometry);
     const QRect chronometryRect(
-        colorRectX - chronometryRectWidth - s_itemsSpacing,
-        s_topMargin,
+        colorRectX - chronometryRectWidth - m_itemsSpacing,
+        m_topMargin,
         chronometryRectWidth,
-        s_iconSize
+        m_iconSize
         );
     _painter->drawText(chronometryRect, Qt::AlignLeft | Qt::AlignVCenter, chronometry);
 
@@ -200,10 +197,10 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     //
     _painter->setFont(headerFont);
     const QRect headerRect(
-        iconRect.right() + s_itemsSpacing,
-        s_topMargin,
-        chronometryRect.left() - iconRect.right() - s_itemsSpacing*2,
-        s_iconSize
+        iconRect.right() + m_itemsSpacing,
+        m_topMargin,
+        chronometryRect.left() - iconRect.right() - m_itemsSpacing*2,
+        m_iconSize
         );
     QString header = _index.data(Qt::DisplayRole).toString().toUpper();
     if (m_showSceneTitle) {
@@ -234,7 +231,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
         _painter->setFont(textFont);
         const QRect descriptionRect(
             headerRect.left(),
-            headerRect.bottom() + s_itemsSpacing,
+            headerRect.bottom() + m_itemsSpacing,
             chronometryRect.right() - headerRect.left(),
             TEXT_LINE_HEIGHT * m_sceneDescriptionHeight
             );
@@ -259,10 +256,10 @@ QSize ScenarioNavigatorItemDelegate::sizeHint(const QStyleOptionViewItem& _optio
     // + отступы TOP_MARGIN сверху + BOTTOM_MARGIN снизу + ITEMS_SPACING между текстом
     //
     int lines = 0;
-    int additionalHeight = s_topMargin + s_iconSize + s_bottomMargin;
+    int additionalHeight = m_topMargin + m_iconSize + m_bottomMargin;
     if (m_showSceneDescription) {
         lines += m_sceneDescriptionHeight;
-        additionalHeight += s_itemsSpacing;
+        additionalHeight += m_itemsSpacing;
     }
     const int height = _option.fontMetrics.height() * lines + additionalHeight;
     const int width = StyleSheetHelper::dpToPx(50);
