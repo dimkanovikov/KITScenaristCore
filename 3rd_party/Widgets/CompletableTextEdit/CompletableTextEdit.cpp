@@ -10,7 +10,7 @@
 #include <QListView>
 #include <QScrollBar>
 #include <QStyledItemDelegate>
-
+#include <QDebug>
 namespace {
 #ifdef MOBILE_OS
     /**
@@ -42,18 +42,21 @@ namespace {
             m_popup(new QListView),
             m_popupDelegate(new CenteredTextDelegate(m_popup))
         {
+            setPopup(m_popup);
+
+            m_popup->setFocusPolicy(Qt::NoFocus);
             m_popup->installEventFilter(this);
             m_popup->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
             m_popup->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
             const QString styleSheet =
                     QString("QListView { show-decoration-selected: 0; }"
                             "QListView::item, QListView::item:selected { text-align: center; height: %1px; "
-                            "border: none; border-bottom: 1dp solid palette(highlighted-text); "
+                            "border: none; border-bottom: %2px solid palette(highlighted-text); "
                             "background-color: palette(highlight); color: palette(highlighted-text); }")
-                    .arg(StyleSheetHelper::dpToPx(COMPLETER_ITEM_HEIGHT));
+                    .arg(StyleSheetHelper::dpToPx(COMPLETER_ITEM_HEIGHT))
+                    .arg(StyleSheetHelper::dpToPx(1));
             m_popup->setStyleSheet(styleSheet);
 
-            setPopup(m_popup);
             setMaxVisibleItems(COMPLETER_MAX_ITEMS);
         }
 
@@ -62,7 +65,8 @@ namespace {
 		 *		  левого верхнего угла области для отображения
 		 */
 		void completeReimpl(const QRect& _rect) {
-            complete(_rect);
+            Q_UNUSED(_rect);
+
             m_popup->setWindowFlags(Qt::Widget);
             m_popup->setItemDelegate(m_popupDelegate);
             m_popup->setParent(qobject_cast<QWidget*>(parent()));

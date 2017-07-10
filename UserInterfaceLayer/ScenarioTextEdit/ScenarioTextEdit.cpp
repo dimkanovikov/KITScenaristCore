@@ -478,6 +478,16 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
 
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 {
+#ifdef MOBILE_OS
+    //
+    // Не перехватываем событие кнопки назад в мобильных приложениях
+    //
+    if (_event->key() == Qt::Key_Back) {
+        _event->ignore();
+        return;
+    }
+#endif
+
     //
     // Отмену и повтор последнего действия, делаем без последующей обработки
     //
@@ -568,15 +578,25 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
     }
 }
 
-void ScenarioTextEdit::inputMethodEvent(QInputMethodEvent *_event)
+void ScenarioTextEdit::inputMethodEvent(QInputMethodEvent* _event)
 {
+#ifndef MOBILE_OS
     CompletableTextEdit::inputMethodEvent(_event);
-
-    if (!_event->commitString().isEmpty()) {
-        QKeyEvent keyEvent(QKeyEvent::KeyPress, Qt::Key_unknown, Qt::NoModifier, _event->commitString());
-        updateEnteredText(&keyEvent);
+#else
+    Qt::Key pressedKey = Qt::Key_unknown;
+    QString eventText = _event->commitString();
+    if (eventText == "\n") {
+        pressedKey = Qt::Key_Return;
+        eventText.clear();
+    } else if (_event->replacementLength() == 1
+               && _event->replacementStart() == -1) {
+        pressedKey = Qt::Key_Backspace;
     }
+    QKeyEvent keyEvent(QKeyEvent::KeyPress, pressedKey, Qt::NoModifier, eventText);
 
+    keyPressEvent(&keyEvent);
+    _event->accept();
+#endif
 }
 
 bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
