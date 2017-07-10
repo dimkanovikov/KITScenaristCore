@@ -4,16 +4,17 @@
 #include <BusinessLayer/Chronometry/ChronometerFacade.h>
 
 #include <3rd_party/Helpers/ImageHelper.h>
+#include <3rd_party/Helpers/StyleSheetHelper.h>
 
 #include <QPainter>
 
 using UserInterface::ScenarioNavigatorItemDelegate;
 
 namespace {
-    static int s_iconSize = 20;
-    static int s_topMargin = 8;
-    static int s_bottomMargin = 8;
-    static int s_itemsSpacing = 6;
+    static int s_iconSize = StyleSheetHelper::dpToPx(20);
+    static int s_topMargin = StyleSheetHelper::dpToPx(8);
+    static int s_bottomMargin = StyleSheetHelper::dpToPx(8);
+    static int s_itemsSpacing = StyleSheetHelper::dpToPx(6);
 }
 
 
@@ -23,7 +24,7 @@ ScenarioNavigatorItemDelegate::ScenarioNavigatorItemDelegate(QObject* _parent) :
     m_showSceneTitle(false),
     m_showSceneDescription(true),
     m_sceneDescriptionIsSceneText(true),
-    m_sceneDescriptionHeight(1)
+    m_sceneDescriptionHeight(StyleSheetHelper::dpToPx(1))
 {
 }
 
@@ -81,9 +82,9 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     //
     // Рисуем
     //
-    const int TREE_INDICATOR_WIDTH = 20;
-    const int COLOR_RECT_WIDTH = 12;
-    const int RIGHT_MARGIN = 12;
+    const int TREE_INDICATOR_WIDTH = StyleSheetHelper::dpToPx(20);
+    const int COLOR_RECT_WIDTH = StyleSheetHelper::dpToPx(12);
+    const int RIGHT_MARGIN = StyleSheetHelper::dpToPx(12);
     const int TEXT_LINE_HEIGHT = _painter->fontMetrics().height();
 
     //
@@ -264,7 +265,7 @@ QSize ScenarioNavigatorItemDelegate::sizeHint(const QStyleOptionViewItem& _optio
         additionalHeight += s_itemsSpacing;
     }
     const int height = _option.fontMetrics.height() * lines + additionalHeight;
-    const int width = 50;
+    const int width = StyleSheetHelper::dpToPx(50);
     return QSize(width, height);
 }
 
