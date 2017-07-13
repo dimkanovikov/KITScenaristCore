@@ -514,6 +514,13 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("navigator/scene-description-is-scene-text", "1");
     m_defaultValues.insert("navigator/scene-description-height", "1");
 
+    m_defaultValues.insert("scenario-editor/current-style",
+#ifndef MOBILE_OS
+                          "default"
+#else
+                          "Mobile"
+#endif
+                           );
     m_defaultValues.insert("scenario-editor/page-view",
 #ifndef MOBILE_OS
                            "1"
