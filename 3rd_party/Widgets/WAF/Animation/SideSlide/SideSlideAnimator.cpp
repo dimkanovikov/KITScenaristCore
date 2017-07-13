@@ -80,6 +80,11 @@ void SideSlideAnimator::animateForward()
 void SideSlideAnimator::slideIn()
 {
     //
+    // Не выполняем анимацию, если она и так уже выполнена
+    //
+    if (m_decorator->isVisible()) return;
+
+    //
     // Прерываем выполнение, если клиент хочет повторить его
     //
     if (isAnimated() && isAnimatedForward()) return;
