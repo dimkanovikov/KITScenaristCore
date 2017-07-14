@@ -19,7 +19,7 @@ namespace {
     const int VERTICAL_SPACING = 6;
 #else
     const int ICON_SIZE = 20;
-    const int ICON_MARGIN = 8;
+    const int ICON_MARGIN = 6;
     const int MARGIN = 8;
     const int HORIZONTAL_SPACING = 6;
     const int VERTICAL_SPACING = 6;

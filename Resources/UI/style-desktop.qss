@@ -135,7 +135,7 @@ QToolButton:pressed[isBrowseButton=true] {
  */
 QToolButton:hover[isUpdateButton=true] {
     border: 1px solid transparent;
-    border-radius: 12px;
+    border-radius: 11px;
     background-color: palette(dark);
 }
 

@@ -234,12 +234,6 @@ QTabBar::tab:!selected {
     border-bottom-color: palette(button);
 }
 
-QTabBar::tab:!selected:hover {
-    border-bottom-width: 4dp;
-    border-bottom-style: solid;
-    border-bottom-color: palette(dark);
-}
-
 /*
  * Иконка индикатора в меню
  */
