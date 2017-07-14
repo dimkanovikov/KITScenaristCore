@@ -53,7 +53,9 @@ void ProjectsList::setModel(QAbstractItemModel* _model, bool _isRemote)
                 ProjectFileWidget* project = new ProjectFileWidget;
                 project->setProjectName(projectName);
 #ifdef MOBILE_OS
-                project->setProjectInfo(editDateTime.toString());
+                project->setProjectInfo(editDateTime.isNull()
+                                        ? tr("no changes")
+                                        : editDateTime.toString("dd.MM.yyyy hh:mm:ss"));
 #else
                 project->setProjectInfo(projectPath);
 #endif
