@@ -90,7 +90,11 @@ namespace {
             //
             else {
                 _painter->save();
-                _painter->setFont(QFont("Courier Prime", 12));
+                QFont font("Courier Prime");
+                const qreal fontSize = 12.0 / qMin(_painter->viewport().height() / _body.height(),
+                                                   _painter->viewport().width() / _body.width());
+                font.setPointSizeF(fontSize);
+                _painter->setFont(font);
 
                 //
                 // Середины верхнего и нижнего полей
@@ -283,7 +287,7 @@ namespace {
             QSizeF scaledPageSize = _document->pageSize();
             scaledPageSize.rwidth() *= dpiScaleX;
             scaledPageSize.rheight() *= dpiScaleY;
-            const QSizeF printerPageSize(_printer->pageLayout().fullRect().size());
+            const QSizeF printerPageSize(painter.viewport().size());
             // scale to page
             painter.scale(printerPageSize.width() / scaledPageSize.width(),
                     printerPageSize.height() / scaledPageSize.height());

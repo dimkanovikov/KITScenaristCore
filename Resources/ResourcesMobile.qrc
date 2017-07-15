@@ -55,6 +55,7 @@
         <file>Icons/Mobile/lock-reset.png</file>
         <file>Icons/Mobile/menu/import.png</file>
         <file>Icons/Mobile/menu/export.png</file>
+        <file>Icons/eye-off.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/Scenarist_ru.qm</file>
@@ -78,5 +79,8 @@
         <file>Templates/mobile.kitss</file>
         <file>Templates/final_draft_letter.kitss</file>
         <file>Templates/final_draft_a4.kitss</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>Icons/eye-off.png</file>
     </qresource>
 </RCC>
