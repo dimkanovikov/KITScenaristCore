@@ -1,0 +1,82 @@
+<RCC>
+    <qresource prefix="/Fonts">
+        <file alias="Courier New">Fonts/cour.ttf</file>
+        <file alias="Courier Prime Bold Italic">Fonts/courier-prime-bold-italic.ttf</file>
+        <file alias="Courier Prime Bold">Fonts/courier-prime-bold.ttf</file>
+        <file alias="Courier Prime Italic">Fonts/courier-prime-italic.ttf</file>
+        <file alias="Courier Prime">Fonts/courier-prime.ttf</file>
+        <file>Fonts/embed/courierprime-regular.odttf</file>
+        <file>Fonts/embed/courierprime-italic.odttf</file>
+        <file>Fonts/embed/courierprime-bold.odttf</file>
+        <file>Fonts/embed/courierprime-bold-italic.odttf</file>
+    </qresource>
+    <qresource prefix="/Graphics">
+        <file>Icons/folder.png</file>
+        <file>Icons/scene.png</file>
+        <file>Icons/Editing/delete.png</file>
+        <file>Icons/Editing/refresh.png</file>
+        <file>Icons/Editing/edit.png</file>
+        <file>Icons/logo.png</file>
+        <file>Images/logo.png</file>
+        <file>Icons/browse.png</file>
+        <file>Icons/login.png</file>
+        <file>Icons/Editing/checkmark.png</file>
+        <file>Icons/Indicator/connected.png</file>
+        <file>Icons/Indicator/disconnected.png</file>
+        <file>Icons/Review/delete.png</file>
+        <file>Icons/Review/edit.png</file>
+        <file>Icons/Review/done.png</file>
+        <file>Icons/folder_noted.png</file>
+        <file>Icons/scene_noted.png</file>
+        <file>Icons/chevron-right.png</file>
+        <file>Icons/Mobile/menu.png</file>
+        <file>Icons/Mobile/plus.png</file>
+        <file>Icons/Mobile/dots-vertical.png</file>
+        <file>Icons/Mobile/magnify.png</file>
+        <file>Icons/Mobile/outline.png</file>
+        <file>Icons/Mobile/script.png</file>
+        <file>Icons/Mobile/menu/account.png</file>
+        <file>Icons/Mobile/menu/apps.png</file>
+        <file>Icons/Mobile/menu/chevron-left.png</file>
+        <file>Icons/Mobile/menu/content-save.png</file>
+        <file>Icons/Mobile/menu/script.png</file>
+        <file>Icons/Mobile/navigator.png</file>
+        <file>Icons/Mobile/menu/settings.png</file>
+        <file>Icons/Mobile/logout.png</file>
+        <file>Icons/unknown.png</file>
+        <file>Icons/Editing/account-plus.png</file>
+        <file>Icons/Editing/close.png</file>
+        <file>Icons/Indicator/unsynced.png</file>
+        <file>Icons/Indicator/synced.png</file>
+        <file>Icons/character.png</file>
+        <file>Icons/location.png</file>
+        <file>Icons/Editing/account-multiple.png</file>
+        <file>Icons/Mobile/close.png</file>
+        <file>Icons/Mobile/lock-reset.png</file>
+        <file>Icons/Mobile/menu/import.png</file>
+        <file>Icons/Mobile/menu/export.png</file>
+    </qresource>
+    <qresource prefix="/Translations">
+        <file>Translations/Scenarist_ru.qm</file>
+        <file>Translations/qt_ru.qm</file>
+        <file>Translations/qtbase_ru.qm</file>
+        <file>Translations/Scenarist_en.qm</file>
+        <file>Translations/qtbase_en.qm</file>
+    </qresource>
+    <qresource prefix="/Interface">
+        <file>UI/style-android.qss</file>
+        <file>UI/downarrow.png</file>
+        <file>UI/downarrow-dark.png</file>
+        <file>UI/downarrow-disable.png</file>
+        <file>UI/uparrow.png</file>
+        <file>UI/uparrow-dark.png</file>
+        <file>UI/uparrow-disable.png</file>
+    </qresource>
+    <qresource prefix="/Templates">
+        <file>Templates/default.kitss</file>
+        <file>Templates/default_courier_prime.kitss</file>
+        <file>Templates/mobile.kitss</file>
+        <file>Templates/final_draft_letter.kitss</file>
+        <file>Templates/final_draft_a4.kitss</file>
+    </qresource>
+</RCC>
