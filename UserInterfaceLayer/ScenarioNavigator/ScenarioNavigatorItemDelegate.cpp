@@ -12,7 +12,7 @@ using UserInterface::ScenarioNavigatorItemDelegate;
 
 namespace {
 #ifdef MOBILE_OS
-    const int ICON_SIZE = 40;
+    const int ICON_SIZE = 28;
     const int ICON_MARGIN = 12;
     const int MARGIN = 15;
     const int HORIZONTAL_SPACING = 12;

@@ -130,7 +130,7 @@ QTabBar {
 }
 
 QTabBar::tab {
-    padding: 12dp 3pd 12dp 2dp;
+    padding: 12dp 3dp 12dp 2dp;
     font-weight: 600;
     color: palette(button-text);
     background: palette(button);
@@ -243,7 +243,7 @@ QToolButton[fab=true] {
 QPushButton[flat=true] {
     min-width: 40dp;
     height: 40dp;
-    padding: 0dp 8dp 0 8dp;
+    padding: 0dp 8dp 0dp 8dp;
     margin: 4dp 16dp 4dp 0dp;
     font-weight: 600;
     color: palette(highlight);
@@ -264,7 +264,7 @@ QPushButton[flat=true]:!enabled {
 QPushButton[raised=true] {
     min-width: 40dp;
     height: 40dp;
-    padding: 0dp 16dp 0 16dp;
+    padding: 0dp 16dp 0dp 16dp;
     margin: 4dp 16dp 4dp 0dp;
     font-weight: 600;
     color: palette(highlighted-text);
@@ -435,7 +435,7 @@ QComboBox[materialComboBox=true] QListView {
     show-decoration-selected: 0;
     margin: 0dp 16dp 0dp 16dp;
     background-color: transparent;
-    border: 1px solid palette(highlight);
+    border: 1dp solid palette(highlight);
 }
 
 QComboBox[materialComboBox=true] QListView::item {
