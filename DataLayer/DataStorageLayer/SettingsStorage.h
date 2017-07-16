@@ -39,7 +39,7 @@ namespace DataStorageLayer
 		 * @brief Получить значение по ключу
 		 */
 		QVariant variantValue(const QString& _key, SettingsPlace _settingsPlace);
-		QString value(const QString& _key, SettingsPlace _settingsPlace, const QString& _defaultValue = QString::null);
+		QString value(const QString& _key, SettingsPlace _settingsPlace, const QString& _defaultValue = QString());
 
 		/**
 		 * @brief Получить группу значений

@@ -22,7 +22,7 @@ QString ResearchModelItem::name() const
 {
     return
             m_research == 0
-            ? QString::null
+            ? QString()
             : m_research->name();
 }
 

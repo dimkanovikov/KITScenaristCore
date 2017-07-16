@@ -29,7 +29,7 @@ namespace {
     };
 
     const int COMPLETER_MAX_ITEMS = 3;
-    const int COMPLETER_ITEM_HEIGHT = 40;
+    const int COMPLETER_ITEM_HEIGHT = 46;
 
     /**
      * @brief Переопределяем комплитер, чтобы показывать список красиво

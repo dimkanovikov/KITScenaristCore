@@ -56,7 +56,7 @@ namespace BusinessLogic
 		 *
 		 * @note Вызывающий получает владение над новым сформированным документом
 		 */
-		QPrinter* preparePrinter(const QString& _forFile = QString::null) const;
+		QPrinter* preparePrinter(const QString& _forFile = QString()) const;
 #endif
 
 	private:

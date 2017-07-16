@@ -126,7 +126,7 @@ bool SimpleTextEditorWidget::isEmpty() const
 QString SimpleTextEditorWidget::toHtml() const
 {
     if (isEmpty()) {
-        return QString::null;
+        return QString();
     }
 
     return m_editor->toHtml();
@@ -135,7 +135,7 @@ QString SimpleTextEditorWidget::toHtml() const
 QString SimpleTextEditorWidget::toPlainText() const
 {
     if (isEmpty()) {
-        return QString::null;
+        return QString();
     }
 
     return m_editor->toPlainText();

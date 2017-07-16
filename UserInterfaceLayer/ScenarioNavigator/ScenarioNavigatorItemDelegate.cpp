@@ -61,17 +61,30 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     // Определим кисти и шрифты
     //
     QBrush backgroundBrush = opt.palette.background();
+#ifndef MOBILE_OS
+    QBrush headerBrush = opt.palette.text();
     QBrush textBrush = opt.palette.text();
     QFont headerFont = opt.font;
     headerFont.setBold(m_showSceneDescription ? true : false);
     QFont textFont = opt.font;
     textFont.setBold(false);
+#else
+    QBrush headerBrush = opt.palette.text();
+    QBrush textBrush = opt.palette.mid();
+    QFont headerFont = opt.font;
+    headerFont.setPointSize(16);
+    headerFont.setWeight(QFont::Medium);
+    QFont textFont = opt.font;
+    textFont.setPointSize(14);
+    textFont.setWeight(QFont::Medium);
+#endif
     //
     // ... для выделенных элементов
     //
     if(opt.state.testFlag(QStyle::State_Selected))
     {
         backgroundBrush = opt.palette.highlight();
+        headerBrush = opt.palette.highlightedText();
         textBrush = opt.palette.highlightedText();
     }
     //
@@ -85,12 +98,12 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
         if(opt.features.testFlag(QStyleOptionViewItem::Alternate))
         {
             backgroundBrush = opt.palette.alternateBase();
-            textBrush = opt.palette.windowText();
+            headerBrush = opt.palette.windowText();
         }
         else
         {
-            backgroundBrush = opt.palette.base();
-            textBrush = opt.palette.windowText();
+            backgroundBrush = opt.palette.window();
+            headerBrush = opt.palette.windowText();
         }
     }
 
@@ -128,7 +141,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     const QRect iconRect(0, m_iconTopMargin, m_iconSize, m_iconSize);
     QPixmap icon = _index.data(Qt::DecorationRole).value<QPixmap>();
     QIcon iconColorized(icon);
-    QColor iconColor = textBrush.color();
+    QColor iconColor = headerBrush.color();
     // ... если есть заметка, рисуем красноватым цветом
     if (_index.data(BusinessLogic::ScenarioModel::HasNoteIndex).toBool()) {
         iconColor = QColor("#ec3838");
@@ -192,11 +205,11 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     //
     // ... текстовая часть
     //
-    _painter->setPen(textBrush.color());
 
     //
     // ... длительность
     //
+    _painter->setPen(textBrush.color());
     _painter->setFont(textFont);
     const int duration = _index.data(BusinessLogic::ScenarioModel::DurationIndex).toInt();
     const QString chronometry =
@@ -215,6 +228,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     //
     // ... заголовок
     //
+    _painter->setPen(headerBrush.color());
     _painter->setFont(headerFont);
     const QRect headerRect(
         iconRect.right() + m_itemsHorizontalSpacing,
@@ -248,6 +262,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     // ... описание
     //
     if (m_showSceneDescription) {
+        _painter->setPen(textBrush.color());
         _painter->setFont(textFont);
         const QRect descriptionRect(
             headerRect.left(),

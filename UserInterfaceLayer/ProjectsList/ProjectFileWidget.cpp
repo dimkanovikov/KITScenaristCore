@@ -189,7 +189,10 @@ void ProjectFileWidget::initConnections()
 
 void ProjectFileWidget::initStylesheet()
 {
-    m_ui->projectInfo->setStyleSheet("color: palette(mid);");
+    setProperty("projectFrame", true);
+    m_ui->frame->setProperty("projectTextFrame", true);
+    m_ui->projectName->setProperty("projectName", true);
+    m_ui->projectInfo->setProperty("projectInfo", true);
     m_ui->change->setProperty("projectAction", true);
     m_ui->remove->setProperty("projectAction", true);
     m_ui->hide->setProperty("projectAction", true);

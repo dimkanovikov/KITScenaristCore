@@ -83,6 +83,15 @@ public:
 		}
 	}
 
+    /**
+     * @brief Установить цвет иконки используя максимальный размер иконки
+     */
+    static void setIconColor(QIcon& _icon, const QColor& _color) {
+        if (!_icon.isNull() && !_icon.availableSizes().isEmpty() && _color.isValid()) {
+            setIconColor(_icon, _icon.availableSizes().last(), _color);
+        }
+    }
+
 	/**
 	 * @brief Сравнить два изображения
 	 */

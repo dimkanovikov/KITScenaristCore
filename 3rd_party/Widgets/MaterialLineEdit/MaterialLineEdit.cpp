@@ -32,8 +32,9 @@ MaterialLineEdit::MaterialLineEdit(QWidget* _parent) :
 
 void MaterialLineEdit::clear()
 {
-    setText(QString::null);
+    setText(QString());
     setError(false);
+    setHelperText(QString());
 }
 
 void MaterialLineEdit::setLabel(const QString& _text)

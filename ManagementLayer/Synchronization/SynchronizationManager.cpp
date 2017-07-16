@@ -560,27 +560,27 @@ void SynchronizationManager::logout()
     //
     StorageFacade::settingsStorage()->setValue(
                 "application/email",
-                QString::null,
+                QString(),
                 SettingsStorage::ApplicationSettings);
     StorageFacade::settingsStorage()->setValue(
                 "application/password",
-                QString::null,
+                QString(),
                 SettingsStorage::ApplicationSettings);
     StorageFacade::settingsStorage()->setValue(
                 "application/username",
-                QString::null,
+                QString(),
                 SettingsStorage::ApplicationSettings);
     StorageFacade::settingsStorage()->setValue(
                 "application/remote-projects",
-                QString::null,
+                QString(),
                 SettingsStorage::ApplicationSettings);
     StorageFacade::settingsStorage()->setValue(
                 "application/subscriptionIsActive",
-                QString::null,
+                QString(),
                 SettingsStorage::ApplicationSettings);
     StorageFacade::settingsStorage()->setValue(
                 "application/subscriptionExpiredDate",
-                QString::null,
+                QString(),
                 SettingsStorage::ApplicationSettings);
 
     //
@@ -1225,7 +1225,7 @@ void SynchronizationManager::aboutFullSyncData()
         //
         // Сформируем список изменений сценария хранящихся локально
         //
-        QList<QString> localChanges = StorageFacade::databaseHistoryStorage()->history(QString::null);
+        QList<QString> localChanges = StorageFacade::databaseHistoryStorage()->history(QString());
 
         //
         // Отправить на сайт все версии, которых на сайте нет

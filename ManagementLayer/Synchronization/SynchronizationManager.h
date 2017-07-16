@@ -136,7 +136,7 @@ namespace ManagementLayer
          * @brief Убрать подписку на проект для заданного пользователя
          * @note Если пользователь не задан, то происходит отписка текущего пользователя
          */
-        void unshareProject(int _projectId, const QString& _userEmail = QString::null);
+        void unshareProject(int _projectId, const QString& _userEmail = QString());
 
         //
         // Методы работы с конкретным проектом

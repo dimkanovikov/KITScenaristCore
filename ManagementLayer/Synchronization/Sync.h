@@ -116,7 +116,7 @@ namespace ManagementLayer
                 default: break;
             }
 
-            return QString::null;
+            return QString();
         }
         static QString errorText(int _code) { return errorText((SynchronizationErrorCode)_code); }
         /** @} */

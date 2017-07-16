@@ -278,7 +278,7 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
             //
             // Установить описание в элемент
             //
-            item->setDescription(!_description.isEmpty() ? _description : QString::null);
+            item->setDescription(!_description.isEmpty() ? _description : QString());
             m_model->updateItem(item);
 
             //

@@ -72,6 +72,12 @@
         <file>UI/uparrow.png</file>
         <file>UI/uparrow-dark.png</file>
         <file>UI/uparrow-disable.png</file>
+        <file>UI/radiobutton-checked.png</file>
+        <file>UI/radiobutton-unchecked-dark.png</file>
+        <file>UI/radiobutton-unchecked.png</file>
+        <file>UI/checkbox-checked.png</file>
+        <file>UI/checkbox-unchecked-dark.png</file>
+        <file>UI/checkbox-unchecked.png</file>
     </qresource>
     <qresource prefix="/Templates">
         <file>Templates/default.kitss</file>

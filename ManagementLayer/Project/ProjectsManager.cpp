@@ -346,7 +346,7 @@ void ProjectsManager::setRemoteProjects(const QString& _xml)
         if (projectsReader.tokenType() == QXmlStreamReader::StartElement
             && projectsReader.name().toString() == "project") {
             const QString name = projectsReader.attributes().value("name").toString();
-            const QString path = QString::null;
+            const QString path = QString();
             const QString lastEditDatetimeText = projectsReader.attributes().value("modified_at").toString();
             const QDateTime lastEditDatetime = QDateTime::fromString(lastEditDatetimeText, "yyyy-MM-dd hh:mm:ss");
             const int id = projectsReader.attributes().value("id").toInt();

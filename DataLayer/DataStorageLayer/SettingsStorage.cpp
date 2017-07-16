@@ -507,7 +507,7 @@ SettingsStorage::SettingsStorage()
 
     m_defaultValues.insert("cards/use-corkboard", "1");
     m_defaultValues.insert("cards/background-color", "#FEFEFE");
-    m_defaultValues.insert("cards/background-color-dark", "#3D3D3D");
+    m_defaultValues.insert("cards/background-color-dark", "#26282A");
 
     m_defaultValues.insert("navigator/show-scenes-numbers", "1");
     m_defaultValues.insert("navigator/show-scene-description", "1");
@@ -536,7 +536,13 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("scenario-editor/folder-text-color", "#FEFEFE");
     m_defaultValues.insert("scenario-editor/folder-background-color", "#CAC6C3");
     m_defaultValues.insert("scenario-editor/text-color-dark", "#EBEBEB");
-    m_defaultValues.insert("scenario-editor/background-color-dark", "#3D3D3D");
+    m_defaultValues.insert("scenario-editor/background-color-dark",
+#ifndef MOBILE_OS
+                           "#3D3D3D"
+#else
+                           "#26282A"
+#endif
+                           );
     m_defaultValues.insert("scenario-editor/nonprintable-text-color-dark", "#0AC139");
     m_defaultValues.insert("scenario-editor/folder-text-color-dark", "#EBEBEB");
     m_defaultValues.insert("scenario-editor/folder-background-color-dark", "#8D2DC4");

@@ -165,8 +165,8 @@ QString Database::CONNECTION_NAME = "local_database";
 QString Database::SQL_DRIVER      = "QSQLITE";
 QString Database::DATABASE_NAME   = ":memory:";
 
-QString Database::s_openFileError = QString::null;
-QString Database::s_lastError = QString::null;
+QString Database::s_openFileError = QString();
+QString Database::s_lastError = QString();
 int Database::s_openedTransactions = 0;
 
 QSqlDatabase Database::instanse()

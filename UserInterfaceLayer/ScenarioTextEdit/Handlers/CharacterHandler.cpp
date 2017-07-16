@@ -89,7 +89,7 @@ void CharacterHandler::prehandle()
 		} else {
             model = StorageFacade::researchStorage()->characters();
 		}
-		editor()->complete(model, QString::null);
+		editor()->complete(model, QString());
 	}
 }
 void CharacterHandler::handleEnter(QKeyEvent* _event)

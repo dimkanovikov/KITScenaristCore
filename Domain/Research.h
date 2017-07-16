@@ -37,8 +37,8 @@ namespace Domain
 
     public:
         Research(const Identifier& _id, Research* _parent, Type _type, int _sortOrder,
-            const QString& _name, const QString& _description = QString::null,
-            const QString& _url = QString::null, const QPixmap& _image = QPixmap());
+            const QString& _name, const QString& _description = QString(),
+            const QString& _url = QString(), const QPixmap& _image = QPixmap());
 
         /**
          * @brief Получить родителя
