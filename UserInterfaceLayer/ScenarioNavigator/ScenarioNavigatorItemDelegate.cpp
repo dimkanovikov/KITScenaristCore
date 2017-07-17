@@ -41,6 +41,12 @@ ScenarioNavigatorItemDelegate::ScenarioNavigatorItemDelegate(QObject* _parent) :
     m_itemsHorizontalSpacing(StyleSheetHelper::dpToPx(HORIZONTAL_SPACING)),
     m_itemsVerticalSpacing(StyleSheetHelper::dpToPx(VERTICAL_SPACING))
 {
+#ifdef MOBILE_OS
+    if (!StyleSheetHelper::deviceIsTablet()) {
+        m_iconSize = 0;
+        m_itemsHorizontalSpacing = 0;
+    }
+#endif
 }
 
 void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem& _option, const QModelIndex& _index) const

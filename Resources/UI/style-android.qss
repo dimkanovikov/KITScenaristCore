@@ -1,3 +1,35 @@
+
+
+/******
+ * Табы
+ */
+
+QTabBar {
+    min-height: 48dp;
+    background-color: palette(button);
+}
+
+QTabBar::tab {
+    padding: 12dp 3dp 12dp 2dp;
+    font-weight: 600;
+    color: palette(button-text);
+    background: palette(button);
+}
+
+QTabBar::tab:selected {
+    color: palette(bright-text);
+    border-bottom-width: 3dp;
+    border-bottom-style: solid;
+    border-bottom-color: palette(highlight);
+}
+
+QTabBar::tab:!selected {
+    color: palette(button-text);
+    border-bottom-width: 3dp;
+    border-bottom-style: solid;
+    border-bottom-color: palette(button);
+}
+
 /********************************************
  * Стандартные настройки стилей для виджетов
  */
@@ -133,10 +165,10 @@ QPushButton[sideNavigationSubheader=true] {
  * Иконка индикатора в меню
  */
 QLabel[indicatorIcon=true] {
-    width: 16dp;
-    height: 16dp;
-    padding-left: 22dp;
-    padding-right: 26dp;
+    max-width: 16dp;
+    max-height: 16dp;
+    padding-left: 24dp;
+    padding-right: 22dp;
 }
 
 /*
@@ -219,6 +251,33 @@ QToolButton[projectActionMenu=false] {
     background: palette(alternate-base);
     border: none;
 }
+
+/******************************
+ * Панель инструментов вверху
+ */
+
+QFrame[toolbar=true] {
+    background-color: palette(button);
+}
+
+QFrame[toolbar=true] QLabel {
+    margin-left: 8dp;
+    font-weight: 600;
+    font-size: 20pt;
+    text-align: left;
+}
+
+QFrame[toolbarBottomBordered=true] {
+    border: none;
+    border-bottom: 4dp solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 palette(shadow), stop:0.8 palette(window), stop:1 palette(window));
+    /*border-bottom: 4dp solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(178, 178, 178, 255), stop:0.4 rgba(192, 192, 192, 255), stop:0.8 rgba(233, 233, 233, 255), stop:1 rgba(244, 244, 244, 255));*/
+}
+
+QFrame[toolbarTopBordered=true] {
+    border: none;
+    border-top: 4dp solid qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 palette(shadow), stop:0.5 palette(window), stop:1 palette(window));
+}
+
 
 /*
  * Фрейм проекта
@@ -372,13 +431,15 @@ QComboBox[materialComboBox=true]::drop-down {
     background: transparent;
     subcontrol-origin: padding;
     subcontrol-position: top right;
-    width: 15dp;
+    max-width: 16dp;
     border-width: 0dp;
     padding-left: 4dp;
     padding-right: 4dp;
 }
 
 QComboBox[materialComboBox=true]::down-arrow {
+    width: 16dp;
+    height: 16dp;
     image: url(:/Interface/UI/downarrow_THEME_POSTFIX.png);
 }
 
@@ -490,7 +551,7 @@ QCheckBox::indicator:checked {
  */
 
 QToolButton[styleButton=true] {
-    font-size: 14pt;
+    font-size: 16pt;
     font-weight: 600;
     background-color: palette(button);
 }
@@ -590,36 +651,4 @@ QDialogButtonBox {
     color: white;
     border: none;
     padding: 0dp 24dp 24dp 24dp;
-}
-
-
-
-/******
- * Табы
- */
-
-QTabBar {
-    min-height: 48dp;
-    background-color: palette(button);
-}
-
-QTabBar::tab {
-    padding: 12dp 3dp 12dp 2dp;
-    font-weight: 600;
-    color: palette(button-text);
-    background: palette(button);
-}
-
-QTabBar::tab:selected {
-    color: palette(bright-text);
-    border-bottom-width: 3dp;
-    border-bottom-style: solid;
-    border-bottom-color: palette(highlight);
-}
-
-QTabBar::tab:!selected {
-    color: palette(button-text);
-    border-bottom-width: 3dp;
-    border-bottom-style: solid;
-    border-bottom-color: palette(button);
 }

@@ -60,11 +60,11 @@ namespace UserInterface {
          * Нельзя инициализировать хелпером статически
          */
         /** @{ */
-        const int m_iconSize;
+        int m_iconSize;
         const int m_iconTopMargin;
         const int m_topMargin;
         const int m_bottomMargin;
-        const int m_itemsHorizontalSpacing;
+        int m_itemsHorizontalSpacing;
         const int m_itemsVerticalSpacing;
         /** @} */
     };
