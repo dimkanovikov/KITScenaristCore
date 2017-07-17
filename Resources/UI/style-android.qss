@@ -19,217 +19,6 @@ QToolButton:pressed, QPushButton:pressed {
     background-color: palette(dark);
 }
 
-/******************************
- * Панель инструментов вверху
- */
-
-QFrame[toolbar=true] {
-    background-color: palette(button);
-}
-
-QFrame[toolbar=true] QLabel {
-    margin-left: 8dp;
-    font-weight: 600;
-    font-size: 20pt;
-    text-align: left;
-}
-
-QFrame[toolbar-bottom-bordered=true] {
-    border: none;
-    border-bottom: 4dp solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 palette(shadow), stop:0.8 palette(window), stop:1 palette(window));
-    /*border-bottom: 4dp solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(178, 178, 178, 255), stop:0.4 rgba(192, 192, 192, 255), stop:0.8 rgba(233, 233, 233, 255), stop:1 rgba(244, 244, 244, 255));*/
-}
-
-QFrame[toolbar-top-bordered=true] {
-    border: none;
-    border-top: 4dp solid qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 palette(shadow), stop:0.5 palette(window), stop:1 palette(window));
-}
-
-/****************
- * Боковое меню
- */
-
-/*
- * Фрейм бокового меню
- */
-QFrame[side-nav=true] {
-    background-color: palette(base);
-}
-
-/*
- * Элемент с именем пользователя в боковом меню
- */
-QPushButton[side-nav-name=true] {
-    height: 48dp;
-    padding-left: 16dp;
-    icon-size: 24dp;
-    font-weight: 600;
-    text-align: left;
-    border: none;
-}
-
-/*
- * Элемент в боковом меню
- */
-QPushButton[side-nav-item=true] {
-    height: 48dp;
-    icon-size: 24dp;
-    padding-left: 16dp;
-    font-weight: 600;
-    text-align: left;
-    border: none;
-}
-
-QPushButton[side-nav-item=true]:checked {
-    color: palette(highlight);
-    background-color: palette(midlight);
-}
-
-QPushButton[side-nav-item=true]:pressed {
-    background-color: palette(midlight);
-}
-
-/*
- * Добавить элементу в меню рамку сверху
- */
-QPushButton[side-nav-item-top-bordered=true] {
-    border-top: 1dp solid palette(dark);
-}
-
-/*
- * Элемент подзаголовок в боковом меню
- */
-QPushButton[side-nav-subheader=true] {
-    height: 48dp;
-    icon-size: 0dp;
-    padding-left: 16dp;
-    font-weight: 600;
-    text-align: left;
-    color: palete(dark);
-    border: none;
-    border-top: 1dp solid palette(dark);
-}
-
-/*
- * Иконка индикатора в меню
- */
-QLabel[indicatorIcon=true] {
-    width: 16dp;
-    height: 16dp;
-    padding-left: 22dp;
-    padding-right: 26dp;
-}
-
-/******
- * Табы
- */
-
-QTabBar {
-    min-height: 48dp;
-    background-color: palette(button);
-}
-
-QTabBar::tab {
-    padding: 12dp 3dp 12dp 2dp;
-    font-weight: 600;
-    color: palette(button-text);
-    background: palette(button);
-}
-
-QTabBar::tab:selected {
-    color: palette(bright-text);
-    border-bottom-width: 3dp;
-    border-bottom-style: solid;
-    border-bottom-color: palette(highlight);
-}
-
-QTabBar::tab:!selected {
-    color: palette(button-text);
-    border-bottom-width: 3dp;
-    border-bottom-style: solid;
-    border-bottom-color: palette(button);
-}
-
-/*******************
- * Список проектов
- */
-
-/*
- * Фрейм проекта
- */
-QFrame[projectFrame=true] {
-    border: none;
-    border-bottom: 0dp solid palette(dark);
-}
-
-/*
- * Фрейм текстовой части проекта
- */
-QFrame[projectTextFrame=true] {
-    padding: 16dp 16dp 16dp 16dp;
-}
-
-/*
- * Название проекта
- */
-QLabel[projectName=true] {
-    font-weight: 500;
-    font-size: 16pt;
-}
-
-/*
- * Описание проекта
- */
-QLabel[projectInfo=true] {
-    font-weight: 500;
-    font-size: 14pt;
-    color: palette(mid);
-}
-
-/*
- * Кнопки действий проекта из списка
- */
-QToolButton[projectAction=true] {
-    min-width: 40dp;
-    icon-size: 24dp;
-    margin-left: 0dp;
-    margin-right: 0dp;
-    padding-top: 1dp;
-    padding-bottom: 1dp;
-    background: palette(alternate-base);
-    border: none;
-}
-
-QToolButton[projectAction=true]:pressed {
-    padding-top: 2dp;
-    padding-bottom: 0dp;
-}
-
-/*
- * Кнопки раскрытия меню в списке проектов
- */
-QToolButton[projectActionMenu=true] {
-    min-width: 40dp;
-    icon-size: 24dp;
-    margin-left: 0dp;
-    margin-right: 0dp;
-    padding-top: 1dp;
-    padding-bottom: 1dp;
-    background: palette(window);
-    border: none;
-}
-
-QToolButton[projectActionMenu=false] {
-    min-width: 40dp;
-    icon-size: 24dp;
-    margin-left: 0dp;
-    margin-right: 0dp;
-    padding-top: 1dp;
-    padding-bottom: 1dp;
-    background: palette(alternate-base);
-    border: none;
-}
-
 /*************************
  * Различные виды кнопок
  */
@@ -280,6 +69,187 @@ QPushButton[raised=true]:pressed {
 
 QPushButton[raised=true]:!enabled {
     background-color: palette(dark);
+}
+
+/****************
+ * Боковое меню
+ */
+
+/*
+ * Элемент с именем пользователя в боковом меню
+ */
+QPushButton[sideNavigationName=true] {
+    height: 48dp;
+    padding-left: 16dp;
+    icon-size: 24dp;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+}
+
+/*
+ * Элемент в боковом меню
+ */
+QPushButton[sideNavigationItem=true] {
+    height: 48dp;
+    icon-size: 24dp;
+    padding-left: 16dp;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+}
+
+QPushButton[sideNavigationItem=true]:checked {
+    color: palette(highlight);
+    background-color: palette(midlight);
+}
+
+QPushButton[sideNavigationItem=true]:pressed {
+    background-color: palette(midlight);
+}
+
+/*
+ * Добавить элементу в меню рамку сверху
+ */
+QPushButton[sideNavigationItemTopBordered=true] {
+    border-top: 1dp solid palette(dark);
+}
+
+/*
+ * Элемент подзаголовок в боковом меню
+ */
+QPushButton[sideNavigationSubheader=true] {
+    height: 48dp;
+    icon-size: 0dp;
+    padding-left: 16dp;
+    font-weight: 600;
+    text-align: left;
+    color: palete(dark);
+    border: none;
+    border-top: 1dp solid palette(dark);
+}
+
+/*
+ * Иконка индикатора в меню
+ */
+QLabel[indicatorIcon=true] {
+    width: 16dp;
+    height: 16dp;
+    padding-left: 22dp;
+    padding-right: 26dp;
+}
+
+/*
+ * Фрейм бокового меню
+ */
+QFrame[sideNavigation=true] {
+    background-color: palette(base);
+}
+
+/******************************
+ * Панель инструментов вверху
+ */
+
+QFrame[toolbar=true] {
+    background-color: palette(button);
+}
+
+QFrame[toolbar=true] QLabel {
+    margin-left: 8dp;
+    font-weight: 600;
+    font-size: 20pt;
+    text-align: left;
+}
+
+QFrame[toolbarBottomBordered=true] {
+    border: none;
+    border-bottom: 4dp solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 palette(shadow), stop:0.8 palette(window), stop:1 palette(window));
+    /*border-bottom: 4dp solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(178, 178, 178, 255), stop:0.4 rgba(192, 192, 192, 255), stop:0.8 rgba(233, 233, 233, 255), stop:1 rgba(244, 244, 244, 255));*/
+}
+
+QFrame[toolbarTopBordered=true] {
+    border: none;
+    border-top: 4dp solid qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 palette(shadow), stop:0.5 palette(window), stop:1 palette(window));
+}
+
+/*******************
+ * Список проектов
+ */
+
+/*
+ * Кнопки действий проекта из списка
+ */
+QToolButton[projectAction=true] {
+    min-width: 40dp;
+    icon-size: 24dp;
+    margin-left: 0dp;
+    margin-right: 0dp;
+    padding-top: 1dp;
+    padding-bottom: 1dp;
+    background: palette(alternate-base);
+    border: none;
+}
+
+QToolButton[projectAction=true]:pressed {
+    padding-top: 2dp;
+    padding-bottom: 0dp;
+}
+
+/*
+ * Кнопки раскрытия меню в списке проектов
+ */
+QToolButton[projectActionMenu=true] {
+    min-width: 40dp;
+    icon-size: 24dp;
+    margin-left: 0dp;
+    margin-right: 0dp;
+    padding-top: 1dp;
+    padding-bottom: 1dp;
+    background: palette(window);
+    border: none;
+}
+
+QToolButton[projectActionMenu=false] {
+    min-width: 40dp;
+    icon-size: 24dp;
+    margin-left: 0dp;
+    margin-right: 0dp;
+    padding-top: 1dp;
+    padding-bottom: 1dp;
+    background: palette(alternate-base);
+    border: none;
+}
+
+/*
+ * Фрейм проекта
+ */
+QFrame[projectFrame=true] {
+    border: none;
+    border-bottom: 0dp solid palette(dark);
+}
+
+/*
+ * Фрейм текстовой части проекта
+ */
+QFrame[projectTextFrame=true] {
+    padding: 16dp 16dp 16dp 16dp;
+}
+
+/*
+ * Название проекта
+ */
+QLabel[projectName=true] {
+    font-weight: 500;
+    font-size: 16pt;
+}
+
+/*
+ * Описание проекта
+ */
+QLabel[projectInfo=true] {
+    font-weight: 500;
+    font-size: 14pt;
+    color: palette(mid);
 }
 
 /*******************
@@ -479,8 +449,8 @@ QRadioButton {
 }
 
 QRadioButton::indicator {
-    width: 20dp;
-    height: 20dp;
+    width: 16dp;
+    height: 16dp;
 }
 
 QRadioButton::indicator:unchecked {
@@ -503,8 +473,8 @@ QCheckBox {
 }
 
 QCheckBox::indicator {
-    width: 20dp;
-    height: 20dp;
+    width: 16dp;
+    height: 16dp;
 }
 
 QCheckBox::indicator:unchecked {
@@ -623,3 +593,33 @@ QDialogButtonBox {
 }
 
 
+
+/******
+ * Табы
+ */
+
+QTabBar {
+    min-height: 48dp;
+    background-color: palette(button);
+}
+
+QTabBar::tab {
+    padding: 12dp 3dp 12dp 2dp;
+    font-weight: 600;
+    color: palette(button-text);
+    background: palette(button);
+}
+
+QTabBar::tab:selected {
+    color: palette(bright-text);
+    border-bottom-width: 3dp;
+    border-bottom-style: solid;
+    border-bottom-color: palette(highlight);
+}
+
+QTabBar::tab:!selected {
+    color: palette(button-text);
+    border-bottom-width: 3dp;
+    border-bottom-style: solid;
+    border-bottom-color: palette(button);
+}

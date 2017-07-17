@@ -10,7 +10,7 @@
 #else
 #include <QScreen>
 #endif
-
+#include <QDebug>
 
 /**
  * @brief Вспомогательный класс для работы со стилями
@@ -74,9 +74,10 @@ private:
 				density < 180 ? 1
 				: density < 270 ? 1.5
 				: density < 360 ? 2 : 3;
+            qDebug() << density << dp;
 			return dp;
 		}();
-
+        qDebug() << s_dp;
 		return s_dp;
 	}
 };
