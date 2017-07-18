@@ -87,6 +87,17 @@ QAbstractItemModel* ProjectsList::model() const
     return m_model;
 }
 
+void ProjectsList::setMenusAvailable(bool _isAvailable)
+{
+    QLayout* layout = widget()->layout();
+    for (int i = 0; i != layout->count(); ++i) {
+        ProjectFileWidget* projectFileWidget = qobject_cast<ProjectFileWidget*>(layout->itemAt(i)->widget());
+        if (projectFileWidget) {
+            projectFileWidget->setMenuAvailable(_isAvailable);
+        }
+    }
+}
+
 int ProjectsList::projectRow(UserInterface::ProjectFileWidget* _project) const
 {
     QVBoxLayout* layout = dynamic_cast<QVBoxLayout*>(widget()->layout());
