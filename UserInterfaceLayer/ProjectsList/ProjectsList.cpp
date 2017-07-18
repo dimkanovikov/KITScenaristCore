@@ -91,9 +91,10 @@ void ProjectsList::setMenusAvailable(bool _isAvailable)
 {
     QLayout* layout = widget()->layout();
     for (int i = 0; i != layout->count(); ++i) {
-        ProjectFileWidget* projectFileWidget = qobject_cast<ProjectFileWidget*>(layout->itemAt(i)->widget());
+        QWidget* widget = layout->itemAt(i)->widget();
+        ProjectFileWidget* projectFileWidget = qobject_cast<ProjectFileWidget*>(widget);
         if (projectFileWidget) {
-            projectFileWidget->setMenuAvailable(_isAvailable);
+            projectFileWidget->setMenuVisible(_isAvailable);
         }
     }
 }

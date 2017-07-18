@@ -52,9 +52,9 @@ namespace UserInterface
         void setMouseHover(bool _hover);
 
         /**
-         * @brief Сделать кнопку открытия меню доступным/недоступным
+         * @brief Сделать кнопку открытия меню видимым/невидимым
          */
-        void setMenuAvailable(bool _isAvailable);
+        void setMenuVisible(bool _isVisible);
 
     signals:
         /**

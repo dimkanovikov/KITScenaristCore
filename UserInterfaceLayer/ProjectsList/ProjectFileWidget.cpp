@@ -87,9 +87,9 @@ void ProjectFileWidget::setMouseHover(bool _hover)
 #endif
 }
 
-void ProjectFileWidget::setMenuAvailable(bool _isAvailable)
+void ProjectFileWidget::setMenuVisible(bool _isVisible)
 {
-    m_ui->openMenu->setVisible(_isAvailable);
+    m_ui->openMenu->setVisible(_isVisible);
 }
 
 void ProjectFileWidget::mousePressEvent(QMouseEvent* _event)
