@@ -51,6 +51,11 @@ namespace UserInterface
          */
         void setMouseHover(bool _hover);
 
+        /**
+         * @brief Сделать кнопку открытия меню видимым/невидимым
+         */
+        void setMenuVisible(bool _isVisible);
+
     signals:
         /**
          * @brief На виджете был произведён клик

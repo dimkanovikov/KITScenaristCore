@@ -87,6 +87,11 @@ void ProjectFileWidget::setMouseHover(bool _hover)
 #endif
 }
 
+void ProjectFileWidget::setMenuVisible(bool _isVisible)
+{
+    m_ui->openMenu->setVisible(_isVisible);
+}
+
 void ProjectFileWidget::mousePressEvent(QMouseEvent* _event)
 {
     QColor color = palette().text().color();
