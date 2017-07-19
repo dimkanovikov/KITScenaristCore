@@ -11,6 +11,8 @@
 #include <QScreen>
 #endif
 
+#include <cmath>
+
 
 /**
  * @brief Вспомогательный класс для работы со стилями

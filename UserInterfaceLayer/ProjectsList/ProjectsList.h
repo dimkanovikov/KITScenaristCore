@@ -30,6 +30,11 @@ namespace UserInterface
 		 */
 		QAbstractItemModel* model() const;
 
+        /**
+         * @brief Сделать доступным/недоступным меню каждого проекта
+         */
+        void setMenusVisible(bool _isVisible);
+
 	signals:
 		/**
 		 * @brief Был выбран проект для открытия

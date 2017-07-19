@@ -87,6 +87,18 @@ QAbstractItemModel* ProjectsList::model() const
     return m_model;
 }
 
+void ProjectsList::setMenusVisible(bool _isVisible)
+{
+    QLayout* layout = widget()->layout();
+    for (int i = 0; i != layout->count(); ++i) {
+        QWidget* widget = layout->itemAt(i)->widget();
+        ProjectFileWidget* projectFileWidget = qobject_cast<ProjectFileWidget*>(widget);
+        if (projectFileWidget) {
+            projectFileWidget->setMenuVisible(_isVisible);
+        }
+    }
+}
+
 int ProjectsList::projectRow(UserInterface::ProjectFileWidget* _project) const
 {
     QVBoxLayout* layout = dynamic_cast<QVBoxLayout*>(widget()->layout());
