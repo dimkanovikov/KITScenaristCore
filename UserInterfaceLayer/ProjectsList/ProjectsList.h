@@ -33,7 +33,7 @@ namespace UserInterface
         /**
          * @brief Сделать доступным/недоступным меню каждого проекта
          */
-        void setMenusAvailable(bool _isAvailable);
+        void setMenusVisible(bool _isVisible);
 
 	signals:
 		/**
