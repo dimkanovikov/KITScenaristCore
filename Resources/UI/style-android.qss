@@ -568,8 +568,9 @@ QAbstractScrollArea {
 }
 
 
-
-
+/**************************
+ * Стиль полосы прокрутки
+ */
 
 QScrollBar {
     border: none;
@@ -605,6 +606,10 @@ QScrollBar::sub-line {
     height: 0dp;
 }
 
+/*
+ *
+ */
+
 QLineEdit {
     background-color: palette(base);
 }
@@ -613,12 +618,10 @@ QDialogButtonBox {
     background-color: palette(base);
 }
 
-
-
-
-/*
+/*******************
  * Стили лайтбокса
  */
+
 [lightBoxDialogTitle=true] {
     font-weight: 500;
     font-size: 20pt;
@@ -651,4 +654,13 @@ QDialogButtonBox {
     color: white;
     border: none;
     padding: 0dp 24dp 24dp 24dp;
+}
+
+/*
+ * Стиль обычного лейбла
+ */
+QLabel[simpleText=true] {
+    margin: 16dp;
+    font-size: 16dp;
+    font-weight: 500;
 }
