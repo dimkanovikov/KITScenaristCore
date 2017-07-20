@@ -82,7 +82,7 @@ void SideSlideAnimator::slideIn()
     //
     // Не выполняем анимацию, если она и так уже выполнена
     //
-    if (m_decorator->isVisible()) return;
+    if (m_decorator->isVisible() && !isAnimated()) return;
 
     //
     // Прерываем выполнение, если клиент хочет повторить его
@@ -199,6 +199,11 @@ void SideSlideAnimator::animateBackward()
 
 void SideSlideAnimator::slideOut()
 {
+    //
+    // Не выполняем анимацию, если она и так уже выполнена
+    //
+    if (!m_decorator->isVisible() && !isAnimated()) return;
+
     //
     // Прерываем выполнение, если клиент хочет повторить его
     //
