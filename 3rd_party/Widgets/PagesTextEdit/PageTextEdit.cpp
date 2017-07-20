@@ -294,11 +294,7 @@ void PageTextEditPrivate::_q_adjustScrollbars()
         // В обычном режиме просто добавляем немного дополнительной прокрутки для удобства
         //
         else {
-#ifndef MOBILE_OS
             const int SCROLL_DELTA = 800;
-#else
-            const int SCROLL_DELTA = 300;
-#endif
             int maximumValue =
                     docSize.height() - viewportSize.height()
                     + (m_addBottomSpace ? SCROLL_DELTA : 0);
