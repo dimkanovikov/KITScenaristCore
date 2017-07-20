@@ -9,6 +9,8 @@
         <file>Fonts/embed/courierprime-italic.odttf</file>
         <file>Fonts/embed/courierprime-bold.odttf</file>
         <file>Fonts/embed/courierprime-bold-italic.odttf</file>
+        <file alias="Roboto Medium">Fonts/Roboto-Medium.ttf</file>
+        <file alias="Roboto Regular">Fonts/Roboto-Regular.ttf</file>
     </qresource>
     <qresource prefix="/Graphics">
         <file>Icons/folder.png</file>
