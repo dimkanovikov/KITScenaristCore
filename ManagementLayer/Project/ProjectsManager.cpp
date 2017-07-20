@@ -153,6 +153,10 @@ bool ProjectsManager::setCurrentProject(const QString& _path, bool _isLocal, boo
                 // Добавляем проект в список
                 //
                 m_recentProjects.prepend(newCurrentProject);
+                //
+                // Сохраняем список проектов
+                //
+                saveRecentProjects();
             }
 
             //
