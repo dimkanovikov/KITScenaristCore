@@ -25,11 +25,21 @@ public:
 		// Настраиваем параметры скроллера
 		//
         QScrollerProperties properties = scroller->scrollerProperties();
-        properties.setScrollMetric(QScrollerProperties::MousePressEventDelay, qreal(1.0));
+        properties.setScrollMetric(QScrollerProperties::MousePressEventDelay, qreal(0.0));
         properties.setScrollMetric(QScrollerProperties::DragStartDistance, qreal(0.001));
         properties.setScrollMetric(QScrollerProperties::MinimumVelocity, qreal(20.0 / 1000));
         properties.setScrollMetric(QScrollerProperties::MaximumVelocity, qreal(350.0 / 1000));
-        properties.setScrollMetric(QScrollerProperties::MaximumClickThroughVelocity, qreal(1.0 / 1000));
+        //
+        // ... максимальная скорость, при которой события клика отправляются прокручиваемому виджету
+        //
+        properties.setScrollMetric(QScrollerProperties::MaximumClickThroughVelocity, qreal(0.0));
+        //
+        // ... время жест в течении которого воспринимается, как ускоряющий прокрутку
+        //
+        properties.setScrollMetric(QScrollerProperties::AcceleratingFlickMaximumTime, qreal(0.1));
+        //
+        // ... во сколько раз ускоряется прокрутка жестом ускорения
+        //
         properties.setScrollMetric(QScrollerProperties::AcceleratingFlickSpeedupFactor, qreal(2.0));
         QVariant overshootPolicy = QVariant::fromValue<QScrollerProperties::OvershootPolicy>(QScrollerProperties::OvershootAlwaysOff);
         properties.setScrollMetric(QScrollerProperties::HorizontalOvershootPolicy, overshootPolicy);
