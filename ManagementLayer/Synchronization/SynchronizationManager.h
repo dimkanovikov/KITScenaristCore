@@ -253,6 +253,11 @@ namespace ManagementLayer
 
     private:
         /**
+         * @brief Фейковая авторизация для доступа к облачным проектам оффлайн
+         */
+        void fakeLogin();
+
+        /**
          * @brief Проверка, что статус ответа - ок
          */
         bool isOperationSucceed(QXmlStreamReader& _reader);
