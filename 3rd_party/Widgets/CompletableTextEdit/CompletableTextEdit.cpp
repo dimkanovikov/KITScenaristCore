@@ -87,9 +87,9 @@ namespace {
          * @brief Переопределяем, чтобы скрывать декорации, во время закрытия попапа
          */
         bool eventFilter(QObject* _watched, QEvent* _event) {
-            if (_watched == m_popup
-                && m_popup->parentWidget() != nullptr
-                && _event->type() == QEvent::Hide) {
+            if ((_event->type() == QEvent::KeyPress
+                 || (_watched == m_popup && _event->type() == QEvent::Hide))
+                && m_popup->parentWidget() != nullptr) {
                 WAF::Animation::sideSlideOut(m_popup, WAF::TopSide, false);
             }
             return QCompleter::eventFilter(_watched, _event);
