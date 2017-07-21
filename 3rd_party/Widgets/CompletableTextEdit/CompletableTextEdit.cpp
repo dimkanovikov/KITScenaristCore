@@ -10,7 +10,7 @@
 #include <QListView>
 #include <QScrollBar>
 #include <QStyledItemDelegate>
-#include <QDebug>
+
 namespace {
 #ifdef MOBILE_OS
     /**
@@ -56,6 +56,10 @@ namespace {
                     .arg(StyleSheetHelper::dpToPx(COMPLETER_ITEM_HEIGHT))
                     .arg(StyleSheetHelper::dpToPx(1));
             m_popup->setStyleSheet(styleSheet);
+            QFont font = m_popup->font();
+            font.setWeight(QFont::Normal);
+            font.setPixelSize(StyleSheetHelper::dpToPx(18));
+            m_popup->setFont(font);
 
             setMaxVisibleItems(COMPLETER_MAX_ITEMS);
         }
