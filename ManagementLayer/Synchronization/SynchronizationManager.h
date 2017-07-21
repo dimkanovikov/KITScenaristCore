@@ -177,6 +177,11 @@ namespace ManagementLayer
          */
         void restartSession();
 
+        /**
+         * @brief Фейковая авторизация для доступа к облачным проектам оффлайн
+         */
+        void fakeLogin();
+
     signals:
         /**
          * @brief Авторизация пройдена успешно
@@ -252,11 +257,6 @@ namespace ManagementLayer
         void networkStatusChanged(bool _isActive);
 
     private:
-        /**
-         * @brief Фейковая авторизация для доступа к облачным проектам оффлайн
-         */
-        void fakeLogin();
-
         /**
          * @brief Проверка, что статус ответа - ок
          */
