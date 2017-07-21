@@ -222,6 +222,7 @@ bool SynchronizationManager::autoLogin()
     // Если они не пусты, авторизуемся
     //
     if (!email.isEmpty() && !password.isEmpty()) {
+        fakeLogin();
         login(email, password);
         return true;
     }
@@ -249,62 +250,7 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
         // Если неполадки с интернетом, т.е. работает в оффлайн режиме
         //
         if (m_sessionKey == INCORRECT_SESSION_KEY) {
-            //
-            // Попробуем загрузить email
-            //
-            const QString userEmail =
-                        DataStorageLayer::StorageFacade::settingsStorage()->value(
-                            "application/email",
-                            DataStorageLayer::SettingsStorage::ApplicationSettings);
-            //
-            // Если ранее были авторизованы
-            //
-            if (!userEmail.isEmpty()) {
-                //
-                // Запомним email
-                //
-                m_userEmail = userEmail;
-
-                //
-                // Загрузим всю требуемую информацию из кэша (имя пользователя,
-                // активность и дату подписки)
-                //
-                const QString userName =
-                            DataStorageLayer::StorageFacade::settingsStorage()->value(
-                                "application/username",
-                                DataStorageLayer::SettingsStorage::ApplicationSettings);
-                m_isSubscriptionActive =
-                            DataStorageLayer::StorageFacade::settingsStorage()->value(
-                                "application/subscriptionIsActive",
-                                DataStorageLayer::SettingsStorage::ApplicationSettings).toInt();
-                const QString date =
-                            DataStorageLayer::StorageFacade::settingsStorage()->value(
-                                "application/subscriptionExpiredDate",
-                                DataStorageLayer::SettingsStorage::ApplicationSettings);
-                const int paymentMonth =
-                            DataStorageLayer::StorageFacade::settingsStorage()->value(
-                                "application/subscriptionPaymentMonth",
-                                DataStorageLayer::SettingsStorage::ApplicationSettings).toInt();
-                const quint64 usedSpace =
-                            DataStorageLayer::StorageFacade::settingsStorage()->value(
-                                "application/subscriptionUsedSpace",
-                                DataStorageLayer::SettingsStorage::ApplicationSettings).toULongLong();
-                const quint64 availableSpace =
-                            DataStorageLayer::StorageFacade::settingsStorage()->value(
-                                "application/subscriptionAvailableSpace",
-                                DataStorageLayer::SettingsStorage::ApplicationSettings).toULongLong();
-
-                //
-                // Уведомим об этом
-                //
-                emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date), usedSpace, availableSpace);
-                emit loginAccepted(userName, m_userEmail, paymentMonth);
-
-                //
-                // Хоть как то авторизовались, тепер нас интересует статус интернета
-                //
                 checkNetworkState();
-            }
         }
         return;
     }
@@ -1447,6 +1393,68 @@ void SynchronizationManager::restartSession()
         prepareToFullSynchronization();
         aboutFullSyncScenario();
         aboutFullSyncData();
+    }
+}
+
+void SynchronizationManager::fakeLogin()
+{
+    //
+    // Если уже задан какой-то ключ сессии, то это
+    // либо мы действительно авторизовались, либо фейково.
+    // В любом случае, делать фейковую авторизацию нет смысла
+    //
+    if (!m_sessionKey.isEmpty()) {
+        return;
+    }
+
+    const QString userEmail =
+                DataStorageLayer::StorageFacade::settingsStorage()->value(
+                    "application/email",
+                    DataStorageLayer::SettingsStorage::ApplicationSettings);
+    //
+    // Если ранее были авторизованы
+    //
+    if (!userEmail.isEmpty()) {
+        m_sessionKey = INCORRECT_SESSION_KEY;
+        //
+        // Запомним email
+        //
+        m_userEmail = userEmail;
+
+        //
+        // Загрузим всю требуемую информацию из кэша (имя пользователя,
+        // активность и дату подписки)
+        //
+        const QString userName =
+                    DataStorageLayer::StorageFacade::settingsStorage()->value(
+                        "application/username",
+                        DataStorageLayer::SettingsStorage::ApplicationSettings);
+        m_isSubscriptionActive =
+                    DataStorageLayer::StorageFacade::settingsStorage()->value(
+                        "application/subscriptionIsActive",
+                        DataStorageLayer::SettingsStorage::ApplicationSettings).toInt();
+        const QString date =
+                    DataStorageLayer::StorageFacade::settingsStorage()->value(
+                        "application/subscriptionExpiredDate",
+                        DataStorageLayer::SettingsStorage::ApplicationSettings);
+        const int paymentMonth =
+                    DataStorageLayer::StorageFacade::settingsStorage()->value(
+                        "application/subscriptionPaymentMonth",
+                        DataStorageLayer::SettingsStorage::ApplicationSettings).toInt();
+        const quint64 usedSpace =
+                    DataStorageLayer::StorageFacade::settingsStorage()->value(
+                        "application/subscriptionUsedSpace",
+                        DataStorageLayer::SettingsStorage::ApplicationSettings).toULongLong();
+        const quint64 availableSpace =
+                    DataStorageLayer::StorageFacade::settingsStorage()->value(
+                        "application/subscriptionAvailableSpace",
+                        DataStorageLayer::SettingsStorage::ApplicationSettings).toULongLong();
+
+        //
+        // Уведомим об этом
+        //
+        emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date), usedSpace, availableSpace);
+        emit loginAccepted(userName, m_userEmail, paymentMonth);
     }
 }
 

@@ -177,6 +177,11 @@ namespace ManagementLayer
          */
         void restartSession();
 
+        /**
+         * @brief Фейковая авторизация для доступа к облачным проектам оффлайн
+         */
+        void fakeLogin();
+
     signals:
         /**
          * @brief Авторизация пройдена успешно
