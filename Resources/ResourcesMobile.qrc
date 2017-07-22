@@ -64,10 +64,10 @@
         <file>Icons/Editing/format-underline.png</file>
     </qresource>
     <qresource prefix="/Translations">
-        <file>Translations/Scenarist_ru.qm</file>
+        <file>Translations/ScenaristMobile_ru.qm</file>
         <file>Translations/qt_ru.qm</file>
         <file>Translations/qtbase_ru.qm</file>
-        <file>Translations/Scenarist_en.qm</file>
+        <file>Translations/ScenaristMobile_en.qm</file>
         <file>Translations/qtbase_en.qm</file>
     </qresource>
     <qresource prefix="/Interface">

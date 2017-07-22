@@ -14,7 +14,7 @@
    <cursorShape>PointingHandCursor</cursorShape>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">Form</string>
   </property>
   <layout class="QVBoxLayout" name="mainLayout">
    <property name="spacing">
@@ -79,7 +79,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Project Name</string>
+           <string notr="true">Project Name</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -98,7 +98,7 @@
            <string notr="true"/>
           </property>
           <property name="text">
-           <string>Project Info</string>
+           <string notr="true">Project Info</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
