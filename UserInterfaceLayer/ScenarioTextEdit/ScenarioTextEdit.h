@@ -148,8 +148,8 @@ namespace UserInterface
          * @brief Создать контекстное меню, чтобы добавить в него дополнительные действия
          * @note Управление памятью передаётся вызывающему метод
          */
-        QMenu* createContextMenu(const QPoint& _pos, QWidget* _parent = 0);
-
+        QMenu* createContextMenu(const QPoint& _pos, QWidget* _parent = 0) override;
+        
     signals:
         /**
          * @brief Запрос на отмену последнего действия
@@ -180,12 +180,12 @@ namespace UserInterface
         /**
          * @brief Нажатия многих клавиш обрабатываются вручную
          */
-        void keyPressEvent(QKeyEvent* _event);
+        void keyPressEvent(QKeyEvent* _event) override;
 
         /**
          * @brief Переопределяем, чтобы самостоятельно обрабатывать вводимый пользователем текст
          */
-        void inputMethodEvent(QInputMethodEvent* _event);
+        void inputMethodEvent(QInputMethodEvent* _event) override;
 
         /**
          * @brief Дополнительная функция для обработки нажатий самим редактором
@@ -196,35 +196,35 @@ namespace UserInterface
         /**
          * @brief Переопределяется для корректной загрузки больших документов
          */
-        void paintEvent(QPaintEvent* _event);
+        void paintEvent(QPaintEvent* _event) override;
 
         /**
          * @brief Переопределяется для обработки тройного клика
          */
         /** @{ */
-        void mousePressEvent(QMouseEvent* _event);
-        void mouseDoubleClickEvent(QMouseEvent* _event);
+        void mousePressEvent(QMouseEvent* _event) override;
+        void mouseDoubleClickEvent(QMouseEvent* _event) override;
         /** @} */
 
         /**
          * @brief Переопределяется, для того, чтобы блокировать выделение текста мышкой
          */
-        void mouseMoveEvent(QMouseEvent* _event);
+        void mouseMoveEvent(QMouseEvent* _event) override;
 
         /**
          * @brief Переопределяем работу с буфером обмена для использования собственного майм типа данных
          */
         /** @{ */
-        bool canInsertFromMimeData(const QMimeData* _source) const;
-        QMimeData* createMimeDataFromSelection() const;
-        void insertFromMimeData(const QMimeData* _source);
+        bool canInsertFromMimeData(const QMimeData* _source) const override;
+        QMimeData* createMimeDataFromSelection() const override;
+        void insertFromMimeData(const QMimeData* _source) override;
         /** @} */
 
         /**
          * @brief Переопределяем, чтобы запрещать дополнять в пустых блоках при установке
          *		  соответствующего флага
          */
-        bool canComplete() const;
+        bool canComplete() const override;
 
     private slots:
         /**

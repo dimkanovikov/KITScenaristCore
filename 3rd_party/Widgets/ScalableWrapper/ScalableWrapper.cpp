@@ -121,7 +121,16 @@ QVariant ScalableWrapper::inputMethodQuery(Qt::InputMethodQuery _query, QVariant
     } else {
         result = QWidget::inputMethodQuery(_query);
     }
-
+    
+#ifdef Q_OS_IOS
+    //
+    // Делаем курсор всегда на нуле, чтобы редактор сценария не выкидывало ни вниз ни вверх
+    //
+    if (_query & Qt::ImCursorRectangle) {
+        result = QRectF(0,0,0,0);
+    }
+#endif
+    
     return result;
 }
 
