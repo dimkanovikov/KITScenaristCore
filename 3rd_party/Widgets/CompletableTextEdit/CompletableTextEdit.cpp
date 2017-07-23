@@ -34,10 +34,10 @@ namespace {
     /**
      * @brief Переопределяем комплитер, чтобы показывать список красиво
      */
-	class MyCompleter : public QCompleter
-	{
+    class Completer : public QCompleter
+    {
 	public:
-        explicit MyCompleter(QObject* _p = 0) :
+        explicit Completer(QObject* _p = 0) :
             QCompleter(_p),
             m_popup(new QListView),
             m_popupDelegate(new CenteredTextDelegate(m_popup))
@@ -82,6 +82,16 @@ namespace {
             WAF::Animation::sideSlideIn(m_popup, WAF::TopSide, false);
 		}
 
+        /**
+         * @brief Закрыть список автодополнения
+         */
+        void closeCompleter() {
+            if (m_popup != nullptr
+                && m_popup->parentWidget() != nullptr) {
+                WAF::Animation::sideSlideOut(m_popup, WAF::TopSide, false);
+            }
+        }
+
     protected:
         /**
          * @brief Переопределяем, чтобы скрывать декорации, во время закрытия попапа
@@ -107,10 +117,10 @@ namespace {
         QStyledItemDelegate* m_popupDelegate = nullptr;
 	};
 #else
-    class MyCompleter : public QCompleter
+    class Completer : public QCompleter
     {
     public:
-        explicit MyCompleter(QObject* _p = 0) : QCompleter(_p) {}
+        explicit Completer(QObject* _p = 0) : QCompleter(_p) {}
 
         /**
          * @brief Переопределяется для отображения подсказки по глобальной координате
@@ -120,6 +130,13 @@ namespace {
             complete(_rect);
             popup()->move(_rect.topLeft());
         }
+
+        /**
+         * @brief Закрыть список автодополнения
+         */
+        void closeCompleter() {
+            popup()->close();
+        }
     };
 #endif
 }
@@ -128,7 +145,7 @@ namespace {
 CompletableTextEdit::CompletableTextEdit(QWidget* _parent) :
     SpellCheckTextEdit(_parent),
     m_useCompleter(true),
-    m_completer(new MyCompleter(this))
+    m_completer(new Completer(this))
 {
 	m_completer->setWidget(this);
 	connect(m_completer, SIGNAL(activated(QString)), this, SLOT(applyCompletion(QString)));
@@ -196,7 +213,7 @@ bool CompletableTextEdit::complete(QAbstractItemModel* _model, const QString& _c
 							m_completer->popup()->sizeHintForColumn(0)
 							+ m_completer->popup()->verticalScrollBar()->sizeHint().width());
 
-				MyCompleter* myCompleter = static_cast<MyCompleter*>(m_completer);
+                Completer* myCompleter = dynamic_cast<Completer*>(m_completer);
 				myCompleter->completeReimpl(rect);
 				emit popupShowed();
 
@@ -252,7 +269,8 @@ void CompletableTextEdit::applyCompletion(const QString& _completion)
 
 void CompletableTextEdit::closeCompleter()
 {
-	m_completer->popup()->hide();
+    Completer* completer = dynamic_cast<Completer*>(m_completer);
+    completer->closeCompleter();
 }
 
 bool CompletableTextEdit::canComplete() const

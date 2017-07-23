@@ -583,6 +583,14 @@ void ScenarioTextEdit::inputMethodEvent(QInputMethodEvent* _event)
 #ifndef MOBILE_OS
     CompletableTextEdit::inputMethodEvent(_event);
 #else
+    //
+    // Закроем подстановщика, перед событием
+    //
+    closeCompleter();
+
+    //
+    // Имитируем события нажатия клавиши
+    //
     Qt::Key pressedKey = Qt::Key_unknown;
     QString eventText = _event->commitString();
     if (eventText == "\n") {
@@ -593,7 +601,6 @@ void ScenarioTextEdit::inputMethodEvent(QInputMethodEvent* _event)
         pressedKey = Qt::Key_Backspace;
     }
     QKeyEvent keyEvent(QKeyEvent::KeyPress, pressedKey, Qt::NoModifier, eventText);
-
     keyPressEvent(&keyEvent);
     _event->accept();
 #endif

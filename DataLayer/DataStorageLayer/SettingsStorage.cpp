@@ -530,6 +530,7 @@ SettingsStorage::SettingsStorage()
                            );
     m_defaultValues.insert("scenario-editor/zoom-range", "1");
     m_defaultValues.insert("scenario-editor/show-scenes-numbers", "1");
+    m_defaultValues.insert("scenario-editor/highlight-current-line", "0");
     m_defaultValues.insert("scenario-editor/text-color", "#000000");
     m_defaultValues.insert("scenario-editor/background-color", "#FEFEFE");
     m_defaultValues.insert("scenario-editor/nonprintable-text-color", "#0AC139");
