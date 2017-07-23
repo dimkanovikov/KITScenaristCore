@@ -662,5 +662,5 @@ QDialogButtonBox {
 QLabel[simpleText=true] {
     margin: 16dp;
     font-size: 16dp;
-    font-weight: 500;
+    font-weight: 400;
 }
