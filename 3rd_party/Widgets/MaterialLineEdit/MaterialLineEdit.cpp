@@ -47,13 +47,14 @@ void MaterialLineEdit::setLabel(const QString& _text)
 
 void MaterialLineEdit::setText(const QString& _text)
 {
-    m_lineEdit->setText(_text);
+    m_text = _text;
+    m_lineEdit->setText(m_text);
     updatePlaceholder();
 }
 
 QString MaterialLineEdit::text() const
 {
-    return m_lineEdit->text();
+    return m_text;
 }
 
 void MaterialLineEdit::setHelperText(const QString& _text)
@@ -89,11 +90,11 @@ bool MaterialLineEdit::eventFilter(QObject* _watched, QEvent* _event)
             updatePlaceholder();
         } else if (_event->type() == QEvent::InputMethod) {
             QInputMethodEvent* event = static_cast<QInputMethodEvent*>(_event);
-            QString text = m_lineEdit->text();
+            m_text = m_lineEdit->text();
             if (event->replacementStart() >= 0) {
-                text += event->preeditString();
+                m_text += event->preeditString();
             }
-            emit textChanged(text);
+            emit textChanged(m_text);
         }
     }
 

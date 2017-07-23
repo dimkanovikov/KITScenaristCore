@@ -91,6 +91,13 @@ private:
     QLineEdit* m_lineEdit = nullptr;
 
     /**
+     * @brief Введённый текст
+     * @note Из-за того, что в разных системах ввод работает по разному,
+     *       храним текст в отдельной переменной
+     */
+    QString m_text;
+
+    /**
      * @brief Подсказка
      */
     QLabel* m_helper = nullptr;
