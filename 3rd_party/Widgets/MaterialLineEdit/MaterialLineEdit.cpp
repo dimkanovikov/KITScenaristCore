@@ -96,7 +96,11 @@ bool MaterialLineEdit::eventFilter(QObject* _watched, QEvent* _event)
             QInputMethodEvent* event = static_cast<QInputMethodEvent*>(_event);
             m_text = m_lineEdit->text();
             if (event->replacementStart() >= 0) {
-                m_text += event->preeditString();
+                if (!event->preeditString().isEmpty()) {
+                    m_text += event->preeditString();
+                } else {
+                    m_text += event->commitString();
+                }
             }
             emit textChanged(m_text);
         }
