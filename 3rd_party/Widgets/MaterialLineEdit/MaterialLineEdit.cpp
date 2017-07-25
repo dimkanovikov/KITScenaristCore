@@ -54,7 +54,11 @@ void MaterialLineEdit::setText(const QString& _text)
 
 QString MaterialLineEdit::text() const
 {
+#if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     return m_text;
+#else
+    return m_lineEdit->text();
+#endif
 }
 
 void MaterialLineEdit::setHelperText(const QString& _text)
