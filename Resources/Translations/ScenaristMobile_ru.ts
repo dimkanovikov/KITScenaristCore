@@ -4500,7 +4500,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="113"/>
         <source>SIGN UP</source>
-        <translation>ЗАРЕГИСТРИРОВАТЬСЯ</translation>
+        <translation>РЕГИСТРАЦИЯ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="118"/>
