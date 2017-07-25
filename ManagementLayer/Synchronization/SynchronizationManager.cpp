@@ -244,12 +244,12 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     //
     // Успешно ли завершилась авторизация
     //
-    if(!isOperationSucceed(responseReader)) {
+    if (!isOperationSucceed(responseReader)) {
         //
         // Если неполадки с интернетом, т.е. работает в оффлайн режиме
         //
         if (m_sessionKey == INCORRECT_SESSION_KEY) {
-                checkNetworkState();
+            checkNetworkState();
         }
         return;
     }
@@ -671,6 +671,23 @@ void SynchronizationManager::changePassword(const QString& _password,
 
 void SynchronizationManager::loadProjects()
 {
+    auto loadProjectsFromCache = [] {
+        return QByteArray::fromBase64(
+                    DataStorageLayer::StorageFacade::settingsStorage()->value(
+                        "application/remote-projects",
+                        DataStorageLayer::SettingsStorage::ApplicationSettings).toUtf8()
+                    );
+    };
+
+    //
+    // Если работаем в автономном режиме, то загрузим список проектов из кэша
+    //
+    if (m_sessionKey == INCORRECT_SESSION_KEY) {
+        const QByteArray cachedProjectsXml = loadProjectsFromCache();
+        emit projectsLoaded(cachedProjectsXml);
+        return;
+    }
+
     //
     // Получаем список проектов
     //
@@ -685,18 +702,6 @@ void SynchronizationManager::loadProjects()
     //
     QXmlStreamReader responseReader(response);
     if (!isOperationSucceed(responseReader)) {
-        //
-        // Если работает в автономном режиме, то загрузим из кэша
-        //
-        if (m_sessionKey == INCORRECT_SESSION_KEY) {
-            QByteArray cachedProjectsXml =
-                    QByteArray::fromBase64(
-                        DataStorageLayer::StorageFacade::settingsStorage()->value(
-                            "application/remote-projects",
-                            DataStorageLayer::SettingsStorage::ApplicationSettings).toUtf8()
-                        );
-            emit projectsLoaded(cachedProjectsXml);
-        }
         return;
     }
 
