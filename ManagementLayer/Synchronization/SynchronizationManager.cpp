@@ -222,7 +222,6 @@ bool SynchronizationManager::autoLogin()
     // Если они не пусты, авторизуемся
     //
     if (!email.isEmpty() && !password.isEmpty()) {
-        fakeLogin();
         login(email, password);
         return true;
     }
