@@ -110,6 +110,7 @@ namespace {
     const QString KEY_LOGIN = "login";
     const QString KEY_USERNAME = "username";
     const QString KEY_PASSWORD = "password";
+    const QString KEY_DEVICE_UUID = "device_uuid";
     const QString KEY_NEW_PASSWORD = "new_password";
     const QString KEY_SESSION_KEY = "session_key";
     const QString KEY_ROLE = "role";
@@ -166,9 +167,15 @@ namespace {
      * @brief Код ошибки означающий работу в автономном режиме
      */
     const QString INCORRECT_SESSION_KEY = "xxxxxxxxxxxxxxx";
-}
 
-namespace {
+    /**
+     * @brief Получить идентификатор устройства
+     */
+    static QString deviceUuid() {
+        return DataStorageLayer::StorageFacade::settingsStorage()->value(
+                    "application/uuid", DataStorageLayer::SettingsStorage::ApplicationSettings);
+    }
+
     /**
      * @brief Преобразовать дату из гггг.мм.дд чч:мм:сс в дд.мм.гггг
      */
@@ -235,6 +242,7 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_LOGIN, _email);
     loader.addRequestAttribute(KEY_PASSWORD, _password);
+    loader.addRequestAttribute(KEY_DEVICE_UUID, ::deviceUuid());
     QByteArray response = loader.loadSync(URL_LOGIN);
 
     //
@@ -495,7 +503,8 @@ void SynchronizationManager::logout()
     loader.setRequestMethod(NetworkRequest::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
-    QByteArray response = loader.loadSync(URL_LOGOUT);
+    loader.addRequestAttribute(KEY_DEVICE_UUID, ::deviceUuid());
+    loader.loadSync(URL_LOGOUT);
 
     m_sessionKey.clear();
     m_userEmail.clear();
