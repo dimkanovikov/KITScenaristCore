@@ -143,9 +143,10 @@ void ScalableWrapper::zoomOut()
 {
     setZoomRange(m_zoomRange - 0.1);
 }
-
+#include <QDebug>
 bool ScalableWrapper::event(QEvent* _event)
 {
+    qDebug() << _event->type();
     bool result = true;
     //
     // Определяем особый обработчик для жестов
@@ -169,7 +170,6 @@ bool ScalableWrapper::event(QEvent* _event)
 
         updateTextEditSize();
 
-#if !defined(Q_OS_ANDROID) && !defined(Q_OS_IOS)
         //
         // Корректируем размер сцены, чтобы исключить внезапные смещения редактора на ней
         //
@@ -178,7 +178,6 @@ bool ScalableWrapper::event(QEvent* _event)
             ensureVisible(m_editorProxy);
             syncScrollBarWithTextEdit();
         }
-#endif
 
         //
         // А после события включаем синхронизацию
@@ -423,7 +422,7 @@ void ScalableWrapper::syncScrollBarWithTextEdit(bool _syncPosition)
         horizontalScrollBar()->setValue(m_editor->horizontalScrollBar()->value());
     }
 }
-
+#include <QDebug>
 void ScalableWrapper::updateTextEditSize()
 {
     //
@@ -485,6 +484,11 @@ void ScalableWrapper::updateTextEditSize()
     //
     const bool dontSyncScrollPosition = false;
     syncScrollBarWithTextEdit(dontSyncScrollPosition);
+
+    qDebug() << editorSize << m_editorProxy->size() << m_editorProxy->pos() << sceneRect() << scene()->itemsBoundingRect();
+    qDebug() << items();
+    for (auto* item : items())
+        qDebug() << item->boundingRect() << item->pos();
 }
 
 void ScalableWrapper::scaleTextEdit()
