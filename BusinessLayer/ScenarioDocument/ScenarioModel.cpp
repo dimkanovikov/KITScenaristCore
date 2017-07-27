@@ -595,28 +595,6 @@ namespace {
     const int CARDS_SPACE = 40;
 
     /**
-     * @brief Сколько займут вложенные дети
-     */
-    static QSize cardChildsSize(const ScenarioModelItem* _parent) {
-        int width = CARD_WIDTH + CARDS_SPACE;
-        int height = CARD_HEIGHT + CARDS_SPACE;
-        for (int childIndex = 0; childIndex < _parent->childCount(); ++childIndex) {
-            const ScenarioModelItem* childItem = _parent->childAt(childIndex);
-            if (childItem->hasChildren()) {
-                QSize childSize = cardChildsSize(childItem);
-                width += childSize.width() + CARDS_SPACE;
-                if (height < childSize.height() + CARDS_SPACE) {
-                    height = childSize.height() + CARDS_SPACE;
-                }
-            } else {
-                width += CARD_WIDTH + CARDS_SPACE;
-            }
-        }
-
-        return QSize(width, height);
-    }
-
-    /**
      * @brief Сформировать строку xml-акта для элемента
      */
     static QString actXmlFor(const ScenarioModelItem* _item, int _x, int _y) {

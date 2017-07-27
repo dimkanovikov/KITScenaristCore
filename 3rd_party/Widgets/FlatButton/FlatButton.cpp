@@ -9,7 +9,6 @@ namespace {
 	/**
 	 * @brief Размер иконки
 	 */
-	static QSize ICON_SIZE(20, 20);
 }
 
 
@@ -18,7 +17,7 @@ FlatButton::FlatButton(QWidget* _parent) :
 	m_checkedIconHighlight(true)
 {
 #ifndef MOBILE_OS
-	setIconSize(ICON_SIZE);
+	setIconSize(QSize(20, 20));
 #endif
 
 	connect(this, SIGNAL(toggled(bool)), this, SLOT(aboutUpdateIcon()));

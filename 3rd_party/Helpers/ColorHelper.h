@@ -1,5 +1,5 @@
 #ifndef COLORHELPER_H
-#define COLORHELPER_h
+#define COLORHELPER_H
 
 #include <QColor>
 
