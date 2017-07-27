@@ -143,10 +143,9 @@ void ScalableWrapper::zoomOut()
 {
     setZoomRange(m_zoomRange - 0.1);
 }
-#include <QDebug>
+
 bool ScalableWrapper::event(QEvent* _event)
 {
-    qDebug() << _event->type();
     bool result = true;
     //
     // Определяем особый обработчик для жестов
@@ -484,11 +483,6 @@ void ScalableWrapper::updateTextEditSize()
     //
     const bool dontSyncScrollPosition = false;
     syncScrollBarWithTextEdit(dontSyncScrollPosition);
-
-    qDebug() << editorSize << m_editorProxy->size() << m_editorProxy->pos() << sceneRect() << scene()->itemsBoundingRect();
-    qDebug() << items();
-    for (auto* item : items())
-        qDebug() << item->boundingRect() << item->pos();
 }
 
 void ScalableWrapper::scaleTextEdit()

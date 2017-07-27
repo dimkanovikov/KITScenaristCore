@@ -330,10 +330,6 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
             const QString redoPatch = DiffMatchPatchHelper::makePatchXml(m_lastSavedScenarioXml, m_scenarioXml);
             const QString redoPatchCompressed = DatabaseHelper::compress(redoPatch);
 
-            if (undoPatchCompressed == "AAAAAA==" || redoPatchCompressed == "AAAAAA==") {
-                qDebug() << "Shit!";
-            }
-
             //
             // Сохраним изменения
             //

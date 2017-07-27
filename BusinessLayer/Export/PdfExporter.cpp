@@ -236,7 +236,6 @@ namespace {
     static bool setPrintPreviewScrollValue(QPrintPreviewDialog& _dialog, int _value) {
         foreach (QAbstractScrollArea* child, _dialog.findChildren<QAbstractScrollArea*>()) {
             if (QString(child->metaObject()->className()) == "GraphicsView") {
-                qDebug() << _value << child->verticalScrollBar()->maximum();
                 child->verticalScrollBar()->setValue(_value);
                 break;
             }
