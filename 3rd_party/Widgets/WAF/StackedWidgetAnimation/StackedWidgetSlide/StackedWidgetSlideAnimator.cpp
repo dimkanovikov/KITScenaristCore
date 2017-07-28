@@ -38,8 +38,8 @@ StackedWidgetSlideAnimator::StackedWidgetSlideAnimator(QStackedWidget* _containe
 
 	_container->installEventFilter(this);
 
-	m_containerAnimation->setDuration(400);
-	m_widgetAnimation->setDuration(400);
+    m_containerAnimation->setDuration(200);
+    m_widgetAnimation->setDuration(200);
 
 	m_containerDecorator->hide();
 	m_widgetDecorator->hide();

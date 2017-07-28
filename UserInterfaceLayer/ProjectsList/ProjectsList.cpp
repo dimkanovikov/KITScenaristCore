@@ -43,23 +43,22 @@ void ProjectsList::setModel(QAbstractItemModel* _model, bool _isRemote)
         //
         if (m_model != nullptr) {
             for (int row = 0; row < m_model->rowCount(); ++row) {
+                ProjectFileWidget* project = new ProjectFileWidget;
                 const QModelIndex projectIndex = m_model->index(row, 0);
                 const QString projectName = projectIndex.data(Qt::DisplayRole).toString();
-                const QString projectPath = projectIndex.data(Qt::StatusTipRole).toString();
-                const QDateTime editDateTime = projectIndex.data(Qt::WhatsThisRole).toDateTime();
-                const QStringList users = projectIndex.data(Qt::UserRole).toStringList();
-                const bool isOwner = projectIndex.data(Qt::UserRole + 1).toBool();
-
-                ProjectFileWidget* project = new ProjectFileWidget;
                 project->setProjectName(projectName);
 #ifdef MOBILE_OS
+                const QDateTime editDateTime = projectIndex.data(Qt::WhatsThisRole).toDateTime();
                 project->setProjectInfo(editDateTime.isNull()
                                         ? tr("no changes")
                                         : editDateTime.toString("dd.MM.yyyy hh:mm:ss"));
 #else
+                const QString projectPath = projectIndex.data(Qt::StatusTipRole).toString();
                 project->setProjectInfo(projectPath);
 #endif
+                const bool isOwner = projectIndex.data(Qt::UserRole + 1).toBool();
                 project->configureOptions(_isRemote, isOwner);
+                const QStringList users = projectIndex.data(Qt::UserRole).toStringList();
                 for (const QString& user : users) {
                     if (!user.simplified().isEmpty()) {
                         const QStringList userInfo = user.split(";");
