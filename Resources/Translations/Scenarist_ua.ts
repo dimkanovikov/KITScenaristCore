@@ -1185,6 +1185,10 @@
         <source>فارْسِى</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>汉语</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LocationsDataEdit</name>
@@ -2087,11 +2091,11 @@ You can try to reload update.</source>
     <name>ProjectFileWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Project Name</source>
-        <translation>Ім&apos;я проекту</translation>
+        <translation type="vanished">Ім&apos;я проекту</translation>
     </message>
     <message>
         <source>/file/path</source>
@@ -2117,20 +2121,16 @@ You can try to reload update.</source>
         <source>Show cowriters</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Project Info</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>ProjectUserWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>User Name [role]</source>
-        <translation>Ім&apos;я користувача [роль]</translation>
+        <translation type="vanished">Ім&apos;я користувача [роль]</translation>
     </message>
 </context>
 <context>
@@ -3787,6 +3787,13 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Email is empty</source>
         <translation>Електронна пошта порожня</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ProjectsList</name>
+    <message>
+        <source>no changes</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

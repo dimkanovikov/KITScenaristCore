@@ -1197,6 +1197,10 @@
         <source>فارْسِى</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>汉语</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LocationsDataEdit</name>
@@ -1994,11 +1998,11 @@ Você pode tentar recarregar a atualização.</translation>
     <name>ProjectFileWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulário</translation>
+        <translation type="vanished">Formulário</translation>
     </message>
     <message>
         <source>Project Name</source>
-        <translation>Nome do Projeto</translation>
+        <translation type="vanished">Nome do Projeto</translation>
     </message>
     <message>
         <source>/file/path</source>
@@ -2024,20 +2028,16 @@ Você pode tentar recarregar a atualização.</translation>
         <source>Show cowriters</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Project Info</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>ProjectUserWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulário</translation>
+        <translation type="vanished">Formulário</translation>
     </message>
     <message>
         <source>User Name [role]</source>
-        <translation>Nome de Usuário [papel]</translation>
+        <translation type="vanished">Nome de Usuário [papel]</translation>
     </message>
 </context>
 <context>
@@ -3693,6 +3693,13 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Email is empty</source>
         <translation>Email vazio</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ProjectsList</name>
+    <message>
+        <source>no changes</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
