@@ -47,7 +47,9 @@ Project ProjectsManager::s_currentProject;
 
 
 ProjectsManager::ProjectsManager(QObject* _parent) :
-    QObject(_parent)
+    QObject(_parent),
+    m_recentProjectsModel(new QStandardItemModel(this)),
+    m_remoteProjectsModel(new QStandardItemModel(this))
 {
     loadRecentProjects();
     refreshProjects();
@@ -61,38 +63,40 @@ ProjectsManager::~ProjectsManager()
 QAbstractItemModel* ProjectsManager::recentProjects()
 {
     //
-    // Создаём модель
+    // Если модель ещё не заполнена, заполняем
     //
-    QStandardItemModel* recentProjectsModel = new QStandardItemModel;
-    foreach (const Project& project, m_recentProjects) {
-        QStandardItem* item = new QStandardItem;
-        item->setData(project.displayName(), Qt::DisplayRole);
-        item->setData(project.displayPath(), Qt::StatusTipRole);
-        item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
-        item->setData(true, Qt::UserRole + 1);
-        recentProjectsModel->appendRow(item);
+    if (m_recentProjectsModel->rowCount() != m_recentProjects.size()) {
+        for (const Project& project : m_recentProjects) {
+            QStandardItem* item = new QStandardItem;
+            item->setData(project.displayName(), Qt::DisplayRole);
+            item->setData(project.displayPath(), Qt::StatusTipRole);
+            item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
+            item->setData(true, Qt::UserRole + 1);
+            m_recentProjectsModel->appendRow(item);
+        }
     }
 
-    return recentProjectsModel;
+    return m_recentProjectsModel;
 }
 
 QAbstractItemModel* ProjectsManager::remoteProjects()
 {
     //
-    // Создаём модель
+    // Если модель ещё не заполнена, заполним
     //
-    QStandardItemModel* remoteProjectsModel = new QStandardItemModel;
-    foreach (const Project& project, m_remoteProjects) {
-        QStandardItem* item = new QStandardItem;
-        item->setData(project.displayName(), Qt::DisplayRole);
-        item->setData(project.displayPath(), Qt::StatusTipRole);
-        item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
-        item->setData(project.users(), Qt::UserRole);
-        item->setData(project.isUserOwner(), Qt::UserRole + 1);
-        remoteProjectsModel->appendRow(item);
+    if (m_remoteProjectsModel->rowCount() != m_remoteProjects.size()) {
+        for (const Project& project : m_remoteProjects) {
+            QStandardItem* item = new QStandardItem;
+            item->setData(project.displayName(), Qt::DisplayRole);
+            item->setData(project.displayPath(), Qt::StatusTipRole);
+            item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
+            item->setData(project.users(), Qt::UserRole);
+            item->setData(project.isUserOwner(), Qt::UserRole + 1);
+            m_remoteProjectsModel->appendRow(item);
+        }
     }
 
-    return remoteProjectsModel;
+    return m_remoteProjectsModel;
 }
 
 bool ProjectsManager::setCurrentProject(const QString& _path, bool _isLocal, bool _forceOpen)
@@ -340,6 +344,7 @@ void ProjectsManager::refreshProjects()
 void ProjectsManager::setRemoteProjects(const QString& _xml)
 {
     m_remoteProjects.clear();
+    m_remoteProjectsModel->clear();
 
     //
     // Считываем список проектов из xml
@@ -421,6 +426,7 @@ void ProjectsManager::loadRecentProjects()
                 );
 
     m_recentProjects.clear();
+    m_recentProjectsModel->clear();
 
     //
     // Формируем список недавно используемых проектов в порядке убывания даты изменения

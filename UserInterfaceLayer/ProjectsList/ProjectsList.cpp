@@ -19,65 +19,63 @@ ProjectsList::ProjectsList(QWidget* _parent) :
 
 void ProjectsList::setModel(QAbstractItemModel* _model, bool _isRemote)
 {
-    if (m_model != _model) {
-        QVBoxLayout* layout = dynamic_cast<QVBoxLayout*>(widget()->layout());
+    QVBoxLayout* layout = dynamic_cast<QVBoxLayout*>(widget()->layout());
 
-        //
-        // Стираем старый список проектов
-        //
-        while (layout->count() > 0) {
-            QLayoutItem* item = layout->takeAt(0);
-            if (item && item->widget()) {
-                item->widget()->hide();
-                item->widget()->deleteLater();
-            }
+    //
+    // Стираем старый список проектов
+    //
+    while (layout->count() > 0) {
+        QLayoutItem* item = layout->takeAt(0);
+        if (item && item->widget()) {
+            item->widget()->hide();
+            item->widget()->deleteLater();
         }
+    }
 
-        //
-        // Сохраняем новую модель
-        //
-        m_model = _model;
+    //
+    // Сохраняем новую модель
+    //
+    m_model = _model;
 
-        //
-        // Строим новый список проектов
-        //
-        if (m_model != nullptr) {
-            for (int row = 0; row < m_model->rowCount(); ++row) {
-                ProjectFileWidget* project = new ProjectFileWidget;
-                const QModelIndex projectIndex = m_model->index(row, 0);
-                const QString projectName = projectIndex.data(Qt::DisplayRole).toString();
-                project->setProjectName(projectName);
+    //
+    // Строим новый список проектов
+    //
+    if (m_model != nullptr) {
+        for (int row = 0; row < m_model->rowCount(); ++row) {
+            ProjectFileWidget* project = new ProjectFileWidget;
+            const QModelIndex projectIndex = m_model->index(row, 0);
+            const QString projectName = projectIndex.data(Qt::DisplayRole).toString();
+            project->setProjectName(projectName);
 #ifdef MOBILE_OS
-                const QDateTime editDateTime = projectIndex.data(Qt::WhatsThisRole).toDateTime();
-                project->setProjectInfo(editDateTime.isNull()
-                                        ? tr("no changes")
-                                        : editDateTime.toString("dd.MM.yyyy hh:mm:ss"));
+            const QDateTime editDateTime = projectIndex.data(Qt::WhatsThisRole).toDateTime();
+            project->setProjectInfo(editDateTime.isNull()
+                                    ? tr("no changes")
+                                    : editDateTime.toString("dd.MM.yyyy hh:mm:ss"));
 #else
-                const QString projectPath = projectIndex.data(Qt::StatusTipRole).toString();
-                project->setProjectInfo(projectPath);
+            const QString projectPath = projectIndex.data(Qt::StatusTipRole).toString();
+            project->setProjectInfo(projectPath);
 #endif
-                const bool isOwner = projectIndex.data(Qt::UserRole + 1).toBool();
-                project->configureOptions(_isRemote, isOwner);
-                const QStringList users = projectIndex.data(Qt::UserRole).toStringList();
-                for (const QString& user : users) {
-                    if (!user.simplified().isEmpty()) {
-                        const QStringList userInfo = user.split(";");
-                        project->addCollaborator(userInfo.value(0), userInfo.value(1), userInfo.value(2), isOwner);
-                    }
+            const bool isOwner = projectIndex.data(Qt::UserRole + 1).toBool();
+            project->configureOptions(_isRemote, isOwner);
+            const QStringList users = projectIndex.data(Qt::UserRole).toStringList();
+            for (const QString& user : users) {
+                if (!user.simplified().isEmpty()) {
+                    const QStringList userInfo = user.split(";");
+                    project->addCollaborator(userInfo.value(0), userInfo.value(1), userInfo.value(2), isOwner);
                 }
-                //
-                connect(project, &ProjectFileWidget::clicked, this, &ProjectsList::handleProjectClick);
-                connect(project, &ProjectFileWidget::editClicked, this, &ProjectsList::handleEditClick);
-                connect(project, &ProjectFileWidget::removeClicked, this, &ProjectsList::handleRemoveClick);
-                connect(project, &ProjectFileWidget::hideClicked, this, &ProjectsList::handleHideClick);
-                connect(project, &ProjectFileWidget::shareClicked, this, &ProjectsList::handleShareClick);
-                connect(project, &ProjectFileWidget::removeUserRequested, this, &ProjectsList::handleRemoveUserRequest);
-
-                layout->addWidget(project);
             }
+            //
+            connect(project, &ProjectFileWidget::clicked, this, &ProjectsList::handleProjectClick);
+            connect(project, &ProjectFileWidget::editClicked, this, &ProjectsList::handleEditClick);
+            connect(project, &ProjectFileWidget::removeClicked, this, &ProjectsList::handleRemoveClick);
+            connect(project, &ProjectFileWidget::hideClicked, this, &ProjectsList::handleHideClick);
+            connect(project, &ProjectFileWidget::shareClicked, this, &ProjectsList::handleShareClick);
+            connect(project, &ProjectFileWidget::removeUserRequested, this, &ProjectsList::handleRemoveUserRequest);
 
-            layout->addStretch(1);
+            layout->addWidget(project);
         }
+
+        layout->addStretch(1);
     }
 }
 
