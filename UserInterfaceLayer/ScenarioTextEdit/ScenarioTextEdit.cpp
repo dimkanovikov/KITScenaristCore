@@ -764,7 +764,7 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
 
     return isEventHandled;
 }
-
+#include <QDebug>
 void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
 {
     //
@@ -943,10 +943,23 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             //
             // Определим начальный и конечный блоки на экране
             //
-            QTextCursor topCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, 0)));
-            QTextBlock topBlock = topCursor.block().previous();
-            QTextCursor bottomCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, height())));
-            QTextBlock bottomBlock = bottomCursor.block().next().next();
+            QTextCursor topCursor;
+            int positionForCheck = 0;
+            do {
+                --positionForCheck;
+                topCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, positionForCheck)));
+            } while (!topCursor.atStart()
+                     && !topCursor.block().isVisible());
+            const QTextBlock topBlock = topCursor.block();
+            //
+            QTextCursor bottomCursor;
+            positionForCheck = height();
+            do {
+                ++positionForCheck;
+                bottomCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, positionForCheck)));
+            } while (!bottomCursor.atEnd()
+                     && !bottomCursor.block().isVisible());
+            QTextBlock bottomBlock = bottomCursor.block().next();
 
             //
             // Проходим блоки на экрени и декорируем их
