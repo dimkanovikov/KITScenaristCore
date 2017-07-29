@@ -1767,6 +1767,18 @@ Project didn&apos;t synchronized.</source>
         <source>Importing script</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Import error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t get file path to import. Try to download it and open in file browser.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t create temporatry file for import.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::CharactersManager</name>
