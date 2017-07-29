@@ -37,6 +37,12 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
         ExportParameters fakeParameters;
         fakeParameters.saveReviewMarks = true;
         fakeParameters.saveInvisible = true;
+
+        //
+        // Импорт фонтана сам установит номера сцен при необходимости
+        //
+        fakeParameters.printScenesNumbers = false;
+
         QTextDocument* preparedDocument = prepareDocument(_scenario, fakeParameters);
         QTextCursor documentCursor(preparedDocument);
 
