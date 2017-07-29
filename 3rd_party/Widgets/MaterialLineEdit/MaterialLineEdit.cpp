@@ -89,7 +89,7 @@ void MaterialLineEdit::setUseEmailKeyboard(bool _use)
         m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints() | Qt::ImhEmailCharactersOnly);
     }
 }
-
+#include <QDebug>
 bool MaterialLineEdit::eventFilter(QObject* _watched, QEvent* _event)
 {
     if (_watched == m_lineEdit) {
@@ -100,12 +100,15 @@ bool MaterialLineEdit::eventFilter(QObject* _watched, QEvent* _event)
             QInputMethodEvent* event = static_cast<QInputMethodEvent*>(_event);
             m_text = m_lineEdit->text();
             if (event->replacementStart() >= 0) {
+                QString stringForInsert;
                 if (!event->preeditString().isEmpty()) {
-                    m_text += event->preeditString();
+                    stringForInsert = event->preeditString();
                 } else {
-                    m_text += event->commitString();
+                    stringForInsert = event->commitString();
                 }
+                m_text.insert(m_lineEdit->cursorPosition(), stringForInsert);
             }
+            qDebug() << m_text << m_lineEdit->cursorPosition() << event->replacementStart() << event->replacementLength() << event->preeditString() << event->commitString();
             emit textChanged(m_text);
         }
     }

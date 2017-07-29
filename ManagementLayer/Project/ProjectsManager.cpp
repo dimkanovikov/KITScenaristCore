@@ -62,18 +62,14 @@ ProjectsManager::~ProjectsManager()
 
 QAbstractItemModel* ProjectsManager::recentProjects()
 {
-    //
-    // Если модель ещё не заполнена, заполняем
-    //
-    if (m_recentProjectsModel->rowCount() != m_recentProjects.size()) {
-        for (const Project& project : m_recentProjects) {
-            QStandardItem* item = new QStandardItem;
-            item->setData(project.displayName(), Qt::DisplayRole);
-            item->setData(project.displayPath(), Qt::StatusTipRole);
-            item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
-            item->setData(true, Qt::UserRole + 1);
-            m_recentProjectsModel->appendRow(item);
-        }
+    m_recentProjectsModel->clear();
+    for (const Project& project : m_recentProjects) {
+        QStandardItem* item = new QStandardItem;
+        item->setData(project.displayName(), Qt::DisplayRole);
+        item->setData(project.displayPath(), Qt::StatusTipRole);
+        item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
+        item->setData(true, Qt::UserRole + 1);
+        m_recentProjectsModel->appendRow(item);
     }
 
     return m_recentProjectsModel;
@@ -81,19 +77,15 @@ QAbstractItemModel* ProjectsManager::recentProjects()
 
 QAbstractItemModel* ProjectsManager::remoteProjects()
 {
-    //
-    // Если модель ещё не заполнена, заполним
-    //
-    if (m_remoteProjectsModel->rowCount() != m_remoteProjects.size()) {
-        for (const Project& project : m_remoteProjects) {
-            QStandardItem* item = new QStandardItem;
-            item->setData(project.displayName(), Qt::DisplayRole);
-            item->setData(project.displayPath(), Qt::StatusTipRole);
-            item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
-            item->setData(project.users(), Qt::UserRole);
-            item->setData(project.isUserOwner(), Qt::UserRole + 1);
-            m_remoteProjectsModel->appendRow(item);
-        }
+    m_remoteProjectsModel->clear();
+    for (const Project& project : m_remoteProjects) {
+        QStandardItem* item = new QStandardItem;
+        item->setData(project.displayName(), Qt::DisplayRole);
+        item->setData(project.displayPath(), Qt::StatusTipRole);
+        item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
+        item->setData(project.users(), Qt::UserRole);
+        item->setData(project.isUserOwner(), Qt::UserRole + 1);
+        m_remoteProjectsModel->appendRow(item);
     }
 
     return m_remoteProjectsModel;
