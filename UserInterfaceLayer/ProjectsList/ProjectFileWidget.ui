@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>309</width>
-    <height>34</height>
+    <height>30</height>
    </rect>
   </property>
   <property name="cursor">
@@ -277,12 +277,6 @@
    </item>
    <item>
     <widget class="QFrame" name="users">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>

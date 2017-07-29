@@ -764,7 +764,7 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
 
     return isEventHandled;
 }
-
+#include <QDebug>
 void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
 {
     //
@@ -937,11 +937,21 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             const int textRight = viewport()->width() + horizontalScrollBar()->maximum()
                                   - document()->rootFrame()->frameFormat().rightMargin() + 10;
 
-
             QPainter painter(viewport());
             clipPageDecorationRegions(&painter);
 
-            QTextBlock block = document()->begin();
+            //
+            // Определим начальный и конечный блоки на экране
+            //
+            QTextCursor topCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, 0)));
+            QTextBlock topBlock = topCursor.block().previous();
+            QTextCursor bottomCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, height())));
+            QTextBlock bottomBlock = bottomCursor.block().next().next();
+
+            //
+            // Проходим блоки на экрени и декорируем их
+            //
+            QTextBlock block = topBlock.isValid() ? topBlock : document()->begin();
             const QRectF viewportGeometry = viewport()->geometry();
             const int leftDelta = -horizontalScrollBar()->value();
             int lastBlockBottom = 0;
@@ -949,7 +959,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             QColor lastSceneColor;
 
             QTextCursor cursor(document());
-            while (block.isValid()) {
+            while (block.isValid() && block != bottomBlock) {
                 //
                 // Стиль текущего блока
                 //

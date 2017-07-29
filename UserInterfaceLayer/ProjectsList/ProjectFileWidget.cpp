@@ -161,7 +161,7 @@ void ProjectFileWidget::initConnections()
     connect(m_ui->shareDetails, &FlatButton::toggled, [=] (bool _toggled) {
         const bool FIX = true;
         if (m_ui->usersLayout->count() > 0) {
-            WAF::Animation::slide(m_ui->users, WAF::FromBottomToTop, FIX, !FIX, _toggled);
+            WAF::Animation::slide(m_ui->users, WAF::FromBottomToTop, FIX, FIX, _toggled);
         }
     });
 
