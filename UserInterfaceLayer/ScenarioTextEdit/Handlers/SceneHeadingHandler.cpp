@@ -339,6 +339,7 @@ void SceneHeadingHandler::handleInput(QInputMethodEvent* _event)
     const QTextBlock currentBlock = cursor.block();
     // ... текст блока
     QString currentBlockText = currentBlock.text();
+#ifdef Q_OS_ANDROID
     QString stringForInsert;
     if (!_event->preeditString().isEmpty()) {
         stringForInsert = _event->preeditString();
@@ -347,6 +348,7 @@ void SceneHeadingHandler::handleInput(QInputMethodEvent* _event)
     }
     currentBlockText.insert(cursorPosition, stringForInsert);
     cursorPosition += stringForInsert.length();
+#endif
     // ... текст до курсора
     const QString cursorBackwardText = currentBlockText.left(cursorPosition);
 
