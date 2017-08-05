@@ -1,6 +1,8 @@
 #include "AbstractKeyHandler.h"
 
 #include "../ScenarioTextEdit.h"
+
+#include <QInputMethodEvent>
 #include <QKeyEvent>
 
 using namespace KeyProcessingLayer;
@@ -18,7 +20,21 @@ AbstractKeyHandler::~AbstractKeyHandler()
 
 }
 
-void AbstractKeyHandler::handle(QKeyEvent* _event)
+void AbstractKeyHandler::handle(QEvent* _event)
+{
+    if (_event->type() == QEvent::KeyPress) {
+        handleKeyEvent(static_cast<QKeyEvent*>(_event));
+    } else if (_event->type() == QEvent::InputMethod) {
+        handleInput(static_cast<QInputMethodEvent*>(_event));
+    }
+}
+
+ScenarioTextEdit* AbstractKeyHandler::editor() const
+{
+    return m_editor;
+}
+
+void AbstractKeyHandler::handleKeyEvent(QKeyEvent* _event)
 {
     prepareForHandle(_event);
 
@@ -119,9 +135,4 @@ void AbstractKeyHandler::handle(QKeyEvent* _event)
     else {
         handleOther(_event);
     }
-}
-
-ScenarioTextEdit* AbstractKeyHandler::editor() const
-{
-    return m_editor;
 }

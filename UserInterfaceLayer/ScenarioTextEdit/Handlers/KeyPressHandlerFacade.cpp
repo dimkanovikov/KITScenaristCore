@@ -43,7 +43,7 @@ void KeyPressHandlerFacade::prehandle()
 	handle(0, PREPARE);
 }
 
-void KeyPressHandlerFacade::handle(QKeyEvent* _event, bool _pre)
+void KeyPressHandlerFacade::handle(QEvent* _event, bool _pre)
 {
 	QTextBlock currentBlock = m_editor->textCursor().block();
 	ScenarioBlockStyle::Type currentType = ScenarioBlockStyle::forBlock(currentBlock);
@@ -55,7 +55,7 @@ void KeyPressHandlerFacade::handle(QKeyEvent* _event, bool _pre)
 		} else {
 			currentHandler->handle(_event);
 		}
-	}
+    }
 }
 
 bool KeyPressHandlerFacade::needSendEventToBaseClass() const

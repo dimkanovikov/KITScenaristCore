@@ -543,7 +543,7 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
             SpellCheckTextEdit::keyPressEvent(_event);
         }
 
-        updateEnteredText(_event);
+        updateEnteredText(_event->text());
 
         TextEditHelper::beautifyDocument(textCursor(), _event->text(), m_replaceThreeDots, m_smartQuotes);
     }
@@ -580,16 +580,13 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 
 void ScenarioTextEdit::inputMethodEvent(QInputMethodEvent* _event)
 {
-#ifndef MOBILE_OS
-    CompletableTextEdit::inputMethodEvent(_event);
-#else
     //
     // Закроем подстановщика, перед событием
     //
     closeCompleter();
 
     //
-    // Имитируем события нажатия клавиши
+    // Имитируем события нажатия клавиш Enter & Backspace
     //
     Qt::Key pressedKey = Qt::Key_unknown;
     QString eventText = _event->commitString();
@@ -597,13 +594,54 @@ void ScenarioTextEdit::inputMethodEvent(QInputMethodEvent* _event)
         pressedKey = Qt::Key_Return;
         eventText.clear();
     } else if (_event->replacementLength() == 1
-               && _event->replacementStart() == -1) {
+               && _event->replacementStart() < 0) {
         pressedKey = Qt::Key_Backspace;
     }
-    QKeyEvent keyEvent(QKeyEvent::KeyPress, pressedKey, Qt::NoModifier, eventText);
-    keyPressEvent(&keyEvent);
-    _event->accept();
-#endif
+    //
+    // ... если определилсь, что будем имитировать, имитируем
+    //
+    if (pressedKey != Qt::Key_unknown) {
+        QKeyEvent keyEvent(QKeyEvent::KeyPress, pressedKey, Qt::NoModifier, eventText);
+        keyPressEvent(&keyEvent);
+        _event->accept();
+        return;
+    }
+
+    //
+    // Вызываем стандартный обработчик
+    //
+    CompletableTextEdit::inputMethodEvent(_event);
+
+    //
+    // Получим обработчик
+    //
+    KeyProcessingLayer::KeyPressHandlerFacade* handler =
+            KeyProcessingLayer::KeyPressHandlerFacade::instance(this);
+
+    //
+    // Получим курсор в текущем положении
+    // Начнём блок операций
+    //
+    QTextCursor cursor = textCursor();
+    cursor.beginEditBlock();
+
+    //
+    // Если был введён какой-либо текст, скорректируем его
+    //
+    if (!_event->commitString().isEmpty()) {
+        updateEnteredText(_event->commitString());
+        TextEditHelper::beautifyDocument(textCursor(), _event->commitString(), m_replaceThreeDots, m_smartQuotes);
+    }
+
+    //
+    // Обработка
+    //
+    handler->handle(_event);
+
+    //
+    // Завершим блок операций
+    //
+    cursor.endEditBlock();
 }
 
 bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
@@ -764,7 +802,7 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
 
     return isEventHandled;
 }
-#include <QDebug>
+
 void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
 {
     //
@@ -1144,6 +1182,9 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
 
 void ScenarioTextEdit::mousePressEvent(QMouseEvent* _event)
 {
+    QApplication::inputMethod()->commit();
+    QApplication::inputMethod()->reset();
+
     if (!selectBlockOnTripleClick(_event)) {
         CompletableTextEdit::mousePressEvent(_event);
     }
@@ -1573,7 +1614,7 @@ void ScenarioTextEdit::applyScenarioTypeToBlock(ScenarioBlockStyle::Type _blockT
     cursor.endEditBlock();
 }
 
-void ScenarioTextEdit::updateEnteredText(QKeyEvent* _event)
+void ScenarioTextEdit::updateEnteredText(const QString& _eventText)
 {
     //
     // Получим значения
@@ -1590,25 +1631,23 @@ void ScenarioTextEdit::updateEnteredText(QKeyEvent* _event)
     QString cursorForwardText = currentBlockText.mid(cursor.positionInBlock());
     // ... стиль шрифта блока
     QTextCharFormat currentCharFormat = currentBlock.charFormat();
-    // ... текст события
-    QString eventText = _event->text();
 
     //
     // Если был введён текст
     //
-    if (!eventText.isEmpty()) {
+    if (!_eventText.isEmpty()) {
         //
         // Определяем необходимость установки верхнего регистра для первого символа блока
         //
         if (cursorBackwardText != " "
-            && (cursorBackwardText == eventText
+            && (cursorBackwardText == _eventText
                 || cursorBackwardText == (currentCharFormat.stringProperty(ScenarioBlockStyle::PropertyPrefix)
-                                          + eventText))) {
+                                          + _eventText))) {
             //
             // Сформируем правильное представление строки
             //
             bool isFirstUpperCase = currentCharFormat.boolProperty(ScenarioBlockStyle::PropertyIsFirstUppercase);
-            QString correctedText = eventText;
+            QString correctedText = _eventText;
             if (isFirstUpperCase) {
                 correctedText[0] = correctedText[0].toUpper();
             }
@@ -1616,7 +1655,7 @@ void ScenarioTextEdit::updateEnteredText(QKeyEvent* _event)
             //
             // Стираем предыдущий введённый текст
             //
-            for (int repeats = 0; repeats < eventText.length(); ++repeats) {
+            for (int repeats = 0; repeats < _eventText.length(); ++repeats) {
                 cursor.deletePreviousChar();
             }
 
@@ -1631,23 +1670,25 @@ void ScenarioTextEdit::updateEnteredText(QKeyEvent* _event)
         //
         else {
             //
-            // Если перед нами конец предложения и не сокращение и после курсора нет текста
+            // Если перед нами конец предложения
+            // и не сокращение
+            // и после курсора нет текста (для ремарки допустима скобка)
             //
-            QString endOfSentancePattern = QString("([.]|[?]|[!]|[…]) %1$").arg(eventText);
+            QString endOfSentancePattern = QString("([.]|[?]|[!]|[…]) %1$").arg(_eventText);
             if (m_capitalizeFirstWord
                 && cursorBackwardText.contains(QRegularExpression(endOfSentancePattern))
                 && !stringEndsWithAbbrev(cursorBackwardText)
-                && cursorForwardText.isEmpty()) {
+                && (cursorForwardText.isEmpty() || cursorForwardText == ")")) {
                 //
                 // Сделаем первую букву заглавной
                 //
-                QString correctedText = eventText;
+                QString correctedText = _eventText;
                 correctedText[0] = correctedText[0].toUpper();
 
                 //
                 // Стираем предыдущий введённый текст
                 //
-                for (int repeats = 0; repeats < eventText.length(); ++repeats) {
+                for (int repeats = 0; repeats < _eventText.length(); ++repeats) {
                     cursor.deletePreviousChar();
                 }
 
@@ -1672,7 +1713,7 @@ void ScenarioTextEdit::updateEnteredText(QKeyEvent* _event)
                     && right3Characters.left(2) == right3Characters.left(2).toUpper()
                     && right3Characters.left(2).at(0).isLetter()
                     && right3Characters.left(2).at(1).isLetter()
-                    && eventText != eventText.toUpper()) {
+                    && _eventText != _eventText.toUpper()) {
                     //
                     // Сделаем предпоследнюю букву строчной
                     //

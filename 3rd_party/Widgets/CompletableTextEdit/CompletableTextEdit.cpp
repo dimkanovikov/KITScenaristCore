@@ -249,11 +249,15 @@ void CompletableTextEdit::applyCompletion()
 
 void CompletableTextEdit::applyCompletion(const QString& _completion)
 {
-	//
-	// Вставим дополнение в текст
-	//
-	int completionStartFrom = m_completer->completionPrefix().length();
-	QString textToInsert = _completion.mid(completionStartFrom);
+    //
+    // Вставим дополнение в текст
+    //
+    const int completionStartFrom = m_completer->completionPrefix().length();
+    const QString textToInsert = _completion.mid(completionStartFrom);
+
+#ifdef MOBILE_OS
+    QApplication::inputMethod()->commit();
+#endif
 
 	while (!textCursor().atBlockEnd()) {
 		QTextCursor cursor = textCursor();
@@ -265,6 +269,10 @@ void CompletableTextEdit::applyCompletion(const QString& _completion)
 	}
 
 	textCursor().insertText(textToInsert);
+
+#ifdef MOBILE_OS
+    QApplication::inputMethod()->reset();
+#endif
 }
 
 void CompletableTextEdit::closeCompleter()

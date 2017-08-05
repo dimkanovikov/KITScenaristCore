@@ -5,6 +5,7 @@
 
 #include <QMap>
 
+class QEvent;
 class QKeyEvent;
 
 namespace UserInterface {
@@ -54,8 +55,8 @@ namespace KeyProcessingLayer
 
 		/**
 		 * @brief Обработка
-		 */
-		void handle(QKeyEvent* _event, bool _pre = false);
+         */
+        void handle(QEvent* _event, bool _pre = false);
 
 		/**
 		 * @brief Нужно ли отправлять событие в базовый класс

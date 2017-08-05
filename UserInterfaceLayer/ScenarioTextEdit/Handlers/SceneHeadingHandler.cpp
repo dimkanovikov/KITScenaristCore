@@ -319,10 +319,49 @@ void SceneHeadingHandler::handleOther(QKeyEvent*)
     // ... текст блока
     QString currentBlockText = currentBlock.text();
     // ... текст до курсора
-    QString cursorBackwardText = currentBlock.text().left(cursor.positionInBlock());
-    // ... текущая секция
-    SceneHeadingParser::Section currentSection = ::section(cursorBackwardText);
+    QString cursorBackwardText = currentBlockText.left(cursor.positionInBlock());
 
+    //
+    // Покажем подсказку, если это возможно
+    //
+    complete(currentBlockText, cursorBackwardText);
+}
+
+void SceneHeadingHandler::handleInput(QInputMethodEvent* _event)
+{
+    //
+    // Получим необходимые значения
+    //
+    // ... курсор в текущем положении
+    const QTextCursor cursor = editor()->textCursor();
+    int cursorPosition = cursor.positionInBlock();
+    // ... блок текста в котором находится курсор
+    const QTextBlock currentBlock = cursor.block();
+    // ... текст блока
+    QString currentBlockText = currentBlock.text();
+    QString stringForInsert;
+    if (!_event->preeditString().isEmpty()) {
+        stringForInsert = _event->preeditString();
+    } else {
+        stringForInsert = _event->commitString();
+    }
+    currentBlockText.insert(cursorPosition, stringForInsert);
+    cursorPosition += stringForInsert.length();
+    // ... текст до курсора
+    const QString cursorBackwardText = currentBlockText.left(cursorPosition);
+
+    //
+    // Покажем подсказку, если это возможно
+    //
+    complete(currentBlockText, cursorBackwardText);
+}
+
+void SceneHeadingHandler::complete(const QString& _currentBlockText, const QString& _cursorBackwardText)
+{
+    //
+    // Текущая секция
+    //
+    SceneHeadingParser::Section currentSection = ::section(_cursorBackwardText);
 
     //
     // Получим модель подсказок для текущей секции и выведем пользователю
@@ -336,20 +375,20 @@ void SceneHeadingHandler::handleOther(QKeyEvent*)
     switch (currentSection) {
         case SceneHeadingParser::SectionPlace: {
             sectionModel = StorageFacade::placeStorage()->all();
-            sectionText = SceneHeadingParser::placeName(currentBlockText);
+            sectionText = SceneHeadingParser::placeName(_currentBlockText);
             break;
         }
 
         case SceneHeadingParser::SectionLocation: {
             sectionModel = StorageFacade::researchStorage()->locations();
-            bool force = SceneHeadingParser::section(cursorBackwardText) == SceneHeadingParser::SectionTime;
-            sectionText = SceneHeadingParser::locationName(currentBlockText, force);
+            bool force = SceneHeadingParser::section(_cursorBackwardText) == SceneHeadingParser::SectionTime;
+            sectionText = SceneHeadingParser::locationName(_currentBlockText, force);
             break;
         }
 
         case SceneHeadingParser::SectionScenarioDay: {
             sectionModel = StorageFacade::scenarioDayStorage()->all();
-            sectionText = SceneHeadingParser::scenarioDayName(currentBlockText);
+            sectionText = SceneHeadingParser::scenarioDayName(_currentBlockText);
             break;
         }
 
@@ -361,7 +400,7 @@ void SceneHeadingHandler::handleOther(QKeyEvent*)
             //
             bool useLocations = false;
             const bool FORCE = true;
-            const QString locationFromBlock = SceneHeadingParser::locationName(currentBlockText, FORCE);
+            const QString locationFromBlock = SceneHeadingParser::locationName(_currentBlockText, FORCE);
             foreach (DomainObject* object, StorageFacade::researchStorage()->locations()->toList()) {
                 if (Research* location = dynamic_cast<Research*>(object)) {
                     if (location->name().startsWith(locationFromBlock, Qt::CaseInsensitive)) {
@@ -379,7 +418,7 @@ void SceneHeadingHandler::handleOther(QKeyEvent*)
             //
             else {
                 sectionModel = StorageFacade::timeStorage()->all();
-                sectionText = SceneHeadingParser::timeName(currentBlockText);
+                sectionText = SceneHeadingParser::timeName(_currentBlockText);
             }
             break;
         }

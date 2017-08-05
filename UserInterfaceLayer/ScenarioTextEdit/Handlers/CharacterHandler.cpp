@@ -291,86 +291,126 @@ void CharacterHandler::handleOther(QKeyEvent*)
 	// Получим необходимые значения
 	//
 	// ... курсор в текущем положении
-	QTextCursor cursor = editor()->textCursor();
+    const QTextCursor cursor = editor()->textCursor();
 	// ... блок текста в котором находится курсор
-	QTextBlock currentBlock = cursor.block();
+    const QTextBlock currentBlock = cursor.block();
 	// ... текст блока
-	QString currentBlockText = currentBlock.text();
+    const QString currentBlockText = currentBlock.text();
 	// ... текст до курсора
-	QString cursorBackwardText = currentBlock.text().left(cursor.positionInBlock());
-	// ... текущая секция
-	CharacterParser::Section currentSection = CharacterParser::section(cursorBackwardText);
+    const QString cursorBackwardText = currentBlockText.left(cursor.positionInBlock());
 
+    //
+    // Покажем подсказку, если это возможно
+    //
+    complete(currentBlockText, cursorBackwardText);
+}
 
-	//
-	// Получим модель подсказок для текущей секции и выведем пользователю
-	//
-	QAbstractItemModel* sectionModel = 0;
-	//
-	// ... в соответствии со введённым в секции текстом
-	//
-	QString sectionText;
+void CharacterHandler::handleInput(QInputMethodEvent* _event)
+{
+    //
+    // Получим необходимые значения
+    //
+    // ... курсор в текущем положении
+    const QTextCursor cursor = editor()->textCursor();
+    int cursorPosition = cursor.positionInBlock();
+    // ... блок текста в котором находится курсор
+    const QTextBlock currentBlock = cursor.block();
+    // ... текст блока
+    QString currentBlockText = currentBlock.text();
+    QString stringForInsert;
+    if (!_event->preeditString().isEmpty()) {
+        stringForInsert = _event->preeditString();
+    } else {
+        stringForInsert = _event->commitString();
+    }
+    currentBlockText.insert(cursorPosition, stringForInsert);
+    cursorPosition += stringForInsert.length();
+    // ... текст до курсора
+    const QString cursorBackwardText = currentBlockText.left(cursorPosition);
 
-	switch (currentSection) {
-		case CharacterParser::SectionName: {
-			QStringList sceneCharacters;
-			//
-			// Когда введён один символ имени пробуем оптимизировать поиск персонажей из текущей сцены
-			//
-			if (cursorBackwardText.length() < 2) {
-				cursor.movePosition(QTextCursor::PreviousBlock);
-				while (!cursor.atStart()
-					   && ScenarioBlockStyle::forBlock(cursor.block()) != ScenarioBlockStyle::SceneHeading) {
-					if (ScenarioBlockStyle::forBlock(cursor.block()) == ScenarioBlockStyle::Character) {
-						const QString character = CharacterParser::name(cursor.block().text());
-						const QString characterName = character.toUpper().simplified();
-						if (character.startsWith(cursorBackwardText, Qt::CaseInsensitive)
-							&& !sceneCharacters.contains(characterName)) {
-							sceneCharacters.append(characterName);
-						}
-					} else if (ScenarioBlockStyle::forBlock(cursor.block()) == ScenarioBlockStyle::SceneCharacters) {
-						const QStringList characters = SceneCharactersParser::characters(cursor.block().text());
-						foreach (const QString& character, characters) {
-							const QString characterName = character.toUpper().simplified();
-							if (characterName.startsWith(cursorBackwardText, Qt::CaseInsensitive)
-								&& !sceneCharacters.contains(characterName)) {
-								sceneCharacters.append(characterName);
-							}
-						}
-					}
-					cursor.movePosition(QTextCursor::PreviousBlock);
-					cursor.movePosition(QTextCursor::StartOfBlock);
-				}
-			}
+    //
+    // Покажем подсказку, если это возможно
+    //
+    complete(currentBlockText, cursorBackwardText);
+}
 
-			//
-			// По возможности используем список персонажей сцены
-			//
-			if (!sceneCharacters.isEmpty()) {
-				m_sceneCharactersModel->setStringList(sceneCharacters);
-				sectionModel = m_sceneCharactersModel;
-			} else {
+void CharacterHandler::complete(const QString& _currentBlockText, const QString& _cursorBackwardText)
+{
+    //
+    // Текущая секция
+    //
+    CharacterParser::Section currentSection = CharacterParser::section(_cursorBackwardText);
+
+    //
+    // Получим модель подсказок для текущей секции и выведем пользователю
+    //
+    QAbstractItemModel* sectionModel = 0;
+    //
+    // ... в соответствии со введённым в секции текстом
+    //
+    QString sectionText;
+
+    QTextCursor cursor = editor()->textCursor();
+    switch (currentSection) {
+        case CharacterParser::SectionName: {
+            QStringList sceneCharacters;
+            //
+            // Когда введён один символ имени пробуем оптимизировать поиск персонажей из текущей сцены
+            //
+            if (_cursorBackwardText.length() < 2) {
+                cursor.movePosition(QTextCursor::PreviousBlock);
+                while (!cursor.atStart()
+                       && ScenarioBlockStyle::forBlock(cursor.block()) != ScenarioBlockStyle::SceneHeading) {
+                    if (ScenarioBlockStyle::forBlock(cursor.block()) == ScenarioBlockStyle::Character) {
+                        const QString character = CharacterParser::name(cursor.block().text());
+                        const QString characterName = character.toUpper().simplified();
+                        if (character.startsWith(_cursorBackwardText, Qt::CaseInsensitive)
+                            && !sceneCharacters.contains(characterName)) {
+                            sceneCharacters.append(characterName);
+                        }
+                    } else if (ScenarioBlockStyle::forBlock(cursor.block()) == ScenarioBlockStyle::SceneCharacters) {
+                        const QStringList characters = SceneCharactersParser::characters(cursor.block().text());
+                        foreach (const QString& character, characters) {
+                            const QString characterName = character.toUpper().simplified();
+                            if (characterName.startsWith(_cursorBackwardText, Qt::CaseInsensitive)
+                                && !sceneCharacters.contains(characterName)) {
+                                sceneCharacters.append(characterName);
+                            }
+                        }
+                    }
+                    cursor.movePosition(QTextCursor::PreviousBlock);
+                    cursor.movePosition(QTextCursor::StartOfBlock);
+                }
+            }
+
+            //
+            // По возможности используем список персонажей сцены
+            //
+            if (!sceneCharacters.isEmpty()) {
+                m_sceneCharactersModel->setStringList(sceneCharacters);
+                sectionModel = m_sceneCharactersModel;
+            } else {
                 sectionModel = StorageFacade::researchStorage()->characters();
-			}
-			sectionText = CharacterParser::name(currentBlockText);
-			break;
-		}
+            }
+            sectionText = CharacterParser::name(_currentBlockText);
+            break;
+        }
 
-		case CharacterParser::SectionState: {
-			sectionModel = StorageFacade::characterStateStorage()->all();
-			sectionText = CharacterParser::state(currentBlockText);
-			break;
-		}
+        case CharacterParser::SectionState: {
+            sectionModel = StorageFacade::characterStateStorage()->all();
+            sectionText = CharacterParser::state(_currentBlockText);
+            break;
+        }
 
-		default: {
-			break;
-		}
-	}
+        default: {
+            break;
+        }
+    }
 
-	//
-	// Дополним текст
-	//
-	editor()->complete(sectionModel, sectionText);
+    //
+    // Дополним текст
+    //
+    editor()->complete(sectionModel, sectionText);
 }
 
 void CharacterHandler::storeCharacter() const

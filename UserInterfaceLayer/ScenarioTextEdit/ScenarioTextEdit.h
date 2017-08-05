@@ -266,7 +266,7 @@ namespace UserInterface
          * - иправить проблему ДВойных ЗАглавных
          * - убрать лишние пробелы
          */
-        void updateEnteredText(QKeyEvent* _event);
+        void updateEnteredText(const QString& _eventText);
 
         /**
          * @brief Оканчивается ли строка сокращением

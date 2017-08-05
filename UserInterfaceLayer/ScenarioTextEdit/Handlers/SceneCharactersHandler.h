@@ -21,12 +21,18 @@ namespace KeyProcessingLayer
 		 * @brief Реализация интерфейса AbstractKeyHandler
 		 */
 		/** @{ */
-		void handleEnter(QKeyEvent* _event = 0);
-		void handleTab(QKeyEvent* _event = 0);
-		void handleOther(QKeyEvent* _event = 0);
+        void handleEnter(QKeyEvent* _event = 0) override;
+        void handleTab(QKeyEvent* _event = 0) override;
+        void handleOther(QKeyEvent* _event = 0) override;
+        void handleInput(QInputMethodEvent* _event) override;
 		/** @} */
 
 	private:
+        /**
+         * @brief Показать автодополнение, если это возможно
+         */
+        void complete(const QString& _currentBlockText, const QString& _cursorBackwardText);
+
 		/**
 		 * @brief Сохранить персонажей
 		 */
