@@ -34,7 +34,7 @@ public:
 	/** @{ */
 	QVariant inputMethodQuery(Qt::InputMethodQuery _query) const;
 	Q_INVOKABLE QVariant inputMethodQuery(Qt::InputMethodQuery _query, QVariant _argument) const;
-	/** @} */
+    /** @} */
 
 public slots:
 	/**
@@ -51,13 +51,18 @@ signals:
 	/**
 	 * @brief Изменился коэффициент масштабирования
 	 */
-	void zoomRangeChanged(qreal) const;
+    void zoomRangeChanged(qreal) const;
+
+    /**
+     * @brief cursorPositionChanged
+     */
+    void cursorPositionChanged() const;
 
 protected:
 	/**
 	 * @brief Переопределяем для обработки жестов
 	 */
-	bool event(QEvent* _event);
+    bool event(QEvent* _event);
 
 	/**
 	 * @brief Переопределяется для реализации увеличения/уменьшения

@@ -87,6 +87,7 @@ ScalableWrapper::ScalableWrapper(SpellCheckTextEdit* _editor, QWidget* _parent) 
             QPointF point = m_editorProxy->mapToScene(editor->completer()->popup()->pos());
             editor->completer()->popup()->move(mapToGlobal(mapFromScene(point)));
         });
+        connect(editor, &CompletableTextEdit::cursorPositionChanged, this, &ScalableWrapper::cursorPositionChanged);
     }
 }
 
@@ -143,7 +144,7 @@ void ScalableWrapper::zoomOut()
 {
     setZoomRange(m_zoomRange - 0.1);
 }
-
+#include <QDebug>
 bool ScalableWrapper::event(QEvent* _event)
 {
     bool result = true;
@@ -206,6 +207,11 @@ bool ScalableWrapper::event(QEvent* _event)
     // Прочие стандартные обработчики событий
     //
     else {
+        if (_event->type() == QEvent::InputMethod) {
+            QInputMethodEvent* ev = static_cast<QInputMethodEvent*>(_event);
+            qDebug() << ev->preeditString() << ev->commitString();
+        }
+        
         result = QGraphicsView::event(_event);
 
         //

@@ -540,7 +540,7 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
     //
     if (handler->needSendEventToBaseClass()) {
         if (!keyPressEventReimpl(_event)) {
-            SpellCheckTextEdit::keyPressEvent(_event);
+            CompletableTextEdit::keyPressEvent(_event);
         }
 
         updateEnteredText(_event->text());
@@ -1182,9 +1182,6 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
 
 void ScenarioTextEdit::mousePressEvent(QMouseEvent* _event)
 {
-    QApplication::inputMethod()->commit();
-    QApplication::inputMethod()->reset();
-
     if (!selectBlockOnTripleClick(_event)) {
         CompletableTextEdit::mousePressEvent(_event);
     }
