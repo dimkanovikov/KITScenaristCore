@@ -117,10 +117,10 @@ QVariant ScalableWrapper::inputMethodQuery(Qt::InputMethodQuery _query) const
 QVariant ScalableWrapper::inputMethodQuery(Qt::InputMethodQuery _query, QVariant _argument) const
 {
     QVariant result;
-    if (m_editor != 0) {
+    if (m_editor != nullptr) {
         result = m_editor->inputMethodQuery(_query, _argument);
     } else {
-        result = QWidget::inputMethodQuery(_query);
+        result = QGraphicsView::inputMethodQuery(_query);
     }
     
 #ifdef Q_OS_IOS
@@ -130,8 +130,14 @@ QVariant ScalableWrapper::inputMethodQuery(Qt::InputMethodQuery _query, QVariant
     if (_query & Qt::ImCursorRectangle) {
         result = QRectF(0,0,0,0);
     }
+    //
+    // ... и чтобы удаление работало корректно
+    //
+    else if (_query & Qt::ImCursorPosition) {
+        result = QVariant();
+    }
 #endif
-    
+
     return result;
 }
 
@@ -144,7 +150,7 @@ void ScalableWrapper::zoomOut()
 {
     setZoomRange(m_zoomRange - 0.1);
 }
-#include <QDebug>
+
 bool ScalableWrapper::event(QEvent* _event)
 {
     bool result = true;
@@ -207,10 +213,6 @@ bool ScalableWrapper::event(QEvent* _event)
     // Прочие стандартные обработчики событий
     //
     else {
-        if (_event->type() == QEvent::InputMethod) {
-            QInputMethodEvent* ev = static_cast<QInputMethodEvent*>(_event);
-            qDebug() << ev->preeditString() << ev->commitString();
-        }
         
         result = QGraphicsView::event(_event);
 
@@ -427,7 +429,7 @@ void ScalableWrapper::syncScrollBarWithTextEdit(bool _syncPosition)
         horizontalScrollBar()->setValue(m_editor->horizontalScrollBar()->value());
     }
 }
-#include <QDebug>
+
 void ScalableWrapper::updateTextEditSize()
 {
     //
