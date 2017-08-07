@@ -187,7 +187,7 @@ namespace ManagementLayer
          * @brief Авторизация пройдена успешно
          */
         void loginAccepted(const QString& _userName, const QString& _userEmail,
-                           int _paymentMonth);
+                           int _paymentMonth, int _reviewVersion);
 
         /**
          * @brief Сервер успешно принял данные пользователя на регистрацию
@@ -217,7 +217,8 @@ namespace ManagementLayer
         /**
          * @brief Успешно запрошена информация о подписке
          */
-        void subscriptionInfoLoaded(bool _isActive, const QString& _expiredDate, quint64 _usedSpace, quint64 _availableSpace);
+        void subscriptionInfoLoaded(bool _isActive, const QString& _expiredDate, quint64 _usedSpace,
+                                    quint64 _availableSpace);
 
         /**
          * @brief Успешно изменен пароль

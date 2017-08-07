@@ -267,6 +267,7 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     int paymentMonth = -1;
     quint64 usedSpace = 0;
     quint64 availableSpace = 0;
+    int reviewVersion = 0;
 
     //
     // Найдем наш ключ сессии, имя пользователя, информацию о подписке
@@ -304,6 +305,10 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
             responseReader.readNext();
             availableSpace = responseReader.text().toULongLong();
             responseReader.readNext();
+        } else if (responseReader.name().toString() == "review_version") {
+            responseReader.readNext();
+            reviewVersion = responseReader.text().toInt();
+            responseReader.readNext();
         }
     }
 
@@ -323,52 +328,44 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     }
 
     //
-    // Если авторизация успешна, сохраним информацию о пользователе
+    // Если авторизация успешна, запомним email
     //
-    StorageFacade::settingsStorage()->setValue(
-                "application/email",
-                _email,
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/password",
-                PasswordStorage::save(_password, _email),
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/username",
-                userName,
-                SettingsStorage::ApplicationSettings);
-
+    m_userEmail = _email;
+    //
+    // ... сохраним информацию о пользователе и о версии проверки
+    //
+    StorageFacade::settingsStorage()->setValue("application/email",
+                                               _email,
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/password",
+                                               PasswordStorage::save(_password, _email),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/username",
+                                               userName,
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/reviewVersion",
+                                               QString::number(reviewVersion),
+                                               SettingsStorage::ApplicationSettings);
+    emit loginAccepted(userName, m_userEmail, paymentMonth, reviewVersion);
     //
     // ... и о подписке
     //
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionIsActive",
-                QString::number(m_isSubscriptionActive),
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionExpiredDate",
-                dateTransform(date),
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionPaymentMonth",
-                QString::number(paymentMonth),
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionUsedSpace",
-                QString::number(usedSpace),
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionAvailableSpace",
-                QString::number(availableSpace),
-                SettingsStorage::ApplicationSettings);
-
-    //
-    // Запомним email
-    //
-    m_userEmail = _email;
-
+    StorageFacade::settingsStorage()->setValue("application/subscriptionIsActive",
+                                               QString::number(m_isSubscriptionActive),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionExpiredDate",
+                                               dateTransform(date),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionPaymentMonth",
+                                               QString::number(paymentMonth),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionUsedSpace",
+                                               QString::number(usedSpace),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionAvailableSpace",
+                                               QString::number(availableSpace),
+                                               SettingsStorage::ApplicationSettings);
     emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date), usedSpace, availableSpace);
-    emit loginAccepted(userName, m_userEmail, paymentMonth);
 
     //
     // Авторизовались, тепер нас интересует статус интернета
@@ -513,30 +510,27 @@ void SynchronizationManager::logout()
     //
     // Удаляем сохраненные значения, если они были
     //
-    StorageFacade::settingsStorage()->setValue(
-                "application/email",
-                QString(),
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/password",
-                QString(),
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/username",
-                QString(),
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/remote-projects",
-                QString(),
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionIsActive",
-                QString(),
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionExpiredDate",
-                QString(),
-                SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/email",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/password",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/username",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/reviewVersion",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/remote-projects",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionIsActive",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionExpiredDate",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
 
     //
     // Если деавторизация прошла
@@ -1436,39 +1430,36 @@ void SynchronizationManager::fakeLogin()
         m_userEmail = userEmail;
 
         //
-        // Загрузим всю требуемую информацию из кэша (имя пользователя,
-        // активность и дату подписки)
+        // Загрузим всю требуемую информацию из кэша и уведомим клиентов
         //
-        const QString userName =
-                    DataStorageLayer::StorageFacade::settingsStorage()->value(
-                        "application/username",
-                        DataStorageLayer::SettingsStorage::ApplicationSettings);
-        m_isSubscriptionActive =
-                    DataStorageLayer::StorageFacade::settingsStorage()->value(
-                        "application/subscriptionIsActive",
-                        DataStorageLayer::SettingsStorage::ApplicationSettings).toInt();
-        const QString date =
-                    DataStorageLayer::StorageFacade::settingsStorage()->value(
-                        "application/subscriptionExpiredDate",
-                        DataStorageLayer::SettingsStorage::ApplicationSettings);
-        const int paymentMonth =
-                    DataStorageLayer::StorageFacade::settingsStorage()->value(
-                        "application/subscriptionPaymentMonth",
-                        DataStorageLayer::SettingsStorage::ApplicationSettings).toInt();
-        const quint64 usedSpace =
-                    DataStorageLayer::StorageFacade::settingsStorage()->value(
-                        "application/subscriptionUsedSpace",
-                        DataStorageLayer::SettingsStorage::ApplicationSettings).toULongLong();
-        const quint64 availableSpace =
-                    DataStorageLayer::StorageFacade::settingsStorage()->value(
-                        "application/subscriptionAvailableSpace",
-                        DataStorageLayer::SettingsStorage::ApplicationSettings).toULongLong();
-
+        // ... имя пользователя, стоимость подписки и версию проверки
         //
-        // Уведомим об этом
+        const QString userName = StorageFacade::settingsStorage()->value(
+                                     "application/username",
+                                     SettingsStorage::ApplicationSettings);
+        const int paymentMonth = StorageFacade::settingsStorage()->value(
+                                     "application/subscriptionPaymentMonth",
+                                     SettingsStorage::ApplicationSettings).toInt();
+        const int reviewVersion = StorageFacade::settingsStorage()->value(
+                                      "application/reviewVersion",
+                                      SettingsStorage::ApplicationSettings).toInt();
+        emit loginAccepted(userName, m_userEmail, paymentMonth, reviewVersion);
         //
+        // ... детальную информацию о подписке и использованном месте
+        //
+        m_isSubscriptionActive = StorageFacade::settingsStorage()->value(
+                                     "application/subscriptionIsActive",
+                                     SettingsStorage::ApplicationSettings).toInt();
+        const QString date = StorageFacade::settingsStorage()->value(
+                                 "application/subscriptionExpiredDate",
+                                 SettingsStorage::ApplicationSettings);
+        const quint64 usedSpace = StorageFacade::settingsStorage()->value(
+                                      "application/subscriptionUsedSpace",
+                                      SettingsStorage::ApplicationSettings).toULongLong();
+        const quint64 availableSpace = StorageFacade::settingsStorage()->value(
+                                           "application/subscriptionAvailableSpace",
+                                           SettingsStorage::ApplicationSettings).toULongLong();
         emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date), usedSpace, availableSpace);
-        emit loginAccepted(userName, m_userEmail, paymentMonth);
     }
 }
 
