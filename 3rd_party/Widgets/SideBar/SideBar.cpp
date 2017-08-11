@@ -388,7 +388,11 @@ void SideTabBar::paintEvent(QPaintEvent *event)
         // Иконка индикатора
         //
         p.setOpacity(m_timeline->currentFrame() / 100.);
-        m_indicator->icon().paint(&p, indicatorRect);
+        const int iconSize = 20;
+        const QPixmap icon = m_indicator->icon().pixmap(iconSize, iconSize);
+        p.drawPixmap((indicatorRect.width() - iconSize) / 2,
+                     indicatorRect.top() + (indicatorRect.height() - iconSize) / 2,
+                     icon);
     }
 }
 

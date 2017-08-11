@@ -94,6 +94,8 @@ QToolButton::menu-button:pressed[inTopPanel=true] {
 }
 
 QToolButton::menu-arrow[inTopPanel=true] {
+    width: 10px;
+    height: 10px;
     image: url(:Interface/UI/downarrow_THEME_POSTFIX.png);
 }
 
@@ -261,10 +263,14 @@ QComboBox::drop-down {
 }
 
 QComboBox::down-arrow {
+    width: 10px;
+    height: 10px;
     image: url(:/Interface/UI/downarrow_THEME_POSTFIX.png);
 }
 
 QComboBox::down-arrow:disabled {
+    width: 10px;
+    height: 10px;
     image: url(:/Interface/UI/downarrow-disable.png);
 }
 
@@ -331,6 +337,8 @@ QAbstractSpinBox::down-button:hover, QAbstractSpinBox::up-button:hover {
 }
 
 QAbstractSpinBox::up-arrow {
+    width: 8px;
+    height: 8px;
     image: url(:/Interface/UI/uparrow_THEME_POSTFIX.png);
 }
 
@@ -339,6 +347,8 @@ QAbstractSpinBox::up-arrow:disabled {
 }
 
 QAbstractSpinBox::down-arrow {
+    width: 8px;
+    height: 8px;
     image: url(:/Interface/UI/downarrow_THEME_POSTFIX.png);
 }
 
@@ -780,4 +790,34 @@ QWidget[lightBoxProgressDescription=true] {
     color: white;
     border: none;
     margin: 0px 0px 0px 12px;
+}
+
+/*
+ * Фрейм проекта
+ */
+QFrame[projectFrame=true] {
+    border: none;
+    border-bottom: 0dp solid palette(dark);
+}
+
+/*
+ * Фрейм текстовой части проекта
+ */
+QFrame[projectTextFrame=true] {
+    padding: 6px 10px 12px 10px;
+}
+
+/*
+ * Название проекта
+ */
+QLabel[projectName=true] {
+    font-weight: bold;
+    min-height: 22px;
+}
+
+/*
+ * Описание проекта
+ */
+QLabel[projectInfo=true] {
+    color: palette(mid);
 }

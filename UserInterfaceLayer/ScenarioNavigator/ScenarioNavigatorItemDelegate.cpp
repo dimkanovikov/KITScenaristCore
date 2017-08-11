@@ -66,17 +66,19 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     //
     // Определим кисти и шрифты
     //
-    QBrush backgroundBrush = opt.palette.background();
+    const QPalette palette = QApplication::palette();
 #ifndef MOBILE_OS
-    QBrush headerBrush = opt.palette.text();
-    QBrush textBrush = opt.palette.text();
+    QBrush backgroundBrush = palette.base();
+    QBrush headerBrush = palette.text();
+    QBrush textBrush = palette.text();
     QFont headerFont = opt.font;
     headerFont.setBold(m_showSceneDescription ? true : false);
     QFont textFont = opt.font;
     textFont.setBold(false);
 #else
-    QBrush headerBrush = opt.palette.text();
-    QBrush textBrush = opt.palette.mid();
+    QBrush backgroundBrush = palette.background();
+    QBrush headerBrush = palette.text();
+    QBrush textBrush = palette.mid();
     QFont headerFont = opt.font;
     headerFont.setPointSize(16);
     headerFont.setWeight(QFont::Medium);
@@ -87,30 +89,28 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     //
     // ... для выделенных элементов
     //
-    if(opt.state.testFlag(QStyle::State_Selected))
-    {
-        backgroundBrush = opt.palette.highlight();
-        headerBrush = opt.palette.highlightedText();
-        textBrush = opt.palette.highlightedText();
+    if (opt.state.testFlag(QStyle::State_Selected)) {
+        backgroundBrush = palette.highlight();
+        headerBrush = palette.highlightedText();
+        textBrush = palette.highlightedText();
     }
     //
     // ... для остальных
     //
-    else
-    {
+    else {
         //
         // Реализация альтернативных цветов в представлении
         //
-        if(opt.features.testFlag(QStyleOptionViewItem::Alternate))
-        {
-            backgroundBrush = opt.palette.alternateBase();
-            headerBrush = opt.palette.windowText();
+        if (opt.features.testFlag(QStyleOptionViewItem::Alternate)) {
+            backgroundBrush = palette.alternateBase();
+        } else {
+#ifdef MOBILE_OS
+            backgroundBrush = palette.window();
+#else
+            backgroundBrush = palette.base();
+#endif
         }
-        else
-        {
-            backgroundBrush = opt.palette.window();
-            headerBrush = opt.palette.windowText();
-        }
+        headerBrush = palette.windowText();
     }
 
     //
@@ -132,7 +132,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     //
     QPoint borderLeft = opt.rect.bottomLeft();
     borderLeft.setX(0);
-    _painter->setPen(QPen(opt.palette.dark(), 1));
+    _painter->setPen(QPen(palette.dark(), 0.5));
     _painter->drawLine(borderLeft, opt.rect.bottomRight());
 #endif
 

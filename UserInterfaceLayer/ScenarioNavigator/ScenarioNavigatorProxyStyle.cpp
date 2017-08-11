@@ -89,6 +89,7 @@ void ScenarioNavigatorProxyStyle::drawPrimitive(QStyle::PrimitiveElement _elemen
             _painter->drawRoundedRect(rect, 2, 2);
         }
     }
+#ifdef MOBILE_OS
     //
     // Рисуем индикатор элемента, если у него есть дети
     //
@@ -139,7 +140,9 @@ void ScenarioNavigatorProxyStyle::drawPrimitive(QStyle::PrimitiveElement _elemen
                      << QPointF(x - arrowHeight,  y + arrowHalfWidth);
             _painter->drawPolygon(treangle);
         }
-    } else {
+    }
+#endif
+    else {
         QProxyStyle::drawPrimitive(_element, _option, _painter, _widget);
     }
 }

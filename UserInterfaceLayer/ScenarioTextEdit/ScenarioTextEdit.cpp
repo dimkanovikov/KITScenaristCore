@@ -984,19 +984,29 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             QTextCursor topCursor;
             int positionForCheck = 0;
             do {
-                --positionForCheck;
                 topCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, positionForCheck)));
-            } while (!topCursor.atStart()
-                     && !topCursor.block().isVisible());
+                --positionForCheck;
+            } while (
+                     // пока не дошли до начала или до видимого блока
+                     (!topCursor.atStart()
+                      && !topCursor.block().isVisible())
+                     // или пока не выйдем из последнего блока в документе
+                     || (topCursor.block() != document()->firstBlock()
+                         && topCursor.block() == document()->lastBlock()));
             const QTextBlock topBlock = topCursor.block();
             //
             QTextCursor bottomCursor;
             positionForCheck = height();
             do {
-                ++positionForCheck;
+                --positionForCheck;
                 bottomCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, positionForCheck)));
-            } while (!bottomCursor.atEnd()
-                     && !bottomCursor.block().isVisible());
+            } while (
+                     // пока не дойдём до начала или до видимого блока
+                     (!bottomCursor.atStart()
+                      && !bottomCursor.block().isVisible())
+                     // или пока не выйдем из последнего блока в документе
+                     || (bottomCursor.block() != document()->firstBlock()
+                         && bottomCursor.block() == document()->lastBlock()));
             QTextBlock bottomBlock = bottomCursor.block().next();
 
             //
