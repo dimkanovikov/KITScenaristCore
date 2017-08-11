@@ -101,10 +101,8 @@ void GraphLogic::addFirstNode()
 
 void GraphLogic::removeAllNodes()
 {
-    for (Node* node : m_nodeList) {
-        delete node;
-        node = nullptr;
-    }
+    setActiveNode(nullptr);
+    qDeleteAll(m_nodeList);
 
     m_nodeList.clear();
     m_activeNode = 0;
