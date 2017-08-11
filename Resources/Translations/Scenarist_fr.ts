@@ -15,40 +15,6 @@
     </message>
 </context>
 <context>
-    <name>ActionShapePropertiesDialog</name>
-    <message>
-        <source>Title:</source>
-        <translation type="obsolete">Titre:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="obsolete">Description:</translation>
-    </message>
-</context>
-<context>
-    <name>ActivityEdit</name>
-    <message>
-        <source>Scene</source>
-        <translation type="obsolete">Scène</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="obsolete">Dossier</translation>
-    </message>
-    <message>
-        <source>Color %1</source>
-        <translation type="obsolete">Couleur %1</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Retirer</translation>
-    </message>
-    <message>
-        <source>Add color</source>
-        <translation type="obsolete">Ajoutez des couleur</translation>
-    </message>
-</context>
-<context>
     <name>AddImageButton</name>
     <message>
         <location filename="../../3rd_party/Widgets/ImagesPane/AddImageButton.cpp" line="28"/>
@@ -63,10 +29,6 @@
 </context>
 <context>
     <name>AddProjectDialog</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulaire</translation>
-    </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="20"/>
         <source>Add New Project</source>
@@ -123,20 +85,6 @@
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="150"/>
         <source>Choose File with Project to Import:</source>
         <translation>Choisir un fichier contenant un projet à importer:</translation>
-    </message>
-</context>
-<context>
-    <name>ApplicationView</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulaire</translation>
-    </message>
-</context>
-<context>
-    <name>ArrowFlowPropertiesDialog</name>
-    <message>
-        <source>Text:</source>
-        <translation type="obsolete">Texte:</translation>
     </message>
 </context>
 <context>
@@ -292,10 +240,6 @@
 </context>
 <context>
     <name>BusinessLogic::CharacterReport</name>
-    <message>
-        <source>Character Report</source>
-        <translation type="obsolete">Rapport Personnage</translation>
-    </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="27"/>
         <source>Characters Dialogues</source>
@@ -574,10 +518,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Note</source>
-        <translation type="obsolete">Note</translation>
-    </message>
-    <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="74"/>
         <source>Title Header</source>
         <translation>En-tête de titre</translation>
@@ -591,14 +531,6 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="76"/>
         <source>Noprintable Text</source>
         <translation>Texte non-imprimable</translation>
-    </message>
-    <message>
-        <source>Scene Group</source>
-        <translation type="vanished">Scène groupe</translation>
-    </message>
-    <message>
-        <source>Scene Group Footer</source>
-        <translation type="vanished">Pied groupe scène</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="77"/>
@@ -635,14 +567,6 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="793"/>
         <source>Default with Courier Prime</source>
         <translation>Défaut avec Courier Prime</translation>
-    </message>
-</context>
-<context>
-    <name>BusinessLogic::ScenarioTextCorrector</name>
-    <message>
-        <source>CONT&apos;D</source>
-        <extracomment>Continued</extracomment>
-        <translation type="obsolete">Ci-dessous</translation>
     </message>
 </context>
 <context>
@@ -832,13 +756,6 @@
     </message>
 </context>
 <context>
-    <name>CabinView</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulaire</translation>
-    </message>
-</context>
-<context>
     <name>CardsResizer</name>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="14"/>
@@ -939,33 +856,6 @@
     </message>
 </context>
 <context>
-    <name>CharactersDataEdit</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulaire</translation>
-    </message>
-    <message>
-        <source>Add Image</source>
-        <translation type="vanished">Ajouter une image</translation>
-    </message>
-    <message>
-        <source>Choose Character</source>
-        <translation type="vanished">Choisir un personnage</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Nom:</translation>
-    </message>
-    <message>
-        <source>Real Name:</source>
-        <translation type="vanished">Vrai nom:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="vanished">Description:</translation>
-    </message>
-</context>
-<context>
     <name>CrashReportDialog</name>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/CrashReportDialog.ui" line="14"/>
@@ -990,14 +880,6 @@
 </context>
 <context>
     <name>DatabaseLayer::Database</name>
-    <message>
-        <source>Project was created in desktop version.</source>
-        <translation type="obsolete">Le projet a été créé dans la version pc.</translation>
-    </message>
-    <message>
-        <source>Project was created in mobile version.</source>
-        <translation type="obsolete">Le projet a été créé dans la version mobile.</translation>
-    </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="59"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
@@ -1102,10 +984,6 @@
         <translation>Export</translation>
     </message>
     <message>
-        <source>File:</source>
-        <translation type="obsolete">Fichier:</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="116"/>
         <source>Format:</source>
         <translation>Format:</translation>
@@ -1141,10 +1019,6 @@
         <translation>Outline</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation type="obsolete">Archives</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="356"/>
         <source>File exists. It will be replaced after exporting.</source>
         <translation>Le fichier existe. Il sera remplacé après l&apos;export.</translation>
@@ -1170,18 +1044,6 @@
         <translation>PDF</translation>
     </message>
     <message>
-        <source>Check page breaks</source>
-        <translation type="vanished">Vérifiez les sauts de page</translation>
-    </message>
-    <message>
-        <source>Checking page breaks can increase scenario page numbers.</source>
-        <translation type="obsolete">Vérification des sauts de page peuvent augmenter le nombre de pages du scénario.</translation>
-    </message>
-    <message>
-        <source>Common</source>
-        <translation type="obsolete">Commun</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="298"/>
         <source>Template:</source>
         <translation>Template:</translation>
@@ -1205,59 +1067,6 @@
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="249"/>
         <source>Save Review Marks</source>
         <translation>Sauvegarder les marques de correction</translation>
-    </message>
-    <message>
-        <source>Title List</source>
-        <translation type="obsolete">
-Liste des titres</translation>
-    </message>
-    <message>
-        <source>Print</source>
-        <translation type="obsolete">impression</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="obsolete">Nom:</translation>
-    </message>
-    <message>
-        <source>Scenario name.</source>
-        <translation type="obsolete">Nom du scénario.</translation>
-    </message>
-    <message>
-        <source>Genre:</source>
-        <translation type="obsolete">Genre:</translation>
-    </message>
-    <message>
-        <source>Scenario genre.</source>
-        <translation type="obsolete">Genre de Scénario.</translation>
-    </message>
-    <message>
-        <source>Author:</source>
-        <translation type="obsolete">Auteur:</translation>
-    </message>
-    <message>
-        <source>Scenario author.</source>
-        <translation type="obsolete">L&apos;auteur du scénario.</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation type="obsolete">Contacts:</translation>
-    </message>
-    <message>
-        <source>Year:</source>
-        <translation type="obsolete">année:</translation>
-    </message>
-    <message>
-        <source>Scenario wirting year.</source>
-        <translation type="obsolete">Scénario année de écriture.</translation>
-    </message>
-    <message>
-        <source>Original scenario</source>
-        <translation type="obsolete">Scénario Original</translation>
-    </message>
-    <message>
-        <source>Additional:</source>
-        <translation type="obsolete">Supplémentaire:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="57"/>
@@ -1296,109 +1105,109 @@ Liste des titres</translation>
 <context>
     <name>GraphLogic</name>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="122"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="120"/>
         <source>Couldn&apos;t parse XML file.</source>
         <translation>Ne peut pas decrypter le fichier XML.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="215"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="213"/>
         <source>Couldn&apos;t read file.</source>
         <translation>Ne peut pas lire le fichier.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="286"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="284"/>
         <source>Couldn&apos;t open file to write.</source>
         <translation>Ne peut pas ouvrir le fichier à écrire.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="294"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="292"/>
         <source>Saved.</source>
         <translation>Sauvegardé.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="316"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="314"/>
         <source>MindMap exported as </source>
         <translation>MindMap exportée</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="357"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="400"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="463"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="488"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="501"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="530"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="559"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="589"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="612"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="642"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="677"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="776"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="355"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="398"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="461"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="486"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="499"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="528"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="557"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="587"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="610"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="640"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="675"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="774"/>
         <source>No active node.</source>
         <translation>Pas de noeud actif.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="377"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="375"/>
         <source>New node would be placed outside of the scene.</source>
         <translation>Le nouveau noeud sera placé en dehors de la scène. </translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="431"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="429"/>
         <source>No active node</source>
         <translation>Pas de noeud actif</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="445"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="443"/>
         <source>Node hasn&apos;t parent for add sibling node</source>
         <translation>Le nœud n’a pas de parent pour ajouter un nœud frère</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="469"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="467"/>
         <source>Base node cannot be deleted.</source>
         <translation>Le noeud de base ne peut pas être supprimé.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="507"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="536"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="505"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="534"/>
         <source>Too much scaling.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="567"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="565"/>
         <source>Select node color</source>
         <translation>Choisissez la couleur du noeud</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="620"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="618"/>
         <source>Select text color</source>
         <translation>Choisissez la couleur du texte</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="663"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="661"/>
         <source>Add edge: select destination node.</source>
         <translation>Ajouter une flèche : choisissez le nœud de destination.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="669"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="667"/>
         <source>Delete edge: select other end-node.</source>
         <translation>Supprimer la flèche: choisissez un autre noeud de fin.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="728"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="726"/>
         <source>Edge adding cancelled.</source>
         <translation>Ajout de la flèche annulé.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="735"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="733"/>
         <source>Edge deleting cancelled.</source>
         <translation>Suppression de la flèche annulé.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="837"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="835"/>
         <source>There is already an edge between these two nodes.</source>
         <translation>Il y a déjà une flèche entre ces deux noeuds.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="868"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="866"/>
         <source>There is no edge between these two nodes.</source>
         <translation>Il n&apos;y a pas de flèche entre ces deux noeuds.</translation>
     </message>
@@ -1411,10 +1220,6 @@ Liste des titres</translation>
         <translation>Importer scénario</translation>
     </message>
     <message>
-        <source>File</source>
-        <translation type="obsolete">Fichier</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="35"/>
         <source>Scenario</source>
         <translation>Scénario</translation>
@@ -1423,10 +1228,6 @@ Liste des titres</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="45"/>
         <source>Outline</source>
         <translation>Outline</translation>
-    </message>
-    <message>
-        <source>File:</source>
-        <translation type="obsolete">Fichier :</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="80"/>
@@ -1546,56 +1347,9 @@ Liste des titres</translation>
         <source>Français</source>
         <translation></translation>
     </message>
-    <message>
-        <source>System</source>
-        <translation type="vanished">Système</translation>
-    </message>
-</context>
-<context>
-    <name>LocationsDataEdit</name>
-    <message>
-        <source>Dialog</source>
-        <translation type="vanished">Dialogue</translation>
-    </message>
-    <message>
-        <source>Add Image</source>
-        <translation type="vanished">Ajouter une image</translation>
-    </message>
-    <message>
-        <source>Choose Location</source>
-        <translation type="vanished">Choisir un emplacement</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="obsolete">Nom :</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="obsolete">Description :</translation>
-    </message>
 </context>
 <context>
     <name>LoginDialog</name>
-    <message>
-        <source>Authorization</source>
-        <translation type="vanished">Autorisation</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;https://kitscenarist.ru/cabin.html&quot; style=&quot;color:#2b78da;&quot;&gt;Registration&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;https://kitscenarist.ru/cabin.html&quot; style=&quot;color:#2b78da;&quot;&gt;Inscription&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>Error message</source>
-        <translation type="vanished">Message d&apos;erreur</translation>
-    </message>
-    <message>
-        <source>User name</source>
-        <translation type="vanished">Nom d&apos;utilisateur</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation type="vanished">Mot de passe</translation>
-    </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/LoginDialog.ui" line="60"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/LoginDialog.ui" line="241"/>
@@ -1646,49 +1400,11 @@ Liste des titres</translation>
     </message>
 </context>
 <context>
-    <name>LoginView</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulaire</translation>
-    </message>
-    <message>
-        <source>Error message</source>
-        <translation type="vanished">Message d&apos;erreur</translation>
-    </message>
-    <message>
-        <source>User Name</source>
-        <translation type="vanished">Nom d&apos;utilisateur</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation type="vanished">Mot de passe</translation>
-    </message>
-</context>
-<context>
-    <name>MainWindow</name>
-    <message>
-        <source>100%</source>
-        <translation type="obsolete">100%</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="obsolete">Dossier</translation>
-    </message>
-    <message>
-        <source>Scene Group</source>
-        <translation type="obsolete">Scène Groupe</translation>
-    </message>
-</context>
-<context>
     <name>ManagementLayer::ApplicationManager</name>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="97"/>
         <source> - changed</source>
         <translation> - changé</translation>
-    </message>
-    <message>
-        <source>Choose file for new project</source>
-        <translation type="obsolete">Choisir le fichier du nouveau projet</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="445"/>
@@ -1773,17 +1489,9 @@ Liste des titres</translation>
         <translation>Entrer le nouveau nom du projet</translation>
     </message>
     <message>
-        <source>Project removing</source>
-        <translation type="vanished">Suppression du projet</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="860"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Ëtes-vous sur de vouloir supprimer le projet &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
-        <source>Project unsubscribing</source>
-        <translation type="vanished">Projet désinscrit</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="869"/>
@@ -1801,10 +1509,6 @@ Liste des titres</translation>
         <translation>Connexion active</translation>
     </message>
     <message>
-        <source>Project sinchronized</source>
-        <translation type="obsolete">Projet synchronisé</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="975"/>
         <source>Modified</source>
         <translation>Modifié</translation>
@@ -1813,15 +1517,6 @@ Liste des titres</translation>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1003"/>
         <source>Network error</source>
         <translation>Erreur réseau</translation>
-    </message>
-    <message>
-        <source>Can&apos;t estabilish network connection.
-Continue working in offline mode.</source>
-        <translation type="obsolete">Impossible d&apos;établir une connexion réseau. Continuer à travailler en mode offline.</translation>
-    </message>
-    <message>
-        <source>Closing Database Connections and Remove Temporatry Files.</source>
-        <translation type="obsolete">Fermeture des connexions à la base de données et suppression des fichiers temporaires.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1020"/>
@@ -1834,24 +1529,9 @@ Continue working in offline mode.</source>
         <translation>Abonnement terminé</translation>
     </message>
     <message>
-        <source>Buyed subscription period is finished.
-Continue working in offline mode.</source>
-        <translation type="obsolete">La période d&apos;abonnement payé est terminée. Continuer à travailler en mode offline.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1057"/>
         <source>Session closed</source>
         <translation>Session fermée</translation>
-    </message>
-    <message>
-        <source>New session for you account started at other device. Restart session?</source>
-        <translation type="obsolete">Une nouvelle session de votre compte a été commencé sur un autre dispositif. Redémarrer la session?</translation>
-    </message>
-    <message>
-        <source>New session for you account started at other device.
-Continue working in offline mode.</source>
-        <translation type="obsolete">Une nouvelle session de votre compte a été commencé sur un autre dispositif..
-Continuer à travailler en mode offline.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1078"/>
@@ -1860,55 +1540,14 @@ Continuer à travailler en mode offline.</translation>
         <translation>Projet indisponible</translation>
     </message>
     <message>
-        <source>Current project is not available for syncronization now.
-Continue working with this project in offline mode.</source>
-        <translation type="obsolete">Le projet en cours n&apos;est pas disponible pour la synchronisation maintenant. Continuer à travailler sur ce projet en mode offline.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="572"/>
         <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
         <translation>Impossible d&apos;écrire vos changement sur le projet. Il y a une erreur dans la base de données: %1 Veuillez vérifier que le fichier existe et que vous avez les permissions en écriture. Réessayer de sauvegarder? </translation>
     </message>
     <message>
-        <source>Can&apos;t estabilish network connection.
-
-Continue working in offline mode.</source>
-        <translation type="obsolete">Impossible d&apos;établir une connexion réseau.
-
-Continuer à travailler en mode offline.</translation>
-    </message>
-    <message>
-        <source>Buyed subscription period is finished.
-
-Continue working in offline mode.</source>
-        <translation type="obsolete">La période d&apos;abonnement payé est terminée.
-
-Continuer à travailler en mode offline.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1043"/>
         <source>Network Error</source>
         <translation>Erreur réseau</translation>
-    </message>
-    <message>
-        <source>New session for you account started at other device.
-
-Continue working in offline mode.</source>
-        <translation type="obsolete">Une nouvelle session de votre compte a été commencé sur un autre dispositif.
-
-Continuer à travailler en mode offline.</translation>
-    </message>
-    <message>
-        <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
-
-Continue working in offline mode.</source>
-        <translation type="obsolete">Le projet en cours n&apos;est pas disponible pour la synchronisation maintenant car l&apos;abonnement du propriétaire du projet est terminé.
-
-Continuer à travailler sur ce projet en mode offline.</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Erreur</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="918"/>
@@ -2099,14 +1738,6 @@ Le projet n&apos;a pas été synchronisé.</translation>
         <translation>Scénario</translation>
     </message>
     <message>
-        <source>Characters</source>
-        <translation type="obsolete">Personnages</translation>
-    </message>
-    <message>
-        <source>Locations</source>
-        <translation type="obsolete">Décors</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1656"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1666"/>
         <source>Statistics</source>
@@ -2180,32 +1811,6 @@ Le projet n&apos;a pas été synchronisé.</translation>
     </message>
 </context>
 <context>
-    <name>ManagementLayer::CharactersManager</name>
-    <message>
-        <source>Are you shure to remove characters: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="obsolete">Êtes-vous bien sûr de vouloir supprimer les personnages:&lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::CharactersNavigatorManager</name>
-    <message>
-        <source>Add Character</source>
-        <translation type="obsolete">Ajouter Personnage</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="vanished">Nom</translation>
-    </message>
-    <message>
-        <source>Add Character Error</source>
-        <translation type="obsolete">Erreur d&apos;ajout de personnage</translation>
-    </message>
-    <message>
-        <source>Character with same name already exist in project</source>
-        <translation type="obsolete">Un personnage avec le même nom existe déjà dans le projet</translation>
-    </message>
-</context>
-<context>
     <name>ManagementLayer::ExportManager</name>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="65"/>
@@ -2231,10 +1836,6 @@ Le projet n&apos;a pas été synchronisé.</translation>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="133"/>
         <source>Export error</source>
         <translation>Erreur d&apos;exportation</translation>
-    </message>
-    <message>
-        <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and restart export.</source>
-        <translation type="obsolete">Impossible d&apos;écire dans le fichier. Il est peut-être ouvert dans une autre application. S&apos;il vous plaît, fermez-le et redémarrez l&apos;exportation.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="124"/>
@@ -2273,32 +1874,6 @@ Le projet n&apos;a pas été synchronisé.</translation>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="246"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation>Les fichiers Microsoft &lt;b&gt;DOC&lt;/b&gt; ne sont pas supportés. Vous devez enregistrez- &lt;b&gt;DOCX&lt;/b&gt; et réimporter.</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsManager</name>
-    <message>
-        <source>Are you shure to remove locations: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="obsolete">Êtes-vous sûr de vouloir supprimer les décors: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsNavigatorManager</name>
-    <message>
-        <source>Add Location</source>
-        <translation type="obsolete">Ajouter un décor</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="vanished">Nom</translation>
-    </message>
-    <message>
-        <source>Add Location Error</source>
-        <translation type="obsolete">Erreur lors de l&apos;ajout du décor</translation>
-    </message>
-    <message>
-        <source>Location with same name already exist in project</source>
-        <translation type="obsolete">Un décor avec le même nom existe déjà dans le projet</translation>
     </message>
 </context>
 <context>
@@ -2397,22 +1972,6 @@ Le projet n&apos;a pas été synchronisé.</translation>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="686"/>
         <source>Chron.</source>
         <translation>Chronomètre.</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation type="obsolete">Texte</translation>
-    </message>
-    <message>
-        <source>Edit Scenario Text</source>
-        <translation type="obsolete">Edit Scenario texte</translation>
-    </message>
-    <message>
-        <source>Data</source>
-        <translation type="obsolete">Données</translation>
-    </message>
-    <message>
-        <source>Edit Scenario Data</source>
-        <translation type="obsolete">Edit Scenario données</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="958"/>
@@ -2541,22 +2100,6 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
         <translation>Version  %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Installation&lt;/a&gt; </translation>
     </message>
-    <message>
-        <source>Released version %1 </source>
-        <translation type="obsolete">Version %1</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">télécharger</translation>
-    </message>
-    <message>
-        <source>or</source>
-        <translation type="vanished">ou</translation>
-    </message>
-    <message>
-        <source>read more</source>
-        <translation type="obsolete">Lire plus</translation>
-    </message>
 </context>
 <context>
     <name>ManagementLayer::Sync</name>
@@ -2579,47 +2122,6 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
         <source>Got wrong response from server.</source>
         <translation>Mauvaise réponse reçue depuis le serveur.</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::SynchronizationManager</name>
-    <message>
-        <source>Authorizing</source>
-        <translation type="vanished">Autorisation</translation>
-    </message>
-    <message>
-        <source>Checking correction of user name and password.</source>
-        <translation type="obsolete">Vérifier le bon nom d&apos;utilisateur et mot de passe.</translation>
-    </message>
-    <message>
-        <source>Close working session.</source>
-        <translation type="vanished">Fermer la session de travail.</translation>
-    </message>
-    <message>
-        <source>Loading</source>
-        <translation type="vanished">Chargement</translation>
-    </message>
-    <message>
-        <source>Loading projects list from remote server.</source>
-        <translation type="obsolete">Liste des projets en cours de chargement depuis le serveur distant.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t estabilish network connection.</source>
-        <translation type="vanished">Impossible d&apos;établir une connexion réseau.</translation>
-    </message>
-</context>
-<context>
-    <name>MenuView</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulaire</translation>
-    </message>
-</context>
-<context>
-    <name>NoteShapePropertiesDialog</name>
-    <message>
-        <source>Title:</source>
-        <translation type="obsolete">Titre:</translation>
     </message>
 </context>
 <context>
@@ -2709,49 +2211,30 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
 <context>
     <name>ProjectFileWidget</name>
     <message>
-        <source>Form</source>
-        <translation type="vanished">Formulaire</translation>
-    </message>
-    <message>
-        <source>Project Name</source>
-        <translation type="vanished">Nom du projet</translation>
-    </message>
-    <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="138"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="132"/>
         <source>Change project name</source>
         <translation>Changer le nom du projet</translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="161"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="155"/>
         <source>Remove project</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="184"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="178"/>
         <source>Hide project from recent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="207"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="201"/>
         <source>Add cowriter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="230"/>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="259"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="224"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="253"/>
         <source>Show cowriters</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ProjectUserWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Formulaire</translation>
-    </message>
-    <message>
-        <source>User Name [role]</source>
-        <translation type="vanished">Nom d&apos;utilisateur [role]</translation>
     </message>
 </context>
 <context>
@@ -2766,11 +2249,6 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <source>Title:</source>
         <comment>ScenarioBlockStyle</comment>
         <translation>Titre:</translation>
-    </message>
-    <message>
-        <source>END OF GROUP</source>
-        <comment>ScenarioXml</comment>
-        <translation type="vanished">FIN DE GROUPE</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="604"/>
@@ -2860,7 +2338,7 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <translation>Changement de la couleur du texte du noeud : &quot;</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="846"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="844"/>
         <source>The graph is acyclic, edge added as secondary edge.</source>
         <translation></translation>
     </message>
@@ -3018,10 +2496,6 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="193"/>
         <source>0</source>
         <translation></translation>
-    </message>
-    <message>
-        <source>words</source>
-        <translation type="obsolete">mots</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="154"/>
@@ -3192,20 +2666,10 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <translation>Ajouter noeud enfant</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1142"/>
-        <source>Ctrl+Return</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1149"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1152"/>
         <source>Add sibling node</source>
         <translation>Ajouter noeud frère</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1159"/>
-        <source>Shift+Return</source>
-        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1166"/>
@@ -3241,10 +2705,6 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <translation>&lt;h2&gt;Mind Map&lt;/h2&gt;</translation>
     </message>
     <message>
-        <source>&lt;h2&gt;Images Galerry&lt;/h2&gt;</source>
-        <translation type="vanished">&lt;h2&gt;Galerie d&apos;images&lt;/h2&gt;</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="823"/>
         <source>&lt;h2&gt;Url&lt;/h2&gt;</source>
         <translation></translation>
@@ -3278,14 +2738,6 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <translation>Supprimer flèche</translation>
     </message>
     <message>
-        <source>Name:</source>
-        <translation type="vanished">Nom:</translation>
-    </message>
-    <message>
-        <source>Text:</source>
-        <translation type="vanished">Texte:</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="962"/>
         <source>Url:</source>
         <translation>Url:</translation>
@@ -3294,10 +2746,6 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="969"/>
         <source>Load</source>
         <translation>Charger</translation>
-    </message>
-    <message>
-        <source>Images:</source>
-        <translation type="vanished">Images:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1043"/>
@@ -3328,36 +2776,6 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
     </message>
 </context>
 <context>
-    <name>ScenarioDataEdit</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulaire</translation>
-    </message>
-    <message>
-        <source>Source</source>
-        <translation type="obsolete">Source</translation>
-    </message>
-    <message>
-        <source>From scenario</source>
-        <translation type="obsolete">A partir du scénario</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Nom:</translation>
-    </message>
-</context>
-<context>
-    <name>ScenarioNavigatorView</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulaire</translation>
-    </message>
-    <message>
-        <source>Scenario Name</source>
-        <translation type="obsolete">Nom du scénario</translation>
-    </message>
-</context>
-<context>
     <name>ScenarioSchemeItemDialog</name>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="26"/>
@@ -3370,10 +2788,6 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <translation>Acte</translation>
     </message>
     <message>
-        <source>Folder</source>
-        <translation type="obsolete">Dossier</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="88"/>
         <source>Description</source>
         <translation>Description</translation>
@@ -3382,21 +2796,6 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="38"/>
         <source>Scene</source>
         <translation>Scène</translation>
-    </message>
-</context>
-<context>
-    <name>ScenarioTextView</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulaire</translation>
-    </message>
-    <message>
-        <source>Scenario Name</source>
-        <translation type="obsolete">Nom du scénario</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="vanished">...</translation>
     </message>
 </context>
 <context>
@@ -3567,10 +2966,6 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <translation>Mettre en surbrillance la ligne en cours</translation>
     </message>
     <message>
-        <source>Colors for</source>
-        <translation type="vanished">Couleurs pour</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="626"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="821"/>
         <source>Light Theme</source>
@@ -3630,29 +3025,9 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
         <translation>Paramètres</translation>
     </message>
     <message>
-        <source>Enable automatically replacing</source>
-        <translation type="obsolete">Activer remplacement automatique</translation>
-    </message>
-    <message>
-        <source>Replace lowercase characters to uppercase on start of sentence.
-Replace three single dots to threedots character.
-Replace quotes to language specific.</source>
-        <translation type="obsolete">Remplacer les caractères minuscules en majuscules en début de phrase.
-Remplacer trois points simples à threedots caractère.
-Remplacer les guillemets à la langue spécifique.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="791"/>
         <source>Page View</source>
         <translation>Voir la page</translation>
-    </message>
-    <message>
-        <source>Automatically jump to next paragraph (in scene headings and characters)</source>
-        <translation type="vanished">Automatiquement sauter au paragraphe suivant (en-tête de la scène et des personnages)</translation>
-    </message>
-    <message>
-        <source>Use MS Word like highlighting colors</source>
-        <translation type="obsolete">Utilisez couleurs de surbrillance comme MS Word</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1661"/>
@@ -3680,17 +3055,9 @@ Remplacer les guillemets à la langue spécifique.</translation>
         <translation>Compteurs</translation>
     </message>
     <message>
-        <source>Simbols Counter</source>
-        <translation type="obsolete">Compteur de symboles</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2308"/>
         <source>Simbols without spaces | Simbols with spaces</source>
         <translation>Symboles sans espaces | Symboles avec des espaces</translation>
-    </message>
-    <message>
-        <source>Pages Counter</source>
-        <translation type="obsolete">Compteur de pages</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2265"/>
@@ -3698,17 +3065,9 @@ Remplacer les guillemets à la langue spécifique.</translation>
         <translation>Mode page seulement</translation>
     </message>
     <message>
-        <source>Words Counter</source>
-        <translation type="obsolete">Compteur de mots</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1824"/>
         <source>Chronometry</source>
         <translation>Chronométrie</translation>
-    </message>
-    <message>
-        <source>Two Panel Mode</source>
-        <translation type="obsolete">Mode deux panneaux</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="437"/>
@@ -3721,21 +3080,9 @@ Remplacer les guillemets à la langue spécifique.</translation>
         <translation>Module de scénario</translation>
     </message>
     <message>
-        <source>Characters module</source>
-        <translation type="obsolete">Module de personnages</translation>
-    </message>
-    <message>
-        <source>Locations module</source>
-        <translation type="obsolete">Module de décors</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="458"/>
         <source>Statistics module</source>
         <translation>Module de statistiques</translation>
-    </message>
-    <message>
-        <source>Show suggestions in empty blocks</source>
-        <translation type="vanished">Afficher les suggestions de blocs vides</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1445"/>
@@ -4000,21 +3347,6 @@ paragraphe</translation>
     </message>
 </context>
 <context>
-    <name>SimpleTextEditor</name>
-    <message>
-        <source>Bold</source>
-        <translation type="obsolete">Gras</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">Italique</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">Souligner</translation>
-    </message>
-</context>
-<context>
     <name>SimpleTextEditorWidget</name>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="185"/>
@@ -4147,10 +3479,6 @@ paragraphe</translation>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;
 S&apos;identifier&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Logout&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Se déconnecter&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="612"/>
@@ -4333,10 +3661,6 @@ S&apos;identifier&lt;/a&gt;</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="337"/>
         <source>Choose characters:</source>
         <translation>Choisir personnages:</translation>
-    </message>
-    <message>
-        <source>Character:</source>
-        <translation type="obsolete">Caracter:</translation>
     </message>
 </context>
 <context>
@@ -4768,10 +4092,6 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
         <translation>Choisir le fichier de nouveau projet</translation>
     </message>
     <message>
-        <source>Scenarist project files (*%1)</source>
-        <translation type="obsolete">Fichiers de projet Scenarist (*%1)</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="235"/>
         <source>Choose file to import</source>
         <translation>Choisir le fichier à importer</translation>
@@ -4791,40 +4111,6 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/ChangePasswordDialog.cpp" line="27"/>
         <source>Change</source>
         <translation>Changer</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::CharactersDataEdit</name>
-    <message>
-        <source>Choose Character</source>
-        <translation type="obsolete">Choisir personnage</translation>
-    </message>
-    <message>
-        <source>Character name</source>
-        <translation type="obsolete">Nom du personnage</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::CharactersNavigator</name>
-    <message>
-        <source>Characters</source>
-        <translation type="obsolete">Personnages</translation>
-    </message>
-    <message>
-        <source>Create New Character</source>
-        <translation type="obsolete">Créer un nouveau personnage</translation>
-    </message>
-    <message>
-        <source>Remove Selected Character</source>
-        <translation type="obsolete">Supprimer le personnage sélectionné</translation>
-    </message>
-    <message>
-        <source>Merge Selected Characters</source>
-        <translation type="obsolete">Fusionner personnages sélectionnés</translation>
-    </message>
-    <message>
-        <source>Find All Characters from Scenario</source>
-        <translation type="obsolete">Trouver tous les personnages du Scénario</translation>
     </message>
 </context>
 <context>
@@ -4856,22 +4142,6 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
 <context>
     <name>UserInterface::ImportDialog</name>
     <message>
-        <source>All Supported Files</source>
-        <translation type="vanished">Tous les fichiers pris en charge</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation type="vanished">Projet de KIT Scenarist</translation>
-    </message>
-    <message>
-        <source>Office Open XML</source>
-        <translation type="vanished">Office Open XML</translation>
-    </message>
-    <message>
-        <source>OpenDocument Text</source>
-        <translation type="vanished">Office Open XML</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="82"/>
         <source>Choose file to import</source>
         <translation>Choisir le fichier à importer</translation>
@@ -4880,36 +4150,6 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="51"/>
         <source>Import</source>
         <translation>Importer</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsDataEdit</name>
-    <message>
-        <source>Choose Location</source>
-        <translation type="obsolete">Choisir un décor</translation>
-    </message>
-    <message>
-        <source>Location</source>
-        <translation type="obsolete">Décor</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsNavigator</name>
-    <message>
-        <source>Locations</source>
-        <translation type="obsolete">Décors</translation>
-    </message>
-    <message>
-        <source>Create New Location</source>
-        <translation type="obsolete">Créer un nouveau décor</translation>
-    </message>
-    <message>
-        <source>Remove Selected Location</source>
-        <translation type="obsolete">Supprimer le décor sélectionné</translation>
-    </message>
-    <message>
-        <source>Find All Locations From Scenario</source>
-        <translation type="obsolete">Trouver tous les décors du scénario</translation>
     </message>
 </context>
 <context>
@@ -5035,12 +4275,12 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
         <translation>Nom du décor</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="706"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="707"/>
         <source>Choose image</source>
         <translation>Choisir une image</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="708"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="709"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
         <translation>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
     </message>
@@ -5102,17 +4342,6 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
         <source>On/off Fullscreen Mode</source>
         <translation>Actif/ Désactiver le mode plein écran</translation>
     </message>
-    <message>
-        <source>On/off fullscreen mode (F5)</source>
-        <translation type="vanished">On/off mode plein écran(F5)</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::ScenarioDataEdit</name>
-    <message>
-        <source>Synopsis</source>
-        <translation type="obsolete">Synopsis</translation>
-    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioFastFormatWidget</name>
@@ -5150,10 +4379,6 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
         <translation>Dossier</translation>
     </message>
     <message>
-        <source>Scenes group</source>
-        <translation type="vanished">Groupe de scènes</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="99"/>
         <source>Scene</source>
         <translation>Scène</translation>
@@ -5176,18 +4401,6 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="266"/>
         <source>Remove</source>
         <translation>Supprimer</translation>
-    </message>
-    <message>
-        <source>Colors</source>
-        <translation type="vanished">Couleurs</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="obsolete">Scène</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="obsolete">Dossier</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="199"/>
@@ -5320,20 +4533,9 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
 <context>
     <name>UserInterface::ScenarioSceneDescription</name>
     <message>
-        <source>Notes of</source>
-        <translation type="vanished">Notes du</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="106"/>
         <source>Description of:</source>
         <translation>Description du:</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::ScenarioSceneSynopsis</name>
-    <message>
-        <source>Notes of</source>
-        <translation type="obsolete">Notes du</translation>
     </message>
 </context>
 <context>
@@ -5391,13 +4593,6 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="646"/>
         <source>Duration from Start to Cursor Position | Full Duration</source>
         <translation>Durée du début à la position du curseur | Plein Durée</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::ScenarioTextView</name>
-    <message>
-        <source>DRAFT</source>
-        <translation type="vanished">RÉDIGER</translation>
     </message>
 </context>
 <context>
@@ -5534,14 +4729,6 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <source>Modules</source>
         <translation>Modules</translation>
     </message>
-    <message>
-        <source>Shortcuts Settings</source>
-        <translation type="obsolete">Réglages des raccourcis</translation>
-    </message>
-    <message>
-        <source>Review</source>
-        <translation type="obsolete">Révision</translation>
-    </message>
 </context>
 <context>
     <name>UserInterface::ShareDialog</name>
@@ -5554,31 +4741,27 @@ but if you work with no terminations it saves project every %1 minutes.</source>
 <context>
     <name>UserInterface::StartUpView</name>
     <message>
-        <source>Logout</source>
-        <translation type="vanished">Se déconnecter</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="101"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="90"/>
         <source>Account is active until:</source>
         <translation>Le compte est actif depuis:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="104"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="93"/>
         <source>Account is inactive</source>
         <translation>Le compte est inactif</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="115"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="104"/>
         <source>Used %1 Gb from %2 Gb</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="150"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="128"/>
         <source>Connect</source>
         <translation>Connecter</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="160"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="138"/>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;S&apos;identifier&lt;/a&gt;</translation>
     </message>
@@ -5666,10 +4849,6 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <translation>Dialogues des personnages</translation>
     </message>
     <message>
-        <source>Character dialogues</source>
-        <translation type="obsolete">Dialogues des personnages</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="315"/>
         <source>Plots</source>
         <translation>Plots</translation>
@@ -5690,10 +4869,6 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <translation>Durée, minutes</translation>
     </message>
     <message>
-        <source>Statistics report</source>
-        <translation type="obsolete">Rapport statistique</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="298"/>
         <source>Scene report</source>
         <translation>Rapport de scène</translation>
@@ -5707,10 +4882,6 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="300"/>
         <source>Cast report</source>
         <translation>Rapport des personnages</translation>
-    </message>
-    <message>
-        <source>Character report</source>
-        <translation type="obsolete">Rapport de Caractère</translation>
     </message>
 </context>
 <context>

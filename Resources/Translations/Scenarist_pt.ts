@@ -13,53 +13,6 @@
     </message>
 </context>
 <context>
-    <name>ActivityEdit</name>
-    <message>
-        <source>Can&apos;t arrange cards</source>
-        <translation type="obsolete">Não é possível alterar os cartões</translation>
-    </message>
-    <message>
-        <source>Schemes with scene groups or with folders cannot be arranged.</source>
-        <translation type="obsolete">Esquemas com grupos de cenas ou pastas não podem ser organizados.</translation>
-    </message>
-    <message>
-        <source>Convert to</source>
-        <translation type="obsolete">Converter para</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="obsolete">Cena</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="obsolete">Grupo de cena</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="obsolete">Pasta</translation>
-    </message>
-    <message>
-        <source>Color %1</source>
-        <translation type="obsolete">Cor %1</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Remover</translation>
-    </message>
-    <message>
-        <source>Add color</source>
-        <translation type="obsolete">Adicionar cor</translation>
-    </message>
-    <message>
-        <source>Create Card After</source>
-        <translation type="obsolete">Criar Cartão Depois</translation>
-    </message>
-    <message>
-        <source>Remove anchors</source>
-        <translation type="obsolete">Remover Âncoras</translation>
-    </message>
-</context>
-<context>
     <name>AddImageButton</name>
     <message>
         <source>Choose image</source>
@@ -99,10 +52,6 @@
     <message>
         <source>Enter Name of New Project:</source>
         <translation>Entre com o nome do novo projeto:</translation>
-    </message>
-    <message>
-        <source>Import Project</source>
-        <translation type="obsolete">Importar Projeto</translation>
     </message>
     <message>
         <source>Choose File with Project to Import:</source>
@@ -414,14 +363,6 @@
         <translation>Texto não imprimível</translation>
     </message>
     <message>
-        <source>Scene Group</source>
-        <translation type="obsolete">Grupo de Cenas</translation>
-    </message>
-    <message>
-        <source>Scene Group Footer</source>
-        <translation type="obsolete">Rodapé do grupo de cenas</translation>
-    </message>
-    <message>
         <source>Folder</source>
         <translation>Pasta</translation>
     </message>
@@ -498,18 +439,6 @@
         <extracomment>Reduction of Noprintable Text</extracomment>
         <translatorcomment>Redução de Não imprimível</translatorcomment>
         <translation>NP</translation>
-    </message>
-    <message>
-        <source>SG</source>
-        <extracomment>Reduction of Scene Group</extracomment>
-        <translatorcomment>Redução de Grupo de Cena</translatorcomment>
-        <translation type="obsolete">GC</translation>
-    </message>
-    <message>
-        <source>SGF</source>
-        <extracomment>Reduction of Scene Group Footer</extracomment>
-        <translatorcomment>Redução de Rodapé de Grupo de Cena</translatorcomment>
-        <translation type="obsolete">RGC</translation>
     </message>
     <message>
         <source>F</source>
@@ -705,18 +634,6 @@
         <translation>Organizar</translation>
     </message>
     <message>
-        <source>cards in</source>
-        <translation type="obsolete">Cartões em</translation>
-    </message>
-    <message>
-        <source>Row</source>
-        <translation type="obsolete">Linha</translation>
-    </message>
-    <message>
-        <source>Column</source>
-        <translation type="obsolete">Coluna</translation>
-    </message>
-    <message>
         <source>Card size:</source>
         <translation>Tamanho do Cartão:</translation>
     </message>
@@ -781,33 +698,6 @@
     <message>
         <source>New Password</source>
         <translation>Nova senha</translation>
-    </message>
-</context>
-<context>
-    <name>CharactersDataEdit</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulário</translation>
-    </message>
-    <message>
-        <source>Add Image</source>
-        <translation type="obsolete">Adicionar Imagem</translation>
-    </message>
-    <message>
-        <source>Choose Character</source>
-        <translation type="obsolete">Escolha o Personagem</translation>
-    </message>
-    <message>
-        <source>Real Name:</source>
-        <translation type="obsolete">Nome Real:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="obsolete">Descrição:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="obsolete">Nome:</translation>
     </message>
 </context>
 <context>
@@ -1203,29 +1093,6 @@
     </message>
 </context>
 <context>
-    <name>LocationsDataEdit</name>
-    <message>
-        <source>Dialog</source>
-        <translation type="obsolete">Diálogo</translation>
-    </message>
-    <message>
-        <source>Add Image</source>
-        <translation type="obsolete">Adicionar Imagem</translation>
-    </message>
-    <message>
-        <source>Choose Location</source>
-        <translation type="obsolete">Escolha a localização </translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="obsolete">Nome:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="obsolete">Descrição:</translation>
-    </message>
-</context>
-<context>
     <name>LoginDialog</name>
     <message>
         <source>&amp;Email</source>
@@ -1327,16 +1194,8 @@
         <translation>Entrar com novo nome para o projeto</translation>
     </message>
     <message>
-        <source>Project removing</source>
-        <translation type="vanished">Remoção do projeto</translation>
-    </message>
-    <message>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Tem certeza em remover o projeto &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
-        <source>Project unsubscribing</source>
-        <translation type="vanished">Cancelamento da inscrição do projeto</translation>
     </message>
     <message>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
@@ -1499,14 +1358,6 @@ O projeto não foi sincronizado.</translation>
         <translation>Cenário</translation>
     </message>
     <message>
-        <source>Characters</source>
-        <translation type="obsolete">Personagens</translation>
-    </message>
-    <message>
-        <source>Locations</source>
-        <translation type="obsolete">Localizações</translation>
-    </message>
-    <message>
         <source>Statistics</source>
         <translation>Estatisticas</translation>
     </message>
@@ -1604,32 +1455,6 @@ O projeto não foi sincronizado.</translation>
     </message>
 </context>
 <context>
-    <name>ManagementLayer::CharactersManager</name>
-    <message>
-        <source>Are you shure to remove characters: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="obsolete">Tem a certeza em remover os personagens: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::CharactersNavigatorManager</name>
-    <message>
-        <source>Add Character</source>
-        <translation type="obsolete">Adicionar Personagem</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="obsolete">Nome</translation>
-    </message>
-    <message>
-        <source>Add Character Error</source>
-        <translation type="obsolete">Erro ao Adicionar Personagem</translation>
-    </message>
-    <message>
-        <source>Character with same name already exist in project</source>
-        <translation type="obsolete">Personagem com o mesmo nome existe no projeto</translation>
-    </message>
-</context>
-<context>
     <name>ManagementLayer::ExportManager</name>
     <message>
         <source>Export</source>
@@ -1681,32 +1506,6 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation>Arquivos &lt;b&gt;DOC&lt;/b&gt; da Microsoft não são suportados. Você precisa salvá-lo no arquivo &lt;b&gt;DOCX &lt;/b&gt; e reimportar.</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsManager</name>
-    <message>
-        <source>Are you shure to remove locations: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="obsolete">Tem certeza de remover os locais: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsNavigatorManager</name>
-    <message>
-        <source>Add Location</source>
-        <translation type="obsolete">Adicionar locais</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="obsolete">Nome</translation>
-    </message>
-    <message>
-        <source>Add Location Error</source>
-        <translation type="obsolete">Erro ao adicionar local</translation>
-    </message>
-    <message>
-        <source>Location with same name already exist in project</source>
-        <translation type="obsolete">Local com o mesmo nome já existe no projeto</translation>
     </message>
 </context>
 <context>
@@ -1878,22 +1677,6 @@ O projeto não foi sincronizado.</translation>
         <translation>Não é possível alterar a senha</translation>
     </message>
     <message>
-        <source>Released version %1 </source>
-        <translation type="obsolete">Versão lançada %1</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="obsolete">download</translation>
-    </message>
-    <message>
-        <source>or</source>
-        <translation type="obsolete">ou</translation>
-    </message>
-    <message>
-        <source>read more</source>
-        <translation type="obsolete">leia mais</translation>
-    </message>
-    <message>
         <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
         <translation>Versão lançada%1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt; Instalar &lt;/a&gt;</translation>
     </message>
@@ -1997,18 +1780,6 @@ Você pode tentar recarregar a atualização.</translation>
 <context>
     <name>ProjectFileWidget</name>
     <message>
-        <source>Form</source>
-        <translation type="vanished">Formulário</translation>
-    </message>
-    <message>
-        <source>Project Name</source>
-        <translation type="vanished">Nome do Projeto</translation>
-    </message>
-    <message>
-        <source>/file/path</source>
-        <translation type="vanished">/arquivo/caminho</translation>
-    </message>
-    <message>
         <source>Change project name</source>
         <translation type="unfinished">Mudar o nome do projeto</translation>
     </message>
@@ -2027,17 +1798,6 @@ Você pode tentar recarregar a atualização.</translation>
     <message>
         <source>Show cowriters</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ProjectUserWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Formulário</translation>
-    </message>
-    <message>
-        <source>User Name [role]</source>
-        <translation type="vanished">Nome de Usuário [papel]</translation>
     </message>
 </context>
 <context>
@@ -2098,11 +1858,6 @@ Você pode tentar recarregar a atualização.</translation>
         <source>Title:</source>
         <comment>ScenarioBlockStyle</comment>
         <translation>Título:</translation>
-    </message>
-    <message>
-        <source>END OF GROUP</source>
-        <comment>ScenarioXml</comment>
-        <translation type="obsolete">FIM DO GRUPO</translation>
     </message>
     <message>
         <source>END OF FOLDER</source>
@@ -2223,10 +1978,6 @@ Você pode tentar recarregar a atualização.</translation>
         <translation>Busca</translation>
     </message>
     <message>
-        <source>Ctrl+F</source>
-        <translation type="obsolete">Ctrl+F</translation>
-    </message>
-    <message>
         <source>words:</source>
         <translation>palavras:</translation>
     </message>
@@ -2319,16 +2070,8 @@ Você pode tentar recarregar a atualização.</translation>
         <translation>Adicionar nó filho</translation>
     </message>
     <message>
-        <source>Ctrl+Return</source>
-        <translation>Ctrl+Enter</translation>
-    </message>
-    <message>
         <source>Add sibling node</source>
         <translation>Adicionar nó irmão</translation>
-    </message>
-    <message>
-        <source>Shift+Return</source>
-        <translation>Shift+Enter</translation>
     </message>
     <message>
         <source>Delete node (Del)</source>
@@ -2470,14 +2213,6 @@ Você pode tentar recarregar a atualização.</translation>
     <message>
         <source>Add scheme item</source>
         <translation>Adicionar item de esquema</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="obsolete">Grupo de cenas</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="obsolete">Pasta</translation>
     </message>
     <message>
         <source>Description</source>
@@ -2632,14 +2367,6 @@ Você pode tentar recarregar a atualização.</translation>
     <message>
         <source>Scenario module</source>
         <translation>Módulo de cenário</translation>
-    </message>
-    <message>
-        <source>Characters module</source>
-        <translation type="obsolete">Módulo de caracteres</translation>
-    </message>
-    <message>
-        <source>Locations module</source>
-        <translation type="obsolete">Módulo Localizações</translation>
     </message>
     <message>
         <source>Statistics module</source>
@@ -3521,10 +3248,6 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <translation>Escolha o arquivo para o novo projeto</translation>
     </message>
     <message>
-        <source>Scenarist project files (*%1)</source>
-        <translation type="obsolete">Scenarist arquivos de projeto (*%1)</translation>
-    </message>
-    <message>
         <source>Choose file to import</source>
         <translation>Escolha o arquivo a ser importado</translation>
     </message>
@@ -3545,40 +3268,6 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Change</source>
         <translation>Mudança</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::CharactersDataEdit</name>
-    <message>
-        <source>Choose Character</source>
-        <translation type="obsolete">Escolher Personagem</translation>
-    </message>
-    <message>
-        <source>Character name</source>
-        <translation type="obsolete">Nome do personagem</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::CharactersNavigator</name>
-    <message>
-        <source>Characters</source>
-        <translation type="obsolete">Personagens</translation>
-    </message>
-    <message>
-        <source>Create New Character</source>
-        <translation type="obsolete">Criar novo personagem</translation>
-    </message>
-    <message>
-        <source>Remove Selected Character</source>
-        <translation type="obsolete">Remover o personagem selecionado</translation>
-    </message>
-    <message>
-        <source>Merge Selected Characters</source>
-        <translation type="obsolete">Combinar personagens selecionados</translation>
-    </message>
-    <message>
-        <source>Find All Characters from Scenario</source>
-        <translation type="obsolete">Localizar todos os personagens do cenário</translation>
     </message>
 </context>
 <context>
@@ -3606,66 +3295,12 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
 <context>
     <name>UserInterface::ImportDialog</name>
     <message>
-        <source>All Supported Files</source>
-        <translation type="obsolete">Todos os arquivos suportados</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation type="obsolete">Projeto KIT Scenarist </translation>
-    </message>
-    <message>
-        <source>Final Draft screenplay</source>
-        <translation type="obsolete">Rascunho final de roteiro</translation>
-    </message>
-    <message>
-        <source>Trelby screenplay</source>
-        <translation type="obsolete">Roteiro Trelby</translation>
-    </message>
-    <message>
-        <source>Office Open XML</source>
-        <translation type="obsolete">Office Open XML</translation>
-    </message>
-    <message>
-        <source>OpenDocument Text</source>
-        <translation type="obsolete">Texto OpenDocument</translation>
-    </message>
-    <message>
         <source>Choose file to import</source>
         <translation>Escolha arquivo para importar</translation>
     </message>
     <message>
         <source>Import</source>
         <translation>Importar</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsDataEdit</name>
-    <message>
-        <source>Choose Location</source>
-        <translation type="obsolete">Escolha local</translation>
-    </message>
-    <message>
-        <source>Location</source>
-        <translation type="obsolete">Local</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsNavigator</name>
-    <message>
-        <source>Locations</source>
-        <translation type="obsolete">Locais</translation>
-    </message>
-    <message>
-        <source>Create New Location</source>
-        <translation type="obsolete">Criar novo local</translation>
-    </message>
-    <message>
-        <source>Remove Selected Location</source>
-        <translation type="obsolete">Remover local selecionado</translation>
-    </message>
-    <message>
-        <source>Find All Locations From Scenario</source>
-        <translation type="obsolete">Encontrar todos os locais do cenário</translation>
     </message>
 </context>
 <context>
@@ -3782,24 +3417,8 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <translation>Adicionar novo cartão</translation>
     </message>
     <message>
-        <source>Add note</source>
-        <translation type="obsolete">Adicionar nota</translation>
-    </message>
-    <message>
-        <source>Add horizontal line</source>
-        <translation type="obsolete">Adicionar linha horizontal</translation>
-    </message>
-    <message>
-        <source>Add vertical line</source>
-        <translation type="obsolete">Adicionar linha vertical</translation>
-    </message>
-    <message>
         <source>Sort cards</source>
         <translation>Organizar cartões</translation>
-    </message>
-    <message>
-        <source>On/off fullscreen mode (F5)</source>
-        <translation type="vanished">On/Off modo de tela cheia(f5)</translation>
     </message>
     <message>
         <source>Cards.png</source>
@@ -3868,10 +3487,6 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <translation>Cena</translation>
     </message>
     <message>
-        <source>Scenes group</source>
-        <translation type="obsolete">Grupo de cenas</translation>
-    </message>
-    <message>
         <source>Folder</source>
         <translation>Pasta</translation>
     </message>
@@ -3882,22 +3497,6 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
 </context>
 <context>
     <name>UserInterface::ScenarioNavigator</name>
-    <message>
-        <source>Convert to</source>
-        <translation type="obsolete">Converter para</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="obsolete">Cena</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="obsolete">Grupo de cenas</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="obsolete">Pasta</translation>
-    </message>
     <message>
         <source>Color %1</source>
         <translation>Cor %1</translation>

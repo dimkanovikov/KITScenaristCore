@@ -1107,109 +1107,109 @@
 <context>
     <name>GraphLogic</name>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="122"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="120"/>
         <source>Couldn&apos;t parse XML file.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="215"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="213"/>
         <source>Couldn&apos;t read file.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="286"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="284"/>
         <source>Couldn&apos;t open file to write.</source>
         <translation>只读文件</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="294"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="292"/>
         <source>Saved.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="316"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="314"/>
         <source>MindMap exported as </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="357"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="400"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="463"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="488"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="501"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="530"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="559"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="589"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="612"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="642"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="677"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="776"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="355"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="398"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="461"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="486"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="499"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="528"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="557"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="587"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="610"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="640"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="675"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="774"/>
         <source>No active node.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="377"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="375"/>
         <source>New node would be placed outside of the scene.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="431"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="429"/>
         <source>No active node</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="445"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="443"/>
         <source>Node hasn&apos;t parent for add sibling node</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="469"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="467"/>
         <source>Base node cannot be deleted.</source>
         <translation>不可删基本节点</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="507"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="536"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="505"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="534"/>
         <source>Too much scaling.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="567"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="565"/>
         <source>Select node color</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="620"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="618"/>
         <source>Select text color</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="663"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="661"/>
         <source>Add edge: select destination node.</source>
         <translation>添加方向：选择目标节点</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="669"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="667"/>
         <source>Delete edge: select other end-node.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="728"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="726"/>
         <source>Edge adding cancelled.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="735"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="733"/>
         <source>Edge deleting cancelled.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="837"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="835"/>
         <source>There is already an edge between these two nodes.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="868"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="866"/>
         <source>There is no edge between these two nodes.</source>
         <translation></translation>
     </message>
@@ -1497,17 +1497,9 @@
         <translation>输入项目的新名称</translation>
     </message>
     <message>
-        <source>Project removing</source>
-        <translation type="vanished">项目移除</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="860"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>确认移除该项目 &lt;b&gt;%1&lt;/b&gt;？</translation>
-    </message>
-    <message>
-        <source>Project unsubscribing</source>
-        <translation type="vanished">停止订阅该项目</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="869"/>
@@ -2225,53 +2217,30 @@ You can try to reload update.</source>
 <context>
     <name>ProjectFileWidget</name>
     <message>
-        <source>Form</source>
-        <translation type="vanished">格式</translation>
-    </message>
-    <message>
-        <source>Project Name</source>
-        <translation type="vanished">项目名称</translation>
-    </message>
-    <message>
-        <source>Project Info</source>
-        <translation type="vanished">项目信息</translation>
-    </message>
-    <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="138"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="132"/>
         <source>Change project name</source>
         <translation>更改项目名称</translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="161"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="155"/>
         <source>Remove project</source>
         <translation>删除项目</translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="184"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="178"/>
         <source>Hide project from recent</source>
         <translation>把项目隐藏从最近打开的文件</translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="207"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="201"/>
         <source>Add cowriter</source>
         <translation>添加联合作者</translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="230"/>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="259"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="224"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="253"/>
         <source>Show cowriters</source>
         <translation>显示联合作者</translation>
-    </message>
-</context>
-<context>
-    <name>ProjectUserWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">格式</translation>
-    </message>
-    <message>
-        <source>User Name [role]</source>
-        <translation type="vanished">用户名称 [身份]</translation>
     </message>
 </context>
 <context>
@@ -2352,7 +2321,7 @@ You can try to reload update.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="846"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="844"/>
         <source>The graph is acyclic, edge added as secondary edge.</source>
         <translation></translation>
     </message>
@@ -2745,20 +2714,10 @@ You can try to reload update.</source>
         <translation>添加子元素</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1142"/>
-        <source>Ctrl+Return</source>
-        <translation>Ctrl+Return</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1149"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1152"/>
         <source>Add sibling node</source>
         <translation>添加相邻的节点</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1159"/>
-        <source>Shift+Return</source>
-        <translation>Shift+Return</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1166"/>
@@ -4321,12 +4280,12 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <translation>地点名称</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="706"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="707"/>
         <source>Choose image</source>
         <translation>选择图片</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="708"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="709"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
         <translation>图片(*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
     </message>
@@ -4387,10 +4346,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="253"/>
         <source>On/off Fullscreen Mode</source>
         <translation>开启／关闭全屏模式</translation>
-    </message>
-    <message>
-        <source>On/off fullscreen mode (F5)</source>
-        <translation type="vanished">开启／关闭全屏模式(F5)</translation>
     </message>
 </context>
 <context>
@@ -4791,27 +4746,27 @@ but if you work with no terminations it saves project every %1 minutes.</source>
 <context>
     <name>UserInterface::StartUpView</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="101"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="90"/>
         <source>Account is active until:</source>
         <translation>您的同步账号有效期为：</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="104"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="93"/>
         <source>Account is inactive</source>
         <translation>账户未激活</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="115"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="104"/>
         <source>Used %1 Gb from %2 Gb</source>
         <translation>在2%GB中，1%已经使用</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="150"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="128"/>
         <source>Connect</source>
         <translation>连接</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="160"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="138"/>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;登录&lt;/a&gt;</translation>
     </message>

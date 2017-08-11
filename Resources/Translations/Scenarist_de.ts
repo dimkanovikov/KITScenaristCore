@@ -15,53 +15,6 @@
     </message>
 </context>
 <context>
-    <name>ActivityEdit</name>
-    <message>
-        <source>Can&apos;t arrange cards</source>
-        <translation type="vanished">Konnte Karten nicht anordnen</translation>
-    </message>
-    <message>
-        <source>Schemes with scene groups or with folders cannot be arranged.</source>
-        <translation type="vanished">Die Schemata der Szenengruppen oder Ordner konnten nicht geordnet werden.</translation>
-    </message>
-    <message>
-        <source>Convert to</source>
-        <translation type="vanished">Konvertiere zu</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="vanished">Szene</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="vanished">Szenengruppe</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="vanished">Ordner</translation>
-    </message>
-    <message>
-        <source>Color %1</source>
-        <translation type="vanished">Farbe %1</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="vanished">Entfernen</translation>
-    </message>
-    <message>
-        <source>Add color</source>
-        <translation type="vanished">Farbe hinzufügen</translation>
-    </message>
-    <message>
-        <source>Create Card After</source>
-        <translation type="vanished">Erstelle eine Karte nach</translation>
-    </message>
-    <message>
-        <source>Remove anchors</source>
-        <translation type="vanished">Anker entfernen.</translation>
-    </message>
-</context>
-<context>
     <name>AddImageButton</name>
     <message>
         <location filename="../../3rd_party/Widgets/ImagesPane/AddImageButton.cpp" line="28"/>
@@ -347,10 +300,6 @@
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="178"/>
         <source>Simbols</source>
         <translation>Symbole</translation>
-    </message>
-    <message>
-        <source>Symbols</source>
-        <translation type="vanished">Symbole</translation>
     </message>
 </context>
 <context>
@@ -1030,10 +979,6 @@
         <translation>Exportieren</translation>
     </message>
     <message>
-        <source>File:</source>
-        <translation type="vanished">Datei:</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="356"/>
         <source>File exists. It will be replaced after exporting.</source>
         <translation>Die Datei existiert. Ersetzen?</translation>
@@ -1047,10 +992,6 @@
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="401"/>
         <source>...</source>
         <translation>...</translation>
-    </message>
-    <message>
-        <source>Additional (Numbering, Title Page, etc.)</source>
-        <translation type="vanished">Zusätzliches (Nummerierung, Titelblatt, etc.)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="57"/>
@@ -1164,109 +1105,109 @@
 <context>
     <name>GraphLogic</name>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="122"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="120"/>
         <source>Couldn&apos;t parse XML file.</source>
         <translation>XML-Datei nicht lesbar.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="215"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="213"/>
         <source>Couldn&apos;t read file.</source>
         <translation>Datei nicht lesbar.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="286"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="284"/>
         <source>Couldn&apos;t open file to write.</source>
         <translation>Die Datei ist schreibgeschützt.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="294"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="292"/>
         <source>Saved.</source>
         <translation>Gespeichert.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="316"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="314"/>
         <source>MindMap exported as </source>
         <translation>Exportiere das MindMap als </translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="357"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="400"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="463"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="488"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="501"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="530"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="559"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="589"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="612"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="642"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="677"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="776"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="355"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="398"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="461"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="486"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="499"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="528"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="557"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="587"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="610"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="640"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="675"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="774"/>
         <source>No active node.</source>
         <translation>Keine akitven Knoten.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="377"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="375"/>
         <source>New node would be placed outside of the scene.</source>
         <translation>Neue Knoten würden außerhalb der Szene platziert.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="431"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="429"/>
         <source>No active node</source>
         <translation>Keine aktiven Knoten.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="445"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="443"/>
         <source>Node hasn&apos;t parent for add sibling node</source>
         <translation>Der Knoten hat keinen Wurzelknoten, um weitere Knoten hinzuzufügen.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="469"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="467"/>
         <source>Base node cannot be deleted.</source>
         <translation>Der Wurzelknoten kann nicht gelöscht werden.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="507"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="536"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="505"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="534"/>
         <source>Too much scaling.</source>
         <translation>Zu stark skaliert.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="567"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="565"/>
         <source>Select node color</source>
         <translation>Wähle die Knotenfarbe</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="620"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="618"/>
         <source>Select text color</source>
         <translation>Wähle die Textfarbe</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="663"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="661"/>
         <source>Add edge: select destination node.</source>
         <translation>Verweis hinzufügen: Endknoten auswählen.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="669"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="667"/>
         <source>Delete edge: select other end-node.</source>
         <translation>Verweis löschen: Wähle einen anderen Endknoten.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="728"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="726"/>
         <source>Edge adding cancelled.</source>
         <translation>Hinzufügen wurde abgebrochen.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="735"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="733"/>
         <source>Edge deleting cancelled.</source>
         <translation>Das Entfernen wurde abgebrochen.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="837"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="835"/>
         <source>There is already an edge between these two nodes.</source>
         <translation>Ein Verweis zwischen beiden Knoten ist bereits vorhanden.</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="868"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="866"/>
         <source>There is no edge between these two nodes.</source>
         <translation>Es gibt keinen Verweis zwischen den Knoten.</translation>
     </message>
@@ -1287,10 +1228,6 @@
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="45"/>
         <source>Outline</source>
         <translation>Outline</translation>
-    </message>
-    <message>
-        <source>File:</source>
-        <translation type="vanished">Datei:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="80"/>
@@ -1412,50 +1349,7 @@
     </message>
 </context>
 <context>
-    <name>LocationsDataEdit</name>
-    <message>
-        <source>Dialog</source>
-        <translation type="vanished">Dialog</translation>
-    </message>
-    <message>
-        <source>Add Image</source>
-        <translation type="vanished">Bild hinzufügen</translation>
-    </message>
-    <message>
-        <source>Choose Location</source>
-        <translation type="vanished">Motiv wählen</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Name:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="vanished">Beschreibung</translation>
-    </message>
-</context>
-<context>
     <name>LoginDialog</name>
-    <message>
-        <source>Authorization</source>
-        <translation type="vanished">Authentifizierung</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;https://kitscenarist.ru/cabin.html&quot; style=&quot;color:#2b78da;&quot;&gt;Registration&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;https://kitscenarist.ru/cabin.html&quot; style=&quot;color:#2b78da;&quot;&gt;Registration&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>Error message</source>
-        <translation type="vanished">Fehlernachricht</translation>
-    </message>
-    <message>
-        <source>User name</source>
-        <translation type="vanished">Benutzername</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation type="vanished">Passwort</translation>
-    </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/LoginDialog.ui" line="60"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/LoginDialog.ui" line="241"/>
@@ -1513,10 +1407,6 @@
         <translation> - geändert</translation>
     </message>
     <message>
-        <source>Choose file for new project</source>
-        <translation type="vanished">Wähle Datei für neues Projekt</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="445"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="659"/>
         <source>Scenarist project files (*%1)</source>
@@ -1560,10 +1450,6 @@
         <translation>Konnte die Datei &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; nicht speichern. Überprüfen Sie die Zugriffsrechte und versuchen Sie es erneut.</translation>
     </message>
     <message>
-        <source>Can&apos;t write you changes to project. There is some internal database error. Please check that file is exists and you have permissions to write in it. Retry to save?</source>
-        <translation type="vanished">Konnte die Änderungen am Projekt nicht speichern. Interner Fehler. Bitte überprüfen Sie, ob die Datei existiert und ob SIe die nötigen Zugriffsrechte haben. Speichervorgang wiederholen?</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="593"/>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
         <translation>Konnte die Änderungen im Ordner &lt;b&gt;%1&lt;/b&gt; nicht speichern, weil die Datei nicht existiert. Bitte verschieben Sie die Projektdatei zurück und versuchen es erneut.</translation>
@@ -1603,17 +1489,9 @@
         <translation>Neuen Namen fürs Projekt eingeben</translation>
     </message>
     <message>
-        <source>Project removing</source>
-        <translation type="vanished">Projekt entfernen</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="860"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Sind Sie sicher, dass Sie das Projekt entfernen möchten? &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
-        <source>Project unsubscribing</source>
-        <translation type="vanished">Projekt entfolgen</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="869"/>
@@ -1641,10 +1519,6 @@
         <translation>Konnte die Änderungen am Projekt nicht speichern. Interner Fehler: %1. Bitte überprüfen Sie, ob die Datei existiert und ob SIe die nötigen Zugriffsrechte haben. Speichervorgang wiederholen?</translation>
     </message>
     <message>
-        <source>Project sinchronized</source>
-        <translation type="vanished">Projekt synchronisiert</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="975"/>
         <source>Modified</source>
         <translation>Geändert</translation>
@@ -1653,12 +1527,6 @@
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1003"/>
         <source>Network error</source>
         <translation>Netzwerkfehler</translation>
-    </message>
-    <message>
-        <source>Can&apos;t estabilish network connection.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Konnte die Netzwerkverbindung nicht herstellen. Arbeite offline weiter.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1020"/>
@@ -1671,21 +1539,9 @@ Continue working in offline mode.</source>
         <translation>Abo beendet.</translation>
     </message>
     <message>
-        <source>Buyed subscription period is finished.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Abo abgelaufen. Arbeite offline weiter.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1043"/>
         <source>Network Error</source>
         <translation>Netzwerkfehler</translation>
-    </message>
-    <message>
-        <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Konnte nicht alle Dateien laden. Bitte überprüfen Sie Ihre Internetverbindung und wiederholen Sie die Synchronisierung.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1057"/>
@@ -1693,31 +1549,10 @@ Continue working in offline mode.</source>
         <translation>Sitzung beendet</translation>
     </message>
     <message>
-        <source>New session for you account started at other device. Restart session?</source>
-        <translation type="vanished">Eine neue Sitzung wurde auf einem anderen Gerät gestartet. Sitzung erneut iniziieren?</translation>
-    </message>
-    <message>
-        <source>New session for you account started at other device.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Eine neue Sitzung wurde auf einem anderen Gerät gestartet. Arbeite offline weiter.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1078"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1089"/>
         <source>Project not available</source>
         <translation>Projekt nicht verfügbar.</translation>
-    </message>
-    <message>
-        <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Das derzeitige Projekt ist für die Synchronisierung nicht verfügbar, da das Abo des Benutzers beendet ist.
-Arbeite im Offline-modus weiter.</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Fehler</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="931"/>
@@ -1899,14 +1734,6 @@ Das Projekt konnte nicht synchronisiert werden.</translation>
         <translation>Drehbuch</translation>
     </message>
     <message>
-        <source>Characters</source>
-        <translation type="vanished">Figuren</translation>
-    </message>
-    <message>
-        <source>Locations</source>
-        <translation type="vanished">Motive</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1656"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1666"/>
         <source>Statistics</source>
@@ -1980,32 +1807,6 @@ Das Projekt konnte nicht synchronisiert werden.</translation>
     </message>
 </context>
 <context>
-    <name>ManagementLayer::CharactersManager</name>
-    <message>
-        <source>Are you shure to remove characters: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">Wollen sie folgende Figuren wirklich löschen: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::CharactersNavigatorManager</name>
-    <message>
-        <source>Add Character</source>
-        <translation type="vanished">Figur hinzufügen</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="vanished">Name</translation>
-    </message>
-    <message>
-        <source>Add Character Error</source>
-        <translation type="vanished">Fehler beim Hinzufügen der Figur</translation>
-    </message>
-    <message>
-        <source>Character with same name already exist in project</source>
-        <translation type="vanished">Eine Figur mit diesem Namen existiert bereits.</translation>
-    </message>
-</context>
-<context>
     <name>ManagementLayer::ExportManager</name>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="65"/>
@@ -2069,32 +1870,6 @@ Das Projekt konnte nicht synchronisiert werden.</translation>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="246"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation>Microsoft &lt;b&gt;DOC&lt;/b&gt; -Dateien werden nicht unterstützt. Speichern Sie die Dateien als &lt;b&gt;DOCX&lt;/b&gt; und wiederholen Sie den Import.</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsManager</name>
-    <message>
-        <source>Are you shure to remove locations: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">Wollen Sie die Motive wirklich löschen: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsNavigatorManager</name>
-    <message>
-        <source>Add Location</source>
-        <translation type="vanished">Motiv hinzufügen</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="vanished">Name</translation>
-    </message>
-    <message>
-        <source>Add Location Error</source>
-        <translation type="vanished">Fehler beim Hinzufügen des Motivs</translation>
-    </message>
-    <message>
-        <source>Location with same name already exist in project</source>
-        <translation type="vanished">Es existiert bereits ein Motiv mit diesem Namen in diesem Projekt</translation>
     </message>
 </context>
 <context>
@@ -2321,22 +2096,6 @@ Versuchen Sie den Download zu wiederholen.</translation>
         <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
         <translation>Neue Version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Installieren&lt;/a&gt;</translation>
     </message>
-    <message>
-        <source>Released version %1 </source>
-        <translation type="vanished">Version %1</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">download</translation>
-    </message>
-    <message>
-        <source>or</source>
-        <translation type="vanished">oder</translation>
-    </message>
-    <message>
-        <source>read more</source>
-        <translation type="vanished">lesen Sie mehr</translation>
-    </message>
 </context>
 <context>
     <name>ManagementLayer::Sync</name>
@@ -2359,33 +2118,6 @@ Versuchen Sie den Download zu wiederholen.</translation>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
         <source>Got wrong response from server.</source>
         <translation>Falsche Antwort vom Server.</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::SynchronizationManager</name>
-    <message>
-        <source>Authorizing</source>
-        <translation type="vanished">Authentifizierung</translation>
-    </message>
-    <message>
-        <source>Checking correction of user name and password.</source>
-        <translation type="vanished">Passwort und Nutzername werden überprüft.</translation>
-    </message>
-    <message>
-        <source>Close working session.</source>
-        <translation type="vanished">Beende aktuelle Sitzung.</translation>
-    </message>
-    <message>
-        <source>Loading</source>
-        <translation type="vanished">Lade</translation>
-    </message>
-    <message>
-        <source>Loading projects list from remote server.</source>
-        <translation type="vanished">Lade Projektliste vom Cloud-Server.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t estabilish network connection.</source>
-        <translation type="vanished">Konnte keine Verbindung herstellen.</translation>
     </message>
 </context>
 <context>
@@ -2475,53 +2207,30 @@ Versuchen Sie den Download zu wiederholen.</translation>
 <context>
     <name>ProjectFileWidget</name>
     <message>
-        <source>Form</source>
-        <translation type="vanished">Form</translation>
-    </message>
-    <message>
-        <source>Project Name</source>
-        <translation type="vanished">Projektname</translation>
-    </message>
-    <message>
-        <source>/file/path</source>
-        <translation type="vanished">/Datei/Pfad</translation>
-    </message>
-    <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="138"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="132"/>
         <source>Change project name</source>
         <translation>Projektnamen ändern</translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="161"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="155"/>
         <source>Remove project</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="184"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="178"/>
         <source>Hide project from recent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="207"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="201"/>
         <source>Add cowriter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="230"/>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="259"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="224"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="253"/>
         <source>Show cowriters</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ProjectUserWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Form</translation>
-    </message>
-    <message>
-        <source>User Name [role]</source>
-        <translation type="vanished">Nutzername [Rolle]</translation>
     </message>
 </context>
 <context>
@@ -2536,11 +2245,6 @@ Versuchen Sie den Download zu wiederholen.</translation>
         <source>Title:</source>
         <comment>ScenarioBlockStyle</comment>
         <translation>Titel:</translation>
-    </message>
-    <message>
-        <source>END OF GROUP</source>
-        <comment>ScenarioXml</comment>
-        <translation type="vanished">GRUPPENENDE</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="604"/>
@@ -2630,7 +2334,7 @@ Versuchen Sie den Download zu wiederholen.</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="846"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="844"/>
         <source>The graph is acyclic, edge added as secondary edge.</source>
         <translation></translation>
     </message>
@@ -2751,10 +2455,6 @@ Versuchen Sie den Download zu wiederholen.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="54"/>
         <source>Research</source>
         <translation>Sammlung</translation>
-    </message>
-    <message>
-        <source>Ctrl+F</source>
-        <translation type="vanished">Ctrl+F</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="174"/>
@@ -2962,20 +2662,10 @@ Versuchen Sie den Download zu wiederholen.</translation>
         <translation>Child-Knoten hinzufügen.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1142"/>
-        <source>Ctrl+Return</source>
-        <translation>Ctrl+Return</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1149"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1152"/>
         <source>Add sibling node</source>
         <translation>Knoten hinzufügen</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1159"/>
-        <source>Shift+Return</source>
-        <translation>Shift+Return</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1166"/>
@@ -3009,10 +2699,6 @@ Versuchen Sie den Download zu wiederholen.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="697"/>
         <source>&lt;h2&gt;Mind Map&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;Mind Map&lt;/h2&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h2&gt;Images Galerry&lt;/h2&gt;</source>
-        <translation type="vanished">&lt;h2&gt;Bildergallerie&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="823"/>
@@ -3096,14 +2782,6 @@ Versuchen Sie den Download zu wiederholen.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="54"/>
         <source>Act</source>
         <translation>Akt</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="vanished">Szenengruppe</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="vanished">Ordner</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="88"/>
@@ -3281,14 +2959,6 @@ Versuchen Sie den Download zu wiederholen.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="451"/>
         <source>Scenario module</source>
         <translation>Drehbuchmodul</translation>
-    </message>
-    <message>
-        <source>Characters module</source>
-        <translation type="vanished">Figurenmodul</translation>
-    </message>
-    <message>
-        <source>Locations module</source>
-        <translation type="vanished">Motivmodul</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="458"/>
@@ -3582,14 +3252,6 @@ Absatz</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2308"/>
         <source>Simbols without spaces | Simbols with spaces</source>
         <translation>Symbole ohne Leerzeichen | Symbole mit Leerzeichen</translation>
-    </message>
-    <message>
-        <source>Symbols</source>
-        <translation type="vanished">Symbole</translation>
-    </message>
-    <message>
-        <source>Symbols without spaces | Symbols with spaces</source>
-        <translation type="vanished">Symbole ohne Leerzeichen | Symbole mit Leerzeichen</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2442"/>
@@ -4425,10 +4087,6 @@ Bitte laden Sie die neue Version manuell unter diesem &lt;a href=&quot;https://k
         <translation>Wählen Sie die Datei für das neue Projekt</translation>
     </message>
     <message>
-        <source>Scenarist project files (*%1)</source>
-        <translation type="obsolete">Scenarist-Projektdatei (*%1)</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="235"/>
         <source>Choose file to import</source>
         <translation>Wählen Sie eine Datei zum Importieren</translation>
@@ -4448,40 +4106,6 @@ Bitte laden Sie die neue Version manuell unter diesem &lt;a href=&quot;https://k
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/ChangePasswordDialog.cpp" line="27"/>
         <source>Change</source>
         <translation>Ändern</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::CharactersDataEdit</name>
-    <message>
-        <source>Choose Character</source>
-        <translation type="vanished">Figur wählen</translation>
-    </message>
-    <message>
-        <source>Character name</source>
-        <translation type="vanished">Name der Figur</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::CharactersNavigator</name>
-    <message>
-        <source>Characters</source>
-        <translation type="vanished">Figuren</translation>
-    </message>
-    <message>
-        <source>Create New Character</source>
-        <translation type="vanished">Neue Figur erstellen</translation>
-    </message>
-    <message>
-        <source>Remove Selected Character</source>
-        <translation type="vanished">Markierte Figuren entfernen</translation>
-    </message>
-    <message>
-        <source>Merge Selected Characters</source>
-        <translation type="vanished">Markierte Figuren zusammenführen</translation>
-    </message>
-    <message>
-        <source>Find All Characters from Scenario</source>
-        <translation type="vanished">Finde Figuren im Drehbuch</translation>
     </message>
 </context>
 <context>
@@ -4513,30 +4137,6 @@ Bitte laden Sie die neue Version manuell unter diesem &lt;a href=&quot;https://k
 <context>
     <name>UserInterface::ImportDialog</name>
     <message>
-        <source>All Supported Files</source>
-        <translation type="vanished">Unterstützte Dateien</translation>
-    </message>
-    <message>
-        <source>Final Draft screenplay</source>
-        <translation type="vanished">Final Draft Dokument</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation type="vanished">KIT Scenarist Projekt</translation>
-    </message>
-    <message>
-        <source>Trelby screenplay</source>
-        <translation type="vanished">Trelby Drehbuch</translation>
-    </message>
-    <message>
-        <source>Office Open XML</source>
-        <translation type="vanished">Office Open XML</translation>
-    </message>
-    <message>
-        <source>OpenDocument Text</source>
-        <translation type="vanished">OpenDocument Text</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="82"/>
         <source>Choose file to import</source>
         <translation>Wählen Sie eine Datei zum Importieren</translation>
@@ -4545,36 +4145,6 @@ Bitte laden Sie die neue Version manuell unter diesem &lt;a href=&quot;https://k
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="51"/>
         <source>Import</source>
         <translation>Importieren</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsDataEdit</name>
-    <message>
-        <source>Choose Location</source>
-        <translation type="vanished">Motiv wählen</translation>
-    </message>
-    <message>
-        <source>Location</source>
-        <translation type="vanished">Motiv</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsNavigator</name>
-    <message>
-        <source>Locations</source>
-        <translation type="vanished">Motive</translation>
-    </message>
-    <message>
-        <source>Create New Location</source>
-        <translation type="vanished">Neues Motiv erstellen</translation>
-    </message>
-    <message>
-        <source>Remove Selected Location</source>
-        <translation type="vanished">Markiertes Motiv entfernen</translation>
-    </message>
-    <message>
-        <source>Find All Locations From Scenario</source>
-        <translation type="vanished">Finde Motive im Drehbuch</translation>
     </message>
 </context>
 <context>
@@ -4700,12 +4270,12 @@ Bitte laden Sie die neue Version manuell unter diesem &lt;a href=&quot;https://k
         <translation>Location-Name</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="706"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="707"/>
         <source>Choose image</source>
         <translation>Bild wählen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="708"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="709"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
         <translation>Bilder (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
     </message>
@@ -4716,18 +4286,6 @@ Bitte laden Sie die neue Version manuell unter diesem &lt;a href=&quot;https://k
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="226"/>
         <source>Add new card</source>
         <translation>Neue Karte hinzufügen</translation>
-    </message>
-    <message>
-        <source>Add note</source>
-        <translation type="vanished">Notiz hinzufügen</translation>
-    </message>
-    <message>
-        <source>Add horizontal line</source>
-        <translation type="vanished">horizontale Linie zeichnen</translation>
-    </message>
-    <message>
-        <source>Add vertical line</source>
-        <translation type="vanished">Vertikale Linie zeichnen</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="120"/>
@@ -4779,10 +4337,6 @@ Bitte laden Sie die neue Version manuell unter diesem &lt;a href=&quot;https://k
         <source>On/off Fullscreen Mode</source>
         <translation>Vollbildmodus An/Aus</translation>
     </message>
-    <message>
-        <source>On/off fullscreen mode (F5)</source>
-        <translation type="vanished">Vollbildmodus An/Aus (F5)</translation>
-    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioFastFormatWidget</name>
@@ -4820,10 +4374,6 @@ Bitte laden Sie die neue Version manuell unter diesem &lt;a href=&quot;https://k
         <translation>Ordner</translation>
     </message>
     <message>
-        <source>Scenes group</source>
-        <translation type="vanished">Szenengruppe</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="99"/>
         <source>Scene</source>
         <translation>Szene</translation>
@@ -4836,22 +4386,6 @@ Bitte laden Sie die neue Version manuell unter diesem &lt;a href=&quot;https://k
 </context>
 <context>
     <name>UserInterface::ScenarioNavigator</name>
-    <message>
-        <source>Convert to</source>
-        <translation type="vanished">Konvertieren</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="vanished">Szene</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="vanished">Szenengruppe</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="vanished">Ordner</translation>
-    </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="199"/>
         <source>Convert to scene</source>
@@ -5202,31 +4736,27 @@ but if you work with no terminations it saves project every %1 minutes.</source>
 <context>
     <name>UserInterface::StartUpView</name>
     <message>
-        <source>Logout</source>
-        <translation type="vanished">Ausloggen</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="101"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="90"/>
         <source>Account is active until:</source>
         <translation>Der Account ist aktiv bis:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="104"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="93"/>
         <source>Account is inactive</source>
         <translation>Der Account ist inaktiv</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="115"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="104"/>
         <source>Used %1 Gb from %2 Gb</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="150"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="128"/>
         <source>Connect</source>
         <translation>Verbinden</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="160"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="138"/>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Einloggen&lt;/a&gt;</translation>
     </message>

@@ -15,64 +15,6 @@
     </message>
 </context>
 <context>
-    <name>ActionShapePropertiesDialog</name>
-    <message>
-        <source>Title:</source>
-        <translation type="obsolete">Титр:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="obsolete">Описание:</translation>
-    </message>
-</context>
-<context>
-    <name>ActivityEdit</name>
-    <message>
-        <source>Can&apos;t arrange cards</source>
-        <translation type="vanished">Не удаётся упорядочить карточки</translation>
-    </message>
-    <message>
-        <source>Schemes with scene groups or with folders cannot be arranged.</source>
-        <translation type="vanished">Нельзя упорядочить схемы с папками или группами сцен. </translation>
-    </message>
-    <message>
-        <source>Convert to</source>
-        <translation type="vanished">Преобразовать в</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="vanished">Сцену</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="vanished">Группу сцен</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="vanished">Папку</translation>
-    </message>
-    <message>
-        <source>Color %1</source>
-        <translation type="vanished">Цвет %1</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="vanished">Удалить</translation>
-    </message>
-    <message>
-        <source>Add color</source>
-        <translation type="vanished">Добавить цвет</translation>
-    </message>
-    <message>
-        <source>Create Card After</source>
-        <translation type="vanished">Создать карточку после</translation>
-    </message>
-    <message>
-        <source>Remove anchors</source>
-        <translation type="vanished">Удалить узлы</translation>
-    </message>
-</context>
-<context>
     <name>AddImageButton</name>
     <message>
         <location filename="../../3rd_party/Widgets/ImagesPane/AddImageButton.cpp" line="28"/>
@@ -87,10 +29,6 @@
 </context>
 <context>
     <name>AddProjectDialog</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="20"/>
         <source>Add New Project</source>
@@ -144,39 +82,9 @@
         <translation>Введите название нового проекта:</translation>
     </message>
     <message>
-        <source>Import Project</source>
-        <translation type="vanished">Импортировать проект</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="150"/>
         <source>Choose File with Project to Import:</source>
         <translation>Выберите файл проекта для импорта:</translation>
-    </message>
-    <message>
-        <source>Project Name</source>
-        <translation type="vanished">Название проекта</translation>
-    </message>
-    <message>
-        <source>CREATE</source>
-        <translation type="vanished">СОЗДАТЬ</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation type="vanished">ОТМЕНА</translation>
-    </message>
-</context>
-<context>
-    <name>ApplicationView</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
-</context>
-<context>
-    <name>ArrowFlowPropertiesDialog</name>
-    <message>
-        <source>Text:</source>
-        <translation type="obsolete">Текст:</translation>
     </message>
 </context>
 <context>
@@ -333,10 +241,6 @@
 <context>
     <name>BusinessLogic::CharacterReport</name>
     <message>
-        <source>Character Report</source>
-        <translation type="vanished">Диалоги персонажа</translation>
-    </message>
-    <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="27"/>
         <source>Characters Dialogues</source>
         <translation>Реплики персонажей</translation>
@@ -364,10 +268,6 @@
 </context>
 <context>
     <name>BusinessLogic::CharactersActivityPlot</name>
-    <message>
-        <source>Story Structure Analisys Plot</source>
-        <translation type="obsolete">График структурного анализа истории</translation>
-    </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="50"/>
         <source>Characters Activity Plot</source>
@@ -600,16 +500,6 @@
         <translation>ЗПТ</translation>
     </message>
     <message>
-        <source>SG</source>
-        <extracomment>Reduction of Scene Group</extracomment>
-        <translation type="vanished">ГС</translation>
-    </message>
-    <message>
-        <source>SGF</source>
-        <extracomment>Reduction of Scene Group Footer</extracomment>
-        <translation type="vanished">КГС</translation>
-    </message>
-    <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="114"/>
         <source>F</source>
         <extracomment>Reduction of Folder</extracomment>
@@ -628,10 +518,6 @@
         <translation>ОС</translation>
     </message>
     <message>
-        <source>Note</source>
-        <translation type="vanished">Примечание</translation>
-    </message>
-    <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="74"/>
         <source>Title Header</source>
         <translation>Заголовок титра</translation>
@@ -645,10 +531,6 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="76"/>
         <source>Noprintable Text</source>
         <translation>Заметка по тексту</translation>
-    </message>
-    <message>
-        <source>Scene Group</source>
-        <translation type="vanished">Группа сцен</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="77"/>
@@ -669,10 +551,6 @@
 <context>
     <name>BusinessLogic::ScenarioModel</name>
     <message>
-        <source>FADE IN</source>
-        <translation type="vanished">ИЗ ЗТМ</translation>
-    </message>
-    <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="322"/>
         <source>FADE IN:</source>
         <translation>ИЗ ЗТМ:</translation>
@@ -689,18 +567,6 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="793"/>
         <source>Default with Courier Prime</source>
         <translation>Стандартный с Courier Prime</translation>
-    </message>
-</context>
-<context>
-    <name>BusinessLogic::ScenarioTextCorrector</name>
-    <message>
-        <source>CONT&apos;D</source>
-        <extracomment>Continued</extracomment>
-        <translation type="vanished">ПРОД.</translation>
-    </message>
-    <message>
-        <source>MORE</source>
-        <translation type="vanished">ДАЛЬШЕ</translation>
     </message>
 </context>
 <context>
@@ -890,17 +756,6 @@
     </message>
 </context>
 <context>
-    <name>CabinView</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
-    <message>
-        <source>User Cabinet</source>
-        <translation type="vanished">Личный кабинет</translation>
-    </message>
-</context>
-<context>
     <name>CardsResizer</name>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="14"/>
@@ -921,18 +776,6 @@
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="86"/>
         <source>cards in Row</source>
         <translation>карточек в строке</translation>
-    </message>
-    <message>
-        <source>cards in</source>
-        <translation type="vanished">карточек</translation>
-    </message>
-    <message>
-        <source>Row</source>
-        <translation type="vanished">в ряд</translation>
-    </message>
-    <message>
-        <source>Column</source>
-        <translation type="vanished">в колонку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="124"/>
@@ -1013,33 +856,6 @@
     </message>
 </context>
 <context>
-    <name>CharactersDataEdit</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
-    <message>
-        <source>Add Image</source>
-        <translation type="vanished">Добавить изображение</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Имя:</translation>
-    </message>
-    <message>
-        <source>Real Name:</source>
-        <translation type="vanished">Настоящее имя:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="vanished">Описание:</translation>
-    </message>
-    <message>
-        <source>Choose Character</source>
-        <translation type="vanished">Выберите персонажа</translation>
-    </message>
-</context>
-<context>
     <name>CrashReportDialog</name>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/CrashReportDialog.ui" line="14"/>
@@ -1064,14 +880,6 @@
 </context>
 <context>
     <name>DatabaseLayer::Database</name>
-    <message>
-        <source>Project was created in desktop version.</source>
-        <translation type="vanished">Проект был создан в версии программы для компьютера.</translation>
-    </message>
-    <message>
-        <source>Project was created in mobile version.</source>
-        <translation type="vanished">Проект был создан в мобильной версии.</translation>
-    </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="59"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
@@ -1166,18 +974,6 @@
         <translation>Шаблон:</translation>
     </message>
     <message>
-        <source>Original scenario</source>
-        <translation type="vanished">Оригинальный сценарий</translation>
-    </message>
-    <message>
-        <source>Additional:</source>
-        <translation type="vanished">Дополнительно:</translation>
-    </message>
-    <message>
-        <source>Common</source>
-        <translation type="vanished">Общее</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="57"/>
         <source>Additional (Numbering, Title Page etc.)</source>
         <translation>Расширенные настройки (нумерация, титульная страница и пр.)</translation>
@@ -1186,10 +982,6 @@
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="92"/>
         <source>Print Preview</source>
         <translation>Предпросмотр</translation>
-    </message>
-    <message>
-        <source>File:</source>
-        <translation type="vanished">Файл:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="356"/>
@@ -1257,58 +1049,6 @@
         <translation>Сохранять пометки редактора</translation>
     </message>
     <message>
-        <source>Title List</source>
-        <translation type="vanished">Титульная страница</translation>
-    </message>
-    <message>
-        <source>Print</source>
-        <translation type="vanished">Печатать</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Название:</translation>
-    </message>
-    <message>
-        <source>Scenario name.</source>
-        <translation type="vanished">Название сценария.</translation>
-    </message>
-    <message>
-        <source>Genre:</source>
-        <translation type="vanished">Жанр:</translation>
-    </message>
-    <message>
-        <source>Scenario genre.</source>
-        <translation type="vanished">Жанр сценария.</translation>
-    </message>
-    <message>
-        <source>Author:</source>
-        <translation type="vanished">Автор:</translation>
-    </message>
-    <message>
-        <source>Scenario author.</source>
-        <translation type="vanished">Автор сценария.</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation type="vanished">Контакты:</translation>
-    </message>
-    <message>
-        <source>Year:</source>
-        <translation type="vanished">Год:</translation>
-    </message>
-    <message>
-        <source>Scenario wirting year.</source>
-        <translation type="vanished">Год написания сценария.</translation>
-    </message>
-    <message>
-        <source>Check page breaks</source>
-        <translation type="vanished">Корректировать текст на разрывах страниц</translation>
-    </message>
-    <message>
-        <source>Checking page breaks can increase scenario page numbers.</source>
-        <translation type="vanished">Корректировка текста на разрывах страниц может привести к увеличению кол-ва страниц сценария.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="116"/>
         <source>Format:</source>
         <translation>Формат:</translation>
@@ -1317,10 +1057,6 @@
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="272"/>
         <source>Scenes Prefix:</source>
         <translation>Приставка сцен:</translation>
-    </message>
-    <message>
-        <source>File</source>
-        <translation type="vanished">Файл</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="398"/>
@@ -1369,109 +1105,109 @@
 <context>
     <name>GraphLogic</name>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="122"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="120"/>
         <source>Couldn&apos;t parse XML file.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="215"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="213"/>
         <source>Couldn&apos;t read file.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="286"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="284"/>
         <source>Couldn&apos;t open file to write.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="294"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="292"/>
         <source>Saved.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="316"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="314"/>
         <source>MindMap exported as </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="357"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="400"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="463"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="488"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="501"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="530"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="559"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="589"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="612"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="642"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="677"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="776"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="355"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="398"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="461"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="486"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="499"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="528"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="557"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="587"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="610"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="640"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="675"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="774"/>
         <source>No active node.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="377"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="375"/>
         <source>New node would be placed outside of the scene.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="431"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="429"/>
         <source>No active node</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="445"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="443"/>
         <source>Node hasn&apos;t parent for add sibling node</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="469"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="467"/>
         <source>Base node cannot be deleted.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="507"/>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="536"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="505"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="534"/>
         <source>Too much scaling.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="567"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="565"/>
         <source>Select node color</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="620"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="618"/>
         <source>Select text color</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="663"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="661"/>
         <source>Add edge: select destination node.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="669"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="667"/>
         <source>Delete edge: select other end-node.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="728"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="726"/>
         <source>Edge adding cancelled.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="735"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="733"/>
         <source>Edge deleting cancelled.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="837"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="835"/>
         <source>There is already an edge between these two nodes.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="868"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="866"/>
         <source>There is no edge between these two nodes.</source>
         <translation></translation>
     </message>
@@ -1482,10 +1218,6 @@
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="20"/>
         <source>Import Scenario</source>
         <translation>Импортировать сценарий</translation>
-    </message>
-    <message>
-        <source>File</source>
-        <translation type="vanished">Файл</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="80"/>
@@ -1511,10 +1243,6 @@
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="45"/>
         <source>Outline</source>
         <translation>Биты</translation>
-    </message>
-    <message>
-        <source>File:</source>
-        <translation type="vanished">Файл:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="83"/>
@@ -1615,76 +1343,13 @@
         <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Не нашли предпочтительный для вас язык? Узнайте как вы можете добавить его сами.&lt;/a&gt;</translation>
     </message>
     <message>
-        <source>System</source>
-        <translation type="vanished">Системный</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="84"/>
         <source>Français</source>
         <translation></translation>
     </message>
 </context>
 <context>
-    <name>LocationsDataEdit</name>
-    <message>
-        <source>Dialog</source>
-        <translation type="vanished">Форма</translation>
-    </message>
-    <message>
-        <source>Add Image</source>
-        <translation type="vanished">Добавить изображение</translation>
-    </message>
-    <message>
-        <source>Choose Location</source>
-        <translation type="vanished">Выберите локацию</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Название:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="vanished">Описание:</translation>
-    </message>
-</context>
-<context>
     <name>LoginDialog</name>
-    <message>
-        <source>Authorization</source>
-        <translation type="vanished">Авторизация</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;https://kitscenarist.ru/cabin.html&quot; style=&quot;color:#2b78da;&quot;&gt;Registration&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;https://kitscenarist.ru/cabin.html&quot; style=&quot;color:#2b78da;&quot;&gt;Зарегистрироваться&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation type="vanished">Пароль</translation>
-    </message>
-    <message>
-        <source>User name</source>
-        <translation type="vanished">Имя пользователя</translation>
-    </message>
-    <message>
-        <source>Error message</source>
-        <translation type="vanished">Сообщение об ошибке</translation>
-    </message>
-    <message>
-        <source>User Name</source>
-        <translation type="vanished">Имя пользователя</translation>
-    </message>
-    <message>
-        <source>REGISTER</source>
-        <translation type="vanished">РЕГИСТРАЦИЯ</translation>
-    </message>
-    <message>
-        <source>LOGIN</source>
-        <translation type="vanished">ВОЙТИ</translation>
-    </message>
-    <message>
-        <source>CANCEL</source>
-        <translation type="vanished">ОТМЕНА</translation>
-    </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/LoginDialog.ui" line="60"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/LoginDialog.ui" line="241"/>
@@ -1735,49 +1400,7 @@
     </message>
 </context>
 <context>
-    <name>LoginView</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
-    <message>
-        <source>Error message</source>
-        <translation type="vanished">Сообщение об ошибке</translation>
-    </message>
-    <message>
-        <source>User Name</source>
-        <translation type="vanished">Имя пользователя</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation type="vanished">Пароль</translation>
-    </message>
-    <message>
-        <source>SIGN UP</source>
-        <translation type="vanished">РЕГИСТРАЦИЯ</translation>
-    </message>
-    <message>
-        <source>LOG IN</source>
-        <translation type="vanished">ВОЙТИ</translation>
-    </message>
-</context>
-<context>
-    <name>MainWindow</name>
-    <message>
-        <source>Folder</source>
-        <translation type="obsolete">Папка</translation>
-    </message>
-    <message>
-        <source>Scene Group</source>
-        <translation type="obsolete">Группа сцен</translation>
-    </message>
-</context>
-<context>
     <name>ManagementLayer::ApplicationManager</name>
-    <message>
-        <source>Choose file for new project</source>
-        <translation type="vanished">Выберите файл для нового проекта</translation>
-    </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="445"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="659"/>
@@ -1798,18 +1421,6 @@
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="97"/>
         <source> - changed</source>
         <translation> - изменён</translation>
-    </message>
-    <message>
-        <source>New session for you account started at other device.
-Continue working in offline mode.</source>
-        <translation type="vanished">Пользователь с вашими учётными данными авторизовался на другом устройстве.
-Работаем в автономном режиме.</translation>
-    </message>
-    <message>
-        <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
-Continue working with this project in offline mode.</source>
-        <translation type="vanished">Проект недоступен для синхронизации, т.к. у владельца проекта закончился срок подписки.
-Работаем с проектом в автономном режиме.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1452"/>
@@ -1865,17 +1476,9 @@ Continue working with this project in offline mode.</source>
         <translation>Не удалось сохранить проект в файл &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Пожалуйста проверьте разрешение на запись в выбранную папку и повторите попытку, или выберите другую папку.</translation>
     </message>
     <message>
-        <source>Can&apos;t write you changes to project. There is some internal database error. Please check that file is exists and you have permissions to write in it. Retry to save?</source>
-        <translation type="vanished">Не удаётся записать изменения. Произошла внутренняя ошибка базы данных. Пожалуйста проверьте, что вы имеете разрешение на запись в него. Попробовать сохранить ещё раз?</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="593"/>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
         <translation>Не удаётся записать изменения в файл &lt;b&gt;%1&lt;/b&gt; потому что файла не существует. Пожалуйста верните файл обратно и попробуйте вновь сохранить проект. Попробовать сохранить ещё раз?</translation>
-    </message>
-    <message>
-        <source>Project sinchronized</source>
-        <translation type="vanished">Проект успешно синхронизирован</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="414"/>
@@ -1912,18 +1515,6 @@ Continue working with this project in offline mode.</source>
         <translation>Введите новое название проекта</translation>
     </message>
     <message>
-        <source>Project removing</source>
-        <translation type="vanished">Удаление проекта</translation>
-    </message>
-    <message>
-        <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="vanished">Удалить проект &lt;b&gt;%1&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Project unsubscribing</source>
-        <translation type="vanished">Отписаться от проекта</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="918"/>
         <source>Project synchronized</source>
         <translation>Проект синхронизирован</translation>
@@ -1949,12 +1540,6 @@ Continue working with this project in offline mode.</source>
         <translation>Ошибка сети</translation>
     </message>
     <message>
-        <source>Can&apos;t estabilish network connection.
-Continue working in offline mode.</source>
-        <translation type="vanished">Отсутствует подключение к интернету.
-Работаем в автономном режиме.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1020"/>
         <source>Incorrect username or password.</source>
         <translation>Не верное имя пользователя или пароль.</translation>
@@ -1965,19 +1550,9 @@ Continue working in offline mode.</source>
         <translation>Подписка закончена</translation>
     </message>
     <message>
-        <source>Buyed subscription period is finished.
-Continue working in offline mode.</source>
-        <translation type="vanished">Закончился оплаченный период подписки.
-Работаем в автономном режиме.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1057"/>
         <source>Session closed</source>
         <translation>Сессия закрыта</translation>
-    </message>
-    <message>
-        <source>New session for you account started at other device. Restart session?</source>
-        <translation type="vanished">Пользователь с вашими учётными данными авторизовался на другом устройстве. Переподключиться?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1078"/>
@@ -1986,59 +1561,9 @@ Continue working in offline mode.</source>
         <translation>Проект недоступен</translation>
     </message>
     <message>
-        <source>Current project is not available for syncronization now.
-Continue working with this project in offline mode.</source>
-        <translation type="vanished">Проект недоступен для синхронизации.
-Работаем с ним в автономном режиме.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t estabilish network connection.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Отсутствует подключение к интернету.
-
-Работаем в автономном режиме.</translation>
-    </message>
-    <message>
-        <source>Buyed subscription period is finished.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Закончился оплаченный период подписки.
-
-Работаем в автономном режиме.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1043"/>
         <source>Network Error</source>
         <translation>Ошибка сети</translation>
-    </message>
-    <message>
-        <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Не удалось корректно загрузить все данные с сервера. Пожалуйста проверьте качество интернет соединения и перезагрузите программу.
-
-Работаем в автономном режиме.</translation>
-    </message>
-    <message>
-        <source>New session for you account started at other device.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Пользователь с вашими учётными данными авторизовался на другом устройстве.
-
-Работаем в автономном режиме.</translation>
-    </message>
-    <message>
-        <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Проект недоступен для синхронизации, т.к. у владельца проекта закончился срок подписки.
-
-Работаем с проектом в автономном режиме.</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Ошибка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="860"/>
@@ -2214,14 +1739,6 @@ Project didn&apos;t synchronized.</source>
         <translation>Сценарий</translation>
     </message>
     <message>
-        <source>Characters</source>
-        <translation type="vanished">Персонажи</translation>
-    </message>
-    <message>
-        <source>Locations</source>
-        <translation type="vanished">Локации</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1656"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1666"/>
         <source>Statistics</source>
@@ -2279,10 +1796,6 @@ Project didn&apos;t synchronized.</source>
         <translation>Двухпанельный режим</translation>
     </message>
     <message>
-        <source>local</source>
-        <translation type="vanished">на компьютере</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2149"/>
         <source>in cloud</source>
         <translation>в облаке</translation>
@@ -2296,36 +1809,6 @@ Project didn&apos;t synchronized.</source>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2153"/>
         <source>%1[*] - KIT Scenarist</source>
         <translation>%1 [*] - КИТ Сценарист</translation>
-    </message>
-    <message>
-        <source>Closing Database Connections and Remove Temporatry Files.</source>
-        <translation type="vanished">Закрытие соединения с базой данных и удаление временных файлов.</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::CharactersManager</name>
-    <message>
-        <source>Are you shure to remove characters: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">Удалить персонажей: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::CharactersNavigatorManager</name>
-    <message>
-        <source>Add Character</source>
-        <translation type="vanished">Добавить персонажа</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="vanished">Имя</translation>
-    </message>
-    <message>
-        <source>Add Character Error</source>
-        <translation type="vanished">Ошибка добавления персонажа</translation>
-    </message>
-    <message>
-        <source>Character with same name already exist in project</source>
-        <translation type="vanished">Персонаж с таким именем уже существует в проекте</translation>
     </message>
 </context>
 <context>
@@ -2354,10 +1837,6 @@ Project didn&apos;t synchronized.</source>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="133"/>
         <source>Export error</source>
         <translation>Ошибка экспорта</translation>
-    </message>
-    <message>
-        <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and restart export.</source>
-        <translation type="vanished">Не удаётся записать файл. Возможно он открыт в другом приложении. Пожалуйста, закройте все приложения использующие этот файл и перезапустите экспорт.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="124"/>
@@ -2396,32 +1875,6 @@ Project didn&apos;t synchronized.</source>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="246"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation>Файлы &lt;b&gt;DOC&lt;/b&gt; не поддерживаются. Вам необходимо сохранить его в формате &lt;b&gt;DOCX&lt;/b&gt; и повторите импорт.</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsManager</name>
-    <message>
-        <source>Are you shure to remove locations: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">Удалить локации: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsNavigatorManager</name>
-    <message>
-        <source>Add Location</source>
-        <translation type="vanished">Добавить локацию</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="vanished">Название</translation>
-    </message>
-    <message>
-        <source>Add Location Error</source>
-        <translation type="vanished">Ошибка добавления локации</translation>
-    </message>
-    <message>
-        <source>Location with same name already exist in project</source>
-        <translation type="vanished">Локация с таким названием уже существует в проекте</translation>
     </message>
 </context>
 <context>
@@ -2520,22 +1973,6 @@ Project didn&apos;t synchronized.</source>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="686"/>
         <source>Chron.</source>
         <translation>Хрон.</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation type="vanished">Текст</translation>
-    </message>
-    <message>
-        <source>Edit Scenario Text</source>
-        <translation type="vanished">Редактирование текста сценария</translation>
-    </message>
-    <message>
-        <source>Data</source>
-        <translation type="vanished">Данные</translation>
-    </message>
-    <message>
-        <source>Edit Scenario Data</source>
-        <translation type="vanished">Редактирование информации о сценарии</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="958"/>
@@ -2664,22 +2101,6 @@ You can try to reload update.</source>
         <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
         <translation>Вышла новая версия %1 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Установить&lt;/a&gt;.</translation>
     </message>
-    <message>
-        <source>Released version %1 </source>
-        <translation type="vanished">Вышла новая версия %1 </translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">скачать</translation>
-    </message>
-    <message>
-        <source>or</source>
-        <translation type="vanished">или</translation>
-    </message>
-    <message>
-        <source>read more</source>
-        <translation type="vanished">узнать подробности</translation>
-    </message>
 </context>
 <context>
     <name>ManagementLayer::Sync</name>
@@ -2702,75 +2123,6 @@ You can try to reload update.</source>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
         <source>Got wrong response from server.</source>
         <translation>Получен ошибочный ответ сервера.</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::SynchronizationManager</name>
-    <message>
-        <source>Authorizing</source>
-        <translation type="vanished">Авторизация</translation>
-    </message>
-    <message>
-        <source>Checking correction of user name and password.</source>
-        <translation type="vanished">Проверка корректности введённых имени пользователя и пароля.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t estabilish network connection.</source>
-        <translation type="vanished">Отсутствует подключение к интернету.</translation>
-    </message>
-    <message>
-        <source>Close working session.</source>
-        <translation type="vanished">Закрытие рабочего соединения.</translation>
-    </message>
-    <message>
-        <source>Loading</source>
-        <translation type="vanished">Загрузка</translation>
-    </message>
-    <message>
-        <source>Loading projects list from remote server.</source>
-        <translation type="vanished">Загрузка списка доступных проектов из облака.</translation>
-    </message>
-</context>
-<context>
-    <name>MenuView</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
-    <message>
-        <source>     Sign In</source>
-        <translation type="vanished">     Войти</translation>
-    </message>
-    <message>
-        <source>     Cabin</source>
-        <translation type="vanished">     Личный кабинет</translation>
-    </message>
-    <message>
-        <source>     Projects</source>
-        <translation type="vanished">     Проекты</translation>
-    </message>
-    <message>
-        <source>Project name</source>
-        <translation type="vanished">Название проекта</translation>
-    </message>
-    <message>
-        <source>     Save</source>
-        <translation type="vanished">     Сохранить</translation>
-    </message>
-    <message>
-        <source>     Text</source>
-        <translation type="vanished">     Текст</translation>
-    </message>
-    <message>
-        <source>     Settings</source>
-        <translation type="vanished">     Настройки</translation>
-    </message>
-</context>
-<context>
-    <name>NoteShapePropertiesDialog</name>
-    <message>
-        <source>Title:</source>
-        <translation type="obsolete">Титр:</translation>
     </message>
 </context>
 <context>
@@ -2860,53 +2212,30 @@ You can try to reload update.</source>
 <context>
     <name>ProjectFileWidget</name>
     <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
-    <message>
-        <source>Project Name</source>
-        <translation type="vanished">Название проекта</translation>
-    </message>
-    <message>
-        <source>Project Info</source>
-        <translation type="vanished">Информация о проекте</translation>
-    </message>
-    <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="138"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="132"/>
         <source>Change project name</source>
         <translation>Изменить название проекта</translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="161"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="155"/>
         <source>Remove project</source>
         <translation>Удалить проект</translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="184"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="178"/>
         <source>Hide project from recent</source>
         <translation>Скрыть проект из списка недавних</translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="207"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="201"/>
         <source>Add cowriter</source>
         <translation>Добавить соавтора</translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="230"/>
-        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="259"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="224"/>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="253"/>
         <source>Show cowriters</source>
         <translation>Показать список соавторов</translation>
-    </message>
-</context>
-<context>
-    <name>ProjectUserWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
-    <message>
-        <source>User Name [role]</source>
-        <translation type="vanished">Имя пользователя [роль]</translation>
     </message>
 </context>
 <context>
@@ -2915,11 +2244,6 @@ You can try to reload update.</source>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="26"/>
         <source>Scenario</source>
         <translation>Сценарий</translation>
-    </message>
-    <message>
-        <source>END OF GROUP</source>
-        <comment>ScenarioXml</comment>
-        <translation type="vanished">КОНЕЦ ГРУППЫ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="604"/>
@@ -3015,7 +2339,7 @@ You can try to reload update.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="846"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="844"/>
         <source>The graph is acyclic, edge added as secondary edge.</source>
         <translation></translation>
     </message>
@@ -3170,10 +2494,6 @@ You can try to reload update.</source>
         <translation></translation>
     </message>
     <message>
-        <source>words</source>
-        <translation type="vanished">слов</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="154"/>
         <source>words:</source>
         <translation>слов:</translation>
@@ -3271,26 +2591,14 @@ You can try to reload update.</source>
         <translation>Добавляйте материалы по вашему сценарию в дерево исследования. Вы можете добавить текстовые материалы, ссылки на интернет ресурсы, а так же галереи изображений. Для добавления и удаления материалов вы можете использовать кнопки на панели инструментов, а также пользоваться контекстным меню.</translation>
     </message>
     <message>
-        <source>&lt;h2&gt;Text&lt;/h2&gt;</source>
-        <translation type="vanished">&lt;h2&gt;Текстовый документ&lt;/h2&gt;</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="697"/>
         <source>&lt;h2&gt;Mind Map&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;Ментальная карта&lt;/h2&gt;</translation>
     </message>
     <message>
-        <source>&lt;h2&gt;Images Galerry&lt;/h2&gt;</source>
-        <translation type="vanished">&lt;h2&gt;Галерея изображений&lt;/h2&gt;</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="823"/>
         <source>&lt;h2&gt;Url&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;Ссылка&lt;/h2&gt;</translation>
-    </message>
-    <message>
-        <source>Add root node</source>
-        <translation type="vanished">Добавить начальный элемент</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1132"/>
@@ -3299,20 +2607,10 @@ You can try to reload update.</source>
         <translation>Добавить дочерний элемент</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1142"/>
-        <source>Ctrl+Return</source>
-        <translation>Crtl+Энтер</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1149"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1152"/>
         <source>Add sibling node</source>
         <translation>Добавить элемент по соседству</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1159"/>
-        <source>Shift+Return</source>
-        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1166"/>
@@ -3441,10 +2739,6 @@ You can try to reload update.</source>
         <translation>Удалить связь</translation>
     </message>
     <message>
-        <source>Add research materials such as text (in next release will be available url and images) in tree. Use toolbar buttons and context menu for add or remove research materials in tree.</source>
-        <translation type="vanished">Сохраняйте материалы по сценарию в дерево исследования. Вы можете добавить текстовые материалы (в следующей версии будут также доступны ссылки на интернет ресурсы и изображения). Для добавления и удаления материалов используйте кнопки на панели инструментов, а также контекстное меню дерева разработки.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="962"/>
         <source>Url:</source>
         <translation>Ссылка:</translation>
@@ -3455,10 +2749,6 @@ You can try to reload update.</source>
         <translation>Загрузить</translation>
     </message>
     <message>
-        <source>Images:</source>
-        <translation type="vanished">Изображения:</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1043"/>
         <source>Image:</source>
         <translation>Изображение:</translation>
@@ -3467,18 +2757,6 @@ You can try to reload update.</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1007"/>
         <source>Change</source>
         <translation>Изменить</translation>
-    </message>
-    <message>
-        <source>Add research materials such as text, url or image gallery in tree. Used toolbar buttons and context menu for add or remove research materials in tree.</source>
-        <translation type="vanished">Добавляйте материалы по вашему сценарию в дерево исследования. Вы можете добавить текстовые материалы, ссылки на интернет ресурсы, а так же галереи изображений. Для добавления и удаления материалов вы можете использовать кнопки на панели инструментов, а также пользоваться контекстным меню.</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Название:</translation>
-    </message>
-    <message>
-        <source>Text:</source>
-        <translation type="vanished">Текст:</translation>
     </message>
 </context>
 <context>
@@ -3499,36 +2777,6 @@ You can try to reload update.</source>
     </message>
 </context>
 <context>
-    <name>ScenarioDataEdit</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Название:</translation>
-    </message>
-    <message>
-        <source>Source</source>
-        <translation type="vanished">Синопсис</translation>
-    </message>
-    <message>
-        <source>From scenario</source>
-        <translation type="vanished">Собрать описания сцен в единый документ</translation>
-    </message>
-</context>
-<context>
-    <name>ScenarioNavigatorView</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
-    <message>
-        <source>Scenario Name</source>
-        <translation type="vanished">Название сценария</translation>
-    </message>
-</context>
-<context>
     <name>ScenarioSchemeItemDialog</name>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="26"/>
@@ -3541,14 +2789,6 @@ You can try to reload update.</source>
         <translation>Акт</translation>
     </message>
     <message>
-        <source>Scenes Group</source>
-        <translation type="vanished">Группа сцен</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="vanished">Папка</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="88"/>
         <source>Description</source>
         <translation>Описание</translation>
@@ -3557,41 +2797,6 @@ You can try to reload update.</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="38"/>
         <source>Scene</source>
         <translation>Сцена</translation>
-    </message>
-</context>
-<context>
-    <name>ScenarioTextView</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
-    <message>
-        <source>Scenario Name</source>
-        <translation type="vanished">Название сценария</translation>
-    </message>
-    <message>
-        <source>SH</source>
-        <translation type="vanished">МВ</translation>
-    </message>
-    <message>
-        <source>SC</source>
-        <translation type="vanished">УС</translation>
-    </message>
-    <message>
-        <source>A</source>
-        <translation type="vanished">ОД</translation>
-    </message>
-    <message>
-        <source>C</source>
-        <translation type="vanished">Г</translation>
-    </message>
-    <message>
-        <source>D</source>
-        <translation type="vanished">Д</translation>
-    </message>
-    <message>
-        <source>P</source>
-        <translation type="vanished">Р</translation>
     </message>
 </context>
 <context>
@@ -3736,21 +2941,9 @@ You can try to reload update.</source>
         <translation>Сценарий</translation>
     </message>
     <message>
-        <source>Characters module</source>
-        <translation type="vanished">Персонажи</translation>
-    </message>
-    <message>
-        <source>Locations modelu</source>
-        <translation type="vanished">Локации</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="458"/>
         <source>Statistics module</source>
         <translation>Статистика</translation>
-    </message>
-    <message>
-        <source>Colors for</source>
-        <translation type="vanished">Цвета для</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="626"/>
@@ -3788,46 +2981,6 @@ You can try to reload update.</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="411"/>
         <source>Change</source>
         <translation>Изменить</translation>
-    </message>
-    <message>
-        <source>Two Panel Mode</source>
-        <translation type="vanished">Использовать двухпанельный режим</translation>
-    </message>
-    <message>
-        <source>Research</source>
-        <translation type="obsolete">Разработка</translation>
-    </message>
-    <message>
-        <source>Scenario</source>
-        <translation type="obsolete">Сценарий</translation>
-    </message>
-    <message>
-        <source>Locations</source>
-        <translation type="obsolete">Локации</translation>
-    </message>
-    <message>
-        <source>Statistics</source>
-        <translation type="obsolete">Статистика</translation>
-    </message>
-    <message>
-        <source>Enable automatically replacing</source>
-        <translation type="vanished">Включить автоматические замены текста</translation>
-    </message>
-    <message>
-        <source>Replace lowercase characters to uppercase on start of sentence.
-Replace three single dots to threedots character.
-Replace quotes to language specific.</source>
-        <translation type="vanished">Заменяет прописные буквы на заглавные в начале предложения.
-Заменяет три точки на символ многоточия.
-Заменяет машинописные кавычки на корректные в соответствии с языком.</translation>
-    </message>
-    <message>
-        <source>Show suggestions in empty blocks</source>
-        <translation type="vanished">Показывать подсказки в пустых блоках</translation>
-    </message>
-    <message>
-        <source>Use MS Word like highlighting colors</source>
-        <translation type="vanished">Использовать выделение маркером, как в MS Word</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1661"/>
@@ -4016,14 +3169,6 @@ Replace quotes to language specific.</source>
         <translation></translation>
     </message>
     <message>
-        <source>Locations module</source>
-        <translation type="vanished">Локации</translation>
-    </message>
-    <message>
-        <source>Automatically jump to next paragraph (in scene headings and characters)</source>
-        <translation type="vanished">Автоматически переходить к следующему абзацу (для блоков &quot;Место и время&quot; и &quot;Герой&quot;)</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1835"/>
         <source>Pages Chronometry</source>
         <translation>Постраничный подсчёт</translation>
@@ -4077,14 +3222,6 @@ Paragraph</source>
         <translation>Хронометраж/счётчики</translation>
     </message>
     <message>
-        <source>Two Panel Mode (F12)</source>
-        <translation type="vanished">Включить двухпанельный режим (F12)</translation>
-    </message>
-    <message>
-        <source>Automatically replacing</source>
-        <translation type="vanished">Автоматические замены</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1445"/>
         <source>Capitalize first word</source>
         <translation>Начинать предложение с прописной</translation>
@@ -4130,14 +3267,6 @@ Paragraph</source>
         <translation>Исправления текста</translation>
     </message>
     <message>
-        <source>Automatically continue dialogue</source>
-        <translation type="vanished">Продолжать реплики персонажей в сцене</translation>
-    </message>
-    <message>
-        <source>Automatically corrections on page breaks</source>
-        <translation type="vanished">Корректировать текст на разрывах страниц</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2078"/>
         <source>Seconds per
 50 characters</source>
@@ -4155,17 +3284,9 @@ Paragraph</source>
         <translation>Счётчики</translation>
     </message>
     <message>
-        <source>Pages Counter</source>
-        <translation type="vanished">Счётчик страниц</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2265"/>
         <source>Pages Mode only</source>
         <translation>Только для постраничного режима</translation>
-    </message>
-    <message>
-        <source>Words Counter</source>
-        <translation type="vanished">Счётчик слов</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2459"/>
@@ -4188,10 +3309,6 @@ Paragraph</source>
         <translation>Загрузить</translation>
     </message>
     <message>
-        <source>Simbols Counter</source>
-        <translation type="vanished">Счётчик символов</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2308"/>
         <source>Simbols without spaces | Simbols with spaces</source>
         <translation>Символов без пробелов | Символов с пробелами</translation>
@@ -4204,10 +3321,6 @@ Paragraph</source>
 </context>
 <context>
     <name>ShareDialog</name>
-    <message>
-        <source>Form</source>
-        <translation type="vanished">Форма</translation>
-    </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="20"/>
         <source>Share project</source>
@@ -4232,21 +3345,6 @@ Paragraph</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="49"/>
         <source>Commentator</source>
         <translation>комментирование</translation>
-    </message>
-</context>
-<context>
-    <name>SimpleTextEditor</name>
-    <message>
-        <source>Bold</source>
-        <translation type="vanished">Жирный</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="vanished">Курсив</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="vanished">Подчёркнутый</translation>
     </message>
 </context>
 <context>
@@ -4301,10 +3399,6 @@ Paragraph</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="14"/>
         <source>Form</source>
         <translation>Форма</translation>
-    </message>
-    <message>
-        <source>Projects</source>
-        <translation type="vanished">Проекты</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="140"/>
@@ -4382,10 +3476,6 @@ Paragraph</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Авторизация&lt;/a&gt;</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Logout&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Выйти&lt;/a&gt;</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="519"/>
         <source>Update recent projects list</source>
         <translation>Обновить список недавно используемых проектов</translation>
@@ -4404,10 +3494,6 @@ Paragraph</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="464"/>
         <source>Released version 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;download&lt;/a&gt; or &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;read more&lt;/a&gt;.</source>
         <translation>Вышла новая версия 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;скачать&lt;/a&gt; или &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;узнать подробности&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source>On device</source>
-        <translation type="vanished">На устройстве</translation>
     </message>
 </context>
 <context>
@@ -4550,10 +3636,6 @@ Paragraph</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="337"/>
         <source>Choose characters:</source>
         <translation>Выберите персонажей:</translation>
-    </message>
-    <message>
-        <source>Character:</source>
-        <translation type="vanished">Персонаж:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="270"/>
@@ -5010,10 +4092,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <translation>Выберите файл для нового проекта</translation>
     </message>
     <message>
-        <source>Scenarist project files (*%1)</source>
-        <translation type="vanished">Файл проекта сценария (*%1)</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="235"/>
         <source>Choose file to import</source>
         <translation>Выберите файл для импорта</translation>
@@ -5033,40 +4111,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/ChangePasswordDialog.cpp" line="27"/>
         <source>Change</source>
         <translation>Изменить</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::CharactersDataEdit</name>
-    <message>
-        <source>Choose Character</source>
-        <translation type="vanished">Выберите персонажа</translation>
-    </message>
-    <message>
-        <source>Character name</source>
-        <translation type="vanished">Имя персонажа</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::CharactersNavigator</name>
-    <message>
-        <source>Characters</source>
-        <translation type="vanished">Персонажи</translation>
-    </message>
-    <message>
-        <source>Create New Character</source>
-        <translation type="vanished">Добавить персонаж</translation>
-    </message>
-    <message>
-        <source>Remove Selected Character</source>
-        <translation type="vanished">Удалить выбранный персонаж</translation>
-    </message>
-    <message>
-        <source>Merge Selected Characters</source>
-        <translation type="vanished">Объединить выбранных персонажей</translation>
-    </message>
-    <message>
-        <source>Find All Characters from Scenario</source>
-        <translation type="vanished">Найти всех персонажей сценария</translation>
     </message>
 </context>
 <context>
@@ -5098,22 +4142,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
 <context>
     <name>UserInterface::ImportDialog</name>
     <message>
-        <source>All Supported Files</source>
-        <translation type="vanished">Все поддерживаемые файлы</translation>
-    </message>
-    <message>
-        <source>Final Draft screenplay</source>
-        <translation type="vanished">Сценарий в формате Final Draft</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation type="vanished">Файл проекта сценария</translation>
-    </message>
-    <message>
-        <source>Trelby screenplay</source>
-        <translation type="vanished">Сценарий в формате Trelby</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="82"/>
         <source>Choose file to import</source>
         <translation>Выберите файл для импорта</translation>
@@ -5122,36 +4150,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="51"/>
         <source>Import</source>
         <translation>Импорт</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsDataEdit</name>
-    <message>
-        <source>Choose Location</source>
-        <translation type="vanished">Выберите локацию</translation>
-    </message>
-    <message>
-        <source>Location</source>
-        <translation type="vanished">Название локации</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsNavigator</name>
-    <message>
-        <source>Locations</source>
-        <translation type="vanished">Локации</translation>
-    </message>
-    <message>
-        <source>Create New Location</source>
-        <translation type="vanished">Создать новую локацию</translation>
-    </message>
-    <message>
-        <source>Remove Selected Location</source>
-        <translation type="vanished">Удалить выбранную локацию</translation>
-    </message>
-    <message>
-        <source>Find All Locations From Scenario</source>
-        <translation type="vanished">Найти все локации из сценария</translation>
     </message>
 </context>
 <context>
@@ -5188,13 +4186,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/LoginDialog.cpp" line="272"/>
         <source>Email is empty</source>
         <translation>Введите адрес электронной почты</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::MenuView</name>
-    <message>
-        <source>Sign In</source>
-        <translation type="vanished">Войти</translation>
     </message>
 </context>
 <context>
@@ -5284,12 +4275,12 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <translation>Название локации</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="706"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="707"/>
         <source>Choose image</source>
         <translation>Выберите изображения</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="708"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="709"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
         <translation>Изображения (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
     </message>
@@ -5300,18 +4291,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="226"/>
         <source>Add new card</source>
         <translation>Добавить новую карточку</translation>
-    </message>
-    <message>
-        <source>Add note</source>
-        <translation type="vanished">Добавить заметку</translation>
-    </message>
-    <message>
-        <source>Add horizontal line</source>
-        <translation type="vanished">Добавить горизонтальную линию</translation>
-    </message>
-    <message>
-        <source>Add vertical line</source>
-        <translation type="vanished">Добавить вертикальную линию</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="120"/>
@@ -5363,17 +4342,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <source>On/off Fullscreen Mode</source>
         <translation>Включить/выключить полноэкранный режим</translation>
     </message>
-    <message>
-        <source>On/off fullscreen mode (F5)</source>
-        <translation type="vanished">Включить/выключить полноэкранный режим (F5)</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::ScenarioDataEdit</name>
-    <message>
-        <source>Synopsis</source>
-        <translation type="vanished">Синопсис</translation>
-    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioFastFormatWidget</name>
@@ -5411,10 +4379,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <translation>Папка</translation>
     </message>
     <message>
-        <source>Scenes group</source>
-        <translation type="vanished">Группа сцен</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="99"/>
         <source>Scene</source>
         <translation>Сцена</translation>
@@ -5428,10 +4392,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
 <context>
     <name>UserInterface::ScenarioNavigator</name>
     <message>
-        <source>Color</source>
-        <translation type="vanished">Цвет</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="229"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="266"/>
         <source>Remove</source>
@@ -5441,30 +4401,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="265"/>
         <source>Create After</source>
         <translation>Создать после</translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation type="vanished">Очистить</translation>
-    </message>
-    <message>
-        <source>Colors</source>
-        <translation type="vanished">Цвета</translation>
-    </message>
-    <message>
-        <source>Convert to</source>
-        <translation type="vanished">Преобразовать в</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="vanished">Сцену</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="vanished">Группу сцен</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="vanished">Папку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="199"/>
@@ -5597,20 +4533,9 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
 <context>
     <name>UserInterface::ScenarioSceneDescription</name>
     <message>
-        <source>Notes of</source>
-        <translation type="vanished">Описание сцены</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="106"/>
         <source>Description of:</source>
         <translation>Описание:</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::ScenarioSceneSynopsis</name>
-    <message>
-        <source>Notes of</source>
-        <translation type="vanished">Описание сцены</translation>
     </message>
 </context>
 <context>
@@ -5668,17 +4593,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="646"/>
         <source>Duration from Start to Cursor Position | Full Duration</source>
         <translation>Хронометраж от начала до текущей позиции курсора | Полный хронометраж сценария</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::ScenarioTextView</name>
-    <message>
-        <source>DRAFT</source>
-        <translation type="vanished">ЧЕРНОВИК</translation>
-    </message>
-    <message>
-        <source>Choose block type</source>
-        <translation type="vanished">Выберите формат блока</translation>
     </message>
 </context>
 <context>
@@ -5817,14 +4731,6 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <source>Modules</source>
         <translation>Модули</translation>
     </message>
-    <message>
-        <source>Shortcuts Settings</source>
-        <translation type="vanished">Горячие клавиши</translation>
-    </message>
-    <message>
-        <source>Review</source>
-        <translation type="vanished">Рецензирование</translation>
-    </message>
 </context>
 <context>
     <name>UserInterface::ShareDialog</name>
@@ -5837,39 +4743,27 @@ but if you work with no terminations it saves project every %1 minutes.</source>
 <context>
     <name>UserInterface::StartUpView</name>
     <message>
-        <source>Logout</source>
-        <translation type="vanished">Выйти</translation>
-    </message>
-    <message>
-        <source>Projects from kitscenarist.ru</source>
-        <translation type="vanished">Проекты на kitscenarist.ru</translation>
-    </message>
-    <message>
-        <source>On cloud</source>
-        <translation type="vanished">В облаке</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="101"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="90"/>
         <source>Account is active until:</source>
         <translation>Подписка активна до:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="104"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="93"/>
         <source>Account is inactive</source>
         <translation>Подписка неактивна</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="115"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="104"/>
         <source>Used %1 Gb from %2 Gb</source>
         <translation>Использовано %1 Гб из %2 Гб</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="150"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="128"/>
         <source>Connect</source>
         <translation>Подключение</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="160"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.cpp" line="138"/>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Авторизация&lt;/a&gt;</translation>
     </message>
@@ -5957,10 +4851,6 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <translation>Реплики персонажей</translation>
     </message>
     <message>
-        <source>Character dialogues</source>
-        <translation type="vanished">Реплики персонажа</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="315"/>
         <source>Plots</source>
         <translation>Графики</translation>
@@ -5981,10 +4871,6 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <translation>Хронометраж, минут</translation>
     </message>
     <message>
-        <source>Statistics report</source>
-        <translation type="vanished">Суммарная информация</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="298"/>
         <source>Scene report</source>
         <translation>Список сцен</translation>
@@ -5998,10 +4884,6 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="300"/>
         <source>Cast report</source>
         <translation>Список персонажей</translation>
-    </message>
-    <message>
-        <source>Character report</source>
-        <translation type="vanished">По персонажу</translation>
     </message>
 </context>
 <context>
