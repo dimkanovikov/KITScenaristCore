@@ -184,11 +184,11 @@ namespace {
         return QDateTime::fromString(_date, "yyyy-MM-dd hh:mm:ss").toString("dd.MM.yyyy");
     }
 
+#ifdef Q_OS_MAC
     /**
      * @brief Пропустим вызов, если открыто окно на Маке
      */
     bool skipIfModal() {
-#ifdef Q_OS_MAC
     //
     // NOTE: Если есть открытый диалог сохранения, или открытия, то он закрывается
     // при загрузке страницы, поэтому делаем отсрочку на выполнение проверки
@@ -197,7 +197,6 @@ namespace {
         || QApplication::activeModalWidget() != 0) {
         return true;
     }
-#endif
     return false;
     }
 
@@ -214,6 +213,7 @@ namespace {
         }
         return false;
     }
+#endif
 }
 
 SynchronizationManager::SynchronizationManager(QObject* _parent, QWidget* _parentView) :
@@ -1061,9 +1061,11 @@ void SynchronizationManager::aboutWorkSyncScenario()
             return;
         }
 
+#ifdef Q_OS_MAC
         if (skipIfModal()) {
             return;
         }
+#endif
 
         s_isInWorkSync = true;
 
@@ -1277,9 +1279,11 @@ void SynchronizationManager::aboutWorkSyncData()
             return;
         }
 
+#ifdef Q_OS_MAC
         if (skipIfModal()) {
             return;
         }
+#endif
 
         s_isInWorkSyncData = true;
 
@@ -1370,9 +1374,11 @@ void SynchronizationManager::aboutWorkSyncData()
 void SynchronizationManager::aboutUpdateCursors(int _cursorPosition, bool _isDraft)
 {
     if (isCanSync()) {
+#ifdef Q_OS_MAC
         if (skipIfModal()) {
             return;
         }
+#endif
 
         //
         // Загрузим позиции курсоров
@@ -1877,9 +1883,11 @@ void SynchronizationManager::checkNetworkState()
         return;
     }
 
+#ifdef Q_OS_MAC
     if (recallIfModal(this, &SynchronizationManager::checkNetworkState)) {
         return;
     }
+#endif
 
     s_isInCheckNetworkState = true;
 

@@ -605,6 +605,11 @@ namespace {
     /** @} */
 }
 
+QString ScenarioTemplate::defaultTemplateName()
+{
+     return QApplication::translate("BusinessLogic::ScenarioTemplate", "Default");
+}
+
 void ScenarioTemplate::saveToFile(const QString& _filePath) const
 {
     QFile templateFile(_filePath);
@@ -788,7 +793,7 @@ void ScenarioTemplate::load(const QString& _fromFile)
             QXmlStreamAttributes templateAttributes = reader.attributes();
             m_name = templateAttributes.value("name").toString();
             if (m_name == "default") {
-                m_name = QApplication::translate("BusinessLogic::ScenarioTemplate", "Default");
+                m_name = defaultTemplateName();
             } else if (m_name == "default_courier_prime") {
                 m_name = QApplication::translate("BusinessLogic::ScenarioTemplate", "Default with Courier Prime");
             }

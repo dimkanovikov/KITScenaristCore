@@ -1660,13 +1660,6 @@ O projeto não foi sincronizado.</translation>
     </message>
 </context>
 <context>
-    <name>ManagementLayer::SettingsTemplatesManager</name>
-    <message>
-        <source>Default</source>
-        <translation>Padrão</translation>
-    </message>
-</context>
-<context>
     <name>ManagementLayer::StartUpManager</name>
     <message>
         <source>Password successfully changed</source>
@@ -3381,6 +3374,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Insert into &quot;%1&quot;</source>
         <translation>Inserir em &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">Adicionar</translation>
     </message>
 </context>
 <context>

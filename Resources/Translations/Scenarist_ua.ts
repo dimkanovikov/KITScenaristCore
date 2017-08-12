@@ -1083,7 +1083,7 @@
     </message>
     <message>
         <source>汉语</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1649,13 +1649,6 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>Shortcut</source>
         <translation>Shortcut</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::SettingsTemplatesManager</name>
-    <message>
-        <source>Default</source>
-        <translation>Стандартний</translation>
     </message>
 </context>
 <context>
@@ -3371,6 +3364,10 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Insert into &quot;%1&quot;</source>
         <translation>Вставити в &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Додати</translation>
     </message>
 </context>
 <context>
