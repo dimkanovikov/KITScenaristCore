@@ -183,6 +183,37 @@ namespace {
     {
         return QDateTime::fromString(_date, "yyyy-MM-dd hh:mm:ss").toString("dd.MM.yyyy");
     }
+
+    /**
+     * @brief Пропустим вызов, если открыто окно на Маке
+     */
+    bool skipIfModal() {
+#ifdef Q_OS_MAC
+    //
+    // NOTE: Если есть открытый диалог сохранения, или открытия, то он закрывается
+    // при загрузке страницы, поэтому делаем отсрочку на выполнение проверки
+    //
+    if (QLightBoxWidget::hasOpenedWidgets()
+        || QApplication::activeModalWidget() != 0) {
+        return true;
+    }
+#endif
+    return false;
+    }
+
+    /**
+     * @brief Если открыто окно на Маке, то вызовем этот метод чуть позже
+     */
+    template<typename F, typename ... Types>
+    bool recallIfModal(SynchronizationManager* _manager, F _function, Types ... _args) {
+        if (skipIfModal()) {
+            QTimer::singleShot(1000, [_manager, _function, _args...] {
+                (_manager->*_function)(_args...);
+            });
+            return true;
+        }
+        return false;
+    }
 }
 
 SynchronizationManager::SynchronizationManager(QObject* _parent, QWidget* _parentView) :
@@ -1029,6 +1060,11 @@ void SynchronizationManager::aboutWorkSyncScenario()
         if (s_isInWorkSync) {
             return;
         }
+
+        if (skipIfModal()) {
+            return;
+        }
+
         s_isInWorkSync = true;
 
         //
@@ -1240,6 +1276,11 @@ void SynchronizationManager::aboutWorkSyncData()
         if (s_isInWorkSyncData) {
             return;
         }
+
+        if (skipIfModal()) {
+            return;
+        }
+
         s_isInWorkSyncData = true;
 
         //
@@ -1329,6 +1370,10 @@ void SynchronizationManager::aboutWorkSyncData()
 void SynchronizationManager::aboutUpdateCursors(int _cursorPosition, bool _isDraft)
 {
     if (isCanSync()) {
+        if (skipIfModal()) {
+            return;
+        }
+
         //
         // Загрузим позиции курсоров
         //
@@ -1832,17 +1877,9 @@ void SynchronizationManager::checkNetworkState()
         return;
     }
 
-#ifdef Q_OS_MAC
-    //
-    // FIXME: Если есть открытый диалог сохранения, или открытия, то он закрывается
-    // при загрузке страницы, поэтому делаем отсрочку на выполнение проверки
-    //
-    if (QLightBoxWidget::hasOpenedWidgets()
-        || QApplication::activeModalWidget() != 0) {
-        QTimer::singleShot(1000, this, &SynchronizationManager::checkNetworkState);
+    if (recallIfModal(this, &SynchronizationManager::checkNetworkState)) {
         return;
     }
-#endif
 
     s_isInCheckNetworkState = true;
 
