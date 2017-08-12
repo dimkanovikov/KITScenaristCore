@@ -636,7 +636,7 @@ QString ScenarioXml::scenarioToXml(ScenarioModelItem* _fromItem, ScenarioModelIt
     return scenarioToXml(startPosition, endPosition);
 }
 
-void ScenarioXml::xmlToScenario(int _position, const QString& _xml)
+void ScenarioXml::xmlToScenario(int _position, const QString& _xml, bool _rebuildUuids)
 {
     QXmlStreamReader reader(_xml);
     if (reader.readNextStartElement()
@@ -645,7 +645,7 @@ void ScenarioXml::xmlToScenario(int _position, const QString& _xml)
         if (version.isEmpty()) {
             xmlToScenarioV0(_position, _xml);
         } else if (version == "1.0") {
-            xmlToScenarioV1(_position, _xml);
+            xmlToScenarioV1(_position, _xml, _rebuildUuids);
         }
     }
 }
@@ -911,7 +911,7 @@ void ScenarioXml::xmlToScenarioV0(int _position, const QString& _xml)
     cursor.endEditBlock();
 }
 
-void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml)
+void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebuildUuids)
 {
     //
     // Происходит ли обработка первого блока
@@ -996,7 +996,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml)
                         ScenarioTextBlockInfo* info = new ScenarioTextBlockInfo;
                         if (reader.attributes().hasAttribute(ATTRIBUTE_UUID)) {
                             const QString uuid = reader.attributes().value(ATTRIBUTE_UUID).toString();
-                            if (!isScenarioHaveUuid(uuid)) {
+                            if (!_rebuildUuids || !isScenarioHaveUuid(uuid)) {
                                 info->setUuid(uuid);
                             }
                         }

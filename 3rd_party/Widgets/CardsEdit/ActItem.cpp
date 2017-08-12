@@ -87,7 +87,9 @@ void ActItem::setBoundingRect(const QRectF& _boundingRect)
 {
     if (m_boundingRect != _boundingRect) {
         prepareGeometryChange();
-        m_boundingRect = _boundingRect;
+        QRectF boundingRectCorrected = _boundingRect;
+        boundingRectCorrected.setWidth(qMax(120.0, boundingRectCorrected.width()));
+        m_boundingRect = boundingRectCorrected;
     }
 }
 
@@ -104,6 +106,8 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
     _painter->save();
 
     {
+        _painter->setClipRect(m_boundingRect);
+
         QRectF actRect = m_boundingRect;
         if (scene() != nullptr
             && !scene()->views().isEmpty()) {

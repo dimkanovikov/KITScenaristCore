@@ -235,7 +235,11 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     // Замещаем его обновлённым
     //
     cursor.removeSelectedText();
-    m_xmlHandler->xmlToScenario(selectionStartPos, xmlsForUpdate.second.xml);
+    //
+    // ... при этом не изменяем идентификаторов сцен, которые находятся в сценарии
+    //
+    const bool dontRebuildUuids = false;
+    m_xmlHandler->xmlToScenario(selectionStartPos, xmlsForUpdate.second.xml, dontRebuildUuids);
 
     //
     // Запомним новый текст
@@ -289,7 +293,11 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
     //
     cursor.select(QTextCursor::Document);
     cursor.removeSelectedText();
-    m_xmlHandler->xmlToScenario(0, ScenarioXml::makeMimeFromXml(newXml));
+    //
+    // ... при этом не изменяем идентификаторов сцен, которые находятся в сценарии
+    //
+    const bool dontRebuildUuids = false;
+    m_xmlHandler->xmlToScenario(0, ScenarioXml::makeMimeFromXml(newXml), dontRebuildUuids);
 
     //
     // Запомним новый текст

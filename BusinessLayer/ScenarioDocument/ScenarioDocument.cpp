@@ -149,7 +149,7 @@ QString ScenarioDocument::itemUuid(ScenarioModelItem* _item) const
     QTextBlockUserData* textBlockData = cursor.block().userData();
     ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
     if (info == 0) {
-        info = new ScenarioTextBlockInfo;
+        info = new ScenarioTextBlockInfo(_item->uuid());
     }
     cursor.block().setUserData(info);
 
@@ -187,7 +187,7 @@ void ScenarioDocument::setItemColorsAtPosition(int _position, const QString& _co
         QTextBlockUserData* textBlockData = cursor.block().userData();
         ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
         if (info == 0) {
-            info = new ScenarioTextBlockInfo;
+            info = new ScenarioTextBlockInfo(item->uuid());
         }
         info->setColors(_colors);
         cursor.block().setUserData(info);
@@ -237,7 +237,7 @@ void ScenarioDocument::setItemTitleAtPosition(int _position, const QString& _tit
         QTextBlockUserData* textBlockData = cursor.block().userData();
         ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
         if (info == 0) {
-            info = new ScenarioTextBlockInfo;
+            info = new ScenarioTextBlockInfo(item->uuid());
         }
         info->setTitle(_title);
         cursor.block().setUserData(info);
@@ -290,7 +290,7 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
             QTextBlockUserData* textBlockData = cursor.block().userData();
             ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
             if (info == 0) {
-                info = new ScenarioTextBlockInfo;
+                info = new ScenarioTextBlockInfo(item->uuid());
             }
             info->setDescription(_description);
             cursor.block().setUserData(info);
@@ -1065,7 +1065,7 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
     cursor.setPosition(_itemStartPos);
     ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(cursor.block().userData());
     if (info == nullptr) {
-        info = new ScenarioTextBlockInfo;
+        info = new ScenarioTextBlockInfo(_item->uuid());
     }
     info->setDescription(description);
     cursor.block().setUserData(info);
@@ -1157,7 +1157,7 @@ void ScenarioDocument::updateDocumentScenesNumbers()
                 QTextBlockUserData* textBlockData = block.userData();
                 ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
                 if (info == 0) {
-                    info = new ScenarioTextBlockInfo;
+                    info = new ScenarioTextBlockInfo(item->uuid());
                 }
                 info->setSceneNumber(item->sceneNumber());
                 block.setUserData(info);

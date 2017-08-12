@@ -5,13 +5,13 @@
 
 namespace BusinessLogic
 {
-	/**
-	 * @brief Класс для хранения информации о сцене
-	 */
-	class ScenarioTextBlockInfo : public QTextBlockUserData
-	{
-	public:
-		ScenarioTextBlockInfo();
+    /**
+     * @brief Класс для хранения информации о сцене
+     */
+    class ScenarioTextBlockInfo : public QTextBlockUserData
+    {
+    public:
+        ScenarioTextBlockInfo(const QString& _uuid = QString());
 
         /**
          * @brief Идентификатор сцены
@@ -23,77 +23,77 @@ namespace BusinessLogic
          */
         void setUuid(const QString& _uuid);
 
-		/**
-		 * @brief Получить номер сцены
-		 */
-		int sceneNumber() const;
+        /**
+         * @brief Получить номер сцены
+         */
+        int sceneNumber() const;
 
-		/**
-		 * @brief Установить номер сцены
-		 */
-		void setSceneNumber(int _number);
+        /**
+         * @brief Установить номер сцены
+         */
+        void setSceneNumber(int _number);
 
-		/**
-		 * @brief Получить цвета сцены
-		 */
-		QString colors() const;
+        /**
+         * @brief Получить цвета сцены
+         */
+        QString colors() const;
 
-		/**
-		 * @brief Установить цвета сцены
-		 */
-		void setColors(const QString& _colors);
+        /**
+         * @brief Установить цвета сцены
+         */
+        void setColors(const QString& _colors);
 
-		/**
-		 * @brief Получить название сцены
-		 */
-		QString title() const;
+        /**
+         * @brief Получить название сцены
+         */
+        QString title() const;
 
-		/**
-		 * @brief Установить название сцены
-		 */
-		void setTitle(const QString& _title);
+        /**
+         * @brief Установить название сцены
+         */
+        void setTitle(const QString& _title);
 
-		/**
-		 * @brief Получить описание
-		 */
+        /**
+         * @brief Получить описание
+         */
         QString description() const;
 
-		/**
-		 * @brief Установить описание
-		 */
+        /**
+         * @brief Установить описание
+         */
         void setDescription(const QString& _description);
 
-		/**
-		 * @brief Создать дубликат
-		 */
-		ScenarioTextBlockInfo* clone() const;
+        /**
+         * @brief Создать дубликат
+         */
+        ScenarioTextBlockInfo* clone() const;
 
-	private:
+    private:
         /**
          * @brief Идентификатор сцены
          */
         QString m_uuid;
 
-		/**
-		 * @brief Номер сцены
-		 */
-		int m_sceneNumber;
+        /**
+         * @brief Номер сцены
+         */
+        int m_sceneNumber;
 
-		/**
-		 * @brief Цвета сцены
-		 */
-		QString m_colors;
+        /**
+         * @brief Цвета сцены
+         */
+        QString m_colors;
 
-		/**
-		 * @brief Название
-		 */
-		QString m_title;
+        /**
+         * @brief Название
+         */
+        QString m_title;
 
-		/**
-		 * @brief Текст описания
-		 */
-		QString m_description;
-	};
+        /**
+         * @brief Текст описания
+         */
+        QString m_description;
+    };
 }
 
 #endif // SCENARIOTEXTBLOCKINFO_H
