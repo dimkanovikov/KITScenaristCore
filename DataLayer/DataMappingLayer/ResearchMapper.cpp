@@ -145,7 +145,7 @@ DomainObject* ResearchMapper::doLoad(const Identifier& _id, const QSqlRecord& _r
     const QPixmap image = ImageHelper::imageFromBytes(_record.value("image").toByteArray());
     const int sortOrder = _record.value("sort_order").toInt();
 
-    return new Research(_id, parent, type, sortOrder, name, description, url, image);
+    return ResearchBuilder::create(_id, parent, type, sortOrder, name, description, url, image);
 }
 
 void ResearchMapper::doLoad(DomainObject* _domainObject, const QSqlRecord& _record)

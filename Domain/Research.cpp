@@ -1,176 +1,310 @@
 #include "Research.h"
 
 #include <3rd_party/Helpers/ImageHelper.h>
+#include <3rd_party/Helpers/TextEditHelper.h>
+
+#include <QDomDocument>
+#include <QXmlStreamWriter>
 
 using namespace Domain;
 
 
-Research::Research(const Identifier& _id, Research* _parent, Research::Type _type, int _sortOrder,
-	const QString& _name, const QString& _description, const QString& _url, const QPixmap& _image) :
-	DomainObject(_id),
-	m_parent(_parent),
-	m_type(_type),
-	m_name(_name),
-	m_description(_description),
-	m_url(_url),
-	m_image(_image),
-	m_sortOrder(_sortOrder)
-{
-}
-
 Research* Research::parent() const
 {
-	return m_parent;
+    return m_parent;
 }
 
 void Research::setParent(Research* _parent)
 {
-	if (m_parent != _parent) {
-		m_parent = _parent;
+    if (m_parent != _parent) {
+        m_parent = _parent;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
 
 Research::Type Research::type() const
 {
-	return m_type;
+    return m_type;
 }
 
 void Research::setType(Research::Type _type)
 {
-	if (m_type != _type) {
-		m_type = _type;
+    if (m_type != _type) {
+        m_type = _type;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
 
 QString Research::name() const
 {
-	return m_name;
+    return m_name;
 }
 
 void Research::setName(const QString& _name)
 {
-	if (m_name != _name) {
-		m_name = _name;
+    if (m_name != _name) {
+        m_name = _name;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
 
 QString Research::description() const
 {
-	return m_description;
+    return m_description;
 }
 
 void Research::setDescription(const QString& _description)
 {
-	if (m_description != _description) {
-		m_description = _description;
+    if (m_description != _description) {
+        m_description = _description;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
+}
+
+void Research::addDescription(const QString& _description)
+{
+    if (!_description.isEmpty()) {
+        m_description.append(_description);
+
+        changesNotStored();
+    }
 }
 
 QString Research::url() const
 {
-	return m_url;
+    return m_url;
 }
 
 void Research::setUrl(const QString& _url)
 {
-	if (m_url != _url) {
-		m_url = _url;
+    if (m_url != _url) {
+        m_url = _url;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
 
 QPixmap Research::image() const
 {
-	return m_image;
+    return m_image;
 }
 
 void Research::setImage(const QPixmap& _image)
 {
-	if (!ImageHelper::isImagesEqual(m_image, _image)) {
-		m_image = _image;
+    if (!ImageHelper::isImagesEqual(m_image, _image)) {
+        m_image = _image;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
 
 int Research::sortOrder() const
 {
-	return m_sortOrder;
+    return m_sortOrder;
 }
 
 void Research::setSortOrder(int _sortOrder)
 {
-	if (m_sortOrder != _sortOrder) {
-		m_sortOrder = _sortOrder;
+    if (m_sortOrder != _sortOrder) {
+        m_sortOrder = _sortOrder;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
+
+Research::Research(const Identifier& _id, Research* _parent, Research::Type _type, int _sortOrder,
+    const QString& _name, const QString& _description, const QString& _url, const QPixmap& _image) :
+    DomainObject(_id),
+    m_parent(_parent),
+    m_type(_type),
+    m_name(_name),
+    m_description(_description),
+    m_url(_url),
+    m_image(_image),
+    m_sortOrder(_sortOrder)
+{
+}
+
+
+// ****
+
+
+QString ResearchCharacter::realName() const
+{
+    QDomDocument xmlDocument;
+    xmlDocument.setContent(description());
+    QDomNode characterNode = xmlDocument.namedItem("character");
+    QDomNode realNameNode = characterNode.namedItem("real_name");
+    return realNameNode.toElement().text();
+}
+
+void ResearchCharacter::setRealName(const QString& _name)
+{
+    QString description;
+    QXmlStreamWriter writer(&description);
+    writer.writeStartDocument();
+    writer.writeStartElement("character");
+    writer.writeTextElement("real_name", _name);
+    writer.writeStartElement("description");
+    writer.writeCDATA(
+                TextEditHelper::toHtmlEscaped(
+                    TextEditHelper::removeDocumentTags(
+                        descriptionText()
+                        )
+                    )
+                );
+    writer.writeEndElement();
+    writer.writeEndElement();
+    writer.writeEndDocument();
+
+    setDescription(description);
+}
+
+QString ResearchCharacter::descriptionText() const
+{
+    QDomDocument xmlDocument;
+    xmlDocument.setContent(description());
+    QDomNode characterNode = xmlDocument.namedItem("character");
+    QDomNode descriptionNode = characterNode.namedItem("description");
+    return TextEditHelper::fromHtmlEscaped(descriptionNode.toElement().text());
+}
+
+void ResearchCharacter::setDescriptionText(const QString& _description)
+{
+    QString description;
+    QXmlStreamWriter writer(&description);
+    writer.writeStartDocument();
+    writer.writeStartElement("character");
+    writer.writeTextElement("real_name", realName());
+    writer.writeStartElement("description");
+    writer.writeCDATA(
+                TextEditHelper::toHtmlEscaped(
+                    TextEditHelper::removeDocumentTags(
+                        _description
+                        )
+                    )
+                );
+    writer.writeEndElement();
+    writer.writeEndElement();
+    writer.writeEndDocument();
+
+    setDescription(description);
+}
+
+void ResearchCharacter::addDescription(const QString& _description)
+{
+    //
+    // Запоминаем текущие настоящее имя и описание
+    //
+    QString sourceRealName = realName();
+    QString sourceDescription = descriptionText();
+    //
+    // Устанавливаем новые
+    //
+    setDescription(_description);
+    QString addedRealName = realName();
+    QString addedDescription = descriptionText();
+    //
+    // И объединяем
+    //
+    setRealName(sourceRealName);
+    setDescriptionText(QString("%1<p>%2</p>%3")
+                       .arg(sourceDescription)
+                       .arg(addedRealName)
+                       .arg(addedDescription));
+
+    //
+    // Помечаем изменённым
+    //
+    changesNotStored();
+}
+
+ResearchCharacter::ResearchCharacter(const Identifier& _id, Research* _parent, Research::Type _type, int _sortOrder,
+    const QString& _name, const QString& _description, const QString& _url, const QPixmap& _image) :
+    Research(_id, _parent, _type, _sortOrder, _name, _description, _url, _image)
+{
+    Q_ASSERT_X(_type == Research::Character, Q_FUNC_INFO, "Character must have convenient type");
+}
+
+
+// ****
+
+
+Research* ResearchBuilder::create(const Identifier& _id, Research* _parent, Research::Type _type,
+    int _sortOrder, const QString& _name, const QString& _description, const QString& _url,
+    const QPixmap& _image)
+{
+    switch (_type) {
+        case Research::Character: {
+            return new ResearchCharacter(_id, _parent, _type, _sortOrder, _name, _description, _url, _image);
+        }
+
+        default: {
+            return new Research(_id, _parent, _type, _sortOrder, _name, _description, _url, _image);
+        }
+    }
+}
+
 
 // ****
 
 
 namespace {
-	const int COLUMN_COUNT = 1;
+    const int COLUMN_COUNT = 1;
 }
 
 ResearchTable::ResearchTable(QObject* _parent) :
-	DomainObjectsItemModel(_parent)
+    DomainObjectsItemModel(_parent)
 {
 }
 
 int ResearchTable::columnCount(const QModelIndex&) const
 {
-	return COLUMN_COUNT;
+    return COLUMN_COUNT;
 }
 
 QVariant ResearchTable::data(const QModelIndex& _index, int _role) const
 {
-	QVariant resultData;
+    QVariant resultData;
 
-	if (_role ==  Qt::DisplayRole
-		|| _role == Qt::EditRole) {
-		DomainObject *domainObject = domainObjects().value(_index.row());
-		Research* research = dynamic_cast<Research*>(domainObject);
-		Column column = sectionToColumn(_index.column());
-		switch (column) {
-			case Name: {
-				resultData = research->name();
-				break;
-			}
+    if (_role ==  Qt::DisplayRole
+        || _role == Qt::EditRole) {
+        DomainObject *domainObject = domainObjects().value(_index.row());
+        Research* research = dynamic_cast<Research*>(domainObject);
+        Column column = sectionToColumn(_index.column());
+        switch (column) {
+            case Name: {
+                resultData = research->name();
+                break;
+            }
 
-			default: {
-				break;
-			}
-		}
-	}
+            default: {
+                break;
+            }
+        }
+    }
 
-	return resultData;
+    return resultData;
 }
 
 ResearchTable::Column ResearchTable::sectionToColumn(int _section) const
 {
-	Column column = Undefined;
+    Column column = Undefined;
 
-	switch (_section) {
-		case 0: {
-			column = Name;
-			break;
-		}
+    switch (_section) {
+        case 0: {
+            column = Name;
+            break;
+        }
 
-		default: {
-			break;
-		}
-	}
+        default: {
+            break;
+        }
+    }
 
-	return column;
+    return column;
 }

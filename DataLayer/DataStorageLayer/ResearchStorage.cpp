@@ -37,7 +37,7 @@ Research* ResearchStorage::storeResearch(Research* _parent, int _researchType, i
     // Создаём новую разработку
     //
     Research* newResearch =
-        new Research(Identifier(), _parent, (Research::Type)_researchType, _sortOrder, _researchName);
+        ResearchBuilder::create(Identifier(), _parent, (Research::Type)_researchType, _sortOrder, _researchName);
 
     //
     // И сохраняем её
@@ -157,7 +157,7 @@ ResearchTable* ResearchStorage::characters()
 
 Research* ResearchStorage::character(const QString& _name)
 {
-    return research(_name);
+    return research(_name.toUpper());
 }
 
 Research* ResearchStorage::storeCharacter(const QString& _name, int _sortOrder)
@@ -251,7 +251,7 @@ ResearchTable* ResearchStorage::locations()
 
 Research* ResearchStorage::location(const QString& _name)
 {
-    return research(_name);
+    return research(_name.toUpper());
 }
 
 Research* ResearchStorage::storeLocation(const QString& _name, int _sortOrder)

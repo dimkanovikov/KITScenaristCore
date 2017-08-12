@@ -10,6 +10,7 @@
 using BusinessLogic::ResearchModel;
 using BusinessLogic::ResearchModelItem;
 using Domain::Research;
+using Domain::ResearchBuilder;
 
 namespace {
     /**
@@ -101,7 +102,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     ResearchModelItem* scenarioItem =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::Scenario, 0, tr("Scenario"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::Scenario, 0, tr("Scenario"))
         );
     m_rootItem->appendItem(scenarioItem);
     //
@@ -109,7 +110,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     ResearchModelItem* titlePageItem =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::TitlePage, 0, tr("Title Page"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::TitlePage, 0, tr("Title Page"))
         );
     scenarioItem->appendItem(titlePageItem);
     //
@@ -117,7 +118,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     ResearchModelItem* synopsisItem =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::Synopsis, 1, tr("Synopsis"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::Synopsis, 1, tr("Synopsis"))
         );
     scenarioItem->appendItem(synopsisItem);
 
@@ -126,7 +127,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     m_charactersRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::CharactersRoot, 1, tr("Characters"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::CharactersRoot, 1, tr("Characters"))
         );
     m_rootItem->appendItem(m_charactersRoot);
 
@@ -135,7 +136,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     m_locationsRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::LocationsRoot, 2, tr("Locations"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::LocationsRoot, 2, tr("Locations"))
         );
     m_rootItem->appendItem(m_locationsRoot);
 
@@ -144,7 +145,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     m_researchRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::ResearchRoot, 3, tr("Research"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::ResearchRoot, 3, tr("Research"))
         );
     m_rootItem->appendItem(m_researchRoot);
 }
@@ -229,17 +230,17 @@ void ResearchModel::clear()
     //
     m_charactersRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::CharactersRoot, 1, tr("Characters"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::CharactersRoot, 1, tr("Characters"))
         );
     //
     m_locationsRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::LocationsRoot, 2, tr("Locations"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::LocationsRoot, 2, tr("Locations"))
         );
     //
     m_researchRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::ResearchRoot, 1, tr("Research"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::ResearchRoot, 1, tr("Research"))
         );
     //
     emit beginInsertRows(QModelIndex(), 1, 3);
