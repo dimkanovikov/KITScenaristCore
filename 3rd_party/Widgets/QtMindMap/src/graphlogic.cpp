@@ -102,7 +102,11 @@ void GraphLogic::addFirstNode()
 void GraphLogic::removeAllNodes()
 {
     setActiveNode(nullptr);
-    qDeleteAll(m_nodeList);
+    while (!m_nodeList.isEmpty()) {
+        Node* node = m_nodeList.takeLast();
+        delete node;
+        node = nullptr;
+    }
 
     m_nodeList.clear();
     m_activeNode = 0;
