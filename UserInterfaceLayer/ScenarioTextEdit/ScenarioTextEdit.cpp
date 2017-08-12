@@ -985,34 +985,52 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             int positionForCheck = 0;
             do {
                 topCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, positionForCheck)));
-                --positionForCheck;
-            } while (
-                     // пока не дошли до начала или до видимого блока
-                     (!topCursor.atStart()
-                      && !topCursor.block().isVisible())
-                     // или пока не выйдем из последнего блока в документе
-                     || (topCursor.block() != document()->firstBlock()
-                         && topCursor.block() == document()->lastBlock()));
-            const QTextBlock topBlock = topCursor.block();
+                positionForCheck += 10;
+                //
+                // Если прошли весь виджет, но так и не нашли нужный блок, считаем от начала
+                //
+                if (positionForCheck > height()) {
+                    topCursor.movePosition(QTextCursor::Start);
+                    break;
+                }
+                //
+                // Ищем, пока не дошли до начала или до видимого блока
+                //
+            } while (!topCursor.atEnd()
+                     && !topCursor.block().isVisible());
+            QTextBlock topBlock = topCursor.block();
+            //
+            // ... идём до начала сцены
+            //
+            while (ScenarioBlockStyle::forBlock(topBlock) != ScenarioBlockStyle::SceneHeading
+                   && ScenarioBlockStyle::forBlock(topBlock) != ScenarioBlockStyle::FolderHeader
+                   && topBlock != document()->firstBlock()) {
+                topBlock = topBlock.previous();
+            }
             //
             QTextCursor bottomCursor;
             positionForCheck = height();
             do {
-                --positionForCheck;
+                positionForCheck -= 10;
                 bottomCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, positionForCheck)));
-            } while (
-                     // пока не дойдём до начала или до видимого блока
-                     (!bottomCursor.atStart()
-                      && !bottomCursor.block().isVisible())
-                     // или пока не выйдем из последнего блока в документе
-                     || (bottomCursor.block() != document()->firstBlock()
-                         && bottomCursor.block() == document()->lastBlock()));
-            QTextBlock bottomBlock = bottomCursor.block().next();
+                //
+                // Если прошли весь виджет, но так и не нашли нужный блок, считаем до конца
+                //
+                if (positionForCheck < 0) {
+                    bottomCursor.movePosition(QTextCursor::End);
+                    break;
+                }
+                //
+                // Ищем, пока не дойдём до начала или до видимого блока
+                //
+            } while (!bottomCursor.atStart()
+                     && !bottomCursor.block().isVisible());
+            const QTextBlock bottomBlock = bottomCursor.block().next();
 
             //
             // Проходим блоки на экрени и декорируем их
             //
-            QTextBlock block = topBlock.isValid() ? topBlock : document()->begin();
+            QTextBlock block = topBlock;
             const QRectF viewportGeometry = viewport()->geometry();
             const int leftDelta = -horizontalScrollBar()->value();
             int lastBlockBottom = 0;
