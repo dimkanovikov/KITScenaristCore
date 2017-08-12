@@ -139,6 +139,13 @@ void SpellChecker::setSpellingLanguage(SpellChecker::Language _spellingLanguage)
 
 bool SpellChecker::spellCheckWord(const QString& _word) const
 {
+    //
+    // Игнорируем двойной минус, т.к. это служебное обозначение в сценарной записи
+    //
+    if (_word == "--") {
+        return true;
+    }
+
     bool spelled = false;
     if (m_checker != 0) {
         //
