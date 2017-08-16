@@ -77,10 +77,16 @@ void Node::deleteEdge(Node *otherEnd)
 
 void Node::deleteEdges()
 {
+    //
+    // Тут идёт довольно хитрое удаление, т.к. каждая стрелка во время
+    // удаления убирает себя из списка стрелок ячейки, поэтому сперва формируем
+    // независимый список на удаление и даляем соединения уже из него
+    //
+    QVector<Edge*> edgesToRemove;
     for (EdgeElement& element : m_edgeList) {
-        delete element.edge;
-        element.edge = nullptr;
+        edgesToRemove.append(element.edge);
     }
+    qDeleteAll(edgesToRemove);
 }
 
 void Node::removeEdge(Edge *edge)

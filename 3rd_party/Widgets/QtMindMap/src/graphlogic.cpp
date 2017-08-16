@@ -1,12 +1,15 @@
 #include "../include/graphwidget.h"
 
+#include "../include/commands.h"
+
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 #include <QtXml>
 #include <QColorDialog>
 #include <QApplication>
 #include <QScrollBar>
 #include <QUndoCommand>
 
-#include "../include/commands.h"
 
 GraphLogic::GraphLogic(GraphWidget *parent)
     : QObject(parent)
@@ -101,13 +104,7 @@ void GraphLogic::addFirstNode()
 
 void GraphLogic::removeAllNodes()
 {
-    setActiveNode(nullptr);
-    while (!m_nodeList.isEmpty()) {
-        Node* node = m_nodeList.takeLast();
-        delete node;
-        node = nullptr;
-    }
-
+    qDeleteAll(m_nodeList);
     m_nodeList.clear();
     m_activeNode = 0;
     m_hintNode = 0;
@@ -128,69 +125,152 @@ bool GraphLogic::readContentFromXml(const QString& _xml)
     QDomElement docElem = doc.documentElement();
 
     //
-    // Восстанавливаем масштаб
+    // Считываем содержимое в зависимости от версии
     //
-    m_graphWidget->resetTransform();
-    const qreal scaleFactor = docElem.attribute("scale").toDouble();
-    m_graphWidget->scale(scaleFactor, scaleFactor);
+    // Изначальная версия
     //
-    // ... и позиционирование
-    //
-    const int scrollX = docElem.attribute("scroll_x").toInt();
-    m_graphWidget->horizontalScrollBar()->setValue(scrollX);
-    const int scrollY = docElem.attribute("scroll_y").toInt();
-    m_graphWidget->verticalScrollBar()->setValue(scrollY);
+    if (!docElem.hasAttribute("version")) {
+        //
+        // Восстанавливаем масштаб
+        //
+        m_graphWidget->resetTransform();
+        const qreal scaleFactor = docElem.attribute("scale").toDouble();
+        m_graphWidget->scale(scaleFactor, scaleFactor);
+        //
+        // ... и позиционирование
+        //
+        const int scrollX = docElem.attribute("scroll_x").toInt();
+        m_graphWidget->horizontalScrollBar()->setValue(scrollX);
+        const int scrollY = docElem.attribute("scroll_y").toInt();
+        m_graphWidget->verticalScrollBar()->setValue(scrollY);
 
-    // add nodes
-    QDomNodeList nodes = docElem.childNodes().item(0).childNodes();
-    for (int i = 0; i < nodes.length(); i++)
-    {
-        QDomElement e = nodes.item(i).toElement();
-        if(!e.isNull())
+        // add nodes
+        QDomNodeList nodes = docElem.childNodes().item(0).childNodes();
+        for (int i = 0; i < nodes.length(); i++)
         {
-            Node *node = nodeFactory(e.attribute("is_root").toInt());
-            node->disconnect(node, SIGNAL(nodeChanged()), this, SLOT(nodeChanged()));
-            m_graphWidget->scene()->addItem(node);
-            m_nodeList.append(node);
-            node->setHtml(e.attribute("htmlContent"));
-            node->setPos(e.attribute("x").toFloat(),
-                         e.attribute("y").toFloat());
-            node->setScale(e.attribute("scale").toFloat(),
-                           m_graphWidget->sceneRect());
-            node->setColor(QColor(e.attribute("bg_red").toFloat(),
-                                  e.attribute("bg_green").toFloat(),
-                                  e.attribute("bg_blue").toFloat()));
-            node->setTextColor(QColor(e.attribute("text_red").toFloat(),
-                                      e.attribute("text_green").toFloat(),
-                                      e.attribute("text_blue").toFloat()));
-            node->connect(node, SIGNAL(nodeChanged()), this, SLOT(nodeChanged()));
+            QDomElement e = nodes.item(i).toElement();
+            if(!e.isNull())
+            {
+                Node *node = nodeFactory(e.attribute("is_root").toInt());
+                node->disconnect(node, SIGNAL(nodeChanged()), this, SLOT(nodeChanged()));
+                m_graphWidget->scene()->addItem(node);
+                m_nodeList.append(node);
+                node->setHtml(e.attribute("htmlContent"));
+                node->setPos(e.attribute("x").toFloat(),
+                             e.attribute("y").toFloat());
+                node->setScale(e.attribute("scale").toFloat(),
+                               m_graphWidget->sceneRect());
+                node->setColor(QColor(e.attribute("bg_red").toFloat(),
+                                      e.attribute("bg_green").toFloat(),
+                                      e.attribute("bg_blue").toFloat()));
+                node->setTextColor(QColor(e.attribute("text_red").toFloat(),
+                                          e.attribute("text_green").toFloat(),
+                                          e.attribute("text_blue").toFloat()));
+                node->connect(node, SIGNAL(nodeChanged()), this, SLOT(nodeChanged()));
+            }
         }
-    }
 
-    // add edges
-    QDomNodeList edges = docElem.childNodes().item(1).childNodes();
-    for (int i = 0; i < edges.length(); i++)
-    {
-        QDomElement e = edges.item(i).toElement();
-        if(!e.isNull())
+        // add edges
+        QDomNodeList edges = docElem.childNodes().item(1).childNodes();
+        for (int i = 0; i < edges.length(); i++)
         {
-            const int sourceIndex = e.attribute("source").toInt();
-            const int destIndex = e.attribute("destination").toInt();
-            if (sourceIndex != -1 && destIndex != -1) {
-                Node *source = m_nodeList[sourceIndex];
-                Node *destination = m_nodeList[destIndex];
+            QDomElement e = edges.item(i).toElement();
+            if(!e.isNull())
+            {
+                const int sourceIndex = e.attribute("source").toInt();
+                const int destIndex = e.attribute("destination").toInt();
+                if (sourceIndex != -1 && destIndex != -1) {
+                    Node *source = m_nodeList[sourceIndex];
+                    Node *destination = m_nodeList[destIndex];
 
-                Edge *edge = new Edge(source, destination);
-                source->addEdge(edge, true);
-                destination->addEdge(edge, false);
+                    Edge *edge = new Edge(source, destination);
+                    source->addEdge(edge, true);
+                    destination->addEdge(edge, false);
 
-                edge->setColor(QColor(e.attribute("red").toFloat(),
-                                      e.attribute("green").toFloat(),
-                                      e.attribute("blue").toFloat()));
-                edge->setWidth(e.attribute("width").toFloat());
-                edge->setSecondary(e.attribute("secondary").toInt() );
+                    edge->setColor(QColor(e.attribute("red").toFloat(),
+                                          e.attribute("green").toFloat(),
+                                          e.attribute("blue").toFloat()));
+                    edge->setWidth(e.attribute("width").toFloat());
+                    edge->setSecondary(e.attribute("secondary").toInt() );
 
-                m_graphWidget->scene()->addItem(edge);
+                    m_graphWidget->scene()->addItem(edge);
+                }
+            }
+        }
+        emit contentChanged();
+    }
+    //
+    // Версия 1.0
+    //
+    else if (docElem.attribute("version") == "1.0") {
+        //
+        // Восстанавливаем масштаб
+        //
+        m_graphWidget->resetTransform();
+        const qreal scaleFactor = docElem.attribute("scale").toDouble();
+        m_graphWidget->scale(scaleFactor, scaleFactor);
+        //
+        // ... и позиционирование
+        //
+        const int scrollX = docElem.attribute("scroll_x").toInt();
+        m_graphWidget->horizontalScrollBar()->setValue(scrollX);
+        const int scrollY = docElem.attribute("scroll_y").toInt();
+        m_graphWidget->verticalScrollBar()->setValue(scrollY);
+
+        // add nodes
+        QDomNodeList nodes = docElem.childNodes().item(0).childNodes();
+        for (int i = 0; i < nodes.length(); i++)
+        {
+            QDomElement e = nodes.item(i).toElement();
+            if(!e.isNull())
+            {
+                //
+                // Считываем параметры ячейки
+                //
+                Node *node = nodeFactory(e.attribute("is_root").toInt());
+                node->disconnect(node, SIGNAL(nodeChanged()), this, SLOT(nodeChanged()));
+                m_graphWidget->scene()->addItem(node);
+                m_nodeList.append(node);
+                node->setPos(e.attribute("x").toFloat(),
+                             e.attribute("y").toFloat());
+                node->setScale(e.attribute("scale").toFloat(),
+                               m_graphWidget->sceneRect());
+                node->setColor(QColor(e.attribute("bg_color")));
+                node->setTextColor(QColor(e.attribute("text_color")));
+                //
+                // Её содержимое
+                //
+                node->setHtml(TextEditHelper::fromHtmlEscaped(e.firstChild().nodeValue()));
+                //
+                // Настраиваем уведомление об изменении
+                //
+                node->connect(node, &Node::nodeChanged, this, &GraphLogic::nodeChanged);
+            }
+        }
+
+        // add edges
+        QDomNodeList edges = docElem.childNodes().item(1).childNodes();
+        for (int i = 0; i < edges.length(); i++)
+        {
+            QDomElement e = edges.item(i).toElement();
+            if(!e.isNull())
+            {
+                const int sourceIndex = e.attribute("source").toInt();
+                const int destIndex = e.attribute("destination").toInt();
+                if (sourceIndex != -1 && destIndex != -1) {
+                    Node *source = m_nodeList[sourceIndex];
+                    Node *destination = m_nodeList[destIndex];
+
+                    Edge *edge = new Edge(source, destination);
+                    source->addEdge(edge, true);
+                    destination->addEdge(edge, false);
+
+                    edge->setColor(QColor(e.attribute("color")));
+                    edge->setWidth(e.attribute("width").toFloat());
+                    edge->setSecondary(e.attribute("secondary").toInt() );
+
+                    m_graphWidget->scene()->addItem(edge);
+                }
             }
         }
     }
@@ -227,6 +307,7 @@ QString GraphLogic::writeContentToXml()
     QDomDocument doc("QtMindMap");
 
     QDomElement root = doc.createElement("qtmindmap");
+    root.setAttribute("version", "1.0");
     root.setAttribute("scale", QString::number(m_graphWidget->transform().m11()));
     root.setAttribute("scroll_x", QString::number(m_graphWidget->horizontalScrollBar()->value()));
     root.setAttribute("scroll_y", QString::number(m_graphWidget->verticalScrollBar()->value()));
@@ -241,17 +322,16 @@ QString GraphLogic::writeContentToXml()
 
         // no need to store ID: parsing order is preorder.
         // cn.setAttribute( "id", QString::number(m_nodeList.indexOf(node)));
-        cn.setAttribute( "is_root", node->isRoot() ? "1" : "0");
-        cn.setAttribute( "x", QString::number(node->pos().x()));
-        cn.setAttribute( "y", QString::number(node->pos().y()));
-        cn.setAttribute( "htmlContent", node->toHtml());
-        cn.setAttribute( "scale", QString::number(node->scale()));
-        cn.setAttribute( "bg_red", QString::number(node->color().red()));
-        cn.setAttribute( "bg_green", QString::number(node->color().green()));
-        cn.setAttribute( "bg_blue", QString::number(node->color().blue()));
-        cn.setAttribute( "text_red", QString::number(node->textColor().red()));
-        cn.setAttribute( "text_green", QString::number(node->textColor().green()));
-        cn.setAttribute( "text_blue", QString::number(node->textColor().blue()));
+        cn.setAttribute("is_root", node->isRoot() ? "1" : "0");
+        cn.setAttribute("x", QString::number(node->pos().x()));
+        cn.setAttribute("y", QString::number(node->pos().y()));
+        cn.setAttribute("scale", QString::number(node->scale()));
+        cn.setAttribute("bg_color", node->color().name());
+        cn.setAttribute("text_color", node->textColor().name());
+
+        QDomCDATASection contentNode = doc.createCDATASection(TextEditHelper::toHtmlEscaped(node->toHtml()));
+        cn.appendChild(contentNode);
+
         nodes_root.appendChild(cn);
     }
 
@@ -261,15 +341,13 @@ QString GraphLogic::writeContentToXml()
     foreach(Edge *edge, allEdges())
     {
         QDomElement cn = doc.createElement("edge");
-        cn.setAttribute( "source",
+        cn.setAttribute("source",
                       QString::number(m_nodeList.indexOf(edge->sourceNode())));
-        cn.setAttribute( "destination",
+        cn.setAttribute("destination",
                       QString::number(m_nodeList.indexOf(edge->destNode())));
-        cn.setAttribute( "red", QString::number(edge->color().red()));
-        cn.setAttribute( "green", QString::number(edge->color().green()));
-        cn.setAttribute( "blue", QString::number(edge->color().blue()));
-        cn.setAttribute( "width", QString::number(edge->width()));
-        cn.setAttribute( "secondary", QString::number(edge->secondary()));
+        cn.setAttribute("color", edge->color().name());
+        cn.setAttribute("width", QString::number(edge->width()));
+        cn.setAttribute("secondary", QString::number(edge->secondary()));
 
         edges_root.appendChild(cn);
     }
@@ -369,16 +447,6 @@ void GraphLogic::insertRootNode(const QColor& _color)
     QPointF pos(m_activeNode->sceneBoundingRect().center() +
                  QPointF(length * cos(angle), length * sin(angle)) -
                  Node::newNodeCenter);
-
-    QRectF rect (m_graphWidget->scene()->sceneRect().topLeft(),
-                 m_graphWidget->scene()->sceneRect().bottomRight()
-                 - Node::newNodeBottomRigth);
-
-    if (!rect.contains(pos))
-    {
-        emit notification(tr("New node would be placed outside of the scene."));
-        return;
-    }
 
     UndoContext context;
     context.m_graphLogic = this;
