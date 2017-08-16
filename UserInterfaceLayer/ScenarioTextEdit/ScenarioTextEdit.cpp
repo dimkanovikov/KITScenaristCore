@@ -99,14 +99,14 @@ void ScenarioTextEdit::addScenarioBlock(ScenarioBlockStyle::Type _blockType)
         && scenarioBlockType() == ScenarioBlockStyle::SceneDescription
         && (_blockType == ScenarioBlockStyle::SceneHeading
             || _blockType == ScenarioBlockStyle::FolderHeader)) {
-        ScenarioBlockStyle::Type currentBlockType = scenarioBlockType();
+        ScenarioBlockStyle::Type currentBlockType = ScenarioBlockStyle::forBlock(cursor.block());
         while (!cursor.atEnd()
                && currentBlockType != ScenarioBlockStyle::SceneHeading
                && currentBlockType != ScenarioBlockStyle::FolderFooter
                && currentBlockType != ScenarioBlockStyle::FolderHeader) {
             cursor.movePosition(QTextCursor::NextBlock);
             cursor.movePosition(QTextCursor::EndOfBlock);
-            currentBlockType = scenarioBlockType();
+            currentBlockType = ScenarioBlockStyle::forBlock(cursor.block());
         }
         //
         // Если дошли не до конца документа, а до начала новой сцены,
