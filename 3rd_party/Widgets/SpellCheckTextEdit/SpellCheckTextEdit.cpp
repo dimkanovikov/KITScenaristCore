@@ -7,6 +7,9 @@
 #include <QDir>
 #include <QMenu>
 #include <QStandardPaths>
+#include <QTimer>
+
+#include <QtGui/private/qtextdocument_p.h>
 
 
 namespace {
@@ -347,6 +350,14 @@ QTextCursor SpellCheckTextEdit::moveCursorToEndWord(QTextCursor cursor)
 
 void SpellCheckTextEdit::rehighlighWithNewCursor()
 {
+    //
+    // Если редактирование документа не закончено, но позиция курсора сменилась, откладываем проверку орфографии
+    //
+    if (document()->docHandle()->isInEditBlock()) {
+        QTimer::singleShot(100, this, &SpellCheckTextEdit::rehighlighWithNewCursor);
+        return;
+    }
+
     QTextCursor cursor = textCursor();
     cursor = moveCursorToStartWord(cursor);
     m_spellCheckHighlighter->setCursorPosition(cursor.positionInBlock());
