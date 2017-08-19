@@ -925,7 +925,7 @@
     </message>
     <message>
         <source>New node would be placed outside of the scene.</source>
-        <translation>Новий елемент буде розміщено за межами сцени.</translation>
+        <translation type="vanished">Новий елемент буде розміщено за межами сцени.</translation>
     </message>
     <message>
         <source>No active node</source>
@@ -1445,6 +1445,10 @@ Project didn&apos;t synchronized.</source>
         <source>on local computer</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Редагувати</translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -1498,6 +1502,22 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation>Microsoft &lt;b&gt;DOC&lt;/b&gt; файли не підтримуються.. Вам треба зберегти їх в &lt;b&gt;DOCX&lt;/b&gt; файл і повторити імпорт.</translation>
+    </message>
+    <message>
+        <source>File isn&apos;t exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please choose existed file and retry import.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File to import is empty. Please check that you select correct file and retry import.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1672,6 +1692,14 @@ You can try to reload update.</source>
     <message>
         <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
         <translation>Випущена версія %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Встановити&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3481,6 +3509,10 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <source>Scene Description</source>
         <translation>Опис сцени</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">Додати</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioNavigator</name>
@@ -3646,6 +3678,18 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Duration from Start to Cursor Position | Full Duration</source>
         <translation>Тривалість від Початку до Позиції курсору | Загальна тривалість</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find and replace</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

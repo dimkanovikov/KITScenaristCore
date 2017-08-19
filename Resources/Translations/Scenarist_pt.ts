@@ -931,7 +931,7 @@
     </message>
     <message>
         <source>New node would be placed outside of the scene.</source>
-        <translation>Novo nó seria colocado fora da cena.</translation>
+        <translation type="vanished">Novo nó seria colocado fora da cena.</translation>
     </message>
     <message>
         <source>No active node</source>
@@ -1453,6 +1453,10 @@ O projeto não foi sincronizado.</translation>
         <source>on local computer</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Editar</translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -1506,6 +1510,22 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation>Arquivos &lt;b&gt;DOC&lt;/b&gt; da Microsoft não são suportados. Você precisa salvá-lo no arquivo &lt;b&gt;DOCX &lt;/b&gt; e reimportar.</translation>
+    </message>
+    <message>
+        <source>File isn&apos;t exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please choose existed file and retry import.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File to import is empty. Please check that you select correct file and retry import.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1680,6 +1700,14 @@ You can try to reload update.</source>
         <translation>Não é possível instalar a atualização. Existem alguns problemas com o arquivo transferido.
 
 Você pode tentar recarregar a atualização.</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3491,6 +3519,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <source>Scene Description</source>
         <translation>Descrição de cena</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation type="unfinished">Adicionar</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioNavigator</name>
@@ -3656,6 +3688,18 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Duration from Start to Cursor Position | Full Duration</source>
         <translation>Duração do início à posição do cursor | Duração Completa</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find and replace</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
