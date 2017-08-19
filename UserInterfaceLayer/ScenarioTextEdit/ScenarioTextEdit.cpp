@@ -1017,7 +1017,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                 //
                 // Если прошли четверть виджета, но так и не нашли нужный блок, считаем до конца
                 //
-                if ((height() / 4) - positionForCheck < 0) {
+                if (height() - positionForCheck > (height() / 4) ) {
                     bottomCursor.movePosition(QTextCursor::End);
                     break;
                 }
@@ -1030,7 +1030,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             const QTextBlock bottomBlock = bottomCursor.block().next();
 
             //
-            // Проходим блоки на экрени и декорируем их
+            // Проходим блоки на экране и декорируем их
             //
             QTextBlock block = topBlock;
             const QRectF viewportGeometry = viewport()->geometry();

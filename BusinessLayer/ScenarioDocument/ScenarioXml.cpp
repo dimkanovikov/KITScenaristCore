@@ -1008,13 +1008,6 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         }
                         cursor.block().setUserData(info);
                     }
-
-                    //
-                    // Скрываем блоки, которых не должно быть видно в текщем режиме сценария
-                    //
-                    if (!m_scenario->document()->visibleBlocksTypes().contains(tokenType)) {
-                        cursor.block().setVisible(false);
-                    }
                 }
                 //
                 // Обработка остальных тэгов

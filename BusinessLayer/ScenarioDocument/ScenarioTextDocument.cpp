@@ -462,24 +462,22 @@ bool ScenarioTextDocument::outlineMode() const
 
 void ScenarioTextDocument::setOutlineMode(bool _outlineMode)
 {
-    if (m_outlineMode != _outlineMode) {
-        m_outlineMode = _outlineMode;
+    m_outlineMode = _outlineMode;
 
-        //
-        // Сформируем список типов блоков для отображения
-        //
-        QList<ScenarioBlockStyle::Type> visibleBlocksTypes = this->visibleBlocksTypes();
+    //
+    // Сформируем список типов блоков для отображения
+    //
+    QList<ScenarioBlockStyle::Type> visibleBlocksTypes = this->visibleBlocksTypes();
 
-        //
-        // Пробегаем документ и настраиваем видимые и невидимые блоки
-        //
-        QTextCursor cursor(this);
-        while (!cursor.atEnd()) {
-            QTextBlock block = cursor.block();
-            block.setVisible(visibleBlocksTypes.contains(ScenarioBlockStyle::forBlock(block)));
-            cursor.movePosition(QTextCursor::EndOfBlock);
-            cursor.movePosition(QTextCursor::NextBlock);
-        }
+    //
+    // Пробегаем документ и настраиваем видимые и невидимые блоки
+    //
+    QTextCursor cursor(this);
+    while (!cursor.atEnd()) {
+        QTextBlock block = cursor.block();
+        block.setVisible(visibleBlocksTypes.contains(ScenarioBlockStyle::forBlock(block)));
+        cursor.movePosition(QTextCursor::EndOfBlock);
+        cursor.movePosition(QTextCursor::NextBlock);
     }
 }
 
