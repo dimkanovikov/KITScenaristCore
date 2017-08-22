@@ -182,7 +182,7 @@ void PageTextEditPrivate::init(const QString &html)
 #ifndef QT_NO_CURSOR
     viewport->setCursor(Qt::IBeamCursor);
 #endif
-#ifdef Q_DEAD_CODE_FROM_QT4_WIN
+#if 0 // Used to be included in Qt4 for Q_WS_WIN
     setSingleFingerPanEnabled(true);
 #endif
 }
@@ -2117,7 +2117,7 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
     if (layout)
         layout->setViewport(QRect());
 
-    if (!placeholderText.isEmpty() && doc->isEmpty()) {
+    if (!placeholderText.isEmpty() && doc->isEmpty() && !control->isPreediting()) {
         QColor col = control->palette().text().color();
         col.setAlpha(128);
         p->setPen(col);
@@ -2181,8 +2181,8 @@ void PageTextEdit::mouseMoveEvent(QMouseEvent *e)
 {
     Q_D(PageTextEdit);
     d->inDrag = false; // paranoia
-    d->sendControlMouseEvent(e);
     const QPoint pos = e->pos();
+    d->sendControlMouseEvent(e);
     if (!(e->buttons() & Qt::LeftButton))
         return;
     if (e->source() == Qt::MouseEventNotSynthesized) {
@@ -2316,6 +2316,7 @@ void PageTextEdit::scrollContentsBy(int dx, int dy)
     if (isRightToLeft())
         dx = -dx;
     d->viewport->scroll(dx, dy);
+    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle | Qt::ImAnchorRectangle);
 }
 
 /*!\reimp
@@ -2330,10 +2331,33 @@ QVariant PageTextEdit::inputMethodQuery(Qt::InputMethodQuery property) const
 QVariant PageTextEdit::inputMethodQuery(Qt::InputMethodQuery query, QVariant argument) const
 {
     Q_D(const PageTextEdit);
-    if (query == Qt::ImHints)
+    switch (query) {
+        case Qt::ImHints:
+        case Qt::ImInputItemClipRectangle:
         return QWidget::inputMethodQuery(query);
-    const QVariant v = d->control->inputMethodQuery(query, argument);
+    default:
+        break;
+    }
+
     const QPointF offset(-d->horizontalOffset(), -d->verticalOffset());
+    switch (argument.type()) {
+    case QVariant::RectF:
+        argument = argument.toRectF().translated(-offset);
+        break;
+    case QVariant::PointF:
+        argument = argument.toPointF() - offset;
+        break;
+    case QVariant::Rect:
+        argument = argument.toRect().translated(-offset.toPoint());
+        break;
+    case QVariant::Point:
+        argument = argument.toPoint() - offset;
+        break;
+    default:
+        break;
+    }
+
+    const QVariant v = d->control->inputMethodQuery(query, argument);
     switch (v.type()) {
     case QVariant::RectF:
         return v.toRectF().translated(offset);

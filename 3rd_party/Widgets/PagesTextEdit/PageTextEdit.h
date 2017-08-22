@@ -95,8 +95,8 @@ public:
 
     Q_DECLARE_FLAGS(AutoFormatting, AutoFormattingFlag)
 
-    explicit PageTextEdit(QWidget *parent = 0);
-    explicit PageTextEdit(const QString &text, QWidget *parent = 0);
+    explicit PageTextEdit(QWidget *parent = nullptr);
+    explicit PageTextEdit(const QString &text, QWidget *parent = nullptr);
     virtual ~PageTextEdit();
 
     void setDocument(QTextDocument *document);
