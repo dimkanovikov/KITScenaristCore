@@ -62,6 +62,8 @@
         <file>Icons/Editing/format-bold.png</file>
         <file>Icons/Editing/format-italic.png</file>
         <file>Icons/Editing/format-underline.png</file>
+        <file>Icons/Mobile/chevron-down.png</file>
+        <file>Icons/Mobile/chevron-up.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/ScenaristMobile_ru.qm</file>

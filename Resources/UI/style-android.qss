@@ -664,3 +664,13 @@ QLabel[simpleText=true] {
     font-size: 16dp;
     font-weight: 400;
 }
+
+/*
+ * Стиль строки ввода
+ */
+QLineEdit[inlineInput=true] {
+    margin: 0dp 16dp 1dp 16dp;
+    padding: 0;
+    font-size: 16pt;
+    border: none;
+}
