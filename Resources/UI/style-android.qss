@@ -42,6 +42,8 @@ QToolButton {
     min-width: 56dp;
     min-height: 56dp;
     icon-size: 24dp;
+    font-size: 16pt;
+    font-weight: 600;
     background-color: transparent;
     border: none;
 }
@@ -551,8 +553,6 @@ QCheckBox::indicator:checked {
  */
 
 QToolButton[styleButton=true] {
-    font-size: 16pt;
-    font-weight: 600;
     background-color: palette(button);
 }
 
@@ -680,4 +680,9 @@ QLineEdit[inlineInput=true] {
  */
 QFrame[simpleFrame=true] {
     margin: 16dp;
+}
+
+
+QToolButton[searchButton=true] {
+    border-left: 1dp solid palette(dark);
 }
