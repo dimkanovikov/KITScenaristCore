@@ -674,3 +674,10 @@ QLineEdit[inlineInput=true] {
     font-size: 16pt;
     border: none;
 }
+
+/*
+ * Стиль обычного фрейма внутри содержимого страницы
+ */
+QFrame[simpleFrame=true] {
+    margin: 16dp;
+}
