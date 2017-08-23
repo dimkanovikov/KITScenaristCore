@@ -2774,7 +2774,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Navigator</source>
-        <translation type="vanished">Navegador</translation>
+        <translation>Navegador</translation>
     </message>
     <message>
         <source>Chronometry/Counters</source>
@@ -3110,6 +3110,18 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Use dark theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show scene numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show scene description, lines</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -2834,7 +2834,7 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>Navigator</source>
-        <translation type="vanished">Навігатор</translation>
+        <translation>Навігатор</translation>
     </message>
     <message>
         <source>Chronometry/Counters</source>
@@ -3166,6 +3166,18 @@ Paragraph</source>
     </message>
     <message>
         <source>Use dark theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show scene numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show scene description, lines</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
