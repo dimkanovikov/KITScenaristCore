@@ -192,40 +192,54 @@ void FolderHeaderHandler::handleOther(QKeyEvent* _event)
 		return;
 	}
 
-	//
-	// Найти закрывающий блок и обновить его текст
-	//
+    updateFooter();
+}
 
-	QTextCursor cursor = editor()->textCursor();
+void FolderHeaderHandler::handleInput(QInputMethodEvent* _event)
+{
+    //
+    // Если не было введено текста, прерываем операцию
+    //
+    if (_event->commitString().isEmpty()
+        || _event->preeditString().isEmpty()) {
+        return;
+    }
 
-	//
-	// Если редактируется заголовок группы
-	//
-	if (editor()->scenarioBlockType() == ScenarioBlockStyle::FolderHeader) {
-		//
-		// ... открытые группы на пути поиска необходимого для обновления блока
-		//
-		int openedGroups = 0;
-		bool isFooterUpdated = false;
-		while (!isFooterUpdated && !cursor.atEnd()) {
-			cursor.movePosition(QTextCursor::EndOfBlock);
-			cursor.movePosition(QTextCursor::NextBlock);
+    updateFooter();
+}
 
-			ScenarioBlockStyle::Type currentType =
-					ScenarioBlockStyle::forBlock(cursor.block());
+void FolderHeaderHandler::updateFooter()
+{
+    QTextCursor cursor = editor()->textCursor();
 
-			if (currentType == ScenarioBlockStyle::FolderFooter) {
-				if (openedGroups == 0) {
-					cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
-					cursor.insertText(Helpers::footerText(editor()->textCursor().block().text()));
-					isFooterUpdated = true;
-				} else {
-					--openedGroups;
-				}
-			} else if (currentType == ScenarioBlockStyle::FolderHeader) {
-				// ... встретилась новая группа
-				++openedGroups;
-			}
-		}
-	}
+    //
+    // Если редактируется заголовок группы
+    //
+    if (editor()->scenarioBlockType() == ScenarioBlockStyle::FolderHeader) {
+        //
+        // ... открытые группы на пути поиска необходимого для обновления блока
+        //
+        int openedGroups = 0;
+        bool isFooterUpdated = false;
+        while (!isFooterUpdated && !cursor.atEnd()) {
+            cursor.movePosition(QTextCursor::EndOfBlock);
+            cursor.movePosition(QTextCursor::NextBlock);
+
+            ScenarioBlockStyle::Type currentType =
+                    ScenarioBlockStyle::forBlock(cursor.block());
+
+            if (currentType == ScenarioBlockStyle::FolderFooter) {
+                if (openedGroups == 0) {
+                    cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+                    cursor.insertText(Helpers::footerText(editor()->textCursor().block().text()));
+                    isFooterUpdated = true;
+                } else {
+                    --openedGroups;
+                }
+            } else if (currentType == ScenarioBlockStyle::FolderHeader) {
+                // ... встретилась новая группа
+                ++openedGroups;
+            }
+        }
+    }
 }
