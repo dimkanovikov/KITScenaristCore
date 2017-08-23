@@ -30,6 +30,10 @@ QTabBar::tab:!selected {
     border-bottom-color: palette(button);
 }
 
+QTabBar::tab:!enabled {
+    color: palette(dark);
+}
+
 /********************************************
  * Стандартные настройки стилей для виджетов
  */
