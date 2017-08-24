@@ -56,6 +56,11 @@ public:
      */
     void setUseEmailKeyboard(bool _use);
 
+    /**
+     * @brief Установить режим встроенного редактора строки
+     */
+    void setInlineMode(bool _isInline);
+
 signals:
     /**
      * @brief Изменился текст в поле ввода
@@ -111,6 +116,11 @@ private:
      * @brief Ошибочное состояние
      */
     bool m_isError = false;
+
+    /**
+     * @brief Находится ли редактор во встроенном режиме
+     */
+    bool m_isInline = false;
 };
 
 #endif // MATERIALLINEEDIT_H

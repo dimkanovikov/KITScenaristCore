@@ -382,7 +382,16 @@ QLabel[materialLineEditHelper=false] {
     font-size: 12pt;
 }
 
-
+/*
+ * Стиль строки ввода
+ */
+QLineEdit[inlineInput=true] {
+    margin: 0dp 16dp 1dp 16dp;
+    padding: 0;
+    font-size: 16pt;
+    background-color: transparent;
+    border: none;
+}
 
 /******************************************
  * Стиль материального выпадающего списка
@@ -648,16 +657,6 @@ QLabel[simpleText=true] {
     margin: 16dp;
     font-size: 16dp;
     font-weight: 400;
-}
-
-/*
- * Стиль строки ввода
- */
-QLineEdit[inlineInput=true] {
-    margin: 0dp 16dp 1dp 16dp;
-    padding: 0;
-    font-size: 16pt;
-    border: none;
 }
 
 /*

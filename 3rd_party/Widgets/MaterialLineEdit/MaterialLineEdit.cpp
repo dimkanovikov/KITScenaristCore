@@ -90,6 +90,14 @@ void MaterialLineEdit::setUseEmailKeyboard(bool _use)
     }
 }
 
+void MaterialLineEdit::setInlineMode(bool _isInline)
+{
+    if (m_isInline != _isInline) {
+        m_isInline = _isInline;
+        updateStyle();
+    }
+}
+
 bool MaterialLineEdit::eventFilter(QObject* _watched, QEvent* _event)
 {
     if (_watched == m_lineEdit) {
@@ -117,9 +125,17 @@ bool MaterialLineEdit::eventFilter(QObject* _watched, QEvent* _event)
 
 void MaterialLineEdit::updateStyle()
 {
+    m_label->setVisible(!m_isInline);
     m_label->setProperty("materialLineEditLabel", !m_isError);
-    m_lineEdit->setProperty("materialLineEdit", !m_isError);
+    m_helper->setVisible(!m_isInline);
     m_helper->setProperty("materialLineEditHelper", !m_isError);
+    if (m_isInline) {
+        m_lineEdit->setProperty("materialLineEdit", QVariant());
+        m_lineEdit->setProperty("inlineInput", !m_isError);
+    } else {
+        m_lineEdit->setProperty("inlineInput", QVariant());
+        m_lineEdit->setProperty("materialLineEdit", !m_isError);
+    }
 
     setStyleSheet("");
 }
