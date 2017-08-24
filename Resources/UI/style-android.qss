@@ -199,6 +199,13 @@ QFrame[toolbar=true] QLabel {
     text-align: left;
 }
 
+QFrame[toolbar=true] QLabel[simpleText=true] {
+    margin-left: 8dp;
+    font-weight: 500;
+    font-size: 16pt;
+    text-align: left;
+}
+
 QFrame[toolbarBottomBordered=true] {
     border: none;
     border-bottom: 4dp solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 palette(shadow), stop:0.8 palette(window), stop:1 palette(window));
@@ -256,32 +263,6 @@ QToolButton[projectActionMenu=false] {
     padding-bottom: 1dp;
     background: palette(alternate-base);
     border: none;
-}
-
-/******************************
- * Панель инструментов вверху
- */
-
-QFrame[toolbar=true] {
-    background-color: palette(button);
-}
-
-QFrame[toolbar=true] QLabel {
-    margin-left: 8dp;
-    font-weight: 600;
-    font-size: 20pt;
-    text-align: left;
-}
-
-QFrame[toolbarBottomBordered=true] {
-    border: none;
-    border-bottom: 4dp solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 palette(shadow), stop:0.8 palette(window), stop:1 palette(window));
-    /*border-bottom: 4dp solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(178, 178, 178, 255), stop:0.4 rgba(192, 192, 192, 255), stop:0.8 rgba(233, 233, 233, 255), stop:1 rgba(244, 244, 244, 255));*/
-}
-
-QFrame[toolbarTopBordered=true] {
-    border: none;
-    border-top: 4dp solid qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 palette(shadow), stop:0.5 palette(window), stop:1 palette(window));
 }
 
 
