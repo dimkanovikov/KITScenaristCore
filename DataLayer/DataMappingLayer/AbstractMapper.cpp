@@ -321,7 +321,7 @@ bool AbstractMapper::executeSql(QSqlQuery& _sqlQuery)
             //
             // ... время выполнения
             //
-            q_history.addBindValue(QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss"));
+            q_history.addBindValue(QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz"));
 
             //
             // Сохраняем данные

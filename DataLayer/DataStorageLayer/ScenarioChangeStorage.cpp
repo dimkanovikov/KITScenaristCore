@@ -39,7 +39,16 @@ ScenarioChange* ScenarioChangeStorage::append(const QString& _id, const QString&
         return nullptr;
     }
 
-    QDateTime changeDatetime = QDateTime::fromString(_datetime, "yyyy-MM-dd hh:mm:ss");
+    //
+    // Пробуем загрузить дату из расширенного формата
+    //
+    QDateTime changeDatetime = QDateTime::fromString(_datetime, "yyyy-MM-dd hh:mm:ss:zzz");
+    //
+    // ... а если не удалось, загружаем из ограниченного
+    //
+    if (!changeDatetime.isValid()) {
+        changeDatetime = QDateTime::fromString(_datetime, "yyyy-MM-dd hh:mm:ss");
+    }
 
     //
     // Формируем изменение
@@ -71,7 +80,7 @@ ScenarioChange* ScenarioChangeStorage::append(const QString& _user, const QStrin
     const QString& _redoPatch, bool _isDraft)
 {
     return
-            append(QUuid::createUuid().toString(), QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss"),
+            append(QUuid::createUuid().toString(), QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz"),
                    _user, _undoPatch, _redoPatch, _isDraft);
 }
 
@@ -142,7 +151,7 @@ QList<QString> ScenarioChangeStorage::newUuids(const QString& _fromDatetime)
     foreach (DomainObject* domainObject, all()->toList()) {
         ScenarioChange* change = dynamic_cast<ScenarioChange*>(domainObject);
         if (change->user() == username
-            && change->datetime().toString("yyyy-MM-dd hh:mm:ss") > _fromDatetime) {
+            && change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz") > _fromDatetime) {
             allNew.append(change->uuid().toString());
         }
     }

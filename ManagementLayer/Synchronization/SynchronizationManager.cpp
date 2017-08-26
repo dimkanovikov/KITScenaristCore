@@ -922,7 +922,7 @@ void SynchronizationManager::aboutFullSyncScenario()
         // Запоминаем время синхронизации изменений сценария, в дальнейшем будем отправлять
         // изменения произведённые с данного момента
         //
-        m_lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss");
+        m_lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
         //
         // Получить список патчей проекта
@@ -1077,7 +1077,7 @@ void SynchronizationManager::aboutWorkSyncScenario()
             // Запоминаем время синхронизации изменений сценария
             //
             const QString prevChangesSyncDatetime = m_lastChangesSyncDatetime;
-            m_lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss");
+            m_lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
             //
             // Отправляем
@@ -1182,7 +1182,7 @@ void SynchronizationManager::aboutFullSyncData()
         // Запоминаем время синхронизации данных, в дальнейшем будем отправлять изменения
         // произведённые с данного момента
         //
-        m_lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss");
+        m_lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
         //
         // Получить список всех изменений данных на сервере
@@ -1295,7 +1295,7 @@ void SynchronizationManager::aboutWorkSyncData()
             // Запоминаем время синхронизации изменений данных сценария
             //
             const QString prevDataSyncDatetime = m_lastDataSyncDatetime;
-            m_lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss");
+            m_lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
             //
             // Отправляем

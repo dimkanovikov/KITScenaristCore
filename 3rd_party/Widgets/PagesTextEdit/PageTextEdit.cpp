@@ -2117,7 +2117,11 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
     if (layout)
         layout->setViewport(QRect());
 
-    if (!placeholderText.isEmpty() && doc->isEmpty() && !control->isPreediting()) {
+    if (!placeholderText.isEmpty() && doc->isEmpty()
+#if QT_VERSION >= 0x050800
+        && !control->isPreediting()
+#endif
+        ) {
         QColor col = control->palette().text().color();
         col.setAlpha(128);
         p->setPen(col);

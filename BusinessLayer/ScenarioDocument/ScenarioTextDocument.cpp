@@ -380,7 +380,7 @@ int ScenarioTextDocument::undoReimpl()
 
 #ifdef PATCH_DEBUG
         qDebug() << "*******************************************************************";
-        qDebug() << change->uuid().toString() << change->user() << characterCount();
+        qDebug() << change->uuid().toString() << change->user() << characterCount() << change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz");
 #endif
 
         m_redoStack.append(change);
@@ -403,7 +403,7 @@ int ScenarioTextDocument::redoReimpl()
 
 #ifdef PATCH_DEBUG
         qDebug() << "*******************************************************************";
-        qDebug() << change->uuid().toString() << change->user() << characterCount();
+        qDebug() << change->uuid().toString() << change->user() << characterCount() << change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz");
 #endif
 
         m_undoStack.append(change);
