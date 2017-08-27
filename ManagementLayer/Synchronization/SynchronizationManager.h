@@ -149,8 +149,9 @@ namespace ManagementLayer
 
         /**
          * @brief Полная синхронизация сценария
+         * @return Были ли загружены изменения сценария
          */
-        void aboutFullSyncScenario();
+        bool aboutFullSyncScenario();
 
         /**
          * @brief Синхронизация сценария во время работы над ним

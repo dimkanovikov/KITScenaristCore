@@ -2118,7 +2118,7 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
         layout->setViewport(QRect());
 
     if (!placeholderText.isEmpty() && doc->isEmpty()
-#if QT_VERSION >= 0x050800
+#if QT_VERSION >= 0x050900
         && !control->isPreediting()
 #endif
         ) {
@@ -2320,7 +2320,11 @@ void PageTextEdit::scrollContentsBy(int dx, int dy)
     if (isRightToLeft())
         dx = -dx;
     d->viewport->scroll(dx, dy);
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle | Qt::ImAnchorRectangle);
+    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
+#if QT_VERSION >= 0x050900
+                                           | Qt::ImAnchorRectangle
+#endif
+                                           );
 }
 
 /*!\reimp
@@ -2337,7 +2341,9 @@ QVariant PageTextEdit::inputMethodQuery(Qt::InputMethodQuery query, QVariant arg
     Q_D(const PageTextEdit);
     switch (query) {
         case Qt::ImHints:
+#if QT_VERSION >= 0x050900
         case Qt::ImInputItemClipRectangle:
+#endif
         return QWidget::inputMethodQuery(query);
     default:
         break;

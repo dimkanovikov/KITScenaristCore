@@ -915,8 +915,9 @@ void SynchronizationManager::prepareToFullSynchronization()
     m_lastDataSyncDatetime.clear();
 }
 
-void SynchronizationManager::aboutFullSyncScenario()
+bool SynchronizationManager::aboutFullSyncScenario()
 {
+    bool hasChanges = false;
     if (isCanSync()) {
         //
         // Запоминаем время синхронизации изменений сценария, в дальнейшем будем отправлять
@@ -937,7 +938,7 @@ void SynchronizationManager::aboutFullSyncScenario()
 
         QXmlStreamReader changesReader(response);
         if (!isOperationSucceed(changesReader)) {
-            return;
+            return false;
         }
 
 
@@ -1033,6 +1034,7 @@ void SynchronizationManager::aboutFullSyncScenario()
             //
             if (!cleanPatches.isEmpty()) {
                 emit applyPatchesRequested(cleanPatches, IS_CLEAN);
+                hasChanges = true;
             }
             if (!draftPatches.isEmpty()) {
                 emit applyPatchesRequested(draftPatches, IS_DRAFT);
@@ -1044,6 +1046,8 @@ void SynchronizationManager::aboutFullSyncScenario()
             DataStorageLayer::StorageFacade::scenarioChangeStorage()->store();
         }
     }
+
+    return hasChanges;
 }
 
 void SynchronizationManager::aboutWorkSyncScenario()
