@@ -915,9 +915,8 @@ void SynchronizationManager::prepareToFullSynchronization()
     m_lastDataSyncDatetime.clear();
 }
 
-bool SynchronizationManager::aboutFullSyncScenario()
+void SynchronizationManager::aboutFullSyncScenario()
 {
-    bool hasChanges = false;
     if (isCanSync()) {
         //
         // Запоминаем время синхронизации изменений сценария, в дальнейшем будем отправлять
@@ -938,7 +937,7 @@ bool SynchronizationManager::aboutFullSyncScenario()
 
         QXmlStreamReader changesReader(response);
         if (!isOperationSucceed(changesReader)) {
-            return false;
+            return;
         }
 
 
@@ -961,6 +960,15 @@ bool SynchronizationManager::aboutFullSyncScenario()
         // Сформируем список изменений сценария хранящихся локально
         //
         QList<QString> localChanges = StorageFacade::scenarioChangeStorage()->uuids();
+        //
+        // ... обрабатываем крайний случай, если пользователь сделал изменения, они не успели синхронизироваться
+        //     и пропал интернет, таким образом они не смогут быть извлечены из БД, но могут из списка текущих правок
+        //
+        for (const QString& uuid : StorageFacade::scenarioChangeStorage()->newUuids(QString())) {
+            if (!localChanges.contains(uuid)) {
+                localChanges.append(uuid);
+            }
+        }
 
 
         //
@@ -1034,7 +1042,6 @@ bool SynchronizationManager::aboutFullSyncScenario()
             //
             if (!cleanPatches.isEmpty()) {
                 emit applyPatchesRequested(cleanPatches, IS_CLEAN);
-                hasChanges = true;
             }
             if (!draftPatches.isEmpty()) {
                 emit applyPatchesRequested(draftPatches, IS_DRAFT);
@@ -1046,8 +1053,6 @@ bool SynchronizationManager::aboutFullSyncScenario()
             DataStorageLayer::StorageFacade::scenarioChangeStorage()->store();
         }
     }
-
-    return hasChanges;
 }
 
 void SynchronizationManager::aboutWorkSyncScenario()
@@ -1080,21 +1085,21 @@ void SynchronizationManager::aboutWorkSyncScenario()
             //
             // Запоминаем время синхронизации изменений сценария
             //
-            const QString prevChangesSyncDatetime = m_lastChangesSyncDatetime;
-            m_lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
+            const QString currentChangesSyncDatetime =
+                    QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
             //
             // Отправляем
             //
-            QList<QString> newChanges =
-                    StorageFacade::scenarioChangeStorage()->newUuids(prevChangesSyncDatetime);
+            const QList<QString> newChanges =
+                    StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime);
             const bool changesUploaded = uploadScenarioChanges(newChanges);
 
             //
-            // Не обновляем время последней синхронизации, если изменения не были отправлены
+            // Обновляем время последней синхронизации, если изменения были отправлены
             //
-            if (changesUploaded == false) {
-                m_lastChangesSyncDatetime = prevChangesSyncDatetime;
+            if (changesUploaded) {
+                m_lastChangesSyncDatetime = currentChangesSyncDatetime;
             }
         }
 
@@ -1298,21 +1303,21 @@ void SynchronizationManager::aboutWorkSyncData()
             //
             // Запоминаем время синхронизации изменений данных сценария
             //
-            const QString prevDataSyncDatetime = m_lastDataSyncDatetime;
-            m_lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
+            const QString currentDataSyncDatetime =
+                    QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
             //
             // Отправляем
             //
-            QList<QString> newChanges =
-                    StorageFacade::databaseHistoryStorage()->history(prevDataSyncDatetime);
+            const QList<QString> newChanges =
+                    StorageFacade::databaseHistoryStorage()->history(m_lastDataSyncDatetime);
             const bool dataUploaded = uploadScenarioData(newChanges);
 
             //
-            // Не обновляем время последней синхронизации, если данные не были отправлены
+            // Обновляем время последней синхронизации, если данные были отправлены
             //
-            if (dataUploaded == false) {
-                m_lastDataSyncDatetime = prevDataSyncDatetime;
+            if (dataUploaded) {
+                m_lastDataSyncDatetime = currentDataSyncDatetime;
             }
         }
 
@@ -1453,7 +1458,6 @@ void SynchronizationManager::restartSession()
     // А если текущий проект - удаленный, то синхронизуем и его
     //
     if (ProjectsManager::currentProject().isRemote()) {
-        prepareToFullSynchronization();
         aboutFullSyncScenario();
         aboutFullSyncData();
     }
@@ -1932,8 +1936,17 @@ void SynchronizationManager::setInternetConnectionStatus(SynchronizationManager:
 {
     if (m_internetConnectionStatus != _newStatus) {
         m_internetConnectionStatus = _newStatus;
+        //
+        // Если обрели соединение, то переавторизуемся
+        //
         if (m_internetConnectionStatus == Active) {
             restartSession();
+        }
+        //
+        // А если потеряли, то очищаем даты синхронизации, будем синхронизировать всё целиком
+        //
+        else {
+            prepareToFullSynchronization();
         }
         emit networkStatusChanged(m_internetConnectionStatus);
     }

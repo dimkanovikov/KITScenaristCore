@@ -224,11 +224,11 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     qDebug() << "===================================================================";
     qDebug() << cursor.selectedText();
     qDebug() << "###################################################################";
-    qDebug() << qPrintable(xmlsForUpdate.first.xml);
+    qDebug() << qUtf8Printable(xmlsForUpdate.first.xml);
     qDebug() << "###################################################################";
-    qDebug() << qPrintable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
+    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
     qDebug() << "###################################################################";
-    qDebug() << qPrintable(xmlsForUpdate.second.xml);
+    qDebug() << qUtf8Printable(xmlsForUpdate.second.xml);
 #endif
 
     //
@@ -360,9 +360,9 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
 
 #ifdef PATCH_DEBUG
     qDebug() << "-------------------------------------------------------------------";
-    qDebug() << qPrintable(QByteArray::fromPercentEncoding(undoPatch.toUtf8()));
+    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(undoPatch.toUtf8()));
     qDebug() << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$";
-    qDebug() << qPrintable(QByteArray::fromPercentEncoding(redoPatch.toUtf8()));
+    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(redoPatch.toUtf8()));
 #endif
         }
     }
