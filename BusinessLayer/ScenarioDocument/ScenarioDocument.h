@@ -109,6 +109,16 @@ namespace BusinessLogic
 		 */
 		void setItemColorsAtPosition(int _position, const QString& _colors);
 
+        /**
+         * @brief Штамп сцены
+         */
+        QString itemStamp(ScenarioModelItem* _item) const;
+
+        /**
+         * @brief Установить штамп для сцены в указанной позиции
+         */
+        void setItemStampAtPosition(int _position, const QString& _stamp);
+
 		/**
 		 * @brief Название сцены в позиции
 		 */

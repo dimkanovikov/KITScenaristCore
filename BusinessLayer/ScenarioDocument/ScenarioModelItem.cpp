@@ -140,6 +140,18 @@ void ScenarioModelItem::setColors(const QString& _colors)
     }
 }
 
+QString ScenarioModelItem::stamp() const
+{
+    return m_stamp;
+}
+
+void ScenarioModelItem::setStamp(const QString& _stamp)
+{
+    if (m_stamp != _stamp) {
+        m_stamp = _stamp;
+    }
+}
+
 QString ScenarioModelItem::title() const
 {
     return m_title;

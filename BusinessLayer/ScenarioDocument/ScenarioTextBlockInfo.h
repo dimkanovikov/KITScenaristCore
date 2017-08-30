@@ -44,6 +44,16 @@ namespace BusinessLogic
         void setColors(const QString& _colors);
 
         /**
+         * @brief Получить штамп сцены
+         */
+        QString stamp() const;
+
+        /**
+         * @brief Установить штамп сцены
+         */
+        void setStamp(const QString& _stamp);
+
+        /**
          * @brief Получить название сцены
          */
         QString title() const;
@@ -83,6 +93,11 @@ namespace BusinessLogic
          * @brief Цвета сцены
          */
         QString m_colors;
+
+        /**
+         * @brief Штамп сцены
+         */
+        QString m_stamp;
 
         /**
          * @brief Название

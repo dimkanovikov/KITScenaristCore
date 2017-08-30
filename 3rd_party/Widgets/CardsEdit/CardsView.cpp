@@ -251,6 +251,7 @@ void CardsView::initConnections()
     connect(m_scene, &CardsScene::cardMoved, this, &CardsView::cardMoved);
     connect(m_scene, &CardsScene::cardMovedToGroup, this, &CardsView::cardMovedToGroup);
     connect(m_scene, &CardsScene::cardColorsChanged, this, &CardsView::cardColorsChanged);
+    connect(m_scene, &CardsScene::cardStampChanged, this, &CardsView::cardStampChanged);
     connect(m_scene, &CardsScene::cardTypeChanged, this, &CardsView::cardTypeChanged);
     connect(m_scene, &CardsScene::cardsChanged, this, &CardsView::cardsChanged);
 

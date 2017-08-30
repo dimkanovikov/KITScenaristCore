@@ -29,6 +29,7 @@ namespace {
     const QString ATTRIBUTE_DESCRIPTION = "description";
     const QString ATTRIBUTE_UUID = "uuid";
     const QString ATTRIBUTE_COLOR = "color";
+    const QString ATTRIBUTE_STAMP = "stamp";
     const QString ATTRIBUTE_TITLE = "title";
     const QString ATTRIBUTE_REVIEW_FROM = "from";
     const QString ATTRIBUTE_REVIEW_LENGTH = "length";
@@ -79,6 +80,8 @@ namespace {
             hash.append(QString::number(blockInfo->sceneNumber()));
             hash.append("#");
             hash.append(blockInfo->colors());
+            hash.append("#");
+            hash.append(blockInfo->stamp());
             hash.append("#");
             hash.append(blockInfo->title());
             hash.append("#");
@@ -228,7 +231,7 @@ QString ScenarioXml::scenarioToXml()
             //
             if (needWrite) {
                 //
-                // Если возможно, сохраним uuid, цвета элемента и его заголовок
+                // Если возможно, сохраним uuid, цвета элемента, штамп и его заголовок
                 //
                 QString uuidColorsAndTitle;
                 if (canHaveColors) {
@@ -243,6 +246,9 @@ QString ScenarioXml::scenarioToXml()
                     }
                     if (!info->colors().isEmpty()) {
                         uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_COLOR, info->colors());
+                    }
+                    if (!info->stamp().isEmpty()) {
+                        uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_STAMP, info->stamp());
                     }
                     if (!info->title().isEmpty()) {
                         uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->title()));
@@ -488,6 +494,9 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     }
                     if (!info->colors().isEmpty()) {
                         writer.writeAttribute(ATTRIBUTE_COLOR, info->colors());
+                    }
+                    if (!info->stamp().isEmpty()) {
+                        writer.writeAttribute(ATTRIBUTE_STAMP, info->stamp());
                     }
                     if (!info->title().isEmpty()) {
                         writer.writeAttribute(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->title()));
@@ -1002,6 +1011,9 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         }
                         if (reader.attributes().hasAttribute(ATTRIBUTE_COLOR)) {
                             info->setColors(reader.attributes().value(ATTRIBUTE_COLOR).toString());
+                        }
+                        if (reader.attributes().hasAttribute(ATTRIBUTE_STAMP)) {
+                            info->setStamp(reader.attributes().value(ATTRIBUTE_STAMP).toString());
                         }
                         if (reader.attributes().hasAttribute(ATTRIBUTE_TITLE)) {
                             info->setTitle(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));

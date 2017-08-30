@@ -23,12 +23,7 @@ CircleFillAnimator::CircleFillAnimator(QWidget* _widgetForFill) :
     m_decorator->setAttribute(Qt::WA_TransparentForMouseEvents);
     m_decorator->hide();
 
-    connect(m_animation, &QPropertyAnimation::finished, [=] {
-        setAnimatedStopped();
-        if (m_hideAfterFinish) {
-            hideDecorator();
-        }
-    });
+    connect(m_animation, &QPropertyAnimation::finished, this, &CircleFillAnimator::finalize);
 }
 
 void CircleFillAnimator::setStartPoint(const QPoint& _globalPoint)
@@ -149,6 +144,14 @@ void CircleFillAnimator::fillOut()
         m_animation->setStartValue(startRadius);
         m_animation->setEndValue(finalRadius);
         m_animation->start();
+    }
+}
+
+void CircleFillAnimator::finalize()
+{
+    setAnimatedStopped();
+    if (m_hideAfterFinish) {
+        hideDecorator();
     }
 }
 

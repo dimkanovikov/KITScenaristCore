@@ -258,6 +258,14 @@ QVariant ScenarioModel::data(const QModelIndex& _index, int _role) const
         }
 
         //
+        // Штамп сцены
+        //
+        case StampIndex: {
+            result = item->stamp();
+            break;
+        }
+
+        //
         // Название сцены
         //
         case TitleIndex: {
@@ -632,7 +640,7 @@ namespace {
                        .arg(_item->description().isEmpty()
                             ? TextEditHelper::toHtmlEscaped(_item->fullText())
                             : TextEditHelper::toHtmlEscaped(_item->description())));
-        cardXml.append(QString("stamp=\"\" "));
+        cardXml.append(QString("stamp=\"%1\" ").arg(_item->stamp()));
         cardXml.append(QString("colors=\"%1\" ").arg(_item->colors()));
         cardXml.append(QString("is_embedded=\"%1\" ").arg(_isEmbedded ? "true" : "false"));
         cardXml.append(QString("x=\"%1\" ").arg(_x));

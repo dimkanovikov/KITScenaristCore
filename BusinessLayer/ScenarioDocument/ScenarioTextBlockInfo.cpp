@@ -52,6 +52,18 @@ void ScenarioTextBlockInfo::setColors(const QString& _colors)
     }
 }
 
+QString ScenarioTextBlockInfo::stamp() const
+{
+    return m_stamp;
+}
+
+void ScenarioTextBlockInfo::setStamp(const QString& _stamp)
+{
+    if (m_stamp != _stamp) {
+        m_stamp = _stamp;
+    }
+}
+
 QString ScenarioTextBlockInfo::title() const
 {
     return m_title;
@@ -84,6 +96,7 @@ ScenarioTextBlockInfo* ScenarioTextBlockInfo::clone() const
     ScenarioTextBlockInfo* copy = new ScenarioTextBlockInfo(m_uuid);
     copy->m_sceneNumber = m_sceneNumber;
     copy->m_colors = m_colors;
+    copy->m_stamp = m_stamp;
     copy->m_description = m_description;
     return copy;
 }

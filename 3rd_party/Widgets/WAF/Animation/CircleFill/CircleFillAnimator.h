@@ -76,12 +76,17 @@ namespace WAF
         void fillOut();
         /** @} */
 
+    private:
+        /**
+         * @brief Завершить выполнение анимации
+         */
+        void finalize();
+
         /**
          * @brief Скрыть декоратор
          */
         void hideDecorator();
 
-    private:
         /**
          * @brief Получить виджет, который нужно заполнить
          */

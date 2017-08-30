@@ -197,6 +197,47 @@ void ScenarioDocument::setItemColorsAtPosition(int _position, const QString& _co
     }
 }
 
+QString ScenarioDocument::itemStamp(ScenarioModelItem* _item) const
+{
+    QTextCursor cursor(m_document);
+    cursor.setPosition(_item->position());
+
+    QString stamp;
+    QTextBlockUserData* textBlockData = cursor.block().userData();
+    if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData)) {
+        stamp = info->stamp();
+    }
+    return stamp;
+}
+
+void ScenarioDocument::setItemStampAtPosition(int _position, const QString& _stamp)
+{
+    if (ScenarioModelItem* item = itemForPosition(_position, true)) {
+        //
+        // Установить штамп в элемент
+        //
+        item->setStamp(_stamp);
+        m_model->updateItem(item);
+
+        //
+        // Установить штамп в документ
+        //
+        QTextCursor cursor(m_document);
+        cursor.setPosition(item->position());
+
+        QTextBlockUserData* textBlockData = cursor.block().userData();
+        ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
+        if (info == 0) {
+            info = new ScenarioTextBlockInfo(item->uuid());
+        }
+        info->setStamp(_stamp);
+        cursor.block().setUserData(info);
+
+        ScenarioTextDocument::updateBlockRevision(cursor);
+        aboutContentsChange(cursor.block().position(), 0, 0);
+    }
+}
+
 QString ScenarioDocument::itemTitleAtPosition(int _position) const
 {
     QString title;
@@ -968,6 +1009,8 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
     const QString title = itemTitle(_item);
     // ... цвет
     const QString colors = itemColors(_item);
+    // ... штамп
+    const QString stamp = itemStamp(_item);
     // ... текст и описание
     QString itemText;
     QString description;
@@ -1095,6 +1138,7 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
     _item->setType(itemType);
     _item->setHeader(itemHeader);
     _item->setColors(colors);
+    _item->setStamp(stamp);
     _item->setTitle(title);
     _item->setText(itemText);
     _item->setDescription(description);

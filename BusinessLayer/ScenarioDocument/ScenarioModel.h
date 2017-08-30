@@ -32,6 +32,7 @@ namespace BusinessLogic
         enum DataRoles {
             TypeIndex = Qt::UserRole + 1,
             ColorIndex,
+            StampIndex,
             TitleIndex,
             SceneTextIndex,
             DescriptionIndex,
