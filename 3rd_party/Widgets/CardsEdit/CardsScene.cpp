@@ -466,6 +466,7 @@ void CardsScene::updateItem(const QString& _uuid, bool _isFolder, int _number, c
                 card->setTitle(_title);
                 card->setDescription(_description);
                 card->setColors(_colors);
+                card->setStamp(_stamp);
                 card->setIsEmbedded(_isEmbedded);
 
                 //
