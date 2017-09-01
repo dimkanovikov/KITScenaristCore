@@ -365,7 +365,7 @@
 <context>
     <name>BusinessLogic::ScenarioModel</name>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="322"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="330"/>
         <source>FADE IN:</source>
         <translation>ИЗ ЗТМ:</translation>
     </message>
@@ -952,6 +952,14 @@ Project didn&apos;t synchronized.</source>
     </message>
 </context>
 <context>
+    <name>ManagementLayer::SettingsManager</name>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/SettingsManager.cpp" line="29"/>
+        <source>Language will be change after application restart.</source>
+        <translation>Язык будет обновлён после перезапуска приложения.</translation>
+    </message>
+</context>
+<context>
     <name>ManagementLayer::Sync</name>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="101"/>
@@ -1091,7 +1099,8 @@ Project didn&apos;t synchronized.</source>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.ui" line="172"/>
         <source>There will be a list of your projects.
 Let&apos;s create the first one!</source>
-        <translation type="unfinished"></translation>
+        <translation>Здесь будет список ваших проектов.
+Давайте же создадим первый!</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.ui" line="186"/>
@@ -1107,7 +1116,7 @@ Let&apos;s create the first one!</source>
         <translation>Сценарий</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="604"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="613"/>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
         <translation>КОНЕЦ ПАПКИ</translation>
@@ -1145,7 +1154,7 @@ Let&apos;s create the first one!</source>
 <context>
     <name>SettingsView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="125"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="171"/>
         <source>Navigator</source>
         <translation>Навигатор</translation>
     </message>
@@ -1155,23 +1164,28 @@ Let&apos;s create the first one!</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="104"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="140"/>
+        <source>Application</source>
+        <translation>Приложение</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="150"/>
         <source>Use dark theme</source>
         <translation>Использовать тёмную тему</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="111"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="157"/>
         <source>Script editor</source>
         <translation>Редактор сценария</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="118"/>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="132"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="164"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="178"/>
         <source>Show scene numbers</source>
         <translation>Отображать номера сцен</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="139"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="185"/>
         <source>Show scene description, lines</source>
         <translation>Отображать описание сцены, строк</translation>
     </message>
@@ -1425,12 +1439,12 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::ProjectsView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.cpp" line="97"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.cpp" line="126"/>
         <source>LOCAL</source>
         <translation>НА УСТРОЙСТВЕ</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.cpp" line="98"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.cpp" line="127"/>
         <source>IN CLOUD</source>
         <translation>В ОБЛАКЕ</translation>
     </message>
@@ -1441,6 +1455,20 @@ Your subscription is active until</source>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="154"/>
         <source>DRAFT</source>
         <translation>ЧЕРНОВИК</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::SettingsView</name>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="35"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="111"/>
+        <source>System</source>
+        <translation>Системный</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="110"/>
+        <source>Language</source>
+        <translation>Язык</translation>
     </message>
 </context>
 <context>
@@ -1469,28 +1497,48 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::SubscriptionView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="57"/>
         <source>1 mounth - %1 rubles</source>
+        <translation type="vanished">1 месяц - %1 рублей</translation>
+    </message>
+    <message>
+        <source>2 mounth - %1 rubles</source>
+        <translation type="vanished">2 месяца - %2 рублей</translation>
+    </message>
+    <message>
+        <source>3 mounth - %1 rubles</source>
+        <translation type="vanished">3 месяца - %1 рублей</translation>
+    </message>
+    <message>
+        <source>6 mounth (6% off) - %1 rubles</source>
+        <translation type="vanished">6 месяцев (-6%) - %1 рублей</translation>
+    </message>
+    <message>
+        <source>12 mounth (12% off) - %1 rubles</source>
+        <translation type="vanished">12 месяцев (-12%) - %1 рублей</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="57"/>
+        <source>1 month - %1 rubles</source>
         <translation>1 месяц - %1 рублей</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="58"/>
-        <source>2 mounth - %1 rubles</source>
+        <source>2 month - %1 rubles</source>
         <translation>2 месяца - %2 рублей</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="59"/>
-        <source>3 mounth - %1 rubles</source>
+        <source>3 month - %1 rubles</source>
         <translation>3 месяца - %1 рублей</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="60"/>
-        <source>6 mounth (6% off) - %1 rubles</source>
+        <source>6 month (6% off) - %1 rubles</source>
         <translation>6 месяцев (-6%) - %1 рублей</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="61"/>
-        <source>12 mounth (12% off) - %1 rubles</source>
+        <source>12 month (12% off) - %1 rubles</source>
         <translation>12 месяцев (-12%) - %1 рублей</translation>
     </message>
 </context>

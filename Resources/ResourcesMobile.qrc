@@ -73,6 +73,26 @@
         <file>Translations/qtbase_ru.qm</file>
         <file>Translations/ScenaristMobile_en.qm</file>
         <file>Translations/qtbase_en.qm</file>
+        <file>Translations/qt_de.qm</file>
+        <file>Translations/ScenaristMobile_de.qm</file>
+        <file>Translations/qt_es.qm</file>
+        <file>Translations/qt_fa.qm</file>
+        <file>Translations/qt_fr.qm</file>
+        <file>Translations/qt_kz.qm</file>
+        <file>Translations/qt_pt.qm</file>
+        <file>Translations/qt_zh.qm</file>
+        <file>Translations/qtbase_de.qm</file>
+        <file>Translations/qtbase_es.qm</file>
+        <file>Translations/qtbase_fr.qm</file>
+        <file>Translations/qtbase_pt.qm</file>
+        <file>Translations/ScenaristMobile_es.qm</file>
+        <file>Translations/ScenaristMobile_fa.qm</file>
+        <file>Translations/ScenaristMobile_fr.qm</file>
+        <file>Translations/ScenaristMobile_it.qm</file>
+        <file>Translations/ScenaristMobile_kz.qm</file>
+        <file>Translations/ScenaristMobile_pt.qm</file>
+        <file>Translations/ScenaristMobile_ua.qm</file>
+        <file>Translations/ScenaristMobile_zn.qm</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>
