@@ -143,6 +143,8 @@ void ScenarioTextDocument::load(const QString& _scenarioXml)
     m_undoStack.clear();
     m_redoStack.clear();
 
+    emit redoAvailableChanged(false);
+
 #ifdef PATCH_DEBUG
     foreach (DomainObject* obj, DataStorageLayer::StorageFacade::scenarioChangeStorage()->all()->toList()) {
         ScenarioChange* ch = dynamic_cast<ScenarioChange*>(obj);
@@ -356,7 +358,9 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
                 m_undoStack.takeFirst();
             }
             m_undoStack.append(change);
+
             m_redoStack.clear();
+            emit redoAvailableChanged(false);
 
 #ifdef PATCH_DEBUG
     qDebug() << "-------------------------------------------------------------------";
@@ -372,6 +376,10 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
 
 int ScenarioTextDocument::undoReimpl()
 {
+#ifdef MOBILE_OS
+    QApplication::inputMethod()->reset();
+#endif
+
     saveChanges();
 
     int pos = -1;
@@ -384,6 +392,7 @@ int ScenarioTextDocument::undoReimpl()
 #endif
 
         m_redoStack.append(change);
+        emit redoAvailableChanged(true);
         pos = applyPatch(change->undoPatch());
 
         //
@@ -397,6 +406,10 @@ int ScenarioTextDocument::undoReimpl()
 
 int ScenarioTextDocument::redoReimpl()
 {
+#ifdef MOBILE_OS
+    QApplication::inputMethod()->reset();
+#endif
+
     int pos = -1;
     if (!m_redoStack.isEmpty()) {
         Domain::ScenarioChange* change = m_redoStack.takeLast();
@@ -414,7 +427,15 @@ int ScenarioTextDocument::redoReimpl()
         //
         Domain::ScenarioChange* newChange = ::saveChange(change->undoPatch(), change->redoPatch());
         newChange->setIsDraft(change->isDraft());
+
+        //
+        // Если больше нельзя повторить отменённое действие, испускаем соответствующий сигнал
+        //
+        if (m_redoStack.isEmpty()) {
+            emit redoAvailableChanged(false);
+        }
     }
+
     return pos;
 }
 
