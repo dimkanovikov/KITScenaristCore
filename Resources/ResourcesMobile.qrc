@@ -66,6 +66,7 @@
         <file>Icons/Mobile/chevron-up.png</file>
         <file>Icons/Editing/redo.png</file>
         <file>Icons/Editing/undo.png</file>
+        <file>Icons/Mobile/menu/title-page.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/ScenaristMobile_ru.qm</file>
