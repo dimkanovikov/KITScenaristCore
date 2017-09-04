@@ -2,6 +2,7 @@
 
 #include <QAbstractItemView>
 #include <QLabel>
+#include <QStringListModel>
 #include <QStyledItemDelegate>
 #include <QVBoxLayout>
 
@@ -36,6 +37,11 @@ void MaterialComboBox::setModel(QAbstractItemModel* _model)
 {
     m_comboBox->setModel(_model);
     m_comboBox->view()->setItemDelegate(m_delegate);
+}
+
+void MaterialComboBox::setModel(const QStringList& _model)
+{
+    setModel(new QStringListModel(_model, m_comboBox));
 }
 
 void MaterialComboBox::setCurrentText(const QString& _text)

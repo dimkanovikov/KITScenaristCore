@@ -476,6 +476,11 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     return menu;
 }
 
+bool ScenarioTextEdit::isRedoAvailable() const
+{
+    return m_document->isRedoAvailableReimpl();
+}
+
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 {
 #ifdef MOBILE_OS
@@ -1839,6 +1844,7 @@ void ScenarioTextEdit::initEditorConnections()
         connect(m_document, SIGNAL(beforePatchApply()), this, SLOT(aboutSaveEditorState()));
         connect(m_document, SIGNAL(afterPatchApply()), this, SLOT(aboutLoadEditorState()));
         connect(m_document, SIGNAL(reviewChanged()), this, SIGNAL(reviewChanged()));
+        connect(m_document, &ScenarioTextDocument::redoAvailableChanged, this, &ScenarioTextEdit::redoAvailableChanged);
     }
 }
 
@@ -1850,6 +1856,7 @@ void ScenarioTextEdit::removeEditorConnections()
         disconnect(m_document, SIGNAL(beforePatchApply()), this, SLOT(aboutSaveEditorState()));
         disconnect(m_document, SIGNAL(afterPatchApply()), this, SLOT(aboutLoadEditorState()));
         disconnect(m_document, SIGNAL(reviewChanged()), this, SIGNAL(reviewChanged()));
+        disconnect(m_document, &ScenarioTextDocument::redoAvailableChanged, this, &ScenarioTextEdit::redoAvailableChanged);
     }
 }
 

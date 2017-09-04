@@ -139,6 +139,11 @@ namespace BusinessLogic
          */
         void reviewChanged();
 
+        /**
+         * @brief Изменилась доступность повтора отменённого действия
+         */
+        void redoAvailableChanged(bool _isRedoAvailable);
+
     private:
         /**
          * @brief Процедура удаления одинаковый первых и последних частей в xml-строках у _xmls

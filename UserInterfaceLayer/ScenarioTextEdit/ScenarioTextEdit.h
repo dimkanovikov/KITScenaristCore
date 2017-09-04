@@ -149,6 +149,11 @@ namespace UserInterface
          * @note Управление памятью передаётся вызывающему метод
          */
         QMenu* createContextMenu(const QPoint& _pos, QWidget* _parent = 0) override;
+
+        /**
+         * @brief Доступно ли действие повтора отменённого действия
+         */
+        bool isRedoAvailable() const;
         
     signals:
         /**
@@ -160,6 +165,11 @@ namespace UserInterface
          * @brief Запрос на повтор последнего действия
          */
         void redoRequest();
+
+        /**
+         * @brief Изменилось состояние доступности повтора отменённого действия
+         */
+        void redoAvailableChanged(bool _isRedoAvailable);
 
         /**
          * @brief Сменился стиль под курсором

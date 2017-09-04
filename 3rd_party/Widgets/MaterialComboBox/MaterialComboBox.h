@@ -28,6 +28,11 @@ public:
     void setModel(QAbstractItemModel* _model);
 
     /**
+     * @brief Установить список строк в качестве модели
+     */
+    void setModel(const QStringList& _model);
+
+    /**
      * @brief Установить текущий элемент списка
      */
     void setCurrentText(const QString& _text);

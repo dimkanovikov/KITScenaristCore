@@ -789,6 +789,13 @@ O projeto não foi sincronizado.</translation>
     </message>
 </context>
 <context>
+    <name>ManagementLayer::SettingsManager</name>
+    <message>
+        <source>Language will be change after application restart.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ManagementLayer::Sync</name>
     <message>
         <source>Can&apos;t estabilish network connection.</source>
@@ -970,6 +977,10 @@ Let&apos;s create the first one!</source>
     </message>
     <message>
         <source>Show scene description, lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Application</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1191,6 +1202,17 @@ Your subscription is active until</source>
     </message>
 </context>
 <context>
+    <name>UserInterface::SettingsView</name>
+    <message>
+        <source>System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UserInterface::ShareDialog</name>
     <message>
         <source>Share</source>
@@ -1212,23 +1234,23 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::SubscriptionView</name>
     <message>
-        <source>1 mounth - %1 rubles</source>
+        <source>1 month - %1 rubles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>2 mounth - %1 rubles</source>
+        <source>2 month - %1 rubles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>3 mounth - %1 rubles</source>
+        <source>3 month - %1 rubles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>6 mounth (6% off) - %1 rubles</source>
+        <source>6 month (6% off) - %1 rubles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>12 mounth (12% off) - %1 rubles</source>
+        <source>12 month (12% off) - %1 rubles</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
