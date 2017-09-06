@@ -99,6 +99,11 @@ namespace ManagementLayer
          */
         void hideProjectFromLocal(const QModelIndex& _index);
 
+        /**
+         * @brief Загрузить список недавних проектов
+         */
+        void loadRecentProjects();
+
     public slots:
         /**
          * @brief Обновить список проектов
@@ -123,11 +128,6 @@ namespace ManagementLayer
         void remoteProjectsUpdated();
 
     private:
-        /**
-         * @brief Загрузить список недавних проектов
-         */
-        void loadRecentProjects();
-
         /**
          * @brief Сохранить список недавних проектов
          */

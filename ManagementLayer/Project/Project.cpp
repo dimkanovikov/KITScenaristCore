@@ -3,6 +3,8 @@
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
+#include <ManagementLayer/Project/ProjectsManager.h>
+
 #include <3rd_party/Helpers/PasswordStorage.h>
 
 #include <QApplication>
@@ -10,6 +12,7 @@
 #include <QStandardPaths>
 
 using ManagementLayer::Project;
+using ManagementLayer::ProjectsManager;
 using DataStorageLayer::StorageFacade;
 using DataStorageLayer::SettingsStorage;
 
@@ -37,7 +40,14 @@ Project::Role Project::roleFromString(const QString& _role)
 
 QString Project::remoteProjectsDirPath()
 {
+    //
+    // У мобилок другая директория облачных проектов
+    //
+#ifdef MOBILE_OS
+    const QString appDataFolderPath = ProjectsManager::defaultLocation();
+#else
     const QString appDataFolderPath = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+#endif
     const QString login = DataStorageLayer::StorageFacade::username();
     return QString("%1%4%2%4%3").arg(appDataFolderPath).arg("Projects").arg(login).arg(QDir::separator());
 }
