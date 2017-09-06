@@ -43,7 +43,7 @@ QString Project::remoteProjectsDirPath()
     //
     // У мобилок другая директория облачных проектов
     //
-#if defined(Q_OS_IOS) || defined(Q_OS_ANDROID)
+#ifdef MOBILE_OS
     const QString appDataFolderPath = ProjectsManager::defaultLocation();
 #else
     const QString appDataFolderPath = QStandardPaths::writableLocation(QStandardPaths::DataLocation);

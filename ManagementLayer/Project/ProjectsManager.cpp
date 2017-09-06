@@ -433,9 +433,11 @@ void ProjectsManager::loadRecentProjects()
         const QString name = recentFiles.value(path);
 
         //
-        // Абсолютный путь до проекта
+        // Поскольку для iOS пути хранятся относительные, то построим абсолютный
         //
+#ifdef Q_OS_IOS
         path = QDir(defaultLocation()).filePath(path);
+#endif
 
         //
         // Сам проект
