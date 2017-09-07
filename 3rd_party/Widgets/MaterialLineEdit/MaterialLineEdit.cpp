@@ -7,10 +7,59 @@
 #include <QVBoxLayout>
 
 
+/**
+ * @brief Редактор текста, которому можно отключить корректировку позиции на экране
+ * @note Используется на iOS, когда нужно разместить виджет независимо от других условий
+ */
+class LineEditWithFixedPosition : public QLineEdit
+{
+public:
+    explicit LineEditWithFixedPosition(QWidget* _parent = nullptr) : QLineEdit(_parent) {}
+    
+    /**
+     * @brief Установить необходимость корректировки позиции
+     */
+    void setNeedCorrectPosition(bool _needCorrect) {
+        if (m_needCorrectPosition != _needCorrect) {
+            m_needCorrectPosition = _needCorrect;
+        }
+    }
+    
+    /**
+     * @brief Переопределяем для корректной работы позиционирования виджета на экране
+     */
+    /** @{ */
+    QVariant inputMethodQuery(Qt::InputMethodQuery _property) const Q_DECL_OVERRIDE {
+        return inputMethodQuery(_property, QVariant());
+    }
+    Q_INVOKABLE QVariant inputMethodQuery(Qt::InputMethodQuery _query, QVariant _argument) const {
+        QVariant result = QLineEdit::inputMethodQuery(_query, _argument);
+#ifdef Q_OS_IOS
+        if (!m_needCorrectPosition) {
+            //
+            // Делаем курсор всегда на нуле, чтобы редактор сценария не выкидывало ни вниз ни вверх
+            //
+            if (_query & Qt::ImCursorRectangle) {
+                result = QRectF(0,0,0,0);
+            }
+        }
+#endif
+        return result;
+    }
+    /** @} */
+    
+private:
+    /**
+     * @brief Необходимо ли корректировать позицию на экране
+     */
+    bool m_needCorrectPosition = true;
+};
+
+
 MaterialLineEdit::MaterialLineEdit(QWidget* _parent) :
     QWidget(_parent),
     m_label(new QLabel(this)),
-    m_lineEdit(new QLineEdit(this)),
+    m_lineEdit(new LineEditWithFixedPosition(this)),
     m_helper(new QLabel(this))
 {
     setFocusProxy(m_lineEdit);
@@ -94,8 +143,16 @@ void MaterialLineEdit::setInlineMode(bool _isInline)
 {
     if (m_isInline != _isInline) {
         m_isInline = _isInline;
+#ifdef Q_OS_IOS
+        m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints() | Qt::ImhNoPredictiveText);
+#endif
         updateStyle();
     }
+}
+
+void MaterialLineEdit::setNeedCorrectScreenPosition(bool _needCorrect)
+{
+    m_lineEdit->setNeedCorrectPosition(_needCorrect);
 }
 
 bool MaterialLineEdit::eventFilter(QObject* _watched, QEvent* _event)

@@ -3,6 +3,7 @@
 
 #include <QLineEdit>
 
+class LineEditWithFixedPosition;
 class QLabel;
 
 
@@ -60,6 +61,11 @@ public:
      * @brief Установить режим встроенного редактора строки
      */
     void setInlineMode(bool _isInline);
+    
+    /**
+     * @brief Установить необходимость корректировать положение редактора текста на экране
+     */
+    void setNeedCorrectScreenPosition(bool _needCorrect);
 
 signals:
     /**
@@ -93,7 +99,7 @@ private:
     /**
      * @brief Поле для ввода текста
      */
-    QLineEdit* m_lineEdit = nullptr;
+    LineEditWithFixedPosition* m_lineEdit = nullptr;
 
     /**
      * @brief Введённый текст

@@ -213,14 +213,12 @@ bool ScalableWrapper::event(QEvent* _event)
     // Прочие стандартные обработчики событий
     //
     else {
-        
         result = QGraphicsView::event(_event);
 
         //
         // Переустанавливаем фокус в редактор, иначе в нём пропадает курсор
         //
         if (_event->type() == QEvent::FocusIn) {
-            m_editor->clearFocus();
             m_editor->setFocus();
         }
     }
