@@ -5,22 +5,22 @@
     <name>AccountView</name>
     <message>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Акаунт</translation>
     </message>
     <message>
         <source>RENEW SUBSCRIPTION</source>
-        <translation type="unfinished"></translation>
+        <translation>Поновити підписку</translation>
     </message>
 </context>
 <context>
     <name>AddProjectView</name>
     <message>
         <source>CREATE</source>
-        <translation type="unfinished"></translation>
+        <translation>СТВОРИТИ</translation>
     </message>
     <message>
         <source>Create project</source>
-        <translation type="unfinished"></translation>
+        <translation>Створити проект</translation>
     </message>
 </context>
 <context>
@@ -35,15 +35,15 @@
     </message>
     <message>
         <source>EST</source>
-        <translation type="unfinished"></translation>
+        <translation>АДР</translation>
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ./НАТ</translation>
     </message>
     <message>
         <source>INT/EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ/НАТ</translation>
     </message>
 </context>
 <context>
@@ -58,19 +58,19 @@
     </message>
     <message>
         <source>EST</source>
-        <translation type="unfinished"></translation>
+        <translation>АДР</translation>
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ./НАТ</translation>
     </message>
     <message>
         <source>INT/EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ/НАТ</translation>
     </message>
     <message>
         <source>I/E</source>
-        <translation type="unfinished"></translation>
+        <translation>І/Н</translation>
     </message>
 </context>
 <context>
@@ -113,11 +113,11 @@
     </message>
     <message>
         <source>Final Draft template</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарій формату Final Draft</translation>
     </message>
     <message>
         <source>Fountain Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Fountain Text</translation>
     </message>
 </context>
 <context>
@@ -202,7 +202,7 @@
     </message>
     <message>
         <source>Title Header</source>
-        <translation>Title Header</translation>
+        <translation>Колонтитул</translation>
     </message>
     <message>
         <source>Title</source>
@@ -210,7 +210,7 @@
     </message>
     <message>
         <source>Noprintable Text</source>
-        <translation>Нотатка по тексту</translation>
+        <translation>Недрукований текст</translation>
     </message>
     <message>
         <source>Folder</source>
@@ -311,7 +311,7 @@
     <name>BusinessLogic::ScenarioModel</name>
     <message>
         <source>FADE IN:</source>
-        <translation>Із затемнення:</translation>
+        <translation>ІЗ ЗАТЕМНЕННЯ:</translation>
     </message>
 </context>
 <context>
@@ -392,31 +392,31 @@
     <name>ExportView</name>
     <message>
         <source>EXPORT</source>
-        <translation type="unfinished"></translation>
+        <translation>ЕКСПОРТ</translation>
     </message>
     <message>
         <source>Export script</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт сценарію</translation>
     </message>
     <message>
         <source>Check page breaks</source>
-        <translation type="unfinished"></translation>
+        <translation>Коригувати текст на розривах сторінок</translation>
     </message>
     <message>
         <source>Page numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Нумерувати сторінки</translation>
     </message>
     <message>
         <source>Scenes numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Нумерувати сцени</translation>
     </message>
     <message>
         <source>Save review marks</source>
-        <translation>Зберігати нотатки редактора</translation>
+        <translation>Зберегти нотатки редактора</translation>
     </message>
     <message>
         <source>Print title page</source>
-        <translation type="unfinished"></translation>
+        <translation>Друкувати титульну сторінку</translation>
     </message>
 </context>
 <context>
@@ -450,7 +450,7 @@
     </message>
     <message>
         <source>Import script</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт сценарію</translation>
     </message>
     <message>
         <source>Save review marks</source>
@@ -458,35 +458,35 @@
     </message>
     <message>
         <source>EXISTED PROJECT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІСНУЮЧИЙ ПРОЕКТ</translation>
     </message>
     <message>
         <source>NEW PROJECT</source>
-        <translation type="unfinished"></translation>
+        <translation>НОВИЙ ПРОЕКТ</translation>
     </message>
     <message>
         <source>Replace script</source>
-        <translation type="unfinished"></translation>
+        <translation>Замінити сценарій</translation>
     </message>
     <message>
         <source>End of script</source>
-        <translation type="unfinished"></translation>
+        <translation>Кінець сценарію</translation>
     </message>
     <message>
         <source>Insert to</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставити до</translation>
     </message>
     <message>
         <source>Find characters and locations</source>
-        <translation>Визначити героїв та локації</translation>
+        <translation>Знайти героїв та локації</translation>
     </message>
     <message>
         <source>Remove scene numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистити номери сцен</translation>
     </message>
     <message>
         <source>To import files of FDX, DOCX, Fountain or KITSP file-types, open them on your device (e.g. in file browser), tap Open in... or the share button and choose KIT Scenarist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Для імпорту FDX, DOCX, Fountain або KITSP файлів, відкрийте їх на вашому пристрої (в файловому провіднику), натисність Відкрити як... та виберіть KIT Scenarist.</translation>
     </message>
 </context>
 <context>
@@ -497,15 +497,15 @@
     </message>
     <message>
         <source>LOGIN</source>
-        <translation type="unfinished"></translation>
+        <translation>ЛОГІН</translation>
     </message>
     <message>
         <source>RESTORE PASSWORD</source>
-        <translation type="unfinished"></translation>
+        <translation>ВІДНОВИТИ ПАРОЛЬ</translation>
     </message>
     <message>
         <source>SIGN UP</source>
-        <translation type="unfinished"></translation>
+        <translation>РЕЄСТРАЦІЯ</translation>
     </message>
 </context>
 <context>
@@ -686,35 +686,35 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>in cloud</source>
-        <translation type="unfinished"></translation>
+        <translation>в хмарі</translation>
     </message>
     <message>
         <source>Please wait. Importing can take few minutes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, зачекайте. Імпорт може тривати декілька хвилин.</translation>
     </message>
     <message>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевненні у видаленні проекту &lt;b&gt;%1&lt;/b&gt; з останніх?</translation>
     </message>
     <message>
         <source>on device</source>
-        <translation type="unfinished"></translation>
+        <translation>на пристрої</translation>
     </message>
     <message>
         <source>Importing script</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт сценарію</translation>
     </message>
     <message>
         <source>Import error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка імпорту</translation>
     </message>
     <message>
         <source>Can&apos;t get file path to import. Try to download it and open in file browser.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неможливо отримати шлях файлу для імпорту. Спробуйте завантажити його та відкрити у файловому провіднику.</translation>
     </message>
     <message>
         <source>Can&apos;t create temporatry file for import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неможливо створити тимчасовий файл для імпорту.</translation>
     </message>
 </context>
 <context>
@@ -745,7 +745,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Send script to</source>
-        <translation type="unfinished"></translation>
+        <translation>Відправити сценарій</translation>
     </message>
 </context>
 <context>
@@ -767,14 +767,14 @@ Project didn&apos;t synchronized.</source>
     <name>ManagementLayer::ProjectsPageManager</name>
     <message>
         <source>Project exists. It will be replaced after creating.</source>
-        <translation type="unfinished"></translation>
+        <translation>Проект існує. Після створення він буде замінений.</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ScriptManager</name>
     <message>
         <source>Scenes</source>
-        <translation type="unfinished"></translation>
+        <translation>Сцени</translation>
     </message>
     <message>
         <source>Chron.</source>
@@ -785,7 +785,7 @@ Project didn&apos;t synchronized.</source>
     <name>ManagementLayer::SettingsManager</name>
     <message>
         <source>Language will be change after application restart.</source>
-        <translation type="unfinished"></translation>
+        <translation>Мову буде змінено після перезапуску програми.</translation>
     </message>
 </context>
 <context>
@@ -815,7 +815,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Проекти</translation>
     </message>
     <message>
         <source>Script</source>
@@ -837,12 +837,16 @@ Project didn&apos;t synchronized.</source>
         <source>Settings</source>
         <translation>Налаштування</translation>
     </message>
+    <message>
+        <source>Title page</source>
+        <translation>Титульна сторінка</translation>
+    </message>
 </context>
 <context>
     <name>NavigatorView</name>
     <message>
         <source>Summary</source>
-        <translation></translation>
+        <translation>Загалом</translation>
     </message>
 </context>
 <context>
@@ -860,11 +864,11 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>New password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Новий пароль:</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Старий пароль:</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -879,35 +883,36 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Remove project</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистити проект</translation>
     </message>
     <message>
         <source>Hide project from recent</source>
-        <translation type="unfinished"></translation>
+        <translation>Сховати проект з останніх</translation>
     </message>
     <message>
         <source>Add cowriter</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати співавтора</translation>
     </message>
     <message>
         <source>Show cowriters</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати співавторів</translation>
     </message>
 </context>
 <context>
     <name>ProjectsView</name>
     <message>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Проекти</translation>
     </message>
     <message>
         <source>There will be a list of your projects.
 Let&apos;s create the first one!</source>
-        <translation type="unfinished"></translation>
+        <translation>Це буде списком ваших проектів.
+Давайте створимо перший!</translation>
     </message>
     <message>
         <source>CREATE</source>
-        <translation type="unfinished"></translation>
+        <translation>СТВОРИТИ</translation>
     </message>
 </context>
 <context>
@@ -924,12 +929,12 @@ Let&apos;s create the first one!</source>
     <message>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
-        <translation></translation>
+        <translation>КІНЕЦЬ ПАПКИ</translation>
     </message>
     <message>
         <source>END OF</source>
         <comment>ScenarioTextEditHelpers</comment>
-        <translation></translation>
+        <translation>КІНЕЦЬ</translation>
     </message>
 </context>
 <context>
@@ -943,7 +948,7 @@ Let&apos;s create the first one!</source>
     <name>RtfTokenizer</name>
     <message>
         <source>Unexpectedly reached end of file.</source>
-        <translation>Несподівано досягнутий кінець файлу.</translation>
+        <translation>Несподівано досягнуто кінця файлу.</translation>
     </message>
 </context>
 <context>
@@ -958,23 +963,23 @@ Let&apos;s create the first one!</source>
     </message>
     <message>
         <source>Use dark theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Темна тема</translation>
     </message>
     <message>
         <source>Script editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактор сценарію</translation>
     </message>
     <message>
         <source>Show scene numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати номери сцен</translation>
     </message>
     <message>
         <source>Show scene description, lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати опис сцен, рядків</translation>
     </message>
     <message>
         <source>Application</source>
-        <translation type="unfinished"></translation>
+        <translation>Програма</translation>
     </message>
 </context>
 <context>
@@ -1030,16 +1035,17 @@ Let&apos;s create the first one!</source>
     <name>SubscriptionView</name>
     <message>
         <source>Yandex.Money</source>
-        <translation></translation>
+        <translation>Яндекс.Гроші</translation>
     </message>
     <message>
         <source>RENEW</source>
-        <translation type="unfinished"></translation>
+        <translation>ПОНОВИТИ</translation>
     </message>
     <message>
         <source>Thanks!
 Your subscription is active until</source>
-        <translation type="unfinished"></translation>
+        <translation>Дякую!
+Ваша підписка активна до</translation>
     </message>
     <message>
         <source>Renew subscription</source>
@@ -1047,22 +1053,33 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>Subscription period:</source>
-        <translation type="unfinished"></translation>
+        <translation>Період підписки:</translation>
     </message>
     <message>
         <source>Payment type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип оплати:</translation>
     </message>
     <message>
         <source>Bank card</source>
-        <translation>Банківську картку</translation>
+        <translation>Банківська картка</translation>
+    </message>
+</context>
+<context>
+    <name>TitlePageView</name>
+    <message>
+        <source>Form</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Title page</source>
+        <translation>Титульна сторінка</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::AccountView</name>
     <message>
         <source>Account is active until: </source>
-        <translation type="unfinished"></translation>
+        <translation>Акаунт активний до:</translation>
     </message>
     <message>
         <source>Account is inactive</source>
@@ -1070,7 +1087,7 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation type="unfinished"></translation>
+        <translation>Використано %1 Гб з %2 Гб</translation>
     </message>
     <message>
         <source>Email</source>
@@ -1085,34 +1102,34 @@ Your subscription is active until</source>
     <name>UserInterface::AddProjectView</name>
     <message>
         <source>LOCAL</source>
-        <translation type="unfinished"></translation>
+        <translation>ЛОКАЛЬНО</translation>
     </message>
     <message>
         <source>Please, enter name for your new project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, введіть ім&apos;я вашого нового  проекту.</translation>
     </message>
     <message>
         <source>IN CLOUD</source>
-        <translation type="unfinished"></translation>
+        <translation>В ХМАРІ</translation>
     </message>
     <message>
         <source>Project name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім&apos;я проекту</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ExportView</name>
     <message>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Шаблон</translation>
     </message>
     <message>
         <source>File format</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат файлу</translation>
     </message>
     <message>
         <source>Scenes prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Префікс сцен</translation>
     </message>
 </context>
 <context>
@@ -1127,23 +1144,23 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>Please wait, authorzation can take few minutes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, зачекайте, авторизація може тривати декілька хвилин.</translation>
     </message>
     <message>
         <source>Registration</source>
-        <translation type="unfinished"></translation>
+        <translation>Реєстрація</translation>
     </message>
     <message>
         <source>Please wait, registration can take few minutes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, зачекайте, реєстрація може тривати декілька хвилин.</translation>
     </message>
     <message>
         <source>LOGIN</source>
-        <translation type="unfinished"></translation>
+        <translation>ЛОГІН</translation>
     </message>
     <message>
         <source>SIGN UP</source>
-        <translation type="unfinished"></translation>
+        <translation>РЕЄСТРАЦІЯ</translation>
     </message>
     <message>
         <source>Email</source>
@@ -1166,25 +1183,25 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>Changes saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміни збережено</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ProjectsList</name>
     <message>
         <source>no changes</source>
-        <translation type="unfinished"></translation>
+        <translation>нема змін</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ProjectsView</name>
     <message>
         <source>LOCAL</source>
-        <translation type="unfinished"></translation>
+        <translation>ЛОКАЛЬНО</translation>
     </message>
     <message>
         <source>IN CLOUD</source>
-        <translation type="unfinished"></translation>
+        <translation>В ХМАРІ</translation>
     </message>
 </context>
 <context>
@@ -1198,11 +1215,11 @@ Your subscription is active until</source>
     <name>UserInterface::SettingsView</name>
     <message>
         <source>System</source>
-        <translation type="unfinished"></translation>
+        <translation>Системні налаштування</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть мову програми</translation>
     </message>
 </context>
 <context>
@@ -1227,24 +1244,71 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::SubscriptionView</name>
     <message>
+        <source>1 mounth - %1 rubles</source>
+        <translation type="vanished">1 місяць - %1 рублів</translation>
+    </message>
+    <message>
+        <source>2 mounth - %1 rubles</source>
+        <translation type="vanished">2 місяці - %1 рублів</translation>
+    </message>
+    <message>
+        <source>3 mounth - %1 rubles</source>
+        <translation type="vanished">3 місяці - %1 рублів</translation>
+    </message>
+    <message>
+        <source>6 mounth (6% off) - %1 rubles</source>
+        <translation type="vanished">6 місяців (6% знижка) - %1 рублів</translation>
+    </message>
+    <message>
+        <source>12 mounth (12% off) - %1 rubles</source>
+        <translation type="vanished">12 місяців (12% знижка) - %1 рублів</translation>
+    </message>
+    <message>
         <source>1 month - %1 rubles</source>
-        <translation type="unfinished"></translation>
+        <translation>1 місяць - %1 рублів</translation>
     </message>
     <message>
         <source>2 month - %1 rubles</source>
-        <translation type="unfinished"></translation>
+        <translation>2 місяці - %1 рублів</translation>
     </message>
     <message>
         <source>3 month - %1 rubles</source>
-        <translation type="unfinished"></translation>
+        <translation>3 місяці - %1 рублів</translation>
     </message>
     <message>
         <source>6 month (6% off) - %1 rubles</source>
-        <translation type="unfinished"></translation>
+        <translation>6 місяців (6% знижка) - %1 рублів</translation>
     </message>
     <message>
         <source>12 month (12% off) - %1 rubles</source>
-        <translation type="unfinished"></translation>
+        <translation>12 місяців (12% знижка) - %1 рублів</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::TitlePageView</name>
+    <message>
+        <source>Script name</source>
+        <translation>Назва сценарію</translation>
+    </message>
+    <message>
+        <source>Additional</source>
+        <translation>Додатково</translation>
+    </message>
+    <message>
+        <source>Genre</source>
+        <translation>Жанр</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Автор</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation>Контакти</translation>
+    </message>
+    <message>
+        <source>Year</source>
+        <translation>Рік</translation>
     </message>
 </context>
 <context>

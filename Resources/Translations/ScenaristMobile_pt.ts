@@ -844,6 +844,10 @@ O projeto não foi sincronizado.</translation>
         <source>Settings</source>
         <translation>Configurar</translation>
     </message>
+    <message>
+        <source>Title page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NavigatorView</name>
@@ -1066,6 +1070,17 @@ Your subscription is active until</source>
     </message>
 </context>
 <context>
+    <name>TitlePageView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title page</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UserInterface::AccountView</name>
     <message>
         <source>Account is active until: </source>
@@ -1251,6 +1266,33 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>12 month (12% off) - %1 rubles</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::TitlePageView</name>
+    <message>
+        <source>Script name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Additional</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Genre</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Year</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
