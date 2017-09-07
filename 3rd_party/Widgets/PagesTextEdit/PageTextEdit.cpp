@@ -2117,11 +2117,7 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
     if (layout)
         layout->setViewport(QRect());
 
-    if (!placeholderText.isEmpty() && doc->isEmpty()
-#if QT_VERSION >= 0x050900
-        && !control->isPreediting()
-#endif
-        ) {
+    if (!placeholderText.isEmpty() && doc->isEmpty()) {
         QColor col = control->palette().text().color();
         col.setAlpha(128);
         p->setPen(col);
@@ -2320,11 +2316,6 @@ void PageTextEdit::scrollContentsBy(int dx, int dy)
     if (isRightToLeft())
         dx = -dx;
     d->viewport->scroll(dx, dy);
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
-#if QT_VERSION >= 0x050900
-                                           | Qt::ImAnchorRectangle
-#endif
-                                           );
 }
 
 /*!\reimp
@@ -2339,35 +2330,10 @@ QVariant PageTextEdit::inputMethodQuery(Qt::InputMethodQuery property) const
 QVariant PageTextEdit::inputMethodQuery(Qt::InputMethodQuery query, QVariant argument) const
 {
     Q_D(const PageTextEdit);
-    switch (query) {
-        case Qt::ImHints:
-#if QT_VERSION >= 0x050900
-        case Qt::ImInputItemClipRectangle:
-#endif
+    if (query == Qt::ImHints)
         return QWidget::inputMethodQuery(query);
-    default:
-        break;
-    }
-
-    const QPointF offset(-d->horizontalOffset(), -d->verticalOffset());
-    switch (argument.type()) {
-    case QVariant::RectF:
-        argument = argument.toRectF().translated(-offset);
-        break;
-    case QVariant::PointF:
-        argument = argument.toPointF() - offset;
-        break;
-    case QVariant::Rect:
-        argument = argument.toRect().translated(-offset.toPoint());
-        break;
-    case QVariant::Point:
-        argument = argument.toPoint() - offset;
-        break;
-    default:
-        break;
-    }
-
     const QVariant v = d->control->inputMethodQuery(query, argument);
+    const QPointF offset(-d->horizontalOffset(), -d->verticalOffset());
     switch (v.type()) {
     case QVariant::RectF:
         return v.toRectF().translated(offset);
