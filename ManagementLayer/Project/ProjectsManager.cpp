@@ -16,8 +16,16 @@ using ManagementLayer::ProjectsManager;
 using ManagementLayer::Project;
 
 namespace {
+    /**
+     * @brief Ключи для доступа к спискам проектов
+     */
     const QString RECENT_FILES_LIST_SETTINGS_KEY = "application/recent-files/list";
     const QString RECENT_FILES_USING_SETTINGS_KEY = "application/recent-files/using";
+
+    /**
+     * @brief kit scenarist project
+     */
+    const QString PROJECT_FILE_EXTENSION = ".kitsp";
 }
 
 
@@ -33,7 +41,11 @@ const ManagementLayer::Project& ProjectsManager::currentProject()
 
 QString ProjectsManager::defaultLocation()
 {
+#ifdef MOBILE_OS
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+#else
     return QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+#endif
 }
 
 Project ProjectsManager::s_currentProject;
@@ -421,11 +433,11 @@ void ProjectsManager::loadRecentProjects()
     //
     QStringList usingDates = recentFilesUsing.values();
     qSort(usingDates.begin(), usingDates.end(), qGreater<QString>());
-    foreach (const QString& usingDate, usingDates) {
+    for (const QString& usingDate : usingDates) {
         //
         // Путь к проекту
         //
-        QString path = recentFilesUsing.key(usingDate);
+        const QString path = recentFilesUsing.key(usingDate);
 
         //
         // Название проекта
@@ -433,18 +445,41 @@ void ProjectsManager::loadRecentProjects()
         const QString name = recentFiles.value(path);
 
         //
-        // Поскольку для iOS пути хранятся относительные, то построим абсолютный
-        //
-#ifdef Q_OS_IOS
-        path = QDir(defaultLocation()).filePath(path);
-#endif
-
-        //
         // Сам проект
         //
         m_recentProjects.append(
             Project(Project::Local, name, path, QDateTime::fromString(usingDate, "yyyy-MM-dd hh:mm:ss")));
     }
+
+#ifdef MOBILE_OS
+    //
+    // Загружаем список "потерянных проектов"
+    //
+    const QDir projectsDir(defaultLocation());
+    for (const QFileInfo& fileInfo : projectsDir.entryInfoList()) {
+        //
+        // ... если такого файла проекта нет в списке недавних, значит от "потерялся"
+        //
+        if (fileInfo.fileName().endsWith(::PROJECT_FILE_EXTENSION)
+            && !recentFiles.contains(fileInfo.absoluteFilePath())) {
+            //
+            // Путь к проекту
+            //
+            const QString path = fileInfo.absoluteFilePath();
+
+            //
+            // Название проекта
+            //
+            const QString name = fileInfo.baseName();
+
+            //
+            // Сам проект
+            //
+            m_recentProjects.append(Project(Project::Local, name, path, fileInfo.lastRead()));
+        }
+    }
+
+#endif
 
     //
     // Уведомляем об обновлении
@@ -473,16 +508,10 @@ void ProjectsManager::saveRecentProjects()
      */
     QMap<QString, QString> recentFilesUsing;
 
-    foreach (const Project& project, m_recentProjects) {
-#ifdef Q_OS_IOS
-        const QString path = QDir(defaultLocation()).relativeFilePath(project.path());
-#else
-        const QString path = project.path();
-#endif
-        recentFiles.insert(path, project.name());
-        recentFilesUsing.insert(path, project.lastEditDatetime().toString("yyyy-MM-dd hh:mm:ss"));
+    for (const Project& project : m_recentProjects) {
+        recentFiles.insert(project.path(), project.name());
+        recentFilesUsing.insert(project.path(), project.lastEditDatetime().toString("yyyy-MM-dd hh:mm:ss"));
     }
-
 
     //
     // Сохраняем
