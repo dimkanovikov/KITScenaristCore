@@ -74,6 +74,13 @@ protected:
 	 */
     void gestureEvent(QGestureEvent* _event);
 
+    //
+    // FIXME: Недоделанный индикатор выделения
+    //
+//    void mouseReleaseEvent(QMouseEvent* _event);
+//    void mouseDoubleClickEvent(QMouseEvent* _event);
+//    void inputMethodEvent(QInputMethodEvent* _event);
+
 	/**
 	 * @brief Переопределяется для отлавливания контекстного меню текстового редактора
 	 */

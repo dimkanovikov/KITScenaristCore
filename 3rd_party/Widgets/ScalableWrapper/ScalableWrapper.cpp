@@ -119,6 +119,40 @@ QVariant ScalableWrapper::inputMethodQuery(Qt::InputMethodQuery _query, QVariant
     QVariant result;
     if (m_editor != nullptr) {
         result = m_editor->inputMethodQuery(_query, _argument);
+
+        //
+        // FIXME: Недоделанный индикатор выделения
+        //
+//        //
+//        // Масштабируем результат
+//        //
+//        if (true) {
+//            switch (result.type()) {
+//                case QVariant::RectF: {
+//                    result = QRectF(result.toRectF().topLeft() * m_zoomRange,
+//                                    result.toRectF().size() * m_zoomRange);
+//                    break;
+//                }
+
+//                case QVariant::PointF: {
+//                    result = result.toPointF() * m_zoomRange;
+//                    break;
+//                }
+
+//                case QVariant::Rect: {
+//                    result = QRect(result.toRect().topLeft() * m_zoomRange,
+//                                   result.toRect().size() * m_zoomRange);
+//                    break;
+//                }
+
+//                case QVariant::Point: {
+//                    result = result.toPoint() * m_zoomRange;
+//                    break;
+//                }
+
+//                default: break;
+//            }
+//        }
     } else {
         result = QGraphicsView::inputMethodQuery(_query);
     }
@@ -137,7 +171,6 @@ QVariant ScalableWrapper::inputMethodQuery(Qt::InputMethodQuery _query, QVariant
         result = QVariant();
     }
 #endif
-
     return result;
 }
 
@@ -210,10 +243,59 @@ bool ScalableWrapper::event(QEvent* _event)
         setupScrollingSynchronization(true);
     }
     //
+    // FIXME: Недоделанный индикатор выделения
+    //
+//    else if (_event->type() == QEvent::InputMethodQuery) {
+//        auto printEventData = [this] (QEvent* ev, bool ch) {
+//            if (ev->type() != QEvent::InputMethodQuery)
+//                return;
+//            qDebug() << ev;
+//            if (QInputMethodQueryEvent* e = static_cast<QInputMethodQueryEvent*>(ev)) {
+//                qDebug() << e << (e->queries() == Qt::ImCursorRectangle) << (e->queries() == Qt::ImAnchorRectangle);
+//                if (e->queries().testFlag(Qt::ImCursorPosition)) {
+//                    qDebug() << Qt::ImCursorPosition << e->value(Qt::ImCursorPosition);
+//                }
+//                if (e->queries().testFlag(Qt::ImCursorRectangle)) {
+//                    qDebug() << Qt::ImCursorRectangle << e->value(Qt::ImCursorRectangle);
+//                    QRectF rect =  e->value(Qt::ImCursorRectangle).toRectF();
+//                    if (ch)
+//                    {
+//                        e->setValue(Qt::ImCursorRectangle, QRectF(rect.topLeft() * m_zoomRange,
+//                                                                  rect.size() * m_zoomRange));
+//                        qDebug() << Qt::ImCursorRectangle << e->value(Qt::ImCursorRectangle);
+//                    }
+//                }
+//                if (e->queries().testFlag(Qt::ImAnchorPosition)) {
+//                    qDebug() << Qt::ImAnchorPosition << e->value(Qt::ImAnchorPosition);
+//                }
+//                if (e->queries().testFlag(Qt::ImAnchorRectangle)) {
+//                    qDebug() << Qt::ImAnchorRectangle << e->value(Qt::ImAnchorRectangle);
+//                    QRectF rect =  e->value(Qt::ImAnchorRectangle).toRectF();
+//                    if (ch)
+//                    {
+//                        e->setValue(Qt::ImAnchorRectangle, QRectF(rect.topLeft() * m_zoomRange,
+//                                                                  rect.size() * m_zoomRange));
+//                        qDebug() << Qt::ImAnchorRectangle << e->value(Qt::ImAnchorRectangle);
+//                    }
+//                }
+//            }
+//        };
+
+//        qDebug() << "*********";
+//        result = QGraphicsView::event(_event);
+//        printEventData(_event, false);
+//        qDebug() << "===========";
+//        if (QInputMethodQueryEvent* e = static_cast<QInputMethodQueryEvent*>(_event)) {
+//            if (e->queries() != Qt::ImCursorRectangle
+//                && e->queries() != Qt::ImAnchorRectangle);
+//                result = QApplication::sendEvent(m_editor, _event);
+//        }
+////        printEventData(_event, false);
+//    }
+    //
     // Прочие стандартные обработчики событий
     //
     else {
-        
         result = QGraphicsView::event(_event);
 
         //
@@ -311,6 +393,43 @@ void ScalableWrapper::gestureEvent(QGestureEvent* _event)
         }
     }
 }
+
+//
+// FIXME: Недоделанный индикатор выделения
+//
+//void ScalableWrapper::mouseReleaseEvent(QMouseEvent* _event)
+//{
+//    QGraphicsView::mouseReleaseEvent(_event);
+
+////    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
+////#if QT_VERSION >= 0x050900
+////                                           | Qt::ImAnchorRectangle
+////#endif
+////                                           );
+//}
+
+//void ScalableWrapper::mouseDoubleClickEvent(QMouseEvent* _event)
+//{
+//    QGraphicsView::mouseDoubleClickEvent(_event);
+
+////    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
+////#if QT_VERSION >= 0x050900
+////                                           | Qt::ImAnchorRectangle
+////#endif
+////                                           );
+//}
+
+//void ScalableWrapper::inputMethodEvent(QInputMethodEvent* _event)
+//{
+////    QApplication::sendEvent(m_editor, _event);
+//    QGraphicsView::inputMethodEvent(_event);
+
+////    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
+////#if QT_VERSION >= 0x050900
+////                                           | Qt::ImAnchorRectangle
+////#endif
+////                                           );
+//}
 
 bool ScalableWrapper::eventFilter(QObject* _object, QEvent* _event)
 {
