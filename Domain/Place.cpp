@@ -14,7 +14,7 @@ Place::Place(const Identifier& _id, const QString& _name) :
 
 QString Place::name() const
 {
-	return m_name;
+    return m_name;
 }
 
 void Place::setName(const QString& _name)

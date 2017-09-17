@@ -56,6 +56,19 @@ namespace {
 SceneHeadingHandler::SceneHeadingHandler(ScenarioTextEdit* _editor) :
     StandardKeyHandler(_editor)
 {
+#ifdef MOBILE_OS
+    //
+    // Для мобильной версии автоматом вставляем пробел при выборе места действия из выпадающего списка
+    //
+    QObject::connect(_editor, &ScenarioTextEdit::completed, [this] {
+        const auto block = editor()->textCursor().block();
+        if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::SceneHeading
+            && ::section(block.text()) == SceneHeadingParser::SectionPlace) {
+            editor()->insertPlainText(" ");
+            handleOther();
+        }
+    });
+#endif
 }
 
 void SceneHeadingHandler::handleEnter(QKeyEvent* _event)

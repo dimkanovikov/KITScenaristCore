@@ -1,5 +1,9 @@
 #include "CompletableTextEdit.h"
 
+#ifdef MOBILE_OS
+#include <Utils/UIUtils.h>
+#endif
+
 #include <3rd_party/Helpers/StyleSheetHelper.h>
 #include <3rd_party/Widgets/WAF/Animation/Animation.h>
 
@@ -49,10 +53,11 @@ namespace {
             m_popup->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
             m_popup->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
             const QString styleSheet =
-                    QString("QListView { show-decoration-selected: 0; }"
-                            "QListView::item, QListView::item:selected { text-align: center; height: %1px; "
-                            "border: none; border-bottom: %2px solid palette(highlighted-text); "
+                    QString("QListView { show-decoration-selected: 0; border-top: %1px solid #215da8; }"
+                            "QListView::item, QListView::item:selected { text-align: center; height: %2px; "
+                            "border: none; border-bottom: %3px solid palette(highlighted-text); "
                             "background-color: palette(highlight); color: palette(highlighted-text); }")
+                    .arg(UIUtils::statusbarHeight())
                     .arg(StyleSheetHelper::dpToPx(COMPLETER_ITEM_HEIGHT))
                     .arg(StyleSheetHelper::dpToPx(1));
             m_popup->setStyleSheet(styleSheet);
@@ -76,7 +81,8 @@ namespace {
             m_popup->setParent(QApplication::activeWindow());
             m_popup->setFixedHeight(
                         qMin(completionCount(),
-                             COMPLETER_MAX_ITEMS) * StyleSheetHelper::dpToPx(COMPLETER_ITEM_HEIGHT));
+                             COMPLETER_MAX_ITEMS) * StyleSheetHelper::dpToPx(COMPLETER_ITEM_HEIGHT)
+                        + UIUtils::statusbarHeight());
             m_popup->setFixedWidth(m_popup->parentWidget()->width());
             m_popup->raise();
             WAF::Animation::sideSlideIn(m_popup, WAF::TopSide, false);
@@ -271,8 +277,12 @@ void CompletableTextEdit::applyCompletion(const QString& _completion)
 	textCursor().insertText(textToInsert);
 
 #ifdef MOBILE_OS
-    QApplication::inputMethod()->reset();
+    if (!textToInsert.endsWith(" ")) {
+        QApplication::inputMethod()->reset();
+    }
 #endif
+
+    emit completed();
 }
 
 void CompletableTextEdit::closeCompleter()

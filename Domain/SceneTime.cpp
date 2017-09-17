@@ -11,7 +11,7 @@ SceneTime::SceneTime(const Identifier& _id, const QString& _name) :
 
 QString SceneTime::name() const
 {
-	return m_name;
+    return m_name;
 }
 
 void SceneTime::setName(const QString& _name)

@@ -58,6 +58,11 @@ signals:
 	 */
 	void popupShowed();
 
+    /**
+     * @brief Текст был дополнен
+     */
+    void completed();
+
 protected:
 	/**
 	 * @brief Можно ли показывать автодополнение
