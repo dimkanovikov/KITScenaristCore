@@ -122,7 +122,7 @@ QVariant ScalableWrapper::inputMethodQuery(Qt::InputMethodQuery _query, QVariant
     } else {
         result = QGraphicsView::inputMethodQuery(_query);
     }
-    
+
 #ifdef Q_OS_IOS
     //
     // Делаем курсор всегда на нуле, чтобы редактор сценария не выкидывало ни вниз ни вверх
@@ -213,12 +213,14 @@ bool ScalableWrapper::event(QEvent* _event)
     // Прочие стандартные обработчики событий
     //
     else {
+
         result = QGraphicsView::event(_event);
 
         //
         // Переустанавливаем фокус в редактор, иначе в нём пропадает курсор
         //
         if (_event->type() == QEvent::FocusIn) {
+            m_editor->clearFocus();
             m_editor->setFocus();
         }
     }
@@ -272,13 +274,19 @@ void ScalableWrapper::gestureEvent(QGestureEvent* _event)
             //
 
             const int INERTION_BREAK_STOP = 8;
+            const qreal ZOOM_STEP =
+#ifdef MOBILE_OS
+                    0.05;
+#else
+                    0.1;
+#endif
             qreal zoomDelta = 0;
             if (pinch->scaleFactor() > 1) {
                 if (m_gestureZoomInertionBreak < 0) {
                     m_gestureZoomInertionBreak = 0;
                 } else if (m_gestureZoomInertionBreak >= INERTION_BREAK_STOP) {
                     m_gestureZoomInertionBreak = 0;
-                    zoomDelta = 0.1;
+                    zoomDelta = ZOOM_STEP;
                 } else {
                     ++m_gestureZoomInertionBreak;
                 }
@@ -287,7 +295,7 @@ void ScalableWrapper::gestureEvent(QGestureEvent* _event)
                     m_gestureZoomInertionBreak = 0;
                 } else if (m_gestureZoomInertionBreak <= -INERTION_BREAK_STOP) {
                     m_gestureZoomInertionBreak = 0;
-                    zoomDelta = -0.1;
+                    zoomDelta = -1 * ZOOM_STEP;
                 } else {
                     --m_gestureZoomInertionBreak;
                 }
