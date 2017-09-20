@@ -377,7 +377,7 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
 int ScenarioTextDocument::undoReimpl()
 {
 #ifdef MOBILE_OS
-    QApplication::inputMethod()->reset();
+    QApplication::inputMethod()->commit();
 #endif
 
     saveChanges();
@@ -407,7 +407,7 @@ int ScenarioTextDocument::undoReimpl()
 int ScenarioTextDocument::redoReimpl()
 {
 #ifdef MOBILE_OS
-    QApplication::inputMethod()->reset();
+    QApplication::inputMethod()->commit();
 #endif
 
     int pos = -1;
