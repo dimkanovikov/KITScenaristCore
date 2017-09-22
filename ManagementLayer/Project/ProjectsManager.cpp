@@ -437,12 +437,16 @@ void ProjectsManager::loadRecentProjects()
         //
         // Путь к проекту
         //
-        const QString path = recentFilesUsing.key(usingDate);
+        QString path = recentFilesUsing.key(usingDate);
 
         //
         // Название проекта
         //
         const QString name = recentFiles.value(path);
+
+#ifdef Q_OS_IOS
+        path = QDir(defaultLocation()).filePath(path);
+#endif
 
         //
         // Сам проект
@@ -460,12 +464,21 @@ void ProjectsManager::loadRecentProjects()
         //
         // ... если такого файла проекта нет в списке недавних, значит от "потерялся"
         //
+#ifdef Q_OS_IOS
+        const QString filePath = fileInfo.fileName();
+#elif
+        const QString filePath = fileInfo.absoluteFilePath();
+#endif
         if (fileInfo.fileName().endsWith(::PROJECT_FILE_EXTENSION)
-            && !recentFiles.contains(fileInfo.absoluteFilePath())) {
+            && !recentFiles.contains(filePath)) {
             //
             // Путь к проекту
             //
-            const QString path = fileInfo.absoluteFilePath();
+#ifdef Q_OS_IOS
+            const QString path = QDir(defaultLocation()).filePath(filePath);
+#elif
+            const QString path = filePath;
+#endif
 
             //
             // Название проекта
@@ -509,9 +522,15 @@ void ProjectsManager::saveRecentProjects()
     QMap<QString, QString> recentFilesUsing;
 
     for (const Project& project : m_recentProjects) {
-        recentFiles.insert(project.path(), project.name());
-        recentFilesUsing.insert(project.path(), project.lastEditDatetime().toString("yyyy-MM-dd hh:mm:ss"));
+#ifdef Q_OS_IOS
+        const QString path = QDir(defaultLocation()).relativeFilePath(project.path());
+#else
+        const QString path = project.path();
+#endif
+        recentFiles.insert(path, project.name());
+        recentFilesUsing.insert(path, project.lastEditDatetime().toString("yyyy-MM-dd hh:mm:ss"));
     }
+    return;
 
     //
     // Сохраняем
