@@ -35,7 +35,8 @@ public:
         Portuguese,
         PortugueseBrazilian,
         Swedish,
-        Farsi
+        Farsi,
+        Hebrew
     };
 
     /**

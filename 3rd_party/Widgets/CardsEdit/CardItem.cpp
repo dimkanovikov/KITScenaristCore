@@ -15,7 +15,23 @@
 #include <QPropertyAnimation>
 #include <QStyleOptionGraphicsItem>
 
+namespace {
+    /**
+     * @brief Флаги для отрисовки текста в зависимости от локали
+     */
+    static Qt::AlignmentFlag textDrawAlign() {
+        if (QLocale().textDirection() == Qt::LeftToRight) {
+            return Qt::AlignLeft;
+        } else {
+            return Qt::AlignRight;
+        }
+    }
+}
 
+
+/**
+ * @brief Майм-тип для перетаскиваемых карточек
+ */
 const QString CardItem::MimeType = "application/kit-card";
 
 CardItem::CardItem(QGraphicsItem* _parent) :
@@ -291,7 +307,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         // Рисуем заголовок
         //
         QTextOption textoption;
-        textoption.setAlignment(Qt::AlignTop | Qt::AlignLeft);
+        textoption.setAlignment(::textDrawAlign() | Qt::AlignTop);
         textoption.setWrapMode(QTextOption::NoWrap);
         QFont font = _painter->font();
         font.setBold(true);
@@ -340,7 +356,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         // Рисуем описание
         //
         if (!m_description.isEmpty()) {
-            textoption.setAlignment(Qt::AlignTop | Qt::AlignLeft);
+            textoption.setAlignment(::textDrawAlign() | Qt::AlignTop);
             textoption.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
             font.setBold(false);
             _painter->setFont(font);

@@ -24,6 +24,17 @@ namespace {
     const int HORIZONTAL_SPACING = 6;
     const int VERTICAL_SPACING = 6;
 #endif
+
+    /**
+     * @brief Флаги для отрисовки текста в зависимости от локали
+     */
+    static int textDrawAlign() {
+        if (QLocale().textDirection() == Qt::LeftToRight) {
+            return Qt::AlignLeft;
+        } else {
+            return Qt::AlignRight;
+        }
+    }
 }
 
 
@@ -229,7 +240,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
         chronometryRectWidth,
         TEXT_LINE_HEIGHT
         );
-    _painter->drawText(chronometryRect, Qt::AlignLeft | Qt::AlignVCenter, chronometry);
+    _painter->drawText(chronometryRect, ::textDrawAlign() | Qt::AlignVCenter, chronometry);
 
     //
     // ... заголовок
@@ -258,11 +269,15 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
         //
         QVariant sceneNumber = _index.data(BusinessLogic::ScenarioModel::SceneNumberIndex);
         if (!sceneNumber.isNull()) {
-            header = sceneNumber.toString() + ". " + header;
+            if (::textDrawAlign() == Qt::AlignLeft) {
+                header = sceneNumber.toString() + ". " + header;
+            } else {
+                header = header + " ." + sceneNumber.toString();
+            }
         }
     }
     header = _painter->fontMetrics().elidedText(header, Qt::ElideRight, headerRect.width());
-    _painter->drawText(headerRect, Qt::AlignLeft | Qt::AlignVCenter, header);
+    _painter->drawText(headerRect, ::textDrawAlign() | Qt::AlignVCenter, header);
 
     //
     // ... описание
@@ -280,7 +295,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
                 m_sceneDescriptionIsSceneText
                 ? _index.data(BusinessLogic::ScenarioModel::SceneTextIndex).toString()
                 : _index.data(BusinessLogic::ScenarioModel::DescriptionIndex).toString();
-        _painter->drawText(descriptionRect, Qt::TextWordWrap, descriptionText);
+        _painter->drawText(descriptionRect, ::textDrawAlign() | Qt::TextWordWrap, descriptionText);
     }
 
     _painter->restore();

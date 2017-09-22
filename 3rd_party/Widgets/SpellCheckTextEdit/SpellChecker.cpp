@@ -43,6 +43,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case French:
             code = "fr_FR";
             break;
+        case Hebrew:
+            code = "he_IL";
+            break;
         case Kazakh:
             code = "kk_KZ";
             break;
