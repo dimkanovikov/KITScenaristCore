@@ -59,6 +59,9 @@ ProjectsManager::ProjectsManager(QObject* _parent) :
     m_recentProjectsModel(new QStandardItemModel(this)),
     m_remoteProjectsModel(new QStandardItemModel(this))
 {
+#ifdef Q_OS_IOS
+    makeRelativePaths();
+#endif
     loadRecentProjects();
     refreshProjects();
 }
@@ -437,12 +440,16 @@ void ProjectsManager::loadRecentProjects()
         //
         // Путь к проекту
         //
-        const QString path = recentFilesUsing.key(usingDate);
+        QString path = recentFilesUsing.key(usingDate);
 
         //
         // Название проекта
         //
         const QString name = recentFiles.value(path);
+
+#ifdef Q_OS_IOS
+        path = QDir(defaultLocation()).filePath(path);
+#endif
 
         //
         // Сам проект
@@ -460,8 +467,13 @@ void ProjectsManager::loadRecentProjects()
         //
         // ... если такого файла проекта нет в списке недавних, значит от "потерялся"
         //
+#ifdef Q_OS_IOS
+        const QString filePath = fileInfo.fileName();
+#elif
+        const QString filePath = fileInfo.absoluteFilePath();
+#endif
         if (fileInfo.fileName().endsWith(::PROJECT_FILE_EXTENSION)
-            && !recentFiles.contains(fileInfo.absoluteFilePath())) {
+            && !recentFiles.contains(filePath)) {
             //
             // Путь к проекту
             //
@@ -509,12 +521,68 @@ void ProjectsManager::saveRecentProjects()
     QMap<QString, QString> recentFilesUsing;
 
     for (const Project& project : m_recentProjects) {
-        recentFiles.insert(project.path(), project.name());
-        recentFilesUsing.insert(project.path(), project.lastEditDatetime().toString("yyyy-MM-dd hh:mm:ss"));
+#ifdef Q_OS_IOS
+        const QString path = QDir(defaultLocation()).relativeFilePath(project.path());
+#else
+        const QString path = project.path();
+#endif
+        recentFiles.insert(path, project.name());
+        recentFilesUsing.insert(path, project.lastEditDatetime().toString("yyyy-MM-dd hh:mm:ss"));
     }
 
     //
     // Сохраняем
+    //
+    DataStorageLayer::StorageFacade::settingsStorage()->setValues(
+                recentFiles,
+                RECENT_FILES_LIST_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+    DataStorageLayer::StorageFacade::settingsStorage()->setValues(
+                recentFilesUsing,
+                RECENT_FILES_USING_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+}
+
+void ProjectsManager::makeRelativePaths()
+{
+    //
+    // Загрузим списки проектов
+    //
+    QMap<QString, QString> recentFiles =
+            DataStorageLayer::StorageFacade::settingsStorage()->values(
+                RECENT_FILES_LIST_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+
+    QMap<QString, QString> recentFilesUsing =
+            DataStorageLayer::StorageFacade::settingsStorage()->values(
+                RECENT_FILES_USING_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+
+    for (const QString& fileName : recentFiles.keys()) {
+        //
+        // Если путь абсолютный
+        //
+        if (fileName.startsWith(QDir::separator())) {
+            //
+            // Получим имя файла вместе с расширением
+            //
+            const QString newFileName = fileName.split(QDir::separator()).back();
+
+            //
+            // И уберем оставшийся путь
+            recentFiles[newFileName] = recentFiles[fileName];
+            recentFilesUsing[newFileName] = recentFilesUsing[fileName];
+            recentFiles.remove(fileName);
+            recentFilesUsing.remove(fileName);
+        }
+    }
+
+    //
+    // Сохраним все, что сделали
     //
     DataStorageLayer::StorageFacade::settingsStorage()->setValues(
                 recentFiles,

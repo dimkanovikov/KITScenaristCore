@@ -133,6 +133,14 @@ namespace ManagementLayer
          */
         void saveRecentProjects();
 
+        //
+        // TODO: Убрать через несколько релизов (22.09.17)
+        //
+        /**
+         * @brief Поменяем пути на относительные для iOS.
+         */
+        void makeRelativePaths();
+
     private:
         /**
          * @brief Недавно используемые проекты
