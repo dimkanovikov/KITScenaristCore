@@ -477,11 +477,7 @@ void ProjectsManager::loadRecentProjects()
             //
             // Путь к проекту
             //
-#ifdef Q_OS_IOS
-            const QString path = QDir(defaultLocation()).filePath(filePath);
-#elif
-            const QString path = filePath;
-#endif
+            const QString path = fileInfo.absoluteFilePath();
 
             //
             // Название проекта
@@ -533,7 +529,6 @@ void ProjectsManager::saveRecentProjects()
         recentFiles.insert(path, project.name());
         recentFilesUsing.insert(path, project.lastEditDatetime().toString("yyyy-MM-dd hh:mm:ss"));
     }
-    return;
 
     //
     // Сохраняем
