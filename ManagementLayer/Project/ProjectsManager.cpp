@@ -59,6 +59,9 @@ ProjectsManager::ProjectsManager(QObject* _parent) :
     m_recentProjectsModel(new QStandardItemModel(this)),
     m_remoteProjectsModel(new QStandardItemModel(this))
 {
+#ifdef Q_OS_IOS
+    makeRelativePaths();
+#endif
     loadRecentProjects();
     refreshProjects();
 }
@@ -534,6 +537,57 @@ void ProjectsManager::saveRecentProjects()
 
     //
     // Сохраняем
+    //
+    DataStorageLayer::StorageFacade::settingsStorage()->setValues(
+                recentFiles,
+                RECENT_FILES_LIST_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+    DataStorageLayer::StorageFacade::settingsStorage()->setValues(
+                recentFilesUsing,
+                RECENT_FILES_USING_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+}
+
+void ProjectsManager::makeRelativePaths()
+{
+    //
+    // Загрузим списки проектов
+    //
+    QMap<QString, QString> recentFiles =
+            DataStorageLayer::StorageFacade::settingsStorage()->values(
+                RECENT_FILES_LIST_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+
+    QMap<QString, QString> recentFilesUsing =
+            DataStorageLayer::StorageFacade::settingsStorage()->values(
+                RECENT_FILES_USING_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+
+    for (const QString& fileName : recentFiles.keys()) {
+        //
+        // Если путь абсолютный
+        //
+        if (fileName.startsWith(QDir::separator())) {
+            //
+            // Получим имя файла вместе с расширением
+            //
+            const QString newFileName = fileName.split(QDir::separator()).back();
+
+            //
+            // И уберем оставшийся путь
+            recentFiles[newFileName] = recentFiles[fileName];
+            recentFilesUsing[newFileName] = recentFilesUsing[fileName];
+            recentFiles.remove(fileName);
+            recentFilesUsing.remove(fileName);
+        }
+    }
+
+    //
+    // Сохраним все, что сделали
     //
     DataStorageLayer::StorageFacade::settingsStorage()->setValues(
                 recentFiles,

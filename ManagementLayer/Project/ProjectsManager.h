@@ -99,11 +99,6 @@ namespace ManagementLayer
          */
         void hideProjectFromLocal(const QModelIndex& _index);
 
-        /**
-         * @brief Загрузить список недавних проектов
-         */
-        void loadRecentProjects();
-
     public slots:
         /**
          * @brief Обновить список проектов
@@ -129,9 +124,22 @@ namespace ManagementLayer
 
     private:
         /**
+         * @brief Загрузить список недавних проектов
+         */
+        void loadRecentProjects();
+
+        /**
          * @brief Сохранить список недавних проектов
          */
         void saveRecentProjects();
+
+        //
+        // TODO: Убрать через несколько релизов (22.09.17)
+        //
+        /**
+         * @brief Поменяем пути на относительные для iOS.
+         */
+        void makeRelativePaths();
 
     private:
         /**
