@@ -133,6 +133,11 @@ void ProjectFileWidget::initView()
     setMouseTracking(true);
     setMouseHover(false);
 
+    if (QApplication::layoutDirection() == Qt::RightToLeft) {
+        m_ui->projectName->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+        m_ui->projectInfo->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    }
+
     m_ui->projectInfo->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     m_ui->projectInfo->setElideMode(Qt::ElideLeft);
 

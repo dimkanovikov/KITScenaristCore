@@ -37,6 +37,10 @@ void ProjectUserWidget::setDeletable(bool _isDeletable)
 
 void ProjectUserWidget::initView()
 {
+    if (QApplication::layoutDirection() == Qt::RightToLeft) {
+        m_ui->userName->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    }
+
 	m_ui->closeAccess->setIcons(m_ui->closeAccess->icon());
 #ifndef MOBILE_OS
     m_ui->mainLayout->setContentsMargins(10, 0, 10, 0);
