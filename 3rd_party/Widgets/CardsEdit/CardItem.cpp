@@ -295,10 +295,17 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
                 //
                 const qreal fullCardHeight = boundingRect().height();
                 const qreal colorRectWidth = cardRect.width() / colorsNamesList.size();
-                QRectF colorRect(0, fullCardHeight - additionalColorsHeight, colorRectWidth, additionalColorsHeight);
+                const int colorXPos = QLocale().textDirection() == Qt::LeftToRight
+                                      ? 0
+                                      : cardRect.width() - colorRectWidth;
+                QRectF colorRect(colorXPos, fullCardHeight - additionalColorsHeight, colorRectWidth, additionalColorsHeight);
                 for (const QString& colorName : colorsNamesList) {
                     _painter->fillRect(colorRect, QColor(colorName));
-                    colorRect.moveLeft(colorRect.right());
+                    if (QLocale().textDirection() == Qt::LeftToRight) {
+                        colorRect.moveLeft(colorRect.right());
+                    } else {
+                        colorRect.moveRight(colorRect.left());
+                    }
                 }
             }
         }

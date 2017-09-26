@@ -9,6 +9,19 @@
 #include <QScrollBar>
 #include <QStyleOptionGraphicsItem>
 
+namespace {
+    /**
+     * @brief Флаги для отрисовки текста в зависимости от локали
+     */
+    static Qt::AlignmentFlag textDrawAlign() {
+        if (QLocale().textDirection() == Qt::LeftToRight) {
+            return Qt::AlignLeft;
+        } else {
+            return Qt::AlignRight;
+        }
+    }
+}
+
 
 ActItem::ActItem(QGraphicsItem* _parent) :
     QObject(),
@@ -155,9 +168,17 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
             if (!colorsNamesList.isEmpty()) {
                 const qreal additionalColorWidth = 20;
                 const int colorsCount = colorsNamesList.size() - 1;
-                QRectF colorRect(actRect.left(), actRect.top(), additionalColorWidth, actRect.height());
+                const int actXPos = QLocale().textDirection() == Qt::LeftToRight
+                                    ? actRect.left()
+                                    : actRect.right();
+                QRectF colorRect(actXPos, actRect.top(), additionalColorWidth, actRect.height());
                 for (int colorIndex = colorsCount; colorIndex >= 0; --colorIndex) {
-                    colorRect.moveLeft(actRect.right() - (colorsCount - colorIndex + 1)*additionalColorWidth);
+                    const int moveDelta = (colorsCount - colorIndex + 1)*additionalColorWidth;
+                    if (QLocale().textDirection() == Qt::LeftToRight) {
+                        colorRect.moveLeft(actRect.right() - moveDelta);
+                    } else {
+                        colorRect.moveRight(actRect.left() + moveDelta);
+                    }
                     _painter->fillRect(colorRect, QColor(colorsNamesList.value(colorIndex)));
                 }
             }
@@ -167,14 +188,18 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
         // Рисуем заголовок
         //
         QTextOption textoption;
-        textoption.setAlignment(Qt::AlignTop | Qt::AlignLeft);
+        textoption.setAlignment(Qt::AlignTop | ::textDrawAlign());
         textoption.setWrapMode(QTextOption::NoWrap);
         QFont font = _painter->font();
         font.setBold(true);
         _painter->setFont(font);
         _painter->setPen(palette.text().color());
+        const int titleWidth = _painter->fontMetrics().width(m_title);
         const int titleHeight = _painter->fontMetrics().height();
-        const QRectF titleRect(actRect.left() + 7, 9, _painter->fontMetrics().width(m_title), titleHeight);
+        const int titleXPos = _painter->layoutDirection() == Qt::LeftToRight
+                              ? actRect.left() + 7
+                              : actRect.right() - 7 - titleWidth;
+        const QRectF titleRect(titleXPos, 9, titleWidth, titleHeight);
         _painter->drawText(titleRect, m_title, textoption);
 
         //
@@ -183,7 +208,13 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
         font.setBold(false);
         _painter->setFont(font);
         const int spacing = titleRect.height() / 2;
-        const QRectF descriptionRect(titleRect.right() + spacing, 9, actRect.size().width() - titleRect.width() - spacing - 7, titleHeight);
+        const int descriptionXPos = QLocale().textDirection() == Qt::LeftToRight
+                                    ? titleRect.right() + spacing
+                                    : actRect.left();
+        const int descriptionWidth = QLocale().textDirection() == Qt::LeftToRight
+                                     ? actRect.size().width() - titleRect.width() - spacing - 7
+                                     : actRect.size().width() - titleRect.width() - spacing*2 - 7;
+        const QRectF descriptionRect(descriptionXPos, 9, descriptionWidth, titleHeight);
         _painter->drawText(descriptionRect, m_description, textoption);
 
         //
