@@ -490,6 +490,10 @@ void ScalableWrapper::updateTextEditSize()
     const QSize editorSize(editorWidth, editorHeight);
     if (m_editorProxy->size() != editorSize) {
         m_editorProxy->resize(editorSize);
+        if (QLocale().textDirection() == Qt::RightToLeft) {
+            const QPointF delta(vbarWidth * m_zoomRange,  0);
+            m_editorProxy->setPos(-delta);
+        }
     }
 
     //

@@ -89,7 +89,6 @@ void ScenarioNavigatorProxyStyle::drawPrimitive(QStyle::PrimitiveElement _elemen
             _painter->drawRoundedRect(rect, 2, 2);
         }
     }
-#ifdef MOBILE_OS
     //
     // Рисуем индикатор элемента, если у него есть дети
     //
@@ -114,8 +113,13 @@ void ScenarioNavigatorProxyStyle::drawPrimitive(QStyle::PrimitiveElement _elemen
         _painter->setPen(pen);
         _painter->setBrush(brush);
 
+#ifdef MOBILE_OS
         const qreal arrowHeight = StyleSheetHelper::dpToPx(8.);
         const qreal arrowHalfWidth = StyleSheetHelper::dpToPx(7.);
+#else
+        const qreal arrowHeight = StyleSheetHelper::dpToPx(5.5);
+        const qreal arrowHalfWidth = StyleSheetHelper::dpToPx(4.);
+#endif
         //
         // ... открытый
         //
@@ -135,13 +139,18 @@ void ScenarioNavigatorProxyStyle::drawPrimitive(QStyle::PrimitiveElement _elemen
             int x = _option->rect.center().x() + arrowHeight/2;
             int y = _option->rect.center().y();
             QPolygonF treangle;
-            treangle <<  QPointF(x, y)
-                     << QPointF(x - arrowHeight,  y - arrowHalfWidth)
-                     << QPointF(x - arrowHeight,  y + arrowHalfWidth);
+            if (QLocale().textDirection() == Qt::LeftToRight) {
+                treangle << QPointF(x, y)
+                         << QPointF(x - arrowHeight,  y - arrowHalfWidth)
+                         << QPointF(x - arrowHeight,  y + arrowHalfWidth);
+            } else {
+                treangle << QPointF(x,  y - arrowHalfWidth)
+                         << QPointF(x, y + arrowHalfWidth)
+                         << QPointF(x - arrowHeight,  y);
+            }
             _painter->drawPolygon(treangle);
         }
     }
-#endif
     else {
         QProxyStyle::drawPrimitive(_element, _option, _painter, _widget);
     }
