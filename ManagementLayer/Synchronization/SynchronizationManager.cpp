@@ -1060,8 +1060,7 @@ void SynchronizationManager::aboutWorkSyncScenario()
     //
     // Синхроинизируем, если есть такая возможность и закончена полная синхронизация
     //
-    if (isCanSync()
-        && !m_lastChangesSyncDatetime.isEmpty()) {
+    if (isCanSync()) {
         //
         // Защитимся от множественных выховов
         //
@@ -1077,6 +1076,20 @@ void SynchronizationManager::aboutWorkSyncScenario()
 #endif
 
         s_isInWorkSync = true;
+
+        //
+        // Если сценарий ещё не был полностью синхронизирован, делаем это
+        //
+        if (m_lastChangesSyncDatetime.isEmpty()) {
+            aboutFullSyncScenario();
+        }
+        //
+        // Если синхронизироваться так и не удалось, прерываем выполнение до следующего раза
+        //
+        if (m_lastChangesSyncDatetime.isEmpty()) {
+            s_isInWorkSync = false;
+            return;
+        }
 
         //
         // Отправляем новые изменения
@@ -1278,8 +1291,7 @@ void SynchronizationManager::aboutWorkSyncData()
     //
     // Синхроинизируем, если есть такая возможность и закончена полная синхронизация
     //
-    if (isCanSync()
-        && !m_lastDataSyncDatetime.isEmpty()) {
+    if (isCanSync()) {
         //
         // Защитимся от множественных выховов
         //
@@ -1295,6 +1307,20 @@ void SynchronizationManager::aboutWorkSyncData()
 #endif
 
         s_isInWorkSyncData = true;
+
+        //
+        // Если данные ещё не были полностью синхронизирован, делаем это
+        //
+        if (m_lastDataSyncDatetime.isEmpty()) {
+            aboutFullSyncData();
+        }
+        //
+        // Если синхронизироваться так и не удалось, прерываем выполнение до следующего раза
+        //
+        if (m_lastDataSyncDatetime.isEmpty()) {
+            s_isInWorkSyncData = false;
+            return;
+        }
 
         //
         // Отправляем новые изменения
@@ -1553,6 +1579,10 @@ bool SynchronizationManager::isOperationSucceed(QXmlStreamReader& _responseReade
                 // Скажем про ошибку
                 //
                 handleError(errorText, errorCode);
+                //
+                // Необходимо пересинхронизироваться, ибо ошибка могла произойти во время синхронизации данных
+                //
+                prepareToFullSynchronization();
                 return false;
             }
         }
