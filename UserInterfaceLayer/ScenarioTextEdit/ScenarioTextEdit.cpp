@@ -976,12 +976,13 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             // Определить область прорисовки слева от текста
             //
             const int pageLeft = 0;
+            const int pageRight = viewport()->width();
             const int textLeft = document()->rootFrame()->frameFormat().leftMargin() - 10;
             const int textRight = viewport()->width() + horizontalScrollBar()->maximum()
                                   - document()->rootFrame()->frameFormat().rightMargin() + 10;
 
             QPainter painter(viewport());
-            clipPageDecorationRegions(&painter);
+//            clipPageDecorationRegions(&painter);
 
             //
             // Определим начальный и конечный блоки на экране
@@ -1077,8 +1078,14 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     //
                     if (lastSceneColor.isValid()) {
                         painter.save();
-                        QPointF topLeft(textRight + leftDelta, lastBlockBottom);
-                        QPointF bottomRight(textRight + colorRectWidth + leftDelta, cursorREnd.bottom());
+                        QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                                        ? textRight + leftDelta
+                                        : textLeft - colorRectWidth - leftDelta,
+                                        lastBlockBottom);
+                        QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                            ? textRight + colorRectWidth + leftDelta
+                                            : textLeft - leftDelta,
+                                            cursorREnd.bottom());
                         QRectF rect(topLeft, bottomRight);
                         painter.setPen(lastSceneColor);
                         painter.setBrush(lastSceneColor);
@@ -1101,11 +1108,18 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                             //
                             // Определим область для отрисовки и выведем символ в редактор
                             //
-                            QPointF topLeft(pageLeft + leftDelta, cursorR.top());
-                            QPointF bottomRight(textLeft + leftDelta, cursorR.bottom() + 2);
+                            QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                                            ? pageLeft + leftDelta
+                                            : pageRight - leftDelta,
+                                            cursorR.top());
+                            QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                                ? textLeft + leftDelta
+                                                : textRight - leftDelta,
+                                                cursorR.bottom() + 2);
                             QRectF rect(topLeft, bottomRight);
                             painter.setFont(cursor.charFormat().font());
-                            painter.drawText(rect, Qt::AlignRight | Qt::AlignTop, "» ");
+                            painter.drawText(rect, Qt::AlignRight | Qt::AlignTop,
+                                             QLocale().textDirection() == Qt::LeftToRight ? "» " : " «");
                         }
                         //
                         // Остальные декорации

@@ -24,17 +24,6 @@ namespace {
     const int HORIZONTAL_SPACING = 6;
     const int VERTICAL_SPACING = 6;
 #endif
-
-    /**
-     * @brief Флаги для отрисовки текста в зависимости от локали
-     */
-    static int textDrawAlign() {
-        if (QLocale().textDirection() == Qt::LeftToRight) {
-            return Qt::AlignLeft;
-        } else {
-            return Qt::AlignRight;
-        }
-    }
 }
 
 
@@ -155,7 +144,10 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     //
     // ... иконка
     //
-    const QRect iconRect(0, m_iconTopMargin, m_iconSize, m_iconSize);
+    int iconRectX = QLocale().textDirection() == Qt::LeftToRight
+                    ? 0
+                    : TREE_INDICATOR_WIDTH + opt.rect.width() - m_iconSize - m_itemsHorizontalSpacing - RIGHT_MARGIN;
+    const QRect iconRect(iconRectX, m_iconTopMargin, m_iconSize, m_iconSize);
     QPixmap icon = _index.data(Qt::DecorationRole).value<QPixmap>();
     QIcon iconColorized(icon);
     QColor iconColor = headerBrush.color();
@@ -173,7 +165,9 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     const QString colorsNames = _index.data(BusinessLogic::ScenarioModel::ColorIndex).toString();
     QStringList colorsNamesList = colorsNames.split(";", QString::SkipEmptyParts);
     int colorsCount = colorsNamesList.size();
-    int colorRectX = TREE_INDICATOR_WIDTH + opt.rect.width() - COLOR_RECT_WIDTH - m_itemsHorizontalSpacing - RIGHT_MARGIN;
+    int colorRectX = QLocale().textDirection() == Qt::LeftToRight
+                     ? TREE_INDICATOR_WIDTH + opt.rect.width() - COLOR_RECT_WIDTH - m_itemsHorizontalSpacing - RIGHT_MARGIN
+                     : 0;
     if (colorsCount > 0) {
         //
         // Если цвет один, то просто рисуем его
@@ -191,7 +185,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
             // ... первый цвет рисуем на всю вышину в первой колонке
             //
             {
-                colorRectX -= COLOR_RECT_WIDTH;
+                colorRectX += (QLocale().textDirection() == Qt::LeftToRight ? -1 : 1) * COLOR_RECT_WIDTH;
                 const QColor color(colorsNamesList.takeFirst());
                 const QRectF colorRect(colorRectX, 0, COLOR_RECT_WIDTH, opt.rect.height());
                 _painter->fillRect(colorRect, color);
@@ -199,7 +193,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
             //
             // ... остальные цвета рисуем во второй колонке цветов
             //
-            colorRectX += COLOR_RECT_WIDTH;
+            colorRectX += (QLocale().textDirection() == Qt::LeftToRight ? 1 : -1) * COLOR_RECT_WIDTH;
             colorsCount = colorsNamesList.size();
             for (int colorIndex = 0; colorIndex < colorsCount; ++colorIndex) {
                 const QString colorName = colorsNamesList.takeFirst();
@@ -215,7 +209,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
             //
             // ... смещаем позицию назад, для корректной отрисовки остального контента
             //
-            colorRectX -= COLOR_RECT_WIDTH;
+            colorRectX += (QLocale().textDirection() == Qt::LeftToRight ? -1 : 1) * COLOR_RECT_WIDTH;
         }
     }
 
@@ -235,12 +229,14 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
             : "";
     const int chronometryRectWidth = _painter->fontMetrics().width(chronometry);
     const QRect chronometryRect(
-        colorRectX - chronometryRectWidth - m_itemsHorizontalSpacing,
+        QLocale().textDirection() == Qt::LeftToRight
+                ? colorRectX - chronometryRectWidth - m_itemsHorizontalSpacing
+                : colorRectX + COLOR_RECT_WIDTH + m_itemsHorizontalSpacing,
         m_topMargin,
         chronometryRectWidth,
         TEXT_LINE_HEIGHT
         );
-    _painter->drawText(chronometryRect, ::textDrawAlign() | Qt::AlignVCenter, chronometry);
+    _painter->drawText(chronometryRect, Qt::AlignLeft | Qt::AlignVCenter, chronometry);
 
     //
     // ... заголовок
@@ -248,9 +244,13 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     _painter->setPen(headerBrush.color());
     _painter->setFont(headerFont);
     const QRect headerRect(
-        iconRect.right() + m_itemsHorizontalSpacing,
+        QLocale().textDirection() == Qt::LeftToRight
+                ? iconRect.right() + m_itemsHorizontalSpacing
+                : chronometryRect.right() + m_itemsHorizontalSpacing,
         m_topMargin,
-        chronometryRect.left() - iconRect.right() - m_itemsHorizontalSpacing*2,
+        QLocale().textDirection() == Qt::LeftToRight
+                ? chronometryRect.left() - iconRect.right() - m_itemsHorizontalSpacing*2
+                : iconRect.left() - chronometryRect.right() - m_itemsHorizontalSpacing*2,
         TEXT_LINE_HEIGHT
         );
     QString header = _index.data(Qt::DisplayRole).toString().toUpper();
@@ -269,15 +269,18 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
         //
         QVariant sceneNumber = _index.data(BusinessLogic::ScenarioModel::SceneNumberIndex);
         if (!sceneNumber.isNull()) {
-            if (::textDrawAlign() == Qt::AlignLeft) {
+            if (QLocale().textDirection() == Qt::LeftToRight) {
                 header = sceneNumber.toString() + ". " + header;
             } else {
                 header = header + " ." + sceneNumber.toString();
             }
         }
     }
-    header = _painter->fontMetrics().elidedText(header, Qt::ElideRight, headerRect.width());
-    _painter->drawText(headerRect, ::textDrawAlign() | Qt::AlignVCenter, header);
+    header = _painter->fontMetrics().elidedText(
+                 header,
+                 QLocale().textDirection() == Qt::LeftToRight ? Qt::ElideRight : Qt::ElideMiddle,
+                 headerRect.width());
+    _painter->drawText(headerRect, Qt::AlignLeft | Qt::AlignVCenter, header);
 
     //
     // ... описание
@@ -286,16 +289,20 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
         _painter->setPen(textBrush.color());
         _painter->setFont(textFont);
         const QRect descriptionRect(
-            headerRect.left(),
+            QLocale().textDirection() == Qt::LeftToRight
+                    ? headerRect.left()
+                    : chronometryRect.left(),
             headerRect.bottom() + m_itemsVerticalSpacing,
-            chronometryRect.right() - headerRect.left(),
+            QLocale().textDirection() == Qt::LeftToRight
+                    ? chronometryRect.right() - headerRect.left()
+                    : headerRect.right() - chronometryRect.left(),
             TEXT_LINE_HEIGHT * m_sceneDescriptionHeight
             );
         const QString descriptionText =
                 m_sceneDescriptionIsSceneText
                 ? _index.data(BusinessLogic::ScenarioModel::SceneTextIndex).toString()
                 : _index.data(BusinessLogic::ScenarioModel::DescriptionIndex).toString();
-        _painter->drawText(descriptionRect, ::textDrawAlign() | Qt::TextWordWrap, descriptionText);
+        _painter->drawText(descriptionRect, Qt::AlignLeft | Qt::TextWordWrap, descriptionText);
     }
 
     _painter->restore();
