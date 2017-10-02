@@ -269,17 +269,10 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
         //
         QVariant sceneNumber = _index.data(BusinessLogic::ScenarioModel::SceneNumberIndex);
         if (!sceneNumber.isNull()) {
-            if (QLocale().textDirection() == Qt::LeftToRight) {
-                header = sceneNumber.toString() + ". " + header;
-            } else {
-                header = header + " ." + sceneNumber.toString();
-            }
+            header = sceneNumber.toString() + ". " + header;
         }
     }
-    header = _painter->fontMetrics().elidedText(
-                 header,
-                 QLocale().textDirection() == Qt::LeftToRight ? Qt::ElideRight : Qt::ElideMiddle,
-                 headerRect.width());
+    header = _painter->fontMetrics().elidedText(header, Qt::ElideRight, headerRect.width());
     _painter->drawText(headerRect, Qt::AlignLeft | Qt::AlignVCenter, header);
 
     //

@@ -977,12 +977,15 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             //
             const int pageLeft = 0;
             const int pageRight = viewport()->width();
-            const int textLeft = document()->rootFrame()->frameFormat().leftMargin() - 10;
-            const int textRight = viewport()->width() + horizontalScrollBar()->maximum()
+            const int textLeft = pageLeft
+                                 - (QLocale().textDirection() == Qt::LeftToRight ? 0 : horizontalScrollBar()->maximum())
+                                 + document()->rootFrame()->frameFormat().leftMargin() - 10;
+            const int textRight = pageRight
+                                  + (QLocale().textDirection() == Qt::LeftToRight ? horizontalScrollBar()->maximum() : 0)
                                   - document()->rootFrame()->frameFormat().rightMargin() + 10;
 
             QPainter painter(viewport());
-//            clipPageDecorationRegions(&painter);
+            clipPageDecorationRegions(&painter);
 
             //
             // Определим начальный и конечный блоки на экране
@@ -1040,7 +1043,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             //
             QTextBlock block = topBlock;
             const QRectF viewportGeometry = viewport()->geometry();
-            const int leftDelta = -horizontalScrollBar()->value();
+            const int leftDelta = (QLocale().textDirection() == Qt::LeftToRight ? -1 : 1) * horizontalScrollBar()->value();
             int lastBlockBottom = 0;
             int colorRectWidth = 0;
             QColor lastSceneColor;
@@ -1080,11 +1083,11 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         painter.save();
                         QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
                                         ? textRight + leftDelta
-                                        : textLeft - colorRectWidth - leftDelta,
+                                        : textLeft - colorRectWidth + leftDelta,
                                         lastBlockBottom);
                         QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
                                             ? textRight + colorRectWidth + leftDelta
-                                            : textLeft - leftDelta,
+                                            : textLeft + leftDelta,
                                             cursorREnd.bottom());
                         QRectF rect(topLeft, bottomRight);
                         painter.setPen(lastSceneColor);
@@ -1110,16 +1113,15 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                             //
                             QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
                                             ? pageLeft + leftDelta
-                                            : pageRight - leftDelta,
+                                            : textRight + leftDelta,
                                             cursorR.top());
                             QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
                                                 ? textLeft + leftDelta
-                                                : textRight - leftDelta,
+                                                : pageRight + leftDelta,
                                                 cursorR.bottom() + 2);
                             QRectF rect(topLeft, bottomRight);
                             painter.setFont(cursor.charFormat().font());
-                            painter.drawText(rect, Qt::AlignRight | Qt::AlignTop,
-                                             QLocale().textDirection() == Qt::LeftToRight ? "» " : " «");
+                            painter.drawText(rect, Qt::AlignRight | Qt::AlignTop, "» ");
                         }
                         //
                         // Остальные декорации
@@ -1140,8 +1142,14 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                     //
                                     // Определим область для отрисовки и выведем номер сцены в редактор
                                     //
-                                    QPointF topLeft(pageLeft + leftDelta, cursorR.top());
-                                    QPointF bottomRight(textLeft + leftDelta, cursorR.bottom());
+                                    QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                                                    ? pageLeft + leftDelta
+                                                    : textRight + leftDelta,
+                                                    cursorR.top());
+                                    QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                                        ? textLeft + leftDelta
+                                                        : pageRight + leftDelta,
+                                                        cursorR.bottom());
                                     QRectF rect(topLeft, bottomRight);
                                     painter.setFont(cursor.charFormat().font());
                                     painter.drawText(rect, Qt::AlignRight | Qt::AlignTop, sceneNumber);
