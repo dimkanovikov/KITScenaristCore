@@ -181,6 +181,7 @@
         <file>UI/uparrow-dark.png</file>
         <file>UI/uparrow-disable.png</file>
         <file>UI/style-desktop-compact.qss</file>
+        <file>UI/style-desktop-rtl.qss</file>
     </qresource>
     <qresource prefix="/Templates">
         <file>Templates/default.kitss</file>
