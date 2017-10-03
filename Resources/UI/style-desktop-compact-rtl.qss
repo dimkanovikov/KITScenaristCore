@@ -30,9 +30,9 @@ QPushButton[leftAlignedText=true] {
 QFrame[inTopPanel=true] {
     background: palette(button);
     color: palette(button-text);
-    padding-top: 2px;
-    padding-bottom: 2px;
-    min-height: 30px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    min-height: 26px;
 }
 
 /*
@@ -43,9 +43,9 @@ QLabel[inTopPanel=true] {
     color: palette(button-text);
     padding-top: 2px;
     padding-bottom: 2px;
-    padding-left: 3px;
-    padding-right: 5px;
-    min-height: 33px;
+    padding-left: 1px;
+    padding-right: 3px;
+    min-height: 25px;
 }
 
 /*
@@ -58,9 +58,9 @@ QToolButton[inTopPanel=true] {
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: palette(dark);
-    padding-left: 13px;
-    padding-right: 13px;
-    height: 34px;
+    padding-left: 4px;
+    padding-right: 4px;
+    height: 26px;
 }
 
 QToolButton:hover[inTopPanel=true] {
@@ -82,10 +82,10 @@ QToolButton::menu-button[inTopPanel=true] {
     border-left-width: 1px;
     border-left-style: solid;
     border-left-color: palette(dark);
-    width: 6px;
-    padding-top: 6px;
-    padding-bottom: 5px;
-    padding-left: 14px;
+    width: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 7px;
 }
 
 QToolButton::menu-button:hover[inTopPanel=true],
@@ -94,8 +94,8 @@ QToolButton::menu-button:pressed[inTopPanel=true] {
 }
 
 QToolButton::menu-arrow[inTopPanel=true] {
-    width: 10px;
     height: 10px;
+    width: 10px;
     image: url(:Interface/UI/downarrow_THEME_POSTFIX.png);
 }
 
@@ -103,8 +103,8 @@ QToolButton[projectAction=true] {
     background: palette(alternate-base);
     color: palette(button-text);
     border: none;
-    padding-left: 13px;
-    padding-right: 13px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 QToolButton:hover[projectAction=true] {
@@ -116,11 +116,15 @@ QToolButton:pressed[projectAction=true] {
     padding-top: 1px;
 }
 
+QToolButton::menu-arrow[noArrow=true] {
+    image: none;
+}
+
 /*
  * Стиль кнопок "Обзор"
  */
 QToolButton[isBrowseButton=true] {
-    padding: 2px 6px;
+    padding: 1px 3px;
 }
 
 QToolButton[isBrowseButton=true]:hover {
@@ -128,8 +132,8 @@ QToolButton[isBrowseButton=true]:hover {
 }
 
 QToolButton:pressed[isBrowseButton=true] {
-    padding-top: 3px;
-    padding-bottom: 1px;
+    padding-top: 2px;
+    padding-bottom: 0px;
 }
 
 /*
@@ -137,7 +141,7 @@ QToolButton:pressed[isBrowseButton=true] {
  */
 QToolButton:hover[isUpdateButton=true] {
     border: 1px solid transparent;
-    border-radius: 11px;
+    border-radius: 10px;
     background-color: palette(dark);
 }
 
@@ -149,8 +153,8 @@ QToolButton:pressed[isUpdateButton=true] {
  *
  */
 FlatButton[hasMenu=true] {
-    padding-left: 22px;
-    padding-right: 6px;
+    padding-left: 12px;
+    padding-right: 4px;
 }
 
 FlatButton:pressed[hasMenu=true] {
@@ -165,7 +169,7 @@ FlatButton::checked[inTopPanel=true] {
 }
 
 FlatButton::menu-button[inTopPanel=true] {
-    padding-left: 10px;
+    padding-left: 6px;
     border-left: none;
 }
 
@@ -173,8 +177,8 @@ FlatButton::menu-button[inTopPanel=true] {
  *
  */
 ColoredToolButton[inTopPanel=true] {
-    padding-left: 22px;
-    padding-right: 6px;
+    padding-left: 14px;
+    padding-right: 4px;
     min-width: 20px;
 }
 
@@ -183,8 +187,8 @@ ColoredToolButton:hover[inTopPanel=true] {
 }
 
 ColoredToolButton::menu-button[inTopPanel=true] {
-    padding-left: 10px;
-    border-right: none;
+    padding-left: 3px;
+    border-left: none;
 }
 
 ColoredToolButton::menu-button:hover[inTopPanel=true] {
@@ -195,8 +199,8 @@ ColoredToolButton::menu-button:hover[inTopPanel=true] {
  *
  */
 ColoredToolButton[itemDialog=true] {
-    padding: 2px 2px 2px 14px;
-    min-width: 20px;
+    padding: 1px 1px 1px 10px;
+    min-width: 16px;
     background-color: palette(button);
     border: 1px solid palette(dark);
 }
@@ -216,7 +220,7 @@ ColoredToolButton:!checked:hover[itemDialog=true], ColoredToolButton:!checked:pr
 }
 
 ColoredToolButton::menu-button[itemDialog=true] {
-    padding-left: 6px;
+    padding-left: 4px;
     border-left: none;
 }
 
@@ -228,11 +232,11 @@ ColoredToolButton::menu-button:hover[itemDialog=true] {
  * Выпадающий список
  */
 QComboBox  {
-    padding: 1px 10px 1px 16px;
+    padding: 1px 6px 1px 10px;
     background: palette(button);
     color: palette(button-text);
     border: 1px solid palette(dark);
-    min-height: 28px;
+    min-height: 24px;
     min-width: 70px;
 }
 
@@ -256,10 +260,10 @@ QComboBox::drop-down {
     background: transparent;
     subcontrol-origin: padding;
     subcontrol-position: top left;
-    width: 15px;
+    width: 12px;
     border-width: 0px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 QComboBox::down-arrow {
@@ -298,9 +302,9 @@ QComboBox[inTopPanel=true]  {
  */
 QLineEdit {
     border: 1px solid palette(dark);
-    min-height: 30px;
+    min-height: 23px;
     min-width: 70px;
-    padding-right: 10px;
+    padding-right: 6px;
 }
 
 QLineEdit:focus {
@@ -312,20 +316,20 @@ QLineEdit:focus {
  */
 QAbstractSpinBox {
     border: 1px solid palette(dark);
-    min-height: 30px;
+    min-height: 23px;
     min-width: 70px;
-    padding-right: 10px;
+    padding-right: 6px;
 }
 
 QAbstractSpinBox::up-button {
-    height: 16px;
+    height: 12px;
     background: palette(button);
     border: none;
     border-right: 1px solid palette(dark);
 }
 
 QAbstractSpinBox::down-button {
-    height: 16px;
+    height: 11px;
     background: palette(button);
     border: none;
     border-right: 1px solid palette(dark);
@@ -337,8 +341,8 @@ QAbstractSpinBox::down-button:hover, QAbstractSpinBox::up-button:hover {
 }
 
 QAbstractSpinBox::up-arrow {
-    width: 8px;
     height: 8px;
+    width: 8px;
     image: url(:/Interface/UI/uparrow_THEME_POSTFIX.png);
 }
 
@@ -347,8 +351,8 @@ QAbstractSpinBox::up-arrow:disabled {
 }
 
 QAbstractSpinBox::down-arrow {
-    width: 8px;
     height: 8px;
+    width: 8px;
     image: url(:/Interface/UI/downarrow_THEME_POSTFIX.png);
 }
 
@@ -381,7 +385,7 @@ QGroupBox::title {
     subcontrol-origin: margin;
     subcontrol-position: top left;
     padding: 1px 0px 3px 4px;
-    right: 0px;
+    left: 0px;
 }
 
 /*
@@ -389,7 +393,7 @@ QGroupBox::title {
  */
 QTabBar[inTopPanel=true] {
     background-color: palette(button);
-    min-height: 33px;
+    min-height: 26px;
 }
 
 QTabBar::tab[inTopPanel=true] {
@@ -398,8 +402,8 @@ QTabBar::tab[inTopPanel=true] {
     border-top-color: palette(dark);
     background: palette(button);
     color: palette(button-text);
-    padding-top: 4px;
-    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-bottom: 1px;
     padding-left: 11px;
     padding-right: 11px;
 }
@@ -411,71 +415,21 @@ QTabBar::tab:last[topPanelRightBordered=true] {
 }
 
 QTabBar::tab:selected[inTopPanel=true] {
-    border-bottom-width: 4px;
+    border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: palette(highlight);
 }
 
 QTabBar::tab:!selected[inTopPanel=true] {
-    border-bottom-width: 4px;
+    border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: palette(button);
 }
 
 QTabBar::tab:!selected:hover[inTopPanel=true] {
-    border-bottom-width: 4px;
+    border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: palette(dark);
-}
-
-/*
- * Полоса прокрутки
- */
-QScrollBar:vertical {
-    border: none;
-    background: palette(button);
-}
-
-QScrollBar:vertical {
-    width: 10px;
-    margin: 0px;
-}
-
-QScrollBar::handle:vertical {
-    background: palette(dark);
-    min-height: 0px;
-    min-width: 0px;
-    border: none;
-}
-
-QScrollBar::handle:vertical {
-    min-height: 60px;
-}
-
-QScrollBar::add-line:vertical {
-    height: 0px;
-}
-
-QScrollBar::sub-line:vertical {
-    height: 0px;
-}
-
-QScrollBar::sub-line:vertical {
-    height: 24px;
-    border: none;
-}
-
-QScrollBar::sub-line:vertical:hover {
-    background: palette(dark);
-}
-
-QScrollBar::add-line:vertical {
-    height: 24px;
-    border: none;
-}
-
-QScrollBar::add-line:vertical:hover {
-    background: palette(dark);
 }
 
 /*
@@ -497,7 +451,7 @@ QRadioButton[inTopPanel=true] {
     color: palette(button-text);
     padding-top: 2px;
     padding-bottom: 2px;
-    padding-left: 6px;
+    padding-right: 6px;
 }
 
 QRadioButton::indicator[inTopPanel=true] {
@@ -520,7 +474,7 @@ QRadioButton:checked[inTopPanel=true] {
 
 QRadioButton[inStartUpView=true] {
     spacing: 0px;
-    padding: 4px 12px 4px 12px;
+    padding: 2px 6px 2px 6px;
     background-color: palette(window);
     border: 1px solid palette(dark);
 }
@@ -543,7 +497,7 @@ QRadioButton[inStartUpView=true]:indicator {
 
 QRadioButton[chevron=true] {
     spacing: 0px;
-    padding: 10px 10px 10px 10px;
+    padding: 2px 6px 2px 6px;
     background-color: palette(base);
     border: none;
 }
@@ -567,9 +521,9 @@ QRadioButton[chevron=true]:indicator {
  * Кнопка
  */
 QPushButton {
-    padding: 3px 14px 3px 14px;
+    padding: 2px 7px 2px 7px;
     min-width: 70px;
-    min-height: 25px;
+    min-height: 20px;
     background-color: palette(button);
     border: 1px solid palette(dark);
 }
@@ -619,7 +573,22 @@ QHeaderView {
 }
 
 QHeaderView::section {
-    min-height: 33px;
+    min-height: 24px;
+}
+
+/*
+ * Виджет заголовок списка отчётов
+ */
+ctkCollapsibleButton[reportButton=true] {
+    padding: 4px 6px 4px 6px;
+    background-color: palette(button);
+    border: none;
+    font-weight: bold;
+}
+
+ctkCollapsibleButton[reportButton=true]:hover,
+ctkCollapsibleButton[reportButton=true]:pressed {
+    background-color: palette(dark);
 }
 
 ctkBasePopupWidget {
@@ -762,7 +731,7 @@ QFrame[projectFrame=true] {
  * Фрейм текстовой части проекта
  */
 QFrame[projectTextFrame=true] {
-    padding: 6px 10px 12px 10px;
+    padding: 6px;
 }
 
 /*
@@ -770,7 +739,6 @@ QFrame[projectTextFrame=true] {
  */
 QLabel[projectName=true] {
     font-weight: bold;
-    min-height: 22px;
 }
 
 /*
