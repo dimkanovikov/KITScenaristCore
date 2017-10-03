@@ -137,6 +137,8 @@
         <file>Icons/Mobile/lock-reset.png</file>
         <file>Icons/Mobile/menu/import.png</file>
         <file>Icons/Mobile/menu/export.png</file>
+        <file>Icons/plot.png</file>
+        <file>Icons/report.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/Scenarist_ru.qm</file>
