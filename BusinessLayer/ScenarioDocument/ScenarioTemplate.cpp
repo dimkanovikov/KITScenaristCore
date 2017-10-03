@@ -1021,6 +1021,8 @@ ScenarioTemplateFacade::ScenarioTemplateFacade()
     updateDefaultTemplate("default_courier_prime.");
     updateDefaultTemplate("final_draft_letter.");
     updateDefaultTemplate("final_draft_a4.");
+    updateDefaultTemplate("chinese.");
+    updateDefaultTemplate("hebrew.");
 #else
     defaultTemplatePath = updateDefaultTemplate("mobile.");
     updateDefaultTemplate("default.");

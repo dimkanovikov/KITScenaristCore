@@ -139,6 +139,8 @@
         <file>Icons/Mobile/menu/export.png</file>
         <file>Icons/plot.png</file>
         <file>Icons/report.png</file>
+        <file>Icons/plot-multiple.png</file>
+        <file>Icons/report-multiple.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/Scenarist_ru.qm</file>
@@ -186,5 +188,7 @@
         <file>Templates/mobile.kitss</file>
         <file>Templates/final_draft_letter.kitss</file>
         <file>Templates/final_draft_a4.kitss</file>
+        <file>Templates/chinese.kitss</file>
+        <file>Templates/hebrew.kitss</file>
     </qresource>
 </RCC>
