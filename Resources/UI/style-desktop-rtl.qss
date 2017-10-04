@@ -184,7 +184,7 @@ ColoredToolButton:hover[inTopPanel=true] {
 
 ColoredToolButton::menu-button[inTopPanel=true] {
     padding-left: 10px;
-    border-right: none;
+    border-left: none;
 }
 
 ColoredToolButton::menu-button:hover[inTopPanel=true] {

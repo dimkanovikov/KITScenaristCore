@@ -31,11 +31,11 @@ SearchWidget::SearchWidget(QWidget* _parent, bool _showTypesCombo) :
                          "  border-top-color: palette(dark);"
                          "}";
     if (QLocale().textDirection() == Qt::LeftToRight) {
-        styleSheet += "*[middle=\"true\"] { border-left: 0; border-radius: 0; min-width: 20px; }"
-                      "*[last=\"true\"] { border-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; min-width: 20px; }";
+        styleSheet += "*[middle=\"true\"] { border-left: 0; min-width: 20px; }"
+                      "*[last=\"true\"] { border-left: 0; min-width: 20px; }";
     } else {
-        styleSheet += "*[middle=\"true\"] { border-right: 0; border-radius: 0; min-width: 20px; }"
-                      "*[last=\"true\"] { border-right: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; min-width: 20px; }";
+        styleSheet += "*[middle=\"true\"] { border-right: 0; min-width: 20px; }"
+                      "*[last=\"true\"] { border-right: 0; min-width: 20px; }";
     }
     setStyleSheet(styleSheet);
     setProperty("searchWidget", true);
