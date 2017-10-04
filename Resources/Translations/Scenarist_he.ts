@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="he_IL">
+<TS version="2.1" language="he_IL">
 <context>
     <name>AcceptebleLineEdit</name>
     <message>
@@ -221,22 +221,22 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="220"/>
         <source>Total Dialogues</source>
-        <translation>סה&quot;כ דיאלוג</translation>
+        <translation>סה&quot;כ רפליקות</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="223"/>
         <source>Speaking Scenes</source>
-        <translation>סצינות עם דיאלוג</translation>
+        <translation>סצנות עם דיאלוג</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="225"/>
         <source>Non-Sp. Scenes</source>
-        <translation>סצינות ללא דיאלוג</translation>
+        <translation>סצנות ללא דיאלוג</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="228"/>
         <source>Total Scenes</source>
-        <translation>סה&quot;כ סצינות</translation>
+        <translation>סה&quot;כ סצנות</translation>
     </message>
 </context>
 <context>
@@ -249,7 +249,7 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="107"/>
         <source>Scene/Dialogue</source>
-        <translation>סצינה/דיאלוג</translation>
+        <translation>סצנה/דיאלוג</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="109"/>
@@ -277,7 +277,7 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="211"/>
         <source>Scene</source>
-        <translation>סצינה</translation>
+        <translation>סצנה</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="216"/>
@@ -313,7 +313,7 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="146"/>
         <source>Location/Scene</source>
-        <translation>לוקיישן/סצינה</translation>
+        <translation>לוקיישן/סצנה</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="148"/>
@@ -328,7 +328,7 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="152"/>
         <source>Scenes</source>
-        <translation>סצינות</translation>
+        <translation>סצנות</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="154"/>
@@ -397,12 +397,12 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="66"/>
         <source>Scene Heading</source>
-        <translation>כותרת סצינה</translation>
+        <translation>כותרת סצנה</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="67"/>
         <source>Scene Characters</source>
-        <translation>דמויות בסצינה</translation>
+        <translation>דמויות בסצנה</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="68"/>
@@ -462,7 +462,7 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="79"/>
         <source>Scene Description</source>
-        <translation>תיאור סצינה</translation>
+        <translation>תיאור סצנה</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="92"/>
@@ -576,12 +576,12 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="35"/>
         <source>Scene Report</source>
-        <translation>רשימת סצינות</translation>
+        <translation>רשימת סצנות</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="236"/>
         <source>Scene/Characters</source>
-        <translation>סצינה/דמויות</translation>
+        <translation>סצנה/דמויות</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="238"/>
@@ -615,7 +615,7 @@
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="36"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="259"/>
         <source>Scene Duration</source>
-        <translation>משך זמן סצינה</translation>
+        <translation>משך זמן סצנה</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="39"/>
@@ -649,7 +649,7 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="196"/>
         <source>Scene</source>
-        <translation>סצינה</translation>
+        <translation>סצנה</translation>
     </message>
 </context>
 <context>
@@ -710,7 +710,7 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="208"/>
         <source>Scenes</source>
-        <translation>סצינות</translation>
+        <translation>סצנות</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="232"/>
@@ -802,7 +802,7 @@
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="797"/>
         <source>Convert to scene</source>
-        <translation>הפוך לסצינה</translation>
+        <translation>הפוך לסצנה</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="798"/>
@@ -1028,7 +1028,7 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="229"/>
         <source>Scenes Numbering</source>
-        <translation>מספר סצינות</translation>
+        <translation>מספר סצנות</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="239"/>
@@ -1044,7 +1044,7 @@
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="272"/>
         <source>Scenes Prefix:</source>
         <translatorcomment>Уточнить</translatorcomment>
-        <translation>קידומת סצינה:</translation>
+        <translation>קידומת סצנה:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="298"/>
@@ -1250,7 +1250,7 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="113"/>
         <source>Remove scenes numbers</source>
-        <translation>מחק מספרי סצינה</translation>
+        <translation>מחק מספרי סצנה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="123"/>
@@ -1922,7 +1922,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="429"/>
         <source>Are you shure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>מחק מחקר &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation type="unfinished">מחק &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="522"/>
@@ -2612,7 +2612,7 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="547"/>
         <source>Add research materials such as text, web pages and images in tree. Use toolbar buttons and context menu for add or remove research materials in tree.</source>
-        <translation>הוסף חומרי מחקר הקשורים לתסריט. ניתן להוסיף חומרי טקסט, קישורים לדפי אינטרנט, גלריות תמונות, ועוד. כדי להוסיף ולמחוק חומרים באפשרותך להשתמש בסרגל הכלים או בתפריט ההקשר.</translation>
+        <translation>הוסף חומרי מחקר הקשורים לתסריט. ניתן להוסיף חומרי טקסט, קישורים לדפי אינטרנט, גלריות תמונות, ועוד. כדי להוסיף ולמחוק חומרים באפשרותך להשתמש בסרגל כלים או בתפריט הקשר.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="571"/>
@@ -2805,7 +2805,7 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="41"/>
         <source>Scene</source>
-        <translation>סצינה</translation>
+        <translation>סצנה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="60"/>
@@ -2849,7 +2849,7 @@ You can try to reload update.</source>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="82"/>
         <source>In scene heading</source>
-        <translation>ב&quot;כותרת סצינה&quot; </translation>
+        <translation>ב&quot;כותרת סצנה&quot; </translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="83"/>
@@ -3058,7 +3058,7 @@ You can try to reload update.</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="798"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1648"/>
         <source>Show Scenes Numbers</source>
-        <translation>הצג מספרי סצינה</translation>
+        <translation>הצג מספרי סצנה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="805"/>
@@ -3113,7 +3113,7 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1459"/>
         <source>Replace three single dots to threedots character.</source>
-        <translation>החלף שלוש נקודות בסימן אחד.</translation>
+        <translation>החלף שלוש נקודות בסימן אחד</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1466"/>
@@ -3128,7 +3128,7 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1507"/>
         <source>For scene heading and character paragraphs.</source>
-        <translation>עבור פסקות &quot;כותרת סצינה&quot; ו&quot;דמות&quot;.</translation>
+        <translation>עבור פסקאות &quot;כותרת סצנה&quot; ו&quot;דמות&quot;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1538"/>
@@ -3143,17 +3143,17 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1661"/>
         <source>Show scene description</source>
-        <translation>הצג תיאור סצינה</translation>
+        <translation>הצג תיאור סצנה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1672"/>
         <source>Scene text</source>
-        <translation>טקסט הסצינה</translation>
+        <translation>טקסט הסצנה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1682"/>
         <source>Scene synopsis</source>
-        <translation>תקציר סצינה</translation>
+        <translation>תקציר סצנה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1706"/>
@@ -3163,7 +3163,7 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1767"/>
         <source>Show Scene Title instead of Scene Heading</source>
-        <translation>הצג שם סצינה במקום כותרת</translation>
+        <translation>הצג שם סצנה במקום כותרת</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1824"/>
@@ -3220,7 +3220,7 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2031"/>
         <source>Scene Heading</source>
-        <translation>כותרת סצינה</translation>
+        <translation>כותרת סצנה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2068"/>
@@ -3489,7 +3489,7 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="441"/>
         <source>Help</source>
-        <translation>כיצד להשתמש ביישום</translation>
+        <translation>עזרה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="464"/>
@@ -3527,12 +3527,12 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="25"/>
         <source>Summary text statistics</source>
-        <translation>סטטיסטיקה כוללת</translation>
+        <translation>סטטיסטיקה כללית</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="35"/>
         <source>Scenes statistics</source>
-        <translation>סטטיסטיקה לפי סצינות</translation>
+        <translation>סטטיסטיקה לפי סצנות</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="45"/>
@@ -3547,7 +3547,7 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="69"/>
         <source>Sort scenes</source>
-        <translation>מיין סצינות</translation>
+        <translation>מיין סצנות</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="80"/>
@@ -3611,17 +3611,17 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="168"/>
         <source>from longest to shortest chron</source>
-        <translation>לפי אורך סצינה (ארוך תחילה)</translation>
+        <translation>לפי אורך סצנה (ארוך תחילה)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="173"/>
         <source>from shortest to longest chron</source>
-        <translation>לפי אורך סצינה (קצר תחילה)</translation>
+        <translation>לפי אורך סצנה (קצר תחילה)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="185"/>
         <source>Show speaking and non-speaking scenes count</source>
-        <translation>הצג סצינות עם ובלי דיאלוג</translation>
+        <translation>הצג סצנות עם ובלי דיאלוג</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="195"/>
@@ -3631,12 +3631,12 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="216"/>
         <source>from most to least scenes</source>
-        <translation>לפי מספר סצינות (הרבה תחילה)</translation>
+        <translation>לפי מספר סצנות (הרבה תחילה)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="221"/>
         <source>from least to most scenes</source>
-        <translation>לפי מספר סצינות (מעט תחילה)</translation>
+        <translation>לפי מספר סצנות (מעט תחילה)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="226"/>
@@ -3656,7 +3656,7 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="270"/>
         <source>Scene Duration</source>
-        <translation>משך זמן סצינה</translation>
+        <translation>משך זמן סצנה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="280"/>
@@ -4345,7 +4345,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="226"/>
         <source>Add new card</source>
-        <translation>הוסף כריס חדש</translation>
+        <translation>הוסף כרטיס חדש</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="229"/>
@@ -4411,7 +4411,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="79"/>
         <source>Scene</source>
-        <translation>סצינה</translation>
+        <translation>סצנה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="82"/>
@@ -4421,7 +4421,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="103"/>
         <source>Scene Description</source>
-        <translation>תיאור סצינה</translation>
+        <translation>תיאור סצנה</translation>
     </message>
 </context>
 <context>
@@ -4429,7 +4429,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="199"/>
         <source>Convert to scene</source>
-        <translation>הפוך לסצינה</translation>
+        <translation>הפוך לסצנה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="201"/>
@@ -4466,12 +4466,12 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="326"/>
         <source>Scenes:</source>
-        <translation>סצינות:</translation>
+        <translation>סצנות:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="328"/>
         <source>Scenes Count</source>
-        <translation>מספר סצינות</translation>
+        <translation>מספר סצנות</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="331"/>
@@ -4492,7 +4492,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="345"/>
         <source>Show/hide scene note</source>
-        <translation>הצג/הסתר תיאור סצינה</translation>
+        <translation>הצג/הסתר תיאור סצנה</translation>
     </message>
 </context>
 <context>
@@ -4883,7 +4883,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="298"/>
         <source>Scene report</source>
-        <translation>דוח סצינות</translation>
+        <translation>דוח סצנות</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="299"/>
