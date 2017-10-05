@@ -196,7 +196,7 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
         _painter->setPen(palette.text().color());
         const int titleWidth = _painter->fontMetrics().width(m_title);
         const int titleHeight = _painter->fontMetrics().height();
-        const int titleXPos = _painter->layoutDirection() == Qt::LeftToRight
+        const int titleXPos = QLocale().textDirection() == Qt::LeftToRight
                               ? actRect.left() + 7
                               : actRect.right() - 7 - titleWidth;
         const QRectF titleRect(titleXPos, 9, titleWidth, titleHeight);
