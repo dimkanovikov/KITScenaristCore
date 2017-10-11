@@ -807,7 +807,7 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
 
     return isEventHandled;
 }
-#include <QDebug>
+
 void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
 {
     //
@@ -1021,6 +1021,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     }
                 }
             }
+            bottomBlock = bottomBlock.next();
 
             //
             // Проходим блоки на экране и декорируем их

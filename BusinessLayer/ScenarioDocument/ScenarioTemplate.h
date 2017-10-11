@@ -394,9 +394,40 @@ namespace BusinessLogic
     {
     public:
         /**
-         * @brief Название умолчального шаблона
+         * @brief Названия шаблонов
          */
-        static QString defaultTemplateName();
+        /** @{ */
+        static QString finalDraftA4TemplateName();
+        static QString finalDraftLetterTemplateName();
+        static QString russianTemplateName();
+        static QString russianTemplateWithCourierPrimeTemplateName();
+        static QString chineseTemplateName();
+        static QString hebrewTemplateName();
+        /** @} */
+
+        /**
+         * @brief Описания шаблонов
+         */
+        /** @{ */
+        static QString finalDraftA4TemplateDescription();
+        static QString finalDraftLetterTemplateDescription();
+        static QString russianTemplateDescription();
+        static QString russianTemplateWithCourierPrimeTemplateDescription();
+        static QString chineseTemplateDescription();
+        static QString hebrewTemplateDescription();
+        /** @} */
+
+        /**
+         * @brief Названия старых шаблонов
+         */
+        /** @{ */
+        static QString oldFinalDraftA4TemplateName();
+        static QString oldFinalDraftLetterTemplateName();
+        static QString oldRussianTemplateName();
+        static QString oldRussianWithCourierPrimeTemplateName();
+        static QString oldChineseTemplateName();
+        static QString oldHebrewTemplateName();
+        /** @} */
 
     public:
         ScenarioTemplate() {}
@@ -486,6 +517,11 @@ namespace BusinessLogic
         void load(const QString& _fromFile);
 
     private:
+        /**
+         * @brief Является ли шаблон умолчальным
+         */
+        bool m_isDefault = false;
+
         /**
          * @brief Название
          */
