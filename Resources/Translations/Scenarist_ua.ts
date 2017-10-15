@@ -1085,6 +1085,10 @@
         <source>汉语</source>
         <translation></translation>
     </message>
+    <message>
+        <source>עִבְרִית</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -1726,6 +1730,159 @@ You can try to reload update.</source>
     <message>
         <source>Unable to open archive.</source>
         <translation>Неможливо відкрити архів.</translation>
+    </message>
+</context>
+<context>
+    <name>OnboardingView</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Форма</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip</source>
+        <translation type="unfinished">Пропустити</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
+        <translation type="unfinished">&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Не знайшли свою мову? Дізнайтеся, як ви можете додати її самостійно.&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation type="unfinished">English</translation>
+    </message>
+    <message>
+        <source>Português</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Español</source>
+        <translation type="unfinished">Español</translation>
+    </message>
+    <message>
+        <source>Français</source>
+        <translation type="unfinished">Français</translation>
+    </message>
+    <message>
+        <source>Detect language from system locale</source>
+        <translation type="unfinished">Використовувати системні мовні налаштування</translation>
+    </message>
+    <message>
+        <source>Українська мова</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>汉语</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>فارْسِى</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deutsch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Русский</source>
+        <translation type="unfinished">Русский</translation>
+    </message>
+    <message>
+        <source>Choose language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Қазақ</source>
+        <translation type="unfinished">Қазақ</translation>
+    </message>
+    <message>
+        <source>עִבְרִית</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose application theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Light theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use research module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can collect all the necessary materials for the project in one place. In it, you can save basic information about the script, such as its name, logline, synopsis, and also fill in the title page of the script.
+
+Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
+
+Also, in research tab you can store a variety of materials (text documents, images, links to web pages and mindmaps) associated with your project, organizing them in a convenient manner.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Research</source>
+        <translation type="unfinished">Розробка</translation>
+    </message>
+    <message>
+        <source>Cards</source>
+        <translation type="unfinished">Картки</translation>
+    </message>
+    <message>
+        <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
+
+You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use cards module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation type="unfinished">Сценарій</translation>
+    </message>
+    <message>
+        <source>Script module allow you to work with screenplay.
+
+Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
+
+And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use script module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose script template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Statistics</source>
+        <translation type="unfinished">Статистика</translation>
+    </message>
+    <message>
+        <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use statistics module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KIT Scenarist. Setup of basic features.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3342,6 +3499,17 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
 </context>
 <context>
+    <name>UserInterface::OnboardingView</name>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finish</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UserInterface::ProjectsList</name>
     <message>
         <source>no changes</source>
@@ -3793,6 +3961,14 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Farsi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

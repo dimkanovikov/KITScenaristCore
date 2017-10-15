@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<style name="default_courier_prime" description=""
+<style default="true" name="Russian screenplay with Courier Prime" description="Russian and CIS screenplay standard template with Courier Prime font instead of Courier New."
 	   page_format="A4" page_margins="37.5,25,25,12.5"
 	   numbering_alignment="top,right">
   <block id="scene_heading" active="true"

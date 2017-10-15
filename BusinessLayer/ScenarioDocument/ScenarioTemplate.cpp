@@ -605,9 +605,94 @@ namespace {
     /** @} */
 }
 
-QString ScenarioTemplate::defaultTemplateName()
+QString ScenarioTemplate::finalDraftA4TemplateName()
 {
-     return QApplication::translate("BusinessLogic::ScenarioTemplate", "Default");
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Final Draft screenplay (A4)");
+}
+
+QString ScenarioTemplate::finalDraftLetterTemplateName()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Final Draft screenplay (Letter)");
+}
+
+QString ScenarioTemplate::russianTemplateName()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Russian screenplay");
+}
+
+QString ScenarioTemplate::russianTemplateWithCourierPrimeTemplateName()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Russian screenplay with Courier Prime");
+}
+
+QString ScenarioTemplate::chineseTemplateName()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Chinese screenplay");
+}
+
+QString ScenarioTemplate::hebrewTemplateName()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Hebrew screenplay");
+}
+
+QString ScenarioTemplate::finalDraftA4TemplateDescription()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "International screenplay standard template for A4 page size.");
+}
+
+QString ScenarioTemplate::finalDraftLetterTemplateDescription()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "International screenplay standard template for Letter page size.");
+}
+
+QString ScenarioTemplate::russianTemplateDescription()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Russian and CIS screenplay standard template.");
+}
+
+QString ScenarioTemplate::russianTemplateWithCourierPrimeTemplateDescription()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.");
+}
+
+QString ScenarioTemplate::chineseTemplateDescription()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Chinese screenplay standard template.");
+}
+
+QString ScenarioTemplate::hebrewTemplateDescription()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Hebrew screenplay standard template.");
+}
+
+QString ScenarioTemplate::oldFinalDraftA4TemplateName()
+{
+    return "Final Draft A4";
+}
+
+QString ScenarioTemplate::oldFinalDraftLetterTemplateName()
+{
+    return "Final Draft Letter";
+}
+
+QString ScenarioTemplate::oldRussianTemplateName()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Default");
+}
+
+QString ScenarioTemplate::oldRussianWithCourierPrimeTemplateName()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Default with Courier Prime");
+}
+
+QString ScenarioTemplate::oldChineseTemplateName()
+{
+    return "Chinese script template";
+}
+
+QString ScenarioTemplate::oldHebrewTemplateName()
+{
+    return "Hebrew script template";
 }
 
 void ScenarioTemplate::saveToFile(const QString& _filePath) const
@@ -791,13 +876,34 @@ void ScenarioTemplate::load(const QString& _fromFile)
             // Считываем атрибуты шаблона
             //
             QXmlStreamAttributes templateAttributes = reader.attributes();
+            m_isDefault = templateAttributes.value("default").toString() == "true";
             m_name = templateAttributes.value("name").toString();
-            if (m_name == "default") {
-                m_name = defaultTemplateName();
-            } else if (m_name == "default_courier_prime") {
-                m_name = QApplication::translate("BusinessLogic::ScenarioTemplate", "Default with Courier Prime");
-            }
             m_description = templateAttributes.value("description").toString();
+            //
+            // ... если это один из стандартных стилей преобразуем его название и описание
+            //
+            if (m_isDefault) {
+                if (m_name == "Final Draft screenplay (A4)") {
+                    m_name = finalDraftA4TemplateName();
+                    m_description = finalDraftA4TemplateDescription();
+                } else if (m_name == "Final Draft screenplay (Letter)") {
+                    m_name = finalDraftLetterTemplateName();
+                    m_description = finalDraftLetterTemplateDescription();
+                } else if (m_name == "Russian screenplay") {
+                    m_name = russianTemplateName();
+                    m_description = russianTemplateDescription();
+                } else if (m_name == "Russian screenplay with Courier Prime") {
+                    m_name = russianTemplateWithCourierPrimeTemplateName();
+                    m_description = russianTemplateWithCourierPrimeTemplateDescription();
+                } else if (m_name == "Chinese screenplay") {
+                    m_name = chineseTemplateName();
+                    m_description = chineseTemplateDescription();
+                } else if (m_name == "Hebrew screenplay") {
+                    m_name = hebrewTemplateName();
+                    m_description = hebrewTemplateDescription();
+                }
+            }
+            //
             m_pageSizeId = PageMetrics::pageSizeIdFromString(templateAttributes.value("page_format").toString());
             m_pageMargins = ::marginsFromString(templateAttributes.value("page_margins").toString());
             const QString numberingAlignment = templateAttributes.value("numbering_alignment").toString();
@@ -1017,19 +1123,27 @@ ScenarioTemplateFacade::ScenarioTemplateFacade()
 
     QString defaultTemplatePath;
 #ifndef MOBILE_OS
-    defaultTemplatePath = updateDefaultTemplate("default.");
-    updateDefaultTemplate("default_courier_prime.");
+    defaultTemplatePath = updateDefaultTemplate("final_draft_a4.");
+    updateDefaultTemplate("russian.");
+    updateDefaultTemplate("russian_courier_prime.");
     updateDefaultTemplate("final_draft_letter.");
-    updateDefaultTemplate("final_draft_a4.");
     updateDefaultTemplate("chinese.");
     updateDefaultTemplate("hebrew.");
 #else
     defaultTemplatePath = updateDefaultTemplate("mobile.");
-    updateDefaultTemplate("default.");
-    updateDefaultTemplate("default_courier_prime.");
+    updateDefaultTemplate("russian.");
+    updateDefaultTemplate("russian_courier_prime.");
     updateDefaultTemplate("final_draft_letter.");
     updateDefaultTemplate("final_draft_a4.");
+    updateDefaultTemplate("chinese.");
+    updateDefaultTemplate("hebrew.");
 #endif
+
+    //
+    // Удаляем файлы default.kitss и default_courier_prime.kitss от старых версий, когда в них хранились русские шаблоны
+    //
+    QFile::remove(templatesFolderPath + QDir::separator() + "default.kitss");
+    QFile::remove(templatesFolderPath + QDir::separator() + "default_courier_prime.kitss");
 
     //
     // Загрузить шаблоны
