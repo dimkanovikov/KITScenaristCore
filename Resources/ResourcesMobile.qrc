@@ -67,6 +67,7 @@
         <file>Icons/Editing/redo.png</file>
         <file>Icons/Editing/undo.png</file>
         <file>Icons/Mobile/menu/title-page.png</file>
+        <file>Icons/help_startpage.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/ScenaristMobile_ru.qm</file>
