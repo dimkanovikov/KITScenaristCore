@@ -103,7 +103,6 @@ namespace BusinessLogic
          * ---
          * type == character (QString)
          * - name (QString)
-         * - real_name (QString)
          * - description (QString)
          * - sort_order (int)
          * - childs (QVariantList)
