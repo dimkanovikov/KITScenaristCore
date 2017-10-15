@@ -1,19 +1,31 @@
 #include "TreeViewItemDelegate.h"
 
 #include <3rd_party/Helpers/ImageHelper.h>
+#include <3rd_party/Helpers/StyleSheetHelper.h>
 
 #include <QPainter>
 
 namespace {
+#ifdef MOBILE_OS
+    const int ICON_SIZE = 28;
+    const int TOP_MARGIN = 9;
+    const int BOTTOM_MARGIN = 9;
+    const int ITEMS_SPACING = 8;
+#else
     const int ICON_SIZE = 20;
     const int TOP_MARGIN = 8;
     const int BOTTOM_MARGIN = 8;
     const int ITEMS_SPACING = 8;
+#endif
 }
 
 
 TreeViewItemDelegate::TreeViewItemDelegate(QObject* _parent) :
-    QStyledItemDelegate(_parent)
+    QStyledItemDelegate(_parent),
+    m_iconSize(StyleSheetHelper::dpToPx(ICON_SIZE)),
+    m_topMargin(StyleSheetHelper::dpToPx(TOP_MARGIN)),
+    m_bottomMargin(StyleSheetHelper::dpToPx(BOTTOM_MARGIN)),
+    m_itemsSpacing(StyleSheetHelper::dpToPx(ITEMS_SPACING))
 {
 }
 
@@ -34,9 +46,17 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
     //
     // Определим кисти и шрифты
     //
+#ifdef MOBILE_OS
+    QBrush backgroundBrush = opt.palette.background();
+    QBrush textBrush = opt.palette.mid();
+    QFont headerFont = opt.font;
+    headerFont.setPointSize(16);
+    headerFont.setWeight(QFont::Medium);
+#else
     QBrush backgroundBrush = opt.palette.background();
     QBrush textBrush = opt.palette.text();
     QFont headerFont = opt.font;
+#endif
     //
     // ... если это родитель верхнего уровня
     //
@@ -74,11 +94,12 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
     //
     // Рисуем
     //
-    const int HEADER_MARGIN = 12;
+    const int HEADER_MARGIN = StyleSheetHelper::dpToPx(12);
     //
     // ... фон
     //
     _painter->fillRect(opt.rect, backgroundBrush);
+#ifndef MOBILE_OS
     //
     // ... разделитель
     //
@@ -86,6 +107,7 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
     left.setX(0);
     _painter->setPen(QPen(opt.palette.dark(), 0.5));
     _painter->drawLine(left, opt.rect.bottomRight());
+#endif
     //
     // Меняем координаты, чтобы рисовать было удобнее
     //
@@ -93,8 +115,8 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
     //
     // ... иконка
     //
-    const int iconXPos = QLocale().textDirection() == Qt::LeftToRight ? 0 : opt.rect.right() - ICON_SIZE;
-    const QRect iconRect(iconXPos, TOP_MARGIN, ICON_SIZE, ICON_SIZE);
+    const int iconXPos = QLocale().textDirection() == Qt::LeftToRight ? 0 : opt.rect.right() - m_iconSize;
+    const QRect iconRect(iconXPos, m_topMargin, m_iconSize, m_iconSize);
     QPixmap icon = _index.data(Qt::DecorationRole).value<QPixmap>();
     QIcon iconColorized(icon);
     QColor iconColor = textBrush.color();
@@ -106,12 +128,12 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
     //
     _painter->setPen(textBrush.color());
     _painter->setFont(headerFont);
-    const int headerXPos = QLocale().textDirection() == Qt::LeftToRight ? iconRect.right() + ITEMS_SPACING : 0;
+    const int headerXPos = QLocale().textDirection() == Qt::LeftToRight ? iconRect.right() + m_itemsSpacing : 0;
     const QRect headerRect(
                 headerXPos,
-                TOP_MARGIN,
-                opt.rect.width() - iconRect.width() - ITEMS_SPACING - HEADER_MARGIN,
-                ICON_SIZE
+                m_topMargin,
+                opt.rect.width() - iconRect.width() - m_itemsSpacing - HEADER_MARGIN,
+                m_iconSize
                 );
     QString header = _index.data(Qt::DisplayRole).toString();
     header = _painter->fontMetrics().elidedText(header, Qt::ElideRight, headerRect.width());
@@ -125,7 +147,7 @@ QSize TreeViewItemDelegate::sizeHint(const QStyleOptionViewItem& _option, const 
     Q_UNUSED(_option);
     Q_UNUSED(_index);
 
-    const int height = TOP_MARGIN + ICON_SIZE + BOTTOM_MARGIN;
+    const int height = m_topMargin + m_iconSize + m_bottomMargin;
     const int width = 50;
     return QSize(width, height);
 }

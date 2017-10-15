@@ -67,15 +67,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     // Определим кисти и шрифты
     //
     const QPalette palette = QApplication::palette();
-#ifndef MOBILE_OS
-    QBrush backgroundBrush = palette.base();
-    QBrush headerBrush = palette.text();
-    QBrush textBrush = palette.text();
-    QFont headerFont = opt.font;
-    headerFont.setBold(m_showSceneDescription ? true : false);
-    QFont textFont = opt.font;
-    textFont.setBold(false);
-#else
+#ifdef MOBILE_OS
     QBrush backgroundBrush = palette.background();
     QBrush headerBrush = palette.text();
     QBrush textBrush = palette.mid();
@@ -85,6 +77,14 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
     QFont textFont = opt.font;
     textFont.setPointSize(14);
     textFont.setWeight(QFont::Medium);
+#else
+    QBrush backgroundBrush = palette.base();
+    QBrush headerBrush = palette.text();
+    QBrush textBrush = palette.text();
+    QFont headerFont = opt.font;
+    headerFont.setBold(m_showSceneDescription ? true : false);
+    QFont textFont = opt.font;
+    textFont.setBold(false);
 #endif
     //
     // ... для выделенных элементов

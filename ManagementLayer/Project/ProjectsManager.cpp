@@ -469,7 +469,7 @@ void ProjectsManager::loadRecentProjects()
         //
 #ifdef Q_OS_IOS
         const QString filePath = fileInfo.fileName();
-#elif
+#else
         const QString filePath = fileInfo.absoluteFilePath();
 #endif
         if (fileInfo.fileName().endsWith(::PROJECT_FILE_EXTENSION)

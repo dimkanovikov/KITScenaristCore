@@ -480,7 +480,7 @@ bool ScenarioTextEdit::isRedoAvailable() const
 {
     return m_document->isRedoAvailableReimpl();
 }
-
+#include <QDebug>
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 {
 #ifdef MOBILE_OS
@@ -490,7 +490,15 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
     if (_event->key() == Qt::Key_Back) {
         _event->ignore();
         return;
+    } else if (_event->key() == Qt::Key_Backspace) {
+        qDebug() << "Backspace";
+    } else if (_event->key() == Qt::Key_Return\
+               || _event->key() == Qt::Key_Enter) {
+        QApplication::inputMethod()->commit();
+        QApplication::inputMethod()->reset();
+        qDebug() << "Enter";
     }
+    qDebug() << _event->key();
 #endif
 
     //
@@ -585,6 +593,9 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 
 void ScenarioTextEdit::inputMethodEvent(QInputMethodEvent* _event)
 {
+//    qDebug() << _event->replacementStart() << _event->replacementLength() << _event->preeditString() <<_event->commitString() << _event->attributes().count()
+//             << _event->attributes().first().type << _event->attributes().first().value
+//                << _event->attributes().last().type << _event->attributes().last().value;
     //
     // Закроем подстановщика, перед событием
     //
