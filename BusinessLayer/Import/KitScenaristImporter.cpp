@@ -129,12 +129,19 @@ QVariantMap KitScenaristImporter::importResearch(const ImportParameters& _import
 QVariantMap KitScenaristImporter::loadResearchDocument(const QSqlQuery& _query, QSqlDatabase& _database) const
 {
     //
+    // Т.к. разработка может быть довольно большой, то нужно давать выполняться гуи-потоку,
+    // чтобы не было ощущения зависания
+    //
+    QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
+
+    //
     // Извлечём общие данные для документа
     //
     QVariantMap document;
     ::storeField("type", _query, document);
     ::storeField("name", _query, document);
     ::storeField("description", _query, document);
+    ::storeField("sort_order", _query, document);
     const int documentType = document["type"].toInt();
     //
     // Извлечём данные зависящие от типа
