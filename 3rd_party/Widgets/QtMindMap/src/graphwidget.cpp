@@ -80,6 +80,18 @@ GraphLogic *GraphWidget::graphLogic() const
     return m_graphlogic;
 }
 
+void GraphWidget::saveToImage(const QString& _filePath)
+{
+    m_scene->clearSelection();
+    QImage image(m_scene->sceneRect().size().toSize(), QImage::Format_ARGB32);
+
+    QPainter painter(&image);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.fillRect(image.rect(), palette().window());
+    m_scene->render(&painter);
+    image.save(_filePath);
+}
+
 void GraphWidget::zoomIn()
 {
     scaleView(qreal(0.1));

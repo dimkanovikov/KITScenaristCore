@@ -9,6 +9,7 @@
 
 #include <QApplication>
 #include <QCheckBox>
+#include <QDir>
 #include <QHeaderView>
 #include <QRadioButton>
 #include <QSpinBox>
@@ -482,6 +483,26 @@ void SettingsStorage::loadApplicationStateAndGeometry(QWidget* _widget)
     m_appSettings.endGroup();
 
     m_appSettings.endGroup(); // STATE_AND_GEOMETRY_KEY
+}
+
+QString SettingsStorage::documentFolderPath(const QString& _key)
+{
+    QString folderPath = value(_key, ApplicationSettings);
+    if (folderPath.isEmpty()) {
+        folderPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    }
+    return folderPath;
+}
+
+QString SettingsStorage::documentFilePath(const QString& _key, const QString& _fileName)
+{
+    QString filePath = documentFolderPath(_key) + QDir::separator() + _fileName;
+    return QDir::toNativeSeparators(filePath);
+}
+
+void SettingsStorage::saveDocumentFolderPath(const QString& _key, const QString& _filePath)
+{
+    setValue(_key, QFileInfo(_filePath).absoluteDir().absolutePath(), ApplicationSettings);
 }
 
 SettingsStorage::SettingsStorage()

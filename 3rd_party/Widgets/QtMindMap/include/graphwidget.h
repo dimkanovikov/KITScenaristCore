@@ -38,6 +38,11 @@ public:
 
     GraphLogic *graphLogic() const;
 
+    /**
+     * @brief Сохранить в картинку
+     */
+    void saveToImage(const QString& _filePath);
+
 public slots:
     void zoomIn();
     void zoomOut();
