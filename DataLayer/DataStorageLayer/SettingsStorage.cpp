@@ -491,6 +491,7 @@ SettingsStorage::SettingsStorage()
     //
     m_defaultValues.insert("application/current-app-review-version", "4");
     m_defaultValues.insert("application/uuid", QUuid::createUuid().toString());
+    m_defaultValues.insert("application/app-was-configured", "0");
     m_defaultValues.insert("application/language", "-1");
     m_defaultValues.insert("application/user-name", ::systemUserName());
     m_defaultValues.insert("application/use-dark-theme", "1");
