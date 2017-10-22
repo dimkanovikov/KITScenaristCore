@@ -117,10 +117,24 @@ namespace ManagementLayer
 
     signals:
         /**
-         * @brief Обновлён список проектов
+         * @brief Обновлён список недавних проектов
          */
         void recentProjectsUpdated();
+
+        /**
+         * @brief Обновлён список облачных проектов
+         */
         void remoteProjectsUpdated();
+
+        /**
+         * @brief Изменено имя проекта из списка недавних
+         */
+        void recentProjectNameChanged(int index, const QString& _name);
+
+        /**
+         * @brief Изменено имя проекта из списка облачных
+         */
+        void remoteProjectNameChanged(int index, const QString& _name);
 
     private:
         /**
