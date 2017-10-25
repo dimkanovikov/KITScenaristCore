@@ -20,9 +20,10 @@
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
+#include <3rd_party/Helpers/PasswordStorage.h>
+#include <3rd_party/Helpers/RunOnce.h>
 #include <3rd_party/Widgets/QLightBoxWidget/qlightboxdialog.h>
 #include <3rd_party/Widgets/QLightBoxWidget/qlightboxprogress.h>
-#include <3rd_party/Helpers/PasswordStorage.h>
 
 #include <NetworkRequest.h>
 #include <NetworkRequestLoader.h>
@@ -1062,10 +1063,10 @@ void SynchronizationManager::aboutWorkSyncScenario()
     //
     if (isCanSync()) {
         //
-        // Защитимся от множественных выховов
+        // Защитимся от множественных выходов
         //
-        static bool s_isInWorkSync = false;
-        if (s_isInWorkSync) {
+        const auto isRunned = RunOnce::tryRun(Q_FUNC_INFO);
+        if (!isRunned) {
             return;
         }
 
@@ -1074,8 +1075,6 @@ void SynchronizationManager::aboutWorkSyncScenario()
             return;
         }
 #endif
-
-        s_isInWorkSync = true;
 
         //
         // Если сценарий ещё не был полностью синхронизирован, делаем это
@@ -1087,7 +1086,6 @@ void SynchronizationManager::aboutWorkSyncScenario()
         // Если синхронизироваться так и не удалось, прерываем выполнение до следующего раза
         //
         if (m_lastChangesSyncDatetime.isEmpty()) {
-            s_isInWorkSync = false;
             return;
         }
 
@@ -1132,7 +1130,6 @@ void SynchronizationManager::aboutWorkSyncScenario()
 
             QXmlStreamReader changesReader(response);
             if (!isOperationSucceed(changesReader)) {
-                s_isInWorkSync = false;
                 return;
             }
 
@@ -1192,8 +1189,6 @@ void SynchronizationManager::aboutWorkSyncScenario()
                 }
             }
         }
-
-        s_isInWorkSync = false;
     }
 }
 

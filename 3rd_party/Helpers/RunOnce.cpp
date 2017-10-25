@@ -1,0 +1,28 @@
+#include "RunOnce.h"
+
+
+RunOnceLock::RunOnceLock()
+{
+}
+
+RunOnceLock::RunOnceLock(const QString& _key) :
+    m_key(_key)
+{
+}
+
+RunOnceLock::~RunOnceLock()
+{
+    RunOnce::s_lockedKeys.remove(m_key);
+}
+
+
+const RunOnceLock RunOnce::tryRun(const QString& _key)
+{
+    if (s_lockedKeys.contains(_key))
+        return RunOnceLock();
+
+    s_lockedKeys.insert(_key);
+    return RunOnceLock(_key);
+}
+
+QSet<QString> RunOnce::s_lockedKeys;
