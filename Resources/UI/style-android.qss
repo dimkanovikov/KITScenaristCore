@@ -619,7 +619,7 @@ QDialogButtonBox {
 [lightBoxDialogTitle=true] {
     font-weight: 500;
     font-size: 20pt;
-    background-color: palette(window);
+    background-color: palette(button);
     border: none;
     padding: 24dp 24dp 0dp 24dp;
 }

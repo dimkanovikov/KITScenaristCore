@@ -763,9 +763,10 @@ QWidget[editableLabel=true]::hover, QWidget[editableLabel=true]::focus {
  */
 QWidget[lightBoxDialogTitle=true] {
     font-weight: 700;
-    background-color: palette(window);
+    background-color: palette(button);
     padding: 11px 20px 11px 20px;
     border: 1px solid palette(dark);
+    border-bottom: none;
 }
 
 QWidget[lightBoxDialogCentralWidget=true] {
