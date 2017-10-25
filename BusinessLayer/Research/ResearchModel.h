@@ -2,6 +2,7 @@
 #define RESEARCHMODEL_H
 
 #include <QAbstractItemModel>
+#include <QSortFilterProxyModel>
 
 namespace Domain {
     class Research;
@@ -162,6 +163,32 @@ namespace BusinessLogic
          * @brief Последние положенные в майм элементы
          */
         mutable QList<ResearchModelItem*> m_lastMimeItems;
+    };
+
+    // ****
+
+    /**
+     * @brief Прокси-модель для отображения возможности выбора элементов модели разработки
+     */
+    class ResearchModelCheckableProxy : public QSortFilterProxyModel
+    {
+    public:
+        explicit ResearchModelCheckableProxy(QObject* _parent);
+
+        /**
+         * @brief Переопределяем методы, для реализации возможности выбора элементов
+         */
+        /** @{ */
+        Qt::ItemFlags flags(const QModelIndex& _index) const;
+        QVariant data(const QModelIndex& _index, int _role ) const;
+        bool setData(const QModelIndex& _index, const QVariant& _value, int _role) override;
+        /** @} */
+
+    private:
+        /**
+         * @brief Состояния элементов модели (по-умолчанию считаем галочка установлена)
+         */
+        QMap<QModelIndex, Qt::CheckState> m_checkStates;
     };
 }
 

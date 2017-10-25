@@ -117,12 +117,37 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
     //
     const int iconXPos = QLocale().textDirection() == Qt::LeftToRight ? 0 : opt.rect.right() - m_iconSize;
     const QRect iconRect(iconXPos, m_topMargin, m_iconSize, m_iconSize);
-    QPixmap icon = _index.data(Qt::DecorationRole).value<QPixmap>();
-    QIcon iconColorized(icon);
-    QColor iconColor = textBrush.color();
-    ImageHelper::setIconColor(iconColorized, iconRect.size(), iconColor);
-    icon = iconColorized.pixmap(iconRect.size());
-    _painter->drawPixmap(iconRect, icon);
+    {
+        //
+        // ... если есть флажёк, то рисуем его
+        //
+        if (!_index.data(Qt::CheckStateRole).isNull()) {
+            _painter->save();
+            _painter->translate(iconRect.center().x()/2, iconRect.center().y());
+            QStyle* style = qApp->style();
+            QStyleOptionButton checkBoxOption;
+            checkBoxOption.state = QStyle::State_Enabled;
+            const int checkState = _index.data(Qt::CheckStateRole).toInt();
+            checkBoxOption.state |= checkState == Qt::Checked
+                                    ? QStyle::State_On
+                                    : checkState == Qt::PartiallyChecked
+                                      ? QStyle::State_NoChange
+                                      : QStyle::State_Off;
+            style->drawControl(QStyle::CE_CheckBox, &checkBoxOption, _painter);
+            _painter->restore();
+        }
+        //
+        // ... в противном случае иконку
+        //
+        else {
+            QPixmap icon = _index.data(Qt::DecorationRole).value<QPixmap>();
+            QIcon iconColorized(icon);
+            QColor iconColor = textBrush.color();
+            ImageHelper::setIconColor(iconColorized, iconRect.size(), iconColor);
+            icon = iconColorized.pixmap(iconRect.size());
+            _painter->drawPixmap(iconRect, icon);
+        }
+    }
     //
     // ... заголовок
     //
@@ -152,3 +177,23 @@ QSize TreeViewItemDelegate::sizeHint(const QStyleOptionViewItem& _option, const 
     return QSize(width, height);
 }
 
+bool TreeViewItemDelegate::editorEvent(QEvent* _event, QAbstractItemModel* _model, const QStyleOptionViewItem& _option, const QModelIndex& _index)
+{
+    if (_event->type() == QEvent::MouseButtonRelease
+        && !_index.data(Qt::CheckStateRole).isNull())
+    {
+        const int checkState = _index.data(Qt::CheckStateRole).toInt();
+
+        if (checkState == Qt::PartiallyChecked
+            || checkState == Qt::Unchecked) {
+            _model->setData(_index, Qt::Checked, Qt::CheckStateRole);
+        }
+        else {
+            _model->setData(_index, Qt::Unchecked, Qt::CheckStateRole);
+        }
+
+        return true;
+    }
+
+    return QStyledItemDelegate::editorEvent(_event, _model, _option, _index);
+}
