@@ -140,12 +140,13 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
         // ... в противном случае иконку
         //
         else {
-            QPixmap icon = _index.data(Qt::DecorationRole).value<QPixmap>();
-            QIcon iconColorized(icon);
+            QPixmap iconPixmap = _index.data(Qt::DecorationRole).value<QPixmap>();
+            QIcon icon = _index.data(Qt::DecorationRole).value<QIcon>();
+            QIcon iconColorized(!iconPixmap.isNull() ? iconPixmap : icon);
             QColor iconColor = textBrush.color();
             ImageHelper::setIconColor(iconColorized, iconRect.size(), iconColor);
-            icon = iconColorized.pixmap(iconRect.size());
-            _painter->drawPixmap(iconRect, icon);
+            iconPixmap = iconColorized.pixmap(iconRect.size());
+            _painter->drawPixmap(iconRect, iconPixmap);
         }
     }
     //

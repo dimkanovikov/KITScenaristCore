@@ -37,7 +37,6 @@
         <file>Icons/Editing/format.png</file>
         <file>Icons/logo.png</file>
         <file>Images/logo.png</file>
-        <file>Icons/style.png</file>
         <file>Icons/Editing/photo.png</file>
         <file>Icons/Editing/save.png</file>
         <file>Icons/Editing/download.png</file>
@@ -141,6 +140,7 @@
         <file>Icons/report.png</file>
         <file>Icons/plot-multiple.png</file>
         <file>Icons/report-multiple.png</file>
+        <file>Icons/settings_templates.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/Scenarist_ru.qm</file>

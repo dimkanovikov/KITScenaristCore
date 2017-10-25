@@ -244,10 +244,9 @@ void ProjectsManager::setCurrentProjectName(const QString& _projectName)
         //
         // Определим источник хранения проекта
         //
-        QMutableListIterator<ManagementLayer::Project> projectsIterator(m_recentProjects);
-        if (s_currentProject.isRemote()) {
-            projectsIterator = QMutableListIterator<ManagementLayer::Project>(m_remoteProjects);
-        }
+        QMutableListIterator<ManagementLayer::Project> projectsIterator(s_currentProject.isLocal()
+                                                                        ? m_recentProjects
+                                                                        : m_remoteProjects);
         //
         // Обновим название проекта
         //
@@ -258,6 +257,14 @@ void ProjectsManager::setCurrentProjectName(const QString& _projectName)
                 projectsIterator.setValue(s_currentProject);
                 break;
             }
+        }
+        //
+        // Уведомим клиентов об обновлении проекта
+        //
+        if (s_currentProject.isLocal()) {
+            emit recentProjectNameChanged(m_recentProjects.indexOf(s_currentProject), _projectName);
+        } else {
+            emit remoteProjectNameChanged(m_recentProjects.indexOf(s_currentProject), _projectName);
         }
     }
 }

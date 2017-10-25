@@ -84,6 +84,17 @@ QAbstractItemModel* ProjectsList::model() const
     return m_model;
 }
 
+void ProjectsList::setProjectName(int _index, const QString& _name)
+{
+    QVBoxLayout* layout = dynamic_cast<QVBoxLayout*>(widget()->layout());
+    if (layout->count() > _index) {
+        QWidget* projectWidget = layout->itemAt(_index)->widget();
+        if (ProjectFileWidget* project = qobject_cast<ProjectFileWidget*>(projectWidget)) {
+            project->setProjectName(_name);
+        }
+    }
+}
+
 void ProjectsList::setMenusVisible(bool _isVisible)
 {
     QLayout* layout = widget()->layout();
