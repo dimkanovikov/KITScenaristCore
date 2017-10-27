@@ -176,6 +176,11 @@ namespace BusinessLogic
         explicit ResearchModelCheckableProxy(QObject* _parent);
 
         /**
+         * @brief Очистить список проставленных/снятых галочек
+         */
+        void clearCheckStates();
+
+        /**
          * @brief Переопределяем методы, для реализации возможности выбора элементов
          */
         /** @{ */

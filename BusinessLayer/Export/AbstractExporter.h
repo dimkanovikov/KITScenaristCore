@@ -17,7 +17,8 @@ namespace BusinessLogic
     {
     public:
         ExportParameters() :
-            outline(false),
+            isResearch(false),
+            isOutline(false),
             checkPageBreaks(false),
             printTilte(true),
             printPagesNumbers(true),
@@ -27,9 +28,14 @@ namespace BusinessLogic
         {}
 
         /**
+         * @brief Экспортировать разработку или текст
+         */
+        bool isResearch;
+
+        /**
          * @brief Режим текста: true - поэпизодник, false - сценарий
          */
-        bool outline;
+        bool isOutline;
 
         /**
          * @brief Путь к файлу

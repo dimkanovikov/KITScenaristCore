@@ -1058,7 +1058,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
         //
         // Если блок содержит текст, который необходимо вывести на печать
         //
-        if (::needPrintBlock(currentBlockType, _exportParameters.outline,
+        if (::needPrintBlock(currentBlockType, _exportParameters.isOutline,
                              _exportParameters.saveInvisible)) {
 
             //

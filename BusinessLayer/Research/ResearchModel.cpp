@@ -147,7 +147,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     m_researchRoot =
         new ResearchModelItem(
-            ResearchBuilder::create(Domain::Identifier(), 0, Research::ResearchRoot, 3, tr("Research"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::ResearchRoot, 3, tr("Documents"))
         );
     m_rootItem->appendItem(m_researchRoot);
 }
@@ -928,6 +928,11 @@ void ResearchModel::researchDataChanged(const QModelIndex& _topLeft, const QMode
 BusinessLogic::ResearchModelCheckableProxy::ResearchModelCheckableProxy(QObject* _parent) :
     QSortFilterProxyModel(_parent)
 {
+}
+
+void BusinessLogic::ResearchModelCheckableProxy::clearCheckStates()
+{
+    m_checkStates.clear();
 }
 
 Qt::ItemFlags BusinessLogic::ResearchModelCheckableProxy::flags(const QModelIndex& _index) const

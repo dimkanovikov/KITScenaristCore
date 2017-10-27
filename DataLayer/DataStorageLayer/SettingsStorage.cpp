@@ -528,6 +528,10 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("application/modules/scenario", "1");
     m_defaultValues.insert("application/modules/statistics", "1");
 
+    m_defaultValues.insert("research/default-font/family", "Courier Prime");
+    m_defaultValues.insert("research/default-font/size", "12");
+
+
     m_defaultValues.insert("cards/use-corkboard", "1");
     m_defaultValues.insert("cards/background-color", "#FEFEFE");
     m_defaultValues.insert("cards/background-color-dark", "#26282A");
