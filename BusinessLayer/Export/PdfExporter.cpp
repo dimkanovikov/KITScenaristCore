@@ -324,7 +324,7 @@ namespace {
 }
 
 
-QPair<ScenarioDocument*, int> PdfExporter::m_lastScenarioPreviewScrollPosition;
+QPair<ScenarioDocument*, int> PdfExporter::m_lastScriptPreviewScrollPosition;
 
 PdfExporter::PdfExporter(QObject* _parent) :
     QObject(_parent),
@@ -360,6 +360,33 @@ void PdfExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
     ::printDocument(preparedDocument, printer.data());
 }
 
+void PdfExporter::exportTo(const ResearchModelCheckableProxy* _researchModel, const ExportParameters& _exportParameters) const
+{
+    //
+    // Настроим принтер
+    //
+#ifndef MOBILE_OS
+    QScopedPointer<QPrinter> printer(preparePrinter(_exportParameters.filePath));
+#else
+    QScopedPointer<QPdfWriter> printer(new QPdfWriter(_exportParameters.filePath));
+    printer->setPageSize(QPageSize(::exportStyle().pageSizeId()));
+    QMarginsF margins = ::exportStyle().pageMargins();
+    printer->setPageMargins(margins, QPageLayout::Millimeter);
+#endif
+
+    //
+    // Сформируем документ
+    //
+    QTextDocument* preparedDocument = prepareDocument(_researchModel, _exportParameters);
+    preparedDocument->setProperty(PRINT_TITLE_KEY, false);
+    preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, true);
+
+    //
+    // Печатаем документ
+    //
+    ::printDocument(preparedDocument, printer.data());
+}
+
 #ifndef MOBILE_OS
 void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParameters& _exportParameters)
 {
@@ -386,17 +413,17 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     QPrintPreviewDialog printDialog(printer, qApp->activeWindow());
     printDialog.setWindowState(Qt::WindowMaximized);
     connect(&printDialog, &QPrintPreviewDialog::paintRequested, this, &PdfExporter::aboutPrint);
-    if (m_lastScenarioPreviewScrollPosition.first == _scenario) {
+    if (m_lastScriptPreviewScrollPosition.first == _scenario) {
         //
         // Если осуществляется повторный предпросмотр документа, пробуем восстановить положение полосы прокрутки
         //
         connect(this, &PdfExporter::printed, [this, &printDialog] {
             QTimer::singleShot(300, [this, &printDialog] {
-                setPrintPreviewScrollValue(printDialog, m_lastScenarioPreviewScrollPosition.second);
+                setPrintPreviewScrollValue(printDialog, m_lastScriptPreviewScrollPosition.second);
             });
         });
     } else {
-        m_lastScenarioPreviewScrollPosition.first = _scenario;
+        m_lastScriptPreviewScrollPosition.first = _scenario;
     }
 
     //
@@ -407,7 +434,7 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     //
     // Сохраняем позицию прокрутки
     //
-    m_lastScenarioPreviewScrollPosition.second = ::printPreviewScrollValue(printDialog);
+    m_lastScriptPreviewScrollPosition.second = ::printPreviewScrollValue(printDialog);
 
     //
     // Освобождаем память
@@ -417,6 +444,52 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     printer = 0;
     delete preparedDocument;
     preparedDocument = 0;
+}
+
+void PdfExporter::printPreview(const ResearchModelCheckableProxy* _researchModel, const ExportParameters& _exportParameters)
+{
+    //
+    // Настроим принтер
+    //
+    QPrinter* printer = preparePrinter();
+
+    //
+    // Сформируем документ
+    //
+    QTextDocument* preparedDocument = prepareDocument(_researchModel, _exportParameters);
+    preparedDocument->setProperty(PRINT_TITLE_KEY, false);
+    preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, true);
+
+    //
+    // Сохраним указатель на документ для печати
+    //
+    m_documentForPrint = preparedDocument;
+
+    //
+    // Настроим диалог предварительного просмотра
+    //
+    QPrintPreviewDialog printDialog(printer, qApp->activeWindow());
+    printDialog.setWindowState(Qt::WindowMaximized);
+    connect(&printDialog, &QPrintPreviewDialog::paintRequested, this, &PdfExporter::aboutPrint);
+
+    //
+    // Вызываем диалог предварительного просмотра и печати
+    //
+    printDialog.exec();
+
+    //
+    // Сохраняем позицию прокрутки
+    //
+    m_lastScriptPreviewScrollPosition.second = ::printPreviewScrollValue(printDialog);
+
+    //
+    // Освобождаем память
+    //
+    m_documentForPrint = nullptr;
+    delete printer;
+    printer = nullptr;
+    delete preparedDocument;
+    preparedDocument = nullptr;
 }
 
 void PdfExporter::aboutPrint(QPrinter* _printer)

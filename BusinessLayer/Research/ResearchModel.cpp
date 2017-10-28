@@ -11,6 +11,7 @@
 
 using BusinessLogic::ResearchModel;
 using BusinessLogic::ResearchModelItem;
+using BusinessLogic::ResearchModelCheckableProxy;
 using Domain::Research;
 using Domain::ResearchBuilder;
 
@@ -242,7 +243,7 @@ void ResearchModel::clear()
     //
     m_researchRoot =
         new ResearchModelItem(
-            ResearchBuilder::create(Domain::Identifier(), 0, Research::ResearchRoot, 1, tr("Research"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::ResearchRoot, 1, tr("Documents"))
         );
     //
     emit beginInsertRows(QModelIndex(), 1, 3);
@@ -924,23 +925,31 @@ void ResearchModel::researchDataChanged(const QModelIndex& _topLeft, const QMode
 
 // ****
 
+namespace {
+    /**
+     * @brief Ключи для доступа к захватчикам выполнения
+     */
+    const QString UPDATE_CHILDS_KEY = "ResearchModelCheckableProxy::updateChilds";
+    const QString UPDATE_PARENTS_KEY = "ResearchModelCheckableProxy::updateParents";
+}
 
-BusinessLogic::ResearchModelCheckableProxy::ResearchModelCheckableProxy(QObject* _parent) :
+
+ResearchModelCheckableProxy::ResearchModelCheckableProxy(QObject* _parent) :
     QSortFilterProxyModel(_parent)
 {
 }
 
-void BusinessLogic::ResearchModelCheckableProxy::clearCheckStates()
+void ResearchModelCheckableProxy::clearCheckStates()
 {
     m_checkStates.clear();
 }
 
-Qt::ItemFlags BusinessLogic::ResearchModelCheckableProxy::flags(const QModelIndex& _index) const
+Qt::ItemFlags ResearchModelCheckableProxy::flags(const QModelIndex& _index) const
 {
     return QSortFilterProxyModel::flags(_index) | Qt::ItemIsUserTristate;
 }
 
-QVariant BusinessLogic::ResearchModelCheckableProxy::data(const QModelIndex& _index, int _role) const
+QVariant ResearchModelCheckableProxy::data(const QModelIndex& _index, int _role) const
 {
     if (_role == Qt::CheckStateRole) {
         return m_checkStates.value(_index, Qt::Checked);
@@ -949,7 +958,7 @@ QVariant BusinessLogic::ResearchModelCheckableProxy::data(const QModelIndex& _in
     return QSortFilterProxyModel::data(_index, _role);
 }
 
-bool BusinessLogic::ResearchModelCheckableProxy::setData(const QModelIndex& _index, const QVariant& _value, int _role)
+bool ResearchModelCheckableProxy::setData(const QModelIndex& _index, const QVariant& _value, int _role)
 {
     if (_role == Qt::CheckStateRole) {
         const Qt::CheckState checkState = static_cast<Qt::CheckState>(_value.toInt());
@@ -965,8 +974,9 @@ bool BusinessLogic::ResearchModelCheckableProxy::setData(const QModelIndex& _ind
             // Устанавливаем детям то же состояние, что и текущему элементу, если изменение значения пришло
             // в первый раз (т.е. вне рекурсивного обновления)
             //
-            const auto isRunned = RunOnce::tryRun(Q_FUNC_INFO);
-            if (isRunned) {
+            if (RunOnce::canRun(::UPDATE_CHILDS_KEY)) {
+                const auto parentLock = RunOnce::tryRun(::UPDATE_PARENTS_KEY);
+
                 const int rows = _index.model()->rowCount(_index);
                 for (int row = 0 ; row < rows; ++row) {
                     const QModelIndex childIndex = _index.child(row, 0);
@@ -977,43 +987,56 @@ bool BusinessLogic::ResearchModelCheckableProxy::setData(const QModelIndex& _ind
             //
             // И обновляем состояние родителя
             //
-            const QModelIndex parentIndex = _index.parent();
-            if (parentIndex.isValid()) {
-                //
-                // Проверяем состояния элементов на текущем уровне
-                //
-                bool isAllChecked = true;
-                bool isAllUnchecked = true;
-                const int rows = parentIndex.model()->rowCount(parentIndex);
-                for (int row = 0 ; row < rows; ++row) {
-                    const QModelIndex childIndex = parentIndex.child(row, 0);
-                    if (childIndex.data(_role).toInt() == Qt::Checked) {
-                        isAllUnchecked = false;
-                    } else {
-                        isAllChecked = false;
+            if (RunOnce::canRun(::UPDATE_PARENTS_KEY)) {
+                const auto childLock = RunOnce::tryRun(::UPDATE_CHILDS_KEY);
+
+                const QModelIndex parentIndex = _index.parent();
+                if (parentIndex.isValid()) {
+                    //
+                    // Проверяем состояния элементов на текущем уровне
+                    //
+                    bool isAllChecked = true;
+                    bool isAllUnchecked = true;
+                    const int rows = parentIndex.model()->rowCount(parentIndex);
+                    for (int row = 0 ; row < rows; ++row) {
+                        const QModelIndex childIndex = parentIndex.child(row, 0);
+                        if (childIndex.data(_role).toInt() == Qt::Checked) {
+                            isAllUnchecked = false;
+                        } else {
+                            isAllChecked = false;
+                        }
                     }
-                }
-                //
-                // Если все элементы на текущем уровне зачеканы, то и родитель зачекан
-                //
-                if (isAllChecked) {
-                    setData(parentIndex, Qt::Checked, _role);
-                }
-                //
-                // Если все элементы на текущем уровне не зачеканы, то и родитель не зачекан
-                //
-                else if (isAllUnchecked) {
-                    setData(parentIndex, Qt::Unchecked, _role);
-                }
-                //
-                // Если не все элементы на текущем уровне зачеканы, то родитель зачекан на половину
-                //
-                else {
-                    setData(parentIndex, Qt::PartiallyChecked, _role);
+                    //
+                    // Если все элементы на текущем уровне зачеканы, то и родитель зачекан
+                    //
+                    if (isAllChecked) {
+                        setData(parentIndex, Qt::Checked, _role);
+                    }
+                    //
+                    // Если все элементы на текущем уровне не зачеканы, то и родитель не зачекан
+                    //
+                    else if (isAllUnchecked) {
+                        setData(parentIndex, Qt::Unchecked, _role);
+                    }
+                    //
+                    // Если не все элементы на текущем уровне зачеканы, то родитель зачекан на половину
+                    //
+                    else {
+                        setData(parentIndex, Qt::PartiallyChecked, _role);
+                    }
                 }
             }
         }
     }
 
     return QSortFilterProxyModel::setData(_index, _value, _role);
+}
+
+ResearchModelItem* ResearchModelCheckableProxy::researchItem(const QModelIndex& _index) const
+{
+    if (ResearchModel* model = dynamic_cast<ResearchModel*>(sourceModel())) {
+        return model->itemForIndex(mapToSource(_index));
+    }
+
+    return nullptr;
 }

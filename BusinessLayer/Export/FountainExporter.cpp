@@ -267,3 +267,9 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
         }
     }
 }
+
+void FountainExporter::exportTo(const ResearchModelCheckableProxy* _researchModel, const ExportParameters& _exportParameters) const
+{
+    Q_UNUSED(_researchModel);
+    Q_UNUSED(_exportParameters);
+}

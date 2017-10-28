@@ -37,7 +37,20 @@ class RunOnce
     RunOnce() = delete;
 
 public:
+    /**
+     * @brief Попробовать захватить запуск для заданного ключа
+     */
     static const RunOnceLock tryRun(const QString& _key);
+
+    /**
+     * @brief Захвачен ли запуск для заданного ключа
+     */
+    static bool isRunned(const QString& _key);
+
+    /**
+     * @brief Можно ли захватить запуск для заданного ключа
+     */
+    static bool canRun(const QString& _key);
 
 private:
     /**

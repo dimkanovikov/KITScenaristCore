@@ -65,7 +65,13 @@ void FdxExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
 		writer.writeEndDocument();
 
 		docxFile.close();
-	}
+    }
+}
+
+void FdxExporter::exportTo(const ResearchModelCheckableProxy* _researchModel, const ExportParameters& _exportParameters) const
+{
+    Q_UNUSED(_researchModel);
+    Q_UNUSED(_exportParameters);
 }
 
 void FdxExporter::writeContent(QXmlStreamWriter& _writer, ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const

@@ -134,7 +134,7 @@ QString CardsView::save() const
 void CardsView::saveToImage(const QString& _filePath)
 {
     m_scene->clearSelection();
-    QImage image(m_scene->sceneRect().size().toSize(), QImage::Format_ARGB32);
+    QImage image(m_scene->sceneRect().size().toSize(), QImage::Format_ARGB32_Premultiplied);
 
     QPainter painter(&image);
     painter.setRenderHint(QPainter::Antialiasing, true);
