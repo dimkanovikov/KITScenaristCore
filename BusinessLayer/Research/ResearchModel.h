@@ -189,6 +189,11 @@ namespace BusinessLogic
         bool setData(const QModelIndex& _index, const QVariant& _value, int _role) override;
         /** @} */
 
+        /**
+         * @brief Получить элемент разработки по заданному индексу
+         */
+        ResearchModelItem* researchItem(const QModelIndex& _index) const;
+
     private:
         /**
          * @brief Состояния элементов модели (по-умолчанию считаем галочка установлена)

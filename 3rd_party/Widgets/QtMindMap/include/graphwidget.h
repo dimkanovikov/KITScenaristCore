@@ -41,7 +41,12 @@ public:
     /**
      * @brief Сохранить в картинку
      */
-    void saveToImage(const QString& _filePath);
+    QImage saveToImage() const;
+
+    /**
+     * @brief Сохранить картинкой в файл
+     */
+    void saveToImageFile(const QString& _filePath);
 
 public slots:
     void zoomIn();

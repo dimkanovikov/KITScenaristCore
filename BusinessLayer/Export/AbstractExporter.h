@@ -7,6 +7,7 @@ class QTextDocument;
 
 namespace BusinessLogic
 {
+    class ResearchModelCheckableProxy;
     class ScenarioDocument;
 
 
@@ -61,13 +62,23 @@ namespace BusinessLogic
          * @brief Информация с титульного листа
          */
         /** @{ */
-        QString scenarioName;
-        QString scenarioAdditionalInfo;
-        QString scenarioGenre;
-        QString scenarioAuthor;
-        QString scenarioContacts;
-        QString scenarioYear;
+        QString scriptName;
+        QString scriptAdditionalInfo;
+        QString scriptGenre;
+        QString scriptAuthor;
+        QString scriptContacts;
+        QString scriptYear;
         /** @} */
+
+        /**
+         * @brief Логлайн
+         */
+        QString logline;
+
+        /**
+         * @brief Синопсис
+         */
+        QString synopsis;
 
         /**
          * @brief Печатать номера страниц
@@ -102,6 +113,20 @@ namespace BusinessLogic
     class AbstractExporter
     {
     public:
+        virtual ~AbstractExporter() {}
+
+        /**
+         * @brief Экспорт заданного документа в файл
+         */
+        virtual void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const = 0;
+
+        /**
+         * @brief Экспорт заданной модели разработки с указанными параметрами
+         */
+        virtual void exportTo(const ResearchModelCheckableProxy* _researchModel,
+                              const ExportParameters& _exportParameters) const  = 0;
+
+    protected:
         /**
          * @brief Сформировать из сценария документ, готовый для экспорта
          * @note Вызывающий получает владение над новым сформированным документом
@@ -109,13 +134,19 @@ namespace BusinessLogic
         static QTextDocument* prepareDocument(const ScenarioDocument* _scenario,
             const ExportParameters& _exportParameters);
 
-    public:
-        virtual ~AbstractExporter() {}
-
         /**
-         * @brief Экспорт заданного документа в файл
+         * @brief Сформировать из разработки документ, готовый для экспорта
+         * @note Вызывающий получает владение над новым сформированным документом
          */
-        virtual void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const = 0;
+        static QTextDocument* prepareDocument(const ResearchModelCheckableProxy* _researchModel,
+            const ExportParameters& _exportParameters);
+
+    private:
+        /**
+         * @brief Подготовить документ, для формирования
+         * @note Вызывающий получает владение над новым сформированным документом
+         */
+        static QTextDocument* prepareDocument();
     };
 }
 

@@ -80,16 +80,20 @@ GraphLogic *GraphWidget::graphLogic() const
     return m_graphlogic;
 }
 
-void GraphWidget::saveToImage(const QString& _filePath)
+QImage GraphWidget::saveToImage() const
 {
     m_scene->clearSelection();
-    QImage image(m_scene->sceneRect().size().toSize(), QImage::Format_ARGB32);
-
+    QImage image(m_scene->sceneRect().size().toSize(), QImage::Format_ARGB32_Premultiplied);
     QPainter painter(&image);
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.fillRect(image.rect(), palette().window());
+    painter.fillRect(image.rect(), Qt::white);
     m_scene->render(&painter);
-    image.save(_filePath);
+    return image;
+}
+
+void GraphWidget::saveToImageFile(const QString& _filePath)
+{
+    saveToImage().save(_filePath);
 }
 
 void GraphWidget::zoomIn()

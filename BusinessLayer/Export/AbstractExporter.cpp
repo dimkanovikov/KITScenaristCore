@@ -1,10 +1,13 @@
 #include "AbstractExporter.h"
 
+#include <BusinessLayer/Research/ResearchModel.h>
+#include <BusinessLayer/Research/ResearchModelItem.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTemplate.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockInfo.h>
 
+#include <Domain/Research.h>
 #include <Domain/Scenario.h>
 
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
@@ -12,6 +15,7 @@
 
 #include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Widgets/PagesTextEdit/PageMetrics.h>
+#include <3rd_party/Widgets/QtMindMap/include/graphwidget.h>
 
 #include <QApplication>
 #include <QTextBlock>
@@ -896,7 +900,232 @@ namespace {
                 charFormat, blockLines, linesToEndOfPageCount);
         }
     }
-}
+
+    // **********
+    // Экспорт разработки
+
+    /**
+     * @brief Шрифт разработки по умолчанию
+     */
+    static QString defaultResearchFont() {
+        return DataStorageLayer::StorageFacade::settingsStorage()->value(
+                    "research/default-font/family", DataStorageLayer::SettingsStorage::ApplicationSettings);
+    }
+
+    /**
+     * @brief Размер шрифта разработки по умолчанию
+     */
+    static int defaultResearchFontSize() {
+        return DataStorageLayer::StorageFacade::settingsStorage()->value(
+                    "research/default-font/size", DataStorageLayer::SettingsStorage::ApplicationSettings).toInt();
+    }
+
+    /**
+     * @brief Экспортировать заданный элемент разработки с заданными параметрами экспорта и на заданном уровне иерархии
+     */
+    static void exportResearchItem(const BusinessLogic::ResearchModelItem* _item,
+        const ExportParameters& _exportParameters, int _level, QTextCursor& _cursor) {
+
+        //
+        // Сформируем эталонные стили для блоков
+        //
+        QTextCharFormat titleCharFormat;
+        titleCharFormat.setFont(QFont(defaultResearchFont(), defaultResearchFontSize() * 4));
+        titleCharFormat.setFontWeight(QFont::Bold);
+        QTextBlockFormat titleBlockFormat;
+        titleBlockFormat.setLineHeight(QFontMetricsF(titleCharFormat.font()).height() / 1.2, QTextBlockFormat::FixedHeight);
+        QTextCharFormat subtitleCharFormat;
+        subtitleCharFormat.setFont(QFont(defaultResearchFont(), defaultResearchFontSize() * 2));
+        subtitleCharFormat.setForeground(Qt::darkGray);
+        QTextBlockFormat subtitleBlockFormat;
+        //
+        QTextBlockFormat headerBlockFormat;
+        QTextCharFormat headerCharFormat;
+        switch (_level) {
+            case 0: {
+                headerCharFormat.setFont(QFont(defaultResearchFont(), defaultResearchFontSize() * 3));
+                headerBlockFormat.setPageBreakPolicy(QTextFormat::PageBreak_AlwaysBefore);
+                break;
+            }
+
+            case 1: {
+                headerCharFormat.setFont(QFont(defaultResearchFont(), defaultResearchFontSize() * 2));
+                headerBlockFormat.setTopMargin(defaultResearchFontSize() * 1.5);
+                break;
+            }
+
+            case 2: {
+                headerCharFormat.setFont(QFont(defaultResearchFont(), defaultResearchFontSize() * 1.5));
+                headerBlockFormat.setTopMargin(defaultResearchFontSize() * 1.2);
+                break;
+            }
+
+            case 3: {
+                headerCharFormat.setFont(QFont(defaultResearchFont(), defaultResearchFontSize() * 1.2));
+                headerBlockFormat.setTopMargin(defaultResearchFontSize());
+                break;
+            }
+
+            default: {
+                headerCharFormat.setFont(QFont(defaultResearchFont(), defaultResearchFontSize()));
+                headerBlockFormat.setTopMargin(defaultResearchFontSize());
+                break;
+            }
+        }
+        headerCharFormat.setFontWeight(QFont::Bold);
+        //
+        QTextBlockFormat textBlockFormat;
+        QTextCharFormat textCharFormat;
+        textCharFormat.setFont(QFont(defaultResearchFont(), defaultResearchFontSize()));
+
+        //
+        // Если это первый блок документа, то убираем флаг разрыва страниц
+        //
+        if (_cursor.document()->isEmpty()) {
+            headerBlockFormat.setPageBreakPolicy(QTextFormat::PageBreak_Auto);
+        }
+
+        //
+        // Выводим элемент разработки в документ
+        //
+        const Domain::Research* research = _item->research();
+        if (research != nullptr) {
+            switch (research->type()) {
+                case Domain::Research::Scenario: {
+                    _cursor.setBlockFormat(titleBlockFormat);
+                    _cursor.setCharFormat(titleCharFormat);
+                    _cursor.setBlockCharFormat(titleCharFormat);
+                    _cursor.insertText(_exportParameters.scriptName);
+                    //
+                    _cursor.insertBlock(subtitleBlockFormat, subtitleCharFormat);
+                    QTextDocument loglineDocument;
+                    loglineDocument.setHtml(_exportParameters.logline);
+                    _cursor.insertText(loglineDocument.toPlainText());
+                    break;
+                }
+
+                case Domain::Research::TitlePage: {
+                    for (int i = 0; i < 8; ++i) {
+                        _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    }
+                    _cursor.insertText(_exportParameters.scriptAdditionalInfo);
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    _cursor.insertText(_exportParameters.scriptGenre);
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    _cursor.insertText(_exportParameters.scriptAuthor);
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    _cursor.insertText(_exportParameters.scriptContacts);
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    _cursor.insertText(_exportParameters.scriptYear);
+                    break;
+                }
+
+                case Domain::Research::Synopsis: {
+                    headerBlockFormat.setPageBreakPolicy(QTextFormat::PageBreak_AlwaysBefore);
+                    _cursor.insertBlock(headerBlockFormat, headerCharFormat);
+                    _cursor.insertText(research->name());
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    _cursor.insertHtml(_exportParameters.synopsis);
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    break;
+                }
+
+                case Domain::Research::CharactersRoot:
+                case Domain::Research::LocationsRoot:
+                case Domain::Research::ResearchRoot:
+                case Domain::Research::ImagesGallery: {
+                    _cursor.insertBlock(headerBlockFormat, headerCharFormat);
+                    _cursor.insertText(research->name());
+                    break;
+                }
+
+                case Domain::Research::Folder: {
+                    _cursor.insertBlock(headerBlockFormat, headerCharFormat);
+                    _cursor.insertText(research->name());
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    _cursor.insertHtml(research->description());
+                    break;
+                }
+
+                case Domain::Research::Text: {
+                    _cursor.insertBlock(headerBlockFormat, headerCharFormat);
+                    _cursor.insertText(research->name());
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    _cursor.insertHtml(research->description());
+                    break;
+                }
+
+                case Domain::Research::Url: {
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    _cursor.insertHtml(QString("<a href='%1'>%2</a>").arg(research->name(), research->url()));
+                    break;
+                }
+
+                case Domain::Research::Image: {
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    QImage image = research->image().toImage();
+                    if (image.size().width() > ::documentSize().width()
+                        || image.size().height() > ::documentSize().height()) {
+                        image = image.scaled(::documentSize().toSize(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+                    }
+                    _cursor.insertImage(image);
+                    break;
+                }
+
+                case Domain::Research::MindMap: {
+                    _cursor.insertBlock(headerBlockFormat, headerCharFormat);
+                    _cursor.insertText(research->name());
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    GraphWidget mindMap;
+                    mindMap.load(research->description());
+                    QImage image = mindMap.saveToImage();
+                    if (image.size().width() > ::documentSize().width()
+                        || image.size().height() > ::documentSize().height()) {
+                        image = image.scaled(::documentSize().toSize(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+                    }
+                    _cursor.insertImage(image);
+                    break;
+                }
+
+                case Domain::Research::Character: {
+                    const Domain::ResearchCharacter* character = dynamic_cast<const Domain::ResearchCharacter*>(research);
+                    _cursor.insertBlock(headerBlockFormat, headerCharFormat);
+                    _cursor.insertText(character->name());
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    _cursor.insertText(QApplication::translate("BusinessLayer::AbstractExporter", "Real name: ") + character->realName());
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    _cursor.insertHtml(character->description());
+                    break;
+                }
+
+                case Domain::Research::Location: {
+                    _cursor.insertBlock(headerBlockFormat, headerCharFormat);
+                    _cursor.insertText(research->name());
+                    _cursor.insertBlock(textBlockFormat, textCharFormat);
+                    _cursor.insertHtml(research->description());
+                    break;
+                }
+            }
+        }
+    }
+
+    /**
+     * @brief Экспортировать заданный уровень иерархии разработки целиком
+     */
+    static void exportResearchLevel(const BusinessLogic::ResearchModelCheckableProxy* _researchModel,
+        const ExportParameters& _exportParameters, const QModelIndex& _parentIndex, int _level, QTextCursor& cursor) {
+        for (int row = 0; row < _researchModel->rowCount(_parentIndex); ++row) {
+            const QModelIndex index = _researchModel->index(row, 0, _parentIndex);
+            if (index.data(Qt::CheckStateRole).toInt() != Qt::Unchecked) {
+                ::exportResearchItem(_researchModel->researchItem(index), _exportParameters, _level, cursor);
+                ::exportResearchLevel(_researchModel, _exportParameters, index, _level + 1, cursor);
+            }
+        }
+    }
+
+} // namesapce
+
+
 
 QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDocument* _scenario,
         const ExportParameters& _exportParameters)
@@ -906,14 +1135,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
     //
     // Настроим новый документ
     //
-    QTextDocument* preparedDocument = new QTextDocument;
-    preparedDocument->setDocumentMargin(0);
-    preparedDocument->setIndentWidth(0);
-
-    //
-    // Настроим размер страниц
-    //
-    preparedDocument->setPageSize(::documentSize());
+    QTextDocument* preparedDocument = prepareDocument();
 
     //
     // Данные считываются из исходного документа, если необходимо преобразовываются,
@@ -977,7 +1199,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
             ::insertLine(destDocumentCursor, centerFormat, headerFormat);
         }
         ::insertLine(destDocumentCursor, centerFormat, headerFormat);
-        destDocumentCursor.insertText(_exportParameters.scenarioName.toUpper());
+        destDocumentCursor.insertText(_exportParameters.scriptName.toUpper());
         //
         // Две строки отступа от заголовка
         //
@@ -986,28 +1208,28 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
         //
         // Жанр [через одну под предыдущим]
         //
-        if (!_exportParameters.scenarioGenre.isEmpty()) {
+        if (!_exportParameters.scriptGenre.isEmpty()) {
             ::insertLine(destDocumentCursor, centerFormat, titleFormat);
             ::insertLine(destDocumentCursor, centerFormat, titleFormat);
-            destDocumentCursor.insertText(_exportParameters.scenarioGenre);
+            destDocumentCursor.insertText(_exportParameters.scriptGenre);
             currentLineNumber += 2;
         }
         //
         // Автор [через одну под предыдущим]
         //
-        if (!_exportParameters.scenarioAuthor.isEmpty()) {
+        if (!_exportParameters.scriptAuthor.isEmpty()) {
             ::insertLine(destDocumentCursor, centerFormat, titleFormat);
             ::insertLine(destDocumentCursor, centerFormat, titleFormat);
-            destDocumentCursor.insertText(_exportParameters.scenarioAuthor);
+            destDocumentCursor.insertText(_exportParameters.scriptAuthor);
             currentLineNumber += 2;
         }
         //
         // Доп. инфо [через одну под предыдущим]
         //
-        if (!_exportParameters.scenarioAdditionalInfo.isEmpty()) {
+        if (!_exportParameters.scriptAdditionalInfo.isEmpty()) {
             ::insertLine(destDocumentCursor, centerFormat, titleFormat);
             ::insertLine(destDocumentCursor, centerFormat, titleFormat);
-            destDocumentCursor.insertText(_exportParameters.scenarioAdditionalInfo);
+            destDocumentCursor.insertText(_exportParameters.scriptAdditionalInfo);
             currentLineNumber += 2;
         }
         //
@@ -1020,7 +1242,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
         // Контакты [45 строка]
         //
         ::insertLine(destDocumentCursor, leftFormat, titleFormat);
-        destDocumentCursor.insertText(_exportParameters.scenarioContacts);
+        destDocumentCursor.insertText(_exportParameters.scriptContacts);
 
         //
         // Год печатается на последней строке документа
@@ -1031,7 +1253,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
             ::insertLine(destDocumentCursor, centerFormat, titleFormat);
             currentLineType = ::currentLine(preparedDocument, centerFormat, titleFormat);
         }
-        destDocumentCursor.insertText(_exportParameters.scenarioYear);
+        destDocumentCursor.insertText(_exportParameters.scriptYear);
     }
 
 
@@ -1229,6 +1451,41 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
     //
     delete scenarioDocument;
     scenarioDocument = 0;
+
+    return preparedDocument;
+}
+
+QTextDocument* AbstractExporter::prepareDocument(const ResearchModelCheckableProxy* _researchModel,
+    const ExportParameters& _exportParameters)
+{
+    //
+    // Настроим новый документ
+    //
+    QTextDocument* preparedDocument = prepareDocument();
+    preparedDocument->setDefaultFont(QFont(defaultResearchFont(), defaultResearchFontSize()));
+
+    //
+    // Проходим все выбранные для экспорта документы разработки и помещаем их в документ
+    //
+    QTextCursor cursor(preparedDocument);
+    ::exportResearchLevel(_researchModel, _exportParameters, QModelIndex(), 0, cursor);
+
+    return preparedDocument;
+}
+
+QTextDocument* AbstractExporter::prepareDocument()
+{
+    //
+    // Настроим новый документ
+    //
+    QTextDocument* preparedDocument = new QTextDocument;
+    preparedDocument->setDocumentMargin(0);
+    preparedDocument->setIndentWidth(0);
+
+    //
+    // Настроим размер страниц
+    //
+    preparedDocument->setPageSize(::documentSize());
 
     return preparedDocument;
 }

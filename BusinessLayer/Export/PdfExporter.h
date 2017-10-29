@@ -28,25 +28,32 @@ namespace BusinessLogic
 		/**
 		 * @brief Экспорт заданного документа в указанный файл
 		 */
-		void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const;
+        void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const override;
+
+        /**
+         * @brief Экспорт заданной модели разработки с указанными параметрами
+         */
+        void exportTo(const ResearchModelCheckableProxy* _researchModel,
+                      const ExportParameters& _exportParameters) const override;
 
 #ifndef MOBILE_OS
 		/**
 		 * @brief Предварительный просмотр и печать
 		 */
-		void printPreview(ScenarioDocument* _scenario, const ExportParameters& _exportParameters);
-#endif
+        /** @{ */
+        void printPreview(ScenarioDocument* _scenario, const ExportParameters& _exportParameters);
+        void printPreview(const ResearchModelCheckableProxy* _researchModel, const ExportParameters& _exportParameters);
+        /** @} */
 
     signals:
         /**
-         * @brief Документ был напечатан
+         * @brief Текст был напечатан
          */
         void printed();
 
-#ifndef MOBILE_OS
 	private slots:
 		/**
-		 * @brief Печатать
+         * @brief Печатать текст
 		 */
         void aboutPrint(QPrinter* _printer);
 
@@ -68,7 +75,7 @@ namespace BusinessLogic
         /**
          * @brief Последняя позиция прокрутки предпросмотра сценария
          */
-        static QPair<ScenarioDocument*, int> m_lastScenarioPreviewScrollPosition;
+        static QPair<ScenarioDocument*, int> m_lastScriptPreviewScrollPosition;
 	};
 }
 

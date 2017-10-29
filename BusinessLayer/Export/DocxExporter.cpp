@@ -511,6 +511,12 @@ void DocxExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters&
     }
 }
 
+void DocxExporter::exportTo(const ResearchModelCheckableProxy* _researchModel, const ExportParameters& _exportParameters) const
+{
+    Q_UNUSED(_researchModel);
+    Q_UNUSED(_exportParameters);
+}
+
 void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _exportParameters) const
 {
     //

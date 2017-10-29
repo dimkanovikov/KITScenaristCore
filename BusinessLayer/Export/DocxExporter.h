@@ -23,7 +23,13 @@ namespace BusinessLogic
 		/**
 		 * @brief Экспорт заданного документа в указанный файл
 		 */
-		void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const;
+        void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const override;
+
+        /**
+         * @brief Экспорт заданной модели разработки с указанными параметрами
+         */
+        void exportTo(const ResearchModelCheckableProxy* _researchModel,
+                      const ExportParameters& _exportParameters) const override;
 
 	private:
 		/**
