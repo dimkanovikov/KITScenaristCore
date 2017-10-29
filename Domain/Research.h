@@ -113,10 +113,15 @@ namespace Domain
          */
         void setSortOrder(int _sortOrder);
 
+        /**
+         * @brief Установить загрузчик изображений
+         */
+        void setImageWrapper(AbstractImageWrapper* _imageWrapper);
+
     protected:
         Research(const Identifier& _id, Research* _parent, Type _type, int _sortOrder,
             const QString& _name, const QString& _description = QString(),
-            const QString& _url = QString(), const QPixmap& _image = QPixmap());
+            const QString& _url = QString(), AbstractImageWrapper* _imageWrapper = nullptr);
         friend class ResearchBuilder;
 
     private:
@@ -148,14 +153,14 @@ namespace Domain
         QString m_url;
 
         /**
-         * @brief Изображение
-         */
-        QPixmap m_image;
-
-        /**
          * @brief Порядок сортировки
          */
         int m_sortOrder;
+
+        /**
+         * @brief Загрузчик фотографий
+         */
+        AbstractImageWrapper* m_image = nullptr;
     };
 
     /**
@@ -192,7 +197,7 @@ namespace Domain
     protected:
         ResearchCharacter(const Identifier& _id, Research* _parent, Type _type, int _sortOrder,
             const QString& _name, const QString& _description = QString(),
-            const QString& _url = QString(), const QPixmap& _image = QPixmap());
+            const QString& _url = QString(), AbstractImageWrapper* _imageWrapper = nullptr);
         friend class ResearchBuilder;
     };
 
@@ -206,8 +211,8 @@ namespace Domain
          * @brief Создать элемент разработки
          */
         static Research* create(const Identifier& _id, Research* _parent, Research::Type _type,
-            int _sortOrder,const QString& _name, const QString& _description = QString(),
-            const QString& _url = QString(), const QPixmap& _image = QPixmap());
+            int _sortOrder, const QString& _name, const QString& _description = QString(),
+            const QString& _url = QString(), AbstractImageWrapper* _imageWrapper = nullptr);
     };
 
     // ****

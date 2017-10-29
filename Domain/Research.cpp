@@ -90,13 +90,18 @@ void Research::setUrl(const QString& _url)
 
 QPixmap Research::image() const
 {
-    return m_image;
+    if (m_image == nullptr) {
+        return QPixmap();
+    }
+
+    return m_image->image(this);
 }
 
 void Research::setImage(const QPixmap& _image)
 {
-    if (!ImageHelper::isImagesEqual(m_image, _image)) {
-        m_image = _image;
+    if (m_image != nullptr
+        && !ImageHelper::isImagesEqual(m_image->image(this), _image)) {
+        m_image->setImage(_image, this);
 
         changesNotStored();
     }
@@ -116,16 +121,23 @@ void Research::setSortOrder(int _sortOrder)
     }
 }
 
+void Research::setImageWrapper(AbstractImageWrapper* _imageWrapper)
+{
+    if (m_image != _imageWrapper) {
+        m_image = _imageWrapper;
+    }
+}
+
 Research::Research(const Identifier& _id, Research* _parent, Research::Type _type, int _sortOrder,
-    const QString& _name, const QString& _description, const QString& _url, const QPixmap& _image) :
+    const QString& _name, const QString& _description, const QString& _url, AbstractImageWrapper* _imageWrapper) :
     DomainObject(_id),
     m_parent(_parent),
     m_type(_type),
     m_name(_name),
     m_description(_description),
     m_url(_url),
-    m_image(_image),
-    m_sortOrder(_sortOrder)
+    m_sortOrder(_sortOrder),
+    m_image(_imageWrapper)
 {
 }
 
@@ -224,8 +236,8 @@ void ResearchCharacter::addDescription(const QString& _description)
 }
 
 ResearchCharacter::ResearchCharacter(const Identifier& _id, Research* _parent, Research::Type _type, int _sortOrder,
-    const QString& _name, const QString& _description, const QString& _url, const QPixmap& _image) :
-    Research(_id, _parent, _type, _sortOrder, _name, _description, _url, _image)
+    const QString& _name, const QString& _description, const QString& _url, AbstractImageWrapper* _imageWrapper) :
+    Research(_id, _parent, _type, _sortOrder, _name, _description, _url, _imageWrapper)
 {
     Q_ASSERT_X(_type == Research::Character, Q_FUNC_INFO, "Character must have convenient type");
 }
@@ -235,16 +247,15 @@ ResearchCharacter::ResearchCharacter(const Identifier& _id, Research* _parent, R
 
 
 Research* ResearchBuilder::create(const Identifier& _id, Research* _parent, Research::Type _type,
-    int _sortOrder, const QString& _name, const QString& _description, const QString& _url,
-    const QPixmap& _image)
+    int _sortOrder, const QString& _name, const QString& _description, const QString& _url, AbstractImageWrapper* _imageWrapper)
 {
     switch (_type) {
         case Research::Character: {
-            return new ResearchCharacter(_id, _parent, _type, _sortOrder, _name, _description, _url, _image);
+            return new ResearchCharacter(_id, _parent, _type, _sortOrder, _name, _description, _url, _imageWrapper);
         }
 
         default: {
-            return new Research(_id, _parent, _type, _sortOrder, _name, _description, _url, _image);
+            return new Research(_id, _parent, _type, _sortOrder, _name, _description, _url, _imageWrapper);
         }
     }
 }
