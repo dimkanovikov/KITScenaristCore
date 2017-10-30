@@ -71,6 +71,13 @@
     </message>
 </context>
 <context>
+    <name>BusinessLayer::AbstractExporter</name>
+    <message>
+        <source>Real name: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BusinessLayer::FountainExporter</name>
     <message>
         <source>INT</source>
@@ -301,7 +308,7 @@
     </message>
     <message>
         <source>Research</source>
-        <translation>Розробка</translation>
+        <translation type="vanished">Розробка</translation>
     </message>
     <message>
         <source>Characters</source>
@@ -310,6 +317,10 @@
     <message>
         <source>Locations</source>
         <translation>Локації</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -473,6 +484,54 @@
     <message>
         <source>Default with Courier Prime</source>
         <translation>Стандартний з Courier Prime</translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (A4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay standard template.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -859,19 +918,23 @@
     </message>
     <message>
         <source>Scenario</source>
-        <translation>Сценарій</translation>
+        <translation type="vanished">Сценарій</translation>
     </message>
     <message>
         <source>Outline</source>
-        <translation>Аутлайн</translation>
+        <translation type="vanished">Аутлайн</translation>
     </message>
     <message>
         <source>Choose File to Export Script:</source>
-        <translation>Виберіть файл для експорту сценарію:</translation>
+        <translation type="vanished">Виберіть файл для експорту сценарію:</translation>
     </message>
     <message>
         <source>Fountain</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Choose file to export:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1523,6 +1586,18 @@ Project didn&apos;t synchronized.</source>
         <source>File to import is empty. Please check that you select correct file and retry import.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Characters import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locations import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documents import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::Project</name>
@@ -1882,6 +1957,72 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>KIT Scenarist. Setup of basic features.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme is convenient for work with sufficient light.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (A4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thank you. The most common application settings were configured.
+
+The application will start in few seconds.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting application</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2363,6 +2504,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
         <source>Ctrl+Tab</source>
         <translation></translation>
     </message>
+    <message>
+        <source>Save mind map as image file</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RtfReader</name>
@@ -2806,6 +2951,22 @@ Paragraph</source>
         <source>Compact Mode</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <source>Research</source>
+        <translation type="unfinished">Розробка</translation>
+    </message>
+    <message>
+        <source>Default font for text documents:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pt</source>
+        <translation type="unfinished">pt</translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -2851,6 +3012,10 @@ Paragraph</source>
     <message>
         <source>Change text background color</source>
         <translation>Змінити колір фону</translation>
+    </message>
+    <message>
+        <source>Clear formatting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3459,6 +3624,22 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <source>%1 files (*%2)</source>
         <translation>%1 файли (*%2)</translation>
     </message>
+    <message>
+        <source>Choose file to export research</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export research</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export outline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export script</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ImportDialog</name>
@@ -3506,6 +3687,12 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>Finish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Will be used default settings.
+
+The application will start in few seconds.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3591,6 +3778,14 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Location name</source>
         <translation>Назва локації</translation>
+    </message>
+    <message>
+        <source>Save mind map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PNG files (*.png)</source>
+        <translation type="unfinished">PNG файли (*.png)</translation>
     </message>
 </context>
 <context>

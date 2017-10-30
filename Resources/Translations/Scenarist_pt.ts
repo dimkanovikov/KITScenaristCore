@@ -71,6 +71,13 @@
     </message>
 </context>
 <context>
+    <name>BusinessLayer::AbstractExporter</name>
+    <message>
+        <source>Real name: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BusinessLayer::FountainExporter</name>
     <message>
         <source>INT</source>
@@ -301,7 +308,7 @@
     </message>
     <message>
         <source>Research</source>
-        <translation>Pesquisa</translation>
+        <translation type="vanished">Pesquisa</translation>
     </message>
     <message>
         <source>Characters</source>
@@ -310,6 +317,10 @@
     <message>
         <source>Locations</source>
         <translation>Locais</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -476,6 +487,54 @@
     <message>
         <source>Default with Courier Prime</source>
         <translation>Padrão com Courier Prime</translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (A4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay standard template.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -831,7 +890,7 @@
     </message>
     <message>
         <source>Choose File to Export Script:</source>
-        <translation>Escolha Arquivo para Exportar Roteiro:</translation>
+        <translation type="vanished">Escolha Arquivo para Exportar Roteiro:</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -851,11 +910,11 @@
     </message>
     <message>
         <source>Scenario</source>
-        <translation>Cenário</translation>
+        <translation type="vanished">Cenário</translation>
     </message>
     <message>
         <source>Outline</source>
-        <translation>Contorno</translation>
+        <translation type="vanished">Contorno</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -875,6 +934,10 @@
     </message>
     <message>
         <source>Fountain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose file to export:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1531,6 +1594,18 @@ O projeto não foi sincronizado.</translation>
         <source>File to import is empty. Please check that you select correct file and retry import.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Characters import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locations import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documents import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::Project</name>
@@ -1886,6 +1961,72 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>KIT Scenarist. Setup of basic features.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme is convenient for work with sufficient light.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (A4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thank you. The most common application settings were configured.
+
+The application will start in few seconds.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting application</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2367,6 +2508,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
         <source>Add Url</source>
         <translation>Adicionar Url</translation>
     </message>
+    <message>
+        <source>Save mind map as image file</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RtfReader</name>
@@ -2810,6 +2955,22 @@ Parágrafo</translation>
         <source>Compact Mode</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <source>Research</source>
+        <translation type="unfinished">Pesquisa</translation>
+    </message>
+    <message>
+        <source>Default font for text documents:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pt</source>
+        <translation type="unfinished">Pt</translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -2855,6 +3016,10 @@ Parágrafo</translation>
     <message>
         <source>Change text background color</source>
         <translation>Mude a cor do fundo do texto</translation>
+    </message>
+    <message>
+        <source>Clear formatting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3465,6 +3630,22 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <source>%1 files (*%2)</source>
         <translation>%1 arquivos (*%2)</translation>
     </message>
+    <message>
+        <source>Choose file to export research</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export research</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export outline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export script</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ImportDialog</name>
@@ -3512,6 +3693,12 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>Finish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Will be used default settings.
+
+The application will start in few seconds.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3597,6 +3784,14 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Location name</source>
         <translation>Nome do local</translation>
+    </message>
+    <message>
+        <source>Save mind map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PNG files (*.png)</source>
+        <translation type="unfinished">Arquivo PNG (*.png)</translation>
     </message>
 </context>
 <context>
