@@ -66,11 +66,8 @@ void SimpleTextEditor::setTextBackgroundColor(const QColor& _color)
 
 void SimpleTextEditor::setTextFont(const QFont& _font)
 {
-	QTextCharFormat fmt;
-	fmt.setFont(_font);
-
 	//
-	// TODO: При изменении шрифта, не удаётся корректно наложить новое форматированние на старое,
+    // При изменении шрифта, не удаётся корректно наложить новое форматированние на старое,
 	// поэтому приходится делать всё это вручную
 	//
 
@@ -78,7 +75,59 @@ void SimpleTextEditor::setTextFont(const QFont& _font)
 	if (!cursor.hasSelection()) {
 		cursor.select(QTextCursor::BlockUnderCursor);
 	}
-    cursor.mergeCharFormat(fmt);
+
+    //
+    // Обновить формат выделенного блока текста
+    //
+    auto updateCursorFormat = [_font] (QTextCursor& _cursor) {
+        QTextCharFormat sourceFormat(_cursor.charFormat());
+        QTextCharFormat targetFormat;
+        targetFormat.setFont(_font);
+        targetFormat.setFontWeight(sourceFormat.fontWeight());
+        targetFormat.setFontUnderline(sourceFormat.fontUnderline());
+        targetFormat.setFontItalic(sourceFormat.fontItalic());
+        _cursor.setCharFormat(targetFormat);
+    };
+
+    const int startPosition = std::min(cursor.selectionStart(), cursor.selectionEnd());
+    const int endPosition = std::max(cursor.selectionStart(), cursor.selectionEnd());
+    QTextBlock block = document()->findBlock(startPosition);
+    while (block.position() < endPosition
+           && block.isValid()) {
+        foreach (const QTextLayout::FormatRange& range, block.textFormats()) {
+            const int rangeStart = block.position() + range.start;
+            const int rangeEnd = rangeStart + range.length;
+            cursor.setPosition(rangeStart);
+            //
+            // Если входит целиком
+            //
+            if (rangeStart >= startPosition
+                && rangeEnd <= endPosition) {
+                cursor.setPosition(rangeEnd, QTextCursor::KeepAnchor);
+                updateCursorFormat(cursor);
+            }
+            //
+            // Если входит начало
+            //
+            else if (rangeStart >= startPosition
+                     && rangeStart < endPosition
+                     && rangeEnd > endPosition) {
+                cursor.setPosition(endPosition, QTextCursor::KeepAnchor);
+                updateCursorFormat(cursor);
+            }
+            //
+            // Если входит конец
+            //
+            else if (rangeStart < startPosition
+                     && rangeEnd > startPosition
+                     && rangeEnd <= endPosition) {
+                cursor.setPosition(startPosition);
+                cursor.setPosition(rangeEnd, QTextCursor::KeepAnchor);
+                updateCursorFormat(cursor);
+            }
+        }
+        block = block.next();
+    }
 }
 
 void SimpleTextEditor::clearFormat()
