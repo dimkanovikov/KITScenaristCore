@@ -18,6 +18,7 @@
 #include "StackedWidgetSlideDecorator.h"
 
 #include <QEvent>
+#include <QLocale>
 #include <QPropertyAnimation>
 #include <QStackedWidget>
 
@@ -55,6 +56,14 @@ StackedWidgetSlideAnimator::StackedWidgetSlideAnimator(QStackedWidget* _containe
 
 void StackedWidgetSlideAnimator::setAnimationDirection(WAF::AnimationDirection _direction)
 {
+    if (QLocale().textDirection() == Qt::RightToLeft) {
+        if (_direction == WAF::FromLeftToRight) {
+            _direction = WAF::FromRightToLeft;
+        } else if (_direction == WAF::FromRightToLeft) {
+            _direction = WAF::FromLeftToRight;
+        }
+    }
+
     if (m_direction != _direction) {
         m_direction = _direction;
     }
