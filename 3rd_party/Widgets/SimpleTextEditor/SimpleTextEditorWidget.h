@@ -152,6 +152,11 @@ private:
     ColoredToolButton* m_textBackgroundColor;
 
     /**
+     * @brief Очистить форматирование
+     */
+    FlatButton* m_clearFormatting = nullptr;
+
+    /**
      * @brief Виджет заполняющий пустое понстранство на панели инструментов
      */
     QLabel* m_toolbarSpace;

@@ -81,6 +81,17 @@ void SimpleTextEditor::setTextFont(const QFont& _font)
     cursor.mergeCharFormat(fmt);
 }
 
+void SimpleTextEditor::clearFormat()
+{
+    QTextCharFormat fmt;
+
+    QTextCursor cursor = textCursor();
+    if (!cursor.hasSelection()) {
+        cursor.select(QTextCursor::BlockUnderCursor);
+    }
+    cursor.setCharFormat(fmt);
+}
+
 QMimeData* SimpleTextEditor::createMimeDataFromSelection() const
 {
 	QMimeData* mime = PageTextEdit::createMimeDataFromSelection();
