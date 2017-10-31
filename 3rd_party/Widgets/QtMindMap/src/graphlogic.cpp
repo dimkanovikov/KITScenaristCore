@@ -257,7 +257,9 @@ bool GraphLogic::readContentFromXml(const QString& _xml)
             {
                 const int sourceIndex = e.attribute("source").toInt();
                 const int destIndex = e.attribute("destination").toInt();
-                if (sourceIndex != -1 && destIndex != -1) {
+                if (sourceIndex != -1
+                    && destIndex != -1
+                    && sourceIndex != destIndex) {
                     Node *source = m_nodeList[sourceIndex];
                     Node *destination = m_nodeList[destIndex];
 
@@ -901,6 +903,12 @@ void GraphLogic::addEdge(Node *source, Node *destination)
 //		emit notification(tr("Base node cannot be a target."));
 //		return;
 //	}
+
+    if (source == destination)
+    {
+        emit notification((tr("Can't add edge between single node.")));
+        return;
+    }
 
     if (source->isConnected(destination))
     {
