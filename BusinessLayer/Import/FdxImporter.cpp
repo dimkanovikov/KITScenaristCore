@@ -17,6 +17,9 @@ namespace {
     const QString NODE_VALUE = "v";
 
     const QString ATTRIBUTE_VERSION = "version";
+    const QString ATTRIBUTE_DESCRIPTION = "description";
+    const QString ATTRIBUTE_COLOR = "color";
+    const QString ATTRIBUTE_TITLE = "title";
     /** @} */
 }
 
@@ -83,10 +86,42 @@ QString FdxImporter::importScenario(const ImportParameters& _importParameters) c
             // Получим текст блока
             //
             QString paragraphText;
-            QDomElement textNode = paragraph.firstChildElement("Text");
-            while (!textNode.isNull()) {
-                paragraphText.append(textNode.text());
-                textNode = textNode.nextSiblingElement("Text");
+            {
+                QDomElement textNode = paragraph.firstChildElement("Text");
+                while (!textNode.isNull()) {
+                    paragraphText.append(textNode.text());
+                    textNode = textNode.nextSiblingElement("Text");
+                }
+            }
+
+            //
+            // По возможности получим цвет, заголовок и описание сцены
+            //
+            QString sceneColor;
+            QString sceneTitle;
+            QString sceneDescription;
+            QDomElement sceneProperties = paragraph.firstChildElement("SceneProperties");
+            if (!sceneProperties.isNull()) {
+                if (sceneProperties.hasAttribute("Color")) {
+                    sceneColor = QColor(sceneProperties.attribute("Color")).name();
+                }
+
+                if (sceneProperties.hasAttribute("Title")) {
+                    sceneTitle = sceneProperties.attribute("Title");
+                }
+
+                QDomElement summary = sceneProperties.firstChildElement("Summary");
+                if (!summary.isNull()) {
+                    QDomElement summaryParagraph = summary.firstChildElement("Paragraph");
+                    while (!summaryParagraph.isNull()) {
+                        QDomElement textNode = summaryParagraph.firstChildElement("Text");
+                        while (!textNode.isNull()) {
+                            sceneDescription.append(textNode.text());
+                            textNode = textNode.nextSiblingElement("Text");
+                        }
+                        summaryParagraph = summaryParagraph.nextSiblingElement("Paragraph");
+                    }
+                }
             }
 
             //
@@ -94,10 +129,29 @@ QString FdxImporter::importScenario(const ImportParameters& _importParameters) c
             //
             const QString blockTypeName = ScenarioBlockStyle::typeName(blockType);
             writer.writeStartElement(blockTypeName);
+            if (blockType == ScenarioBlockStyle::SceneHeading) {
+                if (!sceneColor.isEmpty()) {
+                    writer.writeAttribute(ATTRIBUTE_COLOR, sceneColor);
+                }
+                if (!sceneTitle.isEmpty()) {
+                    writer.writeAttribute(ATTRIBUTE_TITLE, sceneTitle);
+                }
+            }
             writer.writeStartElement(NODE_VALUE);
             writer.writeCDATA(paragraphText);
             writer.writeEndElement();
             writer.writeEndElement();
+
+            //
+            // Если есть описание, то добавляем ещё один блок с ним
+            //
+            if (!sceneDescription.isEmpty()) {
+                writer.writeStartElement(ScenarioBlockStyle::typeName(ScenarioBlockStyle::SceneDescription));
+                writer.writeStartElement(NODE_VALUE);
+                writer.writeCDATA(sceneDescription);
+                writer.writeEndElement();
+                writer.writeEndElement();
+            }
 
             //
             // Переходим к следующему
