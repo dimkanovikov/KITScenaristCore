@@ -438,6 +438,11 @@ namespace BusinessLogic
         void saveToFile(const QString& _filePath) const;
 
         /**
+         * @brief Является ли шаблон умолчальным
+         */
+        bool isDefault() const;
+
+        /**
          * @brief Получить название
          */
         QString name() const { return m_name; }

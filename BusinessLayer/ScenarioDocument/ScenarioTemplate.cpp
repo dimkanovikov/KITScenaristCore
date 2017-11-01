@@ -739,6 +739,11 @@ void ScenarioTemplate::saveToFile(const QString& _filePath) const
     }
 }
 
+bool ScenarioTemplate::isDefault() const
+{
+    return m_isDefault;
+}
+
 ScenarioBlockStyle ScenarioTemplate::blockStyle(ScenarioBlockStyle::Type _forType) const
 {
     return m_blockStyles.value(_forType);
@@ -999,7 +1004,6 @@ void ScenarioTemplateFacade::saveTemplate(const BusinessLogic::ScenarioTemplate&
         QList<QStandardItem*> templateRow;
         templateRow << new QStandardItem(_template.name());
         templateRow << new QStandardItem(_template.description());
-        templateRow.first()->setData(true, Qt::UserRole);
         stylesRootItem->appendRow(templateRow);
     }
     //
@@ -1179,7 +1183,6 @@ ScenarioTemplateFacade::ScenarioTemplateFacade()
         if (templateObj.name() == m_defaultTemplate.name()) {
             isEditable = false;
         }
-        row.first()->setData(isEditable, Qt::UserRole);
 
         rootItem->appendRow(row);
     }
