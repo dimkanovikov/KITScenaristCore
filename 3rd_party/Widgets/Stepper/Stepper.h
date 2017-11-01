@@ -1,6 +1,7 @@
 #ifndef STEPPER_H
 #define STEPPER_H
 
+#include <QTimeLine>
 #include <QWidget>
 
 
@@ -45,6 +46,16 @@ private:
      * @brief Номер текущего шага
      */
     int m_currentStep = 0;
+
+    /**
+     * @brief Таймлайн анимации перехода между шагами
+     */
+    QTimeLine m_animationTimeline;
+
+    /**
+     * @brief Позиция анимации текущего шага (номер шага * 100)
+     */
+    int m_currentStepAnimationPosition = 0;
 };
 
 #endif // STEPPER_H

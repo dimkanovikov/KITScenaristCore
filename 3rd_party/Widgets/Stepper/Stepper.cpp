@@ -16,7 +16,12 @@ namespace {
 Stepper::Stepper(QWidget *_parent) :
     QWidget(_parent)
 {
-
+    m_animationTimeline.setDuration(300);
+    m_animationTimeline.setEasingCurve(QEasingCurve::OutCubic);
+    connect(&m_animationTimeline, &QTimeLine::frameChanged, [this] (int _frame) {
+        m_currentStepAnimationPosition = _frame;
+        update();
+    });
 }
 
 void Stepper::setStepsCount(int _count)
@@ -24,7 +29,7 @@ void Stepper::setStepsCount(int _count)
     if (m_stepsCount != _count) {
         m_stepsCount = _count;
         if (m_currentStep >= _count) {
-            m_currentStep = _count - 1;
+            setCurrentStep(_count - 1);
         }
 
         update();
@@ -35,7 +40,10 @@ void Stepper::setCurrentStep(int _step)
 {
     if (_step < m_stepsCount
         && m_currentStep != _step) {
+        m_animationTimeline.setStartFrame(m_currentStep * 100);
         m_currentStep = _step;
+        m_animationTimeline.setEndFrame(m_currentStep * 100);
+        m_animationTimeline.start();
 
         update();
     }
@@ -88,15 +96,23 @@ void Stepper::paintEvent(QPaintEvent* _event)
     //
     painter.setPen(QPen(palette().highlight(), 1));
     painter.setBrush(palette().highlight());
-    if (m_currentStep >= 0) {
+    if (m_currentStepAnimationPosition >= 0) {
         QPointF firstPoint;
         QPointF lastPoint;
         if (QLocale().textDirection() == Qt::LeftToRight) {
             firstPoint = points.first();
-            lastPoint = points[m_currentStep];
+            lastPoint.setX(firstPoint.x()
+                           + (m_currentStepAnimationPosition / 100) * (::stepDiameter + ::stepMargin) // от первого до последнего целого
+                           + (qreal(m_currentStepAnimationPosition % 100) / 100) * (::stepDiameter + ::stepMargin) // динамическая часть
+                           );
+            lastPoint.setY(firstPoint.y());
         } else {
-            firstPoint = points[m_stepsCount - m_currentStep - 1];
             lastPoint = points.last();
+            firstPoint.setX(lastPoint.x()
+                           - (m_currentStepAnimationPosition / 100) * (::stepDiameter + ::stepMargin) // от первого до последнего целого
+                           - (qreal(m_currentStepAnimationPosition % 100) / 100) * (::stepDiameter + ::stepMargin) // динамическая часть
+                           );
+            firstPoint.setY(lastPoint.y());
         }
         painter.drawEllipse(firstPoint, stepRadius, stepRadius);
         painter.drawEllipse(lastPoint, stepRadius, stepRadius);
