@@ -30,11 +30,27 @@ ProjectFileWidget::ProjectFileWidget(QWidget *parent) :
 void ProjectFileWidget::setProjectName(const QString& _projectName)
 {
     m_ui->projectName->setText(_projectName);
+    //
+    // Настриваем выравнивание, чтобы все имена были выровнены по одному краю,
+    // вне зависимости от языка на котором они написаны
+    //
+    if ((isRightToLeft() && !_projectName.isRightToLeft())
+        || (!isRightToLeft() && _projectName.isRightToLeft())) {
+        m_ui->projectName->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    }
 }
 
 void ProjectFileWidget::setProjectInfo(const QString& _projectInfo)
 {
     m_ui->projectInfo->setText(_projectInfo);
+    //
+    // Настриваем выравнивание, чтобы все строки с дополнительной информацией были выровнены
+    // по одному краю, вне зависимости от языка на котором они написаны
+    //
+    if ((isRightToLeft() && !_projectInfo.isRightToLeft())
+        || (!isRightToLeft() && _projectInfo.isRightToLeft())) {
+        m_ui->projectInfo->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    }
 }
 
 void ProjectFileWidget::configureOptions(bool _isRemote, bool _isOwner)
@@ -132,11 +148,6 @@ void ProjectFileWidget::initView()
 {
     setMouseTracking(true);
     setMouseHover(false);
-
-    if (QApplication::layoutDirection() == Qt::RightToLeft) {
-        m_ui->projectName->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-        m_ui->projectInfo->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-    }
 
     m_ui->projectInfo->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     m_ui->projectInfo->setElideMode(Qt::ElideLeft);

@@ -35,7 +35,7 @@ ElidedLabel::ElidedLabel(const QString &txt,
 void ElidedLabel::setText(const QString &txt) {
     sourceText_ = txt;
     cacheElidedText(geometry().width());
-    setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
+//    setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
 }
 
 //---------------------------------------------------------------------

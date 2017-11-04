@@ -464,7 +464,10 @@ void SideTabBar::mousePressEvent(QMouseEvent* _event)
             }
         }
 
-        QAction* pressedAction = menu.exec(mapToGlobal(QPoint(::sidebarWidth(m_compactMode), height() - menu.sizeHint().height())));
+        const QPoint menuPoint = QLocale().textDirection() == Qt::LeftToRight
+                                 ? QPoint(::sidebarWidth(m_compactMode), height() - menu.sizeHint().height())
+                                 : QPoint(0 - menu.sizeHint().width(), height() - menu.sizeHint().height());
+        QAction* pressedAction = menu.exec(mapToGlobal(menuPoint));
 
         if (pressedAction
             && pressedAction->data() >= 0

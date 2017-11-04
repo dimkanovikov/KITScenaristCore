@@ -5,10 +5,24 @@
 #include <QTextLayout>
 #include <QTextOption>
 
-#include <QDebug>
+
 class TextUtils
 {
 public:
+    /**
+     * @brief Обернуть строку специальными символами, чтобы избавиться от проблемы
+     *        с QString("[%1]").arg(text) при вставке RTL-текста
+     */
+    static QString directedText(const QString& _text, const QChar& _startMark, const QChar& _endMark)
+    {
+        // mark (LRM/RLM) and embedding (LRE/RLE) directions
+        const QString mDir = _text.isRightToLeft() ? QChar(0x200F) : QChar(0x200E);
+        const QString eDir = _text.isRightToLeft() ? QChar(0x202B) : QChar(0x202A);
+        return (_startMark.isNull() ? QString() : mDir + QString(_startMark))
+                + eDir + _text
+                + (_endMark.isNull() ? QString() : mDir + QString(_endMark));
+    }
+
     /**
      * Возвращает минимальный прямоугольник, в который помещается текст.
      * @param text Текст

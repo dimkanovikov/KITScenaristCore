@@ -123,8 +123,7 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
         //
         if (!_index.data(Qt::CheckStateRole).isNull()) {
             _painter->save();
-            _painter->translate(iconRect.center().x()/2, iconRect.center().y());
-            QStyle* style = qApp->style();
+            _painter->translate(iconRect.center().x(), iconRect.center().y());
             QStyleOptionButton checkBoxOption;
             checkBoxOption.state = QStyle::State_Enabled;
             const int checkState = _index.data(Qt::CheckStateRole).toInt();
@@ -133,7 +132,7 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
                                     : checkState == Qt::PartiallyChecked
                                       ? QStyle::State_NoChange
                                       : QStyle::State_Off;
-            style->drawControl(QStyle::CE_CheckBox, &checkBoxOption, _painter);
+            qApp->style()->drawControl(QStyle::CE_CheckBox, &checkBoxOption, _painter);
             _painter->restore();
         }
         //
