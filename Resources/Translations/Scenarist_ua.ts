@@ -67,64 +67,64 @@
     </message>
     <message>
         <source>Sorry, but you need to have active internet connection for creating new projects in cloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, але вам потрібно мати активне з&apos;єднання з Інтернетом для створення нових проектів у хмарі.</translation>
     </message>
 </context>
 <context>
     <name>BusinessLayer::AbstractExporter</name>
     <message>
         <source>Real name: </source>
-        <translation type="unfinished"></translation>
+        <translation>Справжнє ім&apos;я:</translation>
     </message>
 </context>
 <context>
     <name>BusinessLayer::FountainExporter</name>
     <message>
         <source>INT</source>
-        <translation type="unfinished">ІНТ</translation>
+        <translation>ІНТ</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation type="unfinished">НАТ</translation>
+        <translation>ЕКСТ</translation>
     </message>
     <message>
         <source>EST</source>
-        <translation type="unfinished"></translation>
+        <translation>УСТ</translation>
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ./ЕКСТ</translation>
     </message>
     <message>
         <source>INT/EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ/ЕКСТ</translation>
     </message>
 </context>
 <context>
     <name>BusinessLayer::FountainImporter</name>
     <message>
         <source>INT</source>
-        <translation type="unfinished">ІНТ</translation>
+        <translation>ІНТ</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation type="unfinished">НАТ</translation>
+        <translation>ЕКСТ</translation>
     </message>
     <message>
         <source>EST</source>
-        <translation type="unfinished"></translation>
+        <translation>УСТ</translation>
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ./ЕКСТ</translation>
     </message>
     <message>
         <source>INT/EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ/ЕКСТ</translation>
     </message>
     <message>
         <source>I/E</source>
-        <translation type="unfinished"></translation>
+        <translation>І/Е</translation>
     </message>
 </context>
 <context>
@@ -167,11 +167,11 @@
     </message>
     <message>
         <source>Final Draft template</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарій формату Final Draft</translation>
     </message>
     <message>
         <source>Fountain Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Fountain Text</translation>
     </message>
 </context>
 <context>
@@ -320,7 +320,7 @@
     </message>
     <message>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Документи</translation>
     </message>
 </context>
 <context>
@@ -379,7 +379,7 @@
     </message>
     <message>
         <source>Folder Footer</source>
-        <translation>Folder Footer</translation>
+        <translation>Нижній Колонтитул</translation>
     </message>
     <message>
         <source>Scene Description</source>
@@ -459,7 +459,7 @@
     <message>
         <source>FF</source>
         <extracomment>Reduction of Folder Footer</extracomment>
-        <translation></translation>
+        <translation>НК</translation>
     </message>
     <message>
         <source>SD</source>
@@ -472,7 +472,7 @@
     <name>BusinessLogic::ScenarioModel</name>
     <message>
         <source>FADE IN:</source>
-        <translation>Із затемнення:</translation>
+        <translation>ІЗ ЗАТЕМНЕННЯ:</translation>
     </message>
 </context>
 <context>
@@ -487,51 +487,51 @@
     </message>
     <message>
         <source>Final Draft screenplay (A4)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Final Draft screenplay (Letter)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Russian screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Russian screenplay with Courier Prime</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Chinese screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Hebrew screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Chinese screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Hebrew screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -738,7 +738,7 @@
     </message>
     <message>
         <source>Go to text</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейти до тексту</translation>
     </message>
 </context>
 <context>
@@ -787,7 +787,7 @@
     </message>
     <message>
         <source>EXT</source>
-        <translation>НАТ</translation>
+        <translation>ЕКСТ</translation>
     </message>
     <message>
         <source>DAY</source>
@@ -934,7 +934,7 @@
     </message>
     <message>
         <source>Choose file to export:</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть файл для експорту:</translation>
     </message>
 </context>
 <context>
@@ -1038,6 +1038,10 @@
         <source>There is no edge between these two nodes.</source>
         <translation>Немає зв&apos;язку між цими двома елементами.</translation>
     </message>
+    <message>
+        <source>Can&apos;t add edge between single node.</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>ImportDialog</name>
@@ -1102,19 +1106,19 @@
     </message>
     <message>
         <source>Français</source>
-        <translation>Français</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Español</source>
-        <translation>Español</translation>
+        <translation></translation>
     </message>
     <message>
         <source>English</source>
-        <translation>English</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Русский</source>
-        <translation>Русский</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Detect language from system locale</source>
@@ -1122,7 +1126,7 @@
     </message>
     <message>
         <source>Қазақ</source>
-        <translation>Қазақ</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Deutsch</source>
@@ -1130,7 +1134,7 @@
     </message>
     <message>
         <source>Українська мова</source>
-        <translation></translation>
+        <translation>Українська</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
@@ -1142,7 +1146,7 @@
     </message>
     <message>
         <source>فارْسِى</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>汉语</source>
@@ -1150,7 +1154,7 @@
     </message>
     <message>
         <source>עִבְרִית</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1502,19 +1506,19 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви дійсно хочете сховати проект &lt;b&gt;%1&lt;/b&gt; з останніх?</translation>
     </message>
     <message>
         <source>in cloud</source>
-        <translation type="unfinished"></translation>
+        <translation>в хмарі</translation>
     </message>
     <message>
         <source>on local computer</source>
-        <translation type="unfinished"></translation>
+        <translation>на комп&apos;ютері</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished">Редагувати</translation>
+        <translation>Редагувати</translation>
     </message>
 </context>
 <context>
@@ -1572,31 +1576,39 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>File isn&apos;t exists</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Файл не існує</translation>
     </message>
     <message>
         <source>Please choose existed file and retry import.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Будь ласка, виберіть існуючий файл і повторіть спробу імпорту.</translation>
     </message>
     <message>
         <source>Import aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт перервано</translation>
     </message>
     <message>
         <source>File to import is empty. Please check that you select correct file and retry import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл для імпорту порожній. Перевірте, чи правильно ви вибрали файл, і повторіть спробу імпорту.</translation>
     </message>
     <message>
         <source>Characters import</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт героїв</translation>
     </message>
     <message>
         <source>Locations import</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт локацій</translation>
     </message>
     <message>
         <source>Documents import</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт документів</translation>
+    </message>
+    <message>
+        <source>File doesn&apos;t exists</source>
+        <translation>Файл не існує</translation>
+    </message>
+    <message>
+        <source>Please choose existing file and retry import.</source>
+        <translation>Будь ласка, виберіть існуючий файл і повторіть спробу імпорту.</translation>
     </message>
 </context>
 <context>
@@ -1774,11 +1786,11 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Відмінити</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>Поновити</translation>
     </message>
 </context>
 <context>
@@ -1815,87 +1827,87 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Наступний</translation>
     </message>
     <message>
         <source>Skip</source>
-        <translation type="unfinished">Пропустити</translation>
+        <translation>Пропустити</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Не знайшли свою мову? Дізнайтеся, як ви можете додати її самостійно.&lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Не знайшли свою мову? Дізнайтеся, як ви можете додати її самостійно.&lt;/a&gt;</translation>
     </message>
     <message>
         <source>English</source>
-        <translation type="unfinished">English</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Português</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Español</source>
-        <translation type="unfinished">Español</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Français</source>
-        <translation type="unfinished">Français</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Detect language from system locale</source>
-        <translation type="unfinished">Використовувати системні мовні налаштування</translation>
+        <translation>Використовувати системні мовні налаштування</translation>
     </message>
     <message>
         <source>Українська мова</source>
-        <translation type="unfinished"></translation>
+        <translation>Українська</translation>
     </message>
     <message>
         <source>汉语</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>فارْسِى</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Deutsch</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Русский</source>
-        <translation type="unfinished">Русский</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Choose language</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть  мову</translation>
     </message>
     <message>
         <source>Қазақ</source>
-        <translation type="unfinished">Қазақ</translation>
+        <translation></translation>
     </message>
     <message>
         <source>עִבְרִית</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Choose application theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть тему програми</translation>
     </message>
     <message>
         <source>Dark theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Темна тема</translation>
     </message>
     <message>
         <source>Light theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Світла тема</translation>
     </message>
     <message>
         <source>Use research module</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати модуль розробки</translation>
     </message>
     <message>
         <source>You can collect all the necessary materials for the project in one place. In it, you can save basic information about the script, such as its name, logline, synopsis, and also fill in the title page of the script.
@@ -1903,29 +1915,35 @@ You can try to reload update.</source>
 Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
 
 Also, in research tab you can store a variety of materials (text documents, images, links to web pages and mindmaps) associated with your project, organizing them in a convenient manner.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви можете збирати всі необхідні матеріали для проекту в одному місці. У ньому можна зберегти основну інформацію про сценарій, таку як назва, логлайн, синопсис, а також заповнити титульну сторінку сценарію.
+
+Тут ви можете керувати списками героїв і локацій. Створюйте нові, додавайте описи, фотографії, перейменовуйте та упорядковуйте їх.
+
+Також на вкладці розробки можна зберігати різні матеріали (текстові документи, зображення, посилання на веб-сторінки та карти розуму), пов&apos;язані з вашим проектом, організовуючи їх зручним способом.</translation>
     </message>
     <message>
         <source>Research</source>
-        <translation type="unfinished">Розробка</translation>
+        <translation>Розробка</translation>
     </message>
     <message>
         <source>Cards</source>
-        <translation type="unfinished">Картки</translation>
+        <translation>Картки</translation>
     </message>
     <message>
         <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
 
 You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
-        <translation type="unfinished"></translation>
+        <translation>Модуль «Картки» дозволяє переглядати сценарій у вигляді карток, розміщених на дошціі, тим самим забезпечуючи візуальний спосіб роботи зі структурою.
+
+Ви можете додати кольори та штампи до карток, переміщувати їх і групувати, і всі зміни, внесені за допомогою карток, відображатимуться у тексті сценарію.</translation>
     </message>
     <message>
         <source>Use cards module</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати модуль карток</translation>
     </message>
     <message>
         <source>Script</source>
-        <translation type="unfinished">Сценарій</translation>
+        <translation>Сценарій</translation>
     </message>
     <message>
         <source>Script module allow you to work with screenplay.
@@ -1933,97 +1951,115 @@ You can add colors and stamp to cards, move, and group them, and all changes mad
 Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
 
 And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Сценарний модуль дозволяє працювати зі сценарієм.
+
+Модуль включає навігатор сценарію. Це список сцен. Натискання миші на сцені зі списку, відображатиме текст вибраної сцени на екрані.
+
+І текстовий редактор сценарію. Редактор має багато допоміжних функцій, які спрощують введення тексту відповідно до стандарту написання сценаріїв, а також дозволяє виконувати пошук тексту в сценарію та залишати примітки до тексту.</translation>
     </message>
     <message>
         <source>Use script module</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати сценарний модуль</translation>
     </message>
     <message>
         <source>Choose script template</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть шаблон сценарію</translation>
     </message>
     <message>
         <source>Statistics</source>
-        <translation type="unfinished">Статистика</translation>
+        <translation>Статистика</translation>
     </message>
     <message>
         <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Модуль статистики дозволяє отримувати докладні виробничі звіти у сценарії, а також переглядати графіки активності персонажів у сценарії та динаміки сцен.</translation>
     </message>
     <message>
         <source>Use statistics module</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати модуль статистики</translation>
     </message>
     <message>
         <source>KIT Scenarist. Setup of basic features.</source>
-        <translation type="unfinished"></translation>
+        <translation>КІТ Сценарист. Налаштування основних функцій.</translation>
     </message>
     <message>
         <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
-        <translation type="unfinished"></translation>
+        <translation>Тема більше підходить для роботи в затемнених кімнатах, а також у вечірній або нічний час.</translation>
     </message>
     <message>
         <source>Theme is convenient for work with sufficient light.</source>
-        <translation type="unfinished"></translation>
+        <translation>Тема зручна для роботи з достатнім освітленням.</translation>
     </message>
     <message>
         <source>Final Draft screenplay (Letter)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Russian screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Final Draft screenplay (A4)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Russian screenplay with Courier Prime</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Chinese screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Chinese screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Hebrew screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Hebrew screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Thank you. The most common application settings were configured.
 
 The application will start in few seconds.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дякую. Основні параметри програми налаштовані.
+
+Програма почнеться за кілька секунд.</translation>
     </message>
     <message>
         <source>Starting application</source>
-        <translation type="unfinished"></translation>
+        <translation>Запуск програми</translation>
+    </message>
+    <message>
+        <source>Script module allows you to work with screenplay.
+
+Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
+
+And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
+        <translation>Сценарний модуль дозволяє працювати зі сценарієм.
+
+Модуль включає навігатор сценарію. Це список сцен. Натискання миші на сцені зі списку, відображатиме текст вибраної сцени на екрані.
+
+І текстовий редактор сценарію. Редактор має багато допоміжних функцій, які спрощують введення тексту відповідно до стандарту написання сценаріїв, а також дозволяє виконувати пошук тексту в сценарію та залишати примітки до тексту.</translation>
     </message>
 </context>
 <context>
@@ -2096,19 +2132,19 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Remove project</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити проект</translation>
     </message>
     <message>
         <source>Hide project from recent</source>
-        <translation type="unfinished"></translation>
+        <translation>Сховати проект з недавніх</translation>
     </message>
     <message>
         <source>Add cowriter</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати співавтора</translation>
     </message>
     <message>
         <source>Show cowriters</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати співавторів</translation>
     </message>
 </context>
 <context>
@@ -2270,7 +2306,7 @@ The application will start in few seconds.</source>
     <name>ResearchView</name>
     <message>
         <source>Form</source>
-        <translation></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Research</source>
@@ -2506,7 +2542,15 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Save mind map as image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти карту розуму як зображення</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2941,31 +2985,31 @@ Paragraph</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Налаштування</translation>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Автозберігання працює дуже точно. Воно зберігає проекти кожні 3 секунди, якщо ви не використовуєте мишу чи клавіатуру, але якщо ви працюєте без зупинок, воно зберігає проект кожні 5 хвилин.</translation>
     </message>
     <message>
         <source>Compact Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Компактний Режим</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>Research</source>
-        <translation type="unfinished">Розробка</translation>
+        <translation>Розробка</translation>
     </message>
     <message>
         <source>Default font for text documents:</source>
-        <translation type="unfinished"></translation>
+        <translation>Стандартний шрифт для текстових документів:</translation>
     </message>
     <message>
         <source>pt</source>
-        <translation type="unfinished">pt</translation>
+        <translation>pt</translation>
     </message>
 </context>
 <context>
@@ -3015,7 +3059,7 @@ Paragraph</source>
     </message>
     <message>
         <source>Clear formatting</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистити форматування</translation>
     </message>
 </context>
 <context>
@@ -3113,7 +3157,7 @@ Paragraph</source>
     </message>
     <message>
         <source>Used 0 Gb from 0 Gb</source>
-        <translation type="unfinished"></translation>
+        <translation>Використано 0 Гб з 0 Гб</translation>
     </message>
 </context>
 <context>
@@ -3586,7 +3630,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>New Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Новий Проект</translation>
     </message>
 </context>
 <context>
@@ -3626,19 +3670,19 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>Choose file to export research</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть файл для експорту розробки</translation>
     </message>
     <message>
         <source>Export research</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт розробки</translation>
     </message>
     <message>
         <source>Export outline</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт аутлайну</translation>
     </message>
     <message>
         <source>Export script</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт сценарію</translation>
     </message>
 </context>
 <context>
@@ -3683,24 +3727,26 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <name>UserInterface::OnboardingView</name>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Наступний</translation>
     </message>
     <message>
         <source>Finish</source>
-        <translation type="unfinished"></translation>
+        <translation>Фініш</translation>
     </message>
     <message>
         <source>Will be used default settings.
 
 The application will start in few seconds.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будуть використані налаштування за замовчуванням.
+
+Програма почнеться за кілька секунд.</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ProjectsList</name>
     <message>
         <source>no changes</source>
-        <translation type="unfinished"></translation>
+        <translation>ніяких змін</translation>
     </message>
 </context>
 <context>
@@ -3781,11 +3827,11 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Save mind map</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти карту розуму</translation>
     </message>
     <message>
         <source>PNG files (*.png)</source>
-        <translation type="unfinished">PNG файли (*.png)</translation>
+        <translation>PNG файли (*.png)</translation>
     </message>
 </context>
 <context>
@@ -3874,7 +3920,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished">Додати</translation>
+        <translation>Додати</translation>
     </message>
 </context>
 <context>
@@ -3975,7 +4021,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Reply</source>
-        <translation></translation>
+        <translation>Повторити</translation>
     </message>
     <message>
         <source>Done</source>
@@ -4028,7 +4074,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Redo last action</source>
-        <translation>Повторити останню дію</translation>
+        <translation>Поновити останню дію</translation>
     </message>
     <message>
         <source>Search and Replace</source>
@@ -4044,15 +4090,15 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Відмінити</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>Поновити</translation>
     </message>
     <message>
         <source>Find and replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Знайти і замінити</translation>
     </message>
 </context>
 <context>
@@ -4123,7 +4169,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Editing</source>
-        <translation>Змінити</translation>
+        <translation>Редагування</translation>
     </message>
     <message>
         <source>Shortcuts</source>
@@ -4135,36 +4181,37 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Portuguese (Brazil)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Portuguese (Portugal)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
 but if you work with no terminations it saves project every %1 minutes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Автозберігання працює дуже точно. Воно зберігає проекти кожні 3 секунди, якщо ви не використовуєте мишу чи клавіатуру, 
+ але якщо ви працюєте без зупинок, воно зберігає проект кожні %1 хвилин.</translation>
     </message>
     <message>
         <source>Farsi</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4194,7 +4241,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation type="unfinished"></translation>
+        <translation>Використано %1 Гб з %2 Гб</translation>
     </message>
 </context>
 <context>
@@ -4289,7 +4336,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Statistics</source>
-        <translation type="unfinished">Статистика</translation>
+        <translation>Статистика</translation>
     </message>
 </context>
 <context>
