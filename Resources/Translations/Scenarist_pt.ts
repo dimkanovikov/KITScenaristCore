@@ -67,7 +67,7 @@
     </message>
     <message>
         <source>Sorry, but you need to have active internet connection for creating new projects in cloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desculpe, mas você precisa ter conexão de internet ativa para criar projetos novos na nuvem.</translation>
     </message>
 </context>
 <context>
@@ -320,7 +320,7 @@
     </message>
     <message>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Documentos</translation>
     </message>
 </context>
 <context>
@@ -490,51 +490,51 @@
     </message>
     <message>
         <source>Final Draft screenplay (A4)</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Final Draft (A4)</translation>
     </message>
     <message>
         <source>Final Draft screenplay (Letter)</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Final Draft (Letter)</translation>
     </message>
     <message>
         <source>Russian screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Russo</translation>
     </message>
     <message>
         <source>Russian screenplay with Courier Prime</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Russo com Courier Prime</translation>
     </message>
     <message>
         <source>Chinese screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Chinês</translation>
     </message>
     <message>
         <source>Hebrew screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Hebraico</translation>
     </message>
     <message>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão Internacional para página em tamanho A4.</translation>
     </message>
     <message>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão Internacional para página em tamanho Letter.</translation>
     </message>
     <message>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão em Russo e CIS.</translation>
     </message>
     <message>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão em Russo e CIS com fonte Courier Prime ao invés de Courier New.</translation>
     </message>
     <message>
         <source>Chinese screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão em Chinês.</translation>
     </message>
     <message>
         <source>Hebrew screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão em Hebraico.</translation>
     </message>
 </context>
 <context>
@@ -741,7 +741,7 @@
     </message>
     <message>
         <source>Go to text</source>
-        <translation type="unfinished"></translation>
+        <translation>Ir para o texto</translation>
     </message>
 </context>
 <context>
@@ -1514,15 +1514,15 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tem certeza que quer ocultar o projeto &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>in cloud</source>
-        <translation type="unfinished"></translation>
+        <translation>na nuvem</translation>
     </message>
     <message>
         <source>on local computer</source>
-        <translation type="unfinished"></translation>
+        <translation>no computador local</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -1584,31 +1584,31 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Import aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>Importação cancelada</translation>
     </message>
     <message>
         <source>File to import is empty. Please check that you select correct file and retry import.</source>
-        <translation type="unfinished"></translation>
+        <translation>O arquivo para importar não foi encontrado. Por favor verifique se selecionou o arquivo correto e tente novamente.</translation>
     </message>
     <message>
         <source>Characters import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar personagens</translation>
     </message>
     <message>
         <source>Locations import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar locações</translation>
     </message>
     <message>
         <source>Documents import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar documentos</translation>
     </message>
     <message>
         <source>File doesn&apos;t exists</source>
-        <translation type="unfinished"></translation>
+        <translation>O arquivo não existe</translation>
     </message>
     <message>
         <source>Please choose existing file and retry import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor selecione um arquivo existente e importe novamente.</translation>
     </message>
 </context>
 <context>
@@ -1786,11 +1786,11 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Desfazer</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>Refazer</translation>
     </message>
 </context>
 <context>
@@ -1831,7 +1831,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltar</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
@@ -1891,7 +1891,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Choose application theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha o tema do aplicativo</translation>
     </message>
     <message>
         <source>Dark theme</source>
@@ -1903,7 +1903,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Use research module</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar módulo de pesquisa</translation>
     </message>
     <message>
         <source>You can collect all the necessary materials for the project in one place. In it, you can save basic information about the script, such as its name, logline, synopsis, and also fill in the title page of the script.
@@ -1911,7 +1911,11 @@ Você pode tentar recarregar a atualização.</translation>
 Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
 
 Also, in research tab you can store a variety of materials (text documents, images, links to web pages and mindmaps) associated with your project, organizing them in a convenient manner.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você pode reunir todo material necessário para o projeto em um local. Neste local pode salvar a informação básica sobre o roteiro, tal como nome, logline, sinopse e também preencher a página do título do roteiro.
+
+Aqui você pode gerenciar a lista de personagens e locações. Criar outros, adicionar descrições, fotos, renomeá-los e organizá-los.
+
+Também na aba de pesquisa você pode armazenar uma variedade de materiais (documentos de texto, imagens, links de páginas da WEB e mapas mentais) associados ao seu projeto, organizando-os numa forma conveniente.</translation>
     </message>
     <message>
         <source>Research</source>
@@ -1925,11 +1929,13 @@ Also, in research tab you can store a variety of materials (text documents, imag
         <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
 
 You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
-        <translation type="unfinished"></translation>
+        <translation>O módulo dos cartões permite que você visualize o roteiro na forma de cartões colocados sobre um quadro de cortiça, numa forma visual de trabalhar com estrutura.
+
+Você pode adicionar cores e identificações aos cartões, movê-los e agrupá-los, e todas as alterações feitas nos cartões são exibidas no texto do roteiro.</translation>
     </message>
     <message>
         <source>Use cards module</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar módulo de cartões</translation>
     </message>
     <message>
         <source>Script</source>
@@ -1937,11 +1943,11 @@ You can add colors and stamp to cards, move, and group them, and all changes mad
     </message>
     <message>
         <source>Use script module</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar módulo de roteiro</translation>
     </message>
     <message>
         <source>Choose script template</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolher o modelo de roteiro</translation>
     </message>
     <message>
         <source>Statistics</source>
@@ -1949,81 +1955,83 @@ You can add colors and stamp to cards, move, and group them, and all changes mad
     </message>
     <message>
         <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
-        <translation type="unfinished"></translation>
+        <translation>O módulo de estatísticas permite que você obtenha relatórios de produção detalhados do script, bem como analisar os gráficos da atividade dos personagens ao longo do script e a dinâmica das cenas.</translation>
     </message>
     <message>
         <source>Use statistics module</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar o módulo de estatísticas</translation>
     </message>
     <message>
         <source>KIT Scenarist. Setup of basic features.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kit Scenarist. Configuração dos recursos básicos.</translation>
     </message>
     <message>
         <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema é mais adequado para ambientes pouco iluminados e também entardecer e à noite.</translation>
     </message>
     <message>
         <source>Theme is convenient for work with sufficient light.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema é conveniente para trabalhar em ambiente com luz suficiente.</translation>
     </message>
     <message>
         <source>Final Draft screenplay (Letter)</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Final Draft (Letter)</translation>
     </message>
     <message>
         <source>Russian screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Russo</translation>
     </message>
     <message>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão Internacional para página em tamanho A4.</translation>
     </message>
     <message>
         <source>Final Draft screenplay (A4)</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Final Draft (A4)</translation>
     </message>
     <message>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão Internacional para página em tamanho Letter.</translation>
     </message>
     <message>
         <source>Russian screenplay with Courier Prime</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Russo com Courier Prime</translation>
     </message>
     <message>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão em Russo e CIS.</translation>
     </message>
     <message>
         <source>Chinese screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Chinês</translation>
     </message>
     <message>
         <source>Chinese screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão em Chinês.</translation>
     </message>
     <message>
         <source>Hebrew screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro em Hebraico</translation>
     </message>
     <message>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão em Russo e CIS com fonte Courier Prime ao invés de Courier New.</translation>
     </message>
     <message>
         <source>Hebrew screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de roteiro padrão em Hebraico.</translation>
     </message>
     <message>
         <source>Thank you. The most common application settings were configured.
 
 The application will start in few seconds.</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrigado. As configurações mais comuns do aplicativo foram realizadas.
+
+O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Starting application</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciando o aplicativo</translation>
     </message>
     <message>
         <source>Script module allows you to work with screenplay.
@@ -2031,7 +2039,11 @@ The application will start in few seconds.</source>
 Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
 
 And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>O módulo de roteiro permite que você trabalhe no roteiro.
+
+O módulo inclui o navegador de roteiro. É uma lista de cenas. Clicar o mouse na cena da lista exibirá o texto da cena selecionada na tela.
+
+E o editor de texto do roteiro. O editor tem várias funções auxiliares que simplificam a inserção do texto de acordo com os padrões da escrita de roteiros, e também permite você procurar o texto do roteiro e escrever notas.</translation>
     </message>
 </context>
 <context>
@@ -2104,19 +2116,19 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>Remove project</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover projeto</translation>
     </message>
     <message>
         <source>Hide project from recent</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar projeto do recente</translation>
     </message>
     <message>
         <source>Add cowriter</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar co-autor</translation>
     </message>
     <message>
         <source>Show cowriters</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar co-autores</translation>
     </message>
 </context>
 <context>
@@ -2514,7 +2526,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>Save mind map as image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar mapa mental como arquivo de imagem</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2961,11 +2973,11 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Autosave (salvamento automático) funciona com muita precisão. Ele salva o projeto a cada 3 segundos se você não usar o mouse ou o teclado; mas se você trabalhar continuamente, ele salva o projeto a cada 5 minutos.</translation>
     </message>
     <message>
         <source>Compact Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo compacto</translation>
     </message>
     <message>
         <source>1</source>
@@ -2977,7 +2989,7 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Default font for text documents:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonte padrão para documentos de texto:</translation>
     </message>
     <message>
         <source>pt</source>
@@ -3031,7 +3043,7 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Clear formatting</source>
-        <translation type="unfinished"></translation>
+        <translation>Apagar a formatação</translation>
     </message>
 </context>
 <context>
@@ -3130,7 +3142,7 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     </message>
     <message>
         <source>Used 0 Gb from 0 Gb</source>
-        <translation type="unfinished"></translation>
+        <translation>0 Gb usados de 0 Gb</translation>
     </message>
 </context>
 <context>
@@ -3644,15 +3656,15 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>Choose file to export research</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha o arquivo para exportar a pesquisa</translation>
     </message>
     <message>
         <source>Export research</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar pesquisa</translation>
     </message>
     <message>
         <source>Export outline</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar esboço</translation>
     </message>
     <message>
         <source>Export script</source>
@@ -3705,20 +3717,22 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>Finish</source>
-        <translation type="unfinished"></translation>
+        <translation>Finalizar</translation>
     </message>
     <message>
         <source>Will be used default settings.
 
 The application will start in few seconds.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serão usadas configurações padrão.
+
+O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ProjectsList</name>
     <message>
         <source>no changes</source>
-        <translation type="unfinished"></translation>
+        <translation>sem mudanças</translation>
     </message>
 </context>
 <context>
@@ -4062,11 +4076,11 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Desfazer</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>Refazer</translation>
     </message>
     <message>
         <source>Find and replace</source>
@@ -4153,36 +4167,37 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Português</translation>
     </message>
     <message>
         <source>Portuguese (Brazil)</source>
-        <translation type="unfinished"></translation>
+        <translation>Português (Brazil)</translation>
     </message>
     <message>
         <source>Portuguese (Portugal)</source>
-        <translation type="unfinished"></translation>
+        <translation>Português (Portugal)</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Sueco</translation>
     </message>
     <message>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
 but if you work with no terminations it saves project every %1 minutes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Autosave (salvamento automático) funciona com muita precisão. Ele salva o projeto a cada 3 segundos se você não usar o mouse ou o teclado; 
+mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</translation>
     </message>
     <message>
         <source>Farsi</source>
-        <translation type="unfinished"></translation>
+        <translation>Farsi</translation>
     </message>
     <message>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation>Chinês</translation>
     </message>
     <message>
         <source>Hebrew</source>
-        <translation type="unfinished"></translation>
+        <translation>Hebraico</translation>
     </message>
 </context>
 <context>
@@ -4212,7 +4227,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Gb usados de %2 Gb</translation>
     </message>
 </context>
 <context>

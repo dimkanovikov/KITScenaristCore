@@ -49,11 +49,8 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Kazakh:
             code = "kk_KZ";
             break;
-        case Spanish:
-            code = "es_ES";
-            break;
-        case Ukrainian:
-            code = "uk_UA";
+        case Polish:
+            code = "pl_PL";
             break;
         case Portuguese:
             code = "pt_PT";
@@ -61,8 +58,14 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case PortugueseBrazilian:
             code = "pt_BR";
             break;
+        case Spanish:
+            code = "es_ES";
+            break;
         case Swedish:
             code = "sv_SE";
+            break;
+        case Ukrainian:
+            code = "uk_UA";
             break;
         default:
             break;
