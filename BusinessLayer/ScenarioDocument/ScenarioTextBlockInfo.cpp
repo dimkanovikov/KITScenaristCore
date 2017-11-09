@@ -12,7 +12,7 @@ ScenarioTextBlockInfo::ScenarioTextBlockInfo(const QString& _uuid) :
     m_sceneNumber(0)
 {
     if (m_uuid.isEmpty()) {
-        m_uuid = QUuid::createUuid().toString();
+        rebuildUuid();
     }
 }
 
@@ -23,9 +23,14 @@ QString ScenarioTextBlockInfo::uuid() const
 
 void ScenarioTextBlockInfo::setUuid(const QString& _uuid)
 {
-    if (m_uuid!= _uuid) {
-        m_uuid= _uuid;
+    if (m_uuid != _uuid) {
+        m_uuid = _uuid;
     }
+}
+
+void ScenarioTextBlockInfo::rebuildUuid()
+{
+    m_uuid = QUuid::createUuid().toString();
 }
 
 int ScenarioTextBlockInfo::sceneNumber() const

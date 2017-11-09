@@ -24,6 +24,11 @@ namespace BusinessLogic
         void setUuid(const QString& _uuid);
 
         /**
+         * @brief Сформировать новый идентификатор
+         */
+        void rebuildUuid();
+
+        /**
          * @brief Получить номер сцены
          */
         int sceneNumber() const;

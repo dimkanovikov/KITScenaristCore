@@ -681,7 +681,7 @@ QString ScenarioModel::simpleScheme() const
         //
         // ... акт
         //
-        if (child->hasChildren()) {
+        if (child->type() == ScenarioModelItem::Folder) {
             x = 0;
             y += CARD_HEIGHT + CARDS_SPACE;
 

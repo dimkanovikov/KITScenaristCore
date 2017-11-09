@@ -925,6 +925,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
                         // Создать новый элемент
                         //
                         ScenarioModelItem* newItem = itemForPosition(cursor.position());
+                        newItem->setType(ScenarioModelItem::Folder);
                         //
                         // Вставить в группирующий элемент
                         //
