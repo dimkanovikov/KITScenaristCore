@@ -172,6 +172,7 @@ void SimpleTextEditorWidget::initView()
     //
     QSettings settings;
     m_editorWrapper->setZoomRange(settings.value("simple-editor/zoom-range", 0).toDouble());
+    m_editor->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
     m_textFont->setModel(new QStringListModel(QFontDatabase().families(), m_textFont));
     m_textFont->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
