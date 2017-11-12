@@ -307,10 +307,6 @@
         <translation>Синопсис</translation>
     </message>
     <message>
-        <source>Research</source>
-        <translation type="vanished">Розробка</translation>
-    </message>
-    <message>
         <source>Characters</source>
         <translation>Герої</translation>
     </message>
@@ -701,6 +697,18 @@
         <source>cards in Row</source>
         <translation>карти рядком</translation>
     </message>
+    <message>
+        <source>Layout by</source>
+        <translation>Компонувати</translation>
+    </message>
+    <message>
+        <source>rows</source>
+        <translation>рядками</translation>
+    </message>
+    <message>
+        <source>columns</source>
+        <translation>стовпчиками</translation>
+    </message>
 </context>
 <context>
     <name>CardsScene</name>
@@ -917,18 +925,6 @@
         <translation>Коригувати текст на розривах сторінок</translation>
     </message>
     <message>
-        <source>Scenario</source>
-        <translation type="vanished">Сценарій</translation>
-    </message>
-    <message>
-        <source>Outline</source>
-        <translation type="vanished">Аутлайн</translation>
-    </message>
-    <message>
-        <source>Choose File to Export Script:</source>
-        <translation type="vanished">Виберіть файл для експорту сценарію:</translation>
-    </message>
-    <message>
         <source>Fountain</source>
         <translation></translation>
     </message>
@@ -985,10 +981,6 @@
     <message>
         <source>No active node.</source>
         <translation>Нема активних елементів.</translation>
-    </message>
-    <message>
-        <source>New node would be placed outside of the scene.</source>
-        <translation type="vanished">Новий елемент буде розміщено за межами сцени.</translation>
     </message>
     <message>
         <source>No active node</source>
@@ -1520,6 +1512,14 @@ Project didn&apos;t synchronized.</source>
         <source>Edit</source>
         <translation>Редагувати</translation>
     </message>
+    <message>
+        <source>Possible save error</source>
+        <translation>Можлива помилка збереження</translation>
+    </message>
+    <message>
+        <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
+        <translation>У вас менше 50 мегабайт вільного місця на диску. Це може призвести до проблем збереження проекту. Рекомендуємо звільнити більше місця та перевірити правильність збереження проекту.</translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -1573,14 +1573,6 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation>Microsoft &lt;b&gt;DOC&lt;/b&gt; файли не підтримуються.. Вам треба зберегти їх в &lt;b&gt;DOCX&lt;/b&gt; файл і повторити імпорт.</translation>
-    </message>
-    <message>
-        <source>File isn&apos;t exists</source>
-        <translation type="vanished">Файл не існує</translation>
-    </message>
-    <message>
-        <source>Please choose existed file and retry import.</source>
-        <translation type="vanished">Будь ласка, виберіть існуючий файл і повторіть спробу імпорту.</translation>
     </message>
     <message>
         <source>Import aborted</source>
@@ -1822,10 +1814,6 @@ You can try to reload update.</source>
 <context>
     <name>OnboardingView</name>
     <message>
-        <source>Form</source>
-        <translation type="obsolete">Форма</translation>
-    </message>
-    <message>
         <source>Next</source>
         <translation>Наступний</translation>
     </message>
@@ -1944,18 +1932,6 @@ You can add colors and stamp to cards, move, and group them, and all changes mad
     <message>
         <source>Script</source>
         <translation>Сценарій</translation>
-    </message>
-    <message>
-        <source>Script module allow you to work with screenplay.
-
-Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
-
-And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
-        <translation type="vanished">Сценарний модуль дозволяє працювати зі сценарієм.
-
-Модуль включає навігатор сценарію. Це список сцен. Натискання миші на сцені зі списку, відображатиме текст вибраної сцени на екрані.
-
-І текстовий редактор сценарію. Редактор має багато допоміжних функцій, які спрощують введення тексту відповідно до стандарту написання сценаріїв, а також дозволяє виконувати пошук тексту в сценарію та залишати примітки до тексту.</translation>
     </message>
     <message>
         <source>Use script module</source>
@@ -4212,6 +4188,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <source>Hebrew</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <translation>польський</translation>
     </message>
 </context>
 <context>

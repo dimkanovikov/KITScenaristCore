@@ -63,6 +63,11 @@ public:
     void setCanAddActs(bool _can);
 
     /**
+     * @brief Установить необходимость упорядочивать карточки по строкам
+     */
+    void setOrderByRows(bool _orderByRows);
+
+    /**
      * @brief Установить режим привязки карточек к сетке
      */
     void setFixedMode(bool _isFixed);

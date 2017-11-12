@@ -76,6 +76,11 @@ void CardsView::setCanAddActs(bool _can)
     m_scene->setCanAddActs(_can);
 }
 
+void CardsView::setOrderByRows(bool _orderByRows)
+{
+    m_scene->setOrderByRows(_orderByRows);
+}
+
 void CardsView::setFixedMode(bool _isFixed)
 {
     m_scene->setFixedMode(_isFixed);

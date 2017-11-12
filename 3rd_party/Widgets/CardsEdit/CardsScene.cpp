@@ -92,6 +92,15 @@ void CardsScene::setCanAddActs(bool _can)
     }
 }
 
+void CardsScene::setOrderByRows(bool _orderByRows)
+{
+    if (m_isOrderByRows != _orderByRows) {
+        m_isOrderByRows = _orderByRows;
+
+        reorderItemsOnScene();
+    }
+}
+
 void CardsScene::setFixedMode(bool _isFixed)
 {
     if (m_isFixedMode != _isFixed) {

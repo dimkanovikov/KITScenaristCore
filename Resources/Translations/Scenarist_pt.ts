@@ -307,10 +307,6 @@
         <translation>Sinopse</translation>
     </message>
     <message>
-        <source>Research</source>
-        <translation type="vanished">Pesquisa</translation>
-    </message>
-    <message>
         <source>Characters</source>
         <translation>Personagens</translation>
     </message>
@@ -704,6 +700,18 @@
         <source>cards in Row</source>
         <translation>Cartões na fila</translation>
     </message>
+    <message>
+        <source>Layout by</source>
+        <translation>Layout por</translation>
+    </message>
+    <message>
+        <source>rows</source>
+        <translation>linhas</translation>
+    </message>
+    <message>
+        <source>columns</source>
+        <translation>colunas</translation>
+    </message>
 </context>
 <context>
     <name>CardsScene</name>
@@ -889,10 +897,6 @@
         <translation>Arquivo existe. Ele será substituído após a exportação.</translation>
     </message>
     <message>
-        <source>Choose File to Export Script:</source>
-        <translation type="vanished">Escolha Arquivo para Exportar Roteiro:</translation>
-    </message>
-    <message>
         <source>Format:</source>
         <translation>Formato:</translation>
     </message>
@@ -907,14 +911,6 @@
     <message>
         <source>FDX</source>
         <translation>FDX</translation>
-    </message>
-    <message>
-        <source>Scenario</source>
-        <translation type="vanished">Cenário</translation>
-    </message>
-    <message>
-        <source>Outline</source>
-        <translation type="vanished">Contorno</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -991,10 +987,6 @@
     <message>
         <source>No active node.</source>
         <translation>Nenhum nó ativo.</translation>
-    </message>
-    <message>
-        <source>New node would be placed outside of the scene.</source>
-        <translation type="vanished">Novo nó seria colocado fora da cena.</translation>
     </message>
     <message>
         <source>No active node</source>
@@ -1527,6 +1519,14 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Edit</source>
         <translation>Editar</translation>
+    </message>
+    <message>
+        <source>Possible save error</source>
+        <translation>Possível erro ao salvar</translation>
+    </message>
+    <message>
+        <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
+        <translation>Você tem menos de 50 megabytes de espaço livre no disco. Isso pode gerar problemas ao salvar o projeto. Recomendamos que você libere mais espaço e verifique se o projeto foi salvo corretamente.</translation>
     </message>
 </context>
 <context>
@@ -4198,6 +4198,10 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     <message>
         <source>Hebrew</source>
         <translation>Hebraico</translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <translation>Polonês</translation>
     </message>
 </context>
 <context>

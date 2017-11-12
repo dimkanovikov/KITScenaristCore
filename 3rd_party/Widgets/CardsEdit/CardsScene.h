@@ -40,6 +40,11 @@ public:
     void setCanAddActs(bool _can);
 
     /**
+     * @brief Установить необходимость упорядочивать карточки по строкам
+     */
+    void setOrderByRows(bool _orderByRows);
+
+    /**
      * @brief Установить режим привязки карточек к сетке
      */
     void setFixedMode(bool _isFixed);
@@ -329,7 +334,7 @@ private:
     /**
      * @brief Включено ли упорядочивание по строкам (true) или по колонкам (false)
      */
-    bool m_isOrderByRows = false;
+    bool m_isOrderByRows = true;
 
     /**
      * @brief Расстояние между элементами в режиме привязки к сетке
