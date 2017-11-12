@@ -111,6 +111,13 @@ QRectF ActItem::boundingRect() const
     return m_boundingRect;
 }
 
+void ActItem::setCanMoveX(bool _canMove)
+{
+    if (m_canMoveX != _canMove) {
+        m_canMoveX = _canMove;
+    }
+}
+
 void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option, QWidget* _widget)
 {
     Q_UNUSED(_option);
@@ -232,15 +239,17 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
 
 QVariant ActItem::itemChange(QGraphicsItem::GraphicsItemChange _change, const QVariant& _value)
 {
-    switch (_change) {
-        case ItemPositionChange: {
-            QPointF newPositionCorrected = _value.toPointF();
-            newPositionCorrected.setX(0);
-            return QGraphicsItem::itemChange(_change, newPositionCorrected);
-        }
+    if (!m_canMoveX) {
+        switch (_change) {
+            case ItemPositionChange: {
+                QPointF newPositionCorrected = _value.toPointF();
+                newPositionCorrected.setX(0);
+                return QGraphicsItem::itemChange(_change, newPositionCorrected);
+            }
 
-        default: {
-            break;
+            default: {
+                break;
+            }
         }
     }
 

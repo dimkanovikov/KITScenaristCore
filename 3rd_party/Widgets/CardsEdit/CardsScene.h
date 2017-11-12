@@ -267,14 +267,32 @@ protected:
 
 private:
     /**
+     * @brief Обновить область отрисовки акта
+     */
+    void updateActBoundingRect(const QRectF& _sceneRect, ActItem* _act);
+
+    /**
+     * @brief Дополнительное место для акта в режиме упорядочивания по столбцам
+     */
+    qreal actDelta() const;
+
+    /**
      * @brief Определить позицию, где должна находиться выделенная карточка
      */
+    /** @{ */
     void reorderSelectedItem();
+    void reorderSelectedItemByRows();
+    void reorderSelectedItemByColumns();
+    /** @} */
 
     /**
      * @brief Упорядочить элементы по сетке
      */
+    /** @{ */
     void reorderItemsOnScene();
+    void reorderItemsOnSceneByRows();
+    void reorderItemsOnSceneByColumns();
+    /** @} */
 
     /**
      * @brief Исключить возможность пересечения добавляемой карточки с актом
@@ -307,6 +325,11 @@ private:
      * @brief Включён ли режим привязки к сетке
      */
     bool m_isFixedMode = false;
+
+    /**
+     * @brief Включено ли упорядочивание по строкам (true) или по колонкам (false)
+     */
+    bool m_isOrderByRows = false;
 
     /**
      * @brief Расстояние между элементами в режиме привязки к сетке
