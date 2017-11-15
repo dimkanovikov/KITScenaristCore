@@ -9,6 +9,7 @@
 #include <3rd_party/Helpers/TextEditHelper.h>
 
 #include <QApplication>
+#include <QStringBuilder>
 #include <QTextDocument>
 #include <QTextCursor>
 #include <QTextBlock>
@@ -69,48 +70,55 @@ namespace {
         // но в то же время, нельзя опираться на позицию блока, т.к. при смещение текста на абзац
         // вниз, придётся пересчитывать хэши всех остальных блоков
         //
-        QString hash;
-        hash.append(_block.text());
-        hash.append("#");
-        hash.append(_block.revision());
+        QString hash =
+                _block.text()
+                % "#"
+                % QString::number(_block.revision())
+                % "#"
+                % QString::number(ScenarioBlockStyle::forBlock(_block));
+
         if (ScenarioTextBlockInfo* blockInfo = dynamic_cast<ScenarioTextBlockInfo*>(_block.userData())) {
-            hash.append("#");
-            hash.append(blockInfo->uuid());
-            hash.append("#");
-            hash.append(QString::number(blockInfo->sceneNumber()));
-            hash.append("#");
-            hash.append(blockInfo->colors());
-            hash.append("#");
-            hash.append(blockInfo->stamp());
-            hash.append("#");
-            hash.append(blockInfo->title());
-            hash.append("#");
-            hash.append(blockInfo->description());
+            hash = hash
+                    % "#"
+                    % blockInfo->uuid()
+                    % "#"
+                    % QString::number(blockInfo->sceneNumber())
+                    % "#"
+                    % blockInfo->colors()
+                    % "#"
+                    % blockInfo->stamp()
+                    % "#"
+                    % blockInfo->title()
+                    % "#"
+                    % blockInfo->description();
         }
-        foreach (const QTextLayout::FormatRange& range, _block.textFormats()) {
-            hash.append("#");
-            hash.append(QString::number(range.start));
-            hash.append("#");
-            hash.append(QString::number(range.length));
-            hash.append("#");
-            hash.append(range.format.foreground().color().name());
-            hash.append("#");
-            hash.append(range.format.background().color().name());
-            hash.append("#");
-            hash.append(range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) ? "true" : "false");
-            hash.append("#");
-            hash.append(range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false");
-            hash.append("#");
-            hash.append(range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false");
-            hash.append("#");
-            hash.append(range.format.property(ScenarioBlockStyle::PropertyComments).toStringList().join("#"));
-            hash.append("#");
-            hash.append(range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList().join("#"));
-            hash.append("#");
-            hash.append(range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList().join("#"));
+
+        for (const QTextLayout::FormatRange& range : _block.textFormats()) {
+            if (!range.format.hasProperty(ScenarioBlockStyle::PropertyIsDone))
+                continue;
+
+            hash = hash
+                    % "#"
+                    % QString::number(range.start)
+                    % "#"
+                    % QString::number(range.length)
+                    % "#"
+                    % range.format.foreground().color().name()
+                    % "#"
+                    % range.format.background().color().name()
+                    % "#"
+                    % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) ? "true" : "false")
+                    % "#"
+                    % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false")
+                    % "#"
+                    % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false")
+                    % "#"
+                    % range.format.property(ScenarioBlockStyle::PropertyComments).toStringList().join("#")
+                    % "#"
+                    % range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList().join("#")
+                    % "#"
+                    % range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList().join("#");
         }
-        hash.append("#");
-        hash.append(ScenarioBlockStyle::forBlock(_block));
 
         return qHash(hash);
     }
@@ -159,11 +167,13 @@ ScenarioXml::ScenarioXml(ScenarioDocument* _scenario) :
 {
     Q_ASSERT(m_scenario);
 
-    m_xmlCache.setMaxCost(2000);
+    m_xmlCache.setMaxCost(3000);
 }
-
+#include <QDebug>
+#include <QDateTime>
 QString ScenarioXml::scenarioToXml()
 {
+    qDebug() << "start\t" << QDateTime::currentDateTime().toString("hh:mm:ss:zzz");
     //
     // Для формирования xml не используем QXmlStreamWriter, т.к. нам нужно хранить по отдельности
     // xml каждого блока, а QXmlStreamWriter не всегда закрывает последний записанный тэг,
@@ -325,6 +335,7 @@ QString ScenarioXml::scenarioToXml()
         currentBlock = currentBlock.next();
     } while (currentBlock.isValid());
 
+    qDebug() << "end\t" << QDateTime::currentDateTime().toString("hh:mm:ss:zzz");
     return makeMimeFromXml(resultXml);
 }
 
