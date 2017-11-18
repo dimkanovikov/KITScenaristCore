@@ -22,137 +22,137 @@ using UserInterface::ScenarioTextEdit;
 
 
 CharacterHandler::CharacterHandler(ScenarioTextEdit* _editor) :
-	StandardKeyHandler(_editor),
-	m_sceneCharactersModel(new QStringListModel(_editor))
+    StandardKeyHandler(_editor),
+    m_sceneCharactersModel(new QStringListModel(_editor))
 {
 }
 
 void CharacterHandler::prehandle()
 {
-	//
-	// Получим необходимые значения
-	//
-	// ... курсор в текущем положении
-	QTextCursor cursor = editor()->textCursor();
-	// ... блок текста в котором находится курсор
-	QTextBlock currentBlock = cursor.block();
-	// ... текст блока
-	QString currentBlockText = currentBlock.text().trimmed();
+    //
+    // Получим необходимые значения
+    //
+    // ... курсор в текущем положении
+    QTextCursor cursor = editor()->textCursor();
+    // ... блок текста в котором находится курсор
+    QTextBlock currentBlock = cursor.block();
+    // ... текст блока
+    QString currentBlockText = currentBlock.text().trimmed();
 
-	//
-	// Пробуем определить кто сейчас должен говорить
-	//
-	if (currentBlockText.isEmpty()) {
-		QString previousCharacter, character;
+    //
+    // Пробуем определить кто сейчас должен говорить
+    //
+    if (currentBlockText.isEmpty()) {
+        QString previousCharacter, character;
 
-		//
-		// ... для этого ищем предпоследнего персонажа сцены
-		//
-		cursor.movePosition(QTextCursor::PreviousBlock);
-		while (!cursor.atStart()
-			   && ScenarioBlockStyle::forBlock(cursor.block()) != ScenarioBlockStyle::SceneHeading) {
-			if (ScenarioBlockStyle::forBlock(cursor.block()) == ScenarioBlockStyle::Character) {
-				//
-				// Нашли предыдущего персонажа
-				//
-				if (previousCharacter.isEmpty()) {
-					previousCharacter = CharacterParser::name(cursor.block().text());
-				}
-				//
-				// Нашли потенциального говорящего
-				//
-				else {
-					//
-					// Выберем его в списке вариантов
-					//
-					character = CharacterParser::name(cursor.block().text());
-					if (character != previousCharacter) {
-						break;
-					}
-				}
-			}
+        //
+        // ... для этого ищем предпоследнего персонажа сцены
+        //
+        cursor.movePosition(QTextCursor::PreviousBlock);
+        while (!cursor.atStart()
+               && ScenarioBlockStyle::forBlock(cursor.block()) != ScenarioBlockStyle::SceneHeading) {
+            if (ScenarioBlockStyle::forBlock(cursor.block()) == ScenarioBlockStyle::Character) {
+                //
+                // Нашли предыдущего персонажа
+                //
+                if (previousCharacter.isEmpty()) {
+                    previousCharacter = CharacterParser::name(cursor.block().text());
+                }
+                //
+                // Нашли потенциального говорящего
+                //
+                else {
+                    //
+                    // Выберем его в списке вариантов
+                    //
+                    character = CharacterParser::name(cursor.block().text());
+                    if (character != previousCharacter) {
+                        break;
+                    }
+                }
+            }
 
-			cursor.movePosition(QTextCursor::PreviousBlock);
-			cursor.movePosition(QTextCursor::StartOfBlock);
-		}
+            cursor.movePosition(QTextCursor::PreviousBlock);
+            cursor.movePosition(QTextCursor::StartOfBlock);
+        }
 
-		//
-		// Показываем всплывающую подсказку
-		//
-		QAbstractItemModel* model = 0;
-		if (!character.isEmpty()) {
-			m_sceneCharactersModel->setStringList(QStringList() << character.toUpper());
-			model = m_sceneCharactersModel;
-		} else if (!previousCharacter.isEmpty()) {
-			m_sceneCharactersModel->setStringList(QStringList() << previousCharacter.toUpper());
-			model = m_sceneCharactersModel;
-		} else {
+        //
+        // Показываем всплывающую подсказку
+        //
+        QAbstractItemModel* model = 0;
+        if (!character.isEmpty()) {
+            m_sceneCharactersModel->setStringList(QStringList() << character.toUpper());
+            model = m_sceneCharactersModel;
+        } else if (!previousCharacter.isEmpty()) {
+            m_sceneCharactersModel->setStringList(QStringList() << previousCharacter.toUpper());
+            model = m_sceneCharactersModel;
+        } else {
             model = StorageFacade::researchStorage()->characters();
-		}
-		editor()->complete(model, QString());
-	}
+        }
+        editor()->complete(model, QString());
+    }
 }
 void CharacterHandler::handleEnter(QKeyEvent* _event)
 {
-	//
-	// Получим необходимые значения
-	//
-	// ... курсор в текущем положении
-	QTextCursor cursor = editor()->textCursor();
-	// ... блок текста в котором находится курсор
-	QTextBlock currentBlock = cursor.block();
-	// ... текст блока
-	QString currentBlockText = currentBlock.text().trimmed();
-	// ... текст до курсора
-	QString cursorBackwardText = currentBlockText.left(cursor.positionInBlock());
-	// ... текст после курсора
-	QString cursorForwardText = currentBlockText.mid(cursor.positionInBlock());
-	// ... текущая секция
-	CharacterParser::Section currentSection = CharacterParser::section(cursorBackwardText);
+    //
+    // Получим необходимые значения
+    //
+    // ... курсор в текущем положении
+    QTextCursor cursor = editor()->textCursor();
+    // ... блок текста в котором находится курсор
+    QTextBlock currentBlock = cursor.block();
+    // ... текст блока
+    QString currentBlockText = currentBlock.text().trimmed();
+    // ... текст до курсора
+    QString cursorBackwardText = currentBlockText.left(cursor.positionInBlock());
+    // ... текст после курсора
+    QString cursorForwardText = currentBlockText.mid(cursor.positionInBlock());
+    // ... текущая секция
+    CharacterParser::Section currentSection = CharacterParser::section(cursorBackwardText);
 
 
-	//
-	// Обработка
-	//
-	if (editor()->isCompleterVisible()) {
-		//! Если открыт подстановщик
+    //
+    // Обработка
+    //
+    if (editor()->isCompleterVisible()) {
+        //! Если открыт подстановщик
 
-		//
-		// Вставить выбранный вариант
-		//
-		editor()->applyCompletion();
+        //
+        // Вставить выбранный вариант
+        //
+        editor()->applyCompletion();
 
-		//
-		// Обновим курсор, т.к. после автозавершения он смещается
-		//
-		cursor = editor()->textCursor();
+        //
+        // Обновим курсор, т.к. после автозавершения он смещается
+        //
+        cursor = editor()->textCursor();
 
-		//
-		// Дописать необходимые символы
-		//
-		switch (currentSection) {
-			case CharacterParser::SectionState: {
-				cursor.insertText(")");
-				break;
-			}
+        //
+        // Дописать необходимые символы
+        //
+        switch (currentSection) {
+            case CharacterParser::SectionState: {
+                cursor.insertText(")");
+                break;
+            }
 
-			default: {
-				break;
-			}
-		}
+            default: {
+                break;
+            }
+        }
 
-		//
-		// Если нужно автоматически перепрыгиваем к следующему блоку
-		//
-		if (_event != 0 // ... чтобы таб не переводил на новую строку
-			&& autoJumpToNextBlock()
-			&& currentSection == CharacterParser::SectionName) {
-			cursor.movePosition(QTextCursor::EndOfBlock);
-			editor()->setTextCursor(cursor);
-			editor()->addScenarioBlock(jumpForEnter(ScenarioBlockStyle::Character));
-		}
-	} else {
-		//! Подстановщик закрыт
+        //
+        // Если нужно автоматически перепрыгиваем к следующему блоку
+        //
+        if (_event != 0 // ... чтобы таб не переводил на новую строку
+            && autoJumpToNextBlock()
+            && currentSection == CharacterParser::SectionName) {
+            cursor.movePosition(QTextCursor::EndOfBlock);
+            editor()->setTextCursor(cursor);
+            editor()->addScenarioBlock(jumpForEnter(ScenarioBlockStyle::Character));
+        }
+    } else {
+        //! Подстановщик закрыт
 
         if (cursor.hasSelection()) {
             //! Есть выделение
@@ -162,141 +162,141 @@ void CharacterHandler::handleEnter(QKeyEvent* _event)
             //
             editor()->addScenarioBlock(ScenarioBlockStyle::Character);
         } else {
-			//! Нет выделения
+            //! Нет выделения
 
-			if (cursorBackwardText.isEmpty()
-				&& cursorForwardText.isEmpty()) {
-				//! Текст пуст
+            if (cursorBackwardText.isEmpty()
+                && cursorForwardText.isEmpty()) {
+                //! Текст пуст
 
-				//
-				// Cменить стиль на описание действия
-				//
-				editor()->changeScenarioBlockType(changeForEnter(ScenarioBlockStyle::Character));
-			} else {
-				//! Текст не пуст
+                //
+                // Cменить стиль
+                //
+                editor()->changeScenarioBlockType(changeForEnter(ScenarioBlockStyle::Character));
+            } else {
+                //! Текст не пуст
 
-				//
-				// Сохраним имя персонажа
-				//
-				storeCharacter();
+                //
+                // Сохраним имя персонажа
+                //
+                storeCharacter();
 
-				if (cursorBackwardText.isEmpty()) {
-					//! В начале блока
+                if (cursorBackwardText.isEmpty()) {
+                    //! В начале блока
 
-					//
-					// Вставим блок имени героя перед собой
-					//
-					editor()->addScenarioBlock(ScenarioBlockStyle::Character);
-				} else if (cursorForwardText.isEmpty()) {
-					//! В конце блока
+                    //
+                    // Вставим блок имени героя перед собой
+                    //
+                    editor()->addScenarioBlock(ScenarioBlockStyle::Character);
+                } else if (cursorForwardText.isEmpty()) {
+                    //! В конце блока
 
-					//
-					// Вставить блок реплики героя
-					//
-					editor()->addScenarioBlock(jumpForEnter(ScenarioBlockStyle::Character));
-				} else {
-					//! Внутри блока
+                    //
+                    // Вставить блок реплики героя
+                    //
+                    editor()->addScenarioBlock(jumpForEnter(ScenarioBlockStyle::Character));
+                } else {
+                    //! Внутри блока
 
-					//
-					// Вставить блок реплики героя
-					//
-					editor()->addScenarioBlock(ScenarioBlockStyle::Dialogue);
-				}
-			}
-		}
-	}
+                    //
+                    // Вставить блок реплики героя
+                    //
+                    editor()->addScenarioBlock(ScenarioBlockStyle::Dialogue);
+                }
+            }
+        }
+    }
 }
 
 void CharacterHandler::handleTab(QKeyEvent*)
 {
-	//
-	// Получим необходимые значения
-	//
-	// ... курсор в текущем положении
-	QTextCursor cursor = editor()->textCursor();
-	// ... блок текста в котором находится курсор
-	QTextBlock currentBlock = cursor.block();
-	// ... текст до курсора
-	QString cursorBackwardText = currentBlock.text().left(cursor.positionInBlock());
-	// ... текст после курсора
-	QString cursorForwardText = currentBlock.text().mid(cursor.positionInBlock());
+    //
+    // Получим необходимые значения
+    //
+    // ... курсор в текущем положении
+    QTextCursor cursor = editor()->textCursor();
+    // ... блок текста в котором находится курсор
+    QTextBlock currentBlock = cursor.block();
+    // ... текст до курсора
+    QString cursorBackwardText = currentBlock.text().left(cursor.positionInBlock());
+    // ... текст после курсора
+    QString cursorForwardText = currentBlock.text().mid(cursor.positionInBlock());
 
 
-	//
-	// Обработка
-	//
-	if (editor()->isCompleterVisible()) {
-		//! Если открыт подстановщик
+    //
+    // Обработка
+    //
+    if (editor()->isCompleterVisible()) {
+        //! Если открыт подстановщик
 
-		//
-		// Работаем, как ENTER
-		//
-		handleEnter();
-	} else {
-		//! Подстановщик закрыт
+        //
+        // Работаем, как ENTER
+        //
+        handleEnter();
+    } else {
+        //! Подстановщик закрыт
 
-		if (cursor.hasSelection()) {
-			//! Есть выделение
+        if (cursor.hasSelection()) {
+            //! Есть выделение
 
-			//
-			// Ни чего не делаем
-			//
-		} else {
-			//! Нет выделения
+            //
+            // Ни чего не делаем
+            //
+        } else {
+            //! Нет выделения
 
-			if (cursorBackwardText.isEmpty()
-				&& cursorForwardText.isEmpty()) {
-				//! Текст пуст
+            if (cursorBackwardText.isEmpty()
+                && cursorForwardText.isEmpty()) {
+                //! Текст пуст
 
-				//
-				// Cменить стиль на описание действия
-				//
-				editor()->changeScenarioBlockType(changeForTab(ScenarioBlockStyle::Character));
-			} else {
-				//! Текст не пуст
+                //
+                // Cменить стиль на описание действия
+                //
+                editor()->changeScenarioBlockType(changeForTab(ScenarioBlockStyle::Character));
+            } else {
+                //! Текст не пуст
 
-				if (cursorBackwardText.isEmpty()) {
-					//! В начале блока
+                if (cursorBackwardText.isEmpty()) {
+                    //! В начале блока
 
-					//
-					// Ни чего не делаем
-					//
-				} else if (cursorForwardText.isEmpty()) {
-					//! В конце блока
+                    //
+                    // Ни чего не делаем
+                    //
+                } else if (cursorForwardText.isEmpty()) {
+                    //! В конце блока
 
-					//
-					// Сохраним имя персонажа
-					//
-					storeCharacter();
+                    //
+                    // Сохраним имя персонажа
+                    //
+                    storeCharacter();
 
-					//
-					// Вставить блок ремарки
-					//
-					editor()->addScenarioBlock(jumpForTab(ScenarioBlockStyle::Character));
-				} else {
-					//! Внутри блока
+                    //
+                    // Вставить блок ремарки
+                    //
+                    editor()->addScenarioBlock(jumpForTab(ScenarioBlockStyle::Character));
+                } else {
+                    //! Внутри блока
 
-					//
-					// Ни чего не делаем
-					//
-				}
-			}
-		}
-	}
+                    //
+                    // Ни чего не делаем
+                    //
+                }
+            }
+        }
+    }
 }
 
 void CharacterHandler::handleOther(QKeyEvent*)
 {
-	//
-	// Получим необходимые значения
-	//
-	// ... курсор в текущем положении
+    //
+    // Получим необходимые значения
+    //
+    // ... курсор в текущем положении
     const QTextCursor cursor = editor()->textCursor();
-	// ... блок текста в котором находится курсор
+    // ... блок текста в котором находится курсор
     const QTextBlock currentBlock = cursor.block();
-	// ... текст блока
+    // ... текст блока
     const QString currentBlockText = currentBlock.text();
-	// ... текст до курсора
+    // ... текст до курсора
     const QString cursorBackwardText = currentBlockText.left(cursor.positionInBlock());
 
     //
@@ -417,27 +417,27 @@ void CharacterHandler::complete(const QString& _currentBlockText, const QString&
 
 void CharacterHandler::storeCharacter() const
 {
-	if (editor()->storeDataWhenEditing()) {
-		//
-		// Получим необходимые значения
-		//
-		// ... курсор в текущем положении
+    if (editor()->storeDataWhenEditing()) {
+        //
+        // Получим необходимые значения
+        //
+        // ... курсор в текущем положении
         const QTextCursor cursor = editor()->textCursor();
-		// ... блок текста в котором находится курсор
+        // ... блок текста в котором находится курсор
         const QTextBlock currentBlock = cursor.block();
-		// ... текст блока
+        // ... текст блока
         const QString currentBlockText = currentBlock.text();
         // ... текст до курсора
         const QString cursorBackwardText = currentBlockText.left(cursor.positionInBlock());
-		// ... имя персонажа
+        // ... имя персонажа
         const QString characterName = CharacterParser::name(cursorBackwardText);
-		// ... состояние персонажа
+        // ... состояние персонажа
         const QString characterState = CharacterParser::state(cursorBackwardText);
 
-		//
-		// Сохраняем персонажа
-		//
+        //
+        // Сохраняем персонажа
+        //
         StorageFacade::researchStorage()->storeCharacter(characterName);
-		StorageFacade::characterStateStorage()->storeCharacterState(characterState);
-	}
+        StorageFacade::characterStateStorage()->storeCharacterState(characterState);
+    }
 }

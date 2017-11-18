@@ -4,6 +4,7 @@
 #include "ScenarioDayStorage.h"
 #include "TimeStorage.h"
 #include "CharacterStateStorage.h"
+#include "TransitionStorage.h"
 #include "ScenarioStorage.h"
 #include "ScenarioChangeStorage.h"
 #include "ScenarioDataStorage.h"
@@ -36,6 +37,7 @@ void StorageFacade::clearStorages()
     scenarioDayStorage()->clear();
     timeStorage()->clear();
     characterStateStorage()->clear();
+    transitionStorage()->clear();
     scenarioStorage()->clear();
     scenarioChangeStorage()->clear();
     scenarioDataStorage()->clear();
@@ -47,6 +49,7 @@ void StorageFacade::refreshStorages()
     researchStorage()->refresh();
     placeStorage()->refresh();
     scenarioDayStorage()->refresh();
+    transitionStorage()->refresh();
     timeStorage()->refresh();
     characterStateStorage()->refresh();
     scenarioDataStorage()->refresh();
@@ -60,7 +63,7 @@ void StorageFacade::refreshStorages()
 
 PlaceStorage* StorageFacade::placeStorage()
 {
-    if (s_placeStorage == 0) {
+    if (s_placeStorage == nullptr) {
         s_placeStorage = new PlaceStorage;
     }
     return s_placeStorage;
@@ -68,7 +71,7 @@ PlaceStorage* StorageFacade::placeStorage()
 
 ScenarioDayStorage* StorageFacade::scenarioDayStorage()
 {
-    if (s_scenarioDayStorage == 0) {
+    if (s_scenarioDayStorage == nullptr) {
         s_scenarioDayStorage = new ScenarioDayStorage;
     }
     return s_scenarioDayStorage;
@@ -76,7 +79,7 @@ ScenarioDayStorage* StorageFacade::scenarioDayStorage()
 
 TimeStorage* StorageFacade::timeStorage()
 {
-    if (s_timeStorage == 0) {
+    if (s_timeStorage == nullptr) {
         s_timeStorage = new TimeStorage;
     }
     return s_timeStorage;
@@ -84,15 +87,23 @@ TimeStorage* StorageFacade::timeStorage()
 
 CharacterStateStorage*StorageFacade::characterStateStorage()
 {
-    if (s_characterStateStorage == 0) {
+    if (s_characterStateStorage == nullptr) {
         s_characterStateStorage = new CharacterStateStorage;
     }
     return s_characterStateStorage;
 }
 
+TransitionStorage* StorageFacade::transitionStorage()
+{
+    if (s_transitionsStorage == nullptr) {
+        s_transitionsStorage = new TransitionStorage;
+    }
+    return s_transitionsStorage;
+}
+
 ScenarioStorage* StorageFacade::scenarioStorage()
 {
-    if (s_scenarioStorage == 0) {
+    if (s_scenarioStorage == nullptr) {
         s_scenarioStorage = new ScenarioStorage;
     }
     return s_scenarioStorage;
@@ -100,7 +111,7 @@ ScenarioStorage* StorageFacade::scenarioStorage()
 
 ScenarioChangeStorage* StorageFacade::scenarioChangeStorage()
 {
-    if (s_scenarioChangeStorage == 0) {
+    if (s_scenarioChangeStorage == nullptr) {
         s_scenarioChangeStorage = new ScenarioChangeStorage;
     }
     return s_scenarioChangeStorage;
@@ -108,7 +119,7 @@ ScenarioChangeStorage* StorageFacade::scenarioChangeStorage()
 
 ScenarioDataStorage* StorageFacade::scenarioDataStorage()
 {
-    if (s_scenarioDataStorage == 0) {
+    if (s_scenarioDataStorage == nullptr) {
         s_scenarioDataStorage = new ScenarioDataStorage;
     }
     return s_scenarioDataStorage;
@@ -116,7 +127,7 @@ ScenarioDataStorage* StorageFacade::scenarioDataStorage()
 
 ResearchStorage* StorageFacade::researchStorage()
 {
-    if (s_researchStorage == 0) {
+    if (s_researchStorage == nullptr) {
         s_researchStorage = new ResearchStorage;
     }
     return s_researchStorage;
@@ -124,7 +135,7 @@ ResearchStorage* StorageFacade::researchStorage()
 
 SettingsStorage* StorageFacade::settingsStorage()
 {
-    if (s_settingsStorage == 0) {
+    if (s_settingsStorage == nullptr) {
         s_settingsStorage = new SettingsStorage;
     }
     return s_settingsStorage;
@@ -132,19 +143,20 @@ SettingsStorage* StorageFacade::settingsStorage()
 
 DatabaseHistoryStorage* StorageFacade::databaseHistoryStorage()
 {
-    if (s_databaseHistoryStorage == 0) {
+    if (s_databaseHistoryStorage == nullptr) {
         s_databaseHistoryStorage = new DatabaseHistoryStorage;
     }
     return s_databaseHistoryStorage;
 }
 
-PlaceStorage* StorageFacade::s_placeStorage = 0;
-ScenarioDayStorage* StorageFacade::s_scenarioDayStorage = 0;
-TimeStorage* StorageFacade::s_timeStorage = 0;
-CharacterStateStorage* StorageFacade::s_characterStateStorage = 0;
-ScenarioStorage* StorageFacade::s_scenarioStorage = 0;
-ScenarioChangeStorage* StorageFacade::s_scenarioChangeStorage = 0;
-ScenarioDataStorage* StorageFacade::s_scenarioDataStorage = 0;
-ResearchStorage* StorageFacade::s_researchStorage = 0;
-SettingsStorage* StorageFacade::s_settingsStorage = 0;
-DatabaseHistoryStorage* StorageFacade::s_databaseHistoryStorage = 0;
+PlaceStorage* StorageFacade::s_placeStorage = nullptr;
+ScenarioDayStorage* StorageFacade::s_scenarioDayStorage = nullptr;
+TimeStorage* StorageFacade::s_timeStorage = nullptr;
+CharacterStateStorage* StorageFacade::s_characterStateStorage = nullptr;
+TransitionStorage* StorageFacade::s_transitionsStorage = nullptr;
+ScenarioStorage* StorageFacade::s_scenarioStorage = nullptr;
+ScenarioChangeStorage* StorageFacade::s_scenarioChangeStorage = nullptr;
+ScenarioDataStorage* StorageFacade::s_scenarioDataStorage = nullptr;
+ResearchStorage* StorageFacade::s_researchStorage = nullptr;
+SettingsStorage* StorageFacade::s_settingsStorage = nullptr;
+DatabaseHistoryStorage* StorageFacade::s_databaseHistoryStorage = nullptr;
