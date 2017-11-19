@@ -248,12 +248,12 @@ void TransitionHandler::handleInput(QInputMethodEvent* _event)
 
 void TransitionHandler::complete(const QString& _currentBlockText, const QString& _cursorBackwardText)
 {
-    Q_UNUSED(_currentBlockText);
+    Q_UNUSED(_cursorBackwardText);
 
     //
     // Дополним текст
     //
-    editor()->complete(StorageFacade::transitionStorage()->all(), _cursorBackwardText);
+    editor()->complete(StorageFacade::transitionStorage()->all(), _currentBlockText);
 }
 
 void TransitionHandler::storeTransition() const
