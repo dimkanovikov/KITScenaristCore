@@ -1098,7 +1098,7 @@ namespace {
                     _cursor.insertBlock(textBlockFormat, textCharFormat);
                     _cursor.insertText(QApplication::translate("BusinessLayer::AbstractExporter", "Real name: ") + character->realName());
                     _cursor.insertBlock(textBlockFormat, textCharFormat);
-                    _cursor.insertHtml(character->description());
+                    _cursor.insertHtml(character->descriptionText());
                     break;
                 }
 
