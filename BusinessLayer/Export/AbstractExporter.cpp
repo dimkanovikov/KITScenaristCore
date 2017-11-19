@@ -114,7 +114,8 @@ namespace {
             << ScenarioBlockStyle::TitleHeader
             << ScenarioBlockStyle::Title
             << ScenarioBlockStyle::Note
-            << ScenarioBlockStyle::Transition;
+            << ScenarioBlockStyle::Transition
+            << ScenarioBlockStyle::Lyrics;
 
         return
                 (_outline
@@ -543,7 +544,8 @@ namespace {
         const bool nextDialogOrParentheticalOnNewPage =
                 _blockLines == _linesToEndOfPage
                 && (nextBlockType == ScenarioBlockStyle::Parenthetical
-                    || nextBlockType == ScenarioBlockStyle::Dialogue	);
+                    || nextBlockType == ScenarioBlockStyle::Dialogue
+                    || nextBlockType == ScenarioBlockStyle::Lyrics);
         //
         // ... и случай, если не влезает до конца страницы, разорвать блок
         //
@@ -703,7 +705,8 @@ namespace {
                         // ... это тот случай, когда мы уже разорвали
                         // блок реплики и нужно вставить "прод." и "дальше"
                         //
-                        if (prevBlockType == ScenarioBlockStyle::Dialogue) {
+                        if (prevBlockType == ScenarioBlockStyle::Dialogue
+                            || prevBlockType == ScenarioBlockStyle::Lyrics) {
                             //
                             // ДАЛЬШЕ
                             //
@@ -895,7 +898,8 @@ namespace {
         //
         // Для блока "Реплика"
         //
-        else if (currentBlockType == ScenarioBlockStyle::Dialogue) {
+        else if (currentBlockType == ScenarioBlockStyle::Dialogue
+                 || currentBlockType == ScenarioBlockStyle::Lyrics) {
             checkPageBreakForDialog(_sourceDocumentCursor, _destDocumentCursor, blockFormat,
                 charFormat, blockLines, linesToEndOfPageCount);
         }

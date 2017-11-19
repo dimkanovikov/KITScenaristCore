@@ -526,7 +526,8 @@ QList<ScenarioBlockStyle::Type> ScenarioTextDocument::visibleBlocksTypes() const
             << ScenarioBlockStyle::Transition
             << ScenarioBlockStyle::NoprintableText
             << ScenarioBlockStyle::FolderHeader
-            << ScenarioBlockStyle::FolderFooter;
+            << ScenarioBlockStyle::FolderFooter
+            << ScenarioBlockStyle::Lyrics;
 
     return m_outlineMode ? s_outlineVisibleBlocksTypes : s_scenarioVisibleBlocksTypes;
 }

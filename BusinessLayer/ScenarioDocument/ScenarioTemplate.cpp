@@ -52,6 +52,7 @@ namespace {
             s_typeNames.insert(ScenarioBlockStyle::FolderHeader, "folder_header");
             s_typeNames.insert(ScenarioBlockStyle::FolderFooter, "folder_footer");
             s_typeNames.insert(ScenarioBlockStyle::SceneDescription, "scene_description");
+            s_typeNames.insert(ScenarioBlockStyle::Lyrics, "lyrics");
         }
         return s_typeNames;
     }
@@ -77,6 +78,7 @@ namespace {
             s_beautifyTypeNames.insert(ScenarioBlockStyle::FolderHeader, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Folder"));
             s_beautifyTypeNames.insert(ScenarioBlockStyle::FolderFooter, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Folder Footer"));
             s_beautifyTypeNames.insert(ScenarioBlockStyle::SceneDescription, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Scene Description"));
+            s_beautifyTypeNames.insert(ScenarioBlockStyle::Lyrics, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Lyrics"));
         }
         return s_beautifyTypeNames;
     }
@@ -116,6 +118,8 @@ namespace {
             s_shortTypeNames.insert(ScenarioBlockStyle::FolderFooter, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "FF"));
             //: Reduction of Scene Description
             s_shortTypeNames.insert(ScenarioBlockStyle::SceneDescription, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "SD"));
+            //: Reduction of Lyrics
+            s_shortTypeNames.insert(ScenarioBlockStyle::Dialogue, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "L"));
         }
         return s_shortTypeNames;
     }
@@ -1175,15 +1179,6 @@ ScenarioTemplateFacade::ScenarioTemplateFacade()
         QList<QStandardItem*> row;
         row << new QStandardItem(templateObj.name());
         row << new QStandardItem(templateObj.description());
-
-        //
-        // Отключаем возможность редактирования стандартного шаблона
-        //
-        bool isEditable = true;
-        if (templateObj.name() == m_defaultTemplate.name()) {
-            isEditable = false;
-        }
-
         rootItem->appendRow(row);
     }
 }

@@ -89,6 +89,7 @@ SearchWidget::SearchWidget(QWidget* _parent, bool _showTypesCombo) :
     m_searchIn->addItem(tr("In character"), BusinessLogic::ScenarioBlockStyle::Character);
     m_searchIn->addItem(tr("In dialogue"), BusinessLogic::ScenarioBlockStyle::Dialogue);
     m_searchIn->addItem(tr("In parenthetical"), BusinessLogic::ScenarioBlockStyle::Parenthetical);
+    m_searchIn->addItem(tr("In lyrics"), BusinessLogic::ScenarioBlockStyle::Lyrics);
     m_searchIn->setVisible(_showTypesCombo);
     m_searchIn->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 

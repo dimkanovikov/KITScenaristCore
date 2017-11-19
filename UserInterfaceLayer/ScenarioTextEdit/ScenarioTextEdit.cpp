@@ -167,7 +167,8 @@ void ScenarioTextEdit::changeScenarioBlockType(ScenarioBlockStyle::Type _blockTy
             || _blockType == ScenarioBlockStyle::Note
             || _blockType == ScenarioBlockStyle::TitleHeader
             || _blockType == ScenarioBlockStyle::Title
-            || _blockType == ScenarioBlockStyle::NoprintableText)) {
+            || _blockType == ScenarioBlockStyle::NoprintableText
+            || _blockType == ScenarioBlockStyle::Lyrics)) {
         return;
     }
 
@@ -838,7 +839,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
         {
             const QVector<ScenarioBlockStyle::Type> dialogueTypes = { ScenarioBlockStyle::Character,
                                                                       ScenarioBlockStyle::Parenthetical,
-                                                                      ScenarioBlockStyle::Dialogue };
+                                                                      ScenarioBlockStyle::Dialogue,
+                                                                      ScenarioBlockStyle::Lyrics};
             if (dialogueTypes.contains(scenarioBlockType())) {
                 //
                 // Идём до начала блока диалога

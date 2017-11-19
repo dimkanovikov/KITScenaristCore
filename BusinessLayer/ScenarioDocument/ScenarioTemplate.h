@@ -27,15 +27,16 @@ namespace BusinessLogic
             Action,			//!< Описание действия
             Character,		//!< Имя героя
             Parenthetical,	//!< Ремарка
-            Dialogue,			//!< Реплика героя
+            Dialogue,		//!< Реплика героя
             Transition,		//!< Переход
             Note,			//!< Примечание
             TitleHeader,	//!< Заголовок титра
             Title,			//!< Текст титра
-            NoprintableText,//!< Непечатный текст
+            NoprintableText,//!< Заметка по тексту
             FolderHeader,	//!< Заголовок папки
             FolderFooter,	//!< Окончание папки
-            SceneDescription	//!< Описание элемента сценария
+            SceneDescription,	//!< Описание элемента сценария
+            Lyrics          //!< Лирика (стихи, песни)
         };
 
         /**
@@ -89,7 +90,7 @@ namespace BusinessLogic
         };
 
     public:
-        ScenarioBlockStyle() : m_type(Undefined), m_font(QFont("Courier New", 12)) {}
+        ScenarioBlockStyle() : m_type(Undefined), m_isActive(false), m_font(QFont("Courier New", 12)) {}
 
         /**
          * @brief Получить тип блока
