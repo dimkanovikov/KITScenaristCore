@@ -306,6 +306,14 @@ void Database::createTables(QSqlDatabase& _database)
                    "); "
                    );
 
+    // Таблица "Переходы"
+    q_creator.exec("CREATE TABLE transitions "
+                   "( "
+                   "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                   "name TEXT UNIQUE NOT NULL "
+                   "); "
+                   );
+
 
     // Таблица "Текст сценария"
     q_creator.exec("CREATE TABLE scenario "
@@ -395,6 +403,10 @@ void Database::createEnums(QSqlDatabase& _database)
                     QString("INSERT INTO places (id, name) VALUES (null, '%1');")
                     .arg(QApplication::translate("DatabaseLayer::Database", "EXT"))
                     );
+        q_creator.exec(
+                    QString("INSERT INTO places (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "INT./EXT"))
+                    );
     }
 
     // Справочник времени
@@ -413,7 +425,27 @@ void Database::createEnums(QSqlDatabase& _database)
                     );
         q_creator.exec(
                     QString("INSERT INTO times (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "AFTERNOON"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO times (id, name) VALUES (null, '%1');")
                     .arg(QApplication::translate("DatabaseLayer::Database", "EVENING"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO times (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "LATER"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO times (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "MOMENTS LATER"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO times (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "CONTINUOUS"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO times (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "THE NEXT DAY"))
                     );
     }
 
@@ -429,10 +461,60 @@ void Database::createEnums(QSqlDatabase& _database)
                     QString("INSERT INTO character_states (id, name) VALUES (null, '%1');")
                     .arg(QApplication::translate("DatabaseLayer::Database", "O.S."))
                     );
+        //: Off-camera
+        q_creator.exec(
+                    QString("INSERT INTO character_states (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "O.C."))
+                    );
+        //: Subtitle
+        q_creator.exec(
+                    QString("INSERT INTO character_states (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "SUBTITLE"))
+                    );
         //: Continued
         q_creator.exec(
                     QString("INSERT INTO character_states (id, name) VALUES (null, '%1');")
                     .arg(QApplication::translate("DatabaseLayer::Database", "CONT'D"))
+                    );
+    }
+
+    // Справочник переходов
+    {
+        q_creator.exec(
+                    QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "CUT TO:"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "FADE IN:"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "FADE OUT"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "FADE TO:"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "DISSOLVE TO:"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "BACK TO:"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "MATCH CUT TO:"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "JUMP CUT TO:"))
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                    .arg(QApplication::translate("DatabaseLayer::Database", "FADE TO BLACK"))
                     );
     }
 
@@ -459,10 +541,13 @@ void Database::updateDatabase(QSqlDatabase& _database)
         if (databaseVersion.startsWith("0.7.0 beta")) {
             databaseVersion = "0.6.2";
         }
+        if (databaseVersion.startsWith("0.7.2 beta")) {
+            databaseVersion = "0.7.1";
+        }
     }
-    int versionMajor = databaseVersion.split(".").value(0, "0").toInt();
-    int versionMinor = databaseVersion.split(".").value(1, "0").toInt();
-    int versionBuild = databaseVersion.split(".").value(2, "1").split(" ").value(0, "1").toInt();
+    const int versionMajor = databaseVersion.split(".").value(0, "0").toInt();
+    const int versionMinor = databaseVersion.split(".").value(1, "0").toInt();
+    const int versionBuild = databaseVersion.split(".").value(2, "1").split(" ").value(0, "1").toInt();
 
     //
     // Вызываются необходимые процедуры обновления БД в зависимости от её версии
@@ -556,6 +641,10 @@ void Database::updateDatabase(QSqlDatabase& _database)
             if (versionMinor < 7
                 || versionBuild <= 0) {
                 updateDatabaseTo_0_7_1(_database);
+            }
+            if (versionMinor < 7
+                || versionBuild <= 1) {
+                updateDatabaseTo_0_7_2(_database);
             }
         }
     }
@@ -1111,7 +1200,6 @@ void Database::updateDatabaseTo_0_7_0(QSqlDatabase& _database)
 
 void Database::updateDatabaseTo_0_7_1(QSqlDatabase& _database)
 {
-
     QSqlQuery q_updater(_database);
 
     _database.transaction();
@@ -1317,4 +1405,59 @@ void Database::updateDatabaseTo_0_7_1(QSqlDatabase& _database)
     // Уменьшим размер файла
     //
     q_updater.exec("VACUUM");
+}
+
+void Database::updateDatabaseTo_0_7_2(QSqlDatabase& _database)
+{
+    QSqlQuery q_updater(_database);
+
+    _database.transaction();
+
+    // Таблица "Переходы"
+    q_updater.exec("CREATE TABLE transitions "
+                   "( "
+                   "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                   "name TEXT UNIQUE NOT NULL "
+                   "); "
+                   );
+
+    // Данные таблицы
+    q_updater.exec(
+                QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                .arg(QApplication::translate("DatabaseLayer::Database", "CUT TO:"))
+                );
+    q_updater.exec(
+                QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                .arg(QApplication::translate("DatabaseLayer::Database", "FADE IN:"))
+                );
+    q_updater.exec(
+                QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                .arg(QApplication::translate("DatabaseLayer::Database", "FADE OUT"))
+                );
+    q_updater.exec(
+                QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                .arg(QApplication::translate("DatabaseLayer::Database", "FADE TO:"))
+                );
+    q_updater.exec(
+                QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                .arg(QApplication::translate("DatabaseLayer::Database", "DISSOLVE TO:"))
+                );
+    q_updater.exec(
+                QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                .arg(QApplication::translate("DatabaseLayer::Database", "BACK TO:"))
+                );
+    q_updater.exec(
+                QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                .arg(QApplication::translate("DatabaseLayer::Database", "MATCH CUT TO:"))
+                );
+    q_updater.exec(
+                QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                .arg(QApplication::translate("DatabaseLayer::Database", "JUMP CUT TO:"))
+                );
+    q_updater.exec(
+                QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
+                .arg(QApplication::translate("DatabaseLayer::Database", "FADE TO BLACK"))
+                );
+
+    _database.commit();
 }

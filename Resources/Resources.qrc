@@ -194,4 +194,13 @@
         <file>Templates/chinese.kitss</file>
         <file>Templates/hebrew.kitss</file>
     </qresource>
+    <qresource prefix="/Audio">
+        <file>Sound/key-01.wav</file>
+        <file>Sound/key-02.wav</file>
+        <file>Sound/backspace.wav</file>
+        <file>Sound/key-03.wav</file>
+        <file>Sound/key-04.wav</file>
+        <file>Sound/return.wav</file>
+        <file>Sound/space.wav</file>
+    </qresource>
 </RCC>

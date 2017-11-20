@@ -80,6 +80,8 @@ QString FdxImporter::importScenario(const ImportParameters& _importParameters) c
                 blockType = ScenarioBlockStyle::Note;
             } else if (paragraphType == "Cast List") {
                 blockType = ScenarioBlockStyle::SceneCharacters;
+            } else if (paragraphType == "Lyrics") {
+                blockType = ScenarioBlockStyle::Lyrics;
             }
 
             //

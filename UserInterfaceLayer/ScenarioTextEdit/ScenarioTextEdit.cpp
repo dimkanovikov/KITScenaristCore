@@ -23,6 +23,7 @@
 #include <QScrollBar>
 #include <QStringListModel>
 #include <QStyleHints>
+#include <QSound>
 #include <QTextBlock>
 #include <QTextCursor>
 #include <QTextDocumentFragment>
@@ -54,7 +55,7 @@ ScenarioTextEdit::ScenarioTextEdit(QWidget* _parent) :
     m_replaceThreeDots(false),
     m_smartQuotes(false),
     m_showSuggestionsInEmptyBlocks(false),
-    m_textSelectionEnable(true),
+    m_textSelectionEnabled(true),
     m_shortcutsManager(new ShortcutsManager(this))
 {
     setAttribute(Qt::WA_KeyCompression);
@@ -167,7 +168,8 @@ void ScenarioTextEdit::changeScenarioBlockType(ScenarioBlockStyle::Type _blockTy
             || _blockType == ScenarioBlockStyle::Note
             || _blockType == ScenarioBlockStyle::TitleHeader
             || _blockType == ScenarioBlockStyle::Title
-            || _blockType == ScenarioBlockStyle::NoprintableText)) {
+            || _blockType == ScenarioBlockStyle::NoprintableText
+            || _blockType == ScenarioBlockStyle::Lyrics)) {
         return;
     }
 
@@ -360,10 +362,17 @@ void ScenarioTextEdit::setShowSuggestionsInEmptyBlocks(bool _show)
     }
 }
 
-void ScenarioTextEdit::setTextSelectionEnable(bool _enable)
+void ScenarioTextEdit::setTextSelectionEnabled(bool _enabled)
 {
-    if (m_textSelectionEnable != _enable) {
-        m_textSelectionEnable = _enable;
+    if (m_textSelectionEnabled != _enabled) {
+        m_textSelectionEnabled = _enabled;
+    }
+}
+
+void ScenarioTextEdit::setKeyboardSoundEnabled(bool _enabled)
+{
+    if (m_keyboardSoundEnabled != _enabled) {
+        m_keyboardSoundEnabled = _enabled;
     }
 }
 
@@ -480,9 +489,46 @@ bool ScenarioTextEdit::isRedoAvailable() const
 {
     return m_document->isRedoAvailableReimpl();
 }
-#include <QDebug>
+
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 {
+    //
+    // Музицируем
+    //
+    if (m_keyboardSoundEnabled) {
+        switch (_event->key()) {
+            case Qt::Key_Return:
+            case Qt::Key_Enter: {
+                QSound::play(":/Audio/Sound/return.wav");
+                break;
+            }
+
+            case Qt::Key_Space: {
+                QSound::play(":/Audio/Sound/space.wav");
+                break;
+            }
+
+            case Qt::Key_Backspace:
+            case Qt::Key_Delete: {
+                QSound::play(":/Audio/Sound/backspace.wav");
+                break;
+            }
+
+            default: {
+                if (!_event->text().isEmpty()) {
+                    const int firstSoundId = 1;
+                    const int maxSoundId = 4;
+                    static int lastSoundId = firstSoundId;
+                    if (lastSoundId > maxSoundId) {
+                        lastSoundId = firstSoundId;
+                    }
+                    QSound::play(QString(":/Audio/Sound/key-0%1.wav").arg(lastSoundId++));
+                }
+                break;
+            }
+        }
+    }
+
 #ifdef MOBILE_OS
     //
     // Не перехватываем событие кнопки назад в мобильных приложениях
@@ -838,7 +884,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
         {
             const QVector<ScenarioBlockStyle::Type> dialogueTypes = { ScenarioBlockStyle::Character,
                                                                       ScenarioBlockStyle::Parenthetical,
-                                                                      ScenarioBlockStyle::Dialogue };
+                                                                      ScenarioBlockStyle::Dialogue,
+                                                                      ScenarioBlockStyle::Lyrics};
             if (dialogueTypes.contains(scenarioBlockType())) {
                 //
                 // Идём до начала блока диалога
@@ -1249,7 +1296,7 @@ void ScenarioTextEdit::mouseDoubleClickEvent(QMouseEvent* _event)
 
 void ScenarioTextEdit::mouseMoveEvent(QMouseEvent* _event)
 {
-    if (m_textSelectionEnable) {
+    if (m_textSelectionEnabled) {
         CompletableTextEdit::mouseMoveEvent(_event);
     }
 }

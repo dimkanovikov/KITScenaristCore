@@ -80,7 +80,8 @@ QString CharacterReport::makeReport(QTextDocument* _scenario,
                     saveDialogues = false;
                 }
             } else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Dialogue
-                       || ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Parenthetical) {
+                       || ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Parenthetical
+                       || ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Lyrics) {
                 if (saveDialogues) {
                     currentData->dialogues.append({ characterName, block.text(), block.position() });
                 }

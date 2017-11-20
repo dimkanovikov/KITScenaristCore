@@ -1,4 +1,4 @@
-#include "DialogHandler.h"
+#include "LyricsHandler.h"
 
 #include "../ScenarioTextEdit.h"
 
@@ -10,12 +10,12 @@ using namespace BusinessLogic;
 using UserInterface::ScenarioTextEdit;
 
 
-DialogHandler::DialogHandler(ScenarioTextEdit* _editor) :
+LyricsHandler::LyricsHandler(ScenarioTextEdit* _editor) :
     StandardKeyHandler(_editor)
 {
 }
 
-void DialogHandler::handleEnter(QKeyEvent*)
+void LyricsHandler::handleEnter(QKeyEvent*)
 {
     //
     // Получим необходимые значения
@@ -50,7 +50,7 @@ void DialogHandler::handleEnter(QKeyEvent*)
             //
             // Удаляем всё, но оставляем стилем блока текущий
             //
-            editor()->addScenarioBlock(ScenarioBlockStyle::Dialogue);
+            editor()->addScenarioBlock(ScenarioBlockStyle::Lyrics);
         } else {
             //! Нет выделения
 
@@ -61,7 +61,7 @@ void DialogHandler::handleEnter(QKeyEvent*)
                 //
                 // Меняем стиль блока на описание действия
                 //
-                editor()->changeScenarioBlockType(changeForEnter(ScenarioBlockStyle::Dialogue));
+                editor()->changeScenarioBlockType(changeForEnter(ScenarioBlockStyle::Lyrics));
             } else {
                 //! Текст не пуст
 
@@ -77,12 +77,12 @@ void DialogHandler::handleEnter(QKeyEvent*)
                     //
                     // Перейдём к блоку персонажа
                     //
-                    editor()->addScenarioBlock(jumpForEnter(ScenarioBlockStyle::Dialogue));
+                    editor()->addScenarioBlock(jumpForEnter(ScenarioBlockStyle::Lyrics));
                 } else {
                     //! Внутри блока
 
                     //
-                    // Разрываем диалог блоком персонажа, вставляя его имя
+                    // Разрываем лирику блоком персонажа, вставляя его имя
                     //
                     {
                         //
@@ -113,9 +113,9 @@ void DialogHandler::handleEnter(QKeyEvent*)
                         editor()->insertPlainText(characterName);
 
                         //
-                        // Оставшийся текст форматируем, как "диалог"
+                        // Оставшийся текст форматируем, как "лирика"
                         //
-                        editor()->addScenarioBlock(ScenarioBlockStyle::Dialogue);
+                        editor()->addScenarioBlock(ScenarioBlockStyle::Lyrics);
                     }
                 }
             }
@@ -123,7 +123,7 @@ void DialogHandler::handleEnter(QKeyEvent*)
     }
 }
 
-void DialogHandler::handleTab(QKeyEvent*)
+void LyricsHandler::handleTab(QKeyEvent*)
 {
     //
     // Получим необходимые значения
@@ -166,7 +166,7 @@ void DialogHandler::handleTab(QKeyEvent*)
                 //
                 // Меняем стиль на ремарку
                 //
-                editor()->changeScenarioBlockType(changeForTab(ScenarioBlockStyle::Dialogue));
+                editor()->changeScenarioBlockType(changeForTab(ScenarioBlockStyle::Lyrics));
             } else {
                 //! Текст не пуст
 
@@ -182,7 +182,7 @@ void DialogHandler::handleTab(QKeyEvent*)
                     //
                     // Вставляем блок ремарки
                     //
-                    editor()->addScenarioBlock(jumpForTab(ScenarioBlockStyle::Dialogue));
+                    editor()->addScenarioBlock(jumpForTab(ScenarioBlockStyle::Lyrics));
                 } else {
                     //! Внутри блока
 
@@ -191,10 +191,10 @@ void DialogHandler::handleTab(QKeyEvent*)
                     //
 
                     //
-                    // ... оставляем пустой блок реплики
+                    // ... оставляем пустой блок лирики
                     //
-                    editor()->addScenarioBlock(ScenarioBlockStyle::Dialogue);
-                    editor()->addScenarioBlock(ScenarioBlockStyle::Dialogue);
+                    editor()->addScenarioBlock(ScenarioBlockStyle::Lyrics);
+                    editor()->addScenarioBlock(ScenarioBlockStyle::Lyrics);
 
                     //
                     // ... возвращаем курсор к пустому блоку
@@ -213,7 +213,7 @@ void DialogHandler::handleTab(QKeyEvent*)
     }
 }
 
-void DialogHandler::handleOther(QKeyEvent* _event)
+void LyricsHandler::handleOther(QKeyEvent* _event)
 {
     //
     // Получим необходимые значения
@@ -262,13 +262,13 @@ void DialogHandler::handleOther(QKeyEvent* _event)
             // если скобка нажата в начале строки, то делаем лишь один перевод строки
             //
             if (cursorBackwardText != "(") {
-                editor()->addScenarioBlock(ScenarioBlockStyle::Dialogue);
+                editor()->addScenarioBlock(ScenarioBlockStyle::Lyrics);
             }
             //
             // ... если после скобки нет текста, не добавляем новый параграф
             //
             if (!cursorForwardText.isEmpty()) {
-                editor()->addScenarioBlock(ScenarioBlockStyle::Dialogue);
+                editor()->addScenarioBlock(ScenarioBlockStyle::Lyrics);
 
                 //
                 // ... возвращаем курсор к пустому блоку

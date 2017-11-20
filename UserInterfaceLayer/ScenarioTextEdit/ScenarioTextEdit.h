@@ -102,7 +102,12 @@ namespace UserInterface
         /**
          * @brief Установить доступность выделения текста мышью
          */
-        void setTextSelectionEnable(bool _enable);
+        void setTextSelectionEnabled(bool _enabled);
+
+        /**
+         * @brief Установить необходимость проигрывания звуков клавиатуры
+         */
+        void setKeyboardSoundEnabled(bool _enabled);
 
         /**
          * @brief Редактор в режиме отображения поэпизодника или сценария
@@ -154,7 +159,7 @@ namespace UserInterface
          * @brief Доступно ли действие повтора отменённого действия
          */
         bool isRedoAvailable() const;
-        
+
     signals:
         /**
          * @brief Запрос на отмену последнего действия
@@ -343,7 +348,12 @@ namespace UserInterface
         /**
          * @brief Включена ли возможность выделения текста
          */
-        bool m_textSelectionEnable;
+        bool m_textSelectionEnabled;
+
+        /**
+         * @brief Включена ли опция проигрывания звуков клавиатруы
+         */
+        bool m_keyboardSoundEnabled = false;
 
         /**
          * @brief Курсоры соавторов

@@ -626,6 +626,8 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("scenario-editor/styles-jumping/from-scene_group_header-by-enter", QString::number(ScenarioBlockStyle::SceneHeading));
     m_defaultValues.insert("scenario-editor/styles-jumping/from-folder_header-by-tab", QString::number(ScenarioBlockStyle::SceneHeading));
     m_defaultValues.insert("scenario-editor/styles-jumping/from-folder_header-by-enter", QString::number(ScenarioBlockStyle::SceneHeading));
+    m_defaultValues.insert("scenario-editor/styles-jumping/from-lyrics-by-tab", QString::number(ScenarioBlockStyle::Parenthetical));
+    m_defaultValues.insert("scenario-editor/styles-jumping/from-lyrics-by-enter", QString::number(ScenarioBlockStyle::Action));
     //
     m_defaultValues.insert("scenario-editor/styles-changing/from-scene_heading-by-tab", QString::number(ScenarioBlockStyle::Action));
     m_defaultValues.insert("scenario-editor/styles-changing/from-scene_heading-by-enter", QString::number(ScenarioBlockStyle::SceneHeading));
@@ -649,6 +651,8 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("scenario-editor/styles-changing/from-noprintable_text-by-enter", QString::number(ScenarioBlockStyle::NoprintableText));
     m_defaultValues.insert("scenario-editor/styles-changing/from-folder_header-by-tab", QString::number(ScenarioBlockStyle::FolderHeader));
     m_defaultValues.insert("scenario-editor/styles-changing/from-folder_header-by-enter", QString::number(ScenarioBlockStyle::FolderHeader));
+    m_defaultValues.insert("scenario-editor/styles-changing/from-lyrics-by-tab", QString::number(ScenarioBlockStyle::Parenthetical));
+    m_defaultValues.insert("scenario-editor/styles-changing/from-lyrics-by-enter", QString::number(ScenarioBlockStyle::Action));
     //
     m_defaultValues.insert("scenario-editor/review/use-highlight", "1");
 
