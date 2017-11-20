@@ -418,6 +418,11 @@ void SettingsStorage::loadApplicationStateAndGeometry(QWidget* _widget)
         //
         splitter->restoreState(m_appSettings.value("state").toByteArray());
         splitter->restoreGeometry(m_appSettings.value("geometry").toByteArray());
+        //
+        // Запрещаем схлапывание всех разделителей
+        //
+        splitter->setChildrenCollapsible(false);
+
         m_appSettings.endGroup(); // splitter->objectName()
     }
     m_appSettings.endGroup();

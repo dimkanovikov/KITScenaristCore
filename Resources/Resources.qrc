@@ -141,6 +141,7 @@
         <file>Icons/plot-multiple.png</file>
         <file>Icons/report-multiple.png</file>
         <file>Icons/settings_templates.png</file>
+        <file>Icons/view-panels.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/Scenarist_ru.qm</file>

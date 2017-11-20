@@ -653,6 +653,10 @@ QMenu::icon {
     padding: 8px;
 }
 
+QMenu::indicator {
+    width: 24px;
+}
+
 /*
  * Виджет заголовок списка отчётов
  */

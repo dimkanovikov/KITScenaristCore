@@ -169,11 +169,9 @@ ScenarioXml::ScenarioXml(ScenarioDocument* _scenario) :
 
     m_xmlCache.setMaxCost(3000);
 }
-#include <QDebug>
-#include <QDateTime>
+
 QString ScenarioXml::scenarioToXml()
 {
-    qDebug() << "start\t" << QDateTime::currentDateTime().toString("hh:mm:ss:zzz");
     //
     // Для формирования xml не используем QXmlStreamWriter, т.к. нам нужно хранить по отдельности
     // xml каждого блока, а QXmlStreamWriter не всегда закрывает последний записанный тэг,
@@ -335,7 +333,6 @@ QString ScenarioXml::scenarioToXml()
         currentBlock = currentBlock.next();
     } while (currentBlock.isValid());
 
-    qDebug() << "end\t" << QDateTime::currentDateTime().toString("hh:mm:ss:zzz");
     return makeMimeFromXml(resultXml);
 }
 
