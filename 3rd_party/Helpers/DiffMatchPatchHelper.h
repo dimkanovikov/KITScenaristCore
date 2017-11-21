@@ -409,6 +409,7 @@ private:
 
             addTag("scene_description", s_tagsMap, s_charIndex);
             addTag("undefined", s_tagsMap, s_charIndex);
+            addTag("lyrics", s_tagsMap, s_charIndex);
 
             /*
                 ("<scene_heading>", "가")
