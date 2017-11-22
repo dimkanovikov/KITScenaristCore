@@ -814,7 +814,7 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent* _event)
     foreach (const QString& colorName, colorsNames.split(";", QString::SkipEmptyParts)) {
         QAction* color = menu->addAction(tr("Color %1").arg(colorIndex));
         QMenu* colorMenu = new QMenu(views().value(0, nullptr));
-        QAction* removeColor = colorMenu->addAction(tr("Remove"));
+        QAction* removeColor = colorMenu->addAction(tr("Clear"));
         removeColor->setData(QString("removeColor:%1").arg(colorIndex));
         QWidgetAction* wa = new QWidgetAction(colorMenu);
         GoogleColorsPane* colorsPane = new GoogleColorsPane(colorMenu);
