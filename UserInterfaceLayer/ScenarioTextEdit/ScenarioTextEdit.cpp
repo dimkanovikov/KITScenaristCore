@@ -4,8 +4,9 @@
 #include "Handlers/KeyPressHandlerFacade.h"
 
 #include <BusinessLayer/ScenarioDocument/ScenarioDocument.h>
-#include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockInfo.h>
+#include <BusinessLayer/ScenarioDocument/ScenarioTextCorrector.h>
+#include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioReviewModel.h>
 
 #include <3rd_party/Helpers/TextEditHelper.h>
@@ -84,6 +85,9 @@ void ScenarioTextEdit::setScenarioDocument(ScenarioTextDocument* _document)
 
     if (m_document != 0) {
         initEditor();
+
+        ScenarioTextCorrector::removeDecorations(_document);
+        ScenarioTextCorrector::correctScenarioText(_document, 0, true);
     }
 }
 
@@ -717,7 +721,8 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
     if (_event == QKeySequence::MoveToNextChar) {
         moveCursor(QTextCursor::NextCharacter);
         while (!textCursor().atEnd()
-               && !textCursor().block().isVisible()) {
+               && (!textCursor().block().isVisible()
+                   || textCursor().blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection))) {
             moveCursor(QTextCursor::NextBlock);
         }
     }
@@ -727,7 +732,8 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
     else if (_event == QKeySequence::MoveToPreviousChar) {
         moveCursor(QTextCursor::PreviousCharacter);
         while (!textCursor().atStart()
-               && !textCursor().block().isVisible()) {
+               && (!textCursor().block().isVisible()
+                   || textCursor().blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection))) {
             moveCursor(QTextCursor::StartOfBlock);
             moveCursor(QTextCursor::PreviousCharacter);
         }
@@ -1150,7 +1156,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         //
                         // Прорисовка символа пустой строки
                         //
-                        if (block.text().simplified().isEmpty()) {
+                        if (!block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)
+                            && block.text().simplified().isEmpty()) {
                             //
                             // Определим область для отрисовки и выведем символ в редактор
                             //

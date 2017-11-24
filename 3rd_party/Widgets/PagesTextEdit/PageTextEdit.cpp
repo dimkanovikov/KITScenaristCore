@@ -2059,6 +2059,16 @@ QPoint PageTextEditPrivate::correctMousePosition(const QPoint& _eventPos)
     }
 
     //
+    // Прорабатываем случай, когда курсор попал в блок, в котором запрещено позиционирование курсора
+    // Просто идём вниз до первого блока, в который возможно установить курсор
+    //
+    while (!cursor.atEnd()
+           && cursor.blockFormat().boolProperty(PageTextEdit::PropertyDontShowCursor)) {
+        cursor.movePosition(QTextCursor::EndOfBlock);
+        cursor.movePosition(QTextCursor::NextBlock);
+    }
+
+    //
     // Если блок не пуст
     //
     if (!cursor.block().text().isEmpty()) {
@@ -2088,7 +2098,6 @@ QPoint PageTextEditPrivate::correctMousePosition(const QPoint& _eventPos)
     localPos = viewport->mapToParent(localPos);
 
     return localPos;
-//	return new QMouseEvent(_event->type(), localPos, _event->button(), _event->buttons(), _event->modifiers());
 }
 
 void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)

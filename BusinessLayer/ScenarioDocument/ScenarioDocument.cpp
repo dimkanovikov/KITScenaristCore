@@ -1,12 +1,13 @@
 #include "ScenarioDocument.h"
 
-#include "ScenarioXml.h"
-#include "ScenarioTextDocument.h"
 #include "ScenarioModel.h"
 #include "ScenarioModelItem.h"
 #include "ScenarioTemplate.h"
 #include "ScenarioTextBlockInfo.h"
 #include "ScenarioTextBlockParsers.h"
+#include "ScenarioTextCorrector.h"
+#include "ScenarioTextDocument.h"
+#include "ScenarioXml.h"
 
 #include <BusinessLayer/Chronometry/ChronometerFacade.h>
 #include <BusinessLayer/Counters/CountersFacade.h>
@@ -978,14 +979,26 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
     updateDocumentScenesNumbers();
 }
 
+void ScenarioDocument::aboutCorrectText()
+{
+    //
+    // Запускаем корректировки, когда цикл событий освободится
+    //
+    QTimer::singleShot(0, [this] {
+        ScenarioTextCorrector::correctScenarioText(m_document, m_lastChangeStartPosition);
+    });
+}
+
 void ScenarioDocument::initConnections()
 {
     connect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioDocument::aboutContentsChange);
+    connect(m_document, &ScenarioTextDocument::contentsChanged, this, &ScenarioDocument::aboutCorrectText);
 }
 
 void ScenarioDocument::removeConnections()
 {
     disconnect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioDocument::aboutContentsChange);
+    disconnect(m_document, &ScenarioTextDocument::contentsChanged, this, &ScenarioDocument::aboutCorrectText);
 }
 
 void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, int _itemEndPos)

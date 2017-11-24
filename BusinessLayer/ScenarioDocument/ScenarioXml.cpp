@@ -188,9 +188,11 @@ QString ScenarioXml::scenarioToXml()
         const uint currentBlockHash = ::blockHash(currentBlock);
 
         //
-        // Если для блока есть кэш, используем его
+        // Если для блока есть кэш, и блок не разорван по середине используем его
         //
-        if (m_xmlCache.contains(currentBlockHash)) {
+        if (m_xmlCache.contains(currentBlockHash)
+            && !currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)
+            && !currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd)) {
             resultXml.append(m_xmlCache[currentBlockHash]);
         }
         //
@@ -231,6 +233,28 @@ QString ScenarioXml::scenarioToXml()
 
                 default: {
                     break;
+                }
+            }
+
+            //
+            // Если это декорация, не сохраняем
+            //
+            if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                needWrite = false;
+            }
+
+            //
+            // Если разрыв, пробуем сшить
+            //
+            if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)) {
+                do {
+                    currentBlock = currentBlock.next();
+                } while (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection));
+                //
+                // ... если дошли до конца разрыва, то сшиваем его
+                //
+                if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd)) {
+                    textToSave += " " + currentBlock.text();
                 }
             }
 
@@ -475,6 +499,31 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
 
                 default: {
                     break;
+                }
+            }
+
+            //
+            // Если это декорация, не сохраняем
+            //
+            if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                needWrite = false;
+            }
+
+            //
+            // Если разрыв, пробуем сшить
+            //
+            if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)) {
+                QTextCursor breakCursor = cursor;
+                do {
+                    breakCursor.movePosition(QTextCursor::NextBlock);
+                } while (breakCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection));
+                //
+                // ... если дошли до конца разрыва, то сшиваем его
+                //
+                if (breakCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd)) {
+                    textToSave += " " + breakCursor.block().text();
+                    breakCursor.movePosition(QTextCursor::EndOfBlock);
+                    cursor = breakCursor;
                 }
             }
 

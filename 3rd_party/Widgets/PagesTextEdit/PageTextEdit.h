@@ -95,6 +95,16 @@ public:
 
     Q_DECLARE_FLAGS(AutoFormatting, AutoFormattingFlag)
 
+    /**
+     * @brief Расширим список параметров форматов блока
+     */
+    enum TextBlockProperty {
+        //
+        // Запрет на позиционирование курсора в данном блоке [bool]
+        //
+        PropertyDontShowCursor = QTextFormat::UserProperty + 10
+    };
+
     explicit PageTextEdit(QWidget *parent = nullptr);
     explicit PageTextEdit(const QString &text, QWidget *parent = nullptr);
     virtual ~PageTextEdit();

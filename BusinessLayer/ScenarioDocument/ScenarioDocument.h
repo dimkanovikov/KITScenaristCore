@@ -206,6 +206,11 @@ namespace BusinessLogic
 		 */
 		void aboutContentsChange(int _position, int _charsRemoved, int _charsAdded);
 
+        /**
+         * @brief Скорректировать текст сценария
+         */
+        void aboutCorrectText();
+
 	private:
 		/**
 		 * @brief Настроить необходимые соединения

@@ -69,7 +69,8 @@ QString CharacterReport::makeReport(QTextDocument* _scenario,
         }
         //
         if (currentData != 0) {
-            if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Character) {
+            if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Character
+                && !block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
                 characterName = CharacterParser::name(block.text().toUpper());
                 if (_parameters.characterNames.contains(characterName)) {
                     saveDialogues = true;
@@ -79,9 +80,10 @@ QString CharacterReport::makeReport(QTextDocument* _scenario,
                 } else {
                     saveDialogues = false;
                 }
-            } else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Dialogue
-                       || ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Parenthetical
-                       || ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Lyrics) {
+            } else if ((ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Dialogue
+                        || ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Parenthetical
+                        || ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Lyrics)
+                       && !block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
                 if (saveDialogues) {
                     currentData->dialogues.append({ characterName, block.text(), block.position() });
                 }

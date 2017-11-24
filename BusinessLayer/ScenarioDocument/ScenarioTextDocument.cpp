@@ -214,6 +214,35 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     //
     QTextCursor cursor(this);
     cursor.beginEditBlock();
+    //
+    // TODO: скорректировать позицию курсора в соответствии с декорациями
+    //       старая реализация выглядела так:
+    /*
+            int selectionStartPos = xmlsForUpdate.first.plainPos;
+            {
+                //
+                // Увеличиваем стартовую позицию на количество разрывов
+                //
+                cursor.setPosition(selectionStartPos);
+                //
+                // Считать начинаем с предыдущего блока, т.к. в текущем блоке все декорации будут убраны
+                //
+                cursor.movePosition(QTextCursor::PreviousBlock);
+                while (!cursor.atStart()) {
+                    if (cursor.block().blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                        selectionStartPos += cursor.block().length();
+                    }
+                    cursor.movePosition(QTextCursor::PreviousBlock);
+                    cursor.movePosition(QTextCursor::StartOfBlock);
+                }
+            }
+            const int selectionEndPos = selectionStartPos + xmlsForUpdate.first.plainLength;
+            //
+            // ... удаляем все декорации, и сшиваем разрывы в том месте, куда должен быть наложен патч
+            //
+            ScenarioTextCorrector::removeDecorations(this, selectionStartPos, selectionEndPos);
+    */
+    //
     const int selectionStartPos = xmlsForUpdate.first.plainPos;
     const int selectionEndPos = selectionStartPos + xmlsForUpdate.first.plainLength;
     //

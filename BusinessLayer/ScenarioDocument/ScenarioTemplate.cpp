@@ -195,6 +195,14 @@ ScenarioBlockStyle::Type ScenarioBlockStyle::forBlock(const QTextBlock& _block)
     return blockType;
 }
 
+void ScenarioBlockStyle::setType(ScenarioBlockStyle::Type _type)
+{
+    if (m_type != _type) {
+        m_type = _type;
+        m_blockFormat.setProperty(ScenarioBlockStyle::PropertyType, _type);
+    }
+}
+
 void ScenarioBlockStyle::setIsActive(bool _isActive)
 {
     if (m_isActive != _isActive) {
@@ -946,6 +954,15 @@ void ScenarioTemplate::load(const QString& _fromFile)
                 sceneDescriptionStyle.m_type = ScenarioBlockStyle::SceneDescription;
                 sceneDescriptionStyle.m_blockFormat.setProperty(ScenarioBlockStyle::PropertyType, sceneDescriptionStyle.type());
                 m_blockStyles.insert(sceneDescriptionStyle.type(), sceneDescriptionStyle);
+            }
+
+            //
+            // Копируем стиль для теневых заголовков
+            //
+            if (!m_blockStyles.contains(ScenarioBlockStyle::SceneHeadingShadow)) {
+                ScenarioBlockStyle sceneHeadingShadowStyle = m_blockStyles.value(ScenarioBlockStyle::SceneHeading);
+                sceneHeadingShadowStyle.setType(ScenarioBlockStyle::SceneHeadingShadow);
+                setBlockStyle(sceneHeadingShadowStyle);
             }
         }
     }

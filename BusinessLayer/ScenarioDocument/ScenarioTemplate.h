@@ -21,22 +21,24 @@ namespace BusinessLogic
          * @brief Виды блоков текста сценария
          */
         enum Type {
-            Undefined,		//!< Неопределён
-            SceneHeading,	//!< Время - место
-            SceneCharacters,//!< Персонажи сцены
-            Action,			//!< Описание действия
-            Character,		//!< Имя героя
-            Parenthetical,	//!< Ремарка
-            Dialogue,		//!< Реплика героя
-            Transition,		//!< Переход
-            Note,			//!< Примечание
-            TitleHeader,	//!< Заголовок титра
-            Title,			//!< Текст титра
-            NoprintableText,//!< Заметка по тексту
-            FolderHeader,	//!< Заголовок папки
-            FolderFooter,	//!< Окончание папки
+            Undefined,          //!< Неопределён
+            SceneHeading,       //!< Время - место
+            SceneCharacters,    //!< Персонажи сцены
+            Action,         	//!< Описание действия
+            Character,  		//!< Имя героя
+            Parenthetical,      //!< Ремарка
+            Dialogue,       	//!< Реплика героя
+            Transition, 		//!< Переход
+            Note,               //!< Примечание
+            TitleHeader,    	//!< Заголовок титра
+            Title,              //!< Текст титра
+            NoprintableText,    //!< Заметка по тексту
+            FolderHeader,       //!< Заголовок папки
+            FolderFooter,       //!< Окончание папки
             SceneDescription,	//!< Описание элемента сценария
-            Lyrics          //!< Лирика (стихи, песни)
+            Lyrics,             //!< Лирика (стихи, песни)
+            //
+            SceneHeadingShadow	//!< Время - место, для вспомогательных разрывов
         };
 
         /**
@@ -71,12 +73,22 @@ namespace BusinessLogic
             PropertyIsFirstUppercase,	//!< Необходимо ли первый символ поднимать в верхний регистр
             PropertyIsCanModify,	//!< Редактируемый ли блок
             //
+            // Свойства редакторских заметок
+            //
             PropertyIsReviewMark,	//!< Формат является редакторской правкой
             PropertyIsHighlight,	//!< Является ли правка аналогом выделения цветом из ворда
             PropertyIsDone,			//!< Правка помечена как выполненная
             PropertyComments,		//!< Список комментариев к правке
             PropertyCommentsAuthors,//!< Список авторов комментариев
-            PropertyCommentsDates	//!< Список дат комментариев
+            PropertyCommentsDates,	//!< Список дат комментариев
+            //
+            // Свойства корректирующих текст блоков
+            //
+            PropertyIsCorrection,	//!< Не разрывающий текст блок (пустые блоки в конце страницы, блоки с текстом ПРОД, или именем персонажа)
+            PropertyIsCorrectionContinued,	//!< Блок с текстом ПРОД., вставляемый на обрыве реплики
+            PropertyIsCorrectionCharacter,	//!< Блок с именем персонажа, вставляемый на новой странице
+            PropertyIsBreakCorrectionStart,	//!< Разрывающий текст блок в начале разрыва
+            PropertyIsBreakCorrectionEnd	//!< Разрывающий текст блок в конце разрыва
         };
 
         /**
@@ -156,6 +168,11 @@ namespace BusinessLogic
          * @brief Значение межстрочного интервала для FixedLineSpacing, мм
          */
         qreal lineSpacingValue() const { return m_lineSpacingValue; }
+
+        /**
+         * @brief Установить тип
+         */
+        void setType(ScenarioBlockStyle::Type _type);
 
         /**
          * @brief Установить активность

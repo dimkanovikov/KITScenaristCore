@@ -2,6 +2,8 @@
 
 #include "../ScenarioTextEdit.h"
 
+#include <BusinessLayer/ScenarioDocument/ScenarioTextCorrector.h>
+
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
@@ -170,7 +172,8 @@ void StandardKeyHandler::handleUp(QKeyEvent* _event)
 			// Если мы поднялись на строку вверх, но попали в невидимый блок, перейдём к предыдущему видимому
 			//
 			while (!cursor.atStart()
-				   && !cursor.block().isVisible()) {
+                   && (!cursor.block().isVisible()
+                       || cursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection))) {
 				cursor.movePosition(QTextCursor::PreviousBlock, cursorMoveMode);
 				cursor.movePosition(QTextCursor::EndOfBlock, cursorMoveMode);
 			}
@@ -266,7 +269,8 @@ void StandardKeyHandler::handleDown(QKeyEvent* _event)
 			// Если мы опустились на строку вниз, но попали в невидимый блок, перейдём к следующему видимому
 			//
 			while (!cursor.atEnd()
-				   && !cursor.block().isVisible()) {
+                   && (!cursor.block().isVisible()
+                       || cursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection))) {
 				cursor.movePosition(QTextCursor::NextBlock, cursorMoveMode);
 				cursor.movePosition(QTextCursor::EndOfBlock, cursorMoveMode);
 			}
@@ -363,28 +367,101 @@ void StandardKeyHandler::removeCharacters(bool _backward)
 
 	//
 	// Определим границы выделения
-	//
-	// ... верхнюю
-	//
-	int topCursorPosition = 0;
-	{
-		if (cursor.hasSelection()) {
-			topCursorPosition = qMin(cursor.selectionStart(), cursor.selectionEnd());
-		} else {
-			topCursorPosition = cursor.position() - (_backward ? 1 : 0);
-		}
-	}
-	//
-	// ... и нижнюю
-	//
-	int bottomCursorPosition = 0;
-	{
-		if (cursor.hasSelection()) {
-			bottomCursorPosition = qMax(cursor.selectionStart(), cursor.selectionEnd());
-		} else {
-			bottomCursorPosition = cursor.position() + (_backward ? 0 : 1);
-		}
-	}
+    //
+    int topCursorPosition = 0;
+    int bottomCursorPosition = 0;
+    {
+        if (cursor.hasSelection()) {
+            topCursorPosition = qMin(cursor.selectionStart(), cursor.selectionEnd());
+            bottomCursorPosition = qMax(cursor.selectionStart(), cursor.selectionEnd());
+        } else {
+            topCursorPosition = cursor.position() - (_backward ? 1 : 0);
+            bottomCursorPosition = topCursorPosition + 1;
+
+            QTextCursor checkCursor = cursor;
+            checkCursor.setPosition(topCursorPosition);
+            //
+            // ... переходим через корректирующие блоки блоки вперёд
+            //
+            if (!_backward
+                && checkCursor.atBlockEnd()) {
+                //
+                // ... в разрыве, удаляем символы в оторванном абзаце
+                //
+                if (checkCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)) {
+                    checkCursor.movePosition(QTextCursor::NextBlock);
+                    while (!checkCursor.atEnd()
+                           && checkCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                        checkCursor.movePosition(QTextCursor::EndOfBlock);
+                        checkCursor.movePosition(QTextCursor::NextCharacter);
+                    }
+
+                    topCursorPosition = checkCursor.position();
+                    bottomCursorPosition = topCursorPosition + 1;
+                }
+                //
+                // ... в смещении блоков, удаляем все декорации
+                //
+                else if (checkCursor.block().next().blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                    checkCursor.movePosition(QTextCursor::NextBlock);
+                    while (!checkCursor.atEnd()
+                           && checkCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                        checkCursor.movePosition(QTextCursor::EndOfBlock);
+                        checkCursor.movePosition(QTextCursor::NextCharacter);
+                    }
+
+                    bottomCursorPosition = checkCursor.position();
+                }
+            }
+            //
+            // ... назад
+            //
+            else if (_backward
+                     && checkCursor.atBlockEnd()) {
+                //
+                // ... в разрыве, удаляем символы в оторванном абзаце
+                //
+                if (checkCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)
+                    || checkCursor.block().next().blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd)) {
+                    while (!checkCursor.atStart()
+                           && checkCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                        checkCursor.movePosition(QTextCursor::PreviousBlock);
+                    }
+                    checkCursor.movePosition(QTextCursor::EndOfBlock);
+                    checkCursor.movePosition(QTextCursor::PreviousCharacter);
+
+                    topCursorPosition = checkCursor.position();
+                    bottomCursorPosition = topCursorPosition + 1;
+                }
+                //
+                // ... в смещении блоков, удаляем все декорации
+                //
+                else if (checkCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                    while (!checkCursor.atStart()
+                           && checkCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                        checkCursor.movePosition(QTextCursor::PreviousBlock);
+                    }
+                    checkCursor.movePosition(QTextCursor::EndOfBlock);
+
+                    topCursorPosition = checkCursor.position();
+                }
+            }
+        }
+    }
+
+    //
+    // Если удаление распространяется на несколько блоков и его конец заходит
+    // на разорванный блок, то сшиваем его перед удалением
+    //
+    {
+        QTextCursor checkCursor = cursor;
+        checkCursor.setPosition(bottomCursorPosition);
+        if (topCursorPosition < checkCursor.block().position()
+            && checkCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)) {
+            const int nextBlockStartPos = checkCursor.block().position() + checkCursor.block().length();
+            ScenarioTextCorrector::removeDecorations(editor()->document(), bottomCursorPosition, nextBlockStartPos);
+        }
+    }
 
 	//
 	// Получим стили блоков начала и конца выделения
