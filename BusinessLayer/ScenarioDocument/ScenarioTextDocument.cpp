@@ -2,6 +2,7 @@
 
 #include "ScenarioReviewModel.h"
 #include "ScenarioXml.h"
+#include "ScriptTextCorrector.h"
 
 #include <Domain/ScenarioChange.h>
 
@@ -78,7 +79,8 @@ ScenarioTextDocument::ScenarioTextDocument(QObject *parent, ScenarioXml* _xmlHan
     m_xmlHandler(_xmlHandler),
     m_isPatchApplyProcessed(false),
     m_reviewModel(new ScenarioReviewModel(this)),
-    m_outlineMode(false)
+    m_outlineMode(false),
+    m_corrector(new ScriptTextCorrector(this))
 {
     connect(m_reviewModel, SIGNAL(reviewChanged()), this, SIGNAL(reviewChanged()));
 }

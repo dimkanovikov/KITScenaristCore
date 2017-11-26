@@ -1063,10 +1063,10 @@ void SynchronizationManager::aboutWorkSyncScenario()
     //
     if (isCanSync()) {
         //
-        // Защитимся от множественных выходов
+        // Защитимся от множественных вызовов
         //
-        const auto isRunned = RunOnce::tryRun(Q_FUNC_INFO);
-        if (!isRunned) {
+        const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
+        if (!canRun) {
             return;
         }
 

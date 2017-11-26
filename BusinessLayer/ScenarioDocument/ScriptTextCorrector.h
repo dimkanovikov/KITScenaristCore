@@ -1,44 +1,50 @@
 #ifndef SCRIPTTEXTCORRECTOR_H
 #define SCRIPTTEXTCORRECTOR_H
 
+#include <QObject>
 #include <QVector>
+
+class QTextDocument;
 
 
 namespace BusinessLogic
 {
-    class ScenarioTextDocument;
-
     /**
      * @brief Класс корректирующий текст сценария
      */
-    class ScriptTextCorrector
+    class ScriptTextCorrector : public QObject
     {
+        Q_OBJECT
+
     public:
-        explicit ScriptTextCorrector(ScenarioTextDocument* _document);
+        explicit ScriptTextCorrector(QTextDocument* _document);
 
         /**
-         * @brief Скорректировать текст сценария начиная с заданной позиции
+         * @brief Скорректировать текст сценария
          */
-        void correct(int _startPosition = 0);
+        void correct();
 
     private:
         /**
          * @brief Документ который будем корректировать
          */
-        ScenarioTextDocument* m_document = nullptr;
+        QTextDocument* m_document = nullptr;
 
         /**
          * @brief Структура элемента модели блоков
          */
         struct BlockItem {
-            int height = 0;
+            qreal topMargin;
+            qreal bottomMargin;
+            int linesCount;
+            qreal lineHeight;
 
         };
 
         /**
          * @brief Модель блоков
          */
-        QVector<BlockItem> m_items;
+        QVector<BlockItem> m_blockItems;
     };
 }
 

@@ -17,6 +17,7 @@ namespace BusinessLogic
 {
     class ScenarioReviewModel;
     class ScenarioXml;
+    class ScriptTextCorrector;
 
 
     /**
@@ -214,6 +215,11 @@ namespace BusinessLogic
          * @brief Включён ли режим отображения поэпизодного плана (true) или сценария (false)
          */
         bool m_outlineMode;
+
+        /**
+         * @brief Корректировщик текста документа
+         */
+        ScriptTextCorrector* m_corrector;
     };
 }
 
