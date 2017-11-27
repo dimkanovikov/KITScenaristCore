@@ -14,6 +14,11 @@ using BusinessLogic::ScriptTextCorrector;
 
 namespace {
     /**
+     * @brief Список символов пунктуации, разделяющие предложения
+     */
+    const QList<QChar> PUNCTUATION_CHARACTERS = { '.', '!', '?', QString("…").at(0)};
+
+    /**
      * @brief Сместить блок в начало следующей страницы
      * @param _cursor - курсор редактироуемого документа
      * @param _block - блок для смещения
@@ -78,6 +83,9 @@ void ScriptTextCorrector::correct()
     const qreal pageHeight = m_document->pageSize().height()
                              - rootFrameFormat.topMargin()
                              - rootFrameFormat.bottomMargin();
+    const qreal pageWidth = m_document->pageSize().width()
+                             - rootFrameFormat.leftMargin()
+                             - rootFrameFormat.rightMargin();
     if (pageHeight < 0)
         return;
 
@@ -100,6 +108,14 @@ void ScriptTextCorrector::correct()
     //
     qreal lastBlockHeight = 0;
     while (block.isValid()) {
+        //
+        // Пропускаем невидимые блоки
+        //
+        if (!block.isVisible()) {
+            block = block.next();
+            continue;
+        }
+
         const QTextBlockFormat blockFormat = block.blockFormat();
 
         //
@@ -120,6 +136,7 @@ void ScriptTextCorrector::correct()
         // Если в текущем блоке начинается разрыв, пробуем его вернуть
         //
         else if (blockFormat.boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)) {
+            cursor.setPosition(block.position());
             cursor.movePosition(QTextCursor::EndOfBlock);
             do {
                 cursor.movePosition(QTextCursor::NextBlock, QTextCursor::KeepAnchor);
@@ -151,6 +168,20 @@ void ScriptTextCorrector::correct()
             // ... и проработаем текущий блок с начала
             //
             block = cursor.block();
+            //
+            // ... пересчитываем лэйаут
+            //
+            block.layout()->setText(block.text());
+            block.layout()->beginLayout();
+            forever {
+                QTextLine line = block.layout()->createLine();
+                if (!line.isValid()) {
+                    break;
+                }
+
+                line.setLineWidth(pageWidth - blockFormat.leftMargin() -  blockFormat.rightMargin());
+            }
+            block.layout()->endLayout();
             continue;
         }
 
@@ -256,6 +287,109 @@ void ScriptTextCorrector::correct()
                 }
 
                 //
+                // Если это описание действия
+
+                // - если на странице можно оставить текст, который займёт 2 и более строк,
+                //    оставляем максимум, а остальное переносим. Разрываем по предложениям
+                // - в остальном случае переносим полностью
+                // -- если перед описанием действия идёт время и место, переносим и его тоже
+                // -- если перед описанием действия идёт список участников, то переносим их
+                //	  вместе с предыдущим блоком время и место
+                //
+                case ScenarioBlockStyle::Action: {
+                    //
+                    // Если в конце страницы, оставляем как есть
+                    //
+                    if (atPageEnd) {
+                        isBlockFirstOnPage = true;
+                        lastBlockHeight = 0;
+                    }
+                    //
+                    // Если на разрыве между страниц
+                    //
+                    else {
+                        //
+                        // Если влезает 2 или более строк
+                        //
+                        const int minPlacedLines = 2;
+                        const int linesCanBePlaced = (pageHeight - lastBlockHeight - blockFormat.topMargin()) / blockLineHeight;
+                        int lineToBreak = linesCanBePlaced;
+                        //
+                        // ... пробуем разорвать на максимально низкой строке
+                        //
+                        bool isBreaked = false;
+                        while (lineToBreak >= minPlacedLines) {
+                            const QTextLine line = block.layout()->lineAt(lineToBreak - 1); // -1 т.к. нужен индекс, а не порядковый номер
+                            const QString lineText = block.text().mid(line.textStart(), line.textLength());
+                            for (const auto& punctuation : PUNCTUATION_CHARACTERS) {
+                                const int punctuationIndex = lineText.lastIndexOf(punctuation);
+                                //
+                                // ... нашлось место, где можно разорвать
+                                //
+                                if (punctuationIndex != -1) {
+                                    //
+                                    // ... разрываем
+                                    //
+                                    // +1, т.к. символ пунктуации нужно оставить в текущем блоке
+                                    cursor.setPosition(block.position() + line.textStart() + punctuationIndex + 1);
+                                    cursor.insertBlock();
+                                    //
+                                    // ... если после разрыва остался пробел, уберём его
+                                    //
+                                    if (cursor.block().text().startsWith(" ")) {
+                                        cursor.deleteChar();
+                                    }
+                                    //
+                                    // ... помечаем блоки, как разорванные
+                                    //
+                                    QTextBlockFormat breakStartFormat = blockFormat;
+                                    breakStartFormat.setProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart, true);
+                                    cursor.movePosition(QTextCursor::PreviousBlock);
+                                    cursor.setBlockFormat(breakStartFormat);
+                                    //
+                                    QTextBlockFormat breakEndFormat = blockFormat;
+                                    breakEndFormat.setProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd, true);
+                                    cursor.movePosition(QTextCursor::NextBlock);
+                                    cursor.setBlockFormat(breakEndFormat);
+                                    //
+                                    // ... переносим оторванный конец на следующую страницу, если нужно
+                                    //
+                                    block = cursor.block();
+                                    qDebug() << block.text() << block.layout()->lineCount();
+                                    const qreal sizeToPageEnd = lastBlockHeight + blockFormat.topMargin() + blockLineHeight * lineToBreak;
+                                    if (pageHeight - sizeToPageEnd >= blockFormat.topMargin() + blockLineHeight) {
+                                        ::moveBlockToNextPage(cursor, block, sizeToPageEnd);
+                                    }
+                                    //
+                                    // ... обозначаем последнюю высоту
+                                    //
+                                    lastBlockHeight = block.layout()->lineCount() * blockLineHeight + blockFormat.bottomMargin();
+                                    //
+                                    // ... помечаем, что разорвать удалось
+                                    //
+                                    isBreaked = true;
+                                    break;
+                                }
+                            }
+
+                            //
+                            // На текущей строке разорвать не удалось, перейдём к предыдущей
+                            //
+                            --lineToBreak;
+                        }
+
+                        //
+                        // Разорвать не удалось, переносим целиком
+                        //
+                        if (!isBreaked) {
+                            lastBlockHeight += blockHeight;
+                            lastBlockHeight -= pageHeight;
+                        }
+                    }
+                    break;
+                }
+
+                //
                 // Если это имя персонажа, переносим на следующую страницу
                 // - если перед именем идёт время и место, их переносим тоже
                 // - если перед именем идут участники сцены, их переносим тоже, и если перед ними
@@ -267,16 +401,6 @@ void ScriptTextCorrector::correct()
                 // - если перед ремаркой идёт имя персонажа переносим и его тоже
                 // - если перед ремаркой идёт реплика, то разрываем реплику, вставляя вместо ремарки
                 //   ДАЛЬШЕ и добавляя на новой странице имя персонажа с (ПРОД.)
-                //
-
-                //
-                // Если это описание действия и попадает на разрыв
-                // - если на странице можно оставить текст, который займёт 2 и более строк,
-                //    оставляем максимум, а остальное переносим. Разрываем по предложениям
-                // - в остальном случае переносим полностью
-                // -- если перед описанием действия идёт время и место, переносим и его тоже
-                // -- если перед описанием действия идёт список участников, то переносим их
-                //	  вместе с предыдущим блоком время и место
                 //
 
                 //
@@ -292,7 +416,7 @@ void ScriptTextCorrector::correct()
                 //
 
                 //
-                // В противном случае просто переходим на следующую страницу
+                // В остальных случаях просто переходим на следующую страницу
                 //
                 default: {
                     if (atPageEnd) {
