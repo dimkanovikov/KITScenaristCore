@@ -86,8 +86,7 @@ void ScenarioTextEdit::setScenarioDocument(ScenarioTextDocument* _document)
     if (m_document != 0) {
         initEditor();
 
-        ScenarioTextCorrector::removeDecorations(_document);
-        ScenarioTextCorrector::correctScenarioText(_document, 0, true);
+        _document->correct();
     }
 }
 

@@ -977,28 +977,30 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
     }
 
     updateDocumentScenesNumbers();
+
+    m_needToCorrectText = true;
 }
 
-void ScenarioDocument::aboutCorrectText()
+void ScenarioDocument::correctText()
 {
-    //
-    // Запускаем корректировки, когда цикл событий освободится
-    //
-    QTimer::singleShot(0, [this] {
-        ScenarioTextCorrector::correctScenarioText(m_document, m_lastChangeStartPosition);
-    });
+    if (!m_needToCorrectText) {
+        return;
+    }
+
+    m_needToCorrectText = false;
+    m_document->correct();
 }
 
 void ScenarioDocument::initConnections()
 {
     connect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioDocument::aboutContentsChange);
-    connect(m_document, &ScenarioTextDocument::contentsChanged, this, &ScenarioDocument::aboutCorrectText);
+    connect(m_document, &ScenarioTextDocument::contentsChanged, this, &ScenarioDocument::correctText);
 }
 
 void ScenarioDocument::removeConnections()
 {
     disconnect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioDocument::aboutContentsChange);
-    disconnect(m_document, &ScenarioTextDocument::contentsChanged, this, &ScenarioDocument::aboutCorrectText);
+    disconnect(m_document, &ScenarioTextDocument::contentsChanged, this, &ScenarioDocument::correctText);
 }
 
 void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, int _itemEndPos)

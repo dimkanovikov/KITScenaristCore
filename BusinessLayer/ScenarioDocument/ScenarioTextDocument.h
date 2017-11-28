@@ -126,6 +126,11 @@ namespace BusinessLogic
          */
         QList<BusinessLogic::ScenarioBlockStyle::Type> visibleBlocksTypes() const;
 
+        /**
+         * @brief Произвести корректировки текста
+         */
+        void correct();
+
     signals:
         /**
          * @brief Сигналы уведомляющие об этапах применения патчей
