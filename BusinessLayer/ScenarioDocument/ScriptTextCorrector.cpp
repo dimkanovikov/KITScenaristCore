@@ -117,10 +117,6 @@ void ScriptTextCorrector::correct()
     //
     QTextBlock block = m_document->begin();
     //
-    // ... является ли блок первым на странице, для первых не нужно учитывать верхний отступ
-    //
-    bool isBlockFirstOnPage = true;
-    //
     // ... значение нижней позиции последнего блока относительно начала страницы
     //
     qreal lastBlockHeight = 0;
@@ -133,7 +129,85 @@ void ScriptTextCorrector::correct()
             continue;
         }
 
+
+        //
+        // Определить высоту текущего блока
+        //
         const QTextBlockFormat blockFormat = block.blockFormat();
+        const qreal blockLineHeight = blockFormat.lineHeight();
+        const int blockLineCount = block.layout()->lineCount();
+        //
+        // ... если блок первый на странице, то для него не нужно учитывать верхний отступ
+        //
+        const qreal blockHeight =
+                lastBlockHeight == 0
+                ? blockLineHeight * blockLineCount + blockFormat.bottomMargin()
+                : blockLineHeight * blockLineCount + blockFormat.topMargin() + blockFormat.bottomMargin();
+        //
+        // ... и высоту одной строки следующего
+        //
+        qreal nextBlockHeight = 0;
+        if (block.next().isValid()) {
+            const qreal nextBlockLineHeight = block.next().blockFormat().lineHeight();
+            const QTextBlockFormat nextBlockFormat = block.next().blockFormat();
+            nextBlockHeight = nextBlockLineHeight + nextBlockFormat.topMargin();
+        }
+
+
+        //
+        // Определим, заканчивается ли блок на последней строке страницы
+        //
+        const bool atPageEnd =
+                // сам блок влезает
+                (lastBlockHeight + blockHeight <= pageHeight)
+                // и
+                && (
+                    // добавление одной строки перекинет его уже на новую страницу
+                    lastBlockHeight + blockHeight + blockLineHeight > pageHeight
+                    // или 1 строка следующего блока уже не влезет на эту страницу
+                    || lastBlockHeight + blockHeight + nextBlockHeight > pageHeight);
+        //
+        // ... или, может попадает на разрыв
+        //
+        const bool atPageBreak =
+                // сам блок не влезает
+                (lastBlockHeight + blockHeight > pageHeight)
+                // но влезает хотя бы одна строка
+                && (lastBlockHeight + blockFormat.topMargin() + blockLineHeight < pageHeight);
+
+
+        //
+        // Проверяем, изменилась ли позиция блока
+        //
+        if (m_blockItems.contains(block.blockNumber())
+            && m_blockItems[blockHash].height == blockHeight
+            && m_blockItems[blockHash].top == lastBlockHeight) {
+            //
+            // Если не изменилась
+            //
+            // ... в данном случае блок не может быть на разрыве
+            //
+            Q_ASSERT(atPageBreak == false);
+            //
+            // ... то корректируем позицию
+            //
+            if (atPageEnd) {
+                lastBlockHeight = 0;
+            } else {
+                lastBlockHeight += blockHeight;
+            }
+            //
+            // ... и переходим к следующему блоку
+            //
+            block = block.next();
+            continue;
+        }
+
+
+        //
+        // Если позиция блока изменилась, то работаем по алгоритму корректировки текста
+        //
+
 
         //
         // Если блок декорация, то удаляем его
@@ -190,46 +264,7 @@ void ScriptTextCorrector::correct()
         }
 
 
-        //
-        // Определить высоту текущего блока
-        //
-        const qreal blockLineHeight = blockFormat.lineHeight();
-        const int blockLineCount = block.layout()->lineCount();
-        const qreal blockHeight =
-                isBlockFirstOnPage
-                ? blockLineHeight * blockLineCount + blockFormat.bottomMargin()
-                : blockLineHeight * blockLineCount + blockFormat.topMargin() + blockFormat.bottomMargin();
-        //
-        // ... и одной строки следующего
-        //
-        qreal nextBlockHeight = 0;
-        if (block.next().isValid()) {
-            const qreal nextBlockLineHeight = block.next().blockFormat().lineHeight();
-            const QTextBlockFormat nextBlockFormat = block.next().blockFormat();
-            nextBlockHeight = nextBlockLineHeight + nextBlockFormat.topMargin();
-        }
 
-
-        //
-        // Если блок заканчивается на последней строке страницы
-        //
-        const bool atPageEnd =
-                // сам блок влезает
-                (lastBlockHeight + blockHeight <= pageHeight)
-                // и
-                && (
-                    // добавление одной строки перекинет его уже на новую страницу
-                    lastBlockHeight + blockHeight + blockLineHeight > pageHeight
-                    // или 1 строка следующего блока уже не влезет на эту страницу
-                    || lastBlockHeight + blockHeight + nextBlockHeight > pageHeight);
-        //
-        // ... или попадает на разрыв
-        //
-        const bool atPageBreak =
-                // сам блок не влезает
-                (lastBlockHeight + blockHeight > pageHeight)
-                // но влезает хотя бы одна строка
-                && (lastBlockHeight + blockFormat.topMargin() + blockLineHeight < pageHeight);
         if (atPageEnd || atPageBreak) {
             switch (ScenarioBlockStyle::forBlock(block)) {
                 //
@@ -241,6 +276,8 @@ void ScriptTextCorrector::correct()
                     //
                     const qreal sizeToPageEnd = pageHeight - lastBlockHeight;
                     ::moveBlockToNextPage(cursor, block, sizeToPageEnd);
+
+                    storedBlockInfo[blockHash] = new BlockInfo{blockHeight, lastBlockHeight};
                     //
                     // Обозначаем последнюю высоту, как высоту блока время и места
                     //
@@ -305,7 +342,6 @@ void ScriptTextCorrector::correct()
                     // Если в конце страницы, оставляем как есть
                     //
                     if (atPageEnd) {
-                        isBlockFirstOnPage = true;
                         lastBlockHeight = 0;
                     }
                     //
@@ -505,7 +541,6 @@ void ScriptTextCorrector::correct()
                 //
                 default: {
                     if (atPageEnd) {
-                        isBlockFirstOnPage = true;
                         lastBlockHeight = 0;
                     } else {
                         lastBlockHeight += blockHeight;
@@ -519,7 +554,6 @@ void ScriptTextCorrector::correct()
         // Если блок находится посередине страницы, просто переходим к следующему
         //
         else {
-            isBlockFirstOnPage = false;
             lastBlockHeight += blockHeight;
         }
 

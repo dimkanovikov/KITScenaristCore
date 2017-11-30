@@ -2,6 +2,7 @@
 #define SCRIPTTEXTCORRECTOR_H
 
 #include <QObject>
+#include <QHash>
 #include <QVector>
 
 class QTextDocument;
@@ -33,18 +34,21 @@ namespace BusinessLogic
         /**
          * @brief Структура элемента модели блоков
          */
-        struct BlockItem {
-            qreal topMargin;
-            qreal bottomMargin;
-            int linesCount;
-            qreal lineHeight;
-
+        struct BlockInfo {
+            /**
+             * @brief Высота блока
+             */
+            qreal height;
+            /**
+             * @brief Позиция блока от начала страницы
+             */
+            qreal top;
         };
 
         /**
-         * @brief Модель блоков
+         * @brief Модель блоков <порядковый номер блока, параметры блока>
          */
-        QVector<BlockItem> m_blockItems;
+        QHash<int, BlockInfo> m_blockItems;
     };
 }
 
