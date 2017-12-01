@@ -572,9 +572,12 @@ int ScenarioDocument::positionToInsertMime(ScenarioModelItem* _insertParent, Sce
 
     return insertPosition;
 }
-
+#include <QDebug>
+#include <QTime>
 void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int _charsAdded)
 {
+    qDebug() << "change start\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
+    qDebug() << _position << _charsAdded << _charsRemoved;
     //
     // Сохраняем изменённый xml и его хэш
     //
@@ -594,9 +597,12 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
             //     модель документа, например добавился комментарий от редактора
             //
             updateDocumentScenesNumbers();
+            qDebug() << "change end\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
             return;
         }
     }
+
+    qDebug() << "change mid\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 
     //
     // Сохранить md5 хэш текста документа
@@ -979,6 +985,8 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
     updateDocumentScenesNumbers();
 
     m_needToCorrectText = true;
+
+    qDebug() << "change end\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 }
 
 void ScenarioDocument::correctText()

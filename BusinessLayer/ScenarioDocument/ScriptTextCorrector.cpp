@@ -36,42 +36,6 @@ namespace {
         }
         _block.layout()->endLayout();
     }
-
-    /**
-     * @brief Сместить блок в начало следующей страницы
-     * @param _cursor - курсор редактироуемого документа
-     * @param _block - блок для смещения
-     * @param _spaceToPageEnd - количество места до конца страницы
-     */
-    void moveBlockToNextPage(QTextCursor& _cursor, const QTextBlock& _block, qreal _spaceToPageEnd) {
-        //
-        // Смещаем курсор в начало блока
-        //
-        _cursor.setPosition(_block.position());
-        //
-        // Определим сколько пустых блоков нужно вставить
-        //
-        const QTextBlockFormat format = _block.blockFormat();
-        int insertBlockCount = _spaceToPageEnd
-                               / (format.lineHeight() + format.topMargin() + format.bottomMargin());
-        //
-        // Определим формат блоков декорации
-        //
-        QTextBlockFormat decorationFormat = format;
-        if (ScenarioBlockStyle::forBlock(_block) == ScenarioBlockStyle::SceneHeading) {
-            decorationFormat.setProperty(ScenarioBlockStyle::PropertyType, ScenarioBlockStyle::SceneHeadingShadow);
-        }
-        decorationFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrection, true);
-        decorationFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
-        //
-        // Вставляем блоки декорации
-        //
-        while (insertBlockCount-- > 0) {
-            _cursor.insertBlock();
-            _cursor.movePosition(QTextCursor::PreviousBlock);
-            _cursor.setBlockFormat(decorationFormat);
-        }
-    }
 }
 
 
@@ -83,8 +47,11 @@ ScriptTextCorrector::ScriptTextCorrector(QTextDocument* _document) :
 }
 
 #include <QDebug>
+#include <QDateTime>
 void ScriptTextCorrector::correct()
 {
+    qDebug() << "correct start\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
+
     //
     // Избегаем рекурсии
     //
@@ -120,12 +87,14 @@ void ScriptTextCorrector::correct()
     // ... значение нижней позиции последнего блока относительно начала страницы
     //
     qreal lastBlockHeight = 0;
+    m_currentBlockNumber = 0;
     while (block.isValid()) {
         //
         // Пропускаем невидимые блоки
         //
         if (!block.isVisible()) {
             block = block.next();
+            ++m_currentBlockNumber;
             continue;
         }
 
@@ -179,9 +148,9 @@ void ScriptTextCorrector::correct()
         //
         // Проверяем, изменилась ли позиция блока
         //
-        if (m_blockItems.contains(block.blockNumber())
-            && m_blockItems[blockHash].height == blockHeight
-            && m_blockItems[blockHash].top == lastBlockHeight) {
+        if (m_blockItems.contains(m_currentBlockNumber)
+            && m_blockItems[m_currentBlockNumber].height == blockHeight
+            && m_blockItems[m_currentBlockNumber].top == lastBlockHeight) {
             //
             // Если не изменилась
             //
@@ -193,6 +162,8 @@ void ScriptTextCorrector::correct()
             //
             if (atPageEnd) {
                 lastBlockHeight = 0;
+            } else if (atPageBreak) {
+                lastBlockHeight += blockHeight - pageHeight;
             } else {
                 lastBlockHeight += blockHeight;
             }
@@ -200,7 +171,12 @@ void ScriptTextCorrector::correct()
             // ... и переходим к следующему блоку
             //
             block = block.next();
+            ++m_currentBlockNumber;
             continue;
+        } else {
+            qDebug() << "not eq bi:" << m_blockItems[m_currentBlockNumber].height << m_blockItems[m_currentBlockNumber].top;
+            qDebug() << "not eq cb:" << blockHeight << lastBlockHeight;
+            qDebug() << block.text();
         }
 
 
@@ -210,7 +186,9 @@ void ScriptTextCorrector::correct()
 
 
         //
-        // Если блок декорация, то удаляем его
+        // Работаем с декорациями
+        //
+        // ... если блок декорация, то удаляем его
         //
         if (blockFormat.boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
             cursor.setPosition(block.position());
@@ -224,7 +202,7 @@ void ScriptTextCorrector::correct()
             continue;
         }
         //
-        // Если в текущем блоке начинается разрыв, пробуем его вернуть
+        // ... если в текущем блоке начинается разрыв, пробуем его вернуть
         //
         else if (blockFormat.boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)) {
             cursor.setPosition(block.position());
@@ -264,7 +242,9 @@ void ScriptTextCorrector::correct()
         }
 
 
-
+        //
+        // Работаем с переносами
+        //
         if (atPageEnd || atPageBreak) {
             switch (ScenarioBlockStyle::forBlock(block)) {
                 //
@@ -275,9 +255,12 @@ void ScriptTextCorrector::correct()
                     // Переносим на следующую страницу
                     //
                     const qreal sizeToPageEnd = pageHeight - lastBlockHeight;
-                    ::moveBlockToNextPage(cursor, block, sizeToPageEnd);
-
-                    storedBlockInfo[blockHash] = new BlockInfo{blockHeight, lastBlockHeight};
+                    moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
+                    //
+                    // Запоминаем параметры текущего блока
+                    //
+                    m_blockItems[m_currentBlockNumber] =
+                            BlockInfo{blockHeight - blockFormat.topMargin(), 0};
                     //
                     // Обозначаем последнюю высоту, как высоту блока время и места
                     //
@@ -294,6 +277,7 @@ void ScriptTextCorrector::correct()
                     //
                     QTextBlock previousBlock = block.previous();
                     while (previousBlock.isValid() && !previousBlock.isVisible()) {
+                        --m_currentBlockNumber;
                         previousBlock = previousBlock.previous();
                     }
                     //
@@ -301,12 +285,23 @@ void ScriptTextCorrector::correct()
                     //
                     if (previousBlock.isValid()
                         && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::SceneHeading) {
+                        --m_currentBlockNumber;
                         const QTextBlockFormat previousBlockFormat = previousBlock.blockFormat();
                         const qreal previousBlockHeight =
                                 previousBlockFormat.lineHeight() * previousBlock.layout()->lineCount()
                                 + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
                         const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight;
-                        ::moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd);
+                        moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd, pageHeight);
+                        //
+                        // Запоминаем параметры предыдущего блока
+                        //
+                        m_blockItems[m_currentBlockNumber++] =
+                                BlockInfo{previousBlockHeight - previousBlockFormat.topMargin(), 0};
+                        //
+                        // Запоминаем параметры текущего блока
+                        //
+                        m_blockItems[m_currentBlockNumber++] =
+                                BlockInfo{blockHeight, previousBlockHeight - previousBlockFormat.topMargin()};
                         //
                         // Обозначаем последнюю высоту, как высоту блока время и места плюс высоту блока участников сцены
                         //
@@ -317,7 +312,12 @@ void ScriptTextCorrector::correct()
                     //
                     else {
                         const qreal sizeToPageEnd = pageHeight - lastBlockHeight;
-                        ::moveBlockToNextPage(cursor, block, sizeToPageEnd);
+                        moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
+                        //
+                        // Запоминаем параметры текущего блока
+                        //
+                        m_blockItems[m_currentBlockNumber++] =
+                                BlockInfo{blockHeight - blockFormat.topMargin(), 0};
                         //
                         // Обозначаем последнюю высоту, как высоту блока время и места
                         //
@@ -342,6 +342,13 @@ void ScriptTextCorrector::correct()
                     // Если в конце страницы, оставляем как есть
                     //
                     if (atPageEnd) {
+                        //
+                        // Запоминаем параметры текущего блока
+                        //
+                        m_blockItems[m_currentBlockNumber++] = BlockInfo{blockHeight, lastBlockHeight};
+                        //
+                        // и идём дальше
+                        //
                         lastBlockHeight = 0;
                     }
                     //
@@ -375,6 +382,12 @@ void ScriptTextCorrector::correct()
                                     cursor.setPosition(block.position() + line.textStart() + punctuationIndex + 1);
                                     cursor.insertBlock();
                                     //
+                                    // ... запоминаем параметры блока оставшегося в конце страницы
+                                    //
+                                    const qreal breakStartBlockHeight =
+                                            lineToBreak * blockLineHeight + blockFormat.topMargin() + blockFormat.bottomMargin();
+                                    m_blockItems[m_currentBlockNumber++] = BlockInfo{breakStartBlockHeight, lastBlockHeight};
+                                    //
                                     // ... если после разрыва остался пробел, уберём его
                                     //
                                     if (cursor.block().text().startsWith(" ")) {
@@ -397,14 +410,21 @@ void ScriptTextCorrector::correct()
                                     //
                                     block = cursor.block();
                                     ::updateBlockLayout(block, pageWidth);
-                                    const qreal sizeToPageEnd = lastBlockHeight + blockFormat.topMargin() + blockLineHeight * lineToBreak;
+                                    const qreal sizeToPageEnd = lastBlockHeight + breakStartBlockHeight;
                                     if (pageHeight - sizeToPageEnd >= blockFormat.topMargin() + blockLineHeight) {
-                                        ::moveBlockToNextPage(cursor, block, sizeToPageEnd);
+                                        moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
                                     }
+                                    const qreal breakEndBlockHeight =
+                                            block.layout()->lineCount() * blockLineHeight + blockFormat.bottomMargin();
+                                    //
+                                    // ... запоминаем параметры блока перенесённого на следующую страницу
+                                    //
+                                    m_blockItems[m_currentBlockNumber++] =
+                                            BlockInfo{breakEndBlockHeight, 0};
                                     //
                                     // ... обозначаем последнюю высоту
                                     //
-                                    lastBlockHeight = block.layout()->lineCount() * blockLineHeight + blockFormat.bottomMargin();
+                                    lastBlockHeight = breakEndBlockHeight;
                                     //
                                     // ... помечаем, что разорвать удалось
                                     //
@@ -428,6 +448,7 @@ void ScriptTextCorrector::correct()
                             //
                             QTextBlock previousBlock = block.previous();
                             while (previousBlock.isValid() && !previousBlock.isVisible()) {
+                                --m_currentBlockNumber;
                                 previousBlock = previousBlock.previous();
                             }
                             //
@@ -435,12 +456,23 @@ void ScriptTextCorrector::correct()
                             //
                             if (previousBlock.isValid()
                                 && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::SceneHeading) {
+                                --m_currentBlockNumber;
                                 const QTextBlockFormat previousBlockFormat = previousBlock.blockFormat();
                                 const qreal previousBlockHeight =
                                         previousBlockFormat.lineHeight() * previousBlock.layout()->lineCount()
                                         + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
                                 const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight;
-                                ::moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd);
+                                moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd, pageHeight);
+                                //
+                                // Запоминаем параметры предыдущего блока
+                                //
+                                m_blockItems[m_currentBlockNumber++] =
+                                        BlockInfo{previousBlockHeight - previousBlockFormat.topMargin(), 0};
+                                //
+                                // Запоминаем параметры текущего блока
+                                //
+                                m_blockItems[m_currentBlockNumber++] =
+                                        BlockInfo{blockHeight, previousBlockHeight - previousBlockFormat.topMargin()};
                                 //
                                 // Обозначаем последнюю высоту, как высоту блока время и места плюс высоту блока описания действия
                                 //
@@ -451,6 +483,7 @@ void ScriptTextCorrector::correct()
                             //
                             else if (previousBlock.isValid()
                                      && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::SceneCharacters) {
+                                --m_currentBlockNumber;
                                 //
                                 // Проверяем предыдущий блок
                                 //
@@ -463,6 +496,7 @@ void ScriptTextCorrector::correct()
                                 //
                                 if (prePreviousBlock.isValid()
                                     && ScenarioBlockStyle::forBlock(prePreviousBlock) == ScenarioBlockStyle::SceneHeading) {
+                                    --m_currentBlockNumber;
                                     const QTextBlockFormat previousBlockFormat = previousBlock.blockFormat();
                                     const qreal previousBlockHeight =
                                             previousBlockFormat.lineHeight() * previousBlock.layout()->lineCount()
@@ -472,7 +506,22 @@ void ScriptTextCorrector::correct()
                                             prePreviousBlockFormat.lineHeight() * prePreviousBlock.layout()->lineCount()
                                             + prePreviousBlockFormat.topMargin() + prePreviousBlockFormat.bottomMargin();
                                     const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight + prePreviousBlockHeight;
-                                    ::moveBlockToNextPage(cursor, prePreviousBlock, sizeToPageEnd);
+                                    moveBlockToNextPage(cursor, prePreviousBlock, sizeToPageEnd, pageHeight);
+                                    //
+                                    // Запоминаем параметры блока время и места
+                                    //
+                                    m_blockItems[m_currentBlockNumber++] =
+                                            BlockInfo{prePreviousBlockHeight - prePreviousBlockFormat.topMargin(), 0};
+                                    //
+                                    // Запоминаем параметры блока участников сцены
+                                    //
+                                    m_blockItems[m_currentBlockNumber++] =
+                                            BlockInfo{previousBlockHeight, prePreviousBlockHeight - prePreviousBlockFormat.topMargin()};
+                                    //
+                                    // Запоминаем параметры блока описания действия
+                                    //
+                                    m_blockItems[m_currentBlockNumber++] =
+                                            BlockInfo{blockHeight, prePreviousBlockHeight - prePreviousBlockFormat.topMargin() + previousBlockHeight};
                                     //
                                     // Обозначаем последнюю высоту, как высоту блоков время и места, участников сцены плюс высоту блока описания действия
                                     //
@@ -487,7 +536,17 @@ void ScriptTextCorrector::correct()
                                             previousBlockFormat.lineHeight() * previousBlock.layout()->lineCount()
                                             + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
                                     const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight;
-                                    ::moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd);
+                                    moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd, pageHeight);
+                                    //
+                                    // Запоминаем параметры предыдущего блока
+                                    //
+                                    m_blockItems[m_currentBlockNumber++] =
+                                            BlockInfo{previousBlockHeight - previousBlockFormat.topMargin(), 0};
+                                    //
+                                    // Запоминаем параметры текущего блока
+                                    //
+                                    m_blockItems[m_currentBlockNumber++] =
+                                            BlockInfo{blockHeight, previousBlockHeight - previousBlockFormat.topMargin()};
                                     //
                                     // Обозначаем последнюю высоту, как высоту блока участников сцены плюс высоту блока описания действия
                                     //
@@ -499,7 +558,12 @@ void ScriptTextCorrector::correct()
                             //
                             else {
                                 const qreal sizeToPageEnd = pageHeight - lastBlockHeight;
-                                ::moveBlockToNextPage(cursor, block, sizeToPageEnd);
+                                moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
+                                //
+                                // Запоминаем параметры текущего блока
+                                //
+                                m_blockItems[m_currentBlockNumber++] =
+                                        BlockInfo{blockHeight - blockFormat.topMargin(), 0};
                                 //
                                 // Обозначаем последнюю высоту, как высоту блока время и места
                                 //
@@ -540,6 +604,13 @@ void ScriptTextCorrector::correct()
                 // В остальных случаях просто переходим на следующую страницу
                 //
                 default: {
+                    //
+                    // Запоминаем параметры текущего блока
+                    //
+                    m_blockItems[m_currentBlockNumber++] = BlockInfo{blockHeight, lastBlockHeight};
+                    //
+                    // и идём дальше
+                    //
                     if (atPageEnd) {
                         lastBlockHeight = 0;
                     } else {
@@ -554,11 +625,55 @@ void ScriptTextCorrector::correct()
         // Если блок находится посередине страницы, просто переходим к следующему
         //
         else {
+            //
+            // Запоминаем параметры текущего блока
+            //
+            m_blockItems[m_currentBlockNumber++] = BlockInfo{blockHeight, lastBlockHeight};
+            //
+            // и идём дальше
+            //
             lastBlockHeight += blockHeight;
         }
 
         block = block.next();
     }
 
+    qDebug() << "correct bend\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
     cursor.endEditBlock();
+    qDebug() << "correct end\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
+}
+
+void ScriptTextCorrector::moveBlockToNextPage(QTextCursor& _cursor, const QTextBlock& _block, qreal _spaceToPageEnd, qreal _pageHeight)
+{
+    //
+    // Смещаем курсор в начало блока
+    //
+    _cursor.setPosition(_block.position());
+    //
+    // Определим сколько пустых блоков нужно вставить
+    //
+    const QTextBlockFormat format = _block.blockFormat();
+    const qreal blockHeight = format.lineHeight() + format.topMargin() + format.bottomMargin();
+    const int insertBlockCount = _spaceToPageEnd / blockHeight;
+    //
+    // Определим формат блоков декорации
+    //
+    QTextBlockFormat decorationFormat = format;
+    if (ScenarioBlockStyle::forBlock(_block) == ScenarioBlockStyle::SceneHeading) {
+        decorationFormat.setProperty(ScenarioBlockStyle::PropertyType, ScenarioBlockStyle::SceneHeadingShadow);
+    }
+    decorationFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrection, true);
+    decorationFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
+    //
+    // Вставляем блоки декорации
+    //
+    for (int blockIndex = 0; blockIndex < insertBlockCount; ++blockIndex) {
+        _cursor.insertBlock();
+        _cursor.movePosition(QTextCursor::PreviousBlock);
+        _cursor.setBlockFormat(decorationFormat);
+        //
+        // Запоминаем параметры текущего блока
+        //
+        m_blockItems[m_currentBlockNumber++] = BlockInfo{blockHeight, _pageHeight - _spaceToPageEnd + blockIndex * blockHeight};
+    }
 }
