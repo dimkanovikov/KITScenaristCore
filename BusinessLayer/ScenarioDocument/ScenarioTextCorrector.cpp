@@ -718,6 +718,10 @@ void ScenarioTextCorrector::configure(bool _continueDialogues, bool _correctText
 
 void ScenarioTextCorrector::removeDecorations(QTextDocument* _document, int _startPosition, int _endPosition)
 {
+    return;
+
+
+
     QTextCursor cursor(_document);
     cursor.setPosition(_startPosition);
     if (_endPosition == 0) {
@@ -779,6 +783,11 @@ void ScenarioTextCorrector::removeDecorations(QTextDocument* _document, int _sta
 
 void ScenarioTextCorrector::correctScenarioText(ScenarioTextDocument* _document, int _startPosition, bool _force)
 {
+    return;
+
+
+
+
     //
     // Вводим карту с текстами обрабатываемых документов, чтобы не выполнять лишнюю работу,
     // повторно обрабатывая один и тот же документ
@@ -813,6 +822,10 @@ void ScenarioTextCorrector::correctScenarioText(ScenarioTextDocument* _document,
 
 void ScenarioTextCorrector::correctDocumentText(QTextDocument* _document, int _startPosition)
 {
+    return;
+
+
+
     QTextCursor cursor(_document);
 
     //

@@ -174,6 +174,7 @@ void ScriptTextCorrector::correct()
             ++m_currentBlockNumber;
             continue;
         } else {
+            qDebug() << m_currentBlockNumber << block.blockNumber();
             qDebug() << "not eq bi:" << m_blockItems[m_currentBlockNumber].height << m_blockItems[m_currentBlockNumber].top;
             qDebug() << "not eq cb:" << blockHeight << lastBlockHeight;
             qDebug() << block.text();
@@ -256,10 +257,11 @@ void ScriptTextCorrector::correct()
                     //
                     const qreal sizeToPageEnd = pageHeight - lastBlockHeight;
                     moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
+                    block = cursor.block();
                     //
                     // Запоминаем параметры текущего блока
                     //
-                    m_blockItems[m_currentBlockNumber] =
+                    m_blockItems[m_currentBlockNumber++] =
                             BlockInfo{blockHeight - blockFormat.topMargin(), 0};
                     //
                     // Обозначаем последнюю высоту, как высоту блока время и места
@@ -292,20 +294,19 @@ void ScriptTextCorrector::correct()
                                 + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
                         const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight;
                         moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd, pageHeight);
+                        block = cursor.block();
                         //
                         // Запоминаем параметры предыдущего блока
                         //
                         m_blockItems[m_currentBlockNumber++] =
                                 BlockInfo{previousBlockHeight - previousBlockFormat.topMargin(), 0};
                         //
-                        // Запоминаем параметры текущего блока
+                        // Обозначаем последнюю высоту, как высоту блока время и места
                         //
-                        m_blockItems[m_currentBlockNumber++] =
-                                BlockInfo{blockHeight, previousBlockHeight - previousBlockFormat.topMargin()};
+                        lastBlockHeight = previousBlockHeight - previousBlockFormat.topMargin();
                         //
-                        // Обозначаем последнюю высоту, как высоту блока время и места плюс высоту блока участников сцены
+                        // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
                         //
-                        lastBlockHeight = previousBlockHeight - previousBlockFormat.topMargin() + blockHeight;
                     }
                     //
                     // В противном случае, просто переносим блок на следующую страницу
@@ -313,6 +314,7 @@ void ScriptTextCorrector::correct()
                     else {
                         const qreal sizeToPageEnd = pageHeight - lastBlockHeight;
                         moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
+                        block = cursor.block();
                         //
                         // Запоминаем параметры текущего блока
                         //
@@ -328,16 +330,39 @@ void ScriptTextCorrector::correct()
                 }
 
                 //
-                // Если это описание действия
-
-                // - если на странице можно оставить текст, который займёт 2 и более строк,
-                //    оставляем максимум, а остальное переносим. Разрываем по предложениям
-                // - в остальном случае переносим полностью
-                // -- если перед описанием действия идёт время и место, переносим и его тоже
-                // -- если перед описанием действия идёт список участников, то переносим их
-                //	  вместе с предыдущим блоком время и место
+                // Если это имя персонажа, переносим на следующую страницу
+                // - если перед именем идёт время и место, их переносим тоже
+                // - если перед именем идут участники сцены, их переносим тоже, и если перед ними
+                //   идёт время и место, его переносим тоже
                 //
-                case ScenarioBlockStyle::Action: {
+
+
+                //
+                // Если это ремарка, переносим на следующую страницу
+                // - если перед ремаркой идёт имя персонажа переносим и его тоже, и если перед именем
+                //   идут участники и если перед участниками идёт время и место
+                // - если перед ремаркой идёт реплика, то разрываем реплику, вставляя вместо ремарки
+                //   ДАЛЬШЕ и добавляя на новой странице имя персонажа с (ПРОД.)
+                //
+
+
+                //
+                // Если это реплика или лирика и попадает на разрыв
+                // - если можно, то оставляем текст так, чтобы он занимал не менее 2 строк,
+                //	 добавляем ДАЛЬШЕ и на следующей странице имя персонажа с (ПРОД) и остальной текст
+                // - в противном случае
+                // -- если перед диалогом идёт имя персонажа, то переносим их вместе на след.
+                // -- если перед диалогом идёт ремарка
+                // --- если перед ремаркой идёт имя персонажа, то переносим их всех вместе
+                // --- если перед ремаркой идёт диалог, то разрываем по ремарке, пишем вместо неё
+                //	   ДАЛЬШЕ, а на следующей странице имя персонажа с (ПРОД), ремарку и сам диалог
+                //
+
+
+                //
+                // Если это описание действия или любой другой блок, для которого нет собственных правил
+                //
+                default: {
                     //
                     // Если в конце страницы, оставляем как есть
                     //
@@ -390,7 +415,7 @@ void ScriptTextCorrector::correct()
                                     //
                                     // ... если после разрыва остался пробел, уберём его
                                     //
-                                    if (cursor.block().text().startsWith(" ")) {
+                                    while (cursor.block().text().startsWith(" ")) {
                                         cursor.deleteChar();
                                     }
                                     //
@@ -406,14 +431,16 @@ void ScriptTextCorrector::correct()
                                     cursor.movePosition(QTextCursor::NextBlock);
                                     cursor.setBlockFormat(breakEndFormat);
                                     //
-                                    // ... переносим оторванный конец на следующую страницу, если нужно
+                                    // ... переносим оторванный конец на следующую страницу,
+                                    //     если на текущую влезает ещё хотя бы одна строка текста
                                     //
                                     block = cursor.block();
-                                    ::updateBlockLayout(block, pageWidth);
-                                    const qreal sizeToPageEnd = lastBlockHeight + breakStartBlockHeight;
-                                    if (pageHeight - sizeToPageEnd >= blockFormat.topMargin() + blockLineHeight) {
+                                    const qreal sizeToPageEnd = pageHeight - lastBlockHeight - breakStartBlockHeight;
+                                    if (sizeToPageEnd >= blockFormat.topMargin() + blockLineHeight) {
                                         moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
+                                        block = cursor.block();
                                     }
+                                    ::updateBlockLayout(block, pageWidth);
                                     const qreal breakEndBlockHeight =
                                             block.layout()->lineCount() * blockLineHeight + blockFormat.bottomMargin();
                                     //
@@ -463,20 +490,19 @@ void ScriptTextCorrector::correct()
                                         + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
                                 const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight;
                                 moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd, pageHeight);
+                                block = cursor.block();
                                 //
                                 // Запоминаем параметры предыдущего блока
                                 //
                                 m_blockItems[m_currentBlockNumber++] =
                                         BlockInfo{previousBlockHeight - previousBlockFormat.topMargin(), 0};
                                 //
-                                // Запоминаем параметры текущего блока
+                                // Обозначаем последнюю высоту, как высоту блока время и места
                                 //
-                                m_blockItems[m_currentBlockNumber++] =
-                                        BlockInfo{blockHeight, previousBlockHeight - previousBlockFormat.topMargin()};
+                                lastBlockHeight = previousBlockHeight - previousBlockFormat.topMargin();
                                 //
-                                // Обозначаем последнюю высоту, как высоту блока время и места плюс высоту блока описания действия
+                                // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
                                 //
-                                lastBlockHeight = previousBlockHeight - previousBlockFormat.topMargin() + blockHeight;
                             }
                             //
                             // Если перед ним идут участники сцены, то проверим ещё на один блок назад
@@ -507,25 +533,19 @@ void ScriptTextCorrector::correct()
                                             + prePreviousBlockFormat.topMargin() + prePreviousBlockFormat.bottomMargin();
                                     const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight + prePreviousBlockHeight;
                                     moveBlockToNextPage(cursor, prePreviousBlock, sizeToPageEnd, pageHeight);
+                                    block = cursor.block();
                                     //
                                     // Запоминаем параметры блока время и места
                                     //
                                     m_blockItems[m_currentBlockNumber++] =
                                             BlockInfo{prePreviousBlockHeight - prePreviousBlockFormat.topMargin(), 0};
                                     //
-                                    // Запоминаем параметры блока участников сцены
+                                    // Обозначаем последнюю высоту, как высоту блока время и места
                                     //
-                                    m_blockItems[m_currentBlockNumber++] =
-                                            BlockInfo{previousBlockHeight, prePreviousBlockHeight - prePreviousBlockFormat.topMargin()};
+                                    lastBlockHeight = prePreviousBlockHeight - prePreviousBlockFormat.topMargin();
                                     //
-                                    // Запоминаем параметры блока описания действия
+                                    // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
                                     //
-                                    m_blockItems[m_currentBlockNumber++] =
-                                            BlockInfo{blockHeight, prePreviousBlockHeight - prePreviousBlockFormat.topMargin() + previousBlockHeight};
-                                    //
-                                    // Обозначаем последнюю высоту, как высоту блоков время и места, участников сцены плюс высоту блока описания действия
-                                    //
-                                    lastBlockHeight = prePreviousBlockHeight - prePreviousBlockFormat.topMargin() + previousBlockHeight + blockHeight;
                                 }
                                 //
                                 // В противном случае просто переносим вместе с участниками
@@ -537,20 +557,19 @@ void ScriptTextCorrector::correct()
                                             + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
                                     const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight;
                                     moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd, pageHeight);
+                                    block = cursor.block();
                                     //
                                     // Запоминаем параметры предыдущего блока
                                     //
                                     m_blockItems[m_currentBlockNumber++] =
                                             BlockInfo{previousBlockHeight - previousBlockFormat.topMargin(), 0};
                                     //
-                                    // Запоминаем параметры текущего блока
-                                    //
-                                    m_blockItems[m_currentBlockNumber++] =
-                                            BlockInfo{blockHeight, previousBlockHeight - previousBlockFormat.topMargin()};
-                                    //
                                     // Обозначаем последнюю высоту, как высоту блока участников сцены плюс высоту блока описания действия
                                     //
-                                    lastBlockHeight = previousBlockHeight - previousBlockFormat.topMargin() + blockHeight;
+                                    lastBlockHeight = previousBlockHeight - previousBlockFormat.topMargin();
+                                    //
+                                    // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
+                                    //
                                 }
                             }
                             //
@@ -559,6 +578,7 @@ void ScriptTextCorrector::correct()
                             else {
                                 const qreal sizeToPageEnd = pageHeight - lastBlockHeight;
                                 moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
+                                block = cursor.block();
                                 //
                                 // Запоминаем параметры текущего блока
                                 //
@@ -570,52 +590,6 @@ void ScriptTextCorrector::correct()
                                 lastBlockHeight = blockHeight - blockFormat.topMargin();
                             }
                         }
-                    }
-                    break;
-                }
-
-                //
-                // Если это имя персонажа, переносим на следующую страницу
-                // - если перед именем идёт время и место, их переносим тоже
-                // - если перед именем идут участники сцены, их переносим тоже, и если перед ними
-                //   идёт время и место, его переносим тоже
-                //
-
-                //
-                // Если это ремарка, переносим на следующую страницу
-                // - если перед ремаркой идёт имя персонажа переносим и его тоже
-                // - если перед ремаркой идёт реплика, то разрываем реплику, вставляя вместо ремарки
-                //   ДАЛЬШЕ и добавляя на новой странице имя персонажа с (ПРОД.)
-                //
-
-                //
-                // Если это реплика или лирика и попадает на разрыв
-                // - если можно, то оставляем текст так, чтобы он занимал не менее 2 строк,
-                //	 добавляем ДАЛЬШЕ и на следующей странице имя персонажа с (ПРОД) и остальной текст
-                // - в противном случае
-                // -- если перед диалогом идёт имя персонажа, то переносим их вместе на след.
-                // -- если перед диалогом идёт ремарка
-                // --- если перед ремаркой идёт имя персонажа, то переносим их всех вместе
-                // --- если перед ремаркой идёт диалог, то разрываем по ремарке, пишем вместо неё
-                //	   ДАЛЬШЕ, а на следующей странице имя персонажа с (ПРОД), ремарку и сам диалог
-                //
-
-                //
-                // В остальных случаях просто переходим на следующую страницу
-                //
-                default: {
-                    //
-                    // Запоминаем параметры текущего блока
-                    //
-                    m_blockItems[m_currentBlockNumber++] = BlockInfo{blockHeight, lastBlockHeight};
-                    //
-                    // и идём дальше
-                    //
-                    if (atPageEnd) {
-                        lastBlockHeight = 0;
-                    } else {
-                        lastBlockHeight += blockHeight;
-                        lastBlockHeight -= pageHeight;
                     }
                     break;
                 }
@@ -671,6 +645,7 @@ void ScriptTextCorrector::moveBlockToNextPage(QTextCursor& _cursor, const QTextB
         _cursor.insertBlock();
         _cursor.movePosition(QTextCursor::PreviousBlock);
         _cursor.setBlockFormat(decorationFormat);
+        _cursor.movePosition(QTextCursor::NextBlock);
         //
         // Запоминаем параметры текущего блока
         //
