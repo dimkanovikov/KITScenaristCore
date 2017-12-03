@@ -1,15 +1,19 @@
 #include "ScriptTextCorrector.h"
 
 #include "ScenarioTemplate.h"
+#include "ScenarioTextBlockParsers.h"
 
 #include <3rd_party/Helpers/RunOnce.h>
 #include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
 
 #include <QAbstractTextDocumentLayout>
+#include <QApplication>
 #include <QTextBlock>
 #include <QTextDocument>
 
+using BusinessLogic::CharacterParser;
 using BusinessLogic::ScenarioBlockStyle;
+using BusinessLogic::ScenarioTemplateFacade;
 using BusinessLogic::ScriptTextCorrector;
 
 namespace {
@@ -19,9 +23,26 @@ namespace {
     const QList<QChar> PUNCTUATION_CHARACTERS = { '.', '!', '?', QString("…").at(0)};
 
     /**
+     * @brief Автоматически добавляемые продолжения в диалогах
+     */
+    //: Continued
+    static const char* CONTINUED = QT_TRANSLATE_NOOP("BusinessLogic::ScriptTextCorrector", "CONT'D");
+    static const QString continuedTerm() {
+        return QString(" (%1)").arg(QApplication::translate("BusinessLogic::ScriptTextCorrector", CONTINUED));
+    }
+
+    /**
+     * @brief Автоматически добавляемые продолжения в диалогах
+     */
+    static const char* MORE = QT_TRANSLATE_NOOP("BusinessLogic::ScriptTextCorrector", "MORE");
+    static const QString moreTerm() {
+        return QString("(%1)").arg(QApplication::translate("BusinessLogic::ScriptTextCorrector", MORE));
+    }
+
+    /**
      * @brief Обновить компановку текста для блока
      */
-    void updateBlockLayout(QTextBlock& _block, int _pageWidth) {
+    void updateBlockLayout(int _pageWidth, QTextBlock& _block) {
         _block.layout()->setText(_block.text());
         _block.layout()->beginLayout();
         forever {
@@ -238,7 +259,7 @@ void ScriptTextCorrector::correct()
             // ... и проработаем текущий блок с начала
             //
             block = cursor.block();
-            ::updateBlockLayout(block, pageWidth);
+            ::updateBlockLayout(pageWidth, block);
             continue;
         }
 
@@ -255,18 +276,8 @@ void ScriptTextCorrector::correct()
                     //
                     // Переносим на следующую страницу
                     //
-                    const qreal sizeToPageEnd = pageHeight - lastBlockHeight;
-                    moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
-                    block = cursor.block();
-                    //
-                    // Запоминаем параметры текущего блока
-                    //
-                    m_blockItems[m_currentBlockNumber++] =
-                            BlockInfo{blockHeight - blockFormat.topMargin(), 0};
-                    //
-                    // Обозначаем последнюю высоту, как высоту блока время и места
-                    //
-                    lastBlockHeight = blockHeight - blockFormat.topMargin();
+                    moveCurrentBlockToNextPage(blockFormat, blockHeight, pageHeight, cursor, block, lastBlockHeight);
+
                     break;
                 }
 
@@ -277,64 +288,71 @@ void ScriptTextCorrector::correct()
                     //
                     // Определим предыдущий блок
                     //
-                    QTextBlock previousBlock = block.previous();
-                    while (previousBlock.isValid() && !previousBlock.isVisible()) {
-                        --m_currentBlockNumber;
-                        previousBlock = previousBlock.previous();
-                    }
+                    QTextBlock previousBlock = findPreviousBlock(block);
                     //
                     // Если перед ним идёт время и место, переносим его тоже
                     //
                     if (previousBlock.isValid()
                         && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::SceneHeading) {
-                        --m_currentBlockNumber;
-                        const QTextBlockFormat previousBlockFormat = previousBlock.blockFormat();
-                        const qreal previousBlockHeight =
-                                previousBlockFormat.lineHeight() * previousBlock.layout()->lineCount()
-                                + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
-                        const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight;
-                        moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd, pageHeight);
-                        block = cursor.block();
-                        //
-                        // Запоминаем параметры предыдущего блока
-                        //
-                        m_blockItems[m_currentBlockNumber++] =
-                                BlockInfo{previousBlockHeight - previousBlockFormat.topMargin(), 0};
-                        //
-                        // Обозначаем последнюю высоту, как высоту блока время и места
-                        //
-                        lastBlockHeight = previousBlockHeight - previousBlockFormat.topMargin();
-                        //
-                        // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
-                        //
+                        moveCurrentBlockWithPreviousToNextPage(previousBlock, pageHeight, cursor, block, lastBlockHeight);
                     }
                     //
                     // В противном случае, просто переносим блок на следующую страницу
                     //
                     else {
-                        const qreal sizeToPageEnd = pageHeight - lastBlockHeight;
-                        moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
-                        block = cursor.block();
-                        //
-                        // Запоминаем параметры текущего блока
-                        //
-                        m_blockItems[m_currentBlockNumber++] =
-                                BlockInfo{blockHeight - blockFormat.topMargin(), 0};
-                        //
-                        // Обозначаем последнюю высоту, как высоту блока время и места
-                        //
-                        lastBlockHeight = blockHeight - blockFormat.topMargin();
+                        moveCurrentBlockToNextPage(blockFormat, blockHeight, pageHeight, cursor, block, lastBlockHeight);
                     }
 
                     break;
                 }
 
                 //
-                // Если это имя персонажа, переносим на следующую страницу
-                // - если перед именем идёт время и место, их переносим тоже
-                // - если перед именем идут участники сцены, их переносим тоже, и если перед ними
-                //   идёт время и место, его переносим тоже
+                // Если это имя персонажа
                 //
+                case ScenarioBlockStyle::Character: {
+                    //
+                    // Определим предыдущий блок
+                    //
+                    QTextBlock previousBlock = findPreviousBlock(block);
+                    //
+                    // Если перед ним идёт время и место, переносим его тоже
+                    //
+                    if (previousBlock.isValid()
+                        && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::SceneHeading) {
+                        moveCurrentBlockWithPreviousToNextPage(previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                    }
+                    //
+                    // Если перед ним идут участники сцены, то проверим ещё на один блок назад
+                    //
+                    else if (previousBlock.isValid()
+                             && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::SceneCharacters) {
+                        //
+                        // Проверяем предыдущий блок
+                        //
+                        QTextBlock prePreviousBlock = findPreviousBlock(previousBlock);
+                        //
+                        // Если перед участниками идёт время и место, переносим его тоже
+                        //
+                        if (prePreviousBlock.isValid()
+                            && ScenarioBlockStyle::forBlock(prePreviousBlock) == ScenarioBlockStyle::SceneHeading) {
+                            moveCurrentBlockWithTwoPreviousToNextPage(prePreviousBlock, previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                        }
+                        //
+                        // В противном случае просто переносим вместе с участниками
+                        //
+                        else {
+                            moveCurrentBlockWithPreviousToNextPage(previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                        }
+                    }
+                    //
+                    // В противном случае, просто переносим блок на следующую страницу
+                    //
+                    else {
+                        moveCurrentBlockToNextPage(blockFormat, blockHeight, pageHeight, cursor, block, lastBlockHeight);
+                    }
+
+                    break;
+                }
 
 
                 //
@@ -344,6 +362,75 @@ void ScriptTextCorrector::correct()
                 // - если перед ремаркой идёт реплика, то разрываем реплику, вставляя вместо ремарки
                 //   ДАЛЬШЕ и добавляя на новой странице имя персонажа с (ПРОД.)
                 //
+                case ScenarioBlockStyle::Parenthetical: {
+                    //
+                    // Определим предыдущий блок
+                    //
+                    QTextBlock previousBlock = findPreviousBlock(block);
+                    //
+                    // Если перед ним идёт реплика или лирика, то вставляем блок ДАЛЬШЕ
+                    // и переносим на следующую страницу вставляя ПЕРСОНАЖ (ПРОД.) перед ремаркой
+                    //
+                    if (previousBlock.isValid()
+                        && (ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::Dialogue
+                            || ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::Lyrics)) {
+                        breakDialogue(blockFormat, blockHeight, pageHeight, pageWidth, cursor, block, lastBlockHeight);
+                    }
+                    //
+                    // В противном случае, если перед ремаркой идёт персонаж
+                    //
+                    else if (previousBlock.isValid()
+                             && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::Character) {
+                        //
+                        // Проверяем предыдущий блок
+                        //
+                        QTextBlock prePreviousBlock = findPreviousBlock(previousBlock);
+                        //
+                        // Если перед персонажем идёт время и место, переносим его тоже
+                        //
+                        if (prePreviousBlock.isValid()
+                            && ScenarioBlockStyle::forBlock(prePreviousBlock) == ScenarioBlockStyle::SceneHeading) {
+                            moveCurrentBlockWithTwoPreviousToNextPage(prePreviousBlock, previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                        }
+                        //
+                        // В противном случае, если перед персонажем идут участники сцены
+                        //
+                        else if (prePreviousBlock.isValid()
+                                 && ScenarioBlockStyle::forBlock(prePreviousBlock) == ScenarioBlockStyle::SceneCharacters) {
+                            //
+                            // Проверяем предыдущий блок
+                            //
+                            QTextBlock prePrePreviousBlock = findPreviousBlock(prePreviousBlock);
+                            //
+                            // Если перед участниками идёт время и место, переносим его тоже
+                            //
+                            if (prePreviousBlock.isValid()
+                                && ScenarioBlockStyle::forBlock(prePreviousBlock) == ScenarioBlockStyle::SceneHeading) {
+                                moveCurrentBlockWithThreePreviousToNextPage(prePrePreviousBlock, prePreviousBlock, previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                            }
+                            //
+                            // В противном случае просто переносим вместе с участниками
+                            //
+                            else {
+                                moveCurrentBlockWithTwoPreviousToNextPage(prePreviousBlock, previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                            }
+                        }
+                        //
+                        // В противном случае просто переносим вместе с участниками
+                        //
+                        else {
+                            moveCurrentBlockWithPreviousToNextPage(previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                        }
+                    }
+                    //
+                    // В противном случае, просто переносим блок на следующую страницу
+                    //
+                    else {
+                        moveCurrentBlockToNextPage(blockFormat, blockHeight, pageHeight, cursor, block, lastBlockHeight);
+                    }
+
+                    break;
+                }
 
 
                 //
@@ -357,6 +444,37 @@ void ScriptTextCorrector::correct()
                 // --- если перед ремаркой идёт диалог, то разрываем по ремарке, пишем вместо неё
                 //	   ДАЛЬШЕ, а на следующей странице имя персонажа с (ПРОД), ремарку и сам диалог
                 //
+                case ScenarioBlockStyle::Dialogue:
+                case ScenarioBlockStyle::Lyrics: {
+                    //
+                    // Проверяем следующий блок
+                    //
+                    QTextBlock nextBlock = block.next();
+                    //
+                    // Если реплика в конце страницы и после ней идёт не ремарка, то оставляем как есть
+                    //
+                    if (atPageEnd
+                        && (!nextBlock.isValid()
+                            || (nextBlock.isValid()
+                                && ScenarioBlockStyle::forBlock(nextBlock) != ScenarioBlockStyle::Parenthetical))) {
+                        //
+                        // Запоминаем параметры текущего блока
+                        //
+                        m_blockItems[m_currentBlockNumber++] = BlockInfo{blockHeight, lastBlockHeight};
+                        //
+                        // и идём дальше
+                        //
+                        lastBlockHeight = 0;
+                    }
+                    //
+                    // В противном случае разрываем
+                    //
+                    else {
+
+                    }
+
+                    break;
+                }
 
 
                 //
@@ -437,10 +555,10 @@ void ScriptTextCorrector::correct()
                                     block = cursor.block();
                                     const qreal sizeToPageEnd = pageHeight - lastBlockHeight - breakStartBlockHeight;
                                     if (sizeToPageEnd >= blockFormat.topMargin() + blockLineHeight) {
-                                        moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
+                                        moveBlockToNextPage(block, sizeToPageEnd, pageHeight, cursor);
                                         block = cursor.block();
                                     }
-                                    ::updateBlockLayout(block, pageWidth);
+                                    ::updateBlockLayout(pageWidth, block);
                                     const qreal breakEndBlockHeight =
                                             block.layout()->lineCount() * blockLineHeight + blockFormat.bottomMargin();
                                     //
@@ -473,124 +591,46 @@ void ScriptTextCorrector::correct()
                             //
                             // Определим предыдущий блок
                             //
-                            QTextBlock previousBlock = block.previous();
-                            while (previousBlock.isValid() && !previousBlock.isVisible()) {
-                                --m_currentBlockNumber;
-                                previousBlock = previousBlock.previous();
-                            }
+                            QTextBlock previousBlock = findPreviousBlock(block);
                             //
                             // Если перед ним идёт время и место, переносим его тоже
                             //
                             if (previousBlock.isValid()
                                 && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::SceneHeading) {
-                                --m_currentBlockNumber;
-                                const QTextBlockFormat previousBlockFormat = previousBlock.blockFormat();
-                                const qreal previousBlockHeight =
-                                        previousBlockFormat.lineHeight() * previousBlock.layout()->lineCount()
-                                        + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
-                                const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight;
-                                moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd, pageHeight);
-                                block = cursor.block();
-                                //
-                                // Запоминаем параметры предыдущего блока
-                                //
-                                m_blockItems[m_currentBlockNumber++] =
-                                        BlockInfo{previousBlockHeight - previousBlockFormat.topMargin(), 0};
-                                //
-                                // Обозначаем последнюю высоту, как высоту блока время и места
-                                //
-                                lastBlockHeight = previousBlockHeight - previousBlockFormat.topMargin();
-                                //
-                                // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
-                                //
+                                moveCurrentBlockWithPreviousToNextPage(previousBlock, pageHeight, cursor, block, lastBlockHeight);
                             }
                             //
                             // Если перед ним идут участники сцены, то проверим ещё на один блок назад
                             //
                             else if (previousBlock.isValid()
                                      && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::SceneCharacters) {
-                                --m_currentBlockNumber;
                                 //
                                 // Проверяем предыдущий блок
                                 //
-                                QTextBlock prePreviousBlock = previousBlock.previous();
-                                while (prePreviousBlock.isValid() && !prePreviousBlock.isVisible()) {
-                                    prePreviousBlock = prePreviousBlock.previous();
-                                }
+                                QTextBlock prePreviousBlock = findPreviousBlock(previousBlock);
                                 //
                                 // Если перед участниками идёт время и место, переносим его тоже
                                 //
                                 if (prePreviousBlock.isValid()
                                     && ScenarioBlockStyle::forBlock(prePreviousBlock) == ScenarioBlockStyle::SceneHeading) {
-                                    --m_currentBlockNumber;
-                                    const QTextBlockFormat previousBlockFormat = previousBlock.blockFormat();
-                                    const qreal previousBlockHeight =
-                                            previousBlockFormat.lineHeight() * previousBlock.layout()->lineCount()
-                                            + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
-                                    const QTextBlockFormat prePreviousBlockFormat = prePreviousBlock.blockFormat();
-                                    const qreal prePreviousBlockHeight =
-                                            prePreviousBlockFormat.lineHeight() * prePreviousBlock.layout()->lineCount()
-                                            + prePreviousBlockFormat.topMargin() + prePreviousBlockFormat.bottomMargin();
-                                    const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight + prePreviousBlockHeight;
-                                    moveBlockToNextPage(cursor, prePreviousBlock, sizeToPageEnd, pageHeight);
-                                    block = cursor.block();
-                                    //
-                                    // Запоминаем параметры блока время и места
-                                    //
-                                    m_blockItems[m_currentBlockNumber++] =
-                                            BlockInfo{prePreviousBlockHeight - prePreviousBlockFormat.topMargin(), 0};
-                                    //
-                                    // Обозначаем последнюю высоту, как высоту блока время и места
-                                    //
-                                    lastBlockHeight = prePreviousBlockHeight - prePreviousBlockFormat.topMargin();
-                                    //
-                                    // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
-                                    //
+                                    moveCurrentBlockWithTwoPreviousToNextPage(prePreviousBlock, previousBlock, pageHeight, cursor, block, lastBlockHeight);
                                 }
                                 //
                                 // В противном случае просто переносим вместе с участниками
                                 //
                                 else {
-                                    const QTextBlockFormat previousBlockFormat = previousBlock.blockFormat();
-                                    const qreal previousBlockHeight =
-                                            previousBlockFormat.lineHeight() * previousBlock.layout()->lineCount()
-                                            + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
-                                    const qreal sizeToPageEnd = pageHeight - lastBlockHeight + previousBlockHeight;
-                                    moveBlockToNextPage(cursor, previousBlock, sizeToPageEnd, pageHeight);
-                                    block = cursor.block();
-                                    //
-                                    // Запоминаем параметры предыдущего блока
-                                    //
-                                    m_blockItems[m_currentBlockNumber++] =
-                                            BlockInfo{previousBlockHeight - previousBlockFormat.topMargin(), 0};
-                                    //
-                                    // Обозначаем последнюю высоту, как высоту блока участников сцены плюс высоту блока описания действия
-                                    //
-                                    lastBlockHeight = previousBlockHeight - previousBlockFormat.topMargin();
-                                    //
-                                    // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
-                                    //
+                                    moveCurrentBlockWithPreviousToNextPage(previousBlock, pageHeight, cursor, block, lastBlockHeight);
                                 }
                             }
                             //
                             // В противном случае, просто переносим блок на следующую страницу
                             //
                             else {
-                                const qreal sizeToPageEnd = pageHeight - lastBlockHeight;
-                                moveBlockToNextPage(cursor, block, sizeToPageEnd, pageHeight);
-                                block = cursor.block();
-                                //
-                                // Запоминаем параметры текущего блока
-                                //
-                                m_blockItems[m_currentBlockNumber++] =
-                                        BlockInfo{blockHeight - blockFormat.topMargin(), 0};
-                                //
-                                // Обозначаем последнюю высоту, как высоту блока время и места
-                                //
-                                lastBlockHeight = blockHeight - blockFormat.topMargin();
+                                moveCurrentBlockToNextPage(blockFormat, blockHeight, pageHeight, cursor, block, lastBlockHeight);
                             }
                         }
                     }
+
                     break;
                 }
             }
@@ -617,7 +657,226 @@ void ScriptTextCorrector::correct()
     qDebug() << "correct end\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 }
 
-void ScriptTextCorrector::moveBlockToNextPage(QTextCursor& _cursor, const QTextBlock& _block, qreal _spaceToPageEnd, qreal _pageHeight)
+void ScriptTextCorrector::moveCurrentBlockWithThreePreviousToNextPage(const QTextBlock& _prePrePreviousBlock, const QTextBlock& _prePreviousBlock, const QTextBlock& _previousBlock, qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight)
+{
+    --m_currentBlockNumber;
+    --m_currentBlockNumber;
+    --m_currentBlockNumber;
+
+    const QTextBlockFormat previousBlockFormat = _previousBlock.blockFormat();
+    const qreal previousBlockHeight =
+            previousBlockFormat.lineHeight() * _previousBlock.layout()->lineCount()
+            + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
+    const QTextBlockFormat prePreviousBlockFormat = _prePreviousBlock.blockFormat();
+    const qreal prePreviousBlockHeight =
+            prePreviousBlockFormat.lineHeight() * _prePreviousBlock.layout()->lineCount()
+            + prePreviousBlockFormat.topMargin() + prePreviousBlockFormat.bottomMargin();
+    const QTextBlockFormat prePrePreviousBlockFormat = _prePrePreviousBlock.blockFormat();
+    const qreal prePrePreviousBlockHeight =
+            prePrePreviousBlockFormat.lineHeight() * _prePrePreviousBlock.layout()->lineCount()
+            + prePrePreviousBlockFormat.topMargin() + prePrePreviousBlockFormat.bottomMargin();
+    const qreal sizeToPageEnd = _pageHeight - _lastBlockHeight + previousBlockHeight + prePreviousBlockHeight + prePrePreviousBlockHeight;
+    moveBlockToNextPage(_prePrePreviousBlock, sizeToPageEnd, _pageHeight, _cursor);
+    _block = _cursor.block();
+    //
+    // Запоминаем параметры блока время и места
+    //
+    m_blockItems[m_currentBlockNumber++] =
+            BlockInfo{prePreviousBlockHeight - prePreviousBlockFormat.topMargin(), 0};
+    //
+    // Обозначаем последнюю высоту, как высоту предпредпредыдущего блока
+    //
+    _lastBlockHeight = prePrePreviousBlockHeight - prePrePreviousBlockFormat.topMargin();
+    //
+    // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
+    //
+}
+
+void ScriptTextCorrector::moveCurrentBlockWithTwoPreviousToNextPage(const QTextBlock& _prePreviousBlock,
+    const QTextBlock& _previousBlock, qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block,
+    qreal& _lastBlockHeight)
+{
+    --m_currentBlockNumber;
+    --m_currentBlockNumber;
+
+    const QTextBlockFormat previousBlockFormat = _previousBlock.blockFormat();
+    const qreal previousBlockHeight =
+            previousBlockFormat.lineHeight() * _previousBlock.layout()->lineCount()
+            + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
+    const QTextBlockFormat prePreviousBlockFormat = _prePreviousBlock.blockFormat();
+    const qreal prePreviousBlockHeight =
+            prePreviousBlockFormat.lineHeight() * _prePreviousBlock.layout()->lineCount()
+            + prePreviousBlockFormat.topMargin() + prePreviousBlockFormat.bottomMargin();
+    const qreal sizeToPageEnd = _pageHeight - _lastBlockHeight + previousBlockHeight + prePreviousBlockHeight;
+    moveBlockToNextPage(_prePreviousBlock, sizeToPageEnd, _pageHeight, _cursor);
+    _block = _cursor.block();
+    //
+    // Запоминаем параметры блока время и места
+    //
+    m_blockItems[m_currentBlockNumber++] =
+            BlockInfo{prePreviousBlockHeight - prePreviousBlockFormat.topMargin(), 0};
+    //
+    // Обозначаем последнюю высоту, как высоту предпредыдущего блока
+    //
+    _lastBlockHeight = prePreviousBlockHeight - prePreviousBlockFormat.topMargin();
+    //
+    // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
+    //
+}
+
+void ScriptTextCorrector::moveCurrentBlockWithPreviousToNextPage(const QTextBlock& _previousBlock,
+    qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight)
+{
+    --m_currentBlockNumber;
+
+    const QTextBlockFormat previousBlockFormat = _previousBlock.blockFormat();
+    const qreal previousBlockHeight =
+            previousBlockFormat.lineHeight() * _previousBlock.layout()->lineCount()
+            + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
+    const qreal sizeToPageEnd = _pageHeight - _lastBlockHeight + previousBlockHeight;
+    moveBlockToNextPage(_previousBlock, sizeToPageEnd, _pageHeight, _cursor);
+    _block = _cursor.block();
+    //
+    // Запоминаем параметры предыдущего блока
+    //
+    m_blockItems[m_currentBlockNumber++] =
+            BlockInfo{previousBlockHeight - previousBlockFormat.topMargin(), 0};
+    //
+    // Обозначаем последнюю высоту, как высоту предыдущего блока
+    //
+    _lastBlockHeight = previousBlockHeight - previousBlockFormat.topMargin();
+    //
+    // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
+    //
+}
+
+void ScriptTextCorrector::moveCurrentBlockToNextPage(const QTextBlockFormat& _blockFormat,
+    qreal _blockHeight, qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block,
+    qreal& _lastBlockHeight)
+{
+    const qreal sizeToPageEnd = _pageHeight - _lastBlockHeight;
+    moveBlockToNextPage(_block, sizeToPageEnd, _pageHeight, _cursor);
+    _block = _cursor.block();
+    //
+    // Запоминаем параметры текущего блока
+    //
+    m_blockItems[m_currentBlockNumber++] = BlockInfo{_blockHeight - _blockFormat.topMargin(), 0};
+    //
+    // Обозначаем последнюю высоту, как высоту текущего блока
+    //
+    _lastBlockHeight = _blockHeight - _blockFormat.topMargin();
+}
+
+void ScriptTextCorrector::breakDialogue(const QTextBlockFormat& _blockFormat, qreal _blockHeight,
+    qreal _pageHeight, qreal _pageWidth, QTextCursor& _cursor, QTextBlock& _block,
+    qreal& _lastBlockHeight)
+{
+    //
+    // Вставить блок
+    //
+    _cursor.setPosition(_block.position());
+    _cursor.insertBlock();
+    _cursor.movePosition(QTextCursor::PreviousBlock);
+    //
+    // Оформить его, как ремарку
+    //
+    ScenarioBlockStyle parentheticalStyle =
+        ScenarioTemplateFacade::getTemplate().blockStyle(ScenarioBlockStyle::Parenthetical);
+    QTextBlockFormat parentheticalFormat = parentheticalStyle.blockFormat();
+    parentheticalFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrection, true);
+    parentheticalFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrectionContinued, true);
+    parentheticalFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
+    _cursor.setBlockFormat(parentheticalFormat);
+    //
+    // Вставить текст ДАЛЬШЕ
+    //
+    _cursor.insertText(::moreTerm());
+    _block = _cursor.block();
+    ::updateBlockLayout(_pageWidth, _block);
+    const qreal moreBlockHeight =
+            _block.layout()->lineCount() * parentheticalFormat.lineHeight()
+            + parentheticalFormat.topMargin()
+            + parentheticalFormat.bottomMargin();
+    m_blockItems[m_currentBlockNumber++] = BlockInfo{moreBlockHeight, _lastBlockHeight};
+    //
+    // Перенести текущий блок на следующую страницу, если на текущей влезает
+    // ещё хотя бы одна строка текста
+    //
+    _cursor.movePosition(QTextCursor::NextBlock);
+    _block = _cursor.block();
+    const qreal sizeToPageEnd = _pageHeight - _lastBlockHeight - moreBlockHeight;
+    if (sizeToPageEnd >= _blockFormat.topMargin() + _blockFormat.lineHeight()) {
+        moveBlockToNextPage(_block, sizeToPageEnd, _pageHeight, _cursor);
+        _block = _cursor.block();
+    }
+    //
+    // Вставить перед текущим блоком декорацию ПЕРСОНАЖ (ПРОД.)
+    // и для этого ищём предыдущий блок с именем персонажа
+    //
+    QTextBlock characterBlock = _block.previous();
+    while (characterBlock.isValid()
+           && ScenarioBlockStyle::forBlock(characterBlock) != ScenarioBlockStyle::Character) {
+        characterBlock = characterBlock.previous();
+    }
+    //
+    // Если нашли блок с именем персонажа
+    //
+    if (characterBlock.isValid()) {
+        //
+        // Вставляем блок
+        //
+        _cursor.setPosition(_block.position());
+        _cursor.insertBlock();
+        _cursor.movePosition(QTextCursor::PreviousBlock);
+        //
+        // Оформляем его, как имя персонажа
+        //
+        QTextBlockFormat characterFormat = characterBlock.blockFormat();
+        characterFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrection, true);
+        characterFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrectionCharacter, true);
+        characterFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
+        _cursor.setBlockFormat(characterFormat);
+        //
+        // И вставляем текст с именем персонажа
+        //
+        const QString characterName = CharacterParser::name(characterBlock.text());
+        _cursor.insertText(characterName + ::continuedTerm());
+        _block = _cursor.block();
+        //
+        ::updateBlockLayout(_pageWidth, _block);
+        const qreal continuedBlockHeight =
+                _block.layout()->lineCount() * characterFormat.lineHeight()
+                + characterFormat.bottomMargin();
+        m_blockItems[m_currentBlockNumber++] = BlockInfo{continuedBlockHeight, 0};
+        //
+        // Обозначаем последнюю высоту, как высоту предыдущего блока
+        //
+        _lastBlockHeight = continuedBlockHeight;
+        //
+        // Текущий блок будет обработан, как очередной блок посередине страницы при следующем проходе
+        //
+    }
+    //
+    // А если не нашли то оставляем блок прямо сверху страницы
+    //
+    else {
+        m_blockItems[m_currentBlockNumber++] = BlockInfo{_blockHeight - _blockFormat.topMargin(), 0};
+        _lastBlockHeight = _blockHeight - _blockFormat.topMargin();
+    }
+}
+
+QTextBlock ScriptTextCorrector::findPreviousBlock(const QTextBlock& _block)
+{
+    QTextBlock previousBlock = _block.previous();
+    while (previousBlock.isValid() && !previousBlock.isVisible()) {
+        --m_currentBlockNumber;
+        previousBlock = previousBlock.previous();
+    }
+    return previousBlock;
+}
+
+void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _spaceToPageEnd,
+    qreal _pageHeight, QTextCursor& _cursor)
 {
     //
     // Смещаем курсор в начало блока

@@ -6,6 +6,7 @@
 #include <QVector>
 
 class QTextBlock;
+class QTextBlockFormat;
 class QTextCursor;
 class QTextDocument;
 
@@ -28,14 +29,57 @@ namespace BusinessLogic
         void correct();
 
     private:
+        // Функции работающие в рамках текущей коррекции
+
+        /**
+         * @brief Сместить текущий блок вместе с тремя предыдущими на следующую страницу
+         */
+        void moveCurrentBlockWithThreePreviousToNextPage(const QTextBlock& _prePrePreviousBlock,
+            const QTextBlock& _prePreviousBlock, const QTextBlock& _previousBlock, qreal _pageHeight,
+            QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
+
+        /**
+         * @brief Сместить текущий блок вместе с двумя предыдущими на следующую страницу
+         */
+        void moveCurrentBlockWithTwoPreviousToNextPage(const QTextBlock& _prePreviousBlock,
+            const QTextBlock& _previousBlock, qreal _pageHeight, QTextCursor& _cursor,
+            QTextBlock& _block, qreal& _lastBlockHeight);
+
+        /**
+         * @brief Сместить текущий блок вместе с предыдущим на следующую страницу
+         */
+        void moveCurrentBlockWithPreviousToNextPage(const QTextBlock& _previousBlock,
+            qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
+
+        /**
+         * @brief Сместить текущий блок на следующую страницу
+         */
+        void moveCurrentBlockToNextPage(const QTextBlockFormat& _blockFormat, qreal _blockHeight,
+            qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
+
+        /**
+         * @brief Разорвать блок диалога
+         */
+        void breakDialogue(const QTextBlockFormat& _blockFormat, qreal _blockHeight,
+            qreal _pageHeight, qreal _pageWidth, QTextCursor& _cursor, QTextBlock& _block,
+            qreal& _lastBlockHeight);
+
+        // Вспомогательные функции
+
+        /**
+         * @brief Найти предыдущий блок
+         */
+        QTextBlock findPreviousBlock(const QTextBlock& _block);
+
         /**
          * @brief Сместить блок в начало следующей страницы
-         * @param _cursor - курсор редактироуемого документа
          * @param _block - блок для смещения
          * @param _spaceToPageEnd - количество места до конца страницы
          * @param _pageHeight - высота страницы
+         * @param _cursor - курсор редактироуемого документа
          */
-        void moveBlockToNextPage(QTextCursor& _cursor, const QTextBlock& _block, qreal _spaceToPageEnd, qreal _pageHeight);
+        void moveBlockToNextPage(const QTextBlock& _block, qreal _spaceToPageEnd, qreal _pageHeight,
+            QTextCursor& _cursor);
 
     private:
         /**
