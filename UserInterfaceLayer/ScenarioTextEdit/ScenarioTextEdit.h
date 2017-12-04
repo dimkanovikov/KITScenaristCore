@@ -43,6 +43,11 @@ namespace UserInterface
         void changeScenarioBlockType(BusinessLogic::ScenarioBlockStyle::Type _blockType, bool _forced = false);
 
         /**
+         * @brief Установить заданный тип блока для всех выделенных блоков
+         */
+        void changeScenarioBlockTypeForSelection(BusinessLogic::ScenarioBlockStyle::Type _blockType);
+
+        /**
          * @brief Применить тип блока ко всему тексту в блоке
          * @param Тип для применения
          */

@@ -263,6 +263,34 @@ void ScenarioTextEdit::changeScenarioBlockType(ScenarioBlockStyle::Type _blockTy
     emit styleChanged();
 }
 
+void ScenarioTextEdit::changeScenarioBlockTypeForSelection(ScenarioBlockStyle::Type _blockType)
+{
+    QTextCursor cursor = textCursor();
+    cursor.beginEditBlock();
+
+    //
+    // Задаём тип для каждого блока из выделения
+    //
+    const int startPosition = std::min(cursor.selectionStart(), cursor.selectionEnd());
+    const int endPosition = std::max(cursor.selectionStart(), cursor.selectionEnd());
+    cursor.setPosition(startPosition);
+    while (!cursor.atEnd()
+           && cursor.position() < endPosition) {
+        setTextCursor(cursor);
+        changeScenarioBlockType(_blockType);
+        cursor.movePosition(QTextCursor::EndOfBlock);
+        cursor.movePosition(QTextCursor::NextBlock);
+    }
+    cursor.endEditBlock();
+
+    //
+    // Возвращаем курсор в исходное положение
+    //
+    cursor.setPosition(startPosition);
+    cursor.setPosition(endPosition, QTextCursor::KeepAnchor);
+    setTextCursor(cursor);
+}
+
 void ScenarioTextEdit::applyScenarioTypeToBlockText(ScenarioBlockStyle::Type _blockType)
 {
     QTextCursor cursor = textCursor();
