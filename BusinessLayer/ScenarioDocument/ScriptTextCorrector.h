@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QHash>
+#include <QSizeF>
 #include <QVector>
 
 class QTextBlock;
@@ -22,6 +23,11 @@ namespace BusinessLogic
 
     public:
         explicit ScriptTextCorrector(QTextDocument* _document);
+
+        /**
+         * @brief Очистить все сохранённые параметры
+         */
+        void clear();
 
         /**
          * @brief Скорректировать текст сценария
@@ -93,6 +99,18 @@ namespace BusinessLogic
         QTextDocument* m_document = nullptr;
 
         /**
+         * @brief Размер документа при последней проверке
+         */
+        QSizeF m_lastDocumentSize;
+
+        /**
+         * @brief Номер текущего блока при корректировке
+         * @note Используем собственный счётчик номеров, т.к. во время
+         *       коррекций номера блоков могут скакать в QTextBlock
+         */
+        int m_currentBlockNumber = 0;
+
+        /**
          * @brief Структура элемента модели блоков
          */
         struct BlockInfo {
@@ -112,13 +130,6 @@ namespace BusinessLogic
              */
             qreal top = 0.0;
         };
-
-        /**
-         * @brief Номер текущего блока при корректировке
-         * @note Используем собственный счётчик номеров, т.к. во время
-         *       коррекций номера блоков могут скакать в QTextBlock
-         */
-        int m_currentBlockNumber = 0;
 
         /**
          * @brief Модель блоков <порядковый номер блока, параметры блока>

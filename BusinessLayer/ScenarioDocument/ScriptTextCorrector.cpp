@@ -67,6 +67,13 @@ ScriptTextCorrector::ScriptTextCorrector(QTextDocument* _document) :
     Q_ASSERT_X(m_document, Q_FUNC_INFO, "Document couldn't be a nullptr");
 }
 
+void ScriptTextCorrector::clear()
+{
+    m_lastDocumentSize = QSizeF();
+    m_currentBlockNumber = 0;
+    m_blockItems.clear();
+}
+
 #include <QDebug>
 #include <QDateTime>
 void ScriptTextCorrector::correct(int _position)
@@ -85,14 +92,26 @@ void ScriptTextCorrector::correct(int _position)
     // Определим высоту страницы
     //
     const QTextFrameFormat rootFrameFormat = m_document->rootFrame()->frameFormat();
-    const qreal pageHeight = m_document->pageSize().height()
-                             - rootFrameFormat.topMargin()
-                             - rootFrameFormat.bottomMargin();
+    //
     const qreal pageWidth = m_document->pageSize().width()
                              - rootFrameFormat.leftMargin()
                              - rootFrameFormat.rightMargin();
+    if (pageWidth < 0)
+        return;
+    //
+    const qreal pageHeight = m_document->pageSize().height()
+                             - rootFrameFormat.topMargin()
+                             - rootFrameFormat.bottomMargin();
     if (pageHeight < 0)
         return;
+    //
+    // Если размер изменился, необходимо пересчитать все блоки
+    //
+    if (m_lastDocumentSize.width() != pageWidth
+        || m_lastDocumentSize.height() != pageHeight) {
+        m_blockItems.clear();
+        m_lastDocumentSize = QSizeF(pageWidth, pageHeight);
+    }
 
     //
     // Определим список блоков для принудительной ручной проверки
@@ -185,6 +204,8 @@ void ScriptTextCorrector::correct(int _position)
                 // но влезает хотя бы одна строка
                 && (lastBlockHeight + blockFormat.topMargin() + blockLineHeight < pageHeight);
 
+        if (m_currentBlockNumber == 82)
+            qDebug() << "got";
 
         //
         // Проверяем, изменилась ли позиция блока,
@@ -221,12 +242,15 @@ void ScriptTextCorrector::correct(int _position)
             qDebug() << "not eq bi:" << m_blockItems[m_currentBlockNumber].height << m_blockItems[m_currentBlockNumber].top;
             qDebug() << "not eq cb:" << blockHeight << lastBlockHeight;
             qDebug() << block.text();
+            qDebug() << m_blockItems[m_currentBlockNumber - 1].height << m_blockItems[m_currentBlockNumber - 1].top;
         }
 
 
         //
         // Если позиция блока изменилась, то работаем по алгоритму корректировки текста
         //
+        if (block.text().contains("ON WILL AND SANDRA"))
+            qDebug() << "got";
 
 
         //
@@ -544,10 +568,19 @@ void ScriptTextCorrector::correct(int _position)
                                     //
                                     block = cursor.block();
                                     ::updateBlockLayout(pageWidth, block);
+                                    const qreal breakEndBlockHeight =
+                                            block.layout()->lineCount() * blockLineHeight + blockFormat.topMargin()
+                                            + blockFormat.bottomMargin();
                                     //
                                     // ... и декорируем разрыв диалога по правилам
                                     //
-                                    breakDialogue(blockFormat, blockHeight, pageHeight, pageWidth, cursor, block, lastBlockHeight);
+                                    breakDialogue(blockFormat, breakEndBlockHeight, pageHeight, pageWidth, cursor, block, lastBlockHeight);
+                                    //
+                                    // ... сохраняем оторванный конец блока и корректируем последнюю высоту
+                                    //
+                                    block = block.next();
+                                    m_blockItems[m_currentBlockNumber++] = BlockInfo{breakEndBlockHeight, lastBlockHeight};
+                                    lastBlockHeight += breakEndBlockHeight;
                                     //
                                     // ... помечаем, что разорвать удалось
                                     //

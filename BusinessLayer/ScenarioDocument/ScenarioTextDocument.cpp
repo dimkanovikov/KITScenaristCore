@@ -114,6 +114,11 @@ QByteArray ScenarioTextDocument::scenarioXmlHash() const
 void ScenarioTextDocument::load(const QString& _scenarioXml)
 {
     //
+    // Сбрасываем корректор
+    //
+    m_corrector->clear();
+
+    //
     // Если xml не задан сформируем его пустой аналог
     //
     QString scenarioXml = _scenarioXml;
@@ -538,6 +543,7 @@ QList<ScenarioBlockStyle::Type> ScenarioTextDocument::visibleBlocksTypes() const
     static QList<ScenarioBlockStyle::Type> s_outlineVisibleBlocksTypes =
         QList<ScenarioBlockStyle::Type>()
         << ScenarioBlockStyle::SceneHeading
+        << ScenarioBlockStyle::SceneHeadingShadow
         << ScenarioBlockStyle::SceneCharacters
         << ScenarioBlockStyle::FolderHeader
         << ScenarioBlockStyle::FolderFooter
@@ -546,6 +552,7 @@ QList<ScenarioBlockStyle::Type> ScenarioTextDocument::visibleBlocksTypes() const
     static QList<ScenarioBlockStyle::Type> s_scenarioVisibleBlocksTypes =
         QList<ScenarioBlockStyle::Type>()
             << ScenarioBlockStyle::SceneHeading
+            << ScenarioBlockStyle::SceneHeadingShadow
             << ScenarioBlockStyle::SceneCharacters
             << ScenarioBlockStyle::Action
             << ScenarioBlockStyle::Character
