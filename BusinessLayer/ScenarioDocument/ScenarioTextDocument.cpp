@@ -563,9 +563,9 @@ QList<ScenarioBlockStyle::Type> ScenarioTextDocument::visibleBlocksTypes() const
     return m_outlineMode ? s_outlineVisibleBlocksTypes : s_scenarioVisibleBlocksTypes;
 }
 
-void ScenarioTextDocument::correct()
+void ScenarioTextDocument::correct(int _position)
 {
-    m_corrector->correct();
+    m_corrector->correct(_position);
 }
 
 void ScenarioTextDocument::removeIdenticalParts(QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml>& _xmls, bool _reversed)

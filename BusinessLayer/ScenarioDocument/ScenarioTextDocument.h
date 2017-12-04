@@ -129,7 +129,7 @@ namespace BusinessLogic
         /**
          * @brief Произвести корректировки текста
          */
-        void correct();
+        void correct(int _position = -1);
 
     signals:
         /**

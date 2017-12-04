@@ -996,7 +996,7 @@ void ScenarioDocument::correctText()
     }
 
     m_needToCorrectText = false;
-    m_document->correct();
+    m_document->correct(m_lastChangeStartPosition);
 }
 
 void ScenarioDocument::initConnections()

@@ -26,7 +26,7 @@ namespace BusinessLogic
         /**
          * @brief Скорректировать текст сценария
          */
-        void correct();
+        void correct(int _position = -1);
 
     private:
         // Функции работающие в рамках текущей коррекции
@@ -70,6 +70,11 @@ namespace BusinessLogic
          * @brief Найти предыдущий блок
          */
         QTextBlock findPreviousBlock(const QTextBlock& _block);
+
+        /**
+         * @brief Найти следующий блок, который не является декорацией
+         */
+        QTextBlock findNextBlock(const QTextBlock& _block);
 
         /**
          * @brief Сместить блок в начало следующей страницы

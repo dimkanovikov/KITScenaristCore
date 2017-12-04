@@ -69,7 +69,7 @@ ScriptTextCorrector::ScriptTextCorrector(QTextDocument* _document) :
 
 #include <QDebug>
 #include <QDateTime>
-void ScriptTextCorrector::correct()
+void ScriptTextCorrector::correct(int _position)
 {
     qDebug() << "correct start\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 
@@ -93,6 +93,26 @@ void ScriptTextCorrector::correct()
                              - rootFrameFormat.rightMargin();
     if (pageHeight < 0)
         return;
+
+    //
+    // Определим список блоков для принудительной ручной проверки
+    // NOTE: Это необходимо для того, чтобы корректно обрабатывать изменение текста
+    //       в следующих за переносом блоках
+    //
+    QSet<int> blocksToRecheck;
+    if (_position != -1) {
+        QTextBlock blockToRecheck = m_document->findBlock(_position);
+        //
+        // Максимальное количество блоков которое может быть перенесено на новую страницу
+        //
+        int recheckBlocksCount = 5;
+        do {
+            blocksToRecheck.insert(blockToRecheck.blockNumber());
+            blockToRecheck = blockToRecheck.previous();
+        } while (blockToRecheck.isValid()
+                 && (recheckBlocksCount-- > 0
+                     || blockToRecheck.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)));
+    }
 
     //
     // Начинаем работу с документом
@@ -167,11 +187,13 @@ void ScriptTextCorrector::correct()
 
 
         //
-        // Проверяем, изменилась ли позиция блока
+        // Проверяем, изменилась ли позиция блока,
+        // и что текущий блок это не изменённый блок под курсором
         //
         if (m_blockItems.contains(m_currentBlockNumber)
             && m_blockItems[m_currentBlockNumber].height == blockHeight
-            && m_blockItems[m_currentBlockNumber].top == lastBlockHeight) {
+            && m_blockItems[m_currentBlockNumber].top == lastBlockHeight
+            && !blocksToRecheck.contains(m_currentBlockNumber)) {
             //
             // Если не изменилась
             //
@@ -356,11 +378,7 @@ void ScriptTextCorrector::correct()
 
 
                 //
-                // Если это ремарка, переносим на следующую страницу
-                // - если перед ремаркой идёт имя персонажа переносим и его тоже, и если перед именем
-                //   идут участники и если перед участниками идёт время и место
-                // - если перед ремаркой идёт реплика, то разрываем реплику, вставляя вместо ремарки
-                //   ДАЛЬШЕ и добавляя на новой странице имя персонажа с (ПРОД.)
+                // Если это ремарка
                 //
                 case ScenarioBlockStyle::Parenthetical: {
                     //
@@ -449,7 +467,7 @@ void ScriptTextCorrector::correct()
                     //
                     // Проверяем следующий блок
                     //
-                    QTextBlock nextBlock = block.next();
+                    QTextBlock nextBlock = findNextBlock(block);
                     //
                     // Если реплика в конце страницы и после ней идёт не ремарка, то оставляем как есть
                     //
@@ -470,7 +488,132 @@ void ScriptTextCorrector::correct()
                     // В противном случае разрываем
                     //
                     else {
+                        //
+                        // Если влезает 2 или более строк
+                        //
+                        const int minPlacedLines = 2;
+                        const int linesCanBePlaced = (pageHeight - lastBlockHeight - blockFormat.topMargin()) / blockLineHeight;
+                        int lineToBreak = linesCanBePlaced - 1; // Резервируем одну строку, под блок (ДАЛЬШЕ)
+                        //
+                        // ... пробуем разорвать на максимально низкой строке
+                        //
+                        bool isBreaked = false;
+                        while (lineToBreak >= minPlacedLines
+                               && !isBreaked) {
+                            const QTextLine line = block.layout()->lineAt(lineToBreak - 1); // -1 т.к. нужен индекс, а не порядковый номер
+                            const QString lineText = block.text().mid(line.textStart(), line.textLength());
+                            for (const auto& punctuation : PUNCTUATION_CHARACTERS) {
+                                const int punctuationIndex = lineText.lastIndexOf(punctuation);
+                                //
+                                // ... нашлось место, где можно разорвать
+                                //
+                                if (punctuationIndex != -1) {
+                                    //
+                                    // ... разрываем
+                                    //
+                                    // +1, т.к. символ пунктуации нужно оставить в текущем блоке
+                                    cursor.setPosition(block.position() + line.textStart() + punctuationIndex + 1);
+                                    cursor.insertBlock();
+                                    //
+                                    // ... запоминаем параметры блока оставшегося в конце страницы
+                                    //
+                                    const qreal breakStartBlockHeight =
+                                            lineToBreak * blockLineHeight + blockFormat.topMargin() + blockFormat.bottomMargin();
+                                    m_blockItems[m_currentBlockNumber++] = BlockInfo{breakStartBlockHeight, lastBlockHeight};
+                                    lastBlockHeight += breakStartBlockHeight;
+                                    //
+                                    // ... если после разрыва остался пробел, уберём его
+                                    //
+                                    while (cursor.block().text().startsWith(" ")) {
+                                        cursor.deleteChar();
+                                    }
+                                    //
+                                    // ... помечаем блоки, как разорванные
+                                    //
+                                    QTextBlockFormat breakStartFormat = blockFormat;
+                                    breakStartFormat.setProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart, true);
+                                    cursor.movePosition(QTextCursor::PreviousBlock);
+                                    cursor.setBlockFormat(breakStartFormat);
+                                    //
+                                    QTextBlockFormat breakEndFormat = blockFormat;
+                                    breakEndFormat.setProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd, true);
+                                    cursor.movePosition(QTextCursor::NextBlock);
+                                    cursor.setBlockFormat(breakEndFormat);
+                                    //
+                                    // ... обновим лэйаут оторванного блока
+                                    //
+                                    block = cursor.block();
+                                    ::updateBlockLayout(pageWidth, block);
+                                    //
+                                    // ... и декорируем разрыв диалога по правилам
+                                    //
+                                    breakDialogue(blockFormat, blockHeight, pageHeight, pageWidth, cursor, block, lastBlockHeight);
+                                    //
+                                    // ... помечаем, что разорвать удалось
+                                    //
+                                    isBreaked = true;
+                                    break;
+                                }
+                            }
 
+                            //
+                            // На текущей строке разорвать не удалось, перейдём к предыдущей
+                            //
+                            --lineToBreak;
+                        }
+
+                        //
+                        // Разорвать не удалось, переносим целиком
+                        //
+                        if (!isBreaked) {
+                            //
+                            // Определим предыдущий блок
+                            //
+                            QTextBlock previousBlock = findPreviousBlock(block);
+                            //
+                            // Если перед ним идёт персонаж, переносим его тоже
+                            //
+                            if (previousBlock.isValid()
+                                && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::Character) {
+                                moveCurrentBlockWithPreviousToNextPage(previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                            }
+                            //
+                            // Если перед ним идёт ремарка, то проверим ещё на один блок назад
+                            //
+                            else if (previousBlock.isValid()
+                                     && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::Parenthetical) {
+                                //
+                                // Проверяем предыдущий блок
+                                //
+                                QTextBlock prePreviousBlock = findPreviousBlock(previousBlock);
+                                //
+                                // Если перед ремаркой идёт персонаж, переносим его тоже
+                                //
+                                if (prePreviousBlock.isValid()
+                                    && ScenarioBlockStyle::forBlock(prePreviousBlock) == ScenarioBlockStyle::Character) {
+                                    moveCurrentBlockWithTwoPreviousToNextPage(prePreviousBlock, previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                                }
+                                //
+                                // В противном случае разрываем на ремарке
+                                //
+                                else {
+                                    const QTextBlockFormat previousBlockFormat = previousBlock.blockFormat();
+                                    const qreal previousBlockHeight =
+                                            previousBlockFormat.lineHeight() * previousBlock.layout()->lineCount()
+                                            + previousBlockFormat.topMargin() + previousBlockFormat.bottomMargin();
+                                    lastBlockHeight -= previousBlockHeight;
+                                    --m_currentBlockNumber;
+                                    breakDialogue(previousBlockFormat, previousBlockHeight, pageHeight, pageWidth, cursor, previousBlock, lastBlockHeight);
+                                    block = previousBlock;
+                                }
+                            }
+                            //
+                            // В противном случае, просто переносим блок на следующую страницу
+                            //
+                            else {
+                                moveCurrentBlockToNextPage(blockFormat, blockHeight, pageHeight, cursor, block, lastBlockHeight);
+                            }
+                        }
                     }
 
                     break;
@@ -873,6 +1016,17 @@ QTextBlock ScriptTextCorrector::findPreviousBlock(const QTextBlock& _block)
         previousBlock = previousBlock.previous();
     }
     return previousBlock;
+}
+
+QTextBlock ScriptTextCorrector::findNextBlock(const QTextBlock& _block)
+{
+    QTextBlock nextBlock = _block.next();
+    while (nextBlock.isValid()
+           && !nextBlock.isVisible()
+           && nextBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+        nextBlock = nextBlock.next();
+    }
+    return nextBlock;
 }
 
 void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _spaceToPageEnd,
