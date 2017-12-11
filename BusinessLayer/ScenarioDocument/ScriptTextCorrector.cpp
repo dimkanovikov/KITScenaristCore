@@ -222,7 +222,7 @@ void ScriptTextCorrector::correct(int _position)
             //
             // ... в данном случае блок не может быть на разрыве
             //
-            Q_ASSERT(atPageBreak == false);
+            Q_ASSERT_X(atPageBreak == false, Q_FUNC_INFO, "Normally cached blocks can't be placed on page breaks");
             //
             // ... то корректируем позицию
             //
@@ -245,12 +245,6 @@ void ScriptTextCorrector::correct(int _position)
             block = block.next();
             ++m_currentBlockNumber;
             continue;
-        } else {
-            qDebug() << m_currentBlockNumber << block.blockNumber();
-            qDebug() << "not eq bi:" << m_blockItems[m_currentBlockNumber].height << m_blockItems[m_currentBlockNumber].top;
-            qDebug() << "not eq cb:" << blockHeight << lastBlockHeight;
-            qDebug() << block.text();
-            qDebug() << m_blockItems[m_currentBlockNumber - 1].height << m_blockItems[m_currentBlockNumber - 1].top;
         }
 
 

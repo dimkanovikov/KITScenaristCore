@@ -68,6 +68,11 @@ namespace BusinessLogic
         void removeItem(ScenarioModelItem* _item);
 
         /**
+         * @brief Удалить список элементов
+         */
+        void removeItems(const QVector<ScenarioModelItem*>& _items);
+
+        /**
          * @brief Обновить элемент
          */
         void updateItem(ScenarioModelItem* _item);

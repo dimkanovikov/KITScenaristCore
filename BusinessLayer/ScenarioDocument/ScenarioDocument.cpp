@@ -576,8 +576,8 @@ int ScenarioDocument::positionToInsertMime(ScenarioModelItem* _insertParent, Sce
 #include <QTime>
 void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int _charsAdded)
 {
-    qDebug() << "change start\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
     qDebug() << _position << _charsAdded << _charsRemoved;
+    qDebug() << "change start\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
     //
     // Сохраняем изменённый xml и его хэш
     //
@@ -637,6 +637,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
         QMap<int, ScenarioModelItem*>::iterator iter = m_modelItems.lowerBound(position);
         const int charsAddedDelta = _charsAdded - _charsRemoved;
         const int charsRemovedDelta = _charsRemoved - _charsAdded;
+        QVector<ScenarioModelItem*> itemsToDelete;
         while (iter != m_modelItems.end()
                && iter.key() >= position
                && iter.key() < (position + _charsRemoved)) {
@@ -661,9 +662,9 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
                 }
 
                 //
-                // Удалим элемент из модели
+                // Добавим элемент в список на удаление
                 //
-                m_model->removeItem(iter.value());
+                itemsToDelete.append(itemToDelete);
             }
 
             //
@@ -671,7 +672,14 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
             //
             iter = m_modelItems.erase(iter);
         }
+
+        //
+        // Удалим элементы из модели
+        //
+        m_model->removeItems(itemsToDelete);
     }
+
+    qDebug() << "change midr\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 
     //
     // Скорректируем позицию
@@ -725,6 +733,8 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
             m_modelItems.insert(updateIter.key(), updateIter.value());
         }
     }
+
+    qDebug() << "change mida\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 
     //
     // Если были изменены данные
@@ -982,6 +992,8 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
                  && cursor.position() < (_position + _charsAdded));
     }
 
+    qDebug() << "change midu\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
+
     updateDocumentScenesNumbers();
 
     m_needToCorrectText = true;
@@ -1175,7 +1187,7 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
 ScenarioModelItem* ScenarioDocument::itemForPosition(int _position, bool _findNear) const
 {
     ScenarioModelItem* item = m_modelItems.value(_position, 0);
-    if (item == 0) {
+    if (item == nullptr) {
         //
         // Если необходимо ищем ближайшего
         //
