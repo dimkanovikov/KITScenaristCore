@@ -114,6 +114,11 @@ void ScriptTextCorrector::correct(int _position)
     }
 
     //
+    // Карту декораций перестраиваем целиком
+    //
+    m_decorations.clear();
+
+    //
     // Определим список блоков для принудительной ручной проверки
     // NOTE: Это необходимо для того, чтобы корректно обрабатывать изменение текста
     //       в следующих за переносом блоках
@@ -204,9 +209,6 @@ void ScriptTextCorrector::correct(int _position)
                 // но влезает хотя бы одна строка
                 && (lastBlockHeight + blockFormat.topMargin() + blockLineHeight < pageHeight);
 
-        if (m_currentBlockNumber == 82)
-            qDebug() << "got";
-
         //
         // Проверяем, изменилась ли позиция блока,
         // и что текущий блок это не изменённый блок под курсором
@@ -232,6 +234,12 @@ void ScriptTextCorrector::correct(int _position)
                 lastBlockHeight += blockHeight;
             }
             //
+            // ... запомним декорацию при необходимости
+            //
+            if (blockFormat.boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                m_decorations[block.position()] = block.length();
+            }
+            //
             // ... и переходим к следующему блоку
             //
             block = block.next();
@@ -249,8 +257,6 @@ void ScriptTextCorrector::correct(int _position)
         //
         // Если позиция блока изменилась, то работаем по алгоритму корректировки текста
         //
-        if (block.text().contains("ON WILL AND SANDRA"))
-            qDebug() << "got";
 
 
         //
@@ -833,6 +839,22 @@ void ScriptTextCorrector::correct(int _position)
     qDebug() << "correct end\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 }
 
+int ScriptTextCorrector::correctedPosition(int _position) const
+{
+    int positionDelta = 0;
+    for (auto iter = m_decorations.begin(); iter != m_decorations.end(); ++iter) {
+        //
+        // Прерываем выполнение, если текущая декорация находится за искомой позицией
+        //
+        if (iter.key() > _position + positionDelta) {
+            break;
+        }
+
+        positionDelta += iter.value();
+    }
+    return _position + positionDelta;
+}
+
 void ScriptTextCorrector::moveCurrentBlockWithThreePreviousToNextPage(const QTextBlock& _prePrePreviousBlock, const QTextBlock& _prePreviousBlock, const QTextBlock& _previousBlock, qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight)
 {
     --m_currentBlockNumber;
@@ -974,6 +996,7 @@ void ScriptTextCorrector::breakDialogue(const QTextBlockFormat& _blockFormat, qr
             + parentheticalFormat.topMargin()
             + parentheticalFormat.bottomMargin();
     m_blockItems[m_currentBlockNumber++] = BlockInfo{moreBlockHeight, _lastBlockHeight};
+    m_decorations[_block.position()] = _block.length();
     //
     // Перенести текущий блок на следующую страницу, если на текущей влезает
     // ещё хотя бы одна строка текста
@@ -1024,6 +1047,7 @@ void ScriptTextCorrector::breakDialogue(const QTextBlockFormat& _blockFormat, qr
                 _block.layout()->lineCount() * characterFormat.lineHeight()
                 + characterFormat.bottomMargin();
         m_blockItems[m_currentBlockNumber++] = BlockInfo{continuedBlockHeight, 0};
+        m_decorations[_block.position()] = _block.length();
         //
         // Обозначаем последнюю высоту, как высоту предыдущего блока
         //
@@ -1091,10 +1115,14 @@ void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _s
         _cursor.insertBlock();
         _cursor.movePosition(QTextCursor::PreviousBlock);
         _cursor.setBlockFormat(decorationFormat);
-        _cursor.movePosition(QTextCursor::NextBlock);
         //
         // Запоминаем параметры текущего блока
         //
         m_blockItems[m_currentBlockNumber++] = BlockInfo{blockHeight, _pageHeight - _spaceToPageEnd + blockIndex * blockHeight};
+        m_decorations[_cursor.block().position()] = _cursor.block().length();
+        //
+        // Переведём курсор на блок после декорации
+        //
+        _cursor.movePosition(QTextCursor::NextBlock);
     }
 }

@@ -1,8 +1,9 @@
 #ifndef SCRIPTTEXTCORRECTOR_H
 #define SCRIPTTEXTCORRECTOR_H
 
-#include <QObject>
 #include <QHash>
+#include <QMap>
+#include <QObject>
 #include <QSizeF>
 #include <QVector>
 
@@ -34,8 +35,15 @@ namespace BusinessLogic
          */
         void correct(int _position = -1);
 
+        /**
+         * @brief Определить позицию курсора с учётом декораций по позиции без учёта декораций
+         */
+        int correctedPosition(int _position) const;
+
     private:
+        //
         // Функции работающие в рамках текущей коррекции
+        //
 
         /**
          * @brief Сместить текущий блок вместе с тремя предыдущими на следующую страницу
@@ -70,7 +78,9 @@ namespace BusinessLogic
             qreal _pageHeight, qreal _pageWidth, QTextCursor& _cursor, QTextBlock& _block,
             qreal& _lastBlockHeight);
 
+        //
         // Вспомогательные функции
+        //
 
         /**
          * @brief Найти предыдущий блок
@@ -135,6 +145,12 @@ namespace BusinessLogic
          * @brief Модель блоков <порядковый номер блока, параметры блока>
          */
         QHash<int, BlockInfo> m_blockItems;
+
+        /**
+         * @brief Список декораций документа <позиция, длина>
+         * @note Используется для поиска положения курсора при наложении патча
+         */
+        QMap<int, int> m_decorations;
     };
 }
 
