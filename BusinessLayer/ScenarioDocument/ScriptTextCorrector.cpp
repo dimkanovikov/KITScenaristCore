@@ -1,6 +1,7 @@
 #include "ScriptTextCorrector.h"
 
 #include "ScenarioTemplate.h"
+#include "ScenarioTextBlockInfo.h"
 #include "ScenarioTextBlockParsers.h"
 
 #include <3rd_party/Helpers/RunOnce.h>
@@ -14,6 +15,7 @@
 using BusinessLogic::CharacterParser;
 using BusinessLogic::ScenarioBlockStyle;
 using BusinessLogic::ScenarioTemplateFacade;
+using BusinessLogic::ScenarioTextBlockInfo;
 using BusinessLogic::ScriptTextCorrector;
 
 namespace {
@@ -74,12 +76,8 @@ void ScriptTextCorrector::clear()
     m_blockItems.clear();
 }
 
-#include <QDebug>
-#include <QDateTime>
 void ScriptTextCorrector::correct(int _position)
 {
-    qDebug() << "correct start\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
-
     //
     // Избегаем рекурсии
     //
@@ -548,7 +546,7 @@ void ScriptTextCorrector::correct(int _position)
                                     //
                                     // ... если после разрыва остался пробел, уберём его
                                     //
-                                    while (cursor.block().text().startsWith(" ")) {
+                                    if (cursor.block().text().startsWith(" ")) {
                                         cursor.deleteChar();
                                     }
                                     //
@@ -608,7 +606,46 @@ void ScriptTextCorrector::correct(int _position)
                             //
                             if (previousBlock.isValid()
                                 && ScenarioBlockStyle::forBlock(previousBlock) == ScenarioBlockStyle::Character) {
-                                moveCurrentBlockWithPreviousToNextPage(previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                                //
+                                // Проверяем предыдущий блок
+                                //
+                                QTextBlock prePreviousBlock = findPreviousBlock(previousBlock);
+                                //
+                                // Если перед именем идёт время и место, переносим его тоже
+                                //
+                                if (prePreviousBlock.isValid()
+                                    && ScenarioBlockStyle::forBlock(prePreviousBlock) == ScenarioBlockStyle::SceneHeading) {
+                                    moveCurrentBlockWithTwoPreviousToNextPage(prePreviousBlock, previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                                }
+                                //
+                                // Если перед именем идут участники сцены
+                                //
+                                else if (prePreviousBlock.isValid()
+                                         && ScenarioBlockStyle::forBlock(prePreviousBlock) == ScenarioBlockStyle::SceneCharacters) {
+                                    //
+                                    // Проверяем предыдущий блок
+                                    //
+                                    QTextBlock prePrePreviousBlock = findPreviousBlock(prePreviousBlock);
+                                    //
+                                    // Если перед участниками идёт время и место, переносим его тоже
+                                    //
+                                    if (prePreviousBlock.isValid()
+                                        && ScenarioBlockStyle::forBlock(prePreviousBlock) == ScenarioBlockStyle::SceneHeading) {
+                                        moveCurrentBlockWithThreePreviousToNextPage(prePrePreviousBlock, prePreviousBlock, previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                                    }
+                                    //
+                                    // В противном случае просто переносим вместе с участниками
+                                    //
+                                    else {
+                                        moveCurrentBlockWithTwoPreviousToNextPage(prePreviousBlock, previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                                    }
+                                }
+                                //
+                                // В противном случае просто переносим вместе с персонажем
+                                //
+                                else {
+                                    moveCurrentBlockWithPreviousToNextPage(previousBlock, pageHeight, cursor, block, lastBlockHeight);
+                                }
                             }
                             //
                             // Если перед ним идёт ремарка, то проверим ещё на один блок назад
@@ -709,7 +746,7 @@ void ScriptTextCorrector::correct(int _position)
                                     //
                                     // ... если после разрыва остался пробел, уберём его
                                     //
-                                    while (cursor.block().text().startsWith(" ")) {
+                                    if (cursor.block().text().startsWith(" ")) {
                                         cursor.deleteChar();
                                     }
                                     //
@@ -828,9 +865,7 @@ void ScriptTextCorrector::correct(int _position)
         block = block.next();
     }
 
-    qDebug() << "correct bend\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
     cursor.endEditBlock();
-    qDebug() << "correct end\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 }
 
 int ScriptTextCorrector::correctedPosition(int _position) const
@@ -1106,9 +1141,20 @@ void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _s
     // Вставляем блоки декорации
     //
     for (int blockIndex = 0; blockIndex < insertBlockCount; ++blockIndex) {
+        //
+        // Декорируем
+        //
         _cursor.insertBlock();
         _cursor.movePosition(QTextCursor::PreviousBlock);
         _cursor.setBlockFormat(decorationFormat);
+        //
+        // Сохраним данные блока, чтобы перенести их к реальному владельцу
+        //
+        ScenarioTextBlockInfo* blockInfo = nullptr;
+        if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(_cursor.block().userData())) {
+            blockInfo = info->clone();
+            _cursor.block().setUserData(nullptr);
+        }
         //
         // Запоминаем параметры текущего блока
         //
@@ -1118,5 +1164,8 @@ void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _s
         // Переведём курсор на блок после декорации
         //
         _cursor.movePosition(QTextCursor::NextBlock);
+        if (blockInfo != nullptr) {
+            _cursor.block().setUserData(blockInfo);
+        }
     }
 }

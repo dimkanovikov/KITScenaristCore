@@ -259,7 +259,7 @@ QString ScenarioXml::scenarioToXml()
                 // ... если дошли до конца разрыва, то сшиваем его
                 //
                 if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd)) {
-                    textToSave += " " + currentBlock.text();
+                    textToSave += " " + TextEditHelper::toHtmlEscaped(currentBlock.text());
                 }
             }
 

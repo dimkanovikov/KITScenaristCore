@@ -572,12 +572,9 @@ int ScenarioDocument::positionToInsertMime(ScenarioModelItem* _insertParent, Sce
 
     return insertPosition;
 }
-#include <QDebug>
-#include <QTime>
+
 void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int _charsAdded)
 {
-    qDebug() << _position << _charsAdded << _charsRemoved;
-    qDebug() << "change start\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
     //
     // Сохраняем изменённый xml и его хэш
     //
@@ -597,12 +594,10 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
             //     модель документа, например добавился комментарий от редактора
             //
             updateDocumentScenesNumbers();
-            qDebug() << "change end\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
             return;
         }
     }
 
-    qDebug() << "change mid\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 
     //
     // Сохранить md5 хэш текста документа
@@ -679,7 +674,6 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
         m_model->removeItems(itemsToDelete);
     }
 
-    qDebug() << "change midr\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 
     //
     // Скорректируем позицию
@@ -734,7 +728,6 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
         }
     }
 
-    qDebug() << "change mida\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 
     //
     // Если были изменены данные
@@ -992,13 +985,10 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
                  && cursor.position() < (_position + _charsAdded));
     }
 
-    qDebug() << "change midu\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 
     updateDocumentScenesNumbers();
 
     m_needToCorrectText = true;
-
-    qDebug() << "change end\t" << QTime::currentTime().toString("hh.mm.ss.zzz");
 }
 
 void ScenarioDocument::correctText()
