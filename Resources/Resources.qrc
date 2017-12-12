@@ -9,6 +9,9 @@
         <file>Fonts/embed/courierprime-italic.odttf</file>
         <file>Fonts/embed/courierprime-bold.odttf</file>
         <file>Fonts/embed/courierprime-bold-italic.odttf</file>
+        <file alias="Courier New Bold">Fonts/courb.ttf</file>
+        <file alias="Courier New Bold Italic">Fonts/courbi.ttf</file>
+        <file alias="Courier New Italic">Fonts/couri.ttf</file>
     </qresource>
     <qresource prefix="/Graphics">
         <file>Icons/folder.png</file>
