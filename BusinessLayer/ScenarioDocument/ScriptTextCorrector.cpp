@@ -136,8 +136,114 @@ void ScriptTextCorrector::correctCharactersNames(int _position, int _charsRemove
         return;
     }
 
+    //
+    // Определим границы работы алгоритма
+    //
+    int startPosition = _position;
+    int endPosition = _position + (std::max(_charsRemoved, _charsAdded));
+    if (startPosition == -1) {
+        startPosition = 0;
+        endPosition = m_document->characterCount();
+    }
+
+    //
+    // Начинаем работу с документом
+    //
     QTextCursor cursor(m_document);
     cursor.beginEditBlock();
+
+    //
+    // Расширим выделение
+    //
+    // ... от начала сцены
+    //
+    QVector<ScenarioBlockStyle::Type> sceneBorders = { ScenarioBlockStyle::SceneHeading,
+                                                       ScenarioBlockStyle::FolderHeader,
+                                                       ScenarioBlockStyle::FolderFooter };
+    QTextBlock block = m_document->findBlock(startPosition);
+    while (block != m_document->begin()) {
+        const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(block);
+        if (sceneBorders.contains(blockType)) {
+            break;
+        }
+
+        block = block.previous();
+    }
+    //
+    // ... и до конца
+    //
+    {
+        QTextBlock endBlock = m_document->findBlock(endPosition);
+        while (endBlock.isValid()
+               && endBlock != m_document->end()) {
+            const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(endBlock);
+            if (sceneBorders.contains(blockType)) {
+                break;
+            }
+
+            endBlock = endBlock.next();
+        }
+        endPosition = endBlock.previous().position();
+    }
+
+    //
+    // Корректируем имена пресонажей в изменённой части документа
+    //
+    QString lastCharacterName;
+    do {
+        const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(block);
+        //
+        // Если дошли до новой сцены, очищаем последнее найдённое имя персонажа
+        //
+        if (sceneBorders.contains(blockType)) {
+            lastCharacterName.clear();
+        }
+        //
+        // Корректируем имя персонажа при необходимости
+        //
+        else if (blockType == ScenarioBlockStyle::Character) {
+            const QString characterName = CharacterParser::name(block.text());
+            const bool isStartPositionInBlock =
+                    block.position() <= startPosition
+                    && block.position() + block.length() > startPosition;
+            //
+            // Если имя текущего персонажа не пусто и курсор не находится в редактируемом блоке
+            //
+            if (!characterName.isEmpty() && !isStartPositionInBlock) {
+                //
+                // Не второе подряд появление, удаляем из него вспомогательный текст, если есть
+                //
+                if (lastCharacterName.isEmpty()
+                    || characterName != lastCharacterName) {
+                    const QString blockText = block.text();
+                    if (blockText.endsWith(::continuedTerm(), Qt::CaseInsensitive)) {
+                        cursor.setPosition(block.position() + blockText.indexOf(::continuedTerm(), 0, Qt::CaseInsensitive));
+                        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+                        cursor.removeSelectedText();
+                    }
+                }
+                //
+                // Если второе подряд, добавляем вспомогательный текст
+                //
+                else if (characterName == lastCharacterName){
+                    const QString characterState = CharacterParser::state(block.text());
+                    if (characterState.isEmpty()) {
+                        //
+                        // ... вставляем текст
+                        //
+                        cursor.setPosition(block.position());
+                        cursor.movePosition(QTextCursor::EndOfBlock);
+                        cursor.insertText(::continuedTerm());
+                    }
+                }
+
+                lastCharacterName = characterName;
+            }
+        }
+
+        block = block.next();
+    } while (block.isValid()
+             && block.position() < endPosition);
 
     cursor.endEditBlock();
 }
