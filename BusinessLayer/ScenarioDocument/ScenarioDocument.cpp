@@ -32,8 +32,7 @@ ScenarioDocument::ScenarioDocument(QObject* _parent) :
     m_xmlHandler(new ScenarioXml(this)),
     m_document(new ScenarioTextDocument(this, m_xmlHandler)),
     m_model(new ScenarioModel(this, m_xmlHandler)),
-    m_inSceneDescriptionUpdate(false),
-    m_lastChangeStartPosition(0)
+    m_inSceneDescriptionUpdate(false)
 {
     initConnections();
 }
@@ -605,11 +604,6 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
     m_lastTextMd5Hash = currentTextMd5Hash;
 
     //
-    // Сохраняем позицию начала правок для последующей корректировки
-    //
-    m_lastChangeStartPosition = _position;
-
-    //
     // Если были удалены данные
     //
     if (_charsRemoved > 0) {
@@ -682,6 +676,15 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
         && _position > 0) {
         ++_position;
     }
+
+
+    //
+    // Сохраняем позицию начала правок для последующей корректировки
+    //
+    m_lastChange.position = _position;
+    m_lastChange.charactersAdded = _charsAdded;
+    m_lastChange.charactersRemoved = _charsRemoved;
+
 
     //
     // Сместить позиции всех сохранённых в кэше элементов после текущего на _charsRemoved и _charsAdded
@@ -988,17 +991,17 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
 
     updateDocumentScenesNumbers();
 
-    m_needToCorrectText = true;
+    m_lastChange.needToCorrectText = true;
 }
 
 void ScenarioDocument::correctText()
 {
-    if (!m_needToCorrectText) {
+    if (!m_lastChange.needToCorrectText) {
         return;
     }
 
-    m_needToCorrectText = false;
-    m_document->correct(m_lastChangeStartPosition);
+    m_lastChange.needToCorrectText = false;
+    m_document->correct(m_lastChange.position, m_lastChange.charactersRemoved, m_lastChange.charactersAdded);
 }
 
 void ScenarioDocument::initConnections()

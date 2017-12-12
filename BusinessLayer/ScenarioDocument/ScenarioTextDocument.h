@@ -127,9 +127,14 @@ namespace BusinessLogic
         QList<BusinessLogic::ScenarioBlockStyle::Type> visibleBlocksTypes() const;
 
         /**
+         * @brief Настроить необходимость корректировок
+         */
+        void setCorrectionOptions(bool _needToCorrectCharactersNames, bool _needToCorrectPageBreaks);
+
+        /**
          * @brief Произвести корректировки текста
          */
-        void correct(int _position = -1);
+        void correct(int _position = -1, int _charsRemoved = 0, int _charsAdded = 0);
 
     signals:
         /**

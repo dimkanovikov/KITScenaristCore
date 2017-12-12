@@ -280,15 +280,30 @@ namespace BusinessLogic
         bool m_inSceneDescriptionUpdate;
 
         /**
-         * @brief Есть ли необходимость в корректировках текста
-         */
-        bool m_needToCorrectText = false;
-
-        /**
-         * @brief Позиция начала последнего изменения
+         * @brief Параметры последнейго изменения текста сценария
          * @note Используется для корректировок текста после изменения текста документа
          */
-        int m_lastChangeStartPosition;
+        struct LastChangeOptions {
+            /**
+             * @brief Позиция изменения
+             */
+            int position = 0;
+
+            /**
+             * @brief Количество добавленных символов
+             */
+            int charactersAdded = 0;
+
+            /**
+             * @brief Количество удалённых символов
+             */
+            int charactersRemoved = 0;
+
+            /**
+             * @brief Есть ли необходимость в корректировках текста
+             */
+            bool needToCorrectText = false;
+        } m_lastChange;
     };
 }
 

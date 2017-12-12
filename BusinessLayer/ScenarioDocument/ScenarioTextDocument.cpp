@@ -545,9 +545,15 @@ QList<ScenarioBlockStyle::Type> ScenarioTextDocument::visibleBlocksTypes() const
     return m_outlineMode ? s_outlineVisibleBlocksTypes : s_scenarioVisibleBlocksTypes;
 }
 
-void ScenarioTextDocument::correct(int _position)
+void ScenarioTextDocument::setCorrectionOptions(bool _needToCorrectCharactersNames, bool _needToCorrectPageBreaks)
 {
-    m_corrector->correct(_position);
+    m_corrector->setNeedToCorrectCharactersNames(_needToCorrectCharactersNames);
+    m_corrector->setNeedToCorrectPageBreaks(_needToCorrectPageBreaks);
+}
+
+void ScenarioTextDocument::correct(int _position, int _charsRemoved, int _charsAdded)
+{
+    m_corrector->correct(_position, _charsRemoved, _charsAdded);
 }
 
 void ScenarioTextDocument::removeIdenticalParts(QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml>& _xmls, bool _reversed)

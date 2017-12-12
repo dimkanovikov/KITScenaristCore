@@ -23,7 +23,17 @@ namespace BusinessLogic
         Q_OBJECT
 
     public:
-        explicit ScriptTextCorrector(QTextDocument* _document);
+        explicit ScriptTextCorrector(QTextDocument* _document, const QString& _templateName = QString());
+
+        /**
+         * @brief Установить необходимость корректировать текст блоков имён персонажей
+         */
+        void setNeedToCorrectCharactersNames(bool _need);
+
+        /**
+         * @brief Установить необходимость корректировать текст на разрывах страниц
+         */
+        void setNeedToCorrectPageBreaks(bool _need);
 
         /**
          * @brief Очистить все сохранённые параметры
@@ -31,9 +41,9 @@ namespace BusinessLogic
         void clear();
 
         /**
-         * @brief Скорректировать текст сценария
+         * @brief Выполнить корректировки
          */
-        void correct(int _position = -1);
+        void correct(int _position = -1, int _charsRemoved = 0, int _charsAdded = 0);
 
         /**
          * @brief Определить позицию курсора с учётом декораций по позиции без учёта декораций
@@ -41,6 +51,16 @@ namespace BusinessLogic
         int correctedPosition(int _position) const;
 
     private:
+        /**
+         * @brief Скорректировать имена персонажей
+         */
+        void correctCharactersNames(int _position = -1, int _charsRemoved = 0, int _charsAdded = 0);
+
+        /**
+         * @brief Скорректировать текст сценария
+         */
+        void correctPageBreaks(int _position = -1);
+
         //
         // Функции работающие в рамках текущей коррекции
         //
@@ -107,6 +127,21 @@ namespace BusinessLogic
          * @brief Документ который будем корректировать
          */
         QTextDocument* m_document = nullptr;
+
+        /**
+         * @brief Шаблон оформления сценария
+         */
+        QString m_templateName;
+
+        /**
+         * @brief Необходимо ли корректировать текст блоков имён персонажей
+         */
+        bool m_needToCorrectCharactersNames = false;
+
+        /**
+         * @brief Необходимо ли корректировать текст на разрывах страниц
+         */
+        bool m_needToCorrectPageBreaks = true;
 
         /**
          * @brief Размер документа при последней проверке

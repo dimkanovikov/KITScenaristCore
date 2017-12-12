@@ -62,11 +62,29 @@ namespace {
 }
 
 
-ScriptTextCorrector::ScriptTextCorrector(QTextDocument* _document) :
+ScriptTextCorrector::ScriptTextCorrector(QTextDocument* _document, const QString& _templateName) :
     QObject(_document),
-    m_document(_document)
+    m_document(_document),
+    m_templateName(_templateName)
 {
     Q_ASSERT_X(m_document, Q_FUNC_INFO, "Document couldn't be a nullptr");
+}
+
+void ScriptTextCorrector::setNeedToCorrectCharactersNames(bool _need)
+{
+    if (m_needToCorrectCharactersNames != _need) {
+        m_needToCorrectCharactersNames = _need;
+        correctCharactersNames();
+    }
+}
+
+void ScriptTextCorrector::setNeedToCorrectPageBreaks(bool _need)
+{
+    if (m_needToCorrectPageBreaks != _need) {
+        m_needToCorrectPageBreaks = _need;
+        clear();
+        correctPageBreaks();
+    }
 }
 
 void ScriptTextCorrector::clear()
@@ -76,7 +94,55 @@ void ScriptTextCorrector::clear()
     m_blockItems.clear();
 }
 
-void ScriptTextCorrector::correct(int _position)
+void ScriptTextCorrector::correct(int _position, int _charRemoved, int _charAdded)
+{
+    //
+    // Первой обязательно выполняется корректировка текста имён персонажей,
+    // т.к. она может привести к изменению кол-ва строк имени персонажа
+    //
+
+    if (m_needToCorrectCharactersNames) {
+        correctCharactersNames(_position, _charRemoved, _charAdded);
+    }
+
+    if (m_needToCorrectPageBreaks) {
+        correctPageBreaks(_position);
+    }
+}
+
+int ScriptTextCorrector::correctedPosition(int _position) const
+{
+    int positionDelta = 0;
+    for (auto iter = m_decorations.begin(); iter != m_decorations.end(); ++iter) {
+        //
+        // Прерываем выполнение, если текущая декорация находится за искомой позицией
+        //
+        if (iter.key() > _position + positionDelta) {
+            break;
+        }
+
+        positionDelta += iter.value();
+    }
+    return _position + positionDelta;
+}
+
+void ScriptTextCorrector::correctCharactersNames(int _position, int _charsRemoved, int _charsAdded)
+{
+    //
+    // Избегаем рекурсии
+    //
+    const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
+    if (!canRun) {
+        return;
+    }
+
+    QTextCursor cursor(m_document);
+    cursor.beginEditBlock();
+
+    cursor.endEditBlock();
+}
+
+void ScriptTextCorrector::correctPageBreaks(int _position)
 {
     //
     // Избегаем рекурсии
@@ -311,7 +377,8 @@ void ScriptTextCorrector::correct(int _position)
         //
         // Работаем с переносами
         //
-        if (atPageEnd || atPageBreak) {
+        if (m_needToCorrectPageBreaks
+            && (atPageEnd || atPageBreak)) {
             switch (ScenarioBlockStyle::forBlock(block)) {
                 //
                 // Если это время и место
@@ -868,22 +935,6 @@ void ScriptTextCorrector::correct(int _position)
     cursor.endEditBlock();
 }
 
-int ScriptTextCorrector::correctedPosition(int _position) const
-{
-    int positionDelta = 0;
-    for (auto iter = m_decorations.begin(); iter != m_decorations.end(); ++iter) {
-        //
-        // Прерываем выполнение, если текущая декорация находится за искомой позицией
-        //
-        if (iter.key() > _position + positionDelta) {
-            break;
-        }
-
-        positionDelta += iter.value();
-    }
-    return _position + positionDelta;
-}
-
 void ScriptTextCorrector::moveCurrentBlockWithThreePreviousToNextPage(const QTextBlock& _prePrePreviousBlock, const QTextBlock& _prePreviousBlock, const QTextBlock& _previousBlock, qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight)
 {
     --m_currentBlockNumber;
@@ -1008,7 +1059,7 @@ void ScriptTextCorrector::breakDialogue(const QTextBlockFormat& _blockFormat, qr
     // Оформить его, как ремарку
     //
     ScenarioBlockStyle parentheticalStyle =
-        ScenarioTemplateFacade::getTemplate().blockStyle(ScenarioBlockStyle::Parenthetical);
+        ScenarioTemplateFacade::getTemplate(m_templateName).blockStyle(ScenarioBlockStyle::Parenthetical);
     QTextBlockFormat parentheticalFormat = parentheticalStyle.blockFormat();
     parentheticalFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrection, true);
     parentheticalFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrectionContinued, true);
