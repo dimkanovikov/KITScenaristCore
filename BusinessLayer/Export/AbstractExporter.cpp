@@ -4,9 +4,9 @@
 #include <BusinessLayer/Research/ResearchModelItem.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTemplate.h>
-#include <BusinessLayer/ScenarioDocument/ScenarioTextCorrector.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockInfo.h>
+#include <BusinessLayer/ScenarioDocument/ScriptTextCorrector.h>
 
 #include <Domain/Research.h>
 #include <Domain/Scenario.h>
@@ -478,15 +478,13 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
         }
 
         //
-        // Убираем старые декорации
+        // Cкорректируем сценарий
         //
-        ScenarioTextCorrector::removeDecorations(scenarioDocument);
-
-        //
-        // И корректируем документ в соответсвии с экспортируемым шаблоном
-        //
-        ScenarioTextCorrector::correctDocumentText(scenarioDocument);
+        ScriptTextCorrector corrector(scenarioDocument, exportStyle.name());
+        corrector.setNeedToCorrectPageBreaks(_exportParameters.checkPageBreaks);
+        corrector.correct();
     }
+
 
     //
     // Настроим новый документ

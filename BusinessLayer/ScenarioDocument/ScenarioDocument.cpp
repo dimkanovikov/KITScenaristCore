@@ -5,7 +5,6 @@
 #include "ScenarioTemplate.h"
 #include "ScenarioTextBlockInfo.h"
 #include "ScenarioTextBlockParsers.h"
-#include "ScenarioTextCorrector.h"
 #include "ScenarioTextDocument.h"
 #include "ScenarioXml.h"
 

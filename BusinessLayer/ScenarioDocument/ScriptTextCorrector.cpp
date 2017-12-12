@@ -204,7 +204,7 @@ void ScriptTextCorrector::correctCharactersNames(int _position, int _charsRemove
         else if (blockType == ScenarioBlockStyle::Character) {
             const QString characterName = CharacterParser::name(block.text());
             const bool isStartPositionInBlock =
-                    block.position() <= startPosition
+                    block.position() < startPosition
                     && block.position() + block.length() > startPosition;
             //
             // Если имя текущего персонажа не пусто и курсор не находится в редактируемом блоке

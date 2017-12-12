@@ -5,7 +5,6 @@
 
 #include <BusinessLayer/ScenarioDocument/ScenarioDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockInfo.h>
-#include <BusinessLayer/ScenarioDocument/ScenarioTextCorrector.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioReviewModel.h>
 
@@ -265,6 +264,14 @@ void ScenarioTextEdit::changeScenarioBlockType(ScenarioBlockStyle::Type _blockTy
 
 void ScenarioTextEdit::changeScenarioBlockTypeForSelection(ScenarioBlockStyle::Type _blockType)
 {
+    //
+    // Если нет выделения, меняем обычным способом
+    //
+    if (!textCursor().hasSelection()) {
+        changeScenarioBlockType(_blockType);
+        return;
+    }
+
     QTextCursor cursor = textCursor();
     cursor.beginEditBlock();
 
