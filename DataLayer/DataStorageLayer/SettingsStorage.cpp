@@ -604,6 +604,7 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("scenario-editor/shortcuts/noprintable_text", ShortcutHelper::makeShortcut("Ctrl+Esc"));
     m_defaultValues.insert("scenario-editor/shortcuts/scene_group_header", ShortcutHelper::makeShortcut("Ctrl+D"));
     m_defaultValues.insert("scenario-editor/shortcuts/folder_header", ShortcutHelper::makeShortcut("Ctrl+Space"));
+    m_defaultValues.insert("scenario-editor/shortcuts/lyrics", ShortcutHelper::makeShortcut("Ctrl+K"));
     //
     m_defaultValues.insert("scenario-editor/styles-jumping/from-scene_heading-by-tab", QString::number(ScenarioBlockStyle::SceneCharacters));
     m_defaultValues.insert("scenario-editor/styles-jumping/from-scene_heading-by-enter", QString::number(ScenarioBlockStyle::Action));
@@ -657,6 +658,7 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("scenario-editor/styles-changing/from-lyrics-by-tab", QString::number(ScenarioBlockStyle::Parenthetical));
     m_defaultValues.insert("scenario-editor/styles-changing/from-lyrics-by-enter", QString::number(ScenarioBlockStyle::Action));
     //
+    m_defaultValues.insert("scenario-editor/use-open-bracket-in-dialogue-for-parenthetical", "1");
     m_defaultValues.insert("scenario-editor/review/use-highlight", "1");
 
     m_defaultValues.insert("chronometry/used", "1");

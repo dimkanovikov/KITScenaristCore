@@ -2,6 +2,9 @@
 
 #include "../ScenarioTextEdit.h"
 
+#include <DataLayer/DataStorageLayer/StorageFacade.h>
+#include <DataLayer/DataStorageLayer/SettingsStorage.h>
+
 #include <QKeyEvent>
 #include <QTextBlock>
 
@@ -221,17 +224,23 @@ void DialogHandler::handleOther(QKeyEvent* _event)
     // ... курсор в текущем положении
     QTextCursor cursor = editor()->textCursor();
     // ... блок текста в котором находится курсор
-    QTextBlock currentBlock = cursor.block();
+    const QTextBlock currentBlock = cursor.block();
     // ... текст до курсора
-    QString cursorBackwardText = currentBlock.text().left(cursor.positionInBlock());
+    const QString cursorBackwardText = currentBlock.text().left(cursor.positionInBlock());
     // ... текст после курсора
-    QString cursorForwardText = currentBlock.text().mid(cursor.positionInBlock());
+    const QString cursorForwardText = currentBlock.text().mid(cursor.positionInBlock());
+    // ... необходимо ли менять стиль при открытой скобке на ремарку
+    const bool needToCheckOpenBracket =
+            DataStorageLayer::StorageFacade::settingsStorage()->value(
+                "scenario-editor/use-open-bracket-in-dialogue-for-parenthetical",
+                DataStorageLayer::SettingsStorage::ApplicationSettings).toInt();
 
 
     //
     // Обработка
     //
-    if (cursorBackwardText.endsWith("(")
+    if (needToCheckOpenBracket
+        && cursorBackwardText.endsWith("(")
         && _event != 0
         && _event->text() == "(") {
         //! Если нажата открывающая скобка
