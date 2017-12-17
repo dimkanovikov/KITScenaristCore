@@ -473,7 +473,8 @@ QVariant ResearchModel::data(const QModelIndex& _index, int _role) const
 
     ResearchModelItem* item = itemForIndex(_index);
     switch (_role) {
-        case Qt::DisplayRole: {
+        case Qt::DisplayRole:
+        case Qt::ToolTipRole: {
             result = item->name();
             break;
         }
