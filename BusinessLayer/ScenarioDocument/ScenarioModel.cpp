@@ -51,6 +51,7 @@ void ScenarioModel::prependItem(ScenarioModelItem* _item, ScenarioModelItem* _pa
 
         beginInsertRows(parentIndex, itemRowIndex, itemRowIndex);
         _parentItem->prependItem(_item);
+        ++m_scenesCount;
         endInsertRows();
     }
 }
@@ -84,6 +85,7 @@ void ScenarioModel::addItem(ScenarioModelItem* _item, ScenarioModelItem* _parent
 
         beginInsertRows(parentIndex, itemRowIndex, itemRowIndex);
         _parentItem->insertItem(itemRowIndex, _item);
+        ++m_scenesCount;
         endInsertRows();
     }
 }
@@ -101,6 +103,7 @@ void ScenarioModel::insertItem(ScenarioModelItem* _item, ScenarioModelItem* _aft
 
         beginInsertRows(parentIndex, itemRowIndex, itemRowIndex);
         parent->insertItem(itemRowIndex, _item);
+        ++m_scenesCount;
         endInsertRows();
     }
 }
@@ -129,6 +132,7 @@ void ScenarioModel::removeItem(ScenarioModelItem* _item)
     if (itemRowIndex >= 0) {
         beginRemoveRows(itemParentIndex, itemRowIndex, itemRowIndex);
         itemParent->removeItem(_item);
+        --m_scenesCount;
         endRemoveRows();
     }
 }
@@ -142,6 +146,7 @@ void ScenarioModel::removeItems(const QVector<ScenarioModelItem*>& _items)
         beginRemoveRows(itemParentIndex, firstRow, lastRow);
         for (ScenarioModelItem* itemToDelete : _itemsToDelete) {
             _parent->removeItem(itemToDelete);
+            --m_scenesCount;
         }
         endRemoveRows();
     };
