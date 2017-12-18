@@ -3,6 +3,7 @@
 
 #include "qlightboxdialog.h"
 
+class QAbstractItemModel;
 class QDialogButtonBox;
 class QLabel;
 #ifndef MOBILE_OS
@@ -37,8 +38,12 @@ public:
     /**
      * @brief Выбор элемента из списка
      */
+    /** @{ */
     static QString getItem(QWidget* _parent, const QString& _title, const QStringList& _items,
         const QString& _selectedItem = QString());
+    static QString getItem(QWidget* _parent, const QString& _title, const QAbstractItemModel* _itemsModel,
+        const QString& _selectedItem = QString());
+    /** @} */
 
 private:
     explicit QLightBoxInputDialog(QWidget* _parent = 0, bool _isContentStretchable = false);

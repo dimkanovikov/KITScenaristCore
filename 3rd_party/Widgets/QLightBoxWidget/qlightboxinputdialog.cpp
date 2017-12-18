@@ -4,12 +4,14 @@
 #include <3rd_party/Widgets/MaterialLineEdit/MaterialLineEdit.h>
 #include <3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.h>
 
+#include <QAbstractItemModel>
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
 #include <QPlainTextEdit>
 #include <QRadioButton>
+#include <QStringListModel>
 #include <QVBoxLayout>
 
 namespace {
@@ -57,26 +59,30 @@ QString QLightBoxInputDialog::getLongText(QWidget* _parent, const QString& _titl
 
 QString QLightBoxInputDialog::getItem(QWidget* _parent, const QString& _title, const QStringList& _items, const QString& _selectedItem)
 {
+    QStringListModel model(_items);
+    return getItem(_parent, _title, &model, _selectedItem);
+}
+
+QString QLightBoxInputDialog::getItem(QWidget* _parent, const QString& _title, const QAbstractItemModel* _itemsModel, const QString& _selectedItem)
+{
     const bool STRETCH_LIST_WIDGET = true;
     QLightBoxInputDialog dialog(_parent, STRETCH_LIST_WIDGET);
     dialog.setWindowTitle(_title);
     dialog.m_label->hide();
     dialog.m_lineEdit->hide();
     dialog.m_textEdit->hide();
+
     //
     // Наполняем список переключателями
     //
     {
-        QListWidgetItem* item;
-        foreach (const QString& itemText, _items) {
-            item = new QListWidgetItem(dialog.m_listWidget);
-            dialog.m_listWidget->setItemWidget(item, new QRadioButton(itemText));
-        }
-        const int FIRST_ITEM = 0;
-        const int ITEM_FOR_SELECT = _selectedItem.isEmpty() ? FIRST_ITEM : _items.indexOf(_selectedItem);
-        QListWidgetItem* itemForSelect = dialog.m_listWidget->item(ITEM_FOR_SELECT);
-        if (QRadioButton* radioButton = qobject_cast<QRadioButton*>(dialog.m_listWidget->itemWidget(itemForSelect))) {
-            radioButton->setChecked(true);
+        for (int row = 0; row < _itemsModel->rowCount(); ++row) {
+            QListWidgetItem* item = new QListWidgetItem(dialog.m_listWidget);
+            QRadioButton* radioButton = new QRadioButton(_itemsModel->data(_itemsModel->index(row, 0)).toString());
+            if (radioButton->text() == _selectedItem) {
+                radioButton->setChecked(true);
+            }
+            dialog.m_listWidget->setItemWidget(item, radioButton);
         }
     }
 

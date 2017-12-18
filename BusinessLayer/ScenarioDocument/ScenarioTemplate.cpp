@@ -707,6 +707,13 @@ QString ScenarioTemplate::oldHebrewTemplateName()
     return "Hebrew script template";
 }
 
+void ScenarioTemplate::setIsNew()
+{
+    m_isDefault = false;
+    m_name.prepend(QApplication::translate("BusinessLogic::ScenarioTemplate", "Copy of "));
+    m_description.clear();
+}
+
 void ScenarioTemplate::saveToFile(const QString& _filePath) const
 {
     QFile templateFile(_filePath);

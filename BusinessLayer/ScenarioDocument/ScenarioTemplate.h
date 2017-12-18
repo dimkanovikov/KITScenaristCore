@@ -451,6 +451,11 @@ namespace BusinessLogic
         ScenarioTemplate() {}
 
         /**
+         * @brief Назначить шаблон новым
+         */
+        void setIsNew();
+
+        /**
          * @brief Сохранить шаблон в файл
          */
         void saveToFile(const QString& _filePath) const;
