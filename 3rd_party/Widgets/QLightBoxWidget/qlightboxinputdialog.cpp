@@ -1,5 +1,6 @@
 #include "qlightboxinputdialog.h"
 
+#include <3rd_party/Delegates/TreeViewItemDelegate/TreeViewItemDelegate.h>
 #include <3rd_party/Helpers/ScrollerHelper.h>
 #include <3rd_party/Widgets/MaterialLineEdit/MaterialLineEdit.h>
 #include <3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.h>
@@ -76,27 +77,24 @@ QString QLightBoxInputDialog::getItem(QWidget* _parent, const QString& _title, c
     // Наполняем список переключателями
     //
     {
+        const int invalidRow = -1;
+        int selectedRow = invalidRow;
         for (int row = 0; row < _itemsModel->rowCount(); ++row) {
-            QListWidgetItem* item = new QListWidgetItem(dialog.m_listWidget);
-            QRadioButton* radioButton = new QRadioButton(_itemsModel->data(_itemsModel->index(row, 0)).toString());
-            if (radioButton->text() == _selectedItem) {
-                radioButton->setChecked(true);
+            const QString itemText = _itemsModel->data(_itemsModel->index(row, 0)).toString();
+            dialog.m_listWidget->addItem(itemText);
+            if (itemText == _selectedItem) {
+                selectedRow = row;
             }
-            dialog.m_listWidget->setItemWidget(item, radioButton);
+        }
+
+        if (selectedRow != invalidRow) {
+            dialog.m_listWidget->setCurrentRow(selectedRow);
         }
     }
 
     QString result;
     if (dialog.exec() == QLightBoxDialog::Accepted) {
-        for (int itemIndex = 0; itemIndex < dialog.m_listWidget->count(); ++itemIndex) {
-            QListWidgetItem* item = dialog.m_listWidget->item(itemIndex);
-            if (QRadioButton* radioButton = qobject_cast<QRadioButton*>(dialog.m_listWidget->itemWidget(item))) {
-                if (radioButton->isChecked()) {
-                    result = radioButton->text();
-                    break;
-                }
-            }
-        }
+        result = dialog.m_listWidget->currentIndex().data().toString();
     }
     return result;
 }
@@ -126,6 +124,8 @@ void QLightBoxInputDialog::initView()
 
     m_listWidget->setProperty("dialog-container", true);
     m_listWidget->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+    m_listWidget->setItemDelegate(new TreeViewItemDelegate(m_listWidget));
+    m_listWidget->setMinimumWidth(500);
 #ifdef MOBILE_OS
     ScrollerHelper::addScroller(m_listWidget);
 #endif
