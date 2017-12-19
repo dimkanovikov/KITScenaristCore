@@ -926,7 +926,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
     if (m_highlightCurrentLine) {
         QPainter painter(viewport());
         const QRect cursorR = cursorRect();
-        const QRect highlightRect(0, cursorR.top(), width, cursorR.height());
+        const QRect highlightRect(0, cursorR.top(), viewport()->width(), cursorR.height());
         QColor lineColor = palette().highlight().color().lighter();
         lineColor.setAlpha(40);
         painter.fillRect(highlightRect, lineColor);
