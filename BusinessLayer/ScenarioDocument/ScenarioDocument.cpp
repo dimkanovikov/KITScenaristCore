@@ -1242,7 +1242,13 @@ void ScenarioDocument::updateDocumentScenesAndDialoguesNumbers()
                 if (info == nullptr) {
                     info = new CharacterBlockInfo;
                 }
-                info->setDialogueNumber(++dialogueNumber);
+                //
+                // Если блок не является декорацией, увеличиваем номер реплики
+                //
+                if (!block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                    ++dialogueNumber;
+                }
+                info->setDialogueNumber(dialogueNumber);
                 block.setUserData(info);
                 break;
             }

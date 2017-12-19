@@ -1257,7 +1257,9 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                             // Прорисовка номеров реплик, если необходимо
                             //
                             if (m_showDialoguesNumbers
-                                && blockType == ScenarioBlockStyle::Character) {
+                                && blockType == ScenarioBlockStyle::Character
+                                && (!block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)
+                                    || block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrectionCharacter))) {
                                 //
                                 // Определим номер реплики
                                 //
