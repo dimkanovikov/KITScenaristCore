@@ -146,9 +146,9 @@ QString ScenarioDocument::itemUuid(ScenarioModelItem* _item) const
     QTextCursor cursor(m_document);
     cursor.setPosition(_item->position());
     QTextBlockUserData* textBlockData = cursor.block().userData();
-    ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
+    SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
     if (info == 0) {
-        info = new ScenarioTextBlockInfo(_item->uuid());
+        info = new SceneHeadingBlockInfo(_item->uuid());
     }
     cursor.block().setUserData(info);
 
@@ -162,7 +162,7 @@ QString ScenarioDocument::itemColors(ScenarioModelItem* _item) const
 
     QString colors;
     QTextBlockUserData* textBlockData = cursor.block().userData();
-    if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData)) {
+    if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
         colors = info->colors();
     }
     return colors;
@@ -184,9 +184,9 @@ void ScenarioDocument::setItemColorsAtPosition(int _position, const QString& _co
         cursor.setPosition(item->position());
 
         QTextBlockUserData* textBlockData = cursor.block().userData();
-        ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
+        SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
         if (info == 0) {
-            info = new ScenarioTextBlockInfo(item->uuid());
+            info = new SceneHeadingBlockInfo(item->uuid());
         }
         info->setColors(_colors);
         cursor.block().setUserData(info);
@@ -203,7 +203,7 @@ QString ScenarioDocument::itemStamp(ScenarioModelItem* _item) const
 
     QString stamp;
     QTextBlockUserData* textBlockData = cursor.block().userData();
-    if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData)) {
+    if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
         stamp = info->stamp();
     }
     return stamp;
@@ -225,9 +225,9 @@ void ScenarioDocument::setItemStampAtPosition(int _position, const QString& _sta
         cursor.setPosition(item->position());
 
         QTextBlockUserData* textBlockData = cursor.block().userData();
-        ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
+        SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
         if (info == 0) {
-            info = new ScenarioTextBlockInfo(item->uuid());
+            info = new SceneHeadingBlockInfo(item->uuid());
         }
         info->setStamp(_stamp);
         cursor.block().setUserData(info);
@@ -253,7 +253,7 @@ QString ScenarioDocument::itemTitle(ScenarioModelItem* _item) const
 
     QString title;
     QTextBlockUserData* textBlockData = cursor.block().userData();
-    if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData)) {
+    if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
         title = info->title();
     }
     return title;
@@ -275,9 +275,9 @@ void ScenarioDocument::setItemTitleAtPosition(int _position, const QString& _tit
         cursor.setPosition(item->position());
 
         QTextBlockUserData* textBlockData = cursor.block().userData();
-        ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
+        SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
         if (info == 0) {
-            info = new ScenarioTextBlockInfo(item->uuid());
+            info = new SceneHeadingBlockInfo(item->uuid());
         }
         info->setTitle(_title);
         cursor.block().setUserData(info);
@@ -303,7 +303,7 @@ QString ScenarioDocument::itemDescription(ScenarioModelItem* _item) const
 
     QString description;
     QTextBlockUserData* textBlockData = cursor.block().userData();
-    if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData)) {
+    if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
         description = info->description();
     }
     return description;
@@ -328,9 +328,9 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
             cursor.setPosition(item->position());
 
             QTextBlockUserData* textBlockData = cursor.block().userData();
-            ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
+            SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
             if (info == 0) {
-                info = new ScenarioTextBlockInfo(item->uuid());
+                info = new SceneHeadingBlockInfo(item->uuid());
             }
             info->setDescription(_description);
             cursor.block().setUserData(info);
@@ -591,7 +591,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
             // ... даже если текст не изменился, обновляем номера сцен, т.к. могла измениться
             //     модель документа, например добавился комментарий от редактора
             //
-            updateDocumentScenesNumbers();
+            updateDocumentScenesAndDialoguesNumbers();
             return;
         }
     }
@@ -988,7 +988,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
     }
 
 
-    updateDocumentScenesNumbers();
+    updateDocumentScenesAndDialoguesNumbers();
 
     m_lastChange.needToCorrectText = true;
 }
@@ -1134,9 +1134,9 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
     // ... обновляем описание
     //
     cursor.setPosition(_itemStartPos);
-    ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(cursor.block().userData());
+    SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(cursor.block().userData());
     if (info == nullptr) {
-        info = new ScenarioTextBlockInfo(_item->uuid());
+        info = new SceneHeadingBlockInfo(_item->uuid());
     }
     info->setDescription(description);
     cursor.block().setUserData(info);
@@ -1212,28 +1212,42 @@ ScenarioModelItem* ScenarioDocument::itemForPosition(int _position, bool _findNe
     return item;
 }
 
-void ScenarioDocument::updateDocumentScenesNumbers()
+void ScenarioDocument::updateDocumentScenesAndDialoguesNumbers()
 {
     m_model->updateSceneNumbers();
 
     //
-    // Проходим документ и обновляем номера сцен
+    // Проходим документ и обновляем номера сцен и диалогов
     //
     QTextBlock block = document()->begin();
+    int dialogueNumber = 0;
     while (block.isValid()) {
-        if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::SceneHeading) {
-            if (ScenarioModelItem* item = itemForPosition(block.position())) {
-                //
-                // Обновим данные документа
-                //
-                QTextBlockUserData* textBlockData = block.userData();
-                ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
-                if (info == 0) {
-                    info = new ScenarioTextBlockInfo(item->uuid());
+        switch (ScenarioBlockStyle::forBlock(block)) {
+            case ScenarioBlockStyle::SceneHeading: {
+                if (ScenarioModelItem* item = itemForPosition(block.position())) {
+                    QTextBlockUserData* textBlockData = block.userData();
+                    SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
+                    if (info == 0) {
+                        info = new SceneHeadingBlockInfo(item->uuid());
+                    }
+                    info->setSceneNumber(item->sceneNumber());
+                    block.setUserData(info);
                 }
-                info->setSceneNumber(item->sceneNumber());
-                block.setUserData(info);
+                break;
             }
+
+            case ScenarioBlockStyle::Character: {
+                QTextBlockUserData* textBlockData = block.userData();
+                CharacterBlockInfo* info = dynamic_cast<CharacterBlockInfo*>(textBlockData);
+                if (info == nullptr) {
+                    info = new CharacterBlockInfo;
+                }
+                info->setDialogueNumber(++dialogueNumber);
+                block.setUserData(info);
+                break;
+            }
+
+            default: break;
         }
 
         block = block.next();

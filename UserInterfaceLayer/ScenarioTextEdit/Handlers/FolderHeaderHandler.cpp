@@ -83,8 +83,8 @@ void FolderHeaderHandler::handleEnter(QKeyEvent*)
                     //
                     QTextCursor cursor = editor()->textCursor();
                     cursor.movePosition(QTextCursor::PreviousBlock);
-                    if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*> (cursor.block().userData())) {
-                        ScenarioTextBlockInfo* movedInfo = info->clone();
+                    if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*> (cursor.block().userData())) {
+                        SceneHeadingBlockInfo* movedInfo = info->clone();
                         cursor.block().setUserData(nullptr);
                         cursor.movePosition(QTextCursor::NextBlock);
                         cursor.block().setUserData(movedInfo);

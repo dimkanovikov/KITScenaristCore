@@ -8,10 +8,10 @@ namespace BusinessLogic
     /**
      * @brief Класс для хранения информации о сцене
      */
-    class ScenarioTextBlockInfo : public QTextBlockUserData
+    class SceneHeadingBlockInfo : public QTextBlockUserData
     {
     public:
-        ScenarioTextBlockInfo(const QString& _uuid = QString());
+        SceneHeadingBlockInfo(const QString& _uuid = QString());
 
         /**
          * @brief Идентификатор сцены
@@ -81,7 +81,7 @@ namespace BusinessLogic
         /**
          * @brief Создать дубликат
          */
-        ScenarioTextBlockInfo* clone() const;
+        SceneHeadingBlockInfo* clone() const;
 
     private:
         /**
@@ -113,6 +113,31 @@ namespace BusinessLogic
          * @brief Текст описания
          */
         QString m_description;
+    };
+
+    /**
+     * @brief Класс хранящий информацию о блоке реплики
+     */
+    class CharacterBlockInfo : public QTextBlockUserData
+    {
+    public:
+        CharacterBlockInfo() = default;
+
+        /**
+         * @brief Получить номер реплики
+         */
+        int dialogueNumbder() const;
+
+        /**
+         * @brief Установить номер реплики
+         */
+        void setDialogueNumber(int _number);
+
+    private:
+        /**
+         * @brief Порядковый номер реплики персонажа
+         */
+        int m_dialogueNumber = 0;
     };
 }
 

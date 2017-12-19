@@ -82,7 +82,7 @@ namespace {
                 % "#"
                 % QString::number(ScenarioBlockStyle::forBlock(_block));
 
-        if (ScenarioTextBlockInfo* blockInfo = dynamic_cast<ScenarioTextBlockInfo*>(_block.userData())) {
+        if (SceneHeadingBlockInfo* blockInfo = dynamic_cast<SceneHeadingBlockInfo*>(_block.userData())) {
             hash = hash
                     % "#"
                     % blockInfo->uuid()
@@ -272,9 +272,9 @@ QString ScenarioXml::scenarioToXml()
                 //
                 QString uuidColorsAndTitle;
                 if (canHaveColors) {
-                    ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(currentBlock.userData());
+                    SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(currentBlock.userData());
                     if (info == nullptr) {
-                        info = new ScenarioTextBlockInfo;
+                        info = new SceneHeadingBlockInfo;
                         currentBlock.setUserData(info);
                     }
                     //
@@ -545,9 +545,9 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 // Если возможно, сохраним uuid, цвета элемента и его название
                 //
                 if (canHaveUuidColorsAndTitle) {
-                    ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(currentBlock.userData());
+                    SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(currentBlock.userData());
                     if (info == nullptr) {
-                        ScenarioTextBlockInfo* info = new ScenarioTextBlockInfo;
+                        SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
                         currentBlock.setUserData(info);
                     }
                     //
@@ -774,8 +774,8 @@ int ScenarioXml::xmlToScenario(ScenarioModelItem* _insertParent, ScenarioModelIt
         //
         else {
             cursor.movePosition(QTextCursor::PreviousBlock);
-            if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*> (cursor.block().userData())) {
-                ScenarioTextBlockInfo* movedInfo = info->clone();
+            if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*> (cursor.block().userData())) {
+                SceneHeadingBlockInfo* movedInfo = info->clone();
                 cursor.block().setUserData(0);
                 cursor.movePosition(QTextCursor::NextBlock);
                 cursor.block().setUserData(movedInfo);
@@ -930,7 +930,7 @@ void ScenarioXml::xmlToScenarioV0(int _position, const QString& _xml)
                 if (tokenType == ScenarioBlockStyle::SceneHeading
                     || tokenType == ScenarioBlockStyle::FolderHeader) {
                     QString synopsis = reader.attributes().value("synopsis").toString();
-                    ScenarioTextBlockInfo* info = new ScenarioTextBlockInfo;
+                    SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
                     QTextDocument doc;
                     doc.setHtml(synopsis);
                     info->setDescription(doc.toPlainText());
@@ -1064,7 +1064,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                     //
                     if (tokenType == ScenarioBlockStyle::SceneHeading
                         || tokenType == ScenarioBlockStyle::FolderHeader) {
-                        ScenarioTextBlockInfo* info = new ScenarioTextBlockInfo;
+                        SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
                         if (reader.attributes().hasAttribute(ATTRIBUTE_UUID)) {
                             const QString uuid = reader.attributes().value(ATTRIBUTE_UUID).toString();
                             if (!_rebuildUuids || !isScenarioHaveUuid(uuid)) {
@@ -1186,7 +1186,7 @@ bool ScenarioXml::isScenarioHaveUuid(const QString& _uuid) const
         const ScenarioBlockStyle::Type currentBlockType = ScenarioBlockStyle::forBlock(currentBlock);
         if (currentBlockType == ScenarioBlockStyle::SceneHeading
             || currentBlockType == ScenarioBlockStyle::FolderHeader) {
-            if (ScenarioTextBlockInfo* info = static_cast<ScenarioTextBlockInfo*>(currentBlock.userData())) {
+            if (SceneHeadingBlockInfo* info = static_cast<SceneHeadingBlockInfo*>(currentBlock.userData())) {
                 if (info->uuid() == _uuid) {
                     return true;
                 }

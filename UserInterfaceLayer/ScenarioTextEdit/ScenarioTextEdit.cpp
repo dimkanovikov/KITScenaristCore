@@ -49,6 +49,7 @@ ScenarioTextEdit::ScenarioTextEdit(QWidget* _parent) :
     m_lastMouseClickTime(0),
     m_storeDataWhenEditing(true),
     m_showSceneNumbers(false),
+    m_showDialoguesNumbers(false),
     m_highlightCurrentLine(false),
     m_capitalizeFirstWord(false),
     m_correctDoubleCapitals(false),
@@ -361,6 +362,18 @@ void ScenarioTextEdit::setShowSceneNumbers(bool _show)
 {
     if (m_showSceneNumbers != _show) {
         m_showSceneNumbers = _show;
+    }
+}
+
+bool ScenarioTextEdit::showDialoguesNumbers() const
+{
+    return m_showDialoguesNumbers;
+}
+
+void ScenarioTextEdit::setShowDialoguesNumbers(bool _show)
+{
+    if (m_showDialoguesNumbers != _show) {
+        m_showDialoguesNumbers = _show;
     }
 }
 
@@ -1075,12 +1088,13 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             //
             const int pageLeft = 0;
             const int pageRight = viewport()->width();
+            const int spaceBetweenSceneNumberAndText = 10;
             const int textLeft = pageLeft
                                  - (QLocale().textDirection() == Qt::LeftToRight ? 0 : horizontalScrollBar()->maximum())
-                                 + document()->rootFrame()->frameFormat().leftMargin() - 10;
+                                 + document()->rootFrame()->frameFormat().leftMargin() - spaceBetweenSceneNumberAndText;
             const int textRight = pageRight
                                   + (QLocale().textDirection() == Qt::LeftToRight ? horizontalScrollBar()->maximum() : 0)
-                                  - document()->rootFrame()->frameFormat().rightMargin() + 10;
+                                  - document()->rootFrame()->frameFormat().rightMargin() + spaceBetweenSceneNumberAndText;
 
             QPainter painter(viewport());
             clipPageDecorationRegions(&painter);
@@ -1152,7 +1166,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         lastBlockBottom = cursorR.top() - (cursorR.height() / 2);
                         colorRectWidth = QFontMetrics(cursor.charFormat().font()).width(".");
                         lastSceneColor = QColor();
-                        if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(block.userData())) {
+                        if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(block.userData())) {
                             if (!info->colors().isEmpty()) {
                                 lastSceneColor = QColor(info->colors().split(";").first());
                             }
@@ -1220,7 +1234,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                 // Определим номер сцены
                                 //
                                 QTextBlockUserData* textBlockData = block.userData();
-                                if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData)) {
+                                if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
                                     const QString sceneNumber = QString::number(info->sceneNumber()) + ".";
 
                                     //
@@ -1237,6 +1251,35 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                     QRectF rect(topLeft, bottomRight);
                                     painter.setFont(cursor.charFormat().font());
                                     painter.drawText(rect, Qt::AlignRight | Qt::AlignTop, sceneNumber);
+                                }
+                            }
+                            //
+                            // Прорисовка номеров реплик, если необходимо
+                            //
+                            if (m_showDialoguesNumbers
+                                && blockType == ScenarioBlockStyle::Character) {
+                                //
+                                // Определим номер реплики
+                                //
+                                QTextBlockUserData* textBlockData = block.userData();
+                                if (CharacterBlockInfo* info = dynamic_cast<CharacterBlockInfo*>(textBlockData)) {
+                                    const QString dialogueNumber = QString::number(info->dialogueNumbder()) + ".";
+
+                                    //
+                                    // Определим область для отрисовки и выведем номер реплики в редактор
+                                    //
+                                    painter.setFont(cursor.charFormat().font());
+                                    const int numberDelta = painter.fontMetrics().width(dialogueNumber);
+                                    QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                                                    ? textLeft + leftDelta + spaceBetweenSceneNumberAndText
+                                                    : textRight + leftDelta - spaceBetweenSceneNumberAndText - numberDelta,
+                                                    cursorR.top());
+                                    QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                                        ? textLeft + leftDelta + spaceBetweenSceneNumberAndText + numberDelta
+                                                        : textRight + leftDelta - spaceBetweenSceneNumberAndText,
+                                                        cursorR.bottom());
+                                    QRectF rect(topLeft, bottomRight);
+                                    painter.drawText(rect, Qt::AlignLeft | Qt::AlignTop, dialogueNumber);
                                 }
                             }
                         }

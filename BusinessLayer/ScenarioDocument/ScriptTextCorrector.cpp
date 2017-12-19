@@ -15,7 +15,7 @@
 using BusinessLogic::CharacterParser;
 using BusinessLogic::ScenarioBlockStyle;
 using BusinessLogic::ScenarioTemplateFacade;
-using BusinessLogic::ScenarioTextBlockInfo;
+using BusinessLogic::SceneHeadingBlockInfo;
 using BusinessLogic::ScriptTextCorrector;
 
 namespace {
@@ -1307,8 +1307,8 @@ void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _s
         //
         // Сохраним данные блока, чтобы перенести их к реальному владельцу
         //
-        ScenarioTextBlockInfo* blockInfo = nullptr;
-        if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(_cursor.block().userData())) {
+        SceneHeadingBlockInfo* blockInfo = nullptr;
+        if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(_cursor.block().userData())) {
             blockInfo = info->clone();
             _cursor.block().setUserData(nullptr);
         }

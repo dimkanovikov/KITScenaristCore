@@ -236,7 +236,7 @@ namespace BusinessLogic
         /**
          * @brief Обновить номера сцен в блоках информации документа
          */
-        void updateDocumentScenesNumbers();
+        void updateDocumentScenesAndDialoguesNumbers();
 
         /**
          * @brief Загрузить документ из сценария

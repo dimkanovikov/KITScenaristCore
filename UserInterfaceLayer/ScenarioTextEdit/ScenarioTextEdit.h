@@ -84,6 +84,16 @@ namespace UserInterface
         void setShowSceneNumbers(bool _show);
 
         /**
+         * @brief Показываеются ли в редакторе номера реплик
+         */
+        bool showDialoguesNumbers() const;
+
+        /**
+         * @brief Установить необходимость показывать номера реплик
+         */
+        void setShowDialoguesNumbers(bool _show);
+
+        /**
          * @brief Подсвечивается ли текущая строка в редакторе
          */
         bool highlightCurrentLine() const;
@@ -329,6 +339,11 @@ namespace UserInterface
          * @brief Отображать ли номер сцен
          */
         bool m_showSceneNumbers;
+
+        /**
+         * @brief Отображать ли номера реплик
+         */
+        bool m_showDialoguesNumbers;
 
         /**
          * @brief Подсвечивать текущую линию

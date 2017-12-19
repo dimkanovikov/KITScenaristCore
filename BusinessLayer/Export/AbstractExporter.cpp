@@ -468,7 +468,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                 //
                 // ... пользовательские данные
                 //
-                if (ScenarioTextBlockInfo* sceneInfo = dynamic_cast<ScenarioTextBlockInfo*>(sourceCursor.block().userData())) {
+                if (SceneHeadingBlockInfo* sceneInfo = dynamic_cast<SceneHeadingBlockInfo*>(sourceCursor.block().userData())) {
                     destCursor.block().setUserData(sceneInfo->clone());
                 }
             }
@@ -687,7 +687,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                     // Данные сцены
                     //
                     QTextBlockUserData* textBlockData = sourceDocumentCursor.block().userData();
-                    ScenarioTextBlockInfo* sceneInfo = dynamic_cast<ScenarioTextBlockInfo*>(textBlockData);
+                    SceneHeadingBlockInfo* sceneInfo = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
                     if (sceneInfo != 0) {
                         destDocumentCursor.block().setUserData(sceneInfo->clone());
                     }

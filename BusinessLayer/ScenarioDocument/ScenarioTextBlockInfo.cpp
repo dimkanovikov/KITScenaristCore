@@ -7,7 +7,7 @@
 using namespace BusinessLogic;
 
 
-ScenarioTextBlockInfo::ScenarioTextBlockInfo(const QString& _uuid) :
+SceneHeadingBlockInfo::SceneHeadingBlockInfo(const QString& _uuid) :
     m_uuid(_uuid),
     m_sceneNumber(0)
 {
@@ -16,77 +16,77 @@ ScenarioTextBlockInfo::ScenarioTextBlockInfo(const QString& _uuid) :
     }
 }
 
-QString ScenarioTextBlockInfo::uuid() const
+QString SceneHeadingBlockInfo::uuid() const
 {
     return m_uuid;
 }
 
-void ScenarioTextBlockInfo::setUuid(const QString& _uuid)
+void SceneHeadingBlockInfo::setUuid(const QString& _uuid)
 {
     if (m_uuid != _uuid) {
         m_uuid = _uuid;
     }
 }
 
-void ScenarioTextBlockInfo::rebuildUuid()
+void SceneHeadingBlockInfo::rebuildUuid()
 {
     m_uuid = QUuid::createUuid().toString();
 }
 
-int ScenarioTextBlockInfo::sceneNumber() const
+int SceneHeadingBlockInfo::sceneNumber() const
 {
     return m_sceneNumber;
 }
 
-void ScenarioTextBlockInfo::setSceneNumber(int _number)
+void SceneHeadingBlockInfo::setSceneNumber(int _number)
 {
     if (m_sceneNumber != _number) {
         m_sceneNumber = _number;
     }
 }
 
-QString ScenarioTextBlockInfo::colors() const
+QString SceneHeadingBlockInfo::colors() const
 {
     return m_colors;
 }
 
-void ScenarioTextBlockInfo::setColors(const QString& _colors)
+void SceneHeadingBlockInfo::setColors(const QString& _colors)
 {
     if (m_colors != _colors) {
         m_colors = _colors;
     }
 }
 
-QString ScenarioTextBlockInfo::stamp() const
+QString SceneHeadingBlockInfo::stamp() const
 {
     return m_stamp;
 }
 
-void ScenarioTextBlockInfo::setStamp(const QString& _stamp)
+void SceneHeadingBlockInfo::setStamp(const QString& _stamp)
 {
     if (m_stamp != _stamp) {
         m_stamp = _stamp;
     }
 }
 
-QString ScenarioTextBlockInfo::title() const
+QString SceneHeadingBlockInfo::title() const
 {
     return m_title;
 }
 
-void ScenarioTextBlockInfo::setTitle(const QString& _title)
+void SceneHeadingBlockInfo::setTitle(const QString& _title)
 {
     if (m_title != _title) {
         m_title = _title;
     }
 }
 
-QString ScenarioTextBlockInfo::description() const
+QString SceneHeadingBlockInfo::description() const
 {
     return m_description;
 }
 
-void ScenarioTextBlockInfo::setDescription(const QString& _description)
+void SceneHeadingBlockInfo::setDescription(const QString& _description)
 {
     //
     // Обновим описание, если он изменился
@@ -96,12 +96,28 @@ void ScenarioTextBlockInfo::setDescription(const QString& _description)
     }
 }
 
-ScenarioTextBlockInfo* ScenarioTextBlockInfo::clone() const
+SceneHeadingBlockInfo* SceneHeadingBlockInfo::clone() const
 {
-    ScenarioTextBlockInfo* copy = new ScenarioTextBlockInfo(m_uuid);
+    SceneHeadingBlockInfo* copy = new SceneHeadingBlockInfo(m_uuid);
     copy->m_sceneNumber = m_sceneNumber;
     copy->m_colors = m_colors;
     copy->m_stamp = m_stamp;
     copy->m_description = m_description;
     return copy;
+}
+
+
+// ****
+
+
+int CharacterBlockInfo::dialogueNumbder() const
+{
+    return m_dialogueNumber;
+}
+
+void CharacterBlockInfo::setDialogueNumber(int _number)
+{
+    if (m_dialogueNumber != _number) {
+        m_dialogueNumber = _number;
+    }
 }
