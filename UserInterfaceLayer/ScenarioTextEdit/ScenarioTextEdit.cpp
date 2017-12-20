@@ -50,6 +50,7 @@ ScenarioTextEdit::ScenarioTextEdit(QWidget* _parent) :
     m_storeDataWhenEditing(true),
     m_showSceneNumbers(false),
     m_showDialoguesNumbers(false),
+    m_highlightBlocks(false),
     m_highlightCurrentLine(false),
     m_capitalizeFirstWord(false),
     m_correctDoubleCapitals(false),
@@ -377,9 +378,11 @@ void ScenarioTextEdit::setShowDialoguesNumbers(bool _show)
     }
 }
 
-bool ScenarioTextEdit::highlightCurrentLine() const
+void ScenarioTextEdit::setHighlightBlocks(bool _highlight)
 {
-    return m_highlightCurrentLine;
+    if (m_highlightBlocks != _highlight) {
+        m_highlightBlocks = _highlight;
+    }
 }
 
 void ScenarioTextEdit::setHighlightCurrentLine(bool _highlight)
@@ -921,15 +924,159 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
 void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
 {
     //
-    // Подсветка строки
+    // Подсветка блоков и строки, если нужно
     //
-    if (m_highlightCurrentLine) {
+    {
         QPainter painter(viewport());
-        const QRect cursorR = cursorRect();
-        const QRect highlightRect(0, cursorR.top(), viewport()->width(), cursorR.height());
-        QColor lineColor = palette().highlight().color().lighter();
-        lineColor.setAlpha(40);
-        painter.fillRect(highlightRect, lineColor);
+        if (m_highlightBlocks) {
+            int opacity = 10;
+            const int verticalMargin = 5;
+            const int horizontalMargin = 10;
+            const int width = viewport()->width();
+            const int bottom = verticalScrollBar()->maximum() + viewport()->height();
+
+            //
+            // Если курсор в блоке реплики, закрасить всё вокруг блока диалога
+            //
+            {
+                const QVector<ScenarioBlockStyle::Type> dialogueTypes = { ScenarioBlockStyle::Character,
+                                                                          ScenarioBlockStyle::Parenthetical,
+                                                                          ScenarioBlockStyle::Dialogue,
+                                                                          ScenarioBlockStyle::Lyrics};
+                if (dialogueTypes.contains(scenarioBlockType())) {
+                    //
+                    // Идём до начала блока диалога
+                    //
+                    QTextCursor cursor = textCursor();
+                    while (cursor.movePosition(QTextCursor::PreviousBlock)) {
+                        if (!dialogueTypes.contains(ScenarioBlockStyle::forBlock(cursor.block()))) {
+                            cursor.movePosition(QTextCursor::NextBlock);
+                            break;
+                        }
+                    }
+                    const QRect topCursorRect = cursorRect(cursor);
+                    const QRect topNoizeRect(horizontalMargin*2, 0, width - horizontalMargin*4, topCursorRect.top() - verticalMargin);
+                    QColor noizeColor = textColor();
+                    noizeColor.setAlpha(opacity);
+                    painter.fillRect(topNoizeRect, noizeColor);
+
+                    //
+                    // Идём до конца блока диалога
+                    //
+                    cursor = textCursor();
+                    while (cursor.movePosition(QTextCursor::NextBlock)) {
+                        if (!dialogueTypes.contains(ScenarioBlockStyle::forBlock(cursor.block()))) {
+                            cursor.movePosition(QTextCursor::PreviousBlock);
+                            break;
+                        }
+                    }
+                    cursor.movePosition(QTextCursor::EndOfBlock);
+                    const QRect bottomCursorRect = cursorRect(cursor);
+                    const QRect bottomNoizeRect(horizontalMargin*2, bottomCursorRect.bottom() + verticalMargin, width - horizontalMargin*4, bottom);
+                    painter.fillRect(bottomNoizeRect, noizeColor);
+
+                    //
+                    // Соединяем бока
+                    //
+                    const QRect leftNoizeRect(0, 0, horizontalMargin*2, bottom);
+                    painter.fillRect(leftNoizeRect, noizeColor);
+                    const QRect rightNoizeRect(width - horizontalMargin*2, 0, horizontalMargin*2, bottom);
+                    painter.fillRect(rightNoizeRect, noizeColor);
+                }
+                //
+                // В противном случае увеличиваем прозрачность закраски области вокруг сцены, чтобы она
+                // была такой же, как и в случае с диалогом
+                //
+                else {
+                    opacity *= 2;
+                }
+            }
+
+            //
+            // Закрасить всё вокруг сцены/папки
+            //
+            {
+                //
+                // Идём до начала блока сцены, считая по пути вложенные папки
+                //
+                QTextCursor cursor = textCursor();
+                int closedFolders = 0;
+                bool isScene = scenarioBlockType() == ScenarioBlockStyle::SceneHeading;
+                if (scenarioBlockType() != ScenarioBlockStyle::SceneHeading
+                    && scenarioBlockType() != ScenarioBlockStyle::FolderHeader) {
+                    while (cursor.movePosition(QTextCursor::PreviousBlock)) {
+                        const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(cursor.block());
+                        if (blockType == ScenarioBlockStyle::SceneHeading) {
+                            isScene = true;
+                            break;
+                        } else if (blockType == ScenarioBlockStyle::FolderFooter) {
+                            ++closedFolders;
+                        } else if (blockType == ScenarioBlockStyle::FolderHeader) {
+                            if (closedFolders > 0) {
+                                --closedFolders;
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+                }
+                const QRect topCursorRect = cursorRect(cursor);
+                const QRect topNoizeRect(0, 0, width, topCursorRect.top() - verticalMargin);
+                QColor noizeColor = textColor();
+                noizeColor.setAlpha(opacity);
+                painter.fillRect(topNoizeRect, noizeColor);
+
+                //
+                // Идём до конца блока сцены, считая по пути вложенные папки
+                //
+                cursor = textCursor();
+                int openedFolders = 0;
+                while (cursor.movePosition(QTextCursor::NextBlock)) {
+                    const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(cursor.block());
+                    if (isScene
+                        && blockType == ScenarioBlockStyle::SceneHeading) {
+                        cursor.movePosition(QTextCursor::PreviousBlock);
+                        break;
+                    } else if (blockType == ScenarioBlockStyle::FolderHeader) {
+                        ++openedFolders;
+                    } else if (blockType == ScenarioBlockStyle::FolderFooter) {
+                        if (openedFolders > 0) {
+                            --openedFolders;
+                        } else {
+                            if (isScene) {
+                                cursor.movePosition(QTextCursor::PreviousBlock);
+                            }
+                            break;
+                        }
+                    }
+                }
+                cursor.movePosition(QTextCursor::EndOfBlock);
+                const QRect bottomCursorRect = cursorRect(cursor);
+                const QRect bottomNoizeRect(0, bottomCursorRect.bottom() + verticalMargin, width, bottom);
+                painter.fillRect(bottomNoizeRect, noizeColor);
+
+                //
+                // Соединяем бока
+                //
+                const QRect leftNoizeRect(QPoint(0, topCursorRect.top() - verticalMargin),
+                                          QPoint(horizontalMargin, bottomCursorRect.bottom() + verticalMargin));
+                painter.fillRect(leftNoizeRect, noizeColor);
+                const QRect rightNoizeRect(QPoint(width - horizontalMargin, topCursorRect.top() - verticalMargin),
+                                           QPoint(width, bottomCursorRect.bottom() + verticalMargin));
+                painter.fillRect(rightNoizeRect, noizeColor);
+            }
+        }
+
+        //
+        // Подсветка строки
+        //
+        if (m_highlightCurrentLine) {
+            const QRect cursorR = cursorRect();
+            const QRect highlightRect(0, cursorR.top(), viewport()->width(), cursorR.height());
+            QColor lineColor = palette().highlight().color().lighter();
+            lineColor.setAlpha(40);
+            painter.fillRect(highlightRect, lineColor);
+        }
     }
 
 
@@ -1125,23 +1272,50 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                 //
                                 QTextBlockUserData* textBlockData = block.userData();
                                 if (CharacterBlockInfo* info = dynamic_cast<CharacterBlockInfo*>(textBlockData)) {
-                                    const QString dialogueNumber = QString::number(info->dialogueNumbder()) + ".";
+                                    const QString dialogueNumber = QString::number(info->dialogueNumbder()) + ":";
 
                                     //
                                     // Определим область для отрисовки и выведем номер реплики в редактор
                                     //
                                     painter.setFont(cursor.charFormat().font());
                                     const int numberDelta = painter.fontMetrics().width(dialogueNumber);
-                                    QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
-                                                    ? textLeft + leftDelta + spaceBetweenSceneNumberAndText
-                                                    : textRight + leftDelta - spaceBetweenSceneNumberAndText - numberDelta,
-                                                    cursorR.top());
-                                    QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
-                                                        ? textLeft + leftDelta + spaceBetweenSceneNumberAndText + numberDelta
-                                                        : textRight + leftDelta - spaceBetweenSceneNumberAndText,
-                                                        cursorR.bottom());
-                                    QRectF rect(topLeft, bottomRight);
-                                    painter.drawText(rect, Qt::AlignLeft | Qt::AlignTop, dialogueNumber);
+                                    QRectF rect;
+                                    //
+                                    // Если имя персонажа находится не с самого края листа
+                                    //
+                                    if (block.blockFormat().leftMargin() > numberDelta) {
+                                        //
+                                        // ... то поместим номер реплики внутри текстовой области,
+                                        //     чтобы их было удобно отличать от номеров сцен
+                                        //
+                                        QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                                                        ? textLeft + leftDelta + spaceBetweenSceneNumberAndText
+                                                        : textRight + leftDelta - spaceBetweenSceneNumberAndText - numberDelta,
+                                                        cursorR.top());
+                                        QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                                            ? textLeft + leftDelta + spaceBetweenSceneNumberAndText + numberDelta
+                                                            : textRight + leftDelta - spaceBetweenSceneNumberAndText,
+                                                            cursorR.bottom());
+                                        rect = QRectF(topLeft, bottomRight);
+                                    }
+                                    //
+                                    // В противном же случае
+                                    //
+                                    else {
+                                        //
+                                        // ... позиционируем номера реплик на полях, так же как и номера сцен
+                                        //
+                                        QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                                                        ? pageLeft + leftDelta
+                                                        : textRight + leftDelta,
+                                                        cursorR.top());
+                                        QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                                            ? textLeft + leftDelta
+                                                            : pageRight + leftDelta,
+                                                            cursorR.bottom());
+                                        rect = QRectF(topLeft, bottomRight);
+                                    }
+                                    painter.drawText(rect, Qt::AlignRight | Qt::AlignTop, dialogueNumber);
                                 }
                             }
                         }

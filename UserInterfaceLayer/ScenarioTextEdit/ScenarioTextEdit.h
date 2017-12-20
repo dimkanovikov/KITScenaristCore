@@ -94,9 +94,9 @@ namespace UserInterface
         void setShowDialoguesNumbers(bool _show);
 
         /**
-         * @brief Подсвечивается ли текущая строка в редакторе
+         * @brief Установить необходиость подсветки блоков
          */
-        bool highlightCurrentLine() const;
+        void setHighlightBlocks(bool _highlight);
 
         /**
          * @brief Установить значение необходимости подсвечивать текущую строку
@@ -344,6 +344,11 @@ namespace UserInterface
          * @brief Отображать ли номера реплик
          */
         bool m_showDialoguesNumbers;
+
+        /**
+         * @brief Подсвечивать блоки
+         */
+        bool m_highlightBlocks;
 
         /**
          * @brief Подсвечивать текущую линию
