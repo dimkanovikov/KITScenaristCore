@@ -121,3 +121,10 @@ void CharacterBlockInfo::setDialogueNumber(int _number)
         m_dialogueNumber = _number;
     }
 }
+
+CharacterBlockInfo* CharacterBlockInfo::clone() const
+{
+    CharacterBlockInfo* copy = new CharacterBlockInfo;
+    copy->m_dialogueNumber = m_dialogueNumber;
+    return copy;
+}

@@ -470,6 +470,8 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                 //
                 if (SceneHeadingBlockInfo* sceneInfo = dynamic_cast<SceneHeadingBlockInfo*>(sourceCursor.block().userData())) {
                     destCursor.block().setUserData(sceneInfo->clone());
+                } else if (CharacterBlockInfo* sceneInfo = dynamic_cast<CharacterBlockInfo*>(sourceCursor.block().userData())) {
+                    destCursor.block().setUserData(sceneInfo->clone());
                 }
             }
 
@@ -688,7 +690,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                     //
                     QTextBlockUserData* textBlockData = sourceDocumentCursor.block().userData();
                     SceneHeadingBlockInfo* sceneInfo = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
-                    if (sceneInfo != 0) {
+                    if (sceneInfo != nullptr) {
                         destDocumentCursor.block().setUserData(sceneInfo->clone());
                     }
 
@@ -699,11 +701,32 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                     //
                     // Номер сцены, если необходимо
                     //
-                    if (_exportParameters.printScenesNumbers) {
-                        if (sceneInfo != 0) {
-                            QString sceneNumber = QString("%1. ").arg(sceneInfo->sceneNumber());
-                            destDocumentCursor.insertText(sceneNumber);
-                        }
+                    if (_exportParameters.printScenesNumbers
+                        && sceneInfo != nullptr) {
+                        const QString sceneNumber = QString("%1. ").arg(sceneInfo->sceneNumber());
+                        destDocumentCursor.insertText(sceneNumber);
+                    }
+                }
+                //
+                // Для блока реплики добавляем номер реплики, если необходимо
+                //
+                else if (currentBlockType == ScenarioBlockStyle::Character) {
+                    //
+                    // Данные реплики
+                    //
+                    QTextBlockUserData* textBlockData = sourceDocumentCursor.block().userData();
+                    CharacterBlockInfo* characterInfo = dynamic_cast<CharacterBlockInfo*>(textBlockData);
+                    if (characterInfo != nullptr) {
+                        destDocumentCursor.block().setUserData(characterInfo->clone());
+                    }
+
+                    //
+                    // Номер реплики, если необходимо
+                    //
+                    if (_exportParameters.printDialoguesNumbers
+                        && characterInfo != nullptr) {
+                        const QString dialogueNumber = QString("%1: ").arg(characterInfo->dialogueNumbder());
+                        destDocumentCursor.insertText(dialogueNumber);
                     }
                 }
 

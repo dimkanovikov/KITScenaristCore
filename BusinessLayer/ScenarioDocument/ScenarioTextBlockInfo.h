@@ -133,6 +133,11 @@ namespace BusinessLogic
          */
         void setDialogueNumber(int _number);
 
+        /**
+         * @brief Создать дубликат
+         */
+        CharacterBlockInfo* clone() const;
+
     private:
         /**
          * @brief Порядковый номер реплики персонажа

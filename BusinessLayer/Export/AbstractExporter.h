@@ -24,6 +24,7 @@ namespace BusinessLogic
             printTilte(true),
             printPagesNumbers(true),
             printScenesNumbers(true),
+            printDialoguesNumbers(false),
             saveReviewMarks(true),
             saveInvisible(false)
         {}
@@ -89,6 +90,11 @@ namespace BusinessLogic
          * @brief Печатать номера сцен
          */
         bool printScenesNumbers;
+
+        /**
+         * @brief Печатать номера реплик
+         */
+        bool printDialoguesNumbers;
 
         /**
          * @brief Приставка сцен
