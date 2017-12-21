@@ -387,7 +387,7 @@ void SettingsStorage::loadApplicationStateAndGeometry(QWidget* _widget)
     foreach (QSplitter* splitter, _widget->findChildren<QSplitter*>()) {
         m_appSettings.beginGroup(splitter->objectName());
         //
-        // Восстанавливаем расположение панелей
+        // Восстанавливаем очерёдность расположения панелей
         //
         m_appSettings.beginGroup("splitter-widgets");
         //
@@ -419,9 +419,9 @@ void SettingsStorage::loadApplicationStateAndGeometry(QWidget* _widget)
         splitter->restoreState(m_appSettings.value("state").toByteArray());
         splitter->restoreGeometry(m_appSettings.value("geometry").toByteArray());
         //
-        // Запрещаем схлапывание всех разделителей
+        // Запрещаем схлапывание вертикальных разделителей
         //
-        splitter->setChildrenCollapsible(false);
+        splitter->setChildrenCollapsible(splitter->orientation() == Qt::Horizontal);
 
         m_appSettings.endGroup(); // splitter->objectName()
     }
