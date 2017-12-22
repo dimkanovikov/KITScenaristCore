@@ -33,6 +33,11 @@ namespace DataStorageLayer
 		 */
 		bool hasPlace(const QString& _name);
 
+        /**
+         * @brief Удалить место
+         */
+        void removePlace(const QString& _name);
+
 		/**
 		 * @brief Очистить хранилище
 		 */

@@ -28,6 +28,11 @@ namespace DataStorageLayer
 		 */
 		SceneTime* storeTime(const QString& _timeName);
 
+        /**
+         * @brief Удалить время
+         */
+        void removeTime(const QString& _name);
+
 		/**
 		 * @brief Очистить хранилище
 		 */

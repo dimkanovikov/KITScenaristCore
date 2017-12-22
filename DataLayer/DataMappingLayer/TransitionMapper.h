@@ -21,6 +21,7 @@ namespace DataMappingLayer
         TransitionsTable* findAll();
         void insert(Transition* _transition);
         void update(Transition* _transition);
+        void remove(Transition* _transition);
 
     protected:
         QString findStatement(const Identifier& _id) const;

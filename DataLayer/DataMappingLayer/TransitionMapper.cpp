@@ -30,6 +30,11 @@ void TransitionMapper::update(Transition* _transition)
     abstractUpdate(_transition);
 }
 
+void TransitionMapper::remove(Transition* _transition)
+{
+    abstractDelete(_transition);
+}
+
 QString TransitionMapper::findStatement(const Identifier& _id) const
 {
     QString findStatement =

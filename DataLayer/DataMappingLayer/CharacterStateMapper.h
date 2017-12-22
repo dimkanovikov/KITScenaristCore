@@ -21,6 +21,7 @@ namespace DataMappingLayer
 		CharacterStatesTable* findAll();
 		void insert(CharacterState* _characterState);
 		void update(CharacterState* _characterState);
+        void remove(CharacterState* _characterState);
 
 	protected:
 		QString findStatement(const Identifier& _id) const;

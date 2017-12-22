@@ -19,8 +19,9 @@ namespace DataMappingLayer
 	public:
 		ScenarioDay* find(const Identifier& _id);
 		ScenarioDaysTable* findAll();
-		void insert(ScenarioDay* _scenaryDay);
-		void update(ScenarioDay* _scenaryDay);
+        void insert(ScenarioDay* _scenarioDay);
+        void update(ScenarioDay* _scenarioDay);
+        void remove(ScenarioDay* _scenarioDay);
 
 	protected:
 		QString findStatement(const Identifier& _id) const;

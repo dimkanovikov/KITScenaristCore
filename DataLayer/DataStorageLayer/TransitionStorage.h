@@ -24,9 +24,14 @@ namespace DataStorageLayer
         TransitionsTable* all();
 
         /**
-         * @brief Сохранить время
+         * @brief Сохранить переход
          */
         Transition* storeTransition(const QString& _transitionName);
+
+        /**
+         * @brief Удалить переход
+         */
+        void removeTransition(const QString& _name);
 
         /**
          * @brief Очистить хранилище

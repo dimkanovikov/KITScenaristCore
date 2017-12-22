@@ -59,6 +59,18 @@ Transition* TransitionStorage::storeTransition(const QString& _transitionName)
     return newTransition;
 }
 
+void TransitionStorage::removeTransition(const QString& _name)
+{
+    for (DomainObject* domainObject : all()->toList()) {
+        Transition* transition = dynamic_cast<Transition*>(domainObject);
+        if (transition->equal(_name)) {
+            MapperFacade::transitionMapper()->remove(transition);
+            all()->remove(transition);
+            break;
+        }
+    }
+}
+
 void TransitionStorage::clear()
 {
     delete m_all;

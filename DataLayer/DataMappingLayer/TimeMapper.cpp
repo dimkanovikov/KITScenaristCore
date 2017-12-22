@@ -27,7 +27,12 @@ void TimeMapper::insert(SceneTime* _time)
 
 void TimeMapper::update(SceneTime* _time)
 {
-	abstractUpdate(_time);
+    abstractUpdate(_time);
+}
+
+void TimeMapper::remove(SceneTime* _time)
+{
+    abstractDelete(_time);
 }
 
 QString TimeMapper::findStatement(const Identifier& _id) const

@@ -23,6 +23,11 @@ void Transition::setName(const QString& _name)
     }
 }
 
+bool Transition::equal(const QString& _name) const
+{
+    return m_name == _name;
+}
+
 // ****
 
 namespace {

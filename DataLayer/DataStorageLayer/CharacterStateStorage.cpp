@@ -72,6 +72,18 @@ bool CharacterStateStorage::hasCharacterState(const QString& _name)
 	return contains;
 }
 
+void CharacterStateStorage::removeCharacterState(const QString& _name)
+{
+    for (DomainObject* domainObject : all()->toList()) {
+        CharacterState* characterState = dynamic_cast<CharacterState*>(domainObject);
+        if (characterState->equal(_name)) {
+            MapperFacade::characterStateMapper()->remove(characterState);
+            all()->remove(characterState);
+            break;
+        }
+    }
+}
+
 void CharacterStateStorage::clear()
 {
 	delete m_all;

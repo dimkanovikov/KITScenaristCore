@@ -21,6 +21,7 @@ namespace DataMappingLayer
 		SceneTimesTable* findAll();
 		void insert(SceneTime* _time);
 		void update(SceneTime* _time);
+        void remove(SceneTime* _time);
 
 	protected:
 		QString findStatement(const Identifier& _id) const;

@@ -19,19 +19,24 @@ namespace DataStorageLayer
 	{
 	public:
 		/**
-		 * @brief Получить все места
+         * @brief Получить все состояния
 		 */
 		CharacterStatesTable* all();
 
 		/**
-		 * @brief Сохранить место
+         * @brief Сохранить состояние
 		 */
 		CharacterState* storeCharacterState(const QString& _characterStateName);
 
 		/**
-		 * @brief Проверить наличие заданного места
+         * @brief Проверить наличие заданного состояния
 		 */
 		bool hasCharacterState(const QString& _name);
+
+        /**
+         * @brief Удалить состояние
+         */
+        void removeCharacterState(const QString& _name);
 
 		/**
 		 * @brief Очистить хранилище

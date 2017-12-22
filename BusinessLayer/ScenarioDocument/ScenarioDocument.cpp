@@ -579,30 +579,6 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
     m_document->updateScenarioXml();
 
     //
-    // Прерываем ситуацию с ложным срабатыванием изменения документа
-    //
-    const QByteArray currentTextMd5Hash = m_document->scenarioXmlHash();
-    if (_charsRemoved == _charsAdded) {
-        //
-        // ... на самом ли деле текст изменился?
-        //
-        if (currentTextMd5Hash == m_lastTextMd5Hash) {
-            //
-            // ... даже если текст не изменился, обновляем номера сцен, т.к. могла измениться
-            //     модель документа, например добавился комментарий от редактора
-            //
-            updateDocumentScenesAndDialoguesNumbers();
-            return;
-        }
-    }
-
-
-    //
-    // Сохранить md5 хэш текста документа
-    //
-    m_lastTextMd5Hash = currentTextMd5Hash;
-
-    //
     // Если были удалены данные
     //
     if (_charsRemoved > 0) {

@@ -59,6 +59,18 @@ ScenarioDay* ScenarioDayStorage::storeScenarioDay(const QString& _scenarioDayNam
 	return newScenarioDay;
 }
 
+void ScenarioDayStorage::removeScenarioDay(const QString& _name)
+{
+    for (DomainObject* domainObject : all()->toList()) {
+        ScenarioDay* scenarioDay = dynamic_cast<ScenarioDay*>(domainObject);
+        if (scenarioDay->equal(_name)) {
+            MapperFacade::scenarioDayMapper()->remove(scenarioDay);
+            all()->remove(scenarioDay);
+            break;
+        }
+    }
+}
+
 void ScenarioDayStorage::clear()
 {
 	delete m_all;

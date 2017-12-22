@@ -59,6 +59,18 @@ SceneTime* TimeStorage::storeTime(const QString& _timeName)
 	return newTime;
 }
 
+void TimeStorage::removeTime(const QString& _name)
+{
+    for (DomainObject* domainObject : all()->toList()) {
+        SceneTime* time = dynamic_cast<SceneTime*>(domainObject);
+        if (time->equal(_name)) {
+            MapperFacade::timeMapper()->remove(time);
+            all()->remove(time);
+            break;
+        }
+    }
+}
+
 void TimeStorage::clear()
 {
 	delete m_all;

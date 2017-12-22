@@ -21,6 +21,7 @@ namespace DataMappingLayer
 		PlacesTable* findAll();
 		void insert(Place* _place);
 		void update(Place* _place);
+        void remove(Place* _place);
 
 	protected:
 		QString findStatement(const Identifier& _id) const;

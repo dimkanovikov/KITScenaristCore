@@ -27,7 +27,12 @@ void CharacterStateMapper::insert(CharacterState* _characterState)
 
 void CharacterStateMapper::update(CharacterState* _characterState)
 {
-	abstractUpdate(_characterState);
+    abstractUpdate(_characterState);
+}
+
+void CharacterStateMapper::remove(CharacterState* _characterState)
+{
+    abstractDelete(_characterState);
 }
 
 QString CharacterStateMapper::findStatement(const Identifier& _id) const
