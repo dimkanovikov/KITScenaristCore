@@ -48,6 +48,28 @@ namespace {
         }
         return name;
     }
+
+    /**
+     * @brief Преобразовать список чисел в строку
+     */
+    static QString intListToString(const QList<int>& _values) {
+        QString result;
+        for (const int& value : _values) {
+            result.append(QString("%1#").arg(value));
+        }
+        return result;
+    }
+
+    /**
+     * @brief Преобразовать строку в список чисел
+     */
+    static QList<int> intListFromString(const QString& _values) {
+        QList<int> result;
+        for (const QString& value : _values.split("#", QString::SkipEmptyParts)) {
+            result.append(value.toInt());
+        }
+        return result;
+    }
 }
 
 
@@ -294,6 +316,7 @@ void SettingsStorage::saveApplicationStateAndGeometry(QWidget* _widget)
         m_appSettings.beginGroup(splitter->objectName());
         m_appSettings.setValue("state", splitter->saveState());
         m_appSettings.setValue("geometry", splitter->saveGeometry());
+        m_appSettings.setValue("sizes", ::intListToString(splitter->sizes()));
         //
         // Сохраняем расположение панелей
         //
@@ -422,6 +445,24 @@ void SettingsStorage::loadApplicationStateAndGeometry(QWidget* _widget)
         // Запрещаем схлапывание вертикальных разделителей
         //
         splitter->setChildrenCollapsible(splitter->orientation() == Qt::Horizontal);
+        //
+        // Восстанавливаем размеры
+        //
+        if (m_appSettings.contains("sizes")) {
+            const QList<int> sizes = ::intListFromString(m_appSettings.value("sizes").toString());
+            //
+            // Если у сплиттера нельзя схлапывать панели вручную, но размер должен быть нулевым,
+            // то сперва скрываем необходимые виджеты, а уже потом восстанавливаем состояние
+            //
+            if (!splitter->childrenCollapsible()) {
+                for (int index = 0; index < sizes.size(); ++index) {
+                    if (sizes.at(index) == 0) {
+                        splitter->widget(index)->hide();
+                    }
+                }
+            }
+            splitter->setSizes(sizes);
+        }
 
         m_appSettings.endGroup(); // splitter->objectName()
     }
