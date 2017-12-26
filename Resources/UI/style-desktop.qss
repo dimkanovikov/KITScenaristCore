@@ -146,6 +146,39 @@ QToolButton:pressed[isUpdateButton=true] {
 }
 
 /*
+ * Стиль кнопок в меню
+ */
+QToolButton[inContextMenu=true] {
+    border-top: 1px solid palette(shadow);
+    background: palette(base);
+    color: palette(button-text);
+    padding-left: 13px;
+    padding-right: 13px;
+    height: 34px;
+}
+
+QToolButton[firstInContextMenu=true] {
+    border-left: 1px solid palette(shadow);
+}
+
+QToolButton[lastInContextMenu=true] {
+    border-right: 1px solid palette(shadow);
+}
+
+QToolButton:hover[inContextMenu=true] {
+    background: palette(highlight);
+}
+
+QToolButton:hover:checked[inContextMenu=true] {
+    background: palette(dark);
+}
+
+QToolButton:pressed[inContextMenu=true] {
+    background: palette(highlight);
+    padding-top: 1px;
+}
+
+/*
  *
  */
 FlatButton[hasMenu=true] {

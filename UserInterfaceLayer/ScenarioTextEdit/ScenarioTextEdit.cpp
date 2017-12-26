@@ -11,11 +11,14 @@
 #include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Helpers/ColorHelper.h>
 
+#include <3rd_party/Widgets/FlatButton/FlatButton.h>
+
 #include <QAbstractItemView>
 #include <QAbstractTextDocumentLayout>
 #include <QApplication>
-#include <QDateTime>
 #include <QCompleter>
+#include <QDateTime>
+#include <QHBoxLayout>
 #include <QKeyEvent>
 #include <QMenu>
 #include <QMimeData>
@@ -29,6 +32,7 @@
 #include <QTextDocumentFragment>
 #include <QTimer>
 #include <QWheelEvent>
+#include <QWidgetAction>
 
 using UserInterface::ScenarioTextEdit;
 using UserInterface::ShortcutsManager;
@@ -533,6 +537,43 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     if (!m_additionalContextMenuActions.isEmpty()) {
         QAction* firstAction = menu->actions().first();
         menu->insertActions(firstAction, m_additionalContextMenuActions);
+        menu->insertSeparator(firstAction);
+    }
+
+    //
+    // Добавляем в меню фозможности форматирования
+    //
+    {
+        QWidget* widget = new QWidget(menu);
+        QHBoxLayout* layout = new QHBoxLayout(widget);
+        layout->setSpacing(0);
+        layout->setContentsMargins(QMargins());
+        FlatButton* bold = new FlatButton;
+        bold->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        bold->setIcons(QIcon(":/Graphics/Icons/Editing/format-bold.png"));
+        bold->setCheckable(true);
+        bold->setProperty("inContextMenu", true);
+        bold->setProperty("firstInContextMenu", true);
+        layout->addWidget(bold);
+        FlatButton* italic = new FlatButton;
+        italic->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        italic->setIcons(QIcon(":/Graphics/Icons/Editing/format-italic.png"));
+        italic->setCheckable(true);
+        italic->setProperty("inContextMenu", true);
+        layout->addWidget(italic);
+        FlatButton* underline = new FlatButton;
+        underline->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        underline->setIcons(QIcon(":/Graphics/Icons/Editing/format-underline.png"));
+        underline->setCheckable(true);
+        underline->setProperty("inContextMenu", true);
+        underline->setProperty("lastInContextMenu", true);
+        layout->addWidget(underline);
+
+        QWidgetAction* formattingActions = new QWidgetAction(menu);
+        formattingActions->setDefaultWidget(widget);
+
+        QAction* firstAction = menu->actions().first();
+        menu->insertAction(firstAction, formattingActions);
         menu->insertSeparator(firstAction);
     }
 
