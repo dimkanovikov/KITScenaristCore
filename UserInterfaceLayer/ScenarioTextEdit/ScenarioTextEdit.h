@@ -307,6 +307,15 @@ namespace UserInterface
          */
         bool selectBlockOnTripleClick(QMouseEvent* _event);
 
+        /**
+         * @brief Настроить форматирование выделенного текста
+         */
+        /** @{ */
+        void setTextBold(bool _bold);
+        void setTextItalic(bool _italic);
+        void setTextUnderline(bool _underline);
+        /** @} */
+
     private:
         void initEditor();
         void initEditorConnections();

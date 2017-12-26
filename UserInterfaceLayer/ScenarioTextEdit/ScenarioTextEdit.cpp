@@ -543,30 +543,39 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     //
     // Добавляем в меню фозможности форматирования
     //
-    {
+    if (textCursor().hasSelection()) {
         QWidget* widget = new QWidget(menu);
         QHBoxLayout* layout = new QHBoxLayout(widget);
         layout->setSpacing(0);
         layout->setContentsMargins(QMargins());
+        //
         FlatButton* bold = new FlatButton;
         bold->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         bold->setIcons(QIcon(":/Graphics/Icons/Editing/format-bold.png"));
         bold->setCheckable(true);
+        bold->setChecked(textCursor().charFormat().font().bold());
         bold->setProperty("inContextMenu", true);
         bold->setProperty("firstInContextMenu", true);
+        connect(bold, &FlatButton::toggled, this, &ScenarioTextEdit::setTextBold);
         layout->addWidget(bold);
+        //
         FlatButton* italic = new FlatButton;
         italic->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         italic->setIcons(QIcon(":/Graphics/Icons/Editing/format-italic.png"));
         italic->setCheckable(true);
+        italic->setChecked(textCursor().charFormat().font().italic());
         italic->setProperty("inContextMenu", true);
+        connect(italic, &FlatButton::toggled, this, &ScenarioTextEdit::setTextItalic);
         layout->addWidget(italic);
+        //
         FlatButton* underline = new FlatButton;
         underline->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         underline->setIcons(QIcon(":/Graphics/Icons/Editing/format-underline.png"));
         underline->setCheckable(true);
+        underline->setChecked(textCursor().charFormat().font().underline());
         underline->setProperty("inContextMenu", true);
         underline->setProperty("lastInContextMenu", true);
+        connect(underline, &FlatButton::toggled, this, &ScenarioTextEdit::setTextUnderline);
         layout->addWidget(underline);
 
         QWidgetAction* formattingActions = new QWidgetAction(menu);
@@ -936,6 +945,24 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
         const int lastVBarValue = verticalScrollBar()->value();
         paste();
         verticalScrollBar()->setValue(lastVBarValue);
+    }
+    //
+    // Сделать текст полужирным
+    //
+    else if (_event == QKeySequence::Bold) {
+        setTextBold(!textCursor().charFormat().font().bold());
+    }
+    //
+    // Сделать текст курсивом
+    //
+    else if (_event == QKeySequence::Italic) {
+        setTextItalic(!textCursor().charFormat().font().italic());
+    }
+    //
+    // Сделать текст подчёркнутым
+    //
+    else if (_event == QKeySequence::Underline) {
+        setTextUnderline(!textCursor().charFormat().font().underline());
     }
 #ifdef Q_OS_MAC
     //
@@ -2045,6 +2072,42 @@ bool ScenarioTextEdit::selectBlockOnTripleClick(QMouseEvent* _event)
     }
 
     return false;
+}
+
+void ScenarioTextEdit::setTextBold(bool _bold)
+{
+    QTextCursor cursor = textCursor();
+    if (!cursor.hasSelection()) {
+        return;
+    }
+
+    QTextCharFormat format = cursor.charFormat();
+    format.setFontWeight(_bold ? QFont::Bold : QFont::Normal);
+    cursor.mergeCharFormat(format);
+}
+
+void ScenarioTextEdit::setTextItalic(bool _italic)
+{
+    QTextCursor cursor = textCursor();
+    if (!cursor.hasSelection()) {
+        return;
+    }
+
+    QTextCharFormat format = cursor.charFormat();
+    format.setFontItalic(_italic);
+    cursor.mergeCharFormat(format);
+}
+
+void ScenarioTextEdit::setTextUnderline(bool _underline)
+{
+    QTextCursor cursor = textCursor();
+    if (!cursor.hasSelection()) {
+        return;
+    }
+
+    QTextCharFormat format = cursor.charFormat();
+    format.setFontUnderline(_underline);
+    cursor.mergeCharFormat(format);
 }
 
 void ScenarioTextEdit::initEditor()
