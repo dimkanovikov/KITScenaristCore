@@ -64,6 +64,12 @@ namespace {
         result = result.remove("<review_comment>\n");
         result = result.remove("</review_comment>\n");
         result = result.remove("<review_comment/>\n");
+        result = result.remove("<formatting>\n");
+        result = result.remove("</formatting>\n");
+        result = result.remove("<formatting/>\n");
+        result = result.remove("<format>\n");
+        result = result.remove("</format>\n");
+        result = result.remove("<format/>\n");
 
         foreach (const QString& tag, _tagsMap.keys()) {
             //
@@ -78,6 +84,7 @@ namespace {
         result = result.remove(QRegularExpression("<folder_header(.*)>\n"));
         result = result.remove(QRegularExpression("<review(.*)>\n"));
         result = result.remove(QRegularExpression("<review_comment(.*)>\n"));
+        result = result.remove(QRegularExpression("<format(.*)>\n"));
 
         result = TextEditHelper::removeXmlTags(result);
         result = TextEditHelper::fromHtmlEscaped(result);

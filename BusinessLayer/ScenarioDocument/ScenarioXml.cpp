@@ -25,6 +25,8 @@ namespace {
     const QString NODE_REVIEW_GROUP = "reviews";
     const QString NODE_REVIEW = "review";
     const QString NODE_REVIEW_COMMENT = "review_comment";
+    const QString NODE_FORMAT_GROUP = "formatting";
+    const QString NODE_FORMAT = "format";
 
     const QString ATTRIBUTE_VERSION = "version";
     const QString ATTRIBUTE_DESCRIPTION = "description";
@@ -41,6 +43,11 @@ namespace {
     const QString ATTRIBUTE_REVIEW_COMMENT = "comment";
     const QString ATTRIBUTE_REVIEW_AUTHOR = "author";
     const QString ATTRIBUTE_REVIEW_DATE = "date";
+    const QString ATTRIBUTE_FORMAT_FROM = "from";
+    const QString ATTRIBUTE_FORMAT_LENGTH = "length";
+    const QString ATTRIBUTE_FORMAT_BOLD = "bold";
+    const QString ATTRIBUTE_FORMAT_ITALIC = "italic";
+    const QString ATTRIBUTE_FORMAT_UNDERLINE = "underline";
 
     const QString SCENARIO_XML_VERSION = "1.0";
 
@@ -99,30 +106,41 @@ namespace {
         }
 
         for (const QTextLayout::FormatRange& range : _block.textFormats()) {
-            if (!range.format.hasProperty(ScenarioBlockStyle::PropertyIsDone))
-                continue;
-
-            hash = hash
-                    % "#"
-                    % QString::number(range.start)
-                    % "#"
-                    % QString::number(range.length)
-                    % "#"
-                    % range.format.foreground().color().name()
-                    % "#"
-                    % range.format.background().color().name()
-                    % "#"
-                    % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) ? "true" : "false")
-                    % "#"
-                    % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false")
-                    % "#"
-                    % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false")
-                    % "#"
-                    % range.format.property(ScenarioBlockStyle::PropertyComments).toStringList().join("#")
-                    % "#"
-                    % range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList().join("#")
-                    % "#"
-                    % range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList().join("#");
+            if (range.format.hasProperty(ScenarioBlockStyle::PropertyIsDone)) {
+                hash = hash
+                        % "#"
+                        % QString::number(range.start)
+                        % "#"
+                        % QString::number(range.length)
+                        % "#"
+                        % range.format.foreground().color().name()
+                        % "#"
+                        % range.format.background().color().name()
+                        % "#"
+                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) ? "true" : "false")
+                        % "#"
+                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false")
+                        % "#"
+                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false")
+                        % "#"
+                        % range.format.property(ScenarioBlockStyle::PropertyComments).toStringList().join("#")
+                        % "#"
+                        % range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList().join("#")
+                        % "#"
+                        % range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList().join("#");
+            } else {
+                hash = hash
+                        % "#"
+                        % QString::number(range.start)
+                        % "#"
+                        % QString::number(range.length)
+                        % "#"
+                        % (range.format.font().bold() ? "true" : "false")
+                        % "#"
+                        % (range.format.font().italic() ? "true" : "false")
+                        % "#"
+                        % (range.format.font().underline() ? "true" : "false");
+            }
         }
 
         return qHash(hash);
@@ -348,6 +366,33 @@ QString ScenarioXml::scenarioToXml()
                         }
                     }
                     currentBlockXml.append(QString("</%1>\n").arg(NODE_REVIEW_GROUP));
+                }
+
+                //
+                // Пишем форматирование текста блока
+                //
+                if (!currentBlock.textFormats().isEmpty()) {
+                    currentBlockXml.append(QString("<%1>\n").arg(NODE_FORMAT_GROUP));
+                    for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                        currentBlockXml.append(QString("<%1").arg(NODE_FORMAT));
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_FROM, QString::number(range.start)));
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_LENGTH, QString::number(range.length)));
+                        if (range.format.hasProperty(QTextFormat::FontWeight)) {
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_BOLD,
+                                                                             range.format.font().bold() ? "true" : "false"));
+                        }
+                        if (range.format.hasProperty(QTextFormat::FontItalic)) {
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_ITALIC,
+                                                                             range.format.font().italic() ? "true" : "false"));
+                        }
+                        if (range.format.hasProperty(QTextFormat::TextUnderlineStyle)) {
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_UNDERLINE,
+                                                                             range.format.font().underline() ? "true" : "false"));
+                        }
+                        //
+                        currentBlockXml.append("/>\n");
+                    }
+                    currentBlockXml.append(QString("</%1>\n").arg(NODE_FORMAT_GROUP));
                 }
 
                 //
@@ -648,6 +693,30 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                             //
                             writer.writeEndElement();
                         }
+                    }
+                    writer.writeEndElement();
+                }
+
+                //
+                // Пишем форматирование текста блока
+                //
+                if (!currentBlock.textFormats().isEmpty()) {
+                    writer.writeStartElement(NODE_FORMAT_GROUP);
+                    for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                        writer.writeStartElement(NODE_FORMAT);
+                        writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(range.start));
+                        writer.writeAttribute(ATTRIBUTE_FORMAT_LENGTH, QString::number(range.length));
+                        if (range.format.hasProperty(QTextFormat::FontWeight)) {
+                            writer.writeAttribute(ATTRIBUTE_FORMAT_BOLD, range.format.font().bold() ? "true" : "false");
+                        }
+                        if (range.format.hasProperty(QTextFormat::FontItalic)) {
+                            writer.writeAttribute(ATTRIBUTE_FORMAT_ITALIC, range.format.font().italic() ? "true" : "false");
+                        }
+                        if (range.format.hasProperty(QTextFormat::TextUnderlineStyle)) {
+                            writer.writeAttribute(ATTRIBUTE_FORMAT_UNDERLINE, range.format.font().underline() ? "true" : "false");
+                        }
+                        //
+                        writer.writeEndElement();
                     }
                     writer.writeEndElement();
                 }
@@ -1149,6 +1218,40 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         reviewCursor.setPosition(reviewCursor.block().position() + start + startDelta);
                         reviewCursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, length);
                         reviewCursor.mergeCharFormat(reviewFormat);
+                    }
+
+                    //
+                    // Форматирование
+                    //
+                    if (tokenName == NODE_FORMAT) {
+                        const int start = reader.attributes().value(ATTRIBUTE_FORMAT_FROM).toInt();
+                        const int length = reader.attributes().value(ATTRIBUTE_FORMAT_LENGTH).toInt();
+                        const bool bold = reader.attributes().value(ATTRIBUTE_FORMAT_BOLD).toString() == "true";
+                        const bool italic = reader.attributes().value(ATTRIBUTE_FORMAT_ITALIC).toString() == "true";
+                        const bool underline = reader.attributes().value(ATTRIBUTE_FORMAT_UNDERLINE).toString() == "true";
+
+
+                        //
+                        // Собираем формат
+                        //
+                        QTextCharFormat format;
+                        format.setFontWeight(bold ? QFont::Bold : QFont::Normal);
+                        format.setFontItalic(italic);
+                        format.setFontUnderline(underline);
+
+
+                        //
+                        // Вставляем в документ
+                        //
+                        QTextCursor formattingCursor = cursor;
+                        int startDelta = 0;
+                        if (formattingCursor.block().position() < _position
+                            && (formattingCursor.block().position() + formattingCursor.block().length()) > _position) {
+                            startDelta = _position - formattingCursor.block().position();
+                        }
+                        formattingCursor.setPosition(formattingCursor.block().position() + start + startDelta);
+                        formattingCursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, length);
+                        formattingCursor.mergeCharFormat(format);
                     }
                 }
 
