@@ -1177,7 +1177,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             //
             // Определим начальный и конечный блоки на экране
             //
-            QTextBlock topBlock = document()->lastBlock();
+            QTextBlock topBlock = document()->firstBlock();
             {
                 QTextCursor topCursor;
                 for (int delta = 0 ; delta < viewport()->height()/4; delta += 10) {
@@ -1197,7 +1197,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                 topBlock = topBlock.previous();
             }
             //
-            QTextBlock bottomBlock = document()->firstBlock();
+            QTextBlock bottomBlock = document()->lastBlock();
             {
                 QTextCursor bottomCursor;
                 for (int delta = viewport()->height() ; delta > viewport()->height()*3/4; delta -= 10) {
@@ -1208,7 +1208,9 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     }
                 }
             }
-            bottomBlock = bottomBlock.next();
+            if (bottomBlock != document()->lastBlock()) {
+                bottomBlock = bottomBlock.next();
+            }
 
             //
             // Проходим блоки на экране и декорируем их
