@@ -326,44 +326,43 @@ QString ScenarioXml::scenarioToXml()
                 if (::hasReviewMarks(currentBlock)) {
                     currentBlockXml.append(QString("<%1>\n").arg(NODE_REVIEW_GROUP));
                     foreach (const QTextLayout::FormatRange& range, currentBlock.textFormats()) {
-                        bool isReviewMark =
-                            range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark);
+                        if (!range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
+                            continue;
+                        }
 
                         //
                         // Все редакторские правки, и только, если выделен записываемый текст
                         //
-                        if (isReviewMark) {
-                            currentBlockXml.append(QString("<%1").arg(NODE_REVIEW));
-                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_FROM, QString::number(range.start)));
-                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_LENGTH, QString::number(range.length)));
-                            if (range.format.hasProperty(QTextFormat::ForegroundBrush)) {
-                                currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_COLOR, range.format.foreground().color().name()));
-                            }
-                            if (range.format.hasProperty(QTextFormat::BackgroundBrush)) {
-                                currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_BGCOLOR, range.format.background().color().name()));
-                            }
-                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_IS_HIGHLIGHT,
-                                range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false"));
-                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_DONE,
-                                range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false"));
-                            currentBlockXml.append(">\n");
-                            //
-                            // ... комментарии
-                            //
-                            const QStringList comments = range.format.property(ScenarioBlockStyle::PropertyComments).toStringList();
-                            const QStringList authors = range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList();
-                            const QStringList dates = range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList();
-                            for (int commentIndex = 0; commentIndex < comments.size(); ++commentIndex) {
-                                currentBlockXml.append(QString("<%1").arg(NODE_REVIEW_COMMENT));
-                                currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_COMMENT,
-                                    TextEditHelper::toHtmlEscaped(comments.at(commentIndex))));
-                                currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_AUTHOR, authors.at(commentIndex)));
-                                currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_DATE, dates.at(commentIndex)));
-                                currentBlockXml.append("/>\n");
-                            }
-                            //
-                            currentBlockXml.append(QString("</%1>\n").arg(NODE_REVIEW));
+                        currentBlockXml.append(QString("<%1").arg(NODE_REVIEW));
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_FROM, QString::number(range.start)));
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_LENGTH, QString::number(range.length)));
+                        if (range.format.hasProperty(QTextFormat::ForegroundBrush)) {
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_COLOR, range.format.foreground().color().name()));
                         }
+                        if (range.format.hasProperty(QTextFormat::BackgroundBrush)) {
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_BGCOLOR, range.format.background().color().name()));
+                        }
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_IS_HIGHLIGHT,
+                            range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false"));
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_DONE,
+                            range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false"));
+                        currentBlockXml.append(">\n");
+                        //
+                        // ... комментарии
+                        //
+                        const QStringList comments = range.format.property(ScenarioBlockStyle::PropertyComments).toStringList();
+                        const QStringList authors = range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList();
+                        const QStringList dates = range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList();
+                        for (int commentIndex = 0; commentIndex < comments.size(); ++commentIndex) {
+                            currentBlockXml.append(QString("<%1").arg(NODE_REVIEW_COMMENT));
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_COMMENT,
+                                TextEditHelper::toHtmlEscaped(comments.at(commentIndex))));
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_AUTHOR, authors.at(commentIndex)));
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_DATE, dates.at(commentIndex)));
+                            currentBlockXml.append("/>\n");
+                        }
+                        //
+                        currentBlockXml.append(QString("</%1>\n").arg(NODE_REVIEW));
                     }
                     currentBlockXml.append(QString("</%1>\n").arg(NODE_REVIEW_GROUP));
                 }
@@ -376,7 +375,8 @@ QString ScenarioXml::scenarioToXml()
                         && currentBlock.textFormats().first().format != currentBlock.charFormat())) {
                     currentBlockXml.append(QString("<%1>\n").arg(NODE_FORMAT_GROUP));
                     for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
-                        if (range.format == currentBlock.charFormat()) {
+                        if (range.format == currentBlock.charFormat()
+                            || range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
                             continue;
                         }
 
@@ -629,9 +629,6 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 if (::hasReviewMarks(currentBlock)) {
                     writer.writeStartElement(NODE_REVIEW_GROUP);
                     foreach (const QTextLayout::FormatRange& range, currentBlock.textFormats()) {
-                        bool isReviewMark =
-                            range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark);
-
                         //
                         // Корректируем позиции выделения
                         //
@@ -666,10 +663,11 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                         }
 
 
-
                         //
                         // Все редакторские правки, и только, если выделен записываемый текст
                         //
+                        const bool isReviewMark =
+                            range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark);
                         if (isReviewMark && isSelected) {
                             writer.writeStartElement(NODE_REVIEW);
                             writer.writeAttribute(ATTRIBUTE_REVIEW_FROM, QString::number(start));
@@ -711,9 +709,11 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                         && currentBlock.textFormats().first().format != currentBlock.charFormat())) {
                     writer.writeStartElement(NODE_FORMAT_GROUP);
                     for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
-                        if (range.format == currentBlock.charFormat()) {
+                        if (range.format == currentBlock.charFormat()
+                            || range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
                             continue;
                         }
+
                         writer.writeStartElement(NODE_FORMAT);
                         writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(range.start));
                         writer.writeAttribute(ATTRIBUTE_FORMAT_LENGTH, QString::number(range.length));

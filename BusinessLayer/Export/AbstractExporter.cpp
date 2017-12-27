@@ -452,15 +452,25 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                 //
                 destCursor.insertText(sourceCursor.block().text());
                 //
-                // ... выделения
+                // ... выделения и форматирование
                 //
                 if (!sourceCursor.block().textFormats().isEmpty()) {
                     const int startBlockPosition = destCursor.block().position();
                     foreach (const QTextLayout::FormatRange& range, sourceCursor.block().textFormats()) {
-                        if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
+                        const bool isReviewMark = range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark);
+                        const bool isFormatting = range.format != sourceCursor.blockCharFormat();
+                        if (isReviewMark || isFormatting) {
                             destCursor.setPosition(startBlockPosition + range.start);
                             destCursor.setPosition(destCursor.position() + range.length, QTextCursor::KeepAnchor);
-                            destCursor.mergeCharFormat(range.format);
+                            QTextCharFormat format = range.format;
+                            //
+                            // ... выделение красим в чёрный, чтобы случайно не выгрузить
+                            //     текст с пользовательским цветом
+                            //
+                            if (!isReviewMark) {
+                                format.setForeground(Qt::black);
+                            }
+                            destCursor.mergeCharFormat(format);
                         }
                     }
                     destCursor.movePosition(QTextCursor::EndOfBlock);
@@ -682,6 +692,11 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                 destDocumentCursor.setCharFormat(charFormat);
 
                 //
+                // Дополнительное место под номер вписываемый в текст блока
+                //
+                int additionalSpaceForNumber = 0;
+
+                //
                 // Для блока "Время и место" добавочная информация
                 //
                 if (currentBlockType == ScenarioBlockStyle::SceneHeading) {
@@ -705,6 +720,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                         && sceneInfo != nullptr) {
                         const QString sceneNumber = QString("%1. ").arg(sceneInfo->sceneNumber());
                         destDocumentCursor.insertText(sceneNumber);
+                        additionalSpaceForNumber = sceneNumber.length();
                     }
                 }
                 //
@@ -727,6 +743,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                         && characterInfo != nullptr) {
                         const QString dialogueNumber = QString("%1: ").arg(characterInfo->dialogueNumbder());
                         destDocumentCursor.insertText(dialogueNumber);
+                        additionalSpaceForNumber = dialogueNumber.length();
                     }
                 }
 
@@ -754,13 +771,33 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                         const int startBlockPosition = destDocumentCursor.block().position();
                         foreach (const QTextLayout::FormatRange& range, sourceDocumentCursor.block().textFormats()) {
                             if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
-                                destDocumentCursor.setPosition(startBlockPosition + range.start);
+                                destDocumentCursor.setPosition(startBlockPosition + range.start + additionalSpaceForNumber);
                                 destDocumentCursor.setPosition(destDocumentCursor.position() + range.length, QTextCursor::KeepAnchor);
                                 destDocumentCursor.mergeCharFormat(range.format);
                             }
                         }
                         destDocumentCursor.movePosition(QTextCursor::EndOfBlock);
                     }
+                }
+
+                //
+                // Если в блоке есть форматирование отличное от стандартного, добавляем его
+                //
+                if (!sourceDocumentCursor.block().textFormats().isEmpty()) {
+                    const int startBlockPosition = destDocumentCursor.block().position();
+                    foreach (const QTextLayout::FormatRange& range, sourceDocumentCursor.block().textFormats()) {
+                        if (range.format == sourceDocumentCursor.blockCharFormat()
+                            || range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
+                            continue;
+                        }
+
+                        destDocumentCursor.setPosition(startBlockPosition + range.start + additionalSpaceForNumber);
+                        destDocumentCursor.setPosition(destDocumentCursor.position() + range.length, QTextCursor::KeepAnchor);
+                        QTextCharFormat format = range.format;
+                        format.setForeground(Qt::black);
+                        destDocumentCursor.mergeCharFormat(format);
+                    }
+                    destDocumentCursor.movePosition(QTextCursor::EndOfBlock);
                 }
             }
 
