@@ -128,7 +128,7 @@ namespace {
                         % range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList().join("#")
                         % "#"
                         % range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList().join("#");
-            } else {
+            } else if (range.format != _block.charFormat()) {
                 hash = hash
                         % "#"
                         % QString::number(range.start)
@@ -371,9 +371,15 @@ QString ScenarioXml::scenarioToXml()
                 //
                 // Пишем форматирование текста блока
                 //
-                if (!currentBlock.textFormats().isEmpty()) {
+                if (currentBlock.textFormats().size() > 1
+                    || (!currentBlock.textFormats().isEmpty()
+                        && currentBlock.textFormats().first().format != currentBlock.charFormat())) {
                     currentBlockXml.append(QString("<%1>\n").arg(NODE_FORMAT_GROUP));
                     for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                        if (range.format == currentBlock.charFormat()) {
+                            continue;
+                        }
+
                         currentBlockXml.append(QString("<%1").arg(NODE_FORMAT));
                         currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_FROM, QString::number(range.start)));
                         currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_LENGTH, QString::number(range.length)));
@@ -700,9 +706,14 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 //
                 // Пишем форматирование текста блока
                 //
-                if (!currentBlock.textFormats().isEmpty()) {
+                if (currentBlock.textFormats().size() > 1
+                    || (!currentBlock.textFormats().isEmpty()
+                        && currentBlock.textFormats().first().format != currentBlock.charFormat())) {
                     writer.writeStartElement(NODE_FORMAT_GROUP);
                     for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                        if (range.format == currentBlock.charFormat()) {
+                            continue;
+                        }
                         writer.writeStartElement(NODE_FORMAT);
                         writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(range.start));
                         writer.writeAttribute(ATTRIBUTE_FORMAT_LENGTH, QString::number(range.length));
