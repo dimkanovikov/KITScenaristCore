@@ -142,12 +142,17 @@ namespace BusinessLogic
         /**
          * @brief Описание сцены
          */
-        QString itemDescription(ScenarioModelItem* _item) const;
+        QString itemDescription(const ScenarioModelItem* _item) const;
 
         /**
          * @brief Установить описание для сцены в указанной позиции курсора
          */
         void setItemDescriptionAtPosition(int _position, const QString& _description);
+
+        /**
+         * @brief Копировать описание сцены в текст сценария
+         */
+        void copyItemDescriptionToScript(int _position);
 
         /**
          * @brief Загрузить документ из сценария

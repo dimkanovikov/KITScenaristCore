@@ -30,9 +30,7 @@ QPushButton[leftAlignedText=true] {
 QFrame[inTopPanel=true] {
     background: palette(button);
     color: palette(button-text);
-    padding-top: 2px;
-    padding-bottom: 2px;
-    min-height: 30px;
+    min-height: 37px;
 }
 
 /*
@@ -715,10 +713,18 @@ QWidget[topPanelLeftBordered=true] {
     border-left-color: palette(dark);
 }
 
+QWidget[topPanelLeftBordered=false] {
+    border-left: none;
+}
+
 QWidget[topPanelTopBordered=true] {
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: palette(dark);
+}
+
+QWidget[topPanelTopBordered=false] {
+    border-top: none;
 }
 
 QWidget[topPanelRightBordered=true] {

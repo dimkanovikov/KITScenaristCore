@@ -296,7 +296,7 @@ QString ScenarioDocument::itemDescriptionAtPosition(int _position) const
     return description;
 }
 
-QString ScenarioDocument::itemDescription(ScenarioModelItem* _item) const
+QString ScenarioDocument::itemDescription(const ScenarioModelItem* _item) const
 {
     QTextCursor cursor(m_document);
     cursor.setPosition(_item->position());
@@ -372,7 +372,6 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
                     if (currentBlockType == ScenarioBlockStyle::SceneDescription) {
                         cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
                         cursor.removeSelectedText();
-//                        cursor.deleteChar();
 
                         cursor.movePosition(QTextCursor::NextBlock, QTextCursor::KeepAnchor);
                     }
@@ -428,6 +427,33 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
 
         m_inSceneDescriptionUpdate = false;
     }
+}
+
+void ScenarioDocument::copyItemDescriptionToScript(int _position)
+{
+    //
+    // Определим описание текущей сцены
+    //
+    const bool findNear = true;
+    const ScenarioModelItem* item = itemForPosition(_position, findNear);
+    const QString description = itemDescription(item);
+    if (description.isEmpty()) {
+        return;
+    }
+
+    //
+    // Если описание есть, вставляем его, как описание действия в сценарий
+    //
+    QTextCursor cursor(m_document);
+    cursor.setPosition(item->endPosition());
+    cursor.beginEditBlock();
+    const ScenarioBlockStyle actionBlockStyle =
+            ScenarioTemplateFacade::getTemplate().blockStyle(ScenarioBlockStyle::Action);
+    for (const QString& textLine : description.split('\n')) {
+        cursor.insertBlock(actionBlockStyle.blockFormat(), actionBlockStyle.charFormat());
+        cursor.insertText(textLine);
+    }
+    cursor.endEditBlock();
 }
 
 void ScenarioDocument::load(Domain::Scenario* _scenario)
