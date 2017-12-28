@@ -566,7 +566,7 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
                && !cursor.atEnd()) {
             const QTextBlock currentBlock = cursor.block();
             if (!currentBlock.textFormats().isEmpty()) {
-                foreach (const QTextLayout::FormatRange& range, currentBlock.textFormats()) {
+                for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
                     if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
                         //
                         // Если такой заметки не сохранено, добавляем
@@ -613,7 +613,11 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
                                     //
                                     // Проверяем, можно ли её объединить с предыдущей
                                     //
-                                    if (prevMark.endPosition() == newMark.startPosition - 1) {
+                                    if (
+                                        // в одном блоке
+                                        prevMark.endPosition() == newMark.startPosition
+                                        // в разных блоках
+                                        || prevMark.endPosition() == newMark.startPosition - 1) {
                                         //
                                         // Обновляем сохранённую заметку
                                         //
