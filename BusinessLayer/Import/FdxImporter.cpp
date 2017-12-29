@@ -3,6 +3,7 @@
 #include <BusinessLayer/ScenarioDocument/ScenarioTemplate.h>
 
 #include <QDomDocument>
+#include <QDomNode>
 #include <QFile>
 #include <QXmlStreamWriter>
 
@@ -15,11 +16,18 @@ namespace {
     /** @{ */
     const QString NODE_SCENARIO = "scenario";
     const QString NODE_VALUE = "v";
+    const QString NODE_FORMAT_GROUP = "formatting";
+    const QString NODE_FORMAT = "format";
 
     const QString ATTRIBUTE_VERSION = "version";
     const QString ATTRIBUTE_DESCRIPTION = "description";
     const QString ATTRIBUTE_COLOR = "color";
     const QString ATTRIBUTE_TITLE = "title";
+    const QString ATTRIBUTE_FORMAT_FROM = "from";
+    const QString ATTRIBUTE_FORMAT_LENGTH = "length";
+    const QString ATTRIBUTE_FORMAT_BOLD = "bold";
+    const QString ATTRIBUTE_FORMAT_ITALIC = "italic";
+    const QString ATTRIBUTE_FORMAT_UNDERLINE = "underline";
     /** @} */
 }
 
@@ -88,10 +96,30 @@ QString FdxImporter::importScenario(const ImportParameters& _importParameters) c
             // Получим текст блока
             //
             QString paragraphText;
+            QVector<TextFormat> formatting;
             {
                 QDomElement textNode = paragraph.firstChildElement("Text");
                 while (!textNode.isNull()) {
+                    //
+                    // ... читаем форматирование
+                    //
+                    if (textNode.hasAttribute("Style")) {
+                        const QString style = textNode.attribute("Style");
+                        TextFormat format;
+                        format.start = paragraphText.length();
+                        format.length = textNode.text().length();
+                        format.bold = style.contains("Bold");
+                        format.italic = style.contains("Italic");
+                        format.underline = style.contains("Underline");
+                        if (format.isValid()) {
+                            formatting.append(format);
+                        }
+                    }
+                    //
+                    // ... читаем текст
+                    //
                     paragraphText.append(textNode.text());
+
                     textNode = textNode.nextSiblingElement("Text");
                 }
             }
@@ -142,6 +170,23 @@ QString FdxImporter::importScenario(const ImportParameters& _importParameters) c
             writer.writeStartElement(NODE_VALUE);
             writer.writeCDATA(paragraphText);
             writer.writeEndElement();
+            if (!formatting.isEmpty()) {
+                writer.writeStartElement(NODE_FORMAT_GROUP);
+                for (const TextFormat& format : formatting){
+                    writer.writeStartElement(NODE_FORMAT);
+                    //
+                    // Данные пользовательского форматирования
+                    //
+                    writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(format.start));
+                    writer.writeAttribute(ATTRIBUTE_FORMAT_LENGTH, QString::number(format.length));
+                    writer.writeAttribute(ATTRIBUTE_FORMAT_BOLD, format.bold ? "true" : "false");
+                    writer.writeAttribute(ATTRIBUTE_FORMAT_ITALIC, format.italic? "true" : "false");
+                    writer.writeAttribute(ATTRIBUTE_FORMAT_UNDERLINE, format.underline ? "true" : "false");
+                    //
+                    writer.writeEndElement();
+                }
+                writer.writeEndElement();
+            }
             writer.writeEndElement();
 
             //

@@ -172,6 +172,46 @@ namespace BusinessLogic
 
             return filters;
         }
+
+        /**
+         * @brief Структура для работы с форматирование блоков
+         */
+        struct TextFormat {
+            /**
+             * @brief Начальная позиция форматирования
+             */
+            int start = 0;
+
+            /**
+             * @brief Длина форматирования
+             */
+            int length = 0;
+
+            /**
+             * @brief Полужирное
+             */
+            bool bold = false;
+
+            /**
+             * @brief Курсив
+             */
+            bool italic = false;
+
+            /**
+             * @brief Подчёркивание
+             */
+            bool underline = false;
+
+            /**
+             * @brief Задано ли форматирование
+             */
+            bool isValid() const {
+                return
+                        bold != false
+                        || italic != false
+                        || underline != false;
+            }
+        };
     };
 }
 
