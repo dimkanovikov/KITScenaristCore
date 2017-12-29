@@ -82,6 +82,7 @@ void FdxExporter::writeContent(QXmlStreamWriter& _writer, ScenarioDocument* _sce
     // Используем ненастоящие параметры экспорта, если надо, то обрабатываем их вручную
     //
     ExportParameters fakeParameters;
+    fakeParameters.printScenesNumbers = false;
 
     //
     // Сформируем документ
@@ -167,7 +168,35 @@ void FdxExporter::writeContent(QXmlStreamWriter& _writer, ScenarioDocument* _sce
                 _writer.writeAttribute("Number", sceneNumber);
             }
             _writer.writeAttribute("Type", paragraphType);
-            _writer.writeTextElement("Text", documentCursor.block().text());
+            for (const QTextLayout::FormatRange& range : documentCursor.block().textFormats()) {
+                _writer.writeStartElement("Text");
+                //
+                // Пишем стиль блока
+                //
+                QString style;
+                QString styleDivider;
+                if (range.format.fontWeight() == QFont::Bold) {
+                    style = "Bold";
+                    styleDivider = "+";
+                }
+                if (range.format.fontItalic()) {
+                    style += styleDivider + "Italic";
+                    styleDivider = "+";
+                }
+                if (range.format.fontUnderline()) {
+                    style += styleDivider + "Underline";
+                }
+                //
+                if (!style.isEmpty()) {
+                    _writer.writeAttribute("Style", style);
+                }
+                //
+                // Пишем текст
+                //
+                _writer.writeCharacters(documentCursor.block().text().mid(range.start, range.length));
+                //
+                _writer.writeEndElement();
+            }
             _writer.writeEndElement(); // Paragraph
         }
 
