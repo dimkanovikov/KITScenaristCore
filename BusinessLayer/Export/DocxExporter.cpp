@@ -328,16 +328,40 @@ namespace {
             documentXml.append("<w:rPr/></w:pPr>");
             foreach (const QTextLayout::FormatRange& range, block.textFormats()) {
                 //
-                // ... стандартный для абзаца
+                // ... не является редакторской заметкой
                 //
                 if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) == false) {
-                    documentXml.append(
-                        QString("<w:r><w:rPr/><w:t xml:space=\"preserve\">%2</w:t></w:r>")
-                        .arg(TextEditHelper::toHtmlEscaped(blockText.mid(range.start, range.length)))
-                        );
+                    //
+                    // ... стандартный для абзаца
+                    //
+                    if (range.format == block.charFormat()) {
+                        documentXml.append(
+                                    QString("<w:r><w:rPr/><w:t xml:space=\"preserve\">%2</w:t></w:r>")
+                                    .arg(TextEditHelper::toHtmlEscaped(blockText.mid(range.start, range.length)))
+                                    );
+                    }
+                    //
+                    // ... не стандартный
+                    //
+                    else {
+                        documentXml.append("<w:r>");
+                        documentXml.append("<w:rPr>");
+                        documentXml.append(QString("<w:b w:val=\"%1\"/>").arg(range.format.font().bold() ? "true" : "false"));
+                        documentXml.append(QString("<w:i w:val=\"%1\"/>").arg(range.format.font().italic() ? "true" : "false"));
+                        documentXml.append(QString("<w:u w:val=\"%1\"/>").arg(range.format.font().underline() ? "single" : "none"));
+                        documentXml.append("</w:rPr>");
+                        //
+                        // Сам текст
+                        //
+                        documentXml.append(
+                            QString("<w:t xml:space=\"preserve\">%2</w:t>")
+                            .arg(TextEditHelper::toHtmlEscaped(blockText.mid(range.start, range.length)))
+                            );
+                        documentXml.append("</w:r>");
+                    }
                 }
                 //
-                // ... нестандартный
+                // ... редакторская заметка
                 //
                 else {
                     const QStringList comments = range.format.property(ScenarioBlockStyle::PropertyComments).toStringList();
@@ -393,6 +417,9 @@ namespace {
                                     // код цвета без решётки
                                     .arg(range.format.foreground().color().name().mid(1)));
                     }
+                    documentXml.append(QString("<w:b w:val=\"%1\"/>").arg(range.format.font().bold() ? "true" : "false"));
+                    documentXml.append(QString("<w:i w:val=\"%1\"/>").arg(range.format.font().italic() ? "true" : "false"));
+                    documentXml.append(QString("<w:u w:val=\"%1\"/>").arg(range.format.font().underline() ? "single" : "none"));
                     documentXml.append("</w:rPr>");
                     //
                     // Сам текст
