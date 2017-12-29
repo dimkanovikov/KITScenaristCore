@@ -285,6 +285,11 @@ namespace BusinessLogic
          */
         bool hasChildren() const;
 
+        /**
+         * @brief Является ли элемент потомком заданного
+         */
+        bool childOf(ScenarioModelItem* _parent) const;
+
     private:
         /**
          * @brief Родительский элемент

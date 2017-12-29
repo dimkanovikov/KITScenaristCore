@@ -418,3 +418,16 @@ bool ScenarioModelItem::hasChildren() const
 {
     return !m_children.isEmpty();
 }
+
+bool ScenarioModelItem::childOf(ScenarioModelItem* _parent) const
+{
+    ScenarioModelItem* parent = m_parent;
+    while (parent != nullptr) {
+        if (parent == _parent) {
+            return true;
+        }
+
+        parent = parent->parent();
+    }
+    return false;
+}

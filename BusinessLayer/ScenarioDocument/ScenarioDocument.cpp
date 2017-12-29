@@ -652,9 +652,12 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
                 }
 
                 //
-                // Добавим элемент в список на удаление
+                // Добавим элемент в список на удаление, если там нет одно из его предков
                 //
-                itemsToDelete.append(itemToDelete);
+                if (itemsToDelete.isEmpty()
+                    || !itemToDelete->childOf(itemsToDelete.last())) {
+                    itemsToDelete.append(itemToDelete);
+                }
             }
 
             //
