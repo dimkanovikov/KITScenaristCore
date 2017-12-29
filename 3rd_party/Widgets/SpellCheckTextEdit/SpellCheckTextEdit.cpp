@@ -66,6 +66,10 @@ bool SpellCheckTextEdit::useSpellChecker() const
 
 void SpellCheckTextEdit::setSpellCheckLanguage(SpellChecker::Language _language)
 {
+    if (!useSpellChecker()) {
+        return;
+    }
+
     if (m_spellChecker->spellingLanguage() != _language) {
         //
         // Установим язык проверяющего
