@@ -188,7 +188,7 @@ namespace {
             //
             blockStyle.append(
                 QString("<w:bidi w:val=\"%1\"/>")
-                .arg(QLocale().textDirection() == Qt::LeftToRight ? "0" : "1"));
+                .arg(QLocale().textDirection() == Qt::RightToLeft ? "true" : "false"));
             //
             // ... конец свойств
             //
@@ -341,8 +341,10 @@ namespace {
                     // ... стандартный для абзаца
                     //
                     if (range.format == block.charFormat()) {
+                        documentXml.append("<w:r><w:rPr>");
+                        documentXml.append(QString("<w:rtl w:val=\"%1\"/>").arg(QLocale().textDirection() == Qt::RightToLeft ? "true" : "false"));
                         documentXml.append(
-                                    QString("<w:r><w:rPr/><w:t xml:space=\"preserve\">%2</w:t></w:r>")
+                                    QString("</w:rPr><w:t xml:space=\"preserve\">%2</w:t></w:r>")
                                     .arg(TextEditHelper::toHtmlEscaped(blockText.mid(range.start, range.length)))
                                     );
                     }
@@ -355,6 +357,7 @@ namespace {
                         documentXml.append(QString("<w:b w:val=\"%1\"/>").arg(range.format.font().bold() ? "true" : "false"));
                         documentXml.append(QString("<w:i w:val=\"%1\"/>").arg(range.format.font().italic() ? "true" : "false"));
                         documentXml.append(QString("<w:u w:val=\"%1\"/>").arg(range.format.font().underline() ? "single" : "none"));
+                        documentXml.append(QString("<w:rtl w:val=\"%1\"/>").arg(QLocale().textDirection() == Qt::RightToLeft ? "true" : "false"));
                         documentXml.append("</w:rPr>");
                         //
                         // Сам текст
@@ -426,6 +429,7 @@ namespace {
                     documentXml.append(QString("<w:b w:val=\"%1\"/>").arg(range.format.font().bold() ? "true" : "false"));
                     documentXml.append(QString("<w:i w:val=\"%1\"/>").arg(range.format.font().italic() ? "true" : "false"));
                     documentXml.append(QString("<w:u w:val=\"%1\"/>").arg(range.format.font().underline() ? "single" : "none"));
+                    documentXml.append(QString("<w:rtl w:val=\"%1\"/>").arg(QLocale().textDirection() == Qt::RightToLeft ? "true" : "false"));
                     documentXml.append("</w:rPr>");
                     //
                     // Сам текст
