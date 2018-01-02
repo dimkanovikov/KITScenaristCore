@@ -184,6 +184,12 @@ namespace {
             }
             blockStyle.append("\"/>");
             //
+            // ... направление письма
+            //
+            blockStyle.append(
+                QString("<w:bidi w:val=\"%1\"/>")
+                .arg(QLocale().textDirection() == Qt::LeftToRight ? "0" : "1"));
+            //
             // ... конец свойств
             //
             blockStyle.append("</w:pPr>");

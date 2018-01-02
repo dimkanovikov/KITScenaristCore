@@ -15,6 +15,7 @@
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
 #include <3rd_party/Helpers/TextEditHelper.h>
+#include <3rd_party/Helpers/TextUtils.h>
 #include <3rd_party/Widgets/PagesTextEdit/PageMetrics.h>
 #include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
 #include <3rd_party/Widgets/QtMindMap/include/graphwidget.h>
@@ -438,15 +439,12 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                 //
                 // ... настраиваем стиль блока
                 //
-                ScenarioBlockStyle blockStyle = exportStyle.blockStyle(currentBlockType);
-                if (sourceCursor.atStart()) {
-                    destCursor.setBlockFormat(sourceCursor.blockFormat());
-                    destCursor.setCharFormat(sourceCursor.blockCharFormat());
-                } else {
-                    destCursor.insertBlock(sourceCursor.blockFormat(), sourceCursor.blockCharFormat());
+                if (!sourceCursor.atStart()) {
+                    destCursor.insertBlock();
                 }
-                destCursor.mergeBlockFormat(blockStyle.blockFormat());
-                destCursor.mergeBlockCharFormat(blockStyle.charFormat());
+                const ScenarioBlockStyle blockStyle = exportStyle.blockStyle(currentBlockType);
+                destCursor.setBlockFormat(blockStyle.blockFormat());
+                destCursor.setBlockCharFormat(blockStyle.charFormat());
                 //
                 // ... копируем текст
                 //
@@ -458,7 +456,10 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                     const int startBlockPosition = destCursor.block().position();
                     foreach (const QTextLayout::FormatRange& range, sourceCursor.block().textFormats()) {
                         const bool isReviewMark = range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark);
-                        const bool isFormatting = range.format != sourceCursor.blockCharFormat();
+                        const bool isFormatting =
+                                range.format.font().bold() != sourceCursor.blockCharFormat().font().bold()
+                                || range.format.font().italic() != sourceCursor.blockCharFormat().font().italic()
+                                || range.format.font().underline() != sourceCursor.blockCharFormat().font().underline();
                         if (isReviewMark || isFormatting) {
                             destCursor.setPosition(startBlockPosition + range.start);
                             destCursor.setPosition(destCursor.position() + range.length, QTextCursor::KeepAnchor);
@@ -470,6 +471,14 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                             if (!isReviewMark) {
                                 format.setForeground(Qt::black);
                             }
+                            //
+                            // ... используем шрифт из шаблона экспорта, а не самого текста документа
+                            //
+                            format.setFontFamily(destCursor.charFormat().fontFamily());
+                            format.setFontPointSize(destCursor.charFormat().fontPointSize());
+                            //
+                            // ... применим формат
+                            //
                             destCursor.mergeCharFormat(format);
                         }
                     }
@@ -682,7 +691,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                     //
                     // ... вставим новый абзац для наполнения текстом
                     //
-                    destDocumentCursor.insertBlock();
+                    ::insertLine(destDocumentCursor, blockFormat, charFormat);
                 }
 
                 //
@@ -786,8 +795,11 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                 if (!sourceDocumentCursor.block().textFormats().isEmpty()) {
                     const int startBlockPosition = destDocumentCursor.block().position();
                     foreach (const QTextLayout::FormatRange& range, sourceDocumentCursor.block().textFormats()) {
-                        if (range.format == sourceDocumentCursor.blockCharFormat()
-                            || range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
+                        const bool isFormatting =
+                                range.format.font().bold() != sourceDocumentCursor.blockCharFormat().font().bold()
+                                || range.format.font().italic() != sourceDocumentCursor.blockCharFormat().font().italic()
+                                || range.format.font().underline() != sourceDocumentCursor.blockCharFormat().font().underline();
+                        if (!isFormatting) {
                             continue;
                         }
 

@@ -128,18 +128,6 @@
     </message>
 </context>
 <context>
-    <name>BusinessLogic::AbstractExporter</name>
-    <message>
-        <source>(MORE)</source>
-        <translation>(ДАЛІ)</translation>
-    </message>
-    <message>
-        <source> (CONT&apos;D)</source>
-        <extracomment>Continued</extracomment>
-        <translation> (ПРОДОВЖЕННЯ)</translation>
-    </message>
-</context>
-<context>
     <name>BusinessLogic::AbstractImporter</name>
     <message>
         <source>All Supported Files</source>
@@ -463,6 +451,15 @@
         <translatorcomment>Зкорочення від Опис Сцени</translatorcomment>
         <translation>ОС</translation>
     </message>
+    <message>
+        <source>Lyrics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>L</source>
+        <extracomment>Reduction of Lyrics</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioModel</name>
@@ -529,6 +526,10 @@
         <source>Hebrew screenplay standard template.</source>
         <translation></translation>
     </message>
+    <message>
+        <source>Copy of </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLogic::SceneReport</name>
@@ -559,6 +560,18 @@
     <message>
         <source>[UNDEFINED]</source>
         <translation>[Не визначено]</translation>
+    </message>
+</context>
+<context>
+    <name>BusinessLogic::ScriptTextCorrector</name>
+    <message>
+        <source>CONT&apos;D</source>
+        <extracomment>Continued</extracomment>
+        <translation type="unfinished">ПРОДОВЖЕННЯ</translation>
+    </message>
+    <message>
+        <source>MORE</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -748,6 +761,10 @@
         <source>Go to text</source>
         <translation>Перейти до тексту</translation>
     </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Очистити</translation>
+    </message>
 </context>
 <context>
     <name>ChangePasswordDialog</name>
@@ -838,6 +855,76 @@
         <source>Unnamed image</source>
         <translation>Безіменне зображення</translation>
     </message>
+    <message>
+        <source>INT./EXT</source>
+        <translation type="unfinished">ІНТ./ЕКСТ</translation>
+    </message>
+    <message>
+        <source>AFTERNOON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LATER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MOMENTS LATER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CONTINUOUS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>THE NEXT DAY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O.C.</source>
+        <extracomment>Off-camera</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SUBTITLE</source>
+        <extracomment>Subtitle</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FADE IN:</source>
+        <translation type="unfinished">ІЗ ЗАТЕМНЕННЯ:</translation>
+    </message>
+    <message>
+        <source>FADE OUT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FADE TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DISSOLVE TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BACK TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MATCH CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>JUMP CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FADE TO BLACK</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DocxReader</name>
@@ -897,20 +984,8 @@
         <translation>FDX</translation>
     </message>
     <message>
-        <source>Scenes Numbering</source>
-        <translation>Нумерувати сцени</translation>
-    </message>
-    <message>
-        <source>Page Numbering</source>
-        <translation>Нумерувати сторінки</translation>
-    </message>
-    <message>
         <source>Save Review Marks</source>
         <translation>Зберегти нотатки редактора</translation>
-    </message>
-    <message>
-        <source>Scenes Prefix:</source>
-        <translation>Приставка сцен:</translation>
     </message>
     <message>
         <source>Template:</source>
@@ -931,6 +1006,18 @@
     <message>
         <source>Choose file to export:</source>
         <translation>Виберіть файл для експорту:</translation>
+    </message>
+    <message>
+        <source>Print pages numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print scenes numbers with prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print dialogues numbers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1688,6 +1775,17 @@ Project didn&apos;t synchronized.</source>
     </message>
 </context>
 <context>
+    <name>ManagementLayer::ScriptDictionariesManager</name>
+    <message>
+        <source>Enter new item name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure to remove &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ManagementLayer::SettingsManager</name>
     <message>
         <source>Restoring</source>
@@ -1752,6 +1850,13 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>Shortcut</source>
         <translation>Shortcut</translation>
+    </message>
+</context>
+<context>
+    <name>ManagementLayer::SettingsTemplatesManager</name>
+    <message>
+        <source>Choose base template</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2524,9 +2629,9 @@ And the text editor of the script. The editor has many auxiliary functions that 
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2615,6 +2720,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>All</source>
         <translation>Всі</translation>
+    </message>
+    <message>
+        <source>In lyrics</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2986,6 +3095,30 @@ Paragraph</source>
     <message>
         <source>pt</source>
         <translation>pt</translation>
+    </message>
+    <message>
+        <source>Hide all panels in fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show dialogues numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Highlight blocks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatically continue dialogue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatically corrections on page breaks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use open bracket in dialogue for jump to parenthetical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3868,10 +4001,6 @@ The application will start in few seconds.</source>
         <translation>↓ Наступне</translation>
     </message>
     <message>
-        <source>Catch focus</source>
-        <translation>Тримати фокус</translation>
-    </message>
-    <message>
         <source>%1 %2</source>
         <translation>%1 %2</translation>
     </message>
@@ -3953,6 +4082,30 @@ The application will start in few seconds.</source>
         <source>Convert to folder</source>
         <translation>Конвертувати в папку</translation>
     </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Очистити</translation>
+    </message>
+    <message>
+        <source>Show/hide additional panels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation type="unfinished">Варіант</translation>
+    </message>
+    <message>
+        <source>Scene description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script dictionaries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/hide script dictionaries</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioReviewPanel</name>
@@ -4018,6 +4171,10 @@ The application will start in few seconds.</source>
         <source>Description of:</source>
         <translation>Опис про:</translation>
     </message>
+    <message>
+        <source>Copy scene description to the script</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioSchemeItemDialog</name>
@@ -4075,6 +4232,44 @@ The application will start in few seconds.</source>
     <message>
         <source>Find and replace</source>
         <translation>Знайти і замінити</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScriptDictionaries</name>
+    <message>
+        <source>Scene intros</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scene times</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scene days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Character states</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Transitions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add dictionary item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove selected item</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScriptZenModeControls</name>
+    <message>
+        <source>Typewriter sound</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
