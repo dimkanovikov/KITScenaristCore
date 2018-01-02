@@ -12,6 +12,10 @@
         <file alias="Courier New Bold">Fonts/courb.ttf</file>
         <file alias="Courier New Bold Italic">Fonts/courbi.ttf</file>
         <file alias="Courier New Italic">Fonts/couri.ttf</file>
+        <file>Fonts/arial.ttf</file>
+        <file>Fonts/arialb.ttf</file>
+        <file>Fonts/arialbi.ttf</file>
+        <file>Fonts/ariali.ttf</file>
     </qresource>
     <qresource prefix="/Graphics">
         <file>Icons/folder.png</file>
