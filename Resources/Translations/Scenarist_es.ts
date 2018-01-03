@@ -430,7 +430,7 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="81"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Letras</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="94"/>
@@ -520,7 +520,7 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="122"/>
         <source>L</source>
         <extracomment>Reduction of Lyrics</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>L</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="75"/>
@@ -636,7 +636,7 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="713"/>
         <source>Copy of </source>
-        <translation type="unfinished"></translation>
+        <translation>Copia de</translation>
     </message>
 </context>
 <context>
@@ -683,12 +683,12 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="31"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation type="unfinished">A Continuación</translation>
+        <translation>CONT.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="39"/>
         <source>MORE</source>
-        <translation type="unfinished"></translation>
+        <translation>MÁS</translation>
     </message>
 </context>
 <context>
@@ -849,17 +849,17 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="78"/>
         <source>Layout by</source>
-        <translation type="unfinished"></translation>
+        <translation>Disposición en</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="87"/>
         <source>rows</source>
-        <translation type="unfinished"></translation>
+        <translation>filas</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="97"/>
         <source>columns</source>
-        <translation type="unfinished"></translation>
+        <translation>columnas</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="135"/>
@@ -1003,7 +1003,7 @@
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="408"/>
         <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>INT./EXT</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="416"/>
@@ -1024,7 +1024,7 @@
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="428"/>
         <source>AFTERNOON</source>
-        <translation type="unfinished"></translation>
+        <translation>TARDE</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="432"/>
@@ -1035,22 +1035,22 @@
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="436"/>
         <source>LATER</source>
-        <translation type="unfinished"></translation>
+        <translation>MÁS TARDE</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="440"/>
         <source>MOMENTS LATER</source>
-        <translation type="unfinished"></translation>
+        <translation>MOMENTOS DESPUÉS</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="444"/>
         <source>CONTINUOUS</source>
-        <translation type="unfinished"></translation>
+        <translation>CONTINUO</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="448"/>
         <source>THE NEXT DAY</source>
-        <translation type="unfinished"></translation>
+        <translation>AL DÍA SIGUIENTE</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="457"/>
@@ -1070,13 +1070,13 @@
         <location filename="../../DataLayer/Database/Database.cpp" line="467"/>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>O.C.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="472"/>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>SUBTÍTULO</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="477"/>
@@ -1088,55 +1088,55 @@
         <location filename="../../DataLayer/Database/Database.cpp" line="485"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1427"/>
         <source>CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>CORTE A:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="489"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1431"/>
         <source>FADE IN:</source>
-        <translation type="unfinished">FUNDIDO:</translation>
+        <translation>FUNDIDO:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="493"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1435"/>
         <source>FADE OUT</source>
-        <translation type="unfinished"></translation>
+        <translation>FUNDIDO A NEGRO</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="497"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1439"/>
         <source>FADE TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>FUNDE A:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="501"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1443"/>
         <source>DISSOLVE TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>FUNDE A:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="505"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1447"/>
         <source>BACK TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>VUELVE A:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="509"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1451"/>
         <source>MATCH CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>MATCH CUT A:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="513"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1455"/>
         <source>JUMP CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>JUMP CUT A:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="517"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1459"/>
         <source>FADE TO BLACK</source>
-        <translation type="unfinished"></translation>
+        <translation>FUNDIDO A NEGRO</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="1305"/>
@@ -1205,17 +1205,17 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="480"/>
         <source>Print pages numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimir números de páginas</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="490"/>
         <source>Print scenes numbers with prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimir números de escenas con prefijo</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="507"/>
         <source>Print dialogues numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimir números de diálogos</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="524"/>
@@ -1759,12 +1759,12 @@
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="543"/>
         <source>Possible save error</source>
-        <translation type="unfinished"></translation>
+        <translation>Posible error al guardar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="544"/>
         <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tienes menos de 50 megabytes de espacio libre en la unidad. Esto puede provocar errores al guardar el proyecto. Te recomendamos que liberes espacio y compruebas que el proyecto se ha guardado correctamente.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="981"/>
@@ -2236,12 +2236,12 @@ El proyecto no ha podido sincronizarse</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScriptDictionariesManager.cpp" line="91"/>
         <source>Enter new item name</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduce el nombre del nuevo elemento</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScriptDictionariesManager.cpp" line="136"/>
         <source>Are you sure to remove &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Seguro que quieres eliminar &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
 </context>
 <context>
@@ -2335,7 +2335,7 @@ El proyecto no ha podido sincronizarse</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsTemplatesManager.cpp" line="31"/>
         <source>Choose base template</source>
-        <translation type="unfinished"></translation>
+        <translation>Elige la plantilla base</translation>
     </message>
 </context>
 <context>
@@ -3264,7 +3264,7 @@ Y el editor de texto de guión. El editor tiene muchas funciones que simplifican
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="701"/>
@@ -3420,7 +3420,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="92"/>
         <source>In lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>En letras</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="96"/>
@@ -3754,17 +3754,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1501"/>
         <source>Hide all panels in fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar todos los paneles en el modo pantalla completa</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1511"/>
         <source>Show dialogues numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar números de diálogos</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1518"/>
         <source>Highlight blocks</source>
-        <translation type="unfinished"></translation>
+        <translation>Resaltar bloques</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1565"/>
@@ -3774,17 +3774,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1571"/>
         <source>Automatically continue dialogue</source>
-        <translation type="unfinished"></translation>
+        <translation>Continuar diálogo automáticamente</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1578"/>
         <source>Automatically corrections on page breaks</source>
-        <translation type="unfinished"></translation>
+        <translation>Corregir automáticamente en saltos de página</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1708"/>
         <source>Use open bracket in dialogue for jump to parenthetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar “abrir paréntesis” para saltar a paréntesis</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1917"/>
@@ -5139,7 +5139,7 @@ La aplicación se iniciará en unos segundos.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="351"/>
         <source>Show/hide additional panels</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar/ocultar paneles adicionales</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="358"/>
@@ -5164,12 +5164,12 @@ La aplicación se iniciará en unos segundos.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="368"/>
         <source>Script dictionaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Diccionarios del guión</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="369"/>
         <source>Show/hide script dictionaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar/ocultar diccionarios del guión</translation>
     </message>
 </context>
 <context>
@@ -5249,7 +5249,7 @@ La aplicación se iniciará en unos segundos.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="108"/>
         <source>Copy scene description to the script</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar descripción de la escena al guión</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="117"/>
@@ -5334,37 +5334,37 @@ La aplicación se iniciará en unos segundos.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="39"/>
         <source>Scene intros</source>
-        <translation type="unfinished"></translation>
+        <translation>Introducciones de escena</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="40"/>
         <source>Scene times</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempos de escena</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="41"/>
         <source>Scene days</source>
-        <translation type="unfinished"></translation>
+        <translation>Días de escena</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="42"/>
         <source>Character states</source>
-        <translation type="unfinished"></translation>
+        <translation>Estados de personaje</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="43"/>
         <source>Transitions</source>
-        <translation type="unfinished"></translation>
+        <translation>Transiciones</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="46"/>
         <source>Add dictionary item</source>
-        <translation type="unfinished"></translation>
+        <translation>Añadir elemento al diccionario</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="49"/>
         <source>Remove selected item</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar elemento seleccionado</translation>
     </message>
 </context>
 <context>
@@ -5372,7 +5372,7 @@ La aplicación se iniciará en unos segundos.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScriptZenModeControls.cpp" line="71"/>
         <source>Typewriter sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Sonido de máquina de escribir</translation>
     </message>
 </context>
 <context>
@@ -5476,7 +5476,7 @@ La aplicación se iniciará en unos segundos.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="738"/>
         <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulir</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="739"/>

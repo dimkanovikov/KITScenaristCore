@@ -455,12 +455,12 @@
     </message>
     <message>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Letra da música</translation>
     </message>
     <message>
         <source>L</source>
         <extracomment>Reduction of Lyrics</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>L</translation>
     </message>
 </context>
 <context>
@@ -531,7 +531,7 @@
     </message>
     <message>
         <source>Copy of </source>
-        <translation type="unfinished"></translation>
+        <translation>Cópia de</translation>
     </message>
 </context>
 <context>
@@ -570,11 +570,11 @@
     <message>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation type="unfinished">CONT</translation>
+        <translation>CONT.</translation>
     </message>
     <message>
         <source>MORE</source>
-        <translation type="unfinished"></translation>
+        <translation>MAIS</translation>
     </message>
 </context>
 <context>
@@ -861,73 +861,73 @@
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>INT./EXT</translation>
     </message>
     <message>
         <source>AFTERNOON</source>
-        <translation type="unfinished"></translation>
+        <translation>TARDE</translation>
     </message>
     <message>
         <source>LATER</source>
-        <translation type="unfinished"></translation>
+        <translation>MAIS TARDE</translation>
     </message>
     <message>
         <source>MOMENTS LATER</source>
-        <translation type="unfinished"></translation>
+        <translation>MOMENTOS MAIS TARDE</translation>
     </message>
     <message>
         <source>CONTINUOUS</source>
-        <translation type="unfinished"></translation>
+        <translation>CONTÍNUO</translation>
     </message>
     <message>
         <source>THE NEXT DAY</source>
-        <translation type="unfinished"></translation>
+        <translation>O PRÓXIMO DIA</translation>
     </message>
     <message>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>O.C.</translation>
     </message>
     <message>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>LEGENDA</translation>
     </message>
     <message>
         <source>CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>CORTA PARA:</translation>
     </message>
     <message>
         <source>FADE IN:</source>
-        <translation type="unfinished">FADE IN:</translation>
+        <translation>FADE IN:</translation>
     </message>
     <message>
         <source>FADE OUT</source>
-        <translation type="unfinished"></translation>
+        <translation>FADE OUT</translation>
     </message>
     <message>
         <source>FADE TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>FADE PARA:</translation>
     </message>
     <message>
         <source>DISSOLVE TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>FUSÃO PARA:</translation>
     </message>
     <message>
         <source>BACK TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>VOLTA PARA:</translation>
     </message>
     <message>
         <source>MATCH CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>CORTE DE COMPARAÇÃO PARA:</translation>
     </message>
     <message>
         <source>JUMP CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>CORTE DIRETO PARA:</translation>
     </message>
     <message>
         <source>FADE TO BLACK</source>
-        <translation type="unfinished"></translation>
+        <translation>ESCURECER</translation>
     </message>
 </context>
 <context>
@@ -1013,15 +1013,15 @@
     </message>
     <message>
         <source>Print pages numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimir os números das páginas</translation>
     </message>
     <message>
         <source>Print scenes numbers with prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimir os números das cenas com prefixos</translation>
     </message>
     <message>
         <source>Print dialogues numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimir os números dos diálogos</translation>
     </message>
 </context>
 <context>
@@ -1786,11 +1786,11 @@ O projeto não foi sincronizado.</translation>
     <name>ManagementLayer::ScriptDictionariesManager</name>
     <message>
         <source>Enter new item name</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserir o nome de novo item</translation>
     </message>
     <message>
         <source>Are you sure to remove &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Tem certeza que quer remover &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -1864,7 +1864,7 @@ O projeto não foi sincronizado.</translation>
     <name>ManagementLayer::SettingsTemplatesManager</name>
     <message>
         <source>Choose base template</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha o modelo de base</translation>
     </message>
 </context>
 <context>
@@ -2639,7 +2639,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2731,7 +2731,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>In lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Nas letras da música</translation>
     </message>
 </context>
 <context>
@@ -3106,27 +3106,27 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Hide all panels in fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Esconda todos os painéis no modo tela cheia</translation>
     </message>
     <message>
         <source>Show dialogues numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostre os números dos diálogos</translation>
     </message>
     <message>
         <source>Highlight blocks</source>
-        <translation type="unfinished"></translation>
+        <translation>Destaque os blocos</translation>
     </message>
     <message>
         <source>Automatically continue dialogue</source>
-        <translation type="unfinished"></translation>
+        <translation>Continue automaticamente o diálogo</translation>
     </message>
     <message>
         <source>Automatically corrections on page breaks</source>
-        <translation type="unfinished"></translation>
+        <translation>Correções automaticamente em quebras de página</translation>
     </message>
     <message>
         <source>Use open bracket in dialogue for jump to parenthetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Use o suporte aberto no diálogo para saltar para entre parênteses</translation>
     </message>
 </context>
 <context>
@@ -4098,7 +4098,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Show/hide additional panels</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostre/oculte os painéis adicionais</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -4110,11 +4110,11 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Script dictionaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Dicionários do roteiro</translation>
     </message>
     <message>
         <source>Show/hide script dictionaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostre/oculte os dicionários do roteiro</translation>
     </message>
 </context>
 <context>
@@ -4183,7 +4183,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Copy scene description to the script</source>
-        <translation type="unfinished"></translation>
+        <translation>Copie a descrição da cena para o roteiro</translation>
     </message>
 </context>
 <context>
@@ -4248,38 +4248,38 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <name>UserInterface::ScriptDictionaries</name>
     <message>
         <source>Scene intros</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduções das cenas</translation>
     </message>
     <message>
         <source>Scene times</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempos das cenas</translation>
     </message>
     <message>
         <source>Scene days</source>
-        <translation type="unfinished"></translation>
+        <translation>Dias das cenas</translation>
     </message>
     <message>
         <source>Character states</source>
-        <translation type="unfinished"></translation>
+        <translation>Condições dos personagens</translation>
     </message>
     <message>
         <source>Transitions</source>
-        <translation type="unfinished"></translation>
+        <translation>Transições</translation>
     </message>
     <message>
         <source>Add dictionary item</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicione um item do dicionário</translation>
     </message>
     <message>
         <source>Remove selected item</source>
-        <translation type="unfinished"></translation>
+        <translation>Remova o item selecionado</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ScriptZenModeControls</name>
     <message>
         <source>Typewriter sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Som da máquina de escrever</translation>
     </message>
 </context>
 <context>
