@@ -39,6 +39,11 @@ namespace BusinessLogic
          */
         QString importScenario(const ImportParameters &_importParameters) const override;
 
+        /**
+         * @brief Импорт данных разработки
+         */
+        QVariantMap importResearch(const ImportParameters &_importParameters) const override;
+
     private:
         /**
          * @brief Обработка конкретного блока перед его добавлением

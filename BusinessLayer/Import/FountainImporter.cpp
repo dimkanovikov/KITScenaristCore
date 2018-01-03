@@ -29,6 +29,16 @@ const QStringList sceneHeadings = {QApplication::translate("BusinessLayer::Fount
                                    QApplication::translate("BusinessLayer::FountainImporter", "INT./EXT"),
                                    QApplication::translate("BusinessLayer::FountainImporter", "INT/EXT"),
                                    QApplication::translate("BusinessLayer::FountainImporter", "I/E")};
+
+const QMap<QString, QString> TITLE_KEYS({std::make_pair("Title", "name"),
+                                        std::make_pair("Author", "author"),
+                                        std::make_pair("Authors", "author"),
+                                        std::make_pair("Draft date", "year"),
+                                        std::make_pair("Contact", "contacts"),
+                                        std::make_pair("Credit", "genre"),
+                                        std::make_pair("Source", "additional_info")});
+
+const QString TRIPLE_WHITESPACE = "   ";
 }
 
 FountainImporter::FountainImporter() :
@@ -332,6 +342,125 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
     }
 
     return scenarioXml;
+}
+
+QVariantMap FountainImporter::importResearch(const ImportParameters &_importParameters) const
+{
+    QString scriptXml;
+    //
+    // Открываем файл
+    //
+    QVariantMap scriptResult;
+    QFile fountainFile(_importParameters.filePath);
+    if (fountainFile.open(QIODevice::ReadOnly)) {
+        //
+        // Читаем plain text
+        //
+        QXmlStreamWriter writer(&scriptXml);
+        writer.setAutoFormatting(true);
+        writer.setAutoFormattingIndent(true);
+        writer.writeStartDocument();
+        writer.writeStartElement(NODE_SCENARIO);
+        writer.writeAttribute(ATTRIBUTE_VERSION, "1.0");
+
+        //
+        // Титульная страница сценария
+        //
+        QStringList text = QString(fountainFile.readAll()).split('\n');
+        for (QString& line : text) {
+            if (line.endsWith('\r')) {
+                line.remove(line.size() - 1, 1);
+            }
+        }
+
+        //
+        // Если есть титульная страница, значит в первой строке ":"
+        //
+        if (!text.first().contains(":")) {
+            return QVariantMap();
+        }
+
+        //
+        // Титульная страница представлена в виде "key: value"
+        //
+        bool isMultiLine = false; //Является ли текущий value многострочным
+        QString key;
+        QString value;
+        for (QStringList::const_iterator iter = text.begin(); iter != text.end(); ++iter) {
+            //
+            // Добрались до пустой строчки. Закончилась титульная страница
+            //
+            if (iter->trimmed().isEmpty()) {
+                break;
+            }
+
+            if (!isMultiLine) {
+                QStringList splt = iter->split(":");
+                if (TITLE_KEYS.contains(splt[0])) {
+                    //
+                    // Этот параметр нам известен
+                    //
+                    key = TITLE_KEYS[splt[0]];
+                } else {
+                    //
+                    // Неизвестные параметры пропускаем
+                    //
+                    key.clear();
+                }
+
+                //
+                // Значение параметра многострочное
+                //
+                if (splt.size() == 1
+                        || splt[1].isEmpty()) {
+                    isMultiLine = true;
+                } else {
+                    //
+                    // Если параметр не многострочен и известен нам
+                    // тогда сразу же добавим
+                    //
+                    if (!key.isEmpty()) {
+                        scriptResult[key] = splt[1].trimmed();
+                    }
+                }
+            } else {
+                //
+                // Многострочный комментарий.
+                // Каждая строка должна начинаться либо с табуляции, либо с 3 пробелов минимум
+                //
+                if(iter->startsWith(TRIPLE_WHITESPACE)
+                        || iter->startsWith('\t')) {
+
+                    //
+                    // Добавим перевод новой строки если необходимо и значение
+                    //
+                    if (!value.isEmpty()) {
+                        value += '\n';
+                    }
+                    value += iter->trimmed();
+                } else {
+                    //
+                    // Закончился многострочный комментарий
+                    //
+                    if (!key.isEmpty()) {
+                        scriptResult[key] = value;
+                    }
+                    isMultiLine = false;
+
+                    //
+                    // Обработаем текущую строку еще раз, но уже как ключ: значение
+                    //
+                    --iter;
+                    continue;
+                }
+
+            }
+        }
+    }
+    QVariantMap result;
+    result["script"] = scriptResult;
+    return result;
+
 }
 
 void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphText,
