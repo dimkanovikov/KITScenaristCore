@@ -62,8 +62,19 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
         // Текст сценария
         //
         QVector<QString> paragraphs;
-        for (const QString& str : QString(fountainFile.readAll()).split("\n")) {
-            paragraphs.push_back(str.trimmed());
+        for (QString& str : QString(fountainFile.readAll()).split("\n")) {
+            if (str.endsWith("\r")) {
+                str.remove(str.size() - 1, 1);
+            }
+            if (str == "  ") {
+                //
+                // Если строка состоит из 2 пробелов, то это нужно сохранить
+                // Используется для многострочных диалогов с пустыми строками
+                //
+                paragraphs.push_back("  ");
+            } else {
+                paragraphs.push_back(str.trimmed());
+            }
         }
 
         const int paragraphsCount = paragraphs.size();
@@ -285,9 +296,13 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
                             paragraphText = paragraphs[i];
                         }
                     } else if (prevBlockType == ScenarioBlockStyle::Character
-                               || prevBlockType == ScenarioBlockStyle::Parenthetical) {
+                               || prevBlockType == ScenarioBlockStyle::Parenthetical
+                               || (prevBlockType == ScenarioBlockStyle::Dialogue
+                                   && i > 0
+                                   && !paragraphs[i-1].isEmpty())) {
                         //
                         // Если предыдущий блок - имя персонажа или ремарка, то сейчас диалог
+                        // Или предыдущая строка является диалогом
                         //
                         blockType = ScenarioBlockStyle::Dialogue;
                         paragraphText = paragraphs[i];
