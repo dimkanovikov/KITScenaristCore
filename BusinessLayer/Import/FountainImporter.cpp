@@ -29,6 +29,8 @@ const QStringList sceneHeadings = {QApplication::translate("BusinessLayer::Fount
                                    QApplication::translate("BusinessLayer::FountainImporter", "INT./EXT"),
                                    QApplication::translate("BusinessLayer::FountainImporter", "INT/EXT"),
                                    QApplication::translate("BusinessLayer::FountainImporter", "I/E")};
+
+const QString DOUBLE_WHITESPACE = "  ";
 }
 
 FountainImporter::FountainImporter() :
@@ -64,14 +66,14 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
         QVector<QString> paragraphs;
         for (QString& str : QString(fountainFile.readAll()).split("\n")) {
             if (str.endsWith("\r")) {
-                str.remove(str.size() - 1, 1);
+                str.chop(1);
             }
-            if (str == "  ") {
+            if (str == DOUBLE_WHITESPACE) {
                 //
                 // Если строка состоит из 2 пробелов, то это нужно сохранить
                 // Используется для многострочных диалогов с пустыми строками
                 //
-                paragraphs.push_back("  ");
+                paragraphs.push_back(DOUBLE_WHITESPACE);
             } else {
                 paragraphs.push_back(str.trimmed());
             }
