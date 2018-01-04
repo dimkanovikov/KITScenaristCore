@@ -600,33 +600,41 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
     // Музицируем
     //
     if (m_keyboardSoundEnabled) {
+        static QSound s_returnSound(":/Audio/Sound/return.wav");
+        static QSound s_spaceSound(":/Audio/Sound/space.wav");
+        static QSound s_deleteSound(":/Audio/Sound/backspace.wav");
+        static QSound s_key1Sound(":/Audio/Sound/key-01.wav");
+        static QSound s_key2Sound(":/Audio/Sound/key-02.wav");
+        static QSound s_key3Sound(":/Audio/Sound/key-03.wav");
+        static QSound s_key4Sound(":/Audio/Sound/key-04.wav");
+        static QVector<QSound*> s_keySounds = { &s_key1Sound, &s_key2Sound, &s_key3Sound, &s_key4Sound };
         switch (_event->key()) {
             case Qt::Key_Return:
             case Qt::Key_Enter: {
-                QSound::play(":/Audio/Sound/return.wav");
+                s_returnSound.play();
                 break;
             }
 
             case Qt::Key_Space: {
-                QSound::play(":/Audio/Sound/space.wav");
+                s_spaceSound.play();
                 break;
             }
 
             case Qt::Key_Backspace:
             case Qt::Key_Delete: {
-                QSound::play(":/Audio/Sound/backspace.wav");
+                s_deleteSound.play();
                 break;
             }
 
             default: {
                 if (!_event->text().isEmpty()) {
-                    const int firstSoundId = 1;
-                    const int maxSoundId = 4;
+                    const int firstSoundId = 0;
+                    const int maxSoundId = 3;
                     static int lastSoundId = firstSoundId;
                     if (lastSoundId > maxSoundId) {
                         lastSoundId = firstSoundId;
                     }
-                    QSound::play(QString(":/Audio/Sound/key-0%1.wav").arg(lastSoundId++));
+                    s_keySounds[lastSoundId++]->play();
                 }
                 break;
             }
