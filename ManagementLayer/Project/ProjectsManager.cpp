@@ -262,9 +262,13 @@ void ProjectsManager::setCurrentProjectName(const QString& _projectName)
         // Уведомим клиентов об обновлении проекта
         //
         if (s_currentProject.isLocal()) {
-            emit recentProjectNameChanged(m_recentProjects.indexOf(s_currentProject), _projectName);
+            if (m_recentProjects.contains(s_currentProject)) {
+                emit recentProjectNameChanged(m_recentProjects.indexOf(s_currentProject), _projectName);
+            }
         } else {
-            emit remoteProjectNameChanged(m_recentProjects.indexOf(s_currentProject), _projectName);
+            if (m_remoteProjects.contains(s_currentProject)) {
+                emit remoteProjectNameChanged(m_remoteProjects.indexOf(s_currentProject), _projectName);
+            }
         }
     }
 }
