@@ -62,6 +62,11 @@ namespace BusinessLogic
          */
         void appendComments(QXmlStreamWriter &writer) const;
 
+        /**
+         * @brief Убрать форматирование
+         */
+        QString simplify(const QString &_value) const;
+
         //
         // Чтобы не передавать большое число параметров в функции, используются члены класса
         //

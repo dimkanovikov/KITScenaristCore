@@ -420,7 +420,7 @@ QVariantMap FountainImporter::importResearch(const ImportParameters &_importPara
                     // тогда сразу же добавим
                     //
                     if (!key.isEmpty()) {
-                        scriptResult[key] = splt[1].trimmed();
+                        scriptResult[key] = simplify(splt[1].trimmed());
                     }
                 }
             } else {
@@ -443,7 +443,7 @@ QVariantMap FountainImporter::importResearch(const ImportParameters &_importPara
                     // Закончился многострочный комментарий
                     //
                     if (!key.isEmpty()) {
-                        scriptResult[key] = value;
+                        scriptResult[key] = simplify(value);
                     }
                     isMultiLine = false;
 
@@ -460,7 +460,6 @@ QVariantMap FountainImporter::importResearch(const ImportParameters &_importPara
     QVariantMap result;
     result["script"] = scriptResult;
     return result;
-
 }
 
 void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphText,
@@ -710,4 +709,26 @@ void FountainImporter::appendComments(QXmlStreamWriter &writer) const
     writer.writeEndElement();
 
     notes.clear();
+}
+
+QString FountainImporter::simplify(const QString &_value) const
+{
+    QString res;
+    for (int i = 0; i != _value.size(); ++i) {
+        if (_value[i] == '*'
+                || _value[i] == '_'
+                || _value[i] == '\\') {
+            if (i == 0
+                      ||(  i > 0
+                    && _value[i-1] != '\\')) {
+                continue;
+            } else {
+               res += _value[i];
+            }
+        }
+        else {
+            res += _value[i];
+        }
+    }
+    return res;
 }
