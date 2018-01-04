@@ -98,37 +98,36 @@ namespace {
     /**
      * @brief Определить, нужно ли записать блок с заданным типом в результирующий файл
      */
-    static bool needPrintBlock(ScenarioBlockStyle::Type _blockType, bool _outline, bool _showInvisible) {
+    static bool needPrintBlock(ScenarioBlockStyle::Type _blockType, const ExportParameters& _parameters) {
         static QList<ScenarioBlockStyle::Type> s_outlinePrintableBlocksTypes =
-            QList<ScenarioBlockStyle::Type>()
-            << ScenarioBlockStyle::SceneHeading
-            << ScenarioBlockStyle::SceneHeadingShadow
-            << ScenarioBlockStyle::SceneCharacters
-            << ScenarioBlockStyle::SceneDescription;
+            { ScenarioBlockStyle::SceneHeading,
+              ScenarioBlockStyle::SceneHeadingShadow,
+              ScenarioBlockStyle::SceneCharacters,
+              ScenarioBlockStyle::SceneDescription };
 
-        static QList<ScenarioBlockStyle::Type> s_scenarioPrintableBlocksTypes =
-            QList<ScenarioBlockStyle::Type>()
-            << ScenarioBlockStyle::SceneHeading
-            << ScenarioBlockStyle::SceneHeadingShadow
-            << ScenarioBlockStyle::SceneCharacters
-            << ScenarioBlockStyle::Action
-            << ScenarioBlockStyle::Character
-            << ScenarioBlockStyle::Dialogue
-            << ScenarioBlockStyle::Parenthetical
-            << ScenarioBlockStyle::TitleHeader
-            << ScenarioBlockStyle::Title
-            << ScenarioBlockStyle::Note
-            << ScenarioBlockStyle::Transition
-            << ScenarioBlockStyle::Lyrics;
+        static QList<ScenarioBlockStyle::Type> s_scriptPrintableBlocksTypes =
+            { ScenarioBlockStyle::SceneHeading,
+              ScenarioBlockStyle::SceneHeadingShadow,
+              ScenarioBlockStyle::SceneCharacters,
+              ScenarioBlockStyle::Action,
+              ScenarioBlockStyle::Character,
+              ScenarioBlockStyle::Dialogue,
+              ScenarioBlockStyle::Parenthetical,
+              ScenarioBlockStyle::TitleHeader,
+              ScenarioBlockStyle::Title,
+              ScenarioBlockStyle::Note,
+              ScenarioBlockStyle::Transition,
+              ScenarioBlockStyle::Lyrics };
+
+        static QList<ScenarioBlockStyle::Type> s_invisibleBlockTypes =
+            { ScenarioBlockStyle::NoprintableText,
+              ScenarioBlockStyle::FolderFooter,
+              ScenarioBlockStyle::FolderHeader };
 
         return
-                (_outline
-                 ? s_outlinePrintableBlocksTypes.contains(_blockType)
-                 : s_scenarioPrintableBlocksTypes.contains(_blockType))
-                || (_showInvisible
-                    && (_blockType == ScenarioBlockStyle::NoprintableText
-                        || _blockType == ScenarioBlockStyle::FolderFooter
-                        || _blockType == ScenarioBlockStyle::FolderHeader));
+                (_parameters.isOutline && s_outlinePrintableBlocksTypes.contains(_blockType))
+                || (_parameters.isScript && s_scriptPrintableBlocksTypes.contains(_blockType))
+                || (_parameters.printInvisible && s_invisibleBlockTypes.contains(_blockType));
     }
 
     /**
@@ -435,7 +434,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
             // Копируем содержимое блока, если нужно
             //
             currentBlockType = ScenarioBlockStyle::forBlock(sourceCursor.block());
-            if (::needPrintBlock(currentBlockType, _exportParameters.isOutline, _exportParameters.saveInvisible)) {
+            if (::needPrintBlock(currentBlockType, _exportParameters)) {
                 //
                 // ... настраиваем стиль блока
                 //
@@ -443,7 +442,8 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                     destCursor.insertBlock();
                 }
                 const ScenarioBlockStyle blockStyle = exportStyle.blockStyle(currentBlockType);
-                destCursor.setBlockFormat(blockStyle.blockFormat());
+                destCursor.setBlockFormat(sourceCursor.blockFormat());
+                destCursor.mergeBlockFormat(blockStyle.blockFormat());
                 destCursor.setBlockCharFormat(blockStyle.charFormat());
                 //
                 // ... копируем текст
@@ -637,8 +637,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
         //
         // Если блок содержит текст, который необходимо вывести на печать
         //
-        if (::needPrintBlock(currentBlockType, _exportParameters.isOutline,
-                             _exportParameters.saveInvisible)) {
+        if (::needPrintBlock(currentBlockType, _exportParameters)) {
 
             //
             // Определим стили и настроим курсор
