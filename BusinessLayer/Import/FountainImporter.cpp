@@ -72,8 +72,28 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
         // Текст сценария
         //
         QVector<QString> paragraphs;
+        bool isTitle = false;
+        bool isFirstLine = true;
         for (const QString& str : QString(fountainFile.readAll()).split("\n")) {
-            paragraphs.push_back(str.trimmed());
+            //
+            // Если первая строка содержит ':', то в начале идет титульная страница, которую мы обрабатываем не здесь
+            //
+            if (isFirstLine) {
+                isFirstLine = false;
+                if (str.contains(':')) {
+                    isTitle = true;
+                }
+            }
+            if (isTitle) {
+                //
+                // Титульная страница заканчивается пустой строкой
+                //
+                if (str.trimmed().isEmpty()) {
+                    isTitle = false;
+                }
+            } else {
+                paragraphs.push_back(str.trimmed());
+            }
         }
 
         const int paragraphsCount = paragraphs.size();
