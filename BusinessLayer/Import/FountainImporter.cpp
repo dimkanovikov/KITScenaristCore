@@ -189,9 +189,9 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
                 case '~':
                 {
                     //
-                    // TODO: Вообще, это Lyrics блок. Но у нас такого нет
+                    // Лирика
                     //
-                    blockType = ScenarioBlockStyle::Action;
+                    blockType = ScenarioBlockStyle::Lyrics;
                     paragraphText = paragraphs[i].mid(1);
                     break;
                 }
