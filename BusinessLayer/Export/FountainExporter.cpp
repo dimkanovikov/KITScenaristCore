@@ -29,6 +29,35 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
     //
     QFile fountainFile(_exportParameters.filePath);
     if (fountainFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+        //
+        // При необходимости пишем титульную страницу
+        //
+        if (_exportParameters.printTilte) {
+            auto writeLine = [&fountainFile] (const QString& _key, const QString& _value) {
+                if (!_key.isEmpty() && !_value.isEmpty()) {
+                    fountainFile.write(QString("%1: %2\n").arg(_key).arg(_value).toUtf8());
+                }
+            };
+            auto writeLines = [&fountainFile] (const QString& _key, const QString& _value) {
+                if (!_key.isEmpty() && !_value.isEmpty()) {
+                    fountainFile.write(QString("%1:\n").arg(_key).toUtf8());
+                    for (const QString& line : _value.split("\n")) {
+                        fountainFile.write(QString("   %1\n").arg(line).toUtf8());
+                    }
+                }
+            };
+            writeLine("Title", _exportParameters.scriptName);
+            writeLine("Credit", _exportParameters.scriptGenre);
+            writeLine("Author", _exportParameters.scriptAuthor);
+            writeLine("Source", _exportParameters.scriptAdditionalInfo);
+            writeLine("Draft date", _exportParameters.scriptYear);
+            writeLines("Contact", _exportParameters.scriptContacts);
+            //
+            // Пустая строка в конце
+            //
+            fountainFile.write("\n");
+        }
+
 
         //
         // Нам нужен не просто QTextDocument, а тот,
@@ -168,17 +197,21 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
 
                     case ScenarioBlockStyle::Transition:
                     {
-                        if (paragraphText.toUpper() == paragraphText) {
+                        //
+                        // Если переход задан заглавными буквами и в конце есть TO:
+                        //
+                        if (paragraphText.toUpper() == paragraphText
+                            && paragraphText.endsWith("TO:")) {
                             //
-                            // Либо переход сделан заглавными буквами.
-                            // Тогда необходимо лишь добавить в конец TO:
+                            // Ничего делать не надо, всё распознается нормально
                             //
-                            if (!paragraphText.endsWith("TO:")) {
-                                paragraphText.append(" TO:");
-                            }
-                        } else {
+                        }
+                        //
+                        // А если переход задан как то иначе
+                        //
+                        else {
                             //
-                            // Либо добавить в начало >
+                            // То надо добавить в начало >
                             //
                             paragraphText.prepend("> ");
                         }
@@ -202,9 +235,27 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
                         // не будем разделять подряд идущие действия пустой строкой
                         //
                         if (prevType != ScenarioBlockStyle::Action
-                                && !isFirst) {
+                            && !isFirst) {
                             paragraphText.prepend('\n');
                         }
+                        break;
+                    }
+
+                    case ScenarioBlockStyle::SceneDescription:
+                    {
+                        //
+                        // Блоки описания сцены предворяются = и расставляются обособлено
+                        //
+                        paragraphText.prepend("\n= ");
+                        break;
+                    }
+
+                    case ScenarioBlockStyle::Lyrics:
+                    {
+                        //
+                        // Добавим ~ вначало блока лирики
+                        //
+                        paragraphText.prepend("~ ");
                         break;
                     }
 

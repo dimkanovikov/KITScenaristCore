@@ -464,6 +464,7 @@ QVariantMap FountainImporter::importResearch(const ImportParameters &_importPara
                 // Каждая строка должна начинаться либо с табуляции, либо с 3 пробелов минимум
                 //
                 else if (!lastKey.isEmpty()
+                         && !textLineData.isEmpty()
                          && !textLineData.first().isEmpty()
                          && (textLine.startsWith(TRIPLE_WHITESPACE)
                              || textLine.startsWith('\t'))) {
