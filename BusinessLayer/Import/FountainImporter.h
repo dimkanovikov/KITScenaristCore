@@ -39,6 +39,11 @@ namespace BusinessLogic
          */
         QString importScenario(const ImportParameters &_importParameters) const override;
 
+        /**
+         * @brief Импорт данных разработки
+         */
+        QVariantMap importResearch(const ImportParameters &_importParameters) const override;
+
     private:
         /**
          * @brief Обработка конкретного блока перед его добавлением
@@ -50,12 +55,24 @@ namespace BusinessLogic
          * @brief Добавление блока
          */
         void appendBlock(QXmlStreamWriter &writer, const QString& paragraphText,
-                              ScenarioBlockStyle::Type blockStyle) const;
+                              QVector<TextFormat>& _formats, ScenarioBlockStyle::Type blockStyle) const;
 
         /**
          * @brief Добавление комментариев к блоку
          */
         void appendComments(QXmlStreamWriter &writer) const;
+
+        /**
+         * @brief Убрать форматирование
+         */
+        QString simplify(const QString &_value) const;
+
+        /**
+         * @brief Добавить форматирование
+         */
+        void addFormat(QVector<TextFormat>& formats, QVector<TextFormat>& tmpFormats,
+                       bool isItalics, bool isBold, bool isUnderline,
+                       bool byOne = false) const ;
 
         //
         // Чтобы не передавать большое число параметров в функции, используются члены класса
