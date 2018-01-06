@@ -55,7 +55,7 @@ namespace BusinessLogic
          * @brief Добавление блока
          */
         void appendBlock(QXmlStreamWriter &writer, const QString& paragraphText,
-                              ScenarioBlockStyle::Type blockStyle) const;
+                              QVector<TextFormat>& _formats, ScenarioBlockStyle::Type blockStyle) const;
 
         /**
          * @brief Добавление комментариев к блоку
@@ -66,6 +66,13 @@ namespace BusinessLogic
          * @brief Убрать форматирование
          */
         QString simplify(const QString &_value) const;
+
+        /**
+         * @brief Добавить форматирование
+         */
+        void addFormat(QVector<TextFormat>& formats, QVector<TextFormat>& tmpFormats,
+                       bool isItalics, bool isBold, bool isUnderline,
+                       bool byOne = false) const ;
 
         //
         // Чтобы не передавать большое число параметров в функции, используются члены класса

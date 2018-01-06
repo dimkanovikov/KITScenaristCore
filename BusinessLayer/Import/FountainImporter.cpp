@@ -16,6 +16,14 @@ namespace {
 /** @{ */
 const QString NODE_SCENARIO = "scenario";
 const QString NODE_VALUE = "v";
+const QString NODE_FORMAT_GROUP = "formatting";
+const QString NODE_FORMAT = "format";
+
+const QString ATTRIBUTE_FORMAT_FROM = "from";
+const QString ATTRIBUTE_FORMAT_LENGTH = "length";
+const QString ATTRIBUTE_FORMAT_BOLD = "bold";
+const QString ATTRIBUTE_FORMAT_ITALIC = "italic";
+const QString ATTRIBUTE_FORMAT_UNDERLINE = "underline";
 
 const QString ATTRIBUTE_VERSION = "version";
 /** @} */
@@ -39,6 +47,7 @@ const QMap<QString, QString> TITLE_KEYS({std::make_pair("Title", "name"),
                                         std::make_pair("Source", "additional_info")});
 
 const QString TRIPLE_WHITESPACE = "   ";
+
 }
 
 FountainImporter::FountainImporter() :
@@ -502,6 +511,9 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
     }
 
     char prevSymbol = '\0';
+    QVector<TextFormat> formats;
+    QVector<TextFormat> tmpFormats;
+    int asteriskLen = 0;
 
     for (int i = 0; i != paragraphText.size(); ++i) {
         if (prevSymbol == '\\') {
@@ -516,7 +528,8 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
             }
             continue;
         }
-        switch (paragraphText.toStdString()[i]) {
+        char curSymbol = paragraphText.toStdString()[i];
+        switch (curSymbol) {
             case '\\':
             {
                 if (notation) {
@@ -542,7 +555,7 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
                     // Закроем предыдущий блок, добавим текущий
                     //
                     writer.writeEndElement();
-                    appendBlock(writer, text.left(text.size() - 1), ScenarioBlockStyle::NoprintableText);
+                    appendBlock(writer, text.left(text.size() - 1), formats, ScenarioBlockStyle::NoprintableText);
                     text.clear();
                 } else {
                     if (notation) {
@@ -572,7 +585,7 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
                     //
                     writer.writeEndElement();
                     if (text.size() != 1) {
-                        appendBlock(writer, text.left(text.size() - 1), type);
+                        appendBlock(writer, text.left(text.size() - 1), formats, type);
                         appendComments(writer);
                         notes.clear();
                     }
@@ -584,6 +597,7 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
                         //
                         // Игнорируем *, поскольку они являются символом форматирования, которое мы еще не умеем
                         //
+                        ++asteriskLen;
                         //text.append('*');
                     }
                 }
@@ -635,7 +649,7 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
 
             case '_':
                 //
-                // Игнорируем подчеркивания, которые являются символом форматирования
+                // Подчеркивания обрабатываются в другом месте
                 //
                 break;
             default:
@@ -651,8 +665,73 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
                 break;
             }
         }
+
+        //
+        // Underline
+        //
+        if (prevSymbol == '_') {
+            addFormat(formats, tmpFormats, false, false, true, curSymbol == '*');
+        }
+
         prevSymbol = paragraphText.toStdString()[i];
+
+        if (curSymbol != '*') {
+            switch(asteriskLen) {
+                //
+                // Italics
+                //
+            case 1:
+                addFormat(formats, tmpFormats, true, false, false, curSymbol == '_');
+                break;
+                //
+                // Bold
+                //
+            case 2:
+                addFormat(formats, tmpFormats, false, true, false, curSymbol == '_');
+                break;
+                //
+                // Bold & Italics
+                //
+            case 3:
+                addFormat(formats, tmpFormats, true, true, false, curSymbol == '_');
+                break;
+            default:
+                break;
+            }
+            asteriskLen = 0;
+        }
     }
+
+    //
+    // Underline
+    //
+    if (prevSymbol == '_') {
+        addFormat(formats, tmpFormats, false, false, true, true);
+    }
+
+    switch(asteriskLen) {
+        //
+        // Italics
+        //
+    case 1:
+        addFormat(formats, tmpFormats, true, false, false);
+        break;
+        //
+        // Bold
+        //
+    case 2:
+        addFormat(formats, tmpFormats, false, true, false);
+        break;
+        //
+        // Bold & Italics
+        //
+    case 3:
+        addFormat(formats, tmpFormats, true, true, false);
+        break;
+    default:
+        break;
+    }
+    asteriskLen = 0;
 
 
     if (!notation
@@ -673,7 +752,7 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
         // Добавим текущий блок
         //
         if (!text.isEmpty() || type == ScenarioBlockStyle::FolderFooter) {
-            appendBlock(writer, text, type);
+            appendBlock(writer, text, formats, type);
         }
         text.clear();
     }
@@ -687,13 +766,32 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
 }
 
 void FountainImporter::appendBlock(QXmlStreamWriter &writer, const QString &paragraphText,
-                                   ScenarioBlockStyle::Type type) const
+                                   QVector<TextFormat> &_formats, ScenarioBlockStyle::Type type) const
 {
     const QString& blockTypeName = ScenarioBlockStyle::typeName(type);
     writer.writeStartElement(blockTypeName);
     writer.writeStartElement(NODE_VALUE);
     writer.writeCDATA(paragraphText.trimmed());
     writer.writeEndElement();
+
+    if (!_formats.isEmpty()) {
+        writer.writeStartElement(NODE_FORMAT_GROUP);
+        for (const TextFormat& format: _formats) {
+            writer.writeStartElement(NODE_FORMAT);
+            //
+            // Данные пользовательского форматирования
+            //
+            writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(format.start));
+            writer.writeAttribute(ATTRIBUTE_FORMAT_LENGTH, QString::number(format.length));
+            writer.writeAttribute(ATTRIBUTE_FORMAT_BOLD, format.bold ? "true" : "false");
+            writer.writeAttribute(ATTRIBUTE_FORMAT_ITALIC, format.italic? "true" : "false");
+            writer.writeAttribute(ATTRIBUTE_FORMAT_UNDERLINE, format.underline ? "true" : "false");
+            //
+            writer.writeEndElement();
+        }
+        writer.writeEndElement();
+        _formats.clear();
+    }
 
     //
     // Не закрываем блок, чтобы можно было добавить редакторских заметок
@@ -725,7 +823,6 @@ void FountainImporter::appendComments(QXmlStreamWriter &writer) const
     }
 
     writer.writeEndElement();
-
     writer.writeEndElement();
 
     notes.clear();
@@ -752,3 +849,63 @@ QString FountainImporter::simplify(const QString &_value) const
     }
     return res;
 }
+
+void FountainImporter::addFormat(QVector<AbstractImporter::TextFormat> &formats,
+                                 QVector<AbstractImporter::TextFormat> &tmpFormats,
+                                 bool isItalics, bool isBold, bool isUnderline,
+                                 bool byOne) const
+{
+    if (tmpFormats.isEmpty()) {
+        //
+        // Новый формат, который еще не начат
+        //
+            TextFormat format;
+            format.bold = isBold;
+            format.italic = isItalics;
+            format.underline = isUnderline;
+            format.start = text.size();
+            if (!byOne) {
+                --format.start;
+            }
+            tmpFormats.push_back(format);
+    } else {
+        //
+        // Формат уже начат
+        //
+        TextFormat& format = tmpFormats[0];
+        //
+        // Либо закроем его полностью
+        //
+        if (format.bold == isBold
+                && format.italic == isItalics
+                && format.underline == isUnderline) {
+            format.length = text.size() - format.start;
+            if (!byOne) {
+                --format.length;
+            }
+            if (format.length != 0) {
+                formats.push_back(format);
+            }
+            tmpFormats.clear();
+        } else {
+            //
+            // Либо закроем и создадим новый, частично унаследованный от предыдущего
+            //
+            TextFormat newFormat;
+            newFormat.italic = format.italic ^ isItalics;
+            newFormat.bold = format.bold ^ isBold;
+            newFormat.underline = format.underline ^ isUnderline;
+            format.length = text.size() - format.start;
+            if (!byOne) {
+                --format.length;
+            }
+            if (format.length != 0) {
+                formats.append(format);
+            }
+            newFormat.start = format.start + format.length;
+            tmpFormats.clear();
+            tmpFormats.append(newFormat);
+        }
+    }
+}
+
