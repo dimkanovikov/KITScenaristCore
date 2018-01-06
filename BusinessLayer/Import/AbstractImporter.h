@@ -72,7 +72,7 @@ namespace BusinessLogic
          * @brief Импорт сценария
          * @return Сценарий в xml-формате
          */
-        virtual QString importScenario(const ImportParameters& _importParameters) const = 0;
+        virtual QString importScript(const ImportParameters& _importParameters) const = 0;
 
         /**
          * @brief Импорт данных разработки
@@ -210,6 +210,15 @@ namespace BusinessLogic
                         bold != false
                         || italic != false
                         || underline != false;
+            }
+
+            /**
+             * @brief Очистить форматирование
+             */
+            void clear() {
+                bold = false;
+                italic = false;
+                underline = false;
             }
         };
     };

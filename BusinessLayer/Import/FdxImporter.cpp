@@ -38,7 +38,7 @@ FdxImporter::FdxImporter() :
 
 }
 
-QString FdxImporter::importScenario(const ImportParameters& _importParameters) const
+QString FdxImporter::importScript(const ImportParameters& _importParameters) const
 {
     QString scenarioXml;
 

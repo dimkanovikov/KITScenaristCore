@@ -27,7 +27,7 @@ KitScenaristImporter::KitScenaristImporter() :
 
 }
 
-QString KitScenaristImporter::importScenario(const ImportParameters& _importParameters) const
+QString KitScenaristImporter::importScript(const ImportParameters& _importParameters) const
 {
     QString result;
 

@@ -257,7 +257,7 @@ DocumentImporter::DocumentImporter() :
 {
 }
 
-QString DocumentImporter::importScenario(const ImportParameters& _importParameters) const
+QString DocumentImporter::importScript(const ImportParameters& _importParameters) const
 {
 	//
 	// Преобразовать заданный документ в QTextDocument

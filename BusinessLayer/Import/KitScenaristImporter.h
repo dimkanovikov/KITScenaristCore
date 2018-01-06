@@ -20,7 +20,7 @@ namespace BusinessLogic
         /**
          * @brief Импорт сценария из документа
          */
-        QString importScenario(const ImportParameters& _importParameters) const override;
+        QString importScript(const ImportParameters& _importParameters) const override;
 
         /**
          * @brief Импорт данных разработки из документа
