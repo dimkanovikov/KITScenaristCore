@@ -15,6 +15,36 @@ const QStringList sceneHeadingStart = {QApplication::translate("BusinessLayer::F
                                        QApplication::translate("BusinessLayer::FountainExporter", "EST"),
                                        QApplication::translate("BusinessLayer::FountainExporter", "INT./EXT"),
                                        QApplication::translate("BusinessLayer::FountainExporter", "INT/EXT")};
+
+/**
+ * @brief Преобразовать заданный формат в строку
+ */
+static QString formatToString(const QTextCharFormat& _format)
+{
+    QString formatString;
+    if (_format.font().bold()) {
+        formatString += "**";
+    }
+    if (_format.font().italic()) {
+        formatString += "*";
+    }
+    if (_format.font().underline()) {
+        formatString += "_";
+    }
+    return formatString;
+}
+
+/**
+ * @brief Преобразовать разницу в двух форматах в строку
+ */
+static QString formatsDiffToString(const QTextCharFormat& _current, const QTextCharFormat& _next)
+{
+    QTextCharFormat diff;
+    diff.setFontWeight(_current.font().bold() ^ _next.font().bold() ? QFont::Bold : QFont::Normal);
+    diff.setFontItalic(_current.font().italic() ^ _next.font().italic());
+    diff.setFontUnderline(_current.font().underline() ^ _next.font().underline());
+    return formatToString(diff);
+}
 }
 
 FountainExporter::FountainExporter() :
@@ -96,10 +126,10 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
             QString paragraphText;
             if (!documentCursor.block().text().isEmpty()) {
                 paragraphText = documentCursor.block().text();
-                QVector<QTextLayout::FormatRange> notes;
+                QVector<QTextLayout::FormatRange> formats;
 
                 //
-                // Извлечем список редакторских заметок
+                // Извлечем список форматов и редакторских заметок
                 //
 
                 //
@@ -107,34 +137,92 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
                 // или copy_if, то получаем сегфолт
                 //
                 for (const QTextLayout::FormatRange& format : documentCursor.block().textFormats()) {
-                    if (!format.format.property(ScenarioBlockStyle::PropertyComments).toStringList().isEmpty()) {
-                        notes.push_back(format);
+                    if (format.format != documentCursor.blockCharFormat()) {
+                        formats.push_back(format);
                     }
                 }
 
                 //
-                // Если всего одна редакторская заметка на весь текст, то расположим ее после блока на отдельной строке
-                // (делается не здесь, а в конце цикла), а иначе просто вставим в блок заметки
+                // Если всего один формат или редакторская заметка на весь текст, то расположим
+                // ее после блока на отдельной строке (делается не здесь, а в конце цикла),
+                // а иначе просто вставим в блок заметки
                 //
                 bool fullBlockComment = true;
-                if (notes.size() != 1
-                        || notes.front().length != paragraphText.size()) {
+                if (formats.size() != 1
+                    || formats.front().length != paragraphText.size()) {
                     fullBlockComment = false;
 
                     //
-                    // Обрабатывать редакторские заметки надо с конца, чтобы не сбилась их позиция вставки
+                    // Обрабатывать форматирование надо с конца, чтобы не сбилась их позиция вставки
                     //
-                    for (int i = notes.size() - 1; i >= 0; --i) {
+                    for (int formatIndex = formats.size() - 1; formatIndex >= 0; --formatIndex) {
                         //
-                        // Извлечем список редакторских заметок для данной области блока
+                        // Если это редактораская заметка, обработаем комментарии
                         //
-                        const QStringList comments = notes[i].format.property(ScenarioBlockStyle::PropertyComments)
-                                .toStringList();
+                        if (formats[formatIndex].format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
+                            //
+                            // Извлечем список редакторских заметок для данной области блока
+                            //
+                            const QStringList comments = formats[formatIndex].format.property(ScenarioBlockStyle::PropertyComments)
+                                                         .toStringList();
+                            //
+                            // Вставлять редакторские заметки нужно с конца, чтобы не сбилась их позиция вставки
+                            //
+                            for (int commentIndex = comments.size() - 1; commentIndex >= 0; --commentIndex) {
+                                if (!comments[commentIndex].simplified().isEmpty()) {
+                                    paragraphText.insert(formats[formatIndex].start + formats[formatIndex].length, "[[" + comments[commentIndex] + "]]");
+                                }
+                            }
+                        }
+
                         //
-                        // Вставлять редакторские заметки нужно с конца, чтобы не сбилась их позиция вставки
+                        // Далее работаем с форматированием
                         //
-                        for (int j = comments.size() - 1; j >= 0; --j) {
-                            paragraphText.insert(notes[i].start + notes[i].length, "[[" + comments[j] + "]]");
+
+                        //
+                        // Пишем закрывающий формат
+                        //
+                        // Смотрим на последующее форматирование
+                        //
+                        const int nextFormatIndex = formatIndex + 1;
+                        //
+                        // ... если было, то сравниваем форматы и пишем только необходимое (то, которое не дублируется с последующим)
+                        //
+                        if (nextFormatIndex < formats.size()
+                            && (formats[formatIndex].start + formats[formatIndex].length == formats[nextFormatIndex].start)) {
+                            paragraphText.insert(formats[formatIndex].start + formats[formatIndex].length,
+                                                 ::formatsDiffToString(formats[formatIndex].format, formats[nextFormatIndex].format));
+                        }
+                        //
+                        // ... если его не было, то формируем полностью
+                        //
+                        else {
+                            paragraphText.insert(formats[formatIndex].start + formats[formatIndex].length,
+                                                 ::formatToString(formats[formatIndex].format));
+                        }
+
+                        //
+                        // Пишем закрывающий формат, если это самый первый из форматов
+                        //
+                        // Смотрим на предыдущее форматирование
+                        //
+                        const int prevFormatIndex = formatIndex - 1;
+                        //
+                        // ... если есть, то ничего не пишем
+                        //
+                        if (prevFormatIndex > 0
+                            && (formats[prevFormatIndex].start + formats[prevFormatIndex].length == formats[formatIndex].start)) {
+                            //
+                            // Формат будет записан, при записи закрывающей части
+                            // предыдущего форматирования в следующем проходе
+                            //
+                        }
+                        //
+                        // ... если нет, то пишем открывающий формат
+                        //
+                        else {
+                            paragraphText.insert(formats[formatIndex].start,
+                                                 ::formatToString(formats[formatIndex].format));
                         }
                     }
                 }
@@ -291,17 +379,49 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
                         skipBlock = true;
                     }
                 }
+
                 paragraphText += '\n';
 
+                //
+                // А это как раз случай одной большой редакторской заметки или формата
+                //
                 if (fullBlockComment) {
                     //
-                    // А это как раз случай одной большой редакторской заметки
+                    // Формат
                     //
-                    paragraphText += '\n';
-                    QStringList comments = notes[0].format
-                            .property(ScenarioBlockStyle::PropertyComments).toStringList();
-                    for (const QString& comment: comments) {
-                        paragraphText += "[[" + comment + "]]\n";
+                    const QTextCharFormat paragraphFormat = formats.first().format;
+                    const QString paragraphFormatText = ::formatToString(paragraphFormat);
+                    //
+                    // ... начало
+                    //
+                    int formatStartIndex = 0;
+                    const QStringList prefixes = {"\n", ".", "@", "= ", "~ ", "/*", "##### ", "#### ", "### ", "## ", "# ", "\n"};
+                    for (const QString& prefix : prefixes) {
+                        if (paragraphText.mid(formatStartIndex, prefix.length()) == prefix) {
+                            formatStartIndex += prefix.length();
+                        }
+                    }
+                    paragraphText.insert(formatStartIndex, paragraphFormatText);
+                    //
+                    // ... конец
+                    //
+                    int formatEndIndex = paragraphText.length();
+                    const QStringList postfixes = {"\n", "*/", "\n"};
+                    for (const QString& postfix : postfixes) {
+                        if (paragraphText.mid(formatEndIndex - postfix.length(), postfix.length()) == postfix) {
+                            formatEndIndex -= postfix.length();
+                        }
+                    }
+                    paragraphText.insert(formatEndIndex, paragraphFormatText);
+                    //
+                    // Заметки
+                    //
+                    const QStringList comments =
+                            paragraphFormat.property(ScenarioBlockStyle::PropertyComments).toStringList();
+                    for (const QString& comment : comments) {
+                        if (!comment.isEmpty()) {
+                            paragraphText += "\n[[" + comment + "]]\n";
+                        }
                     }
                 }
 

@@ -132,7 +132,7 @@ QString FountainImporter::importScript(const ImportParameters &_importParameters
         ScenarioBlockStyle::Type blockType;
         for (int i = 0; i != paragraphsCount; ++i) {
             if (m_isNotation
-                    || m_isCommenting) {
+                || m_isCommenting) {
                 //
                 // Если мы комментируем или делаем заметку, то продолжим это
                 //
@@ -147,7 +147,7 @@ QString FountainImporter::importScript(const ImportParameters &_importParameters
             blockType = ScenarioBlockStyle::Action;
             QString paragraphText;
 
-            switch(paragraphs[i].toStdString()[0]) {
+            switch(paragraphs[i][0].toLatin1()) {
                 case '.':
                 {
                     blockType = ScenarioBlockStyle::SceneHeading;
@@ -232,7 +232,7 @@ QString FountainImporter::importScript(const ImportParameters &_importParameters
                     // Директории
                     //
                     int sharpCount = 0;
-                    while(paragraphs[i].toStdString()[sharpCount] == '#') {
+                    while (paragraphs[i][sharpCount] == '#') {
                         ++sharpCount;
                     }
 
@@ -514,10 +514,12 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
         m_noteStartPos = 0;
     }
 
-    char prevSymbol = '\0';
-    m_formats.clear();
-    int asteriskLen = 0;
+    if (!m_isCommenting) {
+        m_formats.clear();
+    }
 
+    char prevSymbol = '\0';
+    int asteriskLen = 0;
     for (int i = 0; i != _paragraphText.size(); ++i) {
         //
         // Если предыдущий символ - \, то просто добавим текущий
@@ -531,7 +533,7 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
             continue;
         }
 
-        char curSymbol = _paragraphText.toStdString()[i];
+        char curSymbol = _paragraphText[i].toLatin1();
         switch (curSymbol) {
             case '\\':
             {
@@ -550,15 +552,16 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
                     //
                     // Заканчивается комментирование
                     //
+                    --asteriskLen;
                     m_isCommenting = false;
                     m_noteStartPos += m_noteLen;
-                    m_noteLen = m_blockText.size() - 1;
+                    m_noteLen = m_blockText.size();
 
                     //
                     // Закроем предыдущий блок, добавим текущий
                     //
                     _writer.writeEndElement();
-                    appendBlock(m_blockText.left(m_blockText.size() - 1),
+                    appendBlock(m_blockText.left(m_blockText.size()),
                                 ScenarioBlockStyle::NoprintableText, _writer);
                     m_blockText.clear();
                 } else {
@@ -677,27 +680,35 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
         }
 
         if (curSymbol != '*') {
-            switch(asteriskLen) {
+            switch (asteriskLen) {
                 //
                 // Italics
                 //
                 case 1:
+                {
                     processFormat(true, false, false, curSymbol == '_');
                     break;
-                    //
-                    // Bold
-                    //
+                }
+
+                //
+                // Bold
+                //
                 case 2:
+                {
                     processFormat(false, true, false, curSymbol == '_');
                     break;
-                    //
-                    // Bold & Italics
-                    //
+                }
+
+                //
+                // Bold & Italics
+                //
                 case 3:
+                {
                     processFormat(true, true, false, curSymbol == '_');
                     break;
-                default:
-                    break;
+                }
+
+                default: break;
             }
             asteriskLen = 0;
         }
@@ -716,29 +727,37 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
         //
         // Italics
         //
-    case 1:
-        processFormat(true, false, false);
-        break;
+        case 1:
+        {
+            processFormat(true, false, false, true);
+            break;
+        }
+
         //
         // Bold
         //
-    case 2:
-        processFormat(false, true, false);
-        break;
+        case 2:
+        {
+            processFormat(false, true, false, true);
+            break;
+        }
+
         //
         // Bold & Italics
         //
-    case 3:
-        processFormat(true, true, false);
-        break;
-    default:
-        break;
+        case 3:
+        {
+            processFormat(true, true, false, true);
+            break;
+        }
+
+        default: break;
     }
     asteriskLen = 0;
 
 
     if (!m_isNotation
-            && !m_isCommenting) {
+        && !m_isCommenting) {
         //
         // Если блок действительно закончился
         //
@@ -771,10 +790,18 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
 void FountainImporter::appendBlock(const QString& _paragraphText, ScenarioBlockStyle::Type _type,
     QXmlStreamWriter& _writer) const
 {
+    int leadSpaceCount = 0;
+    QString paragraphText = _paragraphText;
+    while (!paragraphText.isEmpty()
+           && paragraphText.startsWith(" ")) {
+        ++leadSpaceCount;
+        paragraphText = paragraphText.mid(1);
+    }
+
     const QString& blockTypeName = ScenarioBlockStyle::typeName(_type);
     _writer.writeStartElement(blockTypeName);
     _writer.writeStartElement(NODE_VALUE);
-    _writer.writeCDATA(_paragraphText.trimmed());
+    _writer.writeCDATA(paragraphText);
     _writer.writeEndElement();
 
     //
@@ -802,7 +829,7 @@ void FountainImporter::appendBlock(const QString& _paragraphText, ScenarioBlockS
             //
             // Данные пользовательского форматирования
             //
-            _writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(format.start));
+            _writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(format.start - leadSpaceCount));
             _writer.writeAttribute(ATTRIBUTE_FORMAT_LENGTH, QString::number(format.length));
             _writer.writeAttribute(ATTRIBUTE_FORMAT_BOLD, format.bold ? "true" : "false");
             _writer.writeAttribute(ATTRIBUTE_FORMAT_ITALIC, format.italic? "true" : "false");
@@ -835,6 +862,7 @@ void FountainImporter::appendComments(QXmlStreamWriter& _writer) const
             _writer.writeStartElement("review");
             _writer.writeAttribute("from", QString::number(std::get<1>(m_notes[i])));
             _writer.writeAttribute("length", QString::number(std::get<2>(m_notes[i])));
+            _writer.writeAttribute("color", "#000000");
             _writer.writeAttribute("bgcolor", "#ffff00");
             _writer.writeAttribute("is_highlight", "true");
         }

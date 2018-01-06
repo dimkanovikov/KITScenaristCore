@@ -112,7 +112,7 @@ namespace {
                         % range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList().join("#")
                         % "#"
                         % range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList().join("#");
-            } else if (range.format != _block.charFormat()) {
+            } else {
                 hash = hash
                         % "#"
                         % QString::number(range.start)
