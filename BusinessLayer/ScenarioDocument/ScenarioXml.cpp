@@ -90,7 +90,7 @@ namespace {
         }
 
         for (const QTextLayout::FormatRange& range : _block.textFormats()) {
-            if (range.format.hasProperty(ScenarioBlockStyle::PropertyIsDone)) {
+            if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
                 hash = hash
                         % "#"
                         % QString::number(range.start)
@@ -101,29 +101,30 @@ namespace {
                         % "#"
                         % range.format.background().color().name()
                         % "#"
-                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) ? "true" : "false")
+                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) ? "1" : "0")
                         % "#"
-                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false")
+                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "1" : "0")
                         % "#"
-                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false")
+                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "1" : "0")
                         % "#"
                         % range.format.property(ScenarioBlockStyle::PropertyComments).toStringList().join("#")
                         % "#"
                         % range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList().join("#")
                         % "#"
                         % range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList().join("#");
-            } else {
+            }
+            if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsFormatting)) {
                 hash = hash
                         % "#"
                         % QString::number(range.start)
                         % "#"
                         % QString::number(range.length)
                         % "#"
-                        % (range.format.font().bold() ? "true" : "false")
+                        % (range.format.font().bold() ? "1" : "0")
                         % "#"
-                        % (range.format.font().italic() ? "true" : "false")
+                        % (range.format.font().italic() ? "1" : "0")
                         % "#"
-                        % (range.format.font().underline() ? "true" : "false");
+                        % (range.format.font().underline() ? "1" : "0");
             }
         }
 
@@ -173,7 +174,7 @@ namespace {
     static bool hasFormatting(const QTextBlock& _block) {
         bool hasFormatting = false;
         foreach (const QTextLayout::FormatRange& range, _block.textFormats()) {
-            if (!isFormattingEquals(range.format, _block.charFormat())) {
+            if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsFormatting)) {
                 hasFormatting = true;
                 break;
             }
@@ -480,7 +481,7 @@ QString ScenarioXml::scenarioToXml()
                     //
                     QTextLayout::FormatRange lastFormatRange{0, 0, QTextCharFormat()};
                     for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
-                        if (::isFormattingEquals(range.format, currentBlock.charFormat())) {
+                        if (!range.format.boolProperty(ScenarioBlockStyle::PropertyIsFormatting)) {
                             continue;
                         }
 
@@ -901,7 +902,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     //
                     QTextLayout::FormatRange lastFormatRange{0, 0, QTextCharFormat()};
                     for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
-                        if (::isFormattingEquals(range.format, currentBlock.charFormat())) {
+                        if (!range.format.boolProperty(ScenarioBlockStyle::PropertyIsFormatting)) {
                             continue;
                         }
 
@@ -1494,6 +1495,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         // Собираем формат
                         //
                         QTextCharFormat format;
+                        format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
                         format.setFontWeight(bold ? QFont::Bold : QFont::Normal);
                         format.setFontItalic(italic);
                         format.setFontUnderline(underline);

@@ -88,7 +88,11 @@ namespace BusinessLogic
             PropertyIsCorrectionContinued,	//!< Блок с текстом ПРОД., вставляемый на обрыве реплики
             PropertyIsCorrectionCharacter,	//!< Блок с именем персонажа, вставляемый на новой странице
             PropertyIsBreakCorrectionStart,	//!< Разрывающий текст блок в начале разрыва
-            PropertyIsBreakCorrectionEnd	//!< Разрывающий текст блок в конце разрыва
+            PropertyIsBreakCorrectionEnd,	//!< Разрывающий текст блок в конце разрыва
+            //
+            // Свойства форматирования
+            //
+            PropertyIsFormatting    //!< Пользовательский формат текста
         };
 
         /**

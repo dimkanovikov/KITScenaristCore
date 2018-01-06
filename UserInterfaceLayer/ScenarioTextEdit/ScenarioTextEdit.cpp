@@ -2092,6 +2092,7 @@ void ScenarioTextEdit::setTextBold(bool _bold)
     }
 
     QTextCharFormat format = cursor.charFormat();
+    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
     format.setFontWeight(_bold ? QFont::Bold : QFont::Normal);
     cursor.mergeCharFormat(format);
 }
@@ -2104,6 +2105,7 @@ void ScenarioTextEdit::setTextItalic(bool _italic)
     }
 
     QTextCharFormat format = cursor.charFormat();
+    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
     format.setFontItalic(_italic);
     cursor.mergeCharFormat(format);
 }
@@ -2116,6 +2118,7 @@ void ScenarioTextEdit::setTextUnderline(bool _underline)
     }
 
     QTextCharFormat format = cursor.charFormat();
+    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
     format.setFontUnderline(_underline);
     cursor.mergeCharFormat(format);
 }
