@@ -1049,6 +1049,13 @@
     </message>
 </context>
 <context>
+    <name>FountainImporter</name>
+    <message>
+        <source>END OF </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GraphLogic</name>
     <message>
         <source>Couldn&apos;t parse XML file.</source>
