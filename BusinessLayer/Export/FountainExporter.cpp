@@ -35,8 +35,10 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
         // в котором будут еще редакторские заметки, Noprintable и директории
         //
         ExportParameters fakeParameters;
+        fakeParameters.isOutline = true;
+        fakeParameters.isScript = _exportParameters.isScript;
         fakeParameters.saveReviewMarks = true;
-        fakeParameters.saveInvisible = true;
+        fakeParameters.printInvisible = true;
 
         //
         // Импорт фонтана сам установит номера сцен при необходимости

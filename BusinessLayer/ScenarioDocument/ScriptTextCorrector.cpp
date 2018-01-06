@@ -305,7 +305,9 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
             blockToRecheck = blockToRecheck.previous();
         } while (blockToRecheck.isValid()
                  && (recheckBlocksCount-- > 0
-                     || blockToRecheck.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)));
+                     || blockToRecheck.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)
+                     || blockToRecheck.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)
+                     || blockToRecheck.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd)));
     }
 
     //
@@ -459,7 +461,7 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
             //
             else {
                 cursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::KeepAnchor);
-                if (cursor.selectionStart() != cursor.selectionEnd()) {
+                if (cursor.hasSelection()) {
                     cursor.deleteChar();
                 }
             }

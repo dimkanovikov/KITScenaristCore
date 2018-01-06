@@ -31,7 +31,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QAbstractItemModel>
 #include <QPointer>
 
-
 class HierarchicalHeaderView::private_data
 {
 public:
@@ -197,8 +196,13 @@ public:
             int n=leafsList.indexOf(leafIndex);
             int firstLeafSectionIndex=sectionIndex-n;
             --n;
-            for(; n>=0; --n)
-                left-=hv->sectionSize(firstLeafSectionIndex+n);
+            for (; n>=0; --n) {
+                if (QLocale().textDirection() == Qt::LeftToRight) {
+                    left -= hv->sectionSize(firstLeafSectionIndex+n);
+                } else {
+                    left += hv->sectionSize(firstLeafSectionIndex+n);
+                }
+            }
         }
         return left;
     }
@@ -214,8 +218,12 @@ public:
         int height=cellSize(cellIndex, hv, uniopt).height();
         if(cellIndex==leafIndex)
             height=sectionRect.height()-top;
-        int left=currentCellLeft(cellIndex, leafIndex, logicalLeafIndex, sectionRect.left(), hv);
         int width=currentCellWidth(cellIndex, leafIndex, logicalLeafIndex, hv);
+        int left=currentCellLeft(cellIndex, leafIndex, logicalLeafIndex, sectionRect.left(), hv);
+        if (QLocale().textDirection() == Qt::RightToLeft
+            && width > sectionRect.width()) {
+            left -= width - sectionRect.width();
+        }
 
         QRect r(left, top, width, height);
 
@@ -458,15 +466,14 @@ QSize HierarchicalHeaderView::sectionSizeFromContents(int logicalIndex) const
 
 void HierarchicalHeaderView::paintSection(QPainter *painter, const QRect &rect, int logicalIndex) const
 {
-    if (rect.isValid())
-    {
+    if (rect.isValid()) {
         QModelIndex leafIndex(_pd->leafIndex(logicalIndex));
-        if(leafIndex.isValid())
-        {
-            if(orientation() == Qt::Horizontal)
+        if (leafIndex.isValid()) {
+            if (orientation() == Qt::Horizontal)
                 _pd->paintHorizontalSection(painter, rect, logicalIndex, this, styleOptionForCell(logicalIndex), leafIndex);
             else
                 _pd->paintVerticalSection(painter, rect, logicalIndex, this, styleOptionForCell(logicalIndex), leafIndex);
+
             return;
         }
     }
@@ -491,12 +498,7 @@ void HierarchicalHeaderView::on_sectionResized(int logicalIndex)
             int h = viewport()->height();
             int pos = sectionViewportPosition(logicalIndex);
             QRect r(pos, 0, w - pos, h);
-            if(orientation() == Qt::Horizontal)
-            {
-                if (isRightToLeft())
-                    r.setRect(0, 0, pos + sectionSize(logicalIndex), h);
-            }
-            else
+            if (orientation() == Qt::Vertical)
                 r.setRect(0, pos, w, h - pos);
 
             viewport()->update(r.normalized());

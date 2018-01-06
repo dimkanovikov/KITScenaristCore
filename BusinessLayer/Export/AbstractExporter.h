@@ -17,27 +17,20 @@ namespace BusinessLogic
     class ExportParameters
     {
     public:
-        ExportParameters() :
-            isResearch(false),
-            isOutline(false),
-            checkPageBreaks(false),
-            printTilte(true),
-            printPagesNumbers(true),
-            printScenesNumbers(true),
-            printDialoguesNumbers(false),
-            saveReviewMarks(true),
-            saveInvisible(false)
-        {}
-
         /**
          * @brief Экспортировать разработку или текст
          */
-        bool isResearch;
+        bool isResearch = false;
 
         /**
-         * @brief Режим текста: true - поэпизодник, false - сценарий
+         * @brief Необходимо ли экспортировать описания сцен
          */
-        bool isOutline;
+        bool isOutline = false;
+
+        /**
+         * @brief Необходимо ли экспортировать текст сценария
+         */
+        bool isScript = true;
 
         /**
          * @brief Путь к файлу
@@ -47,7 +40,7 @@ namespace BusinessLogic
         /**
          * @brief Проверять ли переносы страниц
          */
-        bool checkPageBreaks;
+        bool checkPageBreaks = false;
 
         /**
          * @brief Название стиля экспорта
@@ -57,7 +50,7 @@ namespace BusinessLogic
         /**
          * @brief Печатать титульную страницу
          */
-        bool printTilte;
+        bool printTilte = true;
 
         /**
          * @brief Информация с титульного листа
@@ -84,17 +77,17 @@ namespace BusinessLogic
         /**
          * @brief Печатать номера страниц
          */
-        bool printPagesNumbers;
+        bool printPagesNumbers = true;
 
         /**
          * @brief Печатать номера сцен
          */
-        bool printScenesNumbers;
+        bool printScenesNumbers = true;
 
         /**
          * @brief Печатать номера реплик
          */
-        bool printDialoguesNumbers;
+        bool printDialoguesNumbers = false;
 
         /**
          * @brief Приставка сцен
@@ -104,12 +97,12 @@ namespace BusinessLogic
         /**
          * @brief Сохранять редакторские пометки
          */
-        bool saveReviewMarks;
+        bool saveReviewMarks = true;
 
         /**
          * @brief Сохранять ли непечатаемые комментарии
          */
-        bool saveInvisible;
+        bool printInvisible = false;
     };
 
 

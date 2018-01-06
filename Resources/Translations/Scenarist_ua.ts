@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.0" language="uk">
 <context>
     <name>AcceptebleLineEdit</name>
     <message>
@@ -453,12 +453,12 @@
     </message>
     <message>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Текст пісень</translation>
     </message>
     <message>
         <source>L</source>
         <extracomment>Reduction of Lyrics</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Т</translation>
     </message>
 </context>
 <context>
@@ -528,7 +528,7 @@
     </message>
     <message>
         <source>Copy of </source>
-        <translation type="unfinished"></translation>
+        <translation>Копія</translation>
     </message>
 </context>
 <context>
@@ -567,11 +567,11 @@
     <message>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation type="unfinished">ПРОДОВЖЕННЯ</translation>
+        <translation>ПРОДОВЖЕННЯ</translation>
     </message>
     <message>
         <source>MORE</source>
-        <translation type="unfinished"></translation>
+        <translation>БІЛЬШЕ</translation>
     </message>
 </context>
 <context>
@@ -763,7 +763,7 @@
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Очистити</translation>
+        <translation>Очистити</translation>
     </message>
 </context>
 <context>
@@ -857,73 +857,73 @@
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="unfinished">ІНТ./ЕКСТ</translation>
+        <translation>ІНТ./ЕКСТ</translation>
     </message>
     <message>
         <source>AFTERNOON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>LATER</source>
-        <translation type="unfinished"></translation>
+        <translation>ПІЗНІШЕ</translation>
     </message>
     <message>
         <source>MOMENTS LATER</source>
-        <translation type="unfinished"></translation>
+        <translation>НАСТУПНОЇ МИТІ</translation>
     </message>
     <message>
         <source>CONTINUOUS</source>
-        <translation type="unfinished"></translation>
+        <translation>ПРОДОВЖЕННЯ</translation>
     </message>
     <message>
         <source>THE NEXT DAY</source>
-        <translation type="unfinished"></translation>
+        <translation>НАСТУПНОГО ДНЯ</translation>
     </message>
     <message>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>П.К.</translation>
     </message>
     <message>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>СУБТИТР</translation>
     </message>
     <message>
         <source>CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>ЗМІНА:</translation>
     </message>
     <message>
         <source>FADE IN:</source>
-        <translation type="unfinished">ІЗ ЗАТЕМНЕННЯ:</translation>
+        <translation>ІЗ ЗАТЕМНЕННЯ:</translation>
     </message>
     <message>
         <source>FADE OUT</source>
-        <translation type="unfinished"></translation>
+        <translation>ЗАТЕМНЕННЯ</translation>
     </message>
     <message>
         <source>FADE TO:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>DISSOLVE TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>НАПЛИВ:</translation>
     </message>
     <message>
         <source>BACK TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>НАЗАД ДО:</translation>
     </message>
     <message>
         <source>MATCH CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>JUMP CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>FADE TO BLACK</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1009,15 +1009,15 @@
     </message>
     <message>
         <source>Print pages numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Друкувати номери сторінок</translation>
     </message>
     <message>
         <source>Print scenes numbers with prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Друкувати номери сцен з префіксом</translation>
     </message>
     <message>
         <source>Print dialogues numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Друкувати номери діалогів</translation>
     </message>
 </context>
 <context>
@@ -1778,11 +1778,11 @@ Project didn&apos;t synchronized.</source>
     <name>ManagementLayer::ScriptDictionariesManager</name>
     <message>
         <source>Enter new item name</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть нове ім&apos;я пункту</translation>
     </message>
     <message>
         <source>Are you sure to remove &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевненні, що хочете видалити &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -1856,7 +1856,7 @@ Project didn&apos;t synchronized.</source>
     <name>ManagementLayer::SettingsTemplatesManager</name>
     <message>
         <source>Choose base template</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть базовий шаблон</translation>
     </message>
 </context>
 <context>
@@ -2631,7 +2631,11 @@ And the text editor of the script. The editor has many auxiliary functions that 
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -2723,7 +2727,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>In lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>В текстах пісень</translation>
     </message>
 </context>
 <context>
@@ -3098,27 +3102,27 @@ Paragraph</source>
     </message>
     <message>
         <source>Hide all panels in fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Сховати всі панелі у повноекранному режимі</translation>
     </message>
     <message>
         <source>Show dialogues numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати номери діалогів</translation>
     </message>
     <message>
         <source>Highlight blocks</source>
-        <translation type="unfinished"></translation>
+        <translation>Виділити блоки</translation>
     </message>
     <message>
         <source>Automatically continue dialogue</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично продовжувати діалог</translation>
     </message>
     <message>
         <source>Automatically corrections on page breaks</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматичне виправлення на розривах сторінок</translation>
     </message>
     <message>
         <source>Use open bracket in dialogue for jump to parenthetical</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати квадратні дужки в діалозі для переходу до ремарки</translation>
     </message>
 </context>
 <context>
@@ -3955,7 +3959,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Draft</source>
-        <translation>Варіант</translation>
+        <translation>Чернетка</translation>
     </message>
     <message>
         <source>Script</source>
@@ -4084,27 +4088,27 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Очистити</translation>
+        <translation>Очистити</translation>
     </message>
     <message>
         <source>Show/hide additional panels</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати/сховати додаткові панелі</translation>
     </message>
     <message>
         <source>Draft</source>
-        <translation type="unfinished">Варіант</translation>
+        <translation>Чернетка</translation>
     </message>
     <message>
         <source>Scene description</source>
-        <translation type="unfinished"></translation>
+        <translation>Опис сцени</translation>
     </message>
     <message>
         <source>Script dictionaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарні словники</translation>
     </message>
     <message>
         <source>Show/hide script dictionaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати/сховати сценарні словники</translation>
     </message>
 </context>
 <context>
@@ -4169,11 +4173,11 @@ The application will start in few seconds.</source>
     <name>UserInterface::ScenarioSceneDescription</name>
     <message>
         <source>Description of:</source>
-        <translation>Опис про:</translation>
+        <translation>Опис:</translation>
     </message>
     <message>
         <source>Copy scene description to the script</source>
-        <translation type="unfinished"></translation>
+        <translation>Копіювати опис сцени в сценарій</translation>
     </message>
 </context>
 <context>
@@ -4191,7 +4195,7 @@ The application will start in few seconds.</source>
     <name>UserInterface::ScenarioTextEditWidget</name>
     <message>
         <source>DRAFT</source>
-        <translation>Чернетка</translation>
+        <translation>ЧЕРНЕТКА</translation>
     </message>
     <message>
         <source>Outline mode</source>
@@ -4238,38 +4242,38 @@ The application will start in few seconds.</source>
     <name>UserInterface::ScriptDictionaries</name>
     <message>
         <source>Scene intros</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Scene times</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Scene days</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Character states</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Transitions</source>
-        <translation type="unfinished"></translation>
+        <translation>Переходи</translation>
     </message>
     <message>
         <source>Add dictionary item</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Remove selected item</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити вибрані пункти</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ScriptZenModeControls</name>
     <message>
         <source>Typewriter sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Звук друкарської машинки</translation>
     </message>
 </context>
 <context>

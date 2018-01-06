@@ -40,9 +40,9 @@ void FdxExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
     //
     // Открываем документ на запись
     //
-    QFile docxFile(_exportParameters.filePath);
-    if (docxFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
-        QXmlStreamWriter writer(&docxFile);
+    QFile fdxFile(_exportParameters.filePath);
+    if (fdxFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+        QXmlStreamWriter writer(&fdxFile);
         //
         // Начало документа
         //
@@ -64,7 +64,7 @@ void FdxExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
         //
         writer.writeEndDocument();
 
-        docxFile.close();
+        fdxFile.close();
     }
 }
 
@@ -82,6 +82,8 @@ void FdxExporter::writeContent(QXmlStreamWriter& _writer, ScenarioDocument* _sce
     // Используем ненастоящие параметры экспорта, если надо, то обрабатываем их вручную
     //
     ExportParameters fakeParameters;
+    fakeParameters.isOutline = true;
+    fakeParameters.isScript = _exportParameters.isScript;
     fakeParameters.printScenesNumbers = false;
 
     //

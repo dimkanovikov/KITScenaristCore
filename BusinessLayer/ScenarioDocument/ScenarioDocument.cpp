@@ -491,7 +491,7 @@ void ScenarioDocument::clear()
 
 void ScenarioDocument::refresh()
 {
-    aboutContentsChange(0, 0, m_document->characterCount());
+    aboutContentsChange(0, m_document->characterCount(), m_document->characterCount());
 }
 
 QStringList ScenarioDocument::findCharacters() const

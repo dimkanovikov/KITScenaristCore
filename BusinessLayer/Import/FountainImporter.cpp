@@ -47,6 +47,7 @@ const QMap<QString, QString> TITLE_KEYS({std::make_pair("Title", "name"),
                                         std::make_pair("Source", "additional_info")});
 
 const QString TRIPLE_WHITESPACE = "   ";
+const QString DOUBLE_WHITESPACE = "  ";
 
 }
 
@@ -83,7 +84,7 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
         QVector<QString> paragraphs;
         bool isTitle = false;
         bool isFirstLine = true;
-        for (const QString& str : QString(fountainFile.readAll()).split("\n")) {
+        for (QString& str : QString(fountainFile.readAll()).split("\n")) {
             //
             // Если первая строка содержит ':', то в начале идет титульная страница, которую мы обрабатываем не здесь
             //
@@ -101,7 +102,18 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
                     isTitle = false;
                 }
             } else {
-                paragraphs.push_back(str.trimmed());
+                if (str.endsWith("\r")) {
+                    str.chop(1);
+                }
+                if (str == DOUBLE_WHITESPACE) {
+                    //
+                    // Если строка состоит из 2 пробелов, то это нужно сохранить
+                    // Используется для многострочных диалогов с пустыми строками
+                    //
+                    paragraphs.push_back(DOUBLE_WHITESPACE);
+                } else {
+                    paragraphs.push_back(str.trimmed());
+                }
             }
         }
 
@@ -324,9 +336,13 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
                             paragraphText = paragraphs[i];
                         }
                     } else if (prevBlockType == ScenarioBlockStyle::Character
-                               || prevBlockType == ScenarioBlockStyle::Parenthetical) {
+                               || prevBlockType == ScenarioBlockStyle::Parenthetical
+                               || (prevBlockType == ScenarioBlockStyle::Dialogue
+                                   && i > 0
+                                   && !paragraphs[i-1].isEmpty())) {
                         //
                         // Если предыдущий блок - имя персонажа или ремарка, то сейчас диалог
+                        // Или предыдущая строка является диалогом
                         //
                         blockType = ScenarioBlockStyle::Dialogue;
                         paragraphText = paragraphs[i];
