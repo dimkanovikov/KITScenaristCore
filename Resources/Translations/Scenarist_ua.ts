@@ -1614,6 +1614,14 @@ Project didn&apos;t synchronized.</source>
         <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
         <translation>У вас менше 50 мегабайт вільного місця на диску. Це може призвести до проблем збереження проекту. Рекомендуємо звільнити більше місця та перевірити правильність збереження проекту.</translation>
     </message>
+    <message>
+        <source>File format not supported</source>
+        <translation type="unfinished">Формат файлу не підтримується</translation>
+    </message>
+    <message>
+        <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
+        <translation type="unfinished">Microsoft &lt;b&gt;DOC&lt;/b&gt; файли не підтримуються.. Вам треба зберегти їх в &lt;b&gt;DOCX&lt;/b&gt; файл і повторити імпорт.</translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
