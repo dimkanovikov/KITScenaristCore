@@ -316,7 +316,22 @@ void SettingsStorage::saveApplicationStateAndGeometry(QWidget* _widget)
         m_appSettings.beginGroup(splitter->objectName());
         m_appSettings.setValue("state", splitter->saveState());
         m_appSettings.setValue("geometry", splitter->saveGeometry());
-        m_appSettings.setValue("sizes", ::intListToString(splitter->sizes()));
+        //
+        // Если разделитель был инициилизирован, сохраним его размеры
+        //
+        {
+            bool isSplitterInitialized = std::max(splitter->width(), splitter->height()) > 200;
+            bool isSplitterSizesLoaded = false;
+            for (int size : splitter->sizes()) {
+                if (size > 0) {
+                    isSplitterSizesLoaded = true;
+                    break;
+                }
+            }
+            if (isSplitterInitialized && isSplitterSizesLoaded) {
+                m_appSettings.setValue("sizes", ::intListToString(splitter->sizes()));
+            }
+        }
         //
         // Сохраняем расположение панелей
         //
@@ -448,17 +463,16 @@ void SettingsStorage::loadApplicationStateAndGeometry(QWidget* _widget)
         //
         // Восстанавливаем размеры
         //
-        if (m_appSettings.contains("sizes")) {
+        if (m_appSettings.contains("sizes")
+            && !splitter->childrenCollapsible()) {
             const QList<int> sizes = ::intListFromString(m_appSettings.value("sizes").toString());
             //
             // Если у сплиттера нельзя схлапывать панели вручную, но размер должен быть нулевым,
             // то сперва скрываем необходимые виджеты, а уже потом восстанавливаем состояние
             //
-            if (!splitter->childrenCollapsible()) {
-                for (int index = 0; index < sizes.size(); ++index) {
-                    if (sizes.at(index) == 0) {
-                        splitter->widget(index)->hide();
-                    }
+            for (int index = 0; index < sizes.size(); ++index) {
+                if (sizes.at(index) == 0) {
+                    splitter->widget(index)->hide();
                 }
             }
             splitter->setSizes(sizes);
