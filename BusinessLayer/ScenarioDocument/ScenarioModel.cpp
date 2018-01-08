@@ -140,7 +140,7 @@ void ScenarioModel::removeItem(ScenarioModelItem* _item)
 void ScenarioModel::removeItems(const QVector<ScenarioModelItem*>& _items)
 {
     auto removeItemsImpl = [this] (ScenarioModelItem* _parent, const QVector<ScenarioModelItem*>& _itemsToDelete) {
-        const QModelIndex itemParentIndex = indexForItem(_parent).parent();
+        const QModelIndex itemParentIndex = indexForItem(_parent);
         const int firstRow = indexForItem(_itemsToDelete.first()).row();
         const int lastRow = indexForItem(_itemsToDelete.last()).row();
         beginRemoveRows(itemParentIndex, firstRow, lastRow);
