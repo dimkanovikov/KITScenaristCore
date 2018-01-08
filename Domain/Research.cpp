@@ -53,7 +53,7 @@ void Research::setName(const QString& _name)
 
 QString Research::description() const
 {
-    return m_description;
+    return TextEditHelper::fromHtmlEscaped(m_description);
 }
 
 void Research::setDescription(const QString& _description)
