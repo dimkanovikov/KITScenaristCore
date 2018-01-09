@@ -637,7 +637,7 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("scenario-editor/nonprintable-text-color-dark", "#0AC139");
     m_defaultValues.insert("scenario-editor/folder-text-color-dark", "#EBEBEB");
     m_defaultValues.insert("scenario-editor/folder-background-color-dark", "#8D2DC4");
-    m_defaultValues.insert("scenario-editor/auto-continue-dialogue", "1");
+    m_defaultValues.insert("scenario-editor/auto-continue-dialogue", "0");
     m_defaultValues.insert("scenario-editor/auto-corrections-on-page-breaks", "1");
     m_defaultValues.insert("scenario-editor/capitalize-first-word", "1");
     m_defaultValues.insert("scenario-editor/correct-double-capitals", "1");
