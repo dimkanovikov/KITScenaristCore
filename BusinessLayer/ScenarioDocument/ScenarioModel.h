@@ -32,6 +32,7 @@ namespace BusinessLogic
         enum DataRoles {
             TypeIndex = Qt::UserRole + 1,
             ColorIndex,
+            StampIndex,
             TitleIndex,
             SceneTextIndex,
             DescriptionIndex,
@@ -65,6 +66,11 @@ namespace BusinessLogic
          * @brief Удалить элемент
          */
         void removeItem(ScenarioModelItem* _item);
+
+        /**
+         * @brief Удалить список элементов
+         */
+        void removeItems(const QVector<ScenarioModelItem*>& _items);
 
         /**
          * @brief Обновить элемент

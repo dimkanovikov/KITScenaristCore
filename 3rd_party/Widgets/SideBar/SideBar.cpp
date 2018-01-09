@@ -45,6 +45,10 @@ namespace {
      * @brief Высота индикатора
      */
     const int INDICATOR_HEIGHT = 33;
+    const int INDICATOR_HEIGHT_COMPACT = 26;
+    static int indicatorHeight(bool _compact) {
+        return _compact ? INDICATOR_HEIGHT_COMPACT : INDICATOR_HEIGHT;
+    }
 
     /**
      * @brief Размер иконки индикатора
@@ -263,7 +267,7 @@ void SideTabBar::makeIndicatorWave(const QColor& _waveColor)
     if (m_waveColor != _waveColor) {
         m_waveColor = _waveColor;
         if (m_waveColor.isValid()) {
-            const QPoint waveStartPosition(::sidebarWidth(m_compactMode)/2, height() - ::INDICATOR_HEIGHT/2);
+            const QPoint waveStartPosition(::sidebarWidth(m_compactMode)/2, height() - ::indicatorHeight(m_compactMode)/2);
             WAF::Animation::circleFillIn(parentWidget(), mapToGlobal(waveStartPosition), m_waveColor);
         }
     }
@@ -372,7 +376,7 @@ void SideTabBar::paintEvent(QPaintEvent *event)
     //
     if (m_indicator->isVisible()
         && !m_indicator->icon().isNull()) {
-        const QRect indicatorRect(0, height() - INDICATOR_HEIGHT, ::sidebarWidth(m_compactMode), INDICATOR_HEIGHT);
+        const QRect indicatorRect(0, height() - indicatorHeight(m_compactMode), ::sidebarWidth(m_compactMode), indicatorHeight(m_compactMode));
 
         //
         // Граница сверху
@@ -384,7 +388,11 @@ void SideTabBar::paintEvent(QPaintEvent *event)
         // Иконка индикатора
         //
         p.setOpacity(m_timeline->currentFrame() / 100.);
-        m_indicator->icon().paint(&p, indicatorRect);
+        const int iconSize = 20;
+        const QPixmap icon = m_indicator->icon().pixmap(iconSize, iconSize);
+        p.drawPixmap((indicatorRect.width() - iconSize) / 2,
+                     indicatorRect.top() + (indicatorRect.height() - iconSize) / 2,
+                     icon);
     }
 }
 
@@ -405,7 +413,7 @@ void SideTabBar::mousePressEvent(QMouseEvent* _event)
     //
     else if (m_indicator->isVisible()
              && !m_indicator->icon().isNull()
-             && _event->pos().y() > (height() - INDICATOR_HEIGHT)) {
+             && _event->pos().y() > (height() - indicatorHeight(m_compactMode))) {
         //
         // Сформируем виджет для отображения
         //
@@ -456,7 +464,10 @@ void SideTabBar::mousePressEvent(QMouseEvent* _event)
             }
         }
 
-        QAction* pressedAction = menu.exec(mapToGlobal(QPoint(::sidebarWidth(m_compactMode), height() - menu.sizeHint().height())));
+        const QPoint menuPoint = QLocale().textDirection() == Qt::LeftToRight
+                                 ? QPoint(::sidebarWidth(m_compactMode), height() - menu.sizeHint().height())
+                                 : QPoint(0 - menu.sizeHint().width(), height() - menu.sizeHint().height());
+        QAction* pressedAction = menu.exec(mapToGlobal(menuPoint));
 
         if (pressedAction
             && pressedAction->data() >= 0
@@ -490,7 +501,7 @@ void SideTabBar::mouseReleaseEvent(QMouseEvent* _event)
 QSize SideTabBar::minimumSizeHint() const
 {
     const int width = ::sidebarWidth(m_compactMode);
-    const int height = (m_tabs.size() * ::tabHeight(m_compactMode)) + (m_indicator->isVisible() ? INDICATOR_HEIGHT : 0);
+    const int height = (m_tabs.size() * ::tabHeight(m_compactMode)) + (m_indicator->isVisible() ? indicatorHeight(m_compactMode) : 0);
     return QSize(width, height);
 }
 

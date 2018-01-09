@@ -89,7 +89,7 @@ Plot CharactersActivityPlot::makePlot(QTextDocument* _scenario, const BusinessLo
 			currentData = new SceneData;
 			scenesDataList.append(currentData);
 			//
-			if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(block.userData())) {
+			if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(block.userData())) {
 				currentData->number = info->sceneNumber();
 			}
 		}

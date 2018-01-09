@@ -1,6 +1,7 @@
 #include "SimpleTextEditorWidget.h"
 #include "SimpleTextEditor.h"
 
+#include <3rd_party/Helpers/ShortcutHelper.h>
 #include <3rd_party/Widgets/ColoredToolButton/ColoredToolButton.h>
 #include <3rd_party/Widgets/FlatButton/FlatButton.h>
 #include <3rd_party/Widgets/ScalableWrapper/ScalableWrapper.h>
@@ -45,6 +46,7 @@ SimpleTextEditorWidget::SimpleTextEditorWidget(QWidget *parent) :
     m_textUnderline(new FlatButton(this)),
     m_textColor(new ColoredToolButton(QIcon(":/Graphics/Icons/Review/font-color.png"), this)),
     m_textBackgroundColor(new ColoredToolButton(QIcon(":/Graphics/Icons/Review/font-bg-color.png"), this)),
+    m_clearFormatting(new FlatButton(this)),
     m_toolbarSpace(new QLabel(this)),
     m_isInTextFormatUpdate(false)
 {
@@ -126,7 +128,7 @@ bool SimpleTextEditorWidget::isEmpty() const
 QString SimpleTextEditorWidget::toHtml() const
 {
     if (isEmpty()) {
-        return QString::null;
+        return QString();
     }
 
     return m_editor->toHtml();
@@ -135,7 +137,7 @@ QString SimpleTextEditorWidget::toHtml() const
 QString SimpleTextEditorWidget::toPlainText() const
 {
     if (isEmpty()) {
-        return QString::null;
+        return QString();
     }
 
     return m_editor->toPlainText();
@@ -170,6 +172,7 @@ void SimpleTextEditorWidget::initView()
     //
     QSettings settings;
     m_editorWrapper->setZoomRange(settings.value("simple-editor/zoom-range", 0).toDouble());
+    m_editor->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
     m_textFont->setModel(new QStringListModel(QFontDatabase().families(), m_textFont));
     m_textFont->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
@@ -180,30 +183,23 @@ void SimpleTextEditorWidget::initView()
     m_textBold->setCheckable(true);
     m_textBold->setShortcut(QKeySequence::Bold);
     m_textBold->setIcons(QIcon(":/Graphics/Icons/Editing/format-bold.png"));
-    m_textBold->setToolTip(
-            QString("%1 (%2)")
-                .arg(tr("Make text bold"))
-                .arg(m_textBold->shortcut().toString(QKeySequence::NativeText)));
+    m_textBold->setToolTip(ShortcutHelper::makeToolTip(tr("Make text bold"), m_textBold->shortcut()));
     m_textItalic->setCheckable(true);
     m_textItalic->setShortcut(QKeySequence::Italic);
     m_textItalic->setIcons(QIcon(":/Graphics/Icons/Editing/format-italic.png"));
-    m_textItalic->setToolTip(
-            QString("%1 (%2)")
-                .arg(tr("Make text italic"))
-                .arg(m_textItalic->shortcut().toString(QKeySequence::NativeText)));
+    m_textItalic->setToolTip(ShortcutHelper::makeToolTip(tr("Make text italic"), m_textItalic->shortcut()));
     m_textUnderline->setCheckable(true);
     m_textUnderline->setShortcut(QKeySequence::Underline);
     m_textUnderline->setIcons(QIcon(":/Graphics/Icons/Editing/format-underline.png"));
-    m_textUnderline->setToolTip(
-            QString("%1 (%2)")
-                .arg(tr("Make text underline"))
-                .arg(m_textUnderline->shortcut().toString(QKeySequence::NativeText)));
+    m_textUnderline->setToolTip(ShortcutHelper::makeToolTip(tr("Make text underline"), m_textUnderline->shortcut()));
     m_textColor->setIconSize(QSize(20, 20));
     m_textColor->setColorsPane(ColoredToolButton::Google);
     m_textColor->setToolTip(tr("Change text color"));
     m_textBackgroundColor->setIconSize(QSize(20, 20));
     m_textBackgroundColor->setColorsPane(ColoredToolButton::Google);
     m_textBackgroundColor->setToolTip(tr("Change text background color"));
+    m_clearFormatting->setIcons(QIcon(":/Graphics/Icons/Review/clear.png"));
+    m_clearFormatting->setToolTip(tr("Clear formatting"));
     m_toolbarSpace->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 
     //
@@ -219,6 +215,7 @@ void SimpleTextEditorWidget::initView()
     toolbarLayout->addWidget(m_textUnderline);
     toolbarLayout->addWidget(m_textColor);
     toolbarLayout->addWidget(m_textBackgroundColor);
+    toolbarLayout->addWidget(m_clearFormatting);
     toolbarLayout->addWidget(m_toolbarSpace);
     m_toolbar->setLayout(toolbarLayout);
     //
@@ -258,7 +255,7 @@ void SimpleTextEditorWidget::initConnections()
     // Панель инструментов
     //
     connect(m_editor, &SimpleTextEditor::currentCharFormatChanged,
-            [=] (const QTextCharFormat& _format) {
+            [this] (const QTextCharFormat& _format) {
         m_isInTextFormatUpdate = true;
         const QFont font = _format.font();
         m_textFont->setCurrentText(font.family());
@@ -281,7 +278,7 @@ void SimpleTextEditorWidget::initConnections()
     //
     // ... шрифт
     //
-    connect(m_textFont, &QComboBox::currentTextChanged, [=] {
+    connect(m_textFont, &QComboBox::currentTextChanged, [this] {
         if (!m_isInTextFormatUpdate) {
             QFont font(m_textFont->currentText(), m_textFontSize->currentText().toInt());
             m_editor->setTextFont(font);
@@ -290,7 +287,7 @@ void SimpleTextEditorWidget::initConnections()
     //
     // ... размер шрифта
     //
-    connect(m_textFontSize, &QComboBox::currentTextChanged, [=] {
+    connect(m_textFontSize, &QComboBox::currentTextChanged, [this] {
         if (!m_isInTextFormatUpdate) {
             QFont font(m_textFont->currentText(), m_textFontSize->currentText().toInt());
             m_editor->setTextFont(font);
@@ -299,17 +296,17 @@ void SimpleTextEditorWidget::initConnections()
     //
     // ... начертания
     //
-    connect(m_textBold, &FlatButton::toggled, [=] (bool _checked) {
+    connect(m_textBold, &FlatButton::toggled, [this] (bool _checked) {
         if (!m_isInTextFormatUpdate) {
             m_editor->setTextBold(_checked);
         }
     });
-    connect(m_textItalic, &FlatButton::toggled, [=] (bool _checked) {
+    connect(m_textItalic, &FlatButton::toggled, [this] (bool _checked) {
         if (!m_isInTextFormatUpdate) {
             m_editor->setTextItalic(_checked);
         }
     });
-    connect(m_textUnderline, &FlatButton::toggled, [=] (bool _checked) {
+    connect(m_textUnderline, &FlatButton::toggled, [this] (bool _checked) {
         if (!m_isInTextFormatUpdate) {
             m_editor->setTextUnderline(_checked);
         }
@@ -317,7 +314,7 @@ void SimpleTextEditorWidget::initConnections()
     //
     // ... цвет текста
     //
-    connect(m_textColor, &ColoredToolButton::clicked, [=] (const QColor& _color) {
+    connect(m_textColor, &ColoredToolButton::clicked, [this] (const QColor& _color) {
         if (!m_isInTextFormatUpdate) {
             m_editor->setTextColor(_color);
         }
@@ -325,9 +322,17 @@ void SimpleTextEditorWidget::initConnections()
     //
     // ... цвет фона текста
     //
-    connect(m_textBackgroundColor, &ColoredToolButton::clicked, [=] (const QColor& _color) {
+    connect(m_textBackgroundColor, &ColoredToolButton::clicked, [this] (const QColor& _color) {
         if (!m_isInTextFormatUpdate) {
             m_editor->setTextBackgroundColor(_color);
+        }
+    });
+    //
+    // ... очистить форматирование
+    //
+    connect(m_clearFormatting, &FlatButton::clicked, [this] {
+        if (!m_isInTextFormatUpdate) {
+            m_editor->clearFormat();
         }
     });
 }
@@ -346,6 +351,7 @@ void SimpleTextEditorWidget::initStyleSheet()
     m_textUnderline->setProperty("inTopPanel", true);
     m_textColor->setProperty("inTopPanel", true);
     m_textBackgroundColor->setProperty("inTopPanel", true);
+    m_clearFormatting->setProperty("inTopPanel", true);
     m_toolbarSpace->setProperty("inTopPanel", true);
     m_toolbarSpace->setProperty("topPanelTopBordered", true);
     m_toolbarSpace->setProperty("topPanelRightBordered", true);

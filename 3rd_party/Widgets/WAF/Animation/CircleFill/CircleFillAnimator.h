@@ -43,12 +43,17 @@ namespace WAF
         /**
          * @brief Установить точку начала анимации
          */
-        void setStartPoint(const QPoint& _point);
+        void setStartPoint(const QPoint& _globalPoint);
 
         /**
          * @brief Установить цвет заливки
          */
         void setFillColor(const QColor& _color);
+
+        /**
+         * @brief Скрывать ли декоратор после окончания анимации
+         */
+        void setHideAfterFinish(bool _hide);
 
         /**
          * @brief Длительность анимации
@@ -71,12 +76,17 @@ namespace WAF
         void fillOut();
         /** @} */
 
+    private:
+        /**
+         * @brief Завершить выполнение анимации
+         */
+        void finalize();
+
         /**
          * @brief Скрыть декоратор
          */
         void hideDecorator();
 
-    private:
         /**
          * @brief Получить виджет, который нужно заполнить
          */
@@ -92,6 +102,11 @@ namespace WAF
          * @brief Объект для анимирования декоратора
          */
         QPropertyAnimation* m_animation;
+
+        /**
+         * @brief Скрывать ли декоратор после завершения анимации
+         */
+        bool m_hideAfterFinish = true;
     };
 }
 

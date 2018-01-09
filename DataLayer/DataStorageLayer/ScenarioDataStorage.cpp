@@ -124,7 +124,7 @@ ScenarioData* ScenarioDataStorage::data(const QString& _name) const
 		//
 		// ... создаём новый
 		//
-		data = new ScenarioData(Identifier(), _name, QString::null);
+		data = new ScenarioData(Identifier(), _name, QString());
 		//
 		// ... сохраняем
 		//

@@ -38,6 +38,16 @@ public:
 
     GraphLogic *graphLogic() const;
 
+    /**
+     * @brief Сохранить в картинку
+     */
+    QImage saveToImage() const;
+
+    /**
+     * @brief Сохранить картинкой в файл
+     */
+    void saveToImageFile(const QString& _filePath);
+
 public slots:
     void zoomIn();
     void zoomOut();

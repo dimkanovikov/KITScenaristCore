@@ -76,6 +76,11 @@ void CardsView::setCanAddActs(bool _can)
     m_scene->setCanAddActs(_can);
 }
 
+void CardsView::setOrderByRows(bool _orderByRows)
+{
+    m_scene->setOrderByRows(_orderByRows);
+}
+
 void CardsView::setFixedMode(bool _isFixed)
 {
     m_scene->setFixedMode(_isFixed);
@@ -134,9 +139,10 @@ QString CardsView::save() const
 void CardsView::saveToImage(const QString& _filePath)
 {
     m_scene->clearSelection();
-    QImage image(m_scene->sceneRect().size().toSize(), QImage::Format_ARGB32);
+    QImage image(m_scene->sceneRect().size().toSize(), QImage::Format_ARGB32_Premultiplied);
 
     QPainter painter(&image);
+    painter.setRenderHint(QPainter::Antialiasing, true);
     painter.fillRect(image.rect(), m_view->backgroundBrush());
     m_scene->render(&painter);
     image.save(_filePath);
@@ -233,6 +239,8 @@ void CardsView::initView()
 
 void CardsView::initConnections()
 {
+    connect(m_scene, &CardsScene::goToActRequest, this, &CardsView::goToActRequest);
+    connect(m_scene, &CardsScene::goToCardRequest, this, &CardsView::goToCardRequest);
     connect(m_scene, &CardsScene::actAddRequest, this, &CardsView::actAddRequest);
     connect(m_scene, &CardsScene::cardAddRequest, this, &CardsView::cardAddRequest);
     connect(m_scene, &CardsScene::cardAddCopyRequest, this, &CardsView::cardAddCopyRequest);
@@ -249,6 +257,7 @@ void CardsView::initConnections()
     connect(m_scene, &CardsScene::cardMoved, this, &CardsView::cardMoved);
     connect(m_scene, &CardsScene::cardMovedToGroup, this, &CardsView::cardMovedToGroup);
     connect(m_scene, &CardsScene::cardColorsChanged, this, &CardsView::cardColorsChanged);
+    connect(m_scene, &CardsScene::cardStampChanged, this, &CardsView::cardStampChanged);
     connect(m_scene, &CardsScene::cardTypeChanged, this, &CardsView::cardTypeChanged);
     connect(m_scene, &CardsScene::cardsChanged, this, &CardsView::cardsChanged);
 

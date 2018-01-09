@@ -16,6 +16,14 @@ namespace {
 /** @{ */
 const QString NODE_SCENARIO = "scenario";
 const QString NODE_VALUE = "v";
+const QString NODE_FORMAT_GROUP = "formatting";
+const QString NODE_FORMAT = "format";
+
+const QString ATTRIBUTE_FORMAT_FROM = "from";
+const QString ATTRIBUTE_FORMAT_LENGTH = "length";
+const QString ATTRIBUTE_FORMAT_BOLD = "bold";
+const QString ATTRIBUTE_FORMAT_ITALIC = "italic";
+const QString ATTRIBUTE_FORMAT_UNDERLINE = "underline";
 
 const QString ATTRIBUTE_VERSION = "version";
 /** @} */
@@ -29,15 +37,27 @@ const QStringList sceneHeadings = {QApplication::translate("BusinessLayer::Fount
                                    QApplication::translate("BusinessLayer::FountainImporter", "INT./EXT"),
                                    QApplication::translate("BusinessLayer::FountainImporter", "INT/EXT"),
                                    QApplication::translate("BusinessLayer::FountainImporter", "I/E")};
+
+const QMap<QString, QString> TITLE_KEYS({{"Title", "name"},
+                                         {"Author", "author"},
+                                         {"Authors", "author"},
+                                         {"Draft date", "year"},
+                                         {"Copyright", "year"},
+                                         {"Contact", "contacts"},
+                                         {"Credit", "genre"},
+                                         {"Source", "additional_info"}});
+
+const QString TRIPLE_WHITESPACE = "   ";
+const QString DOUBLE_WHITESPACE = "  ";
+
 }
 
 FountainImporter::FountainImporter() :
     AbstractImporter()
 {
-
 }
 
-QString FountainImporter::importScenario(const ImportParameters &_importParameters) const
+QString FountainImporter::importScript(const ImportParameters &_importParameters) const
 {
     QString scenarioXml;
 
@@ -59,24 +79,64 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
         writer.writeAttribute(ATTRIBUTE_VERSION, "1.0");
 
         //
-        // Текст сценария
+        // Сформируем список строк, содержащий текст сценария
         //
         QVector<QString> paragraphs;
-        for (const QString& str : QString(fountainFile.readAll()).split("\n")) {
-            paragraphs.push_back(str.trimmed());
+        bool isTitle = false;
+        bool isFirstLine = true;
+        for (QString& str : QString(fountainFile.readAll()).split("\n")) {
+            //
+            // Если первая строка содержит ':', то в начале идет титульная страница,
+            // которую мы обрабатываем не здесь
+            //
+            if (isFirstLine) {
+                isFirstLine = false;
+                if (str.contains(':')) {
+                    isTitle = true;
+                }
+            }
+
+            if (isTitle) {
+                //
+                // Титульная страница заканчивается пустой строкой
+                //
+                if (str.simplified().isEmpty()) {
+                    isTitle = false;
+                }
+            } else {
+                if (str.endsWith("\r")) {
+                    str.chop(1);
+                }
+
+                if (str == DOUBLE_WHITESPACE) {
+                    //
+                    // Если строка состоит из 2 пробелов, то это нужно сохранить
+                    // Используется для многострочных диалогов с пустыми строками
+                    //
+                    paragraphs.push_back(DOUBLE_WHITESPACE);
+                } else {
+                    paragraphs.push_back(str.simplified());
+                }
+            }
         }
+
+        //
+        // Очищаем форматы перед импортом
+        //
+        m_formats.clear();
+        m_lastFormat.clear();
 
         const int paragraphsCount = paragraphs.size();
         ScenarioBlockStyle::Type prevBlockType = ScenarioBlockStyle::Undefined;
         QStack<QString> dirs;
         ScenarioBlockStyle::Type blockType;
         for (int i = 0; i != paragraphsCount; ++i) {
-            if (notation
-                    || commenting) {
+            if (m_isNotation
+                || m_isCommenting) {
                 //
                 // Если мы комментируем или делаем заметку, то продолжим это
                 //
-                processBlock(writer, paragraphs[i], prevBlockType);
+                processBlock(paragraphs[i], prevBlockType, writer);
                 continue;
             }
 
@@ -87,7 +147,7 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
             blockType = ScenarioBlockStyle::Action;
             QString paragraphText;
 
-            switch(paragraphs[i].toStdString()[0]) {
+            switch(paragraphs[i][0].toLatin1()) {
                 case '.':
                 {
                     blockType = ScenarioBlockStyle::SceneHeading;
@@ -159,9 +219,9 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
                 case '~':
                 {
                     //
-                    // TODO: Вообще, это Lyrics блок. Но у нас такого нет
+                    // Лирика
                     //
-                    blockType = ScenarioBlockStyle::Action;
+                    blockType = ScenarioBlockStyle::Lyrics;
                     paragraphText = paragraphs[i].mid(1);
                     break;
                 }
@@ -172,7 +232,7 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
                     // Директории
                     //
                     int sharpCount = 0;
-                    while(paragraphs[i].toStdString()[sharpCount] == '#') {
+                    while (paragraphs[i][sharpCount] == '#') {
                         ++sharpCount;
                     }
 
@@ -182,7 +242,8 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
                         //
                         unsigned toClose = dirs.size() - sharpCount + 1;
                         for (unsigned i = 0; i != toClose; ++i) {
-                            processBlock(writer, "КОНЕЦ " + dirs.top(), ScenarioBlockStyle::FolderFooter);
+                            processBlock(QApplication::translate("FountainImporter", "END OF ") + dirs.top(),
+                                         ScenarioBlockStyle::FolderFooter, writer);
                             dirs.pop();
                         }
                         prevBlockType = ScenarioBlockStyle::FolderFooter;
@@ -191,7 +252,7 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
                     // И откроем новую
                     //
                     QString text = paragraphs[i].mid(sharpCount);
-                    processBlock(writer, text, ScenarioBlockStyle::FolderHeader);
+                    processBlock(text, ScenarioBlockStyle::FolderHeader, writer);
                     dirs.push(text);
                     prevBlockType = ScenarioBlockStyle::FolderHeader;
 
@@ -237,9 +298,9 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
                         //
                         // Редакторская заметка
                         //
-                        notes.append(std::make_tuple(paragraphs[i].mid(2, paragraphs[i].size() - 4), noteStartPos, noteLen));
-                        noteStartPos += noteLen;
-                        noteLen = 0;
+                        m_notes.append(std::make_tuple(paragraphs[i].mid(2, paragraphs[i].size() - 4), m_noteStartPos, m_noteLen));
+                        m_noteStartPos += m_noteLen;
+                        m_noteLen = 0;
                         continue;
                     } else if (paragraphs[i].startsWith("/*")) {
                         //
@@ -285,9 +346,13 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
                             paragraphText = paragraphs[i];
                         }
                     } else if (prevBlockType == ScenarioBlockStyle::Character
-                               || prevBlockType == ScenarioBlockStyle::Parenthetical) {
+                               || prevBlockType == ScenarioBlockStyle::Parenthetical
+                               || (prevBlockType == ScenarioBlockStyle::Dialogue
+                                   && i > 0
+                                   && !paragraphs[i-1].isEmpty())) {
                         //
                         // Если предыдущий блок - имя персонажа или ремарка, то сейчас диалог
+                        // Или предыдущая строка является диалогом
                         //
                         blockType = ScenarioBlockStyle::Dialogue;
                         paragraphText = paragraphs[i];
@@ -303,7 +368,7 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
             //
             // Отправим блок на обработку
             //
-            processBlock(writer, paragraphText, blockType);
+            processBlock(paragraphText, blockType, writer);
             prevBlockType = blockType;
         }
         //
@@ -320,7 +385,8 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
         // Закроем директории нужное число раз
         //
         while (!dirs.empty()) {
-            processBlock(writer, "КОНЕЦ " + dirs.top(), ScenarioBlockStyle::FolderFooter);
+            processBlock(QApplication::translate("FountainImporter", "END OF ") + dirs.top(),
+                         ScenarioBlockStyle::FolderFooter, writer);
             dirs.pop();
         }
 
@@ -334,47 +400,147 @@ QString FountainImporter::importScenario(const ImportParameters &_importParamete
     return scenarioXml;
 }
 
-void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphText,
-                                    ScenarioBlockStyle::Type type) const
+QVariantMap FountainImporter::importResearch(const ImportParameters &_importParameters) const
 {
-    if (!notation
-            && !commenting) {
+    //
+    // Открываем файл
+    //
+    QVariantMap titlePage;
+    QFile fountainFile(_importParameters.filePath);
+    if (fountainFile.open(QIODevice::ReadOnly)) {
+        //
+        // Сохранить параметр, если он нам известен
+        //
+        auto saveParameter = [&titlePage] (const QString& _key, const QString& _value) {
+            if (!_key.isEmpty()
+                && !_value.isEmpty()
+                && ::TITLE_KEYS.contains(_key)) {
+                titlePage[::TITLE_KEYS[_key]] = _value;
+            }
+        };
+
+        //
+        // Титульная страница представлена в виде "key: value" и отделена от текста пустой строкой
+        //
+        QString lastKey;
+        QString lastValue;
+        forever {
+            const QString textLine = fountainFile.readLine();
+            QStringList textLineData = textLine.simplified().split(":", QString::SkipEmptyParts);
+            //
+            // Если в строке содержится ключ и значение
+            //
+            if (textLineData.size() > 1) {
+                //
+                // Если есть ещё не сохранённый параметр, сохраним
+                //
+                saveParameter(lastKey, lastValue);
+                //
+                // ... и очистим
+                //
+                lastKey.clear();
+                lastValue.clear();
+
+                //
+                // Сохраним текущий параметр
+                //
+                const QString key = textLineData.takeFirst();
+                const QString value = textLineData.join(":").simplified();
+                saveParameter(key, value);
+            }
+            //
+            // Иначе в строке содержится либо ключ, либо значение, либо это конец титульной страницы
+            //
+            else {
+                //
+                // Ключ
+                //
+                if (textLine.contains(":")) {
+                    lastKey = textLineData.first();
+                    lastValue.clear();
+                }
+                //
+                // Значение
+                // Каждая строка должна начинаться либо с табуляции, либо с 3 пробелов минимум
+                //
+                else if (!lastKey.isEmpty()
+                         && !textLineData.isEmpty()
+                         && !textLineData.first().isEmpty()
+                         && (textLine.startsWith(TRIPLE_WHITESPACE)
+                             || textLine.startsWith('\t'))) {
+                    if (!lastValue.isEmpty()) {
+                        lastValue.append("\n");
+                    }
+                    lastValue.append(textLineData.first());
+                }
+                //
+                // Конец титульной страницы
+                //
+                else {
+                    //
+                    // Сохраняем последний несохранённый параметр
+                    //
+                    saveParameter(lastKey, lastValue);
+                    //
+                    // ... и прерываем выполнение
+                    //
+                    break;
+                }
+            }
+        }
+    }
+
+    QVariantMap result;
+    result["script"] = titlePage;
+    return result;
+}
+
+void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlockStyle::Type _type,
+    QXmlStreamWriter& _writer) const
+{
+    if (!m_isNotation
+        && !m_isCommenting) {
         //
         // Начинается новая сущность
         //
-        text.reserve(paragraphText.size());
+        m_blockText.reserve(_paragraphText.size());
 
         //
         // Добавим комментарии к предыдущему блоку
         //
-        appendComments(writer);
+        appendComments(_writer);
 
-        noteLen = 0;
-        noteStartPos = 0;
+        m_noteLen = 0;
+        m_noteStartPos = 0;
+    }
+
+    if (!m_isCommenting) {
+        m_formats.clear();
     }
 
     char prevSymbol = '\0';
-
-    for (int i = 0; i != paragraphText.size(); ++i) {
+    int asteriskLen = 0;
+    for (int i = 0; i != _paragraphText.size(); ++i) {
+        //
+        // Если предыдущий символ - \, то просто добавим текущий
+        //
         if (prevSymbol == '\\') {
-            //
-            // Если предыдущий символ - \, то просто добавим текущий
-            //
-            if (notation) {
-                note.append(paragraphText[i]);
-            }
-            else {
-                text.append(paragraphText[i]);
+            if (m_isNotation) {
+                m_note.append(_paragraphText[i]);
+            } else {
+                m_blockText.append(_paragraphText[i]);
             }
             continue;
         }
-        switch (paragraphText.toStdString()[i]) {
+
+        char curSymbol = _paragraphText[i].toLatin1();
+        switch (curSymbol) {
             case '\\':
             {
-                if (notation) {
-                    note.append(paragraphText[i]);
+                if (m_isNotation) {
+                    m_note.append(_paragraphText[i]);
                 } else {
-                    text.append(paragraphText[i]);
+                    m_blockText.append(_paragraphText[i]);
                 }
                 break;
             }
@@ -382,25 +548,27 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
             case '/':
             {
                 if (prevSymbol == '*'
-                        && commenting) {
+                    && m_isCommenting) {
                     //
                     // Заканчивается комментирование
                     //
-                    commenting = false;
-                    noteStartPos += noteLen;
-                    noteLen = text.size() - 1;
+                    --asteriskLen;
+                    m_isCommenting = false;
+                    m_noteStartPos += m_noteLen;
+                    m_noteLen = m_blockText.size();
 
                     //
                     // Закроем предыдущий блок, добавим текущий
                     //
-                    writer.writeEndElement();
-                    appendBlock(writer, text.left(text.size() - 1), ScenarioBlockStyle::NoprintableText);
-                    text.clear();
+                    _writer.writeEndElement();
+                    appendBlock(m_blockText.left(m_blockText.size()),
+                                ScenarioBlockStyle::NoprintableText, _writer);
+                    m_blockText.clear();
                 } else {
-                    if (notation) {
-                        note.append('/');
+                    if (m_isNotation) {
+                        m_note.append('/');
                     } else {
-                        text.append('/');
+                        m_blockText.append('/');
                     }
                 }
                 break;
@@ -409,34 +577,31 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
             case '*':
             {
                 if (prevSymbol == '/'
-                        && !commenting
-                        && !notation) {
+                    && !m_isCommenting
+                    && !m_isNotation) {
                     //
                     // Начинается комментирование
                     //
-                    commenting = true;
-                    noteStartPos += noteLen;
-                    noteLen = text.size() - 1;
+                    m_isCommenting = true;
+                    m_noteStartPos += m_noteLen;
+                    m_noteLen = m_blockText.size() - 1;
 
                     //
                     // Закроем предыдущий блок и, если комментирование начинается в середние текущего блока
                     // то добавим этот текущий блок
                     //
-                    writer.writeEndElement();
-                    if (text.size() != 1) {
-                        appendBlock(writer, text.left(text.size() - 1), type);
-                        appendComments(writer);
-                        notes.clear();
+                    _writer.writeEndElement();
+                    if (m_blockText.size() != 1) {
+                        appendBlock(m_blockText.left(m_blockText.size() - 1), _type, _writer);
+                        appendComments(_writer);
+                        m_notes.clear();
                     }
-                    text.clear();
+                    m_blockText.clear();
                 } else {
-                    if (notation) {
-                        note.append('*');
+                    if (m_isNotation) {
+                        m_note.append('*');
                     } else {
-                        //
-                        // Игнорируем *, поскольку они являются символом форматирования, которое мы еще не умеем
-                        //
-                        //text.append('*');
+                        ++asteriskLen;
                     }
                 }
                 break;
@@ -445,19 +610,19 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
             case '[':
             {
                 if (prevSymbol == '['
-                        && !commenting
-                        && !notation) {
+                        && !m_isCommenting
+                        && !m_isNotation) {
                     //
                     // Начинается редакторская заметка
                     //
-                    notation = true;
-                    noteLen = text.size() - 1 - noteStartPos;
-                    text = text.left(text.size() - 1);
+                    m_isNotation = true;
+                    m_noteLen = m_blockText.size() - 1 - m_noteStartPos;
+                    m_blockText = m_blockText.left(m_blockText.size() - 1);
                 } else {
-                    if (notation) {
-                        note.append('[');
+                    if (m_isNotation) {
+                        m_note.append('[');
                     } else {
-                        text.append('[');
+                        m_blockText.append('[');
                     }
                 }
                 break;
@@ -466,119 +631,320 @@ void FountainImporter::processBlock(QXmlStreamWriter& writer, QString paragraphT
             case ']':
             {
                 if (prevSymbol == ']'
-                        && notation) {
+                        && m_isNotation) {
                     //
                     // Закончилась редакторская заметка. Добавим ее в список редакторских заметок к текущему блоку
                     //
-                    notation = false;
-                    notes.append(std::make_tuple(note.left(note.size() - 1), noteStartPos, noteLen));
-                    noteStartPos += noteLen;
-                    noteLen = 0;
-                    note.clear();
+                    m_isNotation = false;
+                    m_notes.append(std::make_tuple(m_note.left(m_note.size() - 1), m_noteStartPos, m_noteLen));
+                    m_noteStartPos += m_noteLen;
+                    m_noteLen = 0;
+                    m_note.clear();
                 } else {
-                    if (notation) {
-                        note.append(']');
+                    if (m_isNotation) {
+                        m_note.append(']');
                     } else {
-                        text.append(']');
+                        m_blockText.append(']');
                     }
                 }
                 break;
             }
 
             case '_':
+            {
                 //
-                // Игнорируем подчеркивания, которые являются символом форматирования
+                // Подчеркивания обрабатываются в другом месте, поэтому тут игнорируем его обработку
                 //
                 break;
+            }
+
             default:
             {
                 //
                 // Самый обычный символ
                 //
-                if (notation) {
-                    note.append(paragraphText[i]);
+                if (m_isNotation) {
+                    m_note.append(_paragraphText[i]);
                 } else {
-                    text.append(paragraphText[i]);
+                    m_blockText.append(_paragraphText[i]);
                 }
                 break;
             }
         }
-        prevSymbol = paragraphText.toStdString()[i];
+
+        //
+        // Underline
+        //
+        if (prevSymbol == '_') {
+            processFormat(false, false, true, curSymbol == '*');
+        }
+
+        if (curSymbol != '*') {
+            switch (asteriskLen) {
+                //
+                // Italics
+                //
+                case 1:
+                {
+                    processFormat(true, false, false, curSymbol == '_');
+                    break;
+                }
+
+                //
+                // Bold
+                //
+                case 2:
+                {
+                    processFormat(false, true, false, curSymbol == '_');
+                    break;
+                }
+
+                //
+                // Bold & Italics
+                //
+                case 3:
+                {
+                    processFormat(true, true, false, curSymbol == '_');
+                    break;
+                }
+
+                default: break;
+            }
+            asteriskLen = 0;
+        }
+
+        prevSymbol = curSymbol;
     }
 
+    //
+    // Underline
+    //
+    if (prevSymbol == '_') {
+        processFormat(false, false, true, true);
+    }
 
-    if (!notation
-            && !commenting) {
+    switch(asteriskLen) {
+        //
+        // Italics
+        //
+        case 1:
+        {
+            processFormat(true, false, false, true);
+            break;
+        }
+
+        //
+        // Bold
+        //
+        case 2:
+        {
+            processFormat(false, true, false, true);
+            break;
+        }
+
+        //
+        // Bold & Italics
+        //
+        case 3:
+        {
+            processFormat(true, true, false, true);
+            break;
+        }
+
+        default: break;
+    }
+    asteriskLen = 0;
+
+
+    if (!m_isNotation
+        && !m_isCommenting) {
         //
         // Если блок действительно закончился
         //
-        noteLen += text.size() - noteStartPos;
+        m_noteLen += m_blockText.size() - m_noteStartPos;
 
         //
         // Закроем предыдущий блок
         //
-        if (!firstBlock) {
-            writer.writeEndElement();
+        if (!m_isFirstBlock) {
+            _writer.writeEndElement();
         }
 
         //
         // Добавим текущий блок
         //
-        if (!text.isEmpty() || type == ScenarioBlockStyle::FolderFooter) {
-            appendBlock(writer, text, type);
+        if (!m_blockText.isEmpty() || _type == ScenarioBlockStyle::FolderFooter) {
+            appendBlock(m_blockText, _type, _writer);
         }
-        text.clear();
+        m_blockText.clear();
     }
 
     //
     // Первый блок в тексте может встретиться лишь однажды
     //
-    if (!firstBlock) {
-        firstBlock = false;
+    if (!m_isFirstBlock) {
+        m_isFirstBlock = false;
     }
 }
 
-void FountainImporter::appendBlock(QXmlStreamWriter &writer, const QString &paragraphText,
-                                   ScenarioBlockStyle::Type type) const
+void FountainImporter::appendBlock(const QString& _paragraphText, ScenarioBlockStyle::Type _type,
+    QXmlStreamWriter& _writer) const
 {
-    const QString& blockTypeName = ScenarioBlockStyle::typeName(type);
-    writer.writeStartElement(blockTypeName);
-    writer.writeStartElement(NODE_VALUE);
-    writer.writeCDATA(paragraphText.trimmed());
-    writer.writeEndElement();
+    int leadSpaceCount = 0;
+    QString paragraphText = _paragraphText;
+    while (!paragraphText.isEmpty()
+           && paragraphText.startsWith(" ")) {
+        ++leadSpaceCount;
+        paragraphText = paragraphText.mid(1);
+    }
+
+    const QString& blockTypeName = ScenarioBlockStyle::typeName(_type);
+    _writer.writeStartElement(blockTypeName);
+    _writer.writeStartElement(NODE_VALUE);
+    _writer.writeCDATA(paragraphText);
+    _writer.writeEndElement();
+
+    //
+    // Если есть форматирование, которое распространяется на несколько блоков
+    //
+    if (m_lastFormat.isValid()) {
+        //
+        // Добавим его в список форматов текущего блока
+        //
+        m_lastFormat.length = _paragraphText.trimmed().length() - m_lastFormat.start;
+        m_formats.append(m_lastFormat);
+        //
+        // Для следующего блока он будет начинаться с первого символа
+        //
+        m_lastFormat.start = m_lastFormat.length = 0;
+    }
+
+    //
+    // Пишем форматирование, если оно есть
+    //
+    if (!m_formats.isEmpty()) {
+        _writer.writeStartElement(NODE_FORMAT_GROUP);
+        for (const TextFormat& format : m_formats) {
+            _writer.writeStartElement(NODE_FORMAT);
+            //
+            // Данные пользовательского форматирования
+            //
+            _writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(format.start - leadSpaceCount));
+            _writer.writeAttribute(ATTRIBUTE_FORMAT_LENGTH, QString::number(format.length));
+            _writer.writeAttribute(ATTRIBUTE_FORMAT_BOLD, format.bold ? "true" : "false");
+            _writer.writeAttribute(ATTRIBUTE_FORMAT_ITALIC, format.italic? "true" : "false");
+            _writer.writeAttribute(ATTRIBUTE_FORMAT_UNDERLINE, format.underline ? "true" : "false");
+            //
+            _writer.writeEndElement();
+        }
+        _writer.writeEndElement();
+        m_formats.clear();
+    }
 
     //
     // Не закрываем блок, чтобы можно было добавить редакторских заметок
     //
-    //writer.writeEndElement();
 }
 
-void FountainImporter::appendComments(QXmlStreamWriter &writer) const
+void FountainImporter::appendComments(QXmlStreamWriter& _writer) const
 {
-    if (notes.isEmpty()) {
+    if (m_notes.isEmpty()) {
         return;
     }
 
-    writer.writeStartElement("reviews");
+    _writer.writeStartElement("reviews");
 
-    for (int i = 0; i != notes.size(); ++i) {
-        if (std::get<2>(notes[i]) != 0) {
+    for (int i = 0; i != m_notes.size(); ++i) {
+        if (std::get<2>(m_notes[i]) != 0) {
             if (i != 0) {
-                writer.writeEndElement();
+                _writer.writeEndElement();
             }
-            writer.writeStartElement("review");
-            writer.writeAttribute("from", QString::number(std::get<1>(notes[i])));
-            writer.writeAttribute("length", QString::number(std::get<2>(notes[i])));
-            writer.writeAttribute("bgcolor", "#ffff00");
-            writer.writeAttribute("is_highlight", "true");
+            _writer.writeStartElement("review");
+            _writer.writeAttribute("from", QString::number(std::get<1>(m_notes[i])));
+            _writer.writeAttribute("length", QString::number(std::get<2>(m_notes[i])));
+            _writer.writeAttribute("color", "#000000");
+            _writer.writeAttribute("bgcolor", "#ffff00");
+            _writer.writeAttribute("is_highlight", "true");
         }
-        writer.writeEmptyElement("review_comment");
-        writer.writeAttribute("comment", std::get<0>(notes[i]));
+        _writer.writeEmptyElement("review_comment");
+        _writer.writeAttribute("comment", std::get<0>(m_notes[i]));
     }
 
-    writer.writeEndElement();
+    _writer.writeEndElement();
+    _writer.writeEndElement();
 
-    writer.writeEndElement();
-
-    notes.clear();
+    m_notes.clear();
 }
+
+QString FountainImporter::simplify(const QString& _value) const
+{
+    QString res;
+    for (int i = 0; i != _value.size(); ++i) {
+        if (_value[i] == '*'
+            || _value[i] == '_'
+            || _value[i] == '\\') {
+            if (i == 0
+                || (i > 0
+                    && _value[i-1] != '\\')) {
+                continue;
+            } else {
+                res += _value[i];
+            }
+        }
+        else {
+            res += _value[i];
+        }
+    }
+    return res;
+}
+
+void FountainImporter::processFormat(bool _italics, bool _bold, bool _underline,
+                                     bool _forCurrentCharacter) const
+{
+    //
+    // Новый формат, который еще не начат
+    //
+    if (!m_lastFormat.isValid()) {
+        m_lastFormat.bold = _bold;
+        m_lastFormat.italic = _italics;
+        m_lastFormat.underline = _underline;
+        m_lastFormat.start = m_blockText.size();
+        if (!_forCurrentCharacter) {
+            --m_lastFormat.start;
+        }
+    }
+    //
+    // Формат уже начат
+    //
+    else {
+        //
+        // Добавим его в список форматов
+        //
+        m_lastFormat.length = m_blockText.size() - m_lastFormat.start;
+        if (!_forCurrentCharacter) {
+            --m_lastFormat.length;
+        }
+        if (m_lastFormat.length != 0) {
+            m_formats.push_back(m_lastFormat);
+        }
+
+        //
+        // Если необходимо, созданим новый, частично унаследованный от текущего
+        //
+        if (m_lastFormat.bold != _bold
+            || m_lastFormat.italic != _italics
+            || m_lastFormat.underline != _underline) {
+            m_lastFormat.italic = m_lastFormat.italic ^ _italics;
+            m_lastFormat.bold = m_lastFormat.bold ^ _bold;
+            m_lastFormat.underline = m_lastFormat.underline ^ _underline;
+            m_lastFormat.start = m_lastFormat.start + m_lastFormat.length;
+        }
+        //
+        // Либо просто закроем
+        //
+        else {
+            m_lastFormat.clear();
+        }
+    }
+}
+

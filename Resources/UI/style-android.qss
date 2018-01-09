@@ -1,0 +1,672 @@
+
+
+/******
+ * Табы
+ */
+
+QTabBar {
+    min-height: 48dp;
+    background-color: palette(button);
+}
+
+QTabBar::tab {
+    padding: 12dp 3dp 12dp 2dp;
+    font-weight: 600;
+    color: palette(button-text);
+    background: palette(button);
+}
+
+QTabBar::tab:selected {
+    color: palette(bright-text);
+    border-bottom-width: 3dp;
+    border-bottom-style: solid;
+    border-bottom-color: palette(highlight);
+}
+
+QTabBar::tab:!selected {
+    color: palette(button-text);
+    border-bottom-width: 3dp;
+    border-bottom-style: solid;
+    border-bottom-color: palette(button);
+}
+
+QTabBar::tab:!enabled {
+    color: palette(dark);
+}
+
+/********************************************
+ * Стандартные настройки стилей для виджетов
+ */
+
+QAbstractButton {
+    outline: none;
+}
+
+QToolButton {
+    min-width: 56dp;
+    min-height: 56dp;
+    icon-size: 24dp;
+    font-size: 16pt;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+}
+
+QToolButton:checked, QPushButton:checked,
+QToolButton:pressed, QPushButton:pressed {
+    background-color: palette(dark);
+}
+
+/*************************
+ * Различные виды кнопок
+ */
+
+QToolButton[fab=true] {
+    background-color: palette(button);
+    border: 1dp solid palette(button);
+    border-radius: 28dp;
+}
+
+QPushButton[flat=true] {
+    min-width: 40dp;
+    height: 40dp;
+    padding: 0dp 8dp 0dp 8dp;
+    margin: 4dp 16dp 4dp 0dp;
+    font-weight: 600;
+    color: palette(highlight);
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton[flat=true]:checked,
+QPushButton[flat=true]:pressed {
+    background-color: palette(dark);
+    border-radius: 2dp;
+}
+
+QPushButton[flat=true]:!enabled {
+    color: palette(dark);
+}
+
+QPushButton[raised=true] {
+    min-width: 40dp;
+    height: 40dp;
+    padding: 0dp 16dp 0dp 16dp;
+    margin: 4dp 16dp 4dp 0dp;
+    font-weight: 600;
+    color: palette(highlighted-text);
+    border: none;
+    background-color: palette(highlight);
+    border-radius: 2dp;
+}
+
+QPushButton[raised=true]:checked,
+QPushButton[raised=true]:pressed {
+    background-color: #2467b8;
+}
+
+QPushButton[raised=true]:!enabled {
+    background-color: palette(dark);
+}
+
+/****************
+ * Боковое меню
+ */
+
+/*
+ * Элемент с именем пользователя в боковом меню
+ */
+QPushButton[sideNavigationName=true] {
+    height: 48dp;
+    padding-left: 16dp;
+    icon-size: 24dp;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+}
+
+/*
+ * Элемент в боковом меню
+ */
+QPushButton[sideNavigationItem=true] {
+    height: 48dp;
+    icon-size: 24dp;
+    padding-left: 16dp;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+}
+
+QPushButton[sideNavigationItem=true]:checked {
+    color: palette(highlight);
+    background-color: palette(midlight);
+}
+
+QPushButton[sideNavigationItem=true]:pressed {
+    background-color: palette(midlight);
+}
+
+/*
+ * Добавить элементу в меню рамку сверху
+ */
+QPushButton[sideNavigationItemTopBordered=true] {
+    border-top: 1dp solid palette(dark);
+}
+
+/*
+ * Элемент подзаголовок в боковом меню
+ */
+QPushButton[sideNavigationSubheader=true] {
+    height: 48dp;
+    icon-size: 0dp;
+    padding-left: 16dp;
+    font-weight: 600;
+    text-align: left;
+    color: palete(dark);
+    border: none;
+    border-top: 1dp solid palette(dark);
+}
+
+/*
+ * Иконка индикатора в меню
+ */
+QLabel[indicatorIcon=true] {
+    max-width: 16dp;
+    max-height: 16dp;
+    padding-left: 24dp;
+    padding-right: 22dp;
+}
+
+/*
+ * Фрейм бокового меню
+ */
+QFrame[sideNavigation=true] {
+    background-color: palette(base);
+}
+
+/******************************
+ * Панель инструментов вверху
+ */
+
+QFrame[toolbar=true] {
+    background-color: palette(button);
+}
+
+QFrame[toolbar=true] QLabel {
+    margin-left: 8dp;
+    font-weight: 600;
+    font-size: 20pt;
+    text-align: left;
+}
+
+QFrame[toolbar=true] QLabel[simpleText=true] {
+    margin-left: 8dp;
+    font-weight: 500;
+    font-size: 16pt;
+    text-align: left;
+}
+
+QFrame[toolbarBottomBordered=true] {
+    border: none;
+    border-bottom: 4dp solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 palette(shadow), stop:0.8 palette(window), stop:1 palette(window));
+    /*border-bottom: 4dp solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(178, 178, 178, 255), stop:0.4 rgba(192, 192, 192, 255), stop:0.8 rgba(233, 233, 233, 255), stop:1 rgba(244, 244, 244, 255));*/
+}
+
+QFrame[toolbarTopBordered=true] {
+    border: none;
+    border-top: 4dp solid qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 palette(shadow), stop:0.5 palette(window), stop:1 palette(window));
+}
+
+/*******************
+ * Список проектов
+ */
+
+/*
+ * Кнопки действий проекта из списка
+ */
+QToolButton[projectAction=true] {
+    min-width: 40dp;
+    icon-size: 24dp;
+    margin-left: 0dp;
+    margin-right: 0dp;
+    padding-top: 1dp;
+    padding-bottom: 1dp;
+    background: palette(alternate-base);
+    border: none;
+}
+
+QToolButton[projectAction=true]:pressed {
+    padding-top: 2dp;
+    padding-bottom: 0dp;
+}
+
+/*
+ * Кнопки раскрытия меню в списке проектов
+ */
+QToolButton[projectActionMenu=true] {
+    min-width: 40dp;
+    icon-size: 24dp;
+    margin-left: 0dp;
+    margin-right: 0dp;
+    padding-top: 1dp;
+    padding-bottom: 1dp;
+    background: palette(window);
+    border: none;
+}
+
+QToolButton[projectActionMenu=false] {
+    min-width: 40dp;
+    icon-size: 24dp;
+    margin-left: 0dp;
+    margin-right: 0dp;
+    padding-top: 1dp;
+    padding-bottom: 1dp;
+    background: palette(alternate-base);
+    border: none;
+}
+
+
+/*
+ * Фрейм проекта
+ */
+QFrame[projectFrame=true] {
+    border: none;
+    border-bottom: 0dp solid palette(dark);
+}
+
+/*
+ * Фрейм текстовой части проекта
+ */
+QFrame[projectTextFrame=true] {
+    padding: 16dp 16dp 16dp 16dp;
+}
+
+/*
+ * Название проекта
+ */
+QLabel[projectName=true] {
+    font-weight: 500;
+    font-size: 16pt;
+}
+
+/*
+ * Описание проекта
+ */
+QLabel[projectInfo=true] {
+    font-weight: 500;
+    font-size: 14pt;
+    color: palette(mid);
+}
+
+/*******************
+ * Полоса загрузки
+ */
+
+QProgressBar {
+    border-radius: 0dp;
+    border: none;
+    background-color: #b3c4da;
+    max-height: 5dp;
+}
+
+QProgressBar::chunk {
+    background-color: palette(highlight);
+}
+
+/**********************************
+ * Стиль материального поля ввода
+ */
+
+QLabel[materialLineEditLabel=true] {
+    margin-left: 16dp;
+    margin-top: 6dp;
+    font-size: 12pt;
+    color: palette(mid);
+}
+
+QLineEdit[materialLineEdit=true] {
+    height: 40dp;
+    margin: 0dp 16dp 1dp 16dp;
+    padding: 0;
+    font-size: 16pt;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1dp solid palette(text);
+}
+
+QLineEdit[materialLineEdit=true]:disabled {
+    border-bottom: 1dp dashed palette(dark);
+}
+
+QLineEdit[materialLineEdit=true]:hover {
+    margin-bottom: 0dp;
+    border-bottom: 2dp solid palette(text);
+}
+
+QLineEdit[materialLineEdit=true]:focus {
+    margin-bottom: 0dp;
+    border-bottom: 2dp solid palette(highlight);
+}
+
+QLabel[materialLineEditHelper=true] {
+    margin-left: 16dp;
+    color: palette(mid);
+    font-size: 12pt;
+}
+
+QLabel[materialLineEditLabel=false] {
+    margin-left: 16dp;
+    margin-top: 6dp;
+    color: #ff1744;
+    font-size: 12pt;
+}
+
+QLineEdit[materialLineEdit=false] {
+    height: 40dp;
+    margin: 0dp 16dp 1dp 16dp;
+    padding: 0;
+    font-size: 16pt;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1dp solid #ff1744;
+}
+
+QLabel[materialLineEdit=false]:hover, [materialLineEdit=false]:focus {
+    margin-bottom: 0dp;
+    border-bottom: 2dp solid #ff1744;
+}
+
+QLabel[materialLineEditHelper=false] {
+    margin-left: 16dp;
+    color: #ff1744;
+    font-size: 12pt;
+}
+
+/*
+ * Стиль строки ввода
+ */
+QLineEdit[inlineInput=true] {
+    margin: 0dp 16dp 1dp 16dp;
+    padding: 0;
+    font-size: 16pt;
+    background-color: transparent;
+    border: none;
+}
+
+/******************************************
+ * Стиль материального выпадающего списка
+ */
+
+QLabel[materialComboBoxLabel=true] {
+    margin-left: 16dp;
+    margin-top: 6dp;
+    font-size: 12pt;
+    color: palette(mid);
+}
+
+QComboBox[materialComboBox=true] {
+    height: 40dp;
+    margin: 0dp 16dp 1dp 16dp;
+    padding: 0;
+    font-size: 16pt;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1dp solid palette(text);
+}
+
+QComboBox[materialComboBox=true]:disabled {
+    border-bottom: 1dp dashed palette(dark);
+}
+
+QComboBox[materialComboBox=true]:focus {
+    margin-bottom: 0dp;
+    border-bottom: 2dp solid palette(highlight);
+}
+
+QComboBox[materialComboBox=true]::drop-down {
+    background: transparent;
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    max-width: 16dp;
+    border-width: 0dp;
+    padding-left: 4dp;
+    padding-right: 4dp;
+}
+
+QComboBox[materialComboBox=true]::down-arrow {
+    width: 16dp;
+    height: 16dp;
+    image: url(:/Interface/UI/downarrow_THEME_POSTFIX.png);
+}
+
+QComboBox[materialComboBox=true]::down-arrow:disabled {
+    image: url(:/Interface/UI/downarrow-disable.png);
+}
+
+QComboBox[materialComboBox=true]:on, QComboBox:off {
+    color: palette(button-text);
+    background: palette(button);
+}
+
+QComboBox[materialComboBox=true]:on:editable, QComboBox:off:editable {
+    color: palette(button-text);
+    background: palette(base);
+}
+
+QComboBox[materialComboBox=true]:on:selected, QComboBox:off:selected {
+    color: palette(highlighted-text);
+    background: palette(highlight);
+}
+
+QComboBox[materialComboBox=true] QListView {
+    show-decoration-selected: 0;
+    margin: 0dp 16dp 0dp 16dp;
+    background-color: transparent;
+    border: 1dp solid palette(highlight);
+}
+
+QComboBox[materialComboBox=true] QListView::item {
+    height: 40dp;
+    padding-left: 32dp;
+    border: none;
+    background-color: palette(window);
+}
+
+QComboBox[materialComboBox=true] QListView::item:selected {
+    color: palette(highlighted-text);
+    background-color: palette(highlight);
+}
+
+/**************************************
+ * Стиль текстового элемента в списке
+ */
+
+QLabel[listHeader=true] {
+    padding: 16dp 0dp 16dp 16dp;
+    font-weight: 500;
+    font-size: 14pt;
+    color: palette(mid);
+}
+
+QLabel[listItem=true] {
+    padding: 16dp 0dp 16dp 16dp;
+    font-weight: 500;
+    font-size: 16pt;
+}
+
+/***********************
+ * Стиль переключателя
+ */
+
+QRadioButton {
+    padding: 16dp 0dp 16dp 16dp;
+    spacing: 16dp;
+    font-weight: 500;
+    font-size: 16pt;
+}
+
+QRadioButton::indicator {
+    width: 16dp;
+    height: 16dp;
+}
+
+QRadioButton::indicator:unchecked {
+    image: url(:/Interface/UI/radiobutton-unchecked_THEME_POSTFIX.png);
+}
+
+QRadioButton::indicator:checked {
+    image: url(:/Interface/UI/radiobutton-checked.png);
+}
+
+/****************
+ * Стиль флажка
+ */
+
+QCheckBox {
+    padding: 16dp 0dp 16dp 16dp;
+    spacing: 16dp;
+    font-weight: 500;
+    font-size: 16pt;
+}
+
+QCheckBox::indicator {
+    width: 16dp;
+    height: 16dp;
+}
+
+QCheckBox::indicator:unchecked {
+    image: url(:/Interface/UI/checkbox-unchecked_THEME_POSTFIX.png);
+}
+
+QCheckBox::indicator:checked {
+    image: url(:/Interface/UI/checkbox-checked.png);
+}
+
+/********************************************
+ * Стиль кнопок стилей в редакторе сценария
+ */
+
+QToolButton[styleButton=true] {
+    background-color: palette(button);
+}
+
+QToolButton[styleButton=true]:checked {
+    background-color: palette(dark);
+}
+
+/*
+ * Стиль фреймов со списками
+ */
+QAbstractScrollArea {
+    background-color: palette(window);
+}
+
+
+/**************************
+ * Стиль полосы прокрутки
+ */
+
+QScrollBar {
+    border: none;
+    background: palette(window);
+}
+
+QScrollBar:horizontal {
+    height: 6dp;
+    margin: 1dp 0dp 1dp 0dp;
+}
+
+QScrollBar:vertical {
+    width: 6dp;
+    margin: 0dp 1dp 0dp 1dp;
+}
+
+QScrollBar::handle {
+    background: palette(dark);
+    min-height: 0dp;
+    min-width: 0dp;
+    border: none;
+}
+
+QScrollBar::handle:vertical {
+    min-height: 30dp;
+}
+
+QScrollBar::add-line {
+    height: 0dp;
+}
+
+QScrollBar::sub-line {
+    height: 0dp;
+}
+
+/*
+ *
+ */
+
+QLineEdit {
+    background-color: palette(base);
+}
+
+QDialogButtonBox {
+    background-color: palette(base);
+}
+
+/*******************
+ * Стили лайтбокса
+ */
+
+[lightBoxDialogTitle=true] {
+    font-weight: 500;
+    font-size: 20pt;
+    background-color: palette(button);
+    border: none;
+    padding: 24dp 24dp 0dp 24dp;
+}
+
+[lightBoxDialogCentralWidget=true] {
+    background-color: palette(window);
+    border: none;
+    padding: 20dp 8dp 8dp 8dp;
+}
+
+[lightBoxMessageText=true] {
+    background-color: palette(window);
+    border: none;
+    padding: 0dp 24dp 24dp 24dp;
+}
+
+[lightBoxProgressTitle=true] {
+    font-weight: 500;
+    font-size: 20pt;
+    color: white;
+    border: none;
+    padding: 24dp 24dp 0dp 24dp;
+}
+
+[lightBoxProgressDescription=true] {
+    color: white;
+    border: none;
+    padding: 0dp 24dp 24dp 24dp;
+}
+
+/*
+ * Стиль обычного лейбла
+ */
+QLabel[simpleText=true] {
+    margin: 16dp;
+    font-size: 16dp;
+    font-weight: 400;
+}
+
+/*
+ * Стиль обычного фрейма внутри содержимого страницы
+ */
+QFrame[simpleFrame=true] {
+    margin: 16dp;
+}
+
+
+QToolButton[searchButton=true] {
+    border-left: 1dp solid palette(dark);
+}

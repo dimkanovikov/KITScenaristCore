@@ -81,7 +81,7 @@ QString SceneReport::makeReport(QTextDocument* _scenario,
 			cursor.setPosition(block.position());
 			currentData->page = edit.cursorPage(cursor);
 			//
-			if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(block.userData())) {
+			if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(block.userData())) {
 				currentData->number = info->sceneNumber();
 			}
 		}

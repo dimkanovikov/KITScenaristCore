@@ -39,7 +39,7 @@ namespace DataStorageLayer
 		 * @brief Получить значение по ключу
 		 */
 		QVariant variantValue(const QString& _key, SettingsPlace _settingsPlace);
-		QString value(const QString& _key, SettingsPlace _settingsPlace, const QString& _defaultValue = QString::null);
+		QString value(const QString& _key, SettingsPlace _settingsPlace, const QString& _defaultValue = QString());
 
 		/**
 		 * @brief Получить группу значений
@@ -58,6 +58,26 @@ namespace DataStorageLayer
 		void saveApplicationStateAndGeometry(QWidget* _widget);
 		void loadApplicationStateAndGeometry(QWidget* _widget);
 		/** @} */
+
+        /**
+         * @brief Вспомогательные функции для работы с путями к специальным папкам и файлам в них
+         */
+        /** @{ */
+        /**
+         * @brief Получить путь к папке с документами для сохранения по заданному ключу
+         */
+        QString documentFolderPath(const QString& _key);
+
+        /**
+         * @brief Получить путь к файлу в папке с документами для заданного ключа и имени файла
+         */
+        QString documentFilePath(const QString& _key, const QString& _fileName);
+
+        /**
+         * @brief Сохранить путь к папке с документами по заданному ключу и пути файла из этой папки
+         */
+        void saveDocumentFolderPath(const QString& _key, const QString& _filePath);
+        /** @} */
 
 	private:
 		SettingsStorage();

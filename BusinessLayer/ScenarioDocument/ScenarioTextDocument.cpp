@@ -2,6 +2,7 @@
 
 #include "ScenarioReviewModel.h"
 #include "ScenarioXml.h"
+#include "ScriptTextCorrector.h"
 
 #include <Domain/ScenarioChange.h>
 
@@ -78,7 +79,8 @@ ScenarioTextDocument::ScenarioTextDocument(QObject *parent, ScenarioXml* _xmlHan
     m_xmlHandler(_xmlHandler),
     m_isPatchApplyProcessed(false),
     m_reviewModel(new ScenarioReviewModel(this)),
-    m_outlineMode(false)
+    m_outlineMode(false),
+    m_corrector(new ScriptTextCorrector(this))
 {
     connect(m_reviewModel, SIGNAL(reviewChanged()), this, SIGNAL(reviewChanged()));
 }
@@ -112,6 +114,11 @@ QByteArray ScenarioTextDocument::scenarioXmlHash() const
 void ScenarioTextDocument::load(const QString& _scenarioXml)
 {
     //
+    // Сбрасываем корректор
+    //
+    m_corrector->clear();
+
+    //
     // Если xml не задан сформируем его пустой аналог
     //
     QString scenarioXml = _scenarioXml;
@@ -142,6 +149,8 @@ void ScenarioTextDocument::load(const QString& _scenarioXml)
 
     m_undoStack.clear();
     m_redoStack.clear();
+
+    emit redoAvailableChanged(false);
 
 #ifdef PATCH_DEBUG
     foreach (DomainObject* obj, DataStorageLayer::StorageFacade::scenarioChangeStorage()->all()->toList()) {
@@ -184,7 +193,7 @@ void ScenarioTextDocument::insertFromMime(int _insertPosition, const QString& _m
     }
 }
 
-void ScenarioTextDocument::applyPatch(const QString& _patch)
+int ScenarioTextDocument::applyPatch(const QString& _patch)
 {
     updateScenarioXml();
     saveChanges();
@@ -212,8 +221,12 @@ void ScenarioTextDocument::applyPatch(const QString& _patch)
     //
     QTextCursor cursor(this);
     cursor.beginEditBlock();
-    const int selectionStartPos = xmlsForUpdate.first.plainPos;
-    const int selectionEndPos = selectionStartPos + xmlsForUpdate.first.plainLength;
+    //
+    // Определим позицию курсора в соответствии с декорациями
+    //
+    const int selectionStartPos = m_corrector->correctedPosition(xmlsForUpdate.first.plainPos);
+    const int selectionEndPos = m_corrector->correctedPosition(xmlsForUpdate.first.plainPos
+                                                               + xmlsForUpdate.first.plainLength);
     //
     // ... собственно выделение
     //
@@ -224,18 +237,22 @@ void ScenarioTextDocument::applyPatch(const QString& _patch)
     qDebug() << "===================================================================";
     qDebug() << cursor.selectedText();
     qDebug() << "###################################################################";
-    qDebug() << qPrintable(xmlsForUpdate.first.xml);
+    qDebug() << qUtf8Printable(xmlsForUpdate.first.xml);
     qDebug() << "###################################################################";
-    qDebug() << qPrintable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
+    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
     qDebug() << "###################################################################";
-    qDebug() << qPrintable(xmlsForUpdate.second.xml);
+    qDebug() << qUtf8Printable(xmlsForUpdate.second.xml);
 #endif
 
     //
     // Замещаем его обновлённым
     //
     cursor.removeSelectedText();
-    m_xmlHandler->xmlToScenario(selectionStartPos, xmlsForUpdate.second.xml);
+    //
+    // ... при этом не изменяем идентификаторов сцен, которые находятся в сценарии
+    //
+    const bool dontRebuildUuids = false;
+    m_xmlHandler->xmlToScenario(selectionStartPos, xmlsForUpdate.second.xml, dontRebuildUuids);
 
     //
     // Запомним новый текст
@@ -257,6 +274,8 @@ void ScenarioTextDocument::applyPatch(const QString& _patch)
     // отсутствию одного патча в истории изменений
     //
     cursor.endEditBlock();
+
+    return selectionStartPos;
 }
 
 void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
@@ -287,7 +306,11 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
     //
     cursor.select(QTextCursor::Document);
     cursor.removeSelectedText();
-    m_xmlHandler->xmlToScenario(0, ScenarioXml::makeMimeFromXml(newXml));
+    //
+    // ... при этом не изменяем идентификаторов сцен, которые находятся в сценарии
+    //
+    const bool dontRebuildUuids = false;
+    m_xmlHandler->xmlToScenario(0, ScenarioXml::makeMimeFromXml(newXml), dontRebuildUuids);
 
     //
     // Запомним новый текст
@@ -328,10 +351,6 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
             const QString redoPatch = DiffMatchPatchHelper::makePatchXml(m_lastSavedScenarioXml, m_scenarioXml);
             const QString redoPatchCompressed = DatabaseHelper::compress(redoPatch);
 
-            if (undoPatchCompressed == "AAAAAA==" || redoPatchCompressed == "AAAAAA==") {
-                qDebug() << "Shit!";
-            }
-
             //
             // Сохраним изменения
             //
@@ -350,13 +369,15 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
                 m_undoStack.takeFirst();
             }
             m_undoStack.append(change);
+
             m_redoStack.clear();
+            emit redoAvailableChanged(false);
 
 #ifdef PATCH_DEBUG
     qDebug() << "-------------------------------------------------------------------";
-    qDebug() << qPrintable(QByteArray::fromPercentEncoding(undoPatch.toUtf8()));
+    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(undoPatch.toUtf8()));
     qDebug() << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$";
-    qDebug() << qPrintable(QByteArray::fromPercentEncoding(redoPatch.toUtf8()));
+    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(redoPatch.toUtf8()));
 #endif
         }
     }
@@ -364,20 +385,26 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
     return change;
 }
 
-void ScenarioTextDocument::undoReimpl()
+int ScenarioTextDocument::undoReimpl()
 {
+#ifdef MOBILE_OS
+    QApplication::inputMethod()->commit();
+#endif
+
     saveChanges();
 
+    int pos = -1;
     if (!m_undoStack.isEmpty()) {
         Domain::ScenarioChange* change = m_undoStack.takeLast();
 
 #ifdef PATCH_DEBUG
         qDebug() << "*******************************************************************";
-        qDebug() << change->uuid().toString() << change->user() << characterCount();
+        qDebug() << change->uuid().toString() << change->user() << characterCount() << change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz");
 #endif
 
         m_redoStack.append(change);
-        applyPatch(change->undoPatch());
+        emit redoAvailableChanged(true);
+        pos = applyPatch(change->undoPatch());
 
         //
         // Сохраним изменения
@@ -385,27 +412,42 @@ void ScenarioTextDocument::undoReimpl()
         Domain::ScenarioChange* newChange = ::saveChange(change->redoPatch(), change->undoPatch());
         newChange->setIsDraft(change->isDraft());
     }
+    return pos;
 }
 
-void ScenarioTextDocument::redoReimpl()
+int ScenarioTextDocument::redoReimpl()
 {
+#ifdef MOBILE_OS
+    QApplication::inputMethod()->commit();
+#endif
+
+    int pos = -1;
     if (!m_redoStack.isEmpty()) {
         Domain::ScenarioChange* change = m_redoStack.takeLast();
 
 #ifdef PATCH_DEBUG
         qDebug() << "*******************************************************************";
-        qDebug() << change->uuid().toString() << change->user() << characterCount();
+        qDebug() << change->uuid().toString() << change->user() << characterCount() << change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz");
 #endif
 
         m_undoStack.append(change);
-        applyPatch(change->redoPatch());
+        pos = applyPatch(change->redoPatch());
 
         //
         // Сохраним изменения
         //
         Domain::ScenarioChange* newChange = ::saveChange(change->undoPatch(), change->redoPatch());
         newChange->setIsDraft(change->isDraft());
+
+        //
+        // Если больше нельзя повторить отменённое действие, испускаем соответствующий сигнал
+        //
+        if (m_redoStack.isEmpty()) {
+            emit redoAvailableChanged(false);
+        }
     }
+
+    return pos;
 }
 
 bool ScenarioTextDocument::isUndoAvailableReimpl() const
@@ -452,24 +494,22 @@ bool ScenarioTextDocument::outlineMode() const
 
 void ScenarioTextDocument::setOutlineMode(bool _outlineMode)
 {
-    if (m_outlineMode != _outlineMode) {
-        m_outlineMode = _outlineMode;
+    m_outlineMode = _outlineMode;
 
-        //
-        // Сформируем список типов блоков для отображения
-        //
-        QList<ScenarioBlockStyle::Type> visibleBlocksTypes = this->visibleBlocksTypes();
+    //
+    // Сформируем список типов блоков для отображения
+    //
+    QList<ScenarioBlockStyle::Type> visibleBlocksTypes = this->visibleBlocksTypes();
 
-        //
-        // Пробегаем документ и настраиваем видимые и невидимые блоки
-        //
-        QTextCursor cursor(this);
-        while (!cursor.atEnd()) {
-            QTextBlock block = cursor.block();
-            block.setVisible(visibleBlocksTypes.contains(ScenarioBlockStyle::forBlock(block)));
-            cursor.movePosition(QTextCursor::EndOfBlock);
-            cursor.movePosition(QTextCursor::NextBlock);
-        }
+    //
+    // Пробегаем документ и настраиваем видимые и невидимые блоки
+    //
+    QTextCursor cursor(this);
+    while (!cursor.atEnd()) {
+        QTextBlock block = cursor.block();
+        block.setVisible(visibleBlocksTypes.contains(ScenarioBlockStyle::forBlock(block)));
+        cursor.movePosition(QTextCursor::EndOfBlock);
+        cursor.movePosition(QTextCursor::NextBlock);
     }
 }
 
@@ -478,6 +518,7 @@ QList<ScenarioBlockStyle::Type> ScenarioTextDocument::visibleBlocksTypes() const
     static QList<ScenarioBlockStyle::Type> s_outlineVisibleBlocksTypes =
         QList<ScenarioBlockStyle::Type>()
         << ScenarioBlockStyle::SceneHeading
+        << ScenarioBlockStyle::SceneHeadingShadow
         << ScenarioBlockStyle::SceneCharacters
         << ScenarioBlockStyle::FolderHeader
         << ScenarioBlockStyle::FolderFooter
@@ -486,6 +527,7 @@ QList<ScenarioBlockStyle::Type> ScenarioTextDocument::visibleBlocksTypes() const
     static QList<ScenarioBlockStyle::Type> s_scenarioVisibleBlocksTypes =
         QList<ScenarioBlockStyle::Type>()
             << ScenarioBlockStyle::SceneHeading
+            << ScenarioBlockStyle::SceneHeadingShadow
             << ScenarioBlockStyle::SceneCharacters
             << ScenarioBlockStyle::Action
             << ScenarioBlockStyle::Character
@@ -497,9 +539,21 @@ QList<ScenarioBlockStyle::Type> ScenarioTextDocument::visibleBlocksTypes() const
             << ScenarioBlockStyle::Transition
             << ScenarioBlockStyle::NoprintableText
             << ScenarioBlockStyle::FolderHeader
-            << ScenarioBlockStyle::FolderFooter;
+            << ScenarioBlockStyle::FolderFooter
+            << ScenarioBlockStyle::Lyrics;
 
     return m_outlineMode ? s_outlineVisibleBlocksTypes : s_scenarioVisibleBlocksTypes;
+}
+
+void ScenarioTextDocument::setCorrectionOptions(bool _needToCorrectCharactersNames, bool _needToCorrectPageBreaks)
+{
+    m_corrector->setNeedToCorrectCharactersNames(_needToCorrectCharactersNames);
+    m_corrector->setNeedToCorrectPageBreaks(_needToCorrectPageBreaks);
+}
+
+void ScenarioTextDocument::correct(int _position, int _charsRemoved, int _charsAdded)
+{
+    m_corrector->correct(_position, _charsRemoved, _charsAdded);
 }
 
 void ScenarioTextDocument::removeIdenticalParts(QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml>& _xmls, bool _reversed)

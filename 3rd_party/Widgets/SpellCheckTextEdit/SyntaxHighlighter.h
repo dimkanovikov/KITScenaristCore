@@ -75,6 +75,9 @@ public Q_SLOTS:
 	void rehighlight();
 	void rehighlightBlock(const QTextBlock &block);
 
+    bool isEdited() const;
+    void setEdited(bool _edited);
+
 protected:
 	virtual void highlightBlock(const QString &text) = 0;
 
@@ -98,6 +101,12 @@ private:
 //	Q_PRIVATE_SLOT(d, void _q_delayedRehighlight())
 
 	SyntaxHighlighterPrivate* d;
+
+protected:
+    /**
+     * @brief Изменялся ли документ с момента последней проверки
+     */
+    bool m_edited;
 };
 
 

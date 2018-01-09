@@ -13,53 +13,6 @@
     </message>
 </context>
 <context>
-    <name>ActivityEdit</name>
-    <message>
-        <source>Can&apos;t arrange cards</source>
-        <translation type="vanished">Неможливо організувати картки</translation>
-    </message>
-    <message>
-        <source>Schemes with scene groups or with folders cannot be arranged.</source>
-        <translation type="vanished">Схеми з групами сцен або папками не можуть бути організовані.</translation>
-    </message>
-    <message>
-        <source>Convert to</source>
-        <translation type="vanished">Перетворити в</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="vanished">Сцена</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="vanished">Група сцен</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="vanished">Папка</translation>
-    </message>
-    <message>
-        <source>Color %1</source>
-        <translation type="vanished">Колір %1</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="vanished">Видалити</translation>
-    </message>
-    <message>
-        <source>Add color</source>
-        <translation type="vanished">Додати колір</translation>
-    </message>
-    <message>
-        <source>Create Card After</source>
-        <translation type="vanished">Створити Картку Після</translation>
-    </message>
-    <message>
-        <source>Remove anchors</source>
-        <translation type="vanished">Видалити зв&apos;язки</translation>
-    </message>
-</context>
-<context>
     <name>AddImageButton</name>
     <message>
         <source>Choose image</source>
@@ -112,67 +65,66 @@
         <source>File exists. It will be replaced after creating.</source>
         <translation>Файл існує. Він буде замінений після створення.</translation>
     </message>
+    <message>
+        <source>Sorry, but you need to have active internet connection for creating new projects in cloud.</source>
+        <translation>Вибачте, але вам потрібно мати активне з&apos;єднання з Інтернетом для створення нових проектів у хмарі.</translation>
+    </message>
+</context>
+<context>
+    <name>BusinessLayer::AbstractExporter</name>
+    <message>
+        <source>Real name: </source>
+        <translation>Справжнє ім&apos;я:</translation>
+    </message>
 </context>
 <context>
     <name>BusinessLayer::FountainExporter</name>
     <message>
         <source>INT</source>
-        <translation type="unfinished">ІНТ</translation>
+        <translation>ІНТ</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation type="unfinished">НАТ</translation>
+        <translation>ЕКСТ</translation>
     </message>
     <message>
         <source>EST</source>
-        <translation type="unfinished"></translation>
+        <translation>УСТ</translation>
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ./ЕКСТ</translation>
     </message>
     <message>
         <source>INT/EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ/ЕКСТ</translation>
     </message>
 </context>
 <context>
     <name>BusinessLayer::FountainImporter</name>
     <message>
         <source>INT</source>
-        <translation type="unfinished">ІНТ</translation>
+        <translation>ІНТ</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation type="unfinished">НАТ</translation>
+        <translation>ЕКСТ</translation>
     </message>
     <message>
         <source>EST</source>
-        <translation type="unfinished"></translation>
+        <translation>УСТ</translation>
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ./ЕКСТ</translation>
     </message>
     <message>
         <source>INT/EXT</source>
-        <translation type="unfinished"></translation>
+        <translation>ІНТ/ЕКСТ</translation>
     </message>
     <message>
         <source>I/E</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>BusinessLogic::AbstractExporter</name>
-    <message>
-        <source>(MORE)</source>
-        <translation>(ДАЛІ)</translation>
-    </message>
-    <message>
-        <source> (CONT&apos;D)</source>
-        <extracomment>Continued</extracomment>
-        <translation> (ПРОДОВЖЕННЯ)</translation>
+        <translation>І/Е</translation>
     </message>
 </context>
 <context>
@@ -203,11 +155,11 @@
     </message>
     <message>
         <source>Final Draft template</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарій формату Final Draft</translation>
     </message>
     <message>
         <source>Fountain Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Fountain Text</translation>
     </message>
 </context>
 <context>
@@ -343,16 +295,16 @@
         <translation>Синопсис</translation>
     </message>
     <message>
-        <source>Research</source>
-        <translation>Розробка</translation>
-    </message>
-    <message>
         <source>Characters</source>
         <translation>Герої</translation>
     </message>
     <message>
         <source>Locations</source>
         <translation>Локації</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation>Документи</translation>
     </message>
 </context>
 <context>
@@ -406,20 +358,12 @@
         <translation>Нотатка по тексту</translation>
     </message>
     <message>
-        <source>Scene Group</source>
-        <translation type="vanished">Група сцен</translation>
-    </message>
-    <message>
-        <source>Scene Group Footer</source>
-        <translation type="vanished">Scene Group Footer</translation>
-    </message>
-    <message>
         <source>Folder</source>
         <translation>Папка</translation>
     </message>
     <message>
         <source>Folder Footer</source>
-        <translation>Folder Footer</translation>
+        <translation>Нижній Колонтитул</translation>
     </message>
     <message>
         <source>Scene Description</source>
@@ -491,12 +435,6 @@
         <translation>НТ</translation>
     </message>
     <message>
-        <source>SG</source>
-        <extracomment>Reduction of Scene Group</extracomment>
-        <translatorcomment>Зкорочення від Група сцен</translatorcomment>
-        <translation type="vanished">ГС</translation>
-    </message>
-    <message>
         <source>F</source>
         <extracomment>Reduction of Folder</extracomment>
         <translatorcomment>Зкорочення від Папка</translatorcomment>
@@ -505,7 +443,7 @@
     <message>
         <source>FF</source>
         <extracomment>Reduction of Folder Footer</extracomment>
-        <translation></translation>
+        <translation>НК</translation>
     </message>
     <message>
         <source>SD</source>
@@ -513,12 +451,21 @@
         <translatorcomment>Зкорочення від Опис Сцени</translatorcomment>
         <translation>ОС</translation>
     </message>
+    <message>
+        <source>Lyrics</source>
+        <translation>Текст пісень</translation>
+    </message>
+    <message>
+        <source>L</source>
+        <extracomment>Reduction of Lyrics</extracomment>
+        <translation>Т</translation>
+    </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioModel</name>
     <message>
         <source>FADE IN:</source>
-        <translation>Із затемнення:</translation>
+        <translation>ІЗ ЗАТЕМНЕННЯ:</translation>
     </message>
 </context>
 <context>
@@ -530,6 +477,58 @@
     <message>
         <source>Default with Courier Prime</source>
         <translation>Стандартний з Courier Prime</translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (A4)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Russian screenplay</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay standard template.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay standard template.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Copy of </source>
+        <translation>Копія</translation>
     </message>
 </context>
 <context>
@@ -561,6 +560,18 @@
     <message>
         <source>[UNDEFINED]</source>
         <translation>[Не визначено]</translation>
+    </message>
+</context>
+<context>
+    <name>BusinessLogic::ScriptTextCorrector</name>
+    <message>
+        <source>CONT&apos;D</source>
+        <extracomment>Continued</extracomment>
+        <translation>ПРОДОВЖЕННЯ</translation>
+    </message>
+    <message>
+        <source>MORE</source>
+        <translation>БІЛЬШЕ</translation>
     </message>
 </context>
 <context>
@@ -688,18 +699,6 @@
         <translation>Організувати по</translation>
     </message>
     <message>
-        <source>cards in</source>
-        <translation type="vanished">карток</translation>
-    </message>
-    <message>
-        <source>Row</source>
-        <translation type="vanished">Рядком</translation>
-    </message>
-    <message>
-        <source>Column</source>
-        <translation type="vanished">Колонкою</translation>
-    </message>
-    <message>
         <source>Card size:</source>
         <translation>Розмір:</translation>
     </message>
@@ -710,6 +709,18 @@
     <message>
         <source>cards in Row</source>
         <translation>карти рядком</translation>
+    </message>
+    <message>
+        <source>Layout by</source>
+        <translation>Компонувати</translation>
+    </message>
+    <message>
+        <source>rows</source>
+        <translation>рядками</translation>
+    </message>
+    <message>
+        <source>columns</source>
+        <translation>стовпчиками</translation>
     </message>
 </context>
 <context>
@@ -746,6 +757,14 @@
         <source>Stamp:</source>
         <translation>Штамп:</translation>
     </message>
+    <message>
+        <source>Go to text</source>
+        <translation>Перейти до тексту</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Очистити</translation>
+    </message>
 </context>
 <context>
     <name>ChangePasswordDialog</name>
@@ -760,29 +779,6 @@
     <message>
         <source>New Password</source>
         <translation>Новий пароль</translation>
-    </message>
-</context>
-<context>
-    <name>CharactersDataEdit</name>
-    <message>
-        <source>Add Image</source>
-        <translation type="vanished">Додати зображення</translation>
-    </message>
-    <message>
-        <source>Choose Character</source>
-        <translation type="vanished">Вибрати героя</translation>
-    </message>
-    <message>
-        <source>Real Name:</source>
-        <translation type="vanished">Справжнє Ім&apos;я:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="vanished">Опис:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -816,7 +812,7 @@
     </message>
     <message>
         <source>EXT</source>
-        <translation>НАТ</translation>
+        <translation>ЕКСТ</translation>
     </message>
     <message>
         <source>DAY</source>
@@ -859,6 +855,76 @@
         <source>Unnamed image</source>
         <translation>Безіменне зображення</translation>
     </message>
+    <message>
+        <source>INT./EXT</source>
+        <translation>ІНТ./ЕКСТ</translation>
+    </message>
+    <message>
+        <source>AFTERNOON</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>LATER</source>
+        <translation>ПІЗНІШЕ</translation>
+    </message>
+    <message>
+        <source>MOMENTS LATER</source>
+        <translation>НАСТУПНОЇ МИТІ</translation>
+    </message>
+    <message>
+        <source>CONTINUOUS</source>
+        <translation>ПРОДОВЖЕННЯ</translation>
+    </message>
+    <message>
+        <source>THE NEXT DAY</source>
+        <translation>НАСТУПНОГО ДНЯ</translation>
+    </message>
+    <message>
+        <source>O.C.</source>
+        <extracomment>Off-camera</extracomment>
+        <translation>П.К.</translation>
+    </message>
+    <message>
+        <source>SUBTITLE</source>
+        <extracomment>Subtitle</extracomment>
+        <translation>СУБТИТР</translation>
+    </message>
+    <message>
+        <source>CUT TO:</source>
+        <translation>ЗМІНА:</translation>
+    </message>
+    <message>
+        <source>FADE IN:</source>
+        <translation>ІЗ ЗАТЕМНЕННЯ:</translation>
+    </message>
+    <message>
+        <source>FADE OUT</source>
+        <translation>ЗАТЕМНЕННЯ</translation>
+    </message>
+    <message>
+        <source>FADE TO:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>DISSOLVE TO:</source>
+        <translation>НАПЛИВ:</translation>
+    </message>
+    <message>
+        <source>BACK TO:</source>
+        <translation>НАЗАД ДО:</translation>
+    </message>
+    <message>
+        <source>MATCH CUT TO:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>JUMP CUT TO:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>FADE TO BLACK</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>DocxReader</name>
@@ -884,10 +950,6 @@
     <message>
         <source>Export</source>
         <translation>Експорт</translation>
-    </message>
-    <message>
-        <source>File:</source>
-        <translation type="vanished">Файл:</translation>
     </message>
     <message>
         <source>File exists. It will be replaced after exporting.</source>
@@ -922,20 +984,8 @@
         <translation>FDX</translation>
     </message>
     <message>
-        <source>Scenes Numbering</source>
-        <translation>Нумерувати сцени</translation>
-    </message>
-    <message>
-        <source>Page Numbering</source>
-        <translation>Нумерувати сторінки</translation>
-    </message>
-    <message>
         <source>Save Review Marks</source>
         <translation>Зберегти нотатки редактора</translation>
-    </message>
-    <message>
-        <source>Scenes Prefix:</source>
-        <translation>Приставка сцен:</translation>
     </message>
     <message>
         <source>Template:</source>
@@ -950,20 +1000,24 @@
         <translation>Коригувати текст на розривах сторінок</translation>
     </message>
     <message>
-        <source>Scenario</source>
-        <translation>Сценарій</translation>
-    </message>
-    <message>
-        <source>Outline</source>
-        <translation>Аутлайн</translation>
-    </message>
-    <message>
-        <source>Choose File to Export Script:</source>
-        <translation>Виберіть файл для експорту сценарію:</translation>
-    </message>
-    <message>
         <source>Fountain</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Choose file to export:</source>
+        <translation>Виберіть файл для експорту:</translation>
+    </message>
+    <message>
+        <source>Print pages numbers</source>
+        <translation>Друкувати номери сторінок</translation>
+    </message>
+    <message>
+        <source>Print scenes numbers with prefix</source>
+        <translation>Друкувати номери сцен з префіксом</translation>
+    </message>
+    <message>
+        <source>Print dialogues numbers</source>
+        <translation>Друкувати номери діалогів</translation>
     </message>
 </context>
 <context>
@@ -987,6 +1041,13 @@
     <message>
         <source>All Supported Files</source>
         <translation>Всі підтримувані файли</translation>
+    </message>
+</context>
+<context>
+    <name>FountainImporter</name>
+    <message>
+        <source>END OF </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1014,10 +1075,6 @@
     <message>
         <source>No active node.</source>
         <translation>Нема активних елементів.</translation>
-    </message>
-    <message>
-        <source>New node would be placed outside of the scene.</source>
-        <translation>Новий елемент буде розміщено за межами сцени.</translation>
     </message>
     <message>
         <source>No active node</source>
@@ -1067,6 +1124,10 @@
         <source>There is no edge between these two nodes.</source>
         <translation>Немає зв&apos;язку між цими двома елементами.</translation>
     </message>
+    <message>
+        <source>Can&apos;t add edge between single node.</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>ImportDialog</name>
@@ -1081,10 +1142,6 @@
     <message>
         <source>Outline</source>
         <translation>Аутлайн</translation>
-    </message>
-    <message>
-        <source>File:</source>
-        <translation type="vanished">Файл:</translation>
     </message>
     <message>
         <source>Browse...</source>
@@ -1135,19 +1192,19 @@
     </message>
     <message>
         <source>Français</source>
-        <translation>Français</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Español</source>
-        <translation>Español</translation>
+        <translation></translation>
     </message>
     <message>
         <source>English</source>
-        <translation>English</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Русский</source>
-        <translation>Русский</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Detect language from system locale</source>
@@ -1155,7 +1212,7 @@
     </message>
     <message>
         <source>Қазақ</source>
-        <translation>Қазақ</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Deutsch</source>
@@ -1163,7 +1220,7 @@
     </message>
     <message>
         <source>Українська мова</source>
-        <translation></translation>
+        <translation>Українська</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
@@ -1173,52 +1230,21 @@
         <source>Português</source>
         <translation></translation>
     </message>
-</context>
-<context>
-    <name>LocationsDataEdit</name>
     <message>
-        <source>Dialog</source>
-        <translation type="vanished">Діалог</translation>
+        <source>فارْسِى</source>
+        <translation></translation>
     </message>
     <message>
-        <source>Add Image</source>
-        <translation type="vanished">Додати зображення</translation>
+        <source>汉语</source>
+        <translation></translation>
     </message>
     <message>
-        <source>Choose Location</source>
-        <translation type="vanished">Вибрати локацію</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Ім&apos;я:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="vanished">Опис:</translation>
+        <source>עִבְרִית</source>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>LoginDialog</name>
-    <message>
-        <source>Authorization</source>
-        <translation type="vanished">Авторизація</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;https://kitscenarist.ru/cabin.html&quot; style=&quot;color:#2b78da;&quot;&gt;Registration&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;https://kitscenarist.ru/cabin.html&quot; style=&quot;color:#2b78da;&quot;&gt;Реєстрація&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>Error message</source>
-        <translation type="vanished">Повідомлення про помилку</translation>
-    </message>
-    <message>
-        <source>User name</source>
-        <translation type="vanished">Логін</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation type="vanished">Пароль</translation>
-    </message>
     <message>
         <source>&amp;Email</source>
         <translation>&amp;Email</translation>
@@ -1263,10 +1289,6 @@
         <translation> - змінений</translation>
     </message>
     <message>
-        <source>Choose file for new project</source>
-        <translation type="vanished">Виберіть файл для нового проекту</translation>
-    </message>
-    <message>
         <source>Scenarist project files (*%1)</source>
         <translation>Файл проекту сценарію (*%1)</translation>
     </message>
@@ -1299,10 +1321,6 @@
         <translation>Неможливо зберегти проект як &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Будь ласка, перевірте дозволи і спробуйте ще раз.</translation>
     </message>
     <message>
-        <source>Can&apos;t write you changes to project. There is some internal database error. Please check that file is exists and you have permissions to write in it. Retry to save?</source>
-        <translation type="vanished">Неможливо внести зміни до проекту. Існує певна внутрішня помилка бази даних. Будь ласка, перевірте, чи файл існує і чи є у вас права на його зміну. Повторити спробу зберегти?</translation>
-    </message>
-    <message>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
         <translation>Неможливо внести зміни до проекту,що розташований в &lt;b&gt;%1&lt;/b&gt; тому, що файл не існує. Будь ласка, перемістіть файл назад і повторіть спробу зберегти. Повторити спробу зберегти?</translation>
     </message>
@@ -1319,24 +1337,12 @@
         <translation>З&apos;єднання активне</translation>
     </message>
     <message>
-        <source>Project sinchronized</source>
-        <translation type="vanished">Проект синхронізований</translation>
-    </message>
-    <message>
         <source>Modified</source>
         <translation>Змінений</translation>
     </message>
     <message>
         <source>Network error</source>
         <translation>Помилка мережі</translation>
-    </message>
-    <message>
-        <source>Can&apos;t estabilish network connection.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Неможливо встановити з&apos;єднання з мережею.
-
-Продовжувати працювати в автономному режимі.</translation>
     </message>
     <message>
         <source>Incorrect username or password.</source>
@@ -1347,56 +1353,16 @@ Continue working in offline mode.</source>
         <translation>Підписка закінчилась</translation>
     </message>
     <message>
-        <source>Buyed subscription period is finished.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Період підписки завершений.
-
-Продовжувати працювати в автономному режимі.</translation>
-    </message>
-    <message>
         <source>Network Error</source>
         <translation>Помилка Мережі</translation>
-    </message>
-    <message>
-        <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Неможливо коректно завантажити дані зі служби. Будь ласка, перевірте ваше з&apos;єднання з інтернетом і оновіть синхронізацію.
-
-Продовжувати працювати в автономному режимі.</translation>
     </message>
     <message>
         <source>Session closed</source>
         <translation>Сесію закрито</translation>
     </message>
     <message>
-        <source>New session for you account started at other device. Restart session?</source>
-        <translation type="vanished">Нова сесія на вашому акаунті почалась на іншому пристрої. Перезапустити сесію?</translation>
-    </message>
-    <message>
-        <source>New session for you account started at other device.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Нова сесія на вашому акаунті почалась на іншому пристрої.
-
-Продовжувати роботу в автономному режимі.</translation>
-    </message>
-    <message>
         <source>Project not available</source>
         <translation>Проект не доступний</translation>
-    </message>
-    <message>
-        <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
-
-Continue working in offline mode.</source>
-        <translation type="vanished">Даний проект не доступний зараз для синхронізації, тому що закінчилась підписка. 
-
-Продовжувати роботу в автономному режимі.</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Помилка</translation>
     </message>
     <message>
         <source>Exit from Application</source>
@@ -1445,14 +1411,6 @@ Continue working in offline mode.</source>
     <message>
         <source>Scenario</source>
         <translation>Сценарій</translation>
-    </message>
-    <message>
-        <source>Characters</source>
-        <translation type="vanished">Герої</translation>
-    </message>
-    <message>
-        <source>Locations</source>
-        <translation type="vanished">Локації</translation>
     </message>
     <message>
         <source>Statistics</source>
@@ -1515,16 +1473,8 @@ Continue working in offline mode.</source>
         <translation>Введіть нове ім&apos;я проекта</translation>
     </message>
     <message>
-        <source>Project removing</source>
-        <translation type="vanished">Проект видалено</translation>
-    </message>
-    <message>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Ви впевненні у видаленні проекту &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
-        <source>Project unsubscribing</source>
-        <translation type="vanished">Проект відписано</translation>
     </message>
     <message>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
@@ -1642,33 +1592,35 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::CharactersManager</name>
-    <message>
-        <source>Are you shure to remove characters: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">Ви впевнені, що хочете видалити героїв: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::CharactersNavigatorManager</name>
-    <message>
-        <source>Add Character</source>
-        <translation type="vanished">Додати Героя</translation>
+        <translation>Ви дійсно хочете сховати проект &lt;b&gt;%1&lt;/b&gt; з останніх?</translation>
     </message>
     <message>
-        <source>Name</source>
-        <translation type="vanished">Ім&apos;я</translation>
+        <source>in cloud</source>
+        <translation>в хмарі</translation>
     </message>
     <message>
-        <source>Add Character Error</source>
-        <translation type="vanished">Помилка додавання героя</translation>
+        <source>on local computer</source>
+        <translation>на комп&apos;ютері</translation>
     </message>
     <message>
-        <source>Character with same name already exist in project</source>
-        <translation type="vanished">Персонаж з таким ім&apos;ям вже існує в проекті</translation>
+        <source>Edit</source>
+        <translation>Редагувати</translation>
+    </message>
+    <message>
+        <source>Possible save error</source>
+        <translation>Можлива помилка збереження</translation>
+    </message>
+    <message>
+        <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
+        <translation>У вас менше 50 мегабайт вільного місця на диску. Це може призвести до проблем збереження проекту. Рекомендуємо звільнити більше місця та перевірити правильність збереження проекту.</translation>
+    </message>
+    <message>
+        <source>File format not supported</source>
+        <translation type="unfinished">Формат файлу не підтримується</translation>
+    </message>
+    <message>
+        <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
+        <translation type="unfinished">Microsoft &lt;b&gt;DOC&lt;/b&gt; файли не підтримуються.. Вам треба зберегти їх в &lt;b&gt;DOCX&lt;/b&gt; файл і повторити імпорт.</translation>
     </message>
 </context>
 <context>
@@ -1724,31 +1676,33 @@ Project didn&apos;t synchronized.</source>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation>Microsoft &lt;b&gt;DOC&lt;/b&gt; файли не підтримуються.. Вам треба зберегти їх в &lt;b&gt;DOCX&lt;/b&gt; файл і повторити імпорт.</translation>
     </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsManager</name>
     <message>
-        <source>Are you shure to remove locations: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">Ви впевнені, що хочете видалити локації: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsNavigatorManager</name>
-    <message>
-        <source>Add Location</source>
-        <translation type="vanished">Додати локацію</translation>
+        <source>Import aborted</source>
+        <translation>Імпорт перервано</translation>
     </message>
     <message>
-        <source>Name</source>
-        <translation type="vanished">Ім&apos;я</translation>
+        <source>File to import is empty. Please check that you select correct file and retry import.</source>
+        <translation>Файл для імпорту порожній. Перевірте, чи правильно ви вибрали файл, і повторіть спробу імпорту.</translation>
     </message>
     <message>
-        <source>Add Location Error</source>
-        <translation type="vanished">Помилка додавання локації</translation>
+        <source>Characters import</source>
+        <translation>Імпорт героїв</translation>
     </message>
     <message>
-        <source>Location with same name already exist in project</source>
-        <translation type="vanished">Локація з таким ім&apos;ям вже існує в проекті</translation>
+        <source>Locations import</source>
+        <translation>Імпорт локацій</translation>
+    </message>
+    <message>
+        <source>Documents import</source>
+        <translation>Імпорт документів</translation>
+    </message>
+    <message>
+        <source>File doesn&apos;t exists</source>
+        <translation>Файл не існує</translation>
+    </message>
+    <message>
+        <source>Please choose existing file and retry import.</source>
+        <translation>Будь ласка, виберіть існуючий файл і повторіть спробу імпорту.</translation>
     </message>
 </context>
 <context>
@@ -1836,6 +1790,17 @@ Project didn&apos;t synchronized.</source>
     </message>
 </context>
 <context>
+    <name>ManagementLayer::ScriptDictionariesManager</name>
+    <message>
+        <source>Enter new item name</source>
+        <translation>Введіть нове ім&apos;я пункту</translation>
+    </message>
+    <message>
+        <source>Are you sure to remove &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>Ви впевненні, що хочете видалити &lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+</context>
+<context>
     <name>ManagementLayer::SettingsManager</name>
     <message>
         <source>Restoring</source>
@@ -1905,28 +1870,12 @@ Project didn&apos;t synchronized.</source>
 <context>
     <name>ManagementLayer::SettingsTemplatesManager</name>
     <message>
-        <source>Default</source>
-        <translation>Стандартний</translation>
+        <source>Choose base template</source>
+        <translation>Виберіть базовий шаблон</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::StartUpManager</name>
-    <message>
-        <source>Released version %1 </source>
-        <translation type="vanished">Реліз версія %1 </translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">завантажити</translation>
-    </message>
-    <message>
-        <source>or</source>
-        <translation type="vanished">або</translation>
-    </message>
-    <message>
-        <source>read more</source>
-        <translation type="vanished">читати далі</translation>
-    </message>
     <message>
         <source>Password successfully changed</source>
         <translation>Пароль успішно змінено</translation>
@@ -1946,6 +1895,14 @@ You can try to reload update.</source>
     <message>
         <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
         <translation>Випущена версія %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Встановити&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Відмінити</translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation>Поновити</translation>
     </message>
 </context>
 <context>
@@ -1968,37 +1925,237 @@ You can try to reload update.</source>
     </message>
 </context>
 <context>
-    <name>ManagementLayer::SynchronizationManager</name>
-    <message>
-        <source>Authorizing</source>
-        <translation type="vanished">Авторизація</translation>
-    </message>
-    <message>
-        <source>Checking correction of user name and password.</source>
-        <translation type="vanished">Перевірка логіну та пароля.</translation>
-    </message>
-    <message>
-        <source>Close working session.</source>
-        <translation type="vanished">Закрити робочу сесію.</translation>
-    </message>
-    <message>
-        <source>Loading</source>
-        <translation type="vanished">Завантаження</translation>
-    </message>
-    <message>
-        <source>Loading projects list from remote server.</source>
-        <translation type="vanished">Завантаження списку проектів з віддаленого серверу.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t estabilish network connection.</source>
-        <translation type="vanished">Неможливо встановити з&apos;єднання з мережею.</translation>
-    </message>
-</context>
-<context>
     <name>OdtReader</name>
     <message>
         <source>Unable to open archive.</source>
         <translation>Неможливо відкрити архів.</translation>
+    </message>
+</context>
+<context>
+    <name>OnboardingView</name>
+    <message>
+        <source>Next</source>
+        <translation>Наступний</translation>
+    </message>
+    <message>
+        <source>Skip</source>
+        <translation>Пропустити</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Не знайшли свою мову? Дізнайтеся, як ви можете додати її самостійно.&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Português</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Español</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Français</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Detect language from system locale</source>
+        <translation>Використовувати системні мовні налаштування</translation>
+    </message>
+    <message>
+        <source>Українська мова</source>
+        <translation>Українська</translation>
+    </message>
+    <message>
+        <source>汉语</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>فارْسِى</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Deutsch</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Русский</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Choose language</source>
+        <translation>Виберіть  мову</translation>
+    </message>
+    <message>
+        <source>Қазақ</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>עִבְרִית</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Choose application theme</source>
+        <translation>Виберіть тему програми</translation>
+    </message>
+    <message>
+        <source>Dark theme</source>
+        <translation>Темна тема</translation>
+    </message>
+    <message>
+        <source>Light theme</source>
+        <translation>Світла тема</translation>
+    </message>
+    <message>
+        <source>Use research module</source>
+        <translation>Використовувати модуль розробки</translation>
+    </message>
+    <message>
+        <source>You can collect all the necessary materials for the project in one place. In it, you can save basic information about the script, such as its name, logline, synopsis, and also fill in the title page of the script.
+
+Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
+
+Also, in research tab you can store a variety of materials (text documents, images, links to web pages and mindmaps) associated with your project, organizing them in a convenient manner.</source>
+        <translation>Ви можете збирати всі необхідні матеріали для проекту в одному місці. У ньому можна зберегти основну інформацію про сценарій, таку як назва, логлайн, синопсис, а також заповнити титульну сторінку сценарію.
+
+Тут ви можете керувати списками героїв і локацій. Створюйте нові, додавайте описи, фотографії, перейменовуйте та упорядковуйте їх.
+
+Також на вкладці розробки можна зберігати різні матеріали (текстові документи, зображення, посилання на веб-сторінки та карти розуму), пов&apos;язані з вашим проектом, організовуючи їх зручним способом.</translation>
+    </message>
+    <message>
+        <source>Research</source>
+        <translation>Розробка</translation>
+    </message>
+    <message>
+        <source>Cards</source>
+        <translation>Картки</translation>
+    </message>
+    <message>
+        <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
+
+You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
+        <translation>Модуль «Картки» дозволяє переглядати сценарій у вигляді карток, розміщених на дошціі, тим самим забезпечуючи візуальний спосіб роботи зі структурою.
+
+Ви можете додати кольори та штампи до карток, переміщувати їх і групувати, і всі зміни, внесені за допомогою карток, відображатимуться у тексті сценарію.</translation>
+    </message>
+    <message>
+        <source>Use cards module</source>
+        <translation>Використовувати модуль карток</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>Сценарій</translation>
+    </message>
+    <message>
+        <source>Use script module</source>
+        <translation>Використовувати сценарний модуль</translation>
+    </message>
+    <message>
+        <source>Choose script template</source>
+        <translation>Виберіть шаблон сценарію</translation>
+    </message>
+    <message>
+        <source>Statistics</source>
+        <translation>Статистика</translation>
+    </message>
+    <message>
+        <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
+        <translation>Модуль статистики дозволяє отримувати докладні виробничі звіти у сценарії, а також переглядати графіки активності персонажів у сценарії та динаміки сцен.</translation>
+    </message>
+    <message>
+        <source>Use statistics module</source>
+        <translation>Використовувати модуль статистики</translation>
+    </message>
+    <message>
+        <source>KIT Scenarist. Setup of basic features.</source>
+        <translation>КІТ Сценарист. Налаштування основних функцій.</translation>
+    </message>
+    <message>
+        <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
+        <translation>Тема більше підходить для роботи в затемнених кімнатах, а також у вечірній або нічний час.</translation>
+    </message>
+    <message>
+        <source>Theme is convenient for work with sufficient light.</source>
+        <translation>Тема зручна для роботи з достатнім освітленням.</translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Russian screenplay</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (A4)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay standard template.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay standard template.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Thank you. The most common application settings were configured.
+
+The application will start in few seconds.</source>
+        <translation>Дякую. Основні параметри програми налаштовані.
+
+Програма почнеться за кілька секунд.</translation>
+    </message>
+    <message>
+        <source>Starting application</source>
+        <translation>Запуск програми</translation>
+    </message>
+    <message>
+        <source>Script module allows you to work with screenplay.
+
+Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
+
+And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
+        <translation>Сценарний модуль дозволяє працювати зі сценарієм.
+
+Модуль включає навігатор сценарію. Це список сцен. Натискання миші на сцені зі списку, відображатиме текст вибраної сцени на екрані.
+
+І текстовий редактор сценарію. Редактор має багато допоміжних функцій, які спрощують введення тексту відповідно до стандарту написання сценаріїв, а також дозволяє виконувати пошук тексту в сценарію та залишати примітки до тексту.</translation>
     </message>
 </context>
 <context>
@@ -2066,47 +2223,24 @@ You can try to reload update.</source>
 <context>
     <name>ProjectFileWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Форма</translation>
-    </message>
-    <message>
-        <source>Project Name</source>
-        <translation>Ім&apos;я проекту</translation>
-    </message>
-    <message>
-        <source>/file/path</source>
-        <translation>/файл/шлях</translation>
-    </message>
-    <message>
         <source>Change project name</source>
         <translation>Змінити назву проекту</translation>
     </message>
     <message>
         <source>Remove project</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити проект</translation>
     </message>
     <message>
         <source>Hide project from recent</source>
-        <translation type="unfinished"></translation>
+        <translation>Сховати проект з недавніх</translation>
     </message>
     <message>
         <source>Add cowriter</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати співавтора</translation>
     </message>
     <message>
         <source>Show cowriters</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ProjectUserWidget</name>
-    <message>
-        <source>Form</source>
-        <translation>Форма</translation>
-    </message>
-    <message>
-        <source>User Name [role]</source>
-        <translation>Ім&apos;я користувача [роль]</translation>
+        <translation>Показати співавторів</translation>
     </message>
 </context>
 <context>
@@ -2268,7 +2402,7 @@ You can try to reload update.</source>
     <name>ResearchView</name>
     <message>
         <source>Form</source>
-        <translation></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Research</source>
@@ -2285,10 +2419,6 @@ You can try to reload update.</source>
     <message>
         <source>Search</source>
         <translation>Пошук</translation>
-    </message>
-    <message>
-        <source>Ctrl+F</source>
-        <translation type="vanished">Ctrl+F</translation>
     </message>
     <message>
         <source>words:</source>
@@ -2383,16 +2513,8 @@ You can try to reload update.</source>
         <translation>Додати дочірній елемент</translation>
     </message>
     <message>
-        <source>Ctrl+Return</source>
-        <translation>Ctrl+Return</translation>
-    </message>
-    <message>
         <source>Add sibling node</source>
         <translation>Додати споріднений елемент</translation>
-    </message>
-    <message>
-        <source>Shift+Return</source>
-        <translation>Shift+Return</translation>
     </message>
     <message>
         <source>Delete node (Del)</source>
@@ -2499,10 +2621,6 @@ You can try to reload update.</source>
         <translation>&lt;h2&gt;Карта розуму&lt;/h2&gt;</translation>
     </message>
     <message>
-        <source>&lt;h2&gt;Images Galerry&lt;/h2&gt;</source>
-        <translation type="vanished">&lt;h2&gt;Галерея&lt;/h2&gt;</translation>
-    </message>
-    <message>
         <source>&lt;h2&gt;Url&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;Посилання&lt;/h2&gt;</translation>
     </message>
@@ -2517,6 +2635,22 @@ You can try to reload update.</source>
     <message>
         <source>Ctrl+Tab</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Save mind map as image file</source>
+        <translation>Зберегти карту розуму як зображення</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -2538,14 +2672,6 @@ You can try to reload update.</source>
     <message>
         <source>Add scheme item</source>
         <translation>Додати елемент схеми</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="vanished">Група сцен</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="vanished">Папка</translation>
     </message>
     <message>
         <source>Description</source>
@@ -2613,6 +2739,10 @@ You can try to reload update.</source>
     <message>
         <source>All</source>
         <translation>Всі</translation>
+    </message>
+    <message>
+        <source>In lyrics</source>
+        <translation>В текстах пісень</translation>
     </message>
 </context>
 <context>
@@ -2700,14 +2830,6 @@ You can try to reload update.</source>
     <message>
         <source>Scenario module</source>
         <translation>Сценарій</translation>
-    </message>
-    <message>
-        <source>Characters module</source>
-        <translation type="vanished">Герої</translation>
-    </message>
-    <message>
-        <source>Locations module</source>
-        <translation type="vanished">Локації</translation>
     </message>
     <message>
         <source>Statistics module</source>
@@ -2967,7 +3089,55 @@ Paragraph</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Налаштування</translation>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
+        <translation>Автозберігання працює дуже точно. Воно зберігає проекти кожні 3 секунди, якщо ви не використовуєте мишу чи клавіатуру, але якщо ви працюєте без зупинок, воно зберігає проект кожні 5 хвилин.</translation>
+    </message>
+    <message>
+        <source>Compact Mode</source>
+        <translation>Компактний Режим</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>Research</source>
+        <translation>Розробка</translation>
+    </message>
+    <message>
+        <source>Default font for text documents:</source>
+        <translation>Стандартний шрифт для текстових документів:</translation>
+    </message>
+    <message>
+        <source>pt</source>
+        <translation>pt</translation>
+    </message>
+    <message>
+        <source>Hide all panels in fullscreen mode</source>
+        <translation>Сховати всі панелі у повноекранному режимі</translation>
+    </message>
+    <message>
+        <source>Show dialogues numbers</source>
+        <translation>Показувати номери діалогів</translation>
+    </message>
+    <message>
+        <source>Highlight blocks</source>
+        <translation>Виділити блоки</translation>
+    </message>
+    <message>
+        <source>Automatically continue dialogue</source>
+        <translation>Автоматично продовжувати діалог</translation>
+    </message>
+    <message>
+        <source>Automatically corrections on page breaks</source>
+        <translation>Автоматичне виправлення на розривах сторінок</translation>
+    </message>
+    <message>
+        <source>Use open bracket in dialogue for jump to parenthetical</source>
+        <translation>Використовувати квадратні дужки в діалозі для переходу до ремарки</translation>
     </message>
 </context>
 <context>
@@ -3014,6 +3184,10 @@ Paragraph</source>
     <message>
         <source>Change text background color</source>
         <translation>Змінити колір фону</translation>
+    </message>
+    <message>
+        <source>Clear formatting</source>
+        <translation>Очистити форматування</translation>
     </message>
 </context>
 <context>
@@ -3066,10 +3240,6 @@ Paragraph</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Logout&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Вийти&lt;/a&gt;</translation>
-    </message>
-    <message>
         <source>Projects from local computer</source>
         <translation>Проекти на комп&apos;ютері</translation>
     </message>
@@ -3112,6 +3282,10 @@ Paragraph</source>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Used 0 Gb from 0 Gb</source>
+        <translation>Використано 0 Гб з 0 Гб</translation>
     </message>
 </context>
 <context>
@@ -3579,12 +3753,12 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <translation>Виберіть файл для нового проекту</translation>
     </message>
     <message>
-        <source>Scenarist project files (*%1)</source>
-        <translation type="obsolete">Файл проекту сценарію (*%1)</translation>
-    </message>
-    <message>
         <source>Choose file to import</source>
         <translation>Виберіть файл для імпорту</translation>
+    </message>
+    <message>
+        <source>New Project</source>
+        <translation>Новий Проект</translation>
     </message>
 </context>
 <context>
@@ -3599,40 +3773,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Change</source>
         <translation>Змінити</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::CharactersDataEdit</name>
-    <message>
-        <source>Choose Character</source>
-        <translation type="vanished">Вибрати героя</translation>
-    </message>
-    <message>
-        <source>Character name</source>
-        <translation type="vanished">Ім&apos;я героя</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::CharactersNavigator</name>
-    <message>
-        <source>Characters</source>
-        <translation type="vanished">Герої</translation>
-    </message>
-    <message>
-        <source>Create New Character</source>
-        <translation type="vanished">Створити нового героя</translation>
-    </message>
-    <message>
-        <source>Remove Selected Character</source>
-        <translation type="vanished">Видалити вибраного героя</translation>
-    </message>
-    <message>
-        <source>Merge Selected Characters</source>
-        <translation type="vanished">Об&apos;єднати виділених героїв</translation>
-    </message>
-    <message>
-        <source>Find All Characters from Scenario</source>
-        <translation type="vanished">Знайти всіх героїв у сценарії</translation>
     </message>
 </context>
 <context>
@@ -3656,33 +3796,25 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <source>%1 files (*%2)</source>
         <translation>%1 файли (*%2)</translation>
     </message>
+    <message>
+        <source>Choose file to export research</source>
+        <translation>Виберіть файл для експорту розробки</translation>
+    </message>
+    <message>
+        <source>Export research</source>
+        <translation>Експорт розробки</translation>
+    </message>
+    <message>
+        <source>Export outline</source>
+        <translation>Експорт аутлайну</translation>
+    </message>
+    <message>
+        <source>Export script</source>
+        <translation>Експорт сценарію</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ImportDialog</name>
-    <message>
-        <source>All Supported Files</source>
-        <translation type="vanished">Всі підтримувані файли</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation type="vanished">Файл проекту сценарію</translation>
-    </message>
-    <message>
-        <source>Final Draft screenplay</source>
-        <translation type="vanished">Сценарій формату Final Draft</translation>
-    </message>
-    <message>
-        <source>Trelby screenplay</source>
-        <translation type="vanished">Сценарій формату Trelby</translation>
-    </message>
-    <message>
-        <source>Office Open XML</source>
-        <translation type="vanished">Office Open XML</translation>
-    </message>
-    <message>
-        <source>OpenDocument Text</source>
-        <translation type="vanished">OpenDocument Text</translation>
-    </message>
     <message>
         <source>Choose file to import</source>
         <translation>Виберіть файл для імпорту</translation>
@@ -3690,36 +3822,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Import</source>
         <translation>Імпорт</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsDataEdit</name>
-    <message>
-        <source>Choose Location</source>
-        <translation type="vanished">Вибрати локацію</translation>
-    </message>
-    <message>
-        <source>Location</source>
-        <translation type="vanished">Локація</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsNavigator</name>
-    <message>
-        <source>Locations</source>
-        <translation type="vanished">Локації</translation>
-    </message>
-    <message>
-        <source>Create New Location</source>
-        <translation type="vanished">Створити нову локацію</translation>
-    </message>
-    <message>
-        <source>Remove Selected Location</source>
-        <translation type="vanished">Видалити вибрану локацію</translation>
-    </message>
-    <message>
-        <source>Find All Locations From Scenario</source>
-        <translation type="vanished">Знайти всі локації у сценарії</translation>
     </message>
 </context>
 <context>
@@ -3747,6 +3849,32 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Email is empty</source>
         <translation>Електронна пошта порожня</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::OnboardingView</name>
+    <message>
+        <source>Next</source>
+        <translation>Наступний</translation>
+    </message>
+    <message>
+        <source>Finish</source>
+        <translation>Фініш</translation>
+    </message>
+    <message>
+        <source>Will be used default settings.
+
+The application will start in few seconds.</source>
+        <translation>Будуть використані налаштування за замовчуванням.
+
+Програма почнеться за кілька секунд.</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ProjectsList</name>
+    <message>
+        <source>no changes</source>
+        <translation>ніяких змін</translation>
     </message>
 </context>
 <context>
@@ -3794,6 +3922,10 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <source>Insert into &quot;%1&quot;</source>
         <translation>Вставити в &quot;%1&quot;</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation>Додати</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ResearchView</name>
@@ -3821,6 +3953,14 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <source>Location name</source>
         <translation>Назва локації</translation>
     </message>
+    <message>
+        <source>Save mind map</source>
+        <translation>Зберегти карту розуму</translation>
+    </message>
+    <message>
+        <source>PNG files (*.png)</source>
+        <translation>PNG файли (*.png)</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioCardsView</name>
@@ -3829,28 +3969,12 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <translation>Додати нову картку</translation>
     </message>
     <message>
-        <source>Add note</source>
-        <translation type="vanished">Додати помітку</translation>
-    </message>
-    <message>
-        <source>Add horizontal line</source>
-        <translation type="vanished">Додати горизонтальну лінію</translation>
-    </message>
-    <message>
-        <source>Add vertical line</source>
-        <translation type="vanished">Додати вертикальну лінію</translation>
-    </message>
-    <message>
         <source>Sort cards</source>
         <translation>Сортувати картки</translation>
     </message>
     <message>
-        <source>On/off fullscreen mode (F5)</source>
-        <translation type="vanished">Вкл/Викл повноекранний режим (F5)</translation>
-    </message>
-    <message>
         <source>Draft</source>
-        <translation>Варіант</translation>
+        <translation>Чернетка</translation>
     </message>
     <message>
         <source>Script</source>
@@ -3896,10 +4020,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <translation>↓ Наступне</translation>
     </message>
     <message>
-        <source>Catch focus</source>
-        <translation>Тримати фокус</translation>
-    </message>
-    <message>
         <source>%1 %2</source>
         <translation>%1 %2</translation>
     </message>
@@ -3915,10 +4035,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <translation>Сцена</translation>
     </message>
     <message>
-        <source>Scenes group</source>
-        <translation type="vanished">Група сцен</translation>
-    </message>
-    <message>
         <source>Folder</source>
         <translation>Папка</translation>
     </message>
@@ -3926,25 +4042,13 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <source>Scene Description</source>
         <translation>Опис сцени</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation>Додати</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioNavigator</name>
-    <message>
-        <source>Convert to</source>
-        <translation type="vanished">Перетворити в</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="vanished">Сцена</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="vanished">Група сцен</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="vanished">Папка</translation>
-    </message>
     <message>
         <source>Color %1</source>
         <translation>Колір %1</translation>
@@ -3997,6 +4101,30 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <source>Convert to folder</source>
         <translation>Конвертувати в папку</translation>
     </message>
+    <message>
+        <source>Clear</source>
+        <translation>Очистити</translation>
+    </message>
+    <message>
+        <source>Show/hide additional panels</source>
+        <translation>Показати/сховати додаткові панелі</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Чернетка</translation>
+    </message>
+    <message>
+        <source>Scene description</source>
+        <translation>Опис сцени</translation>
+    </message>
+    <message>
+        <source>Script dictionaries</source>
+        <translation>Сценарні словники</translation>
+    </message>
+    <message>
+        <source>Show/hide script dictionaries</source>
+        <translation>Показати/сховати сценарні словники</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioReviewPanel</name>
@@ -4041,7 +4169,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>Reply</source>
-        <translation></translation>
+        <translation>Повторити</translation>
     </message>
     <message>
         <source>Done</source>
@@ -4060,7 +4188,11 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <name>UserInterface::ScenarioSceneDescription</name>
     <message>
         <source>Description of:</source>
-        <translation>Опис про:</translation>
+        <translation>Опис:</translation>
+    </message>
+    <message>
+        <source>Copy scene description to the script</source>
+        <translation>Копіювати опис сцени в сценарій</translation>
     </message>
 </context>
 <context>
@@ -4078,7 +4210,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <name>UserInterface::ScenarioTextEditWidget</name>
     <message>
         <source>DRAFT</source>
-        <translation>Чернетка</translation>
+        <translation>ЧЕРНЕТКА</translation>
     </message>
     <message>
         <source>Outline mode</source>
@@ -4094,7 +4226,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>Redo last action</source>
-        <translation>Повторити останню дію</translation>
+        <translation>Поновити останню дію</translation>
     </message>
     <message>
         <source>Search and Replace</source>
@@ -4107,6 +4239,56 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Duration from Start to Cursor Position | Full Duration</source>
         <translation>Тривалість від Початку до Позиції курсору | Загальна тривалість</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Відмінити</translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation>Поновити</translation>
+    </message>
+    <message>
+        <source>Find and replace</source>
+        <translation>Знайти і замінити</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScriptDictionaries</name>
+    <message>
+        <source>Scene intros</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Scene times</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Scene days</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Character states</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Transitions</source>
+        <translation>Переходи</translation>
+    </message>
+    <message>
+        <source>Add dictionary item</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Remove selected item</source>
+        <translation>Видалити вибрані пункти</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScriptZenModeControls</name>
+    <message>
+        <source>Typewriter sound</source>
+        <translation>Звук друкарської машинки</translation>
     </message>
 </context>
 <context>
@@ -4177,7 +4359,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>Editing</source>
-        <translation>Змінити</translation>
+        <translation>Редагування</translation>
     </message>
     <message>
         <source>Shortcuts</source>
@@ -4189,19 +4371,41 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Portuguese (Brazil)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Portuguese (Portugal)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
+but if you work with no terminations it saves project every %1 minutes.</source>
+        <translation>Автозберігання працює дуже точно. Воно зберігає проекти кожні 3 секунди, якщо ви не використовуєте мишу чи клавіатуру, 
+ але якщо ви працюєте без зупинок, воно зберігає проект кожні %1 хвилин.</translation>
+    </message>
+    <message>
+        <source>Farsi</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Chinese</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Hebrew</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <translation>польський</translation>
     </message>
 </context>
 <context>
@@ -4213,10 +4417,6 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
 </context>
 <context>
     <name>UserInterface::StartUpView</name>
-    <message>
-        <source>Logout</source>
-        <translation type="vanished">Вийти</translation>
-    </message>
     <message>
         <source>Account is active until:</source>
         <translation>Акаунт активний до:</translation>
@@ -4232,6 +4432,10 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Used %1 Gb from %2 Gb</source>
+        <translation>Використано %1 Гб з %2 Гб</translation>
     </message>
 </context>
 <context>
@@ -4326,7 +4530,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>Statistics</source>
-        <translation type="unfinished">Статистика</translation>
+        <translation>Статистика</translation>
     </message>
 </context>
 <context>

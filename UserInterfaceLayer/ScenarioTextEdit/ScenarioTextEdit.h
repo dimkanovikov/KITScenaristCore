@@ -43,6 +43,11 @@ namespace UserInterface
         void changeScenarioBlockType(BusinessLogic::ScenarioBlockStyle::Type _blockType, bool _forced = false);
 
         /**
+         * @brief Установить заданный тип блока для всех выделенных блоков
+         */
+        void changeScenarioBlockTypeForSelection(BusinessLogic::ScenarioBlockStyle::Type _blockType);
+
+        /**
          * @brief Применить тип блока ко всему тексту в блоке
          * @param Тип для применения
          */
@@ -79,9 +84,19 @@ namespace UserInterface
         void setShowSceneNumbers(bool _show);
 
         /**
-         * @brief Подсвечивается ли текущая строка в редакторе
+         * @brief Показываеются ли в редакторе номера реплик
          */
-        bool highlightCurrentLine() const;
+        bool showDialoguesNumbers() const;
+
+        /**
+         * @brief Установить необходимость показывать номера реплик
+         */
+        void setShowDialoguesNumbers(bool _show);
+
+        /**
+         * @brief Установить необходиость подсветки блоков
+         */
+        void setHighlightBlocks(bool _highlight);
 
         /**
          * @brief Установить значение необходимости подсвечивать текущую строку
@@ -102,7 +117,12 @@ namespace UserInterface
         /**
          * @brief Установить доступность выделения текста мышью
          */
-        void setTextSelectionEnable(bool _enable);
+        void setTextSelectionEnabled(bool _enabled);
+
+        /**
+         * @brief Установить необходимость проигрывания звуков клавиатуры
+         */
+        void setKeyboardSoundEnabled(bool _enabled);
 
         /**
          * @brief Редактор в режиме отображения поэпизодника или сценария
@@ -148,7 +168,12 @@ namespace UserInterface
          * @brief Создать контекстное меню, чтобы добавить в него дополнительные действия
          * @note Управление памятью передаётся вызывающему метод
          */
-        QMenu* createContextMenu(const QPoint& _pos, QWidget* _parent = 0);
+        QMenu* createContextMenu(const QPoint& _pos, QWidget* _parent = 0) override;
+
+        /**
+         * @brief Доступно ли действие повтора отменённого действия
+         */
+        bool isRedoAvailable() const;
 
     signals:
         /**
@@ -160,6 +185,11 @@ namespace UserInterface
          * @brief Запрос на повтор последнего действия
          */
         void redoRequest();
+
+        /**
+         * @brief Изменилось состояние доступности повтора отменённого действия
+         */
+        void redoAvailableChanged(bool _isRedoAvailable);
 
         /**
          * @brief Сменился стиль под курсором
@@ -180,12 +210,12 @@ namespace UserInterface
         /**
          * @brief Нажатия многих клавиш обрабатываются вручную
          */
-        void keyPressEvent(QKeyEvent* _event);
+        void keyPressEvent(QKeyEvent* _event) override;
 
         /**
          * @brief Переопределяем, чтобы самостоятельно обрабатывать вводимый пользователем текст
          */
-        void inputMethodEvent(QInputMethodEvent* _event);
+        void inputMethodEvent(QInputMethodEvent* _event) override;
 
         /**
          * @brief Дополнительная функция для обработки нажатий самим редактором
@@ -196,35 +226,35 @@ namespace UserInterface
         /**
          * @brief Переопределяется для корректной загрузки больших документов
          */
-        void paintEvent(QPaintEvent* _event);
+        void paintEvent(QPaintEvent* _event) override;
 
         /**
          * @brief Переопределяется для обработки тройного клика
          */
         /** @{ */
-        void mousePressEvent(QMouseEvent* _event);
-        void mouseDoubleClickEvent(QMouseEvent* _event);
+        void mousePressEvent(QMouseEvent* _event) override;
+        void mouseDoubleClickEvent(QMouseEvent* _event) override;
         /** @} */
 
         /**
          * @brief Переопределяется, для того, чтобы блокировать выделение текста мышкой
          */
-        void mouseMoveEvent(QMouseEvent* _event);
+        void mouseMoveEvent(QMouseEvent* _event) override;
 
         /**
          * @brief Переопределяем работу с буфером обмена для использования собственного майм типа данных
          */
         /** @{ */
-        bool canInsertFromMimeData(const QMimeData* _source) const;
-        QMimeData* createMimeDataFromSelection() const;
-        void insertFromMimeData(const QMimeData* _source);
+        bool canInsertFromMimeData(const QMimeData* _source) const override;
+        QMimeData* createMimeDataFromSelection() const override;
+        void insertFromMimeData(const QMimeData* _source) override;
         /** @} */
 
         /**
          * @brief Переопределяем, чтобы запрещать дополнять в пустых блоках при установке
          *		  соответствующего флага
          */
-        bool canComplete() const;
+        bool canComplete() const override;
 
     private slots:
         /**
@@ -266,7 +296,7 @@ namespace UserInterface
          * - иправить проблему ДВойных ЗАглавных
          * - убрать лишние пробелы
          */
-        void updateEnteredText(QKeyEvent* _event);
+        void updateEnteredText(const QString& _eventText);
 
         /**
          * @brief Оканчивается ли строка сокращением
@@ -276,6 +306,15 @@ namespace UserInterface
          * @brief Выделить блок при тройном клике
          */
         bool selectBlockOnTripleClick(QMouseEvent* _event);
+
+        /**
+         * @brief Настроить форматирование выделенного текста
+         */
+        /** @{ */
+        void setTextBold(bool _bold);
+        void setTextItalic(bool _italic);
+        void setTextUnderline(bool _underline);
+        /** @} */
 
     private:
         void initEditor();
@@ -311,6 +350,16 @@ namespace UserInterface
         bool m_showSceneNumbers;
 
         /**
+         * @brief Отображать ли номера реплик
+         */
+        bool m_showDialoguesNumbers;
+
+        /**
+         * @brief Подсвечивать блоки
+         */
+        bool m_highlightBlocks;
+
+        /**
          * @brief Подсвечивать текущую линию
          */
         bool m_highlightCurrentLine;
@@ -333,7 +382,12 @@ namespace UserInterface
         /**
          * @brief Включена ли возможность выделения текста
          */
-        bool m_textSelectionEnable;
+        bool m_textSelectionEnabled;
+
+        /**
+         * @brief Включена ли опция проигрывания звуков клавиатруы
+         */
+        bool m_keyboardSoundEnabled = false;
 
         /**
          * @brief Курсоры соавторов

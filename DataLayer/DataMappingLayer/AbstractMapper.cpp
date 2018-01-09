@@ -289,7 +289,7 @@ bool AbstractMapper::executeSql(QSqlQuery& _sqlQuery)
     // Если всё завершилось успешно сохраняем запрос и данные в таблицу истории запросов
     //
     else {
-        Database::setLastError(QString::null);
+        Database::setLastError(QString());
 
         //
         // NOTE: Оптимизация размера файла проекта
@@ -321,7 +321,7 @@ bool AbstractMapper::executeSql(QSqlQuery& _sqlQuery)
             //
             // ... время выполнения
             //
-            q_history.addBindValue(QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss"));
+            q_history.addBindValue(QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz"));
 
             //
             // Сохраняем данные

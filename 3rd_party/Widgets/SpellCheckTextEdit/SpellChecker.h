@@ -34,7 +34,10 @@ public:
         ArmenianWestern,
         Portuguese,
         PortugueseBrazilian,
-        Swedish
+        Swedish,
+        Farsi,
+        Hebrew,
+        Polish
     };
 
     /**
@@ -45,7 +48,7 @@ public:
     /**
      * @brief Синглтон
      */
-    static SpellChecker* createSpellChecker(const QString& _userDictionaryPath = QString::null);
+    static SpellChecker* createSpellChecker(const QString& _userDictionaryPath = QString());
 
 public:
     ~SpellChecker();

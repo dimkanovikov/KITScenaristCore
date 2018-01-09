@@ -15,7 +15,23 @@
 #include <QPropertyAnimation>
 #include <QStyleOptionGraphicsItem>
 
+namespace {
+    /**
+     * @brief Флаги для отрисовки текста в зависимости от локали
+     */
+    static Qt::AlignmentFlag textDrawAlign() {
+        if (QLocale().textDirection() == Qt::LeftToRight) {
+            return Qt::AlignLeft;
+        } else {
+            return Qt::AlignRight;
+        }
+    }
+}
 
+
+/**
+ * @brief Майм-тип для перетаскиваемых карточек
+ */
 const QString CardItem::MimeType = "application/kit-card";
 
 CardItem::CardItem(QGraphicsItem* _parent) :
@@ -279,10 +295,17 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
                 //
                 const qreal fullCardHeight = boundingRect().height();
                 const qreal colorRectWidth = cardRect.width() / colorsNamesList.size();
-                QRectF colorRect(0, fullCardHeight - additionalColorsHeight, colorRectWidth, additionalColorsHeight);
+                const int colorXPos = QLocale().textDirection() == Qt::LeftToRight
+                                      ? 0
+                                      : cardRect.width() - colorRectWidth;
+                QRectF colorRect(colorXPos, fullCardHeight - additionalColorsHeight, colorRectWidth, additionalColorsHeight);
                 for (const QString& colorName : colorsNamesList) {
                     _painter->fillRect(colorRect, QColor(colorName));
-                    colorRect.moveLeft(colorRect.right());
+                    if (QLocale().textDirection() == Qt::LeftToRight) {
+                        colorRect.moveLeft(colorRect.right());
+                    } else {
+                        colorRect.moveRight(colorRect.left());
+                    }
                 }
             }
         }
@@ -291,7 +314,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         // Рисуем заголовок
         //
         QTextOption textoption;
-        textoption.setAlignment(Qt::AlignTop | Qt::AlignLeft);
+        textoption.setAlignment(::textDrawAlign() | Qt::AlignTop);
         textoption.setWrapMode(QTextOption::NoWrap);
         QFont font = _painter->font();
         font.setBold(true);
@@ -309,43 +332,47 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         //
         // Рисуем штамп
         //
-        _painter->setOpacity(0.33);
-        QFont stateFont = font;
-        stateFont.setPointSize(stateFont.pointSize()*8);
-        stateFont.setBold(true);
-        stateFont.setCapitalization(QFont::AllUppercase);
-        //
-        // Нужно, чтобы состояние влезало в пределы карточки, если не влезает уменьшаем его шрифт
-        // до тех пор, пока не будет найден подходящий размер, или пока он не будет равен двум
-        // размерам базового шрифта
-        //
-        QFontMetricsF stateFontMetrics(stateFont);
-        while (stateFont.pointSize() > font.pointSizeF()*1.2) {
-            if (stateFontMetrics.width(m_stamp) < cardRect.width() - 7*2) {
-                break;
+        if (!m_stamp.isEmpty()) {
+            _painter->setOpacity(0.33);
+            QFont stateFont = font;
+            stateFont.setPointSize(stateFont.pointSize()*8);
+            stateFont.setBold(true);
+            stateFont.setCapitalization(QFont::AllUppercase);
+            //
+            // Нужно, чтобы состояние влезало в пределы карточки, если не влезает уменьшаем его шрифт
+            // до тех пор, пока не будет найден подходящий размер, или пока он не будет равен двум
+            // размерам базового шрифта
+            //
+            QFontMetricsF stateFontMetrics(stateFont);
+            while (stateFont.pointSize() > font.pointSizeF()*1.2) {
+                if (stateFontMetrics.width(m_stamp) < cardRect.width() - 7*2) {
+                    break;
+                }
+                stateFont.setPointSize(stateFont.pointSize() - 1);
+                stateFontMetrics = QFontMetricsF(stateFont);
             }
-            stateFont.setPointSize(stateFont.pointSize() - 1);
-            stateFontMetrics = QFontMetricsF(stateFont);
+            _painter->setFont(stateFont);
+            const qreal stateHeight = stateFontMetrics.lineSpacing();
+            QRectF stateRect(0, cardRect.height() - stateHeight - additionalColorsHeight, cardRect.width(), stateHeight);
+            textoption.setAlignment(Qt::AlignCenter);
+            _painter->drawText(stateRect, m_stamp, textoption);
+            _painter->setOpacity(1.);
         }
-        _painter->setFont(stateFont);
-        const qreal stateHeight = stateFontMetrics.lineSpacing();
-        QRectF stateRect(0, cardRect.height() - stateHeight - additionalColorsHeight, cardRect.width(), stateHeight);
-        textoption.setAlignment(Qt::AlignCenter);
-        _painter->drawText(stateRect, m_stamp, textoption);
-        _painter->setOpacity(1.);
 
         //
         // Рисуем описание
         //
-        textoption.setAlignment(Qt::AlignTop | Qt::AlignLeft);
-        textoption.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
-        font.setBold(false);
-        _painter->setFont(font);
-        const int spacing = titleRect.height() / 2;
-        const QRectF descriptionRect(9, titleRect.bottom() + spacing, cardRect.size().width() - 18, cardRect.size().height() - titleRect.bottom() - spacing - 9);
-        QString descriptionText = TextUtils::elidedText(m_description, _painter->font(), descriptionRect.size(), textoption);
-        descriptionText.replace("\n", "\n\n");
-        _painter->drawText(descriptionRect, descriptionText, textoption);
+        if (!m_description.isEmpty()) {
+            textoption.setAlignment(::textDrawAlign() | Qt::AlignTop);
+            textoption.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
+            font.setBold(false);
+            _painter->setFont(font);
+            const int spacing = titleRect.height() / 2;
+            const QRectF descriptionRect(9, titleRect.bottom() + spacing, cardRect.size().width() - 18, cardRect.size().height() - titleRect.bottom() - spacing - 9);
+            QString descriptionText = TextUtils::elidedText(m_description, _painter->font(), descriptionRect.size(), textoption);
+            descriptionText.replace("\n", "\n\n");
+            _painter->drawText(descriptionRect, descriptionText, textoption);
+        }
 
         //
         // Рисуем рамку выделения

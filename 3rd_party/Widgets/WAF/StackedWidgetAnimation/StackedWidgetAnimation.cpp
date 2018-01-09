@@ -23,6 +23,8 @@
 #include "StackedWidgetSlideOver/StackedWidgetSlideOverAnimator.h"
 #include "StackedWidgetFadeIn/StackedWidgetFadeInAnimator.h"
 
+#include <QStackedWidget>
+
 using WAF::StackedWidgetAnimation;
 using WAF::StackedWidgetAnimationPrivate;
 using WAF::AbstractAnimator;
@@ -31,8 +33,11 @@ using WAF::StackedWidgetSlideOverAnimator;
 using WAF::StackedWidgetFadeInAnimator;
 
 
-void StackedWidgetAnimation::slide(QStackedWidget* _container, QWidget* _widget, WAF::AnimationDirection _direction)
+int StackedWidgetAnimation::slide(QStackedWidget* _container, QWidget* _widget, WAF::AnimationDirection _direction)
 {
+    if (_container->currentWidget() == _widget)
+        return 0;
+
     const StackedWidgetAnimationPrivate::AnimatorType animatorType = StackedWidgetAnimationPrivate::Slide;
     AbstractAnimator* animator = 0;
     if (pimpl()->hasAnimator(_widget, animatorType)) {
@@ -49,6 +54,8 @@ void StackedWidgetAnimation::slide(QStackedWidget* _container, QWidget* _widget,
     }
 
     animator->animateForward();
+
+    return animator->animationDuration();
 }
 
 void StackedWidgetAnimation::slideOverIn(QStackedWidget* _container, QWidget* _widget, WAF::AnimationDirection _direction)
@@ -65,6 +72,9 @@ void StackedWidgetAnimation::slideOverOut(QStackedWidget* _container, QWidget* _
 
 void StackedWidgetAnimation::slideOver(QStackedWidget* _container, QWidget* _widget, WAF::AnimationDirection _direction, bool _in)
 {
+    if (_container->currentWidget() == _widget)
+        return;
+
     const StackedWidgetAnimationPrivate::AnimatorType animatorType = StackedWidgetAnimationPrivate::SlideOver;
     AbstractAnimator* animator = 0;
     if (pimpl()->hasAnimator(_widget, animatorType)) {
@@ -92,6 +102,9 @@ void StackedWidgetAnimation::slideOver(QStackedWidget* _container, QWidget* _wid
 
 int StackedWidgetAnimation::fadeIn(QStackedWidget* _container, QWidget* _widget)
 {
+    if (_container->currentWidget() == _widget)
+        return 0;
+
     const StackedWidgetAnimationPrivate::AnimatorType animatorType = StackedWidgetAnimationPrivate::FadeIn;
     AbstractAnimator* animator = 0;
     if (pimpl()->hasAnimator(_widget, animatorType)) {

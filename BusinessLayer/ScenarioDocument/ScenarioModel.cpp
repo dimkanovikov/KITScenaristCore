@@ -6,6 +6,7 @@
 
 #include <3rd_party/Helpers/TextEditHelper.h>
 
+#include <QApplication>
 #include <QMimeData>
 
 using namespace BusinessLogic;
@@ -50,6 +51,7 @@ void ScenarioModel::prependItem(ScenarioModelItem* _item, ScenarioModelItem* _pa
 
         beginInsertRows(parentIndex, itemRowIndex, itemRowIndex);
         _parentItem->prependItem(_item);
+        ++m_scenesCount;
         endInsertRows();
     }
 }
@@ -83,6 +85,7 @@ void ScenarioModel::addItem(ScenarioModelItem* _item, ScenarioModelItem* _parent
 
         beginInsertRows(parentIndex, itemRowIndex, itemRowIndex);
         _parentItem->insertItem(itemRowIndex, _item);
+        ++m_scenesCount;
         endInsertRows();
     }
 }
@@ -100,6 +103,7 @@ void ScenarioModel::insertItem(ScenarioModelItem* _item, ScenarioModelItem* _aft
 
         beginInsertRows(parentIndex, itemRowIndex, itemRowIndex);
         parent->insertItem(itemRowIndex, _item);
+        ++m_scenesCount;
         endInsertRows();
     }
 }
@@ -107,7 +111,7 @@ void ScenarioModel::insertItem(ScenarioModelItem* _item, ScenarioModelItem* _aft
 void ScenarioModel::removeItem(ScenarioModelItem* _item)
 {
     //
-    // Спрева удаляем всех детей
+    // Удаляем всех детей
     //
     if (_item->hasChildren()) {
         for (int childIndex = _item->childCount()-1; childIndex >= 0; --childIndex) {
@@ -116,7 +120,7 @@ void ScenarioModel::removeItem(ScenarioModelItem* _item)
     }
 
     //
-    // Затем удаляем сам элемент
+    // Удаляем сам элемент
     //
     ScenarioModelItem* itemParent = _item->parent();
     const QModelIndex itemParentIndex = indexForItem(_item).parent();
@@ -128,7 +132,78 @@ void ScenarioModel::removeItem(ScenarioModelItem* _item)
     if (itemRowIndex >= 0) {
         beginRemoveRows(itemParentIndex, itemRowIndex, itemRowIndex);
         itemParent->removeItem(_item);
+        --m_scenesCount;
         endRemoveRows();
+    }
+}
+
+void ScenarioModel::removeItems(const QVector<ScenarioModelItem*>& _items)
+{
+    auto removeItemsImpl = [this] (ScenarioModelItem* _parent, const QVector<ScenarioModelItem*>& _itemsToDelete) {
+        const QModelIndex itemParentIndex = indexForItem(_parent);
+        const int firstRow = indexForItem(_itemsToDelete.first()).row();
+        const int lastRow = indexForItem(_itemsToDelete.last()).row();
+        beginRemoveRows(itemParentIndex, firstRow, lastRow);
+        for (ScenarioModelItem* itemToDelete : _itemsToDelete) {
+            _parent->removeItem(itemToDelete);
+            --m_scenesCount;
+        }
+        endRemoveRows();
+    };
+
+    //
+    // Проходим список элементов на удаление и удаляем всех с одним родителем
+    //
+    ScenarioModelItem* lastParent = nullptr;
+    QVector<ScenarioModelItem*> itemsToDelete;
+    for (ScenarioModelItem* item : _items) {
+        ScenarioModelItem* itemParent = item->parent();
+
+        //
+        // Если родитель не сменился
+        //
+        if (itemParent == lastParent) {
+            //
+            // ... и если это последовательный элемент, добавляем элемент в список на удаление
+            //
+            if (itemsToDelete.isEmpty()
+                || lastParent->rowOfChild(itemsToDelete.last()) == (lastParent->rowOfChild(item) - 1)) {
+                itemsToDelete.append(item);
+            }
+            //
+            // ... в противном случае удаляем элементы из текущего списка и начинаем формировать новый
+            //
+            else {
+                removeItemsImpl(lastParent, itemsToDelete);
+                itemsToDelete.clear();
+                itemsToDelete.append(item);
+            }
+        }
+        //
+        // Если у следующего элемента другой родитель
+        //
+        else {
+            //
+            // Если есть список элементов на удаление
+            //
+            if (!itemsToDelete.isEmpty()) {
+                removeItemsImpl(lastParent, itemsToDelete);
+            }
+
+            //
+            // Перейдём к новому родителю
+            //
+            lastParent = itemParent;
+            itemsToDelete.clear();
+            itemsToDelete.append(item);
+        }
+    }
+
+    //
+    // Если после выполнения цикла остался список на удаление, удалим элементы из модели
+    //
+    if (!itemsToDelete.isEmpty()) {
+        removeItemsImpl(lastParent, itemsToDelete);
     }
 }
 
@@ -233,6 +308,13 @@ QVariant ScenarioModel::data(const QModelIndex& _index, int _role) const
             break;
         }
 
+        case Qt::ToolTipRole: {
+            if (QApplication::keyboardModifiers().testFlag(Qt::ControlModifier)) {
+                result = item->fullText();
+            }
+            break;
+        }
+
         //
         // Тип элемента
         //
@@ -246,6 +328,14 @@ QVariant ScenarioModel::data(const QModelIndex& _index, int _role) const
         //
         case ColorIndex: {
             result = item->colors();
+            break;
+        }
+
+        //
+        // Штамп сцены
+        //
+        case StampIndex: {
+            result = item->stamp();
             break;
         }
 
@@ -587,28 +677,6 @@ namespace {
     const int CARDS_SPACE = 40;
 
     /**
-     * @brief Сколько займут вложенные дети
-     */
-    static QSize cardChildsSize(const ScenarioModelItem* _parent) {
-        int width = CARD_WIDTH + CARDS_SPACE;
-        int height = CARD_HEIGHT + CARDS_SPACE;
-        for (int childIndex = 0; childIndex < _parent->childCount(); ++childIndex) {
-            const ScenarioModelItem* childItem = _parent->childAt(childIndex);
-            if (childItem->hasChildren()) {
-                QSize childSize = cardChildsSize(childItem);
-                width += childSize.width() + CARDS_SPACE;
-                if (height < childSize.height() + CARDS_SPACE) {
-                    height = childSize.height() + CARDS_SPACE;
-                }
-            } else {
-                width += CARD_WIDTH + CARDS_SPACE;
-            }
-        }
-
-        return QSize(width, height);
-    }
-
-    /**
      * @brief Сформировать строку xml-акта для элемента
      */
     static QString actXmlFor(const ScenarioModelItem* _item, int _x, int _y) {
@@ -646,7 +714,7 @@ namespace {
                        .arg(_item->description().isEmpty()
                             ? TextEditHelper::toHtmlEscaped(_item->fullText())
                             : TextEditHelper::toHtmlEscaped(_item->description())));
-        cardXml.append(QString("stamp=\"\" "));
+        cardXml.append(QString("stamp=\"%1\" ").arg(_item->stamp()));
         cardXml.append(QString("colors=\"%1\" ").arg(_item->colors()));
         cardXml.append(QString("is_embedded=\"%1\" ").arg(_isEmbedded ? "true" : "false"));
         cardXml.append(QString("x=\"%1\" ").arg(_x));
@@ -687,7 +755,7 @@ QString ScenarioModel::simpleScheme() const
         //
         // ... акт
         //
-        if (child->hasChildren()) {
+        if (child->type() == ScenarioModelItem::Folder) {
             x = 0;
             y += CARD_HEIGHT + CARDS_SPACE;
 

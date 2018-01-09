@@ -40,6 +40,11 @@ public:
     void setCanAddActs(bool _can);
 
     /**
+     * @brief Установить необходимость упорядочивать карточки по строкам
+     */
+    void setOrderByRows(bool _orderByRows);
+
+    /**
      * @brief Установить режим привязки карточек к сетке
      */
     void setFixedMode(bool _isFixed);
@@ -134,6 +139,14 @@ public:
 
 signals:
     /**
+     * @brief Пользователь хочет перейти к тексту выбранного элемента
+     */
+    /** @{ */
+    void goToActRequest(const QString& _uuid);
+    void goToCardRequest(const QString& _uuid);
+    /** @} */
+
+    /**
      * @brief Пользователь хочет добавить элемент в заданной позиции
      */
     /** @{ */
@@ -207,6 +220,11 @@ signals:
     void cardColorsChanged(const QString& _uuid, const QString& _colors);
 
     /**
+     * @brief Изменился штамп карточки
+     */
+    void cardStampChanged(const QString& _uuid, const QString& _stamp);
+
+    /**
      * @brief Запрос на изменение типа карточки
      */
     void cardTypeChanged(const QString& _uuid, bool _isFolder);
@@ -254,14 +272,32 @@ protected:
 
 private:
     /**
+     * @brief Обновить область отрисовки акта
+     */
+    void updateActBoundingRect(const QRectF& _sceneRect, ActItem* _act);
+
+    /**
+     * @brief Дополнительное место для акта в режиме упорядочивания по столбцам
+     */
+    qreal actDelta() const;
+
+    /**
      * @brief Определить позицию, где должна находиться выделенная карточка
      */
+    /** @{ */
     void reorderSelectedItem();
+    void reorderSelectedItemByRows();
+    void reorderSelectedItemByColumns();
+    /** @} */
 
     /**
      * @brief Упорядочить элементы по сетке
      */
+    /** @{ */
     void reorderItemsOnScene();
+    void reorderItemsOnSceneByRows();
+    void reorderItemsOnSceneByColumns();
+    /** @} */
 
     /**
      * @brief Исключить возможность пересечения добавляемой карточки с актом
@@ -294,6 +330,11 @@ private:
      * @brief Включён ли режим привязки к сетке
      */
     bool m_isFixedMode = false;
+
+    /**
+     * @brief Включено ли упорядочивание по строкам (true) или по колонкам (false)
+     */
+    bool m_isOrderByRows = true;
 
     /**
      * @brief Расстояние между элементами в режиме привязки к сетке

@@ -20,7 +20,12 @@ void ScenarioDay::setName(const QString& _name)
 		m_name = _name;
 
 		changesNotStored();
-	}
+    }
+}
+
+bool ScenarioDay::equal(const QString& _name) const
+{
+    return m_name == _name;
 }
 
 // ****

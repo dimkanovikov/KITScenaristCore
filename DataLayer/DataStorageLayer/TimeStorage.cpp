@@ -3,13 +3,13 @@
 #include <DataLayer/DataMappingLayer/MapperFacade.h>
 #include <DataLayer/DataMappingLayer/TimeMapper.h>
 
-#include <Domain/Time.h>
+#include <Domain/SceneTime.h>
 
 using namespace DataStorageLayer;
 using namespace DataMappingLayer;
 
 
-TimesTable* TimeStorage::all()
+SceneTimesTable* TimeStorage::all()
 {
 	if (m_all == 0) {
 		m_all = MapperFacade::timeMapper()->findAll();
@@ -17,9 +17,9 @@ TimesTable* TimeStorage::all()
 	return m_all;
 }
 
-Time* TimeStorage::storeTime(const QString& _timeName)
+SceneTime* TimeStorage::storeTime(const QString& _timeName)
 {
-	Time* newTime = 0;
+    SceneTime* newTime = 0;
 
 	QString timeName = _timeName.toUpper().simplified();
 
@@ -31,7 +31,7 @@ Time* TimeStorage::storeTime(const QString& _timeName)
 		// Проверяем наличие данного времени
 		//
 		foreach (DomainObject* domainObject, all()->toList()) {
-			Time* time = dynamic_cast<Time*>(domainObject);
+            SceneTime* time = dynamic_cast<SceneTime*>(domainObject);
 			if (time->name() == timeName) {
 				newTime = time;
 				break;
@@ -42,7 +42,7 @@ Time* TimeStorage::storeTime(const QString& _timeName)
 		// Если такого времени ещё нет, то сохраним его
 		//
 		if (!DomainObject::isValid(newTime)) {
-			newTime = new Time(Identifier(), timeName);
+            newTime = new SceneTime(Identifier(), timeName);
 
 			//
 			// ... в базе данных
@@ -57,6 +57,18 @@ Time* TimeStorage::storeTime(const QString& _timeName)
 	}
 
 	return newTime;
+}
+
+void TimeStorage::removeTime(const QString& _name)
+{
+    for (DomainObject* domainObject : all()->toList()) {
+        SceneTime* time = dynamic_cast<SceneTime*>(domainObject);
+        if (time->equal(_name)) {
+            MapperFacade::timeMapper()->remove(time);
+            all()->remove(time);
+            break;
+        }
+    }
 }
 
 void TimeStorage::clear()

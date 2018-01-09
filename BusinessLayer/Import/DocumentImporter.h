@@ -6,19 +6,19 @@
 
 namespace BusinessLogic
 {
-	/**
-	 * @brief Импортер документов
-	 */
-	class DocumentImporter : public AbstractImporter
-	{
-	public:
-		DocumentImporter();
+    /**
+     * @brief Импортер документов
+     */
+    class DocumentImporter : public AbstractImporter
+    {
+    public:
+        DocumentImporter();
 
-		/**
-		 * @brief Импорт сценария из документа
-		 */
-		QString importScenario(const ImportParameters& _importParameters) const;
-	};
+        /**
+         * @brief Импорт сценария из документа
+         */
+        QString importScript(const ImportParameters& _importParameters) const override;
+    };
 }
 
 #endif // RTFIMPORTER_H

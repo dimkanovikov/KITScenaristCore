@@ -20,14 +20,19 @@ ScenarioDaysTable* ScenarioDayMapper::findAll()
 	return qobject_cast<ScenarioDaysTable*>(abstractFindAll());
 }
 
-void ScenarioDayMapper::insert(ScenarioDay* _scenaryDay)
+void ScenarioDayMapper::insert(ScenarioDay* _scenarioDay)
 {
-	abstractInsert(_scenaryDay);
+    abstractInsert(_scenarioDay);
 }
 
-void ScenarioDayMapper::update(ScenarioDay* _scenaryDay)
+void ScenarioDayMapper::update(ScenarioDay* _scenarioDay)
 {
-	abstractUpdate(_scenaryDay);
+    abstractUpdate(_scenarioDay);
+}
+
+void ScenarioDayMapper::remove(ScenarioDay* _scenarioDay)
+{
+    abstractDelete(_scenarioDay);
 }
 
 QString ScenarioDayMapper::findStatement(const Identifier& _id) const

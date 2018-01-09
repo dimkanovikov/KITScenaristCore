@@ -20,9 +20,10 @@
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
+#include <3rd_party/Helpers/PasswordStorage.h>
+#include <3rd_party/Helpers/RunOnce.h>
 #include <3rd_party/Widgets/QLightBoxWidget/qlightboxdialog.h>
 #include <3rd_party/Widgets/QLightBoxWidget/qlightboxprogress.h>
-#include <3rd_party/Helpers/PasswordStorage.h>
 
 #include <NetworkRequest.h>
 #include <NetworkRequestLoader.h>
@@ -110,6 +111,7 @@ namespace {
     const QString KEY_LOGIN = "login";
     const QString KEY_USERNAME = "username";
     const QString KEY_PASSWORD = "password";
+    const QString KEY_DEVICE_UUID = "device_uuid";
     const QString KEY_NEW_PASSWORD = "new_password";
     const QString KEY_SESSION_KEY = "session_key";
     const QString KEY_ROLE = "role";
@@ -166,9 +168,15 @@ namespace {
      * @brief Код ошибки означающий работу в автономном режиме
      */
     const QString INCORRECT_SESSION_KEY = "xxxxxxxxxxxxxxx";
-}
 
-namespace {
+    /**
+     * @brief Получить идентификатор устройства
+     */
+    static QString deviceUuid() {
+        return DataStorageLayer::StorageFacade::settingsStorage()->value(
+                    "application/uuid", DataStorageLayer::SettingsStorage::ApplicationSettings);
+    }
+
     /**
      * @brief Преобразовать дату из гггг.мм.дд чч:мм:сс в дд.мм.гггг
      */
@@ -176,6 +184,37 @@ namespace {
     {
         return QDateTime::fromString(_date, "yyyy-MM-dd hh:mm:ss").toString("dd.MM.yyyy");
     }
+
+#ifdef Q_OS_MAC
+    /**
+     * @brief Пропустим вызов, если открыто окно на Маке
+     */
+    bool skipIfModal() {
+    //
+    // NOTE: Если есть открытый диалог сохранения, или открытия, то он закрывается
+    // при загрузке страницы, поэтому делаем отсрочку на выполнение проверки
+    //
+    if (QLightBoxWidget::hasOpenedWidgets()
+        || QApplication::activeModalWidget() != 0) {
+        return true;
+    }
+    return false;
+    }
+
+    /**
+     * @brief Если открыто окно на Маке, то вызовем этот метод чуть позже
+     */
+    template<typename F, typename ... Types>
+    bool recallIfModal(SynchronizationManager* _manager, F _function, Types ... _args) {
+        if (skipIfModal()) {
+            QTimer::singleShot(1000, [_manager, _function, _args...] {
+                (_manager->*_function)(_args...);
+            });
+            return true;
+        }
+        return false;
+    }
+#endif
 }
 
 SynchronizationManager::SynchronizationManager(QObject* _parent, QWidget* _parentView) :
@@ -235,6 +274,7 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_LOGIN, _email);
     loader.addRequestAttribute(KEY_PASSWORD, _password);
+    loader.addRequestAttribute(KEY_DEVICE_UUID, ::deviceUuid());
     QByteArray response = loader.loadSync(URL_LOGIN);
 
     //
@@ -244,59 +284,12 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     //
     // Успешно ли завершилась авторизация
     //
-    if(!isOperationSucceed(responseReader)) {
+    if (!isOperationSucceed(responseReader)) {
         //
         // Если неполадки с интернетом, т.е. работает в оффлайн режиме
         //
         if (m_sessionKey == INCORRECT_SESSION_KEY) {
-            //
-            // Попробуем загрузить email
-            //
-            const QString userEmail =
-                        DataStorageLayer::StorageFacade::settingsStorage()->value(
-                            "application/email",
-                            DataStorageLayer::SettingsStorage::ApplicationSettings);
-            //
-            // Если ранее были авторизованы
-            //
-            if (!userEmail.isEmpty()) {
-                //
-                // Запомним email
-                //
-                m_userEmail = userEmail;
-
-                //
-                // Загрузим всю требуемую информацию из кэша (имя пользователя,
-                // активность и дату подписки)
-                //
-                const QString userName =
-                            DataStorageLayer::StorageFacade::settingsStorage()->value(
-                                "application/username",
-                                DataStorageLayer::SettingsStorage::ApplicationSettings);
-                m_isSubscriptionActive =
-                            DataStorageLayer::StorageFacade::settingsStorage()->value(
-                                "application/subscriptionIsActive",
-                                DataStorageLayer::SettingsStorage::ApplicationSettings).toInt();
-                const QString date =
-                            DataStorageLayer::StorageFacade::settingsStorage()->value(
-                                "application/subscriptionExpiredDate",
-                                DataStorageLayer::SettingsStorage::ApplicationSettings);
-                int paymentMonth =
-                            DataStorageLayer::StorageFacade::settingsStorage()->value(
-                                "application/subscriptionPaymentMonth",
-                                DataStorageLayer::SettingsStorage::ApplicationSettings).toInt();
-
-                //
-                // Уведомим об этом
-                //
-                emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date));
-                emit loginAccepted(userName, m_userEmail, paymentMonth);
-
-                //
-                // Хоть как то авторизовались, тепер нас интересует статус интернета
-                //
-                checkNetworkState();
-            }
+            checkNetworkState();
         }
         return;
     }
@@ -304,6 +297,9 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     QString userName;
     QString date;
     int paymentMonth = -1;
+    quint64 usedSpace = 0;
+    quint64 availableSpace = 0;
+    int reviewVersion = 0;
 
     //
     // Найдем наш ключ сессии, имя пользователя, информацию о подписке
@@ -333,6 +329,18 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
             responseReader.readNext();
             paymentMonth = responseReader.text().toInt();
             responseReader.readNext();
+        } else if (responseReader.name().toString() == "used_space") {
+            responseReader.readNext();
+            usedSpace = responseReader.text().toULongLong();
+            responseReader.readNext();
+        } else if (responseReader.name().toString() == "available_space") {
+            responseReader.readNext();
+            availableSpace = responseReader.text().toULongLong();
+            responseReader.readNext();
+        } else if (responseReader.name().toString() == "review_version") {
+            responseReader.readNext();
+            reviewVersion = responseReader.text().toInt();
+            responseReader.readNext();
         }
     }
 
@@ -352,46 +360,44 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     }
 
     //
-    // Если авторизация успешна, сохраним информацию о пользователе
+    // Если авторизация успешна, запомним email
     //
-    StorageFacade::settingsStorage()->setValue(
-                "application/email",
-                _email,
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/password",
-                PasswordStorage::save(_password, _email),
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/username",
-                userName,
-                SettingsStorage::ApplicationSettings);
-
+    m_userEmail = _email;
+    //
+    // ... сохраним информацию о пользователе и о версии проверки
+    //
+    StorageFacade::settingsStorage()->setValue("application/email",
+                                               _email,
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/password",
+                                               PasswordStorage::save(_password, _email),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/username",
+                                               userName,
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/reviewVersion",
+                                               QString::number(reviewVersion),
+                                               SettingsStorage::ApplicationSettings);
+    emit loginAccepted(userName, m_userEmail, paymentMonth, reviewVersion);
     //
     // ... и о подписке
     //
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionIsActive",
-                QString::number(m_isSubscriptionActive),
-                SettingsStorage::ApplicationSettings);
-
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionExpiredDate",
-                dateTransform(date),
-                SettingsStorage::ApplicationSettings);
-
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionPaymentMonth",
-                QString::number(paymentMonth),
-                SettingsStorage::ApplicationSettings);
-
-    //
-    // Запомним email
-    //
-    m_userEmail = _email;
-
-    emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date));
-    emit loginAccepted(userName, m_userEmail, paymentMonth);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionIsActive",
+                                               QString::number(m_isSubscriptionActive),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionExpiredDate",
+                                               dateTransform(date),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionPaymentMonth",
+                                               QString::number(paymentMonth),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionUsedSpace",
+                                               QString::number(usedSpace),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionAvailableSpace",
+                                               QString::number(availableSpace),
+                                               SettingsStorage::ApplicationSettings);
+    emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date), usedSpace, availableSpace);
 
     //
     // Авторизовались, тепер нас интересует статус интернета
@@ -406,6 +412,7 @@ void SynchronizationManager::signUp(const QString& _email, const QString& _passw
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_EMAIL, _email);
     loader.addRequestAttribute(KEY_PASSWORD, _password);
+    loader.addRequestAttribute(KEY_DEVICE_UUID, ::deviceUuid());
     QByteArray response = loader.loadSync(URL_SIGNUP);
 
     //
@@ -526,7 +533,8 @@ void SynchronizationManager::logout()
     loader.setRequestMethod(NetworkRequest::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
-    QByteArray response = loader.loadSync(URL_LOGOUT);
+    loader.addRequestAttribute(KEY_DEVICE_UUID, ::deviceUuid());
+    loader.loadSync(URL_LOGOUT);
 
     m_sessionKey.clear();
     m_userEmail.clear();
@@ -534,30 +542,27 @@ void SynchronizationManager::logout()
     //
     // Удаляем сохраненные значения, если они были
     //
-    StorageFacade::settingsStorage()->setValue(
-                "application/email",
-                QString::null,
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/password",
-                QString::null,
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/username",
-                QString::null,
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/remote-projects",
-                QString::null,
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionIsActive",
-                QString::null,
-                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue(
-                "application/subscriptionExpiredDate",
-                QString::null,
-                SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/email",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/password",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/username",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/reviewVersion",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/remote-projects",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionIsActive",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue("application/subscriptionExpiredDate",
+                                               QString(),
+                                               SettingsStorage::ApplicationSettings);
 
     //
     // Если деавторизация прошла
@@ -629,6 +634,8 @@ void SynchronizationManager::loadSubscriptionInfo()
     //
     QString date;
     bool isActiveFind = false;
+    quint64 usedSpace = 0;
+    quint64 availableSpace = 0;
     while (!responseReader.atEnd()) {
         responseReader.readNext();
         if (responseReader.name().toString() == "subscribe_is_active") {
@@ -639,6 +646,14 @@ void SynchronizationManager::loadSubscriptionInfo()
         } else if (responseReader.name().toString() == "subscribe_end") {
             responseReader.readNext();
             date = responseReader.text().toString();
+            responseReader.readNext();
+        } else if (responseReader.name().toString() == "used_space") {
+            responseReader.readNext();
+            usedSpace = responseReader.text().toULongLong();
+            responseReader.readNext();
+        } else if (responseReader.name().toString() == "available_space") {
+            responseReader.readNext();
+            availableSpace = responseReader.text().toULongLong();
             responseReader.readNext();
         }
     }
@@ -652,13 +667,20 @@ void SynchronizationManager::loadSubscriptionInfo()
                 "application/subscriptionIsActive",
                 QString::number(m_isSubscriptionActive),
                 SettingsStorage::ApplicationSettings);
-
     StorageFacade::settingsStorage()->setValue(
                 "application/subscriptionExpiredDate",
                 dateTransform(date),
                 SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue(
+                "application/subscriptionUsedSpace",
+                QString::number(usedSpace),
+                SettingsStorage::ApplicationSettings);
+    StorageFacade::settingsStorage()->setValue(
+                "application/subscriptionAvailableSpace",
+                QString::number(availableSpace),
+                SettingsStorage::ApplicationSettings);
 
-    emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date));
+    emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date), usedSpace, availableSpace);
 }
 
 void SynchronizationManager::changePassword(const QString& _password,
@@ -685,6 +707,23 @@ void SynchronizationManager::changePassword(const QString& _password,
 
 void SynchronizationManager::loadProjects()
 {
+    auto loadProjectsFromCache = [] {
+        return QByteArray::fromBase64(
+                    DataStorageLayer::StorageFacade::settingsStorage()->value(
+                        "application/remote-projects",
+                        DataStorageLayer::SettingsStorage::ApplicationSettings).toUtf8()
+                    );
+    };
+
+    //
+    // Если работаем в автономном режиме, то загрузим список проектов из кэша
+    //
+    if (m_sessionKey == INCORRECT_SESSION_KEY) {
+        const QByteArray cachedProjectsXml = loadProjectsFromCache();
+        emit projectsLoaded(cachedProjectsXml);
+        return;
+    }
+
     //
     // Получаем список проектов
     //
@@ -699,18 +738,6 @@ void SynchronizationManager::loadProjects()
     //
     QXmlStreamReader responseReader(response);
     if (!isOperationSucceed(responseReader)) {
-        //
-        // Если работает в автономном режиме, то загрузим из кэша
-        //
-        if (m_sessionKey == INCORRECT_SESSION_KEY) {
-            QByteArray cachedProjectsXml =
-                    QByteArray::fromBase64(
-                        DataStorageLayer::StorageFacade::settingsStorage()->value(
-                            "application/remote-projects",
-                            DataStorageLayer::SettingsStorage::ApplicationSettings).toUtf8()
-                        );
-            emit projectsLoaded(cachedProjectsXml);
-        }
         return;
     }
 
@@ -883,6 +910,12 @@ void SynchronizationManager::unshareProject(int _projectId, const QString& _user
     loadProjects();
 }
 
+void SynchronizationManager::prepareToFullSynchronization()
+{
+    m_lastChangesSyncDatetime.clear();
+    m_lastDataSyncDatetime.clear();
+}
+
 void SynchronizationManager::aboutFullSyncScenario()
 {
     if (isCanSync()) {
@@ -890,7 +923,7 @@ void SynchronizationManager::aboutFullSyncScenario()
         // Запоминаем время синхронизации изменений сценария, в дальнейшем будем отправлять
         // изменения произведённые с данного момента
         //
-        m_lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss");
+        m_lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
         //
         // Получить список патчей проекта
@@ -928,6 +961,15 @@ void SynchronizationManager::aboutFullSyncScenario()
         // Сформируем список изменений сценария хранящихся локально
         //
         QList<QString> localChanges = StorageFacade::scenarioChangeStorage()->uuids();
+        //
+        // ... обрабатываем крайний случай, если пользователь сделал изменения, они не успели синхронизироваться
+        //     и пропал интернет, таким образом они не смогут быть извлечены из БД, но могут из списка текущих правок
+        //
+        for (const QString& uuid : StorageFacade::scenarioChangeStorage()->newUuids(QString())) {
+            if (!localChanges.contains(uuid)) {
+                localChanges.append(uuid);
+            }
+        }
 
 
         //
@@ -1016,16 +1058,36 @@ void SynchronizationManager::aboutFullSyncScenario()
 
 void SynchronizationManager::aboutWorkSyncScenario()
 {
+    //
+    // Синхроинизируем, если есть такая возможность и закончена полная синхронизация
+    //
     if (isCanSync()) {
         //
-        // Защитимся от множественных выховов
+        // Защитимся от множественных вызовов
         //
-        static bool s_isInWorkSync = false;
-        if (s_isInWorkSync) {
+        const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
+        if (!canRun) {
             return;
         }
 
-        s_isInWorkSync = true;
+#ifdef Q_OS_MAC
+        if (skipIfModal()) {
+            return;
+        }
+#endif
+
+        //
+        // Если сценарий ещё не был полностью синхронизирован, делаем это
+        //
+        if (m_lastChangesSyncDatetime.isEmpty()) {
+            aboutFullSyncScenario();
+        }
+        //
+        // Если синхронизироваться так и не удалось, прерываем выполнение до следующего раза
+        //
+        if (m_lastChangesSyncDatetime.isEmpty()) {
+            return;
+        }
 
         //
         // Отправляем новые изменения
@@ -1034,21 +1096,21 @@ void SynchronizationManager::aboutWorkSyncScenario()
             //
             // Запоминаем время синхронизации изменений сценария
             //
-            const QString prevChangesSyncDatetime = m_lastChangesSyncDatetime;
-            m_lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss");
+            const QString currentChangesSyncDatetime =
+                    QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
             //
             // Отправляем
             //
-            QList<QString> newChanges =
-                    StorageFacade::scenarioChangeStorage()->newUuids(prevChangesSyncDatetime);
+            const QList<QString> newChanges =
+                    StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime);
             const bool changesUploaded = uploadScenarioChanges(newChanges);
 
             //
-            // Не обновляем время последней синхронизации, если изменения не были отправлены
+            // Обновляем время последней синхронизации, если изменения были отправлены
             //
-            if (changesUploaded == false) {
-                m_lastChangesSyncDatetime = prevChangesSyncDatetime;
+            if (changesUploaded) {
+                m_lastChangesSyncDatetime = currentChangesSyncDatetime;
             }
         }
 
@@ -1127,8 +1189,6 @@ void SynchronizationManager::aboutWorkSyncScenario()
                 }
             }
         }
-
-        s_isInWorkSync = false;
     }
 }
 
@@ -1139,7 +1199,7 @@ void SynchronizationManager::aboutFullSyncData()
         // Запоминаем время синхронизации данных, в дальнейшем будем отправлять изменения
         // произведённые с данного момента
         //
-        m_lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss");
+        m_lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
         //
         // Получить список всех изменений данных на сервере
@@ -1174,7 +1234,7 @@ void SynchronizationManager::aboutFullSyncData()
         //
         // Сформируем список изменений сценария хранящихся локально
         //
-        QList<QString> localChanges = StorageFacade::databaseHistoryStorage()->history(QString::null);
+        QList<QString> localChanges = StorageFacade::databaseHistoryStorage()->history(QString());
 
         //
         // Отправить на сайт все версии, которых на сайте нет
@@ -1223,9 +1283,39 @@ void SynchronizationManager::aboutFullSyncData()
 
 void SynchronizationManager::aboutWorkSyncData()
 {
-    static bool s_inWorkSyncData = false;
-    if (isCanSync() && !s_inWorkSyncData) {
-        s_inWorkSyncData = true;
+    //
+    // Синхроинизируем, если есть такая возможность и закончена полная синхронизация
+    //
+    if (isCanSync()) {
+        //
+        // Защитимся от множественных выховов
+        //
+        static bool s_isInWorkSyncData = false;
+        if (s_isInWorkSyncData) {
+            return;
+        }
+
+#ifdef Q_OS_MAC
+        if (skipIfModal()) {
+            return;
+        }
+#endif
+
+        s_isInWorkSyncData = true;
+
+        //
+        // Если данные ещё не были полностью синхронизирован, делаем это
+        //
+        if (m_lastDataSyncDatetime.isEmpty()) {
+            aboutFullSyncData();
+        }
+        //
+        // Если синхронизироваться так и не удалось, прерываем выполнение до следующего раза
+        //
+        if (m_lastDataSyncDatetime.isEmpty()) {
+            s_isInWorkSyncData = false;
+            return;
+        }
 
         //
         // Отправляем новые изменения
@@ -1234,21 +1324,21 @@ void SynchronizationManager::aboutWorkSyncData()
             //
             // Запоминаем время синхронизации изменений данных сценария
             //
-            const QString prevDataSyncDatetime = m_lastDataSyncDatetime;
-            m_lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss");
+            const QString currentDataSyncDatetime =
+                    QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
             //
             // Отправляем
             //
-            QList<QString> newChanges =
-                    StorageFacade::databaseHistoryStorage()->history(prevDataSyncDatetime);
+            const QList<QString> newChanges =
+                    StorageFacade::databaseHistoryStorage()->history(m_lastDataSyncDatetime);
             const bool dataUploaded = uploadScenarioData(newChanges);
 
             //
-            // Не обновляем время последней синхронизации, если данные не были отправлены
+            // Обновляем время последней синхронизации, если данные были отправлены
             //
-            if (dataUploaded == false) {
-                m_lastDataSyncDatetime = prevDataSyncDatetime;
+            if (dataUploaded) {
+                m_lastDataSyncDatetime = currentDataSyncDatetime;
             }
         }
 
@@ -1268,7 +1358,7 @@ void SynchronizationManager::aboutWorkSyncData()
 
             QXmlStreamReader changesReader(response);
             if (!isOperationSucceed(changesReader)) {
-                s_inWorkSyncData = false;
+                s_isInWorkSyncData = false;
                 return;
             }
 
@@ -1307,13 +1397,19 @@ void SynchronizationManager::aboutWorkSyncData()
             downloadAndSaveScenarioData(changesForDownload.join(";"));
         }
 
-        s_inWorkSyncData = false;
+        s_isInWorkSyncData = false;
     }
 }
 
 void SynchronizationManager::aboutUpdateCursors(int _cursorPosition, bool _isDraft)
 {
     if (isCanSync()) {
+#ifdef Q_OS_MAC
+        if (skipIfModal()) {
+            return;
+        }
+#endif
+
         //
         // Загрузим позиции курсоров
         //
@@ -1388,6 +1484,65 @@ void SynchronizationManager::restartSession()
     }
 }
 
+void SynchronizationManager::fakeLogin()
+{
+    //
+    // Если уже задан какой-то ключ сессии, то это
+    // либо мы действительно авторизовались, либо фейково.
+    // В любом случае, делать фейковую авторизацию нет смысла
+    //
+    if (!m_sessionKey.isEmpty()) {
+        return;
+    }
+
+    const QString userEmail =
+                DataStorageLayer::StorageFacade::settingsStorage()->value(
+                    "application/email",
+                    DataStorageLayer::SettingsStorage::ApplicationSettings);
+    //
+    // Если ранее были авторизованы
+    //
+    if (!userEmail.isEmpty()) {
+        m_sessionKey = INCORRECT_SESSION_KEY;
+        //
+        // Запомним email
+        //
+        m_userEmail = userEmail;
+
+        //
+        // Загрузим всю требуемую информацию из кэша и уведомим клиентов
+        //
+        // ... имя пользователя, стоимость подписки и версию проверки
+        //
+        const QString userName = StorageFacade::settingsStorage()->value(
+                                     "application/username",
+                                     SettingsStorage::ApplicationSettings);
+        const int paymentMonth = StorageFacade::settingsStorage()->value(
+                                     "application/subscriptionPaymentMonth",
+                                     SettingsStorage::ApplicationSettings).toInt();
+        const int reviewVersion = StorageFacade::settingsStorage()->value(
+                                      "application/reviewVersion",
+                                      SettingsStorage::ApplicationSettings).toInt();
+        emit loginAccepted(userName, m_userEmail, paymentMonth, reviewVersion);
+        //
+        // ... детальную информацию о подписке и использованном месте
+        //
+        m_isSubscriptionActive = StorageFacade::settingsStorage()->value(
+                                     "application/subscriptionIsActive",
+                                     SettingsStorage::ApplicationSettings).toInt();
+        const QString date = StorageFacade::settingsStorage()->value(
+                                 "application/subscriptionExpiredDate",
+                                 SettingsStorage::ApplicationSettings);
+        const quint64 usedSpace = StorageFacade::settingsStorage()->value(
+                                      "application/subscriptionUsedSpace",
+                                      SettingsStorage::ApplicationSettings).toULongLong();
+        const quint64 availableSpace = StorageFacade::settingsStorage()->value(
+                                           "application/subscriptionAvailableSpace",
+                                           SettingsStorage::ApplicationSettings).toULongLong();
+        emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date), usedSpace, availableSpace);
+    }
+}
+
 bool SynchronizationManager::isOperationSucceed(QXmlStreamReader& _responseReader)
 {
     while (!_responseReader.atEnd()) {
@@ -1419,6 +1574,10 @@ bool SynchronizationManager::isOperationSucceed(QXmlStreamReader& _responseReade
                 // Скажем про ошибку
                 //
                 handleError(errorText, errorCode);
+                //
+                // Необходимо пересинхронизироваться, ибо ошибка могла произойти во время синхронизации данных
+                //
+                prepareToFullSynchronization();
                 return false;
             }
         }
@@ -1517,7 +1676,8 @@ bool SynchronizationManager::uploadScenarioChanges(const QList<QString>& _change
         //
         // Изменения отправлены, если сервер это подтвердил
         //
-        changesUploaded = !response.isEmpty();
+        QXmlStreamReader responseReader(response);
+        changesUploaded = isOperationSucceed(responseReader);
     }
 
     return changesUploaded;
@@ -1650,7 +1810,8 @@ bool SynchronizationManager::uploadScenarioData(const QList<QString>& _dataUuids
         //
         // Данные отправлены, если сервер это подтвердил
         //
-        dataUploaded = !response.isEmpty();
+        QXmlStreamReader responseReader(response);
+        dataUploaded = isOperationSucceed(responseReader);
     }
 
     return dataUploaded;
@@ -1756,13 +1917,7 @@ void SynchronizationManager::checkNetworkState()
     }
 
 #ifdef Q_OS_MAC
-    //
-    // FIXME: Если есть открытый диалог сохранения, или открытия, то он закрывается
-    // при загрузке страницы, поэтому делаем отсрочку на выполнение проверки
-    //
-    if (QLightBoxWidget::hasOpenedWidgets()
-        || QApplication::activeModalWidget() != 0) {
-        QTimer::singleShot(1000, this, &SynchronizationManager::checkNetworkState);
+    if (recallIfModal(this, &SynchronizationManager::checkNetworkState)) {
         return;
     }
 #endif
@@ -1806,8 +1961,17 @@ void SynchronizationManager::setInternetConnectionStatus(SynchronizationManager:
 {
     if (m_internetConnectionStatus != _newStatus) {
         m_internetConnectionStatus = _newStatus;
+        //
+        // Если обрели соединение, то переавторизуемся
+        //
         if (m_internetConnectionStatus == Active) {
             restartSession();
+        }
+        //
+        // А если потеряли, то очищаем даты синхронизации, будем синхронизировать всё целиком
+        //
+        else {
+            prepareToFullSynchronization();
         }
         emit networkStatusChanged(m_internetConnectionStatus);
     }

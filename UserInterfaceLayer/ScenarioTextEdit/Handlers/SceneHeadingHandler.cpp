@@ -8,7 +8,7 @@
 #include <Domain/Place.h>
 #include <Domain/Research.h>
 #include <Domain/ScenarioDay.h>
-#include <Domain/Time.h>
+#include <Domain/SceneTime.h>
 
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/PlaceStorage.h>
@@ -56,6 +56,19 @@ namespace {
 SceneHeadingHandler::SceneHeadingHandler(ScenarioTextEdit* _editor) :
     StandardKeyHandler(_editor)
 {
+#ifdef MOBILE_OS
+    //
+    // Для мобильной версии автоматом вставляем пробел при выборе места действия из выпадающего списка
+    //
+    QObject::connect(_editor, &ScenarioTextEdit::completed, [this] {
+        const auto block = editor()->textCursor().block();
+        if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::SceneHeading
+            && ::section(block.text()) == SceneHeadingParser::SectionPlace) {
+            editor()->insertPlainText(" ");
+            handleOther();
+        }
+    });
+#endif
 }
 
 void SceneHeadingHandler::handleEnter(QKeyEvent* _event)
@@ -169,8 +182,8 @@ void SceneHeadingHandler::handleEnter(QKeyEvent* _event)
                     //
                     QTextCursor cursor = editor()->textCursor();
                     cursor.movePosition(QTextCursor::PreviousBlock);
-                    if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*> (cursor.block().userData())) {
-                        ScenarioTextBlockInfo* movedInfo = info->clone();
+                    if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*> (cursor.block().userData())) {
+                        SceneHeadingBlockInfo* movedInfo = info->clone();
                         cursor.block().setUserData(nullptr);
                         cursor.movePosition(QTextCursor::NextBlock);
                         cursor.block().setUserData(movedInfo);
@@ -319,10 +332,51 @@ void SceneHeadingHandler::handleOther(QKeyEvent*)
     // ... текст блока
     QString currentBlockText = currentBlock.text();
     // ... текст до курсора
-    QString cursorBackwardText = currentBlock.text().left(cursor.positionInBlock());
-    // ... текущая секция
-    SceneHeadingParser::Section currentSection = ::section(cursorBackwardText);
+    QString cursorBackwardText = currentBlockText.left(cursor.positionInBlock());
 
+    //
+    // Покажем подсказку, если это возможно
+    //
+    complete(currentBlockText, cursorBackwardText);
+}
+
+void SceneHeadingHandler::handleInput(QInputMethodEvent* _event)
+{
+    //
+    // Получим необходимые значения
+    //
+    // ... курсор в текущем положении
+    const QTextCursor cursor = editor()->textCursor();
+    int cursorPosition = cursor.positionInBlock();
+    // ... блок текста в котором находится курсор
+    const QTextBlock currentBlock = cursor.block();
+    // ... текст блока
+    QString currentBlockText = currentBlock.text();
+#ifdef Q_OS_ANDROID
+    QString stringForInsert;
+    if (!_event->preeditString().isEmpty()) {
+        stringForInsert = _event->preeditString();
+    } else {
+        stringForInsert = _event->commitString();
+    }
+    currentBlockText.insert(cursorPosition, stringForInsert);
+    cursorPosition += stringForInsert.length();
+#endif
+    // ... текст до курсора
+    const QString cursorBackwardText = currentBlockText.left(cursorPosition);
+
+    //
+    // Покажем подсказку, если это возможно
+    //
+    complete(currentBlockText, cursorBackwardText);
+}
+
+void SceneHeadingHandler::complete(const QString& _currentBlockText, const QString& _cursorBackwardText)
+{
+    //
+    // Текущая секция
+    //
+    SceneHeadingParser::Section currentSection = ::section(_cursorBackwardText);
 
     //
     // Получим модель подсказок для текущей секции и выведем пользователю
@@ -336,20 +390,20 @@ void SceneHeadingHandler::handleOther(QKeyEvent*)
     switch (currentSection) {
         case SceneHeadingParser::SectionPlace: {
             sectionModel = StorageFacade::placeStorage()->all();
-            sectionText = SceneHeadingParser::placeName(currentBlockText);
+            sectionText = SceneHeadingParser::placeName(_currentBlockText);
             break;
         }
 
         case SceneHeadingParser::SectionLocation: {
             sectionModel = StorageFacade::researchStorage()->locations();
-            bool force = SceneHeadingParser::section(cursorBackwardText) == SceneHeadingParser::SectionTime;
-            sectionText = SceneHeadingParser::locationName(currentBlockText, force);
+            bool force = SceneHeadingParser::section(_cursorBackwardText) == SceneHeadingParser::SectionTime;
+            sectionText = SceneHeadingParser::locationName(_currentBlockText, force);
             break;
         }
 
         case SceneHeadingParser::SectionScenarioDay: {
             sectionModel = StorageFacade::scenarioDayStorage()->all();
-            sectionText = SceneHeadingParser::scenarioDayName(currentBlockText);
+            sectionText = SceneHeadingParser::scenarioDayName(_currentBlockText);
             break;
         }
 
@@ -361,7 +415,7 @@ void SceneHeadingHandler::handleOther(QKeyEvent*)
             //
             bool useLocations = false;
             const bool FORCE = true;
-            const QString locationFromBlock = SceneHeadingParser::locationName(currentBlockText, FORCE);
+            const QString locationFromBlock = SceneHeadingParser::locationName(_currentBlockText, FORCE);
             foreach (DomainObject* object, StorageFacade::researchStorage()->locations()->toList()) {
                 if (Research* location = dynamic_cast<Research*>(object)) {
                     if (location->name().startsWith(locationFromBlock, Qt::CaseInsensitive)) {
@@ -379,7 +433,7 @@ void SceneHeadingHandler::handleOther(QKeyEvent*)
             //
             else {
                 sectionModel = StorageFacade::timeStorage()->all();
-                sectionText = SceneHeadingParser::timeName(currentBlockText);
+                sectionText = SceneHeadingParser::timeName(_currentBlockText);
             }
             break;
         }
@@ -402,34 +456,36 @@ void SceneHeadingHandler::storeSceneParameters() const
         // Получим необходимые значения
         //
         // ... курсор в текущем положении
-        QTextCursor cursor = editor()->textCursor();
+        const QTextCursor cursor = editor()->textCursor();
         // ... блок текста в котором находится курсор
-        QTextBlock currentBlock = cursor.block();
+        const QTextBlock currentBlock = cursor.block();
         // ... текст блока
-        QString currentBlockText = currentBlock.text();
+        const QString currentBlockText = currentBlock.text();
+        // ... текст до курсора
+        const QString cursorBackwardText = currentBlockText.left(cursor.positionInBlock());
 
         //
         // Сохраняем время
         //
-        QString placeName = SceneHeadingParser::placeName(currentBlockText);
+        const QString placeName = SceneHeadingParser::placeName(cursorBackwardText);
         StorageFacade::placeStorage()->storePlace(placeName);
 
         //
         // Сохраняем локацию
         //
-        QString locationName = SceneHeadingParser::locationName(currentBlockText);
+        const QString locationName = SceneHeadingParser::locationName(cursorBackwardText);
         StorageFacade::researchStorage()->storeLocation(locationName);
 
         //
         // Сохраняем место
         //
-        QString timeName = SceneHeadingParser::timeName(currentBlockText);
+        const QString timeName = SceneHeadingParser::timeName(cursorBackwardText);
         StorageFacade::timeStorage()->storeTime(timeName);
 
         //
         // Сохраняем сценарный день
         //
-        QString scenarioDayName = SceneHeadingParser::scenarioDayName(currentBlockText);
+        const QString scenarioDayName = SceneHeadingParser::scenarioDayName(cursorBackwardText);
         StorageFacade::scenarioDayStorage()->storeScenarioDay(scenarioDayName);
     }
 }

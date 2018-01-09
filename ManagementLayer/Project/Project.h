@@ -49,7 +49,7 @@ namespace ManagementLayer
 	public:
 		Project();
 		Project(Type _type, const QString& _name, const QString& _path,
-			const QDateTime& _lastEditDatetime, int _id = 0, const QString& _owner = QString::null,
+			const QDateTime& _lastEditDatetime, int _id = 0, const QString& _owner = QString(),
 			Role _role = Owner, const QStringList& _users = QStringList());
 
 		/**
@@ -88,7 +88,10 @@ namespace ManagementLayer
 		/**
 		 * @brief Путь к проекту
 		 */
+        /** @{ */
 		QString path() const;
+        void setPath(const QString& _path);
+        /** @} */
 
 		/**
 		 * @brief Дата и время последнего изменения проекта

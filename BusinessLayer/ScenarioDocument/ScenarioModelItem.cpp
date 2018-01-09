@@ -140,6 +140,18 @@ void ScenarioModelItem::setColors(const QString& _colors)
     }
 }
 
+QString ScenarioModelItem::stamp() const
+{
+    return m_stamp;
+}
+
+void ScenarioModelItem::setStamp(const QString& _stamp)
+{
+    if (m_stamp != _stamp) {
+        m_stamp = _stamp;
+    }
+}
+
 QString ScenarioModelItem::title() const
 {
     return m_title;
@@ -405,4 +417,17 @@ int ScenarioModelItem::childCount() const
 bool ScenarioModelItem::hasChildren() const
 {
     return !m_children.isEmpty();
+}
+
+bool ScenarioModelItem::childOf(ScenarioModelItem* _parent) const
+{
+    ScenarioModelItem* parent = m_parent;
+    while (parent != nullptr) {
+        if (parent == _parent) {
+            return true;
+        }
+
+        parent = parent->parent();
+    }
+    return false;
 }

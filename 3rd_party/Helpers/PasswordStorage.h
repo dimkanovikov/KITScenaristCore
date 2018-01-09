@@ -20,7 +20,7 @@ public:
 	/**
 	 * @brief Сохранение пароля
 	 */
-	static QString save(const QString& _password, QString _key = QString::null)
+	static QString save(const QString& _password, QString _key = QString())
 	{
 		// Перевод строк в битовые массивы с использованием локальных таблиц
 		QByteArray passwordData = _password.toLocal8Bit();
@@ -47,7 +47,7 @@ public:
 	/**
 	 * @brief Загрузка пароля
 	 */
-	static QString load(const QString& _password, const QString& _key = QString::null)
+	static QString load(const QString& _password, const QString& _key = QString())
 	{
 		// Декодировка строки из 16-ричной системы в битовый массив
 		QByteArray passwordData = QByteArray::fromHex(_password.toLocal8Bit());

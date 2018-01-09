@@ -1,16 +1,110 @@
 #include "ResearchMapper.h"
 
+#include <DataLayer/Database/Database.h>
+
 #include <Domain/Research.h>
 
 #include <3rd_party/Helpers/ImageHelper.h>
+
+#include <QSqlQuery>
 
 using namespace DataMappingLayer;
 
 
 namespace {
     const QString COLUMNS = " id, parent_id, type, name, description, url, image, sort_order ";
+    const QString IMAGE_COLUMN = "image";
     const QString TABLE_NAME = " research ";
 }
+
+ResearchImageMapper::ResearchImageMapper() :
+    AbstractImageWrapper()
+{
+    //
+    // Кэшируем всего 20 изображений
+    //
+    m_imagesCache.setMaxCost(20);
+}
+
+QPixmap ResearchImageMapper::image(const DomainObject* _forObject) const
+{
+    const int objectId = _forObject->id().value();
+    //
+    // Если изображение объекта есть среди новых, возвращаем его
+    //
+    if (m_newImages.contains(objectId)) {
+        return m_newImages[objectId];
+    }
+    //
+    // Если изображения нет нигде
+    //
+    if (!m_imagesCache.contains(objectId)) {
+        //
+        // ... загрузим его из базы данных в кэш
+        //
+        QSqlQuery query = DatabaseLayer::Database::query();
+        query.prepare(QString("SELECT " + IMAGE_COLUMN +
+                              " FROM " + TABLE_NAME +
+                              " WHERE id = %1 "
+                              )
+                      .arg(objectId));
+        query.exec();
+        query.next();
+
+        QPixmap* image = new QPixmap(ImageHelper::imageFromBytes(query.value(IMAGE_COLUMN).toByteArray()));
+        m_imagesCache.insert(objectId, image);
+    }
+    //
+    // Возвращаем изображение из кэша
+    //
+    return *m_imagesCache[_forObject->id().value()];
+}
+
+void ResearchImageMapper::setImage(const QPixmap& _image, const DomainObject* _forObject)
+{
+    const int objectId = _forObject->id().value();
+    //
+    // Убираем кэшированную версию изображения
+    //
+    m_imagesCache.remove(objectId);
+    //
+    // Сохраняем новую версию
+    //
+    m_newImages[objectId] = _image;
+}
+
+void ResearchImageMapper::save(const DomainObject* _forObject) const
+{
+    const int objectId = _forObject->id().value();
+
+    //
+    // Если изображение для данного элемента не менялось, ничего не делаем с ним
+    //
+    if (!m_newImages.contains(objectId))
+        return;
+
+    //
+    // Извлекаем изображение из списка несохранённых и сохраняем его в базе данных
+    //
+    QSqlQuery query = DatabaseLayer::Database::query();
+    query.prepare(QString("UPDATE " + TABLE_NAME +
+                          " SET " + IMAGE_COLUMN + " = ? "
+                          " WHERE id = %1 "
+                          )
+                  .arg(objectId));
+    const QPixmap image = m_newImages.take(objectId);
+    query.addBindValue(ImageHelper::bytesFromImage(image));
+    query.exec();
+}
+
+void ResearchImageMapper::remove(const DomainObject* _forObject) const
+{
+    const int objectId = _forObject->id().value();
+    m_imagesCache.remove(objectId);
+    m_newImages.remove(objectId);
+}
+
+// ****
 
 Research* ResearchMapper::find(const Identifier& _id)
 {
@@ -43,17 +137,27 @@ ResearchTable* ResearchMapper::findLocations()
 
 void ResearchMapper::insert(Research* _research)
 {
+    _research->setImageWrapper(&m_imageWrapper);
+
     abstractInsert(_research);
 }
 
 bool ResearchMapper::update(Research* _research)
 {
-    return abstractUpdate(_research);
+    DatabaseLayer::Database::transaction();
+    m_imageWrapper.save(_research);
+    const bool saveState = abstractUpdate(_research);
+    DatabaseLayer::Database::commit();
+
+    return saveState;
 }
 
 void ResearchMapper::remove(Research* _research)
 {
+    DatabaseLayer::Database::transaction();
+    m_imageWrapper.remove(_research);
     abstractDelete(_research);
+    DatabaseLayer::Database::commit();
 }
 
 QString ResearchMapper::findStatement(const Identifier& _id) const
@@ -88,7 +192,7 @@ QString ResearchMapper::insertStatement(DomainObject* _subject, QVariantList& _i
     _insertValues.append(research->name());
     _insertValues.append(research->description());
     _insertValues.append(research->url());
-    _insertValues.append(ImageHelper::bytesFromImage(research->image()));
+    _insertValues.append(QByteArray()); // Вместо изображения пустой массив байт
     _insertValues.append(research->sortOrder());
 
     return insertStatement;
@@ -103,7 +207,6 @@ QString ResearchMapper::updateStatement(DomainObject* _subject, QVariantList& _u
                     " name = ?, "
                     " description = ?, "
                     " url = ?, "
-                    " image = ?, "
                     " sort_order =? "
                     " WHERE id = ? "
                     );
@@ -115,7 +218,6 @@ QString ResearchMapper::updateStatement(DomainObject* _subject, QVariantList& _u
     _updateValues.append(research->name());
     _updateValues.append(research->description());
     _updateValues.append(research->url());
-    _updateValues.append(ImageHelper::bytesFromImage(research->image()));
     _updateValues.append(research->sortOrder());
     _updateValues.append(research->id().value());
 
@@ -142,10 +244,9 @@ DomainObject* ResearchMapper::doLoad(const Identifier& _id, const QSqlRecord& _r
     const QString name = _record.value("name").toString();
     const QString description = _record.value("description").toString();
     const QString url = _record.value("url").toString();
-    const QPixmap image = ImageHelper::imageFromBytes(_record.value("image").toByteArray());
     const int sortOrder = _record.value("sort_order").toInt();
 
-    return new Research(_id, parent, type, sortOrder, name, description, url, image);
+    return ResearchBuilder::create(_id, parent, type, sortOrder, name, description, url, &m_imageWrapper);
 }
 
 void ResearchMapper::doLoad(DomainObject* _domainObject, const QSqlRecord& _record)
@@ -168,9 +269,6 @@ void ResearchMapper::doLoad(DomainObject* _domainObject, const QSqlRecord& _reco
 
         const QString url = _record.value("url").toString();
         research->setUrl(url);
-
-        const QPixmap image = ImageHelper::imageFromBytes(_record.value("image").toByteArray());
-        research->setImage(image);
 
         const int sortOrder = _record.value("sort_order").toInt();
         research->setSortOrder(sortOrder);

@@ -69,6 +69,11 @@ public:
     /** @} */
 
     /**
+     * @brief Установить возможность смещения актов по X
+     */
+    void setCanMoveX(bool _canMove);
+
+    /**
      * @brief Отрисовка акта
      */
     void paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option, QWidget* _widget) override;
@@ -103,6 +108,11 @@ private:
      * @brief Область отрисовки
      */
     mutable QRectF m_boundingRect = QRectF(0, 0, 100, 30);
+
+    /**
+     * @brief Можно ли смещать акт по X
+     */
+    bool m_canMoveX = false;
 
     /**
      * @brief Эффект отбрасывания тени

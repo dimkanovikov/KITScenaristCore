@@ -87,6 +87,7 @@ ScalableWrapper::ScalableWrapper(SpellCheckTextEdit* _editor, QWidget* _parent) 
             QPointF point = m_editorProxy->mapToScene(editor->completer()->popup()->pos());
             editor->completer()->popup()->move(mapToGlobal(mapFromScene(point)));
         });
+        connect(editor, &CompletableTextEdit::cursorPositionChanged, this, &ScalableWrapper::cursorPositionChanged);
     }
 }
 
@@ -116,11 +117,26 @@ QVariant ScalableWrapper::inputMethodQuery(Qt::InputMethodQuery _query) const
 QVariant ScalableWrapper::inputMethodQuery(Qt::InputMethodQuery _query, QVariant _argument) const
 {
     QVariant result;
-    if (m_editor != 0) {
+    if (m_editor != nullptr) {
         result = m_editor->inputMethodQuery(_query, _argument);
     } else {
-        result = QWidget::inputMethodQuery(_query);
+        result = QGraphicsView::inputMethodQuery(_query);
     }
+
+#ifdef Q_OS_IOS
+    //
+    // Делаем курсор всегда на нуле, чтобы редактор сценария не выкидывало ни вниз ни вверх
+    //
+    if (_query & Qt::ImCursorRectangle) {
+        result = QRectF(0,0,0,0);
+    }
+    //
+    // ... и чтобы удаление работало корректно
+    //
+    else if (_query & Qt::ImCursorPosition) {
+        result = QVariant();
+    }
+#endif
 
     return result;
 }
@@ -160,7 +176,6 @@ bool ScalableWrapper::event(QEvent* _event)
 
         updateTextEditSize();
 
-#if !defined(Q_OS_ANDROID) && !defined(Q_OS_IOS)
         //
         // Корректируем размер сцены, чтобы исключить внезапные смещения редактора на ней
         //
@@ -169,7 +184,6 @@ bool ScalableWrapper::event(QEvent* _event)
             ensureVisible(m_editorProxy);
             syncScrollBarWithTextEdit();
         }
-#endif
 
         //
         // А после события включаем синхронизацию
@@ -199,6 +213,7 @@ bool ScalableWrapper::event(QEvent* _event)
     // Прочие стандартные обработчики событий
     //
     else {
+
         result = QGraphicsView::event(_event);
 
         //
@@ -259,13 +274,19 @@ void ScalableWrapper::gestureEvent(QGestureEvent* _event)
             //
 
             const int INERTION_BREAK_STOP = 8;
+            const qreal ZOOM_STEP =
+#ifdef MOBILE_OS
+                    0.05;
+#else
+                    0.1;
+#endif
             qreal zoomDelta = 0;
             if (pinch->scaleFactor() > 1) {
                 if (m_gestureZoomInertionBreak < 0) {
                     m_gestureZoomInertionBreak = 0;
                 } else if (m_gestureZoomInertionBreak >= INERTION_BREAK_STOP) {
                     m_gestureZoomInertionBreak = 0;
-                    zoomDelta = 0.1;
+                    zoomDelta = ZOOM_STEP;
                 } else {
                     ++m_gestureZoomInertionBreak;
                 }
@@ -274,7 +295,7 @@ void ScalableWrapper::gestureEvent(QGestureEvent* _event)
                     m_gestureZoomInertionBreak = 0;
                 } else if (m_gestureZoomInertionBreak <= -INERTION_BREAK_STOP) {
                     m_gestureZoomInertionBreak = 0;
-                    zoomDelta = -0.1;
+                    zoomDelta = -1 * ZOOM_STEP;
                 } else {
                     --m_gestureZoomInertionBreak;
                 }
@@ -469,6 +490,10 @@ void ScalableWrapper::updateTextEditSize()
     const QSize editorSize(editorWidth, editorHeight);
     if (m_editorProxy->size() != editorSize) {
         m_editorProxy->resize(editorSize);
+        if (QLocale().textDirection() == Qt::RightToLeft) {
+            const QPointF delta(vbarWidth * m_zoomRange,  0);
+            m_editorProxy->setPos(-delta);
+        }
     }
 
     //

@@ -76,6 +76,12 @@ namespace BusinessLogic
         void setColors(const QString& _colors);
 
         /**
+         * @brief Штамп элемента
+         */
+        QString stamp() const;
+        void setStamp(const QString& _stamp);
+
+        /**
          * @brief Название
          */
         QString title() const;
@@ -173,6 +179,11 @@ namespace BusinessLogic
          * @brief Цвета элемента
          */
         QString m_colors;
+
+        /**
+         * @brief Штамп элемента
+         */
+        QString m_stamp;
 
         /**
          * @brief Название элемента
@@ -273,6 +284,11 @@ namespace BusinessLogic
          * @brief Имеет ли элемент детей
          */
         bool hasChildren() const;
+
+        /**
+         * @brief Является ли элемент потомком заданного
+         */
+        bool childOf(ScenarioModelItem* _parent) const;
 
     private:
         /**

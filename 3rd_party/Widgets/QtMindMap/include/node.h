@@ -98,7 +98,7 @@ private:
 
     struct EdgeElement
     {
-        Edge *edge;
+        Edge* edge = nullptr;
         bool startsFromThisNode;
         EdgeElement(Edge *e, bool s) : edge(e), startsFromThisNode(s) {}
     };

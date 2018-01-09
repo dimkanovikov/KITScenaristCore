@@ -26,20 +26,20 @@ using WAF::SlideForegroundDecorator;
 
 
 SlideAnimator::SlideAnimator(QWidget* _widgetForSlide) :
-	AbstractAnimator(_widgetForSlide),
-	m_direction(WAF::FromLeftToRight),
-	m_isFixBackground(true),
+    AbstractAnimator(_widgetForSlide),
+    m_direction(WAF::FromLeftToRight),
+    m_isFixBackground(true),
     m_isFixStartSize(false),
     m_animation(new QPropertyAnimation(_widgetForSlide, "maximumWidth")),
-	m_decorator(new SlideForegroundDecorator(_widgetForSlide))
+    m_decorator(new SlideForegroundDecorator(_widgetForSlide))
 {
-	Q_ASSERT(_widgetForSlide);
+    Q_ASSERT(_widgetForSlide);
 
-	_widgetForSlide->installEventFilter(this);
+    _widgetForSlide->installEventFilter(this);
 
     m_animation->setDuration(300);
 
-	m_decorator->hide();
+    m_decorator->hide();
 
     //
     // Синхронизируем изменение минимальных границ с максимальными
@@ -52,27 +52,27 @@ SlideAnimator::SlideAnimator(QWidget* _widgetForSlide) :
         }
     });
 
-	//
-	// Корректировки размера по завершению
-	//
-	connect(m_animation, &QPropertyAnimation::finished, [=] {
-		setAnimatedStopped();
+    //
+    // Корректировки размера по завершению
+    //
+    connect(m_animation, &QPropertyAnimation::finished, [=] {
+        setAnimatedStopped();
         m_decorator->hide();
-	});
+    });
 }
 
 void SlideAnimator::setAnimationDirection(WAF::AnimationDirection _direction)
 {
-	if (m_direction != _direction) {
-		m_direction = _direction;
+    if (m_direction != _direction) {
+        m_direction = _direction;
         m_animation->setPropertyName(isWidth() ? "maximumWidth" : "maximumHeight");
-	}
+    }
 }
 
 void SlideAnimator::setFixBackground(bool _fix)
 {
-	if (m_isFixBackground != _fix) {
-		m_isFixBackground = _fix;
+    if (m_isFixBackground != _fix) {
+        m_isFixBackground = _fix;
     }
 }
 
@@ -85,12 +85,12 @@ void SlideAnimator::setFixStartSize(bool _fix)
 
 int SlideAnimator::animationDuration() const
 {
-	return m_animation->duration();
+    return m_animation->duration();
 }
 
 void SlideAnimator::animateForward()
 {
-	slideIn();
+    slideIn();
 }
 
 void SlideAnimator::slideIn()
@@ -105,15 +105,15 @@ void SlideAnimator::slideIn()
         m_startSize = widgetForSlide()->sizeHint();
     }
 
-	//
-	// Прерываем выполнение, если клиент хочет повторить его
-	//
-	if (isAnimated() && isAnimatedForward()) return;
-	setAnimatedForward();
+    //
+    // Прерываем выполнение, если клиент хочет повторить его
+    //
+    if (isAnimated() && isAnimatedForward()) return;
+    setAnimatedForward();
 
-	//
-	// Определим размер неизменяемой стороны выкатываемого виджета
-	//
+    //
+    // Определим размер неизменяемой стороны выкатываемого виджета
+    //
     if (isWidth()) {
         widgetForSlide()->setMaximumWidth(0);
     } else {
@@ -173,7 +173,7 @@ void SlideAnimator::slideIn()
 
 void SlideAnimator::animateBackward()
 {
-	slideOut();
+    slideOut();
 }
 
 void SlideAnimator::slideOut()
@@ -188,85 +188,85 @@ void SlideAnimator::slideOut()
         m_startSize = widgetForSlide()->size();
     }
 
-	//
-	// Прерываем выполнение, если клиент хочет повторить его
-	//
-	if (isAnimated() && isAnimatedBackward()) return;
-	setAnimatedBackward();
+    //
+    // Прерываем выполнение, если клиент хочет повторить его
+    //
+    if (isAnimated() && isAnimatedBackward()) return;
+    setAnimatedBackward();
 
-	//
-	// Определяем результирующий размер
-	//
-	QSize finalSize = widgetForSlide()->size();
+    //
+    // Определяем результирующий размер
+    //
+    QSize finalSize = widgetForSlide()->size();
     if (isWidth()) {
         finalSize.setWidth(0);
     } else {
         finalSize.setHeight(0);
-	}
+    }
 
-	//
-	// Сформируем изображение выкатываемого виджета
-	//
-	m_decorator->grabParent(widgetForSlide()->size());
+    //
+    // Сформируем изображение выкатываемого виджета
+    //
+    m_decorator->grabParent(widgetForSlide()->size());
 
-	if (m_isFixBackground) {
-		//
-		// Позиционируем декоратор
-		//
-		m_decorator->move(0, 0);
-		m_decorator->show();
-		m_decorator->raise();
-	}
+    if (m_isFixBackground) {
+        //
+        // Позиционируем декоратор
+        //
+        m_decorator->move(0, 0);
+        m_decorator->show();
+        m_decorator->raise();
+    }
 
-	//
-	// Закатываем виджет
-	//
-	if (m_animation->state() == QPropertyAnimation::Running) {
-		//
-		// ... если ещё не закончилась предыдущая анимация реверсируем её
-		//
-		m_animation->pause();
-		m_animation->setDirection(QPropertyAnimation::Backward);
-		m_animation->resume();
-	} else {
-		//
-		// ... если предыдущая анимация закончилась, запускаем новую анимацию
-		//
-		m_animation->setEasingCurve(QEasingCurve::InQuart);
-		m_animation->setDirection(QPropertyAnimation::Forward);
+    //
+    // Закатываем виджет
+    //
+    if (m_animation->state() == QPropertyAnimation::Running) {
+        //
+        // ... если ещё не закончилась предыдущая анимация реверсируем её
+        //
+        m_animation->pause();
+        m_animation->setDirection(QPropertyAnimation::Backward);
+        m_animation->resume();
+    } else {
+        //
+        // ... если предыдущая анимация закончилась, запускаем новую анимацию
+        //
+        m_animation->setEasingCurve(QEasingCurve::InQuart);
+        m_animation->setDirection(QPropertyAnimation::Forward);
         m_animation->setStartValue(isWidth() ? widgetForSlide()->width() : widgetForSlide()->height());
         m_animation->setEndValue(isWidth() ? finalSize.width() : finalSize.height());
-		m_animation->start();
-	}
+        m_animation->start();
+    }
 }
 
 bool SlideAnimator::eventFilter(QObject* _object, QEvent* _event)
 {
-	if (_object == widgetForSlide()
-		&& _event->type() == QEvent::Resize
-		&& m_decorator->isVisible()) {
-		switch (m_direction) {
-			case WAF::FromLeftToRight: {
-				m_decorator->move(widgetForSlide()->width() - m_decorator->width(), 0);
-				break;
-			}
+    if (_object == widgetForSlide()
+        && _event->type() == QEvent::Resize
+        && m_decorator->isVisible()) {
+        switch (m_direction) {
+            case WAF::FromLeftToRight: {
+                m_decorator->move(widgetForSlide()->width() - m_decorator->width(), 0);
+                break;
+            }
 
-			case WAF::FromTopToBottom: {
-				m_decorator->move(0, widgetForSlide()->height() - m_decorator->height());
-				break;
-			}
+            case WAF::FromTopToBottom: {
+                m_decorator->move(0, widgetForSlide()->height() - m_decorator->height());
+                break;
+            }
 
-			case WAF::FromRightToLeft:
-			case WAF::FromBottomToTop: {
-				//
-				// Ничего не делает, позиционирование в точке (0, 0) делает всю работу
-				//
-				break;
-			}
+            case WAF::FromRightToLeft:
+            case WAF::FromBottomToTop: {
+                //
+                // Ничего не делает, позиционирование в точке (0, 0) делает всю работу
+                //
+                break;
+            }
 
             default: Q_ASSERT_X(0, Q_FUNC_INFO, "Not setted animation direction");
-		}
-	}
+        }
+    }
 
     return QObject::eventFilter(_object, _event);
 }
@@ -297,5 +297,5 @@ void SlideAnimator::fixSizeOfWidgetForSlide(const QSize& _sourceSize) const
 
 QWidget* SlideAnimator::widgetForSlide() const
 {
-	return qobject_cast<QWidget*>(parent());
+    return qobject_cast<QWidget*>(parent());
 }

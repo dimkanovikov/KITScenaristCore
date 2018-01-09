@@ -47,6 +47,8 @@ namespace {
 	const QString NODE_REVIEW_GROUP = "reviews";
 	const QString NODE_REVIEW = "review";
 	const QString NODE_REVIEW_COMMENT = "review_comment";
+    const QString NODE_FORMAT_GROUP = "formatting";
+    const QString NODE_FORMAT = "format";
 
 	const QString ATTRIBUTE_VERSION = "version";
 	const QString ATTRIBUTE_REVIEW_FROM = "from";
@@ -57,6 +59,11 @@ namespace {
 	const QString ATTRIBUTE_REVIEW_COMMENT = "comment";
 	const QString ATTRIBUTE_REVIEW_AUTHOR = "author";
 	const QString ATTRIBUTE_REVIEW_DATE = "date";
+    const QString ATTRIBUTE_FORMAT_FROM = "from";
+    const QString ATTRIBUTE_FORMAT_LENGTH = "length";
+    const QString ATTRIBUTE_FORMAT_BOLD = "bold";
+    const QString ATTRIBUTE_FORMAT_ITALIC = "italic";
+    const QString ATTRIBUTE_FORMAT_UNDERLINE = "underline";
 	/** @} */
 
 	/**
@@ -250,7 +257,7 @@ DocumentImporter::DocumentImporter() :
 {
 }
 
-QString DocumentImporter::importScenario(const ImportParameters& _importParameters) const
+QString DocumentImporter::importScript(const ImportParameters& _importParameters) const
 {
 	//
 	// Преобразовать заданный документ в QTextDocument
@@ -354,10 +361,7 @@ QString DocumentImporter::importScenario(const ImportParameters& _importParamete
 				const QTextBlock currentBlock = cursor.block();
 				if (!currentBlock.textFormats().isEmpty()) {
 					writer.writeStartElement(NODE_REVIEW_GROUP);
-					foreach (const QTextLayout::FormatRange& range, currentBlock.textFormats()) {
-						//
-						// Всё, кроме стандартного
-						//
+                    foreach (const QTextLayout::FormatRange& range, currentBlock.textFormats()) {
 						if (range.format.boolProperty(Docx::IsForeground)
 							|| range.format.boolProperty(Docx::IsBackground)
 							|| range.format.boolProperty(Docx::IsHighlight)
@@ -389,11 +393,44 @@ QString DocumentImporter::importScenario(const ImportParameters& _importParamete
 							}
 							//
 							writer.writeEndElement();
-						}
+                        }
 					}
 					writer.writeEndElement();
 				}
 			}
+
+            //
+            // Пишем форматирование
+            //
+            {
+                const QTextBlock currentBlock = cursor.block();
+                if (!currentBlock.textFormats().isEmpty()) {
+                    writer.writeStartElement(NODE_FORMAT_GROUP);
+                    for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                        if (range.format != currentBlock.charFormat()
+                            && (range.format.fontWeight() != currentBlock.charFormat().fontWeight()
+                                || range.format.fontItalic() != currentBlock.charFormat().fontItalic()
+                                || range.format.fontUnderline() != currentBlock.charFormat().fontUnderline())) {
+                            writer.writeStartElement(NODE_FORMAT);
+                            writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(range.start));
+                            writer.writeAttribute(ATTRIBUTE_FORMAT_LENGTH, QString::number(range.length));
+                            if (range.format.hasProperty(QTextFormat::FontWeight)) {
+                                writer.writeAttribute(ATTRIBUTE_FORMAT_BOLD, range.format.font().bold() ? "true" : "false");
+                            }
+                            if (range.format.hasProperty(QTextFormat::FontItalic)) {
+                                writer.writeAttribute(ATTRIBUTE_FORMAT_ITALIC, range.format.font().italic() ? "true" : "false");
+                            }
+                            if (range.format.hasProperty(QTextFormat::TextUnderlineStyle)) {
+                                writer.writeAttribute(ATTRIBUTE_FORMAT_UNDERLINE, range.format.font().underline() ? "true" : "false");
+                            }
+                            //
+                            writer.writeEndElement();
+                        }
+                    }
+                    writer.writeEndElement();
+                }
+            }
+
 			//
 			// ... конец абзаца
 			//

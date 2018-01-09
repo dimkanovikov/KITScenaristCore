@@ -4,12 +4,16 @@
 
 #include <Domain/Research.h>
 
+#include <3rd_party/Helpers/RunOnce.h>
+
 #include <QMimeData>
 #include <QSet>
 
 using BusinessLogic::ResearchModel;
 using BusinessLogic::ResearchModelItem;
+using BusinessLogic::ResearchModelCheckableProxy;
 using Domain::Research;
+using Domain::ResearchBuilder;
 
 namespace {
     /**
@@ -101,7 +105,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     ResearchModelItem* scenarioItem =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::Scenario, 0, tr("Scenario"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::Scenario, 0, tr("Scenario"))
         );
     m_rootItem->appendItem(scenarioItem);
     //
@@ -109,7 +113,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     ResearchModelItem* titlePageItem =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::TitlePage, 0, tr("Title Page"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::TitlePage, 0, tr("Title Page"))
         );
     scenarioItem->appendItem(titlePageItem);
     //
@@ -117,7 +121,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     ResearchModelItem* synopsisItem =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::Synopsis, 1, tr("Synopsis"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::Synopsis, 1, tr("Synopsis"))
         );
     scenarioItem->appendItem(synopsisItem);
 
@@ -126,7 +130,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     m_charactersRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::CharactersRoot, 1, tr("Characters"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::CharactersRoot, 1, tr("Characters"))
         );
     m_rootItem->appendItem(m_charactersRoot);
 
@@ -135,7 +139,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     m_locationsRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::LocationsRoot, 2, tr("Locations"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::LocationsRoot, 2, tr("Locations"))
         );
     m_rootItem->appendItem(m_locationsRoot);
 
@@ -144,7 +148,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     m_researchRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::ResearchRoot, 3, tr("Research"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::ResearchRoot, 3, tr("Documents"))
         );
     m_rootItem->appendItem(m_researchRoot);
 }
@@ -229,17 +233,17 @@ void ResearchModel::clear()
     //
     m_charactersRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::CharactersRoot, 1, tr("Characters"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::CharactersRoot, 1, tr("Characters"))
         );
     //
     m_locationsRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::LocationsRoot, 2, tr("Locations"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::LocationsRoot, 2, tr("Locations"))
         );
     //
     m_researchRoot =
         new ResearchModelItem(
-            new Research(Domain::Identifier(), 0, Research::ResearchRoot, 1, tr("Research"))
+            ResearchBuilder::create(Domain::Identifier(), 0, Research::ResearchRoot, 1, tr("Documents"))
         );
     //
     emit beginInsertRows(QModelIndex(), 1, 3);
@@ -469,7 +473,8 @@ QVariant ResearchModel::data(const QModelIndex& _index, int _role) const
 
     ResearchModelItem* item = itemForIndex(_index);
     switch (_role) {
-        case Qt::DisplayRole: {
+        case Qt::DisplayRole:
+        case Qt::ToolTipRole: {
             result = item->name();
             break;
         }
@@ -916,4 +921,123 @@ void ResearchModel::researchDataChanged(const QModelIndex& _topLeft, const QMode
             }
         }
     }
+}
+
+
+// ****
+
+namespace {
+    /**
+     * @brief Ключи для доступа к захватчикам выполнения
+     */
+    const QString UPDATE_CHILDS_KEY = "ResearchModelCheckableProxy::updateChilds";
+    const QString UPDATE_PARENTS_KEY = "ResearchModelCheckableProxy::updateParents";
+}
+
+
+ResearchModelCheckableProxy::ResearchModelCheckableProxy(QObject* _parent) :
+    QSortFilterProxyModel(_parent)
+{
+}
+
+void ResearchModelCheckableProxy::clearCheckStates()
+{
+    m_checkStates.clear();
+}
+
+Qt::ItemFlags ResearchModelCheckableProxy::flags(const QModelIndex& _index) const
+{
+    return QSortFilterProxyModel::flags(_index) | Qt::ItemIsUserTristate;
+}
+
+QVariant ResearchModelCheckableProxy::data(const QModelIndex& _index, int _role) const
+{
+    if (_role == Qt::CheckStateRole) {
+        return m_checkStates.value(_index, Qt::Checked);
+    }
+
+    return QSortFilterProxyModel::data(_index, _role);
+}
+
+bool ResearchModelCheckableProxy::setData(const QModelIndex& _index, const QVariant& _value, int _role)
+{
+    if (_role == Qt::CheckStateRole) {
+        const Qt::CheckState checkState = static_cast<Qt::CheckState>(_value.toInt());
+
+        if (checkState != _index.data(_role).toInt()) {
+            //
+            // Меняем значение самого элемента
+            //
+            m_checkStates[_index] = checkState;
+            emit dataChanged(_index, _index, { _role });
+
+            //
+            // Устанавливаем детям то же состояние, что и текущему элементу, если изменение значения пришло
+            // в первый раз (т.е. вне рекурсивного обновления)
+            //
+            if (RunOnce::canRun(::UPDATE_CHILDS_KEY)) {
+                const auto parentLock = RunOnce::tryRun(::UPDATE_PARENTS_KEY);
+
+                const int rows = _index.model()->rowCount(_index);
+                for (int row = 0 ; row < rows; ++row) {
+                    const QModelIndex childIndex = _index.child(row, 0);
+                    setData(childIndex, checkState, _role);
+                }
+            }
+
+            //
+            // И обновляем состояние родителя
+            //
+            if (RunOnce::canRun(::UPDATE_PARENTS_KEY)) {
+                const auto childLock = RunOnce::tryRun(::UPDATE_CHILDS_KEY);
+
+                const QModelIndex parentIndex = _index.parent();
+                if (parentIndex.isValid()) {
+                    //
+                    // Проверяем состояния элементов на текущем уровне
+                    //
+                    bool isAllChecked = true;
+                    bool isAllUnchecked = true;
+                    const int rows = parentIndex.model()->rowCount(parentIndex);
+                    for (int row = 0 ; row < rows; ++row) {
+                        const QModelIndex childIndex = parentIndex.child(row, 0);
+                        if (childIndex.data(_role).toInt() == Qt::Checked) {
+                            isAllUnchecked = false;
+                        } else {
+                            isAllChecked = false;
+                        }
+                    }
+                    //
+                    // Если все элементы на текущем уровне зачеканы, то и родитель зачекан
+                    //
+                    if (isAllChecked) {
+                        setData(parentIndex, Qt::Checked, _role);
+                    }
+                    //
+                    // Если все элементы на текущем уровне не зачеканы, то и родитель не зачекан
+                    //
+                    else if (isAllUnchecked) {
+                        setData(parentIndex, Qt::Unchecked, _role);
+                    }
+                    //
+                    // Если не все элементы на текущем уровне зачеканы, то родитель зачекан на половину
+                    //
+                    else {
+                        setData(parentIndex, Qt::PartiallyChecked, _role);
+                    }
+                }
+            }
+        }
+    }
+
+    return QSortFilterProxyModel::setData(_index, _value, _role);
+}
+
+ResearchModelItem* ResearchModelCheckableProxy::researchItem(const QModelIndex& _index) const
+{
+    if (ResearchModel* model = dynamic_cast<ResearchModel*>(sourceModel())) {
+        return model->itemForIndex(mapToSource(_index));
+    }
+
+    return nullptr;
 }

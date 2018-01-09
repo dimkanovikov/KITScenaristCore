@@ -9,6 +9,7 @@
 #include <3rd_party/Helpers/TextEditHelper.h>
 
 #include <QApplication>
+#include <QStringBuilder>
 #include <QTextDocument>
 #include <QTextCursor>
 #include <QTextBlock>
@@ -24,11 +25,14 @@ namespace {
     const QString NODE_REVIEW_GROUP = "reviews";
     const QString NODE_REVIEW = "review";
     const QString NODE_REVIEW_COMMENT = "review_comment";
+    const QString NODE_FORMAT_GROUP = "formatting";
+    const QString NODE_FORMAT = "format";
 
     const QString ATTRIBUTE_VERSION = "version";
     const QString ATTRIBUTE_DESCRIPTION = "description";
     const QString ATTRIBUTE_UUID = "uuid";
     const QString ATTRIBUTE_COLOR = "color";
+    const QString ATTRIBUTE_STAMP = "stamp";
     const QString ATTRIBUTE_TITLE = "title";
     const QString ATTRIBUTE_REVIEW_FROM = "from";
     const QString ATTRIBUTE_REVIEW_LENGTH = "length";
@@ -39,24 +43,13 @@ namespace {
     const QString ATTRIBUTE_REVIEW_COMMENT = "comment";
     const QString ATTRIBUTE_REVIEW_AUTHOR = "author";
     const QString ATTRIBUTE_REVIEW_DATE = "date";
+    const QString ATTRIBUTE_FORMAT_FROM = "from";
+    const QString ATTRIBUTE_FORMAT_LENGTH = "length";
+    const QString ATTRIBUTE_FORMAT_BOLD = "bold";
+    const QString ATTRIBUTE_FORMAT_ITALIC = "italic";
+    const QString ATTRIBUTE_FORMAT_UNDERLINE = "underline";
 
     const QString SCENARIO_XML_VERSION = "1.0";
-
-    /**
-     * @brief Есть ли в блоке редакторские заметки
-     */
-    static bool hasReviewMarks(const QTextBlock& _block) {
-        bool hasMarks = false;
-        if (!_block.textFormats().isEmpty()) {
-            foreach (const QTextLayout::FormatRange& range, _block.textFormats()) {
-                if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
-                    hasMarks = true;
-                    break;
-                }
-            }
-        }
-        return hasMarks;
-    }
 
     /**
      * @brief Сформировать хэш для текстового блока
@@ -64,52 +57,129 @@ namespace {
     static inline uint blockHash(const QTextBlock& _block)
     {
         //
+        // TODO: Нужно оптимизировать формирование хэша, т.к. от него напрямую зависит
+        //       скорость формирования xml-документа сценария
+        //
+
+        //
         // Формируем уникальную строку, главное, чтобы два разных блока не имели одинакового хэша,
         // но в то же время, нельзя опираться на позицию блока, т.к. при смещение текста на абзац
         // вниз, придётся пересчитывать хэши всех остальных блоков
         //
-        QString hash;
-        hash.append(_block.text());
-        hash.append("#");
-        hash.append(_block.revision());
-        if (ScenarioTextBlockInfo* blockInfo = dynamic_cast<ScenarioTextBlockInfo*>(_block.userData())) {
-            hash.append("#");
-            hash.append(blockInfo->uuid());
-            hash.append("#");
-            hash.append(QString::number(blockInfo->sceneNumber()));
-            hash.append("#");
-            hash.append(blockInfo->colors());
-            hash.append("#");
-            hash.append(blockInfo->title());
-            hash.append("#");
-            hash.append(blockInfo->description());
+        QString hash =
+                _block.text()
+                % "#"
+                % QString::number(_block.revision())
+                % "#"
+                % QString::number(ScenarioBlockStyle::forBlock(_block));
+
+        if (SceneHeadingBlockInfo* blockInfo = dynamic_cast<SceneHeadingBlockInfo*>(_block.userData())) {
+            hash = hash
+                    % "#"
+                    % blockInfo->uuid()
+                    % "#"
+                    % QString::number(blockInfo->sceneNumber())
+                    % "#"
+                    % blockInfo->colors()
+                    % "#"
+                    % blockInfo->stamp()
+                    % "#"
+                    % blockInfo->title()
+                    % "#"
+                    % blockInfo->description();
         }
-        foreach (const QTextLayout::FormatRange& range, _block.textFormats()) {
-            hash.append("#");
-            hash.append(QString::number(range.start));
-            hash.append("#");
-            hash.append(QString::number(range.length));
-            hash.append("#");
-            hash.append(range.format.foreground().color().name());
-            hash.append("#");
-            hash.append(range.format.background().color().name());
-            hash.append("#");
-            hash.append(range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) ? "true" : "false");
-            hash.append("#");
-            hash.append(range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false");
-            hash.append("#");
-            hash.append(range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false");
-            hash.append("#");
-            hash.append(range.format.property(ScenarioBlockStyle::PropertyComments).toStringList().join("#"));
-            hash.append("#");
-            hash.append(range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList().join("#"));
-            hash.append("#");
-            hash.append(range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList().join("#"));
+
+        for (const QTextLayout::FormatRange& range : _block.textFormats()) {
+            if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
+                hash = hash
+                        % "#"
+                        % QString::number(range.start)
+                        % "#"
+                        % QString::number(range.length)
+                        % "#"
+                        % range.format.foreground().color().name()
+                        % "#"
+                        % range.format.background().color().name()
+                        % "#"
+                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) ? "1" : "0")
+                        % "#"
+                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "1" : "0")
+                        % "#"
+                        % (range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "1" : "0")
+                        % "#"
+                        % range.format.property(ScenarioBlockStyle::PropertyComments).toStringList().join("#")
+                        % "#"
+                        % range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList().join("#")
+                        % "#"
+                        % range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList().join("#");
+            }
+            if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsFormatting)) {
+                hash = hash
+                        % "#"
+                        % QString::number(range.start)
+                        % "#"
+                        % QString::number(range.length)
+                        % "#"
+                        % (range.format.font().bold() ? "1" : "0")
+                        % "#"
+                        % (range.format.font().italic() ? "1" : "0")
+                        % "#"
+                        % (range.format.font().underline() ? "1" : "0");
+            }
         }
-        hash.append("#");
-        hash.append(ScenarioBlockStyle::forBlock(_block));
 
         return qHash(hash);
+    }
+
+    /**
+     * @brief Одинаковы ли форматы редакторских заметок
+     */
+    static bool isReviewFormatEquals(const QTextCharFormat& _lhs, const QTextCharFormat& _rhs) {
+        return
+                _lhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)
+                && _lhs.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsHighlight)
+                && _lhs.boolProperty(ScenarioBlockStyle::PropertyIsDone) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsDone)
+                && _lhs.property(ScenarioBlockStyle::PropertyComments) == _rhs.property(ScenarioBlockStyle::PropertyComments)
+                && _lhs.property(ScenarioBlockStyle::PropertyCommentsAuthors) == _rhs.property(ScenarioBlockStyle::PropertyCommentsAuthors)
+                && _lhs.property(ScenarioBlockStyle::PropertyCommentsDates) == _rhs.property(ScenarioBlockStyle::PropertyCommentsDates);
+    }
+
+    /**
+     * @brief Есть ли в блоке редакторские заметки
+     */
+    static bool hasReviewMarks(const QTextBlock& _block) {
+        bool hasMarks = false;
+        foreach (const QTextLayout::FormatRange& range, _block.textFormats()) {
+            if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
+                hasMarks = true;
+                break;
+            }
+        }
+        return hasMarks;
+    }
+
+    /**
+     * @brief Одинаково ли форматирование блоков (сравниваем только ж/к/п)
+     */
+    static bool isFormattingEquals(const QTextCharFormat& _lhs, const QTextCharFormat& _rhs) {
+        return
+                _lhs.fontWeight() == _rhs.fontWeight()
+                && _lhs.fontItalic() == _rhs.fontItalic()
+                && _lhs.fontUnderline() == _rhs.fontUnderline();
+    }
+
+    /**
+     * @brief Есть ли в блоке пользовательское форматирование
+     */
+    static bool hasFormatting(const QTextBlock& _block) {
+        bool hasFormatting = false;
+        foreach (const QTextLayout::FormatRange& range, _block.textFormats()) {
+            if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsFormatting)) {
+                hasFormatting = true;
+                break;
+            }
+        }
+        return hasFormatting;
     }
 }
 
@@ -156,7 +226,7 @@ ScenarioXml::ScenarioXml(ScenarioDocument* _scenario) :
 {
     Q_ASSERT(m_scenario);
 
-    m_xmlCache.setMaxCost(2000);
+    m_xmlCache.setMaxCost(3000);
 }
 
 QString ScenarioXml::scenarioToXml()
@@ -177,9 +247,11 @@ QString ScenarioXml::scenarioToXml()
         const uint currentBlockHash = ::blockHash(currentBlock);
 
         //
-        // Если для блока есть кэш, используем его
+        // Если для блока есть кэш, и блок не разорван по середине используем его
         //
-        if (m_xmlCache.contains(currentBlockHash)) {
+        if (m_xmlCache.contains(currentBlockHash)
+            && !currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)
+            && !currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd)) {
             resultXml.append(m_xmlCache[currentBlockHash]);
         }
         //
@@ -224,17 +296,39 @@ QString ScenarioXml::scenarioToXml()
             }
 
             //
+            // Если это декорация, не сохраняем
+            //
+            if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                needWrite = false;
+            }
+
+            //
+            // Если разрыв, пробуем сшить
+            //
+            if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)) {
+                do {
+                    currentBlock = currentBlock.next();
+                } while (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection));
+                //
+                // ... если дошли до конца разрыва, то сшиваем его
+                //
+                if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd)) {
+                    textToSave += " " + TextEditHelper::toHtmlEscaped(currentBlock.text());
+                }
+            }
+
+            //
             // Дописать xml
             //
             if (needWrite) {
                 //
-                // Если возможно, сохраним uuid, цвета элемента и его заголовок
+                // Если возможно, сохраним uuid, цвета элемента, штамп и его заголовок
                 //
                 QString uuidColorsAndTitle;
                 if (canHaveColors) {
-                    ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(currentBlock.userData());
+                    SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(currentBlock.userData());
                     if (info == nullptr) {
-                        info = new ScenarioTextBlockInfo;
+                        info = new SceneHeadingBlockInfo;
                         currentBlock.setUserData(info);
                     }
                     //
@@ -243,6 +337,9 @@ QString ScenarioXml::scenarioToXml()
                     }
                     if (!info->colors().isEmpty()) {
                         uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_COLOR, info->colors());
+                    }
+                    if (!info->stamp().isEmpty()) {
+                        uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_STAMP, info->stamp());
                     }
                     if (!info->title().isEmpty()) {
                         uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->title()));
@@ -263,48 +360,165 @@ QString ScenarioXml::scenarioToXml()
                 // Пишем редакторские комментарии, если они есть в блоке
                 //
                 if (::hasReviewMarks(currentBlock)) {
+                    auto writeReviewMark = [&currentBlockXml] (const QTextLayout::FormatRange& _range) {
+                        currentBlockXml.append(QString("<%1").arg(NODE_REVIEW));
+                        //
+                        // Данные редакторского выделения
+                        //
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_FROM, QString::number(_range.start)));
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_LENGTH, QString::number(_range.length)));
+                        if (_range.format.hasProperty(QTextFormat::ForegroundBrush)) {
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_COLOR, _range.format.foreground().color().name()));
+                        }
+                        if (_range.format.hasProperty(QTextFormat::BackgroundBrush)) {
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_BGCOLOR, _range.format.background().color().name()));
+                        }
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_IS_HIGHLIGHT,
+                            _range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false"));
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_DONE,
+                            _range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false"));
+                        currentBlockXml.append(">\n");
+                        //
+                        // ... сами комментарии
+                        //
+                        const QStringList comments = _range.format.property(ScenarioBlockStyle::PropertyComments).toStringList();
+                        const QStringList authors = _range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList();
+                        const QStringList dates = _range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList();
+                        for (int commentIndex = 0; commentIndex < comments.size(); ++commentIndex) {
+                            currentBlockXml.append(QString("<%1").arg(NODE_REVIEW_COMMENT));
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_COMMENT,
+                                TextEditHelper::toHtmlEscaped(comments.at(commentIndex))));
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_AUTHOR, authors.at(commentIndex)));
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_DATE, dates.at(commentIndex)));
+                            currentBlockXml.append("/>\n");
+                        }
+                        //
+                        currentBlockXml.append(QString("</%1>\n").arg(NODE_REVIEW));
+                    };
+
+                    //
+                    // Пишем начало
+                    //
                     currentBlockXml.append(QString("<%1>\n").arg(NODE_REVIEW_GROUP));
-                    foreach (const QTextLayout::FormatRange& range, currentBlock.textFormats()) {
-                        bool isReviewMark =
-                            range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark);
+                    //
+                    // Пишем тело
+                    //
+                    QTextLayout::FormatRange lastFormatRange{0, 0, QTextCharFormat()};
+                    for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                        if (!range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
+                            continue;
+                        }
 
                         //
-                        // Все редакторские правки, и только, если выделен записываемый текст
+                        // Если следующий формат равен предыдущему и он является продолжает предыдущего
                         //
-                        if (isReviewMark) {
-                            currentBlockXml.append(QString("<%1").arg(NODE_REVIEW));
-                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_FROM, QString::number(range.start)));
-                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_LENGTH, QString::number(range.length)));
-                            if (range.format.hasProperty(QTextFormat::ForegroundBrush)) {
-                                currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_COLOR, range.format.foreground().color().name()));
-                            }
-                            if (range.format.hasProperty(QTextFormat::BackgroundBrush)) {
-                                currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_BGCOLOR, range.format.background().color().name()));
-                            }
-                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_IS_HIGHLIGHT,
-                                range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false"));
-                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_DONE,
-                                range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false"));
-                            currentBlockXml.append(">\n");
+                        if (::isReviewFormatEquals(lastFormatRange.format, range.format)
+                            && ((lastFormatRange.start + lastFormatRange.length) == range.start)) {
                             //
-                            // ... комментарии
+                            // Объединяем их в одну сущность
                             //
-                            const QStringList comments = range.format.property(ScenarioBlockStyle::PropertyComments).toStringList();
-                            const QStringList authors = range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList();
-                            const QStringList dates = range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList();
-                            for (int commentIndex = 0; commentIndex < comments.size(); ++commentIndex) {
-                                currentBlockXml.append(QString("<%1").arg(NODE_REVIEW_COMMENT));
-                                currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_COMMENT,
-                                    TextEditHelper::toHtmlEscaped(comments.at(commentIndex))));
-                                currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_AUTHOR, authors.at(commentIndex)));
-                                currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_DATE, dates.at(commentIndex)));
-                                currentBlockXml.append("/>\n");
+                            lastFormatRange.length += range.length;
+                        }
+                        //
+                        // В противном случае
+                        //
+                        else {
+                            //
+                            // Если предыдущий формат был задан, запишем его
+                            //
+                            if (lastFormatRange.length > 0) {
+                                writeReviewMark(lastFormatRange);
                             }
                             //
-                            currentBlockXml.append(QString("</%1>\n").arg(NODE_REVIEW));
+                            // и перейдём к обработке следующего формата
+                            //
+                            lastFormatRange = range;
                         }
                     }
+                    //
+                    // Запишем последний формат
+                    //
+                    writeReviewMark(lastFormatRange);
+                    //
+                    // Пишем конец
+                    //
                     currentBlockXml.append(QString("</%1>\n").arg(NODE_REVIEW_GROUP));
+                }
+
+                //
+                // Пишем форматирование текста блока
+                //
+                if (::hasFormatting(currentBlock)) {
+                    auto writeFormatting = [&currentBlockXml] (const QTextLayout::FormatRange& _range) {
+                        currentBlockXml.append(QString("<%1").arg(NODE_FORMAT));
+                        //
+                        // Данные пользовательского форматирования
+                        //
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_FROM, QString::number(_range.start)));
+                        currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_LENGTH, QString::number(_range.length)));
+                        if (_range.format.hasProperty(QTextFormat::FontWeight)) {
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_BOLD,
+                                                                             _range.format.font().bold() ? "true" : "false"));
+                        }
+                        if (_range.format.hasProperty(QTextFormat::FontItalic)) {
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_ITALIC,
+                                                                             _range.format.font().italic() ? "true" : "false"));
+                        }
+                        if (_range.format.hasProperty(QTextFormat::TextUnderlineStyle)) {
+                            currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_FORMAT_UNDERLINE,
+                                                                             _range.format.font().underline() ? "true" : "false"));
+                        }
+                        //
+                        currentBlockXml.append("/>\n");
+                    };
+
+                    //
+                    // Пишем начало
+                    //
+                    currentBlockXml.append(QString("<%1>\n").arg(NODE_FORMAT_GROUP));
+                    //
+                    // Пишем тело
+                    //
+                    QTextLayout::FormatRange lastFormatRange{0, 0, QTextCharFormat()};
+                    for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                        if (!range.format.boolProperty(ScenarioBlockStyle::PropertyIsFormatting)) {
+                            continue;
+                        }
+
+                        //
+                        // Если следующий формат равен предыдущему и он является продолжает предыдущего
+                        //
+                        if (::isFormattingEquals(lastFormatRange.format, range.format)
+                            && ((lastFormatRange.start + lastFormatRange.length) == range.start)) {
+                            //
+                            // Объединяем их в одну сущность
+                            //
+                            lastFormatRange.length += range.length;
+                        }
+                        //
+                        // В противном случае
+                        //
+                        else {
+                            //
+                            // Если предыдущий формат был задан, запишем его
+                            //
+                            if (lastFormatRange.length > 0) {
+                                writeFormatting(lastFormatRange);
+                            }
+                            //
+                            // и перейдём к обработке следующего формата
+                            //
+                            lastFormatRange = range;
+                        }
+                    }
+                    //
+                    // Запишем последний формат
+                    //
+                    writeFormatting(lastFormatRange);
+                    //
+                    // Пишем конец
+                    //
+                    currentBlockXml.append(QString("</%1>\n").arg(NODE_FORMAT_GROUP));
                 }
 
                 //
@@ -465,6 +679,31 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
             }
 
             //
+            // Если это декорация, не сохраняем
+            //
+            if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
+                needWrite = false;
+            }
+
+            //
+            // Если разрыв, пробуем сшить
+            //
+            if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)) {
+                QTextCursor breakCursor = cursor;
+                do {
+                    breakCursor.movePosition(QTextCursor::NextBlock);
+                } while (breakCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection));
+                //
+                // ... если дошли до конца разрыва, то сшиваем его
+                //
+                if (breakCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd)) {
+                    textToSave += " " + breakCursor.block().text();
+                    breakCursor.movePosition(QTextCursor::EndOfBlock);
+                    cursor = breakCursor;
+                }
+            }
+
+            //
             // Дописать xml
             //
             if (needWrite) {
@@ -477,9 +716,9 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 // Если возможно, сохраним uuid, цвета элемента и его название
                 //
                 if (canHaveUuidColorsAndTitle) {
-                    ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*>(currentBlock.userData());
+                    SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(currentBlock.userData());
                     if (info == nullptr) {
-                        ScenarioTextBlockInfo* info = new ScenarioTextBlockInfo;
+                        SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
                         currentBlock.setUserData(info);
                     }
                     //
@@ -489,10 +728,14 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     if (!info->colors().isEmpty()) {
                         writer.writeAttribute(ATTRIBUTE_COLOR, info->colors());
                     }
+                    if (!info->stamp().isEmpty()) {
+                        writer.writeAttribute(ATTRIBUTE_STAMP, info->stamp());
+                    }
                     if (!info->title().isEmpty()) {
                         writer.writeAttribute(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->title()));
                     }
                 }
+
 
                 //
                 // Пишем текст текущего элемента
@@ -501,14 +744,56 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 writer.writeCDATA(textToSave);
                 writer.writeEndElement();
 
+
                 //
                 // Пишем редакторские комментарии, если они есть в блоке
                 //
                 if (::hasReviewMarks(currentBlock)) {
+                    auto writeReviewMark = [&writer] (const QTextLayout::FormatRange& _range) {
+                        writer.writeStartElement(NODE_REVIEW);
+                        //
+                        // Данные редакторского выделения
+                        //
+                        writer.writeAttribute(ATTRIBUTE_REVIEW_FROM, QString::number(_range.start));
+                        writer.writeAttribute(ATTRIBUTE_REVIEW_LENGTH, QString::number(_range.length));
+                        if (_range.format.hasProperty(QTextFormat::ForegroundBrush)) {
+                            writer.writeAttribute(ATTRIBUTE_REVIEW_COLOR, _range.format.foreground().color().name());
+                        }
+                        if (_range.format.hasProperty(QTextFormat::BackgroundBrush)) {
+                            writer.writeAttribute(ATTRIBUTE_REVIEW_BGCOLOR, _range.format.background().color().name());
+                        }
+                        writer.writeAttribute(ATTRIBUTE_REVIEW_IS_HIGHLIGHT,
+                            _range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false");
+                        writer.writeAttribute(ATTRIBUTE_REVIEW_DONE,
+                            _range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false");
+                        //
+                        // ... комментарии
+                        //
+                        const QStringList comments = _range.format.property(ScenarioBlockStyle::PropertyComments).toStringList();
+                        const QStringList authors = _range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList();
+                        const QStringList dates = _range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList();
+                        for (int commentIndex = 0; commentIndex < comments.size(); ++commentIndex) {
+                            writer.writeEmptyElement(NODE_REVIEW_COMMENT);
+                            writer.writeAttribute(ATTRIBUTE_REVIEW_COMMENT, TextEditHelper::toHtmlEscaped(comments.at(commentIndex)));
+                            writer.writeAttribute(ATTRIBUTE_REVIEW_AUTHOR, authors.at(commentIndex));
+                            writer.writeAttribute(ATTRIBUTE_REVIEW_DATE, dates.at(commentIndex));
+                        }
+                        //
+                        writer.writeEndElement();
+                    };
+
+                    //
+                    // Пишем начало
+                    //
                     writer.writeStartElement(NODE_REVIEW_GROUP);
-                    foreach (const QTextLayout::FormatRange& range, currentBlock.textFormats()) {
-                        bool isReviewMark =
-                            range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark);
+                    //
+                    // Пишем тело
+                    //
+                    QTextLayout::FormatRange lastFormatRange{0, 0, QTextCharFormat()};
+                    for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                        if (!range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
+                            continue;
+                        }
 
                         //
                         // Корректируем позиции выделения
@@ -516,20 +801,19 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                         int start = range.start;
                         int length = range.length;
                         bool isSelected = false;
-                        //
-                        // Если выделение разрывает редакторские правки
-                        //
                         if (cursor.selectionStart() < (cursor.block().position() + range.start + range.length)
                             || cursor.selectionEnd() > (cursor.block().position() + range.start)) {
-
+                            //
+                            // ... редакторская заметка попадает в текущее выделение
+                            //
                             isSelected = true;
-
+                            //
                             if (cursor.selectionStart() > (cursor.block().position() + range.start)) {
                                 start = 0;
                             } else {
                                 start = range.start - (cursor.selectionStart() - currentBlock.position());
                             }
-
+                            //
                             if (cursor.selectionEnd() < (cursor.block().position() + range.start + range.length)) {
                                 if (cursor.selectionStart() > (cursor.block().position() + range.start)) {
                                     length = cursor.selectionEnd() - cursor.selectionStart();
@@ -542,42 +826,158 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                                 }
                             }
                         }
-
-
+                        if (!isSelected) {
+                            continue;
+                        }
 
                         //
-                        // Все редакторские правки, и только, если выделен записываемый текст
+                        // Если следующий формат равен предыдущему и он является продолжает предыдущего
                         //
-                        if (isReviewMark && isSelected) {
-                            writer.writeStartElement(NODE_REVIEW);
-                            writer.writeAttribute(ATTRIBUTE_REVIEW_FROM, QString::number(start));
-                            writer.writeAttribute(ATTRIBUTE_REVIEW_LENGTH, QString::number(length));
-                            if (range.format.hasProperty(QTextFormat::ForegroundBrush)) {
-                                writer.writeAttribute(ATTRIBUTE_REVIEW_COLOR, range.format.foreground().color().name());
-                            }
-                            if (range.format.hasProperty(QTextFormat::BackgroundBrush)) {
-                                writer.writeAttribute(ATTRIBUTE_REVIEW_BGCOLOR, range.format.background().color().name());
-                            }
-                            writer.writeAttribute(ATTRIBUTE_REVIEW_IS_HIGHLIGHT,
-                                range.format.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) ? "true" : "false");
-                            writer.writeAttribute(ATTRIBUTE_REVIEW_DONE,
-                                range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone) ? "true" : "false");
+                        if (::isReviewFormatEquals(lastFormatRange.format, range.format)
+                            && ((lastFormatRange.start + lastFormatRange.length) == start)) {
                             //
-                            // ... комментарии
+                            // Объединяем их в одну сущность
                             //
-                            const QStringList comments = range.format.property(ScenarioBlockStyle::PropertyComments).toStringList();
-                            const QStringList authors = range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList();
-                            const QStringList dates = range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList();
-                            for (int commentIndex = 0; commentIndex < comments.size(); ++commentIndex) {
-                                writer.writeEmptyElement(NODE_REVIEW_COMMENT);
-                                writer.writeAttribute(ATTRIBUTE_REVIEW_COMMENT, TextEditHelper::toHtmlEscaped(comments.at(commentIndex)));
-                                writer.writeAttribute(ATTRIBUTE_REVIEW_AUTHOR, authors.at(commentIndex));
-                                writer.writeAttribute(ATTRIBUTE_REVIEW_DATE, dates.at(commentIndex));
+                            lastFormatRange.length += length;
+                        }
+                        //
+                        // В противном случае
+                        //
+                        else {
+                            //
+                            // Если предыдущий формат был задан, запишем его
+                            //
+                            if (lastFormatRange.length > 0) {
+                                writeReviewMark(lastFormatRange);
                             }
                             //
-                            writer.writeEndElement();
+                            // и перейдём к обработке следующего формата
+                            //
+                            lastFormatRange.start = start;
+                            lastFormatRange.length = length;
+                            lastFormatRange.format = range.format;
                         }
                     }
+                    //
+                    // Запишем последний формат
+                    //
+                    writeReviewMark(lastFormatRange);
+                    //
+                    // Пишем конец
+                    //
+                    writer.writeEndElement();
+                }
+
+
+                //
+                // Пишем форматирование текста блока
+                //
+                if (::hasFormatting(currentBlock)) {
+                    auto writeFormatting = [&writer] (const QTextLayout::FormatRange& _range) {
+                        writer.writeStartElement(NODE_FORMAT);
+                        //
+                        // Данные пользовательского форматирования
+                        //
+                        writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(_range.start));
+                        writer.writeAttribute(ATTRIBUTE_FORMAT_LENGTH, QString::number(_range.length));
+                        if (_range.format.hasProperty(QTextFormat::FontWeight)) {
+                            writer.writeAttribute(ATTRIBUTE_FORMAT_BOLD, _range.format.font().bold() ? "true" : "false");
+                        }
+                        if (_range.format.hasProperty(QTextFormat::FontItalic)) {
+                            writer.writeAttribute(ATTRIBUTE_FORMAT_ITALIC, _range.format.font().italic() ? "true" : "false");
+                        }
+                        if (_range.format.hasProperty(QTextFormat::TextUnderlineStyle)) {
+                            writer.writeAttribute(ATTRIBUTE_FORMAT_UNDERLINE, _range.format.font().underline() ? "true" : "false");
+                        }
+                        //
+                        writer.writeEndElement();
+                    };
+
+                    //
+                    // Пишем начало
+                    //
+                    writer.writeStartElement(NODE_FORMAT_GROUP);
+                    //
+                    // Пишем тело
+                    //
+                    QTextLayout::FormatRange lastFormatRange{0, 0, QTextCharFormat()};
+                    for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                        if (!range.format.boolProperty(ScenarioBlockStyle::PropertyIsFormatting)) {
+                            continue;
+                        }
+
+                        //
+                        // Корректируем позиции выделения
+                        //
+                        int start = range.start;
+                        int length = range.length;
+                        bool isSelected = false;
+                        if (cursor.selectionStart() < (cursor.block().position() + range.start + range.length)
+                            || cursor.selectionEnd() > (cursor.block().position() + range.start)) {
+                            //
+                            // ... форматирование попадает в текущее выделение
+                            //
+                            isSelected = true;
+                            //
+                            if (cursor.selectionStart() > (cursor.block().position() + range.start)) {
+                                start = 0;
+                            } else {
+                                start = range.start - (cursor.selectionStart() - currentBlock.position());
+                            }
+                            //
+                            if (cursor.selectionEnd() < (cursor.block().position() + range.start + range.length)) {
+                                if (cursor.selectionStart() > (cursor.block().position() + range.start)) {
+                                    length = cursor.selectionEnd() - cursor.selectionStart();
+                                } else {
+                                    length -= cursor.block().position() + range.start + range.length - cursor.selectionEnd();
+                                }
+                            } else {
+                                if (cursor.selectionStart() > (cursor.block().position() + range.start)) {
+                                    length = currentBlock.position() + range.start + range.length - cursor.selectionStart();
+                                }
+                            }
+                        }
+                        if (!isSelected) {
+                            continue;
+                        }
+
+                        //
+                        // Если следующий формат равен предыдущему и он является продолжает предыдущего
+                        //
+                        if (::isFormattingEquals(lastFormatRange.format, range.format)
+                            && ((lastFormatRange.start + lastFormatRange.length) == start)) {
+                            //
+                            // Объединяем их в одну сущность
+                            //
+                            lastFormatRange.length += length;
+                        }
+                        //
+                        // В противном случае
+                        //
+                        else {
+                            //
+                            // Если предыдущий формат был задан, запишем его
+                            //
+                            if (lastFormatRange.length > 0) {
+                                writeFormatting(lastFormatRange);
+                            }
+                            //
+                            // и перейдём к обработке следующего формата
+                            //
+                            lastFormatRange.start = start;
+                            lastFormatRange.length = length;
+                            lastFormatRange.format = range.format;
+                        }
+                    }
+                    //
+                    // Запишем последний формат, если необходимо
+                    //
+                    if (lastFormatRange.format.isValid()) {
+                        writeFormatting(lastFormatRange);
+                    }
+                    //
+                    // Пишем конец
+                    //
                     writer.writeEndElement();
                 }
 
@@ -636,7 +1036,7 @@ QString ScenarioXml::scenarioToXml(ScenarioModelItem* _fromItem, ScenarioModelIt
     return scenarioToXml(startPosition, endPosition);
 }
 
-void ScenarioXml::xmlToScenario(int _position, const QString& _xml)
+void ScenarioXml::xmlToScenario(int _position, const QString& _xml, bool _rebuildUuids)
 {
     QXmlStreamReader reader(_xml);
     if (reader.readNextStartElement()
@@ -645,7 +1045,7 @@ void ScenarioXml::xmlToScenario(int _position, const QString& _xml)
         if (version.isEmpty()) {
             xmlToScenarioV0(_position, _xml);
         } else if (version == "1.0") {
-            xmlToScenarioV1(_position, _xml);
+            xmlToScenarioV1(_position, _xml, _rebuildUuids);
         }
     }
 }
@@ -703,8 +1103,8 @@ int ScenarioXml::xmlToScenario(ScenarioModelItem* _insertParent, ScenarioModelIt
         //
         else {
             cursor.movePosition(QTextCursor::PreviousBlock);
-            if (ScenarioTextBlockInfo* info = dynamic_cast<ScenarioTextBlockInfo*> (cursor.block().userData())) {
-                ScenarioTextBlockInfo* movedInfo = info->clone();
+            if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*> (cursor.block().userData())) {
+                SceneHeadingBlockInfo* movedInfo = info->clone();
                 cursor.block().setUserData(0);
                 cursor.movePosition(QTextCursor::NextBlock);
                 cursor.block().setUserData(movedInfo);
@@ -859,7 +1259,7 @@ void ScenarioXml::xmlToScenarioV0(int _position, const QString& _xml)
                 if (tokenType == ScenarioBlockStyle::SceneHeading
                     || tokenType == ScenarioBlockStyle::FolderHeader) {
                     QString synopsis = reader.attributes().value("synopsis").toString();
-                    ScenarioTextBlockInfo* info = new ScenarioTextBlockInfo;
+                    SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
                     QTextDocument doc;
                     doc.setHtml(synopsis);
                     info->setDescription(doc.toPlainText());
@@ -911,7 +1311,7 @@ void ScenarioXml::xmlToScenarioV0(int _position, const QString& _xml)
     cursor.endEditBlock();
 }
 
-void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml)
+void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebuildUuids)
 {
     //
     // Происходит ли обработка первого блока
@@ -993,15 +1393,18 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml)
                     //
                     if (tokenType == ScenarioBlockStyle::SceneHeading
                         || tokenType == ScenarioBlockStyle::FolderHeader) {
-                        ScenarioTextBlockInfo* info = new ScenarioTextBlockInfo;
+                        SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
                         if (reader.attributes().hasAttribute(ATTRIBUTE_UUID)) {
                             const QString uuid = reader.attributes().value(ATTRIBUTE_UUID).toString();
-                            if (!isScenarioHaveUuid(uuid)) {
+                            if (!_rebuildUuids || !isScenarioHaveUuid(uuid)) {
                                 info->setUuid(uuid);
                             }
                         }
                         if (reader.attributes().hasAttribute(ATTRIBUTE_COLOR)) {
                             info->setColors(reader.attributes().value(ATTRIBUTE_COLOR).toString());
+                        }
+                        if (reader.attributes().hasAttribute(ATTRIBUTE_STAMP)) {
+                            info->setStamp(reader.attributes().value(ATTRIBUTE_STAMP).toString());
                         }
                         if (reader.attributes().hasAttribute(ATTRIBUTE_TITLE)) {
                             info->setTitle(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));
@@ -1076,6 +1479,41 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml)
                         reviewCursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, length);
                         reviewCursor.mergeCharFormat(reviewFormat);
                     }
+
+                    //
+                    // Форматирование
+                    //
+                    if (tokenName == NODE_FORMAT) {
+                        const int start = reader.attributes().value(ATTRIBUTE_FORMAT_FROM).toInt();
+                        const int length = reader.attributes().value(ATTRIBUTE_FORMAT_LENGTH).toInt();
+                        const bool bold = reader.attributes().value(ATTRIBUTE_FORMAT_BOLD).toString() == "true";
+                        const bool italic = reader.attributes().value(ATTRIBUTE_FORMAT_ITALIC).toString() == "true";
+                        const bool underline = reader.attributes().value(ATTRIBUTE_FORMAT_UNDERLINE).toString() == "true";
+
+
+                        //
+                        // Собираем формат
+                        //
+                        QTextCharFormat format;
+                        format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+                        format.setFontWeight(bold ? QFont::Bold : QFont::Normal);
+                        format.setFontItalic(italic);
+                        format.setFontUnderline(underline);
+
+
+                        //
+                        // Вставляем в документ
+                        //
+                        QTextCursor formattingCursor = cursor;
+                        int startDelta = 0;
+                        if (formattingCursor.block().position() < _position
+                            && (formattingCursor.block().position() + formattingCursor.block().length()) > _position) {
+                            startDelta = _position - formattingCursor.block().position();
+                        }
+                        formattingCursor.setPosition(formattingCursor.block().position() + start + startDelta);
+                        formattingCursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, length);
+                        formattingCursor.mergeCharFormat(format);
+                    }
                 }
 
                 break;
@@ -1112,7 +1550,7 @@ bool ScenarioXml::isScenarioHaveUuid(const QString& _uuid) const
         const ScenarioBlockStyle::Type currentBlockType = ScenarioBlockStyle::forBlock(currentBlock);
         if (currentBlockType == ScenarioBlockStyle::SceneHeading
             || currentBlockType == ScenarioBlockStyle::FolderHeader) {
-            if (ScenarioTextBlockInfo* info = static_cast<ScenarioTextBlockInfo*>(currentBlock.userData())) {
+            if (SceneHeadingBlockInfo* info = static_cast<SceneHeadingBlockInfo*>(currentBlock.userData())) {
                 if (info->uuid() == _uuid) {
                     return true;
                 }

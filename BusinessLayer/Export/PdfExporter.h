@@ -28,24 +28,34 @@ namespace BusinessLogic
 		/**
 		 * @brief Экспорт заданного документа в указанный файл
 		 */
-		void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const;
+        void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const override;
 
+        /**
+         * @brief Экспорт заданной модели разработки с указанными параметрами
+         */
+        void exportTo(const ResearchModelCheckableProxy* _researchModel,
+                      const ExportParameters& _exportParameters) const override;
+
+#ifndef MOBILE_OS
 		/**
 		 * @brief Предварительный просмотр и печать
 		 */
-		void printPreview(ScenarioDocument* _scenario, const ExportParameters& _exportParameters);
+        /** @{ */
+        void printPreview(ScenarioDocument* _scenario, const ExportParameters& _exportParameters);
+        void printPreview(const ResearchModelCheckableProxy* _researchModel, const ExportParameters& _exportParameters);
+        /** @} */
 
     signals:
         /**
-         * @brief Документ был напечатан
+         * @brief Текст был напечатан
          */
         void printed();
 
 	private slots:
 		/**
-		 * @brief Печатать
+         * @brief Печатать текст
 		 */
-		void aboutPrint(QPrinter* _printer);
+        void aboutPrint(QPrinter* _printer);
 
 	private:
 		/**
@@ -53,7 +63,8 @@ namespace BusinessLogic
 		 *
 		 * @note Вызывающий получает владение над новым сформированным документом
 		 */
-		QPrinter* preparePrinter(const QString& _forFile = QString::null) const;
+		QPrinter* preparePrinter(const QString& _forFile = QString()) const;
+#endif
 
 	private:
 		/**
@@ -64,7 +75,7 @@ namespace BusinessLogic
         /**
          * @brief Последняя позиция прокрутки предпросмотра сценария
          */
-        static QPair<ScenarioDocument*, int> m_lastScenarioPreviewScrollPosition;
+        static QPair<ScenarioDocument*, int> m_lastScriptPreviewScrollPosition;
 	};
 }
 

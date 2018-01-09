@@ -142,49 +142,88 @@ void SceneCharactersHandler::handleOther(QKeyEvent*)
 	// ... текст блока
 	QString currentBlockText = currentBlock.text();
 	// ... текст до курсора
-	QString cursorBackwardText = currentBlock.text().left(cursor.positionInBlock());
-	// ... текст до запятой
-	QString cursorBackwardTextToComma = cursorBackwardText;
-	if (!cursorBackwardTextToComma.split(", ").isEmpty()) {
-		cursorBackwardTextToComma = cursorBackwardTextToComma.split(", ").last();
-	}
-	// ... уберём префикс
-	ScenarioBlockStyle style = ScenarioTemplateFacade::getTemplate().blockStyle(ScenarioBlockStyle::SceneCharacters);
-	QString stylePrefix = style.prefix();
-	if (!stylePrefix.isEmpty()
-		&& cursorBackwardTextToComma.startsWith(stylePrefix)) {
-		cursorBackwardTextToComma.remove(QRegularExpression(QString("^[%1]").arg(stylePrefix)));
-	}
+    QString cursorBackwardText = currentBlockText.left(cursor.positionInBlock());
 
-	//
-	// Получим модель подсказок для текущей секции и выведем пользователю
-	//
+    //
+    // Покажем подсказку, если это возможно
+    //
+    complete(currentBlockText, cursorBackwardText);
+}
+
+void SceneCharactersHandler::handleInput(QInputMethodEvent* _event)
+{
+    //
+    // Получим необходимые значения
+    //
+    // ... курсор в текущем положении
+    const QTextCursor cursor = editor()->textCursor();
+    int cursorPosition = cursor.positionInBlock();
+    // ... блок текста в котором находится курсор
+    const QTextBlock currentBlock = cursor.block();
+    // ... текст блока
+    QString currentBlockText = currentBlock.text();
+#ifdef Q_OS_ANDROID
+    QString stringForInsert;
+    if (!_event->preeditString().isEmpty()) {
+        stringForInsert = _event->preeditString();
+    } else {
+        stringForInsert = _event->commitString();
+    }
+    currentBlockText.insert(cursorPosition, stringForInsert);
+    cursorPosition += stringForInsert.length();
+#endif
+    // ... текст до курсора
+    const QString cursorBackwardText = currentBlockText.left(cursorPosition);
+
+    //
+    // Покажем подсказку, если это возможно
+    //
+    complete(currentBlockText, cursorBackwardText);
+}
+
+void SceneCharactersHandler::complete(const QString& _currentBlockText, const QString& _cursorBackwardText)
+{
+    QString cursorBackwardTextToComma = _cursorBackwardText;
+    if (!cursorBackwardTextToComma.split(", ").isEmpty()) {
+        cursorBackwardTextToComma = cursorBackwardTextToComma.split(", ").last();
+    }
+    // ... уберём префикс
+    ScenarioBlockStyle style = ScenarioTemplateFacade::getTemplate().blockStyle(ScenarioBlockStyle::SceneCharacters);
+    QString stylePrefix = style.prefix();
+    if (!stylePrefix.isEmpty()
+        && cursorBackwardTextToComma.startsWith(stylePrefix)) {
+        cursorBackwardTextToComma.remove(QRegularExpression(QString("^[%1]").arg(stylePrefix)));
+    }
+
+    //
+    // Получим модель подсказок для текущей секции и выведем пользователю
+    //
     QAbstractItemModel* characterModel = StorageFacade::researchStorage()->characters();
 
-	//
-	// Убрать из модели уже использованные элементы
-	//
-	// ... сформируем список уже введённых персонажей
-	//
-	QStringList enteredCharacters = currentBlockText.toUpper().split(", ");
-	enteredCharacters.removeOne(cursorBackwardTextToComma);
-	//
-	// ... скорректируем модель
-	//
-	QStringList filteredCharacters;
-	for (int row = 0; row < characterModel->rowCount(); ++row) {
-		const QString characterName =
-				characterModel->data(characterModel->index(row, 0)).toString().toUpper();
-		if (!enteredCharacters.contains(characterName)) {
-			filteredCharacters.append(characterName);
-		}
-	}
-	m_filteredCharactersModel->setStringList(filteredCharacters);
+    //
+    // Убрать из модели уже использованные элементы
+    //
+    // ... сформируем список уже введённых персонажей
+    //
+    QStringList enteredCharacters = _currentBlockText.toUpper().split(", ");
+    enteredCharacters.removeOne(cursorBackwardTextToComma);
+    //
+    // ... скорректируем модель
+    //
+    QStringList filteredCharacters;
+    for (int row = 0; row < characterModel->rowCount(); ++row) {
+        const QString characterName =
+                characterModel->data(characterModel->index(row, 0)).toString().toUpper();
+        if (!enteredCharacters.contains(characterName)) {
+            filteredCharacters.append(characterName);
+        }
+    }
+    m_filteredCharactersModel->setStringList(filteredCharacters);
 
-	//
-	// Дополним текст
-	//
-	editor()->complete(m_filteredCharactersModel, cursorBackwardTextToComma);
+    //
+    // Дополним текст
+    //
+    editor()->complete(m_filteredCharactersModel, cursorBackwardTextToComma);
 }
 
 void SceneCharactersHandler::storeCharacters() const

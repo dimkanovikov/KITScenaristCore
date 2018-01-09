@@ -9,6 +9,9 @@
         <file>Fonts/embed/courierprime-italic.odttf</file>
         <file>Fonts/embed/courierprime-bold.odttf</file>
         <file>Fonts/embed/courierprime-bold-italic.odttf</file>
+        <file alias="Courier New Bold">Fonts/courb.ttf</file>
+        <file alias="Courier New Bold Italic">Fonts/courbi.ttf</file>
+        <file alias="Courier New Italic">Fonts/couri.ttf</file>
     </qresource>
     <qresource prefix="/Graphics">
         <file>Icons/folder.png</file>
@@ -37,7 +40,6 @@
         <file>Icons/Editing/format.png</file>
         <file>Icons/logo.png</file>
         <file>Images/logo.png</file>
-        <file>Icons/style.png</file>
         <file>Icons/Editing/photo.png</file>
         <file>Icons/Editing/save.png</file>
         <file>Icons/Editing/download.png</file>
@@ -50,7 +52,6 @@
         <file>Icons/Editing/fullscreen_active.png</file>
         <file>Icons/login.png</file>
         <file>Icons/Editing/checkmark.png</file>
-        <file>Icons/Editing/merge.png</file>
         <file>Icons/Editing/review.png</file>
         <file>Icons/Indicator/connected.png</file>
         <file>Icons/Indicator/disconnected.png</file>
@@ -134,6 +135,17 @@
         <file>Images/cards-print-portrait-2.png</file>
         <file>Images/cards-print-portrait-1.png</file>
         <file>Icons/Editing/account-multiple.png</file>
+        <file>Icons/Mobile/close.png</file>
+        <file>Icons/Mobile/lock-reset.png</file>
+        <file>Icons/Mobile/menu/import.png</file>
+        <file>Icons/Mobile/menu/export.png</file>
+        <file>Icons/plot.png</file>
+        <file>Icons/report.png</file>
+        <file>Icons/plot-multiple.png</file>
+        <file>Icons/report-multiple.png</file>
+        <file>Icons/settings_templates.png</file>
+        <file>Icons/view-panels.png</file>
+        <file>Icons/Editing/copy-to-script.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/Scenarist_ru.qm</file>
@@ -159,9 +171,13 @@
         <file>Translations/qt_kz.qm</file>
         <file>Translations/qtbase_pt.qm</file>
         <file>Translations/qt_pt.qm</file>
+        <file>Translations/Scenarist_fa.qm</file>
+        <file>Translations/Scenarist_he.qm</file>
+        <file>Translations/qt_he.qm</file>
+        <file>Translations/qtbase_he.qm</file>
     </qresource>
     <qresource prefix="/Interface">
-        <file>UI/style-mobile.qss</file>
+        <file>UI/style-android.qss</file>
         <file>UI/style-desktop.qss</file>
         <file>UI/downarrow.png</file>
         <file>UI/downarrow-dark.png</file>
@@ -169,12 +185,26 @@
         <file>UI/uparrow.png</file>
         <file>UI/uparrow-dark.png</file>
         <file>UI/uparrow-disable.png</file>
+        <file>UI/style-desktop-compact.qss</file>
+        <file>UI/style-desktop-rtl.qss</file>
+        <file>UI/style-desktop-compact-rtl.qss</file>
     </qresource>
     <qresource prefix="/Templates">
-        <file>Templates/default.kitss</file>
-        <file>Templates/default_courier_prime.kitss</file>
+        <file>Templates/russian.kitss</file>
+        <file>Templates/russian_courier_prime.kitss</file>
         <file>Templates/mobile.kitss</file>
         <file>Templates/final_draft_letter.kitss</file>
         <file>Templates/final_draft_a4.kitss</file>
+        <file>Templates/chinese.kitss</file>
+        <file>Templates/hebrew.kitss</file>
+    </qresource>
+    <qresource prefix="/Audio">
+        <file>Sound/key-01.wav</file>
+        <file>Sound/key-02.wav</file>
+        <file>Sound/backspace.wav</file>
+        <file>Sound/key-03.wav</file>
+        <file>Sound/key-04.wav</file>
+        <file>Sound/return.wav</file>
+        <file>Sound/space.wav</file>
     </qresource>
 </RCC>

@@ -13,53 +13,6 @@
     </message>
 </context>
 <context>
-    <name>ActivityEdit</name>
-    <message>
-        <source>Can&apos;t arrange cards</source>
-        <translation type="obsolete">Não é possível alterar os cartões</translation>
-    </message>
-    <message>
-        <source>Schemes with scene groups or with folders cannot be arranged.</source>
-        <translation type="obsolete">Esquemas com grupos de cenas ou pastas não podem ser organizados.</translation>
-    </message>
-    <message>
-        <source>Convert to</source>
-        <translation type="obsolete">Converter para</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="obsolete">Cena</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="obsolete">Grupo de cena</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="obsolete">Pasta</translation>
-    </message>
-    <message>
-        <source>Color %1</source>
-        <translation type="obsolete">Cor %1</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation type="obsolete">Remover</translation>
-    </message>
-    <message>
-        <source>Add color</source>
-        <translation type="obsolete">Adicionar cor</translation>
-    </message>
-    <message>
-        <source>Create Card After</source>
-        <translation type="obsolete">Criar Cartão Depois</translation>
-    </message>
-    <message>
-        <source>Remove anchors</source>
-        <translation type="obsolete">Remover Âncoras</translation>
-    </message>
-</context>
-<context>
     <name>AddImageButton</name>
     <message>
         <source>Choose image</source>
@@ -101,10 +54,6 @@
         <translation>Entre com o nome do novo projeto:</translation>
     </message>
     <message>
-        <source>Import Project</source>
-        <translation type="obsolete">Importar Projeto</translation>
-    </message>
-    <message>
         <source>Choose File with Project to Import:</source>
         <translation>Escolha o arquivo com o Projeto para importar:</translation>
     </message>
@@ -116,67 +65,66 @@
         <source>Advanced</source>
         <translation>Avançado</translation>
     </message>
+    <message>
+        <source>Sorry, but you need to have active internet connection for creating new projects in cloud.</source>
+        <translation>Desculpe, mas você precisa ter conexão de internet ativa para criar projetos novos na nuvem.</translation>
+    </message>
+</context>
+<context>
+    <name>BusinessLayer::AbstractExporter</name>
+    <message>
+        <source>Real name: </source>
+        <translation>Nome Real: </translation>
+    </message>
 </context>
 <context>
     <name>BusinessLayer::FountainExporter</name>
     <message>
         <source>INT</source>
-        <translation type="unfinished">INT</translation>
+        <translation>INT</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation type="unfinished">EXT</translation>
+        <translation>EXT</translation>
     </message>
     <message>
         <source>EST</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>INT/EXT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>BusinessLayer::FountainImporter</name>
     <message>
         <source>INT</source>
-        <translation type="unfinished">INT</translation>
+        <translation>INT</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation type="unfinished">EXT</translation>
+        <translation>EXT</translation>
     </message>
     <message>
         <source>EST</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>INT/EXT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>I/E</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>BusinessLogic::AbstractExporter</name>
-    <message>
-        <source>(MORE)</source>
-        <translation>(MAIS)</translation>
-    </message>
-    <message>
-        <source> (CONT&apos;D)</source>
-        <extracomment>Continued</extracomment>
-        <translation>(CONTADO)</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -207,11 +155,11 @@
     </message>
     <message>
         <source>Final Draft template</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de Final Draft</translation>
     </message>
     <message>
         <source>Fountain Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Texto de Fountain</translation>
     </message>
 </context>
 <context>
@@ -336,7 +284,7 @@
     <name>BusinessLogic::ResearchModel</name>
     <message>
         <source>Scenario</source>
-        <translation>Cenário</translation>
+        <translation>Roteiro</translation>
     </message>
     <message>
         <source>Title Page</source>
@@ -344,11 +292,7 @@
     </message>
     <message>
         <source>Synopsis</source>
-        <translation>Sinópse</translation>
-    </message>
-    <message>
-        <source>Research</source>
-        <translation>Pesquisa</translation>
+        <translation>Sinopse</translation>
     </message>
     <message>
         <source>Characters</source>
@@ -357,6 +301,10 @@
     <message>
         <source>Locations</source>
         <translation>Locais</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation>Documentos</translation>
     </message>
 </context>
 <context>
@@ -408,14 +356,6 @@
     <message>
         <source>Noprintable Text</source>
         <translation>Texto não imprimível</translation>
-    </message>
-    <message>
-        <source>Scene Group</source>
-        <translation type="obsolete">Grupo de Cenas</translation>
-    </message>
-    <message>
-        <source>Scene Group Footer</source>
-        <translation type="obsolete">Rodapé do grupo de cenas</translation>
     </message>
     <message>
         <source>Folder</source>
@@ -496,18 +436,6 @@
         <translation>NP</translation>
     </message>
     <message>
-        <source>SG</source>
-        <extracomment>Reduction of Scene Group</extracomment>
-        <translatorcomment>Redução de Grupo de Cena</translatorcomment>
-        <translation type="obsolete">GC</translation>
-    </message>
-    <message>
-        <source>SGF</source>
-        <extracomment>Reduction of Scene Group Footer</extracomment>
-        <translatorcomment>Redução de Rodapé de Grupo de Cena</translatorcomment>
-        <translation type="obsolete">RGC</translation>
-    </message>
-    <message>
         <source>F</source>
         <extracomment>Reduction of Folder</extracomment>
         <translatorcomment>Redução de Pasta</translatorcomment>
@@ -524,6 +452,15 @@
         <extracomment>Reduction of Scene Description</extracomment>
         <translatorcomment>Redução de Descrição de Cena</translatorcomment>
         <translation>DC</translation>
+    </message>
+    <message>
+        <source>Lyrics</source>
+        <translation>Letra da música</translation>
+    </message>
+    <message>
+        <source>L</source>
+        <extracomment>Reduction of Lyrics</extracomment>
+        <translation>L</translation>
     </message>
 </context>
 <context>
@@ -543,6 +480,58 @@
     <message>
         <source>Default with Courier Prime</source>
         <translation>Padrão com Courier Prime</translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (A4)</source>
+        <translation>Roteiro em Final Draft (A4)</translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation>Roteiro em Final Draft (Letter)</translation>
+    </message>
+    <message>
+        <source>Russian screenplay</source>
+        <translation>Roteiro em Russo</translation>
+    </message>
+    <message>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation>Roteiro em Russo com Courier Prime</translation>
+    </message>
+    <message>
+        <source>Chinese screenplay</source>
+        <translation>Roteiro em Chinês</translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay</source>
+        <translation>Roteiro em Hebraico</translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation>Modelo de roteiro padrão Internacional para página em tamanho A4.</translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation>Modelo de roteiro padrão Internacional para página em tamanho Letter.</translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation>Modelo de roteiro padrão em Russo e CIS.</translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation>Modelo de roteiro padrão em Russo e CIS com fonte Courier Prime ao invés de Courier New.</translation>
+    </message>
+    <message>
+        <source>Chinese screenplay standard template.</source>
+        <translation>Modelo de roteiro padrão em Chinês.</translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay standard template.</source>
+        <translation>Modelo de roteiro padrão em Hebraico.</translation>
+    </message>
+    <message>
+        <source>Copy of </source>
+        <translation>Cópia de</translation>
     </message>
 </context>
 <context>
@@ -574,6 +563,18 @@
     <message>
         <source>[UNDEFINED]</source>
         <translation>[INDEFINIDO]</translation>
+    </message>
+</context>
+<context>
+    <name>BusinessLogic::ScriptTextCorrector</name>
+    <message>
+        <source>CONT&apos;D</source>
+        <extracomment>Continued</extracomment>
+        <translation>CONT.</translation>
+    </message>
+    <message>
+        <source>MORE</source>
+        <translation>MAIS</translation>
     </message>
 </context>
 <context>
@@ -701,18 +702,6 @@
         <translation>Organizar</translation>
     </message>
     <message>
-        <source>cards in</source>
-        <translation type="obsolete">Cartões em</translation>
-    </message>
-    <message>
-        <source>Row</source>
-        <translation type="obsolete">Linha</translation>
-    </message>
-    <message>
-        <source>Column</source>
-        <translation type="obsolete">Coluna</translation>
-    </message>
-    <message>
         <source>Card size:</source>
         <translation>Tamanho do Cartão:</translation>
     </message>
@@ -723,6 +712,18 @@
     <message>
         <source>cards in Row</source>
         <translation>Cartões na fila</translation>
+    </message>
+    <message>
+        <source>Layout by</source>
+        <translation>Layout por</translation>
+    </message>
+    <message>
+        <source>rows</source>
+        <translation>linhas</translation>
+    </message>
+    <message>
+        <source>columns</source>
+        <translation>colunas</translation>
     </message>
 </context>
 <context>
@@ -759,6 +760,14 @@
         <source>Stamp:</source>
         <translation>Carimbo:</translation>
     </message>
+    <message>
+        <source>Go to text</source>
+        <translation>Ir para o texto</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Limpar</translation>
+    </message>
 </context>
 <context>
     <name>ChangePasswordDialog</name>
@@ -773,33 +782,6 @@
     <message>
         <source>New Password</source>
         <translation>Nova senha</translation>
-    </message>
-</context>
-<context>
-    <name>CharactersDataEdit</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulário</translation>
-    </message>
-    <message>
-        <source>Add Image</source>
-        <translation type="obsolete">Adicionar Imagem</translation>
-    </message>
-    <message>
-        <source>Choose Character</source>
-        <translation type="obsolete">Escolha o Personagem</translation>
-    </message>
-    <message>
-        <source>Real Name:</source>
-        <translation type="obsolete">Nome Real:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="obsolete">Descrição:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="obsolete">Nome:</translation>
     </message>
 </context>
 <context>
@@ -877,6 +859,76 @@
         <source>Unnamed image</source>
         <translation>Imagem sem nome</translation>
     </message>
+    <message>
+        <source>INT./EXT</source>
+        <translation>INT./EXT</translation>
+    </message>
+    <message>
+        <source>AFTERNOON</source>
+        <translation>TARDE</translation>
+    </message>
+    <message>
+        <source>LATER</source>
+        <translation>MAIS TARDE</translation>
+    </message>
+    <message>
+        <source>MOMENTS LATER</source>
+        <translation>MOMENTOS MAIS TARDE</translation>
+    </message>
+    <message>
+        <source>CONTINUOUS</source>
+        <translation>CONTÍNUO</translation>
+    </message>
+    <message>
+        <source>THE NEXT DAY</source>
+        <translation>O PRÓXIMO DIA</translation>
+    </message>
+    <message>
+        <source>O.C.</source>
+        <extracomment>Off-camera</extracomment>
+        <translation>O.C.</translation>
+    </message>
+    <message>
+        <source>SUBTITLE</source>
+        <extracomment>Subtitle</extracomment>
+        <translation>LEGENDA</translation>
+    </message>
+    <message>
+        <source>CUT TO:</source>
+        <translation>CORTA PARA:</translation>
+    </message>
+    <message>
+        <source>FADE IN:</source>
+        <translation>FADE IN:</translation>
+    </message>
+    <message>
+        <source>FADE OUT</source>
+        <translation>FADE OUT</translation>
+    </message>
+    <message>
+        <source>FADE TO:</source>
+        <translation>FADE PARA:</translation>
+    </message>
+    <message>
+        <source>DISSOLVE TO:</source>
+        <translation>FUSÃO PARA:</translation>
+    </message>
+    <message>
+        <source>BACK TO:</source>
+        <translation>VOLTA PARA:</translation>
+    </message>
+    <message>
+        <source>MATCH CUT TO:</source>
+        <translation>CORTE DE COMPARAÇÃO PARA:</translation>
+    </message>
+    <message>
+        <source>JUMP CUT TO:</source>
+        <translation>CORTE DIRETO PARA:</translation>
+    </message>
+    <message>
+        <source>FADE TO BLACK</source>
+        <translation>ESCURECER</translation>
+    </message>
 </context>
 <context>
     <name>DocxReader</name>
@@ -889,23 +941,11 @@
     <name>ExportDialog</name>
     <message>
         <source>Export Scenario</source>
-        <translation>Exporar Cenário</translation>
-    </message>
-    <message>
-        <source>Scenes Numbering</source>
-        <translation>Numeração de Cena</translation>
-    </message>
-    <message>
-        <source>Page Numbering</source>
-        <translation>Numeração de páginas</translation>
+        <translation>Exporar roteiro</translation>
     </message>
     <message>
         <source>Save Review Marks</source>
         <translation>Salvar Marcas de Revisão</translation>
-    </message>
-    <message>
-        <source>Scenes Prefix:</source>
-        <translation>Prefixo da Cena:</translation>
     </message>
     <message>
         <source>Template:</source>
@@ -932,10 +972,6 @@
         <translation>Arquivo existe. Ele será substituído após a exportação.</translation>
     </message>
     <message>
-        <source>Choose File to Export Script:</source>
-        <translation>Escolha Arquivo para Exportar Roteiro:</translation>
-    </message>
-    <message>
         <source>Format:</source>
         <translation>Formato:</translation>
     </message>
@@ -950,14 +986,6 @@
     <message>
         <source>FDX</source>
         <translation>FDX</translation>
-    </message>
-    <message>
-        <source>Scenario</source>
-        <translation>Cenário</translation>
-    </message>
-    <message>
-        <source>Outline</source>
-        <translation>Contorno</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -977,7 +1005,23 @@
     </message>
     <message>
         <source>Fountain</source>
-        <translation type="unfinished"></translation>
+        <translation>Fountain</translation>
+    </message>
+    <message>
+        <source>Choose file to export:</source>
+        <translation>Escolha arquivo para exportar:</translation>
+    </message>
+    <message>
+        <source>Print pages numbers</source>
+        <translation>Imprimir os números das páginas</translation>
+    </message>
+    <message>
+        <source>Print scenes numbers with prefix</source>
+        <translation>Imprimir os números das cenas com prefixos</translation>
+    </message>
+    <message>
+        <source>Print dialogues numbers</source>
+        <translation>Imprimir os números dos diálogos</translation>
     </message>
 </context>
 <context>
@@ -1002,6 +1046,13 @@
     <message>
         <source>All Supported Files</source>
         <translation>Todos os arquivos suportados</translation>
+    </message>
+</context>
+<context>
+    <name>FountainImporter</name>
+    <message>
+        <source>END OF </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1030,10 +1081,6 @@
     <message>
         <source>No active node.</source>
         <translation>Nenhum nó ativo.</translation>
-    </message>
-    <message>
-        <source>New node would be placed outside of the scene.</source>
-        <translation>Novo nó seria colocado fora da cena.</translation>
     </message>
     <message>
         <source>No active node</source>
@@ -1083,16 +1130,20 @@
         <source>There is no edge between these two nodes.</source>
         <translation>Não há nenhuma borda entre esses dois nós.</translation>
     </message>
+    <message>
+        <source>Can&apos;t add edge between single node.</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>ImportDialog</name>
     <message>
         <source>Import Scenario</source>
-        <translation>Importar Cenário </translation>
+        <translation>Importar roteiro </translation>
     </message>
     <message>
         <source>Scenario</source>
-        <translation>Cenário</translation>
+        <translation>Roteiro</translation>
     </message>
     <message>
         <source>Outline</source>
@@ -1120,7 +1171,7 @@
     </message>
     <message>
         <source>Replace scenario</source>
-        <translation>Trocar Cenário</translation>
+        <translation>Trocar roteiro</translation>
     </message>
     <message>
         <source>Current cursor position</source>
@@ -1128,7 +1179,7 @@
     </message>
     <message>
         <source>End of scenario</source>
-        <translation>Fim do cenário</translation>
+        <translation>Fim do roteiro</translation>
     </message>
     <message>
         <source>Find characters and locations</source>
@@ -1147,23 +1198,23 @@
     </message>
     <message>
         <source>Қазақ</source>
-        <translation>Kazakh</translation>
+        <translation></translation>
     </message>
     <message>
         <source>English</source>
-        <translation>Inglês</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Français</source>
-        <translation>Francês</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Español</source>
-        <translation>Espanhol</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Deutsch</source>
-        <translation>Alemão</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Detect language from system locale</source>
@@ -1171,11 +1222,11 @@
     </message>
     <message>
         <source>Українська мова</source>
-        <translation>Ucraniano</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Русский</source>
-        <translation>Russo</translation>
+        <translation></translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
@@ -1183,30 +1234,19 @@
     </message>
     <message>
         <source>Português</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>LocationsDataEdit</name>
-    <message>
-        <source>Dialog</source>
-        <translation type="obsolete">Diálogo</translation>
+        <translation></translation>
     </message>
     <message>
-        <source>Add Image</source>
-        <translation type="obsolete">Adicionar Imagem</translation>
+        <source>فارْسِى</source>
+        <translation></translation>
     </message>
     <message>
-        <source>Choose Location</source>
-        <translation type="obsolete">Escolha a localização </translation>
+        <source>汉语</source>
+        <translation></translation>
     </message>
     <message>
-        <source>Name:</source>
-        <translation type="obsolete">Nome:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="obsolete">Descrição:</translation>
+        <source>עִבְרִית</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1311,16 +1351,8 @@
         <translation>Entrar com novo nome para o projeto</translation>
     </message>
     <message>
-        <source>Project removing</source>
-        <translation type="vanished">Remoção do projeto</translation>
-    </message>
-    <message>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Tem certeza em remover o projeto &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
-        <source>Project unsubscribing</source>
-        <translation type="vanished">Cancelamento da inscrição do projeto</translation>
     </message>
     <message>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
@@ -1452,7 +1484,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Loading Scenario</source>
-        <translation>Carregando Cenário</translation>
+        <translation>Carregando roteiro</translation>
     </message>
     <message>
         <source>Please wait. Loading can take few minutes.</source>
@@ -1460,7 +1492,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Sync scenario with cloud service.</source>
-        <translation>Sincronizar o cenário com o serviço em nuvem.</translation>
+        <translation>Sincronizar o roteiro com o serviço em nuvem.</translation>
     </message>
     <message>
         <source>Menu</source>
@@ -1480,15 +1512,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Scenario</source>
-        <translation>Cenário</translation>
-    </message>
-    <message>
-        <source>Characters</source>
-        <translation type="obsolete">Personagens</translation>
-    </message>
-    <message>
-        <source>Locations</source>
-        <translation type="obsolete">Localizações</translation>
+        <translation>Roteiro</translation>
     </message>
     <message>
         <source>Statistics</source>
@@ -1576,33 +1600,35 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::CharactersManager</name>
-    <message>
-        <source>Are you shure to remove characters: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="obsolete">Tem a certeza em remover os personagens: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::CharactersNavigatorManager</name>
-    <message>
-        <source>Add Character</source>
-        <translation type="obsolete">Adicionar Personagem</translation>
+        <translation>Tem certeza que quer ocultar o projeto &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <source>Name</source>
-        <translation type="obsolete">Nome</translation>
+        <source>in cloud</source>
+        <translation>na nuvem</translation>
     </message>
     <message>
-        <source>Add Character Error</source>
-        <translation type="obsolete">Erro ao Adicionar Personagem</translation>
+        <source>on local computer</source>
+        <translation>no computador local</translation>
     </message>
     <message>
-        <source>Character with same name already exist in project</source>
-        <translation type="obsolete">Personagem com o mesmo nome existe no projeto</translation>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+    <message>
+        <source>Possible save error</source>
+        <translation>Possível erro ao salvar</translation>
+    </message>
+    <message>
+        <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
+        <translation>Você tem menos de 50 megabytes de espaço livre no disco. Isso pode gerar problemas ao salvar o projeto. Recomendamos que você libere mais espaço e verifique se o projeto foi salvo corretamente.</translation>
+    </message>
+    <message>
+        <source>File format not supported</source>
+        <translation type="unfinished">Formato de arquivo não suportado</translation>
+    </message>
+    <message>
+        <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
+        <translation type="unfinished">Arquivos &lt;b&gt;DOC&lt;/b&gt; da Microsoft não são suportados. Você precisa salvá-lo no arquivo &lt;b&gt;DOCX &lt;/b&gt; e reimportar.</translation>
     </message>
 </context>
 <context>
@@ -1658,31 +1684,33 @@ O projeto não foi sincronizado.</translation>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation>Arquivos &lt;b&gt;DOC&lt;/b&gt; da Microsoft não são suportados. Você precisa salvá-lo no arquivo &lt;b&gt;DOCX &lt;/b&gt; e reimportar.</translation>
     </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsManager</name>
     <message>
-        <source>Are you shure to remove locations: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="obsolete">Tem certeza de remover os locais: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::LocationsNavigatorManager</name>
-    <message>
-        <source>Add Location</source>
-        <translation type="obsolete">Adicionar locais</translation>
+        <source>Import aborted</source>
+        <translation>Importação cancelada</translation>
     </message>
     <message>
-        <source>Name</source>
-        <translation type="obsolete">Nome</translation>
+        <source>File to import is empty. Please check that you select correct file and retry import.</source>
+        <translation>O arquivo para importar não foi encontrado. Por favor verifique se selecionou o arquivo correto e tente novamente.</translation>
     </message>
     <message>
-        <source>Add Location Error</source>
-        <translation type="obsolete">Erro ao adicionar local</translation>
+        <source>Characters import</source>
+        <translation>Importar personagens</translation>
     </message>
     <message>
-        <source>Location with same name already exist in project</source>
-        <translation type="obsolete">Local com o mesmo nome já existe no projeto</translation>
+        <source>Locations import</source>
+        <translation>Importar locações</translation>
+    </message>
+    <message>
+        <source>Documents import</source>
+        <translation>Importar documentos</translation>
+    </message>
+    <message>
+        <source>File doesn&apos;t exists</source>
+        <translation>O arquivo não existe</translation>
+    </message>
+    <message>
+        <source>Please choose existing file and retry import.</source>
+        <translation>Por favor selecione um arquivo existente e importe novamente.</translation>
     </message>
 </context>
 <context>
@@ -1770,6 +1798,17 @@ O projeto não foi sincronizado.</translation>
     </message>
 </context>
 <context>
+    <name>ManagementLayer::ScriptDictionariesManager</name>
+    <message>
+        <source>Enter new item name</source>
+        <translation>Inserir o nome de novo item</translation>
+    </message>
+    <message>
+        <source>Are you sure to remove &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>Tem certeza que quer remover &lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+</context>
+<context>
     <name>ManagementLayer::SettingsManager</name>
     <message>
         <source>Restoring</source>
@@ -1805,7 +1844,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Scenario Template Files (*.%1)</source>
-        <translation>Arquivos de modelo de cenário (*.%1)</translation>
+        <translation>Arquivos de modelo de roteiro (*.%1)</translation>
     </message>
     <message>
         <source>Choose file to save</source>
@@ -1839,8 +1878,8 @@ O projeto não foi sincronizado.</translation>
 <context>
     <name>ManagementLayer::SettingsTemplatesManager</name>
     <message>
-        <source>Default</source>
-        <translation>Padrão</translation>
+        <source>Choose base template</source>
+        <translation>Escolha o modelo de base</translation>
     </message>
 </context>
 <context>
@@ -1854,22 +1893,6 @@ O projeto não foi sincronizado.</translation>
         <translation>Não é possível alterar a senha</translation>
     </message>
     <message>
-        <source>Released version %1 </source>
-        <translation type="obsolete">Versão lançada %1</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="obsolete">download</translation>
-    </message>
-    <message>
-        <source>or</source>
-        <translation type="obsolete">ou</translation>
-    </message>
-    <message>
-        <source>read more</source>
-        <translation type="obsolete">leia mais</translation>
-    </message>
-    <message>
         <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
         <translation>Versão lançada%1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt; Instalar &lt;/a&gt;</translation>
     </message>
@@ -1880,6 +1903,14 @@ You can try to reload update.</source>
         <translation>Não é possível instalar a atualização. Existem alguns problemas com o arquivo transferido.
 
 Você pode tentar recarregar a atualização.</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Desfazer</translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation>Refazer</translation>
     </message>
 </context>
 <context>
@@ -1906,6 +1937,233 @@ Você pode tentar recarregar a atualização.</translation>
     <message>
         <source>Unable to open archive.</source>
         <translation>Não foi possível abrir o arquivo.</translation>
+    </message>
+</context>
+<context>
+    <name>OnboardingView</name>
+    <message>
+        <source>Next</source>
+        <translation>Próx</translation>
+    </message>
+    <message>
+        <source>Skip</source>
+        <translation>Pular</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Voltar</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Não encontrou o idioma preferido? Leia como você pode adicioná-lo você mesmo.&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Português</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Español</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Français</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Detect language from system locale</source>
+        <translation>Detectar idioma pela região do sistema</translation>
+    </message>
+    <message>
+        <source>Українська мова</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>汉语</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>فارْسِى</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Deutsch</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Русский</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Choose language</source>
+        <translation>Escolha o idioma</translation>
+    </message>
+    <message>
+        <source>Қазақ</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>עִבְרִית</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Choose application theme</source>
+        <translation>Escolha o tema do aplicativo</translation>
+    </message>
+    <message>
+        <source>Dark theme</source>
+        <translation>Tema escuro</translation>
+    </message>
+    <message>
+        <source>Light theme</source>
+        <translation>Tema claro</translation>
+    </message>
+    <message>
+        <source>Use research module</source>
+        <translation>Usar módulo de pesquisa</translation>
+    </message>
+    <message>
+        <source>You can collect all the necessary materials for the project in one place. In it, you can save basic information about the script, such as its name, logline, synopsis, and also fill in the title page of the script.
+
+Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
+
+Also, in research tab you can store a variety of materials (text documents, images, links to web pages and mindmaps) associated with your project, organizing them in a convenient manner.</source>
+        <translation>Você pode reunir todo material necessário para o projeto em um local. Neste local pode salvar a informação básica sobre o roteiro, tal como nome, logline, sinopse e também preencher a página do título do roteiro.
+
+Aqui você pode gerenciar a lista de personagens e locações. Criar outros, adicionar descrições, fotos, renomeá-los e organizá-los.
+
+Também na aba de pesquisa você pode armazenar uma variedade de materiais (documentos de texto, imagens, links de páginas da WEB e mapas mentais) associados ao seu projeto, organizando-os numa forma conveniente.</translation>
+    </message>
+    <message>
+        <source>Research</source>
+        <translation>Pesquisa</translation>
+    </message>
+    <message>
+        <source>Cards</source>
+        <translation>Cartões</translation>
+    </message>
+    <message>
+        <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
+
+You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
+        <translation>O módulo dos cartões permite que você visualize o roteiro na forma de cartões colocados sobre um quadro de cortiça, numa forma visual de trabalhar com estrutura.
+
+Você pode adicionar cores e identificações aos cartões, movê-los e agrupá-los, e todas as alterações feitas nos cartões são exibidas no texto do roteiro.</translation>
+    </message>
+    <message>
+        <source>Use cards module</source>
+        <translation>Usar módulo de cartões</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>Roteiro</translation>
+    </message>
+    <message>
+        <source>Use script module</source>
+        <translation>Usar módulo de roteiro</translation>
+    </message>
+    <message>
+        <source>Choose script template</source>
+        <translation>Escolher o modelo de roteiro</translation>
+    </message>
+    <message>
+        <source>Statistics</source>
+        <translation>Estatisticas</translation>
+    </message>
+    <message>
+        <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
+        <translation>O módulo de estatísticas permite que você obtenha relatórios de produção detalhados do script, bem como analisar os gráficos da atividade dos personagens ao longo do script e a dinâmica das cenas.</translation>
+    </message>
+    <message>
+        <source>Use statistics module</source>
+        <translation>Usar o módulo de estatísticas</translation>
+    </message>
+    <message>
+        <source>KIT Scenarist. Setup of basic features.</source>
+        <translation>Kit Scenarist. Configuração dos recursos básicos.</translation>
+    </message>
+    <message>
+        <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
+        <translation>Tema é mais adequado para ambientes pouco iluminados e também entardecer e à noite.</translation>
+    </message>
+    <message>
+        <source>Theme is convenient for work with sufficient light.</source>
+        <translation>Tema é conveniente para trabalhar em ambiente com luz suficiente.</translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation>Roteiro em Final Draft (Letter)</translation>
+    </message>
+    <message>
+        <source>Russian screenplay</source>
+        <translation>Roteiro em Russo</translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation>Modelo de roteiro padrão Internacional para página em tamanho A4.</translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (A4)</source>
+        <translation>Roteiro em Final Draft (A4)</translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation>Modelo de roteiro padrão Internacional para página em tamanho Letter.</translation>
+    </message>
+    <message>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation>Roteiro em Russo com Courier Prime</translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation>Modelo de roteiro padrão em Russo e CIS.</translation>
+    </message>
+    <message>
+        <source>Chinese screenplay</source>
+        <translation>Roteiro em Chinês</translation>
+    </message>
+    <message>
+        <source>Chinese screenplay standard template.</source>
+        <translation>Modelo de roteiro padrão em Chinês.</translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay</source>
+        <translation>Roteiro em Hebraico</translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation>Modelo de roteiro padrão em Russo e CIS com fonte Courier Prime ao invés de Courier New.</translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay standard template.</source>
+        <translation>Modelo de roteiro padrão em Hebraico.</translation>
+    </message>
+    <message>
+        <source>Thank you. The most common application settings were configured.
+
+The application will start in few seconds.</source>
+        <translation>Obrigado. As configurações mais comuns do aplicativo foram realizadas.
+
+O aplicativo vai iniciar em poucos segundos.</translation>
+    </message>
+    <message>
+        <source>Starting application</source>
+        <translation>Iniciando o aplicativo</translation>
+    </message>
+    <message>
+        <source>Script module allows you to work with screenplay.
+
+Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
+
+And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
+        <translation>O módulo de roteiro permite que você trabalhe no roteiro.
+
+O módulo inclui o navegador de roteiro. É uma lista de cenas. Clicar o mouse na cena da lista exibirá o texto da cena selecionada na tela.
+
+E o editor de texto do roteiro. O editor tem várias funções auxiliares que simplificam a inserção do texto de acordo com os padrões da escrita de roteiros, e também permite você procurar o texto do roteiro e escrever notas.</translation>
     </message>
 </context>
 <context>
@@ -1973,47 +2231,24 @@ Você pode tentar recarregar a atualização.</translation>
 <context>
     <name>ProjectFileWidget</name>
     <message>
-        <source>Form</source>
-        <translation>Formulário</translation>
-    </message>
-    <message>
-        <source>Project Name</source>
-        <translation>Nome do Projeto</translation>
-    </message>
-    <message>
-        <source>/file/path</source>
-        <translation>/arquivo/caminho</translation>
-    </message>
-    <message>
         <source>Change project name</source>
-        <translation type="unfinished">Mudar o nome do projeto</translation>
+        <translation>Mudar o nome do projeto</translation>
     </message>
     <message>
         <source>Remove project</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover projeto</translation>
     </message>
     <message>
         <source>Hide project from recent</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar projeto do recente</translation>
     </message>
     <message>
         <source>Add cowriter</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar co-autor</translation>
     </message>
     <message>
         <source>Show cowriters</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ProjectUserWidget</name>
-    <message>
-        <source>Form</source>
-        <translation>Formulário</translation>
-    </message>
-    <message>
-        <source>User Name [role]</source>
-        <translation>Nome de Usuário [papel]</translation>
+        <translation>Mostrar co-autores</translation>
     </message>
 </context>
 <context>
@@ -2068,17 +2303,12 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Scenario</source>
-        <translation>Cenário</translation>
+        <translation>Roteiro</translation>
     </message>
     <message>
         <source>Title:</source>
         <comment>ScenarioBlockStyle</comment>
         <translation>Título:</translation>
-    </message>
-    <message>
-        <source>END OF GROUP</source>
-        <comment>ScenarioXml</comment>
-        <translation type="obsolete">FIM DO GRUPO</translation>
     </message>
     <message>
         <source>END OF FOLDER</source>
@@ -2199,10 +2429,6 @@ Você pode tentar recarregar a atualização.</translation>
         <translation>Busca</translation>
     </message>
     <message>
-        <source>Ctrl+F</source>
-        <translation type="obsolete">Ctrl+F</translation>
-    </message>
-    <message>
         <source>words:</source>
         <translation>palavras:</translation>
     </message>
@@ -2212,7 +2438,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Scenario Name:</source>
-        <translation>Nome do cenário:</translation>
+        <translation>Nome do roteiro:</translation>
     </message>
     <message>
         <source>0</source>
@@ -2220,7 +2446,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Scenario name.</source>
-        <translation>Nome do cenário.</translation>
+        <translation>Nome do roteiro.</translation>
     </message>
     <message>
         <source>Genre:</source>
@@ -2228,7 +2454,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Scenario genre.</source>
-        <translation>Cenário gênero.</translation>
+        <translation>Roteiro gênero.</translation>
     </message>
     <message>
         <source>Author:</source>
@@ -2236,7 +2462,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Scenario author.</source>
-        <translation>Autor do cenário.</translation>
+        <translation>Autor do roteiro.</translation>
     </message>
     <message>
         <source>Additional:</source>
@@ -2244,7 +2470,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Original scenario</source>
-        <translation>Cenário original</translation>
+        <translation>Roteiro original</translation>
     </message>
     <message>
         <source>Contacts:</source>
@@ -2256,7 +2482,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Scenario wirting year.</source>
-        <translation>Ano de criação do cenário.</translation>
+        <translation>Ano de criação do roteiro.</translation>
     </message>
     <message>
         <source>Synopsis</source>
@@ -2295,16 +2521,8 @@ Você pode tentar recarregar a atualização.</translation>
         <translation>Adicionar nó filho</translation>
     </message>
     <message>
-        <source>Ctrl+Return</source>
-        <translation>Ctrl+Enter</translation>
-    </message>
-    <message>
         <source>Add sibling node</source>
         <translation>Adicionar nó irmão</translation>
-    </message>
-    <message>
-        <source>Shift+Return</source>
-        <translation>Shift+Enter</translation>
     </message>
     <message>
         <source>Delete node (Del)</source>
@@ -2426,6 +2644,18 @@ Você pode tentar recarregar a atualização.</translation>
         <source>Add Url</source>
         <translation>Adicionar Url</translation>
     </message>
+    <message>
+        <source>Save mind map as image file</source>
+        <translation>Salvar mapa mental como arquivo de imagem</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>RtfReader</name>
@@ -2446,14 +2676,6 @@ Você pode tentar recarregar a atualização.</translation>
     <message>
         <source>Add scheme item</source>
         <translation>Adicionar item de esquema</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="obsolete">Grupo de cenas</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="obsolete">Pasta</translation>
     </message>
     <message>
         <source>Description</source>
@@ -2522,6 +2744,10 @@ Você pode tentar recarregar a atualização.</translation>
         <source>All</source>
         <translation>Todos</translation>
     </message>
+    <message>
+        <source>In lyrics</source>
+        <translation>Nas letras da música</translation>
+    </message>
 </context>
 <context>
     <name>SettingsView</name>
@@ -2539,7 +2765,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Scenario Editor</source>
-        <translation>Editor de cenários</translation>
+        <translation>Editor de roteiro</translation>
     </message>
     <message>
         <source>Navigator</source>
@@ -2607,15 +2833,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Scenario module</source>
-        <translation>Módulo de cenário</translation>
-    </message>
-    <message>
-        <source>Characters module</source>
-        <translation type="obsolete">Módulo de caracteres</translation>
-    </message>
-    <message>
-        <source>Locations module</source>
-        <translation type="obsolete">Módulo Localizações</translation>
+        <translation>Módulo de roteiro</translation>
     </message>
     <message>
         <source>Statistics module</source>
@@ -2875,7 +3093,55 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Configurar</translation>
+        <translation>Configurar</translation>
+    </message>
+    <message>
+        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
+        <translation>Autosave (salvamento automático) funciona com muita precisão. Ele salva o projeto a cada 3 segundos se você não usar o mouse ou o teclado; mas se você trabalhar continuamente, ele salva o projeto a cada 5 minutos.</translation>
+    </message>
+    <message>
+        <source>Compact Mode</source>
+        <translation>Modo compacto</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>Research</source>
+        <translation>Pesquisa</translation>
+    </message>
+    <message>
+        <source>Default font for text documents:</source>
+        <translation>Fonte padrão para documentos de texto:</translation>
+    </message>
+    <message>
+        <source>pt</source>
+        <translation>pt</translation>
+    </message>
+    <message>
+        <source>Hide all panels in fullscreen mode</source>
+        <translation>Esconda todos os painéis no modo tela cheia</translation>
+    </message>
+    <message>
+        <source>Show dialogues numbers</source>
+        <translation>Mostre os números dos diálogos</translation>
+    </message>
+    <message>
+        <source>Highlight blocks</source>
+        <translation>Destaque os blocos</translation>
+    </message>
+    <message>
+        <source>Automatically continue dialogue</source>
+        <translation>Continue automaticamente o diálogo</translation>
+    </message>
+    <message>
+        <source>Automatically corrections on page breaks</source>
+        <translation>Correções automaticamente em quebras de página</translation>
+    </message>
+    <message>
+        <source>Use open bracket in dialogue for jump to parenthetical</source>
+        <translation>Use o suporte aberto no diálogo para saltar para entre parênteses</translation>
     </message>
 </context>
 <context>
@@ -2922,6 +3188,10 @@ Parágrafo</translation>
     <message>
         <source>Change text background color</source>
         <translation>Mude a cor do fundo do texto</translation>
+    </message>
+    <message>
+        <source>Clear formatting</source>
+        <translation>Apagar a formatação</translation>
     </message>
 </context>
 <context>
@@ -3018,6 +3288,10 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
         <source>Projects from kitscenarist.ru</source>
         <translation>Projetos de kitscenarist.ru</translation>
     </message>
+    <message>
+        <source>Used 0 Gb from 0 Gb</source>
+        <translation>0 Gb usados de 0 Gb</translation>
+    </message>
 </context>
 <context>
     <name>StatisticsSettings</name>
@@ -3047,7 +3321,7 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     </message>
     <message>
         <source>by script order</source>
-        <translation>Por ordem de script</translation>
+        <translation>Por ordem de roteiro</translation>
     </message>
     <message>
         <source>by alphabetical order</source>
@@ -3154,7 +3428,7 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     <name>TemplateDialog</name>
     <message>
         <source>Edit Scenario Template</source>
-        <translation>Editar modelo de cenário</translation>
+        <translation>Editar modelo de roteiro</translation>
     </message>
     <message>
         <source>Common</source>
@@ -3485,12 +3759,12 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <translation>Escolha o arquivo para o novo projeto</translation>
     </message>
     <message>
-        <source>Scenarist project files (*%1)</source>
-        <translation type="obsolete">Scenarist arquivos de projeto (*%1)</translation>
-    </message>
-    <message>
         <source>Choose file to import</source>
         <translation>Escolha o arquivo a ser importado</translation>
+    </message>
+    <message>
+        <source>New Project</source>
+        <translation>Novo projeto</translation>
     </message>
 </context>
 <context>
@@ -3508,40 +3782,6 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
 </context>
 <context>
-    <name>UserInterface::CharactersDataEdit</name>
-    <message>
-        <source>Choose Character</source>
-        <translation type="obsolete">Escolher Personagem</translation>
-    </message>
-    <message>
-        <source>Character name</source>
-        <translation type="obsolete">Nome do personagem</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::CharactersNavigator</name>
-    <message>
-        <source>Characters</source>
-        <translation type="obsolete">Personagens</translation>
-    </message>
-    <message>
-        <source>Create New Character</source>
-        <translation type="obsolete">Criar novo personagem</translation>
-    </message>
-    <message>
-        <source>Remove Selected Character</source>
-        <translation type="obsolete">Remover o personagem selecionado</translation>
-    </message>
-    <message>
-        <source>Merge Selected Characters</source>
-        <translation type="obsolete">Combinar personagens selecionados</translation>
-    </message>
-    <message>
-        <source>Find All Characters from Scenario</source>
-        <translation type="obsolete">Localizar todos os personagens do cenário</translation>
-    </message>
-</context>
-<context>
     <name>UserInterface::CrashReportDialog</name>
     <message>
         <source>Send report</source>
@@ -3556,39 +3796,31 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <name>UserInterface::ExportDialog</name>
     <message>
         <source>Choose file to export scenario</source>
-        <translation>Escolher arquivo para exportar o cenário </translation>
+        <translation>Escolher arquivo para exportar o roteiro</translation>
     </message>
     <message>
         <source>%1 files (*%2)</source>
         <translation>%1 arquivos (*%2)</translation>
     </message>
+    <message>
+        <source>Choose file to export research</source>
+        <translation>Escolha o arquivo para exportar a pesquisa</translation>
+    </message>
+    <message>
+        <source>Export research</source>
+        <translation>Exportar pesquisa</translation>
+    </message>
+    <message>
+        <source>Export outline</source>
+        <translation>Exportar esboço</translation>
+    </message>
+    <message>
+        <source>Export script</source>
+        <translation>Exporar roteiro</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ImportDialog</name>
-    <message>
-        <source>All Supported Files</source>
-        <translation type="obsolete">Todos os arquivos suportados</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation type="obsolete">Projeto KIT Scenarist </translation>
-    </message>
-    <message>
-        <source>Final Draft screenplay</source>
-        <translation type="obsolete">Rascunho final de roteiro</translation>
-    </message>
-    <message>
-        <source>Trelby screenplay</source>
-        <translation type="obsolete">Roteiro Trelby</translation>
-    </message>
-    <message>
-        <source>Office Open XML</source>
-        <translation type="obsolete">Office Open XML</translation>
-    </message>
-    <message>
-        <source>OpenDocument Text</source>
-        <translation type="obsolete">Texto OpenDocument</translation>
-    </message>
     <message>
         <source>Choose file to import</source>
         <translation>Escolha arquivo para importar</translation>
@@ -3596,36 +3828,6 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Import</source>
         <translation>Importar</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsDataEdit</name>
-    <message>
-        <source>Choose Location</source>
-        <translation type="obsolete">Escolha local</translation>
-    </message>
-    <message>
-        <source>Location</source>
-        <translation type="obsolete">Local</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::LocationsNavigator</name>
-    <message>
-        <source>Locations</source>
-        <translation type="obsolete">Locais</translation>
-    </message>
-    <message>
-        <source>Create New Location</source>
-        <translation type="obsolete">Criar novo local</translation>
-    </message>
-    <message>
-        <source>Remove Selected Location</source>
-        <translation type="obsolete">Remover local selecionado</translation>
-    </message>
-    <message>
-        <source>Find All Locations From Scenario</source>
-        <translation type="obsolete">Encontrar todos os locais do cenário</translation>
     </message>
 </context>
 <context>
@@ -3653,6 +3855,32 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Email is empty</source>
         <translation>Email vazio</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::OnboardingView</name>
+    <message>
+        <source>Next</source>
+        <translation>Próx</translation>
+    </message>
+    <message>
+        <source>Finish</source>
+        <translation>Finalizar</translation>
+    </message>
+    <message>
+        <source>Will be used default settings.
+
+The application will start in few seconds.</source>
+        <translation>Serão usadas configurações padrão.
+
+O aplicativo vai iniciar em poucos segundos.</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ProjectsList</name>
+    <message>
+        <source>no changes</source>
+        <translation>sem mudanças</translation>
     </message>
 </context>
 <context>
@@ -3700,6 +3928,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <source>Insert into &quot;%1&quot;</source>
         <translation>Inserir em &quot;%1&quot;</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation>Adicionar</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ResearchView</name>
@@ -3727,6 +3959,14 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <source>Location name</source>
         <translation>Nome do local</translation>
     </message>
+    <message>
+        <source>Save mind map</source>
+        <translation>Salvar mapa mental</translation>
+    </message>
+    <message>
+        <source>PNG files (*.png)</source>
+        <translation>Arquivo PNG (*.png)</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioCardsView</name>
@@ -3735,24 +3975,8 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <translation>Adicionar novo cartão</translation>
     </message>
     <message>
-        <source>Add note</source>
-        <translation type="obsolete">Adicionar nota</translation>
-    </message>
-    <message>
-        <source>Add horizontal line</source>
-        <translation type="obsolete">Adicionar linha horizontal</translation>
-    </message>
-    <message>
-        <source>Add vertical line</source>
-        <translation type="obsolete">Adicionar linha vertical</translation>
-    </message>
-    <message>
         <source>Sort cards</source>
         <translation>Organizar cartões</translation>
-    </message>
-    <message>
-        <source>On/off fullscreen mode (F5)</source>
-        <translation type="vanished">On/Off modo de tela cheia(f5)</translation>
     </message>
     <message>
         <source>Cards.png</source>
@@ -3802,10 +4026,6 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <translation>↓ Próx</translation>
     </message>
     <message>
-        <source>Catch focus</source>
-        <translation>Apanhar o foco</translation>
-    </message>
-    <message>
         <source>%1 %2</source>
         <translation>%1 %2</translation>
     </message>
@@ -3814,15 +4034,11 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <name>UserInterface::ScenarioItemDialog</name>
     <message>
         <source>Add scenario item</source>
-        <translation>Adicionar item de cenário</translation>
+        <translation>Adicionar item de roteiro</translation>
     </message>
     <message>
         <source>Scene</source>
         <translation>Cena</translation>
-    </message>
-    <message>
-        <source>Scenes group</source>
-        <translation type="obsolete">Grupo de cenas</translation>
     </message>
     <message>
         <source>Folder</source>
@@ -3832,25 +4048,13 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <source>Scene Description</source>
         <translation>Descrição de cena</translation>
     </message>
+    <message>
+        <source>Add</source>
+        <translation>Adicionar</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioNavigator</name>
-    <message>
-        <source>Convert to</source>
-        <translation type="obsolete">Converter para</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="obsolete">Cena</translation>
-    </message>
-    <message>
-        <source>Scenes Group</source>
-        <translation type="obsolete">Grupo de cenas</translation>
-    </message>
-    <message>
-        <source>Folder</source>
-        <translation type="obsolete">Pasta</translation>
-    </message>
     <message>
         <source>Color %1</source>
         <translation>Cor %1</translation>
@@ -3881,11 +4085,11 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>Add Scenario Item After Selected</source>
-        <translation>Adicionar item de cenário depois do selecionado</translation>
+        <translation>Adicionar item de roteiro depois do selecionado</translation>
     </message>
     <message>
         <source>Remove Selected Scenario Item</source>
-        <translation>Remover item de cenário selecionado</translation>
+        <translation>Remover item de roteiro selecionado</translation>
     </message>
     <message>
         <source>Show/hide draft</source>
@@ -3902,6 +4106,30 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Convert to folder</source>
         <translation>Converter para pasta</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Limpar</translation>
+    </message>
+    <message>
+        <source>Show/hide additional panels</source>
+        <translation>Mostre/oculte os painéis adicionais</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Rascunho</translation>
+    </message>
+    <message>
+        <source>Scene description</source>
+        <translation>Descrição de cena</translation>
+    </message>
+    <message>
+        <source>Script dictionaries</source>
+        <translation>Dicionários do roteiro</translation>
+    </message>
+    <message>
+        <source>Show/hide script dictionaries</source>
+        <translation>Mostre/oculte os dicionários do roteiro</translation>
     </message>
 </context>
 <context>
@@ -3968,6 +4196,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <source>Description of:</source>
         <translation>Descrição de:</translation>
     </message>
+    <message>
+        <source>Copy scene description to the script</source>
+        <translation>Copie a descrição da cena para o roteiro</translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioSchemeItemDialog</name>
@@ -4013,6 +4245,56 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Duration from Start to Cursor Position | Full Duration</source>
         <translation>Duração do início à posição do cursor | Duração Completa</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Desfazer</translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation>Refazer</translation>
+    </message>
+    <message>
+        <source>Find and replace</source>
+        <translation>Buscar e substituir</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScriptDictionaries</name>
+    <message>
+        <source>Scene intros</source>
+        <translation>Introduções das cenas</translation>
+    </message>
+    <message>
+        <source>Scene times</source>
+        <translation>Tempos das cenas</translation>
+    </message>
+    <message>
+        <source>Scene days</source>
+        <translation>Dias das cenas</translation>
+    </message>
+    <message>
+        <source>Character states</source>
+        <translation>Condições dos personagens</translation>
+    </message>
+    <message>
+        <source>Transitions</source>
+        <translation>Transições</translation>
+    </message>
+    <message>
+        <source>Add dictionary item</source>
+        <translation>Adicione um item do dicionário</translation>
+    </message>
+    <message>
+        <source>Remove selected item</source>
+        <translation>Remova o item selecionado</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScriptZenModeControls</name>
+    <message>
+        <source>Typewriter sound</source>
+        <translation>Som da máquina de escrever</translation>
     </message>
 </context>
 <context>
@@ -4095,19 +4377,41 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Português</translation>
     </message>
     <message>
         <source>Portuguese (Brazil)</source>
-        <translation type="unfinished"></translation>
+        <translation>Português (Brazil)</translation>
     </message>
     <message>
         <source>Portuguese (Portugal)</source>
-        <translation type="unfinished"></translation>
+        <translation>Português (Portugal)</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Sueco</translation>
+    </message>
+    <message>
+        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
+but if you work with no terminations it saves project every %1 minutes.</source>
+        <translation>Autosave (salvamento automático) funciona com muita precisão. Ele salva o projeto a cada 3 segundos se você não usar o mouse ou o teclado; 
+mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</translation>
+    </message>
+    <message>
+        <source>Farsi</source>
+        <translation>Farsi</translation>
+    </message>
+    <message>
+        <source>Chinese</source>
+        <translation>Chinês</translation>
+    </message>
+    <message>
+        <source>Hebrew</source>
+        <translation>Hebraico</translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <translation>Polonês</translation>
     </message>
 </context>
 <context>
@@ -4134,6 +4438,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Used %1 Gb from %2 Gb</source>
+        <translation>%1 Gb usados de %2 Gb</translation>
     </message>
 </context>
 <context>
@@ -4228,7 +4536,7 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>Statistics</source>
-        <translation type="unfinished">Estatisticas</translation>
+        <translation>Estatisticas</translation>
     </message>
 </context>
 <context>

@@ -9,14 +9,23 @@
 #include <QFileInfo>
 #include <QList>
 #include <QStandardItemModel>
+#include <QStandardPaths>
 #include <QXmlStreamReader>
 
 using ManagementLayer::ProjectsManager;
 using ManagementLayer::Project;
 
 namespace {
+    /**
+     * @brief Ключи для доступа к спискам проектов
+     */
     const QString RECENT_FILES_LIST_SETTINGS_KEY = "application/recent-files/list";
     const QString RECENT_FILES_USING_SETTINGS_KEY = "application/recent-files/using";
+
+    /**
+     * @brief kit scenarist project
+     */
+    const QString PROJECT_FILE_EXTENSION = ".kitsp";
 }
 
 
@@ -30,6 +39,15 @@ const ManagementLayer::Project& ProjectsManager::currentProject()
     return s_currentProject;
 }
 
+QString ProjectsManager::defaultLocation()
+{
+#ifdef MOBILE_OS
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+#else
+    return QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+#endif
+}
+
 Project ProjectsManager::s_currentProject;
 
 
@@ -37,8 +55,13 @@ Project ProjectsManager::s_currentProject;
 
 
 ProjectsManager::ProjectsManager(QObject* _parent) :
-    QObject(_parent)
+    QObject(_parent),
+    m_recentProjectsModel(new QStandardItemModel(this)),
+    m_remoteProjectsModel(new QStandardItemModel(this))
 {
+#ifdef Q_OS_IOS
+    makeRelativePaths();
+#endif
     loadRecentProjects();
     refreshProjects();
 }
@@ -50,36 +73,33 @@ ProjectsManager::~ProjectsManager()
 
 QAbstractItemModel* ProjectsManager::recentProjects()
 {
-    //
-    // Создаём модель
-    //
-    QStandardItemModel* recentProjectsModel = new QStandardItemModel;
-    foreach (const Project& project, m_recentProjects) {
+    m_recentProjectsModel->clear();
+    for (const Project& project : m_recentProjects) {
         QStandardItem* item = new QStandardItem;
         item->setData(project.displayName(), Qt::DisplayRole);
-        item->setData(project.displayPath(), Qt::WhatsThisRole);
-        recentProjectsModel->appendRow(item);
+        item->setData(project.displayPath(), Qt::StatusTipRole);
+        item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
+        item->setData(true, Qt::UserRole + 1);
+        m_recentProjectsModel->appendRow(item);
     }
 
-    return recentProjectsModel;
+    return m_recentProjectsModel;
 }
 
 QAbstractItemModel* ProjectsManager::remoteProjects()
 {
-    //
-    // Создаём модель
-    //
-    QStandardItemModel* remoteProjectsModel = new QStandardItemModel;
-    foreach (const Project& project, m_remoteProjects) {
+    m_remoteProjectsModel->clear();
+    for (const Project& project : m_remoteProjects) {
         QStandardItem* item = new QStandardItem;
         item->setData(project.displayName(), Qt::DisplayRole);
-        item->setData(project.displayPath(), Qt::WhatsThisRole);
+        item->setData(project.displayPath(), Qt::StatusTipRole);
+        item->setData(project.lastEditDatetime(), Qt::WhatsThisRole);
         item->setData(project.users(), Qt::UserRole);
         item->setData(project.isUserOwner(), Qt::UserRole + 1);
-        remoteProjectsModel->appendRow(item);
+        m_remoteProjectsModel->appendRow(item);
     }
 
-    return remoteProjectsModel;
+    return m_remoteProjectsModel;
 }
 
 bool ProjectsManager::setCurrentProject(const QString& _path, bool _isLocal, bool _forceOpen)
@@ -140,6 +160,10 @@ bool ProjectsManager::setCurrentProject(const QString& _path, bool _isLocal, boo
                 // Добавляем проект в список
                 //
                 m_recentProjects.prepend(newCurrentProject);
+                //
+                // Сохраняем список проектов
+                //
+                saveRecentProjects();
             }
 
             //
@@ -220,10 +244,9 @@ void ProjectsManager::setCurrentProjectName(const QString& _projectName)
         //
         // Определим источник хранения проекта
         //
-        QMutableListIterator<ManagementLayer::Project> projectsIterator(m_recentProjects);
-        if (s_currentProject.isRemote()) {
-            projectsIterator = QMutableListIterator<ManagementLayer::Project>(m_remoteProjects);
-        }
+        QMutableListIterator<ManagementLayer::Project> projectsIterator(s_currentProject.isLocal()
+                                                                        ? m_recentProjects
+                                                                        : m_remoteProjects);
         //
         // Обновим название проекта
         //
@@ -233,6 +256,18 @@ void ProjectsManager::setCurrentProjectName(const QString& _projectName)
                 s_currentProject.setName(_projectName);
                 projectsIterator.setValue(s_currentProject);
                 break;
+            }
+        }
+        //
+        // Уведомим клиентов об обновлении проекта
+        //
+        if (s_currentProject.isLocal()) {
+            if (m_recentProjects.contains(s_currentProject)) {
+                emit recentProjectNameChanged(m_recentProjects.indexOf(s_currentProject), _projectName);
+            }
+        } else {
+            if (m_remoteProjects.contains(s_currentProject)) {
+                emit remoteProjectNameChanged(m_remoteProjects.indexOf(s_currentProject), _projectName);
             }
         }
     }
@@ -282,6 +317,14 @@ ManagementLayer::Project ProjectsManager::project(const QModelIndex& _index, boo
             : m_remoteProjects.value(_index.row());
 }
 
+ManagementLayer::Project& ProjectsManager::project(const QModelIndex& _index, bool _isLocal)
+{
+    return
+            _isLocal
+            ? m_recentProjects[_index.row()]
+            : m_remoteProjects[_index.row()];
+}
+
 void ProjectsManager::hideProjectFromLocal(const QModelIndex& _index)
 {
     m_recentProjects.removeAt(_index.row());
@@ -315,6 +358,7 @@ void ProjectsManager::refreshProjects()
 void ProjectsManager::setRemoteProjects(const QString& _xml)
 {
     m_remoteProjects.clear();
+    m_remoteProjectsModel->clear();
 
     //
     // Считываем список проектов из xml
@@ -325,7 +369,7 @@ void ProjectsManager::setRemoteProjects(const QString& _xml)
         if (projectsReader.tokenType() == QXmlStreamReader::StartElement
             && projectsReader.name().toString() == "project") {
             const QString name = projectsReader.attributes().value("name").toString();
-            const QString path = QString::null;
+            const QString path = QString();
             const QString lastEditDatetimeText = projectsReader.attributes().value("modified_at").toString();
             const QDateTime lastEditDatetime = QDateTime::fromString(lastEditDatetimeText, "yyyy-MM-dd hh:mm:ss");
             const int id = projectsReader.attributes().value("id").toInt();
@@ -396,27 +440,69 @@ void ProjectsManager::loadRecentProjects()
                 );
 
     m_recentProjects.clear();
+    m_recentProjectsModel->clear();
 
     //
     // Формируем список недавно используемых проектов в порядке убывания даты изменения
     //
     QStringList usingDates = recentFilesUsing.values();
     qSort(usingDates.begin(), usingDates.end(), qGreater<QString>());
-    foreach (const QString& usingDate, usingDates) {
+    for (const QString& usingDate : usingDates) {
         //
         // Путь к проекту
         //
-        const QString path = recentFilesUsing.key(usingDate);
+        QString path = recentFilesUsing.key(usingDate);
+
         //
         // Название проекта
         //
         const QString name = recentFiles.value(path);
+
+#ifdef Q_OS_IOS
+        path = QDir(defaultLocation()).filePath(path);
+#endif
+
         //
         // Сам проект
         //
         m_recentProjects.append(
             Project(Project::Local, name, path, QDateTime::fromString(usingDate, "yyyy-MM-dd hh:mm:ss")));
     }
+
+#ifdef MOBILE_OS
+    //
+    // Загружаем список "потерянных проектов"
+    //
+    const QDir projectsDir(defaultLocation());
+    for (const QFileInfo& fileInfo : projectsDir.entryInfoList()) {
+        //
+        // ... если такого файла проекта нет в списке недавних, значит от "потерялся"
+        //
+#ifdef Q_OS_IOS
+        const QString filePath = fileInfo.fileName();
+#else
+        const QString filePath = fileInfo.absoluteFilePath();
+#endif
+        if (fileInfo.fileName().endsWith(::PROJECT_FILE_EXTENSION)
+            && !recentFiles.contains(filePath)) {
+            //
+            // Путь к проекту
+            //
+            const QString path = fileInfo.absoluteFilePath();
+
+            //
+            // Название проекта
+            //
+            const QString name = fileInfo.baseName();
+
+            //
+            // Сам проект
+            //
+            m_recentProjects.append(Project(Project::Local, name, path, fileInfo.lastRead()));
+        }
+    }
+
+#endif
 
     //
     // Уведомляем об обновлении
@@ -445,14 +531,69 @@ void ProjectsManager::saveRecentProjects()
      */
     QMap<QString, QString> recentFilesUsing;
 
-    foreach (const Project& project, m_recentProjects) {
-        recentFiles.insert(project.path(), project.name());
-        recentFilesUsing.insert(project.path(), project.lastEditDatetime().toString("yyyy-MM-dd hh:mm:ss"));
+    for (const Project& project : m_recentProjects) {
+#ifdef Q_OS_IOS
+        const QString path = QDir(defaultLocation()).relativeFilePath(project.path());
+#else
+        const QString path = project.path();
+#endif
+        recentFiles.insert(path, project.name());
+        recentFilesUsing.insert(path, project.lastEditDatetime().toString("yyyy-MM-dd hh:mm:ss"));
     }
-
 
     //
     // Сохраняем
+    //
+    DataStorageLayer::StorageFacade::settingsStorage()->setValues(
+                recentFiles,
+                RECENT_FILES_LIST_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+    DataStorageLayer::StorageFacade::settingsStorage()->setValues(
+                recentFilesUsing,
+                RECENT_FILES_USING_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+}
+
+void ProjectsManager::makeRelativePaths()
+{
+    //
+    // Загрузим списки проектов
+    //
+    QMap<QString, QString> recentFiles =
+            DataStorageLayer::StorageFacade::settingsStorage()->values(
+                RECENT_FILES_LIST_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+
+    QMap<QString, QString> recentFilesUsing =
+            DataStorageLayer::StorageFacade::settingsStorage()->values(
+                RECENT_FILES_USING_SETTINGS_KEY,
+                DataStorageLayer::SettingsStorage::ApplicationSettings
+                );
+
+    for (const QString& fileName : recentFiles.keys()) {
+        //
+        // Если путь абсолютный
+        //
+        if (fileName.startsWith(QDir::separator())) {
+            //
+            // Получим имя файла вместе с расширением
+            //
+            const QString newFileName = fileName.split(QDir::separator()).back();
+
+            //
+            // И уберем оставшийся путь
+            recentFiles[newFileName] = recentFiles[fileName];
+            recentFilesUsing[newFileName] = recentFilesUsing[fileName];
+            recentFiles.remove(fileName);
+            recentFilesUsing.remove(fileName);
+        }
+    }
+
+    //
+    // Сохраним все, что сделали
     //
     DataStorageLayer::StorageFacade::settingsStorage()->setValues(
                 recentFiles,

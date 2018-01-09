@@ -5,13 +5,13 @@
 
 namespace BusinessLogic
 {
-	/**
-	 * @brief Класс для хранения информации о сцене
-	 */
-	class ScenarioTextBlockInfo : public QTextBlockUserData
-	{
-	public:
-		ScenarioTextBlockInfo();
+    /**
+     * @brief Класс для хранения информации о сцене
+     */
+    class SceneHeadingBlockInfo : public QTextBlockUserData
+    {
+    public:
+        SceneHeadingBlockInfo(const QString& _uuid = QString());
 
         /**
          * @brief Идентификатор сцены
@@ -23,77 +23,127 @@ namespace BusinessLogic
          */
         void setUuid(const QString& _uuid);
 
-		/**
-		 * @brief Получить номер сцены
-		 */
-		int sceneNumber() const;
+        /**
+         * @brief Сформировать новый идентификатор
+         */
+        void rebuildUuid();
 
-		/**
-		 * @brief Установить номер сцены
-		 */
-		void setSceneNumber(int _number);
+        /**
+         * @brief Получить номер сцены
+         */
+        int sceneNumber() const;
 
-		/**
-		 * @brief Получить цвета сцены
-		 */
-		QString colors() const;
+        /**
+         * @brief Установить номер сцены
+         */
+        void setSceneNumber(int _number);
 
-		/**
-		 * @brief Установить цвета сцены
-		 */
-		void setColors(const QString& _colors);
+        /**
+         * @brief Получить цвета сцены
+         */
+        QString colors() const;
 
-		/**
-		 * @brief Получить название сцены
-		 */
-		QString title() const;
+        /**
+         * @brief Установить цвета сцены
+         */
+        void setColors(const QString& _colors);
 
-		/**
-		 * @brief Установить название сцены
-		 */
-		void setTitle(const QString& _title);
+        /**
+         * @brief Получить штамп сцены
+         */
+        QString stamp() const;
 
-		/**
-		 * @brief Получить описание
-		 */
+        /**
+         * @brief Установить штамп сцены
+         */
+        void setStamp(const QString& _stamp);
+
+        /**
+         * @brief Получить название сцены
+         */
+        QString title() const;
+
+        /**
+         * @brief Установить название сцены
+         */
+        void setTitle(const QString& _title);
+
+        /**
+         * @brief Получить описание
+         */
         QString description() const;
 
-		/**
-		 * @brief Установить описание
-		 */
+        /**
+         * @brief Установить описание
+         */
         void setDescription(const QString& _description);
 
-		/**
-		 * @brief Создать дубликат
-		 */
-		ScenarioTextBlockInfo* clone() const;
+        /**
+         * @brief Создать дубликат
+         */
+        SceneHeadingBlockInfo* clone() const;
 
-	private:
+    private:
         /**
          * @brief Идентификатор сцены
          */
         QString m_uuid;
 
-		/**
-		 * @brief Номер сцены
-		 */
-		int m_sceneNumber;
+        /**
+         * @brief Номер сцены
+         */
+        int m_sceneNumber;
 
-		/**
-		 * @brief Цвета сцены
-		 */
-		QString m_colors;
+        /**
+         * @brief Цвета сцены
+         */
+        QString m_colors;
 
-		/**
-		 * @brief Название
-		 */
-		QString m_title;
+        /**
+         * @brief Штамп сцены
+         */
+        QString m_stamp;
 
-		/**
-		 * @brief Текст описания
-		 */
-		QString m_description;
-	};
+        /**
+         * @brief Название
+         */
+        QString m_title;
+
+        /**
+         * @brief Текст описания
+         */
+        QString m_description;
+    };
+
+    /**
+     * @brief Класс хранящий информацию о блоке реплики
+     */
+    class CharacterBlockInfo : public QTextBlockUserData
+    {
+    public:
+        CharacterBlockInfo() = default;
+
+        /**
+         * @brief Получить номер реплики
+         */
+        int dialogueNumbder() const;
+
+        /**
+         * @brief Установить номер реплики
+         */
+        void setDialogueNumber(int _number);
+
+        /**
+         * @brief Создать дубликат
+         */
+        CharacterBlockInfo* clone() const;
+
+    private:
+        /**
+         * @brief Порядковый номер реплики персонажа
+         */
+        int m_dialogueNumber = 0;
+    };
 }
 
 #endif // SCENARIOTEXTBLOCKINFO_H

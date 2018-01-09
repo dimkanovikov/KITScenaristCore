@@ -9,7 +9,6 @@ namespace {
 	/**
 	 * @brief Размер иконки
 	 */
-	static QSize ICON_SIZE(20, 20);
 }
 
 
@@ -17,7 +16,9 @@ FlatButton::FlatButton(QWidget* _parent) :
 	QToolButton(_parent),
 	m_checkedIconHighlight(true)
 {
-	setIconSize(ICON_SIZE);
+#ifndef MOBILE_OS
+	setIconSize(QSize(20, 20));
+#endif
 
 	connect(this, SIGNAL(toggled(bool)), this, SLOT(aboutUpdateIcon()));
 }
@@ -25,20 +26,22 @@ FlatButton::FlatButton(QWidget* _parent) :
 void FlatButton::setIcons(const QIcon& _icon, const QIcon& _checkedIcon, const QIcon& _hoverIcon)
 {
 	m_icon = _icon;
-	ImageHelper::setIconColor(m_icon, ICON_SIZE, palette().text().color());
+    if (!m_icon.isNull()) {
+        ImageHelper::setIconColor(m_icon, m_icon.availableSizes().last(), palette().text().color());
 
-	m_checkedIcon = _checkedIcon;
-	if (!m_checkedIcon.isNull()) {
-		m_checkedIconHighlight = false;
-		ImageHelper::setIconColor(m_checkedIcon, ICON_SIZE, palette().text().color());
-	} else {
-		m_checkedIconHighlight = true;
-		m_checkedIcon = _icon;
-		QColor highlightColor = palette().highlight().color();
-		ImageHelper::setIconColor(m_checkedIcon, ICON_SIZE, highlightColor);
-	}
+        m_checkedIcon = _checkedIcon;
+        if (!m_checkedIcon.isNull()) {
+            m_checkedIconHighlight = false;
+            ImageHelper::setIconColor(m_checkedIcon, m_icon.availableSizes().last(), palette().text().color());
+        } else {
+            m_checkedIconHighlight = true;
+            m_checkedIcon = _icon;
+            QColor highlightColor = palette().highlight().color();
+            ImageHelper::setIconColor(m_checkedIcon, m_icon.availableSizes().last(), highlightColor);
+        }
 
-	m_hoverIcon = _hoverIcon;
+        m_hoverIcon = _hoverIcon;
+    }
 
 	aboutUpdateIcon();
 }
@@ -52,10 +55,11 @@ void FlatButton::updateIcons()
 
 bool FlatButton::event(QEvent* _event)
 {
-	if (_event->type() == QEvent::PaletteChange) {
-		ImageHelper::setIconColor(m_icon, ICON_SIZE, palette().text().color());
+    if (_event->type() == QEvent::PaletteChange
+        && !m_icon.isNull()) {
+        ImageHelper::setIconColor(m_icon, m_icon.availableSizes().last(), palette().text().color());
 		if (!m_checkedIconHighlight) {
-			ImageHelper::setIconColor(m_checkedIcon, ICON_SIZE, palette().text().color());
+            ImageHelper::setIconColor(m_checkedIcon, m_icon.availableSizes().last(), palette().text().color());
 		}
 
 		aboutUpdateIcon();
@@ -94,6 +98,8 @@ void FlatButton::aboutUpdateIcon()
 	if (!m_icon.isNull()) {
 		const bool isCheckedIcon = !m_checkedIcon.isNull() && isEnabled() && isChecked();
 		setIcon(isCheckedIcon ? m_checkedIcon : m_icon);
-	}
+    } else {
+        setIcon(m_icon);
+    }
 }
 

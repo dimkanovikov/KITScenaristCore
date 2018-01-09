@@ -60,11 +60,13 @@ void QLightBoxProgress::showProgress(const QString& _title, const QString& _desc
 
 void QLightBoxProgress::setProgressText(const QString& _title, const QString& _description)
 {
-    if (!_title.isEmpty()) {
-        m_title->setText(_title);
-    }
-    if (!_description.isEmpty()) {
-        m_description->setText(_description);
+    if (s_lastUsedWidget != 0) {
+        if (!_title.isEmpty()) {
+            s_lastUsedWidget->m_title->setText(_title);
+        }
+        if (!_description.isEmpty()) {
+            s_lastUsedWidget->m_description->setText(_description);
+        }
     }
 }
 

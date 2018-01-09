@@ -2,6 +2,7 @@
 
 #include <BusinessLayer/ScenarioDocument/ScenarioDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
+#include <BusinessLayer/ScenarioDocument/ScenarioTextBlockInfo.h>
 
 #include <Domain/Scenario.h>
 
@@ -12,10 +13,14 @@
 
 #include <QAbstractTextDocumentLayout>
 #include <QApplication>
+#include <QFontMetrics>
 #include <QString>
 #include <QPainter>
+#include <QPdfWriter>
+#ifndef MOBILE_OS
 #include <QPrinter>
 #include <QPrintPreviewDialog>
+#endif
 #include <QScrollArea>
 #include <QScrollBar>
 #include <QTextDocument>
@@ -29,7 +34,7 @@ namespace {
     /**
      * @brief Стиль экспорта
      */
-    static ScenarioTemplate exportStyle() {
+    static ScenarioTemplate exportTemplate() {
         return ScenarioTemplateFacade::getTemplate(
                     DataStorageLayer::StorageFacade::settingsStorage()->value(
                         "export/style",
@@ -43,9 +48,13 @@ namespace {
     const char* PRINT_TITLE_KEY = "print_title";
 
     /**
-     * @brief Необходимо ли печатать номера страниц
+     * @brief Необходимо ли печатать номера страниц, сцен и реплик
      */
+    /** @{ */
     const char* PRINT_PAGE_NUMBERS_KEY = "page_numbers";
+    const char* PRINT_SCENES_NUMBERS_KEY = "scenes_numbers";
+    const char* PRINT_DIALOGUES_NUMBERS_KEY = "dialogues_numbers";
+    /** @} */
 
     /**
      * @brief Напечатать страницу документа
@@ -54,7 +63,7 @@ namespace {
     static void printPage(int _pageNumber, QPainter* _painter, const QTextDocument* _document,
         const QRectF& _body, const QPagedPaintDevice::Margins& _margins)
     {
-        const int pageYPos = (_pageNumber - 1) * _body.height();
+        const qreal pageYPos = (_pageNumber - 1) * _body.height();
 
         _painter->save();
         _painter->translate(_body.left(), _body.top() - pageYPos);
@@ -70,13 +79,135 @@ namespace {
         layout->draw(_painter, ctx);
 
         //
+        // Печатаем номера сцен и реплик, если нужно
+        //
+        const bool needPrintScenesNumbers = _document->property(PRINT_SCENES_NUMBERS_KEY).toBool();
+        const bool needPrintDialoguesNumbers = _document->property(PRINT_DIALOGUES_NUMBERS_KEY).toBool();
+        if (needPrintScenesNumbers
+            || needPrintDialoguesNumbers) {
+            _painter->save();
+            //
+            // Смещаем пэинтер на ширину поля, чтобы можно было отрисовать номера сцен
+            //
+            _painter->translate(-1 * PageMetrics::mmToPx(_margins.left), 0);
+            const QRectF fullWidthPageRect(0, pageYPos, PageMetrics::mmToPx(_margins.left) + _body.width() + PageMetrics::mmToPx(_margins.right), _body.height());
+            _painter->setClipRect(fullWidthPageRect);
+
+            const int blockPos = layout->hitTest(QPointF(0, pageYPos), Qt::FuzzyHit);
+            QTextBlock block = _document->findBlock(std::max(0, blockPos));
+            while (block.isValid()) {
+                const QRectF blockRect = layout->blockBoundingRect(block);
+                if (blockRect.bottom() > pageYPos + _body.height()) {
+                    break;
+                }
+
+                //
+                // Покажем номер сцены, если необходимо
+                //
+                if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::SceneHeading
+                    && !block.text().isEmpty()
+                    && needPrintScenesNumbers) {
+                    const SceneHeadingBlockInfo* const blockInfo = dynamic_cast<SceneHeadingBlockInfo*>(block.userData());
+                    if (blockInfo != nullptr) {
+                        QFont font = exportTemplate().blockStyle(ScenarioBlockStyle::SceneHeading).charFormat().font();
+                        const qreal fontSize = font.pointSize() / qMin(_painter->viewport().height() / _body.height(),
+                                                                       _painter->viewport().width() / _body.width());
+                        font.setPointSizeF(fontSize);
+                        _painter->setFont(font);
+                        //
+                        const int distanceBetweenSceneNumberAndText = 10;
+                        if (QLocale().textDirection() == Qt::LeftToRight) {
+                            const QRectF sceneNumberRect(
+                                        0,
+                                        blockRect.top() <= pageYPos ? pageYPos : blockRect.top(),
+                                        PageMetrics::mmToPx(_margins.left) - distanceBetweenSceneNumberAndText,
+                                        blockRect.height());
+                            _painter->drawText(sceneNumberRect, Qt::AlignRight | Qt::AlignTop, QString::number(blockInfo->sceneNumber()) + ".");
+                        } else {
+                            const QRectF sceneNumberRect(
+                                        PageMetrics::mmToPx(_margins.left) + _body.width() + distanceBetweenSceneNumberAndText,
+                                        blockRect.top() <= pageYPos ? pageYPos : blockRect.top(),
+                                        PageMetrics::mmToPx(_margins.right) - distanceBetweenSceneNumberAndText,
+                                        blockRect.height());
+                            _painter->drawText(sceneNumberRect, Qt::AlignLeft | Qt::AlignTop, "." + QString::number(blockInfo->sceneNumber()));
+                        }
+                    }
+                }
+                //
+                // Покажем номер диалога, если необходимо
+                //
+                else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Character
+                         && !block.text().isEmpty()
+                         && needPrintDialoguesNumbers) {
+                    const CharacterBlockInfo* const blockInfo = dynamic_cast<CharacterBlockInfo*>(block.userData());
+                    if (blockInfo != nullptr) {
+                        QFont font = exportTemplate().blockStyle(ScenarioBlockStyle::Character).charFormat().font();
+                        const qreal fontSize = font.pointSize() / qMin(_painter->viewport().height() / _body.height(),
+                                                                       _painter->viewport().width() / _body.width());
+                        font.setPointSizeF(fontSize);
+                        _painter->setFont(font);
+                        //
+                        if (QLocale().textDirection() == Qt::LeftToRight) {
+                            const QString dialogueNumber = QString("%1:").arg(blockInfo->dialogueNumbder());
+                            const int numberDelta = _painter->fontMetrics().width(dialogueNumber);
+                            QRectF dialogueNumberRect;
+                            if (block.blockFormat().leftMargin() > numberDelta) {
+                                dialogueNumberRect =
+                                        QRectF(
+                                            PageMetrics::mmToPx(_margins.left),
+                                            blockRect.top() <= pageYPos ? pageYPos : blockRect.top(),
+                                            numberDelta,
+                                            blockRect.height());
+                            } else {
+                                const int distanceBetweenSceneNumberAndText = 10;
+                                dialogueNumberRect =
+                                        QRectF(
+                                            0,
+                                            blockRect.top() <= pageYPos ? pageYPos : blockRect.top(),
+                                            PageMetrics::mmToPx(_margins.left) - distanceBetweenSceneNumberAndText,
+                                            blockRect.height());
+                            }
+                            _painter->drawText(dialogueNumberRect, Qt::AlignRight | Qt::AlignTop, dialogueNumber);
+                        } else {
+                            const QString dialogueNumber = QString(":%1").arg(blockInfo->dialogueNumbder());
+                            const int numberDelta = _painter->fontMetrics().width(dialogueNumber);
+                            QRectF dialogueNumberRect;
+                            if (block.blockFormat().rightMargin() > numberDelta) {
+                                dialogueNumberRect =
+                                        QRectF(
+                                            PageMetrics::mmToPx(_margins.left) + _body.width() - numberDelta,
+                                            blockRect.top() <= pageYPos ? pageYPos : blockRect.top(),
+                                            numberDelta,
+                                            blockRect.height());
+                            } else {
+                                const int distanceBetweenSceneNumberAndText = 10;
+                                dialogueNumberRect =
+                                        QRectF(
+                                            PageMetrics::mmToPx(_margins.left) + _body.width() + distanceBetweenSceneNumberAndText,
+                                            blockRect.top() <= pageYPos ? pageYPos : blockRect.top(),
+                                            PageMetrics::mmToPx(_margins.right) - distanceBetweenSceneNumberAndText,
+                                            blockRect.height());
+                            }
+                            _painter->drawText(dialogueNumberRect, Qt::AlignRight | Qt::AlignTop, dialogueNumber);
+                        }
+                    }
+                }
+
+                block = block.next();
+            }
+            _painter->restore();
+        }
+
+        //
         // Если необходимо рисуем нумерацию страниц
         //
-        if (_document->property(PRINT_PAGE_NUMBERS_KEY).toBool()) {
+        const bool needPrintPageNumbers = _document->property(PRINT_PAGE_NUMBERS_KEY).toBool();
+        const bool needPrintTitlePage = _document->property(PRINT_TITLE_KEY).toBool();
+        if (needPrintPageNumbers) {
             //
             // На титульной и на первой странице сценария
             //
-            if ((_document->property(PRINT_TITLE_KEY).toBool() && _pageNumber < 3)
+            if ((needPrintTitlePage && _pageNumber < 3)
                 || _pageNumber == 1) {
                 //
                 // ... не печатаем номер
@@ -87,7 +218,11 @@ namespace {
             //
             else {
                 _painter->save();
-                _painter->setFont(QFont("Courier Prime", 12));
+                QFont font = exportTemplate().blockStyle(ScenarioBlockStyle::Action).charFormat().font();
+                const qreal fontSize = font.pointSize() / qMin(_painter->viewport().height() / _body.height(),
+                                                               _painter->viewport().width() / _body.width());
+                font.setPointSizeF(fontSize);
+                _painter->setFont(font);
 
                 //
                 // Середины верхнего и нижнего полей
@@ -105,15 +240,15 @@ namespace {
                 // Определяем где положено находиться нумерации
                 //
                 QRectF numberingRect;
-                if (exportStyle().numberingAlignment().testFlag(Qt::AlignTop)) {
+                if (exportTemplate().numberingAlignment().testFlag(Qt::AlignTop)) {
                     numberingRect = headerRect;
                 } else {
                     numberingRect = footerRect;
                 }
                 Qt::Alignment numberingAlignment = Qt::AlignVCenter;
-                if (exportStyle().numberingAlignment().testFlag(Qt::AlignLeft)) {
+                if (exportTemplate().numberingAlignment().testFlag(Qt::AlignLeft)) {
                     numberingAlignment |= Qt::AlignLeft;
-                } else if (exportStyle().numberingAlignment().testFlag(Qt::AlignCenter)) {
+                } else if (exportTemplate().numberingAlignment().testFlag(Qt::AlignCenter)) {
                     numberingAlignment |= Qt::AlignCenter;
                 } else {
                     numberingAlignment |= Qt::AlignRight;
@@ -123,16 +258,18 @@ namespace {
                 // Рисуем нумерацию в положеном месте (отнимаем единицу, т.к. нумерация
                 // должна следовать с единицы для первой страницы текста сценария)
                 //
-                int titleDelta = _document->property(PRINT_TITLE_KEY).toBool() ? -1 : 0;
+                int titleDelta = needPrintTitlePage ? -1 : 0;
                 _painter->setClipRect(numberingRect);
-                _painter->drawText(numberingRect, numberingAlignment,
-                                   QString("%1.").arg(_pageNumber + titleDelta));
+                _painter->drawText(
+                    numberingRect, numberingAlignment,
+                    QString(QLocale().textDirection() == Qt::LeftToRight ? "%1." : ".%1").arg(_pageNumber + titleDelta));
                 _painter->restore();
             }
         }
         _painter->restore();
     }
 
+#ifndef MOBILE_OS
     /**
      * @brief Напечатать документ
      * @note Адаптация функции QTextDocument::print
@@ -228,7 +365,6 @@ namespace {
     static bool setPrintPreviewScrollValue(QPrintPreviewDialog& _dialog, int _value) {
         foreach (QAbstractScrollArea* child, _dialog.findChildren<QAbstractScrollArea*>()) {
             if (QString(child->metaObject()->className()) == "GraphicsView") {
-                qDebug() << _value << child->verticalScrollBar()->maximum();
                 child->verticalScrollBar()->setValue(_value);
                 break;
             }
@@ -249,10 +385,75 @@ namespace {
         }
         return value;
     }
+#else
+    /**
+     * @brief Напечатать документ
+     * @note Адаптация функции QTextDocument::print
+     */
+    static void printDocument(QTextDocument* _document, QPdfWriter* _printer)
+    {
+        QPainter painter(_printer);
+        // Check that there is a valid device to print to.
+        if (!painter.isActive())
+            return;
+        QScopedPointer<QTextDocument> clonedDoc;
+        (void)_document->documentLayout(); // make sure that there is a layout
+        QRectF body = QRectF(QPointF(0, 0), _document->pageSize());
+
+        {
+            qreal sourceDpiX = painter.device()->logicalDpiX();
+            qreal sourceDpiY = sourceDpiX;
+            QPaintDevice *dev = _document->documentLayout()->paintDevice();
+            if (dev) {
+                sourceDpiX = dev->logicalDpiX();
+                sourceDpiY = dev->logicalDpiY();
+            }
+            const qreal dpiScaleX = qreal(_printer->logicalDpiX()) / sourceDpiX;
+            const qreal dpiScaleY = qreal(_printer->logicalDpiY()) / sourceDpiY;
+            // scale to dpi
+            painter.scale(dpiScaleX, dpiScaleY);
+            QSizeF scaledPageSize = _document->pageSize();
+            scaledPageSize.rwidth() *= dpiScaleX;
+            scaledPageSize.rheight() *= dpiScaleY;
+            const QSizeF printerPageSize(painter.viewport().size());
+            // scale to page
+            painter.scale(printerPageSize.width() / scaledPageSize.width(),
+                    printerPageSize.height() / scaledPageSize.height());
+        }
+
+        int docCopies = 1;
+        int pageCopies = 1;
+        int fromPage = 1;
+        int toPage = _document->pageCount();
+        bool ascending = true;
+        // paranoia check
+        fromPage = qMax(1, fromPage);
+        toPage = qMin(_document->pageCount(), toPage);
+        for (int i = 0; i < docCopies; ++i) {
+            int page = fromPage;
+            while (true) {
+                for (int j = 0; j < pageCopies; ++j) {
+                    printPage(page, &painter, _document, body, _printer->margins());
+                    if (j < pageCopies - 1)
+                        _printer->newPage();
+                }
+                if (page == toPage)
+                    break;
+                if (ascending)
+                    ++page;
+                else
+                    --page;
+                _printer->newPage();
+            }
+            if ( i < docCopies - 1)
+                _printer->newPage();
+        }
+    }
+#endif
 }
 
 
-QPair<ScenarioDocument*, int> PdfExporter::m_lastScenarioPreviewScrollPosition;
+QPair<ScenarioDocument*, int> PdfExporter::m_lastScriptPreviewScrollPosition;
 
 PdfExporter::PdfExporter(QObject* _parent) :
     QObject(_parent),
@@ -266,29 +467,64 @@ void PdfExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
     //
     // Настроим принтер
     //
-    QPrinter* printer = preparePrinter(_exportParameters.filePath);
+#ifndef MOBILE_OS
+    QScopedPointer<QPrinter> printer(preparePrinter(_exportParameters.filePath));
+#else
+    QScopedPointer<QPdfWriter> printer(new QPdfWriter(_exportParameters.filePath));
+    printer->setPageSize(QPageSize(::exportStyle().pageSizeId()));
+    QMarginsF margins = ::exportStyle().pageMargins();
+    printer->setPageMargins(margins, QPageLayout::Millimeter);
+#endif
 
     //
     // Сформируем документ
     //
-    QTextDocument* preparedDocument = prepareDocument(_scenario, _exportParameters);
+    ExportParameters fakeParameters = _exportParameters;
+    fakeParameters.printScenesNumbers = false;
+    fakeParameters.printDialoguesNumbers = false;
+    QTextDocument* preparedDocument = prepareDocument(_scenario, fakeParameters);
+    //
+    // ... настроим документ для печати
+    //
     preparedDocument->setProperty(PRINT_TITLE_KEY, _exportParameters.printTilte);
     preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, _exportParameters.printPagesNumbers);
+    preparedDocument->setProperty(PRINT_SCENES_NUMBERS_KEY, _exportParameters.printScenesNumbers);
+    preparedDocument->setProperty(PRINT_DIALOGUES_NUMBERS_KEY, _exportParameters.printDialoguesNumbers);
 
     //
     // Печатаем документ
     //
-    ::printDocument(preparedDocument, printer);
-
-    //
-    // Освобождаем память
-    //
-    delete printer;
-    printer = 0;
-    delete preparedDocument;
-    preparedDocument = 0;
+    ::printDocument(preparedDocument, printer.data());
 }
 
+void PdfExporter::exportTo(const ResearchModelCheckableProxy* _researchModel, const ExportParameters& _exportParameters) const
+{
+    //
+    // Настроим принтер
+    //
+#ifndef MOBILE_OS
+    QScopedPointer<QPrinter> printer(preparePrinter(_exportParameters.filePath));
+#else
+    QScopedPointer<QPdfWriter> printer(new QPdfWriter(_exportParameters.filePath));
+    printer->setPageSize(QPageSize(::exportStyle().pageSizeId()));
+    QMarginsF margins = ::exportStyle().pageMargins();
+    printer->setPageMargins(margins, QPageLayout::Millimeter);
+#endif
+
+    //
+    // Сформируем документ
+    //
+    QTextDocument* preparedDocument = prepareDocument(_researchModel, _exportParameters);
+    preparedDocument->setProperty(PRINT_TITLE_KEY, false);
+    preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, true);
+
+    //
+    // Печатаем документ
+    //
+    ::printDocument(preparedDocument, printer.data());
+}
+
+#ifndef MOBILE_OS
 void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParameters& _exportParameters)
 {
     //
@@ -299,9 +535,17 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     //
     // Сформируем документ
     //
-    QTextDocument* preparedDocument = prepareDocument(_scenario, _exportParameters);
+    ExportParameters fakeParameters = _exportParameters;
+    fakeParameters.printScenesNumbers = false;
+    fakeParameters.printDialoguesNumbers = false;
+    QTextDocument* preparedDocument = prepareDocument(_scenario, fakeParameters);
+    //
+    // ... настроим документ для печати
+    //
     preparedDocument->setProperty(PRINT_TITLE_KEY, _exportParameters.printTilte);
     preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, _exportParameters.printPagesNumbers);
+    preparedDocument->setProperty(PRINT_SCENES_NUMBERS_KEY, _exportParameters.printScenesNumbers);
+    preparedDocument->setProperty(PRINT_DIALOGUES_NUMBERS_KEY, _exportParameters.printDialoguesNumbers);
 
     //
     // Сохраним указатель на документ для печати
@@ -314,17 +558,17 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     QPrintPreviewDialog printDialog(printer, qApp->activeWindow());
     printDialog.setWindowState(Qt::WindowMaximized);
     connect(&printDialog, &QPrintPreviewDialog::paintRequested, this, &PdfExporter::aboutPrint);
-    if (m_lastScenarioPreviewScrollPosition.first == _scenario) {
+    if (m_lastScriptPreviewScrollPosition.first == _scenario) {
         //
         // Если осуществляется повторный предпросмотр документа, пробуем восстановить положение полосы прокрутки
         //
         connect(this, &PdfExporter::printed, [this, &printDialog] {
             QTimer::singleShot(300, [this, &printDialog] {
-                setPrintPreviewScrollValue(printDialog, m_lastScenarioPreviewScrollPosition.second);
+                setPrintPreviewScrollValue(printDialog, m_lastScriptPreviewScrollPosition.second);
             });
         });
     } else {
-        m_lastScenarioPreviewScrollPosition.first = _scenario;
+        m_lastScriptPreviewScrollPosition.first = _scenario;
     }
 
     //
@@ -335,7 +579,7 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     //
     // Сохраняем позицию прокрутки
     //
-    m_lastScenarioPreviewScrollPosition.second = ::printPreviewScrollValue(printDialog);
+    m_lastScriptPreviewScrollPosition.second = ::printPreviewScrollValue(printDialog);
 
     //
     // Освобождаем память
@@ -345,6 +589,52 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     printer = 0;
     delete preparedDocument;
     preparedDocument = 0;
+}
+
+void PdfExporter::printPreview(const ResearchModelCheckableProxy* _researchModel, const ExportParameters& _exportParameters)
+{
+    //
+    // Настроим принтер
+    //
+    QPrinter* printer = preparePrinter();
+
+    //
+    // Сформируем документ
+    //
+    QTextDocument* preparedDocument = prepareDocument(_researchModel, _exportParameters);
+    preparedDocument->setProperty(PRINT_TITLE_KEY, false);
+    preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, true);
+
+    //
+    // Сохраним указатель на документ для печати
+    //
+    m_documentForPrint = preparedDocument;
+
+    //
+    // Настроим диалог предварительного просмотра
+    //
+    QPrintPreviewDialog printDialog(printer, qApp->activeWindow());
+    printDialog.setWindowState(Qt::WindowMaximized);
+    connect(&printDialog, &QPrintPreviewDialog::paintRequested, this, &PdfExporter::aboutPrint);
+
+    //
+    // Вызываем диалог предварительного просмотра и печати
+    //
+    printDialog.exec();
+
+    //
+    // Сохраняем позицию прокрутки
+    //
+    m_lastScriptPreviewScrollPosition.second = ::printPreviewScrollValue(printDialog);
+
+    //
+    // Освобождаем память
+    //
+    m_documentForPrint = nullptr;
+    delete printer;
+    printer = nullptr;
+    delete preparedDocument;
+    preparedDocument = nullptr;
 }
 
 void PdfExporter::aboutPrint(QPrinter* _printer)
@@ -357,8 +647,8 @@ void PdfExporter::aboutPrint(QPrinter* _printer)
 QPrinter* PdfExporter::preparePrinter(const QString& _forFile) const
 {
     QPrinter* printer = new QPrinter;
-    printer->setPageSize(QPageSize(::exportStyle().pageSizeId()));
-    QMarginsF margins = ::exportStyle().pageMargins();
+    printer->setPageSize(QPageSize(::exportTemplate().pageSizeId()));
+    QMarginsF margins = ::exportTemplate().pageMargins();
     printer->setPageMargins(margins.left(), margins.top(), margins.right(), margins.bottom(),
                             QPrinter::Millimeter);
 
@@ -369,3 +659,4 @@ QPrinter* PdfExporter::preparePrinter(const QString& _forFile) const
 
     return printer;
 }
+#endif

@@ -17,29 +17,28 @@ CircleFillAnimator::CircleFillAnimator(QWidget* _widgetForFill) :
 {
     Q_ASSERT(_widgetForFill);
 
-    m_animation->setDuration(800);
+    m_animation->setEasingCurve(QEasingCurve::InCubic);
+    m_animation->setDuration(400);
 
     m_decorator->setAttribute(Qt::WA_TransparentForMouseEvents);
     m_decorator->hide();
 
-    connect(m_animation, &QPropertyAnimation::finished, [=] {
-        setAnimatedStopped();
-        if (isAnimatedBackward()) {
-            m_decorator->hide();
-        } else {
-            hideDecorator();
-        }
-    });
+    connect(m_animation, &QPropertyAnimation::finished, this, &CircleFillAnimator::finalize);
 }
 
-void CircleFillAnimator::setStartPoint(const QPoint& _point)
+void CircleFillAnimator::setStartPoint(const QPoint& _globalPoint)
 {
-    m_decorator->setStartPoint(_point);
+    m_decorator->setStartPoint(_globalPoint);
 }
 
 void CircleFillAnimator::setFillColor(const QColor& _color)
 {
     m_decorator->setFillColor(_color);
+}
+
+void CircleFillAnimator::setHideAfterFinish(bool _hide)
+{
+    m_hideAfterFinish = _hide;
 }
 
 int CircleFillAnimator::animationDuration() const
@@ -63,13 +62,16 @@ void CircleFillAnimator::fillIn()
     //
     // Определим стартовые и финальные позиции для декораций
     //
-    int startRadius = 0;
-    int finalRadius = sqrt(widgetForFill()->height()*widgetForFill()->height() + widgetForFill()->width()*widgetForFill()->width());
+    const int startRadius = 0;
+    //
+    const QPoint startPoint = widgetForFill()->mapFromGlobal(m_decorator->startPoint());
+    const int w = qMax(startPoint.x(), widgetForFill()->width() - startPoint.x());
+    const int h = qMax(startPoint.y(), widgetForFill()->height() - startPoint.y());
+    const int finalRadius = sqrt(w*w + h*h);
 
     //
     // Позиционируем декораторы
     //
-    m_decorator->resize(widgetForFill()->size());
     m_decorator->move(0, 0);
     m_decorator->show();
     m_decorator->raise();
@@ -112,13 +114,13 @@ void CircleFillAnimator::fillOut()
     //
     // Определим стартовые и финальные позиции для декораций
     //
-    int startRadius = sqrt(widgetForFill()->height()*widgetForFill()->height() + widgetForFill()->width()*widgetForFill()->width());
+    int startRadius = sqrt(widgetForFill()->height() * widgetForFill()->height()
+                           + widgetForFill()->width() * widgetForFill()->width());
     int finalRadius = 0;
 
     //
     // Позиционируем декораторы
     //
-    m_decorator->resize(widgetForFill()->size());
     m_decorator->move(0, 0);
     m_decorator->show();
     m_decorator->raise();
@@ -145,6 +147,14 @@ void CircleFillAnimator::fillOut()
     }
 }
 
+void CircleFillAnimator::finalize()
+{
+    setAnimatedStopped();
+    if (m_hideAfterFinish) {
+        hideDecorator();
+    }
+}
+
 void CircleFillAnimator::hideDecorator()
 {
     QGraphicsOpacityEffect* hideEffect = qobject_cast<QGraphicsOpacityEffect*>(m_decorator->graphicsEffect());
@@ -155,7 +165,7 @@ void CircleFillAnimator::hideDecorator()
     hideEffect->setOpacity(1.);
 
     QPropertyAnimation* hideAnimation = new QPropertyAnimation(hideEffect, "opacity", m_decorator);
-    hideAnimation->setDuration(400);
+    hideAnimation->setDuration(200);
     hideAnimation->setStartValue(1.);
     hideAnimation->setEndValue(0.);
     connect(hideAnimation, &QPropertyAnimation::finished, [=] {

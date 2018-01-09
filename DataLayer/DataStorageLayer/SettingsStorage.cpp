@@ -9,6 +9,7 @@
 
 #include <QApplication>
 #include <QCheckBox>
+#include <QDir>
 #include <QHeaderView>
 #include <QRadioButton>
 #include <QSpinBox>
@@ -46,6 +47,28 @@ namespace {
             }
         }
         return name;
+    }
+
+    /**
+     * @brief Преобразовать список чисел в строку
+     */
+    static QString intListToString(const QList<int>& _values) {
+        QString result;
+        for (const int& value : _values) {
+            result.append(QString("%1#").arg(value));
+        }
+        return result;
+    }
+
+    /**
+     * @brief Преобразовать строку в список чисел
+     */
+    static QList<int> intListFromString(const QString& _values) {
+        QList<int> result;
+        for (const QString& value : _values.split("#", QString::SkipEmptyParts)) {
+            result.append(value.toInt());
+        }
+        return result;
     }
 }
 
@@ -294,6 +317,22 @@ void SettingsStorage::saveApplicationStateAndGeometry(QWidget* _widget)
         m_appSettings.setValue("state", splitter->saveState());
         m_appSettings.setValue("geometry", splitter->saveGeometry());
         //
+        // Если разделитель был инициилизирован, сохраним его размеры
+        //
+        {
+            bool isSplitterInitialized = std::max(splitter->width(), splitter->height()) > 200;
+            bool isSplitterSizesLoaded = false;
+            for (int size : splitter->sizes()) {
+                if (size > 0) {
+                    isSplitterSizesLoaded = true;
+                    break;
+                }
+            }
+            if (isSplitterInitialized && isSplitterSizesLoaded) {
+                m_appSettings.setValue("sizes", ::intListToString(splitter->sizes()));
+            }
+        }
+        //
         // Сохраняем расположение панелей
         //
         m_appSettings.beginGroup("splitter-widgets");
@@ -386,7 +425,7 @@ void SettingsStorage::loadApplicationStateAndGeometry(QWidget* _widget)
     foreach (QSplitter* splitter, _widget->findChildren<QSplitter*>()) {
         m_appSettings.beginGroup(splitter->objectName());
         //
-        // Восстанавливаем расположение панелей
+        // Восстанавливаем очерёдность расположения панелей
         //
         m_appSettings.beginGroup("splitter-widgets");
         //
@@ -417,6 +456,28 @@ void SettingsStorage::loadApplicationStateAndGeometry(QWidget* _widget)
         //
         splitter->restoreState(m_appSettings.value("state").toByteArray());
         splitter->restoreGeometry(m_appSettings.value("geometry").toByteArray());
+        //
+        // Запрещаем схлапывание вертикальных разделителей
+        //
+        splitter->setChildrenCollapsible(splitter->orientation() == Qt::Horizontal);
+        //
+        // Восстанавливаем размеры
+        //
+        if (m_appSettings.contains("sizes")
+            && !splitter->childrenCollapsible()) {
+            const QList<int> sizes = ::intListFromString(m_appSettings.value("sizes").toString());
+            //
+            // Если у сплиттера нельзя схлапывать панели вручную, но размер должен быть нулевым,
+            // то сперва скрываем необходимые виджеты, а уже потом восстанавливаем состояние
+            //
+            for (int index = 0; index < sizes.size(); ++index) {
+                if (sizes.at(index) == 0) {
+                    splitter->widget(index)->hide();
+                }
+            }
+            splitter->setSizes(sizes);
+        }
+
         m_appSettings.endGroup(); // splitter->objectName()
     }
     m_appSettings.endGroup();
@@ -484,12 +545,34 @@ void SettingsStorage::loadApplicationStateAndGeometry(QWidget* _widget)
     m_appSettings.endGroup(); // STATE_AND_GEOMETRY_KEY
 }
 
+QString SettingsStorage::documentFolderPath(const QString& _key)
+{
+    QString folderPath = value(_key, ApplicationSettings);
+    if (folderPath.isEmpty()) {
+        folderPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    }
+    return folderPath;
+}
+
+QString SettingsStorage::documentFilePath(const QString& _key, const QString& _fileName)
+{
+    QString filePath = documentFolderPath(_key) + QDir::separator() + _fileName;
+    return QDir::toNativeSeparators(filePath);
+}
+
+void SettingsStorage::saveDocumentFolderPath(const QString& _key, const QString& _filePath)
+{
+    setValue(_key, QFileInfo(_filePath).absoluteDir().absolutePath(), ApplicationSettings);
+}
+
 SettingsStorage::SettingsStorage()
 {
     //
     // Настроим значения параметров по умолчанию
     //
+    m_defaultValues.insert("application/current-app-review-version", "4");
     m_defaultValues.insert("application/uuid", QUuid::createUuid().toString());
+    m_defaultValues.insert("application/app-was-configured", "0");
     m_defaultValues.insert("application/language", "-1");
     m_defaultValues.insert("application/user-name", ::systemUserName());
     m_defaultValues.insert("application/use-dark-theme", "1");
@@ -498,20 +581,33 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("application/save-backups", "1");
     m_defaultValues.insert("application/save-backups-folder",
         QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + "/KITScenarist/backups");
+    m_defaultValues.insert("application/compact-mode-auto-enable", "1");
+    m_defaultValues.insert("application/compact-mode", "0");
     m_defaultValues.insert("application/modules/research", "1");
     m_defaultValues.insert("application/modules/cards", "1");
     m_defaultValues.insert("application/modules/scenario", "1");
     m_defaultValues.insert("application/modules/statistics", "1");
 
+    m_defaultValues.insert("research/default-font/family", "Courier Prime");
+    m_defaultValues.insert("research/default-font/size", "12");
+
+
     m_defaultValues.insert("cards/use-corkboard", "1");
     m_defaultValues.insert("cards/background-color", "#FEFEFE");
-    m_defaultValues.insert("cards/background-color-dark", "#3D3D3D");
+    m_defaultValues.insert("cards/background-color-dark", "#26282A");
 
     m_defaultValues.insert("navigator/show-scenes-numbers", "1");
     m_defaultValues.insert("navigator/show-scene-description", "1");
     m_defaultValues.insert("navigator/scene-description-is-scene-text", "1");
     m_defaultValues.insert("navigator/scene-description-height", "1");
 
+    m_defaultValues.insert("scenario-editor/current-style",
+#ifndef MOBILE_OS
+                          "default"
+#else
+                          "Mobile"
+#endif
+                           );
     m_defaultValues.insert("scenario-editor/page-view",
 #ifndef MOBILE_OS
                            "1"
@@ -521,16 +617,28 @@ SettingsStorage::SettingsStorage()
                            );
     m_defaultValues.insert("scenario-editor/zoom-range", "1");
     m_defaultValues.insert("scenario-editor/show-scenes-numbers", "1");
+    m_defaultValues.insert("scenario-editor/show-dialogues-numbers", "0");
+    m_defaultValues.insert("scenario-editor/hide-panels-in-fullscreen", "1");
+    m_defaultValues.insert("scenario-editor/highlight-blocks", "0");
+    m_defaultValues.insert("scenario-editor/highlight-current-line", "0");
     m_defaultValues.insert("scenario-editor/text-color", "#000000");
     m_defaultValues.insert("scenario-editor/background-color", "#FEFEFE");
     m_defaultValues.insert("scenario-editor/nonprintable-text-color", "#0AC139");
     m_defaultValues.insert("scenario-editor/folder-text-color", "#FEFEFE");
     m_defaultValues.insert("scenario-editor/folder-background-color", "#CAC6C3");
     m_defaultValues.insert("scenario-editor/text-color-dark", "#EBEBEB");
-    m_defaultValues.insert("scenario-editor/background-color-dark", "#3D3D3D");
+    m_defaultValues.insert("scenario-editor/background-color-dark",
+#ifndef MOBILE_OS
+                           "#3D3D3D"
+#else
+                           "#26282A"
+#endif
+                           );
     m_defaultValues.insert("scenario-editor/nonprintable-text-color-dark", "#0AC139");
     m_defaultValues.insert("scenario-editor/folder-text-color-dark", "#EBEBEB");
     m_defaultValues.insert("scenario-editor/folder-background-color-dark", "#8D2DC4");
+    m_defaultValues.insert("scenario-editor/auto-continue-dialogue", "0");
+    m_defaultValues.insert("scenario-editor/auto-corrections-on-page-breaks", "1");
     m_defaultValues.insert("scenario-editor/capitalize-first-word", "1");
     m_defaultValues.insert("scenario-editor/correct-double-capitals", "1");
     m_defaultValues.insert("scenario-editor/replace-three-dots", "0");
@@ -553,6 +661,7 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("scenario-editor/shortcuts/noprintable_text", ShortcutHelper::makeShortcut("Ctrl+Esc"));
     m_defaultValues.insert("scenario-editor/shortcuts/scene_group_header", ShortcutHelper::makeShortcut("Ctrl+D"));
     m_defaultValues.insert("scenario-editor/shortcuts/folder_header", ShortcutHelper::makeShortcut("Ctrl+Space"));
+    m_defaultValues.insert("scenario-editor/shortcuts/lyrics", ShortcutHelper::makeShortcut("Ctrl+K"));
     //
     m_defaultValues.insert("scenario-editor/styles-jumping/from-scene_heading-by-tab", QString::number(ScenarioBlockStyle::SceneCharacters));
     m_defaultValues.insert("scenario-editor/styles-jumping/from-scene_heading-by-enter", QString::number(ScenarioBlockStyle::Action));
@@ -578,6 +687,8 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("scenario-editor/styles-jumping/from-scene_group_header-by-enter", QString::number(ScenarioBlockStyle::SceneHeading));
     m_defaultValues.insert("scenario-editor/styles-jumping/from-folder_header-by-tab", QString::number(ScenarioBlockStyle::SceneHeading));
     m_defaultValues.insert("scenario-editor/styles-jumping/from-folder_header-by-enter", QString::number(ScenarioBlockStyle::SceneHeading));
+    m_defaultValues.insert("scenario-editor/styles-jumping/from-lyrics-by-tab", QString::number(ScenarioBlockStyle::Parenthetical));
+    m_defaultValues.insert("scenario-editor/styles-jumping/from-lyrics-by-enter", QString::number(ScenarioBlockStyle::Action));
     //
     m_defaultValues.insert("scenario-editor/styles-changing/from-scene_heading-by-tab", QString::number(ScenarioBlockStyle::Action));
     m_defaultValues.insert("scenario-editor/styles-changing/from-scene_heading-by-enter", QString::number(ScenarioBlockStyle::SceneHeading));
@@ -601,7 +712,10 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("scenario-editor/styles-changing/from-noprintable_text-by-enter", QString::number(ScenarioBlockStyle::NoprintableText));
     m_defaultValues.insert("scenario-editor/styles-changing/from-folder_header-by-tab", QString::number(ScenarioBlockStyle::FolderHeader));
     m_defaultValues.insert("scenario-editor/styles-changing/from-folder_header-by-enter", QString::number(ScenarioBlockStyle::FolderHeader));
+    m_defaultValues.insert("scenario-editor/styles-changing/from-lyrics-by-tab", QString::number(ScenarioBlockStyle::Parenthetical));
+    m_defaultValues.insert("scenario-editor/styles-changing/from-lyrics-by-enter", QString::number(ScenarioBlockStyle::Action));
     //
+    m_defaultValues.insert("scenario-editor/use-open-bracket-in-dialogue-for-parenthetical", "1");
     m_defaultValues.insert("scenario-editor/review/use-highlight", "1");
 
     m_defaultValues.insert("chronometry/used", "1");

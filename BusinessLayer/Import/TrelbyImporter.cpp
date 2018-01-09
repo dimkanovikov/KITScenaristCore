@@ -27,7 +27,7 @@ TrelbyImporter::TrelbyImporter() :
 
 }
 
-QString TrelbyImporter::importScenario(const BusinessLogic::ImportParameters& _importParameters) const
+QString TrelbyImporter::importScript(const BusinessLogic::ImportParameters& _importParameters) const
 {
 	QString scenarioXml;
 

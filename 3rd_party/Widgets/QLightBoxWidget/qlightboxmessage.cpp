@@ -1,5 +1,7 @@
 #include "qlightboxmessage.h"
 
+#include <3rd_party/Helpers/StyleSheetHelper.h>
+
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPushButton>
@@ -86,9 +88,6 @@ void QLightBoxMessage::initView()
 
     m_text->setProperty("lightBoxMessageText", true);
     m_text->setWordWrap(true);
-#ifndef MOBILE_OS
-    m_text->setMinimumWidth(300);
-#endif
 
     QHBoxLayout* topLayout = new QHBoxLayout;
     topLayout->setContentsMargins(QMargins());
@@ -104,6 +103,9 @@ void QLightBoxMessage::initView()
 
 #ifndef MOBILE_OS
     setMinimumWidth(500);
+#else
+    setMinimumWidth(qMin(StyleSheetHelper::dpToPx(400),
+                         qreal(parentWidget()->width() - StyleSheetHelper::dpToPx(56))));
 #endif
 }
 

@@ -27,7 +27,12 @@ void PlaceMapper::insert(Place* _place)
 
 void PlaceMapper::update(Place* _place)
 {
-	abstractUpdate(_place);
+    abstractUpdate(_place);
+}
+
+void PlaceMapper::remove(Place* _place)
+{
+    abstractDelete(_place);
 }
 
 QString PlaceMapper::findStatement(const Identifier& _id) const

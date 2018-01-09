@@ -9,7 +9,7 @@
 
 
 ImageLabel::ImageLabel(QWidget* _parent) :
-    QLabel(_parent),
+    QWidget(_parent),
     m_sortOrder(0),
     m_clearButton(new QToolButton(this)),
     m_isReadOnly(false)
@@ -29,37 +29,7 @@ void ImageLabel::setImage(const QPixmap& _image)
 {
     m_image = _image;
 
-    //
-    // Если фотография не пустая скорректируем позицию для вывода
-    //
-    QPixmap photoToShow;
-    if (!m_image.isNull()) {
-        //
-        // Изображение должно быть чуть меньше метки, чтобы не увеличивать её размер
-        //
-        const int delta = 2;
-        QSize photoSize(width() - delta, height() - delta);
-        photoToShow = QPixmap(photoSize);
-
-        //
-        // Рисуем масштабированное фото
-        //
-
-        QPainter painter;
-        painter.begin(&photoToShow);
-        painter.fillRect(0, 0, width(), height(), qApp->palette().button());
-
-        QPixmap scaledPhoto = m_image.scaled(photoSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-        painter.drawPixmap((width() - scaledPhoto.width()) / 2,
-                           (height() - scaledPhoto.height()) / 2,
-                           scaledPhoto);
-        painter.end();
-    }
-
-    //
-    // Устанавливаем изображение
-    //
-    setPixmap(photoToShow);
+    update();
 }
 
 QPixmap ImageLabel::image() const
@@ -98,7 +68,7 @@ void ImageLabel::enterEvent(QEvent* _event)
         m_clearButton->show();
     }
 
-    QLabel::enterEvent(_event);
+    QWidget::enterEvent(_event);
 }
 
 void ImageLabel::leaveEvent(QEvent* _event)
@@ -108,19 +78,27 @@ void ImageLabel::leaveEvent(QEvent* _event)
     //
     m_clearButton->hide();
 
-    QLabel::leaveEvent(_event);
+    QWidget::leaveEvent(_event);
 }
 
 void ImageLabel::mousePressEvent(QMouseEvent* _event)
 {
     emit clicked();
 
-    QLabel::mousePressEvent(_event);
+    QWidget::mousePressEvent(_event);
 }
 
-void ImageLabel::resizeEvent(QResizeEvent* _event)
+void ImageLabel::paintEvent(QPaintEvent* _event)
 {
-    setImage(m_image);
+    Q_UNUSED(_event);
 
-    QLabel::resizeEvent(_event);
+    if (!m_image.isNull()) {
+        QPainter painter;
+        painter.begin(this);
+        const QPixmap scaledPhoto = m_image.scaled(size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        painter.drawPixmap((width() - scaledPhoto.width()) / 2,
+                           (height() - scaledPhoto.height()) / 2,
+                           scaledPhoto);
+        painter.end();
+    }
 }

@@ -2,6 +2,7 @@
 #define SPELLCHECKTEXTEDIT_H
 
 #include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
+#include <QTextBlock>
 
 #include "SpellChecker.h"
 
@@ -82,6 +83,11 @@ private slots:
 	 */
 	void aboutReplaceWordOnSuggestion();
 
+    /**
+     * @brief Сменилась позиция курсора
+     */
+    void rehighlighWithNewCursor();
+
 private:
 	/**
 	 * @brief Найти слово в позиции
@@ -94,6 +100,16 @@ private:
      * @brief Удаляет пунктуацию в слове
      */
     QString removePunctutaion(const QString& _word) const;
+
+    /**
+     * @brief Перемещает курсор в начало слова (с учетом - и ')
+     */
+    QTextCursor moveCursorToStartWord(QTextCursor cursor);
+
+    /**
+     * @brief Перемещает курсор в конец слова (с учетом - и ')
+     */
+    QTextCursor moveCursorToEndWord(QTextCursor cursor);
 
 private:
 	/**
@@ -119,6 +135,11 @@ private:
 	 * @brief Последняя позиция курсора, при открытии контекстного меню
 	 */
 	QPoint m_lastCursorPosition;
+
+    /**
+     * @brief Предыдущий блок, на котором был курсор
+     */
+    QTextBlock m_prevBlock;
 };
 
 #endif // SPELLCHECKTEXTEDIT_H

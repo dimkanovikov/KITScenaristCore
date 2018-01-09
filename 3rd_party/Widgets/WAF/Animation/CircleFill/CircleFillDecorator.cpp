@@ -14,12 +14,17 @@ CircleFillDecorator::CircleFillDecorator(QWidget* _parent) :
 
 }
 
-void CircleFillDecorator::setStartPoint(const QPoint& _point)
+void CircleFillDecorator::setStartPoint(const QPoint& _globalPoint)
 {
-    QPoint localStartPoint = mapFromGlobal(_point);
+    QPoint localStartPoint = mapFromGlobal(_globalPoint);
     if (m_startPoint != localStartPoint) {
         m_startPoint = localStartPoint;
     }
+}
+
+QPoint CircleFillDecorator::startPoint() const
+{
+    return mapToGlobal(m_startPoint);
 }
 
 int CircleFillDecorator::radius() const
@@ -45,6 +50,11 @@ void CircleFillDecorator::setFillColor(const QColor& _fillColor)
 
 void CircleFillDecorator::paintEvent(QPaintEvent* _event)
 {
+    if (size() != parentWidget()->size()) {
+        resize(parentWidget()->size());
+        return;
+    }
+
     QPainter painter(this);
     painter.setPen(m_fillColor);
     painter.setBrush(m_fillColor);

@@ -136,15 +136,20 @@ namespace ManagementLayer
          * @brief Убрать подписку на проект для заданного пользователя
          * @note Если пользователь не задан, то происходит отписка текущего пользователя
          */
-        void unshareProject(int _projectId, const QString& _userEmail = QString::null);
+        void unshareProject(int _projectId, const QString& _userEmail = QString());
 
         //
         // Методы работы с конкретным проектом
         //
     public slots:
+        /**
+         * @brief Подготовить менеджер к синхронизации
+         */
+        void prepareToFullSynchronization();
 
         /**
          * @brief Полная синхронизация сценария
+         * @return Были ли загружены изменения сценария
          */
         void aboutFullSyncScenario();
 
@@ -173,12 +178,17 @@ namespace ManagementLayer
          */
         void restartSession();
 
+        /**
+         * @brief Фейковая авторизация для доступа к облачным проектам оффлайн
+         */
+        void fakeLogin();
+
     signals:
         /**
          * @brief Авторизация пройдена успешно
          */
         void loginAccepted(const QString& _userName, const QString& _userEmail,
-                           int _paymentMonth);
+                           int _paymentMonth, int _reviewVersion);
 
         /**
          * @brief Сервер успешно принял данные пользователя на регистрацию
@@ -208,7 +218,8 @@ namespace ManagementLayer
         /**
          * @brief Успешно запрошена информация о подписке
          */
-        void subscriptionInfoLoaded(bool _isActive, const QString& _expiredDate);
+        void subscriptionInfoLoaded(bool _isActive, const QString& _expiredDate, quint64 _usedSpace,
+                                    quint64 _availableSpace);
 
         /**
          * @brief Успешно изменен пароль

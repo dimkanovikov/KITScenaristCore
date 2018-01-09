@@ -17,6 +17,7 @@ namespace BusinessLogic
 {
     class ScenarioReviewModel;
     class ScenarioXml;
+    class ScriptTextCorrector;
 
 
     /**
@@ -70,7 +71,7 @@ namespace BusinessLogic
         /**
          * @brief Применить патч
          */
-        void applyPatch(const QString& _patch);
+        int applyPatch(const QString& _patch);
 
         /**
          * @brief Применить множество патчей
@@ -87,8 +88,8 @@ namespace BusinessLogic
          * @brief Собственные реализации отмены/повтора последнего действия
          */
         /** @{ */
-        void undoReimpl();
-        void redoReimpl();
+        int undoReimpl();
+        int redoReimpl();
         /** @} */
 
         /**
@@ -125,6 +126,16 @@ namespace BusinessLogic
          */
         QList<BusinessLogic::ScenarioBlockStyle::Type> visibleBlocksTypes() const;
 
+        /**
+         * @brief Настроить необходимость корректировок
+         */
+        void setCorrectionOptions(bool _needToCorrectCharactersNames, bool _needToCorrectPageBreaks);
+
+        /**
+         * @brief Произвести корректировки текста
+         */
+        void correct(int _position = -1, int _charsRemoved = 0, int _charsAdded = 0);
+
     signals:
         /**
          * @brief Сигналы уведомляющие об этапах применения патчей
@@ -138,6 +149,11 @@ namespace BusinessLogic
          * @brief В документ были внесены редакторские примечания
          */
         void reviewChanged();
+
+        /**
+         * @brief Изменилась доступность повтора отменённого действия
+         */
+        void redoAvailableChanged(bool _isRedoAvailable);
 
     private:
         /**
@@ -209,6 +225,11 @@ namespace BusinessLogic
          * @brief Включён ли режим отображения поэпизодного плана (true) или сценария (false)
          */
         bool m_outlineMode;
+
+        /**
+         * @brief Корректировщик текста документа
+         */
+        ScriptTextCorrector* m_corrector;
     };
 }
 

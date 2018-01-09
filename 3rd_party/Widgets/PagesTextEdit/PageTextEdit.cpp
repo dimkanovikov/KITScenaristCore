@@ -175,14 +175,14 @@ void PageTextEditPrivate::init(const QString &html)
 
     viewport->setBackgroundRole(QPalette::Base);
     q->setAcceptDrops(true);
-    q->setFocusPolicy(Qt::WheelFocus);
+    q->setFocusPolicy(Qt::StrongFocus);
     q->setAttribute(Qt::WA_KeyCompression);
     q->setAttribute(Qt::WA_InputMethodEnabled);
     q->setInputMethodHints(Qt::ImhMultiLine);
 #ifndef QT_NO_CURSOR
     viewport->setCursor(Qt::IBeamCursor);
 #endif
-#ifdef Q_DEAD_CODE_FROM_QT4_WIN
+#if 0 // Used to be included in Qt4 for Q_WS_WIN
     setSingleFingerPanEnabled(true);
 #endif
 }
@@ -1663,18 +1663,18 @@ void PageTextEditPrivate::paintPagesView(QPainter *_painter)
         qreal pageWidth = m_pageMetrics.pxPageSize().width();
         qreal pageHeight = m_pageMetrics.pxPageSize().height();
 
-        QPen spacePen(control->palette().window(), 8);
+        QPen spacePen(control->palette().window(), 1);
         QPen borderPen(control->palette().dark(), 1);
 
         qreal curHeight = pageHeight - (vbar->value() % (int)pageHeight);
         //
         // Корректируем позицию правой границы
         //
-        const int x = pageWidth + (q->width() % 2 == 0 ? 2 : 1);
+        const qreal x = floor(pageWidth) + 3 + (q->width() % 2);
         //
         // Смещение по горизонтали, если есть полоса прокрутки
         //
-        const int horizontalDelta = hbar->value();
+        const qreal horizontalDelta = hbar->value();
 
         //
         // Нарисовать верхнюю границу
@@ -1682,7 +1682,7 @@ void PageTextEditPrivate::paintPagesView(QPainter *_painter)
         if (curHeight - pageHeight >= 0) {
             _painter->setPen(borderPen);
             // ... верхняя
-            _painter->drawLine(0, curHeight - pageHeight, x, curHeight - pageHeight);
+            _painter->drawLine(QLineF(0, curHeight - pageHeight, x, curHeight - pageHeight));
         }
 
         while (curHeight <= q->height()) {
@@ -1690,20 +1690,29 @@ void PageTextEditPrivate::paintPagesView(QPainter *_painter)
             // Фон разрыва страниц
             //
             _painter->setPen(spacePen);
-            _painter->drawLine(0, curHeight-4, q->width(), curHeight-4);
+            _painter->setBrush(spacePen.color());
+            _painter->drawRect(QRectF(QPointF(0, curHeight - 8), QPointF(x, curHeight)));
 
             //
             // Границы страницы
             //
             _painter->setPen(borderPen);
             // ... нижняя
-            _painter->drawLine(0, curHeight-8, x, curHeight-8);
-            // ... верхняя следующей страницы
-            _painter->drawLine(0, curHeight, x, curHeight);
+            _painter->drawLine(QLineF(0, curHeight - 8, x, curHeight - 8));
             // ... левая
-            _painter->drawLine(0 - horizontalDelta, curHeight - pageHeight, 0 - horizontalDelta, curHeight - 8);
+            _painter->drawLine(QLineF(0 - horizontalDelta, curHeight - pageHeight, 0 - horizontalDelta, curHeight - 8));
             // ... правая
-            _painter->drawLine(x - horizontalDelta, curHeight - pageHeight, x - horizontalDelta, curHeight - 8);
+            _painter->drawLine(QLineF(x - horizontalDelta, curHeight - pageHeight, x - horizontalDelta, curHeight - 8));
+
+            //
+            // Если страница всего одна не рисуем больше ничего
+            //
+            if (control->document()->pageCount() == 1) {
+                break;
+            }
+
+            // ... верхняя следующей страницы
+            _painter->drawLine(QLineF(0, curHeight, x, curHeight));
 
             curHeight += pageHeight;
         }
@@ -1717,9 +1726,9 @@ void PageTextEditPrivate::paintPagesView(QPainter *_painter)
             //
             _painter->setPen(borderPen);
             // ... левая
-            _painter->drawLine(0 - horizontalDelta, curHeight-pageHeight, 0 - horizontalDelta, q->height());
+            _painter->drawLine(QLineF(0 - horizontalDelta, curHeight - pageHeight, 0 - horizontalDelta, q->height()));
             // ... правая
-            _painter->drawLine(x - horizontalDelta, curHeight-pageHeight, x - horizontalDelta, q->height());
+            _painter->drawLine(QLineF(x - horizontalDelta, curHeight - pageHeight, x - horizontalDelta, q->height()));
         }
 
         _painter->restore();
@@ -1796,6 +1805,13 @@ void PageTextEditPrivate::paintPageNumbers(QPainter* _painter)
             paintPageNumber(_painter, topMarginRect, true, pageNumber);
 
             curHeight += pageSize.height();
+
+            //
+            // Если страница всего одна не рисуем больше ничего
+            //
+            if (control->document()->pageCount() == 1) {
+                break;
+            }
         }
 
         _painter->restore();
@@ -1813,7 +1829,7 @@ void PageTextEditPrivate::paintPageNumber(QPainter* _painter, const QRectF& _rec
         //
         if (m_pageNumbersAlignment.testFlag(Qt::AlignTop)) {
             _painter->drawText(_rect, Qt::AlignVCenter | (m_pageNumbersAlignment ^ Qt::AlignTop),
-                QString::number(_number));
+                QString("%1.").arg(_number));
         }
     }
     //
@@ -1825,7 +1841,7 @@ void PageTextEditPrivate::paintPageNumber(QPainter* _painter, const QRectF& _rec
         //
         if (m_pageNumbersAlignment.testFlag(Qt::AlignBottom)) {
             _painter->drawText(_rect, Qt::AlignVCenter | (m_pageNumbersAlignment ^ Qt::AlignBottom),
-                QString::number(_number));
+                QString("%1.").arg(_number));
         }
     }
 }
@@ -1893,16 +1909,10 @@ void PageTextEditPrivate::clipPageDecorationRegions(QPainter* _painter)
         //
         while (curHeight < q->height()) {
             //
-            // Определить прямоугольник нижнего поля
+            // Определить прямоугольник начинающийся от начала нижнего поля и до конца верхнего поля следующей страницы
             //
-            QRect bottomMarginRect(leftMarginPosition, curHeight - pageMargins.bottom(), marginWidth, pageMargins.bottom());
+            QRect bottomMarginRect(leftMarginPosition, curHeight - pageMargins.bottom(), marginWidth, pageMargins.bottom() + pageMargins.top());
             clipPath = clipPath.xored(bottomMarginRect);
-
-            //
-            // Определить прямоугольник верхнего поля следующей страницы
-            //
-            QRect topMarginRect(leftMarginPosition, curHeight, marginWidth, pageMargins.top());
-            clipPath = clipPath.xored(topMarginRect);
 
             curHeight += pageSize.height();
         }
@@ -2049,6 +2059,16 @@ QPoint PageTextEditPrivate::correctMousePosition(const QPoint& _eventPos)
     }
 
     //
+    // Прорабатываем случай, когда курсор попал в блок, в котором запрещено позиционирование курсора
+    // Просто идём вниз до первого блока, в который возможно установить курсор
+    //
+    while (!cursor.atEnd()
+           && cursor.blockFormat().boolProperty(PageTextEdit::PropertyDontShowCursor)) {
+        cursor.movePosition(QTextCursor::EndOfBlock);
+        cursor.movePosition(QTextCursor::NextBlock);
+    }
+
+    //
     // Если блок не пуст
     //
     if (!cursor.block().text().isEmpty()) {
@@ -2078,7 +2098,6 @@ QPoint PageTextEditPrivate::correctMousePosition(const QPoint& _eventPos)
     localPos = viewport->mapToParent(localPos);
 
     return localPos;
-//	return new QMouseEvent(_event->type(), localPos, _event->button(), _event->buttons(), _event->modifiers());
 }
 
 void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
@@ -2171,8 +2190,8 @@ void PageTextEdit::mouseMoveEvent(QMouseEvent *e)
 {
     Q_D(PageTextEdit);
     d->inDrag = false; // paranoia
-    d->sendControlMouseEvent(e);
     const QPoint pos = e->pos();
+    d->sendControlMouseEvent(e);
     if (!(e->buttons() & Qt::LeftButton))
         return;
     if (e->source() == Qt::MouseEventNotSynthesized) {
@@ -2320,24 +2339,22 @@ QVariant PageTextEdit::inputMethodQuery(Qt::InputMethodQuery property) const
 QVariant PageTextEdit::inputMethodQuery(Qt::InputMethodQuery query, QVariant argument) const
 {
     Q_D(const PageTextEdit);
-    QVariant v;
-    switch (query) {
-    case Qt::ImHints:
-        v = QWidget::inputMethodQuery(query);
-        break;
+    if (query == Qt::ImHints)
+        return QWidget::inputMethodQuery(query);
+    const QVariant v = d->control->inputMethodQuery(query, argument);
+    const QPointF offset(-d->horizontalOffset(), -d->verticalOffset());
+    switch (v.type()) {
+    case QVariant::RectF:
+        return v.toRectF().translated(offset);
+    case QVariant::PointF:
+        return v.toPointF() + offset;
+    case QVariant::Rect:
+        return v.toRect().translated(offset.toPoint());
+    case QVariant::Point:
+        return v.toPoint() + offset.toPoint();
     default:
-        v = d->control->inputMethodQuery(query, argument);
-        const QPoint offset(-d->horizontalOffset(), -d->verticalOffset());
-        if (v.type() == QVariant::RectF)
-            v = v.toRectF().toRect().translated(offset);
-        else if (v.type() == QVariant::PointF)
-            v = v.toPointF().toPoint() + offset;
-        else if (v.type() == QVariant::Rect)
-            v = v.toRect().translated(offset);
-        else if (v.type() == QVariant::Point)
-            v = v.toPoint() + offset;
+        break;
     }
-
     return v;
 }
 

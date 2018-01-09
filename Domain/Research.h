@@ -36,9 +36,7 @@ namespace Domain
         };
 
     public:
-        Research(const Identifier& _id, Research* _parent, Type _type, int _sortOrder,
-            const QString& _name, const QString& _description = QString::null,
-            const QString& _url = QString::null, const QPixmap& _image = QPixmap());
+        virtual ~Research() = default;
 
         /**
          * @brief Получить родителя
@@ -81,6 +79,11 @@ namespace Domain
         void setDescription(const QString& _description);
 
         /**
+         * @brief Добавить описание к текущему
+         */
+        virtual void addDescription(const QString& _description);
+
+        /**
          * @brief Получить ссылку
          */
         QString url() const;
@@ -109,6 +112,17 @@ namespace Domain
          * @brief Установить позицию сортировки
          */
         void setSortOrder(int _sortOrder);
+
+        /**
+         * @brief Установить загрузчик изображений
+         */
+        void setImageWrapper(AbstractImageWrapper* _imageWrapper);
+
+    protected:
+        Research(const Identifier& _id, Research* _parent, Type _type, int _sortOrder,
+            const QString& _name, const QString& _description = QString(),
+            const QString& _url = QString(), AbstractImageWrapper* _imageWrapper = nullptr);
+        friend class ResearchBuilder;
 
     private:
         /**
@@ -139,14 +153,66 @@ namespace Domain
         QString m_url;
 
         /**
-         * @brief Изображение
-         */
-        QPixmap m_image;
-
-        /**
          * @brief Порядок сортировки
          */
         int m_sortOrder;
+
+        /**
+         * @brief Загрузчик фотографий
+         */
+        AbstractImageWrapper* m_image = nullptr;
+    };
+
+    /**
+     * @brief Класс персонажа из разработки
+     */
+    class ResearchCharacter : public Research
+    {
+    public:
+        /**
+         * @brief Получить настоящее имя персонажа
+         */
+        QString realName() const;
+
+        /**
+         * @brief Установить настоящее имя персонажа
+         */
+        void setRealName(const QString& _name);
+
+        /**
+         * @brief Получить описательную часть о персонаже
+         */
+        QString descriptionText() const;
+
+        /**
+         * @brief Установить описательную часть
+         */
+        void setDescriptionText(const QString& _description);
+
+        /**
+         * @brief Добавить описание к текущему
+         */
+        void addDescription(const QString& _description) override;
+
+    protected:
+        ResearchCharacter(const Identifier& _id, Research* _parent, Type _type, int _sortOrder,
+            const QString& _name, const QString& _description = QString(),
+            const QString& _url = QString(), AbstractImageWrapper* _imageWrapper = nullptr);
+        friend class ResearchBuilder;
+    };
+
+    /**
+     * @brief Фабрика для создания элементов разработки
+     */
+    class ResearchBuilder
+    {
+    public:
+        /**
+         * @brief Создать элемент разработки
+         */
+        static Research* create(const Identifier& _id, Research* _parent, Research::Type _type,
+            int _sortOrder, const QString& _name, const QString& _description = QString(),
+            const QString& _url = QString(), AbstractImageWrapper* _imageWrapper = nullptr);
     };
 
     // ****

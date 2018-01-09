@@ -74,7 +74,7 @@ void QLightBoxDialog::showProgress(int _minimumValue, int _maximumValue)
     //
     // Убираем маскирующий стиль
     //
-    m_progress->setStyleSheet(QString::null);
+    m_progress->setStyleSheet(QString());
 
     m_progress->setRange(_minimumValue, _maximumValue);
 }
@@ -152,7 +152,7 @@ void QLightBoxDialog::init()
         m_progress->setFixedHeight(5);
         m_progress->setValue(0);
         m_progress->setRange(0, 0);
-        m_progress->setFormat(QString::null);
+        m_progress->setFormat(QString());
         hideProgress();
 
         //

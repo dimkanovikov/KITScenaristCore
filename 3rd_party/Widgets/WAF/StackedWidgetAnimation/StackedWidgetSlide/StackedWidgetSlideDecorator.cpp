@@ -17,6 +17,7 @@
 #include "StackedWidgetSlideDecorator.h"
 
 #include <QPainter>
+#include <QPaintEvent>
 #include <QStackedWidget>
 
 using WAF::StackedWidgetSlideDecorator;
@@ -48,9 +49,10 @@ void StackedWidgetSlideDecorator::grabWidget()
 
 void StackedWidgetSlideDecorator::paintEvent(QPaintEvent* _event)
 {
-	QPainter painter(this);
-	painter.drawPixmap(0, 0, m_foreground);
+    Q_UNUSED(_event);
 
-	QWidget::paintEvent(_event);
+	QPainter painter(this);
+    painter.setClipRegion(_event->region());
+    painter.drawPixmap(0, 0, m_foreground);
 }
 

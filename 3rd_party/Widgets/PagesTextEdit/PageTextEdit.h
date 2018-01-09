@@ -56,325 +56,335 @@ class QPagedPaintDevice;
 
 class PageTextEdit : public QAbstractScrollArea
 {
-	Q_OBJECT
-	Q_DECLARE_PRIVATE(PageTextEdit)
-	Q_FLAGS(AutoFormatting)
-	Q_PROPERTY(AutoFormatting autoFormatting READ autoFormatting WRITE setAutoFormatting)
-	Q_PROPERTY(bool tabChangesFocus READ tabChangesFocus WRITE setTabChangesFocus)
-	Q_PROPERTY(QString documentTitle READ documentTitle WRITE setDocumentTitle)
-	Q_PROPERTY(bool undoRedoEnabled READ isUndoRedoEnabled WRITE setUndoRedoEnabled)
-	Q_PROPERTY(LineWrapMode lineWrapMode READ lineWrapMode WRITE setLineWrapMode)
-	QDOC_PROPERTY(QTextOption::WrapMode wordWrapMode READ wordWrapMode WRITE setWordWrapMode)
-	Q_PROPERTY(int lineWrapColumnOrWidth READ lineWrapColumnOrWidth WRITE setLineWrapColumnOrWidth)
-	Q_PROPERTY(bool readOnly READ isReadOnly WRITE setReadOnly)
+    Q_OBJECT
+    Q_DECLARE_PRIVATE(PageTextEdit)
+    Q_FLAGS(AutoFormatting)
+    Q_PROPERTY(AutoFormatting autoFormatting READ autoFormatting WRITE setAutoFormatting)
+    Q_PROPERTY(bool tabChangesFocus READ tabChangesFocus WRITE setTabChangesFocus)
+    Q_PROPERTY(QString documentTitle READ documentTitle WRITE setDocumentTitle)
+    Q_PROPERTY(bool undoRedoEnabled READ isUndoRedoEnabled WRITE setUndoRedoEnabled)
+    Q_PROPERTY(LineWrapMode lineWrapMode READ lineWrapMode WRITE setLineWrapMode)
+    QDOC_PROPERTY(QTextOption::WrapMode wordWrapMode READ wordWrapMode WRITE setWordWrapMode)
+    Q_PROPERTY(int lineWrapColumnOrWidth READ lineWrapColumnOrWidth WRITE setLineWrapColumnOrWidth)
+    Q_PROPERTY(bool readOnly READ isReadOnly WRITE setReadOnly)
 #ifndef QT_NO_TEXTHTMLPARSER
-	Q_PROPERTY(QString html READ toHtml WRITE setHtml NOTIFY textChanged USER true)
+    Q_PROPERTY(QString html READ toHtml WRITE setHtml NOTIFY textChanged USER true)
 #endif
-	Q_PROPERTY(QString plainText READ toPlainText WRITE setPlainText DESIGNABLE false)
-	Q_PROPERTY(bool overwriteMode READ overwriteMode WRITE setOverwriteMode)
-	Q_PROPERTY(int tabStopWidth READ tabStopWidth WRITE setTabStopWidth)
-	Q_PROPERTY(bool acceptRichText READ acceptRichText WRITE setAcceptRichText)
-	Q_PROPERTY(int cursorWidth READ cursorWidth WRITE setCursorWidth)
-	Q_PROPERTY(Qt::TextInteractionFlags textInteractionFlags READ textInteractionFlags WRITE setTextInteractionFlags)
-	Q_PROPERTY(QTextDocument *document READ document WRITE setDocument DESIGNABLE false)
-	Q_PROPERTY(QString placeholderText READ placeholderText WRITE setPlaceholderText)
+    Q_PROPERTY(QString plainText READ toPlainText WRITE setPlainText DESIGNABLE false)
+    Q_PROPERTY(bool overwriteMode READ overwriteMode WRITE setOverwriteMode)
+    Q_PROPERTY(int tabStopWidth READ tabStopWidth WRITE setTabStopWidth)
+    Q_PROPERTY(bool acceptRichText READ acceptRichText WRITE setAcceptRichText)
+    Q_PROPERTY(int cursorWidth READ cursorWidth WRITE setCursorWidth)
+    Q_PROPERTY(Qt::TextInteractionFlags textInteractionFlags READ textInteractionFlags WRITE setTextInteractionFlags)
+    Q_PROPERTY(QTextDocument *document READ document WRITE setDocument DESIGNABLE false)
+    Q_PROPERTY(QString placeholderText READ placeholderText WRITE setPlaceholderText)
 public:
-	enum LineWrapMode {
-		NoWrap,
-		WidgetWidth,
-		FixedPixelWidth,
-		FixedColumnWidth
-	};
-	Q_ENUM(LineWrapMode)
+    enum LineWrapMode {
+        NoWrap,
+        WidgetWidth,
+        FixedPixelWidth,
+        FixedColumnWidth
+    };
+    Q_ENUM(LineWrapMode)
 
-	enum AutoFormattingFlag {
-		AutoNone = 0,
-		AutoBulletList = 0x00000001,
-		AutoAll = 0xffffffff
-	};
+    enum AutoFormattingFlag {
+        AutoNone = 0,
+        AutoBulletList = 0x00000001,
+        AutoAll = 0xffffffff
+    };
 
-	Q_DECLARE_FLAGS(AutoFormatting, AutoFormattingFlag)
+    Q_DECLARE_FLAGS(AutoFormatting, AutoFormattingFlag)
 
-	explicit PageTextEdit(QWidget *parent = 0);
-	explicit PageTextEdit(const QString &text, QWidget *parent = 0);
-	virtual ~PageTextEdit();
+    /**
+     * @brief Расширим список параметров форматов блока
+     */
+    enum TextBlockProperty {
+        //
+        // Запрет на позиционирование курсора в данном блоке [bool]
+        //
+        PropertyDontShowCursor = QTextFormat::UserProperty + 10
+    };
 
-	void setDocument(QTextDocument *document);
-	QTextDocument *document() const;
+    explicit PageTextEdit(QWidget *parent = nullptr);
+    explicit PageTextEdit(const QString &text, QWidget *parent = nullptr);
+    virtual ~PageTextEdit();
 
-	void setPlaceholderText(const QString &placeholderText);
-	QString placeholderText() const;
+    void setDocument(QTextDocument *document);
+    QTextDocument *document() const;
 
-	void setTextCursor(const QTextCursor &cursor);
-	QTextCursor textCursor() const;
+    void setPlaceholderText(const QString &placeholderText);
+    QString placeholderText() const;
 
-	bool isReadOnly() const;
-	void setReadOnly(bool ro);
+    void setTextCursor(const QTextCursor &cursor);
+    QTextCursor textCursor() const;
 
-	void setTextInteractionFlags(Qt::TextInteractionFlags flags);
-	Qt::TextInteractionFlags textInteractionFlags() const;
+    bool isReadOnly() const;
+    void setReadOnly(bool ro);
 
-	qreal fontPointSize() const;
-	QString fontFamily() const;
-	int fontWeight() const;
-	bool fontUnderline() const;
-	bool fontItalic() const;
-	QColor textColor() const;
-	QColor textBackgroundColor() const;
-	QFont currentFont() const;
-	Qt::Alignment alignment() const;
+    void setTextInteractionFlags(Qt::TextInteractionFlags flags);
+    Qt::TextInteractionFlags textInteractionFlags() const;
 
-	void mergeCurrentCharFormat(const QTextCharFormat &modifier);
+    qreal fontPointSize() const;
+    QString fontFamily() const;
+    int fontWeight() const;
+    bool fontUnderline() const;
+    bool fontItalic() const;
+    QColor textColor() const;
+    QColor textBackgroundColor() const;
+    QFont currentFont() const;
+    Qt::Alignment alignment() const;
 
-	void setCurrentCharFormat(const QTextCharFormat &format);
-	QTextCharFormat currentCharFormat() const;
+    void mergeCurrentCharFormat(const QTextCharFormat &modifier);
 
-	AutoFormatting autoFormatting() const;
-	void setAutoFormatting(AutoFormatting features);
+    void setCurrentCharFormat(const QTextCharFormat &format);
+    QTextCharFormat currentCharFormat() const;
 
-	bool tabChangesFocus() const;
-	void setTabChangesFocus(bool b);
+    AutoFormatting autoFormatting() const;
+    void setAutoFormatting(AutoFormatting features);
 
-	inline void setDocumentTitle(const QString &title)
-	{ document()->setMetaInformation(QTextDocument::DocumentTitle, title); }
-	inline QString documentTitle() const
-	{ return document()->metaInformation(QTextDocument::DocumentTitle); }
+    bool tabChangesFocus() const;
+    void setTabChangesFocus(bool b);
 
-	inline bool isUndoRedoEnabled() const
-	{ return document()->isUndoRedoEnabled(); }
-	inline void setUndoRedoEnabled(bool enable)
-	{ document()->setUndoRedoEnabled(enable); }
+    inline void setDocumentTitle(const QString &title)
+    { document()->setMetaInformation(QTextDocument::DocumentTitle, title); }
+    inline QString documentTitle() const
+    { return document()->metaInformation(QTextDocument::DocumentTitle); }
 
-	LineWrapMode lineWrapMode() const;
-	void setLineWrapMode(LineWrapMode mode);
+    inline bool isUndoRedoEnabled() const
+    { return document()->isUndoRedoEnabled(); }
+    inline void setUndoRedoEnabled(bool enable)
+    { document()->setUndoRedoEnabled(enable); }
 
-	int lineWrapColumnOrWidth() const;
-	void setLineWrapColumnOrWidth(int w);
+    LineWrapMode lineWrapMode() const;
+    void setLineWrapMode(LineWrapMode mode);
 
-	QTextOption::WrapMode wordWrapMode() const;
-	void setWordWrapMode(QTextOption::WrapMode policy);
+    int lineWrapColumnOrWidth() const;
+    void setLineWrapColumnOrWidth(int w);
 
-	bool find(const QString &exp, QTextDocument::FindFlags options = 0);
+    QTextOption::WrapMode wordWrapMode() const;
+    void setWordWrapMode(QTextOption::WrapMode policy);
+
+    bool find(const QString &exp, QTextDocument::FindFlags options = QTextDocument::FindFlags());
 #ifndef QT_NO_REGEXP
-	bool find(const QRegExp &exp, QTextDocument::FindFlags options = 0);
+    bool find(const QRegExp &exp, QTextDocument::FindFlags options = QTextDocument::FindFlags());
 #endif
 
-	QString toPlainText() const;
+    QString toPlainText() const;
 #ifndef QT_NO_TEXTHTMLPARSER
-	QString toHtml() const;
+    QString toHtml() const;
 #endif
 
-	/**
-	 * @brief Своя реализация проверки виден ли курсор на экране
-	 * @param Значение true докручивает, как сверху, так и снизу, а false только снизу
-	 */
-	void ensureCursorVisible();
-	void ensureCursorVisible(const QTextCursor& _cursor, bool _animate = true);
+    /**
+     * @brief Своя реализация проверки виден ли курсор на экране
+     * @param Значение true докручивает, как сверху, так и снизу, а false только снизу
+     */
+    void ensureCursorVisible();
+    void ensureCursorVisible(const QTextCursor& _cursor, bool _animate = true);
 
-	Q_INVOKABLE virtual QVariant loadResource(int type, const QUrl &name);
+    Q_INVOKABLE virtual QVariant loadResource(int type, const QUrl &name);
 #ifndef QT_NO_CONTEXTMENU
-	QMenu *createStandardContextMenu(QWidget* _parent = 0);
-	QMenu *createStandardContextMenu(const QPoint &position, QWidget* _parent = 0);
+    QMenu *createStandardContextMenu(QWidget* _parent = 0);
+    QMenu *createStandardContextMenu(const QPoint &position, QWidget* _parent = 0);
 #endif
 
-	QTextCursor cursorForPosition(const QPoint &pos) const;
-	QRect cursorRect(const QTextCursor &cursor) const;
-	QRect cursorRect() const;
+    QTextCursor cursorForPosition(const QPoint &pos) const;
+    QRect cursorRect(const QTextCursor &cursor) const;
+    QRect cursorRect() const;
 
-	QString anchorAt(const QPoint& pos) const;
+    QString anchorAt(const QPoint& pos) const;
 
-	bool overwriteMode() const;
-	void setOverwriteMode(bool overwrite);
+    bool overwriteMode() const;
+    void setOverwriteMode(bool overwrite);
 
-	int tabStopWidth() const;
-	void setTabStopWidth(int width);
+    int tabStopWidth() const;
+    void setTabStopWidth(int width);
 
-	int cursorWidth() const;
-	void setCursorWidth(int width);
+    int cursorWidth() const;
+    void setCursorWidth(int width);
 
-	bool acceptRichText() const;
-	void setAcceptRichText(bool accept);
+    bool acceptRichText() const;
+    void setAcceptRichText(bool accept);
 
-	struct ExtraSelection
-	{
-		QTextCursor cursor;
-		QTextCharFormat format;
-	};
+    struct ExtraSelection
+    {
+        QTextCursor cursor;
+        QTextCharFormat format;
+    };
 //	void setExtraSelections(const QList<ExtraSelection> &selections);
 //	QList<ExtraSelection> extraSelections() const;
 
-	void moveCursor(QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode = QTextCursor::MoveAnchor);
+    void moveCursor(QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode = QTextCursor::MoveAnchor);
 
-	bool canPaste() const;
+    bool canPaste() const;
 
-	void print(QPagedPaintDevice *printer) const;
+    void print(QPagedPaintDevice *printer) const;
 
-	QVariant inputMethodQuery(Qt::InputMethodQuery property) const Q_DECL_OVERRIDE;
-	Q_INVOKABLE QVariant inputMethodQuery(Qt::InputMethodQuery query, QVariant argument) const;
+    QVariant inputMethodQuery(Qt::InputMethodQuery property) const Q_DECL_OVERRIDE;
+    Q_INVOKABLE QVariant inputMethodQuery(Qt::InputMethodQuery query, QVariant argument) const;
 
 public Q_SLOTS:
-	void setFontPointSize(qreal s);
-	void setFontFamily(const QString &fontFamily);
-	void setFontWeight(int w);
-	void setFontUnderline(bool b);
-	void setFontItalic(bool b);
-	void setTextColor(const QColor &c);
-	void setTextBackgroundColor(const QColor &c);
-	void setCurrentFont(const QFont &f);
-	void setAlignment(Qt::Alignment a);
+    void setFontPointSize(qreal s);
+    void setFontFamily(const QString &fontFamily);
+    void setFontWeight(int w);
+    void setFontUnderline(bool b);
+    void setFontItalic(bool b);
+    void setTextColor(const QColor &c);
+    void setTextBackgroundColor(const QColor &c);
+    void setCurrentFont(const QFont &f);
+    void setAlignment(Qt::Alignment a);
 
-	void setPlainText(const QString &text);
+    void setPlainText(const QString &text);
 #ifndef QT_NO_TEXTHTMLPARSER
-	void setHtml(const QString &text);
+    void setHtml(const QString &text);
 #endif
-	void setText(const QString &text);
+    void setText(const QString &text);
 
 #ifndef QT_NO_CLIPBOARD
-	void cut();
-	void copy();
-	void paste();
+    void cut();
+    void copy();
+    void paste();
 #endif
 
-	void undo();
-	void redo();
+    void undo();
+    void redo();
 
-	void clear();
-	void selectAll();
+    void clear();
+    void selectAll();
 
-	void insertPlainText(const QString &text);
+    void insertPlainText(const QString &text);
 #ifndef QT_NO_TEXTHTMLPARSER
-	void insertHtml(const QString &text);
+    void insertHtml(const QString &text);
 #endif // QT_NO_TEXTHTMLPARSER
 
-	void append(const QString &text);
+    void append(const QString &text);
 
-	void scrollToAnchor(const QString &name);
+    void scrollToAnchor(const QString &name);
 
-	void zoomIn(int range = 1);
-	void zoomOut(int range = 1);
+    void zoomIn(int range = 1);
+    void zoomOut(int range = 1);
 
 Q_SIGNALS:
-	void textChanged();
-	void undoAvailable(bool b);
-	void redoAvailable(bool b);
-	void currentCharFormatChanged(const QTextCharFormat &format);
-	void copyAvailable(bool b);
-	void selectionChanged();
-	void cursorPositionChanged();
+    void textChanged();
+    void undoAvailable(bool b);
+    void redoAvailable(bool b);
+    void currentCharFormatChanged(const QTextCharFormat &format);
+    void copyAvailable(bool b);
+    void selectionChanged();
+    void cursorPositionChanged();
 
 protected:
-	virtual bool event(QEvent *e) Q_DECL_OVERRIDE;
-	virtual void timerEvent(QTimerEvent *e) Q_DECL_OVERRIDE;
-	virtual void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
-	virtual void keyReleaseEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
-	virtual void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
-	virtual void paintEvent(QPaintEvent *e) Q_DECL_OVERRIDE;
-	virtual void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-	virtual void mouseMoveEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-	virtual void mouseReleaseEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-	virtual void mouseDoubleClickEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-	virtual bool focusNextPrevChild(bool next) Q_DECL_OVERRIDE;
+    virtual bool event(QEvent *e) Q_DECL_OVERRIDE;
+    virtual void timerEvent(QTimerEvent *e) Q_DECL_OVERRIDE;
+    virtual void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    virtual void keyReleaseEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    virtual void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
+    virtual void paintEvent(QPaintEvent *e) Q_DECL_OVERRIDE;
+    virtual void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    virtual void mouseMoveEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    virtual void mouseReleaseEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    virtual void mouseDoubleClickEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    virtual bool focusNextPrevChild(bool next) Q_DECL_OVERRIDE;
 #ifndef QT_NO_CONTEXTMENU
-	virtual void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
+    virtual void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
 #endif
 #ifndef QT_NO_DRAGANDDROP
-	virtual void dragEnterEvent(QDragEnterEvent *e) Q_DECL_OVERRIDE;
-	virtual void dragLeaveEvent(QDragLeaveEvent *e) Q_DECL_OVERRIDE;
-	virtual void dragMoveEvent(QDragMoveEvent *e) Q_DECL_OVERRIDE;
-	virtual void dropEvent(QDropEvent *e) Q_DECL_OVERRIDE;
+    virtual void dragEnterEvent(QDragEnterEvent *e) Q_DECL_OVERRIDE;
+    virtual void dragLeaveEvent(QDragLeaveEvent *e) Q_DECL_OVERRIDE;
+    virtual void dragMoveEvent(QDragMoveEvent *e) Q_DECL_OVERRIDE;
+    virtual void dropEvent(QDropEvent *e) Q_DECL_OVERRIDE;
 #endif
-	virtual void focusInEvent(QFocusEvent *e) Q_DECL_OVERRIDE;
-	virtual void focusOutEvent(QFocusEvent *e) Q_DECL_OVERRIDE;
-	virtual void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
-	virtual void changeEvent(QEvent *e) Q_DECL_OVERRIDE;
+    virtual void focusInEvent(QFocusEvent *e) Q_DECL_OVERRIDE;
+    virtual void focusOutEvent(QFocusEvent *e) Q_DECL_OVERRIDE;
+    virtual void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
+    virtual void changeEvent(QEvent *e) Q_DECL_OVERRIDE;
 #ifndef QT_NO_WHEELEVENT
-	virtual void wheelEvent(QWheelEvent *e) Q_DECL_OVERRIDE;
+    virtual void wheelEvent(QWheelEvent *e) Q_DECL_OVERRIDE;
 #endif
 
-	virtual QMimeData *createMimeDataFromSelection() const;
-	virtual bool canInsertFromMimeData(const QMimeData *source) const;
-	virtual void insertFromMimeData(const QMimeData *source);
+    virtual QMimeData *createMimeDataFromSelection() const;
+    virtual bool canInsertFromMimeData(const QMimeData *source) const;
+    virtual void insertFromMimeData(const QMimeData *source);
 
-	virtual void inputMethodEvent(QInputMethodEvent *) Q_DECL_OVERRIDE;
+    virtual void inputMethodEvent(QInputMethodEvent *) Q_DECL_OVERRIDE;
 
-	PageTextEdit(PageTextEditPrivate &dd, QWidget *parent);
+    PageTextEdit(PageTextEditPrivate &dd, QWidget *parent);
 
-	virtual void scrollContentsBy(int dx, int dy) Q_DECL_OVERRIDE;
-	virtual void doSetTextCursor(const QTextCursor &cursor);
+    virtual void scrollContentsBy(int dx, int dy) Q_DECL_OVERRIDE;
+    virtual void doSetTextCursor(const QTextCursor &cursor);
 
-	void zoomInF(float range);
+    void zoomInF(float range);
 
 private:
-	Q_DISABLE_COPY(PageTextEdit)
-	Q_SLOT void _q_repaintContents(const QRectF &r);
-	Q_SLOT void _q_currentCharFormatChanged(const QTextCharFormat &cf);
-	Q_SLOT void _q_adjustScrollbars();
-	Q_SLOT void _q_ensureVisible(const QRectF &);
-	Q_SLOT void _q_cursorPositionChanged();
-	friend class PageTextEditControl;
-	friend class QTextDocument;
-	friend class QWidgetTextControl;
+    Q_DISABLE_COPY(PageTextEdit)
+    Q_SLOT void _q_repaintContents(const QRectF &r);
+    Q_SLOT void _q_currentCharFormatChanged(const QTextCharFormat &cf);
+    Q_SLOT void _q_adjustScrollbars();
+    Q_SLOT void _q_ensureVisible(const QRectF &);
+    Q_SLOT void _q_cursorPositionChanged();
+    friend class PageTextEditControl;
+    friend class QTextDocument;
+    friend class QWidgetTextControl;
 
-	//
-	// Дополнения, необходимые для того, чтобы превратить простой QTextEdit в постраничный редактор
-	//
+    //
+    // Дополнения, необходимые для того, чтобы превратить простой QTextEdit в постраничный редактор
+    //
 
 public:
-	/**
-	 * @brief Установить формат страницы
-	 */
-	void setPageFormat(QPageSize::PageSizeId _pageFormat);
+    /**
+     * @brief Установить формат страницы
+     */
+    void setPageFormat(QPageSize::PageSizeId _pageFormat);
 
-	/**
-	 * @brief Настроить поля страницы
-	 */
-	void setPageMargins(const QMarginsF& _margins);
+    /**
+     * @brief Настроить поля страницы
+     */
+    void setPageMargins(const QMarginsF& _margins);
 
-	/**
-	 * @brief Получить режим отображения текста
-	 */
-	bool usePageMode() const;
+    /**
+     * @brief Получить режим отображения текста
+     */
+    bool usePageMode() const;
 
-	/**
-	 * @brief Получить номер страницы курсора
-	 */
-	int cursorPage(const QTextCursor& _cursor);
+    /**
+     * @brief Получить номер страницы курсора
+     */
+    int cursorPage(const QTextCursor& _cursor);
 
 public Q_SLOTS:
-	/**
-	 * @brief Установить режим отображения текста
-	 */
-	void setUsePageMode(bool _use);
+    /**
+     * @brief Установить режим отображения текста
+     */
+    void setUsePageMode(bool _use);
 
-	/**
-	 * @brief Установить значение необходимости добавления дополнительной прокрутки снизу
-	 */
-	void setAddSpaceToBottom(bool _addSpace);
+    /**
+     * @brief Установить значение необходимости добавления дополнительной прокрутки снизу
+     */
+    void setAddSpaceToBottom(bool _addSpace);
 
-	/**
-	 * @brief Установить значение необходимости отображения номеров страниц
-	 */
-	void setShowPageNumbers(bool _show);
+    /**
+     * @brief Установить значение необходимости отображения номеров страниц
+     */
+    void setShowPageNumbers(bool _show);
 
-	/**
-	 * @brief Установить место отображения номеров страниц
-	 */
-	void setPageNumbersAlignment(Qt::Alignment _align);
+    /**
+     * @brief Установить место отображения номеров страниц
+     */
+    void setPageNumbersAlignment(Qt::Alignment _align);
 
-	/**
-	 * @brief Установить водяной знак
-	 */
-	void setWatermark(const QString& _watermark);
+    /**
+     * @brief Установить водяной знак
+     */
+    void setWatermark(const QString& _watermark);
 
     /**
      * @brief Установить область обрезки так, чтобы вырезалось всё, что выходит на поля страницы
      */
     void clipPageDecorationRegions(QPainter* _painter);
 
-	/**
-	 * @brief Перестроить документ
-	 */
-	void relayoutDocument();
+    /**
+     * @brief Перестроить документ
+     */
+    void relayoutDocument();
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(PageTextEdit::AutoFormatting)

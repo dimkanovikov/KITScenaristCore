@@ -6,8 +6,8 @@
 class QString;
 
 namespace Domain {
-	class Time;
-	class TimesTable;
+	class SceneTime;
+	class SceneTimesTable;
 }
 
 using namespace Domain;
@@ -21,12 +21,17 @@ namespace DataStorageLayer
 		/**
 		 * @brief Получить все времена
 		 */
-		TimesTable* all();
+		SceneTimesTable* all();
 
 		/**
 		 * @brief Сохранить время
 		 */
-		Time* storeTime(const QString& _timeName);
+		SceneTime* storeTime(const QString& _timeName);
+
+        /**
+         * @brief Удалить время
+         */
+        void removeTime(const QString& _name);
 
 		/**
 		 * @brief Очистить хранилище
@@ -39,7 +44,7 @@ namespace DataStorageLayer
 		void refresh();
 
 	private:
-		TimesTable* m_all;
+		SceneTimesTable* m_all;
 
 	private:
 		TimeStorage();

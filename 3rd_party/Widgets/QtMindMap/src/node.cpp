@@ -66,20 +66,27 @@ void Node::deleteEdge(Node *otherEnd)
     {
         if ((it->edge->sourceNode() == otherEnd &&
              it->edge->destNode() == this)
-         || (it->edge->sourceNode() == this &&
-             it->edge->destNode() == otherEnd))
-        {
+            || (it->edge->sourceNode() == this &&
+                it->edge->destNode() == otherEnd)) {
             delete it->edge;
             it->edge = nullptr;
-            return;
+            break;
         }
     }
 }
 
 void Node::deleteEdges()
 {
-    foreach (EdgeElement element, m_edgeList)
-        delete element.edge;
+    //
+    // Тут идёт довольно хитрое удаление, т.к. каждая стрелка во время
+    // удаления убирает себя из списка стрелок ячейки, поэтому сперва формируем
+    // независимый список на удаление и даляем соединения уже из него
+    //
+    QVector<Edge*> edgesToRemove;
+    for (EdgeElement& element : m_edgeList) {
+        edgesToRemove.append(element.edge);
+    }
+    qDeleteAll(edgesToRemove);
 }
 
 void Node::removeEdge(Edge *edge)

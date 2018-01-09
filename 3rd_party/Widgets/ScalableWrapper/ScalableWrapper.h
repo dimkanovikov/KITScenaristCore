@@ -32,9 +32,9 @@ public:
 	 * @brief Дополнительные вещи для корректной работы в андройде
 	 */
 	/** @{ */
-	QVariant inputMethodQuery(Qt::InputMethodQuery _query) const;
+    QVariant inputMethodQuery(Qt::InputMethodQuery _query) const override;
 	Q_INVOKABLE QVariant inputMethodQuery(Qt::InputMethodQuery _query, QVariant _argument) const;
-	/** @} */
+    /** @} */
 
 public slots:
 	/**
@@ -51,28 +51,33 @@ signals:
 	/**
 	 * @brief Изменился коэффициент масштабирования
 	 */
-	void zoomRangeChanged(qreal) const;
+    void zoomRangeChanged(qreal) const;
+
+    /**
+     * @brief Сменилась позиция курсора оборачиваемого редактора текста
+     */
+    void cursorPositionChanged() const;
 
 protected:
 	/**
 	 * @brief Переопределяем для обработки жестов
 	 */
-	bool event(QEvent* _event);
+    bool event(QEvent* _event) override;
 
 	/**
 	 * @brief Переопределяется для реализации увеличения/уменьшения
 	 */
-	void wheelEvent(QWheelEvent* _event);
+    void wheelEvent(QWheelEvent* _event) override;
 
 	/**
 	 * @brief Обрабатываем жест увеличения масштаба
 	 */
-	void gestureEvent(QGestureEvent* _event);
+    void gestureEvent(QGestureEvent* _event);
 
 	/**
 	 * @brief Переопределяется для отлавливания контекстного меню текстового редактора
 	 */
-	bool eventFilter(QObject* _object, QEvent* _event);
+    bool eventFilter(QObject* _object, QEvent* _event) override;
 
 private:
 	/**

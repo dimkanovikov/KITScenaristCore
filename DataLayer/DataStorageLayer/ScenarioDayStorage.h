@@ -28,6 +28,11 @@ namespace DataStorageLayer
 		 */
 		ScenarioDay* storeScenarioDay(const QString& _scenarioDayName);
 
+        /**
+         * @brief Удалить сценарный день
+         */
+        void removeScenarioDay(const QString& _name);
+
 		/**
 		 * @brief Очистить хранилище
 		 */
