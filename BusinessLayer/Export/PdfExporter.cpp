@@ -471,8 +471,8 @@ void PdfExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
     QScopedPointer<QPrinter> printer(preparePrinter(_exportParameters.filePath));
 #else
     QScopedPointer<QPdfWriter> printer(new QPdfWriter(_exportParameters.filePath));
-    printer->setPageSize(QPageSize(::exportStyle().pageSizeId()));
-    QMarginsF margins = ::exportStyle().pageMargins();
+    printer->setPageSize(QPageSize(::exportTemplate().pageSizeId()));
+    QMarginsF margins = ::exportTemplate().pageMargins();
     printer->setPageMargins(margins, QPageLayout::Millimeter);
 #endif
 
@@ -506,8 +506,8 @@ void PdfExporter::exportTo(const ResearchModelCheckableProxy* _researchModel, co
     QScopedPointer<QPrinter> printer(preparePrinter(_exportParameters.filePath));
 #else
     QScopedPointer<QPdfWriter> printer(new QPdfWriter(_exportParameters.filePath));
-    printer->setPageSize(QPageSize(::exportStyle().pageSizeId()));
-    QMarginsF margins = ::exportStyle().pageMargins();
+    printer->setPageSize(QPageSize(::exportTemplate().pageSizeId()));
+    QMarginsF margins = ::exportTemplate().pageMargins();
     printer->setPageMargins(margins, QPageLayout::Millimeter);
 #endif
 

@@ -26,7 +26,9 @@
 #include <QScrollBar>
 #include <QStringListModel>
 #include <QStyleHints>
+#ifndef MOBILE_OS
 #include <QSound>
+#endif
 #include <QTextBlock>
 #include <QTextCursor>
 #include <QTextDocumentFragment>
@@ -596,6 +598,7 @@ bool ScenarioTextEdit::isRedoAvailable() const
 
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 {
+#ifndef MOBILE_OS
     //
     // Музицируем
     //
@@ -640,6 +643,7 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
             }
         }
     }
+#endif
 
 #ifdef MOBILE_OS
     //
