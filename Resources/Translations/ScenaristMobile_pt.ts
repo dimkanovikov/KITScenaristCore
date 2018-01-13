@@ -24,6 +24,13 @@
     </message>
 </context>
 <context>
+    <name>BusinessLayer::AbstractExporter</name>
+    <message>
+        <source>Real name: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BusinessLayer::FountainExporter</name>
     <message>
         <source>INT</source>
@@ -77,12 +84,12 @@
     <name>BusinessLogic::AbstractExporter</name>
     <message>
         <source>(MORE)</source>
-        <translation>(MAIS)</translation>
+        <translation type="vanished">(MAIS)</translation>
     </message>
     <message>
         <source> (CONT&apos;D)</source>
         <extracomment>Continued</extracomment>
-        <translation>(CONTADO)</translation>
+        <translation type="vanished">(CONTADO)</translation>
     </message>
 </context>
 <context>
@@ -151,7 +158,7 @@
     </message>
     <message>
         <source>Research</source>
-        <translation>Pesquisa</translation>
+        <translation type="vanished">Pesquisa</translation>
     </message>
     <message>
         <source>Characters</source>
@@ -160,6 +167,10 @@
     <message>
         <source>Locations</source>
         <translation>Locais</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -308,6 +319,15 @@
         <translatorcomment>Redução de Descrição de Cena</translatorcomment>
         <translation>DC</translation>
     </message>
+    <message>
+        <source>Lyrics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>L</source>
+        <extracomment>Reduction of Lyrics</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioModel</name>
@@ -326,6 +346,70 @@
     <message>
         <source>Default with Courier Prime</source>
         <translation>Padrão com Courier Prime</translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (A4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy of </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BusinessLogic::ScriptTextCorrector</name>
+    <message>
+        <source>CONT&apos;D</source>
+        <extracomment>Continued</extracomment>
+        <translation type="unfinished">CONT</translation>
+    </message>
+    <message>
+        <source>MORE</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -383,6 +467,76 @@
     <message>
         <source>Unnamed image</source>
         <translation>Imagem sem nome</translation>
+    </message>
+    <message>
+        <source>INT./EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AFTERNOON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LATER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MOMENTS LATER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CONTINUOUS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>THE NEXT DAY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O.C.</source>
+        <extracomment>Off-camera</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SUBTITLE</source>
+        <extracomment>Subtitle</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FADE IN:</source>
+        <translation type="unfinished">FADE IN:</translation>
+    </message>
+    <message>
+        <source>FADE OUT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FADE TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DISSOLVE TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BACK TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MATCH CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>JUMP CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FADE TO BLACK</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -445,6 +599,229 @@
     <message>
         <source>All Supported Files</source>
         <translation>Todos os arquivos suportados</translation>
+    </message>
+</context>
+<context>
+    <name>FountainImporter</name>
+    <message>
+        <source>END OF </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GraphLogic</name>
+    <message>
+        <source>Couldn&apos;t parse XML file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t read file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t open file to write.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MindMap exported as </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No active node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No active node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node hasn&apos;t parent for add sibling node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base node cannot be deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Too much scaling.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select node color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select text color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add edge: select destination node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete edge: select other end-node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edge adding cancelled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edge deleting cancelled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t add edge between single node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is already an edge between these two nodes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no edge between these two nodes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>HelpView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At first glance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Authorization in cloud service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Projects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Configurar</translation>
+    </message>
+    <message>
+        <source>Create a new project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script editing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script navigation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving the script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secret features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;t first glance&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After installing and running the application, you will see a screen with a list of projects. Other application pages have a similar arrangement of elements, so let&apos;s look at it in more detail.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;At the top of the page is the main toolbar. In the left part of toolbar placed a button for calling the menu. On other pages, instead of the menu button, there may be a button to return to the previous page. In the middle is the title of the current page. And one or more auxiliary buttons can be located to the right (on the page with the list of projects this is the button for creating a new project).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;In the center of the screen is the main content of the current page. On current page, it is a list of projects located on your device.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Finally, at the bottom of the screen, there may be an additional toolbar.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;1&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;M&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;enu&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;When the menu button is pressed, a panel with a list of actions available at the moment will appear on the left side of the screen.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After starting the application, the menu contains four items: authorization, projects, settings, and help.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Let&apos;s consider each of them in more detail.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;2&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;uthorization in cloud service&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;When you click on the menu item &amp;quot;Authorization&amp;quot;, the page for entering the private account of the cloud service KIT Scenarist will open.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Also, on this page, you can recover the password from your account, or register a new one.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After you correctly enter the data for authorization, the app will open the page of the personal account. In your personal account, you can set up personal information about your account, as well as monitor the resources used.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Also, after a successful login in the personal account, the menu item Authorization will change to your username and will lead to the personal account page.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;3&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;P&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;rojects&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The menu item &amp;quot;Projects&amp;quot; leads to a page with a list of projects.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After successful authorization, an additional tabbed panel appeared at the top of the project page, allowing you to switch between projects on your device and projects in the cloud service.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Each of the projects in the list has an &amp;quot;Options&amp;quot; button, the click of which brings up a list of actions available for the project. Depending on the location of the project, this can be: changing the project name, deleting the project, managing the list of co-authors.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;4&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;ettings&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The menu item &amp;quot;Settings&amp;quot; leads to the same page. On it, you can configure the application in a convenient way.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Here you can choose the language of the application, set the color scheme (dark is more suitable for work in dimly lit rooms, and also in the evening or at night, and light is convenient for work with sufficient light), and also configure the script editor and navigator.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;5&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;H&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;elp&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;When you click the Help menu item, a list of sections with reference information leading to this document opens.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;6&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;reate a new project&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;To create a new project, go to the projects page and click the appropriate button (it&apos;s in the upper right corner). Pressing the button will display the page for creating a new project.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;You need to set the project name different from the names of existing projects on the device. If a project with the name like you entered already exists, a warning message will be displayed on the screen.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After the project name is set, you need to click the &amp;quot;Create&amp;quot; button, and, the program will create a new project and redirect you to the script editing page. In addition, additional items related to the current project will be available on the menu:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Title page&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens the title page of the script for completion;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Script&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens a page with the text of the script;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Save&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - saves current project changes;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Import&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens the page with the import &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;instruction;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Export&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens the script export page.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;In more detail, each of them will be considered below.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;7&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript editing&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The script editing page at the top has a toolbar on which there are: a menu button, a script name, and a navigator button. The main part of the window is occupied by the text area in which the script is located. And at the bottom of the window, with the active keyboard, there is an additional panel with a list of block formats and a text search bar (the top toolbar is hidden while working with the text).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The script during the text input and the transition between different blocks is immediately formatted. The script template is slightly changed for the convenience of working on mobile devices, but in general, it is close to the standard, so you will not have any problems with determining the location of blocks of text and their purpose.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The bottom formats panel contains a list of available block formats. Abbreviations mean the first letters of the names:&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;SH&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Scene heading&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Action&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Character&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;P&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Parenthetical&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;D&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Dialogue&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;SC&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Scene characters&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Shot&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Tr&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Transition&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;NT&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Note on the text&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Folder&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The format of the current block where the cursor is located is highlighted in the panel.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;In order to set the paragraph of the text to the desired format, you must place the cursor in this paragraph and select the desired format in blocks formats panel.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;When you click on the search icon, the format panel changes to the search bar. You will have to enter the search text and move on to the next or previous match.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;8&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript navigation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Pressing the navigation button (it is in the upper right corner of the script page with the hidden keyboard) will open the corresponding page in the application.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;On top of the navigation page, is a button for calling the menu, the name of the project and a button to return to the text of the script.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;In the center is the list of scenes of the current screenplay. The information for each scene consists of the scene number, the scene title (scene heading block or folder name), scene duration and scene text. In the settings, you can specify the need to display the scene numbers, as well as the number of displayed lines of the text of the scene.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Clicking on the scene will move you to the page with the text of the script and cursor will be placed at the scene start.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;At the bottom of the navigator page, is a panel with summary information of the script - the number of scenes and the overall timing.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;9&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;itle page&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The transition to the title page data is carried out using the menu item of the same name.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After filling the title page information, it will be placed in the exported scenario if you check the &amp;quot;Print title page&amp;quot; checkbox in the export settings.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;10&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;aving the script&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;When you work with the project, the application automatically saves all the changes made if you have not interacted with the device for 5 seconds, or every 5 minutes, if you work without stopping.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;If the current changes have not yet been saved, the menu will contain the &amp;quot;Save&amp;quot; item. Pressing it will save all changes. And the menu item itself turns into the line &amp;quot;Changes saved&amp;quot;, notifying about the success of the operation.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;If the saving was not successful, an information message with details of the problem and a suggestion of a method for solving it will be displayed.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;11&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript import&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The app supports import of scripts from the files docx, fdx, fountain, txt and own format kitsp.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;To import a script from a file, or from another app, you need to touch the file (in the file manager or in another application) and select the KIT Scenarist in the list of proposed programs to open it.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After that, the page with the import parameters will open in the program. After setting the necessary parameters, you should select the project in which the script will be imported by clicking the &amp;quot;Existing project&amp;quot; button or import it into the new project by clicking the &amp;quot;New project&amp;quot; button and specifying its name.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After the import is complete, a page with the text of the script will open.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;12&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript export&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Clicking the menu item &amp;quot;Export&amp;quot; will open the page with export settings for the script.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Then you can select the format of the file to export, the script template and other parameters related to the export.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Pressing the &amp;quot;Export&amp;quot; button (at the bottom of the page) will generate a script file in accordance with all selected settings. After that, a system dialog will be opened for selecting a program to save or send an exported script file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;13&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;ecret features&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;How to change the scale of the script text?&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;You need to put two fingers on the screen with script text and push them apart to zoom in, or close to zoom out (use pinch and stretch gestures).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;How to switch to the navigator in a more convenient way?&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;You need to swipe from right to left, and to move from the navigator to the text of the script, you need to swipe in the opposite direction.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -848,6 +1225,10 @@ O projeto não foi sincronizado.</translation>
         <source>Title page</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NavigatorView</name>
@@ -942,6 +1323,61 @@ Let&apos;s create the first one!</source>
         <comment>ScenarioTextEditHelpers</comment>
         <translation>FIM DE</translation>
     </message>
+    <message>
+        <source>Node added to &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node added to scene</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node deleted &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> with subtree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edge added between &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot; and &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edge deleted between &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changing color of node: &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changing textcolor of node: &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The graph is acyclic, edge added as secondary edge.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QtMindMap::Node</name>
+    <message>
+        <source>&lt;b&gt;Root node&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RtfReader</name>
@@ -1020,6 +1456,10 @@ Let&apos;s create the first one!</source>
     <message>
         <source>Change text background color</source>
         <translation>Mude a cor do fundo do texto</translation>
+    </message>
+    <message>
+        <source>Clear formatting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
