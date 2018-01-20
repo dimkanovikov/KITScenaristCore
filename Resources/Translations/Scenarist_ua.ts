@@ -1242,6 +1242,10 @@
         <source>עִבְרִית</source>
         <translation></translation>
     </message>
+    <message>
+        <source>Polszczyzna</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -2156,6 +2160,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
 Модуль включає навігатор сценарію. Це список сцен. Натискання миші на сцені зі списку, відображатиме текст вибраної сцени на екрані.
 
 І текстовий редактор сценарію. Редактор має багато допоміжних функцій, які спрощують введення тексту відповідно до стандарту написання сценаріїв, а також дозволяє виконувати пошук тексту в сценарію та залишати примітки до тексту.</translation>
+    </message>
+    <message>
+        <source>Polszczyzna</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

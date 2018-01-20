@@ -1248,6 +1248,10 @@
         <source>עִבְרִית</source>
         <translation></translation>
     </message>
+    <message>
+        <source>Polszczyzna</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -2164,6 +2168,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
 O módulo inclui o navegador de roteiro. É uma lista de cenas. Clicar o mouse na cena da lista exibirá o texto da cena selecionada na tela.
 
 E o editor de texto do roteiro. O editor tem várias funções auxiliares que simplificam a inserção do texto de acordo com os padrões da escrita de roteiros, e também permite você procurar o texto do roteiro e escrever notas.</translation>
+    </message>
+    <message>
+        <source>Polszczyzna</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

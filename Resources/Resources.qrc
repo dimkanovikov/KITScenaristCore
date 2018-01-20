@@ -175,6 +175,9 @@
         <file>Translations/Scenarist_he.qm</file>
         <file>Translations/qt_he.qm</file>
         <file>Translations/qtbase_he.qm</file>
+        <file>Translations/qtbase_pl.qm</file>
+        <file>Translations/qt_pl.qm</file>
+        <file>Translations/Scenarist_pl.qm</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>
