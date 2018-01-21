@@ -2362,6 +2362,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
         <source>22.17.2010</source>
         <translation>22.17.2010</translation>
     </message>
+    <message>
+        <source>PayPal</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ResearchItemDialog</name>

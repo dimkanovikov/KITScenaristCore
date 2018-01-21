@@ -2370,6 +2370,10 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
         <source>22.17.2010</source>
         <translation>22.17.2010</translation>
     </message>
+    <message>
+        <source>PayPal</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ResearchItemDialog</name>

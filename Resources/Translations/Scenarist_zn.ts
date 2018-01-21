@@ -1507,23 +1507,23 @@
         <translation>Русский</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="156"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="146"/>
         <source>Português</source>
         <translation>Português</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="94"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="84"/>
         <source>Français</source>
         <translation>Français</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="142"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="132"/>
         <source>汉语</source>
         <translatorcomment>Лучше 中文. Нынешний вариант - это, скорее, про устный язык, не письменный.</translatorcomment>
         <translation>中文</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="149"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="139"/>
         <source>עִבְרִית</source>
         <translation>עִבְרִית</translation>
     </message>
@@ -1548,17 +1548,17 @@
         <translation>Deutsch</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="84"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="156"/>
         <source>Polszczyzna</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="101"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="91"/>
         <source>فارْسِى</source>
         <translation>فارْسِى</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="132"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="122"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;没有找到您偏好的语言，请阅览上面的链接您便知如何自我添加。&lt;/a&gt;</translation>
     </message>
@@ -2960,21 +2960,26 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.ui" line="95"/>
+        <source>PayPal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.ui" line="100"/>
         <source>Bank card</source>
         <translation>银行卡</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.ui" line="100"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.ui" line="105"/>
         <source>Yandex money</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.ui" line="114"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.ui" line="119"/>
         <source>Thanks! Your subscription is active until </source>
         <translation>感谢！您的订阅已激活</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.ui" line="124"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.ui" line="129"/>
         <source>22.17.2010</source>
         <translation></translation>
     </message>
@@ -4924,27 +4929,27 @@ The application will start in few seconds.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.cpp" line="119"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.cpp" line="122"/>
         <source>1 month</source>
         <translation>1个月</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.cpp" line="120"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.cpp" line="123"/>
         <source>2 month</source>
         <translation>2个月</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.cpp" line="121"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.cpp" line="124"/>
         <source>3 month</source>
         <translation>3个月</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.cpp" line="122"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.cpp" line="125"/>
         <source>6 month (6% discount)</source>
         <translation>6个月（6%折扣）</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.cpp" line="123"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/RenewSubscriptionDialog.cpp" line="126"/>
         <source>12 month (12% discount)</source>
         <translation>12个月（12%折扣）</translation>
     </message>

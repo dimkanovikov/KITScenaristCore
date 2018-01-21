@@ -581,7 +581,11 @@ void SynchronizationManager::renewSubscription(unsigned _duration,
     QDesktopServices::openUrl(QUrl(QString("http://kitscenarist.ru/api/account/subscribe/?"
                                            "user=%1&month=%2&payment_type=%3").
                                    arg(m_userEmail).arg(_duration).
-                                   arg(_type == 0 ? "AC" : "PC")));
+                                   arg(_type == 0
+                                       ? "paypal"
+                                       : _type == 1
+                                         ? "AC"
+                                         : "PC")));
 }
 
 void SynchronizationManager::changeUserName(const QString &_newUserName)
