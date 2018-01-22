@@ -22,14 +22,14 @@ public:
 		//
 		QString toCheck = _email;
 
-		QRegExpValidator validator(QRegExp(".+@.{2,}\\..{2,}"));
+        QRegExpValidator validator(QRegExp("[^\\s]+@[^\\s]{2,}\\.[^\\s]{2,}"));
 		int pos = 0;
 		if (validator.validate(toCheck, pos) != QValidator::Acceptable) {
 			return false;
 		} else {
 			return true;
 		}
-	}
+    }
 };
 
 #endif // VALIDATORS_H
