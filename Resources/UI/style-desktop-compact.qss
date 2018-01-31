@@ -868,3 +868,34 @@ QLabel[projectName=true] {
 QLabel[projectInfo=true] {
     color: palette(mid);
 }
+
+/*
+ * Фрейм аккаунта в меню
+ */
+QFrame[menuAccount=true] {
+    background-color: palette(button);
+}
+
+/*
+ * Пункт меню
+ */
+QPushButton[menuButton=true] {
+    background-color: palette(window);
+    text-align: left;
+    border: none;
+    padding: 2px 8px 2px 8px;
+    min-height: 35px;
+}
+
+QPushButton[menuButtonTopBordered=true] {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: palette(dark);
+}
+
+/*
+ * Ссылка
+ */
+QLabel[link=true] {
+    color: #2b78da;
+}

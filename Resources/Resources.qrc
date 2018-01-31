@@ -146,6 +146,8 @@
         <file>Icons/settings_templates.png</file>
         <file>Icons/view-panels.png</file>
         <file>Icons/Editing/copy-to-script.png</file>
+        <file>Images/avatar.png</file>
+        <file>Icons/empty.png</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>
