@@ -14,6 +14,7 @@ MaterialComboBox::MaterialComboBox(QWidget* _parent) :
     m_delegate(new QStyledItemDelegate(this))
 {
     setFocusProxy(m_comboBox);
+    m_comboBox->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
 
     QVBoxLayout* layout = new QVBoxLayout;
     layout->setContentsMargins(QMargins());

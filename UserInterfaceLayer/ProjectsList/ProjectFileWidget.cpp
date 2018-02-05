@@ -161,6 +161,12 @@ void ProjectFileWidget::initView()
 
 #ifdef MOBILE_OS
     m_ui->optionsPanel->hide();
+    m_ui->change->setToolTip(QString());
+    m_ui->remove->setToolTip(QString());
+    m_ui->hide->setToolTip(QString());
+    m_ui->share->setToolTip(QString());
+    m_ui->shareDetails->setToolTip(QString());
+    m_ui->openMenu->setToolTip(QString());
 #else
     m_ui->openMenu->hide();
 #endif
