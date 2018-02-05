@@ -77,6 +77,8 @@ MaterialLineEdit::MaterialLineEdit(QWidget* _parent) :
     m_helper->setFocusProxy(m_lineEdit);
 
     m_lineEdit->installEventFilter(this);
+    m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints()
+                                    | Qt::ImhNoPredictiveText);
 
     QVBoxLayout* layout = new QVBoxLayout;
     layout->setContentsMargins(QMargins());
