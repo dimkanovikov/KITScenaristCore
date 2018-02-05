@@ -69,6 +69,7 @@
         <file>Icons/Mobile/menu/title-page.png</file>
         <file>Icons/help_startpage.png</file>
         <file>Icons/Review/clear.png</file>
+        <file>Icons/Mobile/arrow-left.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/ScenaristMobile_ru.qm</file>
