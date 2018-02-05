@@ -755,7 +755,7 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 
 void ScenarioTextEdit::inputMethodEvent(QInputMethodEvent* _event)
 {
-//    qDebug() << _event->replacementStart() << _event->replacementLength() << _event->preeditString() <<_event->commitString() << _event->attributes().count()
+//    qDebug() << _event->replacementStart() << _event->replacementLength() << _event->preeditString() <<_event->commitString() << _event->attributes().count();
 //             << _event->attributes().first().type << _event->attributes().first().value
 //                << _event->attributes().last().type << _event->attributes().last().value;
     //

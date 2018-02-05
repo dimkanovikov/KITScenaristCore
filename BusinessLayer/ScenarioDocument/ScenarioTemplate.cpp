@@ -119,7 +119,7 @@ namespace {
             //: Reduction of Scene Description
             s_shortTypeNames.insert(ScenarioBlockStyle::SceneDescription, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "SD"));
             //: Reduction of Lyrics
-            s_shortTypeNames.insert(ScenarioBlockStyle::Dialogue, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "L"));
+            s_shortTypeNames.insert(ScenarioBlockStyle::Lyrics, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "L"));
         }
         return s_shortTypeNames;
     }
