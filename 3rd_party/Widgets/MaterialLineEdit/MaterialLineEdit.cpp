@@ -117,15 +117,7 @@ void MaterialLineEdit::setText(const QString& _text)
 
 QString MaterialLineEdit::text() const
 {
-#if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
-    if (m_lineEdit->echoMode() == QLineEdit::Password) {
-        return m_lineEdit->text();
-    } else  {
-        return m_text;
-    }
-#else
     return m_lineEdit->text();
-#endif
 }
 
 void MaterialLineEdit::setHelperText(const QString& _text)
@@ -157,9 +149,7 @@ void MaterialLineEdit::setInlineMode(bool _isInline)
 {
     if (m_isInline != _isInline) {
         m_isInline = _isInline;
-#ifdef Q_OS_IOS
-        m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints() | Qt::ImhNoPredictiveText);
-#endif
+
         updateStyle();
     }
 }
@@ -175,19 +165,6 @@ bool MaterialLineEdit::eventFilter(QObject* _watched, QEvent* _event)
         if (_event->type() == QEvent::FocusIn
             || _event->type() == QEvent::FocusOut) {
             updatePlaceholder();
-        } else if (_event->type() == QEvent::InputMethod) {
-            QInputMethodEvent* event = static_cast<QInputMethodEvent*>(_event);
-            m_text = m_lineEdit->text();
-            if (event->replacementStart() >= 0) {
-                QString stringForInsert;
-                if (!event->preeditString().isEmpty()) {
-                    stringForInsert = event->preeditString();
-                } else {
-                    stringForInsert = event->commitString();
-                }
-                m_text.insert(m_lineEdit->cursorPosition(), stringForInsert);
-            }
-            emit textChanged(m_text);
         }
     }
 
