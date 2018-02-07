@@ -1200,6 +1200,10 @@ ScenarioTemplateFacade::ScenarioTemplateFacade()
     m_templatesModel = new QStandardItemModel;
     QStandardItem* rootItem = m_templatesModel->invisibleRootItem();
     foreach (const ScenarioTemplate& templateObj, m_templates.values()) {
+        if (templateObj.name() == "Mobile") {
+            continue;
+        }
+
         QList<QStandardItem*> row;
         row << new QStandardItem(templateObj.name());
         row << new QStandardItem(templateObj.description());
