@@ -427,15 +427,15 @@ QComboBox[materialComboBox=true]::drop-down {
     background: transparent;
     subcontrol-origin: padding;
     subcontrol-position: top right;
-    max-width: 16dp;
+    max-width: 12dp;
     border-width: 0dp;
     padding-left: 4dp;
     padding-right: 4dp;
 }
 
 QComboBox[materialComboBox=true]::down-arrow {
-    width: 16dp;
-    height: 16dp;
+    width: 12dp;
+    height: 12dp;
     image: url(:/Interface/UI/downarrow_THEME_POSTFIX.png);
 }
 
@@ -483,6 +483,15 @@ QComboBox[materialComboBox=true] QListView::item:selected {
 
 QLabel[listHeader=true] {
     padding: 16dp 0dp 16dp 16dp;
+    font-weight: 500;
+    font-size: 14pt;
+    color: palette(mid);
+}
+
+QLabel[listHeaderTopBordered=true] {
+    border-top: 1px solid palette(dark);
+    padding: 16dp 0dp 16dp 16dp;
+    margin-top: 18dp;
     font-weight: 500;
     font-size: 14pt;
     color: palette(mid);
