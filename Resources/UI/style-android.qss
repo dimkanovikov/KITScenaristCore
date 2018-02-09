@@ -491,7 +491,7 @@ QLabel[listHeader=true] {
 QLabel[listHeaderTopBordered=true] {
     border-top: 1px solid palette(dark);
     padding: 16dp 0dp 16dp 16dp;
-    margin-top: 18dp;
+    margin-top: 8dp;
     font-weight: 500;
     font-size: 14pt;
     color: palette(mid);

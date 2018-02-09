@@ -880,6 +880,17 @@ void ScenarioTemplate::updateBlocksColors()
     }
 }
 
+#ifdef MOBILE_OS
+void ScenarioTemplate::setFontSize(int _size)
+{
+    for (auto iter = m_blockStyles.begin(); iter != m_blockStyles.end(); ++iter) {
+        QFont font = m_blockStyles[iter.key()].font();
+        font.setPointSize(_size);
+        m_blockStyles[iter.key()].setFont(font);
+    }
+}
+#endif
+
 ScenarioTemplate::ScenarioTemplate(const QString& _fromFile)
 {
     load(_fromFile);
@@ -1137,7 +1148,7 @@ ScenarioTemplateFacade::ScenarioTemplateFacade()
     //
     // Обновим шаблон по умолчанию
     //
-    auto updateDefaultTemplate = [=] (const QString& _templateName) {
+    auto updateDefaultTemplate = [this, templatesFolderPath] (const QString& _templateName) {
         const QString defaultTemplatePath =
                 templatesFolderPath + QDir::separator() + _templateName + SCENARIO_TEMPLATE_FILE_EXTENSION;
         QFile defaultTemplateFile(defaultTemplatePath);

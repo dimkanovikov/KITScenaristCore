@@ -539,6 +539,13 @@ namespace BusinessLogic
          */
         void updateBlocksColors();
 
+#ifdef MOBILE_OS
+        /**
+         * @brief Задать размер шрифта
+         */
+        void setFontSize(int _size);
+#endif
+
     private:
         ScenarioTemplate(const QString& _fromFile);
         friend class ScenarioTemplateFacade;
