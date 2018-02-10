@@ -81,18 +81,6 @@
     </message>
 </context>
 <context>
-    <name>BusinessLogic::AbstractExporter</name>
-    <message>
-        <source>(MORE)</source>
-        <translation type="vanished">(MAIS)</translation>
-    </message>
-    <message>
-        <source> (CONT&apos;D)</source>
-        <extracomment>Continued</extracomment>
-        <translation type="vanished">(CONTADO)</translation>
-    </message>
-</context>
-<context>
     <name>BusinessLogic::AbstractImporter</name>
     <message>
         <source>All Supported Files</source>
@@ -155,10 +143,6 @@
     <message>
         <source>Synopsis</source>
         <translation>Sinópse</translation>
-    </message>
-    <message>
-        <source>Research</source>
-        <translation type="vanished">Pesquisa</translation>
     </message>
     <message>
         <source>Characters</source>
@@ -576,6 +560,10 @@
         <source>Print title page</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Dialogues numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FormatManager</name>
@@ -750,6 +738,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Contents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -813,14 +805,8 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Then you can select the format of the file to export, the script template and other parameters related to the export.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Pressing the &amp;quot;Export&amp;quot; button (at the bottom of the page) will generate a script file in accordance with all selected settings. After that, a system dialog will be opened for selecting a program to save or send an exported script file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;13&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;ecret features&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;How to change the scale of the script text?&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;You need to put two fingers on the screen with script text and push them apart to zoom in, or close to zoom out (use pinch and stretch gestures).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;How to switch to the navigator in a more convenient way?&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;You need to swipe from right to left, and to move from the navigator to the text of the script, you need to swipe in the opposite direction.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contents</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1423,6 +1409,10 @@ Let&apos;s create the first one!</source>
         <source>Application</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show dialogues numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -1507,6 +1497,10 @@ Your subscription is active until</source>
     <message>
         <source>Bank card</source>
         <translation>cartão do banco</translation>
+    </message>
+    <message>
+        <source>PayPal</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1664,6 +1658,30 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Little</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Middle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Big</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Very big</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Large</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font size</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -9,7 +9,7 @@
         <translation>Личный кабинет</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.ui" line="177"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.ui" line="188"/>
         <source>RENEW SUBSCRIPTION</source>
         <translation>ПРОДЛИТЬ ПОДПИСКУ</translation>
     </message>
@@ -94,18 +94,6 @@
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="39"/>
         <source>I/E</source>
         <translation>И/Н</translation>
-    </message>
-</context>
-<context>
-    <name>BusinessLogic::AbstractExporter</name>
-    <message>
-        <source>(MORE)</source>
-        <translation type="vanished">(ДАЛЬШЕ)</translation>
-    </message>
-    <message>
-        <source> (CONT&apos;D)</source>
-        <extracomment>Continued</extracomment>
-        <translation type="vanished"> (ПРОД.)</translation>
     </message>
 </context>
 <context>
@@ -203,10 +191,6 @@
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="246"/>
         <source>Documents</source>
         <translation>Документы</translation>
-    </message>
-    <message>
-        <source>Research</source>
-        <translation type="vanished">Разработка</translation>
     </message>
 </context>
 <context>
@@ -665,27 +649,27 @@
         <translation>Экспортировать сценарий</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="122"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="131"/>
         <source>Check page breaks</source>
         <translation>Корректировать текст</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="135"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="138"/>
         <source>Page numbers</source>
         <translation>Нумеровать страницы</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="142"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="145"/>
         <source>Scenes numbers</source>
         <translation>Нумеровать сцены</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="149"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="152"/>
         <source>Save review marks</source>
         <translation>Сохранять пометки редактора</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="184"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="187"/>
         <source>EXPORT</source>
         <translation>ЭКСПОРТИРОВАТЬ</translation>
     </message>
@@ -693,6 +677,11 @@
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="196"/>
         <source>Print title page</source>
         <translation>Печатать титульную страницу</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="203"/>
+        <source>Dialogues numbers</source>
+        <translation>Номера реплик</translation>
     </message>
 </context>
 <context>
@@ -990,78 +979,74 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Then you can select the format of the file to export, the script template and other parameters related to the export.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Pressing the &amp;quot;Export&amp;quot; button (at the bottom of the page) will generate a script file in accordance with all selected settings. After that, a system dialog will be opened for selecting a program to save or send an exported script file.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;13&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;ecret features&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;How to change the scale of the script text?&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;You need to put two fingers on the screen with script text and push them apart to zoom in, or close to zoom out (use pinch and stretch gestures).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;How to switch to the navigator in a more convenient way?&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;You need to swipe from right to left, and to move from the navigator to the text of the script, you need to swipe in the opposite direction.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;Первое знакомство&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После установки и запуска приложения перед вами будет отображён экран со списком проектов. Другие страницы приложения имеют подобное расположение элементов, поэтому давайте рассмотрим её более подробно.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Вверху страницы расположена основная панель инструментов. В левой её части находится кнопка вызова меню. На других страницах вместо кнопки меню может быть кнопка возврата к предыдущей странице. Посередине находится заголовок текущей страницы. А справа могут располагаться одна или несколько вспомогательных кнопок. На странице со списком проектов - это кнопка создания нового проекта.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;В центре экрана находится основное содержимое текущей страницы. В данном случае - это список проектов расположенных на вашем устройстве.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;И наконец в нижней части экрана может находиться вспомогательная панель инструментов.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;1&quot;&gt;&lt;/a&gt;Меню&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;При нажатии кнопки меню, с левой стороны экрана выедет вспомогательная панель со списком действий доступных в данный момент.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После запуска приложения меню содержит четыре пункта: авторизация, проекты, настройки и справка.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Рассмотрим каждый из них более подробно.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;2&quot;&gt;&lt;/a&gt;Авторизация в облачном сервисе&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;При нажатии на пункт меню &quot;Авторизация&quot;, откроется страница для входа в личный кабинет облачного сервиса КИТ Сценарист.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;На этой же странице есть возможность восстановить пароль от своего аккаунта, или зарегистрировать новый.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После того, как вы верно введёте данные для авторизации, программа откроет страницу личного кабинета. В личном кабинете вы можете настроить персональную информацию о вашем аккаунте, а так же контролировать используемые ресурсы.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Также, после успешного входа в личный кабинет, пункт меню Авторизация сменится на ваше имя пользователя и впредь будет вести на страницу личного кабинета.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;3&quot;&gt;&lt;/a&gt;Проекты&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Пункт меню &quot;Проекты&quot; ведёт на уже знакомую нам страницу со списком проектов.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После успешной авторизации вверху страницы проектов появилась дополнительная панель со вкладками, позволяющая переключаться между проектами находящимися на вашем устройстве и проектами в облачном сервисе.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;У каждого из проектов в списке есть кнопка &quot;Опции&quot;, нажатие которой приводит к отображению списка действий доступных для проекта. В зависимости от места расположения проекта это могут быть: изменение названия проекта, удаление проекта, кнопки управления списком соавторов,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;4&quot;&gt;&lt;/a&gt;Настройки&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Пункт меню &quot;Настройки&quot; ведёт на одноимённую страницу. На ней вы можете сконфигурировать приложение удобным для себя способом.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Здесь вы можете выбрать язык приложения,&amp;nbsp; задать цветовую схему (тёмная больше подходит для работы в слабоосвещённых помещениях, а также вечером и ночью; светлая же удобна для работы при достаточном количестве света), а также сконфигурировать редактор сценария и навигатор.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;5&quot;&gt;&lt;/a&gt;Справка&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;При нажатии пункта меню &quot;Справка&quot;, откроется список разделов со справочной информацией, ведущий к данному документу.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;6&quot;&gt;&lt;/a&gt;Создание нового проекта&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Для создания нового проекта необходимо перейти на страницу проектов и нажать соответствующую кнопку (она находится в правом верхнем углу). Нажатие кнопки приведёт к отображению страницы создания нового проекта.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Вам необходимо задать название проекта отличное от названий существующих на устройстве проектов. В случае, если проект с таким именем уже существует, на экране будет отображено сообщение уведомляющее ее об этом.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После того, как имя проекта установлено, нужно нажать кнопку &quot;Создать&quot;, и, программа, создав новый проект,&amp;nbsp; перенаправит вас на страницу редактирования текста сценария. Кроме того, в меню станут доступны дополнительные пункты, относящиеся к текущему сценарию:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;&lt;strong&gt;Титульная страница&lt;/strong&gt; - открывает титульную страницу сценария для заполнения;&lt;br /&gt;&lt;strong&gt;Сценарий&lt;/strong&gt; - открывает страницу с текстом сценария; &lt;br /&gt;&lt;strong&gt;Сохранить&lt;/strong&gt; - сохраняет текущие изменения проекта; &lt;br /&gt;&lt;strong&gt;Импортировать&lt;/strong&gt; - открывает страницу с инструкцией по импорту;&lt;br /&gt;&lt;strong&gt;Экспортировать&lt;/strong&gt; - открывает страницу экспорта сценария.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Более детально каждый из них будет рассмотрен ниже.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;7&quot;&gt;&lt;/a&gt;Редактирование сценария&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Страница редактирования сценария вверху имеет панель инструментов, на которой присутствуют: кнопка вызова меню, название сценария и кнопка перехода к навигатору. Основную часть окна занимает текстовое поле, в котором находится сценарий. А внизу окна, при активной клавиатуре, располагается вспомогательная панель со списком форматов сценария и панель поиска по тексту (верхняя панель инструментов при этом скрывается на время работы с текстом).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Сценарий по ходу ввода текста и перехода между разными блоками сразу форматируется в виде сценарной записи. Шаблон оформления сценария немного изменён для удобства работы на мобильных устройствах, но в целом он близок стандарту, поэтому у вас не возникнет проблем с определением расположения блоков текста и их назначением.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;На панели форматов находится список доступных форматов блоков. Сокращения означают первые буквы из названий:&lt;br /&gt;&lt;strong&gt;МВ&lt;/strong&gt; - место и время.&lt;br /&gt;&lt;strong&gt;ОД&lt;/strong&gt; - описание действия&lt;br /&gt;&lt;strong&gt;Г&lt;/strong&gt; - герой&lt;br /&gt;&lt;strong&gt;Р&lt;/strong&gt; - ремарка&lt;br /&gt;&lt;strong&gt;Д&lt;/strong&gt; - диалог&lt;br /&gt;&lt;strong&gt;УС&lt;/strong&gt; - участники сцены&lt;br /&gt;&lt;strong&gt;Пр&lt;/strong&gt; - примечание&lt;br /&gt;&lt;strong&gt;Пе&lt;/strong&gt; - переход&lt;br /&gt;&lt;strong&gt;ЗПТ&lt;/strong&gt; - заметка по тексту&lt;br /&gt;&lt;strong&gt;Па&lt;/strong&gt; - папка&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Формат текущего блока, где находится курсор выделен на панели.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Для того, чтобы установить абзацу текста нужный формат, необходимо установить курсор в данный абзац и выбрать желаемый формат.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;При нажатии на иконку поиска, панель форматов сменится на панель поиска. Вам останется ввести искомый текст и переходить к следующему или предыдущему совпадению.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;8&quot;&gt;&lt;/a&gt;Навигация по сценарию&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Нажатие кнопки перехода к навигации (она находится в правом верхнем углу страницы сценария при скрытой клавиатуре) откроет соответствующую страницу в приложении.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Сверху в ней расположены кнопка вызова меню, название проекта и кнопка возврата к тексту сценария.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;В центре находится список сцен текущего сценария. Информация по каждой сцене состоит из номера сцены, заголовка сцены (блок время и место или название папки), хронометража и текста сцены. В настройках можно задать необходимость отображения номеров сцен, а также количество отображаемых строк текста сцены.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Нажатие на сцену приведёт вас на страницу с текстом сценария и сместит курсор к месту начала сцены.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Внизу страницы навигатора расположена панель с суммарной информацией по сценарию - количество сцен и общий хронометраж.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;9&quot;&gt;&lt;/a&gt;Заполнение титульной страницы&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Переход к данным титульной страницы осуществляется при помощи одноимённого пункта меню.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После заполнения информации титульной страницы, она будет помещена в экспортируемый сценарий, если установить галочку &quot;Печатать титульную страницу&quot; в настройках экспорта.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;10&quot;&gt;&lt;/a&gt;Сохранение сценария&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;При работе со сценарием, программа автоматически сохраняет все внесённые изменения, если вы в течении 5 секунд не взаимодействовали с устройством, либо каждые 5 минут, если вы работаете без остановки.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;В случае, если текущие изменения ещё не были сохранены, в меню будет присутствовать пункт &quot;Сохранить&quot;. Его нажатие приводит к сохранению всех изменений. А сам пункт меню превращается в строку &quot;Изменения сохранены&quot;, уведомляющую об успешности операции.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Если же сохранение не удалось, на экран будет выведено информационное сообщение с деталями проблемы и предложением способа её решения.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;11&quot;&gt;&lt;/a&gt;Импорт сценария&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Программа поддерживает импорт сценариев из файлов docx, fdx, fountain, txt и собственного формата kitsp.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Для импорта сценария из файла, или из другой программы необходимо коснуться файла (в файловом менеджере или в другой программе) и в списке предложенных программ выбрать КИТ Сценарист для его открытия.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После этого в программе откроется страница с параметрами импорта. Настроив необходимые параметры, следует выбрать проект, в который будет импортироваться сценарий, нажав кнопку &quot;Существующий&quot;, либо импортировать в новый проект, нажав кнопку &quot;Новый&quot; и&amp;nbsp; указав его название.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После того, как импорт завершится, откроется страница с текстом сценария.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;12&quot;&gt;&lt;/a&gt;Экспорт сценария&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Нажатие пункта меню &quot;Экспортировать&quot; откроет страницу с параметрами экспорта сценария.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;На ней вы можете выбрать формат файла, в который будет произведён экспорт, шаблон оформления сценария и другие параметры, относящиеся к экспорту.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Нажатие кнопки &quot;Экспортировать&quot; (внизу страницы) сформирует файл со сценарием в соответствии со всеми выбранными настройками. После чего будет открыт системный диалог выбора программы для сохранения или отправки экспортированного файла со сценарием.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;13&quot;&gt;&lt;/a&gt;Секретные возможности&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;Как сменить масштаб текста?&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Нужно положить два пальца на текст и раздвинуть их для увеличения, или сомкнуть для уменьшения масштаба.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;Как удобно переключаться в навигатор?&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Нужно смахнуть справа-налево, а чтобы из навигатора попасть на текст сценария, нужно смахнуть в обратном направлении.&lt;/span&gt;&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</translation>
+        &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        p, li { white-space: pre-wrap; }
+        &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;Первое знакомство&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После установки и запуска приложения перед вами будет отображён экран со списком проектов. Другие страницы приложения имеют подобное расположение элементов, поэтому давайте рассмотрим её более подробно.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Вверху страницы расположена основная панель инструментов. В левой её части находится кнопка вызова меню. На других страницах вместо кнопки меню может быть кнопка возврата к предыдущей странице. Посередине находится заголовок текущей страницы. А справа могут располагаться одна или несколько вспомогательных кнопок. На странице со списком проектов - это кнопка создания нового проекта.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;В центре экрана находится основное содержимое текущей страницы. В данном случае - это список проектов расположенных на вашем устройстве.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;И наконец в нижней части экрана может находиться вспомогательная панель инструментов.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;1&quot;&gt;&lt;/a&gt;Меню&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;При нажатии кнопки меню, с левой стороны экрана выедет вспомогательная панель со списком действий доступных в данный момент.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После запуска приложения меню содержит четыре пункта: авторизация, проекты, настройки и справка.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Рассмотрим каждый из них более подробно.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;2&quot;&gt;&lt;/a&gt;Авторизация в облачном сервисе&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;При нажатии на пункт меню &quot;Авторизация&quot;, откроется страница для входа в личный кабинет облачного сервиса КИТ Сценарист.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;На этой же странице есть возможность восстановить пароль от своего аккаунта, или зарегистрировать новый.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После того, как вы верно введёте данные для авторизации, программа откроет страницу личного кабинета. В личном кабинете вы можете настроить персональную информацию о вашем аккаунте, а так же контролировать используемые ресурсы.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Также, после успешного входа в личный кабинет, пункт меню Авторизация сменится на ваше имя пользователя и впредь будет вести на страницу личного кабинета.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;3&quot;&gt;&lt;/a&gt;Проекты&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Пункт меню &quot;Проекты&quot; ведёт на уже знакомую нам страницу со списком проектов.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После успешной авторизации вверху страницы проектов появилась дополнительная панель со вкладками, позволяющая переключаться между проектами находящимися на вашем устройстве и проектами в облачном сервисе.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;У каждого из проектов в списке есть кнопка &quot;Опции&quot;, нажатие которой приводит к отображению списка действий доступных для проекта. В зависимости от места расположения проекта это могут быть: изменение названия проекта, удаление проекта, кнопки управления списком соавторов,&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;4&quot;&gt;&lt;/a&gt;Настройки&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Пункт меню &quot;Настройки&quot; ведёт на одноимённую страницу. На ней вы можете сконфигурировать приложение удобным для себя способом.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Здесь вы можете выбрать язык приложения,&amp;nbsp; задать цветовую схему (тёмная больше подходит для работы в слабоосвещённых помещениях, а также вечером и ночью; светлая же удобна для работы при достаточном количестве света), а также сконфигурировать редактор сценария и навигатор.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;5&quot;&gt;&lt;/a&gt;Справка&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;При нажатии пункта меню &quot;Справка&quot;, откроется список разделов со справочной информацией, ведущий к данному документу.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;6&quot;&gt;&lt;/a&gt;Создание нового проекта&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Для создания нового проекта необходимо перейти на страницу проектов и нажать соответствующую кнопку (она находится в правом верхнем углу). Нажатие кнопки приведёт к отображению страницы создания нового проекта.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Вам необходимо задать название проекта отличное от названий существующих на устройстве проектов. В случае, если проект с таким именем уже существует, на экране будет отображено сообщение уведомляющее ее об этом.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После того, как имя проекта установлено, нужно нажать кнопку &quot;Создать&quot;, и, программа, создав новый проект,&amp;nbsp; перенаправит вас на страницу редактирования текста сценария. Кроме того, в меню станут доступны дополнительные пункты, относящиеся к текущему сценарию:&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;&lt;strong&gt;Титульная страница&lt;/strong&gt; - открывает титульную страницу сценария для заполнения;&lt;br /&gt;&lt;strong&gt;Сценарий&lt;/strong&gt; - открывает страницу с текстом сценария; &lt;br /&gt;&lt;strong&gt;Сохранить&lt;/strong&gt; - сохраняет текущие изменения проекта; &lt;br /&gt;&lt;strong&gt;Импортировать&lt;/strong&gt; - открывает страницу с инструкцией по импорту;&lt;br /&gt;&lt;strong&gt;Экспортировать&lt;/strong&gt; - открывает страницу экспорта сценария.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Более детально каждый из них будет рассмотрен ниже.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;7&quot;&gt;&lt;/a&gt;Редактирование сценария&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Страница редактирования сценария вверху имеет панель инструментов, на которой присутствуют: кнопка вызова меню, название сценария и кнопка перехода к навигатору. Основную часть окна занимает текстовое поле, в котором находится сценарий. А внизу окна, при активной клавиатуре, располагается вспомогательная панель со списком форматов сценария и панель поиска по тексту (верхняя панель инструментов при этом скрывается на время работы с текстом).&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Сценарий по ходу ввода текста и перехода между разными блоками сразу форматируется в виде сценарной записи. Шаблон оформления сценария немного изменён для удобства работы на мобильных устройствах, но в целом он близок стандарту, поэтому у вас не возникнет проблем с определением расположения блоков текста и их назначением.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;На панели форматов находится список доступных форматов блоков. Сокращения означают первые буквы из названий:&lt;br /&gt;&lt;strong&gt;МВ&lt;/strong&gt; - место и время.&lt;br /&gt;&lt;strong&gt;ОД&lt;/strong&gt; - описание действия&lt;br /&gt;&lt;strong&gt;Г&lt;/strong&gt; - герой&lt;br /&gt;&lt;strong&gt;Р&lt;/strong&gt; - ремарка&lt;br /&gt;&lt;strong&gt;Д&lt;/strong&gt; - диалог&lt;br /&gt;&lt;strong&gt;УС&lt;/strong&gt; - участники сцены&lt;br /&gt;&lt;strong&gt;Пр&lt;/strong&gt; - примечание&lt;br /&gt;&lt;strong&gt;Пе&lt;/strong&gt; - переход&lt;br /&gt;&lt;strong&gt;ЗПТ&lt;/strong&gt; - заметка по тексту&lt;br /&gt;&lt;strong&gt;Па&lt;/strong&gt; - папка&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Формат текущего блока, где находится курсор выделен на панели.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Для того, чтобы установить абзацу текста нужный формат, необходимо установить курсор в данный абзац и выбрать желаемый формат.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;При нажатии на иконку поиска, панель форматов сменится на панель поиска. Вам останется ввести искомый текст и переходить к следующему или предыдущему совпадению.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;8&quot;&gt;&lt;/a&gt;Навигация по сценарию&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Нажатие кнопки перехода к навигации (она находится в правом верхнем углу страницы сценария при скрытой клавиатуре) откроет соответствующую страницу в приложении.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Сверху в ней расположены кнопка вызова меню, название проекта и кнопка возврата к тексту сценария.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;В центре находится список сцен текущего сценария. Информация по каждой сцене состоит из номера сцены, заголовка сцены (блок время и место или название папки), хронометража и текста сцены. В настройках можно задать необходимость отображения номеров сцен, а также количество отображаемых строк текста сцены.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Нажатие на сцену приведёт вас на страницу с текстом сценария и сместит курсор к месту начала сцены.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Внизу страницы навигатора расположена панель с суммарной информацией по сценарию - количество сцен и общий хронометраж.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;9&quot;&gt;&lt;/a&gt;Заполнение титульной страницы&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Переход к данным титульной страницы осуществляется при помощи одноимённого пункта меню.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После заполнения информации титульной страницы, она будет помещена в экспортируемый сценарий, если установить галочку &quot;Печатать титульную страницу&quot; в настройках экспорта.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;10&quot;&gt;&lt;/a&gt;Сохранение сценария&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;При работе со сценарием, программа автоматически сохраняет все внесённые изменения, если вы в течении 5 секунд не взаимодействовали с устройством, либо каждые 5 минут, если вы работаете без остановки.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;В случае, если текущие изменения ещё не были сохранены, в меню будет присутствовать пункт &quot;Сохранить&quot;. Его нажатие приводит к сохранению всех изменений. А сам пункт меню превращается в строку &quot;Изменения сохранены&quot;, уведомляющую об успешности операции.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Если же сохранение не удалось, на экран будет выведено информационное сообщение с деталями проблемы и предложением способа её решения.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;11&quot;&gt;&lt;/a&gt;Импорт сценария&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Программа поддерживает импорт сценариев из файлов docx, fdx, fountain, txt и собственного формата kitsp.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Для импорта сценария из файла, или из другой программы необходимо коснуться файла (в файловом менеджере или в другой программе) и в списке предложенных программ выбрать КИТ Сценарист для его открытия.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После этого в программе откроется страница с параметрами импорта. Настроив необходимые параметры, следует выбрать проект, в который будет импортироваться сценарий, нажав кнопку &quot;Существующий&quot;, либо импортировать в новый проект, нажав кнопку &quot;Новый&quot; и&amp;nbsp; указав его название.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;После того, как импорт завершится, откроется страница с текстом сценария.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;12&quot;&gt;&lt;/a&gt;Экспорт сценария&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Нажатие пункта меню &quot;Экспортировать&quot; откроет страницу с параметрами экспорта сценария.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;На ней вы можете выбрать формат файла, в который будет произведён экспорт, шаблон оформления сценария и другие параметры, относящиеся к экспорту.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Нажатие кнопки &quot;Экспортировать&quot; (внизу страницы) сформирует файл со сценарием в соответствии со всеми выбранными настройками. После чего будет открыт системный диалог выбора программы для сохранения или отправки экспортированного файла со сценарием.&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;&lt;a name=&quot;13&quot;&gt;&lt;/a&gt;Секретные возможности&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;Как удобно переключаться в навигатор?&lt;/span&gt;&lt;/p&gt;
+        &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Нужно смахнуть справа-налево, а чтобы из навигатора попасть на текст сценария, нужно смахнуть в обратном направлении.&lt;/span&gt;&lt;/p&gt;
+        &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1148,149 +1133,149 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ManagementLayer::ApplicationManager</name>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="247"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="249"/>
         <source>Connection active</source>
         <translation>Соединение установлено</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="559"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="561"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
         <translation>Нельзя создать проект в папке &lt;b&gt;%1&lt;/b&gt;, т.к. её не существует. Пожалуйста выберите другую папку.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="563"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="565"/>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
         <translation>Не удаётся записать файл. Возможно он открыт в другом приложении. Пожалуйста, закройте все приложения использующие этот файл и повторите попытку.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="566"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="568"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
         <translatorcomment>Can&apos;t write to file. Please, check permissions to write for choosed folder and retry, or choose other folder.</translatorcomment>
         <translation>Не удаётся записать файл. Пожалуйста проверьте разрешение на запись в выбранную папку и повторите попытку, или выберите другую папку.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="568"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="570"/>
         <source>Create project error</source>
         <translation>Ошибка создания проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="697"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="699"/>
         <source>Please wait. Importing can take few minutes.</source>
         <translation>Немного терпения. Импорт может длиться несколько минут.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="697"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="699"/>
         <source>Importing script</source>
         <translation>Импорт сценария</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="884"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="886"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
         <translation>Удалить проект &lt;b&gt;%1&lt;/b&gt; из списка недавних файлов?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1018"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1039"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1019"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1040"/>
         <source>Saving error</source>
         <translation>Ошибка сохранения</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1075"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1076"/>
         <source>on device</source>
         <translation>на устройстве</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1040"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1041"/>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
         <translation>Не удаётся записать изменения в файл &lt;b&gt;%1&lt;/b&gt; потому что файла не существует. Пожалуйста верните файл обратно и попробуйте вновь сохранить проект. Попробовать сохранить ещё раз?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="603"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="753"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="790"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="605"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="755"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="792"/>
         <source>Can&apos;t open project file</source>
         <translation>Не удаётся открыть проект</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1019"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1020"/>
         <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
         <translation>Не удаётся записать изменения. Произошла внутренняя ошибка базы данных: %1. Пожалуйста проверьте, что вы имеете разрешение на запись в него. Попробовать сохранить ещё раз?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="791"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="793"/>
         <source>Ignore and try to open project?</source>
         <translation>Игнорировать и попробовать открыть проект?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="854"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="902"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="856"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="904"/>
         <source>Change project name</source>
         <translation>Изменить название проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="855"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="903"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="857"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="905"/>
         <source>Enter new name for project</source>
         <translation>Введите новое название проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="253"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="255"/>
         <source>Project synchronized</source>
         <translation>Проект синхронизирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="266"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="268"/>
         <source>Connection inactive</source>
         <translation>Отсутствует соединение</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="267"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="269"/>
         <source>Project didn&apos;t synchronized</source>
         <translation>Проект не синхронизирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="296"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="298"/>
         <source>Network error</source>
         <translation>Ошибка сети</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="308"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="310"/>
         <source>Incorrect username or password.</source>
         <translation>Не верное имя пользователя или пароль.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="317"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="319"/>
         <source>Subscription ended</source>
         <translation>Подписка закончена</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="365"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="376"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="367"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="378"/>
         <source>Project not available</source>
         <translation>Проект недоступен</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="330"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="332"/>
         <source>Network Error</source>
         <translation>Ошибка сети</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="936"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="937"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Удалить проект &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="949"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="950"/>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Отписать от проекта &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="974"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="975"/>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
         <translation>Отписать пользввателя &lt;b&gt;%1&lt;/b&gt; от проекта &lt;b&gt;%2&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="298"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="300"/>
         <source>Project didn&apos;t synchronized.</source>
         <translation>Проект не синхронизирован.</translation>
     </message>
@@ -1311,7 +1296,7 @@ p, li { white-space: pre-wrap; }
         <translation>Не удалось создать временный файл для импорта.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="318"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="320"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
@@ -1320,7 +1305,7 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="331"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="333"/>
         <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
@@ -1329,17 +1314,17 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="355"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="357"/>
         <source>Share error</source>
         <translation>Ошибка доступа</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="356"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="358"/>
         <source>You can&apos;t share project with yourself.</source>
         <translation>Нельзя открыть доступ к проекту самому себе.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="366"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="368"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
@@ -1348,7 +1333,7 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="377"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="379"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
@@ -1357,12 +1342,12 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="387"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="389"/>
         <source>Sync not available</source>
         <translation>Синхронизация недоступна</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="388"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="390"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
@@ -1371,42 +1356,42 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="398"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="400"/>
         <source>Email already exist</source>
         <translation>Адрес электронной почты уже зарегистрирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="407"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="409"/>
         <source>Password too weak</source>
         <translation>Слишком слабый пароль</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="434"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="436"/>
         <source>Wrong email</source>
         <translation>Адрес электронной почты не зарегистрирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="443"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="445"/>
         <source>Unknown Error</source>
         <translation>Неизвестная ошибка</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="620"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="622"/>
         <source>Loading Scenario</source>
         <translation>Загрузка сценария</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="620"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="622"/>
         <source>Please wait. Loading can take few minutes.</source>
         <translation>Немного терпения. Загрузка может длиться несколько минут.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="652"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="654"/>
         <source>Sync scenario with cloud service.</source>
         <translation>Немного терпения. Сценарий синхронизируется с облаком.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1075"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1076"/>
         <source>in cloud</source>
         <translation>в облаке</translation>
     </message>
@@ -1478,12 +1463,12 @@ Project didn&apos;t synchronized.</source>
 <context>
     <name>ManagementLayer::ScriptManager</name>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="467"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="476"/>
         <source>Scenes</source>
         <translation>Сцен</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="468"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="477"/>
         <source>Chron.</source>
         <translation>Хрон.</translation>
     </message>
@@ -1532,37 +1517,37 @@ Project didn&apos;t synchronized.</source>
         <translation>Проекты</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="156"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="162"/>
         <source>Title page</source>
         <translation>Титульная страница</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="170"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="176"/>
         <source>Script</source>
         <translation>Сценарий</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="184"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="190"/>
         <source>Save</source>
         <translation>Сохранить</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="195"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="201"/>
         <source>Import</source>
         <translation>Импортировать</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="209"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="215"/>
         <source>Export</source>
         <translation>Экспортировать</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="223"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="229"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="234"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="240"/>
         <source>Help</source>
         <translation>Справка</translation>
     </message>
@@ -1638,19 +1623,19 @@ Project didn&apos;t synchronized.</source>
 <context>
     <name>ProjectsView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.ui" line="56"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.ui" line="67"/>
         <source>Projects</source>
         <translation>Проекты</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.ui" line="172"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.ui" line="183"/>
         <source>There will be a list of your projects.
 Let&apos;s create the first one!</source>
         <translation>Здесь будет список ваших проектов.
 Давайте же создадим первый!</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.ui" line="186"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.ui" line="197"/>
         <source>CREATE</source>
         <translation>СОЗДАТЬ</translation>
     </message>
@@ -1789,7 +1774,7 @@ Let&apos;s create the first one!</source>
 <context>
     <name>SettingsView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="171"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="181"/>
         <source>Navigator</source>
         <translation>Навигатор</translation>
     </message>
@@ -1814,13 +1799,18 @@ Let&apos;s create the first one!</source>
         <translation>Редактор сценария</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="164"/>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="178"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="167"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="188"/>
         <source>Show scene numbers</source>
         <translation>Отображать номера сцен</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="185"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="174"/>
+        <source>Show dialogues numbers</source>
+        <translation>Отображать номера реплик</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="195"/>
         <source>Show scene description, lines</source>
         <translation>Отображать описание сцены, строк</translation>
     </message>
@@ -1908,21 +1898,26 @@ Let&apos;s create the first one!</source>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="193"/>
+        <source>PayPal</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="200"/>
         <source>Bank card</source>
         <translation>Банковской картой</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="203"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="210"/>
         <source>Yandex.Money</source>
         <translation>Яндекс.Деньги</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="231"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="238"/>
         <source>RENEW</source>
         <translation>ПРОДЛИТЬ</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="270"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="277"/>
         <source>Thanks!
 Your subscription is active until</source>
         <translation>Спасибо!
@@ -1960,12 +1955,12 @@ Your subscription is active until</source>
         <translation>Использовано %1 Гб из %2 Гб</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="63"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="64"/>
         <source>Email</source>
         <translation>Адрес электронной почты</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="64"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="65"/>
         <source>Login</source>
         <translation>Имя пользователя</translation>
     </message>
@@ -1996,17 +1991,17 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::ExportView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="92"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="99"/>
         <source>File format</source>
         <translation>Формат файла</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="94"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="101"/>
         <source>Template</source>
         <translation>Шаблон</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="95"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="102"/>
         <source>Scenes prefix</source>
         <translation>Приставка сцен</translation>
     </message>
@@ -2105,7 +2100,7 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::ScriptView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="156"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="155"/>
         <source>DRAFT</source>
         <translation>ЧЕРНОВИК</translation>
     </message>
@@ -2113,15 +2108,45 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::SettingsView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="35"/>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="111"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="34"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="161"/>
         <source>System</source>
         <translation>Системный</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="110"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="51"/>
+        <source>Little</source>
+        <translation>Маленький</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="52"/>
+        <source>Middle</source>
+        <translation>Средний</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="53"/>
+        <source>Big</source>
+        <translation>Большой</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="54"/>
+        <source>Very big</source>
+        <translation>Очень большой</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="55"/>
+        <source>Large</source>
+        <translation>Огромный</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="160"/>
         <source>Language</source>
         <translation>Язык</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="164"/>
+        <source>Font size</source>
+        <translation>Размер шрифта</translation>
     </message>
 </context>
 <context>
@@ -2149,26 +2174,6 @@ Your subscription is active until</source>
 </context>
 <context>
     <name>UserInterface::SubscriptionView</name>
-    <message>
-        <source>1 mounth - %1 rubles</source>
-        <translation type="vanished">1 месяц - %1 рублей</translation>
-    </message>
-    <message>
-        <source>2 mounth - %1 rubles</source>
-        <translation type="vanished">2 месяца - %2 рублей</translation>
-    </message>
-    <message>
-        <source>3 mounth - %1 rubles</source>
-        <translation type="vanished">3 месяца - %1 рублей</translation>
-    </message>
-    <message>
-        <source>6 mounth (6% off) - %1 rubles</source>
-        <translation type="vanished">6 месяцев (-6%) - %1 рублей</translation>
-    </message>
-    <message>
-        <source>12 mounth (12% off) - %1 rubles</source>
-        <translation type="vanished">12 месяцев (-12%) - %1 рублей</translation>
-    </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="57"/>
         <source>1 month - %1 rubles</source>
