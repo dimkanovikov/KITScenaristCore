@@ -33,14 +33,7 @@ public:
         return inputMethodQuery(_property, QVariant());
     }
     Q_INVOKABLE QVariant inputMethodQuery(Qt::InputMethodQuery _query, QVariant _argument) const {
-        //
-        // FIXME: С переходом на Qt 5.9 убрать это
-        //
-        QVariant result = QLineEdit::inputMethodQuery(_query
-#if QT_VERSION >= 0x050900
-                                                      , _argument
-#endif
-                                                      );
+        QVariant result = QLineEdit::inputMethodQuery(_query, _argument);
 #ifdef Q_OS_IOS
         if (!m_needCorrectPosition) {
             //
