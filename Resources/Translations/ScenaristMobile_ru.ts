@@ -681,7 +681,7 @@
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="203"/>
         <source>Dialogues numbers</source>
-        <translation>Номера реплик</translation>
+        <translation>Нумеровать реплики</translation>
     </message>
 </context>
 <context>
