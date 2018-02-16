@@ -74,6 +74,9 @@ namespace DataMappingLayer
         bool update(Research* _place);
         void remove(Research* _place);
 
+        void refreshCharacters(DomainObjectsItemModel* _model);
+        void refreshLocations(DomainObjectsItemModel* _model);
+
     protected:
         QString findStatement(const Identifier& _id) const;
         QString findAllStatement() const;

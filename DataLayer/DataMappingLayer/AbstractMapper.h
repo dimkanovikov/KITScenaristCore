@@ -23,8 +23,9 @@ namespace DataMappingLayer
 
         /**
          * @brief Обновить элементы списка
+         * @param _filter - часть запроса для фильтрации, начинающаяся с WHERE
          */
-        void refresh(DomainObjectsItemModel* _model);
+        void refresh(DomainObjectsItemModel* _model, const QString& _filter = QString());
 
     protected:
         virtual QString findStatement(const Identifier&) const = 0;

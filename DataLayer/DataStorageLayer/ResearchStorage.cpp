@@ -11,7 +11,7 @@ using namespace DataMappingLayer;
 
 ResearchTable* ResearchStorage::all()
 {
-    if (m_all == 0) {
+    if (m_all == nullptr) {
         m_all = MapperFacade::researchMapper()->findAll();
     }
     return m_all;
@@ -19,7 +19,7 @@ ResearchTable* ResearchStorage::all()
 
 Research* ResearchStorage::research(const QString& _name)
 {
-    Research* resultResearch = 0;
+    Research* resultResearch = nullptr;
     foreach (DomainObject* domainObject, all()->toList()) {
         Research* research = dynamic_cast<Research*>(domainObject);
         if (research->name() == _name) {
@@ -145,11 +145,13 @@ void ResearchStorage::clear()
 void ResearchStorage::refresh()
 {
     MapperFacade::researchMapper()->refresh(all());
+    MapperFacade::researchMapper()->refreshCharacters(characters());
+    MapperFacade::researchMapper()->refreshLocations(locations());
 }
 
 ResearchTable* ResearchStorage::characters()
 {
-    if (m_characters == 0) {
+    if (m_characters == nullptr) {
         m_characters = MapperFacade::researchMapper()->findCharacters();
     }
     return m_characters;
@@ -162,7 +164,7 @@ Research* ResearchStorage::character(const QString& _name)
 
 Research* ResearchStorage::storeCharacter(const QString& _name, int _sortOrder)
 {
-    Research* newCharacter = 0;
+    Research* newCharacter = nullptr;
 
     QString characterName = _name.toUpper().trimmed();
 
@@ -256,7 +258,7 @@ Research* ResearchStorage::location(const QString& _name)
 
 Research* ResearchStorage::storeLocation(const QString& _name, int _sortOrder)
 {
-    Research* newLocation = 0;
+    Research* newLocation = nullptr;
 
     QString locationName = _name.toUpper().trimmed();
 

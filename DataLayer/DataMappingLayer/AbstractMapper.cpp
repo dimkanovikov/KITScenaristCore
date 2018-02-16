@@ -33,10 +33,10 @@ void AbstractMapper::clear()
     m_loadedObjectsMap.clear();
 }
 
-void AbstractMapper::refresh(DomainObjectsItemModel* _model)
+void AbstractMapper::refresh(DomainObjectsItemModel* _model, const QString& _filter)
 {
     QSqlQuery query = Database::query();
-    query.prepare(findAllStatement());
+    query.prepare(findAllStatement() + _filter);
     query.exec();
     QSet<Identifier> updatedObjectsIds;
     //

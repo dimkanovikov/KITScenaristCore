@@ -15,6 +15,8 @@ namespace {
     const QString COLUMNS = " id, parent_id, type, name, description, url, image, sort_order ";
     const QString IMAGE_COLUMN = "image";
     const QString TABLE_NAME = " research ";
+    const QString CHARACTERS_FILTER = QString(" WHERE type = %1 ORDER BY name").arg(Research::Character);
+    const QString LOCATIONS_FILTER = QString(" WHERE type = %1 ORDER BY name").arg(Research::Location);
 }
 
 ResearchImageMapper::ResearchImageMapper() :
@@ -123,16 +125,12 @@ ResearchTable* ResearchMapper::findAll()
 
 ResearchTable* ResearchMapper::findCharacters()
 {
-    const QString filterQuery = QString(" WHERE type = %1 ORDER BY name").arg(Research::Character);
-
-    return qobject_cast<ResearchTable*>(abstractFindAll(filterQuery));
+    return qobject_cast<ResearchTable*>(abstractFindAll(CHARACTERS_FILTER));
 }
 
 ResearchTable* ResearchMapper::findLocations()
 {
-    const QString filterQuery = QString(" WHERE type = %1 ORDER BY name").arg(Research::Location);
-
-    return qobject_cast<ResearchTable*>(abstractFindAll(filterQuery));
+    return qobject_cast<ResearchTable*>(abstractFindAll(LOCATIONS_FILTER));
 }
 
 void ResearchMapper::insert(Research* _research)
@@ -158,6 +156,16 @@ void ResearchMapper::remove(Research* _research)
     m_imageWrapper.remove(_research);
     abstractDelete(_research);
     DatabaseLayer::Database::commit();
+}
+
+void ResearchMapper::refreshCharacters(DomainObjectsItemModel* _model)
+{
+    refresh(_model, CHARACTERS_FILTER);
+}
+
+void ResearchMapper::refreshLocations(DomainObjectsItemModel* _model)
+{
+    refresh(_model, LOCATIONS_FILTER);
 }
 
 QString ResearchMapper::findStatement(const Identifier& _id) const
