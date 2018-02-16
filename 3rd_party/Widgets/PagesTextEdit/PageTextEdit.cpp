@@ -1400,7 +1400,11 @@ void PageTextEdit::keyReleaseEvent(QKeyEvent *e)
 #endif
     e->ignore();
 
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle | Qt::ImAnchorRectangle);
+    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
+#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
+                                           | Qt::ImAnchorRectangle
+#endif
+                                           );
 }
 
 /*!
@@ -2136,7 +2140,10 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
 
     if (!placeholderText.isEmpty()
         && doc->isEmpty()
-        && !control->isPreediting()) {
+#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
+        && !control->isPreediting()
+#endif
+        ) {
         QColor col = control->palette().text().color();
         col.setAlpha(128);
         p->setPen(col);
@@ -2227,7 +2234,11 @@ void PageTextEdit::mouseReleaseEvent(QMouseEvent *e)
         d->handleSoftwareInputPanel(e->button(), d->clickCausedFocus);
     d->clickCausedFocus = 0;
 
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle | Qt::ImAnchorRectangle);
+    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
+#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
+                                           | Qt::ImAnchorRectangle
+#endif
+                                           );
 }
 
 /*! \reimp
@@ -2237,7 +2248,11 @@ void PageTextEdit::mouseDoubleClickEvent(QMouseEvent *e)
     Q_D(PageTextEdit);
     d->sendControlMouseEvent(e);
 
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle | Qt::ImAnchorRectangle);
+    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
+#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
+                                           | Qt::ImAnchorRectangle
+#endif
+                                           );
 }
 
 /*! \reimp
@@ -2330,7 +2345,11 @@ void PageTextEdit::inputMethodEvent(QInputMethodEvent *e)
     d->sendControlEvent(e);
     ensureCursorVisible();
 
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle | Qt::ImAnchorRectangle);
+    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
+#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
+                                           | Qt::ImAnchorRectangle
+#endif
+                                           );
 }
 
 /*!\reimp
@@ -2341,7 +2360,11 @@ void PageTextEdit::scrollContentsBy(int dx, int dy)
     if (isRightToLeft())
         dx = -dx;
     d->viewport->scroll(dx, dy);
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle | Qt::ImAnchorRectangle);
+    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
+#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
+                                           | Qt::ImAnchorRectangle
+#endif
+                                           );
 }
 
 /*!\reimp
@@ -2358,7 +2381,9 @@ QVariant PageTextEdit::inputMethodQuery(Qt::InputMethodQuery query, QVariant arg
     Q_D(const PageTextEdit);
     switch (query) {
         case Qt::ImHints:
+#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
         case Qt::ImInputItemClipRectangle:
+#endif
         return QWidget::inputMethodQuery(query);
     default:
         break;
