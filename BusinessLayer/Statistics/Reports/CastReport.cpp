@@ -85,46 +85,58 @@ QString CastReport::makeReport(QTextDocument* _scenario,
 		//
 		// Персонаж +1 реплика и в список говорящих
 		//
-		else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Character) {
-			const QString character = CharacterParser::name(block.text().toUpper());
-			if (!characters.contains(character)) {
-				characters.append(character);
-				sceneSpeakingCharacters.append(character);
-				reportCharactersDataList.append(new CharacterData(character));
-				reportCharactersDataList.last()->speakingScenesCount += 1;
-				reportCharactersDataList.last()->dialogsCount += 1;
-			} else {
-				//
-				// Если он уже был и в говорящих
-				//
-				if (sceneSpeakingCharacters.contains(character)) {
-					//
-					// Просто увеличиваем число реплик
-					//
-					reportCharactersDataList[characters.indexOf(character)]->dialogsCount += 1;
-				}
-				//
-				// Если был в молчаливых
-				//
-				else if (sceneNonspeakingCharacters.contains(character)) {
-					//
-					// То перемещаем в говорящих
-					//
-					sceneNonspeakingCharacters.removeAll(character);
-					sceneSpeakingCharacters.append(character);
-					reportCharactersDataList[characters.indexOf(character)]->nonspeakingScenesCount -= 1;
-					reportCharactersDataList[characters.indexOf(character)]->speakingScenesCount += 1;
-					reportCharactersDataList[characters.indexOf(character)]->dialogsCount += 1;
-				}
-				//
-				// Если не было в сцене
-				//
-				else {
-					sceneSpeakingCharacters.append(character);
-					reportCharactersDataList[characters.indexOf(character)]->speakingScenesCount += 1;
-					reportCharactersDataList[characters.indexOf(character)]->dialogsCount += 1;
-				}
-			}
+        else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Character) {
+            const QString character = CharacterParser::name(block.text().toUpper());
+            //
+            // Если имя персонажа задано
+            //
+            if (!character.isEmpty()) {
+                //
+                // Если это первое обнаружение персонажа
+                //
+                if (!characters.contains(character)) {
+                    characters.append(character);
+                    sceneSpeakingCharacters.append(character);
+                    reportCharactersDataList.append(new CharacterData(character));
+                    reportCharactersDataList.last()->speakingScenesCount += 1;
+                    reportCharactersDataList.last()->dialogsCount += 1;
+                }
+                //
+                // А если персонаж уже был обнаружен ранее
+                //
+                else {
+                    //
+                    // Если он уже был и в говорящих
+                    //
+                    if (sceneSpeakingCharacters.contains(character)) {
+                        //
+                        // Просто увеличиваем число реплик
+                        //
+                        reportCharactersDataList[characters.indexOf(character)]->dialogsCount += 1;
+                    }
+                    //
+                    // Если был в молчаливых
+                    //
+                    else if (sceneNonspeakingCharacters.contains(character)) {
+                        //
+                        // То перемещаем в говорящих
+                        //
+                        sceneNonspeakingCharacters.removeAll(character);
+                        sceneSpeakingCharacters.append(character);
+                        reportCharactersDataList[characters.indexOf(character)]->nonspeakingScenesCount -= 1;
+                        reportCharactersDataList[characters.indexOf(character)]->speakingScenesCount += 1;
+                        reportCharactersDataList[characters.indexOf(character)]->dialogsCount += 1;
+                    }
+                    //
+                    // Если не было в сцене
+                    //
+                    else {
+                        sceneSpeakingCharacters.append(character);
+                        reportCharactersDataList[characters.indexOf(character)]->speakingScenesCount += 1;
+                        reportCharactersDataList[characters.indexOf(character)]->dialogsCount += 1;
+                    }
+                }
+            }
 		}
 		//
 		// Описание действия, в молчаливые, если ещё не встречался
