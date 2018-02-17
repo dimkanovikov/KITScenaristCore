@@ -1249,7 +1249,7 @@
         <translation></translation>
     </message>
     <message>
-        <source>Polszczyzna</source>
+        <source>Polski</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1937,6 +1937,73 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
 </context>
 <context>
+    <name>MenuView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished">Login</translation>
+    </message>
+    <message>
+        <source>Log in to get access to the cloud service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create new project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save current project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How to use the application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save current project as...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import...</source>
+        <translation type="unfinished">Importar...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print preview</source>
+        <translation type="unfinished">Pré-visualização de impressão</translation>
+    </message>
+    <message>
+        <source>version</source>
+        <translation type="unfinished">versão</translation>
+    </message>
+    <message>
+        <source>0.0.0</source>
+        <translation type="unfinished">0,0,0</translation>
+    </message>
+    <message>
+        <source> - </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About the app</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KIT Scenarist</source>
+        <translation type="unfinished">KIT Scenarist</translation>
+    </message>
+</context>
+<context>
     <name>OdtReader</name>
     <message>
         <source>Unable to open archive.</source>
@@ -2170,7 +2237,7 @@ O módulo inclui o navegador de roteiro. É uma lista de cenas. Clicar o mouse n
 E o editor de texto do roteiro. O editor tem várias funções auxiliares que simplificam a inserção do texto de acordo com os padrões da escrita de roteiros, e também permite você procurar o texto do roteiro e escrever notas.</translation>
     </message>
     <message>
-        <source>Polszczyzna</source>
+        <source>Polski</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

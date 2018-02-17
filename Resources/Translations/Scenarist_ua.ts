@@ -1243,7 +1243,7 @@
         <translation></translation>
     </message>
     <message>
-        <source>Polszczyzna</source>
+        <source>Polski</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1929,6 +1929,73 @@ You can try to reload update.</source>
     </message>
 </context>
 <context>
+    <name>MenuView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished">Увійти</translation>
+    </message>
+    <message>
+        <source>Log in to get access to the cloud service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create new project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save current project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How to use the application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save current project as...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import...</source>
+        <translation type="unfinished">Імпорт...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print preview</source>
+        <translation type="unfinished">Попередній перегляд</translation>
+    </message>
+    <message>
+        <source>version</source>
+        <translation type="unfinished">версія</translation>
+    </message>
+    <message>
+        <source>0.0.0</source>
+        <translation type="unfinished">0.0.0</translation>
+    </message>
+    <message>
+        <source> - </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About the app</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KIT Scenarist</source>
+        <translation type="unfinished">КІТ Сценарист</translation>
+    </message>
+</context>
+<context>
     <name>OdtReader</name>
     <message>
         <source>Unable to open archive.</source>
@@ -2162,7 +2229,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
 І текстовий редактор сценарію. Редактор має багато допоміжних функцій, які спрощують введення тексту відповідно до стандарту написання сценаріїв, а також дозволяє виконувати пошук тексту в сценарію та залишати примітки до тексту.</translation>
     </message>
     <message>
-        <source>Polszczyzna</source>
+        <source>Polski</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
