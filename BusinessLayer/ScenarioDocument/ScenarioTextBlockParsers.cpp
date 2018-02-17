@@ -116,9 +116,10 @@ QString SceneHeadingParser::timeName(const QString& _text)
 
 	if (_text.split(" - ").count() >= 2) {
 		timeName = _text.split(" - ").last().split(",").first();
+        timeName = timeName.simplified();
 	}
 
-	return timeName.toUpper();
+    return timeName.toUpper();
 }
 
 // ****
