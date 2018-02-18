@@ -27,7 +27,7 @@ void ClickableLabel::leaveEvent(QEvent* _event)
 
 void ClickableLabel::mousePressEvent(QMouseEvent* _event)
 {
-    emit clicked();
-
     QLabel::mousePressEvent(_event);
+
+    emit clicked();
 }

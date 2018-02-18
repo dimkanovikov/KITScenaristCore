@@ -148,6 +148,9 @@
         <file>Icons/Editing/copy-to-script.png</file>
         <file>Images/avatar.png</file>
         <file>Icons/empty.png</file>
+        <file>Icons/lock-reset.png</file>
+        <file>Icons/logout.png</file>
+        <file>Icons/renew.png</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>
