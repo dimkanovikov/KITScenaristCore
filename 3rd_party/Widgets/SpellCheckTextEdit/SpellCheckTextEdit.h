@@ -47,6 +47,11 @@ public slots:
 	 */
 	virtual QMenu* createContextMenu(const QPoint& _pos, QWidget* _parent = 0);
 
+    /**
+     * @brief Переопределяем для очистки собственных параметров, перед очисткой в  базовом классе
+     */
+    void clear() override;
+
 protected:
 	/**
 	 * @brief Получить путь к файлу с пользовательским словарём

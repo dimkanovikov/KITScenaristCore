@@ -1159,6 +1159,7 @@ void PageTextEdit::timerEvent(QTimerEvent *e)
 void PageTextEdit::setPlainText(const QString &text)
 {
     Q_D(PageTextEdit);
+    clear();
     d->control->setPlainText(text);
     d->updateDocumentGeometry();
     d->preferRichText = false;
@@ -1202,6 +1203,7 @@ QString PageTextEdit::toPlainText() const
 void PageTextEdit::setHtml(const QString &text)
 {
     Q_D(PageTextEdit);
+    clear();
     d->control->setHtml(text);
     d->updateDocumentGeometry();
     d->preferRichText = true;

@@ -21,8 +21,8 @@ namespace {
 
 SpellCheckTextEdit::SpellCheckTextEdit(QWidget *_parent) :
     PageTextEdit(_parent),
-    m_spellChecker(0),
-    m_spellCheckHighlighter(0)
+    m_spellChecker(nullptr),
+    m_spellCheckHighlighter(nullptr)
 {
     //
     // Настроим проверяющего
@@ -208,6 +208,12 @@ QMenu* SpellCheckTextEdit::createContextMenu(const QPoint& _pos, QWidget* _paren
     }
 
     return menu;
+}
+
+void SpellCheckTextEdit::clear()
+{
+    m_prevBlock = QTextBlock();
+    PageTextEdit::clear();
 }
 
 QString SpellCheckTextEdit::userDictionaryfile() const

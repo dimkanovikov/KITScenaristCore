@@ -248,7 +248,7 @@ public Q_SLOTS:
     void undo();
     void redo();
 
-    void clear();
+    virtual void clear();
     void selectAll();
 
     void insertPlainText(const QString &text);
