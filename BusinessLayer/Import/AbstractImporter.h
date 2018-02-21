@@ -154,9 +154,9 @@ namespace BusinessLogic
          */
         static QString filters() {
             QString filters;
-            filters.append(QApplication::translate("BusinessLogic::AbstractImporter", "All Supported Files") + QLatin1String(" (*.kitsp *.fdx *.trelby *.docx *.doc *.odt *.fountain)"));
+            filters.append(QApplication::translate("BusinessLogic::AbstractImporter", "All supported files") + QLatin1String(" (*.kitsp *.fdx *.trelby *.docx *.doc *.odt *.fountain *.celtx)"));
             filters.append(";;");
-            filters.append(QApplication::translate("BusinessLogic::AbstractImporter","KIT Scenarist Project") + QLatin1String(" (*.kitsp)"));
+            filters.append(QApplication::translate("BusinessLogic::AbstractImporter","KIT Scenarist project") + QLatin1String(" (*.kitsp)"));
             filters.append(";;");
             filters.append(QApplication::translate("BusinessLogic::AbstractImporter","Final Draft screenplay") + QLatin1String(" (*.fdx)"));
             filters.append(";;");
@@ -166,9 +166,11 @@ namespace BusinessLogic
             filters.append(";;");
             filters.append(QApplication::translate("BusinessLogic::AbstractImporter","Office Open XML") + QLatin1String(" (*.docx *.doc)"));
             filters.append(";;");
-            filters.append(QApplication::translate("BusinessLogic::AbstractImporter","OpenDocument Text") + QLatin1String(" (*.odt)"));
+            filters.append(QApplication::translate("BusinessLogic::AbstractImporter","OpenDocument text") + QLatin1String(" (*.odt)"));
             filters.append(";;");
-            filters.append(QApplication::translate("BusinessLogic::AbstractImporter","Fountain Text") + QLatin1String(" (*.fountain)"));
+            filters.append(QApplication::translate("BusinessLogic::AbstractImporter","Fountain text") + QLatin1String(" (*.fountain)"));
+            filters.append(";;");
+            filters.append(QApplication::translate("BusinessLogic::AbstractImporter","Celtx project") + QLatin1String(" (*.celtx)"));
 
             return filters;
         }

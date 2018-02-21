@@ -10,45 +10,45 @@
 using namespace BusinessLogic;
 
 namespace {
-/**
+    /**
      * @brief Ключ для формирования xml из импортируемого документа
      */
-/** @{ */
-const QString NODE_SCENARIO = "scenario";
-const QString NODE_VALUE = "v";
-const QString NODE_FORMAT_GROUP = "formatting";
-const QString NODE_FORMAT = "format";
+    /** @{ */
+    const QString NODE_SCENARIO = "scenario";
+    const QString NODE_VALUE = "v";
+    const QString NODE_FORMAT_GROUP = "formatting";
+    const QString NODE_FORMAT = "format";
 
-const QString ATTRIBUTE_FORMAT_FROM = "from";
-const QString ATTRIBUTE_FORMAT_LENGTH = "length";
-const QString ATTRIBUTE_FORMAT_BOLD = "bold";
-const QString ATTRIBUTE_FORMAT_ITALIC = "italic";
-const QString ATTRIBUTE_FORMAT_UNDERLINE = "underline";
+    const QString ATTRIBUTE_FORMAT_FROM = "from";
+    const QString ATTRIBUTE_FORMAT_LENGTH = "length";
+    const QString ATTRIBUTE_FORMAT_BOLD = "bold";
+    const QString ATTRIBUTE_FORMAT_ITALIC = "italic";
+    const QString ATTRIBUTE_FORMAT_UNDERLINE = "underline";
 
-const QString ATTRIBUTE_VERSION = "version";
-/** @} */
+    const QString ATTRIBUTE_VERSION = "version";
+    /** @} */
 
-/**
-  * @brief С чего может начинаться название сцены
-  */
-const QStringList sceneHeadings = {QApplication::translate("BusinessLayer::FountainImporter", "INT"),
-                                   QApplication::translate("BusinessLayer::FountainImporter", "EXT"),
-                                   QApplication::translate("BusinessLayer::FountainImporter", "EST"),
-                                   QApplication::translate("BusinessLayer::FountainImporter", "INT./EXT"),
-                                   QApplication::translate("BusinessLayer::FountainImporter", "INT/EXT"),
-                                   QApplication::translate("BusinessLayer::FountainImporter", "I/E")};
+    /**
+      * @brief С чего может начинаться название сцены
+      */
+    const QStringList sceneHeadings = {QApplication::translate("BusinessLayer::FountainImporter", "INT"),
+                                       QApplication::translate("BusinessLayer::FountainImporter", "EXT"),
+                                       QApplication::translate("BusinessLayer::FountainImporter", "EST"),
+                                       QApplication::translate("BusinessLayer::FountainImporter", "INT./EXT"),
+                                       QApplication::translate("BusinessLayer::FountainImporter", "INT/EXT"),
+                                       QApplication::translate("BusinessLayer::FountainImporter", "I/E")};
 
-const QMap<QString, QString> TITLE_KEYS({{"Title", "name"},
-                                         {"Author", "author"},
-                                         {"Authors", "author"},
-                                         {"Draft date", "year"},
-                                         {"Copyright", "year"},
-                                         {"Contact", "contacts"},
-                                         {"Credit", "genre"},
-                                         {"Source", "additional_info"}});
+    const QMap<QString, QString> TITLE_KEYS({{"Title", "name"},
+                                             {"Author", "author"},
+                                             {"Authors", "author"},
+                                             {"Draft date", "year"},
+                                             {"Copyright", "year"},
+                                             {"Contact", "contacts"},
+                                             {"Credit", "genre"},
+                                             {"Source", "additional_info"}});
 
-const QString TRIPLE_WHITESPACE = "   ";
-const QString DOUBLE_WHITESPACE = "  ";
+    const QString TRIPLE_WHITESPACE = "   ";
+    const QString DOUBLE_WHITESPACE = "  ";
 
 }
 

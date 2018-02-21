@@ -75,6 +75,7 @@ namespace BusinessLogic
         void processFormat(bool _italics, bool _bold, bool _underline,
                        bool _forCurrentCharacter = false) const ;
 
+    private:
         //
         // Чтобы не передавать большое число параметров в функции, используются члены класса
         //
