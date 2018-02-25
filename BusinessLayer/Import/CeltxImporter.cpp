@@ -65,7 +65,7 @@ CeltxImporter::CeltxImporter() :
     AbstractImporter()
 {
 }
-
+#include <QDebug>
 QString CeltxImporter::importScript(const BusinessLogic::ImportParameters& _importParameters) const
 {
     QString scriptXml;
@@ -108,7 +108,25 @@ QString CeltxImporter::importScript(const BusinessLogic::ImportParameters& _impo
             const QString& blockTypeName = ScenarioBlockStyle::typeName(blockType);
             writer.writeStartElement(blockTypeName);
             writer.writeStartElement(NODE_VALUE);
-            writer.writeCDATA(pNode.innerText());
+            //
+            // Сформируем текст
+            //
+            QString blockText = pNode.innerText();
+            qDebug() << pNode.outerHtml();
+            for (const auto& child : pNode.children()) {
+                if (child.tag() == HtmlTag::BR) {
+                    continue;
+                }
+
+                QString n = child.nodeName();
+                QString t = child.innerText();
+                int a = child.rawStartPosition();
+                int b = pNode.childStartPosition(child);
+                qDebug() << n << a << b << t;
+
+                blockText.insert(b, t);
+            }
+            writer.writeCDATA(blockText);
             writer.writeEndElement();
         }
 
