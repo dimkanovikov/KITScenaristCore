@@ -2,6 +2,7 @@
 #define ABSTRACTIMPORTER_H
 
 #include <QApplication>
+#include <QColor>
 #include <QString>
 
 
@@ -221,6 +222,53 @@ namespace BusinessLogic
                 bold = false;
                 italic = false;
                 underline = false;
+            }
+        };
+
+        /**
+         * @brief Структура для работы с заметками на полях
+         */
+        struct TextNote {
+            /**
+             * @brief Относится ли заметка ко всему блоку, или только к части, ограниченной start и length
+             */
+            bool isFullBlock = false;
+
+            /**
+             * @brief Начальная позиция форматирования
+             */
+            int start = 0;
+
+            /**
+             * @brief Длина форматирования
+             */
+            int length = 0;
+
+            /**
+             * @brief Текст заметки
+             */
+            QString comment;
+
+            /**
+             * @brief Цвет заметки
+             */
+            QColor color;
+
+            /**
+             * @brief Задана ли заметка
+             */
+            bool isValid() const {
+                return
+                        !comment.isEmpty()
+                        && color.isValid();
+            }
+
+            /**
+             * @brief Очистить заметку
+             */
+            void clear() {
+                comment.clear();
+                color = QColor();
             }
         };
     };

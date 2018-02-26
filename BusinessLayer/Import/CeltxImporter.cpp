@@ -38,9 +38,20 @@ namespace {
     /** @{ */
     const QString NODE_SCENARIO = "scenario";
     const QString NODE_VALUE = "v";
+    const QString NODE_REVIEW_GROUP = "reviews";
+    const QString NODE_REVIEW = "review";
+    const QString NODE_REVIEW_COMMENT = "review_comment";
     const QString NODE_FORMAT_GROUP = "formatting";
     const QString NODE_FORMAT = "format";
 
+    const QString ATTRIBUTE_REVIEW_FROM = "from";
+    const QString ATTRIBUTE_REVIEW_LENGTH = "length";
+    const QString ATTRIBUTE_REVIEW_COLOR = "color";
+    const QString ATTRIBUTE_REVIEW_BGCOLOR = "bgcolor";
+    const QString ATTRIBUTE_REVIEW_IS_HIGHLIGHT = "is_highlight";
+    const QString ATTRIBUTE_REVIEW_COMMENT = "comment";
+    const QString ATTRIBUTE_REVIEW_AUTHOR = "author";
+    const QString ATTRIBUTE_REVIEW_DATE = "date";
     const QString ATTRIBUTE_FORMAT_FROM = "from";
     const QString ATTRIBUTE_FORMAT_LENGTH = "length";
     const QString ATTRIBUTE_FORMAT_BOLD = "bold";
@@ -65,7 +76,7 @@ CeltxImporter::CeltxImporter() :
     AbstractImporter()
 {
 }
-#include <QDebug>
+
 QString CeltxImporter::importScript(const BusinessLogic::ImportParameters& _importParameters) const
 {
     QString scriptXml;
@@ -111,23 +122,99 @@ QString CeltxImporter::importScript(const BusinessLogic::ImportParameters& _impo
             //
             // Сформируем текст
             //
-            QString blockText = pNode.innerText();
-            qDebug() << pNode.outerHtml();
+            QString paragraphText = pNode.innerText();
+            QVector<TextFormat> formatting;
+            QVector<TextNote> notes;
             for (const auto& child : pNode.children()) {
-                if (child.tag() == HtmlTag::BR) {
+                if (child.tag() != HtmlTag::SPAN) {
                     continue;
                 }
 
-                QString n = child.nodeName();
-                QString t = child.innerText();
-                int a = child.rawStartPosition();
-                int b = pNode.childStartPosition(child);
-                qDebug() << n << a << b << t;
+                //
+                // Обработать заметку
+                //
+                if (child.hasAttribute("text")) {
+                    TextNote note;
+                    note.isFullBlock = true;
+                    note.comment = child.getAttribute("text");
+                    QString colorText = child.getAttribute("style");
+                    colorText = colorText.remove(0, colorText.indexOf("(") + 1);
+                    colorText = colorText.left(colorText.indexOf(")"));
+                    colorText = colorText.remove(" ");
+                    const QStringList colorComponents = colorText.split(",");
+                    if (colorComponents.size() == 3) {
+                        note.color = QColor(colorComponents[0].toInt(), colorComponents[1].toInt(), colorComponents[2].toInt());
+                    }
+                    if (note.isValid()) {
+                        notes.append(note);
+                    }
+                }
+                //
+                // Обработать форматированный текст
+                //
+                else {
+                    const QString childText = child.innerText();
+                    const int childStartPosition = pNode.childStartPosition(child);
+                    paragraphText.insert(childStartPosition, childText);
 
-                blockText.insert(b, t);
+                    const QString style = child.getAttribute("style");
+                    TextFormat format;
+                    format.start = childStartPosition;
+                    format.length = childText.length();
+                    format.bold = style.contains("font-weight: bold;");
+                    format.italic = style.contains("font-style: italic;");
+                    format.underline = style.contains("text-decoration: underline;");
+                    if (format.isValid()) {
+                        formatting.append(format);
+                    }
+                }
             }
-            writer.writeCDATA(blockText);
+            writer.writeCDATA(paragraphText);
             writer.writeEndElement();
+
+            //
+            // Добавляем форматирование
+            //
+            if (!formatting.isEmpty()) {
+                writer.writeStartElement(NODE_FORMAT_GROUP);
+                for (const TextFormat& format : formatting){
+                    writer.writeStartElement(NODE_FORMAT);
+                    //
+                    // Данные пользовательского форматирования
+                    //
+                    writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(format.start));
+                    writer.writeAttribute(ATTRIBUTE_FORMAT_LENGTH, QString::number(format.length));
+                    writer.writeAttribute(ATTRIBUTE_FORMAT_BOLD, format.bold ? "true" : "false");
+                    writer.writeAttribute(ATTRIBUTE_FORMAT_ITALIC, format.italic? "true" : "false");
+                    writer.writeAttribute(ATTRIBUTE_FORMAT_UNDERLINE, format.underline ? "true" : "false");
+                    //
+                    writer.writeEndElement();
+                }
+                writer.writeEndElement();
+            }
+
+            //
+            // Добавляем заметки
+            //
+            if (!notes.isEmpty()) {
+                writer.writeStartElement(NODE_REVIEW_GROUP);
+                for (const TextNote& note : notes) {
+                    writer.writeStartElement(NODE_REVIEW);
+                    writer.writeAttribute(ATTRIBUTE_REVIEW_FROM, "0");
+                    writer.writeAttribute(ATTRIBUTE_REVIEW_LENGTH, QString::number(paragraphText.length()));
+                    writer.writeAttribute(ATTRIBUTE_REVIEW_COLOR, "#000000");
+                    writer.writeAttribute(ATTRIBUTE_REVIEW_BGCOLOR, note.color.name());
+                    writer.writeAttribute(ATTRIBUTE_REVIEW_IS_HIGHLIGHT, "false");
+
+                    writer.writeEmptyElement(NODE_REVIEW_COMMENT);
+                    writer.writeAttribute(ATTRIBUTE_REVIEW_COMMENT, note.comment);
+
+                    writer.writeEndElement();
+                }
+                writer.writeEndElement();
+            }
+
+            writer.writeEndElement(); // NODE_VALUE
         }
 
         writer.writeEndDocument();
