@@ -62,6 +62,11 @@ namespace UserInterface
         void hideRequested(const QModelIndex& _projectIndex);
 
         /**
+         * @brief Запрос на перемещение проекта в облако
+         */
+        void moveToCloudRequested(const QModelIndex& _projectIndex);
+
+        /**
          * @brief Запрос на открытие доступа к проекту
          */
         void shareRequested(const QModelIndex& _projectIndex);
@@ -85,6 +90,7 @@ namespace UserInterface
         void handleEditClick();
         void handleRemoveClick();
         void handleHideClick();
+        void handleMoveToCloudClick();
         void handleShareClick();
         /** @} */
 

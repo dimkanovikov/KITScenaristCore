@@ -69,6 +69,7 @@ void ProjectsList::setModel(QAbstractItemModel* _model, bool _isRemote)
             connect(project, &ProjectFileWidget::editClicked, this, &ProjectsList::handleEditClick);
             connect(project, &ProjectFileWidget::removeClicked, this, &ProjectsList::handleRemoveClick);
             connect(project, &ProjectFileWidget::hideClicked, this, &ProjectsList::handleHideClick);
+            connect(project, &ProjectFileWidget::moveToCloudClicked, this, &ProjectsList::handleMoveToCloudClick);
             connect(project, &ProjectFileWidget::shareClicked, this, &ProjectsList::handleShareClick);
             connect(project, &ProjectFileWidget::removeUserRequested, this, &ProjectsList::handleRemoveUserRequest);
 
@@ -138,6 +139,13 @@ void ProjectsList::handleHideClick()
 {
     if (ProjectFileWidget* project = qobject_cast<ProjectFileWidget*>(sender())) {
         emit hideRequested(m_model->index(projectRow(project), 0));
+    }
+}
+
+void ProjectsList::handleMoveToCloudClick()
+{
+    if (ProjectFileWidget* project = qobject_cast<ProjectFileWidget*>(sender())) {
+        emit moveToCloudRequested(m_model->index(projectRow(project), 0));
     }
 }
 

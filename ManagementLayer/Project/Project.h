@@ -29,7 +29,12 @@ namespace ManagementLayer
 			Owner,
 			Redactor,
 			Commentator
-		};
+        };
+
+        /**
+         * @brief Невалидный идентификатор проекта
+         */
+        static const int kInvalidId = -1;
 
 		/**
 		 * @brief Получить строку из роли

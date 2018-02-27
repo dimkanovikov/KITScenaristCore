@@ -151,6 +151,7 @@
         <file>Icons/lock-reset.png</file>
         <file>Icons/logout.png</file>
         <file>Icons/renew.png</file>
+        <file>Icons/move-to-cloud.png</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>

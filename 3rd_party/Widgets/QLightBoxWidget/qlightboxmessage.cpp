@@ -48,7 +48,7 @@ QDialogButtonBox::StandardButton QLightBoxMessage::message(QWidget* _parent, con
     const QString& _text, QStyle::StandardPixmap _pixmap, QDialogButtonBox::StandardButtons _buttons,
     QDialogButtonBox::StandardButton _defaultButton)
 {
-    QLightBoxMessage message(_parent);
+    static QLightBoxMessage message(_parent);
     message.setWindowTitle(_title);
     message.m_icon->setPixmap(message.style()->standardIcon(_pixmap).pixmap(ICON_PIXMAP_SIZE));
     message.m_text->setText(_text);

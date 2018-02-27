@@ -78,6 +78,11 @@ namespace UserInterface
         void hideClicked();
 
         /**
+         * @brief Нажата кнопка перенесения проекта в облако
+         */
+        void moveToCloudClicked();
+
+        /**
          * @brief Нажата кнопка открыть доступ
          */
         void shareClicked();

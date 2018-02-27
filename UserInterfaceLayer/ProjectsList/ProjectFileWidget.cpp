@@ -58,12 +58,14 @@ void ProjectFileWidget::configureOptions(bool _isRemote, bool _isOwner)
 #ifndef MOBILE_OS
     m_ui->change->setVisible(_isRemote && _isOwner);
     m_ui->remove->setVisible(_isRemote);
+    m_ui->moveToCloud->setVisible(!_isRemote);
     m_ui->share->setVisible(_isRemote && _isOwner);
     m_ui->shareDetails->setVisible(_isRemote);
 
     m_ui->hide->setVisible(!_isRemote);
 #else
     m_ui->change->setVisible(_isOwner);
+    m_ui->moveToCloud->setVisible(!_isRemote);
     m_ui->share->setVisible(_isRemote && _isOwner);
     m_ui->shareDetails->setVisible(_isRemote);
 
@@ -155,6 +157,7 @@ void ProjectFileWidget::initView()
     m_ui->change->setIcons(m_ui->change->icon());
     m_ui->remove->setIcons(m_ui->remove->icon());
     m_ui->hide->setIcons(m_ui->hide->icon());
+    m_ui->moveToCloud->setIcons(m_ui->moveToCloud->icon());
     m_ui->share->setIcons(m_ui->share->icon());
     m_ui->shareDetails->setIcons(m_ui->shareDetails->icon());
     m_ui->openMenu->setIcons(m_ui->openMenu->icon());
@@ -164,6 +167,7 @@ void ProjectFileWidget::initView()
     m_ui->change->setToolTip(QString());
     m_ui->remove->setToolTip(QString());
     m_ui->hide->setToolTip(QString());
+    m_ui->moveToCloud->setToolTip(QString());
     m_ui->share->setToolTip(QString());
     m_ui->shareDetails->setToolTip(QString());
     m_ui->openMenu->setToolTip(QString());
@@ -179,6 +183,7 @@ void ProjectFileWidget::initConnections()
     connect(m_ui->change, &FlatButton::clicked, this, &ProjectFileWidget::editClicked);
     connect(m_ui->remove, &FlatButton::clicked, this, &ProjectFileWidget::removeClicked);
     connect(m_ui->hide, &FlatButton::clicked, this, &ProjectFileWidget::hideClicked);
+    connect(m_ui->moveToCloud, &FlatButton::clicked, this, &ProjectFileWidget::moveToCloudClicked);
     connect(m_ui->share, &FlatButton::clicked, this, &ProjectFileWidget::shareClicked);
     connect(m_ui->shareDetails, &FlatButton::toggled, [=] (bool _toggled) {
         const bool FIX = true;
@@ -223,6 +228,7 @@ void ProjectFileWidget::initStylesheet()
     m_ui->change->setProperty("projectAction", true);
     m_ui->remove->setProperty("projectAction", true);
     m_ui->hide->setProperty("projectAction", true);
+    m_ui->moveToCloud->setProperty("projectAction", true);
     m_ui->share->setProperty("projectAction", true);
     m_ui->shareDetails->setProperty("projectAction", true);
     m_ui->openMenu->setProperty("projectActionMenu", true);

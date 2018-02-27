@@ -187,6 +187,29 @@
          </widget>
         </item>
         <item>
+         <widget class="FlatButton" name="moveToCloud">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>Move project to the cloud</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../../Resources/Resources.qrc">
+            <normaloff>:/Graphics/Icons/move-to-cloud.png</normaloff>:/Graphics/Icons/move-to-cloud.png</iconset>
+          </property>
+          <property name="autoRaise">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="FlatButton" name="share">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">

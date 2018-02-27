@@ -759,8 +759,6 @@ void SynchronizationManager::loadProjects()
 
 int SynchronizationManager::createProject(const QString& _projectName)
 {
-    const int INVALID_PROJECT_ID = -1;
-
     //
     // Создаём новый проект
     //
@@ -776,13 +774,13 @@ int SynchronizationManager::createProject(const QString& _projectName)
     //
     QXmlStreamReader responseReader(response);
     if (!isOperationSucceed(responseReader)) {
-        return INVALID_PROJECT_ID;
+        return ManagementLayer::Project::kInvalidId;
     }
 
     //
     // Считываем идентификатор проекта
     //
-    int newProjectId = INVALID_PROJECT_ID;
+    int newProjectId = ManagementLayer::Project::kInvalidId;
     while (!responseReader.atEnd()) {
         responseReader.readNext();
         if (responseReader.name().toString() == "project") {
@@ -791,9 +789,9 @@ int SynchronizationManager::createProject(const QString& _projectName)
         }
     }
 
-    if (newProjectId == INVALID_PROJECT_ID) {
+    if (newProjectId == ManagementLayer::Project::kInvalidId) {
         handleError(Sync::UnknownError);
-        return INVALID_PROJECT_ID;
+        return ManagementLayer::Project::kInvalidId;
     }
 
     //
