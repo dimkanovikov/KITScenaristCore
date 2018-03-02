@@ -270,7 +270,7 @@ bool SynchronizationManager::autoLogin()
 void SynchronizationManager::login(const QString &_email, const QString &_password)
 {
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_LOGIN, _email);
     loader.addRequestAttribute(KEY_PASSWORD, _password);
@@ -408,7 +408,7 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
 void SynchronizationManager::signUp(const QString& _email, const QString& _password)
 {
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_EMAIL, _email);
     loader.addRequestAttribute(KEY_PASSWORD, _password);
@@ -488,7 +488,7 @@ void SynchronizationManager::verify(const QString& _code)
 void SynchronizationManager::restorePassword(const QString &_email)
 {
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_EMAIL, _email);
     QByteArray response = loader.loadSync(URL_RESTORE);
@@ -530,7 +530,7 @@ void SynchronizationManager::restorePassword(const QString &_email)
 void SynchronizationManager::logout()
 {
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
     loader.addRequestAttribute(KEY_DEVICE_UUID, ::deviceUuid());
@@ -591,7 +591,7 @@ void SynchronizationManager::renewSubscription(unsigned _duration,
 void SynchronizationManager::changeUserName(const QString &_newUserName)
 {
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
     loader.addRequestAttribute(KEY_USERNAME, _newUserName);
@@ -620,7 +620,7 @@ void SynchronizationManager::changeUserName(const QString &_newUserName)
 void SynchronizationManager::loadSubscriptionInfo()
 {
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
     QByteArray response = loader.loadSync(URL_SUBSCRIBE_STATE);
@@ -691,7 +691,7 @@ void SynchronizationManager::changePassword(const QString& _password,
                                               const QString& _newPassword)
 {
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
     loader.addRequestAttribute(KEY_PASSWORD, _password);
@@ -732,7 +732,7 @@ void SynchronizationManager::loadProjects()
     // Получаем список проектов
     //
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
     const QByteArray response = loader.loadSync(URL_PROJECTS);
@@ -763,7 +763,7 @@ int SynchronizationManager::createProject(const QString& _projectName)
     // Создаём новый проект
     //
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
     loader.addRequestAttribute(KEY_PROJECT_NAME, _projectName);
@@ -808,7 +808,7 @@ void SynchronizationManager::updateProjectName(int _projectId, const QString& _n
     // Обновляем проект
     //
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
     loader.addRequestAttribute(KEY_PROJECT_ID, _projectId);
@@ -835,7 +835,7 @@ void SynchronizationManager::removeProject(int _projectId)
     // Удаляем проект
     //
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
     loader.addRequestAttribute(KEY_PROJECT_ID, _projectId);
@@ -863,7 +863,7 @@ void SynchronizationManager::shareProject(int _projectId, const QString& _userEm
     // ДОбавляем подписчика в проект
     //
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
     loader.addRequestAttribute(KEY_PROJECT_ID, _projectId);
@@ -891,7 +891,7 @@ void SynchronizationManager::unshareProject(int _projectId, const QString& _user
     // Убираем подписчика из проекта
     //
     NetworkRequest loader;
-    loader.setRequestMethod(NetworkRequest::Post);
+    loader.setRequestMethod(NetworkRequestMethod::Post);
     loader.clearRequestAttributes();
     loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
     loader.addRequestAttribute(KEY_PROJECT_ID, _projectId);
@@ -931,7 +931,7 @@ void SynchronizationManager::aboutFullSyncScenario()
         // Получить список патчей проекта
         //
         NetworkRequest loader;
-        loader.setRequestMethod(NetworkRequest::Post);
+        loader.setRequestMethod(NetworkRequestMethod::Post);
         loader.clearRequestAttributes();
         loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
         loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
@@ -1123,7 +1123,7 @@ void SynchronizationManager::aboutWorkSyncScenario()
             const int LAST_MINUTES = 2;
 
             NetworkRequest loader;
-            loader.setRequestMethod(NetworkRequest::Post);
+            loader.setRequestMethod(NetworkRequestMethod::Post);
             loader.clearRequestAttributes();
             loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
             loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
@@ -1207,7 +1207,7 @@ void SynchronizationManager::aboutFullSyncData()
         // Получить список всех изменений данных на сервере
         //
         NetworkRequest loader;
-        loader.setRequestMethod(NetworkRequest::Post);
+        loader.setRequestMethod(NetworkRequestMethod::Post);
         loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
         loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
         QByteArray response = loader.loadSync(URL_SCENARIO_DATA_LIST);
@@ -1351,7 +1351,7 @@ void SynchronizationManager::aboutWorkSyncData()
             const int LAST_MINUTES = 2;
 
             NetworkRequest loader;
-            loader.setRequestMethod(NetworkRequest::Post);
+            loader.setRequestMethod(NetworkRequestMethod::Post);
             loader.clearRequestAttributes();
             loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
             loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
@@ -1416,7 +1416,7 @@ void SynchronizationManager::aboutUpdateCursors(int _cursorPosition, bool _isDra
         // Загрузим позиции курсоров
         //
         NetworkRequest loader;
-        loader.setRequestMethod(NetworkRequest::Post);
+        loader.setRequestMethod(NetworkRequestMethod::Post);
         loader.clearRequestAttributes();
         loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
         loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
@@ -1668,7 +1668,7 @@ bool SynchronizationManager::uploadScenarioChanges(const QList<QString>& _change
         // Отправить данные
         //
         NetworkRequest loader;
-        loader.setRequestMethod(NetworkRequest::Post);
+        loader.setRequestMethod(NetworkRequestMethod::Post);
         loader.clearRequestAttributes();
         loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
         loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
@@ -1695,7 +1695,7 @@ QList<QHash<QString, QString> > SynchronizationManager::downloadScenarioChanges(
         // ... загружаем изменения
         //
         NetworkRequest loader;
-        loader.setRequestMethod(NetworkRequest::Post);
+        loader.setRequestMethod(NetworkRequestMethod::Post);
         loader.clearRequestAttributes();
         loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
         loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
@@ -1802,7 +1802,7 @@ bool SynchronizationManager::uploadScenarioData(const QList<QString>& _dataUuids
         // Отправить данные
         //
         NetworkRequest loader;
-        loader.setRequestMethod(NetworkRequest::Post);
+        loader.setRequestMethod(NetworkRequestMethod::Post);
         loader.clearRequestAttributes();
         loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
         loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
@@ -1827,7 +1827,7 @@ void SynchronizationManager::downloadAndSaveScenarioData(const QString& _dataUui
         // ... загружаем изменения
         //
         NetworkRequest loader;
-        loader.setRequestMethod(NetworkRequest::Post);
+        loader.setRequestMethod(NetworkRequestMethod::Post);
         loader.clearRequestAttributes();
         loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
         loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
