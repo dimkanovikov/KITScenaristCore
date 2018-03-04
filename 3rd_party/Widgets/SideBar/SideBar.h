@@ -72,7 +72,12 @@ public:
     void setIndicatorActionIcon(const QIcon& _icon);
 
     /**
-     * @brief Установить список из action
+     * @brief Очистить дополнительное меню индикатора
+     */
+    void clearIndicatorMenu();
+
+    /**
+     * @brief Установить дополнительное меню индикатора
      */
     void setIndicatorMenu(const QVector<QString>& _menuActions);
 

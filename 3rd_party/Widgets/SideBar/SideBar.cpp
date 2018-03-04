@@ -254,6 +254,11 @@ void SideTabBar::setIndicatorActionIcon(const QIcon& _icon)
     m_indicator->setProperty(::INDICATOR_ACTION_ICON_KEY, _icon);
 }
 
+void SideTabBar::clearIndicatorMenu()
+{
+    m_indicatorActions.clear();
+}
+
 void SideTabBar::setIndicatorMenu(const QVector<QString> &_menuActions)
 {
     m_indicatorActions = _menuActions;
