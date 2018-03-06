@@ -2,6 +2,8 @@
 
 #include "Counter.h"
 
+#include <BusinessLayer/ScenarioDocument/ScenarioTemplate.h>
+
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
@@ -12,6 +14,7 @@
 
 using BusinessLogic::CountersFacade;
 using BusinessLogic::Counter;
+using BusinessLogic::ScenarioBlockStyle;
 
 
 Counter CountersFacade::calculate(QTextDocument* _document, int _fromCursorPosition, int _toCursorPosition)
@@ -41,7 +44,12 @@ Counter CountersFacade::calculate(QTextDocument* _document, int _fromCursorPosit
 		do {
 			cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
 
-			if (cursor.block().isVisible()) {
+            const QTextBlock& block = cursor.block();
+            const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(block);
+            if (block.isVisible()
+                && blockType != ScenarioBlockStyle::NoprintableText
+                && blockType != ScenarioBlockStyle::FolderHeader
+                && blockType != ScenarioBlockStyle::FolderFooter) {
 				QString text = cursor.selectedText();
 				if (calculateWords) {
 					counter.addWords(wordsCount(text));
@@ -65,10 +73,15 @@ BusinessLogic::Counter CountersFacade::calculateFull(QTextDocument* _document)
 	Counter counter;
 	QTextBlock block = _document->begin();
 	while (block.isValid()) {
-		const Counter blockCounter = calculateFull(block);
-		counter.addWords(blockCounter.words());
-		counter.addCharactersWithoutSpaces(blockCounter.charactersWithoutSpaces());
-		counter.addCharactersWithSpaces(blockCounter.charactersWithSpaces());
+        const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(block);
+        if (blockType != ScenarioBlockStyle::NoprintableText
+            && blockType != ScenarioBlockStyle::FolderHeader
+            && blockType != ScenarioBlockStyle::FolderFooter) {
+            const Counter blockCounter = calculateFull(block);
+            counter.addWords(blockCounter.words());
+            counter.addCharactersWithoutSpaces(blockCounter.charactersWithoutSpaces());
+            counter.addCharactersWithSpaces(blockCounter.charactersWithSpaces());
+        }
 
 		block = block.next();
 	}
@@ -82,7 +95,11 @@ BusinessLogic::Counter CountersFacade::calculateFull(const QTextBlock& _block)
 	//
 	// Считаем только видимые блоки
 	//
-	if (_block.isVisible()) {
+    const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(_block);
+    if (_block.isVisible()
+        && blockType != ScenarioBlockStyle::NoprintableText
+        && blockType != ScenarioBlockStyle::FolderHeader
+        && blockType != ScenarioBlockStyle::FolderFooter) {
 		//
 		// Определим текст, который необходимо обсчитать
 		//
