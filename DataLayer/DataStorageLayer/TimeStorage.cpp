@@ -5,6 +5,8 @@
 
 #include <Domain/SceneTime.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 using namespace DataStorageLayer;
 using namespace DataMappingLayer;
 
@@ -21,7 +23,7 @@ SceneTime* TimeStorage::storeTime(const QString& _timeName)
 {
     SceneTime* newTime = 0;
 
-	QString timeName = _timeName.toUpper().simplified();
+    const QString timeName = TextEditHelper::smartToUpper(_timeName).simplified();
 
 	//
 	// Если время можно сохранить

@@ -8,6 +8,8 @@
 
 #include <Domain/Research.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 #include <QApplication>
 #include <QTextBlock>
 #include <QTextDocument>
@@ -63,7 +65,7 @@ QString CastReport::makeReport(QTextDocument* _scenario,
 		// Список персонажей, всех в молчаливых
 		//
 		else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::SceneCharacters) {
-			const QStringList sceneCharacters = SceneCharactersParser::characters(block.text().toUpper());
+            const QStringList sceneCharacters = SceneCharactersParser::characters(block.text());
 			foreach (const QString& character, sceneCharacters) {
 				if (!characters.contains(character)) {
 					characters.append(character);
@@ -86,7 +88,7 @@ QString CastReport::makeReport(QTextDocument* _scenario,
 		// Персонаж +1 реплика и в список говорящих
 		//
         else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Character) {
-            const QString character = CharacterParser::name(block.text().toUpper());
+            const QString character = CharacterParser::name(block.text());
             //
             // Если имя персонажа задано
             //
@@ -145,7 +147,7 @@ QString CastReport::makeReport(QTextDocument* _scenario,
 				 && !block.text().isEmpty()) {
 			QRegularExpressionMatch match = rxCharacterFinder.match(block.text());
 			while (match.hasMatch()) {
-				const QString character = match.captured(2).toUpper();
+                const QString character = TextEditHelper::smartToUpper(match.captured(2));
 				if (!characters.contains(character)) {
 					characters.append(character);
 					sceneNonspeakingCharacters.append(character);

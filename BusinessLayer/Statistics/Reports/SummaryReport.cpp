@@ -11,6 +11,7 @@
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/ResearchStorage.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
 
 #include <QApplication>
@@ -103,9 +104,9 @@ QString SummaryReport::makeReport(QTextDocument* _scenario, const BusinessLogic:
     QString lastCharacter;
     while (block.isValid()) {
         if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::SceneHeading) {
-            scenes.append(block.text().toUpper());
+            scenes.append(TextEditHelper::smartToUpper(block.text()));
         } else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Character) {
-            lastCharacter = CharacterParser::name(block.text().toUpper());
+            lastCharacter = CharacterParser::name(block.text());
         } else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Dialogue
                    || ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Lyrics) {
             if (!characters.contains(lastCharacter)) {

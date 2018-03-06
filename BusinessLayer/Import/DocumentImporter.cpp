@@ -7,6 +7,7 @@
 #include <BusinessLayer/ScenarioDocument/ScenarioTemplate.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockParsers.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Widgets/PagesTextEdit/PageMetrics.h>
 
 #include <QRegularExpression>
@@ -77,7 +78,7 @@ namespace {
 		// Определим текст блока
 		//
 		const QString blockText = _cursor.block().text();
-		const QString blockTextUppercase = blockText.toUpper();
+        const QString blockTextUppercase = TextEditHelper::smartToUpper(blockText);
 
 		//
 		// Для всех нераспознаных блоков ставим тип "Описание действия"
@@ -93,7 +94,7 @@ namespace {
 		// ... текст в верхнем регистре (FIXME: такие строки, как "Я.")
 		bool textIsUppercase =
 				charFormat.fontCapitalization() == QFont::AllUppercase
-				|| blockText == blockText.toUpper();
+                || blockText == TextEditHelper::smartToUpper(blockText);
 		// ... блоки находящиеся в центре
 		bool isCentered =
 				(blockFormat.leftMargin() > LEFT_MARGIN_DELTA + _minLeftMargin)
@@ -335,7 +336,7 @@ QString DocumentImporter::importScript(const ImportParameters& _importParameters
 			//
 			if (blockType == ScenarioBlockStyle::SceneHeading
 				&& _importParameters.removeScenesNumbers){
-				blockText = blockText.toUpper();
+                blockText = TextEditHelper::smartToUpper(blockText);
 				QRegularExpressionMatch match = START_FROM_NUMBER_CHECKER.match(blockText);
 				if (match.hasMatch()) {
 					blockText = blockText.mid(match.capturedEnd());

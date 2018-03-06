@@ -401,7 +401,7 @@ QVariant ScenarioModel::data(const QModelIndex& _index, int _role) const
             //
             // Скрываем только первый блок, если он содержит текст ИЗ ЗТМ
             //
-            if (item->type() == ScenarioModelItem::Undefined && item->header().toUpper() == tr("FADE IN:")) {
+            if (item->type() == ScenarioModelItem::Undefined && TextEditHelper::smartToUpper(item->header()) == tr("FADE IN:")) {
                 result = false;
             }
             break;
@@ -684,8 +684,8 @@ namespace {
         actXml.append(QString("id=\"%1\" ").arg(_item->uuid()));
         actXml.append(QString("title=\"%1\" ")
                        .arg(_item->title().isEmpty()
-                            ? TextEditHelper::toHtmlEscaped(_item->header().toUpper())
-                            : TextEditHelper::toHtmlEscaped(_item->title().toUpper())));
+                            ? TextEditHelper::toHtmlEscaped(TextEditHelper::smartToUpper(_item->header()))
+                            : TextEditHelper::toHtmlEscaped(TextEditHelper::smartToUpper(_item->title()))));
         actXml.append(QString("description=\"%1\" ")
                        .arg(_item->description().isEmpty()
                             ? TextEditHelper::toHtmlEscaped(_item->fullText())
@@ -708,8 +708,8 @@ namespace {
         cardXml.append(QString("number=\"%1\" ").arg(_item->sceneNumber()));
         cardXml.append(QString("title=\"%1\" ")
                        .arg(_item->title().isEmpty()
-                            ? TextEditHelper::toHtmlEscaped(_item->header().toUpper())
-                            : TextEditHelper::toHtmlEscaped(_item->title().toUpper())));
+                            ? TextEditHelper::toHtmlEscaped(TextEditHelper::smartToUpper(_item->header()))
+                            : TextEditHelper::toHtmlEscaped(TextEditHelper::smartToUpper(_item->title()))));
         cardXml.append(QString("description=\"%1\" ")
                        .arg(_item->description().isEmpty()
                             ? TextEditHelper::toHtmlEscaped(_item->fullText())

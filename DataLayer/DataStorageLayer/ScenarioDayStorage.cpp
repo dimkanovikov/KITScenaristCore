@@ -5,6 +5,8 @@
 
 #include <Domain/ScenarioDay.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 using namespace DataStorageLayer;
 using namespace DataMappingLayer;
 
@@ -21,7 +23,7 @@ ScenarioDay* ScenarioDayStorage::storeScenarioDay(const QString& _scenarioDayNam
 {
 	ScenarioDay* newScenarioDay = 0;
 
-	QString scenarioDayName = _scenarioDayName.toUpper().simplified();
+    const QString scenarioDayName = TextEditHelper::smartToUpper(_scenarioDayName).simplified();
 
 	//
 	// Если сценарный день можно сохранить

@@ -7,6 +7,8 @@
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/PlaceStorage.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 #include <QKeyEvent>
 #include <QTextBlock>
 
@@ -175,7 +177,7 @@ void SceneDescriptionHandler::handleOther(QKeyEvent* _event)
 		// Если было введено какое-либо значение из списка мест (ИНТ./НАТ. и т.п.)
 		// то необходимо преобразовать блок во время и место
 		//
-		QString maybePlace = cursorBackwardText.toUpper();
+        const QString maybePlace = TextEditHelper::smartToUpper(cursorBackwardText);
 		if (DataStorageLayer::StorageFacade::placeStorage()->hasPlace(maybePlace)) {
 			editor()->changeScenarioBlockType(ScenarioBlockStyle::SceneHeading);
 		}

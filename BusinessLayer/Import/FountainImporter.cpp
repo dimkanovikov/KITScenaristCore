@@ -2,6 +2,8 @@
 
 #include <BusinessLayer/ScenarioDocument/ScenarioTemplate.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 #include <QDomDocument>
 #include <QFile>
 #include <QStack>
@@ -306,7 +308,7 @@ QString FountainImporter::importScript(const ImportParameters &_importParameters
                         //
                         // Начинается комментарий
                         paragraphText = paragraphs[i];
-                    } else if (paragraphs[i] == paragraphs[i].toUpper()
+                    } else if (paragraphs[i] == TextEditHelper::smartToUpper(paragraphs[i])
                                && i != 0
                                && paragraphs[i-1].isEmpty()
                                && i + 1 < paragraphsCount
@@ -327,7 +329,7 @@ QString FountainImporter::importScript(const ImportParameters &_importParameters
                         //
                         blockType = ScenarioBlockStyle::Parenthetical;
                         paragraphText = paragraphs[i];
-                    } else if (paragraphs[i] == paragraphs[i].toUpper()
+                    } else if (paragraphs[i] == TextEditHelper::smartToUpper(paragraphs[i])
                                && i != 0
                                && paragraphs[i-1].isEmpty()
                                && i + 1 < paragraphsCount

@@ -4,6 +4,7 @@
 #include <BusinessLayer/Chronometry/ChronometerFacade.h>
 
 #include <3rd_party/Helpers/ImageHelper.h>
+#include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Helpers/StyleSheetHelper.h>
 
 #include <QPainter>
@@ -253,12 +254,12 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
                 : iconRect.left() - chronometryRect.right() - m_itemsHorizontalSpacing*2,
         TEXT_LINE_HEIGHT
         );
-    QString header = _index.data(Qt::DisplayRole).toString().toUpper();
+    QString header = TextEditHelper::smartToUpper(_index.data(Qt::DisplayRole).toString());
     if (m_showSceneTitle) {
         //
         // Если нужно выводим название сцены вместо заголовка
         //
-        const QString title = _index.data(BusinessLogic::ScenarioModel::TitleIndex).toString().toUpper();
+        const QString title = TextEditHelper::smartToUpper(_index.data(BusinessLogic::ScenarioModel::TitleIndex).toString());
         if (!title.isEmpty()) {
             header = title;
         }

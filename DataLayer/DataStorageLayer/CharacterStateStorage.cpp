@@ -5,6 +5,8 @@
 
 #include <Domain/CharacterState.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 using namespace DataStorageLayer;
 using namespace DataMappingLayer;
 
@@ -21,7 +23,7 @@ CharacterState* CharacterStateStorage::storeCharacterState(const QString& _chara
 {
 	CharacterState* newCharacterState = 0;
 
-	QString characterStateName = _characterStateName.toUpper().simplified();
+    const QString characterStateName = TextEditHelper::smartToUpper(_characterStateName).simplified();
 
 	//
 	// Если состояние можно сохранить

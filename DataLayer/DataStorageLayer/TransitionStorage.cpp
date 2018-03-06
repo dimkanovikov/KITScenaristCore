@@ -5,6 +5,8 @@
 
 #include <Domain/Transition.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 using namespace DataStorageLayer;
 using namespace DataMappingLayer;
 
@@ -21,7 +23,7 @@ Transition* TransitionStorage::storeTransition(const QString& _transitionName)
 {
     Transition* newTransition = nullptr;
 
-    QString transitionName = _transitionName.toUpper().simplified();
+    const QString transitionName = TextEditHelper::smartToUpper(_transitionName).simplified();
 
     //
     // Если переход можно сохранить

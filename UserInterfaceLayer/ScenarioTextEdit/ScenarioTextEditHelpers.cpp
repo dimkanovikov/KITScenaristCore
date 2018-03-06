@@ -1,11 +1,13 @@
 #include "ScenarioTextEditHelpers.h"
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 #include <QObject>
 
 
 namespace {
 	static QString replaceKnownFooterWords(const QString& _text) {
-		QString sourceText = _text.toUpper();
+        QString sourceText = TextEditHelper::smartToUpper(_text);
 		return  sourceText
 				.replace(QString::fromUtf8("ПАПКА"), QString::fromUtf8("ПАПКИ"))
 				.replace(QString::fromUtf8("ГРУППА"), QString::fromUtf8("ГРУППЫ"))

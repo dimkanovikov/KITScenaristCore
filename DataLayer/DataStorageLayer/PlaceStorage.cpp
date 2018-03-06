@@ -5,6 +5,8 @@
 
 #include <Domain/Place.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 using namespace DataStorageLayer;
 using namespace DataMappingLayer;
 
@@ -21,7 +23,7 @@ Place* PlaceStorage::storePlace(const QString& _placeName)
 {
 	Place* newPlace = 0;
 
-	QString placeName = _placeName.toUpper().simplified();
+    QString placeName = TextEditHelper::smartToUpper(_placeName).simplified();
 
 	//
 	// Если место можно сохранить

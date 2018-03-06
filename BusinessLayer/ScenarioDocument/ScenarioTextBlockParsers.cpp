@@ -2,6 +2,8 @@
 
 #include "ScenarioTemplate.h"
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 #include <QString>
 #include <QStringList>
 #include <QRegularExpression>
@@ -30,7 +32,7 @@ QString CharacterParser::name(const QString& _text)
 	//
 
 	QString name = _text;
-	return name.remove(QRegularExpression("[(](.*)")).simplified().toUpper();
+    return TextEditHelper::smartToUpper(name.remove(QRegularExpression("[(](.*)")).simplified());
 }
 
 QString CharacterParser::state(const QString& _text)
@@ -47,7 +49,7 @@ QString CharacterParser::state(const QString& _text)
 		state = match.captured(0);
 		state = state.remove("(").remove(")");
 	}
-	return state.toUpper();
+    return TextEditHelper::smartToUpper(state);
 }
 
 // ****
@@ -80,7 +82,7 @@ QString SceneHeadingParser::placeName(const QString& _text)
 		placeName = _text.split(". ").value(0);
 	}
 
-	return placeName.toUpper();
+    return TextEditHelper::smartToUpper(placeName);
 }
 
 QString SceneHeadingParser::locationName(const QString& _text, bool _force)
@@ -96,7 +98,7 @@ QString SceneHeadingParser::locationName(const QString& _text, bool _force)
 		}
 	}
 
-	return locationName.toUpper();
+    return TextEditHelper::smartToUpper(locationName);
 }
 
 QString SceneHeadingParser::scenarioDayName(const QString& _text)
@@ -107,7 +109,7 @@ QString SceneHeadingParser::scenarioDayName(const QString& _text)
 		scenarioDayName = _text.split(", ").last();
 	}
 
-	return scenarioDayName.toUpper();
+    return TextEditHelper::smartToUpper(scenarioDayName);
 }
 
 QString SceneHeadingParser::timeName(const QString& _text)
@@ -119,7 +121,7 @@ QString SceneHeadingParser::timeName(const QString& _text)
         timeName = timeName.simplified();
 	}
 
-    return timeName.toUpper();
+    return TextEditHelper::smartToUpper(timeName);
 }
 
 // ****
@@ -149,7 +151,7 @@ QStringList SceneCharactersParser::characters(const QString& _text)
 	// Убираем символы пробелов
 	//
 	for (int index = 0; index < charactersList.size(); ++index) {
-		charactersList[index] = charactersList[index].simplified().toUpper();
+        charactersList[index] = TextEditHelper::smartToUpper(charactersList[index].simplified());
 	}
 
 	return charactersList;

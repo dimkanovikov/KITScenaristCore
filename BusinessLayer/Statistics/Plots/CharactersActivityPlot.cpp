@@ -10,6 +10,7 @@
 
 #include <Domain/Research.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
 
 #include <QApplication>
@@ -100,7 +101,7 @@ Plot CharactersActivityPlot::makePlot(QTextDocument* _scenario, const BusinessLo
 			// Участники сцены
 			//
 			if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::SceneCharacters) {
-				const QStringList sceneCharacters = SceneCharactersParser::characters(block.text().toUpper());
+                const QStringList sceneCharacters = SceneCharactersParser::characters(block.text());
 				foreach (const QString& character, sceneCharacters) {
 					//
 					// Первое появление
@@ -125,7 +126,7 @@ Plot CharactersActivityPlot::makePlot(QTextDocument* _scenario, const BusinessLo
 			// Персонаж
 			//
 			else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Character) {
-				const QString character = CharacterParser::name(block.text().toUpper());
+                const QString character = CharacterParser::name(block.text());
 				//
 				// Первое появление
 				//
@@ -154,7 +155,7 @@ Plot CharactersActivityPlot::makePlot(QTextDocument* _scenario, const BusinessLo
 			else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Action) {
 				QRegularExpressionMatch match = rxCharacterFinder.match(block.text());
 				while (match.hasMatch()) {
-					const QString character = match.captured(2).toUpper();
+                    const QString character = TextEditHelper::smartToUpper(match.captured(2));
 					//
 					// Первое появление
 					//

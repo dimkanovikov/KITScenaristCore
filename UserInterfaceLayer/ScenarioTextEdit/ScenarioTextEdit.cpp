@@ -908,8 +908,8 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
         const bool toUpper = _event->key() == Qt::Key_Up;
         const QString selectedText = cursor.selectedText();
         const QChar firstChar = selectedText.at(0);
-        const bool firstToUpper = firstChar.toUpper() != firstChar;
-        const bool textInUpper = (selectedText.length() > 1) && (selectedText.toUpper() == selectedText);
+        const bool firstToUpper = TextEditHelper::smartToUpper(firstChar) != firstChar;
+        const bool textInUpper = (selectedText.length() > 1) && (TextEditHelper::smartToUpper(selectedText) == selectedText);
         const int fromPosition = qMin(cursor.selectionStart(), cursor.selectionEnd());
         const int toPosition = qMax(cursor.selectionStart(), cursor.selectionEnd());
         for (int position = fromPosition; position < toPosition; ++position) {
@@ -917,13 +917,13 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
             cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor);
             if (toUpper) {
                 if (firstToUpper) {
-                    cursor.insertText(position == fromPosition ? cursor.selectedText().toUpper() : cursor.selectedText().toLower());
+                    cursor.insertText(position == fromPosition ? TextEditHelper::smartToUpper(cursor.selectedText()) : cursor.selectedText().toLower());
                 } else {
-                    cursor.insertText(cursor.selectedText().toUpper());
+                    cursor.insertText(TextEditHelper::smartToUpper(cursor.selectedText()));
                 }
             } else {
                 if (textInUpper) {
-                    cursor.insertText(position == fromPosition ? cursor.selectedText().toUpper() : cursor.selectedText().toLower());
+                    cursor.insertText(position == fromPosition ? TextEditHelper::smartToUpper(cursor.selectedText()) : cursor.selectedText().toLower());
                 } else {
                     cursor.insertText(cursor.selectedText().toLower());
                 }
@@ -1937,7 +1937,7 @@ void ScenarioTextEdit::updateEnteredText(const QString& _eventText)
             bool isFirstUpperCase = currentCharFormat.boolProperty(ScenarioBlockStyle::PropertyIsFirstUppercase);
             QString correctedText = _eventText;
             if (isFirstUpperCase) {
-                correctedText[0] = correctedText[0].toUpper();
+                correctedText[0] = TextEditHelper::smartToUpper(correctedText[0]);
             }
 
             //
@@ -1971,7 +1971,7 @@ void ScenarioTextEdit::updateEnteredText(const QString& _eventText)
                 // Сделаем первую букву заглавной
                 //
                 QString correctedText = _eventText;
-                correctedText[0] = correctedText[0].toUpper();
+                correctedText[0] = TextEditHelper::smartToUpper(correctedText[0]);
 
                 //
                 // Стираем предыдущий введённый текст
@@ -1997,11 +1997,11 @@ void ScenarioTextEdit::updateEnteredText(const QString& _eventText)
                 //
                 if (!right3Characters.contains(" ")
                     && right3Characters.length() == 3
-                    && right3Characters != right3Characters.toUpper()
-                    && right3Characters.left(2) == right3Characters.left(2).toUpper()
+                    && right3Characters != TextEditHelper::smartToUpper(right3Characters)
+                    && right3Characters.left(2) == TextEditHelper::smartToUpper(right3Characters.left(2))
                     && right3Characters.left(2).at(0).isLetter()
                     && right3Characters.left(2).at(1).isLetter()
-                    && _eventText != _eventText.toUpper()) {
+                    && _eventText != TextEditHelper::smartToUpper(_eventText)) {
                     //
                     // Сделаем предпоследнюю букву строчной
                     //

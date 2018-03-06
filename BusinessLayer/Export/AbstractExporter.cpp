@@ -556,7 +556,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
             ::insertLine(destDocumentCursor, centerFormat, headerFormat);
         }
         ::insertLine(destDocumentCursor, centerFormat, headerFormat);
-        destDocumentCursor.insertText(_exportParameters.scriptName.toUpper());
+        destDocumentCursor.insertText(TextEditHelper::smartToUpper(_exportParameters.scriptName));
         //
         // Две строки отступа от заголовка
         //
@@ -763,7 +763,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                 // настройка не учитывается...
                 //
                 if (charFormatForType(currentBlockType).fontCapitalization() == QFont::AllUppercase) {
-                    destDocumentCursor.insertText(sourceDocumentCursor.block().text().toUpper());
+                    destDocumentCursor.insertText(TextEditHelper::smartToUpper(sourceDocumentCursor.block().text()));
                 } else {
                     destDocumentCursor.insertText(sourceDocumentCursor.block().text());
                 }

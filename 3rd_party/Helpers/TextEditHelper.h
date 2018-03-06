@@ -253,6 +253,25 @@ namespace TextEditHelper
             }
         }
     }
+
+    /**
+     * @brief Продвинутый toUpper с учётом некоторых специфичных юникод-символов
+     */
+    /** @{ */
+    inline static QString smartToUpper(const QString& _string) {
+        QString result = _string;
+        result = result.replace("ß", "ẞ");
+        result = result.toUpper();
+        return result;
+    }
+    inline static QChar smartToUpper(const QChar& _char) {
+        if (_char == 'ß') {
+            return 'ẞ';
+        }
+
+        return _char.toUpper();
+    }
+    /** @} */
 }
 
 #endif // TEXTEDITHELPER_H

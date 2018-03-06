@@ -81,10 +81,10 @@ void CharacterHandler::prehandle()
         //
         QAbstractItemModel* model = 0;
         if (!character.isEmpty()) {
-            m_sceneCharactersModel->setStringList(QStringList() << character.toUpper());
+            m_sceneCharactersModel->setStringList(QStringList() << character);
             model = m_sceneCharactersModel;
         } else if (!previousCharacter.isEmpty()) {
-            m_sceneCharactersModel->setStringList(QStringList() << previousCharacter.toUpper());
+            m_sceneCharactersModel->setStringList(QStringList() << previousCharacter);
             model = m_sceneCharactersModel;
         } else {
             model = StorageFacade::researchStorage()->characters();
@@ -364,16 +364,14 @@ void CharacterHandler::complete(const QString& _currentBlockText, const QString&
                 while (!cursor.atStart()
                        && ScenarioBlockStyle::forBlock(cursor.block()) != ScenarioBlockStyle::SceneHeading) {
                     if (ScenarioBlockStyle::forBlock(cursor.block()) == ScenarioBlockStyle::Character) {
-                        const QString character = CharacterParser::name(cursor.block().text());
-                        const QString characterName = character.toUpper().simplified();
-                        if (character.startsWith(_cursorBackwardText, Qt::CaseInsensitive)
+                        const QString characterName = CharacterParser::name(cursor.block().text());
+                        if (characterName.startsWith(_cursorBackwardText, Qt::CaseInsensitive)
                             && !sceneCharacters.contains(characterName)) {
                             sceneCharacters.append(characterName);
                         }
                     } else if (ScenarioBlockStyle::forBlock(cursor.block()) == ScenarioBlockStyle::SceneCharacters) {
                         const QStringList characters = SceneCharactersParser::characters(cursor.block().text());
-                        foreach (const QString& character, characters) {
-                            const QString characterName = character.toUpper().simplified();
+                        foreach (const QString& characterName, characters) {
                             if (characterName.startsWith(_cursorBackwardText, Qt::CaseInsensitive)
                                 && !sceneCharacters.contains(characterName)) {
                                 sceneCharacters.append(characterName);

@@ -3,6 +3,8 @@
 #include <BusinessLayer/ScenarioDocument/ScenarioTemplate.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockInfo.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockParsers.h>
+
+#include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
 
 #include <QApplication>
@@ -58,7 +60,7 @@ QString CharacterReport::makeReport(QTextDocument* _scenario,
             currentData = new ReportData;
             reportScenesDataList.append(currentData);
             //
-            currentData->scene = block.text().toUpper();
+            currentData->scene = TextEditHelper::smartToUpper(block.text());
             //
             cursor.setPosition(block.position());
             currentData->page = edit.cursorPage(cursor);
@@ -71,7 +73,7 @@ QString CharacterReport::makeReport(QTextDocument* _scenario,
         if (currentData != 0) {
             if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Character
                 && !block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
-                characterName = CharacterParser::name(block.text().toUpper());
+                characterName = CharacterParser::name(block.text());
                 if (_parameters.characterNames.contains(characterName)) {
                     saveDialogues = true;
                     if (!currentData->dialogues.isEmpty()) {

@@ -3,6 +3,8 @@
 #include <BusinessLayer/ScenarioDocument/ScenarioTemplate.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockInfo.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 #include <QApplication>
 #include <QFile>
 #include <QTextBlock>
@@ -272,7 +274,7 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
 
                     case ScenarioBlockStyle::Character:
                     {
-                        if (paragraphText != paragraphText.toUpper()) {
+                        if (paragraphText != TextEditHelper::smartToUpper(paragraphText)) {
                             //
                             // Если название персонажа не состоит из заглавных букв,
                             // то необходимо добавить @ в начало
@@ -288,7 +290,7 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
                         //
                         // Если переход задан заглавными буквами и в конце есть TO:
                         //
-                        if (paragraphText.toUpper() == paragraphText
+                        if (TextEditHelper::smartToUpper(paragraphText) == paragraphText
                             && paragraphText.endsWith("TO:")) {
                             //
                             // Ничего делать не надо, всё распознается нормально

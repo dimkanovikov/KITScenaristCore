@@ -10,6 +10,7 @@
 
 #include <Domain/Research.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
 
 #include <QApplication>
@@ -97,7 +98,7 @@ Plot StoryStructureAnalisysPlot::makePlot(QTextDocument* _scenario, const Busine
             currentData = new SceneData;
             scenesDataList.append(currentData);
             //
-            currentData->name = block.text().toUpper();
+            currentData->name = TextEditHelper::smartToUpper(block.text());
             //
             cursor.setPosition(block.position());
             currentData->page = edit.cursorPage(cursor);
@@ -115,7 +116,7 @@ Plot StoryStructureAnalisysPlot::makePlot(QTextDocument* _scenario, const Busine
             // Участники сцены
             //
             if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::SceneCharacters) {
-                const QStringList sceneCharacters = SceneCharactersParser::characters(block.text().toUpper());
+                const QStringList sceneCharacters = SceneCharactersParser::characters(block.text());
                 foreach (const QString& character, sceneCharacters) {
                     if (!currentSceneCharacters.contains(character)) {
                         currentSceneCharacters.append(character);
@@ -127,7 +128,7 @@ Plot StoryStructureAnalisysPlot::makePlot(QTextDocument* _scenario, const Busine
             // Персонаж
             //
             else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Character) {
-                const QString character = CharacterParser::name(block.text().toUpper());
+                const QString character = CharacterParser::name(block.text());
                 if (!currentSceneCharacters.contains(character)) {
                     currentSceneCharacters.append(character);
                     currentData->charactersCount += 1;
@@ -139,7 +140,7 @@ Plot StoryStructureAnalisysPlot::makePlot(QTextDocument* _scenario, const Busine
             else if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::Action) {
                 QRegularExpressionMatch match = rxCharacterFinder.match(block.text());
                 while (match.hasMatch()) {
-                    const QString character = match.captured(2).toUpper();
+                    const QString character = TextEditHelper::smartToUpper(match.captured(2));
                     //
                     // Первое появление
                     //

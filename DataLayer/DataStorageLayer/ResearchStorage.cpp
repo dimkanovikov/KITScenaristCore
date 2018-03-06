@@ -5,6 +5,8 @@
 
 #include <Domain/Research.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 using namespace DataStorageLayer;
 using namespace DataMappingLayer;
 
@@ -159,14 +161,14 @@ ResearchTable* ResearchStorage::characters()
 
 Research* ResearchStorage::character(const QString& _name)
 {
-    return research(_name.toUpper());
+    return research(TextEditHelper::smartToUpper(_name));
 }
 
 Research* ResearchStorage::storeCharacter(const QString& _name, int _sortOrder)
 {
     Research* newCharacter = nullptr;
 
-    QString characterName = _name.toUpper().trimmed();
+    QString characterName = TextEditHelper::smartToUpper(_name).trimmed();
 
     //
     // Если персонажа можно сохранить
@@ -205,7 +207,7 @@ Research* ResearchStorage::storeCharacter(const QString& _name, int _sortOrder)
 
 void ResearchStorage::updateCharacter(Research* _character)
 {
-    _character->setName(_character->name().toUpper());
+    _character->setName(TextEditHelper::smartToUpper(_character->name()));
     updateResearch(_character);
 
     //
@@ -235,7 +237,7 @@ bool ResearchStorage::hasCharacter(const QString& _name)
     bool contains = false;
     foreach (DomainObject* domainObject, characters()->toList()) {
         Research* character = dynamic_cast<Research*>(domainObject);
-        if (character->name() == _name.toUpper()) {
+        if (character->name() == TextEditHelper::smartToUpper(_name)) {
             contains = true;
             break;
         }
@@ -253,14 +255,14 @@ ResearchTable* ResearchStorage::locations()
 
 Research* ResearchStorage::location(const QString& _name)
 {
-    return research(_name.toUpper());
+    return research(TextEditHelper::smartToUpper(_name));
 }
 
 Research* ResearchStorage::storeLocation(const QString& _name, int _sortOrder)
 {
     Research* newLocation = nullptr;
 
-    QString locationName = _name.toUpper().trimmed();
+    QString locationName = TextEditHelper::smartToUpper(_name).trimmed();
 
     //
     // Если локацию можно сохранить
@@ -299,7 +301,7 @@ Research* ResearchStorage::storeLocation(const QString& _name, int _sortOrder)
 
 void ResearchStorage::updateLocation(Research* _location)
 {
-    _location->setName(_location->name().toUpper());
+    _location->setName(TextEditHelper::smartToUpper(_location->name()));
     updateResearch(_location);
 
     //
@@ -329,7 +331,7 @@ bool ResearchStorage::hasLocation(const QString& _name)
     bool contains = false;
     foreach (DomainObject* domainObject, locations()->toList()) {
         Research* location = dynamic_cast<Research*>(domainObject);
-        if (location->name() == _name.toUpper()) {
+        if (location->name() == TextEditHelper::smartToUpper(_name)) {
             contains = true;
             break;
         }

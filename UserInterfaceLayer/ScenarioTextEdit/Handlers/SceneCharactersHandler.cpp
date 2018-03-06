@@ -9,6 +9,8 @@
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/ResearchStorage.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 #include <QKeyEvent>
 #include <QRegularExpression>
 #include <QStringListModel>
@@ -205,7 +207,7 @@ void SceneCharactersHandler::complete(const QString& _currentBlockText, const QS
     //
     // ... сформируем список уже введённых персонажей
     //
-    QStringList enteredCharacters = _currentBlockText.toUpper().split(", ");
+    QStringList enteredCharacters = TextEditHelper::smartToUpper(_currentBlockText).split(", ");
     enteredCharacters.removeOne(cursorBackwardTextToComma);
     //
     // ... скорректируем модель
@@ -213,7 +215,7 @@ void SceneCharactersHandler::complete(const QString& _currentBlockText, const QS
     QStringList filteredCharacters;
     for (int row = 0; row < characterModel->rowCount(); ++row) {
         const QString characterName =
-                characterModel->data(characterModel->index(row, 0)).toString().toUpper();
+                TextEditHelper::smartToUpper(characterModel->data(characterModel->index(row, 0)).toString());
         if (!enteredCharacters.contains(characterName)) {
             filteredCharacters.append(characterName);
         }

@@ -505,14 +505,15 @@ QStringList ScenarioDocument::findCharacters() const
         cursor.movePosition(QTextCursor::EndOfBlock);
         if (ScenarioBlockStyle::forBlock(cursor.block()) == ScenarioBlockStyle::Character) {
             cursor.select(QTextCursor::BlockUnderCursor);
-            QString character =
-                    BusinessLogic::CharacterParser::name(cursor.selectedText().toUpper().trimmed());
+            const QString character =
+                    BusinessLogic::CharacterParser::name(TextEditHelper::smartToUpper(cursor.selectedText()).trimmed());
             characters.insert(character);
         } else if (ScenarioBlockStyle::forBlock(cursor.block()) == ScenarioBlockStyle::SceneCharacters) {
             cursor.select(QTextCursor::BlockUnderCursor);
             QStringList blockCharacters = BusinessLogic::SceneCharactersParser::characters(cursor.selectedText());
             foreach (const QString& characterName, blockCharacters) {
-                QString character = BusinessLogic::CharacterParser::name(characterName.toUpper().trimmed());
+                const QString character =
+                        BusinessLogic::CharacterParser::name(TextEditHelper::smartToUpper(characterName).trimmed());
                 characters.insert(character);
             }
         }
@@ -532,8 +533,8 @@ QStringList ScenarioDocument::findLocations() const
     while (!cursor.atEnd()) {
         cursor.movePosition(QTextCursor::EndOfBlock);
         if (ScenarioBlockStyle::forBlock(cursor.block()) == ScenarioBlockStyle::SceneHeading) {
-            QString location =
-                    BusinessLogic::SceneHeadingParser::locationName(cursor.block().text().toUpper().trimmed());
+            const QString location =
+                    BusinessLogic::SceneHeadingParser::locationName(TextEditHelper::smartToUpper(cursor.block().text()).trimmed());
             locations.insert(location);
         }
         cursor.movePosition(QTextCursor::NextBlock);
@@ -1126,7 +1127,7 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
                     ScenarioBlockStyle blockStyle = ScenarioTemplateFacade::getTemplate().blockStyle(blockType);
                     itemText +=
                             blockStyle.charFormat().fontCapitalization() == QFont::AllUppercase
-                            ? cursor.block().text().toUpper()
+                            ? TextEditHelper::smartToUpper(cursor.block().text())
                             : cursor.block().text();
                 }
                 break;

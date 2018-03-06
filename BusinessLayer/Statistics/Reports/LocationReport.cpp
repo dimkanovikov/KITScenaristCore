@@ -5,6 +5,7 @@
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockParsers.h>
 #include <BusinessLayer/Chronometry/ChronometerFacade.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
 
 #include <QApplication>
@@ -50,7 +51,7 @@ QString LocationReport::makeReport(QTextDocument* _scenario,
 			currentData = new ReportData;
 			reportScenesDataList.append(currentData);
 			//
-			currentData->name = block.text().toUpper();
+            currentData->name = TextEditHelper::smartToUpper(block.text());
 			//
 			cursor.setPosition(block.position());
 			currentData->page = edit.cursorPage(cursor);
