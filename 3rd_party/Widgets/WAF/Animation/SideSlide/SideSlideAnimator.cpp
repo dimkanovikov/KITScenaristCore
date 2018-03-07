@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2017 Dimka Novikov, to@dimkanovikov.pro
+ * Copyright (C) 2015-2018 Dimka Novikov, to@dimkanovikov.pro
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -18,6 +18,7 @@
 #include "SideSlideDecorator.h"
 
 #include <QEvent>
+#include <QLocale>
 #include <QPropertyAnimation>
 #include <QWidget>
 
@@ -55,6 +56,14 @@ SideSlideAnimator::SideSlideAnimator(QWidget* _widgetForSlide) :
 
 void SideSlideAnimator::setApplicationSide(WAF::ApplicationSide _side)
 {
+    if (QLocale().textDirection() == Qt::RightToLeft) {
+        if (_side == WAF::LeftSide) {
+            _side = WAF::RightSide;
+        } else if (_side == WAF::RightSide) {
+            _side = WAF::LeftSide;
+        }
+    }
+
     if (m_side != _side) {
         m_side = _side;
     }

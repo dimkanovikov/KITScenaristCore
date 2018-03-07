@@ -113,11 +113,19 @@ namespace {
             //
             // ... отступы
             //
-            blockStyle.append(
-                QString("<w:ind w:left=\"%1\" w:right=\"%2\"/>")
-                .arg(mmToTwips(_style.leftMargin()))
-                .arg(mmToTwips(_style.rightMargin()))
-                );
+            if (QLocale().textDirection() == Qt::LeftToRight) {
+                blockStyle.append(
+                            QString("<w:ind w:left=\"%1\" w:right=\"%2\"/>")
+                            .arg(mmToTwips(_style.leftMargin()))
+                            .arg(mmToTwips(_style.rightMargin()))
+                            );
+            } else {
+                blockStyle.append(
+                            QString("<w:ind w:left=\"%1\" w:right=\"%2\"/>")
+                            .arg(mmToTwips(_style.rightMargin()))
+                            .arg(mmToTwips(_style.leftMargin()))
+                    );
+            }
             //
             // ... интервалы
             //
