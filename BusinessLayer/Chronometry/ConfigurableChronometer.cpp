@@ -18,7 +18,7 @@ QString ConfigurableChronometer::name() const
     return "configurable-chronometer";
 }
 
-float ConfigurableChronometer::calculateFrom(const QTextBlock& _block, int _from, int _length) const
+qreal ConfigurableChronometer::calculateFrom(const QTextBlock& _block, int _from, int _length) const
 {
     Q_UNUSED(_from);
 
@@ -33,8 +33,8 @@ float ConfigurableChronometer::calculateFrom(const QTextBlock& _block, int _from
     //
     // Длительность зависит от блока
     //
-    float secondsForParagraph = 0;
-    float secondsForEvery50 = 0;
+    qreal secondsForParagraph = 0;
+    qreal secondsForEvery50 = 0;
     QString secondsForParagraphKey;
     QString secondsForEvery50Key;
 
@@ -57,16 +57,16 @@ float ConfigurableChronometer::calculateFrom(const QTextBlock& _block, int _from
             StorageFacade::settingsStorage()->value(
                 secondsForParagraphKey,
                 SettingsStorage::ApplicationSettings)
-            .toFloat();
+            .toDouble();
 
     secondsForEvery50 =
             StorageFacade::settingsStorage()->value(
                 secondsForEvery50Key,
                 SettingsStorage::ApplicationSettings)
-            .toFloat();
+            .toDouble();
 
     const int every50 = 50;
-    const float secondsPerCharacter = secondsForEvery50 / every50;
-    const float textChron = secondsForParagraph + _length * secondsPerCharacter;
+    const qreal secondsPerCharacter = secondsForEvery50 / every50;
+    const qreal textChron = secondsForParagraph + _length * secondsPerCharacter;
     return textChron;
 }

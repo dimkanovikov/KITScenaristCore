@@ -18,7 +18,7 @@ QString CharactersChronometer::name() const
     return "characters-chronometer";
 }
 
-float CharactersChronometer::calculateFrom(const QTextBlock& _block, int _from, int _length) const
+qreal CharactersChronometer::calculateFrom(const QTextBlock& _block, int _from, int _length) const
 {
     //
     // Не включаем в хронометраж непечатный текст, заголовок и окончание папки, а также описание сцены
@@ -34,12 +34,12 @@ float CharactersChronometer::calculateFrom(const QTextBlock& _block, int _from, 
     //
     // Рассчитаем длительность одного символа
     //
-    const int characters =
+    const qreal characters =
             StorageFacade::settingsStorage()->value(
                 "chronometry/characters/characters",
                 SettingsStorage::ApplicationSettings)
             .toInt();
-    const int seconds =
+    const qreal seconds =
             StorageFacade::settingsStorage()->value(
                 "chronometry/characters/seconds",
                 SettingsStorage::ApplicationSettings)
@@ -49,7 +49,7 @@ float CharactersChronometer::calculateFrom(const QTextBlock& _block, int _from, 
                 "chronometry/characters/consider-spaces",
                 SettingsStorage::ApplicationSettings)
             .toInt();
-    const float characterChron = (float)seconds / (float)characters;
+    const qreal characterChron = seconds / characters;
 
     //
     // Рассчитаем длительность текста
@@ -60,6 +60,6 @@ float CharactersChronometer::calculateFrom(const QTextBlock& _block, int _from, 
         textForChron = textForChron.remove(" ");
     }
 
-    const float textChron = textForChron.length() * characterChron;
+    const qreal textChron = textForChron.length() * characterChron;
     return textChron;
 }

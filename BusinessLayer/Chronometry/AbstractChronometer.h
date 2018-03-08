@@ -24,7 +24,7 @@ namespace BusinessLogic
         /**
          * @brief Подсчитать длительность заданного текста определённого типа
          */
-        virtual float calculateFrom(const QTextBlock& _block, int _from, int _length) const = 0;
+        virtual qreal calculateFrom(const QTextBlock& _block, int _from, int _length) const = 0;
     };
 }
 
