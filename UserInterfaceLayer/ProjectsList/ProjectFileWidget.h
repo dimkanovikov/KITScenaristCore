@@ -2,6 +2,7 @@
 #define RECENTFILEWIDGET_H
 
 #include <QFrame>
+#include <QTimer>
 
 class QLabel;
 class ElidedLabel;
@@ -143,6 +144,11 @@ namespace UserInterface
          * @note Используется для определения в какой момент испускать сигнал о клике
          */
         quint64 m_clickedAt = 0;
+
+        /**
+         * @brief Таймер по которому будет отправлен сигнал о щелчке
+         */
+        QTimer m_clickEmitter;
     };
 }
 

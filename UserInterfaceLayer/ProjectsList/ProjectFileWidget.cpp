@@ -127,7 +127,7 @@ void ProjectFileWidget::mouseReleaseEvent(QMouseEvent* _event)
     //
     if (rect().contains(_event->pos())) {
         const int delay = qMax(m_clickedAt + 400 - QDateTime::currentMSecsSinceEpoch(), quint64(0));
-        QTimer::singleShot(delay, this, &ProjectFileWidget::clicked);
+        m_clickEmitter.start(delay);
     }
     QWidget::mouseReleaseEvent(_event);
 }
@@ -176,10 +176,13 @@ void ProjectFileWidget::initView()
 #endif
 
     m_ui->users->hide();
+
+    m_clickEmitter.setSingleShot(true);
 }
 
 void ProjectFileWidget::initConnections()
 {
+    connect(&m_clickEmitter, &QTimer::timeout, this, &ProjectFileWidget::clicked);
     connect(m_ui->change, &FlatButton::clicked, this, &ProjectFileWidget::editClicked);
     connect(m_ui->remove, &FlatButton::clicked, this, &ProjectFileWidget::removeClicked);
     connect(m_ui->hide, &FlatButton::clicked, this, &ProjectFileWidget::hideClicked);

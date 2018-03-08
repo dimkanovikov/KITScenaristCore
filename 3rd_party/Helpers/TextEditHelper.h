@@ -265,15 +265,9 @@ namespace TextEditHelper
         return result;
     }
     inline static QChar smartToUpper(const QChar& _char) {
-#ifdef Q_OS_MAC
         if (_char == QString("ß")[0]) {
             return QString("ẞ")[0];
         }
-#else
-        if (_char == 'ß') {
-            return 'ẞ';
-        }
-#endif
 
         return _char.toUpper();
     }
