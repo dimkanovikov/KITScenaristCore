@@ -2,6 +2,42 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="pt_PT">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <source>About the app</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KIT Scenarist</source>
+        <translation type="unfinished">KIT Scenarist</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Deutsch: Michael Krämer
+English: Dimka Novikov
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Қазақ: Алпамыс Баткалов
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Українська мова: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AcceptebleLineEdit</name>
     <message>
         <source>Text</source>
@@ -131,11 +167,11 @@
     <name>BusinessLogic::AbstractImporter</name>
     <message>
         <source>All Supported Files</source>
-        <translation>Todos os arquivos suportados</translation>
+        <translation type="vanished">Todos os arquivos suportados</translation>
     </message>
     <message>
         <source>KIT Scenarist Project</source>
-        <translation>Projeto KIT Scenarist</translation>
+        <translation type="vanished">Projeto KIT Scenarist</translation>
     </message>
     <message>
         <source>Final Draft screenplay</source>
@@ -151,7 +187,7 @@
     </message>
     <message>
         <source>OpenDocument Text</source>
-        <translation>Texto OpenDocument</translation>
+        <translation type="vanished">Texto OpenDocument</translation>
     </message>
     <message>
         <source>Final Draft template</source>
@@ -159,7 +195,27 @@
     </message>
     <message>
         <source>Fountain Text</source>
-        <translation>Texto de Fountain</translation>
+        <translation type="vanished">Texto de Fountain</translation>
+    </message>
+    <message>
+        <source>All supported files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KIT Scenarist project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OpenDocument text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fountain text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Celtx project</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1634,6 +1690,30 @@ O projeto não foi sincronizado.</translation>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation type="unfinished">Arquivos &lt;b&gt;DOC&lt;/b&gt; da Microsoft não são suportados. Você precisa salvá-lo no arquivo &lt;b&gt;DOCX &lt;/b&gt; e reimportar.</translation>
     </message>
+    <message>
+        <source>Moving project to the cloud failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For moving projects to the cloud you should be logged in the KIT Scenaist cloud service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saved password is incorrect. Look like you changed the password. Please, enter the new password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation type="unfinished">Importar</translation>
+    </message>
+    <message>
+        <source>Please wait. Import can take few minutes.</source>
+        <translation type="unfinished">Por favor, espere. A importação pode demorar alguns minutos.</translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -1715,6 +1795,17 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Please choose existing file and retry import.</source>
         <translation>Por favor selecione um arquivo existente e importe novamente.</translation>
+    </message>
+</context>
+<context>
+    <name>ManagementLayer::MenuManager</name>
+    <message>
+        <source>Password successfully changed</source>
+        <translation type="unfinished">Senha alterada com sucesso</translation>
+    </message>
+    <message>
+        <source>Can not change password</source>
+        <translation type="unfinished">Não é possível alterar a senha</translation>
     </message>
 </context>
 <context>
@@ -1890,11 +1981,11 @@ O projeto não foi sincronizado.</translation>
     <name>ManagementLayer::StartUpManager</name>
     <message>
         <source>Password successfully changed</source>
-        <translation>Senha alterada com sucesso</translation>
+        <translation type="vanished">Senha alterada com sucesso</translation>
     </message>
     <message>
         <source>Can not change password</source>
-        <translation>Não é possível alterar a senha</translation>
+        <translation type="vanished">Não é possível alterar a senha</translation>
     </message>
     <message>
         <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
@@ -1988,11 +2079,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>0.0.0</source>
-        <translation type="unfinished">0,0,0</translation>
-    </message>
-    <message>
-        <source> - </source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">0,0,0</translation>
     </message>
     <message>
         <source>About the app</source>
@@ -2001,6 +2088,42 @@ Você pode tentar recarregar a atualização.</translation>
     <message>
         <source>KIT Scenarist</source>
         <translation type="unfinished">KIT Scenarist</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <source>User name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account is active until:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>22.02.2017</source>
+        <translation type="unfinished">22.02.2017</translation>
+    </message>
+    <message>
+        <source>UserName</source>
+        <translation type="unfinished">Nome de usuário</translation>
+    </message>
+    <message>
+        <source>Used 0 Gb from 0 Gb</source>
+        <translation type="unfinished">0 Gb usados de 0 Gb</translation>
+    </message>
+    <message>
+        <source>Renew subscription</source>
+        <translation type="unfinished">Renovar assinatura</translation>
+    </message>
+    <message>
+        <source>Change Password</source>
+        <translation type="unfinished">Mudar senha</translation>
+    </message>
+    <message>
+        <source>Quit from cabinet</source>
+        <translation type="unfinished">Sair do armário</translation>
     </message>
 </context>
 <context>
@@ -2324,6 +2447,10 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     <message>
         <source>Show cowriters</source>
         <translation>Mostrar co-autores</translation>
+    </message>
+    <message>
+        <source>Move project to the cloud</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3313,31 +3440,31 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     </message>
     <message>
         <source>22.02.2017</source>
-        <translation>22.02.2017</translation>
+        <translation type="vanished">22.02.2017</translation>
     </message>
     <message>
         <source>Account is active until:</source>
-        <translation>A conta está ativa até:</translation>
+        <translation type="vanished">A conta está ativa até:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>UserName</source>
-        <translation>Nome de usuário</translation>
+        <translation type="vanished">Nome de usuário</translation>
     </message>
     <message>
         <source>Renew subscription</source>
-        <translation>Renovar assinatura</translation>
+        <translation type="vanished">Renovar assinatura</translation>
     </message>
     <message>
         <source>Change Password</source>
-        <translation>Mudar senha</translation>
+        <translation type="vanished">Mudar senha</translation>
     </message>
     <message>
         <source>Quit from cabinet</source>
-        <translation>Sair do armário</translation>
+        <translation type="vanished">Sair do armário</translation>
     </message>
     <message>
         <source>Help</source>
@@ -3345,11 +3472,11 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Create Project</source>
@@ -3369,7 +3496,7 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     </message>
     <message>
         <source>Used 0 Gb from 0 Gb</source>
-        <translation>0 Gb usados de 0 Gb</translation>
+        <translation type="vanished">0 Gb usados de 0 Gb</translation>
     </message>
 </context>
 <context>
@@ -3828,6 +3955,13 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
 </context>
 <context>
+    <name>UserInterface::AboutDialog</name>
+    <message>
+        <source>version</source>
+        <translation type="unfinished">versão</translation>
+    </message>
+</context>
+<context>
     <name>UserInterface::AddProjectDialog</name>
     <message>
         <source>Create</source>
@@ -3934,6 +4068,29 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Email is empty</source>
         <translation>Email vazio</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::MenuView</name>
+    <message>
+        <source>Connect</source>
+        <translation type="unfinished">Conectar</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
+        <translation type="unfinished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Account is active until:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account is inactive</source>
+        <translation type="unfinished">Conta Inativa</translation>
+    </message>
+    <message>
+        <source>Used %1 Gb from %2 Gb</source>
+        <translation type="unfinished">%1 Gb usados de %2 Gb</translation>
     </message>
 </context>
 <context>
@@ -4504,23 +4661,23 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     <name>UserInterface::StartUpView</name>
     <message>
         <source>Account is active until:</source>
-        <translation>Conta ativa até:</translation>
+        <translation type="vanished">Conta ativa até:</translation>
     </message>
     <message>
         <source>Account is inactive</source>
-        <translation>Conta Inativa</translation>
+        <translation type="vanished">Conta Inativa</translation>
     </message>
     <message>
         <source>Connect</source>
-        <translation>Conectar</translation>
+        <translation type="vanished">Conectar</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation>%1 Gb usados de %2 Gb</translation>
+        <translation type="vanished">%1 Gb usados de %2 Gb</translation>
     </message>
 </context>
 <context>

@@ -2,6 +2,42 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="uk">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <source>About the app</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KIT Scenarist</source>
+        <translation type="unfinished">КІТ Сценарист</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Deutsch: Michael Krämer
+English: Dimka Novikov
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Қазақ: Алпамыс Баткалов
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Українська мова: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AcceptebleLineEdit</name>
     <message>
         <source>Text</source>
@@ -131,11 +167,11 @@
     <name>BusinessLogic::AbstractImporter</name>
     <message>
         <source>All Supported Files</source>
-        <translation>Всі підтримувані файли</translation>
+        <translation type="vanished">Всі підтримувані файли</translation>
     </message>
     <message>
         <source>KIT Scenarist Project</source>
-        <translation>Файл проекту сценарію KIT Scenarist</translation>
+        <translation type="vanished">Файл проекту сценарію KIT Scenarist</translation>
     </message>
     <message>
         <source>Final Draft screenplay</source>
@@ -151,7 +187,7 @@
     </message>
     <message>
         <source>OpenDocument Text</source>
-        <translation>OpenDocument Text</translation>
+        <translation type="vanished">OpenDocument Text</translation>
     </message>
     <message>
         <source>Final Draft template</source>
@@ -159,7 +195,27 @@
     </message>
     <message>
         <source>Fountain Text</source>
-        <translation>Fountain Text</translation>
+        <translation type="vanished">Fountain Text</translation>
+    </message>
+    <message>
+        <source>All supported files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KIT Scenarist project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OpenDocument text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fountain text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Celtx project</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1626,6 +1682,30 @@ Project didn&apos;t synchronized.</source>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation type="unfinished">Microsoft &lt;b&gt;DOC&lt;/b&gt; файли не підтримуються.. Вам треба зберегти їх в &lt;b&gt;DOCX&lt;/b&gt; файл і повторити імпорт.</translation>
     </message>
+    <message>
+        <source>Moving project to the cloud failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For moving projects to the cloud you should be logged in the KIT Scenaist cloud service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saved password is incorrect. Look like you changed the password. Please, enter the new password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation type="unfinished">Імпорт</translation>
+    </message>
+    <message>
+        <source>Please wait. Import can take few minutes.</source>
+        <translation type="unfinished">Будь-ласка, зачекайте. Імпорт може тривати декілька хвилин.</translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -1707,6 +1787,17 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>Please choose existing file and retry import.</source>
         <translation>Будь ласка, виберіть існуючий файл і повторіть спробу імпорту.</translation>
+    </message>
+</context>
+<context>
+    <name>ManagementLayer::MenuManager</name>
+    <message>
+        <source>Password successfully changed</source>
+        <translation type="unfinished">Пароль успішно змінено</translation>
+    </message>
+    <message>
+        <source>Can not change password</source>
+        <translation type="unfinished">Неможливо змінити пароль</translation>
     </message>
 </context>
 <context>
@@ -1882,11 +1973,11 @@ Project didn&apos;t synchronized.</source>
     <name>ManagementLayer::StartUpManager</name>
     <message>
         <source>Password successfully changed</source>
-        <translation>Пароль успішно змінено</translation>
+        <translation type="vanished">Пароль успішно змінено</translation>
     </message>
     <message>
         <source>Can not change password</source>
-        <translation>Неможливо змінити пароль</translation>
+        <translation type="vanished">Неможливо змінити пароль</translation>
     </message>
     <message>
         <source>Can&apos;t install update. There are some problems with downloaded file.
@@ -1980,11 +2071,7 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>0.0.0</source>
-        <translation type="unfinished">0.0.0</translation>
-    </message>
-    <message>
-        <source> - </source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">0.0.0</translation>
     </message>
     <message>
         <source>About the app</source>
@@ -1993,6 +2080,42 @@ You can try to reload update.</source>
     <message>
         <source>KIT Scenarist</source>
         <translation type="unfinished">КІТ Сценарист</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <source>User name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account is active until:</source>
+        <translation type="unfinished">Акаунт активний до:</translation>
+    </message>
+    <message>
+        <source>22.02.2017</source>
+        <translation type="unfinished">22.02.2017</translation>
+    </message>
+    <message>
+        <source>UserName</source>
+        <translation type="unfinished">Ім&apos;я користувача</translation>
+    </message>
+    <message>
+        <source>Used 0 Gb from 0 Gb</source>
+        <translation type="unfinished">Використано 0 Гб з 0 Гб</translation>
+    </message>
+    <message>
+        <source>Renew subscription</source>
+        <translation type="unfinished">Поновити підписку</translation>
+    </message>
+    <message>
+        <source>Change Password</source>
+        <translation type="unfinished">Змінити пароль</translation>
+    </message>
+    <message>
+        <source>Quit from cabinet</source>
+        <translation type="unfinished">Вийти з кабінету</translation>
     </message>
 </context>
 <context>
@@ -2316,6 +2439,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <source>Show cowriters</source>
         <translation>Показати співавторів</translation>
+    </message>
+    <message>
+        <source>Move project to the cloud</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3316,7 +3443,7 @@ Paragraph</source>
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Projects from local computer</source>
@@ -3332,39 +3459,39 @@ Paragraph</source>
     </message>
     <message>
         <source>22.02.2017</source>
-        <translation>22.02.2017</translation>
+        <translation type="vanished">22.02.2017</translation>
     </message>
     <message>
         <source>Account is active until:</source>
-        <translation>Акаунт активний до:</translation>
+        <translation type="vanished">Акаунт активний до:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>UserName</source>
-        <translation>Ім&apos;я користувача</translation>
+        <translation type="vanished">Ім&apos;я користувача</translation>
     </message>
     <message>
         <source>Renew subscription</source>
-        <translation>Поновити підписку</translation>
+        <translation type="vanished">Поновити підписку</translation>
     </message>
     <message>
         <source>Change Password</source>
-        <translation>Змінити пароль</translation>
+        <translation type="vanished">Змінити пароль</translation>
     </message>
     <message>
         <source>Quit from cabinet</source>
-        <translation>Вийти з кабінету</translation>
+        <translation type="vanished">Вийти з кабінету</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Used 0 Gb from 0 Gb</source>
-        <translation>Використано 0 Гб з 0 Гб</translation>
+        <translation type="vanished">Використано 0 Гб з 0 Гб</translation>
     </message>
 </context>
 <context>
@@ -3822,6 +3949,13 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
 </context>
 <context>
+    <name>UserInterface::AboutDialog</name>
+    <message>
+        <source>version</source>
+        <translation type="unfinished">версія</translation>
+    </message>
+</context>
+<context>
     <name>UserInterface::AddProjectDialog</name>
     <message>
         <source>Create</source>
@@ -3928,6 +4062,29 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Email is empty</source>
         <translation>Електронна пошта порожня</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::MenuView</name>
+    <message>
+        <source>Connect</source>
+        <translation type="unfinished">З&apos;єднатись</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
+        <translation type="unfinished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Account is active until:</source>
+        <translation type="unfinished">Акаунт активний до:</translation>
+    </message>
+    <message>
+        <source>Account is inactive</source>
+        <translation type="unfinished">Акаунт не активний</translation>
+    </message>
+    <message>
+        <source>Used %1 Gb from %2 Gb</source>
+        <translation type="unfinished">Використано %1 Гб з %2 Гб</translation>
     </message>
 </context>
 <context>
@@ -4498,23 +4655,23 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <name>UserInterface::StartUpView</name>
     <message>
         <source>Account is active until:</source>
-        <translation>Акаунт активний до:</translation>
+        <translation type="vanished">Акаунт активний до:</translation>
     </message>
     <message>
         <source>Account is inactive</source>
-        <translation>Акаунт не активний</translation>
+        <translation type="vanished">Акаунт не активний</translation>
     </message>
     <message>
         <source>Connect</source>
-        <translation>З&apos;єднатись</translation>
+        <translation type="vanished">З&apos;єднатись</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation>Використано %1 Гб з %2 Гб</translation>
+        <translation type="vanished">Використано %1 Гб з %2 Гб</translation>
     </message>
 </context>
 <context>
