@@ -922,10 +922,11 @@ void SynchronizationManager::aboutFullSyncScenario()
 {
     if (isCanSync()) {
         //
-        // Запоминаем время синхронизации изменений сценария, в дальнейшем будем отправлять
-        // изменения произведённые с данного момента
+        // Запоминаем время синхронизации изменений сценария
+        // Если синхронизировать данные удастся, то будем использовать это время для отправки
+        // изменений произведённых с этого момента
         //
-        m_lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
+        const QString lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
         //
         // Получить список патчей проекта
@@ -1055,6 +1056,11 @@ void SynchronizationManager::aboutFullSyncScenario()
             //
             DataStorageLayer::StorageFacade::scenarioChangeStorage()->store();
         }
+
+        //
+        // Синхронизация удалась, запомним её время
+        //
+        m_lastChangesSyncDatetime = lastChangesSyncDatetime;
     }
 }
 
@@ -1198,10 +1204,11 @@ void SynchronizationManager::aboutFullSyncData()
 {
     if (isCanSync()) {
         //
-        // Запоминаем время синхронизации данных, в дальнейшем будем отправлять изменения
-        // произведённые с данного момента
+        // Запоминаем время синхронизации изменений сценария
+        // Если синхронизировать данные удастся, то будем использовать это время для отправки
+        // изменений произведённых с этого момента
         //
-        m_lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
+        const QString lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
         //
         // Получить список всех изменений данных на сервере
@@ -1280,6 +1287,11 @@ void SynchronizationManager::aboutFullSyncData()
             //
             downloadAndSaveScenarioData(changesForDownloadAndSave.join(";"));
         }
+
+        //
+        // Синхронизация удалась, запомним её время
+        //
+        m_lastDataSyncDatetime = lastDataSyncDatetime;
     }
 }
 
