@@ -5,19 +5,19 @@
     <name>AboutDialog</name>
     <message>
         <source>About the app</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre o aplicativo</translation>
     </message>
     <message>
         <source>KIT Scenarist</source>
-        <translation type="unfinished">KIT Scenarist</translation>
+        <translation></translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Editor de roteiros simples e poderoso desenvolvido por &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Esse software é distribuído com a licença &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; código da fonte disponível em &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Our heroes, who help us to create international versions:
@@ -34,7 +34,19 @@ Português: Ricardo Graça, Ronaldo German
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Nossos heróis, que nos ajudaram a criar as versões internacionais:
+Deutsch: Michael Krämer
+English: Dimka Novikov
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Қазақ: Алпамыс Баткалов
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Українська мова: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin</translation>
     </message>
 </context>
 <context>
@@ -199,23 +211,23 @@ Português: Ricardo Graça, Ronaldo German
     </message>
     <message>
         <source>All supported files</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos os arquivos suportados</translation>
     </message>
     <message>
         <source>KIT Scenarist project</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeto KIT Scenarist</translation>
     </message>
     <message>
         <source>OpenDocument text</source>
-        <translation type="unfinished"></translation>
+        <translation>Texto OpenDocument</translation>
     </message>
     <message>
         <source>Fountain text</source>
-        <translation type="unfinished"></translation>
+        <translation>Texto de Fountain</translation>
     </message>
     <message>
         <source>Celtx project</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeto Celtx</translation>
     </message>
 </context>
 <context>
@@ -1108,7 +1120,7 @@ Português: Ricardo Graça, Ronaldo German
     <name>FountainImporter</name>
     <message>
         <source>END OF </source>
-        <translation type="unfinished"></translation>
+        <translation>FIM DE </translation>
     </message>
 </context>
 <context>
@@ -1306,7 +1318,7 @@ Português: Ricardo Graça, Ronaldo German
     </message>
     <message>
         <source>Polski</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1684,35 +1696,35 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>File format not supported</source>
-        <translation type="unfinished">Formato de arquivo não suportado</translation>
+        <translation>Formato de arquivo não suportado</translation>
     </message>
     <message>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation type="unfinished">Arquivos &lt;b&gt;DOC&lt;/b&gt; da Microsoft não são suportados. Você precisa salvá-lo no arquivo &lt;b&gt;DOCX &lt;/b&gt; e reimportar.</translation>
+        <translation>Arquivos &lt;b&gt;DOC&lt;/b&gt; da Microsoft não são suportados. Você precisa salvá-lo no arquivo &lt;b&gt;DOCX &lt;/b&gt; e reimportar.</translation>
     </message>
     <message>
         <source>Moving project to the cloud failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha ao mover o projeto para a nuvem</translation>
     </message>
     <message>
         <source>For moving projects to the cloud you should be logged in the KIT Scenaist cloud service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para mover projetos para a nuvem você deve estar logado no serviço da nuvem do KIT Scenaist.</translation>
     </message>
     <message>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para mover projetos para a nuvem sua assinatura no serviço da nuvem do KIT Scenarist precisa estar ativa.</translation>
     </message>
     <message>
         <source>Saved password is incorrect. Look like you changed the password. Please, enter the new password.</source>
-        <translation type="unfinished"></translation>
+        <translation>A senha salva está incorreta. Parece que você alterou a senha. Por favor entre com a nova senha.</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished">Importar</translation>
+        <translation>Importar</translation>
     </message>
     <message>
         <source>Please wait. Import can take few minutes.</source>
-        <translation type="unfinished">Por favor, espere. A importação pode demorar alguns minutos.</translation>
+        <translation>Por favor, espere. A importação pode demorar alguns minutos.</translation>
     </message>
 </context>
 <context>
@@ -1801,11 +1813,11 @@ O projeto não foi sincronizado.</translation>
     <name>ManagementLayer::MenuManager</name>
     <message>
         <source>Password successfully changed</source>
-        <translation type="unfinished">Senha alterada com sucesso</translation>
+        <translation>Senha alterada com sucesso</translation>
     </message>
     <message>
         <source>Can not change password</source>
-        <translation type="unfinished">Não é possível alterar a senha</translation>
+        <translation>Não é possível alterar a senha</translation>
     </message>
 </context>
 <context>
@@ -2031,51 +2043,51 @@ Você pode tentar recarregar a atualização.</translation>
     <name>MenuView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation type="unfinished">Login</translation>
+        <translation>Logue</translation>
     </message>
     <message>
         <source>Log in to get access to the cloud service</source>
-        <translation type="unfinished"></translation>
+        <translation>Logue-se para ter acesso ao serviço de nuvem</translation>
     </message>
     <message>
         <source>Create new project</source>
-        <translation type="unfinished"></translation>
+        <translation>Criar projeto</translation>
     </message>
     <message>
         <source>Open project</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeto aberto</translation>
     </message>
     <message>
         <source>Save current project</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar projeto atual</translation>
     </message>
     <message>
         <source>How to use the application</source>
-        <translation type="unfinished"></translation>
+        <translation>Como usar o aplicativo</translation>
     </message>
     <message>
         <source>Save current project as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvar projeto atual como...</translation>
     </message>
     <message>
         <source>Import...</source>
-        <translation type="unfinished">Importar...</translation>
+        <translation>Importar...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar...</translation>
     </message>
     <message>
         <source>Print preview</source>
-        <translation type="unfinished">Pré-visualização de impressão</translation>
+        <translation>Pré-visualização de impressão</translation>
     </message>
     <message>
         <source>version</source>
-        <translation type="unfinished">versão</translation>
+        <translation>versão</translation>
     </message>
     <message>
         <source>0.0.0</source>
@@ -2083,47 +2095,47 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>About the app</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre o aplicativo</translation>
     </message>
     <message>
         <source>KIT Scenarist</source>
-        <translation type="unfinished">KIT Scenarist</translation>
+        <translation></translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>User name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do usuário:</translation>
     </message>
     <message>
         <source>Account is active until:</source>
-        <translation type="unfinished"></translation>
+        <translation>A conta está ativa até:</translation>
     </message>
     <message>
         <source>22.02.2017</source>
-        <translation type="unfinished">22.02.2017</translation>
+        <translation>22.02.2017</translation>
     </message>
     <message>
         <source>UserName</source>
-        <translation type="unfinished">Nome de usuário</translation>
+        <translation>Nome de usuário</translation>
     </message>
     <message>
         <source>Used 0 Gb from 0 Gb</source>
-        <translation type="unfinished">0 Gb usados de 0 Gb</translation>
+        <translation>0 Gb usados de 0 Gb</translation>
     </message>
     <message>
         <source>Renew subscription</source>
-        <translation type="unfinished">Renovar assinatura</translation>
+        <translation>Renovar assinatura</translation>
     </message>
     <message>
         <source>Change Password</source>
-        <translation type="unfinished">Mudar senha</translation>
+        <translation>Mudar senha</translation>
     </message>
     <message>
         <source>Quit from cabinet</source>
-        <translation type="unfinished">Sair do armário</translation>
+        <translation>Sair do armário</translation>
     </message>
 </context>
 <context>
@@ -2361,7 +2373,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Polski</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2450,7 +2462,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Move project to the cloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover projeto para a nuvem</translation>
     </message>
 </context>
 <context>
@@ -2566,7 +2578,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>PayPal</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3958,7 +3970,7 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <name>UserInterface::AboutDialog</name>
     <message>
         <source>version</source>
-        <translation type="unfinished">versão</translation>
+        <translation>versão</translation>
     </message>
 </context>
 <context>
@@ -4074,23 +4086,23 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <name>UserInterface::MenuView</name>
     <message>
         <source>Connect</source>
-        <translation type="unfinished">Conectar</translation>
+        <translation>Conectar</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Logue&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Account is active until:</source>
-        <translation type="unfinished"></translation>
+        <translation>A conta está ativa até:</translation>
     </message>
     <message>
         <source>Account is inactive</source>
-        <translation type="unfinished">Conta Inativa</translation>
+        <translation>Conta Inativa</translation>
     </message>
     <message>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation type="unfinished">%1 Gb usados de %2 Gb</translation>
+        <translation>%1 Gb usados de %2 Gb</translation>
     </message>
 </context>
 <context>
