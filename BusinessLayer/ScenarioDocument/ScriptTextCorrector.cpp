@@ -12,6 +12,7 @@
 #include <QTextBlock>
 #include <QTextDocument>
 
+using BusinessLogic::CharacterBlockInfo;
 using BusinessLogic::CharacterParser;
 using BusinessLogic::ScenarioBlockStyle;
 using BusinessLogic::ScenarioTemplateFacade;
@@ -1309,9 +1310,14 @@ void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _s
         //
         // Сохраним данные блока, чтобы перенести их к реальному владельцу
         //
-        SceneHeadingBlockInfo* blockInfo = nullptr;
+        SceneHeadingBlockInfo* sceneBlockInfo = nullptr;
         if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(_cursor.block().userData())) {
-            blockInfo = info->clone();
+            sceneBlockInfo = info->clone();
+            _cursor.block().setUserData(nullptr);
+        }
+        CharacterBlockInfo* characterBlockInfo = nullptr;
+        if (CharacterBlockInfo* info = dynamic_cast<CharacterBlockInfo*>(_cursor.block().userData())) {
+            characterBlockInfo = info->clone();
             _cursor.block().setUserData(nullptr);
         }
         //
@@ -1323,8 +1329,11 @@ void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _s
         // Переведём курсор на блок после декорации
         //
         _cursor.movePosition(QTextCursor::NextBlock);
-        if (blockInfo != nullptr) {
-            _cursor.block().setUserData(blockInfo);
+        if (sceneBlockInfo != nullptr) {
+            _cursor.block().setUserData(sceneBlockInfo);
+        }
+        if (characterBlockInfo != nullptr) {
+            _cursor.block().setUserData(characterBlockInfo);
         }
     }
 }
