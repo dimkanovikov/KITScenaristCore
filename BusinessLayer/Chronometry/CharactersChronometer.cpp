@@ -3,6 +3,8 @@
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
+#include <QTextBlock>
+
 using namespace DataStorageLayer;
 using namespace BusinessLogic;
 
@@ -13,55 +15,51 @@ CharactersChronometer::CharactersChronometer()
 
 QString CharactersChronometer::name() const
 {
-	return "characters-chronometer";
+    return "characters-chronometer";
 }
 
-float CharactersChronometer::calculateFrom(BusinessLogic::ScenarioBlockStyle::Type _type, const QString& _text) const
+float CharactersChronometer::calculateFrom(const QTextBlock& _block, int _from, int _length) const
 {
-	//
-	// Не включаем в хронометраж непечатный текст, заголовок и окончание папки, а также описание сцены
-	//
-	if (_type == ScenarioBlockStyle::NoprintableText
-		|| _type == ScenarioBlockStyle::FolderHeader
-		|| _type == ScenarioBlockStyle::FolderFooter
-		|| _type == ScenarioBlockStyle::SceneDescription) {
-		return 0;
-	}
+    //
+    // Не включаем в хронометраж непечатный текст, заголовок и окончание папки, а также описание сцены
+    //
+    const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(_block);
+    if (blockType == ScenarioBlockStyle::NoprintableText
+        || blockType == ScenarioBlockStyle::FolderHeader
+        || blockType == ScenarioBlockStyle::FolderFooter
+        || blockType == ScenarioBlockStyle::SceneDescription) {
+        return 0;
+    }
 
-	static const QString CHARACTERS_KEY = "chronometry/characters/characters";
-	static const QString SECONDS_KEY = "chronometry/characters/seconds";
-	static const QString CONSIDER_SPACES_KEY = "chronometry/characters/consider-spaces";
+    //
+    // Рассчитаем длительность одного символа
+    //
+    const int characters =
+            StorageFacade::settingsStorage()->value(
+                "chronometry/characters/characters",
+                SettingsStorage::ApplicationSettings)
+            .toInt();
+    const int seconds =
+            StorageFacade::settingsStorage()->value(
+                "chronometry/characters/seconds",
+                SettingsStorage::ApplicationSettings)
+            .toInt();
+    const bool considerSpaces =
+            StorageFacade::settingsStorage()->value(
+                "chronometry/characters/consider-spaces",
+                SettingsStorage::ApplicationSettings)
+            .toInt();
+    const float characterChron = (float)seconds / (float)characters;
 
-	//
-	// Рассчитаем длительность одного символа
-	//
-	int characters =
-			StorageFacade::settingsStorage()->value(
-				CHARACTERS_KEY,
-				SettingsStorage::ApplicationSettings)
-			.toInt();
-	int seconds =
-			StorageFacade::settingsStorage()->value(
-				SECONDS_KEY,
-				SettingsStorage::ApplicationSettings)
-			.toInt();
-	bool considerSpaces =
-			StorageFacade::settingsStorage()->value(
-				CONSIDER_SPACES_KEY,
-				SettingsStorage::ApplicationSettings)
-			.toInt();
+    //
+    // Рассчитаем длительность текста
+    //
+    QString textForChron = _block.text().mid(_from, _length);
+    textForChron = textForChron.remove("\n").simplified();
+    if (!considerSpaces) {
+        textForChron = textForChron.remove(" ");
+    }
 
-	const float CHARACTER_CHRON = (float)seconds / (float)characters;
-
-	//
-	// Рассчитаем длительность текста
-	//
-	QString textForChron = _text;
-	textForChron = textForChron.remove("\n").simplified();
-	if (!considerSpaces) {
-		textForChron = textForChron.remove(" ");
-	}
-	float textChron = textForChron.length() * CHARACTER_CHRON;
-
-	return textChron;
+    const float textChron = textForChron.length() * characterChron;
+    return textChron;
 }

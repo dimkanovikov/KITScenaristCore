@@ -6,25 +6,24 @@
 
 namespace BusinessLogic
 {
-	/**
-	 * @brief Расчёт хронометража по количеству символов
-	 */
-	class CharactersChronometer : public AbstractChronometer
-	{
-	public:
-		CharactersChronometer();
+    /**
+     * @brief Расчёт хронометража по количеству символов
+     */
+    class CharactersChronometer : public AbstractChronometer
+    {
+    public:
+        CharactersChronometer();
 
-		/**
-		 * @brief Наименование хронометра
-		 */
-		QString name() const;
+        /**
+         * @brief Наименование хронометра
+         */
+        QString name() const;
 
-		/**
-		 * @brief Подсчитать длительность заданного текста определённого типа
-		 */
-		float calculateFrom(
-				BusinessLogic::ScenarioBlockStyle::Type _type, const QString &_text) const;
-	};
+        /**
+         * @brief Подсчитать длительность заданного текста определённого типа
+         */
+        float calculateFrom(const QTextBlock& _block, int _from, int _length) const override;
+    };
 }
 
 #endif // CHARACTERSCHRONOMETER_H

@@ -3,6 +3,8 @@
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
+#include <QTextBlock>
+
 using namespace DataStorageLayer;
 using namespace BusinessLogic;
 
@@ -16,13 +18,15 @@ QString ConfigurableChronometer::name() const
     return "configurable-chronometer";
 }
 
-float ConfigurableChronometer::calculateFrom(
-        BusinessLogic::ScenarioBlockStyle::Type _type, const QString& _text) const
+float ConfigurableChronometer::calculateFrom(const QTextBlock& _block, int _from, int _length) const
 {
-    if (_type != ScenarioBlockStyle::SceneHeading
-        && _type != ScenarioBlockStyle::Action
-        && _type != ScenarioBlockStyle::Dialogue
-        && _type != ScenarioBlockStyle::Lyrics) {
+    Q_UNUSED(_from);
+
+    const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(_block);
+    if (blockType != ScenarioBlockStyle::SceneHeading
+        && blockType != ScenarioBlockStyle::Action
+        && blockType != ScenarioBlockStyle::Dialogue
+        && blockType != ScenarioBlockStyle::Lyrics) {
         return 0;
     }
 
@@ -34,11 +38,11 @@ float ConfigurableChronometer::calculateFrom(
     QString secondsForParagraphKey;
     QString secondsForEvery50Key;
 
-    if (_type == ScenarioBlockStyle::Action) {
+    if (blockType == ScenarioBlockStyle::Action) {
         secondsForParagraphKey = "chronometry/configurable/seconds-for-paragraph/action";
         secondsForEvery50Key = "chronometry/configurable/seconds-for-every-50/action";
-    } else if (_type == ScenarioBlockStyle::Dialogue
-               || _type == ScenarioBlockStyle::Lyrics) {
+    } else if (blockType == ScenarioBlockStyle::Dialogue
+               || blockType == ScenarioBlockStyle::Lyrics) {
         secondsForParagraphKey = "chronometry/configurable/seconds-for-paragraph/dialog";
         secondsForEvery50Key = "chronometry/configurable/seconds-for-every-50/dialog";
     } else {
@@ -61,9 +65,8 @@ float ConfigurableChronometer::calculateFrom(
                 SettingsStorage::ApplicationSettings)
             .toFloat();
 
-    const int EVERY_50 = 50;
-    const float SECONDS_FOR_CHARACTER = secondsForEvery50 / EVERY_50;
-
-    float textChron = secondsForParagraph + _text.length() * SECONDS_FOR_CHARACTER;
+    const int every50 = 50;
+    const float secondsPerCharacter = secondsForEvery50 / every50;
+    const float textChron = secondsForParagraph + _length * secondsPerCharacter;
     return textChron;
 }

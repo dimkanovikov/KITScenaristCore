@@ -3,6 +3,8 @@
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
+#include <QTextBlock>
+
 using namespace DataStorageLayer;
 using namespace BusinessLogic;
 
@@ -16,34 +18,33 @@ QString PagesChronometer::name() const
     return "pages-chronometer";
 }
 
-float PagesChronometer::calculateFrom(
-        BusinessLogic::ScenarioBlockStyle::Type _type, const QString& _text) const
+float PagesChronometer::calculateFrom(const QTextBlock& _block, int _from, int _lenght) const
 {
     //
     // Не включаем в хронометраж непечатный текст, заголовок и окончание папки, а также описание сцены
     //
-    if (_type == ScenarioBlockStyle::NoprintableText
-        || _type == ScenarioBlockStyle::FolderHeader
-        || _type == ScenarioBlockStyle::FolderFooter
-        || _type == ScenarioBlockStyle::SceneDescription) {
+    const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(_block);
+    if (blockType == ScenarioBlockStyle::NoprintableText
+        || blockType == ScenarioBlockStyle::FolderHeader
+        || blockType == ScenarioBlockStyle::FolderFooter
+        || blockType == ScenarioBlockStyle::SceneDescription) {
         return 0;
     }
 
     //
     // Получим значение длительности одной страницы текста
     //
-    static const QString SECONDS_KEY = "chronometry/pages/seconds";
-    int seconds =
+    const int seconds =
             StorageFacade::settingsStorage()->value(
-                SECONDS_KEY,
+                "chronometry/pages/seconds",
                 SettingsStorage::ApplicationSettings)
             .toInt();
 
     //
     // Высчитываем длительность строки на странице, из знания о том, сколько строк на странице
     //
-    const float LINES_IN_PAGE = 54;
-    const float LINE_CHRON = seconds / LINES_IN_PAGE;
+    const float linesPerPage = 54;
+    const float lineChron = seconds / linesPerPage;
 
     //
     // Длина строки в зависимости от типа
@@ -56,7 +57,7 @@ float PagesChronometer::calculateFrom(
     //
     int additionalLines = 1;
 
-    switch (_type) {
+    switch (blockType) {
         case ScenarioBlockStyle::SceneCharacters: {
             lineLength = 58;
             additionalLines = 0;
@@ -99,7 +100,8 @@ float PagesChronometer::calculateFrom(
     //
     // Подсчитаем хронометраж
     //
-    float textChron = (float)(linesInText(_text, lineLength) + additionalLines) * LINE_CHRON;
+    const QString text = _block.text().mid(_from, _lenght);
+    const float textChron = (float)(linesInText(text, lineLength) + additionalLines) * lineChron;
     return textChron;
 }
 
