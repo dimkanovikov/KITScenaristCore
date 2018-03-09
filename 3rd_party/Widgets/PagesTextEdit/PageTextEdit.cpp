@@ -2391,15 +2391,6 @@ QVariant PageTextEdit::inputMethodQuery(Qt::InputMethodQuery query, QVariant arg
         break;
     }
 
-#ifdef Q_OS_IOS
-    //
-    // Делаем курсор всегда на нуле, чтобы редактор сценария не выкидывало ни вниз ни вверх
-    //
-    if (_query & Qt::ImCursorRectangle) {
-        return QRectF(0,0,0,0);
-    }
-#endif
-
     const QPointF offset(-d->horizontalOffset(), -d->verticalOffset());
     switch (argument.type()) {
     case QVariant::RectF:
@@ -2420,8 +2411,24 @@ QVariant PageTextEdit::inputMethodQuery(Qt::InputMethodQuery query, QVariant arg
 
     const QVariant v = d->control->inputMethodQuery(query, argument);
     switch (v.type()) {
-    case QVariant::RectF:
-        return v.toRectF().translated(offset);
+        case QVariant::RectF: {
+            QRectF rect = v.toRectF().translated(offset);
+#ifdef Q_OS_IOS
+            //
+            // Если курсор вылезает вверху или внизу, то передаём невалидную область
+            // для того, чтобы экран не отбрасывало вверх или вниз
+            //
+            if (query == Qt::ImCursorRectangle) {
+                if (!textCursor().hasSelection()
+                    || rect.top() < 0
+                    || rect.bottom() >= height()) {
+                    rect = QRectF();
+                }
+            }
+#endif
+            return rect;
+        }
+            
     case QVariant::PointF:
         return v.toPointF() + offset;
     case QVariant::Rect:

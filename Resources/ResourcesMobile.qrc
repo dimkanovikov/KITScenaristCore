@@ -70,6 +70,7 @@
         <file>Icons/help_startpage.png</file>
         <file>Icons/Review/clear.png</file>
         <file>Icons/Mobile/arrow-left.png</file>
+        <file>Icons/move-to-cloud.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/ScenaristMobile_ru.qm</file>
