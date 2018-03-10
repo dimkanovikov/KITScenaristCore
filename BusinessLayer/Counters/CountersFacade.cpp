@@ -118,7 +118,7 @@ BusinessLogic::Counter CountersFacade::calculateFull(const QTextBlock& _block)
     return counter;
 }
 
-QString CountersFacade::countersInfo(int pageCount, const BusinessLogic::Counter& _counter)
+QStringList CountersFacade::countersInfo(int pageCount, const BusinessLogic::Counter& _counter)
 {
     //
     // Проверить какие счётчики необходимо рассчитать
@@ -138,22 +138,16 @@ QString CountersFacade::countersInfo(int pageCount, const BusinessLogic::Counter
     //
     // Рассчитать счётчики
     //
-    QString result;
+    QStringList result;
     if (calculatePages) {
         result.append(pageInfo(pageCount));
     }
 
     if (calculateWords) {
-        if (!result.isEmpty()) {
-            result.append(" ");
-        }
         result.append(wordsInfo(_counter.words()));
     }
 
     if (calculateCharacters) {
-        if (!result.isEmpty()) {
-            result.append(" ");
-        }
         result.append(charactersInfo(_counter.charactersWithSpaces(), _counter.charactersWithoutSpaces()));
     }
 

@@ -67,7 +67,7 @@ namespace BusinessLogic
         /**
          * @brief Показания счётчиков
          */
-        QString countersInfo() const;
+        QStringList countersInfo() const;
 
         /**
          * @brief Индекс элемента дерева в указанной позиции
