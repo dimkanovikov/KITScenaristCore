@@ -1,6 +1,7 @@
 #ifndef COUNTERSFACADE_H
 #define COUNTERSFACADE_H
 
+class QStringList;
 class QString;
 class QTextBlock;
 class QTextDocument;
@@ -34,7 +35,7 @@ namespace BusinessLogic
 		/**
 		 * @brief Расчитать исформацию для заданного документа
 		 */
-		static QString countersInfo(int pageCount, const Counter& _counter);
+        static QStringList countersInfo(int pageCount, const Counter& _counter);
 
 
 	private:

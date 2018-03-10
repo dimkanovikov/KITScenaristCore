@@ -98,7 +98,7 @@ int ScenarioDocument::fullDuration() const
     return m_model->duration();
 }
 
-QString ScenarioDocument::countersInfo() const
+QStringList ScenarioDocument::countersInfo() const
 {
     const int pageCount = m_document->pageCount();
     return BusinessLogic::CountersFacade::countersInfo(pageCount, m_model->counter());
