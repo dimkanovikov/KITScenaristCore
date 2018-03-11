@@ -1148,7 +1148,6 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
         }
     }
 
-
     CompletableTextEdit::paintEvent(_event);
 
     //
@@ -1178,7 +1177,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             //
             // Определим начальный и конечный блоки на экране
             //
-            QTextBlock topBlock = document()->firstBlock();
+            QTextBlock topBlock = document()->lastBlock();
             {
                 QTextCursor topCursor;
                 for (int delta = 0 ; delta < viewport()->height()/4; delta += 10) {
@@ -1198,7 +1197,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                 topBlock = topBlock.previous();
             }
             //
-            QTextBlock bottomBlock = document()->lastBlock();
+            QTextBlock bottomBlock = document()->firstBlock();
             {
                 QTextCursor bottomCursor;
                 for (int delta = viewport()->height() ; delta > viewport()->height()*3/4; delta -= 10) {
