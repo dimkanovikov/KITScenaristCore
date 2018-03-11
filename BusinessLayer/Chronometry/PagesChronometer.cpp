@@ -9,6 +9,46 @@
 using namespace DataStorageLayer;
 using namespace BusinessLogic;
 
+namespace {
+    /**
+     * @brief Подсчитать количество строк в тексте исходя из знания
+     *        о том сколько символов вмещается в одну строку
+     */
+    static int linesInText(const QString& _text, int _lineLength) const
+    {
+        //
+        // Переносы не должны разрывать текст
+        //
+        // Берём текст на границе блока, если попадаем в слово, то идём назад до пробела
+        // дальше делаем отступ на ширину блока от текущего места и опять идём назад до пробела
+        // до тех пор, пока не зайдём за конец блока
+        //
+        const int textLength = _text.length();
+        int currentPosition = _lineLength;
+        int lastCurrentPosition = 0;
+        int linesCount = 1;
+        while (currentPosition < textLength) {
+            if (_text.at(currentPosition) == ' ') {
+                ++linesCount;
+                lastCurrentPosition = currentPosition;
+                currentPosition += _lineLength;
+            } else {
+                --currentPosition;
+            }
+
+            //
+            // Ставим предохранитель на случай длинных слов, которые превышают допустимую ширину блока
+            //
+            if (currentPosition == lastCurrentPosition) {
+                linesCount = _text.length() / _lineLength + ((_text.length() % _lineLength > 0) ? 1 : 0);
+                break;
+            }
+        }
+
+        return linesCount;
+     }
+}
+
 
 PagesChronometer::PagesChronometer()
 {
@@ -45,23 +85,84 @@ qreal PagesChronometer::calculateFrom(const QTextBlock& _block, int _from, int _
             .toInt();
 
     //
-    // Определить высоту текущего блока
+    // Если работаем в постраничном режиме, то определяем хронометраж по факту
     //
-    const QTextBlockFormat blockFormat = _block.blockFormat();
-    const qreal blockLineHeight = blockFormat.lineHeight();
-    const int blockLineCount = _block.layout()->lineCount();
-    //
-    // ... если блок первый на странице, то для него не нужно учитывать верхний отступ
-    //
-    const qreal blockHeight = blockLineHeight * blockLineCount + blockFormat.topMargin() + blockFormat.bottomMargin();
+    qreal chron = 0.0;
+    if (_block.document()->pageSize() > 0) {
+        //
+        // Определить высоту текущего блока
+        //
+        const QTextBlockFormat blockFormat = _block.blockFormat();
+        const qreal blockLineHeight = blockFormat.lineHeight();
+        const int blockLineCount = _block.layout()->lineCount();
+        //
+        // ... если блок первый на странице, то для него не нужно учитывать верхний отступ
+        //
+        const qreal blockHeight = blockLineHeight * blockLineCount + blockFormat.topMargin() + blockFormat.bottomMargin();
 
-    //
-    // Определим высоту страницы
-    //
-    const QTextFrameFormat rootFrameFormat = _block.document()->rootFrame()->frameFormat();
-    const qreal pageHeight = _block.document()->pageSize().height()
-                             - rootFrameFormat.topMargin()
-                             - rootFrameFormat.bottomMargin();
+        //
+        // Определим высоту страницы
+        //
+        const QTextFrameFormat rootFrameFormat = _block.document()->rootFrame()->frameFormat();
+        const qreal pageHeight = _block.document()->pageSize().height()
+                                 - rootFrameFormat.topMargin()
+                                 - rootFrameFormat.bottomMargin();
 
-    return blockHeight * seconds / pageHeight;
+        chron = blockHeight * seconds / pageHeight;
+    }
+    //
+    // В противном случае, считаем по символам как раньше и было
+    //
+    else {
+        int lineLength = 0;
+        int additionalLines = 1;
+
+        switch (blockType) {
+            case ScenarioBlockStyle::SceneCharacters: {
+                lineLength = 58;
+                additionalLines = 0;
+                break;
+            }
+
+            case ScenarioBlockStyle::Character: {
+                lineLength = 31;
+                break;
+            }
+
+            case ScenarioBlockStyle::Dialogue: {
+                lineLength = 28;
+                additionalLines = 0;
+                break;
+            }
+
+            case ScenarioBlockStyle::Parenthetical: {
+                lineLength = 18;
+                additionalLines = 0;
+                break;
+            }
+
+            case ScenarioBlockStyle::Title: {
+                lineLength = 18;
+                break;
+            }
+
+            case ScenarioBlockStyle::Lyrics: {
+                lineLength = 35;
+                break;
+            }
+
+            default: {
+                lineLength = 58;
+                break;
+            }
+        }
+
+        //
+        // Подсчитаем хронометраж
+        //
+        const QString text = _block.text().mid(_from, _lenght);
+        chron = (qreal)(linesInText(text, lineLength) + additionalLines) * lineChron;
+    }
+
+    return chron;
 }
