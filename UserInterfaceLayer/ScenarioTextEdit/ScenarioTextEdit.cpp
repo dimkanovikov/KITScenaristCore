@@ -8,6 +8,9 @@
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioReviewModel.h>
 
+#include <BusinessLayer/Import/AbstractImporter.h>
+#include <BusinessLayer/Import/FountainImporter.h>
+
 #include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Helpers/ColorHelper.h>
 
@@ -64,7 +67,8 @@ ScenarioTextEdit::ScenarioTextEdit(QWidget* _parent) :
     m_smartQuotes(false),
     m_showSuggestionsInEmptyBlocks(false),
     m_textSelectionEnabled(true),
-    m_shortcutsManager(new ShortcutsManager(this))
+    m_shortcutsManager(new ShortcutsManager(this)),
+    m_fountainImporter(new FountainImporter)
 {
     setAttribute(Qt::WA_KeyCompression);
 
@@ -1544,34 +1548,21 @@ void ScenarioTextEdit::insertFromMimeData(const QMimeData* _source)
         changeScenarioBlockType(type);
     }
 
+    QString text;
+
     //
     // Если вставляются данные в сценарном формате, то вставляем как положено
     //
     if (_source->formats().contains(ScenarioDocument::MIME_TYPE)) {
-        m_document->insertFromMime(cursor.position(), _source->data(ScenarioDocument::MIME_TYPE));
+        text = _source->data(ScenarioDocument::MIME_TYPE);
     }
     //
-    // Если простой текст, то вставляем его, как описание действия
+    // Если простой текст, то вставляем его, импортировав с фонтана
     //
     else if (_source->hasText()) {
-        QString textToInsert = _source->text();
-        bool isFirstLine = true;
-        foreach (const QString& line, textToInsert.split("\n", QString::SkipEmptyParts)) {
-            //
-            // Первую строку вставляем в текущий блок
-            //
-            if (isFirstLine) {
-                isFirstLine = false;
-            }
-            //
-            // А для всех остальных создаём блок описания действия
-            //
-            else {
-                addScenarioBlock(ScenarioBlockStyle::Action);
-            }
-            cursor.insertText(line.simplified());
-        }
+        text = m_fountainImporter->importScript(_source->text());
     }
+    m_document->insertFromMime(cursor.position(), text);
 
     cursor.endEditBlock();
 }
