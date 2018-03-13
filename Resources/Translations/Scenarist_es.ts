@@ -6,22 +6,22 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="20"/>
         <source>About the app</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre la aplicación</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="30"/>
         <source>KIT Scenarist</source>
-        <translation type="unfinished">KIT Scenarist</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="53"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Un editor de guiones simple y potente desarrollado en &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;los laboratorios de DimkaNovikov&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="85"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Este software es distribuido bajo licencia &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt;, el código fuente está disponible en &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="147"/>
@@ -39,7 +39,19 @@ Português: Ricardo Graça, Ronaldo German
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Nuestros héroes, que nos ayudan a crear versiones internacionales:
+Deutsch: Michael Krämer
+English: Dimka Novikov
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Қазақ: Алпамыс Баткалов
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin</translation>
     </message>
 </context>
 <context>
@@ -210,12 +222,12 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="158"/>
         <source>All supported files</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos los formatos soportados</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="160"/>
         <source>KIT Scenarist project</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyecto de KIT Scenarist</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="162"/>
@@ -240,17 +252,17 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="170"/>
         <source>OpenDocument text</source>
-        <translation type="unfinished"></translation>
+        <translation>Texto de OpenDocument</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="172"/>
         <source>Fountain text</source>
-        <translation type="unfinished"></translation>
+        <translation>Texto de Fountain</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="174"/>
         <source>Celtx project</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyecto Celtx</translation>
     </message>
     <message>
         <source>OpenDocument Text</source>
@@ -355,7 +367,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="189"/>
         <source>Symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Caracteres</translation>
     </message>
     <message>
         <source>Simbols</source>
@@ -1371,7 +1383,7 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="247"/>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="390"/>
         <source>END OF </source>
-        <translation type="unfinished"></translation>
+        <translation>FINAL DE </translation>
     </message>
 </context>
 <context>
@@ -1577,7 +1589,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="46"/>
         <source>Українська</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="132"/>
@@ -1592,7 +1604,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="156"/>
         <source>Polski</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="60"/>
@@ -1749,22 +1761,22 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="413"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede escribir en el archivo. Es posible que esté abierto en otra aplicación. Ciérralo e inténtalo de nuevo.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="502"/>
         <source>Choose file to save project</source>
-        <translation type="unfinished"></translation>
+        <translation>Elegír carpeta y guardar proyecto</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="644"/>
         <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
-        <translation type="unfinished"></translation>
+        <translation>No se pueden guardar los cambios en el proyecto. Hay un error en la base de datos interna: %1. Por favor, comprueba que el archivo existe y que tiene permisos de escritura. ¿Reintentar?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="665"/>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
-        <translation type="unfinished"></translation>
+        <translation>No se pueden guardar los cambios en el proyecto en &lt;b&gt;%1&lt;/b&gt; porque el archivo no existe. Coloca el archivo de nuevo en la carpeta e intenta guardar de nuevo. ¿Reintentar?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="754"/>
@@ -1780,7 +1792,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="888"/>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para mover proyectos a la nube tienes que entrar en el servicio en la nube de KIT Scenarist.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="951"/>
@@ -1830,7 +1842,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1160"/>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
-        <translation type="unfinished"></translation>
+        <translation>La contraseña guardada es incorrecta. Parece que has cambiado tu contraseña. Por favor, introduce una nueva.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1170"/>
@@ -1842,7 +1854,9 @@ Português: Ricardo Graça, Ronaldo German
         <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se han podido cargar correctamente todos los datos del servicio. Por favor, comprueba tu conexión a internet e intenta sincronizar de nuevo.
+
+El proyecto no ha podido sincronizarse</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1197"/>
@@ -1872,12 +1886,12 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="313"/>
         <source>File format not supported</source>
-        <translation type="unfinished">Formato de archivo no soportado</translation>
+        <translation>Formato de archivo no soportado</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="314"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation type="unfinished">Los archivos de Microsoft &lt;b&gt;DOC&lt;/b&gt; no son soportados. Necesitas guardarlo en formato &lt;b&gt;DOCX&lt;/b&gt; y re-importar.</translation>
+        <translation>Los archivos de Microsoft &lt;b&gt;DOC&lt;/b&gt; no son soportados. Necesitas guardarlo en formato &lt;b&gt;DOCX&lt;/b&gt; y re-importar.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="589"/>
@@ -1893,12 +1907,12 @@ Project didn&apos;t synchronized.</source>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="887"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="893"/>
         <source>Moving project to the cloud failed</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido mover el proyecto a la nube</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="894"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para mover proyectos a la nube tu suscripción al servicio en la nube de KIT Scenarist tiene que estar activa.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1055"/>
@@ -2050,12 +2064,12 @@ El proyecto no ha podido sincronizarse</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1729"/>
         <source>Import</source>
-        <translation type="unfinished">Importar</translation>
+        <translation>Importar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1729"/>
         <source>Please wait. Import can take few minutes.</source>
-        <translation type="unfinished">Por favor, espera. La importación puede tardar unos minutos.</translation>
+        <translation>Por favor, espera. La importación puede tardar unos minutos.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1834"/>
@@ -2166,7 +2180,7 @@ El proyecto no ha podido sincronizarse</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1360"/>
         <source>Closing Database Connections and remove temporary files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrando la conexión de datos y quitando los archivos temporales.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2374"/>
@@ -2208,7 +2222,7 @@ El proyecto no ha podido sincronizarse</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="144"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry export.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede escribir el archivo. Tal vez está siendo usado por otra aplicación. Por favor, ciérralo y exporta otra vez.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="176"/>
@@ -2284,13 +2298,13 @@ El proyecto no ha podido sincronizarse</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="194"/>
         <source>Password successfully changed</source>
-        <translation type="unfinished">Contraseña cambiada con éxito</translation>
+        <translation>Contraseña cambiada con éxito</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="209"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="245"/>
         <source>Can not change password</source>
-        <translation type="unfinished">No se puede cambiar la contraseña</translation>
+        <translation>No se puede cambiar la contraseña</translation>
     </message>
 </context>
 <context>
@@ -2320,7 +2334,7 @@ El proyecto no ha podido sincronizarse</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="451"/>
         <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Estás seguro de que quieres eliminar la investigación &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="544"/>
@@ -2432,7 +2446,7 @@ El proyecto no ha podido sincronizarse</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="165"/>
         <source>Language will be changed after application restart.</source>
-        <translation type="unfinished"></translation>
+        <translation>El idioma cambiará después de que el programa se reinicie.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="350"/>
@@ -2574,107 +2588,107 @@ Puedes probar a reintentar la actualización.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="121"/>
         <source>Login</source>
-        <translation type="unfinished">Entrar</translation>
+        <translation>Entrar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="77"/>
         <source>Log in to get access to the cloud service</source>
-        <translation type="unfinished"></translation>
+        <translation>Entra para acceder al servicio en la nube</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="315"/>
         <source>Create new project</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear proyecto</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="332"/>
         <source>Open project</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir proyecto</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="349"/>
         <source>Save current project</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar proyecto actual</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="434"/>
         <source>How to use the application</source>
-        <translation type="unfinished"></translation>
+        <translation>Cómo usar la aplicación</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="513"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="533"/>
         <source>User name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de usuario:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="543"/>
         <source>Account is active until:</source>
-        <translation type="unfinished">La cuenta está activa hasta el:</translation>
+        <translation>La cuenta está activa hasta el:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="553"/>
         <source>22.02.2017</source>
-        <translation type="unfinished">22.02.2017</translation>
+        <translation>22.02.2017</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="586"/>
         <source>UserName</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="593"/>
         <source>Used 0 Gb from 0 Gb</source>
-        <translation type="unfinished">Usados 0 Gb de 0 Gb</translation>
+        <translation>Usados 0 Gb de 0 Gb</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="605"/>
         <source>Renew subscription</source>
-        <translation type="unfinished">Renovar suscripción</translation>
+        <translation>Renovar suscripción</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="622"/>
         <source>Change Password</source>
-        <translation type="unfinished">Cambiar contraseña</translation>
+        <translation>Cambiar contraseña</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="639"/>
         <source>Quit from cabinet</source>
-        <translation type="unfinished">Salir de la cuenta</translation>
+        <translation>Salir de la cuenta</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="366"/>
         <source>Save current project as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar proyecto actual como…</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="383"/>
         <source>Import...</source>
-        <translation type="unfinished">Importar...</translation>
+        <translation>Importar...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="400"/>
         <source>Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="417"/>
         <source>Print preview</source>
-        <translation type="unfinished">Imprimir vista previa</translation>
+        <translation>Imprimir vista previa</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="219"/>
         <source>version</source>
-        <translation type="unfinished">Versión</translation>
+        <translation>versión</translation>
     </message>
     <message>
         <source>0.0.0</source>
@@ -2683,12 +2697,12 @@ Puedes probar a reintentar la actualización.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="255"/>
         <source>About the app</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre la aplicación</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="284"/>
         <source>KIT Scenarist</source>
-        <translation type="unfinished">KIT Scenarist</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2809,12 +2823,12 @@ Puedes probar a reintentar la actualización.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="171"/>
         <source>Українська</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="236"/>
         <source>Polski</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="297"/>
@@ -3077,7 +3091,7 @@ Y el editor de texto de guión. El editor tiene muchas funciones que simplifican
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="198"/>
         <source>Move project to the cloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover proyecto a la nube</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="221"/>
@@ -3231,7 +3245,7 @@ Y el editor de texto de guión. El editor tiene muchas funciones que simplifican
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="95"/>
         <source>PayPal</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="100"/>
@@ -3409,7 +3423,7 @@ Y el editor de texto de guión. El editor tiene muchas funciones que simplifican
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="342"/>
@@ -3618,7 +3632,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="551"/>
         <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar elementos de investigación como textos, url e imágenes en árbol. Usa los botones de la barra de herramientas y el menú contextual para añadir o eliminar elementos en el árbol.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="973"/>
@@ -4187,12 +4201,12 @@ Párrafo</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2445"/>
         <source>Symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Caracteres</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2458"/>
         <source>Symbols without spaces | Symbols with spaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Caracteres sin espacios | Caracteres con espacios</translation>
     </message>
     <message>
         <source>Simbols</source>
@@ -5007,7 +5021,7 @@ Por favor, actualiza a la nueva versión en &lt;a href=&quot;https://kitscenaris
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.cpp" line="21"/>
         <source>version</source>
-        <translation type="unfinished">Versión</translation>
+        <translation>versión</translation>
     </message>
 </context>
 <context>
@@ -5150,27 +5164,27 @@ Por favor, actualiza a la nueva versión en &lt;a href=&quot;https://kitscenaris
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="137"/>
         <source>Connect</source>
-        <translation type="unfinished">Conectar</translation>
+        <translation>Conectar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="147"/>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation type="unfinished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Abrir sesión&lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Abrir sesión&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="185"/>
         <source>Account is active until:</source>
-        <translation type="unfinished">La cuenta está activa hasta el:</translation>
+        <translation>La cuenta está activa hasta el:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="188"/>
         <source>Account is inactive</source>
-        <translation type="unfinished">La cuenta no está activa</translation>
+        <translation>La cuenta no está activa</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="199"/>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation type="unfinished">Usados %1 Gb de %2 Gb</translation>
+        <translation>Usados %1 Gb de %2 Gb</translation>
     </message>
 </context>
 <context>

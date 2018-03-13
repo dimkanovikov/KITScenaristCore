@@ -6,22 +6,22 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="20"/>
         <source>About the app</source>
-        <translation type="unfinished"></translation>
+        <translation>על היישום</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="30"/>
         <source>KIT Scenarist</source>
-        <translation type="unfinished">KIT Scenarist</translation>
+        <translation>KIT Scenarist</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="53"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="85"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="147"/>
@@ -39,7 +39,7 @@ Português: Ricardo Graça, Ronaldo German
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -210,12 +210,12 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="158"/>
         <source>All supported files</source>
-        <translation type="unfinished"></translation>
+        <translation>כל הקבצים הנתמכים</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="160"/>
         <source>KIT Scenarist project</source>
-        <translation type="unfinished"></translation>
+        <translation>פרויקט בפורמט KIT</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="162"/>
@@ -240,17 +240,17 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="170"/>
         <source>OpenDocument text</source>
-        <translation type="unfinished"></translation>
+        <translation>טקסט בפורמט OpenDocument</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="172"/>
         <source>Fountain text</source>
-        <translation type="unfinished"></translation>
+        <translation>טקסט בפורמט Fountain</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="174"/>
         <source>Celtx project</source>
-        <translation type="unfinished"></translation>
+        <translation>פרויקט בפורמט Celtx</translation>
     </message>
     <message>
         <source>Fountain Text</source>
@@ -351,7 +351,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="189"/>
         <source>Symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>סמלים</translation>
     </message>
     <message>
         <source>Simbols</source>
@@ -1368,7 +1368,7 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="247"/>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="390"/>
         <source>END OF </source>
-        <translation type="unfinished"></translation>
+        <translation>סוף</translation>
     </message>
 </context>
 <context>
@@ -1569,7 +1569,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="156"/>
         <source>Polski</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="60"/>
@@ -1579,7 +1579,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="46"/>
         <source>Українська</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="53"/>
@@ -1688,12 +1688,12 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="313"/>
         <source>File format not supported</source>
-        <translation type="unfinished">סוג קובץ לא נתמך</translation>
+        <translation>סוג קובץ לא נתמך</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="314"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation type="unfinished">קבצי &lt;b&gt;DOC&lt;/b&gt; אינם נתמכים. אנא, שמור אותו כקובץ &lt;b&gt;DOCX&lt;/b&gt; וייבא מחדש.</translation>
+        <translation>קבצי &lt;b&gt;DOC&lt;/b&gt; אינם נתמכים. אנא, שמור אותו כקובץ &lt;b&gt;DOCX&lt;/b&gt; וייבא מחדש.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="409"/>
@@ -1782,12 +1782,16 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="887"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="893"/>
         <source>Moving project to the cloud failed</source>
-        <translation type="unfinished"></translation>
+        <translation>העברת פרויקט לענן נכשלה</translation>
+    </message>
+    <message>
+        <source>For moving projects to the cloud you should be logged in the KIT Scenaist cloud service.</source>
+        <translation type="vanished">להעברת פרויקטים לענן עליך להיות מחובר לשירות ענן של KIT Scenarist.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="894"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
-        <translation type="unfinished"></translation>
+        <translation>להעברת פרויקטים לענן המנוי שלך בשירות ענן KIT Scenarist צריך להיות פעיל.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="951"/>
@@ -1853,6 +1857,10 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1149"/>
         <source>Incorrect username or password.</source>
         <translation>שם משתמש או סיסמה שגוי.</translation>
+    </message>
+    <message>
+        <source>Saved password is incorrect. Look like you changed the password. Please, enter the new password.</source>
+        <translation type="vanished">הסיסמה שגויה. נראה ששינית את הסיסמה. אנא, הזן את הסיסמה החדשה.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1170"/>
@@ -1985,44 +1993,46 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="413"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry.</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ניתן לכתוב לקובץ. כנראה שהוא פתוח ביישום אחר. אנא, סגור אותו ונסה שוב.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="502"/>
         <source>Choose file to save project</source>
-        <translation type="unfinished"></translation>
+        <translation>בחר פרויקט לשמירה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="644"/>
         <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ניתן לשמור שינויים בפרויקט. אירעה שגיאת מסד נתונים פנימית: %1. בדוק שיש לך הרשאה לכתוב אליו. לנסות לשמור שוב?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="665"/>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ניתן לכתוב שינויים בפרויקט &lt;b&gt;%1&lt;/b&gt; מכיוון שהקובץ אינו קיים. אנא החזר את הקובץ למקום ונסה לשמור את הפרויקט שוב. לנסות לשמור שוב?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="888"/>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
-        <translation type="unfinished"></translation>
+        <translation>להעברת פרויקטים לענן עליך להיות מחובר לשירות ענן של KIT Scenarist.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1160"/>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
-        <translation type="unfinished"></translation>
+        <translation>הסיסמה שגויה. נראה ששינית את הסיסמה. אנא, הזן את הסיסמה החדשה.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1184"/>
         <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="unfinished"></translation>
+        <translation>טעינת הנתונים מהשרת נכשלה. בדוק את איכות החיבור לאינטרנט והפעל את היישום מחדש.
+
+הפרויקט אינו מסונכרן.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1360"/>
         <source>Closing Database Connections and remove temporary files.</source>
-        <translation type="unfinished"></translation>
+        <translation>סגור חיבור למסד הנתונים ומחק קבצים זמניים.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1629"/>
@@ -2052,12 +2062,12 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1729"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>יבוא</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1729"/>
         <source>Please wait. Import can take few minutes.</source>
-        <translation type="unfinished">אנא המתן. יבוא יכול לקחת כמה דקות.</translation>
+        <translation>אנא המתן. יבוא יכול לקחת כמה דקות.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1834"/>
@@ -2195,7 +2205,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="144"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry export.</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ניתן לכתוב לקובץ. כנראה שהוא פתוח ביישום אחר. אנא, סגור אותו ונסה שוב.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="147"/>
@@ -2281,13 +2291,13 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="194"/>
         <source>Password successfully changed</source>
-        <translation type="unfinished">הסיסמה שונתה בהצלחה</translation>
+        <translation>הסיסמה שונתה בהצלחה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="209"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="245"/>
         <source>Can not change password</source>
-        <translation type="unfinished">שינוי הסיסמה נכשל</translation>
+        <translation>שינוי הסיסמה נכשל</translation>
     </message>
 </context>
 <context>
@@ -2317,7 +2327,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="451"/>
         <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation>מחק פריט מחקר: &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="544"/>
@@ -2429,7 +2439,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="165"/>
         <source>Language will be changed after application restart.</source>
-        <translation type="unfinished"></translation>
+        <translation>השפה תעודכן לאחר הפעלת יישום מחדש.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="350"/>
@@ -2572,107 +2582,107 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="121"/>
         <source>Login</source>
-        <translation type="unfinished">כניסה</translation>
+        <translation>כניסה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="77"/>
         <source>Log in to get access to the cloud service</source>
-        <translation type="unfinished"></translation>
+        <translation>התחבר כדי לקבל גישה לשירות ענן</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="315"/>
         <source>Create new project</source>
-        <translation type="unfinished"></translation>
+        <translation>פרויקט חדש</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="332"/>
         <source>Open project</source>
-        <translation type="unfinished"></translation>
+        <translation>פתח פרויקט</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="349"/>
         <source>Save current project</source>
-        <translation type="unfinished"></translation>
+        <translation>שמור פרויקט נוכחי</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="434"/>
         <source>How to use the application</source>
-        <translation type="unfinished"></translation>
+        <translation>כיצד להשתמש ביישום</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="513"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="533"/>
         <source>User name:</source>
-        <translation type="unfinished"></translation>
+        <translation>שם משתמש:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="543"/>
         <source>Account is active until:</source>
-        <translation type="unfinished">החשבון פעיל עד:</translation>
+        <translation>החשבון פעיל עד:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="553"/>
         <source>22.02.2017</source>
-        <translation type="unfinished">22.02.2017</translation>
+        <translation>22.02.2017</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="586"/>
         <source>UserName</source>
-        <translation type="unfinished"></translation>
+        <translation>שם משתמש</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="593"/>
         <source>Used 0 Gb from 0 Gb</source>
-        <translation type="unfinished"></translation>
+        <translation>השתמשת ב 0 Gb מתוך 0 Gb</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="605"/>
         <source>Renew subscription</source>
-        <translation type="unfinished"></translation>
+        <translation>חידוש מנוי</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="622"/>
         <source>Change Password</source>
-        <translation type="unfinished">שנה סיסמה</translation>
+        <translation>שנה סיסמה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="639"/>
         <source>Quit from cabinet</source>
-        <translation type="unfinished">צא</translation>
+        <translation>צא</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="366"/>
         <source>Save current project as...</source>
-        <translation type="unfinished"></translation>
+        <translation>שמור פרויקט נוכחי כ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="383"/>
         <source>Import...</source>
-        <translation type="unfinished">יבוא...</translation>
+        <translation>יבוא...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="400"/>
         <source>Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>יצוא...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="417"/>
         <source>Print preview</source>
-        <translation type="unfinished">תצוגה לפני הדפסה</translation>
+        <translation>תצוגה לפני הדפסה</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="219"/>
         <source>version</source>
-        <translation type="unfinished">גרסה</translation>
+        <translation>גרסה</translation>
     </message>
     <message>
         <source>0.0.0</source>
@@ -2681,12 +2691,12 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="255"/>
         <source>About the app</source>
-        <translation type="unfinished"></translation>
+        <translation>על היישום</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="284"/>
         <source>KIT Scenarist</source>
-        <translation type="unfinished">KIT Scenarist</translation>
+        <translation>KIT Scenarist</translation>
     </message>
 </context>
 <context>
@@ -2807,12 +2817,12 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="171"/>
         <source>Українська</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="236"/>
         <source>Polski</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="297"/>
@@ -3073,7 +3083,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="198"/>
         <source>Move project to the cloud</source>
-        <translation type="unfinished"></translation>
+        <translation>העבר פריקט לענן</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="221"/>
@@ -3228,7 +3238,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="95"/>
         <source>PayPal</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="100"/>
@@ -3459,12 +3469,12 @@ And the text editor of the script. The editor has many auxiliary functions that 
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="551"/>
         <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף חומרי מחקר הקשורים לתסריט. ניתן להוסיף חומרי טקסט, קישורים לדפי אינטרנט, גלריות תמונות, ועוד. כדי להוסיף ולמחוק חומרים באפשרותך להשתמש בסרגל כלים או בתפריט הקשר.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="575"/>
@@ -4184,12 +4194,12 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2445"/>
         <source>Symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>סמלים</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2458"/>
         <source>Symbols without spaces | Symbols with spaces</source>
-        <translation type="unfinished"></translation>
+        <translation>סמלים בלי רווח | סמלים עם רווח</translation>
     </message>
     <message>
         <source>Simbols</source>
@@ -4997,7 +5007,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.cpp" line="21"/>
         <source>version</source>
-        <translation type="unfinished">גרסה</translation>
+        <translation>גרסה</translation>
     </message>
 </context>
 <context>
@@ -5141,27 +5151,27 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="137"/>
         <source>Connect</source>
-        <translation type="unfinished">התחבר</translation>
+        <translation>התחבר</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="147"/>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="185"/>
         <source>Account is active until:</source>
-        <translation type="unfinished">החשבון פעיל עד:</translation>
+        <translation>החשבון פעיל עד:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="188"/>
         <source>Account is inactive</source>
-        <translation type="unfinished">החשבון אינו פעיל</translation>
+        <translation>החשבון אינו פעיל</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="199"/>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation type="unfinished">השתמשת ב %1 Gb מתוך %2 Gb</translation>
+        <translation>השתמשת ב %1 Gb מתוך %2 Gb</translation>
     </message>
 </context>
 <context>

@@ -63,7 +63,19 @@ Português: Ricardo Graça, Ronaldo German
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Nossos heróis, que nos ajudaram a criar as versões internacionais:
+Deutsch: Michael Krämer
+English: Dimka Novikov
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Қазақ: Алпамыс Баткалов
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin</translation>
     </message>
 </context>
 <context>
@@ -328,7 +340,7 @@ Português: Ricardo Graça, Ronaldo German
     </message>
     <message>
         <source>Symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Símbolos</translation>
     </message>
 </context>
 <context>
@@ -1339,7 +1351,7 @@ Português: Ricardo Graça, Ronaldo German
     </message>
     <message>
         <source>Українська</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1749,37 +1761,39 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível gravar no arquivo. Talvez esteja aberto em outra aplicação. Feche-o e tente novamente.</translation>
     </message>
     <message>
         <source>Choose file to save project</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha o arquivo para salvar o projeto</translation>
     </message>
     <message>
         <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível escrever alterações no projeto. Há algum erro de banco de dados interno:%1 Verifique se o arquivo existe e se você tem permissão para gravá-lo. Tentar novamente para salvar?</translation>
     </message>
     <message>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível gravar alterações no projeto localizado em &lt;b&gt;%1 &lt;/b&gt; porque o arquivo não existe. Mova o arquivo de volta e tente salvar novamente. Tentar salvar novamente?</translation>
     </message>
     <message>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para mover projetos para a nuvem você deve estar logado no serviço da nuvem do KIT Scenaist.</translation>
     </message>
     <message>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
-        <translation type="unfinished"></translation>
+        <translation>A senha salva está incorreta. Parece que você alterou a senha. Por favor entre com a nova senha.</translation>
     </message>
     <message>
         <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível carregar todos os dados do serviço corretamente. Verifique a qualidade da sua conecção à Internet e atualize a sincronização.
+
+O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Closing Database Connections and remove temporary files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fechar conexões de banco de dados e remover arquivos temporários.</translation>
     </message>
 </context>
 <context>
@@ -1818,7 +1832,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível gravar no arquivo. Talvez esteja aberto em outra aplicação. Feche-o e repita a exportação.</translation>
     </message>
 </context>
 <context>
@@ -1922,7 +1936,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tem certeza de remover a pesquisa:&lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
 </context>
 <context>
@@ -2046,7 +2060,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Language will be changed after application restart.</source>
-        <translation type="unfinished"></translation>
+        <translation>O idioma será alterado após o reinício da aplicação.</translation>
     </message>
 </context>
 <context>
@@ -2440,7 +2454,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Українська</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2939,11 +2953,11 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar materiais de pesquisa, como texto, páginas da web e imagens na árvore. Use os botões da barra de ferramentas e o menu de contexto para adicionar ou remover materiais de pesquisa na árvore.</translation>
     </message>
 </context>
 <context>
@@ -3434,11 +3448,11 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Símbolos</translation>
     </message>
     <message>
         <source>Symbols without spaces | Symbols with spaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Símbolos sem espaços | Símbolos com espaços</translation>
     </message>
 </context>
 <context>
