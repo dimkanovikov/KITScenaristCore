@@ -14,7 +14,7 @@ namespace {
      * @brief Подсчитать количество строк в тексте исходя из знания
      *        о том сколько символов вмещается в одну строку
      */
-    static int linesInText(const QString& _text, int _lineLength) const
+    static int linesInText(const QString& _text, int _lineLength)
     {
         //
         // Переносы не должны разрывать текст
@@ -88,7 +88,7 @@ qreal PagesChronometer::calculateFrom(const QTextBlock& _block, int _from, int _
     // Если работаем в постраничном режиме, то определяем хронометраж по факту
     //
     qreal chron = 0.0;
-    if (_block.document()->pageSize() > 0) {
+    if (_block.document()->pageSize().height() > 0) {
         //
         // Определить высоту текущего блока
         //
@@ -161,6 +161,8 @@ qreal PagesChronometer::calculateFrom(const QTextBlock& _block, int _from, int _
         // Подсчитаем хронометраж
         //
         const QString text = _block.text().mid(_from, _lenght);
+        const float linesPerPage = 54;
+        const float lineChron = seconds / linesPerPage;
         chron = (qreal)(linesInText(text, lineLength) + additionalLines) * lineChron;
     }
 

@@ -50,7 +50,6 @@
         <file>Icons/Editing/draft.png</file>
         <file>Icons/Editing/note.png</file>
         <file>Icons/Editing/fullscreen_active.png</file>
-        <file>Icons/login.png</file>
         <file>Icons/Editing/checkmark.png</file>
         <file>Icons/Editing/review.png</file>
         <file>Icons/Indicator/connected.png</file>
@@ -66,7 +65,6 @@
         <file>Icons/help_startpage.png</file>
         <file>Icons/folder_noted.png</file>
         <file>Icons/scene_noted.png</file>
-        <file>Icons/chevron-right.png</file>
         <file>Icons/statistics.png</file>
         <file>Icons/printer.png</file>
         <file>Icons/settings_tool.png</file>

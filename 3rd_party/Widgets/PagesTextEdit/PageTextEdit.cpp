@@ -2428,7 +2428,7 @@ QVariant PageTextEdit::inputMethodQuery(Qt::InputMethodQuery query, QVariant arg
 #endif
             return rect;
         }
-            
+
     case QVariant::PointF:
         return v.toPointF() + offset;
     case QVariant::Rect:

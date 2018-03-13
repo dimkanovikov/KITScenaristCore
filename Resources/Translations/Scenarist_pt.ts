@@ -34,7 +34,7 @@ Português: Ricardo Graça, Ronaldo German
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation>Nossos heróis, que nos ajudaram a criar as versões internacionais:
+        <translation type="vanished">Nossos heróis, que nos ajudaram a criar as versões internacionais:
 Deutsch: Michael Krämer
 English: Dimka Novikov
 Español: Felipe Vece, Pedro Terrero
@@ -47,6 +47,23 @@ Português: Ricardo Graça, Ronaldo German
 فارْسِى: Arash Aneessee
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin</translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Deutsch: Michael Krämer
+English: Dimka Novikov
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Қазақ: Алпамыс Баткалов
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -307,7 +324,11 @@ Português: Ricardo Graça, Ronaldo German
     </message>
     <message>
         <source>Simbols</source>
-        <translation>Símbolos</translation>
+        <translation type="vanished">Símbolos</translation>
+    </message>
+    <message>
+        <source>Symbols</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1289,10 +1310,6 @@ Português: Ricardo Graça, Ronaldo German
         <translation>Detectar idioma pela região do sistema</translation>
     </message>
     <message>
-        <source>Українська мова</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Русский</source>
         <translation></translation>
     </message>
@@ -1319,6 +1336,10 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <source>Polski</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Українська</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1372,7 +1393,7 @@ Português: Ricardo Graça, Ronaldo German
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
-        <translation>Não é possível gravar no arquivo. Talvez esteja aberto em outra aplicação. Feche-o e tente novamente.</translation>
+        <translation type="vanished">Não é possível gravar no arquivo. Talvez esteja aberto em outra aplicação. Feche-o e tente novamente.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
@@ -1388,7 +1409,7 @@ Português: Ricardo Graça, Ronaldo German
     </message>
     <message>
         <source>Choose file for save project</source>
-        <translation>Escolha o arquivo para salvar o projeto</translation>
+        <translation type="vanished">Escolha o arquivo para salvar o projeto</translation>
     </message>
     <message>
         <source>Scenarist project files (*%1)</source>
@@ -1404,11 +1425,11 @@ Português: Ricardo Graça, Ronaldo German
     </message>
     <message>
         <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
-        <translation>Não é possível escrever alterações no projeto. Há algum erro de banco de dados interno:%1 Verifique se o arquivo existe e se você tem permissão para gravá-lo. Tentar novamente para salvar?</translation>
+        <translation type="vanished">Não é possível escrever alterações no projeto. Há algum erro de banco de dados interno:%1 Verifique se o arquivo existe e se você tem permissão para gravá-lo. Tentar novamente para salvar?</translation>
     </message>
     <message>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
-        <translation>Não é possível gravar alterações no projeto localizado em &lt;b&gt;%1 &lt;/b&gt; porque o arquivo não existe. Mova o arquivo de volta e tente salvar novamente. Tentar salvar novamente?</translation>
+        <translation type="vanished">Não é possível gravar alterações no projeto localizado em &lt;b&gt;%1 &lt;/b&gt; porque o arquivo não existe. Mova o arquivo de volta e tente salvar novamente. Tentar salvar novamente?</translation>
     </message>
     <message>
         <source>Choose project file to open</source>
@@ -1486,7 +1507,7 @@ O projeto não foi sincronizado.</translation>
         <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Não é possível carregar todos os dados do serviço corretamente. Verifique a qualidade da sua conecção à Internet e atualize a sincronização.
+        <translation type="vanished">Não é possível carregar todos os dados do serviço corretamente. Verifique a qualidade da sua conecção à Internet e atualize a sincronização.
 
 O projeto não foi sincronizado.</translation>
     </message>
@@ -1544,7 +1565,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Closing Databse Connections and Remove Temporatry Files.</source>
-        <translation>Fechar conexões de banco de dados e remover arquivos temporários.</translation>
+        <translation type="vanished">Fechar conexões de banco de dados e remover arquivos temporários.</translation>
     </message>
     <message>
         <source>Save project changes?</source>
@@ -1708,7 +1729,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>For moving projects to the cloud you should be logged in the KIT Scenaist cloud service.</source>
-        <translation>Para mover projetos para a nuvem você deve estar logado no serviço da nuvem do KIT Scenaist.</translation>
+        <translation type="vanished">Para mover projetos para a nuvem você deve estar logado no serviço da nuvem do KIT Scenaist.</translation>
     </message>
     <message>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
@@ -1716,7 +1737,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Saved password is incorrect. Look like you changed the password. Please, enter the new password.</source>
-        <translation>A senha salva está incorreta. Parece que você alterou a senha. Por favor entre com a nova senha.</translation>
+        <translation type="vanished">A senha salva está incorreta. Parece que você alterou a senha. Por favor entre com a nova senha.</translation>
     </message>
     <message>
         <source>Import</source>
@@ -1725,6 +1746,40 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Please wait. Import can take few minutes.</source>
         <translation>Por favor, espere. A importação pode demorar alguns minutos.</translation>
+    </message>
+    <message>
+        <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose file to save project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
+
+Project didn&apos;t synchronized.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Closing Database Connections and remove temporary files.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1743,7 +1798,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry export.</source>
-        <translation>Não é possível gravar no arquivo. Talvez esteja aberto em outra aplicação. Feche-o e repita a exportação.</translation>
+        <translation type="vanished">Não é possível gravar no arquivo. Talvez esteja aberto em outra aplicação. Feche-o e repita a exportação.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
@@ -1760,6 +1815,10 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Please wait. Preparing document to preview can take few minutes.</source>
         <translation>Por favor, espere. A preparação do documento para visualização pode levar alguns minutos.</translation>
+    </message>
+    <message>
+        <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry export.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1839,7 +1898,7 @@ O projeto não foi sincronizado.</translation>
     <name>ManagementLayer::ResearchManager</name>
     <message>
         <source>Are you shure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Tem certeza de remover a pesquisa:&lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation type="vanished">Tem certeza de remover a pesquisa:&lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Add New</source>
@@ -1860,6 +1919,10 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Find All Locations from Script</source>
         <translation>Localizar todos os locais do roteiro</translation>
+    </message>
+    <message>
+        <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1927,7 +1990,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Language will be change after application restart.</source>
-        <translation>O idioma será alterado após o reinício da aplicação.</translation>
+        <translation type="vanished">O idioma será alterado após o reinício da aplicação.</translation>
     </message>
     <message>
         <source>Dictionary loading</source>
@@ -1980,6 +2043,10 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Shortcut</source>
         <translation>Atalho</translation>
+    </message>
+    <message>
+        <source>Language will be changed after application restart.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2184,10 +2251,6 @@ Você pode tentar recarregar a atualização.</translation>
         <translation>Detectar idioma pela região do sistema</translation>
     </message>
     <message>
-        <source>Українська мова</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>汉语</source>
         <translation></translation>
     </message>
@@ -2374,6 +2437,10 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     <message>
         <source>Polski</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Українська</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2708,7 +2775,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Add research materials such as text, web pages and images in tree. Use toolbar buttons and context menu for add or remove research materials in tree.</source>
-        <translation>Adicionar materiais de pesquisa, como texto, páginas da web e imagens na árvore. Use os botões da barra de ferramentas e o menu de contexto para adicionar ou remover materiais de pesquisa na árvore.</translation>
+        <translation type="vanished">Adicionar materiais de pesquisa, como texto, páginas da web e imagens na árvore. Use os botões da barra de ferramentas e o menu de contexto para adicionar ou remover materiais de pesquisa na árvore.</translation>
     </message>
     <message>
         <source>Url:</source>
@@ -2870,9 +2937,13 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3255,11 +3326,11 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Simbols</source>
-        <translation>Símbolos</translation>
+        <translation type="vanished">Símbolos</translation>
     </message>
     <message>
         <source>Simbols without spaces | Simbols with spaces</source>
-        <translation>Símbolos sem espaços | Símbolos com espaços</translation>
+        <translation type="vanished">Símbolos sem espaços | Símbolos com espaços</translation>
     </message>
     <message>
         <source>Apply Selected Template</source>
@@ -3360,6 +3431,14 @@ Parágrafo</translation>
     <message>
         <source>Use open bracket in dialogue for jump to parenthetical</source>
         <translation>Use o suporte aberto no diálogo para saltar para entre parênteses</translation>
+    </message>
+    <message>
+        <source>Symbols</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Symbols without spaces | Symbols with spaces</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

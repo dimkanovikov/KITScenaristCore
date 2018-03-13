@@ -1208,7 +1208,9 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     }
                 }
             }
-            if (bottomBlock != document()->lastBlock()) {
+            if (bottomBlock == document()->firstBlock()) {
+                bottomBlock = document()->lastBlock();
+            } else if (bottomBlock != document()->lastBlock()) {
                 bottomBlock = bottomBlock.next();
             }
 
