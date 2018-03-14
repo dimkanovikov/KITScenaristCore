@@ -6,7 +6,6 @@
 
 namespace BusinessLogic {
     class ScenarioTextDocument;
-    class FountainImporter;
 }
 
 class QCompleter;
@@ -409,11 +408,6 @@ namespace UserInterface
          * @brief Список дополнительных действий для контекстного меню
          */
         QList<QAction*> m_additionalContextMenuActions;
-
-        /**
-         * @brief Импортер фонтана при вставки с буфера
-         */
-        BusinessLogic::FountainImporter* m_fountainImporter;
     };
 }
 
