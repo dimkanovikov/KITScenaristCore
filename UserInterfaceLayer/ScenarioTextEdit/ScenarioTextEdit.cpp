@@ -8,7 +8,6 @@
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioReviewModel.h>
 
-#include <BusinessLayer/Import/AbstractImporter.h>
 #include <BusinessLayer/Import/FountainImporter.h>
 
 #include <3rd_party/Helpers/TextEditHelper.h>
