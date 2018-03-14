@@ -40,6 +40,11 @@ namespace BusinessLogic
         QString importScript(const ImportParameters& _importParameters) const override;
 
         /**
+         * @brief Импорт сценария из строки
+         */
+        QString importScript(const QString& _text) const;
+
+        /**
          * @brief Импорт данных разработки
          */
         QVariantMap importResearch(const ImportParameters& _importParameters) const override;

@@ -68,339 +68,348 @@ QString FountainImporter::importScript(const ImportParameters &_importParameters
     //
     QFile fountainFile(_importParameters.filePath);
     if (fountainFile.open(QIODevice::ReadOnly)) {
-        //
-        // Читаем plain text
-        //
-        // ... и пишем в сценарий
-        //
-        QXmlStreamWriter writer(&scenarioXml);
-        writer.setAutoFormatting(true);
-        writer.setAutoFormattingIndent(true);
-        writer.writeStartDocument();
-        writer.writeStartElement(NODE_SCENARIO);
-        writer.writeAttribute(ATTRIBUTE_VERSION, "1.0");
+        const QString& scriptText = fountainFile.readAll();
+        scenarioXml = importScript(scriptText);
+    }
 
-        //
-        // Сформируем список строк, содержащий текст сценария
-        //
-        QVector<QString> paragraphs;
-        bool isTitle = false;
-        bool isFirstLine = true;
-        for (QString& str : QString(fountainFile.readAll()).split("\n")) {
-            //
-            // Если первая строка содержит ':', то в начале идет титульная страница,
-            // которую мы обрабатываем не здесь
-            //
-            if (isFirstLine) {
-                isFirstLine = false;
-                if (str.contains(':')) {
-                    isTitle = true;
-                }
-            }
+    return scenarioXml;
+}
 
-            if (isTitle) {
-                //
-                // Титульная страница заканчивается пустой строкой
-                //
-                if (str.simplified().isEmpty()) {
-                    isTitle = false;
-                }
-            } else {
-                if (str.endsWith("\r")) {
-                    str.chop(1);
-                }
+QString FountainImporter::importScript(const QString& _scriptText) const {
+    QString scenarioXml;
+    //
+    // Читаем plain text
+    //
+    // ... и пишем в сценарий
+    //
+    QXmlStreamWriter writer(&scenarioXml);
+    writer.setAutoFormatting(true);
+    writer.setAutoFormattingIndent(true);
+    writer.writeStartDocument();
+    writer.writeStartElement(NODE_SCENARIO);
+    writer.writeAttribute(ATTRIBUTE_VERSION, "1.0");
 
-                if (str == DOUBLE_WHITESPACE) {
-                    //
-                    // Если строка состоит из 2 пробелов, то это нужно сохранить
-                    // Используется для многострочных диалогов с пустыми строками
-                    //
-                    paragraphs.push_back(DOUBLE_WHITESPACE);
-                } else {
-                    paragraphs.push_back(str.simplified());
-                }
+    //
+    // Сформируем список строк, содержащий текст сценария
+    //
+    QVector<QString> paragraphs;
+    bool isTitle = false;
+    bool isFirstLine = true;
+    for (QString& str : QString(_scriptText).split("\n")) {
+        //
+        // Если первая строка содержит ':', то в начале идет титульная страница,
+        // которую мы обрабатываем не здесь
+        //
+        if (isFirstLine) {
+            isFirstLine = false;
+            if (str.contains(':')) {
+                isTitle = true;
             }
         }
 
-        //
-        // Очищаем форматы перед импортом
-        //
-        m_formats.clear();
-        m_lastFormat.clear();
+        if (isTitle) {
+            //
+            // Титульная страница заканчивается пустой строкой
+            //
+            if (str.simplified().isEmpty()) {
+                isTitle = false;
+            }
+        } else {
+            if (str.endsWith("\r")) {
+                str.chop(1);
+            }
 
-        const int paragraphsCount = paragraphs.size();
-        ScenarioBlockStyle::Type prevBlockType = ScenarioBlockStyle::Undefined;
-        QStack<QString> dirs;
-        ScenarioBlockStyle::Type blockType;
-        for (int i = 0; i != paragraphsCount; ++i) {
-            if (m_isNotation
+            if (str == DOUBLE_WHITESPACE) {
+                //
+                // Если строка состоит из 2 пробелов, то это нужно сохранить
+                // Используется для многострочных диалогов с пустыми строками
+                //
+                paragraphs.push_back(DOUBLE_WHITESPACE);
+            } else {
+                paragraphs.push_back(str.simplified());
+            }
+        }
+    }
+
+    //
+    // Очищаем форматы перед импортом
+    //
+    m_formats.clear();
+    m_lastFormat.clear();
+
+    const int paragraphsCount = paragraphs.size();
+    ScenarioBlockStyle::Type prevBlockType = ScenarioBlockStyle::Undefined;
+    QStack<QString> dirs;
+    ScenarioBlockStyle::Type blockType;
+    for (int i = 0; i != paragraphsCount; ++i) {
+        if (m_isNotation
                 || m_isCommenting) {
+            //
+            // Если мы комментируем или делаем заметку, то продолжим это
+            //
+            processBlock(paragraphs[i], prevBlockType, writer);
+            continue;
+        }
+
+        if (paragraphs[i].isEmpty()) {
+            continue;
+        }
+
+        blockType = ScenarioBlockStyle::Action;
+        QString paragraphText;
+
+        switch(paragraphs[i][0].toLatin1()) {
+            case '.':
+            {
+                blockType = ScenarioBlockStyle::SceneHeading;
                 //
-                // Если мы комментируем или делаем заметку, то продолжим это
+                // TODO: номера сцен игнорируем, поскольку в фонтане они являются строками
                 //
-                processBlock(paragraphs[i], prevBlockType, writer);
-                continue;
+                int sharpPos = paragraphs[i].size();
+                if (paragraphs[i].endsWith("#")) {
+                    sharpPos = paragraphs[i].lastIndexOf('#', paragraphs[i].size() - 2);
+                }
+                if (sharpPos == -1) {
+                    sharpPos = paragraphs[i].size();
+                }
+                paragraphText = paragraphs[i].mid(1, sharpPos - 1);
+                break;
             }
 
-            if (paragraphs[i].isEmpty()) {
-                continue;
+            case '!':
+            {
+                blockType = ScenarioBlockStyle::Action;
+                paragraphText = paragraphs[i].mid(1);
+                break;
             }
 
-            blockType = ScenarioBlockStyle::Action;
-            QString paragraphText;
+            case '@':
+            {
+                blockType = ScenarioBlockStyle::Character;
+                paragraphText = paragraphs[i].mid(1);
+                break;
+            }
 
-            switch(paragraphs[i][0].toLatin1()) {
-                case '.':
-                {
+            case '>':
+            {
+                if (paragraphs[i].endsWith("<")) {
+                    blockType = ScenarioBlockStyle::Action;
+                    paragraphText = paragraphs[i].mid(1, paragraphs[i].size() - 2);
+                } else {
+                    blockType = ScenarioBlockStyle::Transition;
+                    paragraphText = paragraphs[i].mid(1);
+                }
+                break;
+            }
+
+            case '=':
+            {
+                bool isPageBreak = false;
+                if (paragraphs[i].startsWith("===")) {
+                    isPageBreak = true;
+                    for (int j = 3; j != paragraphs[i].size(); ++j) {
+                        if (paragraphs[i][j] != '=') {
+                            isPageBreak = false;
+                            break;
+                        }
+                    }
+
+                    //
+                    // Если состоит из трех или более '=', то это PageBreak
+                    // У нас такого сейчас нет
+                    //
+                    continue;
+                }
+                if (!isPageBreak) {
+                    blockType = ScenarioBlockStyle::SceneDescription;
+                    paragraphText = paragraphs[i].mid(1);
+                }
+                break;
+            }
+
+            case '~':
+            {
+                //
+                // Лирика
+                //
+                blockType = ScenarioBlockStyle::Lyrics;
+                paragraphText = paragraphs[i].mid(1);
+                break;
+            }
+
+            case '#':
+            {
+                //
+                // Директории
+                //
+                int sharpCount = 0;
+                while (paragraphs[i][sharpCount] == '#') {
+                    ++sharpCount;
+                }
+
+                if (sharpCount <= dirs.size()) {
+                    //
+                    // Закроем нужное число раз уже открытые
+                    //
+                    unsigned toClose = dirs.size() - sharpCount + 1;
+                    for (unsigned i = 0; i != toClose; ++i) {
+                        processBlock(QApplication::translate("FountainImporter", "END OF ") + dirs.top(),
+                                     ScenarioBlockStyle::FolderFooter, writer);
+                        dirs.pop();
+                    }
+                    prevBlockType = ScenarioBlockStyle::FolderFooter;
+                }
+                //
+                // И откроем новую
+                //
+                QString text = paragraphs[i].mid(sharpCount);
+                processBlock(text, ScenarioBlockStyle::FolderHeader, writer);
+                dirs.push(text);
+                prevBlockType = ScenarioBlockStyle::FolderHeader;
+
+                //
+                // Поскольку директории добавляются прямо здесь без обработки, то в конец цикла идти не надо
+                //
+                continue;
+                break;
+            }
+
+            default:
+            {
+                bool startsWithHeading = false;
+                for (const QString &sceneHeading : sceneHeadings) {
+                    if (paragraphs[i].startsWith(sceneHeading)) {
+                        startsWithHeading = true;
+                        break;
+                    }
+                }
+
+                if (startsWithHeading
+                        && i + 1 < paragraphsCount
+                        && paragraphs[i + 1].isEmpty()) {
+                    //
+                    // Если начинается с одного из времен действия, а после обязательно пустая строка
+                    // Значит это заголовок сцены
+                    //
                     blockType = ScenarioBlockStyle::SceneHeading;
+
                     //
                     // TODO: номера сцен игнорируем, поскольку в фонтане они являются строками
                     //
                     int sharpPos = paragraphs[i].size();
-                    if (paragraphs[i].endsWith("#")) {
+                    if (paragraphs[i].startsWith("#")) {
                         sharpPos = paragraphs[i].lastIndexOf('#', paragraphs[i].size() - 2);
                     }
                     if (sharpPos == -1) {
                         sharpPos = paragraphs[i].size();
                     }
-                    paragraphText = paragraphs[i].mid(1, sharpPos - 1);
-                    break;
-                }
-
-                case '!':
-                {
-                    blockType = ScenarioBlockStyle::Action;
-                    paragraphText = paragraphs[i].mid(1);
-                    break;
-                }
-
-                case '@':
-                {
-                    blockType = ScenarioBlockStyle::Character;
-                    paragraphText = paragraphs[i].mid(1);
-                    break;
-                }
-
-                case '>':
-                {
-                    if (paragraphs[i].endsWith("<")) {
-                        blockType = ScenarioBlockStyle::Action;
-                        paragraphText = paragraphs[i].mid(1, paragraphs[i].size() - 2);
-                    } else {
-                        blockType = ScenarioBlockStyle::Transition;
-                        paragraphText = paragraphs[i].mid(1);
-                    }
-                    break;
-                }
-
-                case '=':
-                {
-                    bool isPageBreak = false;
-                    if (paragraphs[i].startsWith("===")) {
-                        isPageBreak = true;
-                        for (int j = 3; j != paragraphs[i].size(); ++j) {
-                            if (paragraphs[i][j] != '=') {
-                                isPageBreak = false;
-                                break;
-                            }
-                        }
-
-                        //
-                        // Если состоит из трех или более '=', то это PageBreak
-                        // У нас такого сейчас нет
-                        //
-                        continue;
-                    }
-                    if (!isPageBreak) {
-                        blockType = ScenarioBlockStyle::SceneDescription;
-                        paragraphText = paragraphs[i].mid(1);
-                    }
-                    break;
-                }
-
-                case '~':
-                {
+                    paragraphText = paragraphs[i].left(sharpPos);
+                } else if (paragraphs[i].startsWith("[[")
+                           && paragraphs[i].endsWith("]]")) {
                     //
-                    // Лирика
+                    // Редакторская заметка
                     //
-                    blockType = ScenarioBlockStyle::Lyrics;
-                    paragraphText = paragraphs[i].mid(1);
-                    break;
-                }
-
-                case '#':
-                {
-                    //
-                    // Директории
-                    //
-                    int sharpCount = 0;
-                    while (paragraphs[i][sharpCount] == '#') {
-                        ++sharpCount;
-                    }
-
-                    if (sharpCount <= dirs.size()) {
-                        //
-                        // Закроем нужное число раз уже открытые
-                        //
-                        unsigned toClose = dirs.size() - sharpCount + 1;
-                        for (unsigned i = 0; i != toClose; ++i) {
-                            processBlock(QApplication::translate("FountainImporter", "END OF ") + dirs.top(),
-                                         ScenarioBlockStyle::FolderFooter, writer);
-                            dirs.pop();
-                        }
-                        prevBlockType = ScenarioBlockStyle::FolderFooter;
-                    }
-                    //
-                    // И откроем новую
-                    //
-                    QString text = paragraphs[i].mid(sharpCount);
-                    processBlock(text, ScenarioBlockStyle::FolderHeader, writer);
-                    dirs.push(text);
-                    prevBlockType = ScenarioBlockStyle::FolderHeader;
-
-                    //
-                    // Поскольку директории добавляются прямо здесь без обработки, то в конец цикла идти не надо
-                    //
+                    m_notes.append(std::make_tuple(paragraphs[i].mid(2, paragraphs[i].size() - 4), m_noteStartPos, m_noteLen));
+                    m_noteStartPos += m_noteLen;
+                    m_noteLen = 0;
                     continue;
-                    break;
-                }
-
-                default:
-                {
-                    bool startsWithHeading = false;
-                    for (const QString &sceneHeading : sceneHeadings) {
-                        if (paragraphs[i].startsWith(sceneHeading)) {
-                            startsWithHeading = true;
-                            break;
-                        }
-                    }
-
-                    if (startsWithHeading
-                            && i + 1 < paragraphsCount
-                            && paragraphs[i + 1].isEmpty()) {
+                } else if (paragraphs[i].startsWith("/*")) {
+                    //
+                    // Начинается комментарий
+                    paragraphText = paragraphs[i];
+                } else if (paragraphs[i] == TextEditHelper::smartToUpper(paragraphs[i])
+                           && i != 0
+                           && paragraphs[i-1].isEmpty()
+                           && i + 1 < paragraphsCount
+                           && paragraphs[i+1].isEmpty()
+                           && paragraphs[i].endsWith("TO:")) {
+                    //
+                    // Если состоит только из заглавных букв, предыдущая и следующая строки пустые
+                    // и заканчивается "TO:", то это переход
+                    //
+                    blockType = ScenarioBlockStyle::Transition;
+                    paragraphText = paragraphs[i].left(paragraphs[i].size()-4);
+                } else if (paragraphs[i].startsWith("(")
+                           && paragraphs[i].endsWith(")")
+                           && (prevBlockType == ScenarioBlockStyle::Character
+                               || prevBlockType == ScenarioBlockStyle::Dialogue)) {
+                    //
+                    // Если текущий блок обернут в (), то это ремарка
+                    //
+                    blockType = ScenarioBlockStyle::Parenthetical;
+                    paragraphText = paragraphs[i];
+                } else if (paragraphs[i] == TextEditHelper::smartToUpper(paragraphs[i])
+                           && i != 0
+                           && paragraphs[i-1].isEmpty()
+                           && i + 1 < paragraphsCount
+                           && !paragraphs[i+1].isEmpty()) {
+                    //
+                    // Если состоит из только из заглавных букв, впереди не пустая строка, а перед пустая
+                    // Значит это имя персонажа (для реплики)
+                    //
+                    blockType = ScenarioBlockStyle::Character;
+                    if (paragraphs[i].endsWith("^")) {
                         //
-                        // Если начинается с одного из времен действия, а после обязательно пустая строка
-                        // Значит это заголовок сцены
+                        // Двойной диалог, который мы пока что не умеем обрабатывать
                         //
-                        blockType = ScenarioBlockStyle::SceneHeading;
-
-                        //
-                        // TODO: номера сцен игнорируем, поскольку в фонтане они являются строками
-                        //
-                        int sharpPos = paragraphs[i].size();
-                        if (paragraphs[i].startsWith("#")) {
-                            sharpPos = paragraphs[i].lastIndexOf('#', paragraphs[i].size() - 2);
-                        }
-                        if (sharpPos == -1) {
-                            sharpPos = paragraphs[i].size();
-                        }
-                        paragraphText = paragraphs[i].left(sharpPos);
-                    } else if (paragraphs[i].startsWith("[[")
-                               && paragraphs[i].endsWith("]]")) {
-                        //
-                        // Редакторская заметка
-                        //
-                        m_notes.append(std::make_tuple(paragraphs[i].mid(2, paragraphs[i].size() - 4), m_noteStartPos, m_noteLen));
-                        m_noteStartPos += m_noteLen;
-                        m_noteLen = 0;
-                        continue;
-                    } else if (paragraphs[i].startsWith("/*")) {
-                        //
-                        // Начинается комментарий
-                        paragraphText = paragraphs[i];
-                    } else if (paragraphs[i] == TextEditHelper::smartToUpper(paragraphs[i])
-                               && i != 0
-                               && paragraphs[i-1].isEmpty()
-                               && i + 1 < paragraphsCount
-                               && paragraphs[i+1].isEmpty()
-                               && paragraphs[i].endsWith("TO:")) {
-                        //
-                        // Если состоит только из заглавных букв, предыдущая и следующая строки пустые
-                        // и заканчивается "TO:", то это переход
-                        //
-                        blockType = ScenarioBlockStyle::Transition;
-                        paragraphText = paragraphs[i].left(paragraphs[i].size()-4);
-                    } else if (paragraphs[i].startsWith("(")
-                               && paragraphs[i].endsWith(")")
-                               && (prevBlockType == ScenarioBlockStyle::Character
-                                   || prevBlockType == ScenarioBlockStyle::Dialogue)) {
-                        //
-                        // Если текущий блок обернут в (), то это ремарка
-                        //
-                        blockType = ScenarioBlockStyle::Parenthetical;
-                        paragraphText = paragraphs[i];
-                    } else if (paragraphs[i] == TextEditHelper::smartToUpper(paragraphs[i])
-                               && i != 0
-                               && paragraphs[i-1].isEmpty()
-                               && i + 1 < paragraphsCount
-                               && !paragraphs[i+1].isEmpty()) {
-                        //
-                        // Если состоит из только из заглавных букв, впереди не пустая строка, а перед пустая
-                        // Значит это имя персонажа (для реплики)
-                        //
-                        blockType = ScenarioBlockStyle::Character;
-                        if (paragraphs[i].endsWith("^")) {
-                            //
-                            // Двойной диалог, который мы пока что не умеем обрабатывать
-                            //
-                            paragraphText = paragraphs[i].left(paragraphs[i].size() - 1);
-                        } else {
-                            paragraphText = paragraphs[i];
-                        }
-                    } else if (prevBlockType == ScenarioBlockStyle::Character
-                               || prevBlockType == ScenarioBlockStyle::Parenthetical
-                               || (prevBlockType == ScenarioBlockStyle::Dialogue
-                                   && i > 0
-                                   && !paragraphs[i-1].isEmpty())) {
-                        //
-                        // Если предыдущий блок - имя персонажа или ремарка, то сейчас диалог
-                        // Или предыдущая строка является диалогом
-                        //
-                        blockType = ScenarioBlockStyle::Dialogue;
-                        paragraphText = paragraphs[i];
+                        paragraphText = paragraphs[i].left(paragraphs[i].size() - 1);
                     } else {
-                        //
-                        // Во всех остальных случаях - Action
-                        //
-                        blockType = ScenarioBlockStyle::Action;
                         paragraphText = paragraphs[i];
                     }
+                } else if (prevBlockType == ScenarioBlockStyle::Character
+                           || prevBlockType == ScenarioBlockStyle::Parenthetical
+                           || (prevBlockType == ScenarioBlockStyle::Dialogue
+                               && i > 0
+                               && !paragraphs[i-1].isEmpty())) {
+                    //
+                    // Если предыдущий блок - имя персонажа или ремарка, то сейчас диалог
+                    // Или предыдущая строка является диалогом
+                    //
+                    blockType = ScenarioBlockStyle::Dialogue;
+                    paragraphText = paragraphs[i];
+                } else {
+                    //
+                    // Во всех остальных случаях - Action
+                    //
+                    blockType = ScenarioBlockStyle::Action;
+                    paragraphText = paragraphs[i];
                 }
             }
-            //
-            // Отправим блок на обработку
-            //
-            processBlock(paragraphText, blockType, writer);
-            prevBlockType = blockType;
         }
         //
-        // Добавим комментарии к последнему блоку
+        // Отправим блок на обработку
         //
-        appendComments(writer);
-
-        //
-        // Закроем последний блок
-        //
-        writer.writeEndElement();
-
-        //
-        // Закроем директории нужное число раз
-        //
-        while (!dirs.empty()) {
-            processBlock(QApplication::translate("FountainImporter", "END OF ") + dirs.top(),
-                         ScenarioBlockStyle::FolderFooter, writer);
-            dirs.pop();
-        }
-
-        //
-        // Закроем документ
-        //
-        writer.writeEndElement();
-        writer.writeEndDocument();
+        processBlock(paragraphText, blockType, writer);
+        prevBlockType = blockType;
     }
+    //
+    // Добавим комментарии к последнему блоку
+    //
+    appendComments(writer);
+
+    //
+    // Закроем последний блок
+    //
+    writer.writeEndElement();
+
+    //
+    // Закроем директории нужное число раз
+    //
+    while (!dirs.empty()) {
+        processBlock(QApplication::translate("FountainImporter", "END OF ") + dirs.top(),
+                     ScenarioBlockStyle::FolderFooter, writer);
+        dirs.pop();
+    }
+
+    //
+    // Закроем документ
+    //
+    writer.writeEndElement();
+    writer.writeEndDocument();
 
     return scenarioXml;
 }
+
 
 QVariantMap FountainImporter::importResearch(const ImportParameters &_importParameters) const
 {
