@@ -229,31 +229,13 @@ QPixmap ScenarioModelItem::icon() const
     QString iconPath;
 
     switch (m_type) {
-        case Scene: {
-            if (!hasNote()) {
-                iconPath = ":/Graphics/Icons/scene.png";
-            } else {
-                iconPath = ":/Graphics/Icons/scene_noted.png";
-            }
-            break;
-        }
-
         case Folder: {
-            if (!hasNote()) {
-                iconPath = ":/Graphics/Icons/folder.png";
-            } else {
-                iconPath = ":/Graphics/Icons/folder_noted.png";
-            }
-            break;
-        }
-
-        case Scenario: {
-            iconPath = ":/Graphics/Icons/script.png";
+            iconPath = ":/Graphics/Iconset/folder.png";
             break;
         }
 
         default: {
-            iconPath = ":/Graphics/Icons/unknown.png";
+            iconPath = ":/Graphics/Iconset/file-document-box.png";
             break;
         }
     }

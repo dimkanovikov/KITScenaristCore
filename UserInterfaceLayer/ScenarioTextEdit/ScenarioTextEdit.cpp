@@ -555,7 +555,7 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         //
         FlatButton* bold = new FlatButton;
         bold->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        bold->setIcons(QIcon(":/Graphics/Icons/Editing/format-bold.png"));
+        bold->setIcons(QIcon(":/Graphics/Iconset/format-bold.png"));
         bold->setCheckable(true);
         bold->setChecked(textCursor().charFormat().font().bold());
         bold->setProperty("inContextMenu", true);
@@ -565,7 +565,7 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         //
         FlatButton* italic = new FlatButton;
         italic->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        italic->setIcons(QIcon(":/Graphics/Icons/Editing/format-italic.png"));
+        italic->setIcons(QIcon(":/Graphics/Iconset/format-italic.png"));
         italic->setCheckable(true);
         italic->setChecked(textCursor().charFormat().font().italic());
         italic->setProperty("inContextMenu", true);
@@ -574,7 +574,7 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         //
         FlatButton* underline = new FlatButton;
         underline->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        underline->setIcons(QIcon(":/Graphics/Icons/Editing/format-underline.png"));
+        underline->setIcons(QIcon(":/Graphics/Iconset/format-underline.png"));
         underline->setCheckable(true);
         underline->setChecked(textCursor().charFormat().font().underline());
         underline->setProperty("inContextMenu", true);
