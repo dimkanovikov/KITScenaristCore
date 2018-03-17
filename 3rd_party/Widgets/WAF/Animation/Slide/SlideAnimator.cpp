@@ -30,7 +30,7 @@ SlideAnimator::SlideAnimator(QWidget* _widgetForSlide) :
     m_direction(WAF::FromLeftToRight),
     m_isFixBackground(true),
     m_isFixStartSize(false),
-    m_animation(new QPropertyAnimation(_widgetForSlide, "maximumWidth")),
+    m_animation(new QPropertyAnimation(_widgetForSlide, "minimumWidth")),
     m_decorator(new SlideForegroundDecorator(_widgetForSlide))
 {
     Q_ASSERT(_widgetForSlide);
@@ -46,9 +46,9 @@ SlideAnimator::SlideAnimator(QWidget* _widgetForSlide) :
     //
     connect(m_animation, &QPropertyAnimation::valueChanged, [=] {
         if (isWidth()) {
-            widgetForSlide()->setMinimumWidth(widgetForSlide()->maximumWidth());
+            widgetForSlide()->setMaximumWidth(widgetForSlide()->minimumWidth());
         } else {
-            widgetForSlide()->setMinimumHeight(widgetForSlide()->maximumHeight());
+            widgetForSlide()->setMaximumHeight(widgetForSlide()->minimumHeight());
         }
     });
 
