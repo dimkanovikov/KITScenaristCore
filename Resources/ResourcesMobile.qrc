@@ -65,6 +65,9 @@
         <file>Iconset/image-multiple.png</file>
         <file>Iconset/sitemap.png</file>
         <file>Iconset/web.png</file>
+        <file>Iconset/format-title.png</file>
+        <file>Iconset/message-reply-text.png</file>
+        <file>Iconset/square.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/ScenaristMobile_ru.qm</file>
