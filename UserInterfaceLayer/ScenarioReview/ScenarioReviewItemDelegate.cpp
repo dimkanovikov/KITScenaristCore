@@ -2,6 +2,8 @@
 
 #include <BusinessLayer/ScenarioDocument/ScenarioReviewModel.h>
 
+#include <3rd_party/Helpers/StyleSheetHelper.h>
+
 #include <QAbstractItemView>
 #include <QApplication>
 #include <QDateTime>
@@ -16,12 +18,22 @@ namespace {
     /**
      * @brief Ширина цветовой метки
      */
-    const int COLOR_MARK_WIDTH = 12;
+    const int COLOR_MARK_WIDTH = StyleSheetHelper::dpToPx(12);
 
     /**
      * @brief Расстояния
      */
-    const int TOP_MARGIN = 8, SPACING = 8, BOTTOM_MARGIN = 8, RIGHT_MARGIN = 3 ;
+#ifndef MOBILE_OS
+    const int TOP_MARGIN = StyleSheetHelper::dpToPx(8);
+    const int SPACING = StyleSheetHelper::dpToPx(8);
+    const int BOTTOM_MARGIN = StyleSheetHelper::dpToPx(8);
+    const int RIGHT_MARGIN = StyleSheetHelper::dpToPx(3);
+#else
+    const int TOP_MARGIN = StyleSheetHelper::dpToPx(15);
+    const int SPACING = StyleSheetHelper::dpToPx(6);
+    const int BOTTOM_MARGIN = StyleSheetHelper::dpToPx(15);
+    const int RIGHT_MARGIN = StyleSheetHelper::dpToPx(8);
+#endif
 
     /**
      * @brief Рассчитать высоту текста по заданной ширине
@@ -106,6 +118,21 @@ void ScenarioReviewItemDelegate::paint(QPainter* _painter, const QStyleOptionVie
     //
     // Определим кисти и шрифты
     //
+#ifdef MOBILE_OS
+    QColor backgroundColor = opt.palette.background().color();
+    QColor replyBackgroundColor = opt.palette.alternateBase().color();
+    QColor textColor = opt.palette.text().color();
+    QColor replyColor = opt.palette.text().color();
+    QColor dateColor = opt.palette.mid().color();
+    QFont headerFont = opt.font;
+    headerFont.setWeight(QFont::Medium);
+    headerFont.setPointSize(16);
+    QFont dateFont = opt.font;
+    dateFont.setWeight(QFont::Medium);
+    dateFont.setPointSize(12);
+    QFont textFont = QApplication::font();
+    textFont.setPointSize(14);
+#else
     QColor backgroundColor = opt.palette.base().color();
     QColor replyBackgroundColor = opt.palette.alternateBase().color();
     QColor textColor = opt.palette.windowText().color();
@@ -121,6 +148,7 @@ void ScenarioReviewItemDelegate::paint(QPainter* _painter, const QStyleOptionVie
     dateFont.setPointSize(dateFont.pointSize() - 4);
 #endif
     QFont textFont = QApplication::font();
+#endif
     //
     // ... для выделенных элементов
     //
@@ -188,6 +216,7 @@ void ScenarioReviewItemDelegate::paint(QPainter* _painter, const QStyleOptionVie
         const QRect colorRect(colorRectX, lastTop, COLOR_MARK_WIDTH, height);
         _painter->fillRect(colorRect, commentIndex == 0 ? color : replyBackgroundColor);
 
+#ifndef MOBILE_OS
         //
         // ... разделитель
         //
@@ -195,6 +224,7 @@ void ScenarioReviewItemDelegate::paint(QPainter* _painter, const QStyleOptionVie
         const QPoint right(rect.right(), lastTop + height);
         _painter->setPen(QPen(opt.palette.dark(), 1));
         _painter->drawLine(left, right);
+#endif
 
         //
         // ... автор

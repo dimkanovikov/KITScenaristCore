@@ -84,8 +84,10 @@ void ColoredToolButton::setColorsPane(ColoredToolButton::ColorsPaneType _pane)
     //
     if (m_colorsPane != 0) {
         setPopupMode(QToolButton::MenuButtonPopup);
+        m_colorsPane->setFocusPolicy(Qt::NoFocus);
 
         QMenu* menu = new QMenu(this);
+        menu->setFocusPolicy(Qt::NoFocus);
         QWidgetAction* wa = new QWidgetAction(menu);
         wa->setDefaultWidget(m_colorsPane);
         menu->addAction(wa);
