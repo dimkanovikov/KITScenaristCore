@@ -7,193 +7,198 @@
 #include <QColor>
 
 namespace BusinessLogic {
-	class ScenarioTextDocument;
+    class ScenarioTextDocument;
 
 
-	/**
-	 * @brief Модель рецензирования
-	 */
-	class ScenarioReviewModel : public QAbstractListModel
-	{
-		Q_OBJECT
+    /**
+     * @brief Модель рецензирования
+     */
+    class ScenarioReviewModel : public QAbstractListModel
+    {
+        Q_OBJECT
 
-	public:
-		/**
-		 * @brief Дополнительные роли для модели
-		 */
-		enum ReviewModelRoles {
-			IsDoneRole = Qt::UserRole + 1,
-			CommentsRole,
-			CommentsAuthorsRole,
-			CommentsDatesRole
-		};
+    public:
+        /**
+         * @brief Дополнительные роли для модели
+         */
+        enum ReviewModelRoles {
+            IsDoneRole = Qt::UserRole + 1,
+            CommentsRole,
+            CommentsAuthorsRole,
+            CommentsDatesRole
+        };
 
-	public:
-		explicit ScenarioReviewModel(ScenarioTextDocument* _parent);
+    public:
+        explicit ScenarioReviewModel(ScenarioTextDocument* _parent);
 
-		/**
-		 * @brief Реализация стандартных методов
-		 */
-		/** @{ */
-		int rowCount(const QModelIndex& _parent = QModelIndex()) const;
-		QVariant data(const QModelIndex& _index, int _role) const;
-		bool removeRows(int _row, int _count, const QModelIndex& _parent = QModelIndex());
-		/** @} */
+        /**
+         * @brief Пуста ли модель
+         */
+        bool isEmpty();
 
-		/**
-		 * @brief Установить цвет текста для заметки
-		 */
-		void setReviewMarkTextColor(int _startPosition, int _length, const QColor& _color);
+        /**
+         * @brief Реализация стандартных методов
+         */
+        /** @{ */
+        int rowCount(const QModelIndex& _parent = QModelIndex()) const;
+        QVariant data(const QModelIndex& _index, int _role) const;
+        bool removeRows(int _row, int _count, const QModelIndex& _parent = QModelIndex());
+        /** @} */
 
-		/**
-		 * @brief Установить цвет фона для заметки
-		 */
-		void setReviewMarkTextBgColor(int _startPosition, int _length, const QColor& _color);
+        /**
+         * @brief Установить цвет текста для заметки
+         */
+        void setReviewMarkTextColor(int _startPosition, int _length, const QColor& _color);
 
-		/**
-		 * @brief Установить выделение для заметки
-		 */
-		void setReviewMarkTextHighlight(int _startPosition, int _length, const QColor& _color);
+        /**
+         * @brief Установить цвет фона для заметки
+         */
+        void setReviewMarkTextBgColor(int _startPosition, int _length, const QColor& _color);
 
-		/**
-		 * @brief Установить комментарий для заметки
-		 */
-		/** @{ */
-		void setReviewMarkComment(int _startPosition, int _length, const QString& _comment);
-		void setReviewMarkComment(const QModelIndex& _index, const QString& _comment);
-		/** @} */
+        /**
+         * @brief Установить выделение для заметки
+         */
+        void setReviewMarkTextHighlight(int _startPosition, int _length, const QColor& _color);
 
-		/**
-		 * @brief Добавить комментарий к существующей редакторской заметке
-		 */
-		void addReviewMarkComment(const QModelIndex& _index, const QString& _comment);
+        /**
+         * @brief Установить комментарий для заметки
+         */
+        /** @{ */
+        void setReviewMarkComment(int _startPosition, int _length, const QString& _comment);
+        void setReviewMarkComment(const QModelIndex& _index, const QString& _comment);
+        /** @} */
 
-		/**
-		 * @brief Обновить комментарий
-		 */
-		void updateReviewMarkComment(const QModelIndex& _index, int _commentIndex, const QString& _comment);
+        /**
+         * @brief Добавить комментарий к существующей редакторской заметке
+         */
+        void addReviewMarkComment(const QModelIndex& _index, const QString& _comment);
 
-		/**
-		 * @brief Установить флаг "выполнено" для заметки
-		 */
-		/** @{ */
-		void setReviewMarkIsDone(int _cursorPosition, bool _isDone);
-		void setReviewMarkIsDone(const QModelIndex& _index, bool _isDone);
-		/** @} */
+        /**
+         * @brief Обновить комментарий
+         */
+        void updateReviewMarkComment(const QModelIndex& _index, int _commentIndex, const QString& _comment);
 
-		/**
-		 * @brief Удалить заметку
-		 */
-		/** @{ */
-		void removeMarks(int _fromCursorPosition, int _toCursorPosition);
-		void removeMark(int _cursorPosition);
-		void removeMark(const QModelIndex& _index, int _commentIndex = 0);
-		/** @{ */
+        /**
+         * @brief Установить флаг "выполнено" для заметки
+         */
+        /** @{ */
+        void setReviewMarkIsDone(int _cursorPosition, bool _isDone);
+        void setReviewMarkIsDone(const QModelIndex& _index, bool _isDone);
+        /** @} */
 
-		/**
-		 * @brief Получить начальную позицию выделения
-		 */
-		int markStartPosition(const QModelIndex& _index) const;
+        /**
+         * @brief Удалить заметку
+         */
+        /** @{ */
+        void removeMarks(int _fromCursorPosition, int _toCursorPosition);
+        void removeMark(int _cursorPosition);
+        void removeMark(const QModelIndex& _index, int _commentIndex = 0);
+        /** @{ */
 
-		/**
-		 * @brief Получить длинну выделения
-		 */
-		int markLength(const QModelIndex& _index) const;
+        /**
+         * @brief Получить начальную позицию выделения
+         */
+        int markStartPosition(const QModelIndex& _index) const;
 
-		/**
-		 * @brief Индекс элемента по позиции
-		 */
-		QModelIndex indexForPosition(int _position);
+        /**
+         * @brief Получить длинну выделения
+         */
+        int markLength(const QModelIndex& _index) const;
 
-	signals:
-		/**
-		 * @brief В документ были внесены редакторские примечания
-		 */
-		void reviewChanged();
+        /**
+         * @brief Индекс элемента по позиции
+         */
+        QModelIndex indexForPosition(int _position);
 
-	private slots:
-		/**
-		 * @brief Сформировать модель комментариев
-		 */
-		void aboutUpdateReviewModel(int _position, int _removed, int _added);
+    signals:
+        /**
+         * @brief В документ были внесены редакторские примечания
+         */
+        void reviewChanged();
 
-	private:
-		/**
-		 * @brief Документ, по которому строится модель
-		 */
-		ScenarioTextDocument* m_document;
+    private slots:
+        /**
+         * @brief Сформировать модель комментариев
+         */
+        void aboutUpdateReviewModel(int _position, int _removed, int _added);
 
-		/**
-		 * @brief Класс информации о редакторской метке
-		 */
-		class ReviewMarkInfo {
-		public:
-			ReviewMarkInfo() : startPosition(0), length(0), isDone(false), needUpdate(false) {}
+    private:
+        /**
+         * @brief Документ, по которому строится модель
+         */
+        ScenarioTextDocument* m_document;
 
-			/**
-			 * @brief Позиция начала
-			 */
-			int startPosition;
+        /**
+         * @brief Класс информации о редакторской метке
+         */
+        class ReviewMarkInfo {
+        public:
+            ReviewMarkInfo() : startPosition(0), length(0), isDone(false), needUpdate(false) {}
 
-			/**
-			 * @brief Длина выделения
-			 */
-			int length;
+            /**
+             * @brief Позиция начала
+             */
+            int startPosition;
 
-			/**
-			 * @brief Позиция конца
-			 */
-			int endPosition() const;
+            /**
+             * @brief Длина выделения
+             */
+            int length;
 
-			/**
-			 * @brief Позиция перед концом
-			 */
-			int beforeEndPosition() const;
+            /**
+             * @brief Позиция конца
+             */
+            int endPosition() const;
 
-			/**
-			 * @brief Цвет выделения
-			 */
-			/** @{ */
-			QColor foreground;
-			QColor background;
-			/** @} */
+            /**
+             * @brief Позиция перед концом
+             */
+            int beforeEndPosition() const;
 
-			/**
-			 * @brief Проработан
-			 */
-			bool isDone;
+            /**
+             * @brief Цвет выделения
+             */
+            /** @{ */
+            QColor foreground;
+            QColor background;
+            /** @} */
 
-			/**
-			 * @brief Тексты комментариев
-			 */
-			QStringList comments;
+            /**
+             * @brief Проработан
+             */
+            bool isDone;
 
-			/**
-			 * @brief Авторы заметок
-			 */
-			QStringList authors;
+            /**
+             * @brief Тексты комментариев
+             */
+            QStringList comments;
 
-			/**
-			 * @brief Даты заметок
-			 */
-			QStringList dates;
+            /**
+             * @brief Авторы заметок
+             */
+            QStringList authors;
 
-			/**
-			 * @brief Заметку нужно обновить
-			 */
-			bool needUpdate;
-		};
+            /**
+             * @brief Даты заметок
+             */
+            QStringList dates;
 
-		/**
-		 * @brief Редакторские заметки
-		 */
-		QList<ReviewMarkInfo> m_reviewMarks;
+            /**
+             * @brief Заметку нужно обновить
+             */
+            bool needUpdate;
+        };
 
-		/**
-		 * @brief Карта заметок, для быстрого поиска по позиции (начальная/конечная позиция, номер заметки)
-		 */
-		QMap<int, int> m_reviewMap;
-	};
+        /**
+         * @brief Редакторские заметки
+         */
+        QList<ReviewMarkInfo> m_reviewMarks;
+
+        /**
+         * @brief Карта заметок, для быстрого поиска по позиции (начальная/конечная позиция, номер заметки)
+         */
+        QMap<int, int> m_reviewMap;
+    };
 }
 
 #endif // SCENARIOREVIEWMODEL_H

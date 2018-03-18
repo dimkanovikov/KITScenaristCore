@@ -44,11 +44,12 @@ SlideAnimator::SlideAnimator(QWidget* _widgetForSlide) :
     //
     // Синхронизируем изменение минимальных границ с максимальными
     //
-    connect(m_animation, &QPropertyAnimation::valueChanged, [=] {
+    connect(m_animation, &QPropertyAnimation::valueChanged, [this] (const QVariant& _value) {
+        const int value = _value.toInt();
         if (isWidth()) {
-            widgetForSlide()->setMaximumWidth(widgetForSlide()->minimumWidth());
+            widgetForSlide()->setMaximumWidth(value);
         } else {
-            widgetForSlide()->setMaximumHeight(widgetForSlide()->minimumHeight());
+            widgetForSlide()->setMaximumHeight(value);
         }
     });
 

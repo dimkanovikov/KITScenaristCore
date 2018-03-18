@@ -482,7 +482,7 @@ void ScenarioTextDocument::setCursorPosition(QTextCursor& _cursor, int _position
     }
 }
 
-ScenarioReviewModel*ScenarioTextDocument::reviewModel() const
+ScenarioReviewModel* ScenarioTextDocument::reviewModel() const
 {
     return m_reviewModel;
 }

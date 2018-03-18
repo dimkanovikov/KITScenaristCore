@@ -82,6 +82,11 @@ ScenarioReviewModel::ScenarioReviewModel(ScenarioTextDocument *_parent) :
     connect(m_document, SIGNAL(contentsChange(int,int,int)), this, SLOT(aboutUpdateReviewModel(int,int,int)));
 }
 
+bool ScenarioReviewModel::isEmpty()
+{
+    return m_reviewMarks.isEmpty();
+}
+
 int ScenarioReviewModel::rowCount(const QModelIndex& _parent) const
 {
     Q_UNUSED(_parent);
