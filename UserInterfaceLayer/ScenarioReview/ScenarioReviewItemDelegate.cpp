@@ -121,8 +121,8 @@ void ScenarioReviewItemDelegate::paint(QPainter* _painter, const QStyleOptionVie
 #ifdef MOBILE_OS
     QColor backgroundColor = opt.palette.background().color();
     QColor replyBackgroundColor = opt.palette.alternateBase().color();
-    QColor textColor = opt.palette.text().color();
-    QColor replyColor = opt.palette.text().color();
+    QColor textColor = opt.palette.windowText().color();
+    QColor replyColor = opt.palette.windowText().color();
     QColor dateColor = opt.palette.mid().color();
     QFont headerFont = opt.font;
     headerFont.setWeight(QFont::Medium);

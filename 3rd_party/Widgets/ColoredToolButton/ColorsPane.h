@@ -13,7 +13,7 @@ class ColorsPane : public QWidget
 
 public:
 	explicit ColorsPane(QWidget* _parent = 0) :
-		QWidget(_parent)
+        QWidget(_parent)
 	{}
 
 	/**

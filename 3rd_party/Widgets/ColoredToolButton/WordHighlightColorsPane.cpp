@@ -66,7 +66,7 @@ namespace {
 
 
 WordHighlightColorsPane::WordHighlightColorsPane(QWidget* _parent) :
-	ColorsPane(_parent)
+    ColorsPane(_parent)
 {
 	//
 	// Рассчитаем фиксированный размер панели

@@ -181,7 +181,11 @@ void QLightBoxDialog::init()
                 newLayout->setRowStretch(2, 8);
             }
             newLayout->addWidget(m_progress, 3, 1);
+#ifdef MOBILE_OS
+            newLayout->setRowStretch(4, 2);
+#else
             newLayout->setRowStretch(4, 1);
+#endif
             newLayout->setColumnStretch(0, 1);
             newLayout->setColumnStretch(2, 1);
             setLayout(newLayout);
