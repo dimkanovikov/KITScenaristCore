@@ -175,6 +175,15 @@ namespace UserInterface
          */
         bool isRedoAvailable() const;
 
+        /**
+         * @brief Настроить форматирование выделенного текста
+         */
+        /** @{ */
+        void setTextBold(bool _bold);
+        void setTextItalic(bool _italic);
+        void setTextUnderline(bool _underline);
+        /** @} */
+
     signals:
         /**
          * @brief Запрос на отмену последнего действия
@@ -306,15 +315,6 @@ namespace UserInterface
          * @brief Выделить блок при тройном клике
          */
         bool selectBlockOnTripleClick(QMouseEvent* _event);
-
-        /**
-         * @brief Настроить форматирование выделенного текста
-         */
-        /** @{ */
-        void setTextBold(bool _bold);
-        void setTextItalic(bool _italic);
-        void setTextUnderline(bool _underline);
-        /** @} */
 
     private:
         void initEditor();

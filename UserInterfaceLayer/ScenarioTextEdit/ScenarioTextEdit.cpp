@@ -598,6 +598,45 @@ bool ScenarioTextEdit::isRedoAvailable() const
     return m_document->isRedoAvailableReimpl();
 }
 
+void ScenarioTextEdit::setTextBold(bool _bold)
+{
+    QTextCursor cursor = textCursor();
+    if (!cursor.hasSelection()) {
+        return;
+    }
+
+    QTextCharFormat format = cursor.charFormat();
+    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+    format.setFontWeight(_bold ? QFont::Bold : QFont::Normal);
+    cursor.mergeCharFormat(format);
+}
+
+void ScenarioTextEdit::setTextItalic(bool _italic)
+{
+    QTextCursor cursor = textCursor();
+    if (!cursor.hasSelection()) {
+        return;
+    }
+
+    QTextCharFormat format = cursor.charFormat();
+    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+    format.setFontItalic(_italic);
+    cursor.mergeCharFormat(format);
+}
+
+void ScenarioTextEdit::setTextUnderline(bool _underline)
+{
+    QTextCursor cursor = textCursor();
+    if (!cursor.hasSelection()) {
+        return;
+    }
+
+    QTextCharFormat format = cursor.charFormat();
+    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+    format.setFontUnderline(_underline);
+    cursor.mergeCharFormat(format);
+}
+
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 {
 #ifndef MOBILE_OS
@@ -2066,45 +2105,6 @@ bool ScenarioTextEdit::selectBlockOnTripleClick(QMouseEvent* _event)
     }
 
     return false;
-}
-
-void ScenarioTextEdit::setTextBold(bool _bold)
-{
-    QTextCursor cursor = textCursor();
-    if (!cursor.hasSelection()) {
-        return;
-    }
-
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontWeight(_bold ? QFont::Bold : QFont::Normal);
-    cursor.mergeCharFormat(format);
-}
-
-void ScenarioTextEdit::setTextItalic(bool _italic)
-{
-    QTextCursor cursor = textCursor();
-    if (!cursor.hasSelection()) {
-        return;
-    }
-
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontItalic(_italic);
-    cursor.mergeCharFormat(format);
-}
-
-void ScenarioTextEdit::setTextUnderline(bool _underline)
-{
-    QTextCursor cursor = textCursor();
-    if (!cursor.hasSelection()) {
-        return;
-    }
-
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontUnderline(_underline);
-    cursor.mergeCharFormat(format);
 }
 
 void ScenarioTextEdit::initEditor()
