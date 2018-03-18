@@ -32,7 +32,7 @@ namespace {
 	/**
 	 * @brief Размер метки текущего цвета
 	 */
-	const int COLOR_MARK_SIZE = 5;
+	const int kColorMarkSize = 5;
 }
 
 
@@ -145,8 +145,8 @@ void GoogleColorsPane::paintEvent(QPaintEvent * _event)
 		// ... метка в центре
 		//
 		const QPointF center = borderRect.center();
-		QRectF markRect(center.x() - COLOR_MARK_SIZE / 2, center.y() - COLOR_MARK_SIZE / 2,
-			COLOR_MARK_SIZE, COLOR_MARK_SIZE);
+		QRectF markRect(center.x() - kColorMarkSize / 2, center.y() - kColorMarkSize / 2,
+			kColorMarkSize, kColorMarkSize);
 		painter.fillRect(markRect, palette().text());
 		painter.setPen(palette().base().color());
 		painter.drawRect(markRect);

@@ -66,7 +66,7 @@ void SlideAnimator::setAnimationDirection(WAF::AnimationDirection _direction)
 {
     if (m_direction != _direction) {
         m_direction = _direction;
-        m_animation->setPropertyName(isWidth() ? "maximumWidth" : "maximumHeight");
+        m_animation->setPropertyName(isWidth() ? "minimumWidth" : "minimumHeight");
     }
 }
 

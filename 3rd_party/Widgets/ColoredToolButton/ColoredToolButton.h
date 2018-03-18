@@ -4,6 +4,7 @@
 #include <QToolButton>
 
 class ColorsPane;
+class SlidingPanel;
 
 
 /**
@@ -24,8 +25,8 @@ public:
     };
 
 public:
-    ColoredToolButton(const QIcon& _icon, QWidget* _parent = 0);
-    ColoredToolButton(QWidget* _parent = 0);
+    ColoredToolButton(const QIcon& _icon, QWidget* _parent = nullptr, QWidget* _topLevelParent = nullptr);
+    ColoredToolButton(QWidget* _parent = nullptr, QWidget* _topLevelParent = nullptr);
     ~ColoredToolButton();
 
     /**
@@ -92,7 +93,14 @@ private:
     /**
      * @brief Цветовая палитра
      */
-    ColorsPane* m_colorsPane;
+    ColorsPane* m_colorsPane = nullptr;
+
+#ifdef MOBILE_OS
+    /**
+     * @brief Выезжающая панель палитры
+     */
+    SlidingPanel* m_colorsPanel = nullptr;
+#endif
 };
 
 #endif // COLOREDTOOLBUTTON_H

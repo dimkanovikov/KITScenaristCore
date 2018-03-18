@@ -16,9 +16,9 @@ public:
     explicit SlidingPanel(QWidget *_parent = nullptr);
 
     /**
-     * @brief Задать фиксированную точку верхнего правого угла
+     * @brief Задать фиксированную точку и угол фиксации
      */
-    void setFixedRightTopPos(const QPoint& _pos);
+    void setFixedCornerPos(const QPoint& _pos, Qt::Corner _corner);
 
 protected:
     /**
@@ -28,9 +28,20 @@ protected:
 
 private:
     /**
-     * @brief Фиксированная точка верхнего правого угла панели
+     * @brief Скоректировать позицию для заданного размера
+     */
+    void correctPosition(const QSize& _size);
+
+private:
+    /**
+     * @brief Фиксированная точка одного из углов
      */
     QPoint m_pos;
+
+    /**
+     * @brief Угол в котором зафиксирована точка
+     */
+    Qt::Corner m_corner = Qt::TopRightCorner;
 };
 
 #endif // SLIDINGPANEL_H

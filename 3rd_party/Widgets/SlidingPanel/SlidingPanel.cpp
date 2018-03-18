@@ -8,14 +8,34 @@ SlidingPanel::SlidingPanel(QWidget* _parent) :
 {
 }
 
-void SlidingPanel::setFixedRightTopPos(const QPoint& _pos)
+void SlidingPanel::setFixedCornerPos(const QPoint& _pos, Qt::Corner _corner)
 {
     m_pos = _pos;
-    move(m_pos.x() - width(), m_pos.y());
+    m_corner = _corner;
+
+    correctPosition(size());
 }
 
 void SlidingPanel::resizeEvent(QResizeEvent* _event)
 {
-    move(m_pos.x() - _event->size().width(), m_pos.y());
+    correctPosition(_event->size());
+
     QFrame::resizeEvent(_event);
+}
+
+void SlidingPanel::correctPosition(const QSize& _size)
+{
+    switch (m_corner) {
+        case Qt::TopRightCorner: {
+            move(m_pos.x() - _size.width(), m_pos.y());
+            break;
+        }
+
+        case Qt::BottomLeftCorner: {
+            move(m_pos.x(), m_pos.y() - _size.height());
+            break;
+        }
+
+        default: break;
+    }
 }

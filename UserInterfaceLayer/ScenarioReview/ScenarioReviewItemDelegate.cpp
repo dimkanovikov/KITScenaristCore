@@ -18,21 +18,36 @@ namespace {
     /**
      * @brief Ширина цветовой метки
      */
-    const int COLOR_MARK_WIDTH = StyleSheetHelper::dpToPx(12);
+    static int kColorMarkWidth() {
+        static const int s_colorMarkWidth = StyleSheetHelper::dpToPx(12);
+        return s_colorMarkWidth;
+    }
 
     /**
      * @brief Расстояния
      */
 #ifndef MOBILE_OS
-    const int TOP_MARGIN = StyleSheetHelper::dpToPx(8);
-    const int SPACING = StyleSheetHelper::dpToPx(8);
-    const int BOTTOM_MARGIN = StyleSheetHelper::dpToPx(8);
-    const int RIGHT_MARGIN = StyleSheetHelper::dpToPx(3);
+    const int TOP_MARGIN = 8;
+    const int SPACING = 8;
+    const int BOTTOM_MARGIN = 8;
+    const int RIGHT_MARGIN = 3;
 #else
-    const int TOP_MARGIN = StyleSheetHelper::dpToPx(15);
-    const int SPACING = StyleSheetHelper::dpToPx(6);
-    const int BOTTOM_MARGIN = StyleSheetHelper::dpToPx(15);
-    const int RIGHT_MARGIN = StyleSheetHelper::dpToPx(8);
+    static int kTopMargin() {
+        static const int s_topMargin = StyleSheetHelper::dpToPx(15);
+        return s_topMargin;
+    }
+    static int kSpacing() {
+        static const int s_spacing = StyleSheetHelper::dpToPx(6);
+        return s_spacing;
+    }
+    static int kBottomMargin() {
+        static const int s_bottomMargin = StyleSheetHelper::dpToPx(15);
+        return s_bottomMargin;
+    }
+    static int kRightMargin() {
+        static const int s_rightMargin = StyleSheetHelper::dpToPx(8);
+        return s_rightMargin;
+    }
 #endif
 
     /**
@@ -57,7 +72,7 @@ namespace {
         //
         // Рассчитаем ширину, которую займёт комментарий
         //
-        const int commentWidth = _width - COLOR_MARK_WIDTH - SPACING - RIGHT_MARGIN;
+        const int commentWidth = _width - kColorMarkWidth() - kSpacing() - kRightMargin();
         return heightForWidth(_text, commentWidth);
     }
 }
@@ -75,7 +90,7 @@ int ScenarioReviewItemDelegate::commentIndexFor(const QModelIndex& _index, int _
     //
     // ... высота заголовка: отступ сверху + две строки (автор и дата) + отступ снизу
     //
-    const int headerHeight = TOP_MARGIN + _widget->fontMetrics().height() * 2 + BOTTOM_MARGIN;
+    const int headerHeight = kTopMargin() + _widget->fontMetrics().height() * 2 + kBottomMargin();
     //
     // ... полная высота
     //
@@ -84,7 +99,7 @@ int ScenarioReviewItemDelegate::commentIndexFor(const QModelIndex& _index, int _
         const QStringList comments = _index.data(ScenarioReviewModel::CommentsRole).toStringList();
         foreach (const QString& comment, comments) {
             const int top = height;
-            height += headerHeight + ::commentHeightForWidth(comment, width) + SPACING;
+            height += headerHeight + ::commentHeightForWidth(comment, width) + kSpacing();
             const int bottom = height;
 
             if (top <= _y && _y <= bottom) {
@@ -191,7 +206,7 @@ void ScenarioReviewItemDelegate::paint(QPainter* _painter, const QStyleOptionVie
     if (const QAbstractItemView* view = qobject_cast<const QAbstractItemView*>(_option.widget)) {
         width = view->viewport()->width();
     }
-    const int headerHeight = TOP_MARGIN + _option.fontMetrics.height() * 2 + BOTTOM_MARGIN;
+    const int headerHeight = kTopMargin() + _option.fontMetrics.height() * 2 + kBottomMargin();
     int lastTop = 0;
     for (int commentIndex = 0; commentIndex < authors.size(); ++commentIndex) {
         //
@@ -199,7 +214,7 @@ void ScenarioReviewItemDelegate::paint(QPainter* _painter, const QStyleOptionVie
         //
         int height = headerHeight;
         if (!done) {
-            height += ::commentHeightForWidth(comments.value(commentIndex), width) + SPACING;
+            height += ::commentHeightForWidth(comments.value(commentIndex), width) + kSpacing();
         }
         const QRect rect(0, lastTop, width, height);
 
@@ -212,8 +227,8 @@ void ScenarioReviewItemDelegate::paint(QPainter* _painter, const QStyleOptionVie
         // ... цвет заметки
         //
         const QColor color = _index.data(Qt::DecorationRole).value<QColor>();
-        const int colorRectX = QLocale().textDirection() == Qt::LeftToRight ? 0 : width - COLOR_MARK_WIDTH;
-        const QRect colorRect(colorRectX, lastTop, COLOR_MARK_WIDTH, height);
+        const int colorRectX = QLocale().textDirection() == Qt::LeftToRight ? 0 : width - kColorMarkWidth();
+        const QRect colorRect(colorRectX, lastTop, kColorMarkWidth(), height);
         _painter->fillRect(colorRect, commentIndex == 0 ? color : replyBackgroundColor);
 
 #ifndef MOBILE_OS
@@ -233,12 +248,12 @@ void ScenarioReviewItemDelegate::paint(QPainter* _painter, const QStyleOptionVie
         _painter->setFont(headerFont);
         const QRect headerRect(
             QLocale().textDirection() == Qt::LeftToRight
-                    ? colorRect.right() + SPACING
-                    : RIGHT_MARGIN,
-            lastTop + TOP_MARGIN,
+                    ? colorRect.right() + kSpacing()
+                    : kRightMargin(),
+            lastTop + kTopMargin(),
             QLocale().textDirection() == Qt::LeftToRight
-                    ? width - colorRect.right() - SPACING - RIGHT_MARGIN
-                    : colorRect.left() - SPACING,
+                    ? width - colorRect.right() - kSpacing() - kRightMargin()
+                    : colorRect.left() - kSpacing(),
             HEADER_LINE_HEIGHT
             );
         _painter->drawText(headerRect, Qt::AlignLeft | Qt::AlignVCenter, authors.value(commentIndex));
@@ -250,12 +265,12 @@ void ScenarioReviewItemDelegate::paint(QPainter* _painter, const QStyleOptionVie
         _painter->setFont(dateFont);
         const QRect dateRect(
             QLocale().textDirection() == Qt::LeftToRight
-                    ? colorRect.right() + SPACING
-                    : RIGHT_MARGIN,
+                    ? colorRect.right() + kSpacing()
+                    : kRightMargin(),
             headerRect.bottom() + 2,
             QLocale().textDirection() == Qt::LeftToRight
-                    ? width - colorRect.right() - SPACING - RIGHT_MARGIN
-                    : colorRect.left() - SPACING,
+                    ? width - colorRect.right() - kSpacing() - kRightMargin()
+                    : colorRect.left() - kSpacing(),
             DATE_LINE_HEIGHT
             );
         const QString date = QDateTime::fromString(dates.value(commentIndex), Qt::ISODate).toString("dd.MM.yyyy hh:mm");
@@ -275,13 +290,13 @@ void ScenarioReviewItemDelegate::paint(QPainter* _painter, const QStyleOptionVie
         _painter->setFont(textFont);
         const QRect commentRect(
             QLocale().textDirection() == Qt::LeftToRight
-                    ? colorRect.right() + SPACING
-                    : RIGHT_MARGIN,
-            dateRect.bottom() + SPACING,
+                    ? colorRect.right() + kSpacing()
+                    : kRightMargin(),
+            dateRect.bottom() + kSpacing(),
             QLocale().textDirection() == Qt::LeftToRight
-                    ? width - colorRect.right() - SPACING - RIGHT_MARGIN
-                    : colorRect.left() - SPACING,
-            height - headerHeight - SPACING
+                    ? width - colorRect.right() - kSpacing() - kRightMargin()
+                    : colorRect.left() - kSpacing(),
+            height - headerHeight - kSpacing()
             );
         _painter->drawText(commentRect, Qt::TextWordWrap, comments.value(commentIndex));
 
@@ -309,7 +324,7 @@ QSize ScenarioReviewItemDelegate::sizeHint(const QStyleOptionViewItem& _option, 
         //
         // ... высота заголовка: отступ сверху + две строки (автор и дата) + отступ снизу
         //
-        const int headerHeight = TOP_MARGIN + _option.fontMetrics.height() * 2 + BOTTOM_MARGIN;
+        const int headerHeight = kTopMargin() + _option.fontMetrics.height() * 2 + kBottomMargin();
         //
         // ... полная высота
         //
@@ -317,7 +332,7 @@ QSize ScenarioReviewItemDelegate::sizeHint(const QStyleOptionViewItem& _option, 
         if (_index.data(ScenarioReviewModel::IsDoneRole).toBool() == false) {
             const QStringList comments = _index.data(ScenarioReviewModel::CommentsRole).toStringList();
             foreach (const QString& comment, comments) {
-                height += headerHeight + ::commentHeightForWidth(comment, width) + SPACING;
+                height += headerHeight + ::commentHeightForWidth(comment, width) + kSpacing();
             }
         }
         if (height == 0) {
