@@ -24,71 +24,36 @@
     </message>
 </context>
 <context>
-    <name>BusinessLayer::AbstractExporter</name>
-    <message>
-        <source>Real name: </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>BusinessLayer::FountainExporter</name>
     <message>
         <source>INT</source>
-        <translation>INT</translation>
+        <translation type="vanished">INT</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation>EXT</translation>
-    </message>
-    <message>
-        <source>EST</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>INT/EXT</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">EXT</translation>
     </message>
 </context>
 <context>
     <name>BusinessLayer::FountainImporter</name>
     <message>
         <source>INT</source>
-        <translation>INT</translation>
+        <translation type="vanished">INT</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation>EXT</translation>
-    </message>
-    <message>
-        <source>EST</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>INT/EXT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I/E</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">EXT</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::AbstractImporter</name>
     <message>
         <source>All Supported Files</source>
-        <translation>Todos os arquivos suportados</translation>
+        <translation type="vanished">Todos os arquivos suportados</translation>
     </message>
     <message>
         <source>KIT Scenarist Project</source>
-        <translation>Projeto KIT Scenarist</translation>
+        <translation type="vanished">Projeto KIT Scenarist</translation>
     </message>
     <message>
         <source>Final Draft screenplay</source>
@@ -104,14 +69,30 @@
     </message>
     <message>
         <source>OpenDocument Text</source>
-        <translation>Texto OpenDocument</translation>
+        <translation type="vanished">Texto OpenDocument</translation>
     </message>
     <message>
         <source>Final Draft template</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Fountain Text</source>
+        <source>All supported files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KIT Scenarist project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OpenDocument text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fountain text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Celtx project</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -119,198 +100,185 @@
     <name>BusinessLogic::CountersFacade</name>
     <message>
         <source>Pages</source>
-        <translation>Páginas</translation>
+        <translation type="vanished">Páginas</translation>
     </message>
     <message>
         <source>Words</source>
-        <translation>Palavras</translation>
+        <translation type="vanished">Palavras</translation>
     </message>
     <message>
         <source>Simbols</source>
-        <translation>Símbolos</translation>
+        <translation type="vanished">Símbolos</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ResearchModel</name>
     <message>
         <source>Scenario</source>
-        <translation>Cenário</translation>
+        <translation type="vanished">Cenário</translation>
     </message>
     <message>
         <source>Title Page</source>
-        <translation>Folha de rosto</translation>
+        <translation type="vanished">Folha de rosto</translation>
     </message>
     <message>
         <source>Synopsis</source>
-        <translation>Sinópse</translation>
+        <translation type="vanished">Sinópse</translation>
     </message>
     <message>
         <source>Characters</source>
-        <translation>Personagens</translation>
+        <translation type="vanished">Personagens</translation>
     </message>
     <message>
         <source>Locations</source>
-        <translation>Locais</translation>
-    </message>
-    <message>
-        <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Locais</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioBlockStyle</name>
     <message>
         <source>Undefined</source>
-        <translation>Indefinido</translation>
+        <translation type="vanished">Indefinido</translation>
     </message>
     <message>
         <source>Scene Heading</source>
-        <translation>Cabeçalho de Cena</translation>
+        <translation type="vanished">Cabeçalho de Cena</translation>
     </message>
     <message>
         <source>Scene Characters</source>
-        <translation>Personagens de Cena</translation>
+        <translation type="vanished">Personagens de Cena</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation>Ação</translation>
+        <translation type="vanished">Ação</translation>
     </message>
     <message>
         <source>Character</source>
-        <translation>Personagem</translation>
+        <translation type="vanished">Personagem</translation>
     </message>
     <message>
         <source>Parenthetical</source>
-        <translation>Entre Parênteses</translation>
+        <translation type="vanished">Entre Parênteses</translation>
     </message>
     <message>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation type="vanished">Diálogo</translation>
     </message>
     <message>
         <source>Transition</source>
-        <translation>Transição</translation>
+        <translation type="vanished">Transição</translation>
     </message>
     <message>
         <source>Shot</source>
-        <translation>Plano</translation>
+        <translation type="vanished">Plano</translation>
     </message>
     <message>
         <source>Title Header</source>
-        <translation>Cabeçalho de Título</translation>
+        <translation type="vanished">Cabeçalho de Título</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Título</translation>
+        <translation type="vanished">Título</translation>
     </message>
     <message>
         <source>Noprintable Text</source>
-        <translation>Texto não imprimível</translation>
+        <translation type="vanished">Texto não imprimível</translation>
     </message>
     <message>
         <source>Folder</source>
-        <translation>Pasta</translation>
+        <translation type="vanished">Pasta</translation>
     </message>
     <message>
         <source>Folder Footer</source>
-        <translation>Rodapé de Pasta</translation>
+        <translation type="vanished">Rodapé de Pasta</translation>
     </message>
     <message>
         <source>Scene Description</source>
-        <translation>Descrição de Cena</translation>
+        <translation type="vanished">Descrição de Cena</translation>
     </message>
     <message>
         <source>SH</source>
         <extracomment>Reduction of Scene Heading</extracomment>
         <translatorcomment>Redução de cabeçalho de cena</translatorcomment>
-        <translation>CC</translation>
+        <translation type="vanished">CC</translation>
     </message>
     <message>
         <source>SC</source>
         <extracomment>Reduction of Scene Characters</extracomment>
         <translatorcomment>Redução de personagens de cena</translatorcomment>
-        <translation>PC</translation>
+        <translation type="vanished">PC</translation>
     </message>
     <message>
         <source>A</source>
         <extracomment>Reduction of Action</extracomment>
         <translatorcomment>Redução de Ação</translatorcomment>
-        <translation>A</translation>
+        <translation type="vanished">A</translation>
     </message>
     <message>
         <source>C</source>
         <extracomment>Reduction of Character</extracomment>
         <translatorcomment>Redução de Personagem</translatorcomment>
-        <translation>P</translation>
+        <translation type="vanished">P</translation>
     </message>
     <message>
         <source>P</source>
         <extracomment>Reduction of Parenthetical</extracomment>
         <translatorcomment>Redução de Entre Parênteses</translatorcomment>
-        <translation>EP</translation>
+        <translation type="vanished">EP</translation>
     </message>
     <message>
         <source>D</source>
         <extracomment>Reduction of Dialog</extracomment>
         <translatorcomment>Redução de Diálogo</translatorcomment>
-        <translation>D</translation>
+        <translation type="vanished">D</translation>
     </message>
     <message>
         <source>Tr</source>
         <extracomment>Reduction of Transition</extracomment>
         <translatorcomment>Redução de Transição</translatorcomment>
-        <translation>Tr</translation>
+        <translation type="vanished">Tr</translation>
     </message>
     <message>
         <source>S</source>
         <extracomment>Reduction of Shot</extracomment>
         <translatorcomment>Redução de Plano</translatorcomment>
-        <translation>Pl</translation>
+        <translation type="vanished">Pl</translation>
     </message>
     <message>
         <source>TH</source>
         <extracomment>Reduction of Title Header</extracomment>
         <translatorcomment>Redução de Cabeçalho de Título</translatorcomment>
-        <translation>CT</translation>
+        <translation type="vanished">CT</translation>
     </message>
     <message>
         <source>Ti</source>
         <extracomment>Reduction of Title</extracomment>
         <translatorcomment>Redução de Título</translatorcomment>
-        <translation>Ti</translation>
+        <translation type="vanished">Ti</translation>
     </message>
     <message>
         <source>NT</source>
         <extracomment>Reduction of Noprintable Text</extracomment>
         <translatorcomment>Redução de Não imprimível</translatorcomment>
-        <translation>NP</translation>
+        <translation type="vanished">NP</translation>
     </message>
     <message>
         <source>F</source>
         <extracomment>Reduction of Folder</extracomment>
         <translatorcomment>Redução de Pasta</translatorcomment>
-        <translation>P</translation>
+        <translation type="vanished">P</translation>
     </message>
     <message>
         <source>FF</source>
         <extracomment>Reduction of Folder Footer</extracomment>
         <translatorcomment>Redução de Rodapé de Pasta</translatorcomment>
-        <translation>RP</translation>
+        <translation type="vanished">RP</translation>
     </message>
     <message>
         <source>SD</source>
         <extracomment>Reduction of Scene Description</extracomment>
         <translatorcomment>Redução de Descrição de Cena</translatorcomment>
-        <translation>DC</translation>
-    </message>
-    <message>
-        <source>Lyrics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>L</source>
-        <extracomment>Reduction of Lyrics</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">DC</translation>
     </message>
 </context>
 <context>
@@ -318,70 +286,18 @@
     <message>
         <source>FADE IN:</source>
         <translatorcomment>Surgir Gradualmente</translatorcomment>
-        <translation>FADE IN:</translation>
+        <translation type="vanished">FADE IN:</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioTemplate</name>
     <message>
         <source>Default</source>
-        <translation>Padrão</translation>
+        <translation type="vanished">Padrão</translation>
     </message>
     <message>
         <source>Default with Courier Prime</source>
-        <translation>Padrão com Courier Prime</translation>
-    </message>
-    <message>
-        <source>Final Draft screenplay (A4)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Final Draft screenplay (Letter)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Russian screenplay</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Russian screenplay with Courier Prime</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Chinese screenplay</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hebrew screenplay</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>International screenplay standard template for A4 page size.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>International screenplay standard template for Letter page size.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Russian and CIS screenplay standard template.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Chinese screenplay standard template.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hebrew screenplay standard template.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy of </source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Padrão com Courier Prime</translation>
     </message>
 </context>
 <context>
@@ -389,138 +305,68 @@
     <message>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation type="unfinished">CONT</translation>
-    </message>
-    <message>
-        <source>MORE</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">CONT</translation>
     </message>
 </context>
 <context>
     <name>DatabaseLayer::Database</name>
     <message>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
-        <translation>Projeto foi modificado em versão superior. Você precisa do aplicativo de atualização para a versão mais recente para abri-lo.</translation>
+        <translation type="vanished">Projeto foi modificado em versão superior. Você precisa do aplicativo de atualização para a versão mais recente para abri-lo.</translation>
     </message>
     <message>
         <source>INT</source>
-        <translation>INT</translation>
+        <translation type="vanished">INT</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation>EXT</translation>
+        <translation type="vanished">EXT</translation>
     </message>
     <message>
         <source>DAY</source>
-        <translation>DIA</translation>
+        <translation type="vanished">DIA</translation>
     </message>
     <message>
         <source>NIGHT</source>
-        <translation>NOITE</translation>
+        <translation type="vanished">NOITE</translation>
     </message>
     <message>
         <source>MORNING</source>
-        <translation>MANHÃ</translation>
+        <translation type="vanished">MANHÃ</translation>
     </message>
     <message>
         <source>EVENING</source>
-        <translation>TARDES</translation>
+        <translation type="vanished">TARDES</translation>
     </message>
     <message>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
         <translatorcomment>Voz Sobre( termo original: voice over )</translatorcomment>
-        <translation>V.O.</translation>
+        <translation type="vanished">V.O.</translation>
     </message>
     <message>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
         <translatorcomment>Fora da tela ( termo original Off-screen )</translatorcomment>
-        <translation>O.S.</translation>
+        <translation type="vanished">O.S.</translation>
     </message>
     <message>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
         <translatorcomment>Continua</translatorcomment>
-        <translation>CONT</translation>
+        <translation type="vanished">CONT</translation>
     </message>
     <message>
         <source>Photos</source>
-        <translation>Fotos</translation>
+        <translation type="vanished">Fotos</translation>
     </message>
     <message>
         <source>Unnamed image</source>
-        <translation>Imagem sem nome</translation>
-    </message>
-    <message>
-        <source>INT./EXT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>AFTERNOON</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>LATER</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>MOMENTS LATER</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CONTINUOUS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>THE NEXT DAY</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>O.C.</source>
-        <extracomment>Off-camera</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SUBTITLE</source>
-        <extracomment>Subtitle</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Imagem sem nome</translation>
     </message>
     <message>
         <source>FADE IN:</source>
-        <translation type="unfinished">FADE IN:</translation>
-    </message>
-    <message>
-        <source>FADE OUT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>FADE TO:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>DISSOLVE TO:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>BACK TO:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>MATCH CUT TO:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>JUMP CUT TO:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>FADE TO BLACK</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">FADE IN:</translation>
     </message>
 </context>
 <context>
@@ -587,92 +433,6 @@
     <message>
         <source>All Supported Files</source>
         <translation>Todos os arquivos suportados</translation>
-    </message>
-</context>
-<context>
-    <name>FountainImporter</name>
-    <message>
-        <source>END OF </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>GraphLogic</name>
-    <message>
-        <source>Couldn&apos;t parse XML file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t read file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t open file to write.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Saved.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>MindMap exported as </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No active node.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No active node</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Node hasn&apos;t parent for add sibling node</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Base node cannot be deleted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Too much scaling.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select node color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select text color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add edge: select destination node.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete edge: select other end-node.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edge adding cancelled.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edge deleting cancelled.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Can&apos;t add edge between single node.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>There is already an edge between these two nodes.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>There is no edge between these two nodes.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -745,7 +505,7 @@
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;t first glance&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After installing and running the application, you will see a screen with a list of projects. Other application pages have a similar arrangement of elements, so let&apos;s look at it in more detail.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;At the top of the page is the main toolbar. In the left part of toolbar placed a button for calling the menu. On other pages, instead of the menu button, there may be a button to return to the previous page. In the middle is the title of the current page. And one or more auxiliary buttons can be located to the right (on the page with the list of projects this is the button for creating a new project).&lt;/span&gt;&lt;/p&gt;
@@ -880,282 +640,232 @@ p, li { white-space: pre-wrap; }
     <name>ManagementLayer::ApplicationManager</name>
     <message>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
-        <translation>Você tentou criar projeto na pasta inexistente &lt;b&gt;%1&lt;/b&gt;. Por favor, escolha outro local para o novo projeto.</translation>
+        <translation type="vanished">Você tentou criar projeto na pasta inexistente &lt;b&gt;%1&lt;/b&gt;. Por favor, escolha outro local para o novo projeto.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
-        <translation>Não é possível gravar no arquivo. Talvez esteja aberto em outra aplicação. Feche-o e tente novamente.</translation>
+        <translation type="vanished">Não é possível gravar no arquivo. Talvez esteja aberto em outra aplicação. Feche-o e tente novamente.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>Não é possível gravar no arquivo. Verifique as permissões para escrever na pasta escolhida. Por favor, escolha outra pasta.</translation>
+        <translation type="vanished">Não é possível gravar no arquivo. Verifique as permissões para escrever na pasta escolhida. Por favor, escolha outra pasta.</translation>
     </message>
     <message>
         <source>Create project error</source>
-        <translation>Erro ao criar projeto</translation>
+        <translation type="vanished">Erro ao criar projeto</translation>
     </message>
     <message>
         <source>Can&apos;t open project file</source>
-        <translation>Não é possível abrir o arquivo de projeto</translation>
+        <translation type="vanished">Não é possível abrir o arquivo de projeto</translation>
     </message>
     <message>
         <source>Saving error</source>
-        <translation>Erro ao salvar</translation>
+        <translation type="vanished">Erro ao salvar</translation>
     </message>
     <message>
         <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
-        <translation>Não é possível escrever alterações no projeto. Há algum erro de banco de dados interno:%1 Verifique se o arquivo existe e se você tem permissão para gravá-lo. Tentar novamente para salvar?</translation>
+        <translation type="vanished">Não é possível escrever alterações no projeto. Há algum erro de banco de dados interno:%1 Verifique se o arquivo existe e se você tem permissão para gravá-lo. Tentar novamente para salvar?</translation>
     </message>
     <message>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
-        <translation>Não é possível gravar alterações no projeto localizado em &lt;b&gt;%1 &lt;/b&gt; porque o arquivo não existe. Mova o arquivo de volta e tente salvar novamente. Tentar salvar novamente?</translation>
+        <translation type="vanished">Não é possível gravar alterações no projeto localizado em &lt;b&gt;%1 &lt;/b&gt; porque o arquivo não existe. Mova o arquivo de volta e tente salvar novamente. Tentar salvar novamente?</translation>
     </message>
     <message>
         <source>Change project name</source>
-        <translation>Mudar o nome do projeto</translation>
+        <translation type="vanished">Mudar o nome do projeto</translation>
     </message>
     <message>
         <source>Enter new name for project</source>
-        <translation>Entrar com novo nome para o projeto</translation>
+        <translation type="vanished">Entrar com novo nome para o projeto</translation>
     </message>
     <message>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Tem certeza em remover o projeto &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation type="vanished">Tem certeza em remover o projeto &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Tem a certeza de remover a inscrição do projecto &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation type="vanished">Tem a certeza de remover a inscrição do projecto &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
-        <translation>Tem certeza em remover a inscrição do utilizador &lt;b&gt;%1&lt;/b&gt; do projecto &lt;b&gt;%2&lt;/b&gt;?</translation>
+        <translation type="vanished">Tem certeza em remover a inscrição do utilizador &lt;b&gt;%1&lt;/b&gt; do projecto &lt;b&gt;%2&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Connection active</source>
-        <translation>Conexão ativa</translation>
+        <translation type="vanished">Conexão ativa</translation>
     </message>
     <message>
         <source>Project synchronized</source>
-        <translation>Projeto sincronizado</translation>
+        <translation type="vanished">Projeto sincronizado</translation>
     </message>
     <message>
         <source>Connection inactive</source>
-        <translation>Conexão inativa</translation>
+        <translation type="vanished">Conexão inativa</translation>
     </message>
     <message>
         <source>Project didn&apos;t synchronized</source>
-        <translation>O projeto não foi sincronizado</translation>
+        <translation type="vanished">O projeto não foi sincronizado</translation>
     </message>
     <message>
         <source>Network error</source>
-        <translation>Erro de rede</translation>
+        <translation type="vanished">Erro de rede</translation>
     </message>
     <message>
         <source>Project didn&apos;t synchronized.</source>
-        <translation>O projeto não foi sincronizado.</translation>
+        <translation type="vanished">O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Incorrect username or password.</source>
-        <translation>Usuário ou senha incorretos.</translation>
+        <translation type="vanished">Usuário ou senha incorretos.</translation>
     </message>
     <message>
         <source>Subscription ended</source>
-        <translation>Subscrição terminada</translation>
+        <translation type="vanished">Subscrição terminada</translation>
     </message>
     <message>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
-        <translation>O período de subscrição adquirida terminou.
+        <translation type="vanished">O período de subscrição adquirida terminou.
 
 O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Network Error</source>
-        <translation>Erro de rede</translation>
+        <translation type="vanished">Erro de rede</translation>
     </message>
     <message>
         <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Não é possível carregar todos os dados do serviço corretamente. Verifique a qualidade da sua conecção à Internet e atualize a sincronização.
+        <translation type="vanished">Não é possível carregar todos os dados do serviço corretamente. Verifique a qualidade da sua conecção à Internet e atualize a sincronização.
 
 O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Project not available</source>
-        <translation>Projeto não disponível</translation>
+        <translation type="vanished">Projeto não disponível</translation>
     </message>
     <message>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
-        <translation>O projeto atual não está disponível para sincronização agora, porque a assinatura do proprietário do projeto está encerrada.
+        <translation type="vanished">O projeto atual não está disponível para sincronização agora, porque a assinatura do proprietário do projeto está encerrada.
 
 O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Email already exist</source>
-        <translation>Email já existe</translation>
+        <translation type="vanished">Email já existe</translation>
     </message>
     <message>
         <source>Password too weak</source>
-        <translation>Senha muito fraca</translation>
+        <translation type="vanished">Senha muito fraca</translation>
     </message>
     <message>
         <source>Wrong email</source>
-        <translation>E-mail errado</translation>
+        <translation type="vanished">E-mail errado</translation>
     </message>
     <message>
         <source>Unknown Error</source>
-        <translation>Erro desconhecido</translation>
+        <translation type="vanished">Erro desconhecido</translation>
     </message>
     <message>
         <source>Loading Scenario</source>
-        <translation>Carregando Cenário</translation>
+        <translation type="vanished">Carregando Cenário</translation>
     </message>
     <message>
         <source>Please wait. Loading can take few minutes.</source>
-        <translation>Por favor, espere. A carga pode demorar alguns minutos.</translation>
+        <translation type="vanished">Por favor, espere. A carga pode demorar alguns minutos.</translation>
     </message>
     <message>
         <source>Sync scenario with cloud service.</source>
-        <translation>Sincronizar o cenário com o serviço em nuvem.</translation>
+        <translation type="vanished">Sincronizar o cenário com o serviço em nuvem.</translation>
     </message>
     <message>
         <source>Ignore and try to open project?</source>
-        <translation>Ignorar e tentar abrir projeto?</translation>
+        <translation type="vanished">Ignorar e tentar abrir projeto?</translation>
     </message>
     <message>
         <source>Share error</source>
-        <translation>Compartilhar erro</translation>
+        <translation type="vanished">Compartilhar erro</translation>
     </message>
     <message>
         <source>You can&apos;t share project with yourself.</source>
-        <translation>Você não pode compartilhar o projeto com você mesmo.</translation>
+        <translation type="vanished">Você não pode compartilhar o projeto com você mesmo.</translation>
     </message>
     <message>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
-        <translation>O projeto atual não está disponível para sincronização agora, porque o proprietário do projeto fechou o acesso ao projeto para você
+        <translation type="vanished">O projeto atual não está disponível para sincronização agora, porque o proprietário do projeto fechou o acesso ao projeto para você
 .
 O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Sync not available</source>
-        <translation>Sincronização não disponível</translation>
+        <translation type="vanished">Sincronização não disponível</translation>
     </message>
     <message>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Você esgotou todos os recursos para o uso do espaço em um servidor.
+        <translation type="vanished">Você esgotou todos os recursos para o uso do espaço em um servidor.
 
 O projeto não foi sincronizado.</translation>
-    </message>
-    <message>
-        <source>in cloud</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please wait. Importing can take few minutes.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>on device</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Importing script</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Can&apos;t get file path to import. Try to download it and open in file browser.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Can&apos;t create temporatry file for import.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
     <message>
         <source>Export</source>
-        <translation>Exportar</translation>
+        <translation type="vanished">Exportar</translation>
     </message>
     <message>
         <source>Please wait. Export can take few minutes.</source>
-        <translation>Por favor, espere. A exportação pode demorar alguns minutos.</translation>
+        <translation type="vanished">Por favor, espere. A exportação pode demorar alguns minutos.</translation>
     </message>
     <message>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
-        <translation>Você tenta exportar para uma pasta inexistente &lt;b&gt;%1&lt;/b&gt;. Por favor, escolha outro local para o arquivo exportado.</translation>
+        <translation type="vanished">Você tenta exportar para uma pasta inexistente &lt;b&gt;%1&lt;/b&gt;. Por favor, escolha outro local para o arquivo exportado.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry export.</source>
-        <translation>Não é possível gravar no arquivo. Talvez esteja aberto em outra aplicação. Feche-o e repita a exportação.</translation>
+        <translation type="vanished">Não é possível gravar no arquivo. Talvez esteja aberto em outra aplicação. Feche-o e repita a exportação.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>Não é possível gravar no arquivo. Verifique as permissões para escrever na pasta escolhida. Por favor, escolha outra pasta.</translation>
+        <translation type="vanished">Não é possível gravar no arquivo. Verifique as permissões para escrever na pasta escolhida. Por favor, escolha outra pasta.</translation>
     </message>
     <message>
         <source>Export error</source>
-        <translation>Erro de exportação</translation>
-    </message>
-    <message>
-        <source>Send script to</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Erro de exportação</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::Project</name>
     <message>
         <source>Owner</source>
-        <translation>Proprietário</translation>
+        <translation type="vanished">Proprietário</translation>
     </message>
     <message>
         <source>Redactor</source>
-        <translation>Redator</translation>
+        <translation type="vanished">Redator</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation>Comentarista</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::ProjectsPageManager</name>
-    <message>
-        <source>Project exists. It will be replaced after creating.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Comentarista</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ScriptManager</name>
     <message>
         <source>Scenes</source>
-        <translation>Cenas</translation>
+        <translation type="vanished">Cenas</translation>
     </message>
     <message>
         <source>Chron.</source>
-        <translation>Chron.</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::SettingsManager</name>
-    <message>
-        <source>Language will be change after application restart.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Chron.</translation>
     </message>
 </context>
 <context>
@@ -1271,6 +981,10 @@ O projeto não foi sincronizado.</translation>
         <source>Show cowriters</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Move project to the cloud</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProjectsView</name>
@@ -1292,76 +1006,28 @@ Let&apos;s create the first one!</source>
     <name>QObject</name>
     <message>
         <source>Scenario</source>
-        <translation>Cenário</translation>
+        <translation type="vanished">Cenário</translation>
     </message>
     <message>
         <source>Title:</source>
         <comment>ScenarioBlockStyle</comment>
-        <translation>Título:</translation>
+        <translation type="vanished">Título:</translation>
     </message>
     <message>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
-        <translation>FIM DA PASTA</translation>
+        <translation type="vanished">FIM DA PASTA</translation>
     </message>
     <message>
         <source>END OF</source>
         <comment>ScenarioTextEditHelpers</comment>
-        <translation>FIM DE</translation>
-    </message>
-    <message>
-        <source>Node added to &quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Base node</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Node added to scene</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Node deleted &quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> with subtree</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edge added between &quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&quot; and &quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edge deleted between &quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Node &quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Changing color of node: &quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Changing textcolor of node: &quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The graph is acyclic, edge added as secondary edge.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">FIM DE</translation>
     </message>
 </context>
 <context>
-    <name>QtMindMap::Node</name>
+    <name>ReviewView</name>
     <message>
-        <source>&lt;b&gt;Root node&lt;/b&gt;</source>
+        <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1429,42 +1095,38 @@ Let&apos;s create the first one!</source>
     <name>SimpleTextEditorWidget</name>
     <message>
         <source>Make text bold</source>
-        <translation>Tornar o texto em negrito</translation>
+        <translation type="vanished">Tornar o texto em negrito</translation>
     </message>
     <message>
         <source>Make text italic</source>
-        <translation>Tornar o texto em itálico</translation>
+        <translation type="vanished">Tornar o texto em itálico</translation>
     </message>
     <message>
         <source>Make text underline</source>
-        <translation>Sublinhar texto</translation>
+        <translation type="vanished">Sublinhar texto</translation>
     </message>
     <message>
         <source>Change text color</source>
-        <translation>Alterar a cor do texto</translation>
+        <translation type="vanished">Alterar a cor do texto</translation>
     </message>
     <message>
         <source>Change text background color</source>
-        <translation>Mude a cor do fundo do texto</translation>
-    </message>
-    <message>
-        <source>Clear formatting</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Mude a cor do fundo do texto</translation>
     </message>
 </context>
 <context>
     <name>SpellCheckTextEdit</name>
     <message>
         <source>Ignore</source>
-        <translation>Ignorar</translation>
+        <translation type="vanished">Ignorar</translation>
     </message>
     <message>
         <source>Add to dictionary</source>
-        <translation>Adicionar ao dicionário</translation>
+        <translation type="vanished">Adicionar ao dicionário</translation>
     </message>
     <message>
         <source>Suggestions not found</source>
-        <translation>Sugestões não encontradas</translation>
+        <translation type="vanished">Sugestões não encontradas</translation>
     </message>
 </context>
 <context>
@@ -1517,241 +1179,57 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::AccountView</name>
     <message>
-        <source>Account is active until: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Account is inactive</source>
-        <translation>Conta Inativa</translation>
-    </message>
-    <message>
-        <source>Used %1 Gb from %2 Gb</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Conta Inativa</translation>
     </message>
     <message>
         <source>Email</source>
-        <translation>O email</translation>
+        <translation type="vanished">O email</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>Login</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::AddProjectView</name>
-    <message>
-        <source>LOCAL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please, enter name for your new project.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>IN CLOUD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Project name</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::ExportView</name>
-    <message>
-        <source>Template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>File format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scenes prefix</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Login</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::LoginView</name>
     <message>
         <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a password.</source>
-        <translation>Seu e-mail &lt;b&gt;%1&lt;/b&gt; recebeu uma mensagem com a senha.</translation>
-    </message>
-    <message>
-        <source>Authorization</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please wait, authorzation can take few minutes.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Registration</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please wait, registration can take few minutes.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>LOGIN</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SIGN UP</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Seu e-mail &lt;b&gt;%1&lt;/b&gt; recebeu uma mensagem com a senha.</translation>
     </message>
     <message>
         <source>Email</source>
-        <translation>O email</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">O email</translation>
     </message>
     <message>
         <source>Email is invalid</source>
-        <translation>Email inválido</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::MenuView</name>
-    <message>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Changes saved</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::ProjectsList</name>
-    <message>
-        <source>no changes</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::ProjectsView</name>
-    <message>
-        <source>LOCAL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>IN CLOUD</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Email inválido</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ScriptView</name>
     <message>
         <source>DRAFT</source>
-        <translation>RASCUNHO</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::SettingsView</name>
-    <message>
-        <source>System</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Little</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Middle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Big</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Very big</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Large</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Font size</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">RASCUNHO</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ShareDialog</name>
     <message>
         <source>Share</source>
-        <translation>Compartilhar</translation>
+        <translation type="vanished">Compartilhar</translation>
     </message>
     <message>
         <source>Share project</source>
-        <translation>Compartilhar projeto</translation>
+        <translation type="vanished">Compartilhar projeto</translation>
     </message>
     <message>
         <source>Email</source>
-        <translation>O email</translation>
+        <translation type="vanished">O email</translation>
     </message>
     <message>
         <source>Email is invalid</source>
-        <translation>Email inválido</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::SubscriptionView</name>
-    <message>
-        <source>1 month - %1 rubles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>2 month - %1 rubles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>3 month - %1 rubles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>6 month (6% off) - %1 rubles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>12 month (12% off) - %1 rubles</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::TitlePageView</name>
-    <message>
-        <source>Script name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Additional</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Genre</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Author</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Year</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Email inválido</translation>
     </message>
 </context>
 <context>

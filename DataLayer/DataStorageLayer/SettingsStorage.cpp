@@ -570,7 +570,7 @@ SettingsStorage::SettingsStorage()
     //
     // Настроим значения параметров по умолчанию
     //
-    m_defaultValues.insert("application/current-app-review-version", "7");
+    m_defaultValues.insert("application/current-app-review-version", "8");
     m_defaultValues.insert("application/uuid", QUuid::createUuid().toString());
     m_defaultValues.insert("application/app-was-configured", "0");
     m_defaultValues.insert("application/language", "-1");
