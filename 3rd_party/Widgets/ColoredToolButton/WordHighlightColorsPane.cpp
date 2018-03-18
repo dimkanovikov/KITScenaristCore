@@ -1,9 +1,47 @@
 #include "WordHighlightColorsPane.h"
 
+#include <3rd_party/Helpers/StyleSheetHelper.h>
+
 #include <QPainter>
 #include <QMouseEvent>
 
 namespace {
+    /**
+     * @brief Количество колонок с цветовыми квадратами
+     */
+    const int COLOR_RECT_COLUMNS = 5;
+
+    /**
+     * @brief Количество строк с цветовыми квадратами
+     */
+    const int COLOR_RECT_ROWS = 3;
+
+#ifdef MOBILE_OS
+    /**
+     * @brief Размер ребра квадрата с цветом
+     */
+    const int COLOR_RECT_SIZE = StyleSheetHelper::dpToPx(46);
+
+    /**
+     * @brief Расстояние между двумя соседними квадратами с цветом
+     */
+    const int COLOR_RECT_SPACE = 0;
+
+    /**
+     * @brief Отступы панели
+     */
+    const int PANEL_MARGIN = 0;
+
+    /**
+     * @brief Размер метки текущего цвета
+     */
+    const int COLOR_MARK_SIZE = StyleSheetHelper::dpToPx(16);
+
+    /**
+     * @brief Ширина рамки метки текущего цвета
+     */
+    const int kMarkBorderWidth = StyleSheetHelper::dpToPx(3);
+#else
 	/**
 	 * @brief Размер ребра квадрата с цветом
 	 */
@@ -12,17 +50,7 @@ namespace {
 	/**
 	 * @brief Расстояние между двумя соседними квадратами с цветом
 	 */
-	const int COLOR_RECT_SPACE = 3;
-
-	/**
-	 * @brief Количество колонок с цветовыми квадратами
-	 */
-	const int COLOR_RECT_COLUMNS = 5;
-
-	/**
-	 * @brief Количество строк с цветовыми квадратами
-	 */
-	const int COLOR_RECT_ROWS = 3;
+    const int COLOR_RECT_SPACE = 3;
 
 	/**
 	 * @brief Отступы панели
@@ -33,6 +61,7 @@ namespace {
 	 * @brief Размер метки текущего цвета
 	 */
 	const int COLOR_MARK_SIZE = 5;
+#endif
 }
 
 
@@ -130,6 +159,17 @@ void WordHighlightColorsPane::paintEvent(QPaintEvent * _event)
 	// Текущий
 	//
 	if (m_currentColorInfo.isValid()) {
+#ifdef MOBILE_OS
+        //
+        // ... метка в центре
+        //
+        const QPointF center = m_currentColorInfo.rect.center();
+        QRectF markRect(center.x() - COLOR_MARK_SIZE / 2, center.y() - COLOR_MARK_SIZE / 2,
+            COLOR_MARK_SIZE, COLOR_MARK_SIZE);
+        painter.fillRect(markRect, palette().text());
+        painter.setPen(QPen(palette().base().color(), kMarkBorderWidth));
+        painter.drawRect(markRect);
+#else
 		//
 		// ... рамка
 		//
@@ -151,6 +191,7 @@ void WordHighlightColorsPane::paintEvent(QPaintEvent * _event)
 		painter.fillRect(markRect, palette().text());
 		painter.setPen(palette().base().color());
 		painter.drawRect(markRect);
+#endif
 	}
 }
 
