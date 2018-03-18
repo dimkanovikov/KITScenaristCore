@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015  Dimka Novikov, to@dimkanovikov.pro
+ * Copyright (C) 2015-2017  Dimka Novikov, to@dimkanovikov.pro
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -232,7 +232,7 @@ void SlideAnimator::slideOut()
         //
         // ... если предыдущая анимация закончилась, запускаем новую анимацию
         //
-        m_animation->setEasingCurve(QEasingCurve::InQuart);
+        m_animation->setEasingCurve(QEasingCurve::OutQuart);
         m_animation->setDirection(QPropertyAnimation::Forward);
         m_animation->setStartValue(isWidth() ? widgetForSlide()->width() : widgetForSlide()->height());
         m_animation->setEndValue(isWidth() ? finalSize.width() : finalSize.height());
