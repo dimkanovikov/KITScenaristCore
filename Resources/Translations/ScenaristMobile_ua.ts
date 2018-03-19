@@ -24,65 +24,64 @@
     </message>
 </context>
 <context>
+    <name>BusinessLayer::AbstractExporter</name>
+    <message>
+        <source>Real name: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BusinessLayer::FountainExporter</name>
     <message>
         <source>INT</source>
-        <translation type="vanished">ІНТ</translation>
+        <translation>ІНТ</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation type="vanished">НАТ</translation>
+        <translation>НАТ</translation>
     </message>
     <message>
         <source>EST</source>
-        <translation type="vanished">АДР</translation>
+        <translation>АДР</translation>
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="vanished">ІНТ./НАТ</translation>
+        <translation>ІНТ./НАТ</translation>
     </message>
     <message>
         <source>INT/EXT</source>
-        <translation type="vanished">ІНТ/НАТ</translation>
+        <translation>ІНТ/НАТ</translation>
     </message>
 </context>
 <context>
     <name>BusinessLayer::FountainImporter</name>
     <message>
         <source>INT</source>
-        <translation type="vanished">ІНТ</translation>
+        <translation>ІНТ</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation type="vanished">НАТ</translation>
+        <translation>НАТ</translation>
     </message>
     <message>
         <source>EST</source>
-        <translation type="vanished">АДР</translation>
+        <translation>АДР</translation>
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="vanished">ІНТ./НАТ</translation>
+        <translation>ІНТ./НАТ</translation>
     </message>
     <message>
         <source>INT/EXT</source>
-        <translation type="vanished">ІНТ/НАТ</translation>
+        <translation>ІНТ/НАТ</translation>
     </message>
     <message>
         <source>I/E</source>
-        <translation type="vanished">І/Н</translation>
+        <translation>І/Н</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::AbstractImporter</name>
-    <message>
-        <source>All Supported Files</source>
-        <translation type="vanished">Всі підтримувані файли</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation type="vanished">Файл проекту сценарію KIT Scenarist</translation>
-    </message>
     <message>
         <source>Final Draft screenplay</source>
         <translation>Сценарій формату Final Draft</translation>
@@ -96,16 +95,8 @@
         <translation>Office Open XML</translation>
     </message>
     <message>
-        <source>OpenDocument Text</source>
-        <translation type="vanished">OpenDocument Text</translation>
-    </message>
-    <message>
         <source>Final Draft template</source>
         <translation>Сценарій формату Final Draft</translation>
-    </message>
-    <message>
-        <source>Fountain Text</source>
-        <translation type="vanished">Fountain Text</translation>
     </message>
     <message>
         <source>All supported files</source>
@@ -132,191 +123,266 @@
     <name>BusinessLogic::CountersFacade</name>
     <message>
         <source>Pages</source>
-        <translation type="vanished">Сторінок</translation>
+        <translation>Сторінок</translation>
     </message>
     <message>
         <source>Words</source>
-        <translation type="vanished">Слів</translation>
+        <translation>Слів</translation>
     </message>
     <message>
-        <source>Simbols</source>
-        <translation type="vanished">Символів</translation>
+        <source>Symbols</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ResearchModel</name>
     <message>
         <source>Scenario</source>
-        <translation type="vanished">Сценарій</translation>
+        <translation>Сценарій</translation>
     </message>
     <message>
         <source>Title Page</source>
-        <translation type="vanished">Титульна сторінка</translation>
+        <translation>Титульна сторінка</translation>
     </message>
     <message>
         <source>Synopsis</source>
-        <translation type="vanished">Синопсис</translation>
+        <translation>Синопсис</translation>
     </message>
     <message>
         <source>Characters</source>
-        <translation type="vanished">Герої</translation>
+        <translation>Герої</translation>
     </message>
     <message>
         <source>Locations</source>
-        <translation type="vanished">Локації</translation>
+        <translation>Локації</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioBlockStyle</name>
     <message>
         <source>Undefined</source>
-        <translation type="vanished">Не визначено</translation>
+        <translation>Не визначено</translation>
     </message>
     <message>
         <source>Scene Heading</source>
-        <translation type="vanished">Місце і час</translation>
+        <translation>Місце і час</translation>
     </message>
     <message>
         <source>Scene Characters</source>
-        <translation type="vanished">Герої сцени</translation>
+        <translation>Герої сцени</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation type="vanished">Опис дії</translation>
+        <translation>Опис дії</translation>
     </message>
     <message>
         <source>Character</source>
-        <translation type="vanished">Герой</translation>
+        <translation>Герой</translation>
     </message>
     <message>
         <source>Parenthetical</source>
-        <translation type="vanished">Ремарка</translation>
+        <translation>Ремарка</translation>
     </message>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">Діалог</translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>Transition</source>
-        <translation type="vanished">Перехід</translation>
+        <translation>Перехід</translation>
     </message>
     <message>
         <source>Shot</source>
-        <translation type="vanished">Коментар</translation>
+        <translation>Коментар</translation>
     </message>
     <message>
         <source>Title Header</source>
-        <translation type="vanished">Колонтитул</translation>
+        <translation>Колонтитул</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="vanished">Титр</translation>
+        <translation>Титр</translation>
     </message>
     <message>
         <source>Noprintable Text</source>
-        <translation type="vanished">Недрукований текст</translation>
+        <translation>Недрукований текст</translation>
     </message>
     <message>
         <source>Folder</source>
-        <translation type="vanished">Папка</translation>
+        <translation>Папка</translation>
     </message>
     <message>
         <source>Folder Footer</source>
-        <translation type="vanished">Folder Footer</translation>
+        <translation>Folder Footer</translation>
     </message>
     <message>
         <source>Scene Description</source>
-        <translation type="vanished">Опис Сцени</translation>
+        <translation>Опис Сцени</translation>
     </message>
     <message>
         <source>SH</source>
         <extracomment>Reduction of Scene Heading</extracomment>
         <translatorcomment>Зкорочення від Місце і час</translatorcomment>
-        <translation type="vanished">МЧ</translation>
+        <translation>МЧ</translation>
     </message>
     <message>
         <source>SC</source>
         <extracomment>Reduction of Scene Characters</extracomment>
         <translatorcomment>Зкорочення від Герої сцени</translatorcomment>
-        <translation type="vanished">ГС</translation>
+        <translation>ГС</translation>
     </message>
     <message>
         <source>A</source>
         <extracomment>Reduction of Action</extracomment>
         <translatorcomment>Зкорочення від Опис дії</translatorcomment>
-        <translation type="vanished">ОД</translation>
+        <translation>ОД</translation>
     </message>
     <message>
         <source>C</source>
         <extracomment>Reduction of Character</extracomment>
         <translatorcomment>Зкорочення від Герой</translatorcomment>
-        <translation type="vanished">Г</translation>
+        <translation>Г</translation>
     </message>
     <message>
         <source>P</source>
         <extracomment>Reduction of Parenthetical</extracomment>
         <translatorcomment>Скорочення від Ремарка</translatorcomment>
-        <translation type="vanished">Р</translation>
+        <translation>Р</translation>
     </message>
     <message>
         <source>D</source>
         <extracomment>Reduction of Dialog</extracomment>
         <translatorcomment>Зкорочення від Діалог</translatorcomment>
-        <translation type="vanished">Д</translation>
+        <translation>Д</translation>
     </message>
     <message>
         <source>Tr</source>
         <extracomment>Reduction of Transition</extracomment>
         <translatorcomment>Зкорочення від Перехід</translatorcomment>
-        <translation type="vanished">П</translation>
+        <translation>П</translation>
     </message>
     <message>
         <source>S</source>
         <extracomment>Reduction of Shot</extracomment>
         <translatorcomment>Зкорочення від Коментар</translatorcomment>
-        <translation type="vanished">К</translation>
+        <translation>К</translation>
     </message>
     <message>
         <source>Ti</source>
         <extracomment>Reduction of Title</extracomment>
         <translatorcomment>Зкорочення від Титр</translatorcomment>
-        <translation type="vanished">Т</translation>
+        <translation>Т</translation>
     </message>
     <message>
         <source>NT</source>
         <extracomment>Reduction of Noprintable Text</extracomment>
         <translatorcomment>Зкорочення від Нотатка по тексту</translatorcomment>
-        <translation type="vanished">НТ</translation>
+        <translation>НТ</translation>
     </message>
     <message>
         <source>F</source>
         <extracomment>Reduction of Folder</extracomment>
         <translatorcomment>Зкорочення від Папка</translatorcomment>
-        <translation type="vanished">П</translation>
+        <translation>П</translation>
     </message>
     <message>
         <source>SD</source>
         <extracomment>Reduction of Scene Description</extracomment>
         <translatorcomment>Зкорочення від Опис Сцени</translatorcomment>
-        <translation type="vanished">ОС</translation>
+        <translation>ОС</translation>
+    </message>
+    <message>
+        <source>Lyrics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TH</source>
+        <extracomment>Reduction of Title Header</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FF</source>
+        <extracomment>Reduction of Folder Footer</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>L</source>
+        <extracomment>Reduction of Lyrics</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioModel</name>
     <message>
         <source>FADE IN:</source>
-        <translation type="vanished">ІЗ ЗАТЕМНЕННЯ:</translation>
+        <translation>ІЗ ЗАТЕМНЕННЯ:</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioTemplate</name>
     <message>
         <source>Default</source>
-        <translation type="vanished">Стандартний</translation>
+        <translation>Стандартний</translation>
     </message>
     <message>
         <source>Default with Courier Prime</source>
-        <translation type="vanished">Стандартний з Courier Prime</translation>
+        <translation>Стандартний з Courier Prime</translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (A4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hebrew screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy of </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -324,71 +390,137 @@
     <message>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation type="obsolete">ПРОДОВЖЕННЯ</translation>
+        <translation type="unfinished">ПРОДОВЖЕННЯ</translation>
+    </message>
+    <message>
+        <source>MORE</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DatabaseLayer::Database</name>
     <message>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
-        <translation type="vanished">Проект було змінено в більш новій версії. Вам необхідно оновити програму до останньої версії, для його відкриття.</translation>
+        <translation>Проект було змінено в більш новій версії. Вам необхідно оновити програму до останньої версії, для його відкриття.</translation>
     </message>
     <message>
         <source>INT</source>
-        <translation type="vanished">ІНТ</translation>
+        <translation>ІНТ</translation>
     </message>
     <message>
         <source>EXT</source>
-        <translation type="vanished">НАТ</translation>
+        <translation>НАТ</translation>
     </message>
     <message>
         <source>DAY</source>
-        <translation type="vanished">ДЕНЬ</translation>
+        <translation>ДЕНЬ</translation>
     </message>
     <message>
         <source>NIGHT</source>
-        <translation type="vanished">НІЧ</translation>
+        <translation>НІЧ</translation>
     </message>
     <message>
         <source>MORNING</source>
-        <translation type="vanished">РАНОК</translation>
+        <translation>РАНОК</translation>
     </message>
     <message>
         <source>EVENING</source>
-        <translation type="vanished">ВЕЧІР</translation>
+        <translation>ВЕЧІР</translation>
     </message>
     <message>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
         <translatorcomment>Закадровий голос</translatorcomment>
-        <translation type="vanished">З.Г.</translation>
+        <translation>З.Г.</translation>
     </message>
     <message>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
         <translatorcomment>Поза кадром</translatorcomment>
-        <translation type="vanished">П.К.</translation>
+        <translation>П.К.</translation>
     </message>
     <message>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation type="vanished">ПРОДОВЖЕННЯ</translation>
+        <translation>ПРОДОВЖЕННЯ</translation>
     </message>
     <message>
         <source>Photos</source>
-        <translation type="vanished">Фотографії</translation>
+        <translation>Фотографії</translation>
     </message>
     <message>
         <source>Unnamed image</source>
-        <translation type="vanished">Безіменне зображення</translation>
+        <translation>Безіменне зображення</translation>
     </message>
     <message>
         <source>INT./EXT</source>
-        <translation type="obsolete">ІНТ./НАТ</translation>
+        <translation type="unfinished">ІНТ./НАТ</translation>
     </message>
     <message>
         <source>FADE IN:</source>
-        <translation type="obsolete">ІЗ ЗАТЕМНЕННЯ:</translation>
+        <translation type="unfinished">ІЗ ЗАТЕМНЕННЯ:</translation>
+    </message>
+    <message>
+        <source>AFTERNOON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LATER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MOMENTS LATER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CONTINUOUS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>THE NEXT DAY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O.C.</source>
+        <extracomment>Off-camera</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SUBTITLE</source>
+        <extracomment>Subtitle</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FADE OUT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FADE TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DISSOLVE TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BACK TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MATCH CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>JUMP CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FADE TO BLACK</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -454,6 +586,92 @@
     <message>
         <source>All Supported Files</source>
         <translation>Всі підтримувані файли</translation>
+    </message>
+</context>
+<context>
+    <name>FountainImporter</name>
+    <message>
+        <source>END OF </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GraphLogic</name>
+    <message>
+        <source>Couldn&apos;t parse XML file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t read file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t open file to write.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MindMap exported as </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No active node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No active node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node hasn&apos;t parent for add sibling node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base node cannot be deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Too much scaling.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select node color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select text color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add edge: select destination node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete edge: select other end-node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edge adding cancelled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edge deleting cancelled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t add edge between single node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is already an edge between these two nodes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no edge between these two nodes.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -661,113 +879,113 @@ p, li { white-space: pre-wrap; }
     <name>ManagementLayer::ApplicationManager</name>
     <message>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
-        <translation type="vanished">Ви намагаєтеся створити проект в неіснуючій папці &lt;b&gt;%1&lt;/b&gt;. Будь ласка, виберіть інше місце для нового проекту.</translation>
+        <translation>Ви намагаєтеся створити проект в неіснуючій папці &lt;b&gt;%1&lt;/b&gt;. Будь ласка, виберіть інше місце для нового проекту.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
-        <translation type="vanished">Неможливо записати у файл. Можливо, він відкритий в іншій програмі. Закрийте програму і спробуйте ще раз.</translation>
+        <translation>Неможливо записати у файл. Можливо, він відкритий в іншій програмі. Закрийте програму і спробуйте ще раз.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation type="vanished">Неможливо записати у файл. Перевірте права доступу для запису в обраній папці. Будь ласка, виберіть іншу папку.</translation>
+        <translation>Неможливо записати у файл. Перевірте права доступу для запису в обраній папці. Будь ласка, виберіть іншу папку.</translation>
     </message>
     <message>
         <source>Create project error</source>
-        <translation type="vanished">Помилка створення проекту</translation>
+        <translation>Помилка створення проекту</translation>
     </message>
     <message>
         <source>Saving error</source>
-        <translation type="vanished">Помилка збереження</translation>
+        <translation>Помилка збереження</translation>
     </message>
     <message>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
-        <translation type="vanished">Неможливо внести зміни до проекту,що розташований в &lt;b&gt;%1&lt;/b&gt; тому, що файл не існує. Будь ласка, перемістіть файл назад і повторіть спробу зберегти. Повторити спробу зберегти?</translation>
+        <translation>Неможливо внести зміни до проекту,що розташований в &lt;b&gt;%1&lt;/b&gt; тому, що файл не існує. Будь ласка, перемістіть файл назад і повторіть спробу зберегти. Повторити спробу зберегти?</translation>
     </message>
     <message>
         <source>Can&apos;t open project file</source>
-        <translation type="vanished">Неможливо відкрити файл проекту</translation>
+        <translation>Неможливо відкрити файл проекту</translation>
     </message>
     <message>
         <source>Connection active</source>
-        <translation type="vanished">З&apos;єднання активне</translation>
+        <translation>З&apos;єднання активне</translation>
     </message>
     <message>
         <source>Network error</source>
-        <translation type="vanished">Помилка мережі</translation>
+        <translation>Помилка мережі</translation>
     </message>
     <message>
         <source>Incorrect username or password.</source>
-        <translation type="vanished">Неправильний логін або пароль.</translation>
+        <translation>Неправильний логін або пароль.</translation>
     </message>
     <message>
         <source>Subscription ended</source>
-        <translation type="vanished">Підписка закінчилась</translation>
+        <translation>Підписка закінчилась</translation>
     </message>
     <message>
         <source>Network Error</source>
-        <translation type="vanished">Помилка Мережі</translation>
+        <translation>Помилка Мережі</translation>
     </message>
     <message>
         <source>Project not available</source>
-        <translation type="vanished">Проект не доступний</translation>
+        <translation>Проект не доступний</translation>
     </message>
     <message>
         <source>Loading Scenario</source>
-        <translation type="vanished">Завантаження Сценарію</translation>
+        <translation>Завантаження Сценарію</translation>
     </message>
     <message>
         <source>Please wait. Loading can take few minutes.</source>
-        <translation type="vanished">Будь-ласка, зачекайте. Завантаження може тривати декілька хвилин.</translation>
+        <translation>Будь-ласка, зачекайте. Завантаження може тривати декілька хвилин.</translation>
     </message>
     <message>
         <source>Sync scenario with cloud service.</source>
-        <translation type="vanished">Синхронізація сценарію з хмарним сервісом.</translation>
+        <translation>Синхронізація сценарію з хмарним сервісом.</translation>
     </message>
     <message>
         <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
-        <translation type="vanished">Не виходить записати ваші зміни в проект. Існує певна внутрішня помилка бази даних: %1 Будь ласка, перевірте, що файл існує і у вас є права на його зміни. Повторити спробу зберегти?</translation>
+        <translation>Не виходить записати ваші зміни в проект. Існує певна внутрішня помилка бази даних: %1 Будь ласка, перевірте, що файл існує і у вас є права на його зміни. Повторити спробу зберегти?</translation>
     </message>
     <message>
         <source>Change project name</source>
-        <translation type="vanished">Змінити назву проекту</translation>
+        <translation>Змінити назву проекту</translation>
     </message>
     <message>
         <source>Enter new name for project</source>
-        <translation type="vanished">Введіть нове ім&apos;я проекта</translation>
+        <translation>Введіть нове ім&apos;я проекта</translation>
     </message>
     <message>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">Ви впевненні у видаленні проекту &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation>Ви впевненні у видаленні проекту &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">Ви впевненні у видаленні вашої підписки на проект &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation>Ви впевненні у видаленні вашої підписки на проект &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
-        <translation type="vanished">Ви впевненні у видаленні підписки користувача &lt;b&gt;%1&lt;/b&gt; на проект &lt;b&gt;%2&lt;/b&gt;?</translation>
+        <translation>Ви впевненні у видаленні підписки користувача &lt;b&gt;%1&lt;/b&gt; на проект &lt;b&gt;%2&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Project synchronized</source>
-        <translation type="vanished">Проект синхронізовано</translation>
+        <translation>Проект синхронізовано</translation>
     </message>
     <message>
         <source>Connection inactive</source>
-        <translation type="vanished">З&apos;єднання неактивно</translation>
+        <translation>З&apos;єднання неактивно</translation>
     </message>
     <message>
         <source>Project didn&apos;t synchronized</source>
-        <translation type="vanished">Проект не синхронізований</translation>
+        <translation>Проект не синхронізований</translation>
     </message>
     <message>
         <source>Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Проект не синхронізований.</translation>
+        <translation>Проект не синхронізований.</translation>
     </message>
     <message>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Період придбаної підписки закінчився.
+        <translation>Період придбаної підписки закінчився.
 
 Проект не синхронізований.</translation>
     </message>
@@ -775,7 +993,7 @@ Project didn&apos;t synchronized.</source>
         <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Не виходить коректно завантажити всі дані з сервісу. Будь ласка, перевірте якість вашого з&apos;єднання з Інтернетом і повторіть синхронізацію.
+        <translation>Не виходить коректно завантажити всі дані з сервісу. Будь ласка, перевірте якість вашого з&apos;єднання з Інтернетом і повторіть синхронізацію.
 
 Проект не синхронізований.</translation>
     </message>
@@ -783,158 +1001,158 @@ Project didn&apos;t synchronized.</source>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Даний проект не доступний для синхронізації, тому що закінчилась підписка. 
+        <translation>Даний проект не доступний для синхронізації, тому що закінчилась підписка. 
 
 Проект не синхронізований.</translation>
     </message>
     <message>
         <source>Email already exist</source>
-        <translation type="vanished">Адреса електронної пошти вже існує</translation>
+        <translation>Адреса електронної пошти вже існує</translation>
     </message>
     <message>
         <source>Password too weak</source>
-        <translation type="vanished">Пароль занадто слабкий</translation>
+        <translation>Пароль занадто слабкий</translation>
     </message>
     <message>
         <source>Wrong email</source>
-        <translation type="vanished">Неправильний email</translation>
+        <translation>Неправильний email</translation>
     </message>
     <message>
         <source>Unknown Error</source>
-        <translation type="vanished">Невідома помилка</translation>
+        <translation>Невідома помилка</translation>
     </message>
     <message>
         <source>Ignore and try to open project?</source>
-        <translation type="vanished">Ігнорувати і спробувати відкрити проект?</translation>
+        <translation>Ігнорувати і спробувати відкрити проект?</translation>
     </message>
     <message>
         <source>Share error</source>
-        <translation type="vanished">Поділитись помилкою</translation>
+        <translation>Поділитись помилкою</translation>
     </message>
     <message>
         <source>You can&apos;t share project with yourself.</source>
-        <translation type="vanished">Ви не можете поділитись проектом з собою.</translation>
+        <translation>Ви не можете поділитись проектом з собою.</translation>
     </message>
     <message>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Данний проект не доступний для синхронізації, тому що власник проекту закрив доступ до проекту для вас.</translation>
+        <translation>Данний проект не доступний для синхронізації, тому що власник проекту закрив доступ до проекту для вас.</translation>
     </message>
     <message>
         <source>Sync not available</source>
-        <translation type="vanished">Синхронізація недоступна</translation>
+        <translation>Синхронізація недоступна</translation>
     </message>
     <message>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Ви вичерпали весь доступний для використання простір на сервері.
+        <translation>Ви вичерпали весь доступний для використання простір на сервері.
 
 Проект не синхронізовано.</translation>
     </message>
     <message>
         <source>in cloud</source>
-        <translation type="vanished">в хмарі</translation>
+        <translation>в хмарі</translation>
     </message>
     <message>
         <source>Please wait. Importing can take few minutes.</source>
-        <translation type="vanished">Будь ласка, зачекайте. Імпорт може тривати декілька хвилин.</translation>
+        <translation>Будь ласка, зачекайте. Імпорт може тривати декілька хвилин.</translation>
     </message>
     <message>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation type="vanished">Ви впевненні у видаленні проекту &lt;b&gt;%1&lt;/b&gt; з останніх?</translation>
+        <translation>Ви впевненні у видаленні проекту &lt;b&gt;%1&lt;/b&gt; з останніх?</translation>
     </message>
     <message>
         <source>on device</source>
-        <translation type="vanished">на пристрої</translation>
+        <translation>на пристрої</translation>
     </message>
     <message>
         <source>Importing script</source>
-        <translation type="vanished">Імпорт сценарію</translation>
+        <translation>Імпорт сценарію</translation>
     </message>
     <message>
         <source>Import error</source>
-        <translation type="vanished">Помилка імпорту</translation>
+        <translation>Помилка імпорту</translation>
     </message>
     <message>
         <source>Can&apos;t get file path to import. Try to download it and open in file browser.</source>
-        <translation type="vanished">Неможливо отримати шлях файлу для імпорту. Спробуйте завантажити його та відкрити у файловому провіднику.</translation>
+        <translation>Неможливо отримати шлях файлу для імпорту. Спробуйте завантажити його та відкрити у файловому провіднику.</translation>
     </message>
     <message>
         <source>Can&apos;t create temporatry file for import.</source>
-        <translation type="vanished">Неможливо створити тимчасовий файл для імпорту.</translation>
+        <translation>Неможливо створити тимчасовий файл для імпорту.</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
     <message>
         <source>Export</source>
-        <translation type="vanished">Експорт</translation>
+        <translation>Експорт</translation>
     </message>
     <message>
         <source>Please wait. Export can take few minutes.</source>
-        <translation type="vanished">Будь-ласка, зачекайте. Експорт може тривати декілька хвилин.</translation>
+        <translation>Будь-ласка, зачекайте. Експорт може тривати декілька хвилин.</translation>
     </message>
     <message>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
-        <translation type="vanished">Ви намагаєтесь експортувати в неіснуючу папку &lt;b&gt;%1&lt;/b&gt;. Будь-ласка, виберіть інше місце для експортованого файлу.</translation>
+        <translation>Ви намагаєтесь експортувати в неіснуючу папку &lt;b&gt;%1&lt;/b&gt;. Будь-ласка, виберіть інше місце для експортованого файлу.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry export.</source>
-        <translation type="vanished">Неможливо внести зміни у файл. Можливо, він відкритий в іншій програмі. Будь ласка, закрийте програму і спробуйте ще раз.</translation>
+        <translation>Неможливо внести зміни у файл. Можливо, він відкритий в іншій програмі. Будь ласка, закрийте програму і спробуйте ще раз.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation type="vanished">Неможливо внести зміни до файлу. Перевірте права на доступ в обранній папці. Будь ласка, виберіть іншу папку.</translation>
+        <translation>Неможливо внести зміни до файлу. Перевірте права на доступ в обранній папці. Будь ласка, виберіть іншу папку.</translation>
     </message>
     <message>
         <source>Export error</source>
-        <translation type="vanished">Помилка експорту</translation>
+        <translation>Помилка експорту</translation>
     </message>
     <message>
         <source>Send script to</source>
-        <translation type="vanished">Відправити сценарій</translation>
+        <translation>Відправити сценарій</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::Project</name>
     <message>
         <source>Owner</source>
-        <translation type="vanished">Власник</translation>
+        <translation>Власник</translation>
     </message>
     <message>
         <source>Redactor</source>
-        <translation type="vanished">Редактор</translation>
+        <translation>Редактор</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation type="vanished">Коментатор</translation>
+        <translation>Коментатор</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ProjectsPageManager</name>
     <message>
         <source>Project exists. It will be replaced after creating.</source>
-        <translation type="vanished">Проект існує. Після створення він буде замінений.</translation>
+        <translation>Проект існує. Після створення він буде замінений.</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ScriptManager</name>
     <message>
         <source>Scenes</source>
-        <translation type="vanished">Сцени</translation>
+        <translation>Сцени</translation>
     </message>
     <message>
         <source>Chron.</source>
-        <translation type="vanished">Тривалість.</translation>
+        <translation>Тривалість.</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::SettingsManager</name>
     <message>
         <source>Language will be change after application restart.</source>
-        <translation type="vanished">Мову буде змінено після перезапуску програми.</translation>
+        <translation>Мову буде змінено після перезапуску програми.</translation>
     </message>
 </context>
 <context>
@@ -1076,22 +1294,77 @@ Let&apos;s create the first one!</source>
     <name>QObject</name>
     <message>
         <source>Scenario</source>
-        <translation type="vanished">Сценарій</translation>
+        <translation>Сценарій</translation>
     </message>
     <message>
         <source>Title:</source>
         <comment>ScenarioBlockStyle</comment>
-        <translation type="vanished">Титр:</translation>
+        <translation>Титр:</translation>
     </message>
     <message>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
-        <translation type="vanished">КІНЕЦЬ ПАПКИ</translation>
+        <translation>КІНЕЦЬ ПАПКИ</translation>
     </message>
     <message>
         <source>END OF</source>
         <comment>ScenarioTextEditHelpers</comment>
-        <translation type="vanished">КІНЕЦЬ</translation>
+        <translation>КІНЕЦЬ</translation>
+    </message>
+    <message>
+        <source>Node added to &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node added to scene</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node deleted &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> with subtree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edge added between &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot; and &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edge deleted between &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changing color of node: &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changing textcolor of node: &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The graph is acyclic, edge added as secondary edge.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QtMindMap::Node</name>
+    <message>
+        <source>&lt;b&gt;Root node&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1165,38 +1438,42 @@ Let&apos;s create the first one!</source>
     <name>SimpleTextEditorWidget</name>
     <message>
         <source>Make text bold</source>
-        <translation type="vanished">Жирний текст</translation>
+        <translation>Жирний текст</translation>
     </message>
     <message>
         <source>Make text italic</source>
-        <translation type="vanished">Текст курсивом</translation>
+        <translation>Текст курсивом</translation>
     </message>
     <message>
         <source>Make text underline</source>
-        <translation type="vanished">Підкреслений текст</translation>
+        <translation>Підкреслений текст</translation>
     </message>
     <message>
         <source>Change text color</source>
-        <translation type="vanished">Змінити колір тексту</translation>
+        <translation>Змінити колір тексту</translation>
     </message>
     <message>
         <source>Change text background color</source>
-        <translation type="vanished">Змінити колір фону</translation>
+        <translation>Змінити колір фону</translation>
+    </message>
+    <message>
+        <source>Clear formatting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SpellCheckTextEdit</name>
     <message>
         <source>Ignore</source>
-        <translation type="vanished">Ігнорувати</translation>
+        <translation>Ігнорувати</translation>
     </message>
     <message>
         <source>Add to dictionary</source>
-        <translation type="vanished">Додати в словник</translation>
+        <translation>Додати в словник</translation>
     </message>
     <message>
         <source>Suggestions not found</source>
-        <translation type="vanished">Не знайдено</translation>
+        <translation>Не знайдено</translation>
     </message>
 </context>
 <context>
@@ -1251,216 +1528,244 @@ Your subscription is active until</source>
     <name>UserInterface::AccountView</name>
     <message>
         <source>Account is active until: </source>
-        <translation type="vanished">Акаунт активний до:</translation>
+        <translation>Акаунт активний до:</translation>
     </message>
     <message>
         <source>Account is inactive</source>
-        <translation type="vanished">Акаунт не активний</translation>
+        <translation>Акаунт не активний</translation>
     </message>
     <message>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation type="vanished">Використано %1 Гб з %2 Гб</translation>
+        <translation>Використано %1 Гб з %2 Гб</translation>
     </message>
     <message>
         <source>Email</source>
-        <translation type="vanished">Email</translation>
+        <translation>Email</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation type="vanished">Увійти</translation>
+        <translation>Увійти</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::AddProjectView</name>
     <message>
         <source>LOCAL</source>
-        <translation type="vanished">ЛОКАЛЬНО</translation>
+        <translation>ЛОКАЛЬНО</translation>
     </message>
     <message>
         <source>Please, enter name for your new project.</source>
-        <translation type="vanished">Будь ласка, введіть ім&apos;я вашого нового  проекту.</translation>
+        <translation>Будь ласка, введіть ім&apos;я вашого нового  проекту.</translation>
     </message>
     <message>
         <source>IN CLOUD</source>
-        <translation type="vanished">В ХМАРІ</translation>
+        <translation>В ХМАРІ</translation>
     </message>
     <message>
         <source>Project name</source>
-        <translation type="vanished">Ім&apos;я проекту</translation>
+        <translation>Ім&apos;я проекту</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ExportView</name>
     <message>
         <source>Template</source>
-        <translation type="vanished">Шаблон</translation>
+        <translation>Шаблон</translation>
     </message>
     <message>
         <source>File format</source>
-        <translation type="vanished">Формат файлу</translation>
+        <translation>Формат файлу</translation>
     </message>
     <message>
         <source>Scenes prefix</source>
-        <translation type="vanished">Префікс сцен</translation>
+        <translation>Префікс сцен</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::LoginView</name>
     <message>
         <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a password.</source>
-        <translation type="vanished">На вашу електронну адресу &lt;b&gt;%1&lt;/b&gt; було відправлено лист з паролем.</translation>
+        <translation>На вашу електронну адресу &lt;b&gt;%1&lt;/b&gt; було відправлено лист з паролем.</translation>
     </message>
     <message>
         <source>Authorization</source>
-        <translation type="vanished">Авторизація</translation>
+        <translation>Авторизація</translation>
     </message>
     <message>
         <source>Please wait, authorzation can take few minutes.</source>
-        <translation type="vanished">Будь ласка, зачекайте, авторизація може тривати декілька хвилин.</translation>
+        <translation>Будь ласка, зачекайте, авторизація може тривати декілька хвилин.</translation>
     </message>
     <message>
         <source>Registration</source>
-        <translation type="vanished">Реєстрація</translation>
+        <translation>Реєстрація</translation>
     </message>
     <message>
         <source>Please wait, registration can take few minutes.</source>
-        <translation type="vanished">Будь ласка, зачекайте, реєстрація може тривати декілька хвилин.</translation>
+        <translation>Будь ласка, зачекайте, реєстрація може тривати декілька хвилин.</translation>
     </message>
     <message>
         <source>LOGIN</source>
-        <translation type="vanished">ЛОГІН</translation>
+        <translation>ЛОГІН</translation>
     </message>
     <message>
         <source>SIGN UP</source>
-        <translation type="vanished">РЕЄСТРАЦІЯ</translation>
+        <translation>РЕЄСТРАЦІЯ</translation>
     </message>
     <message>
         <source>Email</source>
-        <translation type="vanished">Email</translation>
+        <translation>Email</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation type="vanished">Пароль</translation>
+        <translation>Пароль</translation>
     </message>
     <message>
         <source>Email is invalid</source>
-        <translation type="vanished">Неправильний email</translation>
+        <translation>Неправильний email</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::MenuView</name>
     <message>
         <source>Save</source>
-        <translation type="vanished">Зберегти</translation>
+        <translation>Зберегти</translation>
     </message>
     <message>
         <source>Changes saved</source>
-        <translation type="vanished">Зміни збережено</translation>
+        <translation>Зміни збережено</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ProjectsList</name>
     <message>
         <source>no changes</source>
-        <translation type="vanished">нема змін</translation>
+        <translation>нема змін</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ProjectsView</name>
     <message>
         <source>LOCAL</source>
-        <translation type="vanished">ЛОКАЛЬНО</translation>
+        <translation>ЛОКАЛЬНО</translation>
     </message>
     <message>
         <source>IN CLOUD</source>
-        <translation type="vanished">В ХМАРІ</translation>
+        <translation>В ХМАРІ</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ScriptView</name>
     <message>
         <source>DRAFT</source>
-        <translation type="vanished">ЧЕРНЕТКА</translation>
+        <translation>ЧЕРНЕТКА</translation>
+    </message>
+    <message>
+        <source>Comment</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UserInterface::SettingsView</name>
     <message>
         <source>System</source>
-        <translation type="vanished">Системні налаштування</translation>
+        <translation>Системні налаштування</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="vanished">Виберіть мову програми</translation>
+        <translation>Виберіть мову програми</translation>
+    </message>
+    <message>
+        <source>Little</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Middle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Big</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Very big</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Large</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font size</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ShareDialog</name>
     <message>
         <source>Share</source>
-        <translation type="vanished">Поділитись</translation>
+        <translation>Поділитись</translation>
     </message>
     <message>
         <source>Share project</source>
-        <translation type="vanished">Поділитись проектом</translation>
+        <translation>Поділитись проектом</translation>
     </message>
     <message>
         <source>Email</source>
-        <translation type="vanished">Email</translation>
+        <translation>Email</translation>
     </message>
     <message>
         <source>Email is invalid</source>
-        <translation type="vanished">Неправильний email</translation>
+        <translation>Неправильний email</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::SubscriptionView</name>
     <message>
         <source>1 month - %1 rubles</source>
-        <translation type="vanished">1 місяць - %1 рублів</translation>
+        <translation>1 місяць - %1 рублів</translation>
     </message>
     <message>
         <source>2 month - %1 rubles</source>
-        <translation type="vanished">2 місяці - %1 рублів</translation>
+        <translation>2 місяці - %1 рублів</translation>
     </message>
     <message>
         <source>3 month - %1 rubles</source>
-        <translation type="vanished">3 місяці - %1 рублів</translation>
+        <translation>3 місяці - %1 рублів</translation>
     </message>
     <message>
         <source>6 month (6% off) - %1 rubles</source>
-        <translation type="vanished">6 місяців (6% знижка) - %1 рублів</translation>
+        <translation>6 місяців (6% знижка) - %1 рублів</translation>
     </message>
     <message>
         <source>12 month (12% off) - %1 rubles</source>
-        <translation type="vanished">12 місяців (12% знижка) - %1 рублів</translation>
+        <translation>12 місяців (12% знижка) - %1 рублів</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::TitlePageView</name>
     <message>
         <source>Script name</source>
-        <translation type="vanished">Назва сценарію</translation>
+        <translation>Назва сценарію</translation>
     </message>
     <message>
         <source>Additional</source>
-        <translation type="vanished">Додатково</translation>
+        <translation>Додатково</translation>
     </message>
     <message>
         <source>Genre</source>
-        <translation type="vanished">Жанр</translation>
+        <translation>Жанр</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation type="vanished">Автор</translation>
+        <translation>Автор</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="vanished">Контакти</translation>
+        <translation>Контакти</translation>
     </message>
     <message>
         <source>Year</source>
-        <translation type="vanished">Рік</translation>
+        <translation>Рік</translation>
     </message>
 </context>
 <context>

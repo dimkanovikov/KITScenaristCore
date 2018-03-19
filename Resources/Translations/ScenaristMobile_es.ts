@@ -28,37 +28,76 @@
     </message>
 </context>
 <context>
+    <name>BusinessLayer::AbstractExporter</name>
+    <message>
+        <location filename="../../BusinessLayer/Export/AbstractExporter.cpp" line="372"/>
+        <source>Real name: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BusinessLayer::FountainExporter</name>
     <message>
+        <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="15"/>
         <source>INT</source>
-        <translation type="vanished">INT</translation>
+        <translation>INT</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="16"/>
         <source>EXT</source>
-        <translation type="vanished">EXT</translation>
+        <translation>EXT</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="17"/>
+        <source>EST</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="18"/>
+        <source>INT./EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="19"/>
+        <source>INT/EXT</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BusinessLayer::FountainImporter</name>
     <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="36"/>
         <source>INT</source>
-        <translation type="vanished">INT</translation>
+        <translation>INT</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="37"/>
         <source>EXT</source>
-        <translation type="vanished">EXT</translation>
+        <translation>EXT</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="38"/>
+        <source>EST</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="39"/>
+        <source>INT./EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="40"/>
+        <source>INT/EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="41"/>
+        <source>I/E</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::AbstractImporter</name>
-    <message>
-        <source>All Supported Files</source>
-        <translation type="vanished">Todos los formatos soportados</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation type="vanished">Proyecto de KIT Scenarist</translation>
-    </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="158"/>
         <source>All supported files</source>
@@ -104,272 +143,503 @@
         <source>Celtx project</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>OpenDocument Text</source>
-        <translation type="vanished">Texto de OpenDocument</translation>
-    </message>
-    <message>
-        <source>Fountain Text</source>
-        <translation type="vanished">Fuente de texto</translation>
-    </message>
 </context>
 <context>
     <name>BusinessLogic::CountersFacade</name>
     <message>
+        <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="175"/>
         <source>Pages</source>
-        <translation type="vanished">Páginas</translation>
+        <translation>Páginas</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="182"/>
         <source>Words</source>
-        <translation type="vanished">Palabras</translation>
+        <translation>Palabras</translation>
     </message>
     <message>
-        <source>Simbols</source>
-        <translation type="vanished">Caracteres</translation>
+        <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="189"/>
+        <source>Symbols</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ResearchModel</name>
     <message>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="108"/>
         <source>Scenario</source>
-        <translation type="vanished">Guión</translation>
+        <translation>Guión</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="116"/>
         <source>Title Page</source>
-        <translation type="vanished">Título de la lista</translation>
+        <translation>Título de la lista</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="124"/>
         <source>Synopsis</source>
-        <translation type="vanished">Sinopsis</translation>
+        <translation>Sinopsis</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="133"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="236"/>
         <source>Characters</source>
-        <translation type="vanished">Personajes</translation>
+        <translation>Personajes</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="142"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="241"/>
         <source>Locations</source>
-        <translation type="vanished">Localizaciones</translation>
+        <translation>Localizaciones</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="151"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="246"/>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioBlockStyle</name>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="66"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="92"/>
         <source>Undefined</source>
-        <translation type="vanished">Indefinido</translation>
+        <translation>Indefinido</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="67"/>
         <source>Scene Heading</source>
-        <translation type="vanished">Título de escena</translation>
+        <translation>Título de escena</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="68"/>
         <source>Scene Characters</source>
-        <translation type="vanished">Personajes en escena</translation>
+        <translation>Personajes en escena</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="69"/>
         <source>Action</source>
-        <translation type="vanished">Acción</translation>
+        <translation>Acción</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="70"/>
         <source>Character</source>
-        <translation type="vanished">Personaje</translation>
+        <translation>Personaje</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="71"/>
         <source>Parenthetical</source>
-        <translation type="vanished">Paréntesis</translation>
+        <translation>Paréntesis</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="72"/>
         <source>Dialog</source>
-        <translation type="vanished">Diálogo</translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="73"/>
         <source>Transition</source>
-        <translation type="vanished">Transición</translation>
+        <translation>Transición</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="74"/>
         <source>Shot</source>
-        <translation type="vanished">Plano</translation>
+        <translation>Plano</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="81"/>
+        <source>Lyrics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="94"/>
         <source>SH</source>
         <extracomment>Reduction of Scene Heading</extracomment>
-        <translation type="vanished">TE</translation>
+        <translation>TE</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="96"/>
         <source>SC</source>
         <extracomment>Reduction of Scene Characters</extracomment>
-        <translation type="vanished">PE</translation>
+        <translation>PE</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="98"/>
         <source>A</source>
         <extracomment>Reduction of Action</extracomment>
-        <translation type="vanished">A</translation>
+        <translation>A</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="100"/>
         <source>C</source>
         <extracomment>Reduction of Character</extracomment>
-        <translation type="vanished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="102"/>
         <source>P</source>
         <extracomment>Reduction of Parenthetical</extracomment>
-        <translation type="vanished">PA</translation>
+        <translation>PA</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="104"/>
         <source>D</source>
         <extracomment>Reduction of Dialog</extracomment>
-        <translation type="vanished">D</translation>
+        <translation>D</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="106"/>
         <source>Tr</source>
         <extracomment>Reduction of Transition</extracomment>
-        <translation type="vanished">Tr</translation>
+        <translation>Tr</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="108"/>
         <source>S</source>
         <extracomment>Reduction of Shot</extracomment>
-        <translation type="vanished">PL</translation>
+        <translation>PL</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="110"/>
         <source>TH</source>
         <extracomment>Reduction of Title Header</extracomment>
-        <translation type="vanished">T</translation>
+        <translation>T</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="112"/>
         <source>Ti</source>
         <extracomment>Reduction of Title</extracomment>
-        <translation type="vanished">Ti</translation>
+        <translation>Ti</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="114"/>
         <source>NT</source>
         <extracomment>Reduction of Noprintable Text</extracomment>
-        <translation type="vanished">TNI</translation>
+        <translation>TNI</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="116"/>
         <source>F</source>
         <extracomment>Reduction of Folder</extracomment>
-        <translation type="vanished">C</translation>
+        <translation>C</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="118"/>
         <source>FF</source>
         <extracomment>Reduction of Folder Footer</extracomment>
-        <translation type="vanished">CPP</translation>
+        <translation>CPP</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="120"/>
         <source>SD</source>
         <extracomment>Reduction of Scene Description</extracomment>
-        <translation type="vanished">DE</translation>
+        <translation>DE</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="122"/>
+        <source>L</source>
+        <extracomment>Reduction of Lyrics</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="75"/>
         <source>Title Header</source>
-        <translation type="vanished">Título del encabezado</translation>
+        <translation>Título del encabezado</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="76"/>
         <source>Title</source>
-        <translation type="vanished">Título</translation>
+        <translation>Título</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="77"/>
         <source>Noprintable Text</source>
-        <translation type="vanished">Texto no imprimible</translation>
+        <translation>Texto no imprimible</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="78"/>
         <source>Folder</source>
-        <translation type="vanished">Carpeta</translation>
+        <translation>Carpeta</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="79"/>
         <source>Folder Footer</source>
-        <translation type="vanished">Carpeta de pie de página</translation>
+        <translation>Carpeta de pie de página</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="80"/>
         <source>Scene Description</source>
-        <translation type="vanished">Descripción de la escena</translation>
+        <translation>Descripción de la escena</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioModel</name>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="404"/>
         <source>FADE IN:</source>
-        <translation type="vanished">FUNDIDO:</translation>
+        <translation>FUNDIDO:</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioTemplate</name>
     <message>
-        <source>Default</source>
-        <translation type="vanished">Por defecto</translation>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="622"/>
+        <source>Final Draft screenplay (A4)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="627"/>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="632"/>
+        <source>Russian screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="637"/>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="642"/>
+        <source>Chinese screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="647"/>
+        <source>Hebrew screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="652"/>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="657"/>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="662"/>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="667"/>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="672"/>
+        <source>Chinese screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="677"/>
+        <source>Hebrew screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="692"/>
+        <source>Default</source>
+        <translation>Por defecto</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="697"/>
         <source>Default with Courier Prime</source>
-        <translation type="vanished">Por defecto con Courier Prime</translation>
+        <translation>Por defecto con Courier Prime</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="713"/>
+        <source>Copy of </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScriptTextCorrector</name>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="32"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation type="obsolete">A Continuación</translation>
+        <translation type="unfinished">A Continuación</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="40"/>
+        <source>MORE</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DatabaseLayer::Database</name>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="59"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
-        <translation type="vanished">El proyecto fue modificado con una versión más reciente. Actualiza la aplicación para abrirlo.</translation>
+        <translation>El proyecto fue modificado con una versión más reciente. Actualiza la aplicación para abrirlo.</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="400"/>
         <source>INT</source>
         <translatorcomment>Interiores</translatorcomment>
-        <translation type="vanished">INT</translation>
+        <translation>INT</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="404"/>
         <source>EXT</source>
         <translatorcomment>Exteriores</translatorcomment>
-        <translation type="vanished">EXT</translation>
+        <translation>EXT</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="408"/>
+        <source>INT./EXT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="416"/>
         <source>DAY</source>
-        <translation type="vanished">DÍA</translation>
+        <translation>DÍA</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="420"/>
         <source>NIGHT</source>
-        <translation type="vanished">NOCHE</translation>
+        <translation>NOCHE</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="424"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="680"/>
         <source>MORNING</source>
-        <translation type="vanished">MAÑANA</translation>
+        <translation>MAÑANA</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="428"/>
+        <source>AFTERNOON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="432"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="684"/>
         <source>EVENING</source>
-        <translation type="vanished">ANOCHECER</translation>
+        <translation>ANOCHECER</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="436"/>
+        <source>LATER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="440"/>
+        <source>MOMENTS LATER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="444"/>
+        <source>CONTINUOUS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="448"/>
+        <source>THE NEXT DAY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="457"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
         <translatorcomment>Voz en Off</translatorcomment>
-        <translation type="vanished">V.O.</translation>
+        <translation>V.O.</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="462"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
         <translatorcomment>off-screen/ fuera de escena</translatorcomment>
-        <translation type="vanished">O.S.</translation>
+        <translation>O.S.</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="467"/>
+        <source>O.C.</source>
+        <extracomment>Off-camera</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="472"/>
+        <source>SUBTITLE</source>
+        <extracomment>Subtitle</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="477"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation type="vanished">A Continuación</translation>
+        <translation>A Continuación</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="485"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1427"/>
+        <source>CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="489"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1431"/>
         <source>FADE IN:</source>
-        <translation type="obsolete">FUNDIDO:</translation>
+        <translation type="unfinished">FUNDIDO:</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="493"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1435"/>
+        <source>FADE OUT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="497"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1439"/>
+        <source>FADE TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="501"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1443"/>
+        <source>DISSOLVE TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="505"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1447"/>
+        <source>BACK TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="509"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1451"/>
+        <source>MATCH CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="513"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1455"/>
+        <source>JUMP CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="517"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1459"/>
+        <source>FADE TO BLACK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1305"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1376"/>
         <source>Photos</source>
-        <translation type="vanished">Fotos</translation>
+        <translation>Fotos</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1316"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1387"/>
         <source>Unnamed image</source>
-        <translation type="vanished">Imagen sin nombre</translation>
+        <translation>Imagen sin nombre</translation>
     </message>
 </context>
 <context>
@@ -449,6 +719,125 @@
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="107"/>
         <source>All Supported Files</source>
         <translation>Todos los formatos</translation>
+    </message>
+</context>
+<context>
+    <name>FountainImporter</name>
+    <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="256"/>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="399"/>
+        <source>END OF </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GraphLogic</name>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="121"/>
+        <source>Couldn&apos;t parse XML file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="299"/>
+        <source>Couldn&apos;t read file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="368"/>
+        <source>Couldn&apos;t open file to write.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="376"/>
+        <source>Saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="398"/>
+        <source>MindMap exported as </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="439"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="472"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="535"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="560"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="573"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="602"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="631"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="661"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="684"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="714"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="749"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="848"/>
+        <source>No active node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="503"/>
+        <source>No active node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="517"/>
+        <source>Node hasn&apos;t parent for add sibling node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="541"/>
+        <source>Base node cannot be deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="579"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="608"/>
+        <source>Too much scaling.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="639"/>
+        <source>Select node color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="692"/>
+        <source>Select text color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="735"/>
+        <source>Add edge: select destination node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="741"/>
+        <source>Delete edge: select other end-node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="800"/>
+        <source>Edge adding cancelled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="807"/>
+        <source>Edge deleting cancelled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="909"/>
+        <source>Can&apos;t add edge between single node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="915"/>
+        <source>There is already an edge between these two nodes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="946"/>
+        <source>There is no edge between these two nodes.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -688,283 +1077,351 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ManagementLayer::ApplicationManager</name>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="561"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
-        <translation type="vanished">Estás intentando crear un proyecto en la carpeta inexistente &lt;b&gt;%1&lt;/b&gt;. Por favor, selecciona otro destino.</translation>
+        <translation>Estás intentando crear un proyecto en la carpeta inexistente &lt;b&gt;%1&lt;/b&gt;. Por favor, selecciona otro destino.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="565"/>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
-        <translation type="vanished">No se puede escribir en el archivo. Es posible que esté abierto en otra aplicación. Ciérralo e inténtalo de nuevo.</translation>
+        <translation>No se puede escribir en el archivo. Es posible que esté abierto en otra aplicación. Ciérralo e inténtalo de nuevo.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="568"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation type="vanished">No se puede escribir en el archivo. Comprueba los permisos para escribir en la carpeta seleccionada o elige otra carpeta.</translation>
+        <translation>No se puede escribir en el archivo. Comprueba los permisos para escribir en la carpeta seleccionada o elige otra carpeta.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="570"/>
         <source>Create project error</source>
-        <translation type="vanished">Error al crear el proyecto</translation>
+        <translation>Error al crear el proyecto</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1019"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1040"/>
         <source>Saving error</source>
-        <translation type="vanished">Error al guardar</translation>
+        <translation>Error al guardar</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1041"/>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
-        <translation type="vanished">No se pueden guardar los cambios en el proyecto en &lt;b&gt;%1&lt;/b&gt; porque el archivo no existe. Coloca el archivo de nuevo en la carpeta e intenta guardar de nuevo. ¿Reintentar?</translation>
+        <translation>No se pueden guardar los cambios en el proyecto en &lt;b&gt;%1&lt;/b&gt; porque el archivo no existe. Coloca el archivo de nuevo en la carpeta e intenta guardar de nuevo. ¿Reintentar?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="605"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="755"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="792"/>
         <source>Can&apos;t open project file</source>
-        <translation type="vanished">No se puede abrir el archivo de proyecto</translation>
+        <translation>No se puede abrir el archivo de proyecto</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="699"/>
         <source>Please wait. Importing can take few minutes.</source>
-        <translation type="vanished">Por favor, espera. El proceso de importación puede llevar unos minutos.</translation>
+        <translation>Por favor, espera. El proceso de importación puede llevar unos minutos.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="793"/>
         <source>Ignore and try to open project?</source>
-        <translation type="vanished">¿Ignorar e intentar abrir el proyecto?</translation>
+        <translation>¿Ignorar e intentar abrir el proyecto?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="856"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="904"/>
         <source>Change project name</source>
-        <translation type="vanished">Cambiar el nombre del proyecto</translation>
+        <translation>Cambiar el nombre del proyecto</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="857"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="905"/>
         <source>Enter new name for project</source>
-        <translation type="vanished">Escribe un nombre nuevo para el proyecto</translation>
+        <translation>Escribe un nombre nuevo para el proyecto</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="937"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">¿Seguro que quieres eliminar el proyecto?</translation>
+        <translation>¿Seguro que quieres eliminar el proyecto?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="950"/>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">¿Seguro que quieres cancelar la suscripción al proyecto?</translation>
+        <translation>¿Seguro que quieres cancelar la suscripción al proyecto?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="975"/>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
-        <translation type="vanished">¿Seguro que quieres cancelar la suscripción del usuario %1 al proyecto %2?</translation>
+        <translation>¿Seguro que quieres cancelar la suscripción del usuario %1 al proyecto %2?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="249"/>
         <source>Connection active</source>
-        <translation type="vanished">Conexión activada</translation>
+        <translation>Conexión activada</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="298"/>
         <source>Network error</source>
-        <translation type="vanished">Error de red</translation>
+        <translation>Error de red</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="310"/>
         <source>Incorrect username or password.</source>
-        <translation type="vanished">Nombre de usuario o clave incorrecta.</translation>
+        <translation>Nombre de usuario o clave incorrecta.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="319"/>
         <source>Subscription ended</source>
-        <translation type="vanished">Suscripción terminada</translation>
+        <translation>Suscripción terminada</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="367"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="378"/>
         <source>Project not available</source>
-        <translation type="vanished">Proyecto no disponible</translation>
+        <translation>Proyecto no disponible</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1020"/>
         <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
-        <translation type="vanished">No se pueden guardar los cambios en el proyecto. Hay un error en la base de datos interna: %1. Por favor, comprueba que el archivo existe y que tiene permisos de escritura. ¿Reintentar?</translation>
+        <translation>No se pueden guardar los cambios en el proyecto. Hay un error en la base de datos interna: %1. Por favor, comprueba que el archivo existe y que tiene permisos de escritura. ¿Reintentar?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="332"/>
         <source>Network Error</source>
-        <translation type="vanished">Error de red</translation>
+        <translation>Error de red</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="255"/>
         <source>Project synchronized</source>
-        <translation type="vanished">Proyecto sincronizado</translation>
+        <translation>Proyecto sincronizado</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="268"/>
         <source>Connection inactive</source>
-        <translation type="vanished">Conexión inactiva</translation>
+        <translation>Conexión inactiva</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="269"/>
         <source>Project didn&apos;t synchronized</source>
-        <translation type="vanished">El proyecto no ha podido sincronizarse</translation>
+        <translation>El proyecto no ha podido sincronizarse</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="300"/>
         <source>Project didn&apos;t synchronized.</source>
-        <translation type="vanished">El periodo comprado para la suscripción ha terminado.</translation>
+        <translation>El periodo comprado para la suscripción ha terminado.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="320"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">No se han podido cargar correctamente todos los datos del servicio. Por favor, comprueba tu conexión a internet e intenta sincronizar de nuevo.
+        <translation>No se han podido cargar correctamente todos los datos del servicio. Por favor, comprueba tu conexión a internet e intenta sincronizar de nuevo.
 
 El proyecto no ha podido sincronizarse.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="333"/>
         <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">No se han podido cargar correctamente todos los datos del servicio. Por favor, comprueba tu conexión a internet e intenta sincronizar de nuevo.
+        <translation>No se han podido cargar correctamente todos los datos del servicio. Por favor, comprueba tu conexión a internet e intenta sincronizar de nuevo.
 
 El proyecto no ha podido sincronizarse</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="104"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="121"/>
         <source>Import error</source>
-        <translation type="vanished">Error de importación</translation>
+        <translation>Error de importación</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="105"/>
         <source>Can&apos;t get file path to import. Try to download it and open in file browser.</source>
-        <translation type="vanished">No se pudo obtener la ruta para importar. Intenta descargarlo y abrirlo en el navegador de archivos.</translation>
+        <translation>No se pudo obtener la ruta para importar. Intenta descargarlo y abrirlo en el navegador de archivos.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="122"/>
         <source>Can&apos;t create temporatry file for import.</source>
-        <translation type="vanished">No se pudo crear el archivo temporal para importar</translation>
+        <translation>No se pudo crear el archivo temporal para importar</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="357"/>
         <source>Share error</source>
-        <translation type="vanished">Error al compartir</translation>
+        <translation>Error al compartir</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="358"/>
         <source>You can&apos;t share project with yourself.</source>
-        <translation type="vanished">No puedes compartir el proyecto contigo mismo.</translation>
+        <translation>No puedes compartir el proyecto contigo mismo.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="368"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">El proyecto actual no está disponible para su sincronización porque la suscripción del dueño del proyecto ha terminado.
+        <translation>El proyecto actual no está disponible para su sincronización porque la suscripción del dueño del proyecto ha terminado.
 
 El proyecto no ha podido sincronizarse.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="379"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">El proyecto actual no está disponible para su sincronización porque el dueño ha impedido tu acceso al proyecto.
+        <translation>El proyecto actual no está disponible para su sincronización porque el dueño ha impedido tu acceso al proyecto.
 
 El proyecto no ha podido sincronizarse.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="389"/>
         <source>Sync not available</source>
-        <translation type="vanished">La sincronización no está disponible</translation>
+        <translation>La sincronización no está disponible</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="390"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Has agotado todo el espacio en un servidor.
+        <translation>Has agotado todo el espacio en un servidor.
 
 El proyecto no ha podido sincronizarse</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="400"/>
         <source>Email already exist</source>
-        <translation type="vanished">El email ya existe</translation>
+        <translation>El email ya existe</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="409"/>
         <source>Password too weak</source>
-        <translation type="vanished">Contraseña débil</translation>
+        <translation>Contraseña débil</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="699"/>
         <source>Importing script</source>
-        <translation type="vanished">Importando guion</translation>
+        <translation>Importando guion</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="886"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation type="vanished">¿Seguro que quieres eliminar el proyecto %1 de los proyectos recientes?</translation>
+        <translation>¿Seguro que quieres eliminar el proyecto %1 de los proyectos recientes?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1076"/>
         <source>on device</source>
-        <translation type="vanished">en el dispositivo</translation>
+        <translation>en el dispositivo</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="436"/>
         <source>Wrong email</source>
-        <translation type="vanished">Email incorrecto</translation>
+        <translation>Email incorrecto</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="445"/>
         <source>Unknown Error</source>
-        <translation type="vanished">Error desconocido</translation>
+        <translation>Error desconocido</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="622"/>
         <source>Loading Scenario</source>
-        <translation type="vanished">Cargando guión</translation>
+        <translation>Cargando guión</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="622"/>
         <source>Please wait. Loading can take few minutes.</source>
-        <translation type="vanished">Por favor, espera. La carga puede tomar unos minutos.</translation>
+        <translation>Por favor, espera. La carga puede tomar unos minutos.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="654"/>
         <source>Sync scenario with cloud service.</source>
-        <translation type="vanished">Coordinar guión con el servicio en la nube.</translation>
+        <translation>Coordinar guión con el servicio en la nube.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1076"/>
         <source>in cloud</source>
-        <translation type="vanished">en la nube</translation>
+        <translation>en la nube</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="54"/>
         <source>Export</source>
-        <translation type="vanished">Exportar</translation>
+        <translation>Exportar</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="54"/>
         <source>Please wait. Export can take few minutes.</source>
-        <translation type="vanished">Por favor, espera. La exportación puede tardar unos minutos.</translation>
+        <translation>Por favor, espera. La exportación puede tardar unos minutos.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="148"/>
         <source>Send script to</source>
-        <translation type="vanished">Enviar guion a</translation>
+        <translation>Enviar guion a</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="170"/>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry export.</source>
-        <translation type="vanished">No se puede escribir el archivo. Tal vez está siendo usado por otra aplicación. Por favor, ciérralo y exporta otra vez.</translation>
+        <translation>No se puede escribir el archivo. Tal vez está siendo usado por otra aplicación. Por favor, ciérralo y exporta otra vez.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="173"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation type="vanished">No se puede escribir el archivo. Tal vez está siendo usado por otra aplicación. Por favor, ciérralo y exporta otra vez.</translation>
+        <translation>No se puede escribir el archivo. Tal vez está siendo usado por otra aplicación. Por favor, ciérralo y exporta otra vez.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="175"/>
         <source>Export error</source>
-        <translation type="vanished">Error al exportar</translation>
+        <translation>Error al exportar</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="166"/>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
-        <translation type="vanished">La carpeta para exportar &lt;b&gt;%1&lt;/b&gt; no existe, por favor, selecciona otra ubicación.</translation>
+        <translation>La carpeta para exportar &lt;b&gt;%1&lt;/b&gt; no existe, por favor, selecciona otra ubicación.</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::Project</name>
     <message>
+        <location filename="../../ManagementLayer/Project/Project.cpp" line="26"/>
         <source>Owner</source>
-        <translation type="vanished">Propietario</translation>
+        <translation>Propietario</translation>
     </message>
     <message>
+        <location filename="../../ManagementLayer/Project/Project.cpp" line="27"/>
         <source>Redactor</source>
-        <translation type="vanished">Redactor</translation>
+        <translation>Redactor</translation>
     </message>
     <message>
+        <location filename="../../ManagementLayer/Project/Project.cpp" line="28"/>
         <source>Commentator</source>
-        <translation type="vanished">Comentaristas</translation>
+        <translation>Comentaristas</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ProjectsPageManager</name>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ProjectsPageManager.cpp" line="71"/>
         <source>Project exists. It will be replaced after creating.</source>
-        <translation type="vanished">El proyecto ya existe. Será reemplazado después de crearlo.</translation>
+        <translation>El proyecto ya existe. Será reemplazado después de crearlo.</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ScriptManager</name>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="492"/>
         <source>Scenes</source>
-        <translation type="vanished">Escenas</translation>
+        <translation>Escenas</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="493"/>
         <source>Chron.</source>
-        <translation type="vanished">Duración</translation>
+        <translation>Duración</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::SettingsManager</name>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/SettingsManager.cpp" line="29"/>
         <source>Language will be change after application restart.</source>
-        <translation type="vanished">El idioma cambiará después de que el programa se reinicie.</translation>
+        <translation>El idioma cambiará después de que el programa se reinicie.</translation>
     </message>
 </context>
 <context>
@@ -1134,23 +1591,115 @@ Let&apos;s create the first one!</source>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="26"/>
         <source>Scenario</source>
-        <translation type="vanished">Guión</translation>
+        <translation>Guión</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="483"/>
         <source>Title:</source>
         <comment>ScenarioBlockStyle</comment>
-        <translation type="vanished">Titulo:</translation>
+        <translation>Titulo:</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1004"/>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
-        <translation type="vanished">FINAL DE LA CARPETA</translation>
+        <translation>FINAL DE LA CARPETA</translation>
     </message>
     <message>
+        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEditHelpers.cpp" line="23"/>
         <source>END OF</source>
         <comment>ScenarioTextEditHelpers</comment>
-        <translation type="vanished">FINAL DE</translation>
+        <translation>FINAL DE</translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="33"/>
+        <source>Node added to &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="35"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="207"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="211"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="259"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="263"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="295"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="337"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="356"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="395"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="426"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="467"/>
+        <source>Base node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="103"/>
+        <source>Node added to scene</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="150"/>
+        <source>Node deleted &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="153"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="298"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="340"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="358"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="397"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="429"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="470"/>
+        <source> with subtree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="205"/>
+        <source>Edge added between &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="209"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="261"/>
+        <source>&quot; and &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="257"/>
+        <source>Edge deleted between &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="293"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="335"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="424"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="465"/>
+        <source>Node &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="353"/>
+        <source>Changing color of node: &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="393"/>
+        <source>Changing textcolor of node: &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="924"/>
+        <source>The graph is acyclic, edge added as secondary edge.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QtMindMap::Node</name>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/node.cpp" line="36"/>
+        <source>&lt;b&gt;Root node&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1238,39 +1787,52 @@ Let&apos;s create the first one!</source>
 <context>
     <name>SimpleTextEditorWidget</name>
     <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="186"/>
         <source>Make text bold</source>
-        <translation type="vanished">Convertir en negrita</translation>
+        <translation>Convertir en negrita</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="190"/>
         <source>Make text italic</source>
-        <translation type="vanished">Convertir en cursiva</translation>
+        <translation>Convertir en cursiva</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="194"/>
         <source>Make text underline</source>
-        <translation type="vanished">Convertir en subrayado</translation>
+        <translation>Convertir en subrayado</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="197"/>
         <source>Change text color</source>
-        <translation type="vanished">Cambiar color de texto</translation>
+        <translation>Cambiar color de texto</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="200"/>
         <source>Change text background color</source>
-        <translation type="vanished">Cambiar color de fondo de texto</translation>
+        <translation>Cambiar color de fondo de texto</translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="202"/>
+        <source>Clear formatting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SpellCheckTextEdit</name>
     <message>
+        <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="43"/>
         <source>Ignore</source>
-        <translation type="vanished">Ignorar</translation>
+        <translation>Ignorar</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="46"/>
         <source>Add to dictionary</source>
-        <translation type="vanished">Agregar al diccionario</translation>
+        <translation>Agregar al diccionario</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="156"/>
         <source>Suggestions not found</source>
-        <translation type="vanished">Sugerencias no encontradas</translation>
+        <translation>Sugerencias no encontradas</translation>
     </message>
 </context>
 <context>
@@ -1334,217 +1896,302 @@ Tu suscripción está activa hasta el</translation>
 <context>
     <name>UserInterface::AccountView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="39"/>
         <source>Account is active until: </source>
-        <translation type="vanished">La cuenta está activa hasta el: </translation>
+        <translation>La cuenta está activa hasta el: </translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="41"/>
         <source>Account is inactive</source>
-        <translation type="vanished">La cuenta no está activa</translation>
+        <translation>La cuenta no está activa</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="45"/>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation type="vanished">Usado %1 Gb de %2 Gb</translation>
+        <translation>Usado %1 Gb de %2 Gb</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="64"/>
         <source>Email</source>
-        <translation type="vanished">Email</translation>
+        <translation>Email</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="65"/>
         <source>Login</source>
-        <translation type="vanished">Entrar</translation>
+        <translation>Entrar</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::AddProjectView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="75"/>
         <source>LOCAL</source>
-        <translation type="vanished">LOCAL</translation>
+        <translation>LOCAL</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="76"/>
         <source>IN CLOUD</source>
-        <translation type="vanished">EN LA NUBE</translation>
+        <translation>EN LA NUBE</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="79"/>
         <source>Project name</source>
-        <translation type="vanished">Nombre del Proyecto</translation>
+        <translation>Nombre del Proyecto</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="97"/>
         <source>Please, enter name for your new project.</source>
-        <translation type="vanished">Por favor, introduce el nombre del nuevo proyecto.</translation>
+        <translation>Por favor, introduce el nombre del nuevo proyecto.</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ExportView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="99"/>
         <source>File format</source>
-        <translation type="vanished">Formato de archivo</translation>
+        <translation>Formato de archivo</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="101"/>
         <source>Template</source>
-        <translation type="vanished">Plantilla</translation>
+        <translation>Plantilla</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="102"/>
         <source>Scenes prefix</source>
-        <translation type="vanished">Prefijo de escenas</translation>
+        <translation>Prefijo de escenas</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::LoginView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="69"/>
         <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a password.</source>
-        <translation type="vanished">Se ha enviado una contraseña a tu email &lt;b&gt;%1&lt;/b&gt;</translation>
+        <translation>Se ha enviado una contraseña a tu email &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="76"/>
         <source>Authorization</source>
-        <translation type="vanished">Autorización</translation>
+        <translation>Autorización</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="77"/>
         <source>Please wait, authorzation can take few minutes.</source>
-        <translation type="vanished">Por favor, espera. La autorización puede llevar unos minutos.</translation>
+        <translation>Por favor, espera. La autorización puede llevar unos minutos.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="79"/>
         <source>Registration</source>
-        <translation type="vanished">Registro</translation>
+        <translation>Registro</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="80"/>
         <source>Please wait, registration can take few minutes.</source>
-        <translation type="vanished">Por favor, espera. El registro puede llevar unos minutos.</translation>
+        <translation>Por favor, espera. El registro puede llevar unos minutos.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="112"/>
         <source>LOGIN</source>
-        <translation type="vanished">ENTRAR</translation>
+        <translation>ENTRAR</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="113"/>
         <source>SIGN UP</source>
-        <translation type="vanished">REGISTRARSE</translation>
+        <translation>REGISTRARSE</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="118"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="122"/>
         <source>Email</source>
-        <translation type="vanished">Email</translation>
+        <translation>Email</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="120"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="124"/>
         <source>Password</source>
-        <translation type="vanished">Contraseña</translation>
+        <translation>Contraseña</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="167"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="174"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="181"/>
         <source>Email is invalid</source>
-        <translation type="vanished">El email no es válido</translation>
+        <translation>El email no es válido</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::MenuView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="110"/>
         <source>Save</source>
-        <translation type="vanished">Guardar</translation>
+        <translation>Guardar</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="110"/>
         <source>Changes saved</source>
-        <translation type="vanished">Cambios guardados</translation>
+        <translation>Cambios guardados</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ProjectsList</name>
     <message>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectsList.cpp" line="52"/>
         <source>no changes</source>
-        <translation type="vanished">Sin cambios</translation>
+        <translation>Sin cambios</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ProjectsView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.cpp" line="126"/>
         <source>LOCAL</source>
-        <translation type="vanished">LOCAL</translation>
+        <translation>LOCAL</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.cpp" line="127"/>
         <source>IN CLOUD</source>
-        <translation type="vanished">EN LA NUBE</translation>
+        <translation>EN LA NUBE</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ScriptView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="223"/>
         <source>DRAFT</source>
-        <translation type="vanished">BORRADOR</translation>
+        <translation>BORRADOR</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="834"/>
+        <source>Comment</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UserInterface::SettingsView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="35"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="165"/>
         <source>System</source>
-        <translation type="vanished">Sistema</translation>
+        <translation>Sistema</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="53"/>
+        <source>Little</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="54"/>
+        <source>Middle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="55"/>
+        <source>Big</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="56"/>
+        <source>Very big</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="57"/>
+        <source>Large</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="164"/>
         <source>Language</source>
-        <translation type="vanished">Elegir idioma</translation>
+        <translation>Elegir idioma</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="168"/>
+        <source>Font size</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ShareDialog</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="43"/>
         <source>Share project</source>
-        <translation type="vanished">Compartir proyecto</translation>
+        <translation>Compartir proyecto</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="47"/>
         <source>Email</source>
-        <translation type="vanished">Email</translation>
+        <translation>Email</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="49"/>
         <source>Share</source>
-        <translation type="vanished">Compartir</translation>
+        <translation>Compartir</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="71"/>
         <source>Email is invalid</source>
-        <translation type="vanished">El email no es válido</translation>
+        <translation>El email no es válido</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::SubscriptionView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="57"/>
         <source>1 month - %1 rubles</source>
-        <translation type="vanished">1 mes - %1 rublos</translation>
+        <translation>1 mes - %1 rublos</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="58"/>
         <source>2 month - %1 rubles</source>
-        <translation type="vanished">2 meses - %1 rublos</translation>
+        <translation>2 meses - %1 rublos</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="59"/>
         <source>3 month - %1 rubles</source>
-        <translation type="vanished">3 meses - %1 rublos</translation>
+        <translation>3 meses - %1 rublos</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="60"/>
         <source>6 month (6% off) - %1 rubles</source>
-        <translation type="vanished">6 meses (6% de descuento) - %1 rublos</translation>
+        <translation>6 meses (6% de descuento) - %1 rublos</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="61"/>
         <source>12 month (12% off) - %1 rubles</source>
-        <translation type="vanished">12 meses (12% de descuento) - %1 rublos</translation>
+        <translation>12 meses (12% de descuento) - %1 rublos</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::TitlePageView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="87"/>
         <source>Script name</source>
-        <translation type="vanished">Nombre del guión</translation>
+        <translation>Nombre del guión</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="89"/>
         <source>Additional</source>
-        <translation type="vanished">Adicional</translation>
+        <translation>Adicional</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="91"/>
         <source>Genre</source>
-        <translation type="vanished">Género</translation>
+        <translation>Género</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="93"/>
         <source>Author</source>
-        <translation type="vanished">Autor</translation>
+        <translation>Autor</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="95"/>
         <source>Contacts</source>
-        <translation type="vanished">Contacto</translation>
+        <translation>Contacto</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="97"/>
         <source>Year</source>
-        <translation type="vanished">Año</translation>
+        <translation>Año</translation>
     </message>
 </context>
 <context>

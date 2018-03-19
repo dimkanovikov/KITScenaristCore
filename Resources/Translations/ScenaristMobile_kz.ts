@@ -28,77 +28,76 @@
     </message>
 </context>
 <context>
+    <name>BusinessLayer::AbstractExporter</name>
+    <message>
+        <location filename="../../BusinessLayer/Export/AbstractExporter.cpp" line="372"/>
+        <source>Real name: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BusinessLayer::FountainExporter</name>
     <message>
+        <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="15"/>
         <source>INT</source>
-        <translation type="vanished">ИНТ</translation>
+        <translation>ИНТ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="16"/>
         <source>EXT</source>
-        <translation type="vanished">СЫРТ</translation>
+        <translation>СЫРТ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="17"/>
         <source>EST</source>
-        <translation type="vanished">ТАБ</translation>
+        <translation>ТАБ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="18"/>
         <source>INT./EXT</source>
-        <translation type="vanished">ИНТ./СЫРТ</translation>
+        <translation>ИНТ./СЫРТ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="19"/>
         <source>INT/EXT</source>
-        <translation type="vanished">ИНТ/СЫРТ</translation>
+        <translation>ИНТ/СЫРТ</translation>
     </message>
 </context>
 <context>
     <name>BusinessLayer::FountainImporter</name>
     <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="36"/>
         <source>INT</source>
-        <translation type="vanished">ИНТ</translation>
+        <translation>ИНТ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="37"/>
         <source>EXT</source>
-        <translation type="vanished">СЫРТ</translation>
+        <translation>СЫРТ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="38"/>
         <source>EST</source>
-        <translation type="vanished">ТАБ</translation>
+        <translation>ТАБ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="39"/>
         <source>INT./EXT</source>
-        <translation type="vanished">ИНТ./СЫРТ</translation>
+        <translation>ИНТ./СЫРТ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="40"/>
         <source>INT/EXT</source>
-        <translation type="vanished">ИНТ/СЫРТ</translation>
+        <translation>ИНТ/СЫРТ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="41"/>
         <source>I/E</source>
-        <translation type="vanished">И/С</translation>
-    </message>
-</context>
-<context>
-    <name>BusinessLogic::AbstractExporter</name>
-    <message>
-        <source>(MORE)</source>
-        <translation type="vanished">(АРЫ ҚАРАЙ)</translation>
-    </message>
-    <message>
-        <source> (CONT&apos;D)</source>
-        <extracomment>Continued</extracomment>
-        <translation type="vanished">(ЖАЛҒАСЫ)</translation>
+        <translation>И/С</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::AbstractImporter</name>
-    <message>
-        <source>All Supported Files</source>
-        <translation type="vanished">Барлық қамтылатын файлдар</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation type="vanished">КИТ Сценарист жобасы</translation>
-    </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="158"/>
         <source>All supported files</source>
@@ -144,275 +143,518 @@
         <source>Celtx project</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>OpenDocument Text</source>
-        <translation type="vanished">OpenDocument Text</translation>
-    </message>
 </context>
 <context>
     <name>BusinessLogic::CountersFacade</name>
     <message>
+        <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="175"/>
         <source>Pages</source>
-        <translation type="vanished">Парақ</translation>
+        <translation>Парақ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="182"/>
         <source>Words</source>
-        <translation type="vanished">Сөздер</translation>
+        <translation>Сөздер</translation>
     </message>
     <message>
-        <source>Simbols</source>
-        <translation type="vanished">Таңбалар</translation>
+        <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="189"/>
+        <source>Symbols</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ResearchModel</name>
     <message>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="108"/>
         <source>Scenario</source>
-        <translation type="vanished">Сценарий</translation>
+        <translation>Сценарий</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="116"/>
         <source>Title Page</source>
-        <translation type="vanished">Титулдық парақ</translation>
+        <translation>Титулдық парақ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="124"/>
         <source>Synopsis</source>
-        <translation type="vanished">Синопсис</translation>
+        <translation>Синопсис</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="133"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="236"/>
         <source>Characters</source>
-        <translation type="vanished">Кейіпкерлер</translation>
+        <translation>Кейіпкерлер</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="142"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="241"/>
         <source>Locations</source>
-        <translation type="vanished">Мекенжайлар</translation>
+        <translation>Мекенжайлар</translation>
     </message>
     <message>
-        <source>Research</source>
-        <translation type="vanished">Жобалау</translation>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="151"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="246"/>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioBlockStyle</name>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="66"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="92"/>
         <source>Undefined</source>
-        <translation type="vanished">Анықталмаған</translation>
+        <translation>Анықталмаған</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="67"/>
         <source>Scene Heading</source>
-        <translation type="vanished">Мекенжай және уақыт</translation>
+        <translation>Мекенжай және уақыт</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="68"/>
         <source>Scene Characters</source>
-        <translation type="vanished">Сахнаға қатысушылар</translation>
+        <translation>Сахнаға қатысушылар</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="69"/>
         <source>Action</source>
-        <translation type="vanished">Әрекет сипаттамасы</translation>
+        <translation>Әрекет сипаттамасы</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="70"/>
         <source>Character</source>
-        <translation type="vanished">Кейіпкер</translation>
+        <translation>Кейіпкер</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="71"/>
         <source>Parenthetical</source>
-        <translation type="vanished">Кіріспе</translation>
+        <translation>Кіріспе</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="72"/>
         <source>Dialog</source>
-        <translation type="vanished">Диалог</translation>
+        <translation>Диалог</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="73"/>
         <source>Transition</source>
-        <translation type="vanished">Ауысу</translation>
+        <translation>Ауысу</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="74"/>
         <source>Shot</source>
-        <translation type="vanished">Ескерту</translation>
+        <translation>Ескерту</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="75"/>
         <source>Title Header</source>
         <translatorcomment>Тақырып атауы</translatorcomment>
-        <translation type="vanished">Тақырып атауы</translation>
+        <translation>Тақырып атауы</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="76"/>
         <source>Title</source>
-        <translation type="vanished">Титр</translation>
+        <translation>Титр</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="77"/>
         <source>Noprintable Text</source>
-        <translation type="vanished">Мәтін бойынша ескерту</translation>
+        <translation>Мәтін бойынша ескерту</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="78"/>
         <source>Folder</source>
-        <translation type="vanished">Папка</translation>
+        <translation>Папка</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="79"/>
         <source>Folder Footer</source>
-        <translation type="vanished">Папка Түсіндірмесі</translation>
+        <translation>Папка Түсіндірмесі</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="80"/>
         <source>Scene Description</source>
-        <translation type="vanished">Сахна сипаттамасы</translation>
+        <translation>Сахна сипаттамасы</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="81"/>
+        <source>Lyrics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="94"/>
         <source>SH</source>
         <extracomment>Reduction of Scene Heading</extracomment>
         <translatorcomment>Менекжай және уақыт</translatorcomment>
-        <translation type="vanished">МУ</translation>
+        <translation>МУ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="96"/>
         <source>SC</source>
         <extracomment>Reduction of Scene Characters</extracomment>
         <translatorcomment>Сахнаға қатысушылар</translatorcomment>
-        <translation type="vanished">СҚ</translation>
+        <translation>СҚ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="98"/>
         <source>A</source>
         <extracomment>Reduction of Action</extracomment>
         <translatorcomment>Әрекет сипаттамасы</translatorcomment>
-        <translation type="vanished">ӘС</translation>
+        <translation>ӘС</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="100"/>
         <source>C</source>
         <extracomment>Reduction of Character</extracomment>
         <translatorcomment>Кейіпкер</translatorcomment>
-        <translation type="vanished">Ке</translation>
+        <translation>Ке</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="102"/>
         <source>P</source>
         <extracomment>Reduction of Parenthetical</extracomment>
         <translatorcomment>Кіріспе</translatorcomment>
-        <translation type="vanished">Кі</translation>
+        <translation>Кі</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="104"/>
         <source>D</source>
         <extracomment>Reduction of Dialog</extracomment>
         <translatorcomment>Диалог</translatorcomment>
-        <translation type="vanished">Ди</translation>
+        <translation>Ди</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="106"/>
         <source>Tr</source>
         <extracomment>Reduction of Transition</extracomment>
         <translatorcomment>Ауысу</translatorcomment>
-        <translation type="vanished">Ау</translation>
+        <translation>Ау</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="108"/>
         <source>S</source>
         <extracomment>Reduction of Shot</extracomment>
         <translatorcomment>Ескерту</translatorcomment>
-        <translation type="vanished">Ес</translation>
+        <translation>Ес</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="110"/>
         <source>TH</source>
         <extracomment>Reduction of Title Header</extracomment>
         <translatorcomment>Тақырып атауы</translatorcomment>
-        <translation type="vanished">ТА</translation>
+        <translation>ТА</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="112"/>
         <source>Ti</source>
         <extracomment>Reduction of Title</extracomment>
         <translatorcomment>Титр</translatorcomment>
-        <translation type="vanished">Ти</translation>
+        <translation>Ти</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="114"/>
         <source>NT</source>
         <extracomment>Reduction of Noprintable Text</extracomment>
         <translatorcomment>Мәтін бойынша ескерту</translatorcomment>
-        <translation type="vanished">МБЕ</translation>
+        <translation>МБЕ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="116"/>
         <source>F</source>
         <extracomment>Reduction of Folder</extracomment>
         <translatorcomment>Папка</translatorcomment>
-        <translation type="vanished">П</translation>
+        <translation>П</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="118"/>
         <source>FF</source>
         <extracomment>Reduction of Folder Footer</extracomment>
         <translatorcomment>Папка Түсіндірмесі</translatorcomment>
-        <translation type="vanished">ПТ</translation>
+        <translation>ПТ</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="120"/>
         <source>SD</source>
         <extracomment>Reduction of Scene Description</extracomment>
         <translatorcomment>Сахна сипаттамасы</translatorcomment>
-        <translation type="vanished">СС</translation>
+        <translation>СС</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="122"/>
+        <source>L</source>
+        <extracomment>Reduction of Lyrics</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioModel</name>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="404"/>
         <source>FADE IN:</source>
-        <translation type="vanished">ҚАРАДАН ЖАРЫҚҚА:</translation>
+        <translation>ҚАРАДАН ЖАРЫҚҚА:</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioTemplate</name>
     <message>
-        <source>Default</source>
-        <translation type="vanished">Бастапқы</translation>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="622"/>
+        <source>Final Draft screenplay (A4)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="627"/>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="632"/>
+        <source>Russian screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="637"/>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="642"/>
+        <source>Chinese screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="647"/>
+        <source>Hebrew screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="652"/>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="657"/>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="662"/>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="667"/>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="672"/>
+        <source>Chinese screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="677"/>
+        <source>Hebrew screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="692"/>
+        <source>Default</source>
+        <translation>Бастапқы</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="697"/>
         <source>Default with Courier Prime</source>
-        <translation type="vanished">Courier Prime бастапқы</translation>
+        <translation>Courier Prime бастапқы</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="713"/>
+        <source>Copy of </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BusinessLogic::ScriptTextCorrector</name>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="32"/>
+        <source>CONT&apos;D</source>
+        <extracomment>Continued</extracomment>
+        <translation type="unfinished">ЖАЛҒАСЫ</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="40"/>
+        <source>MORE</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DatabaseLayer::Database</name>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="59"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
-        <translation type="vanished">Жоба кейінгі нұсқадағы бағдарламада өзгертілген. Ашу үшін сізге бағдарламаны жаңарту керек.</translation>
+        <translation>Жоба кейінгі нұсқадағы бағдарламада өзгертілген. Ашу үшін сізге бағдарламаны жаңарту керек.</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="400"/>
         <source>INT</source>
         <translatorcomment>Интерьер</translatorcomment>
-        <translation type="vanished">ИНТ</translation>
+        <translation>ИНТ</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="404"/>
         <source>EXT</source>
         <translatorcomment>СЫРТТАН</translatorcomment>
-        <translation type="vanished">СЫРТ</translation>
+        <translation>СЫРТ</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="408"/>
+        <source>INT./EXT</source>
+        <translation type="unfinished">ИНТ./СЫРТ</translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="416"/>
         <source>DAY</source>
-        <translation type="vanished">КҮНДІЗ</translation>
+        <translation>КҮНДІЗ</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="420"/>
         <source>NIGHT</source>
-        <translation type="vanished">ТҮН</translation>
+        <translation>ТҮН</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="424"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="680"/>
         <source>MORNING</source>
-        <translation type="vanished">ТАҢ</translation>
+        <translation>ТАҢ</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="428"/>
+        <source>AFTERNOON</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="432"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="684"/>
         <source>EVENING</source>
-        <translation type="vanished">КЕШ</translation>
+        <translation>КЕШ</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="436"/>
+        <source>LATER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="440"/>
+        <source>MOMENTS LATER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="444"/>
+        <source>CONTINUOUS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="448"/>
+        <source>THE NEXT DAY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="457"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
         <translatorcomment>Кадрдан Тыс Дауыс</translatorcomment>
-        <translation type="vanished">К.Т.Д.</translation>
+        <translation>К.Т.Д.</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="462"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
         <translatorcomment>Назарынан Тыс</translatorcomment>
-        <translation type="vanished">Н.Т.</translation>
+        <translation>Н.Т.</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="467"/>
+        <source>O.C.</source>
+        <extracomment>Off-camera</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="472"/>
+        <source>SUBTITLE</source>
+        <extracomment>Subtitle</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="477"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation type="vanished">ЖАЛҒАСЫ</translation>
+        <translation>ЖАЛҒАСЫ</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="485"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1427"/>
+        <source>CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="489"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1431"/>
+        <source>FADE IN:</source>
+        <translation type="unfinished">ҚАРАДАН ЖАРЫҚҚА:</translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="493"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1435"/>
+        <source>FADE OUT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="497"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1439"/>
+        <source>FADE TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="501"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1443"/>
+        <source>DISSOLVE TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="505"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1447"/>
+        <source>BACK TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="509"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1451"/>
+        <source>MATCH CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="513"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1455"/>
+        <source>JUMP CUT TO:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="517"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1459"/>
+        <source>FADE TO BLACK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1305"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1376"/>
         <source>Photos</source>
-        <translation type="vanished">Суреттер</translation>
+        <translation>Суреттер</translation>
     </message>
     <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1316"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1387"/>
         <source>Unnamed image</source>
-        <translation type="vanished">атаусыз сурет</translation>
+        <translation>атаусыз сурет</translation>
     </message>
 </context>
 <context>
@@ -492,6 +734,125 @@
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="107"/>
         <source>All Supported Files</source>
         <translation>Барлық қамтылатын файлдар</translation>
+    </message>
+</context>
+<context>
+    <name>FountainImporter</name>
+    <message>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="256"/>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="399"/>
+        <source>END OF </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GraphLogic</name>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="121"/>
+        <source>Couldn&apos;t parse XML file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="299"/>
+        <source>Couldn&apos;t read file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="368"/>
+        <source>Couldn&apos;t open file to write.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="376"/>
+        <source>Saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="398"/>
+        <source>MindMap exported as </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="439"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="472"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="535"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="560"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="573"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="602"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="631"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="661"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="684"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="714"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="749"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="848"/>
+        <source>No active node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="503"/>
+        <source>No active node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="517"/>
+        <source>Node hasn&apos;t parent for add sibling node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="541"/>
+        <source>Base node cannot be deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="579"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="608"/>
+        <source>Too much scaling.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="639"/>
+        <source>Select node color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="692"/>
+        <source>Select text color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="735"/>
+        <source>Add edge: select destination node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="741"/>
+        <source>Delete edge: select other end-node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="800"/>
+        <source>Edge adding cancelled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="807"/>
+        <source>Edge deleting cancelled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="909"/>
+        <source>Can&apos;t add edge between single node.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="915"/>
+        <source>There is already an edge between these two nodes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="946"/>
+        <source>There is no edge between these two nodes.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -731,283 +1092,351 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ManagementLayer::ApplicationManager</name>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="561"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
-        <translation type="vanished">&lt;b&gt;%1&lt;/b&gt; папкасында жобаны құруға болмайды, себебі ол жоқ. Өтініш басқа папка таңдаңыз.</translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; папкасында жобаны құруға болмайды, себебі ол жоқ. Өтініш басқа папка таңдаңыз.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="565"/>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
-        <translation type="vanished">Файлға жазу мүмкін емес. Мүмкін ол басқа бағдарламада ашылған.Өтініш, осы файлды қолданатын барлық бағдарламаларды жауып, әрекетті қайталаңыз.</translation>
+        <translation>Файлға жазу мүмкін емес. Мүмкін ол басқа бағдарламада ашылған.Өтініш, осы файлды қолданатын барлық бағдарламаларды жауып, әрекетті қайталаңыз.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="568"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation type="vanished">Файлға жазу мүмкін емес. Таңдалған папкаға жазу құқығын анықтаңыз. Немесе басқа папканы таңдаңыз.</translation>
+        <translation>Файлға жазу мүмкін емес. Таңдалған папкаға жазу құқығын анықтаңыз. Немесе басқа папканы таңдаңыз.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="570"/>
         <source>Create project error</source>
-        <translation type="vanished">Жобаны жасаудағы қателік</translation>
+        <translation>Жобаны жасаудағы қателік</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1019"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1040"/>
         <source>Saving error</source>
-        <translation type="vanished">Сақтаудағы қате</translation>
+        <translation>Сақтаудағы қате</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1041"/>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
-        <translation type="vanished">Сіз өзгерткен  жоба көрсетілген &lt;b&gt;%1&lt;/b&gt; адрес бойынша жазылмайды, себебі файл жоқ. Файлды алдыңғы орнына қайтарып, қайта сақтап көріңіз. Сақтау әрекетін қайталау керекпе?</translation>
+        <translation>Сіз өзгерткен  жоба көрсетілген &lt;b&gt;%1&lt;/b&gt; адрес бойынша жазылмайды, себебі файл жоқ. Файлды алдыңғы орнына қайтарып, қайта сақтап көріңіз. Сақтау әрекетін қайталау керекпе?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="605"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="755"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="792"/>
         <source>Can&apos;t open project file</source>
-        <translation type="vanished">Жоба файлы ашылмады</translation>
+        <translation>Жоба файлы ашылмады</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="699"/>
         <source>Please wait. Importing can take few minutes.</source>
-        <translation type="vanished">Күтіңіз. Импорттау біраз уақытты қажет етеді.</translation>
+        <translation>Күтіңіз. Импорттау біраз уақытты қажет етеді.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="886"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation type="vanished">Ақырғы &lt;b&gt;%1&lt;/b&gt; жобасын жою керектігіне сенімдісізбе?</translation>
+        <translation>Ақырғы &lt;b&gt;%1&lt;/b&gt; жобасын жою керектігіне сенімдісізбе?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1020"/>
         <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
-        <translation type="vanished">Сіздің өзгертулеріңіз жобаға жазылмайды. Бұл ішкі деректердің қателіктерінен болуы мүнкім: %1 Файлдың бар-жоғын және сіздің оған құқылы екеніңізді тексеріңіз. Сақтау әрекетін қайталау керекпе?</translation>
+        <translation>Сіздің өзгертулеріңіз жобаға жазылмайды. Бұл ішкі деректердің қателіктерінен болуы мүнкім: %1 Файлдың бар-жоғын және сіздің оған құқылы екеніңізді тексеріңіз. Сақтау әрекетін қайталау керекпе?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="793"/>
         <source>Ignore and try to open project?</source>
-        <translation type="vanished">Елемей жобаны қайта ашып көру керекпе?</translation>
+        <translation>Елемей жобаны қайта ашып көру керекпе?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="104"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="121"/>
         <source>Import error</source>
-        <translation type="vanished">Импорттау қателігі</translation>
+        <translation>Импорттау қателігі</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="105"/>
         <source>Can&apos;t get file path to import. Try to download it and open in file browser.</source>
-        <translation type="vanished">Ипортталатын файлдың орналасу сілтемесі алынбай тұр. Оны құрылғыңызга жүктеп файл браузерінде ашып көріңіз.</translation>
+        <translation>Ипортталатын файлдың орналасу сілтемесі алынбай тұр. Оны құрылғыңызга жүктеп файл браузерінде ашып көріңіз.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="122"/>
         <source>Can&apos;t create temporatry file for import.</source>
-        <translation type="vanished">Импортталатын уақытша файлды құру мүнкім емес.</translation>
+        <translation>Импортталатын уақытша файлды құру мүнкім емес.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="856"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="904"/>
         <source>Change project name</source>
-        <translation type="vanished">Жоба атын өзгерту</translation>
+        <translation>Жоба атын өзгерту</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="857"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="905"/>
         <source>Enter new name for project</source>
-        <translation type="vanished">Жобаның жаңа атауын еңгізіңіз</translation>
+        <translation>Жобаның жаңа атауын еңгізіңіз</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="937"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">&lt;b&gt;%1&lt;/b&gt; жобасын жою керектігіне сенімдісізбе?</translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; жобасын жою керектігіне сенімдісізбе?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="950"/>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">&lt;b&gt;%1&lt;/b&gt; жобаңыздың жазылымын жою керектігіне сенімдісізбе?</translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; жобаңыздың жазылымын жою керектігіне сенімдісізбе?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="975"/>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
-        <translation type="vanished">&lt;b&gt;%1&lt;/b&gt; жобаcынан &lt;b&gt;%1&lt;/b&gt; қолданушы жазылымын жою керектігіне сенімдісізбе?</translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; жобаcынан &lt;b&gt;%1&lt;/b&gt; қолданушы жазылымын жою керектігіне сенімдісізбе?</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="249"/>
         <source>Connection active</source>
-        <translation type="vanished">Байланыс бар</translation>
+        <translation>Байланыс бар</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="298"/>
         <source>Network error</source>
-        <translation type="vanished">Желі қатесі</translation>
+        <translation>Желі қатесі</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="310"/>
         <source>Incorrect username or password.</source>
-        <translation type="vanished">Қолданушының аты әлді құпиясөзі дұрыс емес.</translation>
+        <translation>Қолданушының аты әлді құпиясөзі дұрыс емес.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="319"/>
         <source>Subscription ended</source>
-        <translation type="vanished">Жазылу аяқталды</translation>
+        <translation>Жазылу аяқталды</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="332"/>
         <source>Network Error</source>
-        <translation type="vanished">Желі қатесі</translation>
+        <translation>Желі қатесі</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="367"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="378"/>
         <source>Project not available</source>
-        <translation type="vanished">Жоба қатынассыз</translation>
+        <translation>Жоба қатынассыз</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="255"/>
         <source>Project synchronized</source>
-        <translation type="vanished">Жоба біріктірілді</translation>
+        <translation>Жоба біріктірілді</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="268"/>
         <source>Connection inactive</source>
-        <translation type="vanished">Байланыс жоқ</translation>
+        <translation>Байланыс жоқ</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="269"/>
         <source>Project didn&apos;t synchronized</source>
-        <translation type="vanished">Жоба біріктірілмейді</translation>
+        <translation>Жоба біріктірілмейді</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="300"/>
         <source>Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Жоба біріктірілмеді.</translation>
+        <translation>Жоба біріктірілмеді.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="320"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Жазылудың төленген кезеңі аяқталды.
+        <translation>Жазылудың төленген кезеңі аяқталды.
 
 Жоба біріктірілмейді.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="333"/>
         <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Серверден барлық деректерді дұрыс жүктеу мүмкін болмады. Өтініш, желі байланысының сапасын тексеріңіз және бағдарламаны қайта қосыңыз.
+        <translation>Серверден барлық деректерді дұрыс жүктеу мүмкін болмады. Өтініш, желі байланысының сапасын тексеріңіз және бағдарламаны қайта қосыңыз.
 
 Жоба біріктірілмеді.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="357"/>
         <source>Share error</source>
-        <translation type="vanished">Қателікпен бөлісу</translation>
+        <translation>Қателікпен бөлісу</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="358"/>
         <source>You can&apos;t share project with yourself.</source>
-        <translation type="vanished">Жобаны өзіңізбен бөлісе алмайсыз.</translation>
+        <translation>Жобаны өзіңізбен бөлісе алмайсыз.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="368"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Жобаны біріктіру мүмкін емес, себебі, жоба басқарушысында жазылу уақыты аяқталды.
+        <translation>Жобаны біріктіру мүмкін емес, себебі, жоба басқарушысында жазылу уақыты аяқталды.
 
 Жоба біріктірілмеді.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="379"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Жобаны біріктіру мүмкін емес, себебі, жоба басқарушысы сізге шектеу қойды.
+        <translation>Жобаны біріктіру мүмкін емес, себебі, жоба басқарушысы сізге шектеу қойды.
 
 Жоба біріктірілмеді.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="389"/>
         <source>Sync not available</source>
-        <translation type="vanished">Біріктіру мүнкім емес</translation>
+        <translation>Біріктіру мүнкім емес</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="390"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Сіз сервердегі барлық қолдануға болатын кеңістікті тауыстыңыз.
+        <translation>Сіз сервердегі барлық қолдануға болатын кеңістікті тауыстыңыз.
 
 Жоба біріктірілмеді.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="400"/>
         <source>Email already exist</source>
-        <translation type="vanished">Email адресі бос емес</translation>
+        <translation>Email адресі бос емес</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="409"/>
         <source>Password too weak</source>
-        <translation type="vanished">Құпиясөз әлсіз</translation>
+        <translation>Құпиясөз әлсіз</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="699"/>
         <source>Importing script</source>
-        <translation type="vanished">Сценарияны импорттау</translation>
+        <translation>Сценарияны импорттау</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1076"/>
         <source>on device</source>
-        <translation type="vanished">құрылғыда</translation>
+        <translation>құрылғыда</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="436"/>
         <source>Wrong email</source>
-        <translation type="vanished">Email дұрыс емес</translation>
+        <translation>Email дұрыс емес</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="445"/>
         <source>Unknown Error</source>
-        <translation type="vanished">Белгісіз қате</translation>
+        <translation>Белгісіз қате</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="622"/>
         <source>Loading Scenario</source>
-        <translation type="vanished">Сценарийді жүктеу</translation>
+        <translation>Сценарийді жүктеу</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="622"/>
         <source>Please wait. Loading can take few minutes.</source>
-        <translation type="vanished">Сабыр етіңіз. Жүктеу бірнеше минутқа созылуы мүмкін.</translation>
+        <translation>Сабыр етіңіз. Жүктеу бірнеше минутқа созылуы мүмкін.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="654"/>
         <source>Sync scenario with cloud service.</source>
-        <translation type="vanished">Сценарий бұлтты сервиспен біріктірілуде.</translation>
+        <translation>Сценарий бұлтты сервиспен біріктірілуде.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1076"/>
         <source>in cloud</source>
-        <translation type="vanished">бұлтта</translation>
+        <translation>бұлтта</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="54"/>
         <source>Export</source>
-        <translation type="vanished">Экспорттау</translation>
+        <translation>Экспорттау</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="54"/>
         <source>Please wait. Export can take few minutes.</source>
-        <translation type="vanished">Сабырлық сақтаңыз. Экспорттау біраз уақытты қажет етуі мүнкім.</translation>
+        <translation>Сабырлық сақтаңыз. Экспорттау біраз уақытты қажет етуі мүнкім.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="148"/>
         <source>Send script to</source>
-        <translation type="vanished">Сценарияны жіберу</translation>
+        <translation>Сценарияны жіберу</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="166"/>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
-        <translation type="vanished">&lt;b&gt;%1&lt;/b&gt; -деген жоқ папкаға экспорттау мүнкім емес. Өтініш, экспорттау үшін басқа папка таңдаңыз.</translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; -деген жоқ папкаға экспорттау мүнкім емес. Өтініш, экспорттау үшін басқа папка таңдаңыз.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="170"/>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry export.</source>
-        <translation type="vanished">Файлға жазу мүмкін емес. Мүмкін ол басқа бағдарламада ашылған.Өтініш, осы файлды қолданатын барлық бағдарламаларды жауып, әрекетті қайталаңыз.</translation>
+        <translation>Файлға жазу мүмкін емес. Мүмкін ол басқа бағдарламада ашылған.Өтініш, осы файлды қолданатын барлық бағдарламаларды жауып, әрекетті қайталаңыз.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="173"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation type="vanished">Файлға жазу мүмкін емес. Таңдалған папкаға жазу құқығын анықтаңыз. Немесе басқа папканы таңдаңыз.</translation>
+        <translation>Файлға жазу мүмкін емес. Таңдалған папкаға жазу құқығын анықтаңыз. Немесе басқа папканы таңдаңыз.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="175"/>
         <source>Export error</source>
-        <translation type="vanished">Экспорттаудағы қате</translation>
+        <translation>Экспорттаудағы қате</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::Project</name>
     <message>
+        <location filename="../../ManagementLayer/Project/Project.cpp" line="26"/>
         <source>Owner</source>
-        <translation type="vanished">иесі</translation>
+        <translation>иесі</translation>
     </message>
     <message>
+        <location filename="../../ManagementLayer/Project/Project.cpp" line="27"/>
         <source>Redactor</source>
-        <translation type="vanished">Редактор</translation>
+        <translation>Редактор</translation>
     </message>
     <message>
+        <location filename="../../ManagementLayer/Project/Project.cpp" line="28"/>
         <source>Commentator</source>
-        <translation type="vanished">Коментатор</translation>
+        <translation>Коментатор</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ProjectsPageManager</name>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ProjectsPageManager.cpp" line="71"/>
         <source>Project exists. It will be replaced after creating.</source>
-        <translation type="vanished">Жоба бар. Жасалғаннан кейін ол ауыстырылады.</translation>
+        <translation>Жоба бар. Жасалғаннан кейін ол ауыстырылады.</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ScriptManager</name>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="492"/>
         <source>Scenes</source>
-        <translation type="vanished">Сахналар</translation>
+        <translation>Сахналар</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="493"/>
         <source>Chron.</source>
-        <translation type="vanished">Хрон.</translation>
+        <translation>Хрон.</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::SettingsManager</name>
     <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/SettingsManager.cpp" line="29"/>
         <source>Language will be change after application restart.</source>
-        <translation type="vanished">Тіл бағдарламаны қайта жүктегеннен кейін жаңартылады.</translation>
+        <translation>Тіл бағдарламаны қайта жүктегеннен кейін жаңартылады.</translation>
     </message>
 </context>
 <context>
@@ -1177,23 +1606,115 @@ Let&apos;s create the first one!</source>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="26"/>
         <source>Scenario</source>
-        <translation type="vanished">Сценарий</translation>
+        <translation>Сценарий</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="483"/>
         <source>Title:</source>
         <comment>ScenarioBlockStyle</comment>
-        <translation type="vanished">Титр:</translation>
+        <translation>Титр:</translation>
     </message>
     <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1004"/>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
-        <translation type="vanished">ПАПКА СОҢЫ</translation>
+        <translation>ПАПКА СОҢЫ</translation>
     </message>
     <message>
+        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEditHelpers.cpp" line="23"/>
         <source>END OF</source>
         <comment>ScenarioTextEditHelpers</comment>
-        <translation type="vanished">СОҢЫ</translation>
+        <translation>СОҢЫ</translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="33"/>
+        <source>Node added to &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="35"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="207"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="211"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="259"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="263"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="295"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="337"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="356"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="395"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="426"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="467"/>
+        <source>Base node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="103"/>
+        <source>Node added to scene</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="150"/>
+        <source>Node deleted &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="153"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="298"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="340"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="358"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="397"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="429"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="470"/>
+        <source> with subtree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="205"/>
+        <source>Edge added between &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="209"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="261"/>
+        <source>&quot; and &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="257"/>
+        <source>Edge deleted between &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="293"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="335"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="424"/>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="465"/>
+        <source>Node &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="353"/>
+        <source>Changing color of node: &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="393"/>
+        <source>Changing textcolor of node: &quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="924"/>
+        <source>The graph is acyclic, edge added as secondary edge.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QtMindMap::Node</name>
+    <message>
+        <location filename="../../3rd_party/Widgets/QtMindMap/src/node.cpp" line="36"/>
+        <source>&lt;b&gt;Root node&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1281,39 +1802,52 @@ Let&apos;s create the first one!</source>
 <context>
     <name>SimpleTextEditorWidget</name>
     <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="186"/>
         <source>Make text bold</source>
-        <translation type="vanished">Жуан мәтін</translation>
+        <translation>Жуан мәтін</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="190"/>
         <source>Make text italic</source>
-        <translation type="vanished">Қисайған мәтін</translation>
+        <translation>Қисайған мәтін</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="194"/>
         <source>Make text underline</source>
-        <translation type="vanished">Мәтіннің асты сызылған</translation>
+        <translation>Мәтіннің асты сызылған</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="197"/>
         <source>Change text color</source>
-        <translation type="vanished">Мәтін түсін өзгерту</translation>
+        <translation>Мәтін түсін өзгерту</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="200"/>
         <source>Change text background color</source>
-        <translation type="vanished">Мәтін фонының түсін өзгерту</translation>
+        <translation>Мәтін фонының түсін өзгерту</translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="202"/>
+        <source>Clear formatting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SpellCheckTextEdit</name>
     <message>
+        <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="43"/>
         <source>Ignore</source>
-        <translation type="vanished">Елемеу</translation>
+        <translation>Елемеу</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="46"/>
         <source>Add to dictionary</source>
-        <translation type="vanished">Сөздікке қосу</translation>
+        <translation>Сөздікке қосу</translation>
     </message>
     <message>
+        <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="156"/>
         <source>Suggestions not found</source>
-        <translation type="vanished">Ештеме табылмады</translation>
+        <translation>Ештеме табылмады</translation>
     </message>
 </context>
 <context>
@@ -1376,217 +1910,302 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::AccountView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="39"/>
         <source>Account is active until: </source>
-        <translation type="vanished">Акаунт белсендігі бітетін уақыт:</translation>
+        <translation>Акаунт белсендігі бітетін уақыт:</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="41"/>
         <source>Account is inactive</source>
-        <translation type="vanished">Акаунт белсенді</translation>
+        <translation>Акаунт белсенді</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="45"/>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation type="vanished">%1 Гб тан %2 Гб қолданылды</translation>
+        <translation>%1 Гб тан %2 Гб қолданылды</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="64"/>
         <source>Email</source>
-        <translation type="vanished">Email</translation>
+        <translation>Email</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="65"/>
         <source>Login</source>
-        <translation type="vanished">Кіру</translation>
+        <translation>Кіру</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::AddProjectView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="75"/>
         <source>LOCAL</source>
-        <translation type="vanished">ЛОКАЛДЫҚ</translation>
+        <translation>ЛОКАЛДЫҚ</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="76"/>
         <source>IN CLOUD</source>
-        <translation type="vanished">БҰЛТТА</translation>
+        <translation>БҰЛТТА</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="79"/>
         <source>Project name</source>
-        <translation type="vanished">Жоба атауы</translation>
+        <translation>Жоба атауы</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="97"/>
         <source>Please, enter name for your new project.</source>
-        <translation type="vanished">Өтініш, жаңа жобаңыздың атауын енгізіңіз.</translation>
+        <translation>Өтініш, жаңа жобаңыздың атауын енгізіңіз.</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ExportView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="99"/>
         <source>File format</source>
-        <translation type="vanished">Файл форматы</translation>
+        <translation>Файл форматы</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="101"/>
         <source>Template</source>
-        <translation type="vanished">Үлгі</translation>
+        <translation>Үлгі</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="102"/>
         <source>Scenes prefix</source>
-        <translation type="vanished">Сахналар префиксі</translation>
+        <translation>Сахналар префиксі</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::LoginView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="69"/>
         <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a password.</source>
-        <translation type="vanished">Сіздің e-mail &lt;b&gt;%1&lt;/b&gt; адресіңізге құпиясөз жазылған хат жіберілді.</translation>
+        <translation>Сіздің e-mail &lt;b&gt;%1&lt;/b&gt; адресіңізге құпиясөз жазылған хат жіберілді.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="76"/>
         <source>Authorization</source>
-        <translation type="vanished">Тіркелу</translation>
+        <translation>Тіркелу</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="77"/>
         <source>Please wait, authorzation can take few minutes.</source>
-        <translation type="vanished">Күтіңіз. авторизация біраз уақытты қажет етеді.</translation>
+        <translation>Күтіңіз. авторизация біраз уақытты қажет етеді.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="79"/>
         <source>Registration</source>
-        <translation type="vanished">Тіркеу</translation>
+        <translation>Тіркеу</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="80"/>
         <source>Please wait, registration can take few minutes.</source>
-        <translation type="vanished">Қүтіңіз. тіркелу біраз уақытты қажет етеді.</translation>
+        <translation>Қүтіңіз. тіркелу біраз уақытты қажет етеді.</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="112"/>
         <source>LOGIN</source>
-        <translation type="vanished">КІРУ</translation>
+        <translation>КІРУ</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="113"/>
         <source>SIGN UP</source>
-        <translation type="vanished">ТІРКЕЛУ</translation>
+        <translation>ТІРКЕЛУ</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="118"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="122"/>
         <source>Email</source>
-        <translation type="vanished">Email</translation>
+        <translation>Email</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="120"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="124"/>
         <source>Password</source>
-        <translation type="vanished">Құпиясөз</translation>
+        <translation>Құпиясөз</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="167"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="174"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="181"/>
         <source>Email is invalid</source>
-        <translation type="vanished">Email дұрыс емес</translation>
+        <translation>Email дұрыс емес</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::MenuView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="110"/>
         <source>Save</source>
-        <translation type="vanished">Сақтау</translation>
+        <translation>Сақтау</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="110"/>
         <source>Changes saved</source>
-        <translation type="vanished">Өзгертулерді сақтау</translation>
+        <translation>Өзгертулерді сақтау</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ProjectsList</name>
     <message>
+        <location filename="../../UserInterfaceLayer/ProjectsList/ProjectsList.cpp" line="52"/>
         <source>no changes</source>
-        <translation type="vanished">өзгерістер жоқ</translation>
+        <translation>өзгерістер жоқ</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ProjectsView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.cpp" line="126"/>
         <source>LOCAL</source>
-        <translation type="vanished">ЛОКАЛДЫҚ</translation>
+        <translation>ЛОКАЛДЫҚ</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.cpp" line="127"/>
         <source>IN CLOUD</source>
-        <translation type="vanished">БҰЛТТА</translation>
+        <translation>БҰЛТТА</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ScriptView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="223"/>
         <source>DRAFT</source>
-        <translation type="vanished">ӨЗДІК ЖАЗБА</translation>
+        <translation>ӨЗДІК ЖАЗБА</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="834"/>
+        <source>Comment</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UserInterface::SettingsView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="35"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="165"/>
         <source>System</source>
-        <translation type="vanished">Жүйелік</translation>
+        <translation>Жүйелік</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="53"/>
+        <source>Little</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="54"/>
+        <source>Middle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="55"/>
+        <source>Big</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="56"/>
+        <source>Very big</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="57"/>
+        <source>Large</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="164"/>
         <source>Language</source>
-        <translation type="vanished">Тіл</translation>
+        <translation>Тіл</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="168"/>
+        <source>Font size</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ShareDialog</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="43"/>
         <source>Share project</source>
-        <translation type="vanished">Жобамен бөлісу</translation>
+        <translation>Жобамен бөлісу</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="47"/>
         <source>Email</source>
-        <translation type="vanished">Email</translation>
+        <translation>Email</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="49"/>
         <source>Share</source>
-        <translation type="vanished">Бөлісу</translation>
+        <translation>Бөлісу</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="71"/>
         <source>Email is invalid</source>
-        <translation type="vanished">Email дұрыс емес</translation>
+        <translation>Email дұрыс емес</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::SubscriptionView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="57"/>
         <source>1 month - %1 rubles</source>
-        <translation type="vanished">1 ай - %1 рубль</translation>
+        <translation>1 ай - %1 рубль</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="58"/>
         <source>2 month - %1 rubles</source>
-        <translation type="vanished">2 ай - %1 рубль</translation>
+        <translation>2 ай - %1 рубль</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="59"/>
         <source>3 month - %1 rubles</source>
-        <translation type="vanished">3 ай - %1 рубль</translation>
+        <translation>3 ай - %1 рубль</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="60"/>
         <source>6 month (6% off) - %1 rubles</source>
-        <translation type="vanished">6 ай - %1 рубль</translation>
+        <translation>6 ай - %1 рубль</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="61"/>
         <source>12 month (12% off) - %1 rubles</source>
-        <translation type="vanished">12 ай - %1 рубль</translation>
+        <translation>12 ай - %1 рубль</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::TitlePageView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="87"/>
         <source>Script name</source>
-        <translation type="vanished">Сценария атауы</translation>
+        <translation>Сценария атауы</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="89"/>
         <source>Additional</source>
-        <translation type="vanished">Қосымша</translation>
+        <translation>Қосымша</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="91"/>
         <source>Genre</source>
-        <translation type="vanished">Жанр</translation>
+        <translation>Жанр</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="93"/>
         <source>Author</source>
-        <translation type="vanished">Автор</translation>
+        <translation>Автор</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="95"/>
         <source>Contacts</source>
-        <translation type="vanished">Контактілер</translation>
+        <translation>Контактілер</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="97"/>
         <source>Year</source>
-        <translation type="vanished">Жыл</translation>
+        <translation>Жыл</translation>
     </message>
 </context>
 <context>
