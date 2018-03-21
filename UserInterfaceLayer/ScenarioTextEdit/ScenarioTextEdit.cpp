@@ -524,10 +524,10 @@ void ScenarioTextEdit::scrollToAdditionalCursor(int _additionalCursorIndex)
     ensureCursorVisible(cursor);
 }
 
-void ScenarioTextEdit::setAdditionalContextMenuActions(const QList<QAction*>& _actions)
+void ScenarioTextEdit::setReviewContextMenuActions(const QList<QAction*>& _actions)
 {
-    if (m_additionalContextMenuActions != _actions) {
-        m_additionalContextMenuActions = _actions;
+    if (m_reviewContextMenuActions != _actions) {
+        m_reviewContextMenuActions = _actions;
     }
 }
 
@@ -536,11 +536,11 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     QMenu* menu = CompletableTextEdit::createContextMenu(_pos, _parent);
 
     //
-    // Добавляем дополнительные действия в меню
+    // Добавляем действия рецензирования в меню
     //
-    if (!m_additionalContextMenuActions.isEmpty()) {
+    if (!m_reviewContextMenuActions.isEmpty() && textCursor().hasSelection()) {
         QAction* firstAction = menu->actions().first();
-        menu->insertActions(firstAction, m_additionalContextMenuActions);
+        menu->insertActions(firstAction, m_reviewContextMenuActions);
         menu->insertSeparator(firstAction);
     }
 
