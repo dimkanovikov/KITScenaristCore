@@ -17,12 +17,12 @@ namespace {
 	/**
 	 * @brief Количество колонок с цветовыми квадратами
 	 */
-	const int COLOR_RECT_COLUMNS = 10;
+	const int kColorRectColumns = 10;
 
 	/**
 	 * @brief Количество строк с цветовыми квадратами
 	 */
-	const int COLOR_RECT_ROWS = 8;
+	const int kColorRectRows = 8;
 
 	/**
 	 * @brief Отступы панели
@@ -43,12 +43,12 @@ GoogleColorsPane::GoogleColorsPane(QWidget* _parent) :
 	// Рассчитаем фиксированный размер панели
 	//
 	const int width =
-			(COLOR_RECT_SIZE * COLOR_RECT_COLUMNS) // ширина цветовых квадратов
-			+ (COLOR_RECT_SPACE * (COLOR_RECT_COLUMNS - 1)) // ширина оступов между квадратами
+			(COLOR_RECT_SIZE * kColorRectColumns) // ширина цветовых квадратов
+			+ (COLOR_RECT_SPACE * (kColorRectColumns - 1)) // ширина оступов между квадратами
 			+ (PANEL_MARGIN * 2); // ширина полей
 	const int height =
-			(COLOR_RECT_SIZE * COLOR_RECT_ROWS) // высота цветовых квадратов
-			+ (COLOR_RECT_SPACE * (COLOR_RECT_ROWS + 3)) // высота отступов между ними (+3 т.к. между 1, 2 и 3 увеличенные отступы)
+			(COLOR_RECT_SIZE * kColorRectRows) // высота цветовых квадратов
+			+ (COLOR_RECT_SPACE * (kColorRectRows + 3)) // высота отступов между ними (+3 т.к. между 1, 2 и 3 увеличенные отступы)
 			+ (PANEL_MARGIN * 2); // высота полей
 	setFixedSize(width, height);
 
@@ -191,7 +191,7 @@ void GoogleColorsPane::initColors()
 		   << QColor(239,239,239)
 		   << QColor(243,243,243)
 		   << QColor(255,255,255);
-	for (int column = 0; column < COLOR_RECT_COLUMNS; ++column) {
+	for (int column = 0; column < kColorRectColumns; ++column) {
 		QRectF colorRect;
 		colorRect.setLeft(leftMargin);
 		colorRect.setTop(topMargin);
@@ -220,7 +220,7 @@ void GoogleColorsPane::initColors()
 		   << QColor(0,0,255)
 		   << QColor(153,0,255)
 		   << QColor(255,0,255);
-	for (int column = 0; column < COLOR_RECT_COLUMNS; ++column) {
+	for (int column = 0; column < kColorRectColumns; ++column) {
 		QRectF colorRect;
 		colorRect.setLeft(leftMargin);
 		colorRect.setTop(topMargin);
@@ -298,16 +298,16 @@ void GoogleColorsPane::initColors()
 		   << QColor("#073763")
 		   << QColor("#20124d")
 		   << QColor("#4c1130");
-	for (int row = 0; row < (COLOR_RECT_ROWS - 2); ++row) {
+	for (int row = 0; row < (kColorRectRows - 2); ++row) {
 		leftMargin = PANEL_MARGIN;
-		for (int column = 0; column < COLOR_RECT_COLUMNS; ++column) {
+		for (int column = 0; column < kColorRectColumns; ++column) {
 			QRectF colorRect;
 			colorRect.setLeft(leftMargin);
 			colorRect.setTop(topMargin);
 			colorRect.setWidth(COLOR_RECT_SIZE);
 			colorRect.setHeight(COLOR_RECT_SIZE);
 
-			m_colorInfos.append(ColorKeyInfo(colors.at((row * COLOR_RECT_COLUMNS) + column), colorRect));
+			m_colorInfos.append(ColorKeyInfo(colors.at((row * kColorRectColumns) + column), colorRect));
 
 			leftMargin += COLOR_RECT_SIZE + COLOR_RECT_SPACE;
 		}
