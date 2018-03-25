@@ -69,6 +69,7 @@
         <file>Iconset/message-reply-text.png</file>
         <file>Iconset/square.png</file>
         <file>Iconset/pencil-off.png</file>
+        <file>Iconset/message-draw.png</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/ScenaristMobile_ru.qm</file>
