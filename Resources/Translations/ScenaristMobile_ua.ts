@@ -1083,6 +1083,22 @@ Project didn&apos;t synchronized.</source>
         <source>Can&apos;t create temporatry file for import.</source>
         <translation>Неможливо створити тимчасовий файл для імпорту.</translation>
     </message>
+    <message>
+        <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moving project to the cloud failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -1210,6 +1226,10 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leave review</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
