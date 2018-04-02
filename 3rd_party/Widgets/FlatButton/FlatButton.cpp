@@ -27,17 +27,17 @@ void FlatButton::setIcons(const QIcon& _icon, const QIcon& _checkedIcon, const Q
 {
 	m_icon = _icon;
     if (!m_icon.isNull()) {
-        ImageHelper::setIconColor(m_icon, m_icon.availableSizes().last(), palette().text().color());
+        ImageHelper::setIconColor(m_icon, iconSize(), palette().text().color());
 
         m_checkedIcon = _checkedIcon;
         if (!m_checkedIcon.isNull()) {
             m_checkedIconHighlight = false;
-            ImageHelper::setIconColor(m_checkedIcon, m_icon.availableSizes().last(), palette().text().color());
+            ImageHelper::setIconColor(m_checkedIcon, iconSize(), palette().text().color());
         } else {
             m_checkedIconHighlight = true;
             m_checkedIcon = _icon;
             QColor highlightColor = palette().highlight().color();
-            ImageHelper::setIconColor(m_checkedIcon, m_icon.availableSizes().last(), highlightColor);
+            ImageHelper::setIconColor(m_checkedIcon, iconSize(), highlightColor);
         }
 
         m_hoverIcon = _hoverIcon;

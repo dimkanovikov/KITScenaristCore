@@ -54,7 +54,7 @@ namespace {
     /**
      * @brief Размер ребра квадрата с цветом
      */
-    const int COLOR_RECT_SIZE = 20;
+    static int kColorRectSize() { return 20; }
 
     /**
      * @brief Расстояние между двумя соседними квадратами с цветом

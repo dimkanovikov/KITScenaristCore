@@ -14,92 +14,17 @@
         <file alias="Courier New Italic">Fonts/couri.ttf</file>
     </qresource>
     <qresource prefix="/Graphics">
-        <file>Icons/folder.png</file>
-        <file>Icons/scene.png</file>
-        <file>Icons/characters.png</file>
-        <file>Icons/locations.png</file>
         <file>Icons/script.png</file>
         <file>Icons/settings.png</file>
         <file>Icons/start.png</file>
-        <file>Icons/settings_text_editor.png</file>
-        <file>Icons/settings_chronometry.png</file>
-        <file>Icons/project_new.png</file>
-        <file>Icons/project_open.png</file>
         <file>Icons/help.png</file>
-        <file>Icons/Editing/add.png</file>
-        <file>Icons/Editing/delete.png</file>
-        <file>Icons/Editing/refresh.png</file>
-        <file>Icons/Editing/edit.png</file>
-        <file>Icons/settings_navigator.png</file>
-        <file>Icons/settings_application.png</file>
-        <file>Icons/Editing/redo.png</file>
-        <file>Icons/Editing/undo.png</file>
-        <file>Icons/note.png</file>
         <file>Icons/Editing/red_cross.png</file>
-        <file>Icons/Editing/search.png</file>
-        <file>Icons/Editing/format.png</file>
         <file>Icons/logo.png</file>
         <file>Images/logo.png</file>
-        <file>Icons/Editing/photo.png</file>
-        <file>Icons/Editing/save.png</file>
-        <file>Icons/Editing/download.png</file>
-        <file>Icons/browse.png</file>
-        <file>Icons/Editing/fullscreen.png</file>
-        <file>Icons/Editing/refresh_green.png</file>
         <file>Icons/Editing/accept_green.png</file>
-        <file>Icons/Editing/draft.png</file>
-        <file>Icons/Editing/note.png</file>
-        <file>Icons/Editing/fullscreen_active.png</file>
-        <file>Icons/Editing/checkmark.png</file>
-        <file>Icons/Editing/review.png</file>
-        <file>Icons/Indicator/connected.png</file>
-        <file>Icons/Indicator/disconnected.png</file>
-        <file>Icons/Review/delete.png</file>
-        <file>Icons/Review/edit.png</file>
-        <file>Icons/Review/font-color.png</file>
-        <file>Icons/Review/font-bg-color.png</file>
-        <file>Icons/Review/done.png</file>
-        <file>Icons/Review/clear.png</file>
-        <file>Icons/Review/comment.png</file>
-        <file>Icons/Editing/rect.png</file>
-        <file>Icons/help_startpage.png</file>
-        <file>Icons/folder_noted.png</file>
-        <file>Icons/scene_noted.png</file>
         <file>Icons/statistics.png</file>
-        <file>Icons/printer.png</file>
-        <file>Icons/settings_tool.png</file>
         <file>Icons/alert.png</file>
-        <file>Icons/Mobile/menu.png</file>
-        <file>Icons/Mobile/plus.png</file>
-        <file>Icons/Mobile/dots-vertical.png</file>
-        <file>Icons/Mobile/magnify.png</file>
-        <file>Icons/Mobile/keyboard-tab.png</file>
-        <file>Icons/Mobile/outline.png</file>
-        <file>Icons/Mobile/script.png</file>
-        <file>Icons/Mobile/keyboard-return.png</file>
-        <file>Icons/Mobile/menu/account.png</file>
-        <file>Icons/Mobile/menu/apps.png</file>
-        <file>Icons/Mobile/menu/chevron-left.png</file>
-        <file>Icons/Mobile/menu/content-save.png</file>
-        <file>Icons/Mobile/menu/script.png</file>
         <file>Icons/research.png</file>
-        <file>Icons/research1.png</file>
-        <file>Icons/script1.png</file>
-        <file>Icons/file.png</file>
-        <file>Icons/file-document.png</file>
-        <file>Icons/file-web.png</file>
-        <file>Icons/file-images.png</file>
-        <file>Icons/plus.png</file>
-        <file>Icons/file-image.png</file>
-        <file>Icons/Editing/outline.png</file>
-        <file>Icons/Mobile/navigator.png</file>
-        <file>Icons/Mobile/menu/settings.png</file>
-        <file>Icons/Mobile/logout.png</file>
-        <file>Icons/unknown.png</file>
-        <file>Icons/file-mind-map.png</file>
-        <file>Icons/Editing/format-underline.png</file>
-        <file>Icons/Editing/format-italic.png</file>
-        <file>Icons/Editing/format-bold.png</file>
         <file>Icons/MindMap/remove-node.png</file>
         <file>Icons/MindMap/remove-edge.png</file>
         <file>Icons/MindMap/add-sibling.png</file>
@@ -108,20 +33,8 @@
         <file>Icons/MindMap/add-child.png</file>
         <file>Icons/MindMap/scale-up.png</file>
         <file>Icons/MindMap/scale-down.png</file>
-        <file>Icons/eye-off.png</file>
-        <file>Icons/eye.png</file>
         <file>Icons/cards.png</file>
-        <file>Icons/Cards/vline.png</file>
-        <file>Icons/Cards/hline.png</file>
-        <file>Icons/Cards/table.png</file>
-        <file>Icons/settings-cards.png</file>
         <file>Images/corkboard.jpg</file>
-        <file>Icons/Editing/account-plus.png</file>
-        <file>Icons/Editing/close.png</file>
-        <file>Icons/Indicator/unsynced.png</file>
-        <file>Icons/Indicator/synced.png</file>
-        <file>Icons/character.png</file>
-        <file>Icons/location.png</file>
         <file>Images/cards-print-landscape-1.png</file>
         <file>Images/cards-print-landscape-2.png</file>
         <file>Images/cards-print-landscape-4.png</file>
@@ -132,24 +45,80 @@
         <file>Images/cards-print-portrait-4.png</file>
         <file>Images/cards-print-portrait-2.png</file>
         <file>Images/cards-print-portrait-1.png</file>
-        <file>Icons/Editing/account-multiple.png</file>
-        <file>Icons/Mobile/close.png</file>
-        <file>Icons/Mobile/lock-reset.png</file>
-        <file>Icons/Mobile/menu/import.png</file>
-        <file>Icons/Mobile/menu/export.png</file>
-        <file>Icons/plot.png</file>
-        <file>Icons/report.png</file>
-        <file>Icons/plot-multiple.png</file>
-        <file>Icons/report-multiple.png</file>
-        <file>Icons/settings_templates.png</file>
-        <file>Icons/view-panels.png</file>
         <file>Icons/Editing/copy-to-script.png</file>
         <file>Images/avatar.png</file>
         <file>Icons/empty.png</file>
-        <file>Icons/lock-reset.png</file>
-        <file>Icons/logout.png</file>
-        <file>Icons/renew.png</file>
-        <file>Icons/move-to-cloud.png</file>
+        <file>Iconset/message-text.svg</file>
+        <file>Iconset/account.svg</file>
+        <file>Iconset/account-multiple.svg</file>
+        <file>Iconset/account-plus.svg</file>
+        <file>Iconset/apps.svg</file>
+        <file>Iconset/arrow-left.svg</file>
+        <file>Iconset/book-open-variant.svg</file>
+        <file>Iconset/check.svg</file>
+        <file>Iconset/chevron-down.svg</file>
+        <file>Iconset/chevron-left.svg</file>
+        <file>Iconset/chevron-up.svg</file>
+        <file>Iconset/close.svg</file>
+        <file>Iconset/cloud-upload.svg</file>
+        <file>Iconset/content-save.svg</file>
+        <file>Iconset/delete.svg</file>
+        <file>Iconset/dots-vertical.svg</file>
+        <file>Iconset/export.svg</file>
+        <file>Iconset/eye.svg</file>
+        <file>Iconset/eye-off.svg</file>
+        <file>Iconset/file-document-box.svg</file>
+        <file>Iconset/file-tree.svg</file>
+        <file>Iconset/folder.svg</file>
+        <file>Iconset/folder-outline.svg</file>
+        <file>Iconset/format-bold.svg</file>
+        <file>Iconset/format-clear.svg</file>
+        <file>Iconset/format-color-fill.svg</file>
+        <file>Iconset/format-color-text.svg</file>
+        <file>Iconset/format-italic.svg</file>
+        <file>Iconset/format-title.svg</file>
+        <file>Iconset/format-underline.svg</file>
+        <file>Iconset/help-circle.svg</file>
+        <file>Iconset/home.svg</file>
+        <file>Iconset/home-multiple.svg</file>
+        <file>Iconset/image.svg</file>
+        <file>Iconset/image-multiple.svg</file>
+        <file>Iconset/import.svg</file>
+        <file>Iconset/keyboard-close.svg</file>
+        <file>Iconset/lock-reset.svg</file>
+        <file>Iconset/logout.svg</file>
+        <file>Iconset/magnify.svg</file>
+        <file>Iconset/menu.svg</file>
+        <file>Iconset/message-draw.svg</file>
+        <file>Iconset/pencil.svg</file>
+        <file>Iconset/pencil-off.svg</file>
+        <file>Iconset/plus.svg</file>
+        <file>Iconset/redo.svg</file>
+        <file>Iconset/refresh.svg</file>
+        <file>Iconset/settings.svg</file>
+        <file>Iconset/sitemap.svg</file>
+        <file>Iconset/square.svg</file>
+        <file>Iconset/undo.svg</file>
+        <file>Iconset/view-list.svg</file>
+        <file>Iconset/web.svg</file>
+        <file>Iconset/autorenew.svg</file>
+        <file>Iconset/printer.svg</file>
+        <file>Iconset/grid.svg</file>
+        <file>Iconset/fullscreen.svg</file>
+        <file>Iconset/fullscreen-exit.svg</file>
+        <file>Iconset/view-agenda.svg</file>
+        <file>Iconset/application.svg</file>
+        <file>Iconset/layers.svg</file>
+        <file>Iconset/timer.svg</file>
+        <file>Iconset/arrange-bring-to-front.svg</file>
+        <file>Iconset/format-size.svg</file>
+        <file>Iconset/Indicator/connected.png</file>
+        <file>Iconset/Indicator/disconnected.png</file>
+        <file>Iconset/Indicator/synced.png</file>
+        <file>Iconset/Indicator/unsynced.png</file>
+        <file>Iconset/chart-line.svg</file>
+        <file>Iconset/clipboard-pulse.svg</file>
+        <file>Iconset/clipboard-text.svg</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>

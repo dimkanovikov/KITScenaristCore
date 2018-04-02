@@ -25,6 +25,11 @@ namespace {
 	 * @brief Используем низкое качество изображения (всё-таки у нас приложение не для фотографов)
 	 */
 	const int IMAGE_FILE_QUALITY = 30;
+
+    /**
+     * @brief Умолчальный размер для svg-изображения
+     */
+    const QSize kDefaultSvgIconSize{1024, 1024};
 }
 
 
@@ -89,6 +94,8 @@ public:
     static void setIconColor(QIcon& _icon, const QColor& _color) {
         if (!_icon.isNull() && !_icon.availableSizes().isEmpty() && _color.isValid()) {
             setIconColor(_icon, _icon.availableSizes().last(), _color);
+        } else {
+            setIconColor(_icon, kDefaultSvgIconSize, _color);
         }
     }
 

@@ -1536,8 +1536,8 @@ Hebräisch: Ronkin Maxim
 <context>
     <name>FountainImporter</name>
     <message>
-        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="247"/>
-        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="390"/>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="256"/>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="399"/>
         <source>END OF </source>
         <translation>ENDE </translation>
     </message>

@@ -44,8 +44,8 @@ SimpleTextEditorWidget::SimpleTextEditorWidget(QWidget *parent) :
     m_textBold(new FlatButton(this)),
     m_textItalic(new FlatButton(this)),
     m_textUnderline(new FlatButton(this)),
-    m_textColor(new ColoredToolButton(QIcon(":/Graphics/Iconset/format-color-text.png"), this)),
-    m_textBackgroundColor(new ColoredToolButton(QIcon(":/Graphics/Iconsset/format-color-fill.png"), this)),
+    m_textColor(new ColoredToolButton(QIcon(":/Graphics/Iconset/format-color-text.svg"), this)),
+    m_textBackgroundColor(new ColoredToolButton(QIcon(":/Graphics/Iconsset/format-color-fill.svg"), this)),
     m_clearFormatting(new FlatButton(this)),
     m_toolbarSpace(new QLabel(this)),
     m_isInTextFormatUpdate(false)
@@ -182,15 +182,15 @@ void SimpleTextEditorWidget::initView()
     m_textFontSize->setEditable(true);
     m_textBold->setCheckable(true);
     m_textBold->setShortcut(QKeySequence::Bold);
-    m_textBold->setIcons(QIcon(":/Graphics/Iconset/format-bold.png"));
+    m_textBold->setIcons(QIcon(":/Graphics/Iconset/format-bold.svg"));
     m_textBold->setToolTip(ShortcutHelper::makeToolTip(tr("Make text bold"), m_textBold->shortcut()));
     m_textItalic->setCheckable(true);
     m_textItalic->setShortcut(QKeySequence::Italic);
-    m_textItalic->setIcons(QIcon(":/Graphics/Iconset/format-italic.png"));
+    m_textItalic->setIcons(QIcon(":/Graphics/Iconset/format-italic.svg"));
     m_textItalic->setToolTip(ShortcutHelper::makeToolTip(tr("Make text italic"), m_textItalic->shortcut()));
     m_textUnderline->setCheckable(true);
     m_textUnderline->setShortcut(QKeySequence::Underline);
-    m_textUnderline->setIcons(QIcon(":/Graphics/Iconset/format-underline.png"));
+    m_textUnderline->setIcons(QIcon(":/Graphics/Iconset/format-underline.svg"));
     m_textUnderline->setToolTip(ShortcutHelper::makeToolTip(tr("Make text underline"), m_textUnderline->shortcut()));
     m_textColor->setIconSize(QSize(20, 20));
     m_textColor->setColorsPane(ColoredToolButton::Google);
@@ -198,7 +198,7 @@ void SimpleTextEditorWidget::initView()
     m_textBackgroundColor->setIconSize(QSize(20, 20));
     m_textBackgroundColor->setColorsPane(ColoredToolButton::Google);
     m_textBackgroundColor->setToolTip(tr("Change text background color"));
-    m_clearFormatting->setIcons(QIcon(":/Graphics/Iconset/format-clear.png"));
+    m_clearFormatting->setIcons(QIcon(":/Graphics/Iconset/format-clear.svg"));
     m_clearFormatting->setToolTip(tr("Clear formatting"));
     m_toolbarSpace->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 

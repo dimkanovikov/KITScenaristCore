@@ -40,7 +40,7 @@ void AddImageButton::choosePhoto()
 
 void AddImageButton::initView()
 {
-	setIcon(QIcon(":/Graphics/Icons/plus.png"));
+    setIcon(QIcon(":/Graphics/Iconset/plus.svg"));
 	setIconSize(QSize(100, 100));
 }
 

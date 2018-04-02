@@ -460,7 +460,7 @@ void SideTabBar::mousePressEvent(QMouseEvent* _event)
         menu.addAction(&menuText);
         if (!m_indicatorActions.empty()) {
             menu.addSeparator();
-            QIcon icon(":/Graphics/Icons/Editing/rect.png");
+            QIcon icon(":/Graphics/Iconset/square.svg");
             for (int actionIndex = 0; actionIndex != m_indicatorActions.size(); ++actionIndex) {
                 ImageHelper::setIconColor(icon, QSize(10, 10), ColorHelper::cursorColor(actionIndex));
                 QAction* action = new QAction(icon, m_indicatorActions[actionIndex], &menu);
