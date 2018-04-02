@@ -57,7 +57,7 @@ QPixmap ResearchModelItem::icon() const
             }
 
             case Research::MindMap: {
-                iconPath = ":/Graphics/Iconset/sitemap.svg";
+                iconPath = ":/Graphics/Iconset/mind-map.svg";
                 break;
             }
 

@@ -14,17 +14,12 @@
         <file alias="Courier New Italic">Fonts/couri.ttf</file>
     </qresource>
     <qresource prefix="/Graphics">
-        <file>Icons/script.png</file>
-        <file>Icons/settings.png</file>
-        <file>Icons/start.png</file>
         <file>Icons/help.png</file>
         <file>Icons/Editing/red_cross.png</file>
         <file>Icons/logo.png</file>
         <file>Images/logo.png</file>
         <file>Icons/Editing/accept_green.png</file>
-        <file>Icons/statistics.png</file>
         <file>Icons/alert.png</file>
-        <file>Icons/research.png</file>
         <file>Icons/MindMap/remove-node.png</file>
         <file>Icons/MindMap/remove-edge.png</file>
         <file>Icons/MindMap/add-sibling.png</file>
@@ -119,6 +114,9 @@
         <file>Iconset/chart-line.svg</file>
         <file>Iconset/clipboard-pulse.svg</file>
         <file>Iconset/clipboard-text.svg</file>
+        <file>Iconset/chart-areaspline.svg</file>
+        <file>Iconset/wrench.svg</file>
+        <file>Iconset/mind-map.svg</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>

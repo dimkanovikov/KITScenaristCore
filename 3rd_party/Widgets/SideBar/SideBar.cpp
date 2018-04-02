@@ -35,8 +35,8 @@ namespace {
     /**
      * @brief Размер иконки вкладки
      */
-    const QSize TAB_ICON_SIZE(48, 48);
-    const QSize TAB_ICON_SIZE_COMPACT(36, 36);
+    const QSize TAB_ICON_SIZE(24, 24);
+    const QSize TAB_ICON_SIZE_COMPACT(20, 20);
     static QSize tabIconSize(bool _compact) {
         return _compact ? TAB_ICON_SIZE_COMPACT : TAB_ICON_SIZE;
     }
@@ -139,21 +139,24 @@ SideTabBar::SideTabBar(QWidget *parent) :
     removeIndicator();
 }
 
-void SideTabBar::addTab(QAction *action)
+void SideTabBar::addTab(QAction *_action)
 {
-    action->setCheckable(true);
+    _action->setCheckable(true);
     if (m_tabs.isEmpty()) {
-        action->setChecked(true);
-        m_checkedTab = action;
+        _action->setChecked(true);
+        m_checkedTab = _action;
     }
-    m_tabs.push_back(action);
+    m_tabs.push_back(_action);
     update();
     return;
 }
 
-QAction *SideTabBar::addTab(const QString &text, const QIcon &icon)
+QAction* SideTabBar::addTab(const QString& _text, const QIcon& _icon)
 {
-    QAction *action = new QAction(icon, text, this);
+    QIcon icon = _icon;
+    ImageHelper::setIconColor(icon, QApplication::palette().highlight().color());
+
+    QAction *action = new QAction(icon, _text, this);
     addTab(action);
     return action;
 }

@@ -21,8 +21,8 @@ public:
      * @brief Добавить вкладку
      */
     /** @{ */
-    void addTab(QAction* action);
-    QAction* addTab(const QString& text, const QIcon& icon = QIcon());
+    void addTab(QAction* _action);
+    QAction* addTab(const QString& _text, const QIcon& _icon = QIcon());
     /** @} */
 
     /**
