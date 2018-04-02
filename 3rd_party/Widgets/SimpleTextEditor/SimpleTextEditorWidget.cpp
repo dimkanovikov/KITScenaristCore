@@ -45,7 +45,7 @@ SimpleTextEditorWidget::SimpleTextEditorWidget(QWidget *parent) :
     m_textItalic(new FlatButton(this)),
     m_textUnderline(new FlatButton(this)),
     m_textColor(new ColoredToolButton(QIcon(":/Graphics/Iconset/format-color-text.svg"), this)),
-    m_textBackgroundColor(new ColoredToolButton(QIcon(":/Graphics/Iconsset/format-color-fill.svg"), this)),
+    m_textBackgroundColor(new ColoredToolButton(QIcon(":/Graphics/Iconset/format-color-fill.svg"), this)),
     m_clearFormatting(new FlatButton(this)),
     m_toolbarSpace(new QLabel(this)),
     m_isInTextFormatUpdate(false)
@@ -268,7 +268,7 @@ void SimpleTextEditorWidget::initConnections()
             textColor = _format.foreground().color();
         }
         m_textColor->setColor(textColor);
-        QColor textBackgroundColor = palette().base().color();
+        QColor textBackgroundColor = palette().text().color();
         if (_format.hasProperty(QTextFormat::BackgroundBrush)) {
             textBackgroundColor = _format.background().color();
         }
