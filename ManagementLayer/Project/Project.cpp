@@ -15,7 +15,8 @@ using DataStorageLayer::StorageFacade;
 using DataStorageLayer::SettingsStorage;
 
 namespace {
-    const QString PROJECT_FILE_EXTENSION = ".kitsp"; // kit scenarist project
+    const QString kProjectFleExtension = "kitsp"; // kit scenarist project
+    const QString kBackupVersionsExtension = "kitsrc"; // kit scenarist reserve copies
 }
 
 
@@ -81,11 +82,11 @@ Project::Project(Type _type, const QString& _name, const QString& _path,
         // ... формируем путь к файлу проекта
         //
         m_path =
-            QString("%1%2%3%4")
+            QString("%1%2%3.%4")
                 .arg(remoteProjectsFolderPath)
                 .arg(QDir::separator())
                 .arg(m_id)
-                .arg(PROJECT_FILE_EXTENSION);
+                .arg(kProjectFleExtension);
         //
         // ... корректируем путь
         //
@@ -139,7 +140,7 @@ QString Project::displayPath() const
 {
     QString result = m_path;
     if (m_type == Remote) {
-        result = QString("%1/%2%3").arg(m_owner).arg(m_name).arg(PROJECT_FILE_EXTENSION);
+        result = QString("%1/%2.%3").arg(m_owner).arg(m_name).arg(kProjectFleExtension);
     }
 
     return result;
@@ -203,6 +204,45 @@ void Project::setSyncAvailable(bool _syncAvailable, int _errorCode)
         m_isSyncAvailable = _syncAvailable;
         m_errorCode = _errorCode;
     }
+}
+
+QString Project::fullBackupFileName(const QString& _backupDirPath) const
+{
+    return backupFileName(_backupDirPath, false);
+}
+
+QString Project::versionsBackupFileName(const QString& _backupDirPath) const
+{
+    return backupFileName(_backupDirPath, true);
+}
+
+QString Project::backupFileName(const QString& _backupDirPath, bool _isVersionsBackup) const
+{
+    //
+    // Для удаленных проектов имя бекапа - имя проекта + id проекта
+    //
+    const QFileInfo fileInfo(path());
+    const QString backupBaseName =
+            isRemote()
+            ? QString("%1 [%2]").arg(name()).arg(id())
+            : fileInfo.completeBaseName();
+
+    //
+    // Сформируем путь к папке с резервными копиями
+    //
+    QString backupDirPath = _backupDirPath;
+    if (!backupDirPath.endsWith(QDir::separator())) {
+        backupDirPath.append(QDir::separator());
+    }
+
+    //
+    // Путь к файлу с резервными копиями версий сценария проекта
+    //
+    const QString backupSuffix =
+            _isVersionsBackup
+            ? QString("versions.backup.%1").arg(kBackupVersionsExtension)
+            : QString("full.backup.%1").arg(fileInfo.completeSuffix());
+    return QString("%1%2.%3").arg(backupDirPath, backupBaseName, backupSuffix);
 }
 
 

@@ -104,8 +104,7 @@ bool QLightBoxWidget::eventFilter(QObject* _object, QEvent* _event)
     if (_event->type() == QEvent::ChildAdded
         || _event->type() == QEvent::ChildRemoved) {
         QChildEvent* childEvent = dynamic_cast<QChildEvent*>(_event);
-        if (childEvent->child() != this
-            && isVisible()) {
+        if (childEvent->child() != this) {
             updateSelf();
         }
     }
@@ -114,8 +113,7 @@ bool QLightBoxWidget::eventFilter(QObject* _object, QEvent* _event)
     // Если изменился размер родительского виджета, необходимо
     // перерисовать себя
     //
-    else if (_event->type() == QEvent::Resize
-             && isVisible()) {
+    else if (_event->type() == QEvent::Resize) {
         updateSelf();
     }
 
