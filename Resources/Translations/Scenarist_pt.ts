@@ -1795,6 +1795,10 @@ O projeto não foi sincronizado.</translation>
         <source>Closing Database Connections and remove temporary files.</source>
         <translation>Fechar conexões de banco de dados e remover arquivos temporários.</translation>
     </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -2118,6 +2122,17 @@ Você pode tentar recarregar a atualização.</translation>
     <message>
         <source>Got wrong response from server.</source>
         <translation>Recebi resposta errada do servidor.</translation>
+    </message>
+</context>
+<context>
+    <name>ManagementLayer::ToolsManager</name>
+    <message>
+        <source>Choose backup from list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bytes</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2948,16 +2963,16 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
         <translation>Salvar mapa mental como arquivo de imagem</translation>
     </message>
     <message>
+        <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
+        <translation>Adicionar materiais de pesquisa, como texto, páginas da web e imagens na árvore. Use os botões da barra de ferramentas e o menu de contexto para adicionar ou remover materiais de pesquisa na árvore.</translation>
+    </message>
+    <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
-        <translation>Adicionar materiais de pesquisa, como texto, páginas da web e imagens na árvore. Use os botões da barra de ferramentas e o menu de contexto para adicionar ou remover materiais de pesquisa na árvore.</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3889,6 +3904,21 @@ Valor, mm</translation>
     <message>
         <source>Framing brackets</source>
         <translation>Suportes de enquadramento</translation>
+    </message>
+</context>
+<context>
+    <name>ToolsSettings</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply Selected Template</source>
+        <translation type="unfinished">Aplicar modelo selecionado</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4885,6 +4915,40 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     <message>
         <source>Unnamed Template</source>
         <translation>Template sem nome</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ToolsSettings</name>
+    <message>
+        <source>Back to the tools list</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ToolsView</name>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tool settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare script versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore script from backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose tool from list</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

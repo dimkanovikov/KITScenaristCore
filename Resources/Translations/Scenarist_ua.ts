@@ -1754,6 +1754,10 @@ Project didn&apos;t synchronized.</source>
         <source>Closing Database Connections and remove temporary files.</source>
         <translation>Закриття Бази данних Підключень та видалення тимчасових файлів.</translation>
     </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -2077,6 +2081,17 @@ You can try to reload update.</source>
     <message>
         <source>Got wrong response from server.</source>
         <translation>Отримано неправильну відповідь від сервера.</translation>
+    </message>
+</context>
+<context>
+    <name>ManagementLayer::ToolsManager</name>
+    <message>
+        <source>Choose backup from list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bytes</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2916,7 +2931,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -2928,7 +2943,7 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -3866,6 +3881,21 @@ Paragraph</source>
     <message>
         <source>Framing brackets</source>
         <translation>Обрамляти дужками</translation>
+    </message>
+</context>
+<context>
+    <name>ToolsSettings</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Apply Selected Template</source>
+        <translation type="unfinished">Застосувати обраний шаблон</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished">Застосувати</translation>
     </message>
 </context>
 <context>
@@ -4862,6 +4892,40 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <source>Unnamed Template</source>
         <translation>Шаблон без назви</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ToolsSettings</name>
+    <message>
+        <source>Back to the tools list</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ToolsView</name>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tool settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compare script versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore script from backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose tool from list</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

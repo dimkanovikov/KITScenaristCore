@@ -28,6 +28,7 @@ void RestoreFromBackupTool::loadBackupInfo(const QString& _backupFilePath)
     m_lastBackupFile = _backupFilePath;
     if (m_lastBackupFile.isEmpty()
         || !QFile::exists(m_lastBackupFile)) {
+        emit backupInfoNotLoaded();
         return;
     }
 
@@ -64,6 +65,7 @@ void RestoreFromBackupTool::loadBackup(const QDateTime& _backupDateTime)
 {
     if (m_lastBackupFile.isEmpty()
         || !QFile::exists(m_lastBackupFile)) {
+        emit backupInfoNotLoaded();
         return;
     }
 

@@ -64,6 +64,11 @@ namespace BusinessLogic
          */
         void backupLoaded(const QString& _backup);
 
+        /**
+         * @brief Не удалось найти не одного бэкапа
+         */
+        void backupInfoNotLoaded();
+
     private:
         /**
          * @brief Последний используемый файл бэкапа

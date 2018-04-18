@@ -547,7 +547,8 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     //
     // Добавляем в меню фозможности форматирования
     //
-    if (textCursor().hasSelection()) {
+    if (!isReadOnly()
+        && textCursor().hasSelection()) {
         QWidget* widget = new QWidget(menu);
         QHBoxLayout* layout = new QHBoxLayout(widget);
         layout->setSpacing(0);
