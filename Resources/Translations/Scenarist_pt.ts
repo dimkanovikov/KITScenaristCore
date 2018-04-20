@@ -4950,6 +4950,10 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
         <source>Choose tool from list</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Didn&apos;t find any backups for the current project</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::UpdateDialog</name>
