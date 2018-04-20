@@ -33,7 +33,7 @@
      </property>
      <property name="icon">
       <iconset resource="../../Resources/ResourcesMobile.qrc">
-       <normaloff>:/Graphics/Icons/Editing/close.png</normaloff>:/Graphics/Icons/Editing/close.png</iconset>
+       <normaloff>:/Graphics/Iconset/close.png</normaloff>:/Graphics/Iconset/close.png</iconset>
      </property>
      <property name="autoRaise">
       <bool>true</bool>

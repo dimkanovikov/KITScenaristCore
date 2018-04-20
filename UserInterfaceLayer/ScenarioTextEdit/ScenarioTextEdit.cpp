@@ -8,6 +8,8 @@
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioReviewModel.h>
 
+#include <BusinessLayer/Import/FountainImporter.h>
+
 #include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Helpers/ColorHelper.h>
 
@@ -545,7 +547,8 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     //
     // Добавляем в меню фозможности форматирования
     //
-    if (textCursor().hasSelection()) {
+    if (!isReadOnly()
+        && textCursor().hasSelection()) {
         QWidget* widget = new QWidget(menu);
         QHBoxLayout* layout = new QHBoxLayout(widget);
         layout->setSpacing(0);
@@ -553,7 +556,7 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         //
         FlatButton* bold = new FlatButton;
         bold->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        bold->setIcons(QIcon(":/Graphics/Icons/Editing/format-bold.png"));
+        bold->setIcons(QIcon(":/Graphics/Iconset/format-bold.svg"));
         bold->setCheckable(true);
         bold->setChecked(textCursor().charFormat().font().bold());
         bold->setProperty("inContextMenu", true);
@@ -563,7 +566,7 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         //
         FlatButton* italic = new FlatButton;
         italic->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        italic->setIcons(QIcon(":/Graphics/Icons/Editing/format-italic.png"));
+        italic->setIcons(QIcon(":/Graphics/Iconset/format-italic.svg"));
         italic->setCheckable(true);
         italic->setChecked(textCursor().charFormat().font().italic());
         italic->setProperty("inContextMenu", true);
@@ -572,7 +575,7 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         //
         FlatButton* underline = new FlatButton;
         underline->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        underline->setIcons(QIcon(":/Graphics/Icons/Editing/format-underline.png"));
+        underline->setIcons(QIcon(":/Graphics/Iconset/format-underline.svg"));
         underline->setCheckable(true);
         underline->setChecked(textCursor().charFormat().font().underline());
         underline->setProperty("inContextMenu", true);
@@ -594,6 +597,45 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
 bool ScenarioTextEdit::isRedoAvailable() const
 {
     return m_document->isRedoAvailableReimpl();
+}
+
+void ScenarioTextEdit::setTextBold(bool _bold)
+{
+    QTextCursor cursor = textCursor();
+    if (!cursor.hasSelection()) {
+        return;
+    }
+
+    QTextCharFormat format = cursor.charFormat();
+    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+    format.setFontWeight(_bold ? QFont::Bold : QFont::Normal);
+    cursor.mergeCharFormat(format);
+}
+
+void ScenarioTextEdit::setTextItalic(bool _italic)
+{
+    QTextCursor cursor = textCursor();
+    if (!cursor.hasSelection()) {
+        return;
+    }
+
+    QTextCharFormat format = cursor.charFormat();
+    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+    format.setFontItalic(_italic);
+    cursor.mergeCharFormat(format);
+}
+
+void ScenarioTextEdit::setTextUnderline(bool _underline)
+{
+    QTextCursor cursor = textCursor();
+    if (!cursor.hasSelection()) {
+        return;
+    }
+
+    QTextCharFormat format = cursor.charFormat();
+    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+    format.setFontUnderline(_underline);
+    cursor.mergeCharFormat(format);
 }
 
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
@@ -1544,34 +1586,22 @@ void ScenarioTextEdit::insertFromMimeData(const QMimeData* _source)
         changeScenarioBlockType(type);
     }
 
+    QString textToInsert;
+
     //
     // Если вставляются данные в сценарном формате, то вставляем как положено
     //
     if (_source->formats().contains(ScenarioDocument::MIME_TYPE)) {
-        m_document->insertFromMime(cursor.position(), _source->data(ScenarioDocument::MIME_TYPE));
+        textToInsert = _source->data(ScenarioDocument::MIME_TYPE);
     }
     //
-    // Если простой текст, то вставляем его, как описание действия
+    // Если простой текст, то вставляем его, импортировав с фонтана
     //
     else if (_source->hasText()) {
-        QString textToInsert = _source->text();
-        bool isFirstLine = true;
-        foreach (const QString& line, textToInsert.split("\n", QString::SkipEmptyParts)) {
-            //
-            // Первую строку вставляем в текущий блок
-            //
-            if (isFirstLine) {
-                isFirstLine = false;
-            }
-            //
-            // А для всех остальных создаём блок описания действия
-            //
-            else {
-                addScenarioBlock(ScenarioBlockStyle::Action);
-            }
-            cursor.insertText(line.simplified());
-        }
+        FountainImporter fountainImporter;
+        textToInsert = fountainImporter.importScript(_source->text());
     }
+    m_document->insertFromMime(cursor.position(), textToInsert);
 
     cursor.endEditBlock();
 }
@@ -2076,45 +2106,6 @@ bool ScenarioTextEdit::selectBlockOnTripleClick(QMouseEvent* _event)
     }
 
     return false;
-}
-
-void ScenarioTextEdit::setTextBold(bool _bold)
-{
-    QTextCursor cursor = textCursor();
-    if (!cursor.hasSelection()) {
-        return;
-    }
-
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontWeight(_bold ? QFont::Bold : QFont::Normal);
-    cursor.mergeCharFormat(format);
-}
-
-void ScenarioTextEdit::setTextItalic(bool _italic)
-{
-    QTextCursor cursor = textCursor();
-    if (!cursor.hasSelection()) {
-        return;
-    }
-
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontItalic(_italic);
-    cursor.mergeCharFormat(format);
-}
-
-void ScenarioTextEdit::setTextUnderline(bool _underline)
-{
-    QTextCursor cursor = textCursor();
-    if (!cursor.hasSelection()) {
-        return;
-    }
-
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontUnderline(_underline);
-    cursor.mergeCharFormat(format);
 }
 
 void ScenarioTextEdit::initEditor()

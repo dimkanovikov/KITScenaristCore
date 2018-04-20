@@ -64,6 +64,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Swedish:
             code = "sv_SE";
             break;
+        case Turkish:
+            code = "tr_TR";
+            break;
         case Ukrainian:
             code = "uk_UA";
             break;
@@ -74,7 +77,7 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
     return code;
 }
 
-SpellChecker*SpellChecker::createSpellChecker(const QString& _userDictionaryPath)
+SpellChecker* SpellChecker::createSpellChecker(const QString& _userDictionaryPath)
 {
     if (s_spellChecker == nullptr) {
         s_spellChecker = new SpellChecker(_userDictionaryPath);

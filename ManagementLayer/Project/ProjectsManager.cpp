@@ -25,7 +25,7 @@ namespace {
     /**
      * @brief kit scenarist project
      */
-    const QString PROJECT_FILE_EXTENSION = ".kitsp";
+    const QString kProjectFleExtension = ".kitsp";
 }
 
 

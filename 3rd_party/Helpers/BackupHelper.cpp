@@ -15,12 +15,12 @@ namespace {
 	/**
 	 * @brief Расширение файла "Кит сценарист резервная копия"
 	 */
-	const QString BACKUP_VERSIONS_EXTENSION = "kitsrc";
+    const QString kBackupVersionsExtension = "kitsrc";
 
 	/**
 	 * @brief Название соединения для БД резервных копий версий сценария
 	 */
-	const QString BACKUPDB_CONNECTION_NAME = "backup_versions";
+    const QString kBackupDbConnectionName = "backup_versions_db";
 }
 
 
@@ -48,6 +48,10 @@ void BackupHelper::saveBackup(const QString& _filePath, const QString& _newName)
 		&& !m_isInProgress) {
 		m_isInProgress = true;
 
+        //
+        // FIXME: Переделать через Project::backupFilePath
+        //
+
 		//
 		// Создаём папку для хранения резервных копий, если такой ещё нет
 		//
@@ -68,7 +72,7 @@ void BackupHelper::saveBackup(const QString& _filePath, const QString& _newName)
 		const QString backupFileName =
                 QString("%1%2.full.backup.%3").arg(backupPath, backupBaseName, fileInfo.completeSuffix());
 		const QString backupVersionsFileName =
-                QString("%1%2.versions.backup.%3").arg(backupPath, backupBaseName, BACKUP_VERSIONS_EXTENSION);
+                QString("%1%2.versions.backup.%3").arg(backupPath, backupBaseName, kBackupVersionsExtension);
 
 		//
 		// Копируем файл во временную резервную копию
@@ -84,12 +88,9 @@ void BackupHelper::saveBackup(const QString& _filePath, const QString& _newName)
 		//
 		// Добавляем версию сценария в файл с резервными копиями версий текста сценария
 		//
-		{
-			//
-			// NOTE: Как быть с быстродействием?
-			//
+        {
 			{
-				QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", BACKUPDB_CONNECTION_NAME);
+                QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", kBackupDbConnectionName);
 				db.setDatabaseName(backupVersionsFileName);
 				db.open();
 				//
@@ -106,7 +107,7 @@ void BackupHelper::saveBackup(const QString& _filePath, const QString& _newName)
 				backuper.exec();
 			}
 
-			QSqlDatabase::removeDatabase(BACKUPDB_CONNECTION_NAME);
+            QSqlDatabase::removeDatabase(kBackupDbConnectionName);
 		}
 
 		m_isInProgress = false;

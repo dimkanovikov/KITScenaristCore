@@ -83,14 +83,6 @@
 <context>
     <name>BusinessLogic::AbstractImporter</name>
     <message>
-        <source>All Supported Files</source>
-        <translation>Todos os arquivos suportados</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation>Projeto KIT Scenarist</translation>
-    </message>
-    <message>
         <source>Final Draft screenplay</source>
         <translation>Roteiro Final</translation>
     </message>
@@ -103,15 +95,27 @@
         <translation>Office Open XML</translation>
     </message>
     <message>
-        <source>OpenDocument Text</source>
-        <translation>Texto OpenDocument</translation>
-    </message>
-    <message>
         <source>Final Draft template</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Fountain Text</source>
+        <source>All supported files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KIT Scenarist project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OpenDocument text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fountain text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Celtx project</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -126,8 +130,8 @@
         <translation>Palavras</translation>
     </message>
     <message>
-        <source>Simbols</source>
-        <translation>Símbolos</translation>
+        <source>Symbols</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -453,6 +457,10 @@
         <translation>Imagem sem nome</translation>
     </message>
     <message>
+        <source>FADE IN:</source>
+        <translation type="unfinished">FADE IN:</translation>
+    </message>
+    <message>
         <source>INT./EXT</source>
         <translation type="unfinished"></translation>
     </message>
@@ -489,10 +497,6 @@
     <message>
         <source>CUT TO:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>FADE IN:</source>
-        <translation type="unfinished">FADE IN:</translation>
     </message>
     <message>
         <source>FADE OUT</source>
@@ -745,7 +749,7 @@
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;t first glance&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After installing and running the application, you will see a screen with a list of projects. Other application pages have a similar arrangement of elements, so let&apos;s look at it in more detail.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;At the top of the page is the main toolbar. In the left part of toolbar placed a button for calling the menu. On other pages, instead of the menu button, there may be a button to return to the previous page. In the middle is the title of the current page. And one or more auxiliary buttons can be located to the right (on the page with the list of projects this is the button for creating a new project).&lt;/span&gt;&lt;/p&gt;
@@ -1055,7 +1059,19 @@ Project didn&apos;t synchronized.</source>
 O projeto não foi sincronizado.</translation>
     </message>
     <message>
-        <source>in cloud</source>
+        <source>Import error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t get file path to import. Try to download it and open in file browser.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t create temporatry file for import.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Importing script</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1071,19 +1087,23 @@ O projeto não foi sincronizado.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Importing script</source>
+        <source>in cloud</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Import error</source>
+        <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Can&apos;t get file path to import. Try to download it and open in file browser.</source>
+        <source>Moving project to the cloud failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Can&apos;t create temporatry file for import.</source>
+        <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1215,6 +1235,10 @@ O projeto não foi sincronizado.</translation>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Leave review</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NavigatorView</name>
@@ -1269,6 +1293,10 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Show cowriters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move project to the cloud</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1362,6 +1390,13 @@ Let&apos;s create the first one!</source>
     <name>QtMindMap::Node</name>
     <message>
         <source>&lt;b&gt;Root node&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ReviewView</name>
+    <message>
+        <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1517,16 +1552,8 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::AccountView</name>
     <message>
-        <source>Account is active until: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Account is inactive</source>
         <translation>Conta Inativa</translation>
-    </message>
-    <message>
-        <source>Used %1 Gb from %2 Gb</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Email</source>
@@ -1536,15 +1563,19 @@ Your subscription is active until</source>
         <source>Login</source>
         <translation>Login</translation>
     </message>
+    <message>
+        <source>Account is active until: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Used %1 Gb from %2 Gb</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::AddProjectView</name>
     <message>
         <source>LOCAL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please, enter name for your new project.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1555,15 +1586,19 @@ Your subscription is active until</source>
         <source>Project name</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Please, enter name for your new project.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ExportView</name>
     <message>
-        <source>Template</source>
+        <source>File format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>File format</source>
+        <source>Template</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1576,6 +1611,14 @@ Your subscription is active until</source>
     <message>
         <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a password.</source>
         <translation>Seu e-mail &lt;b&gt;%1&lt;/b&gt; recebeu uma mensagem com a senha.</translation>
+    </message>
+    <message>
+        <source>Email</source>
+        <translation>O email</translation>
+    </message>
+    <message>
+        <source>Email is invalid</source>
+        <translation>Email inválido</translation>
     </message>
     <message>
         <source>Authorization</source>
@@ -1602,16 +1645,8 @@ Your subscription is active until</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Email</source>
-        <translation>O email</translation>
-    </message>
-    <message>
         <source>Password</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Email is invalid</source>
-        <translation>Email inválido</translation>
     </message>
 </context>
 <context>
@@ -1649,15 +1684,15 @@ Your subscription is active until</source>
         <source>DRAFT</source>
         <translation>RASCUNHO</translation>
     </message>
+    <message>
+        <source>Comment</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::SettingsView</name>
     <message>
         <source>System</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1678,6 +1713,10 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>Large</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

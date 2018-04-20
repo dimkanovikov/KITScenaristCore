@@ -27,11 +27,9 @@ QString ScenarioDocument::MIME_TYPE = "application/x-scenarist/scenario";
 
 ScenarioDocument::ScenarioDocument(QObject* _parent) :
     QObject(_parent),
-    m_scenario(0),
     m_xmlHandler(new ScenarioXml(this)),
     m_document(new ScenarioTextDocument(this, m_xmlHandler)),
-    m_model(new ScenarioModel(this, m_xmlHandler)),
-    m_inSceneDescriptionUpdate(false)
+    m_model(new ScenarioModel(this, m_xmlHandler))
 {
     initConnections();
 }
@@ -460,7 +458,7 @@ void ScenarioDocument::load(Domain::Scenario* _scenario)
 {
     m_scenario = _scenario;
 
-    if (m_scenario != 0) {
+    if (m_scenario != nullptr) {
         load(m_scenario->text());
     }
 }

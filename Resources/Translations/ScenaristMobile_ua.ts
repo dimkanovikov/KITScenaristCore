@@ -83,14 +83,6 @@
 <context>
     <name>BusinessLogic::AbstractImporter</name>
     <message>
-        <source>All Supported Files</source>
-        <translation>Всі підтримувані файли</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation>Файл проекту сценарію KIT Scenarist</translation>
-    </message>
-    <message>
         <source>Final Draft screenplay</source>
         <translation>Сценарій формату Final Draft</translation>
     </message>
@@ -103,16 +95,28 @@
         <translation>Office Open XML</translation>
     </message>
     <message>
-        <source>OpenDocument Text</source>
-        <translation>OpenDocument Text</translation>
-    </message>
-    <message>
         <source>Final Draft template</source>
         <translation>Сценарій формату Final Draft</translation>
     </message>
     <message>
-        <source>Fountain Text</source>
-        <translation>Fountain Text</translation>
+        <source>All supported files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KIT Scenarist project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OpenDocument text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fountain text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Celtx project</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -126,8 +130,8 @@
         <translation>Слів</translation>
     </message>
     <message>
-        <source>Simbols</source>
-        <translation>Символів</translation>
+        <source>Symbols</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -268,11 +272,6 @@
         <translation>К</translation>
     </message>
     <message>
-        <source>TH</source>
-        <extracomment>Reduction of Title Header</extracomment>
-        <translation></translation>
-    </message>
-    <message>
         <source>Ti</source>
         <extracomment>Reduction of Title</extracomment>
         <translatorcomment>Зкорочення від Титр</translatorcomment>
@@ -291,11 +290,6 @@
         <translation>П</translation>
     </message>
     <message>
-        <source>FF</source>
-        <extracomment>Reduction of Folder Footer</extracomment>
-        <translation></translation>
-    </message>
-    <message>
         <source>SD</source>
         <extracomment>Reduction of Scene Description</extracomment>
         <translatorcomment>Зкорочення від Опис Сцени</translatorcomment>
@@ -303,6 +297,16 @@
     </message>
     <message>
         <source>Lyrics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TH</source>
+        <extracomment>Reduction of Title Header</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FF</source>
+        <extracomment>Reduction of Folder Footer</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -453,6 +457,10 @@
         <translation type="unfinished">ІНТ./НАТ</translation>
     </message>
     <message>
+        <source>FADE IN:</source>
+        <translation type="unfinished">ІЗ ЗАТЕМНЕННЯ:</translation>
+    </message>
+    <message>
         <source>AFTERNOON</source>
         <translation type="unfinished"></translation>
     </message>
@@ -485,10 +493,6 @@
     <message>
         <source>CUT TO:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>FADE IN:</source>
-        <translation type="unfinished">ІЗ ЗАТЕМНЕННЯ:</translation>
     </message>
     <message>
         <source>FADE OUT</source>
@@ -740,7 +744,7 @@
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;t first glance&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After installing and running the application, you will see a screen with a list of projects. Other application pages have a similar arrangement of elements, so let&apos;s look at it in more detail.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;At the top of the page is the main toolbar. In the left part of toolbar placed a button for calling the menu. On other pages, instead of the menu button, there may be a button to return to the previous page. In the middle is the title of the current page. And one or more auxiliary buttons can be located to the right (on the page with the list of projects this is the button for creating a new project).&lt;/span&gt;&lt;/p&gt;
@@ -1079,6 +1083,22 @@ Project didn&apos;t synchronized.</source>
         <source>Can&apos;t create temporatry file for import.</source>
         <translation>Неможливо створити тимчасовий файл для імпорту.</translation>
     </message>
+    <message>
+        <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moving project to the cloud failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -1208,6 +1228,10 @@ Project didn&apos;t synchronized.</source>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Leave review</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NavigatorView</name>
@@ -1263,6 +1287,10 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>Show cowriters</source>
         <translation>Показати співавторів</translation>
+    </message>
+    <message>
+        <source>Move project to the cloud</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1356,6 +1384,13 @@ Let&apos;s create the first one!</source>
     <name>QtMindMap::Node</name>
     <message>
         <source>&lt;b&gt;Root node&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ReviewView</name>
+    <message>
+        <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1643,6 +1678,10 @@ Your subscription is active until</source>
     <message>
         <source>DRAFT</source>
         <translation>ЧЕРНЕТКА</translation>
+    </message>
+    <message>
+        <source>Comment</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

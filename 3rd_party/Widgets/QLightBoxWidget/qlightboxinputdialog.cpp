@@ -6,7 +6,9 @@
 #include <3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.h>
 
 #include <QAbstractItemModel>
+#include <QApplication>
 #include <QDialogButtonBox>
+#include <QInputMethod>
 #include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
@@ -28,6 +30,7 @@ QString QLightBoxInputDialog::getText(QWidget* _parent, const QString& _title, c
     dialog.m_label->setText(_label);
 #else
     dialog.m_lineEdit->setLabel(_label);
+    connect(&dialog, &QLightBoxInputDialog::showed, QApplication::inputMethod(), &QInputMethod::show);
 #endif
     dialog.m_lineEdit->setText(_text);
     dialog.m_lineEdit->setProperty(::focusProperty, true);

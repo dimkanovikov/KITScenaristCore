@@ -5,41 +5,54 @@
 #include "WordHighlightColorsPane.h"
 
 #include <3rd_party/Helpers/ImageHelper.h>
+#include <3rd_party/Widgets/SlidingPanel/SlidingPanel.h>
+#include <3rd_party/Widgets/WAF/Animation/Animation.h>
 
 #include <QBitmap>
 #include <QEvent>
+#include <QHBoxLayout>
 #include <QMenu>
 #include <QPainter>
 #include <QWidgetAction>
 
-ColoredToolButton::ColoredToolButton(const QIcon& _icon, QWidget* _parent) :
+
+ColoredToolButton::ColoredToolButton(const QIcon& _icon, QWidget* _parent, QWidget* _topLevelParent) :
     QToolButton(_parent),
     m_icon(_icon),
     m_colorNotChoosedYet(true),
-    m_colorsPane(0)
+    m_colorsPane(nullptr)
 {
     setIcon(_icon);
     setFocusPolicy(Qt::NoFocus);
     aboutUpdateIcon(palette().text().color());
 
-    connect(this, SIGNAL(clicked()), this, SLOT(aboutClicked()));
+#ifdef MOBILE_OS
+    m_colorsPanel = new SlidingPanel(_topLevelParent);
+    m_colorsPanel->hide();
+#endif
+
+    connect(this, static_cast<void (QToolButton::*)(bool)>(&QToolButton::clicked), this, &ColoredToolButton::aboutClicked);
 }
 
-ColoredToolButton::ColoredToolButton(QWidget* _parent) :
+ColoredToolButton::ColoredToolButton(QWidget* _parent, QWidget* _topLevelParent) :
     QToolButton(_parent),
     m_colorNotChoosedYet(true),
-    m_colorsPane(0)
+    m_colorsPane(nullptr)
 {
     setFocusPolicy(Qt::NoFocus);
 
-    connect(this, SIGNAL(clicked()), this, SLOT(aboutClicked()));
+#ifdef MOBILE_OS
+    m_colorsPanel = new SlidingPanel(_topLevelParent);
+    m_colorsPanel->hide();
+
+    connect(this, static_cast<void (QToolButton::*)(bool)>(&QToolButton::clicked), this, &ColoredToolButton::aboutClicked);
+#endif
 }
 
 ColoredToolButton::~ColoredToolButton()
 {
-    if (m_colorsPane != 0) {
-        delete m_colorsPane;
-        m_colorsPane = 0;
+    if (m_colorsPane != nullptr) {
+        m_colorsPane->deleteLater();
     }
 }
 
@@ -48,16 +61,18 @@ void ColoredToolButton::setColorsPane(ColoredToolButton::ColorsPaneType _pane)
     //
     // Удаляем предыдущую панель и меню, если была
     //
-    if (m_colorsPane != 0) {
+    if (m_colorsPane != nullptr) {
         m_colorsPane->close();
-        disconnect(m_colorsPane, SIGNAL(selected(QColor)), this, SLOT(setColor(QColor)));
+        disconnect(m_colorsPane, &ColorsPane::selected, this, &ColoredToolButton::setColor);
         m_colorsPane->deleteLater();
-        m_colorsPane = 0;
+        m_colorsPane = nullptr;
     }
-    if (menu() != 0) {
+#ifndef MOBILE_OS
+    if (menu() != nullptr) {
         menu()->deleteLater();
-        setMenu(0);
+        setMenu(nullptr);
     }
+#endif
 
     //
     // Создаём новую панель
@@ -82,7 +97,17 @@ void ColoredToolButton::setColorsPane(ColoredToolButton::ColorsPaneType _pane)
     //
     // Настраиваем новую панель
     //
-    if (m_colorsPane != 0) {
+    setPopupMode(QToolButton::DelayedPopup);
+    if (m_colorsPane != nullptr) {
+#ifdef MOBILE_OS
+        QHBoxLayout* layout = static_cast<QHBoxLayout*>(m_colorsPanel->layout());
+        if (layout == nullptr) {
+            layout = new QHBoxLayout(m_colorsPanel);
+            layout->setContentsMargins(QMargins());
+            layout->setSpacing(0);
+        }
+        layout->addWidget(m_colorsPane);
+#else
         setPopupMode(QToolButton::MenuButtonPopup);
 
         QMenu* menu = new QMenu(this);
@@ -90,10 +115,9 @@ void ColoredToolButton::setColorsPane(ColoredToolButton::ColorsPaneType _pane)
         wa->setDefaultWidget(m_colorsPane);
         menu->addAction(wa);
         setMenu(menu);
+#endif
 
-        connect(m_colorsPane, SIGNAL(selected(QColor)), this, SLOT(setColor(QColor)));
-    } else {
-        setPopupMode(QToolButton::DelayedPopup);
+        connect(m_colorsPane, &ColorsPane::selected, this, &ColoredToolButton::setColor);
     }
 }
 
@@ -124,10 +148,16 @@ void ColoredToolButton::updateColor(const QColor& _color)
         newColor = palette().text().color();
     }
 
-    if (m_colorsPane != 0
+    if (m_colorsPane != nullptr
         && m_colorsPane->contains(_color)) {
         m_colorsPane->setCurrentColor(newColor);
+#ifdef MOBILE_OS
+        if (m_colorsPanel->isVisible()) {
+            WAF::Animation::slideOut(m_colorsPanel, WAF::FromBottomToTop, true, true);
+        }
+#else
         menu()->close();
+#endif
     }
 
     aboutUpdateIcon(_color);
@@ -162,7 +192,16 @@ void ColoredToolButton::aboutUpdateIcon(const QColor& _color)
 
 void ColoredToolButton::aboutClicked()
 {
-    if (m_colorsPane != 0) {
-        emit clicked(m_colorsPane->currentColor());
+    if (m_colorsPane == nullptr) {
+        return;
     }
+
+#ifdef MOBILE_OS
+    m_colorsPanel->raise();
+    m_colorsPanel->resize(m_colorsPanel->sizeHint());
+    m_colorsPanel->setFixedCornerPos(mapTo(m_colorsPanel->parentWidget(), pos()), Qt::BottomLeftCorner);
+    WAF::Animation::slideIn(m_colorsPanel, WAF::FromBottomToTop, true, true);
+#endif
+
+    emit clicked(m_colorsPane->currentColor());
 }

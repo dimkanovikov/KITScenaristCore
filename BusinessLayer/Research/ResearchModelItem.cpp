@@ -31,68 +31,58 @@ QPixmap ResearchModelItem::icon() const
     QString iconPath;
     if (m_research != 0) {
         switch (m_research->type()) {
-            case Research::Scenario: {
-                iconPath = ":/Graphics/Icons/script1.png";
-                break;
-            }
-
             case Research::ResearchRoot: {
-                iconPath = ":/Graphics/Icons/research1.png";
+                iconPath = ":/Graphics/Iconset/file-tree.svg";
                 break;
             }
 
             case Research::Folder: {
-                iconPath = ":/Graphics/Icons/folder.png";
-                break;
-            }
-
-            case Research::Text: {
-                iconPath = ":/Graphics/Icons/file-document.png";
+                iconPath = ":/Graphics/Iconset/folder.svg";
                 break;
             }
 
             case Research::Url: {
-                iconPath = ":/Graphics/Icons/file-web.png";
+                iconPath = ":/Graphics/Iconset/web.svg";
                 break;
             }
 
             case Research::ImagesGallery: {
-                iconPath = ":/Graphics/Icons/file-images.png";
+                iconPath = ":/Graphics/Iconset/image-multiple.svg";
                 break;
             }
 
             case Research::Image: {
-                iconPath = ":/Graphics/Icons/file-image.png";
+                iconPath = ":/Graphics/Iconset/image.svg";
                 break;
             }
 
             case Research::MindMap: {
-                iconPath = ":/Graphics/Icons/file-mind-map.png";
+                iconPath = ":/Graphics/Iconset/mind-map.svg";
                 break;
             }
 
             case Research::CharactersRoot: {
-                iconPath = ":/Graphics/Icons/characters.png";
+                iconPath = ":/Graphics/Iconset/account-multiple.svg";
                 break;
             }
 
             case Research::Character: {
-                iconPath = ":/Graphics/Icons/character.png";
+                iconPath = ":/Graphics/Iconset/account.svg";
                 break;
             }
 
             case Research::LocationsRoot: {
-                iconPath = ":/Graphics/Icons/locations.png";
+                iconPath = ":/Graphics/Iconset/home-multiple.svg";
                 break;
             }
 
             case Research::Location: {
-                iconPath = ":/Graphics/Icons/location.png";
+                iconPath = ":/Graphics/Iconset/home.svg";
                 break;
             }
 
             default: {
-                iconPath = ":/Graphics/Icons/file.png";
+                iconPath = ":/Graphics/Iconset/file-document-box.svg";
                 break;
             }
         }

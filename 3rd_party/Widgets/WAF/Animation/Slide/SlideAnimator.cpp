@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015  Dimka Novikov, to@dimkanovikov.pro
+ * Copyright (C) 2015-2017  Dimka Novikov, to@dimkanovikov.pro
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -30,7 +30,7 @@ SlideAnimator::SlideAnimator(QWidget* _widgetForSlide) :
     m_direction(WAF::FromLeftToRight),
     m_isFixBackground(true),
     m_isFixStartSize(false),
-    m_animation(new QPropertyAnimation(_widgetForSlide, "maximumWidth")),
+    m_animation(new QPropertyAnimation(_widgetForSlide, "minimumWidth")),
     m_decorator(new SlideForegroundDecorator(_widgetForSlide))
 {
     Q_ASSERT(_widgetForSlide);
@@ -44,11 +44,12 @@ SlideAnimator::SlideAnimator(QWidget* _widgetForSlide) :
     //
     // Синхронизируем изменение минимальных границ с максимальными
     //
-    connect(m_animation, &QPropertyAnimation::valueChanged, [=] {
+    connect(m_animation, &QPropertyAnimation::valueChanged, [this] (const QVariant& _value) {
+        const int value = _value.toInt();
         if (isWidth()) {
-            widgetForSlide()->setMinimumWidth(widgetForSlide()->maximumWidth());
+            widgetForSlide()->setMaximumWidth(value);
         } else {
-            widgetForSlide()->setMinimumHeight(widgetForSlide()->maximumHeight());
+            widgetForSlide()->setMaximumHeight(value);
         }
     });
 
@@ -65,7 +66,7 @@ void SlideAnimator::setAnimationDirection(WAF::AnimationDirection _direction)
 {
     if (m_direction != _direction) {
         m_direction = _direction;
-        m_animation->setPropertyName(isWidth() ? "maximumWidth" : "maximumHeight");
+        m_animation->setPropertyName(isWidth() ? "minimumWidth" : "minimumHeight");
     }
 }
 
@@ -232,7 +233,7 @@ void SlideAnimator::slideOut()
         //
         // ... если предыдущая анимация закончилась, запускаем новую анимацию
         //
-        m_animation->setEasingCurve(QEasingCurve::InQuart);
+        m_animation->setEasingCurve(QEasingCurve::OutQuart);
         m_animation->setDirection(QPropertyAnimation::Forward);
         m_animation->setStartValue(isWidth() ? widgetForSlide()->width() : widgetForSlide()->height());
         m_animation->setEndValue(isWidth() ? finalSize.width() : finalSize.height());

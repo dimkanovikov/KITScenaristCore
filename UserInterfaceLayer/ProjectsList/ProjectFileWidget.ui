@@ -132,8 +132,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/Resources.qrc">
-            <normaloff>:/Graphics/Icons/Editing/edit.png</normaloff>:/Graphics/Icons/Editing/edit.png</iconset>
+           <iconset resource="../../Resources/ResourcesMobile.qrc">
+            <normaloff>:/Graphics/Iconset/pencil.png</normaloff>:/Graphics/Iconset/pencil.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -155,8 +155,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/Resources.qrc">
-            <normaloff>:/Graphics/Icons/Editing/delete.png</normaloff>:/Graphics/Icons/Editing/delete.png</iconset>
+           <iconset resource="../../Resources/ResourcesMobile.qrc">
+            <normaloff>:/Graphics/Iconset/delete.png</normaloff>:/Graphics/Iconset/delete.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -178,8 +178,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/Resources.qrc">
-            <normaloff>:/Graphics/Icons/eye-off.png</normaloff>:/Graphics/Icons/eye-off.png</iconset>
+           <iconset resource="../../Resources/ResourcesMobile.qrc">
+            <normaloff>:/Graphics/Iconset/eye-off.png</normaloff>:/Graphics/Iconset/eye-off.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -201,8 +201,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/Resources.qrc">
-            <normaloff>:/Graphics/Icons/move-to-cloud.png</normaloff>:/Graphics/Icons/move-to-cloud.png</iconset>
+           <iconset resource="../../Resources/ResourcesMobile.qrc">
+            <normaloff>:/Graphics/Iconset/cloud-upload.png</normaloff>:/Graphics/Iconset/cloud-upload.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -224,8 +224,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/Resources.qrc">
-            <normaloff>:/Graphics/Icons/Editing/account-plus.png</normaloff>:/Graphics/Icons/Editing/account-plus.png</iconset>
+           <iconset resource="../../Resources/ResourcesMobile.qrc">
+            <normaloff>:/Graphics/Iconset/account-plus.png</normaloff>:/Graphics/Iconset/account-plus.png</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -247,8 +247,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/Resources.qrc">
-            <normaloff>:/Graphics/Icons/Editing/account-multiple.png</normaloff>:/Graphics/Icons/Editing/account-multiple.png</iconset>
+           <iconset resource="../../Resources/ResourcesMobile.qrc">
+            <normaloff>:/Graphics/Iconset/account-multiple.png</normaloff>:/Graphics/Iconset/account-multiple.png</iconset>
           </property>
           <property name="checkable">
            <bool>true</bool>
@@ -276,8 +276,8 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../Resources/Resources.qrc">
-         <normaloff>:/Graphics/Icons/Mobile/dots-vertical.png</normaloff>:/Graphics/Icons/Mobile/dots-vertical.png</iconset>
+        <iconset resource="../../Resources/ResourcesMobile.qrc">
+         <normaloff>:/Graphics/Iconset/dots-vertical.png</normaloff>:/Graphics/Iconset/dots-vertical.png</iconset>
        </property>
        <property name="checkable">
         <bool>true</bool>
@@ -331,7 +331,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../Resources/Resources.qrc"/>
+  <include location="../../Resources/ResourcesMobile.qrc"/>
  </resources>
  <connections/>
 </ui>
