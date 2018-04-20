@@ -64,11 +64,11 @@ namespace {
     /**
      * @brief Карта соответствия ключей титульной страницы
      */
-    const QMap<QString, QString> kTitleKeys({{"Author", "author"},
-                                             {"DC.rights", "year"},
-                                             {"CX.contact", "contacts"},
-                                             {"CX.byline", "genre"},
-                                             {"DC.source", "additional_info"}});
+    const QMap<QString, QString> kTitleKeys({std::make_pair(QString("Author"), QString("author")),
+                                             std::make_pair(QString("DC.rights"), QString("year")),
+                                             std::make_pair(QString("CX.contact"), QString("contacts")),
+                                             std::make_pair(QString("CX.byline"), QString("genre")),
+                                             std::make_pair(QString("DC.source"), QString("additional_info"))});
 }
 
 
