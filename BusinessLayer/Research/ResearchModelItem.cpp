@@ -32,57 +32,57 @@ QPixmap ResearchModelItem::icon() const
     if (m_research != 0) {
         switch (m_research->type()) {
             case Research::ResearchRoot: {
-                iconPath = ":/Graphics/Iconset/file-tree.png";
+                iconPath = ":/Graphics/Iconset/file-tree.svg";
                 break;
             }
 
             case Research::Folder: {
-                iconPath = ":/Graphics/Iconset/folder.png";
+                iconPath = ":/Graphics/Iconset/folder.svg";
                 break;
             }
 
             case Research::Url: {
-                iconPath = ":/Graphics/Iconset/web.png";
+                iconPath = ":/Graphics/Iconset/web.svg";
                 break;
             }
 
             case Research::ImagesGallery: {
-                iconPath = ":/Graphics/Iconset/image-multiple.png";
+                iconPath = ":/Graphics/Iconset/image-multiple.svg";
                 break;
             }
 
             case Research::Image: {
-                iconPath = ":/Graphics/Iconset/image.png";
+                iconPath = ":/Graphics/Iconset/image.svg";
                 break;
             }
 
             case Research::MindMap: {
-                iconPath = ":/Graphics/Iconset/sitemap.png";
+                iconPath = ":/Graphics/Iconset/mind-map.svg";
                 break;
             }
 
             case Research::CharactersRoot: {
-                iconPath = ":/Graphics/Iconset/account-multiple.png";
+                iconPath = ":/Graphics/Iconset/account-multiple.svg";
                 break;
             }
 
             case Research::Character: {
-                iconPath = ":/Graphics/Iconset/account.png";
+                iconPath = ":/Graphics/Iconset/account.svg";
                 break;
             }
 
             case Research::LocationsRoot: {
-                iconPath = ":/Graphics/Iconset/home-multiple.png";
+                iconPath = ":/Graphics/Iconset/home-multiple.svg";
                 break;
             }
 
             case Research::Location: {
-                iconPath = ":/Graphics/Iconset/home.png";
+                iconPath = ":/Graphics/Iconset/home.svg";
                 break;
             }
 
             default: {
-                iconPath = ":/Graphics/Iconset/file-document-box.png";
+                iconPath = ":/Graphics/Iconset/file-document-box.svg";
                 break;
             }
         }

@@ -37,7 +37,8 @@ public:
         Swedish,
         Farsi,
         Hebrew,
-        Polish
+        Polish,
+        Turkish
     };
 
     /**

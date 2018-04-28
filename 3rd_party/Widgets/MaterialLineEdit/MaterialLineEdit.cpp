@@ -15,7 +15,7 @@ class LineEditWithFixedPosition : public QLineEdit
 {
 public:
     explicit LineEditWithFixedPosition(QWidget* _parent = nullptr) : QLineEdit(_parent) {}
-    
+
     /**
      * @brief Установить необходимость корректировки позиции
      */
@@ -24,7 +24,7 @@ public:
             m_needCorrectPosition = _needCorrect;
         }
     }
-    
+
     /**
      * @brief Переопределяем для корректной работы позиционирования виджета на экране
      */
@@ -47,7 +47,7 @@ public:
         return result;
     }
     /** @} */
-    
+
 private:
     /**
      * @brief Необходимо ли корректировать позицию на экране
@@ -68,6 +68,7 @@ MaterialLineEdit::MaterialLineEdit(QWidget* _parent) :
     m_label->setFocusProxy(m_lineEdit);
     m_helper->setFocusPolicy(Qt::StrongFocus);
     m_helper->setFocusProxy(m_lineEdit);
+    m_helper->setWordWrap(true);
 
     m_lineEdit->installEventFilter(this);
     m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints()

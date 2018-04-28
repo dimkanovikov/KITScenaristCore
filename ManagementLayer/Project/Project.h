@@ -134,6 +134,23 @@ namespace ManagementLayer
 		void setSyncAvailable(bool _syncAvailable, int _errorCode = 0);
 		/** @} */
 
+        /**
+         * @brief Получить путь к файлу полной резервной копии проекта
+         */
+        QString fullBackupFileName(const QString& _backupDirPath) const;
+
+        /**
+         * @brief Получить путь к файлу с резервными копиями последних версий сценария
+         */
+        QString versionsBackupFileName(const QString& _backupDirPath) const;
+
+    private:
+
+        /**
+         * @brief Получить путь к файлу резервной копии заданного типа
+         */
+        QString backupFileName(const QString& _backupDirPath, bool _isVersionsBackup) const;
+
 	private:
 		/**
 		 * @brief Тип проекта

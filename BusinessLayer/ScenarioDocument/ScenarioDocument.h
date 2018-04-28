@@ -252,22 +252,22 @@ namespace BusinessLogic
         /**
          * @brief Собственно сам сценарий
          */
-        Domain::Scenario* m_scenario;
+        Domain::Scenario* m_scenario = nullptr;
 
         /**
          * @brief Обработчик xml
          */
-        ScenarioXml* m_xmlHandler;
+        ScenarioXml* m_xmlHandler = nullptr;
 
         /**
          * @brief Документ сценария
          */
-        ScenarioTextDocument* m_document;
+        ScenarioTextDocument* m_document = nullptr;
 
         /**
          * @brief Дерево сценария
          */
-        ScenarioModel* m_model;
+        ScenarioModel* m_model = nullptr;
 
         /**
          * @brief Карта элементов дерева сценария
@@ -277,7 +277,7 @@ namespace BusinessLogic
         /**
          * @brief Флаг операции обновления описания сцены, для предотвращения рекурсии
          */
-        bool m_inSceneDescriptionUpdate;
+        bool m_inSceneDescriptionUpdate = false;
 
         /**
          * @brief Параметры последнейго изменения текста сценария

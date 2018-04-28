@@ -230,12 +230,12 @@ QPixmap ScenarioModelItem::icon() const
 
     switch (m_type) {
         case Folder: {
-            iconPath = ":/Graphics/Iconset/folder.png";
+            iconPath = ":/Graphics/Iconset/folder.svg";
             break;
         }
 
         default: {
-            iconPath = ":/Graphics/Iconset/file-document-box.png";
+            iconPath = ":/Graphics/Iconset/file-document-box.svg";
             break;
         }
     }

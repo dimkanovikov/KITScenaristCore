@@ -547,7 +547,8 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     //
     // Добавляем в меню фозможности форматирования
     //
-    if (textCursor().hasSelection()) {
+    if (!isReadOnly()
+        && textCursor().hasSelection()) {
         QWidget* widget = new QWidget(menu);
         QHBoxLayout* layout = new QHBoxLayout(widget);
         layout->setSpacing(0);
@@ -555,7 +556,7 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         //
         FlatButton* bold = new FlatButton;
         bold->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        bold->setIcons(QIcon(":/Graphics/Iconset/format-bold.png"));
+        bold->setIcons(QIcon(":/Graphics/Iconset/format-bold.svg"));
         bold->setCheckable(true);
         bold->setChecked(textCursor().charFormat().font().bold());
         bold->setProperty("inContextMenu", true);
@@ -565,7 +566,7 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         //
         FlatButton* italic = new FlatButton;
         italic->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        italic->setIcons(QIcon(":/Graphics/Iconset/format-italic.png"));
+        italic->setIcons(QIcon(":/Graphics/Iconset/format-italic.svg"));
         italic->setCheckable(true);
         italic->setChecked(textCursor().charFormat().font().italic());
         italic->setProperty("inContextMenu", true);
@@ -574,7 +575,7 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         //
         FlatButton* underline = new FlatButton;
         underline->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        underline->setIcons(QIcon(":/Graphics/Iconset/format-underline.png"));
+        underline->setIcons(QIcon(":/Graphics/Iconset/format-underline.svg"));
         underline->setCheckable(true);
         underline->setChecked(textCursor().charFormat().font().underline());
         underline->setProperty("inContextMenu", true);
