@@ -23,6 +23,16 @@ namespace BusinessLogic
          */
         void setHasBookmark(bool _hasBookmark);
 
+        /**
+         * @brief Получить текст закладки
+         */
+        QString bookmark() const;
+
+        /**
+         * @brief Установить текст закладки
+         */
+        void setBookmark(const QString& _bookmark);
+
     private:
         /**
          * @brief Установлена ли закладка для блока

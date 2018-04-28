@@ -33,7 +33,10 @@ namespace BusinessLogic
          * @note Это приходится делать вручную, т.к. изменения пользовательских свойств блока
          *		 не отслеживаются автоматически
          */
+        /** @{ */
+        static void updateBlockRevision(QTextBlock& _block);
         static void updateBlockRevision(QTextCursor& _cursor);
+        /** @} */
 
     public:
         explicit ScenarioTextDocument(QObject *parent, ScenarioXml* _xmlHandler);

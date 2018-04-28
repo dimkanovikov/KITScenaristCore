@@ -17,6 +17,16 @@ void TextBlockInfo::setHasBookmark(bool _hasBookmark)
     m_hasBookmark = _hasBookmark;
 }
 
+QString TextBlockInfo::bookmark() const
+{
+    return m_bookmark;
+}
+
+void TextBlockInfo::setBookmark(const QString& _bookmark)
+{
+    m_bookmark = _bookmark;
+}
+
 
 // ****
 

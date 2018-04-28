@@ -454,6 +454,50 @@ void ScenarioDocument::copyItemDescriptionToScript(int _position)
     cursor.endEditBlock();
 }
 
+void ScenarioDocument::addBookmark(int _position)
+{
+    QTextBlock block = document()->findBlock(_position);
+    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+    if (blockInfo == nullptr) {
+        switch (ScenarioBlockStyle::forBlock(block)) {
+            case ScenarioBlockStyle::SceneHeading:
+            case ScenarioBlockStyle::Character: {
+                Q_ASSERT_X(0, Q_FUNC_INFO, "Text block info for scene heading or caharacter should be created before.");
+                break;
+            }
+
+            default: {
+                blockInfo = new TextBlockInfo;
+                break;
+            }
+        }
+    }
+    blockInfo->setHasBookmark(true);
+    block.setUserData(blockInfo);
+
+    ScenarioTextDocument::updateBlockRevision(block);
+    aboutContentsChange(_position, 0, 0);
+
+    emit textChanged();
+}
+
+void ScenarioDocument::removeBookmark(int _position)
+{
+    QTextBlock block = document()->findBlock(_position);
+    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+    if (blockInfo == nullptr) {
+        return;
+    }
+
+    blockInfo->setHasBookmark(false);
+    block.setUserData(blockInfo);
+
+    ScenarioTextDocument::updateBlockRevision(block);
+    aboutContentsChange(_position, 0, 0);
+
+    emit textChanged();
+}
+
 void ScenarioDocument::load(Domain::Scenario* _scenario)
 {
     m_scenario = _scenario;

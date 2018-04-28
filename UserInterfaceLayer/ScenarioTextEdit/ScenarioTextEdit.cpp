@@ -559,12 +559,12 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
             && blockInfo->hasBookmark()) {
             QAction* removeBookmark = new QAction(tr("Remove bookmark"), menu);
             connect(removeBookmark, &QAction::triggered,
-                    this, [this, blockPosition] { this->removeBookmark(blockPosition); });
+                    this, [this, blockPosition] { emit removeBookmarkRequested(blockPosition); });
             menu->insertAction(firstAction, removeBookmark);
         } else {
             QAction* addBookmark = new QAction(tr("Add bookmark"), menu);
             connect(addBookmark, &QAction::triggered,
-                    this, [this, blockPosition] { this->addBookmark(blockPosition); });
+                    this, [this, blockPosition] { emit addBookmarkRequested(blockPosition); });
             menu->insertAction(firstAction, addBookmark);
         }
         menu->insertSeparator(firstAction);
@@ -662,40 +662,6 @@ void ScenarioTextEdit::setTextUnderline(bool _underline)
     format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
     format.setFontUnderline(_underline);
     cursor.mergeCharFormat(format);
-}
-
-void ScenarioTextEdit::addBookmark(int _textPosition)
-{
-    QTextBlock block = document()->findBlock(_textPosition);
-    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
-    if (blockInfo == nullptr) {
-        switch (ScenarioBlockStyle::forBlock(block)) {
-            case ScenarioBlockStyle::SceneHeading:
-            case ScenarioBlockStyle::Character: {
-                Q_ASSERT_X(0, Q_FUNC_INFO, "Text block info for scene heading or caharacter should be created before.");
-                break;
-            }
-
-            default: {
-                blockInfo = new TextBlockInfo;
-                break;
-            }
-        }
-    }
-    blockInfo->setHasBookmark(true);
-    block.setUserData(blockInfo);
-}
-
-void ScenarioTextEdit::removeBookmark(int _textPosition)
-{
-    QTextBlock block = document()->findBlock(_textPosition);
-    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
-    if (blockInfo == nullptr) {
-        return;
-    }
-
-    blockInfo->setHasBookmark(false);
-    block.setUserData(blockInfo);
 }
 
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
@@ -1312,9 +1278,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             }
             if (bottomBlock == document()->firstBlock()) {
                 bottomBlock = document()->lastBlock();
-            } else if (bottomBlock != document()->lastBlock()) {
-                bottomBlock = bottomBlock.next();
             }
+            bottomBlock = bottomBlock.next();
 
             //
             // Проходим блоки на экране и декорируем их
@@ -1409,29 +1374,27 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                             //
                             // Прорисовка закладок
                             //
-                            {
-                                TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
-                                if (blockInfo != nullptr
-                                    && blockInfo->hasBookmark()) {
-                                    //
-                                    // Определим область для отрисовки и выведем номер сцены в редактор
-                                    //
-                                    QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
-                                                    ? pageLeft + leftDelta
-                                                    : textRight + leftDelta,
-                                                    cursorR.top());
-                                    QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
-                                                        ? textLeft + leftDelta
-                                                        : pageRight + leftDelta,
-                                                        cursorR.bottom());
-                                    QRectF rect(topLeft, bottomRight);
-                                    painter.setBrush(QColor("#ec3838"));
-                                    painter.setPen(QColor("#ec3838"));
-                                    painter.drawRect(rect);
-                                    painter.setPen(Qt::white);
-                                } else {
-                                    painter.setPen(palette().text().color());
-                                }
+                            TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+                            if (blockInfo != nullptr
+                                && blockInfo->hasBookmark()) {
+                                //
+                                // Определим область для отрисовки и выведем номер сцены в редактор
+                                //
+                                QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                                                ? pageLeft + leftDelta
+                                                : textRight + leftDelta,
+                                                cursorR.top());
+                                QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                                    ? textLeft + leftDelta
+                                                    : pageRight + leftDelta,
+                                                    cursorR.bottom());
+                                QRectF rect(topLeft, bottomRight);
+                                painter.setBrush(QColor("#ec3838"));
+                                painter.setPen(QColor("#ec3838"));
+                                painter.drawRect(rect);
+                                painter.setPen(Qt::white);
+                            } else {
+                                painter.setPen(palette().text().color());
                             }
 
                             //
@@ -1442,8 +1405,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                 //
                                 // Определим номер сцены
                                 //
-                                QTextBlockUserData* textBlockData = block.userData();
-                                if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
+                                if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(blockInfo)) {
                                     const QString sceneNumber = QString::number(info->sceneNumber()) + ".";
 
                                     //
@@ -1472,8 +1434,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                 //
                                 // Определим номер реплики
                                 //
-                                QTextBlockUserData* textBlockData = block.userData();
-                                if (CharacterBlockInfo* info = dynamic_cast<CharacterBlockInfo*>(textBlockData)) {
+                                if (CharacterBlockInfo* info = dynamic_cast<CharacterBlockInfo*>(blockInfo)) {
                                     const QString dialogueNumber = QString::number(info->dialogueNumbder()) + ":";
 
                                     //

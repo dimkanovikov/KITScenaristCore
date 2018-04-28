@@ -69,9 +69,15 @@ namespace {
 }
 
 
+void ScenarioTextDocument::updateBlockRevision(QTextBlock& _block)
+{
+    _block.setRevision(_block.revision() + 1);
+}
+
 void ScenarioTextDocument::updateBlockRevision(QTextCursor& _cursor)
 {
-    _cursor.block().setRevision(_cursor.block().revision() + 1);
+    QTextBlock block = _cursor.block();
+    updateBlockRevision(block);
 }
 
 ScenarioTextDocument::ScenarioTextDocument(QObject *parent, ScenarioXml* _xmlHandler) :

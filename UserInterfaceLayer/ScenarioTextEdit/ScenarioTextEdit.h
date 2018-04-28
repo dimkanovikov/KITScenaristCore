@@ -184,16 +184,6 @@ namespace UserInterface
         void setTextUnderline(bool _underline);
         /** @} */
 
-        /**
-         * @brief Добавить закладку для блока в указанной позиции
-         */
-        void addBookmark(int _textPosition);
-
-        /**
-         * @brief Удалить закладку для блока в указанной позиции
-         */
-        void removeBookmark(int _textPosition);
-
     signals:
         /**
          * @brief Запрос на отмену последнего действия
@@ -224,6 +214,16 @@ namespace UserInterface
          * @brief В документ были внесены редакторские примечания
          */
         void reviewChanged();
+
+        /**
+         * @brief Пользователь хочет добавить закладку в заданном месте документа
+         */
+        void addBookmarkRequested(int _position);
+
+        /**
+         * @brief Пользователь хочет убрать закладку в заданном месте документа
+         */
+        void removeBookmarkRequested(int _position);
 
     protected:
         /**
