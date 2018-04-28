@@ -545,6 +545,32 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     }
 
     //
+    // Добавляем возможность добавления закладки
+    //
+    {
+        const QTextCursor cursor = cursorForPosition(_pos);
+        const QTextBlock block = cursor.block();
+        const TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+
+        QAction* firstAction = menu->actions().first();
+
+        const int blockPosition = block.position();
+        if (blockInfo != nullptr
+            && blockInfo->hasBookmark()) {
+            QAction* removeBookmark = new QAction(tr("Remove bookmark"), menu);
+            connect(removeBookmark, &QAction::triggered,
+                    this, [this, blockPosition] { this->removeBookmark(blockPosition); });
+            menu->insertAction(firstAction, removeBookmark);
+        } else {
+            QAction* addBookmark = new QAction(tr("Add bookmark"), menu);
+            connect(addBookmark, &QAction::triggered,
+                    this, [this, blockPosition] { this->addBookmark(blockPosition); });
+            menu->insertAction(firstAction, addBookmark);
+        }
+        menu->insertSeparator(firstAction);
+    }
+
+    //
     // Добавляем в меню фозможности форматирования
     //
     if (!isReadOnly()
@@ -636,6 +662,40 @@ void ScenarioTextEdit::setTextUnderline(bool _underline)
     format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
     format.setFontUnderline(_underline);
     cursor.mergeCharFormat(format);
+}
+
+void ScenarioTextEdit::addBookmark(int _textPosition)
+{
+    QTextBlock block = document()->findBlock(_textPosition);
+    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+    if (blockInfo == nullptr) {
+        switch (ScenarioBlockStyle::forBlock(block)) {
+            case ScenarioBlockStyle::SceneHeading:
+            case ScenarioBlockStyle::Character: {
+                Q_ASSERT_X(0, Q_FUNC_INFO, "Text block info for scene heading or caharacter should be created before.");
+                break;
+            }
+
+            default: {
+                blockInfo = new TextBlockInfo;
+                break;
+            }
+        }
+    }
+    blockInfo->setHasBookmark(true);
+    block.setUserData(blockInfo);
+}
+
+void ScenarioTextEdit::removeBookmark(int _textPosition)
+{
+    QTextBlock block = document()->findBlock(_textPosition);
+    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+    if (blockInfo == nullptr) {
+        return;
+    }
+
+    blockInfo->setHasBookmark(false);
+    block.setUserData(blockInfo);
 }
 
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
@@ -1346,6 +1406,34 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         // Остальные декорации
                         //
                         else {
+                            //
+                            // Прорисовка закладок
+                            //
+                            {
+                                TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+                                if (blockInfo != nullptr
+                                    && blockInfo->hasBookmark()) {
+                                    //
+                                    // Определим область для отрисовки и выведем номер сцены в редактор
+                                    //
+                                    QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                                                    ? pageLeft + leftDelta
+                                                    : textRight + leftDelta,
+                                                    cursorR.top());
+                                    QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                                        ? textLeft + leftDelta
+                                                        : pageRight + leftDelta,
+                                                        cursorR.bottom());
+                                    QRectF rect(topLeft, bottomRight);
+                                    painter.setBrush(QColor("#ec3838"));
+                                    painter.setPen(QColor("#ec3838"));
+                                    painter.drawRect(rect);
+                                    painter.setPen(Qt::white);
+                                } else {
+                                    painter.setPen(palette().text().color());
+                                }
+                            }
+
                             //
                             // Прорисовка номеров сцен, если необходимо
                             //
@@ -2126,11 +2214,10 @@ void ScenarioTextEdit::initEditor()
 void ScenarioTextEdit::initEditorConnections()
 {
     if (m_document != 0) {
-        connect(m_document, SIGNAL(contentsChange(int,int,int)),
-                this, SLOT(aboutCorrectAdditionalCursors(int,int,int)));
-        connect(m_document, SIGNAL(beforePatchApply()), this, SLOT(aboutSaveEditorState()));
-        connect(m_document, SIGNAL(afterPatchApply()), this, SLOT(aboutLoadEditorState()));
-        connect(m_document, SIGNAL(reviewChanged()), this, SIGNAL(reviewChanged()));
+        connect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioTextEdit::aboutCorrectAdditionalCursors);
+        connect(m_document, &ScenarioTextDocument::beforePatchApply, this, &ScenarioTextEdit::aboutSaveEditorState);
+        connect(m_document, &ScenarioTextDocument::afterPatchApply, this, &ScenarioTextEdit::aboutLoadEditorState);
+        connect(m_document, &ScenarioTextDocument::reviewChanged, this, &ScenarioTextEdit::reviewChanged);
         connect(m_document, &ScenarioTextDocument::redoAvailableChanged, this, &ScenarioTextEdit::redoAvailableChanged);
     }
 }
@@ -2138,11 +2225,10 @@ void ScenarioTextEdit::initEditorConnections()
 void ScenarioTextEdit::removeEditorConnections()
 {
     if (m_document != 0) {
-        disconnect(m_document, SIGNAL(contentsChange(int,int,int)),
-                   this, SLOT(aboutCorrectAdditionalCursors(int,int,int)));
-        disconnect(m_document, SIGNAL(beforePatchApply()), this, SLOT(aboutSaveEditorState()));
-        disconnect(m_document, SIGNAL(afterPatchApply()), this, SLOT(aboutLoadEditorState()));
-        disconnect(m_document, SIGNAL(reviewChanged()), this, SIGNAL(reviewChanged()));
+        disconnect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioTextEdit::aboutCorrectAdditionalCursors);
+        disconnect(m_document, &ScenarioTextDocument::beforePatchApply, this, &ScenarioTextEdit::aboutSaveEditorState);
+        disconnect(m_document, &ScenarioTextDocument::afterPatchApply, this, &ScenarioTextEdit::aboutLoadEditorState);
+        disconnect(m_document, &ScenarioTextDocument::reviewChanged, this, &ScenarioTextEdit::reviewChanged);
         disconnect(m_document, &ScenarioTextDocument::redoAvailableChanged, this, &ScenarioTextEdit::redoAvailableChanged);
     }
 }

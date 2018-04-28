@@ -7,6 +7,20 @@
 using namespace BusinessLogic;
 
 
+bool TextBlockInfo::hasBookmark() const
+{
+    return m_hasBookmark;
+}
+
+void TextBlockInfo::setHasBookmark(bool _hasBookmark)
+{
+    m_hasBookmark = _hasBookmark;
+}
+
+
+// ****
+
+
 SceneHeadingBlockInfo::SceneHeadingBlockInfo(const QString& _uuid) :
     m_uuid(_uuid),
     m_sceneNumber(0)

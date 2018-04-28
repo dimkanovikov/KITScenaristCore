@@ -184,6 +184,16 @@ namespace UserInterface
         void setTextUnderline(bool _underline);
         /** @} */
 
+        /**
+         * @brief Добавить закладку для блока в указанной позиции
+         */
+        void addBookmark(int _textPosition);
+
+        /**
+         * @brief Удалить закладку для блока в указанной позиции
+         */
+        void removeBookmark(int _textPosition);
+
     signals:
         /**
          * @brief Запрос на отмену последнего действия
@@ -265,7 +275,7 @@ namespace UserInterface
          */
         bool canComplete() const override;
 
-    private slots:
+    private:
         /**
          * @brief Скорректировать позиции курсоров соавторов
          */
@@ -286,7 +296,6 @@ namespace UserInterface
          */
         void aboutLoadEditorState();
 
-    private:
         /**
          * @brief Очистить текущий блок от установленного в нём типа
          */
