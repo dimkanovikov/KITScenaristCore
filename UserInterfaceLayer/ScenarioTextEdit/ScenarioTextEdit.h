@@ -184,6 +184,11 @@ namespace UserInterface
         void setTextUnderline(bool _underline);
         /** @} */
 
+        /**
+         * @brief Применить/отменить сдвоенный диалог для блока
+         */
+        void makeDualDialogue(bool _apply);
+
     signals:
         /**
          * @brief Запрос на отмену последнего действия

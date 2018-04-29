@@ -114,7 +114,8 @@ QMenu* SpellCheckTextEdit::createContextMenu(const QPoint& _pos, QWidget* _paren
     //
     // Добавим пункты меню, связанные с проверкой орфографии
     //
-    if (m_spellCheckHighlighter->useSpellChecker()) {
+    if (m_spellCheckHighlighter->useSpellChecker()
+        && !textCursor().hasSelection()) {
         //
         // Определим слово под курсором
         //

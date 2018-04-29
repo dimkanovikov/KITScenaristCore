@@ -34,6 +34,7 @@
 #include <QTextBlock>
 #include <QTextCursor>
 #include <QTextDocumentFragment>
+#include <QTextTable>
 #include <QTimer>
 #include <QWheelEvent>
 #include <QWidgetAction>
@@ -47,7 +48,13 @@ namespace {
      * @brief Флаг положения курсора
      * @note Используется для корректировки скрола при совместном редактировании
      */
-    const char* CURSOR_RECT = "cursorRect";
+    const char* kCursorRectKey = "cursorRect";
+
+    /**
+     * @brief Позиция мыши в момент вызова контекстного меню
+     * @note Используется для определения над каким блоком было вызвано действие контекстного меню
+     */
+    const char* kLastMousePosKey = "lastMousePos";
 }
 
 
@@ -536,9 +543,33 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     QMenu* menu = CompletableTextEdit::createContextMenu(_pos, _parent);
 
     //
+    // Добавляем возможность преобразовать в сдвоенный диалог и обратно
+    //
+    {
+        QAction* makeDualDialogue = new QAction(tr("Dual dialogue"), menu);
+        makeDualDialogue->setCheckable(true);
+        makeDualDialogue->setProperty(kLastMousePosKey, _pos);
+        connect(makeDualDialogue, &QAction::toggled, this, &ScenarioTextEdit::makeDualDialogue);
+        menu->insertAction(menu->actions().first(), makeDualDialogue);
+        const auto blockType = ScenarioBlockStyle::forBlock(cursorForPosition(_pos).block());
+        if (blockType == ScenarioBlockStyle::Character
+            || blockType == ScenarioBlockStyle::Parenthetical
+            || blockType == ScenarioBlockStyle::Dialogue) {
+            makeDualDialogue->setChecked(false);
+        } else if (blockType == ScenarioBlockStyle::CharacterDual
+                   || blockType == ScenarioBlockStyle::ParentheticalDual
+                   || blockType == ScenarioBlockStyle::DialogueDual) {
+            makeDualDialogue->setChecked(true);
+        } else {
+            makeDualDialogue->setVisible(false);
+        }
+    }
+
+    //
     // Добавляем дополнительные действия в меню
     //
-    if (!m_additionalContextMenuActions.isEmpty()) {
+    if (!m_additionalContextMenuActions.isEmpty()
+        && textCursor().hasSelection()) {
         QAction* firstAction = menu->actions().first();
         menu->insertActions(firstAction, m_additionalContextMenuActions);
         menu->insertSeparator(firstAction);
@@ -635,6 +666,29 @@ void ScenarioTextEdit::setTextUnderline(bool _underline)
     format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
     format.setFontUnderline(_underline);
     cursor.mergeCharFormat(format);
+}
+#include <QDebug>
+void ScenarioTextEdit::makeDualDialogue(bool _apply)
+{
+    if (sender() == nullptr) {
+        return;
+    }
+
+    const QPoint cursorPos = sender()->property(kLastMousePosKey).toPoint();
+    QTextCursor cursor = cursorForPosition(cursorPos);
+    cursor.movePosition(QTextCursor::StartOfBlock);
+    QTextTableFormat format;
+    format.setWidth(QTextLength{QTextLength::PercentageLength, 100});
+    format.setColumnWidthConstraints({ QTextLength{QTextLength::PercentageLength, 50},
+                                       QTextLength{QTextLength::PercentageLength, 50} });
+//    format.setBorderStyle(QTextFrameFormat::BorderStyle_None);
+    auto table = cursor.insertTable(1, 2, format);
+//    format = table->format();
+//    const int tableWidth = cursor.block().layout()->boundingRect().width();
+//    format.setWidth(QTextLength{QTextLength::FixedLength, tableWidth});
+//    format.setColumnWidthConstraints({ QTextLength{QTextLength::FixedLength, tableWidth/2},
+//                                       QTextLength{QTextLength::FixedLength, tableWidth/2} });
+//    table->setFormat(format);
 }
 
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
@@ -1644,7 +1698,7 @@ void ScenarioTextEdit::aboutSelectionChanged()
 
 void ScenarioTextEdit::aboutSaveEditorState()
 {
-    setProperty(CURSOR_RECT, cursorRect());
+    setProperty(kCursorRectKey, cursorRect());
 }
 
 void ScenarioTextEdit::aboutLoadEditorState()

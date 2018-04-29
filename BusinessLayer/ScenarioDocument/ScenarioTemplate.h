@@ -25,9 +25,12 @@ namespace BusinessLogic
             SceneHeading,       //!< Время - место
             SceneCharacters,    //!< Персонажи сцены
             Action,         	//!< Описание действия
-            Character,  		//!< Имя героя
+            Character,  		//!< Имя персонажа
+            CharacterDual,      //!< Имя персонажа в сдвоенном диалоге
             Parenthetical,      //!< Ремарка
+            ParentheticalDual,  //!< Ремарка в сдвоенном диалоге
             Dialogue,       	//!< Реплика героя
+            DialogueDual,       //!< Реплика в сдвоенном диалоге
             Transition, 		//!< Переход
             Note,               //!< Примечание
             TitleHeader,    	//!< Заголовок титра
@@ -106,7 +109,7 @@ namespace BusinessLogic
         };
 
     public:
-        ScenarioBlockStyle() : m_type(Undefined), m_isActive(false), m_font(QFont("Courier New", 12)) {}
+        ScenarioBlockStyle() : m_type(Undefined), m_isActive(false), m_font(QFont("Courier Prime", 12)) {}
 
         /**
          * @brief Получить тип блока

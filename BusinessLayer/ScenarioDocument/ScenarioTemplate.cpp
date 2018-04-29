@@ -42,8 +42,11 @@ namespace {
             s_typeNames.insert(ScenarioBlockStyle::SceneCharacters, "scene_characters");
             s_typeNames.insert(ScenarioBlockStyle::Action, "action");
             s_typeNames.insert(ScenarioBlockStyle::Character, "character");
+            s_typeNames.insert(ScenarioBlockStyle::CharacterDual, "character_dual");
             s_typeNames.insert(ScenarioBlockStyle::Parenthetical, "parenthetical");
+            s_typeNames.insert(ScenarioBlockStyle::ParentheticalDual, "parenthetical_dual");
             s_typeNames.insert(ScenarioBlockStyle::Dialogue, "dialog");
+            s_typeNames.insert(ScenarioBlockStyle::DialogueDual, "dialog_dual");
             s_typeNames.insert(ScenarioBlockStyle::Transition, "transition");
             s_typeNames.insert(ScenarioBlockStyle::Note, "note");
             s_typeNames.insert(ScenarioBlockStyle::TitleHeader, "title_header");
@@ -68,8 +71,11 @@ namespace {
             s_beautifyTypeNames.insert(ScenarioBlockStyle::SceneCharacters, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Scene Characters"));
             s_beautifyTypeNames.insert(ScenarioBlockStyle::Action, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Action"));
             s_beautifyTypeNames.insert(ScenarioBlockStyle::Character, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Character"));
+            s_beautifyTypeNames.insert(ScenarioBlockStyle::CharacterDual, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Character in dual dialogue"));
             s_beautifyTypeNames.insert(ScenarioBlockStyle::Parenthetical, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Parenthetical"));
+            s_beautifyTypeNames.insert(ScenarioBlockStyle::ParentheticalDual, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Parenthetical in dual dialogue"));
             s_beautifyTypeNames.insert(ScenarioBlockStyle::Dialogue, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Dialog"));
+            s_beautifyTypeNames.insert(ScenarioBlockStyle::DialogueDual, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Dialog in dual dialogue"));
             s_beautifyTypeNames.insert(ScenarioBlockStyle::Transition, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Transition"));
             s_beautifyTypeNames.insert(ScenarioBlockStyle::Note, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Shot"));
             s_beautifyTypeNames.insert(ScenarioBlockStyle::TitleHeader, QApplication::translate("BusinessLogic::ScenarioBlockStyle", "Title Header"));
@@ -461,7 +467,8 @@ ScenarioBlockStyle::ScenarioBlockStyle(const QXmlStreamAttributes& _blockAttribu
     // Настроим остальные характеристики
     //
     switch (m_type) {
-        case Parenthetical: {
+        case Parenthetical:
+        case ParentheticalDual: {
             m_charFormat.setProperty(ScenarioBlockStyle::PropertyIsFirstUppercase, false);
             //
             // Стандартное обрамление

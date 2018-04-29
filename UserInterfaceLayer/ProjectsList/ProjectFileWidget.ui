@@ -132,8 +132,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/ResourcesMobile.qrc">
-            <normaloff>:/Graphics/Iconset/pencil.png</normaloff>:/Graphics/Iconset/pencil.png</iconset>
+           <iconset resource="../../Resources/Resources.qrc">
+            <normaloff>:/Graphics/Iconset/pencil.svg</normaloff>:/Graphics/Iconset/pencil.svg</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -155,8 +155,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/ResourcesMobile.qrc">
-            <normaloff>:/Graphics/Iconset/delete.png</normaloff>:/Graphics/Iconset/delete.png</iconset>
+           <iconset resource="../../Resources/Resources.qrc">
+            <normaloff>:/Graphics/Iconset/delete.svg</normaloff>:/Graphics/Iconset/delete.svg</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -178,8 +178,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/ResourcesMobile.qrc">
-            <normaloff>:/Graphics/Iconset/eye-off.png</normaloff>:/Graphics/Iconset/eye-off.png</iconset>
+           <iconset resource="../../Resources/Resources.qrc">
+            <normaloff>:/Graphics/Iconset/eye-off.svg</normaloff>:/Graphics/Iconset/eye-off.svg</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -201,8 +201,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/ResourcesMobile.qrc">
-            <normaloff>:/Graphics/Iconset/cloud-upload.png</normaloff>:/Graphics/Iconset/cloud-upload.png</iconset>
+           <iconset resource="../../Resources/Resources.qrc">
+            <normaloff>:/Graphics/Iconset/cloud-upload.svg</normaloff>:/Graphics/Iconset/cloud-upload.svg</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -224,8 +224,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/ResourcesMobile.qrc">
-            <normaloff>:/Graphics/Iconset/account-plus.png</normaloff>:/Graphics/Iconset/account-plus.png</iconset>
+           <iconset resource="../../Resources/Resources.qrc">
+            <normaloff>:/Graphics/Iconset/account-plus.svg</normaloff>:/Graphics/Iconset/account-plus.svg</iconset>
           </property>
           <property name="autoRaise">
            <bool>true</bool>
@@ -247,8 +247,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Resources/ResourcesMobile.qrc">
-            <normaloff>:/Graphics/Iconset/account-multiple.png</normaloff>:/Graphics/Iconset/account-multiple.png</iconset>
+           <iconset resource="../../Resources/Resources.qrc">
+            <normaloff>:/Graphics/Iconset/account-multiple.svg</normaloff>:/Graphics/Iconset/account-multiple.svg</iconset>
           </property>
           <property name="checkable">
            <bool>true</bool>
@@ -276,8 +276,8 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../Resources/ResourcesMobile.qrc">
-         <normaloff>:/Graphics/Iconset/dots-vertical.png</normaloff>:/Graphics/Iconset/dots-vertical.png</iconset>
+        <iconset resource="../../Resources/Resources.qrc">
+         <normaloff>:/Graphics/Iconset/dots-vertical.svg</normaloff>:/Graphics/Iconset/dots-vertical.svg</iconset>
        </property>
        <property name="checkable">
         <bool>true</bool>
@@ -331,7 +331,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../Resources/ResourcesMobile.qrc"/>
+  <include location="../../Resources/Resources.qrc"/>
  </resources>
  <connections/>
 </ui>
