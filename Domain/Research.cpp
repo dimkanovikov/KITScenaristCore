@@ -212,22 +212,29 @@ void ResearchCharacter::addDescription(const QString& _description)
     //
     // Запоминаем текущие настоящее имя и описание
     //
-    QString sourceRealName = realName();
-    QString sourceDescription = descriptionText();
+    const QString sourceRealName = realName();
+    const QString sourceDescription = descriptionText();
     //
     // Устанавливаем новые
     //
     setDescription(_description);
-    QString addedRealName = realName();
+    const QString addedRealName = realName();
     QString addedDescription = descriptionText();
     //
     // И объединяем
     //
-    setRealName(sourceRealName);
-    setDescriptionText(QString("%1<p>%2</p>%3")
-                       .arg(sourceDescription)
-                       .arg(addedRealName)
-                       .arg(addedDescription));
+    if (!sourceRealName.isEmpty()) {
+        setRealName(sourceRealName);
+        addedDescription = QString("<p>%1</p>%2").arg(addedRealName, addedDescription);
+    } else {
+        setRealName(addedRealName);
+    }
+    //
+    if (!sourceDescription.isEmpty()) {
+        setDescriptionText(QString("%1%2").arg(sourceDescription, addedDescription));
+    } else {
+        setDescriptionText(addedDescription);
+    }
 
     //
     // Помечаем изменённым

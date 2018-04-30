@@ -75,28 +75,29 @@ void ResearchImageMapper::setImage(const QPixmap& _image, const DomainObject* _f
     m_newImages[objectId] = _image;
 }
 
-void ResearchImageMapper::save(const DomainObject* _forObject) const
+void ResearchImageMapper::save(const DomainObject* _forObject, QSqlQuery* _query) const
 {
     const int objectId = _forObject->id().value();
 
     //
     // Если изображение для данного элемента не менялось, ничего не делаем с ним
     //
-    if (!m_newImages.contains(objectId))
+    if (!m_newImages.contains(objectId)) {
         return;
+    }
 
     //
     // Извлекаем изображение из списка несохранённых и сохраняем его в базе данных
     //
-    QSqlQuery query = DatabaseLayer::Database::query();
-    query.prepare(QString("UPDATE " + TABLE_NAME +
-                          " SET " + IMAGE_COLUMN + " = ? "
-                          " WHERE id = %1 "
-                          )
-                  .arg(objectId));
-    const QPixmap image = m_newImages.take(objectId);
-    query.addBindValue(ImageHelper::bytesFromImage(image));
-    query.exec();
+    if (_query != nullptr) {
+        _query->prepare(QString("UPDATE " + TABLE_NAME +
+                               " SET " + IMAGE_COLUMN + " = ? "
+                                                        " WHERE id = %1 "
+                               )
+                        .arg(objectId));
+        const QPixmap image = m_newImages.take(objectId);
+        _query->addBindValue(ImageHelper::bytesFromImage(image));
+    }
 }
 
 void ResearchImageMapper::remove(const DomainObject* _forObject) const
@@ -143,7 +144,17 @@ void ResearchMapper::insert(Research* _research)
 bool ResearchMapper::update(Research* _research)
 {
     DatabaseLayer::Database::transaction();
-    m_imageWrapper.save(_research);
+    //
+    // Сохраним изображение, если нужно
+    //
+    QSqlQuery q_imageSaver = DatabaseLayer::Database::query();
+    m_imageWrapper.save(_research, &q_imageSaver);
+    if (!q_imageSaver.lastQuery().isEmpty()) {
+        executeSql(q_imageSaver);
+    }
+    //
+    // Обновим сам элемент разработки
+    //
     const bool saveState = abstractUpdate(_research);
     DatabaseLayer::Database::commit();
 
