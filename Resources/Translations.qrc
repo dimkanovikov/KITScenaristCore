@@ -31,5 +31,7 @@
         <file>Translations/qt_pl.qm</file>
         <file>Translations/Scenarist_pl.qm</file>
         <file>Translations/Scenarist_tr.qm</file>
+        <file>Translations/qt_tr.qm</file>
+        <file>Translations/qtbase_tr.qm</file>
     </qresource>
 </RCC>
