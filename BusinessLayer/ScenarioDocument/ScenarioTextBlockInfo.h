@@ -33,6 +33,16 @@ namespace BusinessLogic
          */
         void setBookmark(const QString& _bookmark);
 
+        /**
+         * @brief Получить цвет закладки
+         */
+        QColor bookmarkColor() const;
+
+        /**
+         * @brief Установить цвет закладки
+         */
+        void setBookmarkColor(const QColor& _color);
+
     private:
         /**
          * @brief Установлена ли закладка для блока
@@ -43,6 +53,11 @@ namespace BusinessLogic
          * @brief Текст закладки для блока
          */
         QString m_bookmark;
+
+        /**
+         * @brief Цвет закладки
+         */
+        QColor m_bookmarkColor;
     };
 
     /**

@@ -35,6 +35,7 @@ namespace {
     const QString ATTRIBUTE_STAMP = "stamp";
     const QString ATTRIBUTE_TITLE = "title";
     const QString ATTRIBUTE_BOOKMARK = "bookmark";
+    const QString ATTRIBUTE_BOOKMARK_COLOR = "bookmark_color";
     const QString ATTRIBUTE_REVIEW_FROM = "from";
     const QString ATTRIBUTE_REVIEW_LENGTH = "length";
     const QString ATTRIBUTE_REVIEW_COLOR = "color";
@@ -367,7 +368,8 @@ QString ScenarioXml::scenarioToXml()
                     TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(currentBlock.userData());
                     if (blockInfo != nullptr
                         && blockInfo->hasBookmark()) {
-                        bookmark = QString(" %1=\"%2\"").arg(ATTRIBUTE_BOOKMARK).arg(blockInfo->bookmark());
+                        bookmark = QString(" %1=\"%2\"").arg(ATTRIBUTE_BOOKMARK).arg(TextEditHelper::toHtmlEscaped(blockInfo->bookmark()));
+                        bookmark += QString(" %1=\"%2\"").arg(ATTRIBUTE_BOOKMARK_COLOR).arg(blockInfo->bookmarkColor().name());
                     }
                 }
 
@@ -764,11 +766,11 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 //
                 // Запишем закладку, если установлена для блока
                 //
-                {
+                if (currentBlock.userData() != nullptr) {
                     TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(currentBlock.userData());
-                    if (blockInfo != nullptr
-                        && blockInfo->hasBookmark()) {
-                        writer.writeAttribute(ATTRIBUTE_BOOKMARK, blockInfo->bookmark());
+                    if (blockInfo->hasBookmark()) {
+                        writer.writeAttribute(ATTRIBUTE_BOOKMARK, TextEditHelper::toHtmlEscaped(blockInfo->bookmark()));
+                        writer.writeAttribute(ATTRIBUTE_BOOKMARK_COLOR, blockInfo->bookmarkColor().name());
                     }
                 }
 
@@ -1462,6 +1464,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         }
                         blockInfo->setHasBookmark(true);
                         blockInfo->setBookmark(reader.attributes().value(ATTRIBUTE_BOOKMARK).toString());
+                        blockInfo->setBookmarkColor(reader.attributes().value(ATTRIBUTE_BOOKMARK_COLOR).toString());
                         cursor.block().setUserData(blockInfo);
                     }
 

@@ -79,7 +79,7 @@ ScenarioReviewModel::ScenarioReviewModel(ScenarioTextDocument *_parent) :
 {
     Q_ASSERT(_parent);
 
-    connect(m_document, SIGNAL(contentsChange(int,int,int)), this, SLOT(aboutUpdateReviewModel(int,int,int)));
+    connect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioReviewModel::aboutUpdateReviewModel);
 }
 
 bool ScenarioReviewModel::isEmpty()
@@ -91,7 +91,7 @@ int ScenarioReviewModel::rowCount(const QModelIndex& _parent) const
 {
     Q_UNUSED(_parent);
 
-    return m_reviewMarks.count();
+    return m_reviewMarks.size();
 }
 
 QVariant ScenarioReviewModel::data(const QModelIndex& _index, int _role) const
@@ -100,7 +100,7 @@ QVariant ScenarioReviewModel::data(const QModelIndex& _index, int _role) const
 
     if (_index.isValid()
         && _index.row() < m_reviewMarks.size()) {
-        const ReviewMarkInfo info = m_reviewMarks.at(_index.row());
+        const ReviewMarkInfo& info = m_reviewMarks.at(_index.row());
 
         switch (_role) {
             case Qt::DecorationRole: {

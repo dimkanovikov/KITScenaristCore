@@ -118,7 +118,7 @@ namespace BusinessLogic {
 
     private slots:
         /**
-         * @brief Сформировать модель комментариев
+         * @brief Обновить модель комментариев
          */
         void aboutUpdateReviewModel(int _position, int _removed, int _added);
 
@@ -126,7 +126,7 @@ namespace BusinessLogic {
         /**
          * @brief Документ, по которому строится модель
          */
-        ScenarioTextDocument* m_document;
+        ScenarioTextDocument* m_document = nullptr;
 
         /**
          * @brief Класс информации о редакторской метке

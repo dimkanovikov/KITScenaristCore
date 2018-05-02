@@ -7,6 +7,7 @@
 #include "ScenarioTextBlockParsers.h"
 #include "ScenarioTextDocument.h"
 #include "ScenarioXml.h"
+#include "ScriptBookmarksModel.h"
 
 #include <BusinessLayer/Chronometry/ChronometerFacade.h>
 #include <BusinessLayer/Counters/CountersFacade.h>
@@ -454,7 +455,7 @@ void ScenarioDocument::copyItemDescriptionToScript(int _position)
     cursor.endEditBlock();
 }
 
-void ScenarioDocument::addBookmark(int _position)
+void ScenarioDocument::addBookmark(int _position, const QString& _text, const QColor& _color)
 {
     QTextBlock block = document()->findBlock(_position);
     TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
@@ -462,7 +463,7 @@ void ScenarioDocument::addBookmark(int _position)
         switch (ScenarioBlockStyle::forBlock(block)) {
             case ScenarioBlockStyle::SceneHeading:
             case ScenarioBlockStyle::Character: {
-                Q_ASSERT_X(0, Q_FUNC_INFO, "Text block info for scene heading or caharacter should be created before.");
+                Q_ASSERT_X(0, Q_FUNC_INFO, "Text block info for scene heading or character should be created before.");
                 break;
             }
 
@@ -473,10 +474,14 @@ void ScenarioDocument::addBookmark(int _position)
         }
     }
     blockInfo->setHasBookmark(true);
+    blockInfo->setBookmark(_text);
+    blockInfo->setBookmarkColor(_color);
     block.setUserData(blockInfo);
 
     ScenarioTextDocument::updateBlockRevision(block);
     aboutContentsChange(_position, 0, 0);
+
+    document()->bookmarksModel()->addBookmark(_position, _text, _color);
 
     emit textChanged();
 }
@@ -494,6 +499,8 @@ void ScenarioDocument::removeBookmark(int _position)
 
     ScenarioTextDocument::updateBlockRevision(block);
     aboutContentsChange(_position, 0, 0);
+
+    document()->bookmarksModel()->removeBookmark(_position);
 
     emit textChanged();
 }

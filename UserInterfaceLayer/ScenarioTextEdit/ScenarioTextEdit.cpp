@@ -547,7 +547,7 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     //
     // Добавляем возможность добавления закладки
     //
-    {
+    if (!isReadOnly()) {
         const QTextCursor cursor = cursorForPosition(_pos);
         const QTextBlock block = cursor.block();
         const TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
@@ -557,12 +557,17 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         const int blockPosition = block.position();
         if (blockInfo != nullptr
             && blockInfo->hasBookmark()) {
-            QAction* removeBookmark = new QAction(tr("Remove bookmark"), menu);
+            QAction* editBookmark = new QAction(QIcon(":/Graphics/Iconset/bookmark.svg"), tr("Edit bookmark"), menu);
+            connect(editBookmark, &QAction::triggered,
+                    this, [this, blockPosition] { emit editBookmarkRequested(blockPosition); });
+            menu->insertAction(firstAction, editBookmark);
+            //
+            QAction* removeBookmark = new QAction(QIcon(":/Graphics/Iconset/bookmark-remove.svg"), tr("Remove bookmark"), menu);
             connect(removeBookmark, &QAction::triggered,
                     this, [this, blockPosition] { emit removeBookmarkRequested(blockPosition); });
             menu->insertAction(firstAction, removeBookmark);
         } else {
-            QAction* addBookmark = new QAction(tr("Add bookmark"), menu);
+            QAction* addBookmark = new QAction(QIcon(":/Graphics/Iconset/bookmark-plus.svg"), tr("Add bookmark"), menu);
             connect(addBookmark, &QAction::triggered,
                     this, [this, blockPosition] { emit addBookmarkRequested(blockPosition); });
             menu->insertAction(firstAction, addBookmark);
@@ -1348,6 +1353,32 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         && cursorR.top() < viewportGeometry.bottom()) {
 
                         //
+                        // Прорисовка закладок
+                        //
+                        TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+                        if (blockInfo != nullptr
+                            && blockInfo->hasBookmark()) {
+                            //
+                            // Определим область для отрисовки и выведем номер сцены в редактор
+                            //
+                            QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                                            ? pageLeft + leftDelta
+                                            : textRight + leftDelta,
+                                            cursorR.top());
+                            QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                                ? textLeft + leftDelta
+                                                : pageRight + leftDelta,
+                                                cursorR.bottom());
+                            QRectF rect(topLeft, bottomRight);
+                            painter.setBrush(blockInfo->bookmarkColor());
+                            painter.setPen(blockInfo->bookmarkColor());
+                            painter.drawRect(rect);
+                            painter.setPen(Qt::white);
+                        } else {
+                            painter.setPen(palette().text().color());
+                        }
+
+                        //
                         // Прорисовка символа пустой строки
                         //
                         if (!block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)
@@ -1368,35 +1399,9 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                             painter.drawText(rect, Qt::AlignRight | Qt::AlignTop, "» ");
                         }
                         //
-                        // Остальные декорации
+                        // Прорисовка номера для строки
                         //
                         else {
-                            //
-                            // Прорисовка закладок
-                            //
-                            TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
-                            if (blockInfo != nullptr
-                                && blockInfo->hasBookmark()) {
-                                //
-                                // Определим область для отрисовки и выведем номер сцены в редактор
-                                //
-                                QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
-                                                ? pageLeft + leftDelta
-                                                : textRight + leftDelta,
-                                                cursorR.top());
-                                QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
-                                                    ? textLeft + leftDelta
-                                                    : pageRight + leftDelta,
-                                                    cursorR.bottom());
-                                QRectF rect(topLeft, bottomRight);
-                                painter.setBrush(QColor("#ec3838"));
-                                painter.setPen(QColor("#ec3838"));
-                                painter.drawRect(rect);
-                                painter.setPen(Qt::white);
-                            } else {
-                                painter.setPen(palette().text().color());
-                            }
-
                             //
                             // Прорисовка номеров сцен, если необходимо
                             //

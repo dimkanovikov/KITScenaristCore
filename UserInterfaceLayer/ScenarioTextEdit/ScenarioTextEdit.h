@@ -221,6 +221,11 @@ namespace UserInterface
         void addBookmarkRequested(int _position);
 
         /**
+         * @brief Пользователь хочет изменить закладку в заданном месте документа
+         */
+        void editBookmarkRequested(int _position);
+
+        /**
          * @brief Пользователь хочет убрать закладку в заданном месте документа
          */
         void removeBookmarkRequested(int _position);

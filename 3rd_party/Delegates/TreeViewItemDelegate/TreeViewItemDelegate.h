@@ -29,6 +29,11 @@ public:
      */
     bool editorEvent(QEvent* _event, QAbstractItemModel* _model, const QStyleOptionViewItem& _option, const QModelIndex& _index) override;
 
+    /**
+     * @brief Установить необходимость корректировки текста иконки
+     */
+    void setNeedColorize(bool _need);
+
 private:
     /**
      * @brief Константы для вью.
@@ -40,6 +45,11 @@ private:
     const int m_bottomMargin;
     const int m_itemsSpacing;
     /** @} */
+
+    /**
+     * @brief Необходимо ли менять цвет иконки в соответствии с цветом текста
+     */
+    bool m_needColorize = true;
 };
 
 #endif // TREEVIEWITEMDELEGATE_H

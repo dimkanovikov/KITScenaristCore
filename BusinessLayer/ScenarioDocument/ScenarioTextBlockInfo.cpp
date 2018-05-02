@@ -27,6 +27,16 @@ void TextBlockInfo::setBookmark(const QString& _bookmark)
     m_bookmark = _bookmark;
 }
 
+QColor TextBlockInfo::bookmarkColor() const
+{
+    return m_bookmarkColor;
+}
+
+void TextBlockInfo::setBookmarkColor(const QColor& _color)
+{
+    m_bookmarkColor = _color;
+}
+
 
 // ****
 

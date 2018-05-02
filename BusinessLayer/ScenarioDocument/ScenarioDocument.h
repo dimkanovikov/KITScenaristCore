@@ -157,7 +157,7 @@ namespace BusinessLogic
         /**
          * @brief Добавить закладку
          */
-        void addBookmark(int _position);
+        void addBookmark(int _position, const QString& _text, const QColor& _color);
 
         /**
          * @brief Удалить закладку
