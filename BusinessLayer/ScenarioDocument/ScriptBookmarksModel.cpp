@@ -39,14 +39,24 @@ QVariant ScriptBookmarksModel::data(const QModelIndex& _index, int _role) const
 
         switch (_role) {
             case Qt::DecorationRole: {
-                QIcon icon(":/Graphics/Iconset/bookmark.svg");
-                ImageHelper::setIconColor(icon, info.color);
-                result = icon;
+                static QHash<QString, QIcon> s_icons;
+                const QString iconColorName = info.color.name();
+                if (!s_icons.contains(iconColorName)) {
+                    QIcon icon(":/Graphics/Iconset/bookmark.svg");
+                    ImageHelper::setIconColor(icon, info.color);
+                    s_icons.insert(iconColorName, icon);
+                }
+                result = s_icons[iconColorName];
                 break;
             }
 
             case Qt::DisplayRole: {
                 result = info.text;
+                break;
+            }
+
+            case ColorRole: {
+                result = info.color;
                 break;
             }
 
@@ -144,6 +154,28 @@ void ScriptBookmarksModel::removeBookmark(int _position)
         ++bookmarksIter;
     }
     endRemoveRows();
+}
+
+int ScriptBookmarksModel::positionForIndex(const QModelIndex& _index)
+{
+    if (!_index.isValid()
+        || m_bookmarks.size() <= _index.row()) {
+        return -1;
+    }
+
+    return m_bookmarks[_index.row()].position;
+}
+
+QModelIndex ScriptBookmarksModel::indexForPosition(int _position)
+{
+    const QTextBlock block = m_document->findBlock(_position);
+    const int bookmarkPosition = block.position();
+    if (!m_bookmarksMap.contains(bookmarkPosition)) {
+        return QModelIndex();
+    }
+
+    const int bookmarkRow = m_bookmarksMap[bookmarkPosition];
+    return index(bookmarkRow);
 }
 
 void ScriptBookmarksModel::aboutUpdateBookmarksModel(int _position, int _removed, int _added)

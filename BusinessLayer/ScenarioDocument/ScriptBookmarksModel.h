@@ -16,6 +16,17 @@ namespace BusinessLogic {
         Q_OBJECT
 
     public:
+        /**
+         * @brief Дополнительные роли для данных
+         */
+        enum BookmarkRoles {
+            /**
+              * @brief Цвет закладки
+              */
+            ColorRole = Qt::UserRole + 1
+        };
+
+    public:
         explicit ScriptBookmarksModel(ScenarioTextDocument* _parent);
 
         /**
@@ -36,6 +47,16 @@ namespace BusinessLogic {
          * @brief Удалить закладку
          */
         void removeBookmark(int _position);
+
+        /**
+         * @brief Получить позицию закладки по заданному индексу
+         */
+        int positionForIndex(const QModelIndex& _index);
+
+        /**
+         * @brief Индекс элемента по позиции
+         */
+        QModelIndex indexForPosition(int _position);
 
     signals:
         /**

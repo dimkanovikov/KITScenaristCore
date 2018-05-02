@@ -557,17 +557,12 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         const int blockPosition = block.position();
         if (blockInfo != nullptr
             && blockInfo->hasBookmark()) {
-            QAction* editBookmark = new QAction(QIcon(":/Graphics/Iconset/bookmark.svg"), tr("Edit bookmark"), menu);
-            connect(editBookmark, &QAction::triggered,
-                    this, [this, blockPosition] { emit editBookmarkRequested(blockPosition); });
-            menu->insertAction(firstAction, editBookmark);
-            //
-            QAction* removeBookmark = new QAction(QIcon(":/Graphics/Iconset/bookmark-remove.svg"), tr("Remove bookmark"), menu);
+            QAction* removeBookmark = new QAction(tr("Remove bookmark"), menu);
             connect(removeBookmark, &QAction::triggered,
                     this, [this, blockPosition] { emit removeBookmarkRequested(blockPosition); });
             menu->insertAction(firstAction, removeBookmark);
         } else {
-            QAction* addBookmark = new QAction(QIcon(":/Graphics/Iconset/bookmark-plus.svg"), tr("Add bookmark"), menu);
+            QAction* addBookmark = new QAction(tr("Add bookmark"), menu);
             connect(addBookmark, &QAction::triggered,
                     this, [this, blockPosition] { emit addBookmarkRequested(blockPosition); });
             menu->insertAction(firstAction, addBookmark);
@@ -1371,7 +1366,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                                 cursorR.bottom());
                             QRectF rect(topLeft, bottomRight);
                             painter.setBrush(blockInfo->bookmarkColor());
-                            painter.setPen(blockInfo->bookmarkColor());
+                            painter.setPen(Qt::transparent);
                             painter.drawRect(rect);
                             painter.setPen(Qt::white);
                         } else {
