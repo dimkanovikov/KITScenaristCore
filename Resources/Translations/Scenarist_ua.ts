@@ -150,6 +150,13 @@ Türkçe: Recep Burak Yak
     </message>
 </context>
 <context>
+    <name>BookmarkDialog</name>
+    <message>
+        <source>Bookmark text</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BusinessLayer::AbstractExporter</name>
     <message>
         <source>Real name: </source>
@@ -2463,11 +2470,11 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>Polski</source>
-        <translation>Polski</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Українська</source>
-        <translation>Українська</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Türkçe</source>
@@ -3926,15 +3933,19 @@ Paragraph</source>
     <name>ToolsSettings</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation type="obsolete">Форма</translation>
     </message>
     <message>
         <source>Apply Selected Template</source>
-        <translation type="unfinished">Застосувати обраний шаблон</translation>
+        <translation type="obsolete">Застосувати обраний шаблон</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation type="unfinished">Застосувати</translation>
+        <translation type="obsolete">Застосувати</translation>
+    </message>
+    <message>
+        <source>Back to tools list</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4136,6 +4147,17 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>KIT Scenarist</source>
         <translation>КІТ Сценарист</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::BookmarkDialog</name>
+    <message>
+        <source>Add new bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update bookmark</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4518,6 +4540,14 @@ The application will start in few seconds.</source>
         <source>Show/hide script dictionaries</source>
         <translation>Показати/сховати сценарні словники</translation>
     </message>
+    <message>
+        <source>Script bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/hide script bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioReviewPanel</name>
@@ -4655,6 +4685,21 @@ The application will start in few seconds.</source>
     <message>
         <source>Find and replace</source>
         <translation>Знайти і замінити</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScriptBookmarks</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove seleted bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected bookmark</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

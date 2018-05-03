@@ -179,6 +179,13 @@ Türkçe: Recep Burak Yak
     </message>
 </context>
 <context>
+    <name>BookmarkDialog</name>
+    <message>
+        <source>Bookmark text</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BusinessLayer::AbstractExporter</name>
     <message>
         <source>Real name: </source>
@@ -3948,15 +3955,11 @@ Valor, mm</translation>
 <context>
     <name>ToolsSettings</name>
     <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Apply Selected Template</source>
-        <translation type="unfinished">Aplicar modelo selecionado</translation>
+        <translation type="obsolete">Aplicar modelo selecionado</translation>
     </message>
     <message>
-        <source>Apply</source>
+        <source>Back to tools list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4159,6 +4162,17 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>KIT Scenarist</source>
         <translation>KIT Scenarist</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::BookmarkDialog</name>
+    <message>
+        <source>Add new bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update bookmark</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4541,6 +4555,14 @@ O aplicativo vai iniciar em poucos segundos.</translation>
         <source>Show/hide script dictionaries</source>
         <translation>Mostre/oculte os dicionários do roteiro</translation>
     </message>
+    <message>
+        <source>Script bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/hide script bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioReviewPanel</name>
@@ -4678,6 +4700,21 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <message>
         <source>Find and replace</source>
         <translation>Buscar e substituir</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScriptBookmarks</name>
+    <message>
+        <source>Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove seleted bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit selected bookmark</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
