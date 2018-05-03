@@ -17,6 +17,7 @@ namespace BusinessLogic
 {
     class ScenarioReviewModel;
     class ScenarioXml;
+    class ScriptBookmarksModel;
     class ScriptTextCorrector;
 
 
@@ -33,7 +34,10 @@ namespace BusinessLogic
          * @note Это приходится делать вручную, т.к. изменения пользовательских свойств блока
          *		 не отслеживаются автоматически
          */
+        /** @{ */
+        static void updateBlockRevision(QTextBlock& _block);
         static void updateBlockRevision(QTextCursor& _cursor);
+        /** @} */
 
     public:
         explicit ScenarioTextDocument(QObject *parent, ScenarioXml* _xmlHandler);
@@ -112,6 +116,11 @@ namespace BusinessLogic
         ScenarioReviewModel* reviewModel() const;
 
         /**
+         * @brief Получить модель закладок
+         */
+        ScriptBookmarksModel* bookmarksModel() const;
+
+        /**
          * @brief Документ в режиме отображения поэпизодника или сценария
          */
         bool outlineMode() const;
@@ -149,6 +158,11 @@ namespace BusinessLogic
          * @brief В документ были внесены редакторские примечания
          */
         void reviewChanged();
+
+        /**
+         * @brief В документе были изменены закладки
+         */
+        void bookmarksChanged();
 
         /**
          * @brief Изменилась доступность повтора отменённого действия
@@ -219,7 +233,12 @@ namespace BusinessLogic
         /**
          * @brief Модель редакторских правок документа
          */
-        ScenarioReviewModel* m_reviewModel;
+        ScenarioReviewModel* m_reviewModel = nullptr;
+
+        /**
+         * @brief Модель закладок документа
+         */
+        ScriptBookmarksModel* m_bookmarksModel = nullptr;
 
         /**
          * @brief Включён ли режим отображения поэпизодного плана (true) или сценария (false)

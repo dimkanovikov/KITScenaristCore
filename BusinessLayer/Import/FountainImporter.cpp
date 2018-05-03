@@ -40,18 +40,17 @@ namespace {
                                        QApplication::translate("BusinessLayer::FountainImporter", "INT/EXT"),
                                        QApplication::translate("BusinessLayer::FountainImporter", "I/E")};
 
-    const QMap<QString, QString> TITLE_KEYS({{"Title", "name"},
-                                             {"Author", "author"},
-                                             {"Authors", "author"},
-                                             {"Draft date", "year"},
-                                             {"Copyright", "year"},
-                                             {"Contact", "contacts"},
-                                             {"Credit", "genre"},
-                                             {"Source", "additional_info"}});
+    const QMap<QString, QString> TITLE_KEYS({std::make_pair(QString("Title"), QString("name")),
+                                             std::make_pair(QString("Author"), QString("author")),
+                                             std::make_pair(QString("Authors"), QString("author")),
+                                             std::make_pair(QString("Draft date"), QString("year")),
+                                             std::make_pair(QString("Copyright"), QString("year")),
+                                             std::make_pair(QString("Contact"), QString("contacts")),
+                                             std::make_pair(QString("Credit"), QString("genre")),
+                                             std::make_pair(QString("Source"), QString("additional_info"))});
 
     const QString TRIPLE_WHITESPACE = "   ";
     const QString DOUBLE_WHITESPACE = "  ";
-
 }
 
 FountainImporter::FountainImporter() :

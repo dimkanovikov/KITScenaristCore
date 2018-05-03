@@ -524,10 +524,10 @@ void ScenarioTextEdit::scrollToAdditionalCursor(int _additionalCursorIndex)
     ensureCursorVisible(cursor);
 }
 
-void ScenarioTextEdit::setAdditionalContextMenuActions(const QList<QAction*>& _actions)
+void ScenarioTextEdit::setReviewContextMenuActions(const QList<QAction*>& _actions)
 {
-    if (m_additionalContextMenuActions != _actions) {
-        m_additionalContextMenuActions = _actions;
+    if (m_reviewContextMenuActions != _actions) {
+        m_reviewContextMenuActions = _actions;
     }
 }
 
@@ -536,11 +536,37 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     QMenu* menu = CompletableTextEdit::createContextMenu(_pos, _parent);
 
     //
-    // Добавляем дополнительные действия в меню
+    // Добавляем действия рецензирования в меню
     //
-    if (!m_additionalContextMenuActions.isEmpty()) {
+    if (!m_reviewContextMenuActions.isEmpty() && textCursor().hasSelection()) {
         QAction* firstAction = menu->actions().first();
-        menu->insertActions(firstAction, m_additionalContextMenuActions);
+        menu->insertActions(firstAction, m_reviewContextMenuActions);
+        menu->insertSeparator(firstAction);
+    }
+
+    //
+    // Добавляем возможность добавления закладки
+    //
+    if (!isReadOnly()) {
+        const QTextCursor cursor = cursorForPosition(_pos);
+        const QTextBlock block = cursor.block();
+        const TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+
+        QAction* firstAction = menu->actions().first();
+
+        const int blockPosition = block.position();
+        if (blockInfo != nullptr
+            && blockInfo->hasBookmark()) {
+            QAction* removeBookmark = new QAction(tr("Remove bookmark"), menu);
+            connect(removeBookmark, &QAction::triggered,
+                    this, [this, blockPosition] { emit removeBookmarkRequested(blockPosition); });
+            menu->insertAction(firstAction, removeBookmark);
+        } else {
+            QAction* addBookmark = new QAction(tr("Add bookmark"), menu);
+            connect(addBookmark, &QAction::triggered,
+                    this, [this, blockPosition] { emit addBookmarkRequested(blockPosition); });
+            menu->insertAction(firstAction, addBookmark);
+        }
         menu->insertSeparator(firstAction);
     }
 
@@ -1252,9 +1278,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             }
             if (bottomBlock == document()->firstBlock()) {
                 bottomBlock = document()->lastBlock();
-            } else if (bottomBlock != document()->lastBlock()) {
-                bottomBlock = bottomBlock.next();
             }
+            bottomBlock = bottomBlock.next();
 
             //
             // Проходим блоки на экране и декорируем их
@@ -1323,6 +1348,32 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         && cursorR.top() < viewportGeometry.bottom()) {
 
                         //
+                        // Прорисовка закладок
+                        //
+                        TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+                        if (blockInfo != nullptr
+                            && blockInfo->hasBookmark()) {
+                            //
+                            // Определим область для отрисовки и выведем номер сцены в редактор
+                            //
+                            QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                                            ? pageLeft + leftDelta
+                                            : textRight + leftDelta,
+                                            cursorR.top());
+                            QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                                ? textLeft + leftDelta
+                                                : pageRight + leftDelta,
+                                                cursorR.bottom());
+                            QRectF rect(topLeft, bottomRight);
+                            painter.setBrush(blockInfo->bookmarkColor());
+                            painter.setPen(Qt::transparent);
+                            painter.drawRect(rect);
+                            painter.setPen(Qt::white);
+                        } else {
+                            painter.setPen(palette().text().color());
+                        }
+
+                        //
                         // Прорисовка символа пустой строки
                         //
                         if (!block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)
@@ -1343,7 +1394,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                             painter.drawText(rect, Qt::AlignRight | Qt::AlignTop, "» ");
                         }
                         //
-                        // Остальные декорации
+                        // Прорисовка номера для строки
                         //
                         else {
                             //
@@ -1354,8 +1405,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                 //
                                 // Определим номер сцены
                                 //
-                                QTextBlockUserData* textBlockData = block.userData();
-                                if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
+                                if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(blockInfo)) {
                                     const QString sceneNumber = QString::number(info->sceneNumber()) + ".";
 
                                     //
@@ -1384,8 +1434,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                 //
                                 // Определим номер реплики
                                 //
-                                QTextBlockUserData* textBlockData = block.userData();
-                                if (CharacterBlockInfo* info = dynamic_cast<CharacterBlockInfo*>(textBlockData)) {
+                                if (CharacterBlockInfo* info = dynamic_cast<CharacterBlockInfo*>(blockInfo)) {
                                     const QString dialogueNumber = QString::number(info->dialogueNumbder()) + ":";
 
                                     //
@@ -2126,11 +2175,10 @@ void ScenarioTextEdit::initEditor()
 void ScenarioTextEdit::initEditorConnections()
 {
     if (m_document != 0) {
-        connect(m_document, SIGNAL(contentsChange(int,int,int)),
-                this, SLOT(aboutCorrectAdditionalCursors(int,int,int)));
-        connect(m_document, SIGNAL(beforePatchApply()), this, SLOT(aboutSaveEditorState()));
-        connect(m_document, SIGNAL(afterPatchApply()), this, SLOT(aboutLoadEditorState()));
-        connect(m_document, SIGNAL(reviewChanged()), this, SIGNAL(reviewChanged()));
+        connect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioTextEdit::aboutCorrectAdditionalCursors);
+        connect(m_document, &ScenarioTextDocument::beforePatchApply, this, &ScenarioTextEdit::aboutSaveEditorState);
+        connect(m_document, &ScenarioTextDocument::afterPatchApply, this, &ScenarioTextEdit::aboutLoadEditorState);
+        connect(m_document, &ScenarioTextDocument::reviewChanged, this, &ScenarioTextEdit::reviewChanged);
         connect(m_document, &ScenarioTextDocument::redoAvailableChanged, this, &ScenarioTextEdit::redoAvailableChanged);
     }
 }
@@ -2138,11 +2186,10 @@ void ScenarioTextEdit::initEditorConnections()
 void ScenarioTextEdit::removeEditorConnections()
 {
     if (m_document != 0) {
-        disconnect(m_document, SIGNAL(contentsChange(int,int,int)),
-                   this, SLOT(aboutCorrectAdditionalCursors(int,int,int)));
-        disconnect(m_document, SIGNAL(beforePatchApply()), this, SLOT(aboutSaveEditorState()));
-        disconnect(m_document, SIGNAL(afterPatchApply()), this, SLOT(aboutLoadEditorState()));
-        disconnect(m_document, SIGNAL(reviewChanged()), this, SIGNAL(reviewChanged()));
+        disconnect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioTextEdit::aboutCorrectAdditionalCursors);
+        disconnect(m_document, &ScenarioTextDocument::beforePatchApply, this, &ScenarioTextEdit::aboutSaveEditorState);
+        disconnect(m_document, &ScenarioTextDocument::afterPatchApply, this, &ScenarioTextEdit::aboutLoadEditorState);
+        disconnect(m_document, &ScenarioTextDocument::reviewChanged, this, &ScenarioTextEdit::reviewChanged);
         disconnect(m_document, &ScenarioTextDocument::redoAvailableChanged, this, &ScenarioTextEdit::redoAvailableChanged);
     }
 }

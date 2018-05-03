@@ -155,6 +155,16 @@ namespace BusinessLogic
         void copyItemDescriptionToScript(int _position);
 
         /**
+         * @brief Добавить закладку
+         */
+        void addBookmark(int _position, const QString& _text, const QColor& _color);
+
+        /**
+         * @brief Удалить закладку
+         */
+        void removeBookmark(int _position);
+
+        /**
          * @brief Загрузить документ из сценария
          */
         void load(Domain::Scenario* _scenario);
@@ -204,6 +214,12 @@ namespace BusinessLogic
         //! Определить позицию вставки майм-данных в документ
         int positionToInsertMime(ScenarioModelItem* _insertParent, ScenarioModelItem* _insertBefore) const;
         /** @} */
+
+    signals:
+        /**
+         * @brief Изменился текст
+         */
+        void textChanged();
 
     private slots:
         /**

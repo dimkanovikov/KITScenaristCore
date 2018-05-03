@@ -169,7 +169,8 @@ void StandardKeyHandler::handleUp(QKeyEvent* _event)
             //
             // Если мы поднялись на строку вверх, но попали в невидимый блок, перейдём к предыдущему видимому
             //
-            while (!cursor.atStart()
+            const QTextBlock firstDocumentBlock = cursor.document()->firstBlock();
+            while (cursor.block() != firstDocumentBlock
                    && (!cursor.block().isVisible()
                        || cursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection))) {
                 cursor.movePosition(QTextCursor::PreviousBlock, cursorMoveMode);

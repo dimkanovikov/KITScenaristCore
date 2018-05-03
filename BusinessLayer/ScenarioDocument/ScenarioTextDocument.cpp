@@ -2,6 +2,7 @@
 
 #include "ScenarioReviewModel.h"
 #include "ScenarioXml.h"
+#include "ScriptBookmarksModel.h"
 #include "ScriptTextCorrector.h"
 
 #include <Domain/ScenarioChange.h>
@@ -69,9 +70,15 @@ namespace {
 }
 
 
+void ScenarioTextDocument::updateBlockRevision(QTextBlock& _block)
+{
+    _block.setRevision(_block.revision() + 1);
+}
+
 void ScenarioTextDocument::updateBlockRevision(QTextCursor& _cursor)
 {
-    _cursor.block().setRevision(_cursor.block().revision() + 1);
+    QTextBlock block = _cursor.block();
+    updateBlockRevision(block);
 }
 
 ScenarioTextDocument::ScenarioTextDocument(QObject *parent, ScenarioXml* _xmlHandler) :
@@ -79,10 +86,12 @@ ScenarioTextDocument::ScenarioTextDocument(QObject *parent, ScenarioXml* _xmlHan
     m_xmlHandler(_xmlHandler),
     m_isPatchApplyProcessed(false),
     m_reviewModel(new ScenarioReviewModel(this)),
+    m_bookmarksModel(new ScriptBookmarksModel(this)),
     m_outlineMode(false),
     m_corrector(new ScriptTextCorrector(this))
 {
-    connect(m_reviewModel, SIGNAL(reviewChanged()), this, SIGNAL(reviewChanged()));
+    connect(m_reviewModel, &ScenarioReviewModel::reviewChanged, this, &ScenarioTextDocument::reviewChanged);
+    connect(m_bookmarksModel, &ScriptBookmarksModel::modelChanged, this, &ScenarioTextDocument::bookmarksChanged);
 }
 
 void ScenarioTextDocument::updateScenarioXml()
@@ -485,6 +494,11 @@ void ScenarioTextDocument::setCursorPosition(QTextCursor& _cursor, int _position
 ScenarioReviewModel* ScenarioTextDocument::reviewModel() const
 {
     return m_reviewModel;
+}
+
+ScriptBookmarksModel* ScenarioTextDocument::bookmarksModel() const
+{
+    return m_bookmarksModel;
 }
 
 bool ScenarioTextDocument::outlineMode() const

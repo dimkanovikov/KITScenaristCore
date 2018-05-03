@@ -6,9 +6,64 @@
 namespace BusinessLogic
 {
     /**
+     * @brief Базовый класс с информацией о текстовом блоке
+     */
+    class TextBlockInfo : public QTextBlockUserData
+    {
+    public:
+        TextBlockInfo() = default;
+
+        /**
+         * @brief Установлена ли на блоке закладка
+         */
+        bool hasBookmark() const;
+
+        /**
+         * @brief Установить/снять закладку с блока
+         */
+        void setHasBookmark(bool _hasBookmark);
+
+        /**
+         * @brief Получить текст закладки
+         */
+        QString bookmark() const;
+
+        /**
+         * @brief Установить текст закладки
+         */
+        void setBookmark(const QString& _bookmark);
+
+        /**
+         * @brief Получить цвет закладки
+         */
+        QColor bookmarkColor() const;
+
+        /**
+         * @brief Установить цвет закладки
+         */
+        void setBookmarkColor(const QColor& _color);
+
+    private:
+        /**
+         * @brief Установлена ли закладка для блока
+         */
+        bool m_hasBookmark = false;
+
+        /**
+         * @brief Текст закладки для блока
+         */
+        QString m_bookmark;
+
+        /**
+         * @brief Цвет закладки
+         */
+        QColor m_bookmarkColor;
+    };
+
+    /**
      * @brief Класс для хранения информации о сцене
      */
-    class SceneHeadingBlockInfo : public QTextBlockUserData
+    class SceneHeadingBlockInfo : public TextBlockInfo
     {
     public:
         SceneHeadingBlockInfo(const QString& _uuid = QString());
@@ -118,7 +173,7 @@ namespace BusinessLogic
     /**
      * @brief Класс хранящий информацию о блоке реплики
      */
-    class CharacterBlockInfo : public QTextBlockUserData
+    class CharacterBlockInfo : public TextBlockInfo
     {
     public:
         CharacterBlockInfo() = default;

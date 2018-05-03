@@ -7,6 +7,7 @@
 #include "ScenarioTextBlockParsers.h"
 #include "ScenarioTextDocument.h"
 #include "ScenarioXml.h"
+#include "ScriptBookmarksModel.h"
 
 #include <BusinessLayer/Chronometry/ChronometerFacade.h>
 #include <BusinessLayer/Counters/CountersFacade.h>
@@ -452,6 +453,56 @@ void ScenarioDocument::copyItemDescriptionToScript(int _position)
         cursor.insertText(textLine);
     }
     cursor.endEditBlock();
+}
+
+void ScenarioDocument::addBookmark(int _position, const QString& _text, const QColor& _color)
+{
+    QTextBlock block = document()->findBlock(_position);
+    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+    if (blockInfo == nullptr) {
+        switch (ScenarioBlockStyle::forBlock(block)) {
+            case ScenarioBlockStyle::SceneHeading:
+            case ScenarioBlockStyle::Character: {
+                Q_ASSERT_X(0, Q_FUNC_INFO, "Text block info for scene heading or character should be created before.");
+                break;
+            }
+
+            default: {
+                blockInfo = new TextBlockInfo;
+                break;
+            }
+        }
+    }
+    blockInfo->setHasBookmark(true);
+    blockInfo->setBookmark(_text);
+    blockInfo->setBookmarkColor(_color);
+    block.setUserData(blockInfo);
+
+    ScenarioTextDocument::updateBlockRevision(block);
+    aboutContentsChange(_position, 0, 0);
+
+    document()->bookmarksModel()->addBookmark(_position, _text, _color);
+
+    emit textChanged();
+}
+
+void ScenarioDocument::removeBookmark(int _position)
+{
+    QTextBlock block = document()->findBlock(_position);
+    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+    if (blockInfo == nullptr) {
+        return;
+    }
+
+    blockInfo->setHasBookmark(false);
+    block.setUserData(blockInfo);
+
+    ScenarioTextDocument::updateBlockRevision(block);
+    aboutContentsChange(_position, 0, 0);
+
+    document()->bookmarksModel()->removeBookmark(_position);
+
+    emit textChanged();
 }
 
 void ScenarioDocument::load(Domain::Scenario* _scenario)

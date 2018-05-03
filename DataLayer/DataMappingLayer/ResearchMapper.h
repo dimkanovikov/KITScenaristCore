@@ -39,7 +39,7 @@ namespace DataMappingLayer
         /**
          * @brief Сохранить новое изображения если оно менялось
          */
-        void save(const DomainObject* _forObject) const;
+        void save(const DomainObject* _forObject, QSqlQuery* _query = nullptr) const;
 
         /**
          * @brief Удалить изображение для заданного объекта

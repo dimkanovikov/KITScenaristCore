@@ -40,7 +40,7 @@ void ProjectUserWidget::setDeletable(bool _isDeletable)
 {
     m_ui->closeAccess->setEnabled(_isDeletable);
     if (!_isDeletable) {
-        m_ui->closeAccess->setIcons(QIcon(":/Graphics/Iconset/account.png"));
+        m_ui->closeAccess->setIcons(QIcon(":/Graphics/Iconset/account.svg"));
     }
 }
 

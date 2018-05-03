@@ -142,8 +142,10 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
             QPixmap iconPixmap = _index.data(Qt::DecorationRole).value<QPixmap>();
             QIcon icon = _index.data(Qt::DecorationRole).value<QIcon>();
             QIcon iconColorized(!iconPixmap.isNull() ? iconPixmap : icon);
-            QColor iconColor = textBrush.color();
-            ImageHelper::setIconColor(iconColorized, iconRect.size(), iconColor);
+            if (m_needColorize) {
+                QColor iconColor = textBrush.color();
+                ImageHelper::setIconColor(iconColorized, iconRect.size(), iconColor);
+            }
             iconPixmap = iconColorized.pixmap(iconRect.size());
             _painter->drawPixmap(iconRect, iconPixmap);
         }
@@ -196,4 +198,9 @@ bool TreeViewItemDelegate::editorEvent(QEvent* _event, QAbstractItemModel* _mode
     }
 
     return QStyledItemDelegate::editorEvent(_event, _model, _option, _index);
+}
+
+void TreeViewItemDelegate::setNeedColorize(bool _need)
+{
+    m_needColorize = _need;
 }

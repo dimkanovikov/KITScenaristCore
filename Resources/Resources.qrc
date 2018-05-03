@@ -117,6 +117,9 @@
         <file>Iconset/chart-areaspline.svg</file>
         <file>Iconset/wrench.svg</file>
         <file>Iconset/mind-map.svg</file>
+        <file>Iconset/bookmark-remove.svg</file>
+        <file>Iconset/bookmark.svg</file>
+        <file>Iconset/bookmark-plus.svg</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>

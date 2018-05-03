@@ -9,12 +9,12 @@ namespace {
     /**
      * @brief Количество колонок с цветовыми квадратами
      */
-    const int COLOR_RECT_COLUMNS = 5;
+    const int kColorRectColumns = 5;
 
     /**
      * @brief Количество строк с цветовыми квадратами
      */
-    const int COLOR_RECT_ROWS = 3;
+    const int kColorRectRows = 3;
 
 #ifdef MOBILE_OS
     /**
@@ -28,12 +28,12 @@ namespace {
     /**
      * @brief Расстояние между двумя соседними квадратами с цветом
      */
-    const int COLOR_RECT_SPACE = 0;
+    const int kColorRectSpace = 0;
 
     /**
      * @brief Отступы панели
      */
-    const int PANEL_MARGIN = 0;
+    const int kPanelMargin = 0;
 
     /**
      * @brief Размер метки текущего цвета
@@ -59,17 +59,17 @@ namespace {
     /**
      * @brief Расстояние между двумя соседними квадратами с цветом
      */
-    const int COLOR_RECT_SPACE = 3;
+    const int kColorRectSpace = 3;
 
     /**
      * @brief Отступы панели
      */
-    const int PANEL_MARGIN = 16;
+    const int kPanelMargin = 16;
 
     /**
      * @brief Размер метки текущего цвета
      */
-    const int COLOR_MARK_SIZE = 5;
+    static int kColorMarkSize() { return 5; }
 #endif
 }
 
@@ -81,13 +81,13 @@ WordHighlightColorsPane::WordHighlightColorsPane(QWidget* _parent) :
     // Рассчитаем фиксированный размер панели
     //
     const int width =
-            (kColorRectSize() * COLOR_RECT_COLUMNS) // ширина цветовых квадратов
-            + (COLOR_RECT_SPACE * (COLOR_RECT_COLUMNS - 1)) // ширина оступов между квадратами
-            + (PANEL_MARGIN * 2); // ширина полей
+            (kColorRectSize() * kColorRectColumns) // ширина цветовых квадратов
+            + (kColorRectSpace * (kColorRectColumns - 1)) // ширина оступов между квадратами
+            + (kPanelMargin * 2); // ширина полей
     const int height =
-            (kColorRectSize() * COLOR_RECT_ROWS) // высота цветовых квадратов
-            + (COLOR_RECT_SPACE * (COLOR_RECT_ROWS)) // высота отступов между ними (+3 т.к. между 1, 2 и 3 увеличенные отступы)
-            + (PANEL_MARGIN * 2); // высота полей
+            (kColorRectSize() * kColorRectRows) // высота цветовых квадратов
+            + (kColorRectSpace * (kColorRectRows)) // высота отступов между ними (+3 т.к. между 1, 2 и 3 увеличенные отступы)
+            + (kPanelMargin * 2); // высота полей
     setFixedSize(width, height);
 
     //
@@ -195,8 +195,8 @@ void WordHighlightColorsPane::paintEvent(QPaintEvent * _event)
         // ... метка в центре
         //
         const QPointF center = borderRect.center();
-        QRectF markRect(center.x() - COLOR_MARK_SIZE / 2, center.y() - COLOR_MARK_SIZE / 2,
-            COLOR_MARK_SIZE, COLOR_MARK_SIZE);
+        QRectF markRect(center.x() - kColorMarkSize() / 2, center.y() - kColorMarkSize() / 2,
+            kColorMarkSize(), kColorMarkSize());
         painter.fillRect(markRect, palette().text());
         painter.setPen(palette().base().color());
         painter.drawRect(markRect);
@@ -229,8 +229,8 @@ void WordHighlightColorsPane::initColors()
     //
     // Формируем цвета
     //
-    int topMargin = PANEL_MARGIN;
-    int leftMargin = PANEL_MARGIN;
+    int topMargin = kPanelMargin;
+    int leftMargin = kPanelMargin;
     QList<QColor> colors;
     colors << QColor("#ffff00")
            << QColor("#00ff00")
@@ -247,19 +247,19 @@ void WordHighlightColorsPane::initColors()
            << QColor("#808080")
            << QColor("#c0c0c0")
            << QColor("#000000");
-    for (int row = 0; row < COLOR_RECT_ROWS; ++row) {
-        leftMargin = PANEL_MARGIN;
-        for (int column = 0; column < COLOR_RECT_COLUMNS; ++column) {
+    for (int row = 0; row < kColorRectRows; ++row) {
+        leftMargin = kPanelMargin;
+        for (int column = 0; column < kColorRectColumns; ++column) {
             QRectF colorRect;
             colorRect.setLeft(leftMargin);
             colorRect.setTop(topMargin);
             colorRect.setWidth(kColorRectSize());
             colorRect.setHeight(kColorRectSize());
 
-            m_colorInfos.append(ColorKeyInfo(colors.at((row * COLOR_RECT_COLUMNS) + column), colorRect));
+            m_colorInfos.append(ColorKeyInfo(colors.at((row * kColorRectColumns) + column), colorRect));
 
-            leftMargin += kColorRectSize() + COLOR_RECT_SPACE;
+            leftMargin += kColorRectSize() + kColorRectSpace;
         }
-        topMargin += kColorRectSize() + COLOR_RECT_SPACE;
+        topMargin += kColorRectSize() + kColorRectSpace;
     }
 }

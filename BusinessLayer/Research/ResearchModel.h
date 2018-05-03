@@ -184,8 +184,8 @@ namespace BusinessLogic
          * @brief Переопределяем методы, для реализации возможности выбора элементов
          */
         /** @{ */
-        Qt::ItemFlags flags(const QModelIndex& _index) const;
-        QVariant data(const QModelIndex& _index, int _role ) const;
+        Qt::ItemFlags flags(const QModelIndex& _index) const override;
+        QVariant data(const QModelIndex& _index, int _role ) const override;
         bool setData(const QModelIndex& _index, const QVariant& _value, int _role) override;
         /** @} */
 

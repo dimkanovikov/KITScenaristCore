@@ -223,54 +223,6 @@ void AbstractMapper::abstractDelete(DomainObject* _subject)
     }
 }
 
-DomainObject* AbstractMapper::loadObjectFromDatabase(const Identifier& _id)
-{
-    QSqlQuery query = Database::query();
-    query.prepare( findStatement( _id ) );
-    query.exec();
-    query.next();
-    QSqlRecord record = query.record();
-    DomainObject* result = load( record );
-    return result;
-}
-
-Identifier AbstractMapper::findNextIdentifier()
-{
-    Identifier maxId(0);
-    if (!m_loadedObjectsMap.isEmpty()) {
-        QMap<Identifier, DomainObject*>::const_iterator iter = m_loadedObjectsMap.end();
-        --iter;
-        maxId = iter.key();
-    }
-    return maxId.next();
-}
-
-DomainObject* AbstractMapper::load(const QSqlRecord& _record )
-{
-    DomainObject* result = 0;
-
-    const int idValue = _record.value("id").toInt();
-    if (idValue != 0) {
-        Identifier id(idValue);
-        //
-        // Если объект загружен, обновляем его и используем указатель на него
-        //
-        if (m_loadedObjectsMap.contains(id)) {
-            doLoad(m_loadedObjectsMap.value(id), _record);
-            result = m_loadedObjectsMap.value(id);
-        }
-        //
-        // В противном случае создаём новый объект и сохраняем указатель на него
-        //
-        else {
-            result = doLoad(id, _record);
-            m_loadedObjectsMap.insert(id, result);
-        }
-    }
-
-    return result;
-}
-
 bool AbstractMapper::executeSql(QSqlQuery& _sqlQuery)
 {
     //
@@ -331,4 +283,52 @@ bool AbstractMapper::executeSql(QSqlQuery& _sqlQuery)
     }
 
     return true;
+}
+
+DomainObject* AbstractMapper::loadObjectFromDatabase(const Identifier& _id)
+{
+    QSqlQuery query = Database::query();
+    query.prepare( findStatement( _id ) );
+    query.exec();
+    query.next();
+    QSqlRecord record = query.record();
+    DomainObject* result = load( record );
+    return result;
+}
+
+Identifier AbstractMapper::findNextIdentifier()
+{
+    Identifier maxId(0);
+    if (!m_loadedObjectsMap.isEmpty()) {
+        QMap<Identifier, DomainObject*>::const_iterator iter = m_loadedObjectsMap.end();
+        --iter;
+        maxId = iter.key();
+    }
+    return maxId.next();
+}
+
+DomainObject* AbstractMapper::load(const QSqlRecord& _record )
+{
+    DomainObject* result = 0;
+
+    const int idValue = _record.value("id").toInt();
+    if (idValue != 0) {
+        Identifier id(idValue);
+        //
+        // Если объект загружен, обновляем его и используем указатель на него
+        //
+        if (m_loadedObjectsMap.contains(id)) {
+            doLoad(m_loadedObjectsMap.value(id), _record);
+            result = m_loadedObjectsMap.value(id);
+        }
+        //
+        // В противном случае создаём новый объект и сохраняем указатель на него
+        //
+        else {
+            result = doLoad(id, _record);
+            m_loadedObjectsMap.insert(id, result);
+        }
+    }
+
+    return result;
 }

@@ -58,6 +58,11 @@ namespace DataMappingLayer
         bool abstractUpdate(DomainObject* _subject);
         void abstractDelete(DomainObject* _subject);
 
+        /**
+         * @brief Выполнить запрос
+         */
+        bool executeSql(QSqlQuery& _sqlQuery);
+
     protected:
         AbstractMapper();
 
@@ -76,11 +81,6 @@ namespace DataMappingLayer
          * @brief Загрузить или обновить объект из записи в БД
          */
         DomainObject* load(const QSqlRecord& _record);
-
-        /**
-         * @brief Выполнить запрос
-         */
-        bool executeSql(QSqlQuery& _sqlQuery);
 
     private:
         /**

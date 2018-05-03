@@ -64,7 +64,7 @@ protected:
 	/**
 	 * @brief Переопределено для добавления действий связанных с проверкой орфографии
 	 */
-	void contextMenuEvent(QContextMenuEvent* _event);
+    void contextMenuEvent(QContextMenuEvent* _event) override;
 
 	/**
 	 * @brief Пересоздание подсвечивающего класса

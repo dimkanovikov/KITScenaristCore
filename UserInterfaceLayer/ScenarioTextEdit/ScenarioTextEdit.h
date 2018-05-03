@@ -160,9 +160,9 @@ namespace UserInterface
         void scrollToAdditionalCursor(int _index);
 
         /**
-         * @brief Установить список дополнительных действий для контекстного меню
+         * @brief Установить список действий рецензирования для контекстного меню
          */
-        void setAdditionalContextMenuActions(const QList<QAction*>& _actions);
+        void setReviewContextMenuActions(const QList<QAction*>& _actions);
 
         /**
          * @brief Создать контекстное меню, чтобы добавить в него дополнительные действия
@@ -215,6 +215,21 @@ namespace UserInterface
          */
         void reviewChanged();
 
+        /**
+         * @brief Пользователь хочет добавить закладку в заданном месте документа
+         */
+        void addBookmarkRequested(int _position);
+
+        /**
+         * @brief Пользователь хочет изменить закладку в заданном месте документа
+         */
+        void editBookmarkRequested(int _position);
+
+        /**
+         * @brief Пользователь хочет убрать закладку в заданном месте документа
+         */
+        void removeBookmarkRequested(int _position);
+
     protected:
         /**
          * @brief Нажатия многих клавиш обрабатываются вручную
@@ -265,7 +280,7 @@ namespace UserInterface
          */
         bool canComplete() const override;
 
-    private slots:
+    private:
         /**
          * @brief Скорректировать позиции курсоров соавторов
          */
@@ -286,7 +301,6 @@ namespace UserInterface
          */
         void aboutLoadEditorState();
 
-    private:
         /**
          * @brief Очистить текущий блок от установленного в нём типа
          */
@@ -405,9 +419,9 @@ namespace UserInterface
         ShortcutsManager* m_shortcutsManager;
 
         /**
-         * @brief Список дополнительных действий для контекстного меню
+         * @brief Список действий рецензирования для контекстного меню
          */
-        QList<QAction*> m_additionalContextMenuActions;
+        QList<QAction*> m_reviewContextMenuActions;
     };
 }
 

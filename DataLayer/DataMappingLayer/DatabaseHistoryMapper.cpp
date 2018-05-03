@@ -5,6 +5,7 @@
 
 #include <3rd_party/Helpers/QVariantMapWriter.h>
 
+#include <QDebug>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QVariant>
@@ -118,7 +119,7 @@ void DatabaseHistoryMapper::printHistory()
 //    auto h = history("0000-00-00");
 //    for (auto& hr : h) {
 //        auto hrv = historyRecord(hr);
-////        if (!hrv[QUERY_KEY].contains("scenario_data")) continue;
+//        if (!hrv[QUERY_KEY].contains("scenario_data")) continue;
 //        qDebug() << "********************************************************";
 //        for (auto hrvKey : hrv.keys()) {
 //            if (hrvKey != QUERY_VALUES_KEY) {

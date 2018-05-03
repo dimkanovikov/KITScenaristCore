@@ -34,6 +34,8 @@ namespace {
     const QString ATTRIBUTE_COLOR = "color";
     const QString ATTRIBUTE_STAMP = "stamp";
     const QString ATTRIBUTE_TITLE = "title";
+    const QString ATTRIBUTE_BOOKMARK = "bookmark";
+    const QString ATTRIBUTE_BOOKMARK_COLOR = "bookmark_color";
     const QString ATTRIBUTE_REVIEW_FROM = "from";
     const QString ATTRIBUTE_REVIEW_LENGTH = "length";
     const QString ATTRIBUTE_REVIEW_COLOR = "color";
@@ -73,20 +75,32 @@ namespace {
                 % "#"
                 % QString::number(ScenarioBlockStyle::forBlock(_block));
 
-        if (SceneHeadingBlockInfo* blockInfo = dynamic_cast<SceneHeadingBlockInfo*>(_block.userData())) {
-            hash = hash
-                    % "#"
-                    % blockInfo->uuid()
-                    % "#"
-                    % QString::number(blockInfo->sceneNumber())
-                    % "#"
-                    % blockInfo->colors()
-                    % "#"
-                    % blockInfo->stamp()
-                    % "#"
-                    % blockInfo->title()
-                    % "#"
-                    % blockInfo->description();
+        if (TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(_block.userData())) {
+            if (SceneHeadingBlockInfo* shBlockInfo = dynamic_cast<SceneHeadingBlockInfo*>(blockInfo)) {
+                hash = hash
+                       % "#"
+                       % shBlockInfo->uuid()
+                       % "#"
+                       % QString::number(shBlockInfo->sceneNumber())
+                       % "#"
+                       % shBlockInfo->colors()
+                       % "#"
+                       % shBlockInfo->stamp()
+                       % "#"
+                       % shBlockInfo->title()
+                       % "#"
+                       % shBlockInfo->description()
+                       % "#"
+                       % (shBlockInfo->hasBookmark() ? "1" : "0")
+                       % "#"
+                       % shBlockInfo->bookmark();
+            } else {
+                hash = hash
+                       % "#"
+                       % (blockInfo->hasBookmark() ? "1" : "0")
+                       % "#"
+                       % blockInfo->bookmark();
+            }
         }
 
         for (const QTextLayout::FormatRange& range : _block.textFormats()) {
@@ -347,9 +361,22 @@ QString ScenarioXml::scenarioToXml()
                 }
 
                 //
+                // Запишем закладку, если установлена для блока
+                //
+                QString bookmark;
+                {
+                    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(currentBlock.userData());
+                    if (blockInfo != nullptr
+                        && blockInfo->hasBookmark()) {
+                        bookmark = QString(" %1=\"%2\"").arg(ATTRIBUTE_BOOKMARK).arg(TextEditHelper::toHtmlEscaped(blockInfo->bookmark()));
+                        bookmark += QString(" %1=\"%2\"").arg(ATTRIBUTE_BOOKMARK_COLOR).arg(blockInfo->bookmarkColor().name());
+                    }
+                }
+
+                //
                 // Открыть ячейку текущего элемента
                 //
-                currentBlockXml.append(QString("<%1%2>\n").arg(currentNode, uuidColorsAndTitle));
+                currentBlockXml.append(QString("<%1%2%3>\n").arg(currentNode, uuidColorsAndTitle, bookmark));
 
                 //
                 // Пишем текст текущего элемента
@@ -733,6 +760,17 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     }
                     if (!info->title().isEmpty()) {
                         writer.writeAttribute(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->title()));
+                    }
+                }
+
+                //
+                // Запишем закладку, если установлена для блока
+                //
+                if (currentBlock.userData() != nullptr) {
+                    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(currentBlock.userData());
+                    if (blockInfo->hasBookmark()) {
+                        writer.writeAttribute(ATTRIBUTE_BOOKMARK, TextEditHelper::toHtmlEscaped(blockInfo->bookmark()));
+                        writer.writeAttribute(ATTRIBUTE_BOOKMARK_COLOR, blockInfo->bookmarkColor().name());
                     }
                 }
 
@@ -1410,6 +1448,24 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                             info->setTitle(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));
                         }
                         cursor.block().setUserData(info);
+                    }
+
+                    //
+                    // Загружаем закладки, если установлены
+                    //
+                    if (reader.attributes().hasAttribute(ATTRIBUTE_BOOKMARK)) {
+                        TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(cursor.block().userData());
+                        if (blockInfo == nullptr) {
+                            if (tokenType == ScenarioBlockStyle::Character) {
+                                blockInfo = new CharacterBlockInfo;
+                            } else {
+                                blockInfo = new TextBlockInfo;
+                            }
+                        }
+                        blockInfo->setHasBookmark(true);
+                        blockInfo->setBookmark(reader.attributes().value(ATTRIBUTE_BOOKMARK).toString());
+                        blockInfo->setBookmarkColor(reader.attributes().value(ATTRIBUTE_BOOKMARK_COLOR).toString());
+                        cursor.block().setUserData(blockInfo);
                     }
 
                     //
