@@ -4694,11 +4694,11 @@ The application will start in few seconds.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remove seleted bookmark</source>
+        <source>Edit selected bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit selected bookmark</source>
+        <source>Remove selected bookmark</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

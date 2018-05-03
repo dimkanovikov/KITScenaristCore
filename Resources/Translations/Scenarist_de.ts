@@ -6332,7 +6332,7 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="56"/>
-        <source>Remove seleted bookmark</source>
+        <source>Remove selected bookmark</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

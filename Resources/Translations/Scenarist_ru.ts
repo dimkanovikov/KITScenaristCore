@@ -5832,8 +5832,12 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="56"/>
+        <source>Remove selected bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Remove seleted bookmark</source>
-        <translation>Удалить выбранную закладку</translation>
+        <translation type="vanished">Удалить выбранную закладку</translation>
     </message>
 </context>
 <context>

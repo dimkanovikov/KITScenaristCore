@@ -38,7 +38,8 @@ public:
         Farsi,
         Hebrew,
         Polish,
-        Turkish
+        Turkish,
+        Hungarian
     };
 
     /**
