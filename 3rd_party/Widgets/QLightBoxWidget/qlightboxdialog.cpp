@@ -142,11 +142,6 @@ void QLightBoxDialog::init()
         connect(this, &QLightBoxDialog::showed, [=] { focusedOnExec()->setFocus(); });
 
         //
-        // Настраиваем заголовок
-        //
-        updateTitle();
-
-        //
         // Настраиваем прогресс
         //
         m_progress->setFixedHeight(5);
@@ -191,6 +186,11 @@ void QLightBoxDialog::init()
             setLayout(newLayout);
         }
     }
+
+    //
+    // Заголовок необходимо настраивать каждый раз заново
+    //
+    updateTitle();
 }
 
 void QLightBoxDialog::updateTitle()
