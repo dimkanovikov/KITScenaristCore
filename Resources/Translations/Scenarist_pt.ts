@@ -1395,6 +1395,10 @@ Türkçe: Recep Burak Yak
         <source>Türkçe</source>
         <translation></translation>
     </message>
+    <message>
+        <source>Magyar</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -2516,6 +2520,10 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     <message>
         <source>Türkçe</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Magyar</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4874,6 +4882,10 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     <message>
         <source>Turkish</source>
         <translation>Turco</translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

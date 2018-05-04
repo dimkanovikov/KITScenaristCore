@@ -1364,6 +1364,10 @@ Türkçe: Recep Burak Yak
         <source>Türkçe</source>
         <translation></translation>
     </message>
+    <message>
+        <source>Magyar</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -2479,6 +2483,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <source>Türkçe</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Magyar</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4858,6 +4866,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Turkish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

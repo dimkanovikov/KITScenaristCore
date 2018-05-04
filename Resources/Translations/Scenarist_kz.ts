@@ -170,7 +170,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.ui" line="32"/>
         <source>Bookmark text</source>
-        <translation type="unfinished"></translation>
+        <translation>Белгі мәтіні</translation>
     </message>
 </context>
 <context>
@@ -178,7 +178,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Export/AbstractExporter.cpp" line="372"/>
         <source>Real name: </source>
-        <translation>Ағымды уақытта:</translation>
+        <translation>Шын аты:</translation>
     </message>
 </context>
 <context>
@@ -2182,7 +2182,7 @@ Project didn&apos;t synchronized.</source>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1887"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1898"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Құралдар</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1888"/>
@@ -2661,12 +2661,12 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="114"/>
         <source>Choose backup from list</source>
-        <translation type="unfinished"></translation>
+        <translation>Көшірмені тізімнен таңдаңыз</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="130"/>
         <source>Bytes</source>
-        <translation type="unfinished"></translation>
+        <translation>байт</translation>
     </message>
 </context>
 <context>
@@ -4914,7 +4914,7 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="35"/>
         <source>Back to tools list</source>
-        <translation type="unfinished"></translation>
+        <translation>Құралдар тізіміне оралу</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -5176,12 +5176,12 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.cpp" line="12"/>
         <source>Add new bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Жаңа белгі қосу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.cpp" line="12"/>
         <source>Update bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Белгіні жаңарту</translation>
     </message>
 </context>
 <context>
@@ -5644,12 +5644,12 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="375"/>
         <source>Script bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарий белгілері</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="376"/>
         <source>Show/hide script bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарий белгілерін көрсету/көрсетпеу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="380"/>
@@ -5766,12 +5766,12 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="560"/>
         <source>Remove bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Белгілерді жою</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="565"/>
         <source>Add bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Белгі қосу</translation>
     </message>
 </context>
 <context>
@@ -5838,17 +5838,17 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="50"/>
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Белгілер</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="53"/>
         <source>Edit selected bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Таңдалған белгіні өзгерту</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="56"/>
-        <source>Remove selected bookmark</source>
-        <translation type="unfinished"></translation>
+        <source>Remove seleted bookmark</source>
+        <translation>Таңдалған белгіні жою</translation>
     </message>
 </context>
 <context>
@@ -5958,7 +5958,7 @@ The application will start in few seconds.</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="196"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="753"/>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="571"/>
@@ -6218,7 +6218,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.cpp" line="54"/>
         <source>Back to the tools list</source>
-        <translation type="unfinished"></translation>
+        <translation>Құралдар тізіміне оралу</translation>
     </message>
 </context>
 <context>
@@ -6226,37 +6226,37 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="99"/>
         <source>Didn&apos;t find any backups for the current project</source>
-        <translation type="unfinished"></translation>
+        <translation>Ағымды жобаның көшірмелері табылмады</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="112"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Құралдар</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="115"/>
         <source>Tool settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Құрал баптаулары</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="117"/>
         <source>Restore script</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарийді қалпына келтіру</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="122"/>
         <source>Compare script versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарий нұсқаларын салыстыру</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="125"/>
         <source>Restore script from backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарийді көшірмеден келтіру</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="51"/>
         <source>Choose tool from list</source>
-        <translation type="unfinished"></translation>
+        <translation>Құралды тізімнен таңдаңыз</translation>
     </message>
 </context>
 <context>
