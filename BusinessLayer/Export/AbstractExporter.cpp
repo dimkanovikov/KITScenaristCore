@@ -769,6 +769,13 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                 }
 
                 //
+                // Добавим (ПРОД) к имени персонажа, если необходимо
+                //
+                if (sourceDocumentCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCharacterContinued)) {
+                    destDocumentCursor.insertText(ScriptTextCorrector::continuedTerm());
+                }
+
+                //
                 // Добавляем редакторские пометки, если необходимо
                 //
                 if (_exportParameters.saveReviewMarks) {

@@ -29,10 +29,7 @@ namespace {
      * @brief Автоматически добавляемые продолжения в диалогах
      */
     //: Continued
-    static const char* CONTINUED = QT_TRANSLATE_NOOP("BusinessLogic::ScriptTextCorrector", "CONT'D");
-    static const QString continuedTerm() {
-        return QString(" (%1)").arg(QApplication::translate("BusinessLogic::ScriptTextCorrector", CONTINUED));
-    }
+    static const char* kContinuedTerm = QT_TRANSLATE_NOOP("BusinessLogic::ScriptTextCorrector", "CONT'D");
 
     /**
      * @brief Автоматически добавляемые продолжения в диалогах
@@ -62,6 +59,11 @@ namespace {
     }
 }
 
+
+QString ScriptTextCorrector::continuedTerm()
+{
+    return QString(" (%1)").arg(QApplication::translate("BusinessLogic::ScriptTextCorrector", kContinuedTerm));
+}
 
 ScriptTextCorrector::ScriptTextCorrector(QTextDocument* _document, const QString& _templateName) :
     QObject(_document),
@@ -216,11 +218,11 @@ void ScriptTextCorrector::correctCharactersNames(int _position, int _charsRemove
                 //
                 if (lastCharacterName.isEmpty()
                     || characterName != lastCharacterName) {
-                    const QString blockText = block.text();
-                    if (blockText.endsWith(::continuedTerm(), Qt::CaseInsensitive)) {
-                        cursor.setPosition(block.position() + blockText.indexOf(::continuedTerm(), 0, Qt::CaseInsensitive));
-                        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
-                        cursor.removeSelectedText();
+                    QTextBlockFormat characterFormat = block.blockFormat();
+                    if (characterFormat.boolProperty(ScenarioBlockStyle::PropertyIsCharacterContinued)) {
+                        characterFormat.setProperty(ScenarioBlockStyle::PropertyIsCharacterContinued, false);
+                        cursor.setPosition(block.position());
+                        cursor.setBlockFormat(characterFormat);
                     }
                 }
                 //
@@ -228,14 +230,14 @@ void ScriptTextCorrector::correctCharactersNames(int _position, int _charsRemove
                 //
                 else if (characterName == lastCharacterName){
                     const QString characterState = CharacterParser::state(block.text());
-                    if (characterState.isEmpty()) {
-                        //
-                        // ... вставляем текст
-                        //
-                        cursor.setPosition(block.position());
-                        cursor.movePosition(QTextCursor::EndOfBlock);
-                        cursor.insertText(::continuedTerm());
-                    }
+                    //
+                    // ... помечаем блок, что нужно отрисовывать вспомогательный текст
+                    //
+                    QTextBlockFormat characterFormat = block.blockFormat();
+                    characterFormat.setProperty(ScenarioBlockStyle::PropertyIsCharacterContinued,
+                                                m_needToCorrectCharactersNames && characterState.isEmpty());
+                    cursor.setPosition(block.position());
+                    cursor.setBlockFormat(characterFormat);
                 }
 
                 lastCharacterName = characterName;
@@ -1228,7 +1230,7 @@ void ScriptTextCorrector::breakDialogue(const QTextBlockFormat& _blockFormat, qr
         // И вставляем текст с именем персонажа
         //
         const QString characterName = CharacterParser::name(characterBlock.text());
-        _cursor.insertText(characterName + ::continuedTerm());
+        _cursor.insertText(characterName + continuedTerm());
         _block = _cursor.block();
         //
         ::updateBlockLayout(_pageWidth, _block);

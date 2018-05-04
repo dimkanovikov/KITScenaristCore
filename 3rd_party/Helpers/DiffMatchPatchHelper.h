@@ -85,6 +85,20 @@ namespace {
         result = result.remove(QRegularExpression("<review(.*)>\n"));
         result = result.remove(QRegularExpression("<review_comment(.*)>\n"));
         result = result.remove(QRegularExpression("<format(.*)>\n"));
+        //
+        result = result.remove(QRegularExpression("<scene_characters(.*)>\n"));
+        result = result.remove(QRegularExpression("<action(.*)>\n"));
+        result = result.remove(QRegularExpression("<character(.*)>\n"));
+        result = result.remove(QRegularExpression("<parenthetical(.*)>\n"));
+        result = result.remove(QRegularExpression("<dialog(.*)>\n"));
+        result = result.remove(QRegularExpression("<transition(.*)>\n"));
+        result = result.remove(QRegularExpression("<note(.*)>\n"));
+        result = result.remove(QRegularExpression("<title_header(.*)>\n"));
+        result = result.remove(QRegularExpression("<title(.*)>\n"));
+        result = result.remove(QRegularExpression("<noprintable_text(.*)>\n"));
+        result = result.remove(QRegularExpression("<scene_description(.*)>\n"));
+        result = result.remove(QRegularExpression("<undefined(.*)>\n"));
+        result = result.remove(QRegularExpression("<lyrics(.*)>\n"));
 
         result = TextEditHelper::removeXmlTags(result);
         result = TextEditHelper::fromHtmlEscaped(result);

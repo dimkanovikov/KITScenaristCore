@@ -23,6 +23,12 @@ namespace BusinessLogic
         Q_OBJECT
 
     public:
+        /**
+         * @brief Автоматически добавляемые продолжения в диалогах
+         */
+        static QString continuedTerm();
+
+    public:
         explicit ScriptTextCorrector(QTextDocument* _document, const QString& _templateName = QString());
 
         /**

@@ -7,6 +7,7 @@
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockInfo.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioReviewModel.h>
+#include <BusinessLayer/ScenarioDocument/ScriptTextCorrector.h>
 
 #include <BusinessLayer/Import/FountainImporter.h>
 
@@ -1480,6 +1481,27 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                     }
                                     painter.drawText(rect, Qt::AlignRight | Qt::AlignTop, dialogueNumber);
                                 }
+                            }
+
+                            //
+                            // Прорисовка автоматических (ПРОД) для реплик
+                            //
+                            if (blockType == ScenarioBlockStyle::Character
+                                && block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCharacterContinued)) {
+                                painter.setFont(cursor.charFormat().font());
+
+                                //
+                                // Определим место положение конца имени персонажа
+                                //
+                                const int continuedTermWidth = painter.fontMetrics().width(ScriptTextCorrector::continuedTerm());
+                                const QPoint topLeft = QLocale().textDirection() == Qt::LeftToRight
+                                                       ? cursorREnd.topLeft()
+                                                       : cursorREnd.topRight() - QPoint(continuedTermWidth, 0);
+                                const QPoint bottomRight = QLocale().textDirection() == Qt::LeftToRight
+                                                           ? cursorREnd.bottomRight() + QPoint(continuedTermWidth, 0)
+                                                           : cursorREnd.bottomLeft();
+                                const QRect rect(topLeft, bottomRight);
+                                painter.drawText(rect, Qt::AlignRight | Qt::AlignTop, ScriptTextCorrector::continuedTerm());
                             }
                         }
                     }
