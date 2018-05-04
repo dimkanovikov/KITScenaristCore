@@ -182,7 +182,7 @@ Türkçe: Recep Burak Yak
     <name>BookmarkDialog</name>
     <message>
         <source>Bookmark text</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcar texto</translation>
     </message>
 </context>
 <context>
@@ -1839,7 +1839,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Ferramentas</translation>
     </message>
 </context>
 <context>
@@ -2170,11 +2170,11 @@ Você pode tentar recarregar a atualização.</translation>
     <name>ManagementLayer::ToolsManager</name>
     <message>
         <source>Choose backup from list</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha o back up da lista</translation>
     </message>
     <message>
         <source>Bytes</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3960,7 +3960,7 @@ Valor, mm</translation>
     </message>
     <message>
         <source>Back to tools list</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltar para a lista de ferramentas</translation>
     </message>
 </context>
 <context>
@@ -4168,11 +4168,11 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <name>UserInterface::BookmarkDialog</name>
     <message>
         <source>Add new bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar nova marcação</translation>
     </message>
     <message>
         <source>Update bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Atualizar marcação</translation>
     </message>
 </context>
 <context>
@@ -4557,11 +4557,11 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Script bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcações do roteiro</translation>
     </message>
     <message>
         <source>Show/hide script bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar/ocultar marcações do roteiro</translation>
     </message>
 </context>
 <context>
@@ -4648,11 +4648,11 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <name>UserInterface::ScenarioTextEdit</name>
     <message>
         <source>Remove bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover marcação</translation>
     </message>
     <message>
         <source>Add bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar marcação</translation>
     </message>
 </context>
 <context>
@@ -4706,15 +4706,15 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <name>UserInterface::ScriptBookmarks</name>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcações</translation>
     </message>
     <message>
         <source>Edit selected bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar marcação selecionada</translation>
     </message>
     <message>
         <source>Remove selected bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover marcação selecionada</translation>
     </message>
 </context>
 <context>
@@ -4873,7 +4873,7 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>Turco</translation>
     </message>
 </context>
 <context>
@@ -5012,38 +5012,38 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     <name>UserInterface::ToolsSettings</name>
     <message>
         <source>Back to the tools list</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltar para a lista de ferramentas</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ToolsView</name>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Ferramentas</translation>
     </message>
     <message>
         <source>Tool settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurações das ferramentas</translation>
     </message>
     <message>
         <source>Restore script</source>
-        <translation type="unfinished"></translation>
+        <translation>Recuperar roteiro</translation>
     </message>
     <message>
         <source>Compare script versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Comparar versões do roteiro</translation>
     </message>
     <message>
         <source>Restore script from backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Recuperar roteiro à partir do back up</translation>
     </message>
     <message>
         <source>Choose tool from list</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolher a ferramenta da lista</translation>
     </message>
     <message>
         <source>Didn&apos;t find any backups for the current project</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi encontrado nenhum back up do projeto atual</translation>
     </message>
 </context>
 <context>

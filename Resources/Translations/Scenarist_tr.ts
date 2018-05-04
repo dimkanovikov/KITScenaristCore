@@ -179,7 +179,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.ui" line="32"/>
         <source>Bookmark text</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayfa işareti metni</translation>
     </message>
 </context>
 <context>
@@ -4785,7 +4785,7 @@ Saniyeler</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="35"/>
         <source>Back to tools list</source>
-        <translation type="unfinished"></translation>
+        <translation>Araçlar listesine dön</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -5047,12 +5047,12 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.cpp" line="12"/>
         <source>Add new bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni sayfa işareti ekle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.cpp" line="12"/>
         <source>Update bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayfa işaretini güncelle</translation>
     </message>
 </context>
 <context>
@@ -5515,12 +5515,12 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="375"/>
         <source>Script bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryo imleri</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="376"/>
         <source>Show/hide script bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryo imlerini göster/gizle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="380"/>
@@ -5637,12 +5637,12 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="560"/>
         <source>Remove bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayfa işaretini kaldır</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="565"/>
         <source>Add bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayfa işareti ekle</translation>
     </message>
 </context>
 <context>
@@ -5708,17 +5708,17 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="50"/>
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayfa İşaretleri</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="53"/>
         <source>Edit selected bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçili sayfa işaretini düzenle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="56"/>
-        <source>Remove selected bookmark</source>
-        <translation type="unfinished"></translation>
+        <source>Remove seleted bookmark</source>
+        <translation>Seçili sayfa işaretini kaldır</translation>
     </message>
 </context>
 <context>
@@ -5846,7 +5846,7 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="196"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="753"/>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>Türkçe</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="571"/>
@@ -6074,7 +6074,7 @@ projeyi her 3 saniyede bir kaydeder, ancak eğer aralıksız çalışıyorsanız
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="99"/>
         <source>Didn&apos;t find any backups for the current project</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçerli proje için hiçbir yedekleme bulunamadı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="112"/>
