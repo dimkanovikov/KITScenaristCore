@@ -587,6 +587,7 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("application/modules/cards", "1");
     m_defaultValues.insert("application/modules/scenario", "1");
     m_defaultValues.insert("application/modules/statistics", "1");
+    m_defaultValues.insert("application/modules/tools", "1");
 
     m_defaultValues.insert("research/default-font/family", "Courier Prime");
     m_defaultValues.insert("research/default-font/size", "12");

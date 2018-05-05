@@ -296,7 +296,7 @@ QString FountainImporter::importScript(const QString& _scriptText) const {
                     // TODO: номера сцен игнорируем, поскольку в фонтане они являются строками
                     //
                     int sharpPos = paragraphs[i].size();
-                    if (paragraphs[i].startsWith("#")) {
+                    if (paragraphs[i].endsWith("#")) {
                         sharpPos = paragraphs[i].lastIndexOf('#', paragraphs[i].size() - 2);
                     }
                     if (sharpPos == -1) {
