@@ -1845,6 +1845,16 @@ O projeto não foi sincronizado.</translation>
         <source>Tools</source>
         <translation>Ferramentas</translation>
     </message>
+    <message>
+        <source>Project sync not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
+
+Project didn&apos;t synchronized.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -3523,6 +3533,10 @@ Parágrafo</translation>
         <source>Symbols without spaces | Symbols with spaces</source>
         <translation>Símbolos sem espaços | Símbolos com espaços</translation>
     </message>
+    <message>
+        <source>Tools module</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -3677,7 +3691,7 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     <name>StatisticsSettings</name>
     <message>
         <source>StackedWidget</source>
-        <translation>StackedWidget</translation>
+        <translation type="vanished">StackedWidget</translation>
     </message>
     <message>
         <source>Summary text statistics</source>
@@ -3777,7 +3791,7 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     </message>
     <message>
         <source>Choose character:</source>
-        <translation>Escolha o caractere:</translation>
+        <translation type="vanished">Escolha o caractere:</translation>
     </message>
     <message>
         <source>Scene Duration</source>
@@ -3801,7 +3815,11 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     </message>
     <message>
         <source>Choose characters:</source>
-        <translation>Escolha caracteres:</translation>
+        <translation type="vanished">Escolha caracteres:</translation>
+    </message>
+    <message>
+        <source>Back to tools list</source>
+        <translation type="unfinished">Voltar para a lista de ferramentas</translation>
     </message>
 </context>
 <context>

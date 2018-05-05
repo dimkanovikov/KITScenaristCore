@@ -1804,6 +1804,16 @@ Project didn&apos;t synchronized.</source>
         <source>Tools</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Project sync not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
+
+Project didn&apos;t synchronized.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -3502,6 +3512,10 @@ Paragraph</source>
         <source>Symbols without spaces | Symbols with spaces</source>
         <translation>Символи без проміжків | Символи з проміжками</translation>
     </message>
+    <message>
+        <source>Tools module</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -3654,10 +3668,6 @@ Paragraph</source>
 <context>
     <name>StatisticsSettings</name>
     <message>
-        <source>StackedWidget</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Summary text statistics</source>
         <translation>Загальна текстова статистика</translation>
     </message>
@@ -3755,7 +3765,7 @@ Paragraph</source>
     </message>
     <message>
         <source>Choose character:</source>
-        <translation>Виберіть героя:</translation>
+        <translation type="vanished">Виберіть героя:</translation>
     </message>
     <message>
         <source>Scene Duration</source>
@@ -3779,7 +3789,11 @@ Paragraph</source>
     </message>
     <message>
         <source>Choose characters:</source>
-        <translation>Виберіть героїв:</translation>
+        <translation type="vanished">Виберіть героїв:</translation>
+    </message>
+    <message>
+        <source>Back to tools list</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
