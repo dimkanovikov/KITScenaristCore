@@ -112,6 +112,7 @@ namespace {
     const QString KEY_USERNAME = "username";
     const QString KEY_PASSWORD = "password";
     const QString KEY_DEVICE_UUID = "device_uuid";
+    const QString KEY_APP_VERSION = "app_version";
     const QString KEY_NEW_PASSWORD = "new_password";
     const QString KEY_SESSION_KEY = "session_key";
     const QString KEY_ROLE = "role";
@@ -275,6 +276,7 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     loader.addRequestAttribute(KEY_LOGIN, _email);
     loader.addRequestAttribute(KEY_PASSWORD, _password);
     loader.addRequestAttribute(KEY_DEVICE_UUID, ::deviceUuid());
+    loader.addRequestAttribute(KEY_APP_VERSION, QApplication::applicationVersion());
     QByteArray response = loader.loadSync(URL_LOGIN);
 
     //

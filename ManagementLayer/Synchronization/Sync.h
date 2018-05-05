@@ -61,6 +61,10 @@ namespace ManagementLayer
             // Закончилось место на сервере
             //
             StorageSizeFinished = 203,
+            //
+            // Используется устаревшая версия программы
+            //
+            AppVersionOutdated = 204,
 
             // ****
             //

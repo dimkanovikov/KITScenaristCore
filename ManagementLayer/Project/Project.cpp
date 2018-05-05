@@ -190,11 +190,8 @@ QStringList Project::users() const
     return m_users;
 }
 
-bool Project::isSyncAvailable(int* _errorCode) const
+bool Project::isSyncAvailable() const
 {
-    if (_errorCode != 0) {
-        *_errorCode = m_errorCode;
-    }
     return m_isSyncAvailable;
 }
 
