@@ -165,7 +165,7 @@ Türkçe: Recep Burak Yak
     <name>BookmarkDialog</name>
     <message>
         <source>Bookmark text</source>
-        <translation type="unfinished"></translation>
+        <translation>Текст закладки</translation>
     </message>
 </context>
 <context>
@@ -983,7 +983,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>AFTERNOON</source>
-        <translation></translation>
+        <translation>ПОЛУДЕНЬ</translation>
     </message>
     <message>
         <source>LATER</source>
@@ -1818,7 +1818,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Інструменти</translation>
     </message>
     <message>
         <source>Project sync not available</source>
@@ -2163,11 +2163,11 @@ You can try to reload update.</source>
     <name>ManagementLayer::ToolsManager</name>
     <message>
         <source>Choose backup from list</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть бекап зі списку</translation>
     </message>
     <message>
         <source>Bytes</source>
-        <translation type="unfinished"></translation>
+        <translation>Байтів</translation>
     </message>
 </context>
 <context>
@@ -3813,7 +3813,7 @@ Paragraph</source>
     </message>
     <message>
         <source>Back to tools list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Повернутись до списку інструментів</translation>
     </message>
 </context>
 <context>
@@ -3987,7 +3987,7 @@ Paragraph</source>
     </message>
     <message>
         <source>Back to tools list</source>
-        <translation type="unfinished"></translation>
+        <translation>Повернутись до списку інструментів</translation>
     </message>
 </context>
 <context>
@@ -4195,11 +4195,11 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <name>UserInterface::BookmarkDialog</name>
     <message>
         <source>Add new bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати нову закладку</translation>
     </message>
     <message>
         <source>Update bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Оновити закладку</translation>
     </message>
 </context>
 <context>
@@ -4584,11 +4584,11 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Script bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Закладки сценарію</translation>
     </message>
     <message>
         <source>Show/hide script bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати/сховати закладки сценарію</translation>
     </message>
 </context>
 <context>
@@ -4675,11 +4675,11 @@ The application will start in few seconds.</source>
     <name>UserInterface::ScenarioTextEdit</name>
     <message>
         <source>Remove bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити закладку</translation>
     </message>
     <message>
         <source>Add bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати закладку</translation>
     </message>
 </context>
 <context>
@@ -4733,11 +4733,15 @@ The application will start in few seconds.</source>
     <name>UserInterface::ScriptBookmarks</name>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Закладки</translation>
+    </message>
+    <message>
+        <source>Remove seleted bookmark</source>
+        <translation type="vanished">Видалити вибрану закладку</translation>
     </message>
     <message>
         <source>Edit selected bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати вибрану закладку</translation>
     </message>
     <message>
         <source>Remove selected bookmark</source>
@@ -4900,7 +4904,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>Turkish</translation>
     </message>
     <message>
         <source>Hungarian</source>
@@ -5043,38 +5047,38 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <name>UserInterface::ToolsSettings</name>
     <message>
         <source>Back to the tools list</source>
-        <translation type="unfinished"></translation>
+        <translation>Повернутись до списку інструментів</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ToolsView</name>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Інструменти</translation>
     </message>
     <message>
         <source>Tool settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування інструментів</translation>
     </message>
     <message>
         <source>Restore script</source>
-        <translation type="unfinished"></translation>
+        <translation>Відновити сценарій</translation>
     </message>
     <message>
         <source>Compare script versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Порівняти версії сценарію</translation>
     </message>
     <message>
         <source>Restore script from backup</source>
-        <translation type="unfinished"></translation>
+        <translation>Відновити сценарій з бекапу</translation>
     </message>
     <message>
         <source>Choose tool from list</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибрати інструмент зі списку</translation>
     </message>
     <message>
         <source>Didn&apos;t find any backups for the current project</source>
-        <translation type="unfinished"></translation>
+        <translation>Не знайдено жодних резервних копій для поточного проекту</translation>
     </message>
 </context>
 <context>

@@ -9,14 +9,47 @@
         <translation>A szoftverről</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="30"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="26"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The cat Alexander illustrations created by &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="46"/>
         <source>KIT Scenarist</source>
         <translation>KIT Scenarist</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="53"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="147"/>
+        <source>Our heroes, who help us to create international versions:
+Deutsch: Michael Krämer
+English: Dimka Novikov
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Қазақ: Алпамыс Баткалов
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="203"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; featuring &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="219"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The application logo designed by &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Egyszerű és mindentudó forgatókönyvíró program. Fejlesztette &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Egyszerű és mindentudó forgatókönyvíró program. Fejlesztette &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="85"/>
@@ -24,7 +57,6 @@
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A szoftver megtalálható &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; licensz, forráskód megtalálható &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="147"/>
         <source>Our heroes, who help us to create international versions:
 Deutsch: Michael Krämer
 English: Dimka Novikov
@@ -41,7 +73,7 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation>Köszönet a munkájéért azoknak akik sgítettek a fordításban:
+        <translation type="vanished">Köszönet a munkájéért azoknak akik sgítettek a fordításban:
 Deutsch: Michael Krämer
 English: Dimka Novikov
 Español: Felipe Vece, Pedro Terrero
@@ -786,7 +818,7 @@ Português: Ricardo Graça, Ronaldo German
         <translation>FOLYT.</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="40"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="37"/>
         <source>MORE</source>
         <translation>TÖBB</translation>
     </message>
@@ -1317,22 +1349,27 @@ Português: Ricardo Graça, Ronaldo German
         <translation>További (Számozás, Címoldal stb.)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="453"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="447"/>
+        <source>Print watermark:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="460"/>
         <source>Template:</source>
         <translation>Sablon:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="470"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="497"/>
         <source>Print Title Page</source>
         <translation>Címoldal Nyomtatása</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="480"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="487"/>
         <source>Print pages numbers</source>
         <translation>Oldalszámok Nzomtatása</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="490"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="477"/>
         <source>Print scenes numbers with prefix</source>
         <translation>Jelenetszámok nyomtatása előjellel</translation>
     </message>
@@ -1352,17 +1389,17 @@ Português: Ricardo Graça, Ronaldo German
         <translation>Oldaltörések Ellenőrzése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="556"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="573"/>
         <source>Export</source>
         <translation>Exportálás</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="566"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="583"/>
         <source>Print Preview</source>
         <translation>Nyomtatási Előnézet</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="573"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="590"/>
         <source>Cancel</source>
         <translation>Mégse</translation>
     </message>
@@ -1590,47 +1627,47 @@ Português: Ricardo Graça, Ronaldo German
         <translation>Válassza ki az alkalmazás nyelvét</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="53"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="101"/>
         <source>English</source>
         <translation>Angol</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="70"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="84"/>
         <source>Detect language from system locale</source>
         <translation>Nyelv rendszerszintű felismerése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="63"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="94"/>
         <source>Українська</source>
         <translation>Ukrán</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="118"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="39"/>
         <source>Español</source>
         <translation>Spanyol</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="111"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="46"/>
         <source>Қазақ</source>
         <translation>Kazah</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="97"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="60"/>
         <source>Deutsch</source>
         <translation>Német</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="80"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="74"/>
         <source>Русский</source>
         <translation>Orosz</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="90"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="67"/>
         <source>Français</source>
         <translation>Francia</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="104"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="53"/>
         <source>فارْسِى</source>
         <translation>Perzsa</translation>
     </message>
@@ -1650,17 +1687,22 @@ Português: Ricardo Graça, Ronaldo German
         <translation>Török</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="46"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="176"/>
+        <source>Magyar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="111"/>
         <source>עִבְרִית</source>
         <translation>Héber</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="36"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="118"/>
         <source>Português</source>
         <translation>Portugál</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="26"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="128"/>
         <source>Polski</source>
         <translation>Lengyel</translation>
     </message>
@@ -1724,195 +1766,195 @@ Português: Ricardo Graça, Ronaldo German
         <translation> - megváltozott</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="321"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="324"/>
         <source>File format not supported</source>
         <translation>Fájltípus nem támogatott</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="322"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="325"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation>Microsoft &lt;b&gt;DOC&lt;/b&gt; fájlok nem támogatottak. Mentse el &lt;b&gt;DOCX&lt;/b&gt; formátumban és importálja újra.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="417"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="420"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
         <translation>Egy nem létező mappába szeretne projektet létrehozni: &lt;b&gt;%1&lt;/b&gt;. Válasszon másik mappát az új projekt számára.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="421"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="424"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry.</source>
         <translation>A fájlt egy másik folyamat használja. Kérjük zárja be a másik alkalmazást és próbálja újra.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="424"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="427"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
         <translation>A fájl nem módosítható. Ellenőrizze, hogy a mappa írásvédett-e. Válasszon másik mappát.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="426"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="429"/>
         <source>Create project error</source>
         <translation>Projekt létrehozása hiba</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="470"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="768"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="862"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="955"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="473"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="771"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="865"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="958"/>
         <source>Can&apos;t open project file</source>
         <translation>Nem lehet megnyitni a projektfájlt</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="510"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="513"/>
         <source>Choose file to save project</source>
         <translation>Válassza ki a menteni kívánt fájlt a projektfájlt</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="512"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="746"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="515"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="749"/>
         <source>Scenarist project files (*%1)</source>
         <translation>Scenarist projektfájl (*%1)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="571"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="658"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="679"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="574"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="661"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="682"/>
         <source>Saving error</source>
         <translation>Mentési hiba</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="572"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="575"/>
         <source>Can&apos;t save project as &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Please check permissions and retry.</source>
         <translation>Nem lehet menteni a fájlt: &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Ellenőrizze a jogosultságokat és próbálja újra.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="604"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="607"/>
         <source>Possible save error</source>
         <translation>Lehetséges mentési hiba</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="605"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="608"/>
         <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
         <translation>Kevesebb, mint 50 megabájt a szabad lemezterület. Ez problémákhoz vezethet a projekt mentésekor. Ajánlott, hogy szabadítson fel területet és ellenőrizze, hogy a projekt mentése sikeres volt.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="659"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="662"/>
         <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
         <translation>A projekt változtatások nem menthetőek. Belső adatbázis hiba: %1 Ellenőrizze, hogy létezik-e a fájl, és van-e jogosultsága. Próbálja újra (mentés)?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="680"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="683"/>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
         <translation>A projekt változtatások nem menthetőek a következőben: &lt;b&gt;%1&lt;/b&gt;. A fájl nem létezik. Állítsa vissza a fájlt és próbálkozozn újra a mentéssel. Újramentés</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="744"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="747"/>
         <source>Choose project file to open</source>
         <translation>Válasszon a betölteni kívánt projektfájlt</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="769"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="863"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="772"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="866"/>
         <source>Ignore and try to open project?</source>
         <translation>Mindenképpen próbálja megnyitnia projektet?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="883"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="886"/>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
         <translation>Biztos benne, hogy elrejti a &lt;b&gt;%1&lt;/b&gt; projektet a legutóbbiak közül?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="902"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="908"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="905"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="911"/>
         <source>Moving project to the cloud failed</source>
         <translation>A projekt felhőbe történő áthelyezése nem sikerült.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="903"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="906"/>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
         <translation>Projektek felhőbe történő áthelyezéséhez be kell jelentkeznie a KIT Scenarist felhő szolgáltatásba.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="909"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="912"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
         <translation>Projektek felhőbe történő áthelyezéséhez érvényes KIT Scenarist előfizetéssel kell rendelkeznie.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="966"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="969"/>
         <source>Change project name</source>
         <translation>Projekt nevének megváltoztatása</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="967"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="970"/>
         <source>Enter new name for project</source>
         <translation>Adja meg a projekt nevét</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="999"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1002"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Biztos benne, hogy eltávolítja a &lt;b&gt;%1&lt;/b&gt; projektet?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1008"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1011"/>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Biztos benne, hogy visszavonja az előfizetését a &lt;b&gt;%1&lt;/b&gt; projektről?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1029"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1032"/>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
         <translation>Biztos benne, hogy visszavonja a &lt;b&gt;%1&lt;/b&gt; felhasználó előfizetését a &lt;b&gt;%2&lt;/b&gt; projektről?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1051"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1054"/>
         <source>Connection active</source>
         <translation>Kapcsolat aktív</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1057"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1060"/>
         <source>Project synchronized</source>
         <translation>Projekt szinkronizálva</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1070"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1073"/>
         <source>Connection inactive</source>
         <translation>Kapcsolat inaktív</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1071"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1074"/>
         <source>Project didn&apos;t synchronized</source>
         <translation>Projekt nem lett szinkronizálva</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1114"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1117"/>
         <source>Modified</source>
         <translation>Módosított</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1142"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1145"/>
         <source>Network error</source>
         <translation>Hálózati hiba</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1144"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1147"/>
         <source>Project didn&apos;t synchronized.</source>
         <translation>Projekt nem lett szinkronizálva.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1164"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1167"/>
         <source>Incorrect username or password.</source>
         <translation>Felhasználónév vagy jelszó nem megfelelő.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1175"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1178"/>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
         <translation>Az elmentett jelszó nem megfelelő. Úgy tűnik a jelszó megváltozott. Adja meg az új jelszót.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1185"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1188"/>
         <source>Subscription ended</source>
         <translation>Előfizetés befejeződött</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1186"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1189"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
@@ -1921,12 +1963,12 @@ Project didn&apos;t synchronized.</source>
 Projekt nem lett szinkronizálva.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1198"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1201"/>
         <source>Network Error</source>
         <translation>Hálózati hiba</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1199"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1202"/>
         <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
@@ -1935,12 +1977,12 @@ Project didn&apos;t synchronized.</source>
 Projekt nem lett szinkronizálva.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1212"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1215"/>
         <source>Session closed</source>
         <translation>A munkamenet lejárt</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1213"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1216"/>
         <source>New session for you account started at other device.
 
 Project didn&apos;t synchronized.</source>
@@ -1949,23 +1991,23 @@ Project didn&apos;t synchronized.</source>
 Projekt nem lett szinkronizálva.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1223"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1226"/>
         <source>Share error</source>
         <translation>Megosztási hiba</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1224"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1227"/>
         <source>You can&apos;t share project with yourself.</source>
         <translation>Projekt megosztása saját magával nem lehetséges.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1233"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1244"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1236"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1247"/>
         <source>Project not available</source>
         <translation>Projekt nem elérhető</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1234"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1237"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
@@ -1974,7 +2016,7 @@ Project didn&apos;t synchronized.</source>
 Projekt nem lett szinkronizálva.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1245"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1248"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
@@ -1983,12 +2025,12 @@ Project didn&apos;t synchronized.</source>
 Projekt nem lett szinkronizálva.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1255"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1258"/>
         <source>Sync not available</source>
         <translation> Szinkronizáció nem elérhető</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1256"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1259"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
@@ -1997,194 +2039,206 @@ Project didn&apos;t synchronized.</source>
 Projekt nem lett szinkronizálva.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1266"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1269"/>
+        <source>Project sync not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1270"/>
+        <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
+
+Project didn&apos;t synchronized.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1280"/>
         <source>Email already exist</source>
         <translation>Email már létezik</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1275"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1289"/>
         <source>Password too weak</source>
         <translation>A jelszó túl gyenge</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1284"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1298"/>
         <source>Invalid old password</source>
         <translation>Érvénytelen régi jelszó</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1293"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1307"/>
         <source>Wrong validation code</source>
         <translation>Rossz érvényesítő kód</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1302"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1316"/>
         <source>Wrong email</source>
         <translation>Rossz email</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1311"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1325"/>
         <source>Unknown Error</source>
         <translation>Ismeretlen hiba</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1378"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1392"/>
         <source>Exit from Application</source>
         <translation>Kilépés az alkalmazásból</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1378"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1392"/>
         <source>Closing Database Connections and remove temporary files.</source>
         <translation>Adatbázis bezárása és az ideiglenes fájlok visszavonása.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1648"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1662"/>
         <source>Save project changes?</source>
         <translation>Elmenti a projekt változtatásokat?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1649"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1663"/>
         <source>Project was modified. Save changes?</source>
         <translation>A projekt megváltozott. Menti a változásokat?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1678"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1692"/>
         <source>Loading Scenario</source>
         <translation>Forgatókönyv betöltése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1678"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1692"/>
         <source>Please wait. Loading can take few minutes.</source>
         <translation>Kérjük várjon. A betöltés eltarthat pár percig.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1720"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1740"/>
         <source>Sync scenario with cloud service.</source>
         <translation>Forgatókönyv szinkronizálása a felhővel.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1750"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1770"/>
         <source>Import</source>
         <translation>Importálás</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1750"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1770"/>
         <source>Please wait. Import can take few minutes.</source>
         <translation>Kérjük várjon. Az importálás eltarthat pár percig.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1858"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1878"/>
         <source>Menu</source>
         <translation>Menü</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1867"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1887"/>
         <source>New window</source>
         <translation>Új ablak</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1882"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1893"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1902"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1913"/>
         <source>Start</source>
         <translation>Kezdés</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1883"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1894"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1903"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1914"/>
         <source>Research</source>
         <translation>Vizsgálat</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1884"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1895"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1904"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1915"/>
         <source>Cards</source>
         <translation>Kártyák</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1885"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1896"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1905"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1916"/>
         <source>Scenario</source>
         <translation>Forgatókönyv</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1886"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1897"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1906"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1917"/>
         <source>Statistics</source>
         <translation>Statisztikák</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1887"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1898"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1907"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1918"/>
         <source>Tools</source>
         <translation>Eszközök</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1888"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1899"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1908"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1919"/>
         <source>Settings</source>
         <translation>Beállítások</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1977"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1997"/>
         <source>File</source>
         <translation>Fájl</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1978"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1998"/>
         <source>Edit</source>
         <translation>Szerkesztés</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1983"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2003"/>
         <source>New</source>
         <translation>Új</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1984"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2004"/>
         <source>Open</source>
         <translation>Megnyitás</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1985"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2005"/>
         <source>Save</source>
         <translation>Mentés</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1988"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2008"/>
         <source>Save As...</source>
         <translation>Mentés Másként</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1992"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2012"/>
         <source>Import...</source>
         <translation>Importálás...</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1994"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2014"/>
         <source>Export to...</source>
         <translation>Exportálás...</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1996"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2016"/>
         <source>Print Preview</source>
         <translation>Nyomtatási Előnézet</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2001"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2021"/>
         <source>Two Panel Mode</source>
         <translation>Két Ablakos Mód</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2395"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2423"/>
         <source>on local computer</source>
         <translation>helyi számítógépen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2396"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2424"/>
         <source>in cloud</source>
         <translation>felhőben</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2401"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2429"/>
         <source>%1[*] - KIT Scenarist</source>
         <translation>%1[*] - KIT Scenarist</translation>
     </message>
@@ -2438,70 +2492,70 @@ Projekt nem lett szinkronizálva.</translation>
         <translation>Az új nyelvi beállítások az alkalmazás újraindítása után lesznek módosítva.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="350"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="355"/>
         <source>Dictionary loading</source>
         <translation>Szótár betöltése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="350"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="355"/>
         <source>Please wait, loading of spell checking dictionary can take a few minutes.</source>
         <translation>Kérjük várjon. A helyesírásellenőrző betöltése eltarthat pár percig.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="394"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="399"/>
         <source>Can&apos;t enable spell checking</source>
         <translation>Helyesírás ellenőrzés elindítása nem sikerült</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="395"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="400"/>
         <source>Can&apos;t download spelling dictionary. Please check internet connection and retry to activate spell checking</source>
         <translation>Nyelvi szótár letöltése nem sikerült. Ellenőrizze az internetkapcsolatot és próbálja újra a helyesírásellenőrző aktiválásához.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="663"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="668"/>
         <source>Choose file to load</source>
         <translation>Válassza ki a betölteni kívánt fájlt</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="664"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="688"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="669"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="693"/>
         <source>Scenario Template Files (*.%1)</source>
         <translation>Forgatókönyv Sablon Fájlok (*.%1)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="687"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="692"/>
         <source>Choose file to save</source>
         <translation>Válassza ki a menteni kívánt fájlt</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1059"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1070"/>
         <source>Press in paragraph&apos;s end</source>
         <translation>Következő a bekezdés végén</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1061"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1066"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1072"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1077"/>
         <source>Tab</source>
         <translation>Tab</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1062"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1067"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1073"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1078"/>
         <source>Enter</source>
         <translation>Enter</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1064"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1075"/>
         <source>Press in empty paragraph</source>
         <translation>Következő egy üres bekezdésben</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1070"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1081"/>
         <source>Block Name</source>
         <translation>Egység Neve</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1071"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1082"/>
         <source>Shortcut</source>
         <translation>Gyorsbillentyű</translation>
     </message>
@@ -2532,11 +2586,15 @@ Projekt nem lett szinkronizálva.</translation>
         <translation>Újra</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="427"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="364"/>
+        <source>&lt;p&gt;Can&apos;t install update. There are some problems with downloaded file.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Can&apos;t install update. There are some problems with downloaded file.
 
 You can try to reload update.</source>
-        <translation>Frissítés telepítése nem sikerült. A letöltött fájl nem megfelelő.
+        <translation type="vanished">Frissítés telepítése nem sikerült. A letöltött fájl nem megfelelő.
 		
 Próbálja meg újból letölteni a frissítést.</translation>
     </message>
@@ -2544,22 +2602,22 @@ Próbálja meg újból letölteni a frissítést.</translation>
 <context>
     <name>ManagementLayer::Sync</name>
     <message>
-        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="101"/>
+        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="105"/>
         <source>Can&apos;t estabilish network connection.</source>
         <translation>A hálózati kapcsolat létrehozása nem sikerült.</translation>
     </message>
     <message>
-        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="105"/>
+        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="109"/>
         <source>Session key not found.</source>
         <translation>Munkamenet kulcs nem található.</translation>
     </message>
     <message>
-        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="109"/>
+        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
         <source>Wrong validation code.</source>
         <translation>Rossz érvényesítési kód.</translation>
     </message>
     <message>
-        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
+        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="117"/>
         <source>Got wrong response from server.</source>
         <translation>A szerverről érkezett válasz hibás.</translation>
     </message>
@@ -2728,47 +2786,47 @@ Próbálja meg újból letölteni a frissítést.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="90"/>
         <source>עִבְרִית</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Héber</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="113"/>
         <source>فارْسِى</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Perzsa</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="120"/>
         <source>Қазақ</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kazah</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="127"/>
         <source>Português</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Portugál</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="137"/>
         <source>Русский</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Orosz</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="147"/>
         <source>Français</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Francia</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="154"/>
         <source>汉语</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kínai</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="161"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Angol</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="171"/>
         <source>Українська</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ukrán</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="182"/>
@@ -2788,55 +2846,60 @@ Próbálja meg újból letölteni a frissítést.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="222"/>
         <source>Español</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spanyol</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="229"/>
         <source>Deutsch</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Német</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="236"/>
         <source>Polski</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lengyel</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="246"/>
         <source>Türkçe</source>
+        <translation type="unfinished">Török</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="256"/>
+        <source>Magyar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="265"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="272"/>
         <source>Choose application theme</source>
         <translation>Válasszon alkalmazás felületet</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="278"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="285"/>
         <source>Dark theme</source>
         <translation>Sötét téma</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="307"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="314"/>
         <source>Theme is convenient for work with sufficient light.</source>
         <translation>A felület alkalmas megfelelő fénynél.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="342"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="349"/>
         <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
         <translation>A felület megfelelőbb gyengén megvilágított szobában és este vagy éjszaka.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="377"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="384"/>
         <source>Light theme</source>
         <translation>Világos téma</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="410"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="417"/>
         <source>Use research module</source>
         <translation>Vizsgálati modul használata</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="420"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="427"/>
         <source>You can collect all the necessary materials for the project in one place. In it, you can save basic information about the script, such as its name, logline, synopsis, and also fill in the title page of the script.
 
 Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
@@ -2849,17 +2912,17 @@ Itt kezelheti a karakterek és helyek listáját. Hozzon létre újakat, adjon h
 Továbbá a kutatási lapon a projekthez társított különböző anyagokat (szöveges dokumentumok, képek, linkek weboldalakhoz és elmetérképekhez) is el lehet tárolni, megfelelő módon rendszerezni.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="441"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="448"/>
         <source>Research</source>
         <translation>Vizsgálat</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="485"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="492"/>
         <source>Cards</source>
         <translation>Kártyák</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="492"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="499"/>
         <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
 
 You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
@@ -2868,17 +2931,17 @@ You can add colors and stamp to cards, move, and group them, and all changes mad
 A színeket és bélyegzőket a kártyákhoz hozzáadhatja, áthelyezheti és csoportosíthatja, és a kártyákkal végzett összes módosítás a szkript szövegében jelenik meg.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="526"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="533"/>
         <source>Use cards module</source>
         <translation>Kártyák modul használata</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="560"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="567"/>
         <source>Script</source>
         <translation>Szkript</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="567"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="574"/>
         <source>Script module allows you to work with screenplay.
 
 Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
@@ -2891,92 +2954,92 @@ A modul tartalmazza a szkript navigátort. Ez a jelenetek listája. Ha az egérr
 Tartalmazza a szkript szövegszerkesztőjét is. A szerkesztőnek számos segédfunkciója van, amelyek egyszerűsítik a szövegbevitelt a szkriptírás szabványának megfelelően, és lehetővé teszik a szkript szövegének megkeresését, illetve jegyzetek létrehozását.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="603"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="610"/>
         <source>Use script module</source>
         <translation>Szkript modul használata</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="637"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="644"/>
         <source>Choose script template</source>
         <translation>Forgatókönyv sablon kiválasztása</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="671"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="678"/>
         <source>Russian screenplay with Courier Prime</source>
         <translation>Orosz forgatókönyv Courier Prime</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="684"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="691"/>
         <source>Russian screenplay</source>
         <translation>Orosz forgatókönyv</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="697"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="704"/>
         <source>International screenplay standard template for A4 page size.</source>
         <translation>Nemzetközi általános forgatókönyv sablon A4 lapmérethez.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="716"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="723"/>
         <source>Final Draft screenplay (A4)</source>
         <translation>Final Draft forgatókönyv (A4)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="748"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="755"/>
         <source>International screenplay standard template for Letter page size.</source>
         <translation>Nemzetközi általános forgatókönyv sablon Letter lapmérethez.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="780"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="787"/>
         <source>Chinese screenplay</source>
         <translation>Kínai forgatókönyv</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="793"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="800"/>
         <source>Chinese screenplay standard template.</source>
         <translation>Kínai forgatókönyv általános sablon</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="812"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="819"/>
         <source>Hebrew screenplay</source>
         <translation>Héber forgatókönyv</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="825"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="832"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
         <translation>Orosz és FÁK nemzetközi sablon Courier Prime betűtípussal Courier New helyett</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="844"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="851"/>
         <source>Hebrew screenplay standard template.</source>
         <translation>Héber forgatókönyv általános sablon</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="943"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="950"/>
         <source>Final Draft screenplay (Letter)</source>
         <translation>Final Draft forgatókönyv (Letter)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="956"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="963"/>
         <source>Russian and CIS screenplay standard template.</source>
         <translation>Orosz és FÁK nemzetközi sablon.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1074"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1081"/>
         <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
         <translation>A statisztikai modul lehetővé teszi, hogy részletes jelentéseket készítsen a szkriptről, valamint megnézze a karakterek grafikonjait, tevékenységét a forgatókönyvben és a jelenetek dinamikáját.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1091"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1098"/>
         <source>Statistics</source>
         <translation>Statisztikák</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1104"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1111"/>
         <source>Use statistics module</source>
         <translation>Statisztikai modul használata</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1134"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1141"/>
         <source>Thank you. The most common application settings were configured.
 
 The application will start in few seconds.</source>
@@ -2985,7 +3048,7 @@ The application will start in few seconds.</source>
 Az alkalmazás néhány másodperc múlva indul.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1153"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1160"/>
         <source>Starting application</source>
         <translation>Alkalmazás indítása</translation>
     </message>
@@ -3758,7 +3821,7 @@ p, li { white-space: pre-wrap; }
     <name>SettingsView</name>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="14"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2211"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2218"/>
         <source>Dialog</source>
         <translation>Dialógus</translation>
     </message>
@@ -3893,365 +3956,370 @@ p, li { white-space: pre-wrap; }
         <translation>Statisztikai modul</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="538"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="482"/>
+        <source>Tools module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="545"/>
         <source>Default font for text documents:</source>
         <translation>Alapértelmezett betűtípus a szöveges dokumentumokhoz</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="552"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="559"/>
         <source>pt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="635"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="642"/>
         <source>Use corkboad background</source>
         <translation>Parafa háttér használata</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="645"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="652"/>
         <source>Use color background</source>
         <translation>Színes háttér használata</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="655"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="914"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="662"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="921"/>
         <source>Themes colors</source>
         <translation>Témaszínek</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="714"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1044"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="721"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1051"/>
         <source>Background:</source>
         <translation>Háttér:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="721"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="930"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="728"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="937"/>
         <source>Dark Theme</source>
         <translation>Sötét Téma</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="728"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="923"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="735"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="930"/>
         <source>Light Theme</source>
         <translation>Világos Téma</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="893"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="900"/>
         <source>Page View</source>
         <translation>Oldalnézet</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="900"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1798"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="907"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1805"/>
         <source>Show Scenes Numbers</source>
         <translation>Jelenetszámok Mutatása</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="907"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="914"/>
         <source>Highlight Current Line</source>
         <translation>Jelenlegi Vonal Kiemelése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="937"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="944"/>
         <source>Text:</source>
         <translation>Szöveg:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1151"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1158"/>
         <source>Folder text:</source>
         <translation>Mappa szövege:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1258"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1265"/>
         <source>Folder background:</source>
         <translation>Mappa háttere:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1365"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1372"/>
         <source>Noneprintable text:</source>
         <translation>Nem nyomtatott szöveg:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1501"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1508"/>
         <source>Hide all panels in fullscreen mode</source>
         <translation>Minden panel elrejtése teljes képernyős módban</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1511"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1518"/>
         <source>Show dialogues numbers</source>
         <translation>Dialógusszámok mutatása</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1518"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1525"/>
         <source>Highlight blocks</source>
         <translation>Blokkok kiemelése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1532"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1539"/>
         <source>Editor Text Template:</source>
         <translation>Szövegszerkesztő Sablon:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1555"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1562"/>
         <source>Spell Checking</source>
         <translation>Helyesírásellenőrző</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1565"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1572"/>
         <source>Text corrections</source>
         <translation>Szövegjavítások</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1571"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1578"/>
         <source>Automatically continue dialogue</source>
         <translation>Dialógus automatikus folytatása</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1578"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1585"/>
         <source>Automatically corrections on page breaks</source>
         <translation>Oldaltörések automatikus javítása</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1585"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1592"/>
         <source>Capitalize first word</source>
         <translation>Nagybetűs első szó</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1592"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1599"/>
         <source>Correct DOuble CApitals</source>
         <translation>Dupla NAgybetűk JAvítása</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1599"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1606"/>
         <source>Replace three single dots to threedots character.</source>
         <translation>Három különálló pont cserélése a hárompontos karakterre.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1606"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1613"/>
         <source>Smart quotes</source>
         <translation>Intelligens idézőjelek</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1631"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1638"/>
         <source>Automatically jump to next paragraph</source>
         <translation>Automatikus ugrás a következő bekezdésre</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1647"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1654"/>
         <source>For scene heading and character paragraphs.</source>
         <translation>A jelenet fejlécéhez és a karakterekhez.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1678"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1685"/>
         <source>Use MS Word like review highlighting colors</source>
         <translation>Használja az MS Word-szerű színkiemelést</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1685"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1692"/>
         <source>Autocomplete next character for dialogue</source>
         <translation>A párbeszéd következő karakterének automatikus kiegészítése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1708"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1715"/>
         <source>Use open bracket in dialogue for jump to parenthetical</source>
         <translation>Használjon nyitott zárójelet a dialógusokból karakterutasításokba ugrásnál</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1811"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1818"/>
         <source>Show scene description</source>
         <translation>Mutassa a jelenet leírását</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1822"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1829"/>
         <source>Scene text</source>
         <translation>Jelenet szövege</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1832"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1839"/>
         <source>Scene synopsis</source>
         <translation>Jelenet szinopszisa</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1856"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1863"/>
         <source>Description height, lines:</source>
         <translation>Leírás magassága, sorok száma:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1917"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1924"/>
         <source>Show Scene Title instead of Scene Heading</source>
         <translation>Mutassa a Jelenet Címet a Jelenet Fejléc helyett</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1974"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1981"/>
         <source>Chronometry</source>
         <translation>Időmérés</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1985"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1992"/>
         <source>Pages Chronometry</source>
         <translation>Oldalak Időmérése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2001"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2008"/>
         <source>For standard template and compatible</source>
         <translation>Szabvány sablonokhoz és kompatibilishez</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2041"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2048"/>
         <source>Page</source>
         <translation>Oldal</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2048"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2111"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2055"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2118"/>
         <source>=</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2062"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2125"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2069"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2132"/>
         <source>Seconds</source>
         <translation>Másodpercek</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2088"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2095"/>
         <source>Characters Chronometry</source>
         <translation>Karakterek Időmérése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2132"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2139"/>
         <source>Characters</source>
         <translation>Karakterek</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2139"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2146"/>
         <source>Consider Spaces</source>
         <translation>Szünetek Megfigyelése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2165"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2172"/>
         <source>Configurable Chronometry</source>
         <translation>Konfigurálható Időmérés</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2181"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2188"/>
         <source>Scene Heading</source>
         <translation>Jelenet Fejléc</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2218"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2262"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2295"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2225"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2269"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2302"/>
         <source>+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2228"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2235"/>
         <source>Seconds per
 50 characters</source>
         <translation>Másodpercek
 50 karakterenként</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2255"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2262"/>
         <source>Action</source>
         <translation>Akció</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2342"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2349"/>
         <source>Seconds for
 Paragraph</source>
         <translation>Másodpercek
 Bekezdésenként</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2388"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2395"/>
         <source>Counters</source>
         <translation>Számlálók</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2402"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2409"/>
         <source>Pages</source>
         <translation>Oldalak</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2415"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2422"/>
         <source>Pages Mode only</source>
         <translation>Csak Oldalnézeti Mód</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2433"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2440"/>
         <source>Words</source>
         <translation>Szavak</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2445"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2452"/>
         <source>Symbols</source>
         <translation>Szimbólumok</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2458"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2465"/>
         <source>Symbols without spaces | Symbols with spaces</source>
         <translation>Szimbólumok szóközökkel | szóközök nélkül</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2592"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2599"/>
         <source>Apply Selected Template</source>
         <translation>Kiválasztott Sablon Alkalmazása</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2595"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2602"/>
         <source>Apply</source>
         <translation>Alkalmazás</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2606"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2613"/>
         <source>Add Template</source>
         <translation>Sablon Hozzáadása</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2609"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2616"/>
         <source>New</source>
         <translation>Új</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2620"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2627"/>
         <source>Edit Selected Template</source>
         <translation>Kiválasztott Sablon Szerkesztése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2623"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2630"/>
         <source>Edit</source>
         <translation>Szerkesztés</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2634"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2641"/>
         <source>Delete Selected Template</source>
         <translation>Kiválasztott Sablon Törlése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2637"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2644"/>
         <source>Remove</source>
         <translation>Eltávolítás</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2648"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2655"/>
         <source>Load Template From File</source>
         <translation>Sablon Betöltése Fájlból</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2651"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2658"/>
         <source>Load</source>
         <translation>Betöltés</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2662"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2669"/>
         <source>Save Template To File</source>
         <translation>Sablon Mentése Fájlba</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2665"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2672"/>
         <source>Save As...</source>
         <translation>Mentés Másként...</translation>
     </message>
@@ -4391,167 +4459,157 @@ Bekezdésenként</translation>
 <context>
     <name>StatisticsSettings</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="14"/>
-        <source>StackedWidget</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="25"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="63"/>
         <source>Summary text statistics</source>
         <translation>Statisztikák szöveges összegzése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="35"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="73"/>
         <source>Scenes statistics</source>
         <translation>Jelenetek statisztikái</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="45"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="83"/>
         <source>Locations statistics</source>
         <translation>Helyszínek statisztikái</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="55"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="93"/>
         <source>Characters statistics</source>
         <translation>Karakterek statisztikái</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="69"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="117"/>
         <source>Sort scenes</source>
         <translation>Jelenetek rendezése</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="80"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="148"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="206"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="128"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="186"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="244"/>
         <source>by script order</source>
         <translation>szkriptsorrendben</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="85"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="153"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="211"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="133"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="191"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="249"/>
         <source>by alphabetical order</source>
         <translation>betűrendben</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="90"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="138"/>
         <source>from longest to shortest scene</source>
         <translation>hosszabbtól rövidebb jelenet felé</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="95"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="143"/>
         <source>from shortest to longest scene</source>
         <translation>rövidebbtől hosszabb jelenet felé</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="100"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="148"/>
         <source>from massive to unmanned scene</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="105"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="153"/>
         <source>from unmanned to massive scene</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="113"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="107"/>
         <source>Show characters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="127"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="35"/>
+        <source>Back to tools list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="165"/>
         <source>Extended view</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="137"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="175"/>
         <source>Sort locations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="158"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="196"/>
         <source>from most to least occurences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="163"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="201"/>
         <source>from least to most occurences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="168"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="206"/>
         <source>from longest to shortest chron</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="173"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="211"/>
         <source>from shortest to longest chron</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="185"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="223"/>
         <source>Show speaking and non-speaking scenes count</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="195"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="233"/>
         <source>Sort characters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="216"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="254"/>
         <source>from most to least scenes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="221"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="259"/>
         <source>from least to most scenes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="226"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="264"/>
         <source>from most to least dialogues</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="231"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="269"/>
         <source>from least to most dialogues</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="243"/>
-        <source>Choose character:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="270"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="316"/>
         <source>Scene Duration</source>
         <translation>Jelenet Hossza</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="280"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="326"/>
         <source>Action Duration</source>
         <translation>Akció Hossza</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="290"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="336"/>
         <source>Dialogues Duration</source>
         <translation>Dialógusok Hossza</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="300"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="346"/>
         <source>Characters Count</source>
         <translation>Karakterek Száma</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="310"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="356"/>
         <source>Dialogues Count</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="337"/>
-        <source>Choose characters:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4815,19 +4873,19 @@ Bekezdésenként</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="139"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="401"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mentés</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="146"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="408"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Betöltés</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="153"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="415"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alkalmazás</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="162"/>
@@ -4963,7 +5021,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="127"/>
         <source>Skip</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Átugrás</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="134"/>
@@ -4976,7 +5034,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.cpp" line="21"/>
         <source>version</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">verzió</translation>
     </message>
 </context>
 <context>
@@ -5028,7 +5086,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.cpp" line="27"/>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Változtatás</translation>
     </message>
 </context>
 <context>
@@ -5047,33 +5105,33 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
 <context>
     <name>UserInterface::ExportDialog</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="230"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="242"/>
         <source>Choose file to export research</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="232"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="293"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="244"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="305"/>
         <source>%1 files (*%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="291"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="303"/>
         <source>Choose file to export scenario</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="381"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="396"/>
         <source>Export research</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="382"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="397"/>
         <source>Export outline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="383"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="398"/>
         <source>Export script</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5083,7 +5141,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="51"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Importálás</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="82"/>
@@ -5097,7 +5155,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="39"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="247"/>
         <source>Login</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bejelentkezés</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="40"/>
@@ -5158,17 +5216,17 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
 <context>
     <name>UserInterface::OnboardingView</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="186"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="189"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tovább</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="220"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="223"/>
         <source>Finish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="238"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="241"/>
         <source>Will be used default settings.
 
 The application will start in few seconds.</source>
@@ -5249,12 +5307,12 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="245"/>
         <source>Find All Characters from Script</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Összes Karakter megtalálása a Szkriptből</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="271"/>
         <source>Find All Locations from Script</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Összes Helyszín megtalálása a Szkriptből</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="611"/>
@@ -5312,7 +5370,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="201"/>
         <source>Script</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Szkript</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="207"/>
@@ -5337,12 +5395,12 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="230"/>
         <source>Print cards</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kártyák nyomtatása</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="234"/>
         <source>On/off Fullscreen Mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Teljes képernyős mód be/kikapcsolása</translation>
     </message>
 </context>
 <context>
@@ -5595,18 +5653,18 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.cpp" line="60"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mentés</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ScenarioTextEdit</name>
     <message>
-        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="560"/>
+        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="561"/>
         <source>Remove bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="565"/>
+        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="566"/>
         <source>Add bookmark</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5621,12 +5679,12 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="578"/>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Visszavonás</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="579"/>
         <source>Redo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Újra</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="581"/>
@@ -5742,36 +5800,36 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="136"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="750"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="761"/>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Orosz</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="141"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="751"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="762"/>
         <source>Spanish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="146"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Angol</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="151"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="743"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="753"/>
         <source>French</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="156"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="745"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="756"/>
         <source>Kazakh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="161"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="754"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="765"/>
         <source>Ukrainian</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5787,7 +5845,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="176"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="742"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="752"/>
         <source>Farsi</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5798,95 +5856,101 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="186"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="744"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="754"/>
         <source>Hebrew</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="191"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="746"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="757"/>
         <source>Polish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="196"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="753"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="764"/>
         <source>Turkish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="571"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="201"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="755"/>
+        <source>Hungarian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="581"/>
         <source>Choose backups saving folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="749"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="760"/>
         <source>Russian with Yo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="737"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="747"/>
         <source>Armenian (Eastern)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="738"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="748"/>
         <source>Armenian (Western)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="739"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="749"/>
         <source>Belorussian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="740"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="750"/>
         <source>English (GB)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="741"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="751"/>
         <source>English (US)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="747"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="758"/>
         <source>Portuguese (Brazil)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="748"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="759"/>
         <source>Portuguese (Portugal)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="752"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="763"/>
         <source>Swedish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="771"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="778"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="782"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="789"/>
         <source>Common</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="772"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="783"/>
         <source>Modules</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="779"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="790"/>
         <source>Editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="780"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="791"/>
         <source>Shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="814"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="825"/>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
 but if you work with no terminations it saves project every %1 minutes.</source>
         <translation type="unfinished"></translation>
@@ -5903,9 +5967,9 @@ but if you work with no terminations it saves project every %1 minutes.</source>
 <context>
     <name>UserInterface::StatisticsView</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="79"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="78"/>
         <source>Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Statisztikák</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="166"/>
@@ -5918,102 +5982,102 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <translation>Kérjük várjon. Az importálás eltarthat pár percig.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="258"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="261"/>
         <source>Report.pdf</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="259"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="262"/>
         <source>Save report</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="259"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="262"/>
         <source>PDF files (*.pdf)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="277"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="280"/>
         <source>Plot.png</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="278"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="281"/>
         <source>Save plot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="278"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="281"/>
         <source>PNG files (*.png)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="297"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="299"/>
         <source>Report settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="310"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="302"/>
         <source>Print preview</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nyomtatási előnézet</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="312"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="304"/>
         <source>Save report to file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="314"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="306"/>
         <source>Update current report</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="320"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="312"/>
         <source>Reports</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="322"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="314"/>
         <source>Summary statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="326"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="318"/>
         <source>Scene report</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="330"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="322"/>
         <source>Location report</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="334"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="326"/>
         <source>Cast report</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="338"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="330"/>
         <source>Characters dialogues</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="347"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="339"/>
         <source>Plots</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="349"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="341"/>
         <source>Story structure analysis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="353"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="345"/>
         <source>Characters activity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="434"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="436"/>
         <source>Duration, minutes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6049,7 +6113,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="112"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eszközök</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="115"/>
@@ -6091,9 +6155,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="61"/>
-        <source>Error during download update.
-
-You can try to reload update.</source>
+        <source>&lt;p&gt;Error during download update.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

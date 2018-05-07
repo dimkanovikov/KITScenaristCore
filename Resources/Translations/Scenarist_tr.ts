@@ -11,7 +11,7 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="26"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The cat Alexander illustrations created by &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kedi Alexander illüstrasyonları &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt; tarafından yaratılmıştır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="46"/>
@@ -21,12 +21,12 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="203"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; featuring &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bu yalın ve güçlü senaryo düzenleyicisi &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; tarafından &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt; ortaklığıyla geliştirilmiştir&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="219"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The application logo designed by &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Programın logosu &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt; tarafından tasarlanmıştır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1338,7 +1338,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="447"/>
         <source>Print watermark:</source>
-        <translation type="unfinished"></translation>
+        <translation>Çıktı gizli damgası (filigran):</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="460"/>
@@ -2028,14 +2028,16 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1269"/>
         <source>Project sync not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje eşitleme kullanılamaz</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1270"/>
         <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="unfinished"></translation>
+        <translation>Programın kullandığınız sürümünün tarihi geçmiş. Projeye erişimi onarmak için lütfen programın en son sürümünü kurunuz.
+
+Proje eşitlenmedi.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1280"/>
@@ -2575,7 +2577,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="364"/>
         <source>&lt;p&gt;Can&apos;t install update. There are some problems with downloaded file.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Güncelleme gerçekleştirilemedi. İndirilen dosyayla ilgili bazı sorunlar var.&lt;/p&gt;&lt;p&gt;Güncellemeyi yeniden yüklemeyi ya da &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;resmi web sitesinden&lt;/a&gt; el ile indirmeyi deneyebilirsiniz.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Can&apos;t install update. There are some problems with downloaded file.
@@ -3957,7 +3959,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="482"/>
         <source>Tools module</source>
-        <translation type="unfinished"></translation>
+        <translation>Araç kipi</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="545"/>
@@ -4528,7 +4530,7 @@ Saniyeler</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="35"/>
         <source>Back to tools list</source>
-        <translation type="unfinished">Araçlar listesine dön</translation>
+        <translation>Araçlar listesine dön</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="165"/>
@@ -5770,7 +5772,7 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="56"/>
         <source>Remove selected bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçili sayfa işaretini kaldır</translation>
     </message>
     <message>
         <source>Remove seleted bookmark</source>
@@ -5908,7 +5910,7 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="201"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="755"/>
         <source>Hungarian</source>
-        <translation type="unfinished"></translation>
+        <translation>Hungarian</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="581"/>
@@ -6189,7 +6191,7 @@ projeyi her 3 saniyede bir kaydeder, ancak eğer aralıksız çalışıyorsanız
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="61"/>
         <source>&lt;p&gt;Error during download update.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Güncellemeyi indirirken hata oluştu.&lt;/p&gt;&lt;p&gt;Güncellemeyi yeniden yüklemeyi ya da &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;resmi web sitesinden&lt;/a&gt; el ile indirmeyi deneyebilirsiniz.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Error during download update.
