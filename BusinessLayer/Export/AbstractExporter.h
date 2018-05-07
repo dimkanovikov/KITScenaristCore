@@ -103,6 +103,16 @@ namespace BusinessLogic
          * @brief Сохранять ли непечатаемые комментарии
          */
         bool printInvisible = false;
+
+        /**
+         * @brief Печатать водяной знак
+         */
+        bool printWatermark = false;
+
+        /**
+         * @brief Водяной знак
+         */
+        QString watermark;
     };
 
 

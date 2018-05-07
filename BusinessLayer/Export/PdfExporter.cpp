@@ -14,7 +14,6 @@
 #include <QAbstractTextDocumentLayout>
 #include <QApplication>
 #include <QFontMetrics>
-#include <QString>
 #include <QPainter>
 #include <QPdfWriter>
 #ifndef MOBILE_OS
@@ -23,6 +22,8 @@
 #endif
 #include <QScrollArea>
 #include <QScrollBar>
+#include <QString>
+#include <QtMath>
 #include <QTextDocument>
 #include <QTextCursor>
 #include <QTextBlock>
@@ -55,6 +56,11 @@ namespace {
     const char* PRINT_SCENES_NUMBERS_KEY = "scenes_numbers";
     const char* PRINT_DIALOGUES_NUMBERS_KEY = "dialogues_numbers";
     /** @} */
+
+    /**
+     * @brief Водяной знак
+     */
+    const char* WATERMARK_KEY = "watermark";
 
     /**
      * @brief Напечатать страницу документа
@@ -266,7 +272,45 @@ namespace {
                 _painter->restore();
             }
         }
+
         _painter->restore();
+
+        //
+        // Рисуем водяные знаки
+        //
+        const QString watermark = "  " + _document->property(WATERMARK_KEY).toString() + "    ";
+        if (!watermark.isEmpty()) {
+            _painter->save();
+
+            //
+            // Рассчитаем какого размера нужен шрифт
+            //
+            QFont font;
+            font.setBold(true);
+            font.setPointSize(400);
+            const int maxWidth = sqrt(pow(_body.height(), 2) + pow(_body.width(), 2));
+            QFontMetrics fontMetrics(font);
+            while (fontMetrics.width(watermark) > maxWidth) {
+                font.setPointSize(font.pointSize() - 2);
+                fontMetrics = QFontMetrics(font);
+            }
+
+            _painter->setFont(font);
+            _painter->setPen(QColor(100, 100, 100, 100));
+
+            //
+            // Рисуем водяной знак
+            //
+            _painter->rotate(qRadiansToDegrees(atan(_body.height() / _body.width())));
+            const int delta = fontMetrics.height() / 4;
+            _painter->drawText(delta, delta, watermark);
+
+            //
+            // TODO: Рисуем мусор на странице, чтобы текст нельзя было вытащить
+            //
+
+            _painter->restore();
+        }
     }
 
 #ifndef MOBILE_OS
@@ -490,6 +534,9 @@ void PdfExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
     preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, _exportParameters.printPagesNumbers);
     preparedDocument->setProperty(PRINT_SCENES_NUMBERS_KEY, _exportParameters.printScenesNumbers);
     preparedDocument->setProperty(PRINT_DIALOGUES_NUMBERS_KEY, _exportParameters.printDialoguesNumbers);
+    if (_exportParameters.printWatermark) {
+        preparedDocument->setProperty(WATERMARK_KEY, _exportParameters.watermark);
+    }
 
     //
     // Печатаем документ
@@ -546,6 +593,9 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, _exportParameters.printPagesNumbers);
     preparedDocument->setProperty(PRINT_SCENES_NUMBERS_KEY, _exportParameters.printScenesNumbers);
     preparedDocument->setProperty(PRINT_DIALOGUES_NUMBERS_KEY, _exportParameters.printDialoguesNumbers);
+    if (_exportParameters.printWatermark) {
+        preparedDocument->setProperty(WATERMARK_KEY, _exportParameters.watermark);
+    }
 
     //
     // Сохраним указатель на документ для печати
