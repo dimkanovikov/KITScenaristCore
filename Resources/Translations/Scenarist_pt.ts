@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Editor de roteiros simples e poderoso desenvolvido por &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Editor de roteiros simples e poderoso desenvolvido por &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -107,6 +107,18 @@ Türkçe: Recep Burak Yak
 فارْسِى: Arash Aneessee
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The cat Alexander illustrations created by &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; featuring &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The application logo designed by &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1162,6 +1174,10 @@ Türkçe: Recep Burak Yak
         <source>Print dialogues numbers</source>
         <translation>Imprimir os números dos diálogos</translation>
     </message>
+    <message>
+        <source>Print watermark:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FormatManager</name>
@@ -2148,7 +2164,7 @@ Project didn&apos;t synchronized.</source>
         <source>Can&apos;t install update. There are some problems with downloaded file.
 
 You can try to reload update.</source>
-        <translation>Não é possível instalar a atualização. Existem alguns problemas com o arquivo transferido.
+        <translation type="vanished">Não é possível instalar a atualização. Existem alguns problemas com o arquivo transferido.
 
 Você pode tentar recarregar a atualização.</translation>
     </message>
@@ -2159,6 +2175,10 @@ Você pode tentar recarregar a atualização.</translation>
     <message>
         <source>Redo</source>
         <translation>Refazer</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Can&apos;t install update. There are some problems with downloaded file.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5094,9 +5114,13 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
         <source>Error during download update.
 
 You can try to reload update.</source>
-        <translation>Erro durante a atualização de download.
+        <translation type="vanished">Erro durante a atualização de download.
 
 Você pode tentar recarregar a atualização.</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Error during download update.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
