@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uk">
+<TS version="2.1" language="uk">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Простий і потужний редактор сценаріїв, розроблений &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Простий і потужний редактор сценаріїв, розроблений &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -34,7 +34,7 @@ Português: Ricardo Graça, Ronaldo German
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation>Наші герої, які допомагають нам створювати міжнародні версії:
+        <translation type="vanished">Наші герої, які допомагають нам створювати міжнародні версії:
 Deutsch: Michael Krämer
 English: Dimka Novikov
 Español: Felipe Vece, Pedro Terrero
@@ -64,7 +64,7 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation>Наші герої, які допомагають нам створювати міжнародні версії:
+        <translation type="vanished">Наші герої, які допомагають нам створювати міжнародні версії:
 Deutsch: Michael Krämer
 English: Dimka Novikov
 Español: Felipe Vece, Pedro Terrero
@@ -90,6 +90,25 @@ Türkçe: Recep Burak Yak
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The application logo designed by &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Лого додатку розроблено компанією&lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Deutsch: Michael Krämer
+English: Dimka Novikov
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -229,11 +248,11 @@ Türkçe: Recep Burak Yak
     <name>BusinessLogic::AbstractImporter</name>
     <message>
         <source>All Supported Files</source>
-        <translation>Всі підтримувані файли</translation>
+        <translation type="vanished">Всі підтримувані файли</translation>
     </message>
     <message>
         <source>KIT Scenarist Project</source>
-        <translation>Файл проекту сценарію KIT Scenarist</translation>
+        <translation type="vanished">Файл проекту сценарію KIT Scenarist</translation>
     </message>
     <message>
         <source>Final Draft screenplay</source>
@@ -249,7 +268,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>OpenDocument Text</source>
-        <translation>OpenDocument Text</translation>
+        <translation type="vanished">OpenDocument Text</translation>
     </message>
     <message>
         <source>Final Draft template</source>
@@ -257,7 +276,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Fountain Text</source>
-        <translation>Fountain Text</translation>
+        <translation type="vanished">Fountain Text</translation>
     </message>
     <message>
         <source>All supported files</source>
@@ -357,7 +376,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Simbols</source>
-        <translation>Символів</translation>
+        <translation type="vanished">Символів</translation>
     </message>
     <message>
         <source>Symbols</source>
@@ -1346,7 +1365,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Українська мова</source>
-        <translation>Українська</translation>
+        <translation type="vanished">Українська</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
@@ -1440,7 +1459,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
-        <translation>Неможливо записати у файл. Можливо, він відкритий в іншій програмі. Закрийте програму і спробуйте ще раз.</translation>
+        <translation type="vanished">Неможливо записати у файл. Можливо, він відкритий в іншій програмі. Закрийте програму і спробуйте ще раз.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
@@ -1452,7 +1471,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Choose file for save project</source>
-        <translation>Виберіть файл для збереження проекту</translation>
+        <translation type="vanished">Виберіть файл для збереження проекту</translation>
     </message>
     <message>
         <source>Saving error</source>
@@ -1464,7 +1483,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
-        <translation>Неможливо внести зміни до проекту,що розташований в &lt;b&gt;%1&lt;/b&gt; тому, що файл не існує. Будь ласка, перемістіть файл назад і повторіть спробу зберегти. Повторити спробу зберегти?</translation>
+        <translation type="vanished">Неможливо внести зміни до проекту,що розташований в &lt;b&gt;%1&lt;/b&gt; тому, що файл не існує. Будь ласка, перемістіть файл назад і повторіть спробу зберегти. Повторити спробу зберегти?</translation>
     </message>
     <message>
         <source>Choose project file to open</source>
@@ -1512,7 +1531,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Closing Databse Connections and Remove Temporatry Files.</source>
-        <translation>Закриття з&apos;єднань з базами даних і видалення тимчасових файлів.</translation>
+        <translation type="vanished">Закриття з&apos;єднань з базами даних і видалення тимчасових файлів.</translation>
     </message>
     <message>
         <source>Save project changes?</source>
@@ -1604,7 +1623,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
-        <translation>Не виходить записати ваші зміни в проект. Існує певна внутрішня помилка бази даних: %1 Будь ласка, перевірте, що файл існує і у вас є права на його зміни. Повторити спробу зберегти?</translation>
+        <translation type="vanished">Не виходить записати ваші зміни в проект. Існує певна внутрішня помилка бази даних: %1 Будь ласка, перевірте, що файл існує і у вас є права на його зміни. Повторити спробу зберегти?</translation>
     </message>
     <message>
         <source>Change project name</source>
@@ -1654,7 +1673,7 @@ Project didn&apos;t synchronized.</source>
         <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Не виходить коректно завантажити всі дані з сервісу. Будь ласка, перевірте якість вашого з&apos;єднання з Інтернетом і повторіть синхронізацію.
+        <translation type="vanished">Не виходить коректно завантажити всі дані з сервісу. Будь ласка, перевірте якість вашого з&apos;єднання з Інтернетом і повторіть синхронізацію.
 
 Проект не синхронізований.</translation>
     </message>
@@ -1849,7 +1868,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry export.</source>
-        <translation>Неможливо внести зміни у файл. Можливо, він відкритий в іншій програмі. Будь ласка, закрийте програму і спробуйте ще раз.</translation>
+        <translation type="vanished">Неможливо внести зміни у файл. Можливо, він відкритий в іншій програмі. Будь ласка, закрийте програму і спробуйте ще раз.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
@@ -1949,7 +1968,7 @@ Project didn&apos;t synchronized.</source>
     <name>ManagementLayer::ResearchManager</name>
     <message>
         <source>Are you shure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Ви впевнені, що хочете видалити розробку: &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation type="vanished">Ви впевнені, що хочете видалити розробку: &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Add New</source>
@@ -2041,7 +2060,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Language will be change after application restart.</source>
-        <translation>Мову буде змінено після перезапуску програми.</translation>
+        <translation type="vanished">Мову буде змінено після перезапуску програми.</translation>
     </message>
     <message>
         <source>Dictionary loading</source>
@@ -2111,17 +2130,17 @@ Project didn&apos;t synchronized.</source>
     <name>ManagementLayer::StartUpManager</name>
     <message>
         <source>Password successfully changed</source>
-        <translation>Пароль успішно змінено</translation>
+        <translation type="vanished">Пароль успішно змінено</translation>
     </message>
     <message>
         <source>Can not change password</source>
-        <translation>Неможливо змінити пароль</translation>
+        <translation type="vanished">Неможливо змінити пароль</translation>
     </message>
     <message>
         <source>Can&apos;t install update. There are some problems with downloaded file.
 
 You can try to reload update.</source>
-        <translation>Неможливо встановити оновлення. Є деякі проблеми з завантаженим файлом.
+        <translation type="vanished">Неможливо встановити оновлення. Є деякі проблеми з завантаженим файлом.
 
 Ви можете спробувати перезавантажити оновлення.</translation>
     </message>
@@ -2318,7 +2337,7 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>Українська мова</source>
-        <translation>Українська</translation>
+        <translation type="vanished">Українська</translation>
     </message>
     <message>
         <source>汉语</source>
@@ -2853,7 +2872,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>Add research materials such as text, web pages and images in tree. Use toolbar buttons and context menu for add or remove research materials in tree.</source>
-        <translation>Додавайте матеріали по сценарію, такі як текст, посилання на веб ресурси, зображення в дерево досліджень.Для додавання чи видалення матеріалів, використовуйте кнопки на панелі інструментів, а також контекстне меню.</translation>
+        <translation type="vanished">Додавайте матеріали по сценарію, такі як текст, посилання на веб ресурси, зображення в дерево досліджень.Для додавання чи видалення матеріалів, використовуйте кнопки на панелі інструментів, а також контекстне меню.</translation>
     </message>
     <message>
         <source>Url:</source>
@@ -3017,7 +3036,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -3420,11 +3439,11 @@ Paragraph</source>
     </message>
     <message>
         <source>Simbols</source>
-        <translation>Символів</translation>
+        <translation type="vanished">Символів</translation>
     </message>
     <message>
         <source>Simbols without spaces | Simbols with spaces</source>
-        <translation>Символи без проміжків | Символи з проміжками</translation>
+        <translation type="vanished">Символи без проміжків | Символи з проміжками</translation>
     </message>
     <message>
         <source>Apply Selected Template</source>
@@ -3636,7 +3655,7 @@ Paragraph</source>
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Projects from local computer</source>
@@ -3652,39 +3671,39 @@ Paragraph</source>
     </message>
     <message>
         <source>22.02.2017</source>
-        <translation>22.02.2017</translation>
+        <translation type="vanished">22.02.2017</translation>
     </message>
     <message>
         <source>Account is active until:</source>
-        <translation>Акаунт активний до:</translation>
+        <translation type="vanished">Акаунт активний до:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>UserName</source>
-        <translation>Ім&apos;я користувача</translation>
+        <translation type="vanished">Ім&apos;я користувача</translation>
     </message>
     <message>
         <source>Renew subscription</source>
-        <translation>Поновити підписку</translation>
+        <translation type="vanished">Поновити підписку</translation>
     </message>
     <message>
         <source>Change Password</source>
-        <translation>Змінити пароль</translation>
+        <translation type="vanished">Змінити пароль</translation>
     </message>
     <message>
         <source>Quit from cabinet</source>
-        <translation>Вийти з кабінету</translation>
+        <translation type="vanished">Вийти з кабінету</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;user@email&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Used 0 Gb from 0 Gb</source>
-        <translation>Використано 0 Гб з 0 Гб</translation>
+        <translation type="vanished">Використано 0 Гб з 0 Гб</translation>
     </message>
 </context>
 <context>
@@ -3787,7 +3806,7 @@ Paragraph</source>
     </message>
     <message>
         <source>Choose character:</source>
-        <translation>Виберіть героя:</translation>
+        <translation type="vanished">Виберіть героя:</translation>
     </message>
     <message>
         <source>Scene Duration</source>
@@ -3811,7 +3830,7 @@ Paragraph</source>
     </message>
     <message>
         <source>Choose characters:</source>
-        <translation>Виберіть героїв:</translation>
+        <translation type="vanished">Виберіть героїв:</translation>
     </message>
     <message>
         <source>Back to tools list</source>
@@ -4739,7 +4758,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Remove seleted bookmark</source>
-        <translation>Видалити вибрану закладку</translation>
+        <translation type="vanished">Видалити вибрану закладку</translation>
     </message>
     <message>
         <source>Edit selected bookmark</source>
@@ -4924,23 +4943,23 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <name>UserInterface::StartUpView</name>
     <message>
         <source>Account is active until:</source>
-        <translation>Акаунт активний до:</translation>
+        <translation type="vanished">Акаунт активний до:</translation>
     </message>
     <message>
         <source>Account is inactive</source>
-        <translation>Акаунт не активний</translation>
+        <translation type="vanished">Акаунт не активний</translation>
     </message>
     <message>
         <source>Connect</source>
-        <translation>З&apos;єднатись</translation>
+        <translation type="vanished">З&apos;єднатись</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увійти&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation>Використано %1 Гб з %2 Гб</translation>
+        <translation type="vanished">Використано %1 Гб з %2 Гб</translation>
     </message>
 </context>
 <context>
@@ -5097,7 +5116,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <source>Error during download update.
 
 You can try to reload update.</source>
-        <translation>Помилка під час завантаження оновлення.
+        <translation type="vanished">Помилка під час завантаження оновлення.
 
 Ви можете спробувати перезавантажити оновлення.</translation>
     </message>
