@@ -110,15 +110,15 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The cat Alexander illustrations created by &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As ilustrações do gato Alexander criadas por &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; featuring &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Editor de roteiros simples e poderoso desenvolvido por &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; apresentando &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The application logo designed by &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A logo do aplicativo desenhada por &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Our heroes, who help us to create international versions:
@@ -137,7 +137,22 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Nossos heróis, que nos ajudaram a criar as versões internacionais:
+Deutsch: Michael Krämer
+English: Dimka Novikov
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Қазақ: Алпамыс Баткалов
+Magyar: Tömör Gábor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+</translation>
     </message>
 </context>
 <context>
@@ -1195,7 +1210,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Print watermark:</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimir marca d`água:</translation>
     </message>
 </context>
 <context>
@@ -1432,7 +1447,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Magyar</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1882,13 +1897,15 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Project sync not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Sincronização não disponível</translation>
     </message>
     <message>
         <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="unfinished"></translation>
+        <translation>Você tem versão desatualizada do aplicativo. Por favor, instale a última versão do aplicativo para restaurar o acesso ao projeto.
+
+O projeto não foi sincronizado.</translation>
     </message>
 </context>
 <context>
@@ -2197,7 +2214,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>&lt;p&gt;Can&apos;t install update. There are some problems with downloaded file.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Não é possível instalar a atualização. Existem alguns problemas com o arquivo baixado.&lt;/p&gt;&lt;p&gt;Você pode tentar recarregar a atualização ou carregá-la manualmente a partir do &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;site oficial&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2572,7 +2589,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Magyar</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3574,7 +3591,7 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Tools module</source>
-        <translation type="unfinished"></translation>
+        <translation>Módulo das Ferramentas</translation>
     </message>
 </context>
 <context>
@@ -3858,7 +3875,7 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     </message>
     <message>
         <source>Back to tools list</source>
-        <translation type="unfinished">Voltar para a lista de ferramentas</translation>
+        <translation>Voltar para a lista de ferramentas</translation>
     </message>
 </context>
 <context>
@@ -4942,7 +4959,7 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Hungarian</source>
-        <translation type="unfinished"></translation>
+        <translation>Húngaro</translation>
     </message>
 </context>
 <context>
@@ -5139,7 +5156,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>&lt;p&gt;Error during download update.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Erro durante a atualização de download.&lt;/p&gt;&lt;p&gt;Você pode tentar recarregar a atualização ou carregá-la manualmente a partir do &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;site oficial&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
