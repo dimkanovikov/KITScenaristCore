@@ -483,7 +483,7 @@ void ProjectsManager::loadRecentProjects()
 #else
         const QString filePath = fileInfo.absoluteFilePath();
 #endif
-        if (fileInfo.fileName().endsWith(::PROJECT_FILE_EXTENSION)
+        if (fileInfo.fileName().endsWith(kProjectFleExtension)
             && !recentFiles.contains(filePath)) {
             //
             // Путь к проекту
