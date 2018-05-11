@@ -356,27 +356,9 @@ void StandardKeyHandler::removeCharacters(bool _backward)
         }
 
         //
-        // Если в начале блока, в котором есть текст нажат backspace
-        //
-        if (cursor.atBlockStart()
-            && !cursor.block().text().isEmpty()
-            && _backward == true) {
-            return;
-        }
-
-        //
         // Если в конце документа нажат delete
         //
         if (cursor.atEnd()
-            && _backward == false) {
-            return;
-        }
-
-        //
-        // Если в конце блока, в котором есть текст нажат delete
-        //
-        if (cursor.atBlockEnd()
-            && !cursor.block().text().isEmpty()
             && _backward == false) {
             return;
         }
