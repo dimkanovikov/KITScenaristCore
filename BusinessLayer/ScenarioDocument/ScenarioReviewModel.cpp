@@ -426,7 +426,7 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
     //
     int startMarkIndex = 0;
     for (; startMarkIndex < m_reviewMarks.size(); ++startMarkIndex) {
-        if (m_reviewMarks.at(startMarkIndex).endPosition() > _position) {
+        if (m_reviewMarks.at(startMarkIndex).endPosition() >= _position) {
             break;
         }
     }
@@ -437,41 +437,6 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
     //
     if (startMarkIndex < m_reviewMarks.size()) {
         //
-        // Смена формата
-        //
-        if (_removed == _added) {
-            //
-            // Если есть заметка, которая попадает в изменение формата, удаляем её
-            //
-            const int endPosition = _position + _added;
-            for (int markIndex = startMarkIndex; markIndex < m_reviewMarks.size(); ++markIndex) {
-                ReviewMarkInfo& mark = m_reviewMarks[markIndex];
-                if (mark.startPosition < endPosition
-                         && mark.endPosition() > _position) {
-                    //
-                    // Расширим область проверки
-                    //
-                    if (_added < mark.endPosition() - _position) {
-                        _added = _removed = mark.endPosition() - _position;
-                    }
-
-                    //
-                    // Удалим заметку
-                    //
-                    beginRemoveRows(QModelIndex(), markIndex, markIndex);
-                    m_reviewMarks.removeAt(markIndex);
-                    endRemoveRows();
-                    --markIndex;
-                }
-            }
-        }
-
-        //
-        // Перенос строки
-        //
-        const bool lineBreak = _added > 1 && (_added - _removed == 1);
-
-        //
         // Прорабатываем удаление
         //
         if (_removed > 0) {
@@ -479,33 +444,10 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
             for (int markIndex = startMarkIndex; markIndex < m_reviewMarks.size(); ++markIndex) {
                 ReviewMarkInfo& mark = m_reviewMarks[markIndex];
                 //
-                // Скорректировать размер заметки, чей конец или тело попадает под удаление
-                //
-                if (mark.startPosition < _position
-                    && mark.endPosition() > _position) {
-                    //
-                    // корректируем, только  если это не перенос строки
-                    //
-                    if (!lineBreak) {
-                        //
-                        // ... тело
-                        //
-                        if (mark.endPosition() > removeEndPosition) {
-                            mark.length -= _removed;
-                        }
-                        //
-                        // ... конец
-                        //
-                        else {
-                            mark.length = _position - mark.startPosition;
-                        }
-                    }
-                }
-                //
                 // Удалить заметки полностью входящие в удалённый текст
                 //
-                else if (mark.startPosition >= _position
-                         && mark.endPosition() <= removeEndPosition) {
+                if (mark.startPosition >= _position
+                    && mark.endPosition() <= removeEndPosition) {
                     //
                     // Уведомляем клиента об удалении элементов модели
                     //
@@ -513,6 +455,30 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
                     m_reviewMarks.removeAt(markIndex);
                     endRemoveRows();
                     --markIndex;
+                }
+                //
+                // Скорректировать размер заметки, чъё начало попадает под удаление
+                //
+                else if (mark.startPosition >= _position
+                         && mark.startPosition < removeEndPosition
+                         && mark.endPosition() > removeEndPosition) {
+                    mark.length = mark.endPosition() - removeEndPosition;
+                    mark.startPosition = _position;
+                }
+                //
+                // Скорректировать размер заметки, чей конец попадает под удаление
+                //
+                else if (mark.startPosition < _position
+                         && mark.endPosition() > _position
+                         && mark.endPosition() <= removeEndPosition) {
+                    mark.length = _position - mark.startPosition;
+                }
+                //
+                // Скорректировать размер заметки, чъё тело попадает под удаление
+                //
+                else if (mark.startPosition <= _position
+                         && mark.endPosition() >= removeEndPosition) {
+                    mark.length -= _removed;
                 }
                 //
                 // Скорректировать позицию заметки следующей за удалённым текстом
@@ -526,27 +492,49 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
         //
         // Прорабатываем добавление
         //
+        int searchPosition = _position;
+        int searchPositionEnd = _position + _added;
         if (_added > 0) {
             for (int markIndex = startMarkIndex; markIndex < m_reviewMarks.size(); ++markIndex) {
                 ReviewMarkInfo& mark = m_reviewMarks[markIndex];
                 //
-                // Скорректировать размер, если текст вставлен внутри заметки
-                //
-                if (mark.startPosition < _position && mark.endPosition() >= _position) {
-                    if (lineBreak) {
-                        mark.length += 1;
-                    } else {
-                        mark.length += _added;
-                    }
-                }
-                //
                 // Скорректировать позицию заметки после вставленного текст
                 //
-                else {
+                if (mark.startPosition > _position + _added) {
                     mark.startPosition += _added;
+                }
+                //
+                // Все остальные заметки удаляем, т.к. вставиться мог в том числе
+                // и текст содержащий внутри себя форматирование, поэтому нужно его разобрать целиком
+                //
+                else {
+                    //
+                    // Корректируем начальную позицию поиска и количество добавленных символов,
+                    // чтобы включить удалённый комментарий целиком
+                    //
+                    if (searchPosition > mark.startPosition) {
+                        searchPosition = mark.startPosition;
+                    }
+                    if (searchPositionEnd < mark.endPosition()) {
+                        searchPositionEnd = mark.endPosition();
+                    }
+
+                    //
+                    // Уведомляем клиента об удалении элементов модели
+                    //
+                    beginRemoveRows(QModelIndex(), markIndex, markIndex);
+                    m_reviewMarks.removeAt(markIndex);
+                    endRemoveRows();
+                    --markIndex;
                 }
             }
         }
+
+        //
+        // Расширяем границы поиска
+        //
+        _position = searchPosition;
+        _added = searchPositionEnd - searchPosition;
     }
 
 
@@ -570,104 +558,108 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
         while (cursor.position() < (_position + _added)
                && !cursor.atEnd()) {
             const QTextBlock currentBlock = cursor.block();
-            if (!currentBlock.textFormats().isEmpty()) {
-                for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
-                    if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
-                        //
-                        // Если такой заметки не сохранено, добавляем
-                        //
-                        const int startPosition = currentBlock.position() + range.start;
-                        if (!m_reviewMap.contains(startPosition)) {
-                            int insertPosition = m_reviewMarks.size();
-                            QMap<int, int>::iterator iter = m_reviewMap.lowerBound(startPosition);
-                            if (iter != m_reviewMap.end()) {
-                                insertPosition = iter.value();
-                                if (m_reviewMarks[insertPosition].startPosition < startPosition) {
-                                    ++insertPosition;
-                                }
-                            }
+            auto textFormats = currentBlock.textFormats();
+            if (textFormats.isEmpty()) {
+                textFormats.append({0, 0, currentBlock.charFormat()});
+            }
 
-                            ReviewMarkInfo newMark;
-                            if (range.format.hasProperty(QTextFormat::BackgroundBrush)) {
-                                newMark.background = range.format.background().color();
+            for (const QTextLayout::FormatRange& range : textFormats) {
+                if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
+                    //
+                    // Если такой заметки не сохранено, добавляем
+                    //
+                    const int startPosition = currentBlock.position() + range.start;
+                    if (!m_reviewMap.contains(startPosition)) {
+                        int insertPosition = m_reviewMarks.size();
+                        QMap<int, int>::iterator iter = m_reviewMap.lowerBound(startPosition);
+                        if (iter != m_reviewMap.end()) {
+                            insertPosition = iter.value();
+                            if (m_reviewMarks[insertPosition].startPosition < startPosition) {
+                                ++insertPosition;
                             }
-                            if (range.format.hasProperty(QTextFormat::ForegroundBrush)) {
-                                newMark.foreground = range.format.foreground().color();
-                            }
-                            newMark.startPosition = currentBlock.position() + range.start;
-                            newMark.length = range.length;
-                            newMark.isDone = range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone);
-                            newMark.comments = range.format.property(ScenarioBlockStyle::PropertyComments).toStringList();
-                            newMark.authors = range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList();
-                            newMark.dates = range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList();
-
-                            //
-                            // Если это не первая заметка
-                            //
-                            if (insertPosition > 0) {
-                                const int prevMarkIndex = insertPosition - 1;
-                                ReviewMarkInfo& prevMark = m_reviewMarks[prevMarkIndex];
-                                //
-                                // Если стили одинаковы
-                                //
-                                if (prevMark.foreground == newMark.foreground
-                                    && prevMark.background == newMark.background
-                                    && prevMark.comments == newMark.comments
-                                    && prevMark.authors == newMark.authors
-                                    && prevMark.dates == newMark.dates) {
-                                    //
-                                    // Проверяем, можно ли её объединить с предыдущей
-                                    //
-                                    if (
-                                        // в одном блоке
-                                        prevMark.endPosition() == newMark.startPosition
-                                        // в разных блоках
-                                        || prevMark.endPosition() == newMark.startPosition - 1) {
-                                        //
-                                        // Обновляем сохранённую заметку
-                                        //
-                                        const int oldEndPos = prevMark.endPosition();
-                                        prevMark.length += 1 + newMark.length;
-                                        prevMark.isDone = newMark.isDone;
-                                        //
-                                        // Обновляем карту
-                                        //
-                                        m_reviewMap.remove(oldEndPos);
-                                        m_reviewMap.insert(prevMark.beforeEndPosition(), prevMarkIndex);
-
-                                        //
-                                        // Переходим к обработке следующего элемента
-                                        //
-                                        continue;
-                                    }
-                                    //
-                                    // А может быть она итак уже в неё входит
-                                    //
-                                    else if (prevMark.startPosition < newMark.startPosition
-                                             && prevMark.endPosition() >= newMark.endPosition()) {
-                                        //
-                                        // Тогда просто игнорируем эту заметку
-                                        //
-                                        continue;
-                                    }
-                                }
-                            }
-
-
-                            beginInsertRows(QModelIndex(), insertPosition, insertPosition);
-                            m_reviewMarks.insert(insertPosition, newMark);
-                            //
-                            m_reviewMap.insert(newMark.startPosition, insertPosition);
-                            m_reviewMap.insert(newMark.beforeEndPosition(), insertPosition);
-                            while (iter != m_reviewMap.end()) {
-                                *iter = iter.value() + 1;
-                                ++iter;
-                            }
-                            endInsertRows();
                         }
+
+                        ReviewMarkInfo newMark;
+                        if (range.format.hasProperty(QTextFormat::BackgroundBrush)) {
+                            newMark.background = range.format.background().color();
+                        }
+                        if (range.format.hasProperty(QTextFormat::ForegroundBrush)) {
+                            newMark.foreground = range.format.foreground().color();
+                        }
+                        newMark.startPosition = currentBlock.position() + range.start;
+                        newMark.length = range.length;
+                        newMark.isDone = range.format.boolProperty(ScenarioBlockStyle::PropertyIsDone);
+                        newMark.comments = range.format.property(ScenarioBlockStyle::PropertyComments).toStringList();
+                        newMark.authors = range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList();
+                        newMark.dates = range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList();
+
+                        //
+                        // Если это не первая заметка
+                        //
+                        if (insertPosition > 0) {
+                            const int prevMarkIndex = insertPosition - 1;
+                            ReviewMarkInfo& prevMark = m_reviewMarks[prevMarkIndex];
+                            //
+                            // Если стили одинаковы
+                            //
+                            if (prevMark.foreground == newMark.foreground
+                                && prevMark.background == newMark.background
+                                && prevMark.comments == newMark.comments
+                                && prevMark.authors == newMark.authors
+                                && prevMark.dates == newMark.dates) {
+                                //
+                                // Проверяем, можно ли её объединить с предыдущей
+                                //
+                                if (
+                                    // в одном блоке
+                                    prevMark.endPosition() == newMark.startPosition
+                                    // в разных блоках
+                                    || prevMark.endPosition() == newMark.startPosition - 1) {
+                                    //
+                                    // Обновляем сохранённую заметку
+                                    //
+                                    const int oldEndPos = prevMark.endPosition();
+                                    prevMark.length += 1 + newMark.length;
+                                    prevMark.isDone = newMark.isDone;
+                                    //
+                                    // Обновляем карту
+                                    //
+                                    m_reviewMap.remove(oldEndPos);
+                                    m_reviewMap.insert(prevMark.beforeEndPosition(), prevMarkIndex);
+
+                                    //
+                                    // Переходим к обработке следующего элемента
+                                    //
+                                    continue;
+                                }
+                                //
+                                // А может быть она итак уже в неё входит
+                                //
+                                else if (prevMark.startPosition < newMark.startPosition
+                                         && prevMark.endPosition() >= newMark.endPosition()) {
+                                    //
+                                    // Тогда просто игнорируем эту заметку
+                                    //
+                                    continue;
+                                }
+                            }
+                        }
+
+
+                        beginInsertRows(QModelIndex(), insertPosition, insertPosition);
+                        m_reviewMarks.insert(insertPosition, newMark);
+                        //
+                        m_reviewMap.insert(newMark.startPosition, insertPosition);
+                        m_reviewMap.insert(newMark.beforeEndPosition(), insertPosition);
+                        while (iter != m_reviewMap.end()) {
+                            *iter = iter.value() + 1;
+                            ++iter;
+                        }
+                        endInsertRows();
                     }
                 }
             }
+
             cursor.movePosition(QTextCursor::EndOfBlock);
             cursor.movePosition(QTextCursor::NextBlock);
         }

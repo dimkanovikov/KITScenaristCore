@@ -2166,6 +2166,7 @@ bool ScenarioTextEdit::selectBlockOnTripleClick(QMouseEvent* _event)
     // Тройной клик обрабатываем самостоятельно
     //
     if (m_mouseClicks > 2) {
+        m_mouseClicks = 1;
         QTextCursor cursor = textCursor();
         cursor.movePosition(QTextCursor::StartOfBlock);
         cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
