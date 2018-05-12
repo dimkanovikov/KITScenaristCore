@@ -1,6 +1,7 @@
 #include "FlatButton.h"
 
 #include <3rd_party/Helpers/ImageHelper.h>
+#include <3rd_party/Helpers/StyleSheetHelper.h>
 
 #include <QEvent>
 #include <QPainter>
@@ -17,8 +18,11 @@ FlatButton::FlatButton(QWidget* _parent) :
 	m_checkedIconHighlight(true)
 {
 #ifndef MOBILE_OS
-	setIconSize(QSize(20, 20));
+    const int sideSize = StyleSheetHelper::dpToPx(20);
+#else
+    const int sideSize = StyleSheetHelper::dpToPx(24);
 #endif
+    setIconSize(QSize(sideSize, sideSize));
 
 	connect(this, SIGNAL(toggled(bool)), this, SLOT(aboutUpdateIcon()));
 }
