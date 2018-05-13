@@ -415,6 +415,7 @@ void SynchronizationManager::signUp(const QString& _email, const QString& _passw
     loader.addRequestAttribute(KEY_EMAIL, _email);
     loader.addRequestAttribute(KEY_PASSWORD, _password);
     loader.addRequestAttribute(KEY_DEVICE_UUID, ::deviceUuid());
+    loader.addRequestAttribute(KEY_APP_VERSION, QApplication::applicationVersion());
     QByteArray response = loader.loadSync(URL_SIGNUP);
 
     //
