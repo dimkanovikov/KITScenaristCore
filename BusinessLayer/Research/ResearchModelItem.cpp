@@ -81,6 +81,11 @@ QPixmap ResearchModelItem::icon() const
                 break;
             }
 
+            case Research::TitlePage: {
+                iconPath = ":/Graphics/Iconset/book-open-variant.svg";
+                break;
+            }
+
             default: {
                 iconPath = ":/Graphics/Iconset/file-document-box.svg";
                 break;
