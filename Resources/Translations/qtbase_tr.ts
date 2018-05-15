@@ -284,35 +284,35 @@
     <name>QColorDialog</name>
     <message>
         <source>Hu&amp;e:</source>
-        <translation type="unfinished"></translation>
+        <translation>To&amp;n:</translation>
     </message>
     <message>
         <source>&amp;Sat:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Doygunluk:</translation>
     </message>
     <message>
         <source>&amp;Val:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Değer:</translation>
     </message>
     <message>
         <source>&amp;Red:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kırmızı:</translation>
     </message>
     <message>
         <source>&amp;Green:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Yeşil:</translation>
     </message>
     <message>
         <source>Bl&amp;ue:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ma&amp;vi:</translation>
     </message>
     <message>
         <source>A&amp;lpha channel:</source>
-        <translation type="unfinished"></translation>
+        <translation>A&amp;lfa kanalı:</translation>
     </message>
     <message>
         <source>&amp;HTML:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;HTML:</translation>
     </message>
     <message>
         <source>Cursor at %1, %2
@@ -322,33 +322,33 @@ Premeu ESC per cancel·lar</translation>
     </message>
     <message>
         <source>&amp;Pick Screen Color</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ekrandan Renk Al</translation>
     </message>
     <message>
         <source>Cursor at %1, %2, color: %3
 Press ESC to cancel</source>
-        <translation>Cursor en %1, %2, color: %3
-Premeu Esc per cancel·lar</translation>
+        <translation>İmleç burada %1, %2, renk: %3
+İptal için ESC&apos;e basın</translation>
     </message>
     <message>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Seç</translation>
     </message>
     <message>
         <source>Pick Screen Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekrandan Renk Al</translation>
     </message>
     <message>
         <source>&amp;Basic colors</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Temel renkler</translation>
     </message>
     <message>
         <source>&amp;Custom colors</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Özel renkler</translation>
     </message>
     <message>
         <source>&amp;Add to Custom Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Özel Renklere Ekle</translation>
     </message>
 </context>
 <context>
