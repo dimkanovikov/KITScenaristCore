@@ -224,7 +224,7 @@ void ScenarioModelItem::setType(ScenarioModelItem::Type _type)
     }
 }
 
-QPixmap ScenarioModelItem::icon() const
+QIcon ScenarioModelItem::icon() const
 {
     QString iconPath;
 
@@ -240,7 +240,7 @@ QPixmap ScenarioModelItem::icon() const
         }
     }
 
-    return QPixmap(iconPath);
+    return QIcon(iconPath);
 }
 
 bool ScenarioModelItem::hasNote() const

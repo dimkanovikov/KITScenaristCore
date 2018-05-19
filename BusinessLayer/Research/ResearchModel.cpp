@@ -6,6 +6,7 @@
 
 #include <3rd_party/Helpers/RunOnce.h>
 
+#include <QIcon>
 #include <QMimeData>
 #include <QSet>
 

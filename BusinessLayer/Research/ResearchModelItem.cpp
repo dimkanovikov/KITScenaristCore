@@ -26,7 +26,7 @@ QString ResearchModelItem::name() const
             : m_research->name();
 }
 
-QPixmap ResearchModelItem::icon() const
+QIcon ResearchModelItem::icon() const
 {
     QString iconPath;
     if (m_research != 0) {
@@ -93,7 +93,7 @@ QPixmap ResearchModelItem::icon() const
         }
     }
 
-    return QPixmap(iconPath);
+    return QIcon(iconPath);
 }
 
 Domain::Research* ResearchModelItem::research() const

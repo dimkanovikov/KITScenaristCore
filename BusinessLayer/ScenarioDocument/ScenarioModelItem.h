@@ -3,8 +3,8 @@
 
 #include <BusinessLayer/Counters/Counter.h>
 
+#include <QIcon>
 #include <QUuid>
-#include <QPixmap>
 
 
 namespace BusinessLogic
@@ -115,7 +115,7 @@ namespace BusinessLogic
         /**
          * @brief Иконка объекта
          */
-        QPixmap icon() const;
+        QIcon icon() const;
 
         /**
          * @brief Имеется ли в элементе примечание
