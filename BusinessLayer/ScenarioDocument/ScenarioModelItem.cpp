@@ -226,21 +226,24 @@ void ScenarioModelItem::setType(ScenarioModelItem::Type _type)
 
 QIcon ScenarioModelItem::icon() const
 {
-    QString iconPath;
+    static QHash<Type, QIcon> s_iconsCache;
+    if (!s_iconsCache.contains(m_type)) {
+        QString iconPath;
+        switch (m_type) {
+            case Folder: {
+                iconPath = ":/Graphics/Iconset/folder.svg";
+                break;
+            }
 
-    switch (m_type) {
-        case Folder: {
-            iconPath = ":/Graphics/Iconset/folder.svg";
-            break;
+            default: {
+                iconPath = ":/Graphics/Iconset/file-document-box.svg";
+                break;
+            }
         }
-
-        default: {
-            iconPath = ":/Graphics/Iconset/file-document-box.svg";
-            break;
-        }
+        s_iconsCache[m_type] = QIcon(iconPath);
     }
 
-    return QIcon(iconPath);
+    return s_iconsCache[m_type];
 }
 
 bool ScenarioModelItem::hasNote() const

@@ -28,8 +28,13 @@ QString ResearchModelItem::name() const
 
 QIcon ResearchModelItem::icon() const
 {
-    QString iconPath;
-    if (m_research != 0) {
+    if (m_research == nullptr) {
+        return QIcon();
+    }
+
+    static QHash<Research::Type, QIcon> s_iconsCache;
+    if (!s_iconsCache.contains(m_research->type())) {
+        QString iconPath;
         switch (m_research->type()) {
             case Research::ResearchRoot: {
                 iconPath = ":/Graphics/Iconset/file-tree.svg";
@@ -91,9 +96,10 @@ QIcon ResearchModelItem::icon() const
                 break;
             }
         }
+        s_iconsCache[m_research->type()] = QIcon(iconPath);
     }
 
-    return QIcon(iconPath);
+    return s_iconsCache[m_research->type()];
 }
 
 Domain::Research* ResearchModelItem::research() const
