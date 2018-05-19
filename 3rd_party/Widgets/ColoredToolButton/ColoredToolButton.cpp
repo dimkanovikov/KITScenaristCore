@@ -51,9 +51,11 @@ ColoredToolButton::ColoredToolButton(QWidget* _parent, QWidget* _topLevelParent)
 
 ColoredToolButton::~ColoredToolButton()
 {
+#ifndef MOBILE_OS
     if (m_colorsPane != nullptr) {
         m_colorsPane->deleteLater();
     }
+#endif
 }
 
 void ColoredToolButton::setColorsPane(ColoredToolButton::ColorsPaneType _pane)
