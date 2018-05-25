@@ -115,11 +115,6 @@ namespace UserInterface
         void setShowSuggestionsInEmptyBlocks(bool _show);
 
         /**
-         * @brief Установить доступность выделения текста мышью
-         */
-        void setTextSelectionEnabled(bool _enabled);
-
-        /**
          * @brief Установить необходимость проигрывания звуков клавиатуры
          */
         void setKeyboardSoundEnabled(bool _enabled);
@@ -261,11 +256,6 @@ namespace UserInterface
         /** @} */
 
         /**
-         * @brief Переопределяется, для того, чтобы блокировать выделение текста мышкой
-         */
-        void mouseMoveEvent(QMouseEvent* _event) override;
-
-        /**
          * @brief Переопределяем работу с буфером обмена для использования собственного майм типа данных
          */
         /** @{ */
@@ -392,11 +382,6 @@ namespace UserInterface
          * @brief Показывать автодополения в пустых блоках
          */
         bool m_showSuggestionsInEmptyBlocks;
-
-        /**
-         * @brief Включена ли возможность выделения текста
-         */
-        bool m_textSelectionEnabled;
 
         /**
          * @brief Включена ли опция проигрывания звуков клавиатруы

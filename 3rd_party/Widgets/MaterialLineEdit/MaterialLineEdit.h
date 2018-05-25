@@ -67,6 +67,11 @@ public:
      */
     void setNeedCorrectScreenPosition(bool _needCorrect);
 
+    /**
+     * @brief Запретить/разрешить измнение содержимого
+     */
+    void setReadOnly(bool _readOnly);
+
 signals:
     /**
      * @brief Изменился текст в поле ввода

@@ -331,6 +331,11 @@ private:
 
 public:
     /**
+     * @brief Установить доступность выделения текста мышью
+     */
+    void setTextSelectionEnabled(bool _enabled);
+
+    /**
      * @brief Установить формат страницы
      */
     void setPageFormat(QPageSize::PageSizeId _pageFormat);

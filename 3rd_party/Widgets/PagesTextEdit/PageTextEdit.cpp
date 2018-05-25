@@ -109,10 +109,9 @@ public:
 
 PageTextEditPrivate::PageTextEditPrivate()
     : control(0),
-      autoFormatting(PageTextEdit::AutoNone), tabChangesFocus(false),
-      lineWrap(PageTextEdit::WidgetWidth), lineWrapColumnOrWidth(0),
-      wordWrap(QTextOption::WrapAtWordBoundaryOrAnywhere), clickCausedFocus(0),
-      textFormat(Qt::AutoText), m_usePageMode(false), m_addBottomSpace(true),
+      autoFormatting(PageTextEdit::AutoNone), tabChangesFocus(false), lineWrap(PageTextEdit::WidgetWidth),
+      lineWrapColumnOrWidth(0), wordWrap(QTextOption::WrapAtWordBoundaryOrAnywhere), clickCausedFocus(0),
+      textFormat(Qt::AutoText), m_textSelectionEnabled(true), m_usePageMode(false), m_addBottomSpace(true),
       m_showPageNumbers(true), m_pageNumbersAlignment(Qt::AlignTop | Qt::AlignRight)
 {
     ignoreAutomaticScrollbarAdjustment = false;
@@ -2208,6 +2207,10 @@ void PageTextEdit::mousePressEvent(QMouseEvent *e)
 void PageTextEdit::mouseMoveEvent(QMouseEvent *e)
 {
     Q_D(PageTextEdit);
+    if (!d->m_textSelectionEnabled) {
+        return;
+    }
+
     d->inDrag = false; // paranoia
     const QPoint pos = e->pos();
     d->sendControlMouseEvent(e);
@@ -3416,6 +3419,14 @@ void PageTextEdit::ensureCursorVisible(const QTextCursor& _cursor, bool _animate
 //
 // Реализация дополнений, необходимых для превращения простого QTextEdit в постраничный редактор
 //
+
+void PageTextEdit::setTextSelectionEnabled(bool _enabled)
+{
+    Q_D(PageTextEdit);
+    if (d->m_textSelectionEnabled != _enabled) {
+        d->m_textSelectionEnabled = _enabled;
+    }
+}
 
 void PageTextEdit::setPageFormat(QPageSize::PageSizeId _pageFormat)
 {
