@@ -48,8 +48,8 @@ public:
 	/**
 	 * @brief Преобразовать значение в девайсонезависимые пиксели
 	 */
-	static qreal dpToPx(int _pixelValue) {
-        return _pixelValue * dp();
+    static int dpToPx(int _pixelValue) {
+        return static_cast<int>(_pixelValue * dp());
 	}
 
     /**
@@ -94,7 +94,7 @@ private:
         const int density = displayMetrics.getField<int>("densityDpi");
 #else
         QScreen *screen = QApplication::primaryScreen();
-        float density = screen->physicalDotsPerInch();
+        qreal density = screen->physicalDotsPerInch();
         const int width = screen->geometry().width();
         const int height = screen->geometry().height();
 #endif

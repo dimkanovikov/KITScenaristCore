@@ -463,6 +463,25 @@ Qt::ItemFlags ResearchModel::flags(const QModelIndex& _index) const
                 break;
             }
         }
+
+        //
+        // FIXME: для мобилки пока отдельный блок для проверки достпности
+        //
+#ifdef MOBILE_OS
+        switch (item->research()->type()) {
+            case Research::ImagesGallery:
+            case Research::Image:
+            case Research::MindMap:
+            case Research::Url: {
+                flags ^= Qt::ItemIsEnabled;
+                break;
+            }
+
+            default: {
+                break;
+            }
+        }
+#endif
     }
 
     return flags;

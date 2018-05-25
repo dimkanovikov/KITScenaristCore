@@ -318,8 +318,7 @@ QProgressBar::chunk {
  */
 
 QLabel[materialLineEditLabel=true] {
-    margin-left: 16dp;
-    margin-top: 6dp;
+    margin: 6dp 16dp 0dp 16dp;
     font-size: 12pt;
     color: palette(mid);
 }
@@ -355,8 +354,7 @@ QLabel[materialLineEditHelper=true] {
 }
 
 QLabel[materialLineEditLabel=false] {
-    margin-left: 16dp;
-    margin-top: 6dp;
+    margin: 6dp 16dp 0dp 16dp;
     color: #ff1744;
     font-size: 12pt;
 }
@@ -475,6 +473,14 @@ QComboBox[materialComboBox=true] QListView::item {
 QComboBox[materialComboBox=true] QListView::item:selected {
     color: palette(highlighted-text);
     background-color: palette(highlight);
+}
+
+/**************************************
+ * Стиль текстового редактора
+ */
+
+SimpleTextEditorWidget QAbstractScrollArea {
+    margin: 0dp 16dp 16dp 16dp;
 }
 
 /**************************************

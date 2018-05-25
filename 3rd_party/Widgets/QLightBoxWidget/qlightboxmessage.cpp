@@ -105,7 +105,7 @@ void QLightBoxMessage::initView()
     setMinimumWidth(500);
 #else
     setMinimumWidth(qMin(StyleSheetHelper::dpToPx(400),
-                         qreal(parentWidget()->width() - StyleSheetHelper::dpToPx(56))));
+                         parentWidget()->width() - StyleSheetHelper::dpToPx(56)));
 #endif
 }
 
