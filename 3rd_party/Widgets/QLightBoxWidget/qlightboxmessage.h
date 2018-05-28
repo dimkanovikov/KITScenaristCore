@@ -37,7 +37,7 @@ private:
 		QDialogButtonBox::StandardButton _defaultButton);
 
 private:
-	explicit QLightBoxMessage(QWidget* _parent = 0);
+    explicit QLightBoxMessage(QWidget* _parent = nullptr);
 
 	/**
 	 * @brief Настроить представление

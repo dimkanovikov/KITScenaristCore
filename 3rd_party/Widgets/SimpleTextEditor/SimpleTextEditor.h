@@ -12,7 +12,7 @@ class SimpleTextEditor : public SpellCheckTextEdit
 	Q_OBJECT
 
 public:
-	explicit SimpleTextEditor(QWidget *parent = 0);
+    explicit SimpleTextEditor(QWidget* _parent = nullptr);
 
 	/**
 	 * @brief Методы настройки формата
