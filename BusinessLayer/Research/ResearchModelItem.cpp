@@ -8,20 +8,20 @@ using Domain::Research;
 
 ResearchModelItem::ResearchModelItem(Domain::Research* _research) :
     m_research(_research),
-    m_parent(0)
+    m_parent(nullptr)
 {
 }
 
 ResearchModelItem::~ResearchModelItem()
 {
-    m_research = 0;
+    m_research = nullptr;
     qDeleteAll(m_children);
 }
 
 QString ResearchModelItem::name() const
 {
     return
-            m_research == 0
+            m_research == nullptr
             ? QString()
             : m_research->name();
 }

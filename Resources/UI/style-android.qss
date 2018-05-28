@@ -479,8 +479,18 @@ QComboBox[materialComboBox=true] QListView::item:selected {
  * Стиль текстового редактора
  */
 
-SimpleTextEditorWidget QAbstractScrollArea {
+QAbstractScrollArea[materialTextEdit=true] {
     margin: 0dp 16dp 16dp 16dp;
+    border: none;
+    border-bottom: 1px solid palette(text);
+}
+
+QAbstractScrollArea[materialTextEdit=true]:hover:!focus {
+    border-bottom: 2px solid palette(text);
+}
+
+QAbstractScrollArea[materialTextEdit=true]:focus {
+    border-bottom: 2px solid palette(highlight);
 }
 
 /**************************************
