@@ -889,6 +889,100 @@ void ScenarioTemplate::setFontSize(int _size)
         m_blockStyles[iter.key()].setFont(font);
     }
 }
+#include <QDebug>
+void ScenarioTemplate::configureMargins(int _screenWidth)
+{
+    const QFont font = m_blockStyles.first().font();
+    const int characterWidth = QFontMetrics(font).width("W");
+    for (auto iter = m_blockStyles.begin(); iter != m_blockStyles.end(); ++iter) {
+        int lineLength = 0;
+        qreal minLeftMargin = 0;
+        qreal minRightMargin = 0;
+        switch (iter.key()) {
+            case ScenarioBlockStyle::Character: {
+                lineLength = 31;
+                minLeftMargin = 17;
+                minRightMargin = 1.8;
+                break;
+            }
+
+            case ScenarioBlockStyle::Dialogue: {
+                lineLength = 28;
+                minLeftMargin = 8;
+                minRightMargin = 13.3;
+                break;
+            }
+
+            case ScenarioBlockStyle::Parenthetical: {
+                lineLength = 18;
+                minLeftMargin = 12;
+                minRightMargin = 17.3;
+                break;
+            }
+
+            case ScenarioBlockStyle::Lyrics: {
+                lineLength = 35;
+                minLeftMargin = 8;
+                break;
+            }
+
+            default: {
+                lineLength = 58;
+                break;
+            }
+        }
+
+        // сжатые отступы в 3 раза
+        const qreal minMarginsWidthMM = minLeftMargin + minRightMargin;
+        const qreal minMarginsWidth = PageMetrics::mmToPx(minMarginsWidthMM);
+        // полноценные отступы
+        const qreal minMarginsWidthX3 = minMarginsWidth * 3;
+        const int screenMarginsWidth = _screenWidth - (characterWidth * lineLength);
+        qDebug() << iter.key() << (characterWidth * lineLength + minMarginsWidth * 3);
+        //
+        // В случае, если доступна ширина для размещения полноценного шаблона
+        //
+        if (screenMarginsWidth >= minMarginsWidthX3) {
+            //
+            // Используем полноценные отступы
+            //
+            minLeftMargin *= 3;
+            minRightMargin *= 3;
+
+            //
+            // Добавляем к ним лишнее пространство, которое есть на экране
+            //
+            const qreal marginDelta = (screenMarginsWidth - minMarginsWidthX3) / 2;
+            minLeftMargin += marginDelta;
+            minRightMargin += marginDelta;
+
+            //
+            // Настраиваем шаблон
+            //
+            m_blockStyles[iter.key()].setLeftMargin(minLeftMargin);
+            m_blockStyles[iter.key()].setRightMargin(minRightMargin);
+        }
+        //
+        // В случае, если доступна ширина большая чем для сжатых, но меньше, чем для полноценных отступов
+        //
+        else if (screenMarginsWidth >= minMarginsWidth) {
+            //
+            // Используем пропорционально увеличенные сжатые отступы
+            //
+            const qreal leftMargin = screenMarginsWidth * (minLeftMargin / minMarginsWidthMM);
+            const qreal rightMargin = screenMarginsWidth * (minRightMargin / minMarginsWidthMM);
+            m_blockStyles[iter.key()].setLeftMargin(leftMargin);
+            m_blockStyles[iter.key()].setRightMargin(rightMargin);
+        }
+        //
+        // Ну а если места мало, то используем сжатые отступы
+        //
+        else {
+            m_blockStyles[iter.key()].setLeftMargin(minLeftMargin);
+            m_blockStyles[iter.key()].setRightMargin(minRightMargin);
+        }
+    }
+}
 #endif
 
 ScenarioTemplate::ScenarioTemplate(const QString& _fromFile)

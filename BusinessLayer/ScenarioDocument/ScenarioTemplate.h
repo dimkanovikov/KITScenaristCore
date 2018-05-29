@@ -545,6 +545,11 @@ namespace BusinessLogic
          * @brief Задать размер шрифта
          */
         void setFontSize(int _size);
+
+        /**
+         * @brief Настроить отступы, чтобы по возможности документ занимал правильный вид
+         */
+        void configureMargins(int _screenWidth);
 #endif
 
     private:
