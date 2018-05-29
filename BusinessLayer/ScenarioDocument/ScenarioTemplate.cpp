@@ -889,99 +889,70 @@ void ScenarioTemplate::setFontSize(int _size)
         m_blockStyles[iter.key()].setFont(font);
     }
 }
-#include <QDebug>
-void ScenarioTemplate::configureMargins(int _screenWidth)
+
+void ScenarioTemplate::configureMargins(qreal _availableWidth)
 {
     const QFont font = m_blockStyles.first().font();
     const int characterWidth = QFontMetrics(font).width("W");
+    const int fullLineLength = 62;
+    const int fullLineWidth = characterWidth * fullLineLength;
+
+    //
+    // Если в доступное пространство влезает больше текста, чем должно быть на одной строке
+    // определим размер отступов от краёв
+    //
+    qreal leftDocumentMargin = PageMetrics::mmToPx(15);
+    _availableWidth -= leftDocumentMargin;
+    qreal rightDocumentMargin = PageMetrics::mmToPx(12);
+    _availableWidth -= rightDocumentMargin;
+    qreal marginDelta = 0;
+    if (_availableWidth > fullLineWidth) {
+        marginDelta = (_availableWidth - fullLineWidth) / 2;
+        leftDocumentMargin += marginDelta;
+        rightDocumentMargin += marginDelta;
+    }
     for (auto iter = m_blockStyles.begin(); iter != m_blockStyles.end(); ++iter) {
-        int lineLength = 0;
-        qreal minLeftMargin = 0;
-        qreal minRightMargin = 0;
+        qreal leftMarginPercents = 0;
+        qreal rightMarginPercents = 0;
         switch (iter.key()) {
             case ScenarioBlockStyle::Character: {
-                lineLength = 31;
-                minLeftMargin = 17;
-                minRightMargin = 1.8;
-                break;
-            }
-
-            case ScenarioBlockStyle::Dialogue: {
-                lineLength = 28;
-                minLeftMargin = 8;
-                minRightMargin = 13.3;
+                leftMarginPercents = 0.33;
+                rightMarginPercents = 0.035;
                 break;
             }
 
             case ScenarioBlockStyle::Parenthetical: {
-                lineLength = 18;
-                minLeftMargin = 12;
-                minRightMargin = 17.3;
+                leftMarginPercents = 0.23;
+                rightMarginPercents = 0.335;
+                break;
+            }
+
+            case ScenarioBlockStyle::Dialogue: {
+                leftMarginPercents = 0.17;
+                rightMarginPercents = 0.26;
                 break;
             }
 
             case ScenarioBlockStyle::Lyrics: {
-                lineLength = 35;
-                minLeftMargin = 8;
+                leftMarginPercents = 0.17;
                 break;
             }
 
-            default: {
-                lineLength = 58;
-                break;
-            }
+            default: break;
         }
 
-        // сжатые отступы в 3 раза
-        const qreal minMarginsWidthMM = minLeftMargin + minRightMargin;
-        const qreal minMarginsWidth = PageMetrics::mmToPx(minMarginsWidthMM);
-        // полноценные отступы
-        const qreal minMarginsWidthX3 = minMarginsWidth * 3;
-        const int screenMarginsWidth = _screenWidth - (characterWidth * lineLength);
-        qDebug() << iter.key() << (characterWidth * lineLength + minMarginsWidth * 3);
         //
-        // В случае, если доступна ширина для размещения полноценного шаблона
+        // Рассчитаем полные отступы
         //
-        if (screenMarginsWidth >= minMarginsWidthX3) {
-            //
-            // Используем полноценные отступы
-            //
-            minLeftMargin *= 3;
-            minRightMargin *= 3;
-
-            //
-            // Добавляем к ним лишнее пространство, которое есть на экране
-            //
-            const qreal marginDelta = (screenMarginsWidth - minMarginsWidthX3) / 2;
-            minLeftMargin += marginDelta;
-            minRightMargin += marginDelta;
-
-            //
-            // Настраиваем шаблон
-            //
-            m_blockStyles[iter.key()].setLeftMargin(minLeftMargin);
-            m_blockStyles[iter.key()].setRightMargin(minRightMargin);
-        }
-        //
-        // В случае, если доступна ширина большая чем для сжатых, но меньше, чем для полноценных отступов
-        //
-        else if (screenMarginsWidth >= minMarginsWidth) {
-            //
-            // Используем пропорционально увеличенные сжатые отступы
-            //
-            const qreal leftMargin = screenMarginsWidth * (minLeftMargin / minMarginsWidthMM);
-            const qreal rightMargin = screenMarginsWidth * (minRightMargin / minMarginsWidthMM);
-            m_blockStyles[iter.key()].setLeftMargin(leftMargin);
-            m_blockStyles[iter.key()].setRightMargin(rightMargin);
-        }
-        //
-        // Ну а если места мало, то используем сжатые отступы
-        //
-        else {
-            m_blockStyles[iter.key()].setLeftMargin(minLeftMargin);
-            m_blockStyles[iter.key()].setRightMargin(minRightMargin);
-        }
+        const qreal currentLineWidth = _availableWidth > fullLineWidth ? fullLineWidth : _availableWidth;
+        const qreal leftMargin = currentLineWidth * leftMarginPercents;
+        const qreal rightMargin = currentLineWidth * rightMarginPercents;
+        m_blockStyles[iter.key()].setLeftMargin(PageMetrics::pxToMm(leftMargin));
+        m_blockStyles[iter.key()].setRightMargin(PageMetrics::pxToMm(rightMargin));
     }
+
+    m_pageMargins.setLeft(PageMetrics::pxToMm(leftDocumentMargin));
+    m_pageMargins.setRight(PageMetrics::pxToMm(rightDocumentMargin));
 }
 #endif
 

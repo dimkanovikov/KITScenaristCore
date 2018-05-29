@@ -549,7 +549,7 @@ namespace BusinessLogic
         /**
          * @brief Настроить отступы, чтобы по возможности документ занимал правильный вид
          */
-        void configureMargins(int _screenWidth);
+        void configureMargins(qreal _availableWidth);
 #endif
 
     private:
