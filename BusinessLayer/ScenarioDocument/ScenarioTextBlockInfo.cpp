@@ -136,6 +136,7 @@ SceneHeadingBlockInfo* SceneHeadingBlockInfo::clone() const
     copy->m_sceneNumber = m_sceneNumber;
     copy->m_colors = m_colors;
     copy->m_stamp = m_stamp;
+    copy->m_title = m_title;
     copy->m_description = m_description;
     return copy;
 }
