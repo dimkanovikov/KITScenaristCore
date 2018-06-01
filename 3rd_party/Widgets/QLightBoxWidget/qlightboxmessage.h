@@ -17,24 +17,29 @@ class QLightBoxMessage : public QLightBoxDialog
 public:
 	static QDialogButtonBox::StandardButton critical(QWidget* _parent, const QString& _title,
 		const QString& _text, QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::Ok,
-		QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton);
+        QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
+        const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames = QVector<QPair<QDialogButtonBox::StandardButton, QString>>());
 
 	static QDialogButtonBox::StandardButton information(QWidget* _parent, const QString& _title,
 		const QString& _text, QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::Ok,
-		QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton);
+        QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
+        const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames = QVector<QPair<QDialogButtonBox::StandardButton, QString>>());
 
 	static QDialogButtonBox::StandardButton question(QWidget* _parent, const QString& _title, const QString& _text,
 		QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::StandardButtons(QDialogButtonBox::Yes | QDialogButtonBox::No),
-		QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton);
+        QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
+        const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames = QVector<QPair<QDialogButtonBox::StandardButton, QString>>());
 
 	static QDialogButtonBox::StandardButton warning(QWidget* _parent, const QString& _title,
 		const QString& _text, QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::Ok,
-		QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton);
+        QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
+        const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames = QVector<QPair<QDialogButtonBox::StandardButton, QString>>());
 
 private:
 	static QDialogButtonBox::StandardButton message(QWidget* _parent, const QString& _title,
 		const QString& _text, QStyle::StandardPixmap _pixmap, QDialogButtonBox::StandardButtons _buttons,
-		QDialogButtonBox::StandardButton _defaultButton);
+        QDialogButtonBox::StandardButton _defaultButton,
+        const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames);
 
 private:
 	explicit QLightBoxMessage(QWidget* _parent = 0);

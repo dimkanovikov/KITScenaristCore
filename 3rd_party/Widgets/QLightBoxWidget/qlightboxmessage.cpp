@@ -18,35 +18,40 @@ namespace {
 
 QDialogButtonBox::StandardButton QLightBoxMessage::critical(QWidget* _parent, const QString& _title,
     const QString& _text, QDialogButtonBox::StandardButtons _buttons,
-    QDialogButtonBox::StandardButton _defaultButton)
+    QDialogButtonBox::StandardButton _defaultButton,
+    const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames)
 {
-    return message(_parent, _title, _text, QStyle::SP_MessageBoxCritical, _buttons, _defaultButton);
+    return message(_parent, _title, _text, QStyle::SP_MessageBoxCritical, _buttons, _defaultButton, _buttonNames);
 }
 
 QDialogButtonBox::StandardButton QLightBoxMessage::information(QWidget* _parent, const QString& _title,
     const QString& _text, QDialogButtonBox::StandardButtons _buttons,
-    QDialogButtonBox::StandardButton _defaultButton)
+    QDialogButtonBox::StandardButton _defaultButton,
+    const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames)
 {
-    return message(_parent, _title, _text, QStyle::SP_MessageBoxInformation, _buttons, _defaultButton);
+    return message(_parent, _title, _text, QStyle::SP_MessageBoxInformation, _buttons, _defaultButton, _buttonNames);
 }
 
 QDialogButtonBox::StandardButton QLightBoxMessage::question(QWidget* _parent, const QString& _title,
     const QString& _text, QDialogButtonBox::StandardButtons _buttons,
-    QDialogButtonBox::StandardButton _defaultButton)
+    QDialogButtonBox::StandardButton _defaultButton,
+    const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames)
 {
-    return message(_parent, _title, _text, QStyle::SP_MessageBoxQuestion, _buttons, _defaultButton);
+    return message(_parent, _title, _text, QStyle::SP_MessageBoxQuestion, _buttons, _defaultButton, _buttonNames);
 }
 
 QDialogButtonBox::StandardButton QLightBoxMessage::warning(QWidget* _parent, const QString& _title,
     const QString& _text, QDialogButtonBox::StandardButtons _buttons,
-    QDialogButtonBox::StandardButton _defaultButton)
+    QDialogButtonBox::StandardButton _defaultButton,
+    const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames)
 {
-    return message(_parent, _title, _text, QStyle::SP_MessageBoxWarning, _buttons, _defaultButton);
+    return message(_parent, _title, _text, QStyle::SP_MessageBoxWarning, _buttons, _defaultButton, _buttonNames);
 }
 
 QDialogButtonBox::StandardButton QLightBoxMessage::message(QWidget* _parent, const QString& _title,
     const QString& _text, QStyle::StandardPixmap _pixmap, QDialogButtonBox::StandardButtons _buttons,
-    QDialogButtonBox::StandardButton _defaultButton)
+    QDialogButtonBox::StandardButton _defaultButton,
+    const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames)
 {
     static QLightBoxMessage message(_parent);
     message.setWindowTitle(_title);
@@ -58,6 +63,13 @@ QDialogButtonBox::StandardButton QLightBoxMessage::message(QWidget* _parent, con
     }
     foreach (QAbstractButton* button, message.m_buttons->buttons())	{
         button->setProperty("flat", true);
+
+    //
+    // Задаем названия кнопок, если есть
+    //
+    for (const QPair<QDialogButtonBox::StandardButton, QString>& buttonName : _buttonNames) {
+        message.m_buttons->button(buttonName.first)->setText(buttonName.second);
+    }
 
 #ifdef MOBILE_OS
         //
