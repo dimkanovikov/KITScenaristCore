@@ -261,8 +261,8 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
                         if (_exportParameters.printScenesNumbers) {
                             QTextBlockUserData* textBlockData = documentCursor.block().userData();
                             SceneHeadingBlockInfo* sceneInfo = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
-                            if (sceneInfo != 0 && sceneInfo->sceneNumber()) {
-                                paragraphText += " #" + QString::number(sceneInfo->sceneNumber()) + "#";
+                            if (sceneInfo != 0 && !sceneInfo->sceneNumber().isEmpty()) {
+                                paragraphText += " #" + sceneInfo->sceneNumber() + "#";
                             }
                         }
 

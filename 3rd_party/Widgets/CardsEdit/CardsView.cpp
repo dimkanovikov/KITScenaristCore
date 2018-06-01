@@ -102,14 +102,14 @@ void CardsView::insertAct(const QString& _uuid, const QString& _title, const QSt
     m_scene->insertAct(_uuid, _title, _description, _colors, _previousItemUuid);
 }
 
-void CardsView::insertCard(const QString& _uuid, bool _isFolder, int _number, const QString& _title,
+void CardsView::insertCard(const QString& _uuid, bool _isFolder, const QString& _number, const QString& _title,
     const QString& _description, const QString& _stamp, const QString& _colors, bool _isEmbedded,
     const QPointF& _position, const QString& _previousItemUuid)
 {
     m_scene->insertCard(_uuid, _isFolder, _number, _title, _description, _stamp, _colors, _isEmbedded, _position, _previousItemUuid);
 }
 
-void CardsView::updateItem(const QString& _uuid, bool _isFolder, int _number,  const QString& _title,
+void CardsView::updateItem(const QString& _uuid, bool _isFolder, const QString& _number,  const QString& _title,
     const QString& _description, const QString& _stamp, const QString& _colors, bool _isEmbedded,
     bool _isAct)
 {

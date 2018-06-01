@@ -32,12 +32,12 @@ namespace BusinessLogic
 		 */
 		class ReportData {
 		public:
-			ReportData() : page(0), number(0) {}
+            ReportData() : page(0) {}
 
 			/**
 			 * @brief Сцена
 			 */
-			QString scene;
+            QString scene;
 
 			/**
 			 * @brief Страница, на которой начинается
@@ -47,7 +47,7 @@ namespace BusinessLogic
 			/**
 			 * @brief Номер
 			 */
-			int number;
+            QString number;
 
 			/**
              * @brief Реплики персонажа <персонаж, текст, позиция>

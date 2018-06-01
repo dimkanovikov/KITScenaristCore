@@ -31,7 +31,7 @@ namespace BusinessLogic
 		 */
 		class ReportData {
 		public:
-			ReportData() : page(0), number(0), chron(0) {}
+            ReportData() : page(0), chron(0) {}
 
 			/**
 			 * @brief Название
@@ -46,7 +46,7 @@ namespace BusinessLogic
 			/**
 			 * @brief Номер
 			 */
-			int number;
+            QString number;
 
 			/**
 			 * @brief Хронометраж

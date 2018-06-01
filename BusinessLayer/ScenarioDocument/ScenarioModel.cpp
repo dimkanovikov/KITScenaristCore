@@ -8,6 +8,7 @@
 
 #include <QApplication>
 #include <QMimeData>
+#include <QQueue>
 
 using namespace BusinessLogic;
 
@@ -557,35 +558,200 @@ Qt::DropActions ScenarioModel::supportedDropActions() const
     return Qt::CopyAction | Qt::MoveAction;
 }
 
-void ScenarioModel::updateSceneNumbers(ScenarioModelItem* _item, int& _sceneNumberCounter)
-{
-    //
-    // Если элемент сцена, то обновим номер
-    //
-    if (_item->type() == ScenarioModelItem::Scene) {
-        if (_item->setSceneNumber(++_sceneNumberCounter)) {
-            const QModelIndex itemIndex = indexForItem(_item);
-            emit dataChanged(itemIndex, itemIndex);
-        }
-    }
-    //
-    // В противном случае обновим детей элемента
-    //
-    else {
-        for (int itemIndex = 0; itemIndex < _item->childCount(); ++itemIndex) {
-            updateSceneNumbers(_item->childAt(itemIndex), _sceneNumberCounter);
-        }
-    }
-}
-
 void ScenarioModel::updateSceneNumbers()
 {
-    int sceneNumber = 0;
-    for (int itemIndex = 0; itemIndex < m_rootItem->childCount(); ++itemIndex) {
-        updateSceneNumbers(m_rootItem->childAt(itemIndex), sceneNumber);
+    //
+    // Для начала, построим список из сцен
+    //
+    QVector<ScenarioModelItem*> scenes;
+    scenes.reserve(m_scenesCount);
+
+    //
+    // Заполним список из сцен
+    //
+    QQueue<ScenarioModelItem*> queue;
+    queue.push_back(m_rootItem);
+    while (!queue.empty()) {
+        ScenarioModelItem* item = queue.front();
+        queue.pop_front();
+        if (item->type() == ScenarioModelItem::Scene) {
+            scenes.push_back(item);
+        } else {
+            for (int i = 0; i != item->childCount(); ++i) {
+                queue.push_back(item->childAt(i));
+            }
+        }
     }
 
-    m_scenesCount = sceneNumber;
+    //
+    // Обновим номера
+    //
+    QString prevPrefix = "";
+    unsigned sceneNumberCounter = 0;
+    bool anyFixed = false;
+
+    for (int i = 0; i != scenes.size(); ++i) {
+
+        if (scenes[i]->isFixed()) {
+            //
+            // Если сцена зафиксирована, то номера последующих сцен будут отталкиваться от нее
+            //
+            prevPrefix = scenes[i]->sceneNumber();
+            sceneNumberCounter = 0;
+            anyFixed = true;
+        } else {
+            //
+            // А если не зафиксирована, то обновим для нее номер
+            //
+            if (i != 0
+                    && i + 1 != scenes.size()
+                    && scenes[i - 1]->isFixed()) {
+                //
+                // Если предыдущая сцена зафиксирована, то, возможно, текущая сцена находится
+                // между зафиксированными сценами разной глубины фиксации. Тогда ее порядковый номер
+                // должен начинаться с последней зафиксированной сцены, глубина фиксации которой
+                // на 1 меньше предыдущей из ближайшей группы
+                //
+                int nearestNextFixed = -1; // Номер ближайшей зафиксированной сцены, глубина фиксации которой на 1 меньше предыдущей
+                for (int j = i + 1; j != scenes.size(); ++j) {
+                    if (scenes[j]->fixNesting() != 0
+                            && scenes[j]->fixNesting() < scenes[i - 1]->fixNesting()
+                            && scenes[j]->isFixed()) {
+                        nearestNextFixed = j;
+                        //
+                        // Нашли такую сцену
+                        //
+                        break;
+                    }
+                    if (scenes[j]->fixNesting() >= scenes[i - 1]->fixNesting()) {
+                        //
+                        // Вышли из зоны поиска. Не нашли
+                        //
+                        break;
+                    }
+                }
+                if (nearestNextFixed != -1) {
+                    //
+                    // Окей, у нас есть номер ближайшей сцены, глубина фиксации которой на 1 меньше,
+                    // чем у предыдущей по отношению к текущей. Теперь надо найти последнюю сцену из этой группы фиксации
+                    // и взять ее номер
+                    //
+                    unsigned maxSuffix = scenes[nearestNextFixed]->numberSuffix();
+                    for (int j = nearestNextFixed + 1; j != scenes.size(); ++j) {
+                        if (scenes[j]->fixNesting() >= scenes[i - 1]->fixNesting()) {
+                            //
+                            // Вышли из зоны поиска
+                            //
+                            break;
+                        }
+                        if (scenes[j]->fixNesting() + 1 != scenes[i - 1]->fixNesting()
+                                || !scenes[j]->isFixed()) {
+                            //
+                            // А эти сцены мы игнорируем, потому что их номер нас не интересует
+                            // (незафиксированные или с еще меньшей фиксацией)
+                            //
+                            continue;
+                        }
+                        maxSuffix = std::max(maxSuffix, scenes[j]->numberSuffix());
+                    }
+
+                    //
+                    // Вот порядковый номер текущей сцены
+                    //
+                    sceneNumberCounter = maxSuffix + 1;
+
+                    //
+                    // При этом, нужно скопировать глубину фиксации для текущей сцены из группы, к которой она относится
+                    //
+                    scenes[i]->setFixNesting(scenes[nearestNextFixed]->fixNesting());
+                }
+            } else if (i != 0
+                       && !scenes[i - 1]->isFixed()) {
+                //
+                // Если предыдущая и текущая незафиксированы, то у них должна быть одинаковая группа фиксации
+                //
+                scenes[i]->setFixNesting(scenes[i - 1]->fixNesting());
+            }
+
+            //
+            // Наконец, зададим номер сцены
+            //
+            QString sceneCounter;
+            if (prevPrefix.isEmpty()) {
+                //
+                // Если это сцена "верхнего уровня", то у нее номер, а не буква
+                //
+                sceneCounter = QString::number(1 + sceneNumberCounter);
+            } else {
+                //
+                // Иначе, добавим букву к суффиксу
+                // А если буквы закончились, то нумеруем их еще и цифрой
+                //
+                const unsigned alphabetLen = 'B' - 'A' + 1;
+                unsigned sceneLetter = sceneNumberCounter % alphabetLen;
+                unsigned sceneLetterNumber = sceneNumberCounter / alphabetLen;
+                sceneCounter = prevPrefix + ('A' + sceneLetter);
+                if (sceneLetterNumber != 0) {
+                    sceneCounter += QString::number(sceneLetterNumber);
+                }
+            }
+
+            //
+            // Непосредственно задаем номер сцены
+            //
+            if (scenes[i]->setSceneNumber(sceneCounter)) {
+                scenes[i]->setNumberSuffix(sceneNumberCounter);
+                const QModelIndex itemIndex = indexForItem(scenes[i]);
+                emit dataChanged(itemIndex, itemIndex);
+            }
+            ++sceneNumberCounter;
+        }
+    }
+
+    //
+    // Уведомим, если в модели есть фиксированные сцена, а мы не знали или наоборот
+    //
+    if (anyFixed != m_anyFixed) {
+        m_anyFixed = anyFixed;
+        emit fixedScenesChanged(m_anyFixed);
+    }
+
+    m_scenesCount = scenes.size();
+}
+
+void ScenarioModel::lockUnlockSceneNumbers(bool _lock)
+{
+    ScenarioModelItem* item;
+    QQueue<ScenarioModelItem*> queue;
+    queue.push_back(m_rootItem);
+
+    //
+    // Просто обходим дерево и ставим атрибуты фиксации
+    //
+    while(!queue.empty()) {
+        item = queue.front();
+        queue.pop_front();
+        if (item->type() == ScenarioModelItem::Scene) {
+            item->setFixed(_lock);
+            if (_lock) {
+                item->setFixNesting(item->fixNesting() + 1);
+            } else {
+                item->setFixNesting(0);
+                item->setNumberSuffix(0);
+                item->setSceneNumber(0);
+            }
+        }
+        else {
+            for (int itemIndex = 0; itemIndex < item->childCount(); ++itemIndex) {
+                queue.push_back(item->childAt(itemIndex));
+            }
+        }
+    }
+
+    //
+    // Обновляем номера сцен (на всякий случай?)
+    //
+    updateSceneNumbers();
 }
 
 int ScenarioModel::scenesCount() const

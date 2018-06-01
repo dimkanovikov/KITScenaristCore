@@ -52,8 +52,8 @@ public:
      * @brief Номер сцены
      */
     /** @{ */
-    void setNumber(int _number);
-    int number() const;
+    void setNumber(const QString& _number);
+    QString number() const;
     /** @} */
 
     /**
@@ -183,7 +183,7 @@ private:
     /**
      * @brief Номер сцены
      */
-    int m_number = 0;
+    QString m_number = 0;
 
     /**
      * @brief Заголовок карточки

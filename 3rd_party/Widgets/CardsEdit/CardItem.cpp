@@ -98,7 +98,7 @@ bool CardItem::isFolder() const
     return m_isFolder;
 }
 
-void CardItem::setNumber(int _number)
+void CardItem::setNumber(const QString& _number)
 {
     if (m_number != _number) {
         m_number = _number;
@@ -106,7 +106,7 @@ void CardItem::setNumber(int _number)
     }
 }
 
-int CardItem::number() const
+QString CardItem::number() const
 {
     return m_number;
 }

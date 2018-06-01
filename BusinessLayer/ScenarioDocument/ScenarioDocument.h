@@ -105,6 +105,26 @@ namespace BusinessLogic
         QString itemColors(ScenarioModelItem* _item) const;
 
         /**
+         * @brief Номер сцены
+         */
+        QString itemSceneNumber(ScenarioModelItem* _item) const;
+
+        /**
+         * @brief Порядковый номер сцены в своей группе фиксации
+         */
+        unsigned itemSceneNumberSuffix(ScenarioModelItem* _item) const;
+
+        /**
+         * @brief Зафиксирована ли сцена
+         */
+        bool itemSceneIsFixed(ScenarioModelItem* _item) const;
+
+        /**
+         * @brief Группа фиксации (сколько раз сцена была зафиксирована)
+         */
+        unsigned itemSceneFixNesting(ScenarioModelItem* _item) const;
+
+        /**
          * @brief Установить цвет для сцены в указанной позиции
          */
         void setItemColorsAtPosition(int _position, const QString& _colors);
@@ -204,6 +224,16 @@ namespace BusinessLogic
          */
         QStringList findLocations() const;
 
+        /**
+         * @brief Обновить номера сцен в блоках информации документа
+         */
+        void updateDocumentScenesAndDialoguesNumbers();
+
+        /**
+         * @brief Зафиксировать номера сцен
+         */
+        void lockUnlockSceneNumbers(bool _lock);
+
     public:
         /**
          * @brief Вспомогательные функции для обработчика xml
@@ -220,6 +250,11 @@ namespace BusinessLogic
          * @brief Изменился текст
          */
         void textChanged();
+
+        /**
+         * @brief Изменилась информация о зафиксированности сцен
+         */
+        void fixedScenesChanged(bool _anyFixed);
 
     private slots:
         /**
@@ -253,11 +288,6 @@ namespace BusinessLogic
          *		  или ближайший к позиции
          */
         ScenarioModelItem* itemForPosition(int _position, bool _findNear = false) const;
-
-        /**
-         * @brief Обновить номера сцен в блоках информации документа
-         */
-        void updateDocumentScenesAndDialoguesNumbers();
 
         /**
          * @brief Загрузить документ из сценария

@@ -98,10 +98,12 @@ namespace BusinessLogic
         /**
          * @brief Обновить номера сцен
          */
-        /** @{ */
-        void updateSceneNumbers(ScenarioModelItem* _item, int& _sceneNumberCounter);
         void updateSceneNumbers();
-        /** @} */
+
+        /**
+         * @brief Зафиксировать номера сцен
+         */
+        void lockUnlockSceneNumbers(bool _lock);
 
         /**
          * @brief Количество сцен в сценарии
@@ -144,6 +146,11 @@ namespace BusinessLogic
          */
         void mimeDropped(int _atPosition);
 
+        /**
+         * @brief Изменилась информация о зафиксированности сцен
+         */
+        void fixedScenesChanged(bool _anyFixed);
+
     private:
         /**
          * @brief Корневой элемент дерева
@@ -166,6 +173,11 @@ namespace BusinessLogic
          * @brief Счётчик количества сцен
          */
         int m_scenesCount;
+
+        /**
+         * @brief Есть ли зафиксированные сцены
+         */
+        bool m_anyFixed = false;
     };
 
     /**

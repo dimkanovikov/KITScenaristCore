@@ -11,7 +11,7 @@ namespace {
 
 ScenarioModelItem::ScenarioModelItem(int _position) :
     m_position(_position),
-    m_sceneNumber(0),
+    m_fixed(false),
     m_textLength(0),
     m_duration(0),
     m_type(Scene),
@@ -90,18 +90,48 @@ int ScenarioModelItem::length() const
     return length;
 }
 
-int ScenarioModelItem::sceneNumber() const
+QString ScenarioModelItem::sceneNumber() const
 {
     return m_sceneNumber;
 }
 
-bool ScenarioModelItem::setSceneNumber(int _number)
+bool ScenarioModelItem::setSceneNumber(const QString& _number)
 {
     if (m_sceneNumber != _number) {
         m_sceneNumber = _number;
         return true;
     }
     return false;
+}
+
+bool ScenarioModelItem::isFixed() const
+{
+    return m_fixed;
+}
+
+void ScenarioModelItem::setFixed(bool _fixed)
+{
+    m_fixed = _fixed;
+}
+
+unsigned ScenarioModelItem::fixNesting() const
+{
+    return m_fixNesting;
+}
+
+void ScenarioModelItem::setFixNesting(unsigned _fix_nesting)
+{
+    m_fixNesting = _fix_nesting;
+}
+
+unsigned ScenarioModelItem::numberSuffix() const
+{
+    return m_numberSuffix;
+}
+
+void ScenarioModelItem::setNumberSuffix(unsigned _numberSuffix)
+{
+    m_numberSuffix = _numberSuffix;
 }
 
 QString ScenarioModelItem::header() const

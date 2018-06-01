@@ -128,14 +128,14 @@ namespace {
                                         blockRect.top() <= pageYPos ? pageYPos : blockRect.top(),
                                         PageMetrics::mmToPx(_margins.left) - distanceBetweenSceneNumberAndText,
                                         blockRect.height());
-                            _painter->drawText(sceneNumberRect, Qt::AlignRight | Qt::AlignTop, QString::number(blockInfo->sceneNumber()) + ".");
+                            _painter->drawText(sceneNumberRect, Qt::AlignRight | Qt::AlignTop, blockInfo->sceneNumber() + ".");
                         } else {
                             const QRectF sceneNumberRect(
                                         PageMetrics::mmToPx(_margins.left) + _body.width() + distanceBetweenSceneNumberAndText,
                                         blockRect.top() <= pageYPos ? pageYPos : blockRect.top(),
                                         PageMetrics::mmToPx(_margins.right) - distanceBetweenSceneNumberAndText,
                                         blockRect.height());
-                            _painter->drawText(sceneNumberRect, Qt::AlignLeft | Qt::AlignTop, "." + QString::number(blockInfo->sceneNumber()));
+                            _painter->drawText(sceneNumberRect, Qt::AlignLeft | Qt::AlignTop, "." + blockInfo->sceneNumber());
                         }
                     }
                 }
