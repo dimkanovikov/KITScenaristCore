@@ -8,28 +8,33 @@ using Domain::Research;
 
 ResearchModelItem::ResearchModelItem(Domain::Research* _research) :
     m_research(_research),
-    m_parent(0)
+    m_parent(nullptr)
 {
 }
 
 ResearchModelItem::~ResearchModelItem()
 {
-    m_research = 0;
+    m_research = nullptr;
     qDeleteAll(m_children);
 }
 
 QString ResearchModelItem::name() const
 {
     return
-            m_research == 0
+            m_research == nullptr
             ? QString()
             : m_research->name();
 }
 
-QPixmap ResearchModelItem::icon() const
+QIcon ResearchModelItem::icon() const
 {
-    QString iconPath;
-    if (m_research != 0) {
+    if (m_research == nullptr) {
+        return QIcon();
+    }
+
+    static QHash<Research::Type, QIcon> s_iconsCache;
+    if (!s_iconsCache.contains(m_research->type())) {
+        QString iconPath;
         switch (m_research->type()) {
             case Research::ResearchRoot: {
                 iconPath = ":/Graphics/Iconset/file-tree.svg";
@@ -91,9 +96,10 @@ QPixmap ResearchModelItem::icon() const
                 break;
             }
         }
+        s_iconsCache[m_research->type()] = QIcon(iconPath);
     }
 
-    return QPixmap(iconPath);
+    return s_iconsCache[m_research->type()];
 }
 
 Domain::Research* ResearchModelItem::research() const

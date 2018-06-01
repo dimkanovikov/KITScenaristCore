@@ -53,7 +53,7 @@ QDialogButtonBox::StandardButton QLightBoxMessage::message(QWidget* _parent, con
     QDialogButtonBox::StandardButton _defaultButton,
     const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames)
 {
-    static QLightBoxMessage message(_parent);
+    QLightBoxMessage message(_parent);
     message.setWindowTitle(_title);
     message.m_icon->setPixmap(message.style()->standardIcon(_pixmap).pixmap(ICON_PIXMAP_SIZE));
     message.m_text->setText(_text);
@@ -117,7 +117,7 @@ void QLightBoxMessage::initView()
     setMinimumWidth(500);
 #else
     setMinimumWidth(qMin(StyleSheetHelper::dpToPx(400),
-                         qreal(parentWidget()->width() - StyleSheetHelper::dpToPx(56))));
+                         parentWidget()->width() - StyleSheetHelper::dpToPx(56)));
 #endif
 }
 

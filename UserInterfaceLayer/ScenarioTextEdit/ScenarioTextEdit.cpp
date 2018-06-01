@@ -66,12 +66,11 @@ ScenarioTextEdit::ScenarioTextEdit(QWidget* _parent) :
     m_replaceThreeDots(false),
     m_smartQuotes(false),
     m_showSuggestionsInEmptyBlocks(false),
-    m_textSelectionEnabled(true),
     m_shortcutsManager(new ShortcutsManager(this))
 {
     setAttribute(Qt::WA_KeyCompression);
 
-    m_document = new ScenarioTextDocument(this, 0);
+    m_document = new ScenarioTextDocument(this, nullptr);
     setDocument(m_document);
     initEditor();
 
@@ -422,13 +421,6 @@ void ScenarioTextEdit::setShowSuggestionsInEmptyBlocks(bool _show)
 {
     if (m_showSuggestionsInEmptyBlocks != _show) {
         m_showSuggestionsInEmptyBlocks = _show;
-    }
-}
-
-void ScenarioTextEdit::setTextSelectionEnabled(bool _enabled)
-{
-    if (m_textSelectionEnabled != _enabled) {
-        m_textSelectionEnabled = _enabled;
     }
 }
 
@@ -1596,13 +1588,6 @@ void ScenarioTextEdit::mouseDoubleClickEvent(QMouseEvent* _event)
 {
     if (!selectBlockOnTripleClick(_event)) {
         CompletableTextEdit::mouseDoubleClickEvent(_event);
-    }
-}
-
-void ScenarioTextEdit::mouseMoveEvent(QMouseEvent* _event)
-{
-    if (m_textSelectionEnabled) {
-        CompletableTextEdit::mouseMoveEvent(_event);
     }
 }
 

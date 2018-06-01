@@ -42,7 +42,7 @@ private:
         const QVector<QPair<QDialogButtonBox::StandardButton, QString>>& _buttonNames);
 
 private:
-	explicit QLightBoxMessage(QWidget* _parent = 0);
+    explicit QLightBoxMessage(QWidget* _parent = nullptr);
 
 	/**
 	 * @brief Настроить представление

@@ -610,8 +610,7 @@ QList<int> StandardKeyHandler::findGroupCountsToDelete(int _topCursorPosition, i
     QTextCursor searchGroupsCursor(editor()->document());
     searchGroupsCursor.setPosition(_topCursorPosition);
 
-    while (searchGroupsCursor.position() <= _bottomCursorPosition
-           && !searchGroupsCursor.atEnd()) {
+    while (searchGroupsCursor.position() <= _bottomCursorPosition) {
         //
         // Определим тип блока
         //
@@ -640,6 +639,13 @@ QList<int> StandardKeyHandler::findGroupCountsToDelete(int _topCursorPosition, i
         }
 
         //
+        // Если дошли до конца, прерываем выполнение
+        //
+        if (searchGroupsCursor.atEnd()) {
+            break;
+        }
+
+        //
         // Перейдём к следующему блоку или концу блока
         //
         searchGroupsCursor.movePosition(QTextCursor::EndOfBlock);
@@ -659,12 +665,14 @@ void StandardKeyHandler::removeGroupsPairs(int _cursorPosition, const QList<int>
     if (_groupCountsToDelete.value(FOLDER_FOOTER) > 0) {
         QTextCursor cursor(editor()->document());
         cursor.setPosition(_cursorPosition);
-        cursor.movePosition(QTextCursor::NextBlock);
 
         // ... открытые группы на пути поиска необходимого для удаления блока
         int openedGroups = 0;
         int groupsToDeleteCount = _groupCountsToDelete.value(FOLDER_FOOTER);
         do {
+            cursor.movePosition(QTextCursor::NextBlock);
+            cursor.movePosition(QTextCursor::EndOfBlock);
+
             ScenarioBlockStyle::Type currentType =
                     ScenarioBlockStyle::forBlock(cursor.block());
 
@@ -672,7 +680,17 @@ void StandardKeyHandler::removeGroupsPairs(int _cursorPosition, const QList<int>
                 if (openedGroups == 0) {
                     cursor.select(QTextCursor::BlockUnderCursor);
                     cursor.deleteChar();
+
+                    //
+                    // Если жто был самый последний блок
+                    //
+                    if (cursor.atEnd()) {
+                        cursor.deletePreviousChar();
+                    }
+
                     --groupsToDeleteCount;
+
+                    continue;
                 } else {
                     --openedGroups;
                 }
@@ -680,9 +698,6 @@ void StandardKeyHandler::removeGroupsPairs(int _cursorPosition, const QList<int>
                 // ... встретилась новая группа, которую не нужно удалять
                 ++openedGroups;
             }
-
-            cursor.movePosition(QTextCursor::NextBlock);
-            cursor.movePosition(QTextCursor::EndOfBlock);
         } while (groupsToDeleteCount > 0
                  && !cursor.atEnd());
     }
@@ -695,12 +710,12 @@ void StandardKeyHandler::removeGroupsPairs(int _cursorPosition, const QList<int>
     if (_groupCountsToDelete.value(FOLDER_HEADER) > 0) {
         QTextCursor cursor = editor()->textCursor();
         cursor.setPosition(_cursorPosition);
-        cursor.movePosition(QTextCursor::PreviousBlock);
 
         // ... открытые группы на пути поиска необходимого для удаления блока
         int openedGroups = 0;
         int groupsToDeleteCount = _groupCountsToDelete.value(FOLDER_HEADER);
         do {
+            cursor.movePosition(QTextCursor::PreviousBlock);
             ScenarioBlockStyle::Type currentType =
                     ScenarioBlockStyle::forBlock(cursor.block());
 
@@ -708,10 +723,6 @@ void StandardKeyHandler::removeGroupsPairs(int _cursorPosition, const QList<int>
                 if (openedGroups == 0) {
                     cursor.select(QTextCursor::BlockUnderCursor);
                     cursor.deleteChar();
-                    //
-                    // Т.к. курсор после удаления уже находится в предыдущем блоке, смещаем его вперёд
-                    //
-                    cursor.movePosition(QTextCursor::NextBlock);
 
                     //
                     // Если это был самый первый блок
@@ -721,6 +732,8 @@ void StandardKeyHandler::removeGroupsPairs(int _cursorPosition, const QList<int>
                     }
 
                     --groupsToDeleteCount;
+
+                    continue;
                 } else {
                     --openedGroups;
                 }
@@ -728,8 +741,6 @@ void StandardKeyHandler::removeGroupsPairs(int _cursorPosition, const QList<int>
                 // ... встретилась новая группа, которую не нужно удалять
                 ++openedGroups;
             }
-
-            cursor.movePosition(QTextCursor::PreviousBlock);
         } while (groupsToDeleteCount > 0
                  && !cursor.atStart());
     }

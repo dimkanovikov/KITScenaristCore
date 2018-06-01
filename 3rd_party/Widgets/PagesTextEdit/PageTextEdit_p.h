@@ -172,6 +172,11 @@ public:
     void clipPageDecorationRegions(QPainter* _painter);
 
     /**
+     * @brief Включена ли возможность выделения текста
+     */
+    bool m_textSelectionEnabled;
+
+    /**
      * @brief Режим отображения текста
      *
      * true - постраничный

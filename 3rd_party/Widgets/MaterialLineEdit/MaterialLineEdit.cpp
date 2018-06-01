@@ -153,6 +153,11 @@ void MaterialLineEdit::setNeedCorrectScreenPosition(bool _needCorrect)
     m_lineEdit->setNeedCorrectPosition(_needCorrect);
 }
 
+void MaterialLineEdit::setReadOnly(bool _readOnly)
+{
+    m_lineEdit->setReadOnly(_readOnly);
+}
+
 bool MaterialLineEdit::eventFilter(QObject* _watched, QEvent* _event)
 {
     if (_watched == m_lineEdit) {

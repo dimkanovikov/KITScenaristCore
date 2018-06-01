@@ -22,6 +22,13 @@ public:
 	 */
 	static qreal mmToPx(qreal _mm, bool _x = true);
 
+    /**
+     * @brief Перевести писелы в миллиметры
+     * @param _x указывает направление (горизонтальное - true или вертикальное - false), в котором
+     * необходимо произвести рассчёт
+     */
+    static qreal pxToMm(qreal _px, bool _x = true);
+
 	/**
 	 * @brief Получить размер страницы из строки
 	 */

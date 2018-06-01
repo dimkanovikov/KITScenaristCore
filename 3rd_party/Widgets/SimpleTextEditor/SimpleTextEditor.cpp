@@ -18,8 +18,8 @@ namespace {
 }
 
 
-SimpleTextEditor::SimpleTextEditor(QWidget *parent) :
-	SpellCheckTextEdit(parent)
+SimpleTextEditor::SimpleTextEditor(QWidget *_parent) :
+    SpellCheckTextEdit(_parent)
 {
 	setAddSpaceToBottom(false);
 	setTabChangesFocus(true);

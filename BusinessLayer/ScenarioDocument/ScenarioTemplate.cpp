@@ -889,6 +889,71 @@ void ScenarioTemplate::setFontSize(int _size)
         m_blockStyles[iter.key()].setFont(font);
     }
 }
+
+void ScenarioTemplate::configureMargins(qreal _availableWidth)
+{
+    const QFont font = m_blockStyles.first().font();
+    const int characterWidth = QFontMetrics(font).width("W");
+    const int fullLineLength = 62;
+    const int fullLineWidth = characterWidth * fullLineLength;
+
+    //
+    // Если в доступное пространство влезает больше текста, чем должно быть на одной строке
+    // определим размер отступов от краёв
+    //
+    qreal leftDocumentMargin = PageMetrics::mmToPx(15);
+    _availableWidth -= leftDocumentMargin;
+    qreal rightDocumentMargin = PageMetrics::mmToPx(12);
+    _availableWidth -= rightDocumentMargin;
+    qreal marginDelta = 0;
+    if (_availableWidth > fullLineWidth) {
+        marginDelta = (_availableWidth - fullLineWidth) / 2;
+        leftDocumentMargin += marginDelta;
+        rightDocumentMargin += marginDelta;
+    }
+    for (auto iter = m_blockStyles.begin(); iter != m_blockStyles.end(); ++iter) {
+        qreal leftMarginPercents = 0;
+        qreal rightMarginPercents = 0;
+        switch (iter.key()) {
+            case ScenarioBlockStyle::Character: {
+                leftMarginPercents = 0.33;
+                rightMarginPercents = 0.035;
+                break;
+            }
+
+            case ScenarioBlockStyle::Parenthetical: {
+                leftMarginPercents = 0.23;
+                rightMarginPercents = 0.335;
+                break;
+            }
+
+            case ScenarioBlockStyle::Dialogue: {
+                leftMarginPercents = 0.17;
+                rightMarginPercents = 0.26;
+                break;
+            }
+
+            case ScenarioBlockStyle::Lyrics: {
+                leftMarginPercents = 0.17;
+                break;
+            }
+
+            default: break;
+        }
+
+        //
+        // Рассчитаем полные отступы
+        //
+        const qreal currentLineWidth = _availableWidth > fullLineWidth ? fullLineWidth : _availableWidth;
+        const qreal leftMargin = currentLineWidth * leftMarginPercents;
+        const qreal rightMargin = currentLineWidth * rightMarginPercents;
+        m_blockStyles[iter.key()].setLeftMargin(PageMetrics::pxToMm(leftMargin));
+        m_blockStyles[iter.key()].setRightMargin(PageMetrics::pxToMm(rightMargin));
+    }
+
+    m_pageMargins.setLeft(PageMetrics::pxToMm(leftDocumentMargin));
+    m_pageMargins.setRight(PageMetrics::pxToMm(rightDocumentMargin));
+}
 #endif
 
 ScenarioTemplate::ScenarioTemplate(const QString& _fromFile)

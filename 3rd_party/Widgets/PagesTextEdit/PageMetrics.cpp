@@ -16,7 +16,12 @@ qreal PageMetrics::mmToPx(qreal _mm, bool _x)
 	//
     const QFontMetricsF courierNewMetrics(QFont("Courier New", 12));
 	return _x ? ((courierNewMetrics.width("W") * _mm) / 2.53)
-			  : ((courierNewMetrics.lineSpacing() * _mm) / 4.8);
+              : ((courierNewMetrics.lineSpacing() * _mm) / 4.8);
+}
+
+qreal PageMetrics::pxToMm(qreal _px, bool _x)
+{
+    return _px / mmToPx(1, _x);
 }
 
 QPageSize::PageSizeId PageMetrics::pageSizeIdFromString(const QString& _from)

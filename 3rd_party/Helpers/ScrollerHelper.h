@@ -3,6 +3,7 @@
 
 #include <QScroller>
 #include <QScrollerProperties>
+#include <QWidget>
 
 
 /**

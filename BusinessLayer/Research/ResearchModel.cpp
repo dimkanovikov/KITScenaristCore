@@ -6,6 +6,7 @@
 
 #include <3rd_party/Helpers/RunOnce.h>
 
+#include <QIcon>
 #include <QMimeData>
 #include <QSet>
 
@@ -462,6 +463,25 @@ Qt::ItemFlags ResearchModel::flags(const QModelIndex& _index) const
                 break;
             }
         }
+
+        //
+        // FIXME: для мобилки пока отдельный блок для проверки достпности
+        //
+#ifdef MOBILE_OS
+        switch (item->research()->type()) {
+            case Research::ImagesGallery:
+            case Research::Image:
+            case Research::MindMap:
+            case Research::Url: {
+                flags ^= Qt::ItemIsEnabled;
+                break;
+            }
+
+            default: {
+                break;
+            }
+        }
+#endif
     }
 
     return flags;
@@ -473,8 +493,10 @@ QVariant ResearchModel::data(const QModelIndex& _index, int _role) const
 
     ResearchModelItem* item = itemForIndex(_index);
     switch (_role) {
-        case Qt::DisplayRole:
-        case Qt::ToolTipRole: {
+#ifndef MOBILE_OS
+        case Qt::ToolTipRole:
+#endif
+        case Qt::DisplayRole: {
             result = item->name();
             break;
         }
