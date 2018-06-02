@@ -615,7 +615,8 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
 
 bool ScenarioTextEdit::isRedoAvailable() const
 {
-    return m_document->isRedoAvailableReimpl();
+    return m_document != nullptr
+           && m_document->isRedoAvailableReimpl();
 }
 
 void ScenarioTextEdit::setTextBold(bool _bold)
