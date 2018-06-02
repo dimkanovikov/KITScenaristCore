@@ -821,6 +821,9 @@ void ScenarioTextEdit::inputMethodEvent(QInputMethodEvent* _event)
     if (eventText == "\n") {
         pressedKey = Qt::Key_Return;
         eventText.clear();
+    } else if (eventText == "\t") {
+        pressedKey = Qt::Key_Tab;
+        eventText.clear();
     } else if (_event->replacementLength() == 1
                && _event->replacementStart() < 0) {
         pressedKey = Qt::Key_Backspace;

@@ -56,22 +56,22 @@ QDialogButtonBox::StandardButton QLightBoxMessage::message(QWidget* _parent, con
     if (_buttons.testFlag(_defaultButton)) {
         message.m_buttons->button(_defaultButton)->setDefault(true);
     }
-    foreach (QAbstractButton* button, message.m_buttons->buttons())	{
+    
+    for (QAbstractButton* button : message.m_buttons->buttons())	{
         button->setProperty("flat", true);
-
-    //
-    // Задаем названия кнопок, если есть
-    //
-    for (const ButtonInfo& buttonInfo : _buttonInfos) {
-        message.m_buttons->button(buttonInfo.type)->setText(buttonInfo.name);
-    }
-
 #ifdef MOBILE_OS
         //
         // Для мобильных делаем кнопки в верхнем регистре и убераем ускорители
         //
         button->setText(button->text().toUpper().remove("&"));
 #endif
+    }
+
+    //
+    // Задаем названия кнопок, если есть
+    //
+    for (const ButtonInfo& buttonInfo : _buttonInfos) {
+        message.m_buttons->button(buttonInfo.type)->setText(buttonInfo.name);
     }
 
     return (QDialogButtonBox::StandardButton)message.exec();
