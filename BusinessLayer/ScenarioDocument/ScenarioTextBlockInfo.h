@@ -187,9 +187,10 @@ namespace BusinessLogic
         /**
          * @brief Вложенность фиксации номера сцены
          */
+        /** {@ */
         unsigned m_sceneNumberFixNesting = 0;
-
         unsigned m_sceneNumberSuffix = 0;
+        /** @} */
 
         /**
          * @brief Цвета сцены

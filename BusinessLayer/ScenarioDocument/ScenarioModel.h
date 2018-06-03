@@ -103,7 +103,12 @@ namespace BusinessLogic
         /**
          * @brief Зафиксировать номера сцен
          */
-        void lockUnlockSceneNumbers(bool _lock);
+        void changeSceneNumbersLocking(bool _lock);
+
+        /**
+         * @brief Зафиксирована ли хоть одна сцена
+         */
+        bool isAnySceneLocked();
 
         /**
          * @brief Количество сцен в сценарии
@@ -177,7 +182,7 @@ namespace BusinessLogic
         /**
          * @brief Есть ли зафиксированные сцены
          */
-        bool m_anyFixed = false;
+        bool m_anySceneLocked = false;
     };
 
     /**

@@ -303,7 +303,7 @@ void CardsScene::insertAct(const QString& _uuid, const QString& _title, const QS
     emit actAdded(act->uuid());
 }
 
-void CardsScene::addCard(const QString& _uuid, bool _isFolder, const QString _number, const QString& _title,
+void CardsScene::addCard(const QString& _uuid, bool _isFolder, const QString& _number, const QString& _title,
     const QString& _description, const QString& _stamp, const QString& _colors, bool _isEmbedded,
     const QPointF& _position)
 {

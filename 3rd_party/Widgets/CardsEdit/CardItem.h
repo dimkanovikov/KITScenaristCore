@@ -183,7 +183,7 @@ private:
     /**
      * @brief Номер сцены
      */
-    QString m_number = 0;
+    QString m_number;
 
     /**
      * @brief Заголовок карточки

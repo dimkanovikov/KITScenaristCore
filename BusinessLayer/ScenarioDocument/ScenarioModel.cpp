@@ -711,15 +711,15 @@ void ScenarioModel::updateSceneNumbers()
     //
     // Уведомим, если в модели есть фиксированные сцена, а мы не знали или наоборот
     //
-    if (anyFixed != m_anyFixed) {
-        m_anyFixed = anyFixed;
-        emit fixedScenesChanged(m_anyFixed);
+    if (anyFixed != m_anySceneLocked) {
+        m_anySceneLocked = anyFixed;
+        emit fixedScenesChanged(m_anySceneLocked);
     }
 
     m_scenesCount = scenes.size();
 }
 
-void ScenarioModel::lockUnlockSceneNumbers(bool _lock)
+void ScenarioModel::changeSceneNumbersLocking(bool _lock)
 {
     ScenarioModelItem* item;
     QQueue<ScenarioModelItem*> queue;
@@ -738,7 +738,7 @@ void ScenarioModel::lockUnlockSceneNumbers(bool _lock)
             } else {
                 item->setFixNesting(0);
                 item->setNumberSuffix(0);
-                item->setSceneNumber(0);
+                item->setSceneNumber(QString());
             }
         }
         else {
@@ -752,6 +752,11 @@ void ScenarioModel::lockUnlockSceneNumbers(bool _lock)
     // Обновляем номера сцен (на всякий случай?)
     //
     updateSceneNumbers();
+}
+
+bool ScenarioModel::isAnySceneLocked()
+{
+    return m_anySceneLocked;
 }
 
 int ScenarioModel::scenesCount() const

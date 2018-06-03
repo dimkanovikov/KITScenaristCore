@@ -232,7 +232,12 @@ namespace BusinessLogic
         /**
          * @brief Зафиксировать номера сцен
          */
-        void lockUnlockSceneNumbers(bool _lock);
+        void changeSceneNumbersLocking(bool _lock);
+
+        /**
+         * @brief Зафиксирована ли хоть одна сцена
+         */
+        bool isAnySceneLocked();
 
     public:
         /**
