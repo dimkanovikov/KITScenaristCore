@@ -50,6 +50,9 @@ namespace {
     const QString ATTRIBUTE_FORMAT_BOLD = "bold";
     const QString ATTRIBUTE_FORMAT_ITALIC = "italic";
     const QString ATTRIBUTE_FORMAT_UNDERLINE = "underline";
+    const QString ATTRIBUTE_SCENE_NUMBER = "number";
+    const QString ATTRIBUTE_SCENE_NUMBER_FIX_NESTING = "number_fix_nesting";
+    const QString ATTRIBUTE_SCENE_NUMBER_SUFFIX = "number_suffix";
 
     const QString SCENARIO_XML_VERSION = "1.0";
 
@@ -81,7 +84,11 @@ namespace {
                        % "#"
                        % shBlockInfo->uuid()
                        % "#"
-                       % QString::number(shBlockInfo->sceneNumber())
+                       % shBlockInfo->sceneNumber()
+                       % "#"
+                       % QString(shBlockInfo->isSceneNumberFixed())
+                       % "#"
+                       % QString(shBlockInfo->sceneNumberFixNesting())
                        % "#"
                        % shBlockInfo->colors()
                        % "#"
@@ -357,6 +364,11 @@ QString ScenarioXml::scenarioToXml()
                     }
                     if (!info->title().isEmpty()) {
                         uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->title()));
+                    }
+                    if (!info->sceneNumber().isEmpty() && info->isSceneNumberFixed()) {
+                        uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_SCENE_NUMBER, TextEditHelper::toHtmlEscaped(info->sceneNumber()));
+                        uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING, QString::number(info->sceneNumberFixNesting()));
+                        uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_SCENE_NUMBER_SUFFIX, QString::number(info->sceneNumberSuffix()));
                     }
                 }
 
@@ -760,6 +772,11 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     }
                     if (!info->title().isEmpty()) {
                         writer.writeAttribute(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->title()));
+                    }
+                    if (!info->sceneNumber().isEmpty()) {
+                        writer.writeAttribute(ATTRIBUTE_SCENE_NUMBER, TextEditHelper::toHtmlEscaped(info->sceneNumber()));
+                        writer.writeAttribute(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING, QString(info->sceneNumberFixNesting()));
+                        writer.writeAttribute(ATTRIBUTE_SCENE_NUMBER_SUFFIX, QString(info->sceneNumberSuffix()));
                     }
                 }
 
@@ -1446,6 +1463,16 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         }
                         if (reader.attributes().hasAttribute(ATTRIBUTE_TITLE)) {
                             info->setTitle(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));
+                        }
+                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER)) {
+                            info->setSceneNumber(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER).toString());
+                            info->setSceneNumberFixed(true);
+                        }
+                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING)) {
+                            info->setSceneNumberFixNesting(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING).toUInt());
+                        }
+                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER_SUFFIX)) {
+                            info->setSceneNumberSuffix(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_SUFFIX).toUInt());
                         }
                         cursor.block().setUserData(info);
                     }

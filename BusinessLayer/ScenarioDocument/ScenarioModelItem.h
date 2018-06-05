@@ -54,8 +54,26 @@ namespace BusinessLogic
         /**
          * @brief Номер сцены
          */
-        int sceneNumber() const;
-        bool setSceneNumber(int _number);
+        QString sceneNumber() const;
+        bool setSceneNumber(const QString& _number);
+
+        /**
+         * @brief Зафиксирован ли номер сцены
+         */
+        bool isFixed() const;
+        void setFixed(bool _fixed);
+
+        /**
+         * @brief Вложенность (группа) номера фиксации
+         */
+        unsigned fixNesting() const;
+        void setFixNesting(unsigned _fix_nesting);
+
+        /**
+         * @brief Порядковый номер в группе фиксации
+         */
+        unsigned numberSuffix() const;
+        void setNumberSuffix(unsigned _numberSuffix);
 
         /**
          * @brief Заголовок элемента
@@ -163,7 +181,22 @@ namespace BusinessLogic
         /**
          * @brief Номер сцены
          */
-        int m_sceneNumber;
+        QString m_sceneNumber;
+
+        /**
+         * @brief Зафиксирован ли номер сцены
+         */
+        bool m_fixed = false;
+
+        /**
+         * @brief Вложенность фиксации номера сцены
+         */
+        unsigned m_fixNesting = 0;
+
+        /**
+         * @brief Номер суффикса для номера сцены
+         */
+        unsigned m_numberSuffix = 0;
 
         /**
          * @brief Заголовок элемента

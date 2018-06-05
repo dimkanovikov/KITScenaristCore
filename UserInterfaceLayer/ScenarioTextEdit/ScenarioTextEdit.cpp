@@ -1403,7 +1403,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                 // Определим номер сцены
                                 //
                                 if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(blockInfo)) {
-                                    const QString sceneNumber = QString::number(info->sceneNumber()) + ".";
+                                    const QString sceneNumber = info->sceneNumber() + ".";
 
                                     //
                                     // Определим область для отрисовки и выведем номер сцены в редактор

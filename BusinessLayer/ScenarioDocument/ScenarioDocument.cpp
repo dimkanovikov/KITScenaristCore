@@ -167,6 +167,46 @@ QString ScenarioDocument::itemColors(ScenarioModelItem* _item) const
     return colors;
 }
 
+QString ScenarioDocument::itemSceneNumber(ScenarioModelItem *_item) const
+{
+    QString number;
+    QTextBlockUserData* textBlockData = m_document->findBlock(_item->position()).userData();
+    if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
+        number = info->sceneNumber();
+    }
+    return number;
+}
+
+unsigned ScenarioDocument::itemSceneNumberSuffix(ScenarioModelItem *_item) const
+{
+    unsigned number = 0;
+    QTextBlockUserData* textBlockData = m_document->findBlock(_item->position()).userData();
+    if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
+        number = info->sceneNumberSuffix();
+    }
+    return number;
+}
+
+bool ScenarioDocument::itemSceneIsFixed(ScenarioModelItem *_item) const
+{
+    bool isFixed = false;
+    QTextBlockUserData* textBlockData = m_document->findBlock(_item->position()).userData();
+    if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
+        isFixed = info->isSceneNumberFixed();
+    }
+    return isFixed;
+}
+
+unsigned ScenarioDocument::itemSceneFixNesting(ScenarioModelItem *_item) const
+{
+    unsigned sceneFixNesting = 0;
+    QTextBlockUserData* textBlockData = m_document->findBlock(_item->position()).userData();
+    if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
+        sceneFixNesting = info->sceneNumberFixNesting();
+    }
+    return sceneFixNesting;
+}
+
 void ScenarioDocument::setItemColorsAtPosition(int _position, const QString& _colors)
 {
     if (ScenarioModelItem* item = itemForPosition(_position, true)) {
@@ -1062,6 +1102,8 @@ void ScenarioDocument::initConnections()
 {
     connect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioDocument::aboutContentsChange);
     connect(m_document, &ScenarioTextDocument::contentsChanged, this, &ScenarioDocument::correctText);
+
+    connect(m_model, &ScenarioModel::fixedScenesChanged, this, &ScenarioDocument::fixedScenesChanged);
 }
 
 void ScenarioDocument::removeConnections()
@@ -1094,6 +1136,14 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
     const QString colors = itemColors(_item);
     // ... штамп
     const QString stamp = itemStamp(_item);
+    // ... номер сцены
+    const QString sceneNumber = itemSceneNumber(_item);
+    // .. зафиксирован ли номер сцены
+    const bool sceneNumberFixed = itemSceneIsFixed(_item);
+    // .. номер в группе фиксации
+    const unsigned numberSuffix = itemSceneNumberSuffix(_item);
+    // .. группа фиксации (сколько раз была зафиксирована)
+    const unsigned sceneNumberFixNesting = itemSceneFixNesting(_item);
     // ... текст и описание
     QString itemText;
     QString description;
@@ -1222,6 +1272,10 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
     _item->setHeader(itemHeader);
     _item->setColors(colors);
     _item->setStamp(stamp);
+    _item->setSceneNumber(sceneNumber);
+    _item->setFixNesting(sceneNumberFixNesting);
+    _item->setFixed(sceneNumberFixed);
+    _item->setNumberSuffix(numberSuffix);
     _item->setTitle(title);
     _item->setText(itemText);
     _item->setDescription(description);
@@ -1286,6 +1340,9 @@ void ScenarioDocument::updateDocumentScenesAndDialoguesNumbers()
                         info = new SceneHeadingBlockInfo(item->uuid());
                     }
                     info->setSceneNumber(item->sceneNumber());
+                    info->setSceneNumberFixed(item->isFixed());
+                    info->setSceneNumberFixNesting(item->fixNesting());
+                    info->setSceneNumberSuffix(item->numberSuffix());
                     block.setUserData(info);
                 }
                 break;
@@ -1313,6 +1370,41 @@ void ScenarioDocument::updateDocumentScenesAndDialoguesNumbers()
 
         block = block.next();
     }
+}
+
+void ScenarioDocument::changeSceneNumbersLocking(bool _lock)
+{
+   m_model->changeSceneNumbersLocking(_lock);
+
+   for (QTextBlock block = document()->begin(); block.isValid(); block = block.next()) {
+       if (ScenarioBlockStyle::forBlock(block) != ScenarioBlockStyle::SceneHeading) {
+           continue;
+       }
+
+       ScenarioModelItem* item = itemForPosition(block.position());
+       if (!item) {
+           continue;
+       }
+
+       QTextBlockUserData* textBlockData = block.userData();
+
+       SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
+       if (info == nullptr) {
+           info = new SceneHeadingBlockInfo(item->uuid());
+       }
+
+       info->setSceneNumberFixed(item->isFixed());
+       info->setSceneNumber(item->sceneNumber());
+       info->setSceneNumberFixNesting(item->fixNesting());
+       info->setSceneNumberSuffix(item->numberSuffix());
+       block.setUserData(info);
+   }
+   refresh();
+}
+
+bool ScenarioDocument::isAnySceneLocked()
+{
+    return m_model->isAnySceneLocked();
 }
 
 void ScenarioDocument::load(const QString& _scenario)

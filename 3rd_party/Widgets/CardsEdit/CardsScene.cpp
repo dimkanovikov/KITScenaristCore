@@ -303,7 +303,7 @@ void CardsScene::insertAct(const QString& _uuid, const QString& _title, const QS
     emit actAdded(act->uuid());
 }
 
-void CardsScene::addCard(const QString& _uuid, bool _isFolder, int _number, const QString& _title,
+void CardsScene::addCard(const QString& _uuid, bool _isFolder, const QString& _number, const QString& _title,
     const QString& _description, const QString& _stamp, const QString& _colors, bool _isEmbedded,
     const QPointF& _position)
 {
@@ -318,7 +318,7 @@ void CardsScene::addCard(const QString& _uuid, bool _isFolder, int _number, cons
     insertCard(_uuid, _isFolder, _number, _title, _description, _stamp, _colors, _isEmbedded, _position, previousItemUuid);
 }
 
-void CardsScene::insertCard(const QString& _uuid, bool _isFolder, int _number, const QString& _title,
+void CardsScene::insertCard(const QString& _uuid, bool _isFolder, const QString& _number, const QString& _title,
     const QString& _description, const QString& _stamp, const QString& _colors, bool _isEmbedded,
     const QPointF& _position, const QString& _previousItemUuid)
 {
@@ -407,7 +407,7 @@ void CardsScene::insertCard(const QString& _uuid, bool _isFolder, int _number, c
     emit cardAdded(card->uuid());
 }
 
-void CardsScene::updateItem(const QString& _uuid, bool _isFolder, int _number, const QString& _title,
+void CardsScene::updateItem(const QString& _uuid, bool _isFolder, const QString& _number, const QString& _title,
     const QString& _description, const QString& _stamp, const QString& _colors, bool _isEmbedded,
     bool _isAct)
 {
@@ -650,7 +650,7 @@ QString CardsScene::save() const
             writer.writeEmptyElement("card");
             writer.writeAttribute("id", card->uuid());
             writer.writeAttribute("is_folder", card->isFolder() ? "true" : "false");
-            writer.writeAttribute("number", QString::number(card->number()));
+            writer.writeAttribute("number", card->number());
             writer.writeAttribute("title", card->title());
             writer.writeAttribute("description", card->description());
             writer.writeAttribute("stamp", card->stamp());
@@ -737,7 +737,7 @@ bool CardsScene::load(const QString& _xml)
         } else if (item.tagName() == "card") {
             const QString uuid = attributes.namedItem("id").toAttr().value();
             const bool isFolder = attributes.namedItem("is_folder").toAttr().value() == "true";
-            const int number = attributes.namedItem("number").toAttr().value().toInt();
+            const QString number = attributes.namedItem("number").toAttr().value();
             const QString title = attributes.namedItem("title").toAttr().value();
             const QString description = attributes.namedItem("description").toAttr().value();
             const QString stamp = attributes.namedItem("stamp").toAttr().value();

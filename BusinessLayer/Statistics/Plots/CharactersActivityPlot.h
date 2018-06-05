@@ -67,12 +67,12 @@ namespace BusinessLogic
 		 */
 		class SceneData {
 		public:
-			SceneData() : number(0), chron(0) {}
+            SceneData() : chron(0) {}
 
 			/**
 			 * @brief Номер
 			 */
-			int number;
+            QString number;
 
 			/**
 			 * @brief Хронометраж

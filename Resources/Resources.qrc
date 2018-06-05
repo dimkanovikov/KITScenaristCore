@@ -120,6 +120,8 @@
         <file>Iconset/bookmark-remove.svg</file>
         <file>Iconset/bookmark.svg</file>
         <file>Iconset/bookmark-plus.svg</file>
+        <file>Iconset/lock-open.svg</file>
+        <file>Iconset/lock.svg</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>

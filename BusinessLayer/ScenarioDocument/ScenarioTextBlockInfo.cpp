@@ -42,8 +42,7 @@ void TextBlockInfo::setBookmarkColor(const QColor& _color)
 
 
 SceneHeadingBlockInfo::SceneHeadingBlockInfo(const QString& _uuid) :
-    m_uuid(_uuid),
-    m_sceneNumber(0)
+    m_uuid(_uuid)
 {
     if (m_uuid.isEmpty()) {
         rebuildUuid();
@@ -67,12 +66,42 @@ void SceneHeadingBlockInfo::rebuildUuid()
     m_uuid = QUuid::createUuid().toString();
 }
 
-int SceneHeadingBlockInfo::sceneNumber() const
+bool SceneHeadingBlockInfo::isSceneNumberFixed() const
+{
+    return m_fixed;
+}
+
+void SceneHeadingBlockInfo::setSceneNumberFixed(bool _fixed)
+{
+    m_fixed = _fixed;
+}
+
+unsigned SceneHeadingBlockInfo::sceneNumberFixNesting() const
+{
+    return m_sceneNumberFixNesting;
+}
+
+void SceneHeadingBlockInfo::setSceneNumberFixNesting(unsigned sceneNumberFixNesting)
+{
+    m_sceneNumberFixNesting = sceneNumberFixNesting;
+}
+
+unsigned SceneHeadingBlockInfo::sceneNumberSuffix() const
+{
+    return m_sceneNumberSuffix;
+}
+
+void SceneHeadingBlockInfo::setSceneNumberSuffix(unsigned sceneNumberSuffix)
+{
+    m_sceneNumberSuffix = sceneNumberSuffix;
+}
+
+QString SceneHeadingBlockInfo::sceneNumber() const
 {
     return m_sceneNumber;
 }
 
-void SceneHeadingBlockInfo::setSceneNumber(int _number)
+void SceneHeadingBlockInfo::setSceneNumber(const QString& _number)
 {
     if (m_sceneNumber != _number) {
         m_sceneNumber = _number;
@@ -134,6 +163,9 @@ SceneHeadingBlockInfo* SceneHeadingBlockInfo::clone() const
 {
     SceneHeadingBlockInfo* copy = new SceneHeadingBlockInfo(m_uuid);
     copy->m_sceneNumber = m_sceneNumber;
+    copy->m_fixed = m_fixed;
+    copy->m_sceneNumberFixNesting = m_sceneNumberFixNesting;
+    copy->m_sceneNumberSuffix = m_sceneNumberSuffix;
     copy->m_colors = m_colors;
     copy->m_stamp = m_stamp;
     copy->m_title = m_title;

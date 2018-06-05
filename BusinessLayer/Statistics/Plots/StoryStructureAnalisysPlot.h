@@ -31,7 +31,7 @@ namespace BusinessLogic
 		 */
 		class SceneData {
 		public:
-			SceneData() : page(0), number(0), chron(0), actionChron(0), dialoguesChron(0),
+            SceneData() : page(0), chron(0), actionChron(0), dialoguesChron(0),
 				charactersCount(0), dialoguesCount(0)
 			{}
 
@@ -48,7 +48,7 @@ namespace BusinessLogic
 			/**
 			 * @brief Номер
 			 */
-			int number;
+            QString number;
 
 			/**
 			 * @brief Хронометраж

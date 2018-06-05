@@ -86,12 +86,42 @@ namespace BusinessLogic
         /**
          * @brief Получить номер сцены
          */
-        int sceneNumber() const;
+        QString sceneNumber() const;
 
         /**
          * @brief Установить номер сцены
          */
-        void setSceneNumber(int _number);
+        void setSceneNumber(const QString& _number);
+
+        /**
+         * @brief Зафиксирован ли номер сцены
+         */
+        bool isSceneNumberFixed() const;
+
+        /**
+         * @brief Задать фиксацию номера сцены
+         */
+        void setSceneNumberFixed(bool _fixed);
+
+        /**
+         * @brief Группа фиксации
+         */
+        unsigned sceneNumberFixNesting() const;
+
+        /**
+         * @brief Задать группу фиксации
+         */
+        void setSceneNumberFixNesting(unsigned sceneNumberFixNesting);
+
+        /**
+         * @brief Номер в группе фиксации
+         */
+        unsigned sceneNumberSuffix() const;
+
+        /**
+         * @brief Задать номер в группе фиксации
+         */
+        void setSceneNumberSuffix(unsigned sceneNumberSuffix);
 
         /**
          * @brief Получить цвета сцены
@@ -147,7 +177,20 @@ namespace BusinessLogic
         /**
          * @brief Номер сцены
          */
-        int m_sceneNumber;
+        QString m_sceneNumber;
+
+        /**
+         * @brief Зафиксирован ли номер сцены
+         */
+        bool m_fixed = false;
+
+        /**
+         * @brief Вложенность фиксации номера сцены
+         */
+        /** {@ */
+        unsigned m_sceneNumberFixNesting = 0;
+        unsigned m_sceneNumberSuffix = 0;
+        /** @} */
 
         /**
          * @brief Цвета сцены
