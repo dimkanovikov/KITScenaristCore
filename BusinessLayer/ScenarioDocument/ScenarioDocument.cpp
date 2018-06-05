@@ -1377,22 +1377,27 @@ void ScenarioDocument::changeSceneNumbersLocking(bool _lock)
    m_model->changeSceneNumbersLocking(_lock);
 
    for (QTextBlock block = document()->begin(); block.isValid(); block = block.next()) {
-       if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::SceneHeading) {
-            ScenarioModelItem* item = itemForPosition(block.position());
-            if (!item) {
-                continue;
-            }
-            QTextBlockUserData* textBlockData = block.userData();
-            SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
-            if (info == nullptr) {
-                info = new SceneHeadingBlockInfo(item->uuid());
-            }
-            info->setSceneNumberFixed(item->isFixed());
-            info->setSceneNumber(item->sceneNumber());
-            info->setSceneNumberFixNesting(item->fixNesting());
-            info->setSceneNumberSuffix(item->numberSuffix());
-            block.setUserData(info);
+       if (ScenarioBlockStyle::forBlock(block) != ScenarioBlockStyle::SceneHeading) {
+           continue;
        }
+
+       ScenarioModelItem* item = itemForPosition(block.position());
+       if (!item) {
+           continue;
+       }
+
+       QTextBlockUserData* textBlockData = block.userData();
+
+       SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
+       if (info == nullptr) {
+           info = new SceneHeadingBlockInfo(item->uuid());
+       }
+
+       info->setSceneNumberFixed(item->isFixed());
+       info->setSceneNumber(item->sceneNumber());
+       info->setSceneNumberFixNesting(item->fixNesting());
+       info->setSceneNumberSuffix(item->numberSuffix());
+       block.setUserData(info);
    }
    refresh();
 }
