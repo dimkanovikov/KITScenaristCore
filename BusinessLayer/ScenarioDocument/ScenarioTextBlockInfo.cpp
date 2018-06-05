@@ -163,6 +163,9 @@ SceneHeadingBlockInfo* SceneHeadingBlockInfo::clone() const
 {
     SceneHeadingBlockInfo* copy = new SceneHeadingBlockInfo(m_uuid);
     copy->m_sceneNumber = m_sceneNumber;
+    copy->m_fixed = m_fixed;
+    copy->m_sceneNumberFixNesting = m_sceneNumberFixNesting;
+    copy->m_sceneNumberSuffix = m_sceneNumberSuffix;
     copy->m_colors = m_colors;
     copy->m_stamp = m_stamp;
     copy->m_title = m_title;
