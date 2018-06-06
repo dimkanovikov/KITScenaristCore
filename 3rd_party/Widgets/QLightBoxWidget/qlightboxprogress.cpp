@@ -44,7 +44,7 @@ QLightBoxProgress::~QLightBoxProgress()
 {
     finish();
     if (s_lastUsedWidget == this) {
-        s_lastUsedWidget = 0;
+        s_lastUsedWidget = nullptr;
     }
 }
 
@@ -60,7 +60,7 @@ void QLightBoxProgress::showProgress(const QString& _title, const QString& _desc
 
 void QLightBoxProgress::setProgressText(const QString& _title, const QString& _description)
 {
-    if (s_lastUsedWidget != 0) {
+    if (s_lastUsedWidget != nullptr) {
         if (!_title.isEmpty()) {
             s_lastUsedWidget->m_title->setText(_title);
         }
@@ -72,9 +72,14 @@ void QLightBoxProgress::setProgressText(const QString& _title, const QString& _d
 
 void QLightBoxProgress::setProgressValue(int _value)
 {
-    if (s_lastUsedWidget != 0) {
-        if (s_lastUsedWidget->m_progress->maximum() == 0) {
-            s_lastUsedWidget->m_progress->setMaximum(100);
+    setProgressValue(_value, 100);
+}
+
+void QLightBoxProgress::setProgressValue(int _value, int _maximum)
+{
+    if (s_lastUsedWidget != nullptr) {
+        if (s_lastUsedWidget->m_progress->maximum() != _maximum) {
+            s_lastUsedWidget->m_progress->setMaximum(_maximum);
         }
         s_lastUsedWidget->m_progress->setValue(_value);
     }
@@ -86,4 +91,4 @@ void QLightBoxProgress::finish()
     QApplication::alert(parentWidget());
 }
 
-QLightBoxProgress* QLightBoxProgress::s_lastUsedWidget = 0;
+QLightBoxProgress* QLightBoxProgress::s_lastUsedWidget = nullptr;

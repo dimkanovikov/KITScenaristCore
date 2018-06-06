@@ -32,7 +32,10 @@ public:
      * @brief Установить значение прогресса
      * @note Если значение меньше нуля, или больше ста, то значение прогресса не отображается
      */
+    /** @{ */
     static void setProgressValue(int _value);
+    static void setProgressValue(int _value, int _maximum);
+    /** @} */
 
     /**
      * @brief Скрыть виджет и просигнализировать пользователю, о том, что операция завершилась

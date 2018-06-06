@@ -297,10 +297,10 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
     //
     QString newXml = m_scenarioXml;
     int currentIndex = 0, max = _patches.size();
-    foreach (const QString& patch, _patches) {
+    for (const QString& patch : _patches) {
         const QString patchUncopressed = DatabaseHelper::uncompress(patch);
         newXml = DiffMatchPatchHelper::applyPatchXml(newXml, patchUncopressed);
-        QLightBoxProgress::setProgressValue(++currentIndex * 100 / max);
+        QLightBoxProgress::setProgressValue(++currentIndex, max);
         QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
     }
 
