@@ -86,9 +86,9 @@ namespace {
                        % "#"
                        % shBlockInfo->sceneNumber()
                        % "#"
-                       % QString(shBlockInfo->isSceneNumberFixed())
+                       % QString::number(shBlockInfo->isSceneNumberFixed())
                        % "#"
-                       % QString(shBlockInfo->sceneNumberFixNesting())
+                       % QString::number(shBlockInfo->sceneNumberFixNesting())
                        % "#"
                        % shBlockInfo->colors()
                        % "#"
@@ -773,10 +773,10 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     if (!info->title().isEmpty()) {
                         writer.writeAttribute(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->title()));
                     }
-                    if (!info->sceneNumber().isEmpty()) {
+                    if (!info->sceneNumber().isEmpty() && info->isSceneNumberFixed()) {
                         writer.writeAttribute(ATTRIBUTE_SCENE_NUMBER, TextEditHelper::toHtmlEscaped(info->sceneNumber()));
-                        writer.writeAttribute(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING, QString(info->sceneNumberFixNesting()));
-                        writer.writeAttribute(ATTRIBUTE_SCENE_NUMBER_SUFFIX, QString(info->sceneNumberSuffix()));
+                        writer.writeAttribute(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING, QString::number(info->sceneNumberFixNesting()));
+                        writer.writeAttribute(ATTRIBUTE_SCENE_NUMBER_SUFFIX, QString::number(info->sceneNumberSuffix()));
                     }
                 }
 
@@ -1160,7 +1160,7 @@ int ScenarioXml::xmlToScenario(ScenarioModelItem* _insertParent, ScenarioModelIt
             cursor.movePosition(QTextCursor::PreviousBlock);
             if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*> (cursor.block().userData())) {
                 SceneHeadingBlockInfo* movedInfo = info->clone();
-                cursor.block().setUserData(0);
+                cursor.block().setUserData(nullptr);
                 cursor.movePosition(QTextCursor::NextBlock);
                 cursor.block().setUserData(movedInfo);
             }
