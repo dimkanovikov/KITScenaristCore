@@ -20,29 +20,70 @@ public:
         QString name;
     };
 
+    //
+    // Блокирующие цыкл событий методы
+    //
+
     static QDialogButtonBox::StandardButton critical(QWidget* _parent, const QString& _title,
 		const QString& _text, QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::Ok,
         QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
-        const QVector<ButtonInfo>& _buttonNames = QVector<ButtonInfo>());
+        const QVector<ButtonInfo>& _buttonInfos = QVector<ButtonInfo>());
 
 	static QDialogButtonBox::StandardButton information(QWidget* _parent, const QString& _title,
 		const QString& _text, QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::Ok,
         QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
-        const QVector<ButtonInfo>& _buttonNames = QVector<ButtonInfo>());
+        const QVector<ButtonInfo>& _buttonInfos = QVector<ButtonInfo>());
 
 	static QDialogButtonBox::StandardButton question(QWidget* _parent, const QString& _title, const QString& _text,
 		QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::StandardButtons(QDialogButtonBox::Yes | QDialogButtonBox::No),
         QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
-        const QVector<ButtonInfo>& _buttonNames = QVector<ButtonInfo>());
+        const QVector<ButtonInfo>& _buttonInfos = QVector<ButtonInfo>());
 
 	static QDialogButtonBox::StandardButton warning(QWidget* _parent, const QString& _title,
 		const QString& _text, QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::Ok,
         QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
-        const QVector<ButtonInfo>& _buttonNames = QVector<ButtonInfo>());
+        const QVector<ButtonInfo>& _buttonInfos = QVector<ButtonInfo>());
+
+    //
+    // Не блокирующие цыкл событий методы
+    //
+
+    static QLightBoxMessage* showCritical(QWidget* _parent, const QString& _title,
+        const QString& _text, QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::Ok,
+        QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
+        const QVector<ButtonInfo>& _buttonInfos = QVector<ButtonInfo>());
+
+    static QLightBoxMessage* showInformation(QWidget* _parent, const QString& _title,
+        const QString& _text, QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::Ok,
+        QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
+        const QVector<ButtonInfo>& _buttonInfos = QVector<ButtonInfo>());
+
+    static QLightBoxMessage* showQuestion(QWidget* _parent, const QString& _title, const QString& _text,
+        QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::StandardButtons(QDialogButtonBox::Yes | QDialogButtonBox::No),
+        QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
+        const QVector<ButtonInfo>& _buttonInfos = QVector<ButtonInfo>());
+
+    static QLightBoxMessage* showWarning(QWidget* _parent, const QString& _title,
+        const QString& _text, QDialogButtonBox::StandardButtons _buttons = QDialogButtonBox::Ok,
+        QDialogButtonBox::StandardButton _defaultButton = QDialogButtonBox::NoButton,
+        const QVector<ButtonInfo>& _buttonInfos = QVector<ButtonInfo>());
 
 private:
-	static QDialogButtonBox::StandardButton message(QWidget* _parent, const QString& _title,
-		const QString& _text, QStyle::StandardPixmap _pixmap, QDialogButtonBox::StandardButtons _buttons,
+    /**
+     * @brief Выполнить подготовленное сообщение и вернуть результат
+     */
+    static QDialogButtonBox::StandardButton execMessage(QLightBoxMessage* _message);
+
+    /**
+     * @brief Показать подготовленное сообщение неблокирующим способом
+     */
+    static QLightBoxMessage* showMessage(QLightBoxMessage* _message);
+
+    /**
+     * @brief Подготовить сообщение
+     */
+    static QLightBoxMessage* prepareMessage(QWidget* _parent, const QString& _title,
+        const QString& _text, QStyle::StandardPixmap _pixmap, QDialogButtonBox::StandardButtons _buttons,
         QDialogButtonBox::StandardButton _defaultButton, const QVector<ButtonInfo>& _buttonNames);
 
 private:

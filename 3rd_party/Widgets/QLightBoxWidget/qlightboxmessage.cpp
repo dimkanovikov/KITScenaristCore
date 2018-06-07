@@ -20,44 +20,94 @@ QDialogButtonBox::StandardButton QLightBoxMessage::critical(QWidget* _parent, co
     const QString& _text, QDialogButtonBox::StandardButtons _buttons,
     QDialogButtonBox::StandardButton _defaultButton, const QVector<ButtonInfo>& _buttonInfos)
 {
-    return message(_parent, _title, _text, QStyle::SP_MessageBoxCritical, _buttons, _defaultButton, _buttonInfos);
+    auto message = prepareMessage(_parent, _title, _text, QStyle::SP_MessageBoxCritical, _buttons, _defaultButton, _buttonInfos);
+    return execMessage(message);
 }
 
 QDialogButtonBox::StandardButton QLightBoxMessage::information(QWidget* _parent, const QString& _title,
     const QString& _text, QDialogButtonBox::StandardButtons _buttons,
     QDialogButtonBox::StandardButton _defaultButton, const QVector<ButtonInfo>& _buttonInfos)
 {
-    return message(_parent, _title, _text, QStyle::SP_MessageBoxInformation, _buttons, _defaultButton, _buttonInfos);
+    auto message = prepareMessage(_parent, _title, _text, QStyle::SP_MessageBoxInformation, _buttons, _defaultButton, _buttonInfos);
+    return execMessage(message);
 }
 
 QDialogButtonBox::StandardButton QLightBoxMessage::question(QWidget* _parent, const QString& _title,
     const QString& _text, QDialogButtonBox::StandardButtons _buttons,
     QDialogButtonBox::StandardButton _defaultButton, const QVector<ButtonInfo>& _buttonInfos)
 {
-    return message(_parent, _title, _text, QStyle::SP_MessageBoxQuestion, _buttons, _defaultButton, _buttonInfos);
+    auto message = prepareMessage(_parent, _title, _text, QStyle::SP_MessageBoxQuestion, _buttons, _defaultButton, _buttonInfos);
+    return execMessage(message);
 }
 
 QDialogButtonBox::StandardButton QLightBoxMessage::warning(QWidget* _parent, const QString& _title,
     const QString& _text, QDialogButtonBox::StandardButtons _buttons,
     QDialogButtonBox::StandardButton _defaultButton, const QVector<ButtonInfo>& _buttonInfos)
 {
-    return message(_parent, _title, _text, QStyle::SP_MessageBoxWarning, _buttons, _defaultButton, _buttonInfos);
+    auto message = prepareMessage(_parent, _title, _text, QStyle::SP_MessageBoxWarning, _buttons, _defaultButton, _buttonInfos);
+    return execMessage(message);
 }
 
-QDialogButtonBox::StandardButton QLightBoxMessage::message(QWidget* _parent, const QString& _title,
-    const QString& _text, QStyle::StandardPixmap _pixmap, QDialogButtonBox::StandardButtons _buttons,
-    QDialogButtonBox::StandardButton _defaultButton, const QVector<ButtonInfo>& _buttonInfos)
+QLightBoxMessage* QLightBoxMessage::showCritical(QWidget* _parent, const QString& _title, const QString& _text,
+    QDialogButtonBox::StandardButtons _buttons, QDialogButtonBox::StandardButton _defaultButton,
+    const QVector<QLightBoxMessage::ButtonInfo>& _buttonInfos)
 {
-    QLightBoxMessage message(_parent);
-    message.setWindowTitle(_title);
-    message.m_icon->setPixmap(message.style()->standardIcon(_pixmap).pixmap(ICON_PIXMAP_SIZE));
-    message.m_text->setText(_text);
-    message.m_buttons->setStandardButtons(_buttons);
+    auto message = prepareMessage(_parent, _title, _text, QStyle::SP_MessageBoxCritical, _buttons, _defaultButton, _buttonInfos);
+    return showMessage(message);
+}
+
+QLightBoxMessage* QLightBoxMessage::showInformation(QWidget* _parent, const QString& _title, const QString& _text,
+    QDialogButtonBox::StandardButtons _buttons, QDialogButtonBox::StandardButton _defaultButton,
+    const QVector<QLightBoxMessage::ButtonInfo>& _buttonInfos)
+{
+    auto message = prepareMessage(_parent, _title, _text, QStyle::SP_MessageBoxInformation, _buttons, _defaultButton, _buttonInfos);
+    return showMessage(message);
+}
+
+QLightBoxMessage* QLightBoxMessage::showQuestion(QWidget* _parent, const QString& _title,
+    const QString& _text, QDialogButtonBox::StandardButtons _buttons, QDialogButtonBox::StandardButton _defaultButton,
+    const QVector<QLightBoxMessage::ButtonInfo>& _buttonInfos)
+{
+    auto message = prepareMessage(_parent, _title, _text, QStyle::SP_MessageBoxQuestion, _buttons, _defaultButton, _buttonInfos);
+    return showMessage(message);
+}
+
+QLightBoxMessage* QLightBoxMessage::showWarning(QWidget* _parent, const QString& _title, const QString& _text,
+    QDialogButtonBox::StandardButtons _buttons, QDialogButtonBox::StandardButton _defaultButton,
+    const QVector<QLightBoxMessage::ButtonInfo>& _buttonInfos)
+{
+    auto message = prepareMessage(_parent, _title, _text, QStyle::SP_MessageBoxWarning, _buttons, _defaultButton, _buttonInfos);
+    return showMessage(message);
+}
+
+QDialogButtonBox::StandardButton QLightBoxMessage::execMessage(QLightBoxMessage* _message)
+{
+    QSharedPointer<QLightBoxMessage> message{_message};
+    const int execResult = message->exec();
+    return static_cast<QDialogButtonBox::StandardButton>(execResult);
+}
+
+QLightBoxMessage*QLightBoxMessage::showMessage(QLightBoxMessage* _message)
+{
+    connect(_message, &QLightBoxMessage::finished, _message, &QLightBoxMessage::deleteLater);
+    _message->show();
+    return _message;
+}
+
+QLightBoxMessage* QLightBoxMessage::prepareMessage(QWidget* _parent, const QString& _title, const QString& _text,
+    QStyle::StandardPixmap _pixmap, QDialogButtonBox::StandardButtons _buttons,
+    QDialogButtonBox::StandardButton _defaultButton, const QVector<QLightBoxMessage::ButtonInfo>& _buttonInfos)
+{
+    QLightBoxMessage* message = new QLightBoxMessage(_parent);
+    message->setWindowTitle(_title);
+    message->m_icon->setPixmap(message->style()->standardIcon(_pixmap).pixmap(ICON_PIXMAP_SIZE));
+    message->m_text->setText(_text);
+    message->m_buttons->setStandardButtons(_buttons);
     if (_buttons.testFlag(_defaultButton)) {
-        message.m_buttons->button(_defaultButton)->setDefault(true);
+        message->m_buttons->button(_defaultButton)->setDefault(true);
     }
-    
-    for (QAbstractButton* button : message.m_buttons->buttons())	{
+
+    for (QAbstractButton* button : message->m_buttons->buttons())	{
         button->setProperty("flat", true);
 #ifdef MOBILE_OS
         //
@@ -71,10 +121,10 @@ QDialogButtonBox::StandardButton QLightBoxMessage::message(QWidget* _parent, con
     // Задаем названия кнопок, если есть
     //
     for (const ButtonInfo& buttonInfo : _buttonInfos) {
-        message.m_buttons->button(buttonInfo.type)->setText(buttonInfo.name);
+        message->m_buttons->button(buttonInfo.type)->setText(buttonInfo.name);
     }
 
-    return (QDialogButtonBox::StandardButton)message.exec();
+    return message;
 }
 
 QLightBoxMessage::QLightBoxMessage(QWidget* _parent) :
