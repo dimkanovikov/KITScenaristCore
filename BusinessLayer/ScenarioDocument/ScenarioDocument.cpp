@@ -1110,6 +1110,8 @@ void ScenarioDocument::removeConnections()
 {
     disconnect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioDocument::aboutContentsChange);
     disconnect(m_document, &ScenarioTextDocument::contentsChanged, this, &ScenarioDocument::correctText);
+
+    disconnect(m_model, &ScenarioModel::fixedScenesChanged, this, &ScenarioDocument::fixedScenesChanged);
 }
 
 void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, int _itemEndPos)
