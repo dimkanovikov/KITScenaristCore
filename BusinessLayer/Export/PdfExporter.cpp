@@ -501,8 +501,7 @@ QPair<ScenarioDocument*, int> PdfExporter::m_lastScriptPreviewScrollPosition;
 
 PdfExporter::PdfExporter(QObject* _parent) :
     QObject(_parent),
-    AbstractExporter(),
-    m_documentForPrint(0)
+    AbstractExporter()
 {
 }
 

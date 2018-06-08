@@ -70,7 +70,7 @@ namespace BusinessLogic
 		/**
 		 * @brief Документ для печати
 		 */
-		QTextDocument* m_documentForPrint;
+        QTextDocument* m_documentForPrint = nullptr;
 
         /**
          * @brief Последняя позиция прокрутки предпросмотра сценария

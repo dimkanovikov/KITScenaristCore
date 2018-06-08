@@ -25,7 +25,7 @@ public:
 	void setTextBackgroundColor(const QColor& _color);
     void setTextFont(const QFont& _font);
     void clearFormat();
-	/** @} */
+    /** @} */
 
 protected:
 	/**

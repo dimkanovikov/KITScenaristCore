@@ -480,7 +480,6 @@ QComboBox[materialComboBox=true] QListView::item:selected {
  */
 
 QAbstractScrollArea[materialTextEdit=true] {
-    margin: 0dp 16dp 16dp 16dp;
     border: none;
     border-bottom: 1px solid palette(text);
 }
