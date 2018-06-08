@@ -30,6 +30,12 @@ public:
         const QString& _text = QString());
 
     /**
+     * @brief Сформировать диалог ввода текста
+     */
+    static QLightBoxInputDialog* textDialog(QWidget* _parent, const QString& _title, const QString& _label,
+        const QString& _text = QString());
+
+    /**
      * @brief Получить большой текст
      */
     static QString getLongText(QWidget* _parent, const QString& _title, const QString& _label,
@@ -45,8 +51,16 @@ public:
         const QString& _selectedItem = QString());
     /** @} */
 
+public:
+    /**
+     * @brief Получить текст из диалога
+     */
+    QString text() const;
+
+    ~QLightBoxInputDialog();
+
 private:
-    explicit QLightBoxInputDialog(QWidget* _parent = 0, bool _isContentStretchable = false);
+    explicit QLightBoxInputDialog(QWidget* _parent = nullptr, bool _isContentStretchable = false);
 
     /**
      * @brief Настроить представление

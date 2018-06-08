@@ -25,7 +25,7 @@ public:
     };
 
 public:
-    explicit QLightBoxDialog(QWidget *parent = 0, bool _followToHeadWidget = true,
+    explicit QLightBoxDialog(QWidget* _parent = nullptr, bool _followToHeadWidget = true,
         bool _isContentStretchable = false);
 
 public slots:

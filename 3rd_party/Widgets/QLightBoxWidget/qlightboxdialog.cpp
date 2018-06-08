@@ -7,8 +7,8 @@
 #include <QProgressBar>
 
 
-QLightBoxDialog::QLightBoxDialog(QWidget *parent, bool _followToHeadWidget, bool _isContentStretchable) :
-    QLightBoxWidget(parent, _followToHeadWidget),
+QLightBoxDialog::QLightBoxDialog(QWidget *_parent, bool _followToHeadWidget, bool _isContentStretchable) :
+    QLightBoxWidget(_parent, _followToHeadWidget),
     m_initialized(false),
     m_title(new QLabel(this)),
     m_centralWidget(nullptr),
@@ -26,9 +26,7 @@ int QLightBoxDialog::exec()
     show();
 
     QEventLoop dialogEventLoop;
-    connect(this, SIGNAL(accepted()), &dialogEventLoop, SLOT(quit()));
-    connect(this, SIGNAL(rejected()), &dialogEventLoop, SLOT(quit()));
-    connect(this, SIGNAL(finished(int)), &dialogEventLoop, SLOT(quit()));
+    connect(this, &QLightBoxDialog::finished, &dialogEventLoop, &QEventLoop::quit);
     dialogEventLoop.exec();
 
     hide();
@@ -47,18 +45,20 @@ void QLightBoxDialog::accept()
 {
     m_execResult = Accepted;
     emit accepted();
+    emit finished(m_execResult);
 }
 
 void QLightBoxDialog::reject()
 {
     m_execResult = Rejected;
     emit rejected();
+    emit finished(m_execResult);
 }
 
 void QLightBoxDialog::done(int _result)
 {
     m_execResult = _result;
-    emit finished(_result);
+    emit finished(m_execResult);
 }
 
 bool QLightBoxDialog::isProressVisible() const
@@ -153,7 +153,7 @@ void QLightBoxDialog::init()
         //
         // Настраиваем компоновщик
         //
-        if (layout() != 0) {
+        if (layout() != nullptr) {
             m_centralWidget = new QFrame(this);
             m_centralWidget->setProperty("lightBoxDialogCentralWidget", true);
             m_centralWidget->setMinimumSize(minimumSize());

@@ -24,24 +24,31 @@ namespace {
 
 QString QLightBoxInputDialog::getText(QWidget* _parent, const QString& _title, const QString& _label, const QString& _text)
 {
-    QLightBoxInputDialog dialog(_parent);
-    dialog.setWindowTitle(_title);
-#ifndef MOBILE_OS
-    dialog.m_label->setText(_label);
-#else
-    dialog.m_lineEdit->setLabel(_label);
-    connect(&dialog, &QLightBoxInputDialog::showed, QApplication::inputMethod(), &QInputMethod::show);
-#endif
-    dialog.m_lineEdit->setText(_text);
-    dialog.m_lineEdit->setProperty(::focusProperty, true);
-    dialog.m_textEdit->hide();
-    dialog.m_listWidget->hide();
+    QSharedPointer<QLightBoxInputDialog> dialog{textDialog(_parent, _title, _label, _text)};
 
     QString result;
-    if (dialog.exec() == QLightBoxDialog::Accepted) {
-        result = dialog.m_lineEdit->text();
+    if (dialog->exec() == QLightBoxDialog::Accepted) {
+        result = dialog->text();
     }
     return result;
+}
+
+QLightBoxInputDialog* QLightBoxInputDialog::textDialog(QWidget* _parent, const QString& _title, const QString& _label, const QString& _text)
+{
+    QLightBoxInputDialog* dialog = new QLightBoxInputDialog(_parent);
+    dialog->setWindowTitle(_title);
+#ifndef MOBILE_OS
+    dialog->m_label->setText(_label);
+#else
+    dialog->m_lineEdit->setLabel(_label);
+    connect(dialog, &QLightBoxInputDialog::showed, QApplication::inputMethod(), &QInputMethod::show);
+#endif
+    dialog->m_lineEdit->setText(_text);
+    dialog->m_lineEdit->setProperty(::focusProperty, true);
+    dialog->m_textEdit->hide();
+    dialog->m_listWidget->hide();
+
+    return dialog;
 }
 
 QString QLightBoxInputDialog::getLongText(QWidget* _parent, const QString& _title, const QString& _label, const QString& _text)
@@ -102,6 +109,16 @@ QString QLightBoxInputDialog::getItem(QWidget* _parent, const QString& _title, c
     return result;
 }
 
+QString QLightBoxInputDialog::text() const
+{
+    return m_lineEdit->text();
+}
+
+QLightBoxInputDialog::~QLightBoxInputDialog()
+{
+    qDebug("dtor");
+}
+
 QLightBoxInputDialog::QLightBoxInputDialog(QWidget* _parent, bool _isContentStretchable) :
     QLightBoxDialog(_parent, true, _isContentStretchable),
     m_label(new QLabel(this)),
@@ -115,6 +132,7 @@ QLightBoxInputDialog::QLightBoxInputDialog(QWidget* _parent, bool _isContentStre
     m_listWidget(new QListWidget(this)),
     m_buttons(new QDialogButtonBox(this))
 {
+    qDebug("ctor");
 }
 
 void QLightBoxInputDialog::initView()
@@ -159,8 +177,8 @@ void QLightBoxInputDialog::initView()
 
 void QLightBoxInputDialog::initConnections()
 {
-    connect(m_buttons, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(m_buttons, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(m_buttons, &QDialogButtonBox::accepted, this, &QLightBoxInputDialog::accept);
+    connect(m_buttons, &QDialogButtonBox::rejected, this, &QLightBoxInputDialog::reject);
 }
 
 QWidget* QLightBoxInputDialog::focusedOnExec() const
