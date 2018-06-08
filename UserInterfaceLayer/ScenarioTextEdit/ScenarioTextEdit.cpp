@@ -1656,10 +1656,12 @@ void ScenarioTextEdit::insertFromMimeData(const QMimeData* _source)
     }
     //
     // Если простой текст, то вставляем его, импортировав с фонтана
+    // NOTE: Перед текстом нужно обязательно добавить перенос строки, чтобы он
+    //       не воспринимался как титульная страница
     //
     else if (_source->hasText()) {
         FountainImporter fountainImporter;
-        textToInsert = fountainImporter.importScript(_source->text());
+        textToInsert = fountainImporter.importScript("\n" + _source->text());
     }
     m_document->insertFromMime(cursor.position(), textToInsert);
 
