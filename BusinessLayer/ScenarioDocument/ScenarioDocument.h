@@ -279,9 +279,14 @@ namespace BusinessLogic
         void initConnections();
 
         /**
-         * @brief Отключить соединения
+         * @brief Настроить соединения с TextDocument
          */
-        void removeConnections();
+        void connectTextDocument();
+
+        /**
+         * @brief Отключить соединения с TextDocument
+         */
+        void disconnectTextDocument();
 
         /**
          * @brief Обновить элемент структуры из промежутка текста в который он входит

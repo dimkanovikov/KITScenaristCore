@@ -1100,18 +1100,21 @@ void ScenarioDocument::correctText()
 
 void ScenarioDocument::initConnections()
 {
-    connect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioDocument::aboutContentsChange);
-    connect(m_document, &ScenarioTextDocument::contentsChanged, this, &ScenarioDocument::correctText);
-
     connect(m_model, &ScenarioModel::fixedScenesChanged, this, &ScenarioDocument::fixedScenesChanged);
+
+    connectTextDocument();
 }
 
-void ScenarioDocument::removeConnections()
+void ScenarioDocument::connectTextDocument()
+{
+    connect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioDocument::aboutContentsChange);
+    connect(m_document, &ScenarioTextDocument::contentsChanged, this, &ScenarioDocument::correctText);
+}
+
+void ScenarioDocument::disconnectTextDocument()
 {
     disconnect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioDocument::aboutContentsChange);
     disconnect(m_document, &ScenarioTextDocument::contentsChanged, this, &ScenarioDocument::correctText);
-
-    disconnect(m_model, &ScenarioModel::fixedScenesChanged, this, &ScenarioDocument::fixedScenesChanged);
 }
 
 void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, int _itemEndPos)
@@ -1414,7 +1417,7 @@ void ScenarioDocument::load(const QString& _scenario)
     //
     // Отключаем всё от документа
     //
-    removeConnections();
+    disconnectTextDocument();
 
     //
     // Очищаем модель и документ
@@ -1435,5 +1438,5 @@ void ScenarioDocument::load(const QString& _scenario)
     //
     // Подключаем необходимые сигналы
     //
-    initConnections();
+    connectTextDocument();
 }

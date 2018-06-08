@@ -566,6 +566,7 @@ void ScenarioModel::updateSceneNumbers()
     QVector<ScenarioModelItem*> scenes;
     scenes.reserve(m_scenesCount);
 
+    bool anyFixed = false;
     //
     // Заполним список из сцен
     //
@@ -576,6 +577,9 @@ void ScenarioModel::updateSceneNumbers()
         queue.pop_front();
         if (item->type() == ScenarioModelItem::Scene) {
             scenes.push_back(item);
+            if (item->isFixed()) {
+                anyFixed = true;
+            }
         } else {
             for (int i = 0; i != item->childCount(); ++i) {
                 queue.push_back(item->childAt(i));
@@ -588,7 +592,6 @@ void ScenarioModel::updateSceneNumbers()
     //
     QString prevPrefix = "";
     unsigned sceneNumberCounter = 0;
-    bool anyFixed = false;
 
     for (int i = 0; i != scenes.size(); ++i) {
 
@@ -598,16 +601,15 @@ void ScenarioModel::updateSceneNumbers()
             //
             prevPrefix = scenes[i]->sceneNumber();
             sceneNumberCounter = 0;
-            anyFixed = true;
         } else {
             //
             // А если не зафиксирована, то обновим для нее номер
             //
             if (i != 0
-                    && i + 1 != scenes.size()
-                    && scenes[i - 1]->isFixed()) {
+                    && scenes[i - 1]->isFixed()
+                    && i + 1 != scenes.size()) {
                 //
-                // Если предыдущая сцена зафиксирована, то, возможно, текущая сцена находится
+                // Если предыдущая сцена зафиксирована, или это первая сцена, то, возможно, текущая сцена находится
                 // между зафиксированными сценами разной глубины фиксации. Тогда ее порядковый номер
                 // должен начинаться с последней зафиксированной сцены, глубина фиксации которой
                 // на 1 меньше предыдущей из ближайшей группы
@@ -665,6 +667,33 @@ void ScenarioModel::updateSceneNumbers()
                     //
                     scenes[i]->setFixNesting(scenes[nearestNextFixed]->fixNesting());
                 }
+            } else if (i == 0
+                       && i + 1 != scenes.size()
+                       && anyFixed) {
+                //
+                // Отдельно обработаем случай с первой сценой
+                //
+
+                //
+                // Нам нужен максимальный суффикс из сцены, у которой fixNesting
+                // совпадает с fixNesting первой зафиксированной сцены
+                //
+                unsigned maxSuffix = 0;
+                unsigned fixNesting = 0;
+                for (int j = 1; j != scenes.size(); ++j) {
+                    if ((scenes[j]->fixNesting() == fixNesting
+                         || fixNesting == 0)
+                            && scenes[j]->isFixed()) {
+                        maxSuffix = std::max(maxSuffix, scenes[j]->numberSuffix());
+                        fixNesting = scenes[j]->fixNesting();
+                    }
+                }
+
+                //
+                // Как и в общем случае
+                //
+                sceneNumberCounter = maxSuffix + 1;
+                scenes[i]->setFixNesting(scenes[1]->fixNesting());
             } else if (i != 0
                        && !scenes[i - 1]->isFixed()) {
                 //
