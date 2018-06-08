@@ -581,8 +581,8 @@ void ScenarioModel::updateSceneNumbers()
                 anyFixed = true;
             }
         } else {
-            for (int i = 0; i != item->childCount(); ++i) {
-                queue.push_back(item->childAt(i));
+            for (int i = item->childCount() - 1; i >= 0; --i) {
+                queue.push_front(item->childAt(i));
             }
         }
     }
