@@ -23,8 +23,35 @@
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.ui" line="96"/>
+        <source>CREATE PROJECT</source>
+        <translation>СОЗДАТЬ ПРОЕКТ</translation>
+    </message>
+    <message>
         <source>CREATE</source>
-        <translation>СОЗДАТЬ</translation>
+        <translation type="vanished">СОЗДАТЬ</translation>
+    </message>
+</context>
+<context>
+    <name>AddResearchItemView</name>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="56"/>
+        <source>Create research item</source>
+        <translation>Создать элемент разработки</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="113"/>
+        <source>Item type:</source>
+        <translation>Тип элемента:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="160"/>
+        <source>Insert into</source>
+        <translation>Вставить в</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="180"/>
+        <source>ADD ITEM</source>
+        <translation>ДОБАВИТЬ ЭЛЕМЕНТ</translation>
     </message>
 </context>
 <context>
@@ -165,35 +192,35 @@
 <context>
     <name>BusinessLogic::ResearchModel</name>
     <message>
-        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="108"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="109"/>
         <source>Scenario</source>
         <translation>Сценарий</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="116"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="117"/>
         <source>Title Page</source>
         <translation>Титульная страница</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="124"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="125"/>
         <source>Synopsis</source>
         <translation>Синопсис</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="133"/>
-        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="236"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="134"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="237"/>
         <source>Characters</source>
         <translation>Персонажи</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="142"/>
-        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="241"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="143"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="242"/>
         <source>Locations</source>
         <translation>Локации</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="151"/>
-        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="246"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="152"/>
+        <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="247"/>
         <source>Documents</source>
         <translation>Документы</translation>
     </message>
@@ -375,7 +402,7 @@
 <context>
     <name>BusinessLogic::ScenarioModel</name>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="404"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="405"/>
         <source>FADE IN:</source>
         <translation>ИЗ ЗТМ:</translation>
     </message>
@@ -467,7 +494,7 @@
         <translation>ПРОД.</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="40"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="37"/>
         <source>MORE</source>
         <translation>ДАЛЬШЕ</translation>
     </message>
@@ -720,8 +747,8 @@
 <context>
     <name>FountainImporter</name>
     <message>
-        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="256"/>
-        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="399"/>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="255"/>
+        <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="398"/>
         <source>END OF </source>
         <translation>КОНЕЦ </translation>
     </message>
@@ -1138,175 +1165,173 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ManagementLayer::ApplicationManager</name>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="249"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="264"/>
         <source>Connection active</source>
         <translation>Соединение установлено</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="577"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="592"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
         <translation>Нельзя создать проект в папке &lt;b&gt;%1&lt;/b&gt;, т.к. её не существует. Пожалуйста выберите другую папку.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="581"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="596"/>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
         <translation>Не удаётся записать файл. Возможно он открыт в другом приложении. Пожалуйста, закройте все приложения использующие этот файл и повторите попытку.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="584"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="599"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
         <translatorcomment>Can&apos;t write to file. Please, check permissions to write for choosed folder and retry, or choose other folder.</translatorcomment>
         <translation>Не удаётся записать файл. Пожалуйста проверьте разрешение на запись в выбранную папку и повторите попытку, или выберите другую папку.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="586"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="601"/>
         <source>Create project error</source>
         <translation>Ошибка создания проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="715"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="731"/>
         <source>Please wait. Importing can take few minutes.</source>
         <translation>Немного терпения. Импорт может длиться несколько минут.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="715"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="731"/>
         <source>Importing script</source>
         <translation>Импорт сценария</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="902"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="923"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
         <translation>Удалить проект &lt;b&gt;%1&lt;/b&gt; из списка недавних файлов?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1069"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1090"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1118"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1141"/>
         <source>Saving error</source>
         <translation>Ошибка сохранения</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1126"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1188"/>
         <source>on device</source>
         <translation>на устройстве</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1091"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1142"/>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
         <translation>Не удаётся записать изменения в файл &lt;b&gt;%1&lt;/b&gt; потому что файла не существует. Пожалуйста верните файл обратно и попробуйте вновь сохранить проект. Попробовать сохранить ещё раз?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="621"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="771"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="808"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="634"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="798"/>
         <source>Can&apos;t open project file</source>
         <translation>Не удаётся открыть проект</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1070"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1119"/>
         <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
         <translation>Не удаётся записать изменения. Произошла внутренняя ошибка базы данных: %1. Пожалуйста проверьте, что вы имеете разрешение на запись в него. Попробовать сохранить ещё раз?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="809"/>
         <source>Ignore and try to open project?</source>
-        <translation>Игнорировать и попробовать открыть проект?</translation>
+        <translation type="vanished">Игнорировать и попробовать открыть проект?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="872"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="954"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="888"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="977"/>
         <source>Change project name</source>
         <translation>Изменить название проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="873"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="955"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="889"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="978"/>
         <source>Enter new name for project</source>
         <translation>Введите новое название проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="255"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="270"/>
         <source>Project synchronized</source>
         <translation>Проект синхронизирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="268"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="283"/>
         <source>Connection inactive</source>
         <translation>Отсутствует соединение</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="269"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="284"/>
         <source>Project didn&apos;t synchronized</source>
         <translation>Проект не синхронизирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="297"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="312"/>
         <source>Network error</source>
         <translation>Ошибка сети</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="315"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="330"/>
         <source>Incorrect username or password.</source>
         <translation>Не верное имя пользователя или пароль.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="335"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="350"/>
         <source>Subscription ended</source>
         <translation>Подписка закончена</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="383"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="394"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="398"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="409"/>
         <source>Project not available</source>
         <translation>Проект недоступен</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="348"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="363"/>
         <source>Network Error</source>
         <translation>Ошибка сети</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="987"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1017"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Удалить проект &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1000"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1034"/>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Отписать от проекта &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1025"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1067"/>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
         <translation>Отписать пользввателя &lt;b&gt;%1&lt;/b&gt; от проекта &lt;b&gt;%2&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="299"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="314"/>
         <source>Project didn&apos;t synchronized.</source>
         <translation>Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="104"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="121"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="112"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="129"/>
         <source>Import error</source>
         <translation>Ошибка импорта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="105"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="113"/>
         <source>Can&apos;t get file path to import. Try to download it and open in file browser.</source>
         <translation>Не удалось получить файл для импорта. Попробуйте загрузить его и открыть в обозревателе файлов.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="122"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="129"/>
         <source>Can&apos;t create temporatry file for import.</source>
         <translation>Не удалось создать временный файл для импорта.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="325"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="340"/>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
         <translation>Сохранённый пароль некорректен. Похоже, что вы сменили пароль на другом устройстве. Пожалуйста, введите новый пароль.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="336"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="351"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
@@ -1315,7 +1340,7 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="349"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="364"/>
         <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
@@ -1324,17 +1349,17 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="373"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="388"/>
         <source>Share error</source>
         <translation>Ошибка доступа</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="374"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="389"/>
         <source>You can&apos;t share project with yourself.</source>
         <translation>Нельзя открыть доступ к проекту самому себе.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="384"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="399"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
@@ -1343,7 +1368,7 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="395"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="410"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
@@ -1352,12 +1377,12 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="405"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="420"/>
         <source>Sync not available</source>
         <translation>Синхронизация недоступна</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="406"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="421"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
@@ -1366,58 +1391,58 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="416"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="431"/>
         <source>Email already exist</source>
         <translation>Адрес электронной почты уже зарегистрирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="425"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="440"/>
         <source>Password too weak</source>
         <translation>Слишком слабый пароль</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="452"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="467"/>
         <source>Wrong email</source>
         <translation>Адрес электронной почты не зарегистрирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="461"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="476"/>
         <source>Unknown Error</source>
         <translation>Неизвестная ошибка</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="638"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="652"/>
         <source>Loading Scenario</source>
         <translation>Загрузка сценария</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="638"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="652"/>
         <source>Please wait. Loading can take few minutes.</source>
         <translation>Немного терпения. Загрузка может длиться несколько минут.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="670"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="684"/>
         <source>Sync scenario with cloud service.</source>
         <translation>Немного терпения. Сценарий синхронизируется с облаком.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="924"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="930"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="947"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="953"/>
         <source>Moving project to the cloud failed</source>
         <translation>Ошибка перемещения проекта в облако</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="925"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="948"/>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
         <translation>Для перемещения проектов в облако вам необходимо быть авторизованными в облачном сервисе КИТ Сценарист.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="931"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="954"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
         <translation>Для перемещения проектов в облако у вас должна быть активна подписка в облачном сервисе КИТ Сценарист.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1126"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1188"/>
         <source>in cloud</source>
         <translation>в облаке</translation>
     </message>
@@ -1461,19 +1486,37 @@ Project didn&apos;t synchronized.</source>
     </message>
 </context>
 <context>
+    <name>ManagementLayer::ImportManager</name>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ImportManager.cpp" line="375"/>
+        <source>Characters import</source>
+        <translation>Импорт персонажей</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ImportManager.cpp" line="386"/>
+        <source>Locations import</source>
+        <translation>Импорт локаций</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ImportManager.cpp" line="397"/>
+        <source>Documents import</source>
+        <translation>Импорт документов</translation>
+    </message>
+</context>
+<context>
     <name>ManagementLayer::Project</name>
     <message>
-        <location filename="../../ManagementLayer/Project/Project.cpp" line="26"/>
+        <location filename="../../ManagementLayer/Project/Project.cpp" line="27"/>
         <source>Owner</source>
         <translation>владелец</translation>
     </message>
     <message>
-        <location filename="../../ManagementLayer/Project/Project.cpp" line="27"/>
+        <location filename="../../ManagementLayer/Project/Project.cpp" line="28"/>
         <source>Redactor</source>
         <translation>редактирование</translation>
     </message>
     <message>
-        <location filename="../../ManagementLayer/Project/Project.cpp" line="28"/>
+        <location filename="../../ManagementLayer/Project/Project.cpp" line="29"/>
         <source>Commentator</source>
         <translation>комментирование</translation>
     </message>
@@ -1481,20 +1524,33 @@ Project didn&apos;t synchronized.</source>
 <context>
     <name>ManagementLayer::ProjectsPageManager</name>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ProjectsPageManager.cpp" line="71"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ProjectsPageManager.cpp" line="75"/>
+        <source>Project name can&apos;t contains &quot;/&quot; character. Please use name without it.</source>
+        <translation>Название проекта не может содержать символ &quot;/&quot;. Пожалуйста используйте имя без него.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ProjectsPageManager.cpp" line="78"/>
         <source>Project exists. It will be replaced after creating.</source>
         <translation>Проект с таким названием существует.</translation>
     </message>
 </context>
 <context>
+    <name>ManagementLayer::ResearchManager</name>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ResearchManager.cpp" line="458"/>
+        <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation>Удалить элемент разработки &lt;b&gt;%1&lt;/b&gt;?</translation>
+    </message>
+</context>
+<context>
     <name>ManagementLayer::ScriptManager</name>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="492"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="619"/>
         <source>Scenes</source>
         <translation>Сцен</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="493"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="620"/>
         <source>Chron.</source>
         <translation>Хрон.</translation>
     </message>
@@ -1510,22 +1566,22 @@ Project didn&apos;t synchronized.</source>
 <context>
     <name>ManagementLayer::Sync</name>
     <message>
-        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="101"/>
+        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="105"/>
         <source>Can&apos;t estabilish network connection.</source>
         <translation>Отсутствует подключение к интернету.</translation>
     </message>
     <message>
-        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="105"/>
+        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="109"/>
         <source>Session key not found.</source>
         <translation>Не найден ключ сессии.</translation>
     </message>
     <message>
-        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="109"/>
+        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
         <source>Wrong validation code.</source>
         <translation>Неверный код подтверждения.</translation>
     </message>
     <message>
-        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
+        <location filename="../../ManagementLayer/Synchronization/Sync.h" line="117"/>
         <source>Got wrong response from server.</source>
         <translation>Получен ошибочный ответ сервера.</translation>
     </message>
@@ -1543,9 +1599,13 @@ Project didn&apos;t synchronized.</source>
         <translation>Проекты</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="162"/>
         <source>Title page</source>
-        <translation>Титульная страница</translation>
+        <translation type="vanished">Титульная страница</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="162"/>
+        <source>Research</source>
+        <translation>Разработка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="176"/>
@@ -1679,12 +1739,12 @@ Let&apos;s create the first one!</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="26"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="27"/>
         <source>Scenario</source>
         <translation>Сценарий</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1004"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1059"/>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
         <translation>КОНЕЦ ПАПКИ</translation>
@@ -1791,6 +1851,31 @@ Let&apos;s create the first one!</source>
     </message>
 </context>
 <context>
+    <name>ResearchItemView</name>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="130"/>
+        <source>0</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="143"/>
+        <source>Logline:</source>
+        <translation>Логлайн:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="153"/>
+        <source>words:</source>
+        <translation>слов:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="295"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="339"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="383"/>
+        <source>Description</source>
+        <translation>Описание</translation>
+    </message>
+</context>
+<context>
     <name>ReviewView</name>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ReviewView.ui" line="14"/>
@@ -1833,12 +1918,12 @@ Let&apos;s create the first one!</source>
         <translation>Приложение</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="150"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="153"/>
         <source>Use dark theme</source>
         <translation>Использовать тёмную тему</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="157"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="160"/>
         <source>Script editor</source>
         <translation>Редактор сценария</translation>
     </message>
@@ -2012,24 +2097,36 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::AddProjectView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="75"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="81"/>
         <source>LOCAL</source>
         <translation>НА УСТРОЙСТВЕ</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="76"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="82"/>
         <source>IN CLOUD</source>
         <translation>В ОБЛАКЕ</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="79"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="85"/>
         <source>Project name</source>
         <translation>Название проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="97"/>
         <source>Please, enter name for your new project.</source>
-        <translation>Пожалуйста задайте название.</translation>
+        <translation type="vanished">Пожалуйста задайте название.</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::AddResearchItemView</name>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.cpp" line="37"/>
+        <source>Insert into &quot;%1&quot;</source>
+        <translation>Вставить в &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.cpp" line="187"/>
+        <source>Item name</source>
+        <translation>Название элемента</translation>
     </message>
 </context>
 <context>
@@ -2110,12 +2207,12 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::MenuView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="112"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="111"/>
         <source>Save</source>
         <translation>Сохранить</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="112"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="111"/>
         <source>Changes saved</source>
         <translation>Изменения сохранены</translation>
     </message>
@@ -2142,6 +2239,78 @@ Your subscription is active until</source>
     </message>
 </context>
 <context>
+    <name>UserInterface::ResearchItemView</name>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="166"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="169"/>
+        <source>Script name</source>
+        <translation>Название сценария</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="170"/>
+        <source>Additional</source>
+        <translation>Дополнительная информация</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="171"/>
+        <source>Genre</source>
+        <translation>Жанр</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="172"/>
+        <source>Author</source>
+        <translation>Автор</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="173"/>
+        <source>Contacts</source>
+        <translation>Контакты</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="174"/>
+        <source>Year</source>
+        <translation>Год</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="178"/>
+        <source>Character name</source>
+        <translation>Имя персонажа</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="179"/>
+        <source>Real name</source>
+        <translation>Настроящее имя персонажа</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="182"/>
+        <source>Location name</source>
+        <translation>Название локации</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="185"/>
+        <source>Document name</source>
+        <translation>Название документа</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="209"/>
+        <source>words</source>
+        <translation>слов</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScenarioTextEdit</name>
+    <message>
+        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="553"/>
+        <source>Remove bookmark</source>
+        <translation>Удалить закладку</translation>
+    </message>
+    <message>
+        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="558"/>
+        <source>Add bookmark</source>
+        <translation>Добавить закладку</translation>
+    </message>
+</context>
+<context>
     <name>UserInterface::ScriptView</name>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="223"/>
@@ -2149,7 +2318,7 @@ Your subscription is active until</source>
         <translation>ЧЕРНОВИК</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="834"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="833"/>
         <source>Comment</source>
         <translation>Комментарий</translation>
     </message>
@@ -2157,45 +2326,49 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::SettingsView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="35"/>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="165"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="36"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="166"/>
         <source>System</source>
         <translation>Системный</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="53"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="54"/>
         <source>Little</source>
         <translation>Маленький</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="54"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="55"/>
         <source>Middle</source>
         <translation>Средний</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="55"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="56"/>
         <source>Big</source>
         <translation>Большой</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="56"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="57"/>
         <source>Very big</source>
         <translation>Очень большой</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="57"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="58"/>
         <source>Large</source>
         <translation>Огромный</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="164"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="165"/>
         <source>Language</source>
         <translation>Язык</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="168"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="169"/>
+        <source>Research and script editors font size</source>
+        <translation>Размер шрифта в разработке и сценарии</translation>
+    </message>
+    <message>
         <source>Font size</source>
-        <translation>Размер шрифта</translation>
+        <translation type="vanished">Размер шрифта</translation>
     </message>
 </context>
 <context>
@@ -2252,34 +2425,28 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::TitlePageView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="87"/>
         <source>Script name</source>
-        <translation>Название сценария</translation>
+        <translation type="vanished">Название сценария</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="89"/>
         <source>Additional</source>
-        <translation>Дополнительная информация</translation>
+        <translation type="vanished">Дополнительная информация</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="91"/>
         <source>Genre</source>
-        <translation>Жанр</translation>
+        <translation type="vanished">Жанр</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="93"/>
         <source>Author</source>
-        <translation>Автор</translation>
+        <translation type="vanished">Автор</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="95"/>
         <source>Contacts</source>
-        <translation>Контакты</translation>
+        <translation type="vanished">Контакты</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.cpp" line="97"/>
         <source>Year</source>
-        <translation>Год</translation>
+        <translation type="vanished">Год</translation>
     </message>
 </context>
 <context>
