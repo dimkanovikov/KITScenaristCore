@@ -16,11 +16,34 @@
     <name>AddProjectView</name>
     <message>
         <source>CREATE</source>
-        <translation>СТВОРИТИ</translation>
+        <translation type="vanished">СТВОРИТИ</translation>
     </message>
     <message>
         <source>Create project</source>
         <translation>Створити проект</translation>
+    </message>
+    <message>
+        <source>CREATE PROJECT</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddResearchItemView</name>
+    <message>
+        <source>Create research item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Item type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert into</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ADD ITEM</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1023,7 +1046,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Ignore and try to open project?</source>
-        <translation>Ігнорувати і спробувати відкрити проект?</translation>
+        <translation type="vanished">Ігнорувати і спробувати відкрити проект?</translation>
     </message>
     <message>
         <source>Share error</source>
@@ -1132,6 +1155,21 @@ Project didn&apos;t synchronized.</source>
     </message>
 </context>
 <context>
+    <name>ManagementLayer::ImportManager</name>
+    <message>
+        <source>Characters import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locations import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documents import</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ManagementLayer::Project</name>
     <message>
         <source>Owner</source>
@@ -1151,6 +1189,17 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>Project exists. It will be replaced after creating.</source>
         <translation>Проект існує. Після створення він буде замінений.</translation>
+    </message>
+    <message>
+        <source>Project name can&apos;t contains &quot;/&quot; character. Please use name without it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ManagementLayer::ResearchManager</name>
+    <message>
+        <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1222,7 +1271,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Title page</source>
-        <translation>Титульна сторінка</translation>
+        <translation type="vanished">Титульна сторінка</translation>
     </message>
     <message>
         <source>Help</source>
@@ -1230,6 +1279,10 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Leave review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Research</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1384,6 +1437,25 @@ Let&apos;s create the first one!</source>
     <name>QtMindMap::Node</name>
     <message>
         <source>&lt;b&gt;Root node&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ResearchItemView</name>
+    <message>
+        <source>0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logline:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>words:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1575,7 +1647,7 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>Please, enter name for your new project.</source>
-        <translation>Будь ласка, введіть ім&apos;я вашого нового  проекту.</translation>
+        <translation type="vanished">Будь ласка, введіть ім&apos;я вашого нового  проекту.</translation>
     </message>
     <message>
         <source>IN CLOUD</source>
@@ -1584,6 +1656,17 @@ Your subscription is active until</source>
     <message>
         <source>Project name</source>
         <translation>Ім&apos;я проекту</translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::AddResearchItemView</name>
+    <message>
+        <source>Insert into &quot;%1&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Item name</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1674,6 +1757,64 @@ Your subscription is active until</source>
     </message>
 </context>
 <context>
+    <name>UserInterface::ResearchItemView</name>
+    <message>
+        <source>Script name</source>
+        <translation type="unfinished">Назва сценарію</translation>
+    </message>
+    <message>
+        <source>Additional</source>
+        <translation type="unfinished">Додатково</translation>
+    </message>
+    <message>
+        <source>Genre</source>
+        <translation type="unfinished">Жанр</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished">Автор</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Контакти</translation>
+    </message>
+    <message>
+        <source>Year</source>
+        <translation type="unfinished">Рік</translation>
+    </message>
+    <message>
+        <source>Character name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Real name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Document name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>words</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScenarioTextEdit</name>
+    <message>
+        <source>Remove bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UserInterface::ScriptView</name>
     <message>
         <source>DRAFT</source>
@@ -1715,7 +1856,7 @@ Your subscription is active until</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Font size</source>
+        <source>Research and script editors font size</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1765,27 +1906,27 @@ Your subscription is active until</source>
     <name>UserInterface::TitlePageView</name>
     <message>
         <source>Script name</source>
-        <translation>Назва сценарію</translation>
+        <translation type="vanished">Назва сценарію</translation>
     </message>
     <message>
         <source>Additional</source>
-        <translation>Додатково</translation>
+        <translation type="vanished">Додатково</translation>
     </message>
     <message>
         <source>Genre</source>
-        <translation>Жанр</translation>
+        <translation type="vanished">Жанр</translation>
     </message>
     <message>
         <source>Author</source>
-        <translation>Автор</translation>
+        <translation type="vanished">Автор</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation>Контакти</translation>
+        <translation type="vanished">Контакти</translation>
     </message>
     <message>
         <source>Year</source>
-        <translation>Рік</translation>
+        <translation type="vanished">Рік</translation>
     </message>
 </context>
 <context>
