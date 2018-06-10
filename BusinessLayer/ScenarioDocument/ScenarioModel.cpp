@@ -716,7 +716,7 @@ void ScenarioModel::updateSceneNumbers()
                 // Иначе, добавим букву к суффиксу
                 // А если буквы закончились, то нумеруем их еще и цифрой
                 //
-                const unsigned alphabetLen = 'B' - 'A' + 1;
+                const unsigned alphabetLen = 'Z' - 'A' + 1;
                 unsigned sceneLetter = sceneNumberCounter % alphabetLen;
                 unsigned sceneLetterNumber = sceneNumberCounter / alphabetLen;
                 sceneCounter = prevPrefix + ('A' + sceneLetter);
