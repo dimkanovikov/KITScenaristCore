@@ -48,6 +48,26 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="120"/>
+        <source>Character</source>
+        <translation type="unfinished">Кейіпкер</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="130"/>
+        <source>Location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="137"/>
+        <source>Folder</source>
+        <translation type="unfinished">Папка</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="147"/>
+        <source>Text document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="160"/>
         <source>Insert into</source>
         <translation type="unfinished"></translation>
@@ -1814,24 +1834,19 @@ Let&apos;s create the first one!</source>
         <translation type="obsolete">Форма</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="130"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="129"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="143"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="122"/>
         <source>Logline:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="153"/>
-        <source>words:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="295"/>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="339"/>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="383"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="288"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="332"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="376"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>

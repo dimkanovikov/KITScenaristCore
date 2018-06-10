@@ -45,6 +45,22 @@
         <source>ADD ITEM</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Character</source>
+        <translation type="unfinished">Герой</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation type="unfinished">Папка</translation>
+    </message>
+    <message>
+        <source>Text document</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLayer::AbstractExporter</name>
@@ -1448,10 +1464,6 @@ Let&apos;s create the first one!</source>
     </message>
     <message>
         <source>Logline:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>words:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
