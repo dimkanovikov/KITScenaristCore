@@ -13,10 +13,30 @@ qreal PageMetrics::mmToPx(qreal _mm, bool _x)
 	//
 	// Рассчитываем исходя из знания, что один символ шрифта Courier New 12pt
 	// высотой 4,8мм и шириной 2,53мм
-	//
-    const QFontMetricsF courierNewMetrics(QFont("Courier New", 12));
-	return _x ? ((courierNewMetrics.width("W") * _mm) / 2.53)
-              : ((courierNewMetrics.lineSpacing() * _mm) / 4.8);
+    //
+    static qreal xCoefficient = [] {
+        const QFontMetricsF courierNewMetrics(QFont("Courier New", 12));
+        const qreal xCoefficient = courierNewMetrics.width("W") / 2.53;
+        return xCoefficient;
+    } ();
+    static qreal yCoefficient = [] {
+        const QFontMetricsF courierNewMetrics(QFont("Courier New", 12));
+        qreal yCoefficient = courierNewMetrics.lineSpacing() / 4.8;
+#ifdef Q_OS_ANDROID
+        //
+        // На некоторых андройд-устройствах размер строки определяется очень маленьким,
+        // что приводит к проблемам отрисовки и экспорта
+        //
+        const qreal xCoefficient = courierNewMetrics.width("W") / 2.53;
+        const qreal maxEpsilon = 1.012;
+        if (xCoefficient / yCoefficient > maxEpsilon) {
+            yCoefficient = xCoefficient / maxEpsilon;
+        }
+#endif
+        return yCoefficient;
+    } ();
+
+    return _mm * (_x ? xCoefficient : yCoefficient);
 }
 
 qreal PageMetrics::pxToMm(qreal _px, bool _x)

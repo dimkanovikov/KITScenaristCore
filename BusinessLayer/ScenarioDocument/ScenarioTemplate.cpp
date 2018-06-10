@@ -901,7 +901,7 @@ void ScenarioTemplate::configureMargins(qreal _availableWidth)
     // Если в доступное пространство влезает больше текста, чем должно быть на одной строке
     // определим размер отступов от краёв
     //
-    qreal leftDocumentMargin = PageMetrics::mmToPx(15);
+    qreal leftDocumentMargin = PageMetrics::mmToPx(18);
     _availableWidth -= leftDocumentMargin;
     qreal rightDocumentMargin = PageMetrics::mmToPx(12);
     _availableWidth -= rightDocumentMargin;

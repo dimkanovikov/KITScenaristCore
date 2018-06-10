@@ -52,5 +52,10 @@ void MaterialComboBox::setCurrentText(const QString& _text)
 
 QString MaterialComboBox::currentText() const
 {
-    return m_comboBox->currentText();
+    QString currentText = m_comboBox->currentText();
+    if (currentText.isEmpty()
+        && m_comboBox->count() > 0) {
+        currentText = m_comboBox->itemText(0);
+    }
+    return currentText;
 }
