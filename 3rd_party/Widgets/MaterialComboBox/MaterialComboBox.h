@@ -33,6 +33,11 @@ public:
     void setModel(const QStringList& _model);
 
     /**
+     * @brief Установить текущий элемент по индексу
+     */
+    void setCurrentIndex(int _index);
+
+    /**
      * @brief Установить текущий элемент списка
      */
     void setCurrentText(const QString& _text);

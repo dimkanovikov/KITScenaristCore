@@ -45,6 +45,11 @@ void MaterialComboBox::setModel(const QStringList& _model)
     setModel(new QStringListModel(_model, m_comboBox));
 }
 
+void MaterialComboBox::setCurrentIndex(int _index)
+{
+    m_comboBox->setCurrentIndex(_index);
+}
+
 void MaterialComboBox::setCurrentText(const QString& _text)
 {
     m_comboBox->setCurrentText(_text);
@@ -52,10 +57,5 @@ void MaterialComboBox::setCurrentText(const QString& _text)
 
 QString MaterialComboBox::currentText() const
 {
-    QString currentText = m_comboBox->currentText();
-    if (currentText.isEmpty()
-        && m_comboBox->count() > 0) {
-        currentText = m_comboBox->itemText(0);
-    }
-    return currentText;
+    return m_comboBox->currentText();
 }
