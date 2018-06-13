@@ -16,7 +16,7 @@ namespace {
     /**
      * @brief Максимальное кол-во подсказок для проверки орфографии
      */
-    const int SUGGESTIONS_ACTIONS_MAX_COUNT = 5;
+    const int kSuggestionsActionsMaxCount = 5;
 }
 
 SpellCheckTextEdit::SpellCheckTextEdit(QWidget *_parent) :
@@ -32,7 +32,7 @@ SpellCheckTextEdit::SpellCheckTextEdit(QWidget *_parent) :
     //
     // Настраиваем подсветку слов не прошедших проверку орфографии
     //
-    m_spellCheckHighlighter = new SpellCheckHighlighter(0, m_spellChecker);
+    m_spellCheckHighlighter = new SpellCheckHighlighter(nullptr, m_spellChecker);
     connect(this, &SpellCheckTextEdit::cursorPositionChanged,
             this, &SpellCheckTextEdit::rehighlighWithNewCursor);
 
@@ -41,16 +41,14 @@ SpellCheckTextEdit::SpellCheckTextEdit(QWidget *_parent) :
     //
     // ... игнорировать слово
     m_ignoreWordAction = new QAction(tr("Ignore"), this);
-    connect(m_ignoreWordAction, SIGNAL(triggered()), this, SLOT(aboutIgnoreWord()));
+    connect(m_ignoreWordAction, &QAction::triggered, this, &SpellCheckTextEdit::aboutIgnoreWord);
     // ... добавить слово в словарь
     m_addWordToUserDictionaryAction = new QAction(tr("Add to dictionary"), this);
-    connect(m_addWordToUserDictionaryAction, SIGNAL(triggered()),
-            this, SLOT(aboutAddWordToUserDictionary()));
+    connect(m_addWordToUserDictionaryAction, &QAction::triggered, this, &SpellCheckTextEdit::aboutAddWordToUserDictionary);
     // ... добавляем несколько пустых пунктов, для последующего помещения в них вариантов
-    for (int actionIndex = 0; actionIndex < SUGGESTIONS_ACTIONS_MAX_COUNT; ++actionIndex) {
+    for (int actionIndex = 0; actionIndex < kSuggestionsActionsMaxCount; ++actionIndex) {
         m_suggestionsActions.append(new QAction(QString(), this));
-        connect(m_suggestionsActions.at(actionIndex), SIGNAL(triggered()),
-                this, SLOT(aboutReplaceWordOnSuggestion()));
+        connect(m_suggestionsActions.at(actionIndex), &QAction::triggered, this, &SpellCheckTextEdit::aboutReplaceWordOnSuggestion);
     }
 }
 
@@ -103,7 +101,7 @@ QMenu* SpellCheckTextEdit::createContextMenu(const QPoint& _pos, QWidget* _paren
     //
     // Скрываем пункты меню отмены и повтора последнего действия
     //
-    foreach (QAction* menuAction, menu->findChildren<QAction*>()) {
+    for (QAction* menuAction : menu->findChildren<QAction*>()) {
         if (menuAction->text().endsWith(QKeySequence(QKeySequence::Undo).toString(QKeySequence::NativeText))
             || menuAction->text().endsWith(QKeySequence(QKeySequence::Redo).toString(QKeySequence::NativeText))) {
             menuAction->disconnect();
@@ -118,12 +116,10 @@ QMenu* SpellCheckTextEdit::createContextMenu(const QPoint& _pos, QWidget* _paren
         //
         // Определим слово под курсором
         //
-        QTextCursor cursorWordStart = moveCursorToStartWord(cursorForPosition(m_lastCursorPosition));
-        QTextCursor cursorWordEnd = moveCursorToEndWord(cursorWordStart);
-
-        QString text = cursorWordStart.block().text();
-
-        QString wordUnderCursor = text.mid(cursorWordStart.positionInBlock(), cursorWordEnd.positionInBlock() - cursorWordStart.positionInBlock());
+        const QTextCursor cursorWordStart = moveCursorToStartWord(cursorForPosition(m_lastCursorPosition));
+        const QTextCursor cursorWordEnd = moveCursorToEndWord(cursorWordStart);
+        const QString text = cursorWordStart.block().text();
+        const QString wordUnderCursor = text.mid(cursorWordStart.positionInBlock(), cursorWordEnd.positionInBlock() - cursorWordStart.positionInBlock());
 
         QString wordInCorrectRegister = wordUnderCursor;
         if (cursorForPosition(_pos).charFormat().fontCapitalization() == QFont::AllUppercase) {
@@ -142,8 +138,8 @@ QMenu* SpellCheckTextEdit::createContextMenu(const QPoint& _pos, QWidget* _paren
             // ... вставляем варианты
             QAction* actionInsertBefore = menu->actions().first();
             int addedSuggestionsCount = 0;
-            foreach (const QString& suggestion, suggestions) {
-                if (addedSuggestionsCount < SUGGESTIONS_ACTIONS_MAX_COUNT) {
+            for (const QString& suggestion : suggestions) {
+                if (addedSuggestionsCount < kSuggestionsActionsMaxCount) {
                     m_suggestionsActions.at(addedSuggestionsCount)->setText(suggestion);
                     m_suggestionsActions.at(addedSuggestionsCount)->setEnabled(true);
                     menu->insertAction(actionInsertBefore, m_suggestionsActions.at(addedSuggestionsCount));
@@ -246,17 +242,17 @@ void SpellCheckTextEdit::aboutIgnoreWord() const
     //
     // Определим слово под курсором
     //
-    QString wordUnderCursor = wordOnPosition(m_lastCursorPosition);
+    const QString wordUnderCursor = wordOnPosition(m_lastCursorPosition);
 
     //
     // Уберем пунктуацию
     //
-    QString wordUnderCursorWithoutPunct = removePunctutaion(wordUnderCursor);
+    const QString wordUnderCursorWithoutPunct = removePunctutaion(wordUnderCursor);
 
     //
     // Скорректируем регистр слова
     //
-    QString wordUnderCursorWithoutPunctInCorrectRegister = wordUnderCursorWithoutPunct.toLower();
+    const QString wordUnderCursorWithoutPunctInCorrectRegister = wordUnderCursorWithoutPunct.toLower();
 
     //
     // Объявляем проверяющему о том, что это слово нужно игнорировать
@@ -274,17 +270,17 @@ void SpellCheckTextEdit::aboutAddWordToUserDictionary() const
     //
     // Определим слово под курсором
     //
-    QString wordUnderCursor = wordOnPosition(m_lastCursorPosition);
+    const QString wordUnderCursor = wordOnPosition(m_lastCursorPosition);
 
     //
     // Уберем пунктуацию в слове
     //
-    QString wordUnderCursorWithoutPunct = removePunctutaion(wordUnderCursor);
+    const QString wordUnderCursorWithoutPunct = removePunctutaion(wordUnderCursor);
 
     //
     // Приведем к нижнему регистру
     //
-    QString wordUnderCursorWithoutPunctInCorrectRegister = wordUnderCursorWithoutPunct.toLower();
+    const QString wordUnderCursorWithoutPunctInCorrectRegister = wordUnderCursorWithoutPunct.toLower();
 
     //
     // Объявляем проверяющему о том, что это слово нужно добавить в пользовательский словарь
@@ -324,7 +320,7 @@ void SpellCheckTextEdit::aboutReplaceWordOnSuggestion()
     }
 }
 
-QTextCursor SpellCheckTextEdit::moveCursorToStartWord(QTextCursor cursor)
+QTextCursor SpellCheckTextEdit::moveCursorToStartWord(QTextCursor cursor) const
 {
     cursor.movePosition(QTextCursor::StartOfWord);
     QString text = cursor.block().text();
@@ -346,7 +342,7 @@ QTextCursor SpellCheckTextEdit::moveCursorToStartWord(QTextCursor cursor)
     return cursor;
 }
 
-QTextCursor SpellCheckTextEdit::moveCursorToEndWord(QTextCursor cursor)
+QTextCursor SpellCheckTextEdit::moveCursorToEndWord(QTextCursor cursor) const
 {
     QRegExp splitWord("[^\\w'-]");
     splitWord.indexIn(cursor.block().text(), cursor.positionInBlock());
@@ -379,9 +375,10 @@ void SpellCheckTextEdit::rehighlighWithNewCursor()
 
 QString SpellCheckTextEdit::wordOnPosition(const QPoint& _position) const
 {
-    QTextCursor tc = cursorForPosition(_position);
-    tc.select(QTextCursor::WordUnderCursor);
-    return tc.selectedText();
+    const QTextCursor cursorWordStart = moveCursorToStartWord(cursorForPosition(_position));
+    const QTextCursor cursorWordEnd = moveCursorToEndWord(cursorWordStart);
+    const QString text = cursorWordStart.block().text();
+    return text.mid(cursorWordStart.positionInBlock(), cursorWordEnd.positionInBlock() - cursorWordStart.positionInBlock());
 }
 
 QString SpellCheckTextEdit::removePunctutaion(const QString &_word) const

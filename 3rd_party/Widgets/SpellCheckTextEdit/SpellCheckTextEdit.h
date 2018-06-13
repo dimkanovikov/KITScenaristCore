@@ -109,12 +109,12 @@ private:
     /**
      * @brief Перемещает курсор в начало слова (с учетом - и ')
      */
-    QTextCursor moveCursorToStartWord(QTextCursor cursor);
+    QTextCursor moveCursorToStartWord(QTextCursor cursor) const;
 
     /**
      * @brief Перемещает курсор в конец слова (с учетом - и ')
      */
-    QTextCursor moveCursorToEndWord(QTextCursor cursor);
+    QTextCursor moveCursorToEndWord(QTextCursor cursor) const;
 
 private:
 	/**
