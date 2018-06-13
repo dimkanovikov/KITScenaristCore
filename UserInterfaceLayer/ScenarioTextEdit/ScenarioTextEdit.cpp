@@ -1493,7 +1493,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                             // Прорисовка автоматических (ПРОД) для реплик
                             //
                             if (blockType == ScenarioBlockStyle::Character
-                                && block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCharacterContinued)) {
+                                && block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCharacterContinued)
+                                && !block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
                                 painter.setFont(cursor.charFormat().font());
 
                                 //
@@ -1529,7 +1530,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             const unsigned cursorAreaWidth = 20;
 
             if (!m_additionalCursors.isEmpty()
-                && m_document != 0) {
+                && m_document != nullptr) {
                 QPainter painter(viewport());
                 painter.setFont(QFont("Sans", 8));
                 painter.setPen(Qt::white);
