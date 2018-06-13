@@ -268,7 +268,7 @@ namespace {
         const Domain::Research* research = _item->research();
         if (research != nullptr) {
             switch (research->type()) {
-                case Domain::Research::Scenario: {
+                case Domain::Research::Script: {
                     _cursor.setBlockFormat(titleBlockFormat);
                     _cursor.setCharFormat(titleCharFormat);
                     _cursor.setBlockCharFormat(titleCharFormat);
@@ -278,6 +278,13 @@ namespace {
                     QTextDocument loglineDocument;
                     loglineDocument.setHtml(_exportParameters.logline);
                     _cursor.insertText(loglineDocument.toPlainText());
+                    break;
+                }
+
+                case Domain::Research::Logline: {
+                    //
+                    // Ничего не делаем, логлайн добавляется на страницу с названием
+                    //
                     break;
                 }
 
@@ -718,15 +725,12 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                     }
 
                     //
-                    // Префикс экспорта
-                    //
-                    destDocumentCursor.insertText(_exportParameters.scenesPrefix);
-                    //
-                    // Номер сцены, если необходимо
+                    // Номер сцены с префиксом, если необходимо
                     //
                     if (_exportParameters.printScenesNumbers
                         && sceneInfo != nullptr) {
-                        const QString sceneNumber = QString("%1. ").arg(sceneInfo->sceneNumber());
+                        const QString sceneNumber = QString("%1%2. ").arg(_exportParameters.scenesPrefix)
+                                                                     .arg(sceneInfo->sceneNumber());
                         destDocumentCursor.insertText(sceneNumber);
                         additionalSpaceForNumber = sceneNumber.length();
                     }

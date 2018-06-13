@@ -109,7 +109,7 @@ void FdxExporter::writeContent(QXmlStreamWriter& _writer, ScenarioDocument* _sce
                     //
                     if (_exportParameters.printScenesNumbers) {
                         if (SceneHeadingBlockInfo* sceneInfo = dynamic_cast<SceneHeadingBlockInfo*>(documentCursor.block().userData())) {
-                            sceneNumber = sceneInfo->sceneNumber();
+                            sceneNumber = QString("%1%2").arg(_exportParameters.scenesPrefix).arg(sceneInfo->sceneNumber());
                         }
                     }
 

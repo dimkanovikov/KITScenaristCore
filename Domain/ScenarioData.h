@@ -19,12 +19,13 @@ namespace Domain
 		 */
 		/** @{ */
 		static const QString NAME_KEY;
-		static const QString LOGLINE_KEY;
+        static const QString SCENE_NUMBERS_PREFIX_KEY;
 		static const QString ADDITIONAL_INFO_KEY;
 		static const QString GENRE_KEY;
 		static const QString AUTHOR_KEY;
 		static const QString CONTACTS_KEY;
 		static const QString YEAR_KEY;
+        static const QString LOGLINE_KEY;
 		static const QString SYNOPSIS_KEY;
 		/** @} */
 

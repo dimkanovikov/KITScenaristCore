@@ -137,27 +137,27 @@ namespace BusinessLogic
         /**
          * @brief Корневой элемент дерева
          */
-        ResearchModelItem* m_rootItem;
+        ResearchModelItem* m_rootItem = nullptr;
 
         /**
          * @brief Корневой элемент для персонажей
          */
-        ResearchModelItem* m_charactersRoot;
+        ResearchModelItem* m_charactersRoot = nullptr;
 
         /**
          * @brief Корневой элемент для локаций
          */
-        ResearchModelItem* m_locationsRoot;
+        ResearchModelItem* m_locationsRoot = nullptr;
 
         /**
          * @brief Корневой элемент, для ветви разработки
          */
-        ResearchModelItem* m_researchRoot;
+        ResearchModelItem* m_researchRoot = nullptr;
 
         /**
          * @brief Таблица с данными разработки
          */
-        Domain::ResearchTable* m_researchData;
+        Domain::ResearchTable* m_researchData = nullptr;
 
         /**
          * @brief Последние положенные в майм элементы

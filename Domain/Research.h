@@ -19,7 +19,7 @@ namespace Domain
          * @brief Типы разработок
          */
         enum Type {
-            Scenario,
+            Script,
             TitlePage,
             Synopsis,
             ResearchRoot,
@@ -29,6 +29,7 @@ namespace Domain
             ImagesGallery,
             Image,
             MindMap,
+            Logline,
             CharactersRoot = 100, // оставляем резервное место для новых элементов разработки
             Character,
             LocationsRoot = 200,

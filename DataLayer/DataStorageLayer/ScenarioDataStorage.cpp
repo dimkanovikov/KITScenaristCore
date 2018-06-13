@@ -29,7 +29,17 @@ QString ScenarioDataStorage::name() const
 
 void ScenarioDataStorage::setName(const QString& _name)
 {
-	saveData(ScenarioData::NAME_KEY, _name);
+    saveData(ScenarioData::NAME_KEY, _name);
+}
+
+QString ScenarioDataStorage::sceneNumbersPrefix() const
+{
+    return data(ScenarioData::SCENE_NUMBERS_PREFIX_KEY)->value();
+}
+
+void ScenarioDataStorage::setSceneNumbersPrefix(const QString& _prefix)
+{
+    saveData(ScenarioData::SCENE_NUMBERS_PREFIX_KEY, _prefix);
 }
 
 QString ScenarioDataStorage::logline() const
@@ -104,7 +114,7 @@ void ScenarioDataStorage::setSynopsis(const QString& _synopsis)
 
 ScenarioDataTable* ScenarioDataStorage::all() const
 {
-	if (m_all == 0) {
+    if (m_all == nullptr) {
 		m_all = MapperFacade::scenarioDataMapper()->findAll();
 	}
 	return m_all;
@@ -120,7 +130,7 @@ ScenarioData* ScenarioDataStorage::data(const QString& _name) const
 	//
 	// Если не нашли
 	//
-	if (data == 0) {
+    if (data == nullptr) {
 		//
 		// ... создаём новый
 		//
@@ -147,8 +157,7 @@ void ScenarioDataStorage::saveData(const QString& _name, const QString& _newValu
 	}
 }
 
-ScenarioDataStorage::ScenarioDataStorage() :
-	m_all(0)
+ScenarioDataStorage::ScenarioDataStorage()
 {
 }
 

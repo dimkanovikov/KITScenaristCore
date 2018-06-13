@@ -29,6 +29,14 @@ namespace DataStorageLayer
 		void setName(const QString& _name);
 		/** @} */
 
+        /**
+         * @brief Префикс номеров сцен
+         */
+        /** @{ */
+        QString sceneNumbersPrefix() const;
+        void setSceneNumbersPrefix(const QString& _prefix);
+        /** @} */
+
 		/**
 		 * @brief Логлайн сценария
 		 */
@@ -116,7 +124,7 @@ namespace DataStorageLayer
 		/**
 		 * @brief Все данные
 		 */
-		mutable ScenarioDataTable* m_all;
+        mutable ScenarioDataTable* m_all = nullptr;
 
 	private:
 		ScenarioDataStorage();

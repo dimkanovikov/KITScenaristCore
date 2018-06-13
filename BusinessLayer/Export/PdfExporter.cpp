@@ -54,6 +54,7 @@ namespace {
     /** @{ */
     const char* PRINT_PAGE_NUMBERS_KEY = "page_numbers";
     const char* PRINT_SCENES_NUMBERS_KEY = "scenes_numbers";
+    const char* SCENE_NUMBERS_PREFIX_KEY = "scene_numbers_prefix";
     const char* PRINT_DIALOGUES_NUMBERS_KEY = "dialogues_numbers";
     /** @} */
 
@@ -88,6 +89,7 @@ namespace {
         // Печатаем номера сцен и реплик, если нужно
         //
         const bool needPrintScenesNumbers = _document->property(PRINT_SCENES_NUMBERS_KEY).toBool();
+        const QString sceneNumbersPrefix = _document->property(SCENE_NUMBERS_PREFIX_KEY).toString();
         const bool needPrintDialoguesNumbers = _document->property(PRINT_DIALOGUES_NUMBERS_KEY).toBool();
         if (needPrintScenesNumbers
             || needPrintDialoguesNumbers) {
@@ -128,14 +130,16 @@ namespace {
                                         blockRect.top() <= pageYPos ? pageYPos : blockRect.top(),
                                         PageMetrics::mmToPx(_margins.left) - distanceBetweenSceneNumberAndText,
                                         blockRect.height());
-                            _painter->drawText(sceneNumberRect, Qt::AlignRight | Qt::AlignTop, blockInfo->sceneNumber() + ".");
+                            _painter->drawText(sceneNumberRect, Qt::AlignRight | Qt::AlignTop,
+                                               sceneNumbersPrefix + blockInfo->sceneNumber() + ".");
                         } else {
                             const QRectF sceneNumberRect(
                                         PageMetrics::mmToPx(_margins.left) + _body.width() + distanceBetweenSceneNumberAndText,
                                         blockRect.top() <= pageYPos ? pageYPos : blockRect.top(),
                                         PageMetrics::mmToPx(_margins.right) - distanceBetweenSceneNumberAndText,
                                         blockRect.height());
-                            _painter->drawText(sceneNumberRect, Qt::AlignLeft | Qt::AlignTop, "." + blockInfo->sceneNumber());
+                            _painter->drawText(sceneNumberRect, Qt::AlignLeft | Qt::AlignTop,
+                                               "." + blockInfo->sceneNumber() + sceneNumbersPrefix);
                         }
                     }
                 }
@@ -531,6 +535,7 @@ void PdfExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
     //
     preparedDocument->setProperty(PRINT_TITLE_KEY, _exportParameters.printTilte);
     preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, _exportParameters.printPagesNumbers);
+    preparedDocument->setProperty(SCENE_NUMBERS_PREFIX_KEY, _exportParameters.scenesPrefix);
     preparedDocument->setProperty(PRINT_SCENES_NUMBERS_KEY, _exportParameters.printScenesNumbers);
     preparedDocument->setProperty(PRINT_DIALOGUES_NUMBERS_KEY, _exportParameters.printDialoguesNumbers);
     if (_exportParameters.printWatermark) {
@@ -590,6 +595,7 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     //
     preparedDocument->setProperty(PRINT_TITLE_KEY, _exportParameters.printTilte);
     preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, _exportParameters.printPagesNumbers);
+    preparedDocument->setProperty(SCENE_NUMBERS_PREFIX_KEY, _exportParameters.scenesPrefix);
     preparedDocument->setProperty(PRINT_SCENES_NUMBERS_KEY, _exportParameters.printScenesNumbers);
     preparedDocument->setProperty(PRINT_DIALOGUES_NUMBERS_KEY, _exportParameters.printDialoguesNumbers);
     if (_exportParameters.printWatermark) {

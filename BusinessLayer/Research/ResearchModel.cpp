@@ -97,16 +97,14 @@ QString ResearchModel::MIME_TYPE = "application/x-scenarist/research-tree";
 
 ResearchModel::ResearchModel(QObject* _parent) :
     QAbstractItemModel(_parent),
-    m_rootItem(new ResearchModelItem),
-    m_researchRoot(0),
-    m_researchData(0)
+    m_rootItem(new ResearchModelItem)
 {
     //
     // Сценарий
     //
     ResearchModelItem* scenarioItem =
         new ResearchModelItem(
-            ResearchBuilder::create(Domain::Identifier(), 0, Research::Scenario, 0, tr("Scenario"))
+            ResearchBuilder::create(Domain::Identifier(), nullptr, Research::Script, 0, tr("Script"))
         );
     m_rootItem->appendItem(scenarioItem);
     //
@@ -114,15 +112,23 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     ResearchModelItem* titlePageItem =
         new ResearchModelItem(
-            ResearchBuilder::create(Domain::Identifier(), 0, Research::TitlePage, 0, tr("Title Page"))
+            ResearchBuilder::create(Domain::Identifier(), nullptr, Research::TitlePage, 0, tr("Title Page"))
         );
     scenarioItem->appendItem(titlePageItem);
+    //
+    // Логлайн сценария
+    //
+    ResearchModelItem* loglineItem =
+        new ResearchModelItem(
+            ResearchBuilder::create(Domain::Identifier(), nullptr, Research::Logline, 1, tr("Logline"))
+        );
+    scenarioItem->appendItem(loglineItem);
     //
     // Синопсис сценария
     //
     ResearchModelItem* synopsisItem =
         new ResearchModelItem(
-            ResearchBuilder::create(Domain::Identifier(), 0, Research::Synopsis, 1, tr("Synopsis"))
+            ResearchBuilder::create(Domain::Identifier(), nullptr, Research::Synopsis, 2, tr("Synopsis"))
         );
     scenarioItem->appendItem(synopsisItem);
 
@@ -131,7 +137,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     m_charactersRoot =
         new ResearchModelItem(
-            ResearchBuilder::create(Domain::Identifier(), 0, Research::CharactersRoot, 1, tr("Characters"))
+            ResearchBuilder::create(Domain::Identifier(), nullptr, Research::CharactersRoot, 1, tr("Characters"))
         );
     m_rootItem->appendItem(m_charactersRoot);
 
@@ -140,7 +146,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     m_locationsRoot =
         new ResearchModelItem(
-            ResearchBuilder::create(Domain::Identifier(), 0, Research::LocationsRoot, 2, tr("Locations"))
+            ResearchBuilder::create(Domain::Identifier(), nullptr, Research::LocationsRoot, 2, tr("Locations"))
         );
     m_rootItem->appendItem(m_locationsRoot);
 
@@ -149,7 +155,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
     //
     m_researchRoot =
         new ResearchModelItem(
-            ResearchBuilder::create(Domain::Identifier(), 0, Research::ResearchRoot, 3, tr("Documents"))
+            ResearchBuilder::create(Domain::Identifier(), nullptr, Research::ResearchRoot, 3, tr("Documents"))
         );
     m_rootItem->appendItem(m_researchRoot);
 }
@@ -157,7 +163,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
 ResearchModel::~ResearchModel()
 {
     delete m_rootItem;
-    m_rootItem = 0;
+    m_rootItem = nullptr;
 }
 
 void ResearchModel::load(Domain::ResearchTable* _data)
@@ -169,7 +175,7 @@ void ResearchModel::load(Domain::ResearchTable* _data)
         // Делаем обновления модели разработки, при изменении данных таблицы с данными
         //
 
-        if (m_researchData != 0) {
+        if (m_researchData != nullptr) {
             connect(m_researchData, &Domain::ResearchTable::rowsInserted, this, &ResearchModel::researchRowsInserted);
             connect(m_researchData, &Domain::ResearchTable::rowsAboutToBeRemoved, this, &ResearchModel::researchRowsRemoved);
             connect(m_researchData, &Domain::ResearchTable::dataChanged, this, &ResearchModel::researchDataChanged);
@@ -178,13 +184,13 @@ void ResearchModel::load(Domain::ResearchTable* _data)
 
     clear();
 
-    if (m_researchData != 0) {
+    if (m_researchData != nullptr) {
         //
         // Формируем карту разработок
         // первыми в ней будут идти корневые элементы
         //
         QMap<Research*, QList<Research*> > researchMap;
-        foreach (Domain::DomainObject* domainObject, m_researchData->toList()) {
+        for (Domain::DomainObject* domainObject : m_researchData->toList()) {
             if (Research* research = dynamic_cast<Research*>(domainObject)) {
                 if (researchMap.contains(research->parent())) {
                     QList<Research*> childs = researchMap.value(research->parent());
@@ -203,19 +209,19 @@ void ResearchModel::load(Domain::ResearchTable* _data)
         //
         // ... для дерева персонажей
         //
-        foreach (Research* research, researchMap.value(0)) {
+        for (Research* research : researchMap.value(nullptr)) {
             ::populateCharactersTree(researchMap, m_charactersRoot, research);
         }
         //
         // ... для дерева локаций
         //
-        foreach (Research* research, researchMap.value(0)) {
+        for (Research* research : researchMap.value(nullptr)) {
             ::populateLocationsTree(researchMap, m_locationsRoot, research);
         }
         //
         // ... для дерева данных разработки
         //
-        foreach (Research* research, researchMap.value(0)) {
+        for (Research* research : researchMap.value(nullptr)) {
             ::populateResearchTree(researchMap, m_researchRoot, research);
         }
     }
@@ -234,17 +240,17 @@ void ResearchModel::clear()
     //
     m_charactersRoot =
         new ResearchModelItem(
-            ResearchBuilder::create(Domain::Identifier(), 0, Research::CharactersRoot, 1, tr("Characters"))
+            ResearchBuilder::create(Domain::Identifier(), nullptr, Research::CharactersRoot, 1, tr("Characters"))
         );
     //
     m_locationsRoot =
         new ResearchModelItem(
-            ResearchBuilder::create(Domain::Identifier(), 0, Research::LocationsRoot, 2, tr("Locations"))
+            ResearchBuilder::create(Domain::Identifier(), nullptr, Research::LocationsRoot, 2, tr("Locations"))
         );
     //
     m_researchRoot =
         new ResearchModelItem(
-            ResearchBuilder::create(Domain::Identifier(), 0, Research::ResearchRoot, 1, tr("Documents"))
+            ResearchBuilder::create(Domain::Identifier(), nullptr, Research::ResearchRoot, 1, tr("Documents"))
         );
     //
     emit beginInsertRows(QModelIndex(), 1, 3);
@@ -259,7 +265,7 @@ void ResearchModel::prependItem(ResearchModelItem* _item, ResearchModelItem* _pa
     //
     // Если родитель не задан им становится сам сценарий
     //
-    if (_parentItem == 0) {
+    if (_parentItem == nullptr) {
         _parentItem = m_rootItem;
     }
 
@@ -281,7 +287,7 @@ void ResearchModel::appendItem(ResearchModelItem* _item, ResearchModelItem* _par
     //
     // Если родитель не задан им становится сам сценарий
     //
-    if (_parentItem == 0) {
+    if (_parentItem == nullptr) {
         _parentItem = m_rootItem;
     }
 
@@ -335,7 +341,7 @@ void ResearchModel::updateItem(ResearchModelItem* _item)
     //
     // Если элемент уже в списке, то обновим, в противном случае просто игнорируем
     //
-    if (_item->parent() != 0) {
+    if (_item->parent() != nullptr) {
         const QModelIndex indexForUpdate = indexForItem(_item);
         emit dataChanged(indexForUpdate, indexForUpdate);
     }
@@ -356,7 +362,7 @@ QModelIndex ResearchModel::index(int _row, int _column, const QModelIndex& _pare
         Q_ASSERT(parentItem);
 
         ResearchModelItem* indexItem = parentItem->childAt(_row);
-        if (indexItem != 0) {
+        if (indexItem != nullptr) {
             resultIndex = createIndex(_row, _column, indexItem);
         }
     }
@@ -369,10 +375,10 @@ QModelIndex ResearchModel::parent(const QModelIndex& _child) const
     if (_child.isValid()) {
         ResearchModelItem* childItem = itemForIndex(_child);
         ResearchModelItem* parentItem = childItem->parent();
-        if (parentItem != 0
+        if (parentItem != nullptr
             && parentItem != m_rootItem) {
             ResearchModelItem* grandParentItem = parentItem->parent();
-            if (grandParentItem != 0) {
+            if (grandParentItem != nullptr) {
                 int row = grandParentItem->rowOfChild(parentItem);
                 parentIndex = createIndex(row, 0, parentItem);
             }
@@ -395,7 +401,7 @@ int ResearchModel::rowCount(const QModelIndex& _parent) const
         //
     } else {
         ResearchModelItem* item = itemForIndex(_parent);
-        if (item != 0) {
+        if (item != nullptr) {
             rowCount = item->childCount();
         }
     }
