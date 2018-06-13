@@ -27,6 +27,7 @@ namespace UserInterface {
         void setShowSceneDescription(bool _show);
         void setSceneDescriptionIsSceneText(bool _isSceneText);
         void setSceneDescriptionHeight(int _height);
+        void setSceneNumbersPrefix(const QString& _prefix);
         /** @} */
 
     private:
@@ -54,6 +55,11 @@ namespace UserInterface {
         * @brief Высота поля для отображения описания сцены
         */
         int m_sceneDescriptionHeight;
+
+        /**
+         * @brief Префикс номеров сцен
+         */
+        QString m_sceneNumbersPrefix;
 
         /**
          * @brief Константы для вью.

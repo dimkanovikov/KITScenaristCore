@@ -84,6 +84,16 @@ namespace UserInterface
         void setShowSceneNumbers(bool _show);
 
         /**
+         * @brief Префикс номеров сцен
+         */
+        QString sceneNumbersPrefix() const;
+
+        /**
+         * @brief Установить префикс номеров сцен
+         */
+        void setSceneNumbersPrefix(const QString& _prefix);
+
+        /**
          * @brief Показываеются ли в редакторе номера реплик
          */
         bool showDialoguesNumbers() const;
@@ -352,6 +362,11 @@ namespace UserInterface
          * @brief Отображать ли номер сцен
          */
         bool m_showSceneNumbers;
+
+        /**
+         * @brief Префикс номеров сцен
+         */
+        QString m_sceneNumbersPrefix;
 
         /**
          * @brief Отображать ли номера реплик

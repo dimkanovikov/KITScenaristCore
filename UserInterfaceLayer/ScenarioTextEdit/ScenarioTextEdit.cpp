@@ -374,6 +374,16 @@ void ScenarioTextEdit::setShowSceneNumbers(bool _show)
     }
 }
 
+QString ScenarioTextEdit::sceneNumbersPrefix() const
+{
+    return m_sceneNumbersPrefix;
+}
+
+void ScenarioTextEdit::setSceneNumbersPrefix(const QString& _prefix)
+{
+    m_sceneNumbersPrefix = _prefix;
+}
+
 bool ScenarioTextEdit::showDialoguesNumbers() const
 {
     return m_showDialoguesNumbers;
@@ -1403,7 +1413,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                 // Определим номер сцены
                                 //
                                 if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(blockInfo)) {
-                                    const QString sceneNumber = info->sceneNumber() + ".";
+                                    const QString sceneNumber = m_sceneNumbersPrefix + info->sceneNumber() + ".";
 
                                     //
                                     // Определим область для отрисовки и выведем номер сцены в редактор

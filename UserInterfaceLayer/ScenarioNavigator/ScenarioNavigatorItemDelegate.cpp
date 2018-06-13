@@ -270,7 +270,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
         //
         QVariant sceneNumber = _index.data(BusinessLogic::ScenarioModel::SceneNumberIndex);
         if (!sceneNumber.isNull()) {
-            header = sceneNumber.toString() + ". " + header;
+            header = m_sceneNumbersPrefix + sceneNumber.toString() + ". " + header;
         }
     }
     header = _painter->fontMetrics().elidedText(header, Qt::ElideRight, headerRect.width());
@@ -329,35 +329,30 @@ QSize ScenarioNavigatorItemDelegate::sizeHint(const QStyleOptionViewItem& _optio
 
 void ScenarioNavigatorItemDelegate::setShowSceneNumber(bool _show)
 {
-    if (m_showSceneNumber != _show) {
-        m_showSceneNumber = _show;
-    }
+    m_showSceneNumber = _show;
 }
 
 void ScenarioNavigatorItemDelegate::setShowSceneTitle(bool _show)
 {
-    if (m_showSceneTitle != _show) {
-        m_showSceneTitle = _show;
-    }
+    m_showSceneTitle = _show;
 }
 
 void ScenarioNavigatorItemDelegate::setShowSceneDescription(bool _show)
 {
-    if (m_showSceneDescription != _show) {
-        m_showSceneDescription = _show;
-    }
+    m_showSceneDescription = _show;
 }
 
 void ScenarioNavigatorItemDelegate::setSceneDescriptionIsSceneText(bool _isSceneText)
 {
-    if (m_sceneDescriptionIsSceneText != _isSceneText) {
-        m_sceneDescriptionIsSceneText = _isSceneText;
-    }
+    m_sceneDescriptionIsSceneText = _isSceneText;
 }
 
 void ScenarioNavigatorItemDelegate::setSceneDescriptionHeight(int _height)
 {
-    if (m_sceneDescriptionHeight != _height) {
-        m_sceneDescriptionHeight = _height;
-    }
+    m_sceneDescriptionHeight = _height;
+}
+
+void ScenarioNavigatorItemDelegate::setSceneNumbersPrefix(const QString& _prefix)
+{
+    m_sceneNumbersPrefix = _prefix;
 }
