@@ -23,7 +23,7 @@ namespace {
     /**
      * @brief Список символов пунктуации, разделяющие предложения
      */
-    const QList<QChar> PUNCTUATION_CHARACTERS = { '.', '!', '?', QString("…").at(0)};
+    const QList<QChar> PUNCTUATION_CHARACTERS = { '.', '!', '?', ':', ';', QString("…").at(0)};
 
     /**
      * @brief Автоматически добавляемые продолжения в диалогах
