@@ -149,16 +149,15 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
                     ? 0
                     : TREE_INDICATOR_WIDTH + opt.rect.width() - m_iconSize - m_itemsHorizontalSpacing - RIGHT_MARGIN;
     const QRect iconRect(iconRectX, m_iconTopMargin, m_iconSize, m_iconSize);
-    QPixmap icon = _index.data(Qt::DecorationRole).value<QPixmap>();
-    QIcon iconColorized(icon);
+    QIcon icon = _index.data(Qt::DecorationRole).value<QIcon>();
     QColor iconColor = headerBrush.color();
     // ... если есть заметка, рисуем красноватым цветом
     if (_index.data(BusinessLogic::ScenarioModel::HasNoteIndex).toBool()) {
         iconColor = QColor("#ec3838");
     }
-    ImageHelper::setIconColor(iconColorized, iconRect.size(), iconColor);
-    icon = iconColorized.pixmap(iconRect.size());
-    _painter->drawPixmap(iconRect, icon);
+    ImageHelper::setIconColor(icon, iconRect.size(), iconColor);
+    QPixmap iconPixmap = icon.pixmap(iconRect.size());
+    _painter->drawPixmap(iconRect, iconPixmap);
 
     //
     // ... цвета сцены

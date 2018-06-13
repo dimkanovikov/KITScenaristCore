@@ -12,7 +12,7 @@ using namespace DataMappingLayer;
 
 
 namespace {
-    const QString COLUMNS = " id, parent_id, type, name, description, url, image, sort_order ";
+    const QString COLUMNS = " id, parent_id, type, name, description, url, image, color, sort_order ";
     const QString IMAGE_COLUMN = "image";
     const QString TABLE_NAME = " research ";
     const QString CHARACTERS_FILTER = QString(" WHERE type = %1 ORDER BY name").arg(Research::Character);
@@ -206,7 +206,7 @@ QString ResearchMapper::insertStatement(DomainObject* _subject, QVariantList& _i
     Research* research = dynamic_cast<Research*>(_subject );
     _insertValues.clear();
     _insertValues.append(research->id().value());
-    _insertValues.append((research->parent() == 0 || !research->parent()->id().isValid()) ? QVariant() : research->parent()->id().value());
+    _insertValues.append((research->parent() == nullptr || !research->parent()->id().isValid()) ? QVariant() : research->parent()->id().value());
     _insertValues.append(research->type());
     _insertValues.append(research->name());
     _insertValues.append(research->description());
@@ -226,17 +226,19 @@ QString ResearchMapper::updateStatement(DomainObject* _subject, QVariantList& _u
                     " name = ?, "
                     " description = ?, "
                     " url = ?, "
-                    " sort_order =? "
+                    " color = ?, "
+                    " sort_order = ? "
                     " WHERE id = ? "
                     );
 
     Research* research = dynamic_cast<Research*>(_subject);
     _updateValues.clear();
-    _updateValues.append((research->parent() == 0 || !research->parent()->id().isValid()) ? QVariant() : research->parent()->id().value());
+    _updateValues.append((research->parent() == nullptr || !research->parent()->id().isValid()) ? QVariant() : research->parent()->id().value());
     _updateValues.append(research->type());
     _updateValues.append(research->name());
     _updateValues.append(research->description());
     _updateValues.append(research->url());
+    _updateValues.append(research->color().name());
     _updateValues.append(research->sortOrder());
     _updateValues.append(research->id().value());
 
@@ -255,29 +257,30 @@ QString ResearchMapper::deleteStatement(DomainObject* _subject, QVariantList& _d
 
 DomainObject* ResearchMapper::doLoad(const Identifier& _id, const QSqlRecord& _record)
 {
-    Research* parent = 0;
+    Research* parent = nullptr;
     if (!_record.value("parent_id").isNull()) {
         parent = find(Identifier(_record.value("parent_id").toInt()));
     }
-    const Research::Type type = (Research::Type)_record.value("type").toInt();
+    const Research::Type type = static_cast<Research::Type>(_record.value("type").toInt());
     const QString name = _record.value("name").toString();
     const QString description = _record.value("description").toString();
     const QString url = _record.value("url").toString();
+    const QColor color = QColor(_record.value("color").toString());
     const int sortOrder = _record.value("sort_order").toInt();
 
-    return ResearchBuilder::create(_id, parent, type, sortOrder, name, description, url, &m_imageWrapper);
+    return ResearchBuilder::create(_id, parent, type, sortOrder, name, description, url, color, &m_imageWrapper);
 }
 
 void ResearchMapper::doLoad(DomainObject* _domainObject, const QSqlRecord& _record)
 {
     if (Research* research = dynamic_cast<Research*>(_domainObject)) {
-        Research* parent = 0;
+        Research* parent = nullptr;
         if (!_record.value("parent_id").isNull()) {
             parent = find(Identifier(_record.value("parent_id").toInt()));
         }
         research->setParent(parent);
 
-        const Research::Type type = (Research::Type)_record.value("type").toInt();
+        const Research::Type type = static_cast<Research::Type>(_record.value("type").toInt());
         research->setType(type);
 
         const QString name = _record.value("name").toString();
@@ -288,6 +291,9 @@ void ResearchMapper::doLoad(DomainObject* _domainObject, const QSqlRecord& _reco
 
         const QString url = _record.value("url").toString();
         research->setUrl(url);
+
+        const QColor color = QColor(_record.value("color").toString());
+        research->setColor(color);
 
         const int sortOrder = _record.value("sort_order").toInt();
         research->setSortOrder(sortOrder);

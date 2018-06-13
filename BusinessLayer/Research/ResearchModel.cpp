@@ -512,6 +512,11 @@ QVariant ResearchModel::data(const QModelIndex& _index, int _role) const
             break;
         }
 
+        case Qt::BackgroundColorRole: {
+            result = item->color();
+            break;
+        }
+
         default: {
             break;
         }

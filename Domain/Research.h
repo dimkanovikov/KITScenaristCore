@@ -105,6 +105,16 @@ namespace Domain
         void setImage(const QPixmap& _image);
 
         /**
+         * @brief Получить цвет элемента
+         */
+        QColor color() const;
+
+        /**
+         * @brief Установить цвет
+         */
+        void setColor(const QColor& _color);
+
+        /**
          * @brief Получить позицию сортировки
          */
         int sortOrder() const;
@@ -122,7 +132,8 @@ namespace Domain
     protected:
         Research(const Identifier& _id, Research* _parent, Type _type, int _sortOrder,
             const QString& _name, const QString& _description = QString(),
-            const QString& _url = QString(), AbstractImageWrapper* _imageWrapper = nullptr);
+            const QString& _url = QString(), const QColor& _color = QColor(),
+            AbstractImageWrapper* _imageWrapper = nullptr);
         friend class ResearchBuilder;
 
     private:
@@ -152,6 +163,11 @@ namespace Domain
          * @brief Ссылка на интернет-ресурс
          */
         QString m_url;
+
+        /**
+         * @brief Цвет
+         */
+        QColor m_color;
 
         /**
          * @brief Порядок сортировки
@@ -198,7 +214,8 @@ namespace Domain
     protected:
         ResearchCharacter(const Identifier& _id, Research* _parent, Type _type, int _sortOrder,
             const QString& _name, const QString& _description = QString(),
-            const QString& _url = QString(), AbstractImageWrapper* _imageWrapper = nullptr);
+            const QString& _url = QString(), const QColor& _color = QColor(),
+            AbstractImageWrapper* _imageWrapper = nullptr);
         friend class ResearchBuilder;
     };
 
@@ -213,7 +230,8 @@ namespace Domain
          */
         static Research* create(const Identifier& _id, Research* _parent, Research::Type _type,
             int _sortOrder, const QString& _name, const QString& _description = QString(),
-            const QString& _url = QString(), AbstractImageWrapper* _imageWrapper = nullptr);
+            const QString& _url = QString(), const QColor& _color = QColor(),
+            AbstractImageWrapper* _imageWrapper = nullptr);
     };
 
     // ****

@@ -7,8 +7,7 @@ using Domain::Research;
 
 
 ResearchModelItem::ResearchModelItem(Domain::Research* _research) :
-    m_research(_research),
-    m_parent(nullptr)
+    m_research(_research)
 {
 }
 
@@ -100,6 +99,11 @@ QIcon ResearchModelItem::icon() const
     }
 
     return s_iconsCache[m_research->type()];
+}
+
+QColor ResearchModelItem::color() const
+{
+    return m_research->color();
 }
 
 Domain::Research* ResearchModelItem::research() const

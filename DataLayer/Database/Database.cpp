@@ -363,6 +363,7 @@ void Database::createTables(QSqlDatabase& _database)
                    "description TEXT DEFAULT(NULL), "
                    "url TEXT DEFAULT(NULL), "
                    "image BLOB DEFAULT(NULL), "
+                   "color TEXT DEFAULT(NULL), "
                    "sort_order INTEGER NOT NULL DEFAULT(0) "
                    ")"
                    );
@@ -1458,6 +1459,11 @@ void Database::updateDatabaseTo_0_7_2(QSqlDatabase& _database)
                 QString("INSERT INTO transitions (id, name) VALUES (null, '%1');")
                 .arg(QApplication::translate("DatabaseLayer::Database", "FADE TO BLACK"))
                 );
+
+    //
+    // Добавляем колонку цветов в разработку
+    //
+    q_updater.exec("ALTER TABLE research ADD COLUMN color TEXT DEFAULT(NULL)");
 
     _database.commit();
 }

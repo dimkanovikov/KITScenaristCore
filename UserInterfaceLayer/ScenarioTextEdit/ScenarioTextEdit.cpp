@@ -1068,13 +1068,30 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
 void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
 {
     //
+    // Определить область прорисовки слева от текста
+    //
+    const int pageLeft = 0;
+    const int pageRight = viewport()->width();
+    const int spaceBetweenSceneNumberAndText = 10;
+    const int textLeft = pageLeft
+                         - (QLocale().textDirection() == Qt::LeftToRight ? 0 : horizontalScrollBar()->maximum())
+                         + document()->rootFrame()->frameFormat().leftMargin() - spaceBetweenSceneNumberAndText;
+    const int textRight = pageRight
+                          + (QLocale().textDirection() == Qt::LeftToRight ? horizontalScrollBar()->maximum() : 0)
+                          - document()->rootFrame()->frameFormat().rightMargin() + spaceBetweenSceneNumberAndText;
+    const int leftDelta = (QLocale().textDirection() == Qt::LeftToRight ? -1 : 1) * horizontalScrollBar()->value();
+    int colorRectWidth = 0;
+    int verticalMargin = 0;
+
+
+
+    //
     // Подсветка блоков и строки, если нужно
     //
     {
         QPainter painter(viewport());
         if (m_highlightBlocks) {
             int opacity = 10;
-            const int verticalMargin = 5;
             const int horizontalMargin = 10;
             const int width = viewport()->width();
             const int bottom = verticalScrollBar()->maximum() + viewport()->height();
@@ -1137,7 +1154,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             }
 
             //
-            // Закрасить всё вокруг сцены/папки
+            // Закрасить блок сцены/папки
             //
             {
                 //
@@ -1165,10 +1182,13 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     }
                 }
                 const QRect topCursorRect = cursorRect(cursor);
-                const QRect topNoizeRect(0, 0, width, topCursorRect.top() - verticalMargin);
                 QColor noizeColor = textColor();
+                if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(cursor.block().userData())) {
+                    if (!info->colors().isEmpty()) {
+                        noizeColor = QColor(info->colors().split(";").first());
+                    }
+                }
                 noizeColor.setAlpha(opacity);
-                painter.fillRect(topNoizeRect, noizeColor);
 
                 //
                 // Идём до конца блока сцены, считая по пути вложенные папки
@@ -1196,18 +1216,16 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                 }
                 cursor.movePosition(QTextCursor::EndOfBlock);
                 const QRect bottomCursorRect = cursorRect(cursor);
-                const QRect bottomNoizeRect(0, bottomCursorRect.bottom() + verticalMargin, width, bottom);
-                painter.fillRect(bottomNoizeRect, noizeColor);
+
+                verticalMargin = topCursorRect.height() / 2;
+                colorRectWidth = QFontMetrics(cursor.charFormat().font()).width(".");
 
                 //
-                // Соединяем бока
+                // Закрасим область сцены
                 //
-                const QRect leftNoizeRect(QPoint(0, topCursorRect.top() - verticalMargin),
-                                          QPoint(horizontalMargin, bottomCursorRect.bottom() + verticalMargin));
-                painter.fillRect(leftNoizeRect, noizeColor);
-                const QRect rightNoizeRect(QPoint(width - horizontalMargin, topCursorRect.top() - verticalMargin),
-                                           QPoint(width, bottomCursorRect.bottom() + verticalMargin));
-                painter.fillRect(rightNoizeRect, noizeColor);
+                const QRect noizeRect(QPoint(pageLeft, topCursorRect.top() - verticalMargin),
+                                      QPoint(pageRight, bottomCursorRect.bottom() + verticalMargin));
+                painter.fillRect(noizeRect, noizeColor);
             }
         }
 
@@ -1233,19 +1251,6 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
         // Декорации слева от текста
         //
         {
-            //
-            // Определить область прорисовки слева от текста
-            //
-            const int pageLeft = 0;
-            const int pageRight = viewport()->width();
-            const int spaceBetweenSceneNumberAndText = 10;
-            const int textLeft = pageLeft
-                                 - (QLocale().textDirection() == Qt::LeftToRight ? 0 : horizontalScrollBar()->maximum())
-                                 + document()->rootFrame()->frameFormat().leftMargin() - spaceBetweenSceneNumberAndText;
-            const int textRight = pageRight
-                                  + (QLocale().textDirection() == Qt::LeftToRight ? horizontalScrollBar()->maximum() : 0)
-                                  - document()->rootFrame()->frameFormat().rightMargin() + spaceBetweenSceneNumberAndText;
-
             QPainter painter(viewport());
             clipPageDecorationRegions(&painter);
 
@@ -1293,9 +1298,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             //
             QTextBlock block = topBlock;
             const QRectF viewportGeometry = viewport()->geometry();
-            const int leftDelta = (QLocale().textDirection() == Qt::LeftToRight ? -1 : 1) * horizontalScrollBar()->value();
             int lastBlockBottom = 0;
-            int colorRectWidth = 0;
             QColor lastSceneColor;
 
             QTextCursor cursor(document());
@@ -1316,7 +1319,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     //
                     if (blockType == ScenarioBlockStyle::SceneHeading
                         || blockType == ScenarioBlockStyle::FolderHeader) {
-                        lastBlockBottom = cursorR.top() - (cursorR.height() / 2);
+                        lastBlockBottom = cursorR.top();
+                        verticalMargin = cursorR.height() / 2;
                         colorRectWidth = QFontMetrics(cursor.charFormat().font()).width(".");
                         lastSceneColor = QColor();
                         if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(block.userData())) {
@@ -1334,11 +1338,11 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
                                         ? textRight + leftDelta
                                         : textLeft - colorRectWidth + leftDelta,
-                                        lastBlockBottom);
+                                        lastBlockBottom - verticalMargin);
                         QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
                                             ? textRight + colorRectWidth + leftDelta
                                             : textLeft + leftDelta,
-                                            cursorREnd.bottom());
+                                            cursorREnd.bottom() + verticalMargin);
                         QRectF rect(topLeft, bottomRight);
                         painter.setPen(lastSceneColor);
                         painter.setBrush(lastSceneColor);

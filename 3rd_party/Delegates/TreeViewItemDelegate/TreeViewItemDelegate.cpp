@@ -143,7 +143,8 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
             QIcon icon = _index.data(Qt::DecorationRole).value<QIcon>();
             QIcon iconColorized(!iconPixmap.isNull() ? iconPixmap : icon);
             if (m_needColorize) {
-                QColor iconColor = textBrush.color();
+                const QColor itemColor = _index.data(Qt::BackgroundColorRole).value<QColor>();
+                const QColor iconColor = itemColor.isValid() ? itemColor : textBrush.color();
                 ImageHelper::setIconColor(iconColorized, iconRect.size(), iconColor);
             }
             iconPixmap = iconColorized.pixmap(iconRect.size());

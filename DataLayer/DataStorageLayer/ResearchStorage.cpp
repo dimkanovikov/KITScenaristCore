@@ -22,7 +22,7 @@ ResearchTable* ResearchStorage::all()
 Research* ResearchStorage::research(const QString& _name)
 {
     Research* resultResearch = nullptr;
-    foreach (DomainObject* domainObject, all()->toList()) {
+    for (DomainObject* domainObject : all()->toList()) {
         Research* research = dynamic_cast<Research*>(domainObject);
         if (research->name() == _name) {
             resultResearch = research;
@@ -39,7 +39,7 @@ Research* ResearchStorage::storeResearch(Research* _parent, int _researchType, i
     // Создаём новую разработку
     //
     Research* newResearch =
-        ResearchBuilder::create(Identifier(), _parent, (Research::Type)_researchType, _sortOrder, _researchName);
+        ResearchBuilder::create(Identifier(), _parent, static_cast<Research::Type>(_researchType), _sortOrder, _researchName);
 
     //
     // И сохраняем её

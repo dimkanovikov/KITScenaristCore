@@ -107,6 +107,20 @@ void Research::setImage(const QPixmap& _image)
     }
 }
 
+QColor Research::color() const
+{
+    return m_color;
+}
+
+void Research::setColor(const QColor& _color)
+{
+    if (m_color != _color) {
+        m_color = _color;
+
+        changesNotStored();
+    }
+}
+
 int Research::sortOrder() const
 {
     return m_sortOrder;
@@ -129,15 +143,17 @@ void Research::setImageWrapper(AbstractImageWrapper* _imageWrapper)
 }
 
 Research::Research(const Identifier& _id, Research* _parent, Research::Type _type, int _sortOrder,
-    const QString& _name, const QString& _description, const QString& _url, AbstractImageWrapper* _imageWrapper) :
-    DomainObject(_id),
-    m_parent(_parent),
-    m_type(_type),
-    m_name(_name),
-    m_description(_description),
-    m_url(_url),
-    m_sortOrder(_sortOrder),
-    m_image(_imageWrapper)
+    const QString& _name, const QString& _description, const QString& _url, const QColor& _color,
+    AbstractImageWrapper* _imageWrapper)
+    : DomainObject(_id),
+      m_parent(_parent),
+      m_type(_type),
+      m_name(_name),
+      m_description(_description),
+      m_url(_url),
+      m_color(_color),
+      m_sortOrder(_sortOrder),
+      m_image(_imageWrapper)
 {
 }
 
@@ -243,8 +259,9 @@ void ResearchCharacter::addDescription(const QString& _description)
 }
 
 ResearchCharacter::ResearchCharacter(const Identifier& _id, Research* _parent, Research::Type _type, int _sortOrder,
-    const QString& _name, const QString& _description, const QString& _url, AbstractImageWrapper* _imageWrapper) :
-    Research(_id, _parent, _type, _sortOrder, _name, _description, _url, _imageWrapper)
+    const QString& _name, const QString& _description, const QString& _url, const QColor& _color,
+    AbstractImageWrapper* _imageWrapper)
+    : Research(_id, _parent, _type, _sortOrder, _name, _description, _url, _color, _imageWrapper)
 {
     Q_ASSERT_X(_type == Research::Character, Q_FUNC_INFO, "Character must have convenient type");
 }
@@ -254,15 +271,16 @@ ResearchCharacter::ResearchCharacter(const Identifier& _id, Research* _parent, R
 
 
 Research* ResearchBuilder::create(const Identifier& _id, Research* _parent, Research::Type _type,
-    int _sortOrder, const QString& _name, const QString& _description, const QString& _url, AbstractImageWrapper* _imageWrapper)
+    int _sortOrder, const QString& _name, const QString& _description, const QString& _url, const QColor& _color,
+    AbstractImageWrapper* _imageWrapper)
 {
     switch (_type) {
         case Research::Character: {
-            return new ResearchCharacter(_id, _parent, _type, _sortOrder, _name, _description, _url, _imageWrapper);
+            return new ResearchCharacter(_id, _parent, _type, _sortOrder, _name, _description, _url, _color, _imageWrapper);
         }
 
         default: {
-            return new Research(_id, _parent, _type, _sortOrder, _name, _description, _url, _imageWrapper);
+            return new Research(_id, _parent, _type, _sortOrder, _name, _description, _url, _color, _imageWrapper);
         }
     }
 }

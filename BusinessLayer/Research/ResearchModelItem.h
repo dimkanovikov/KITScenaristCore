@@ -17,7 +17,7 @@ namespace BusinessLogic
     class ResearchModelItem
     {
     public:
-        ResearchModelItem(Domain::Research* _research = 0);
+        ResearchModelItem(Domain::Research* _research = nullptr);
         ~ResearchModelItem();
 
     public:
@@ -30,6 +30,11 @@ namespace BusinessLogic
          * @brief Иконка элемента разработки
          */
         QIcon icon() const;
+
+        /**
+         * @brief Цвет элемента разработки
+         */
+        QColor color() const;
 
         /**
          * @brief Получить эелемент разарботки
@@ -101,7 +106,7 @@ namespace BusinessLogic
         /**
          * @brief Родительский элемент
          */
-        ResearchModelItem* m_parent;
+        ResearchModelItem* m_parent = nullptr;
 
         /**
          * @brief Дочерние элементы
