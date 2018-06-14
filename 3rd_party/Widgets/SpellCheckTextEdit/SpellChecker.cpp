@@ -94,7 +94,7 @@ SpellChecker* SpellChecker::s_spellChecker = nullptr;
 SpellChecker::~SpellChecker()
 {
     delete m_checker;
-    m_checker = 0;
+    m_checker = nullptr;
 }
 
 void SpellChecker::setSpellingLanguage(SpellChecker::Language _spellingLanguage)
@@ -106,7 +106,7 @@ void SpellChecker::setSpellingLanguage(SpellChecker::Language _spellingLanguage)
         // Удаляем предыдущего проверяющего
         //
         delete m_checker;
-        m_checker = 0;
+        m_checker = nullptr;
 
         //
         // Получаем пути к файлам словарей
@@ -136,11 +136,9 @@ void SpellChecker::setSpellingLanguage(SpellChecker::Language _spellingLanguage)
             if (!m_userDictionaryPath.isNull()) {
                 QFile userDictonaryFile(m_userDictionaryPath);
                 if (userDictonaryFile.open(QIODevice::ReadOnly)) {
-                    QTextStream stream(&userDictonaryFile);
-                    for(QString word = stream.readLine();
-                        !word.isEmpty();
-                        word = stream.readLine().toLower()) {
-                        addWordToChecker(word);
+                    while (!userDictonaryFile.atEnd()) {
+                        const QString word = QString::fromUtf8(userDictonaryFile.readLine());
+                        addWordToChecker(word.trimmed());
                     }
                     userDictonaryFile.close();
                 }
@@ -159,7 +157,7 @@ bool SpellChecker::spellCheckWord(const QString& _word) const
     }
 
     bool spelled = false;
-    if (m_checker != 0) {
+    if (m_checker != nullptr) {
         //
         // Преобразуем слово в кодировку словаря и осуществим проверку
         //
@@ -174,7 +172,7 @@ QStringList SpellChecker::suggestionsForWord(const QString& _word) const
 {
     QStringList suggestions;
 
-    if (m_checker != 0) {
+    if (m_checker != nullptr) {
         QByteArray encodedWordData = m_checkerTextCodec->fromUnicode(_word);
         const char* encodedWord = encodedWordData.constData();
         //
@@ -284,8 +282,8 @@ void SpellChecker::addWordToDictionary(const QString& _word) const
     if (!m_userDictionaryPath.isNull()) {
         QFile userDictonaryFile(m_userDictionaryPath);
         if (userDictonaryFile.open(QIODevice::WriteOnly | QIODevice::Append)) {
-            QTextStream stream(&userDictonaryFile);
-            stream << _word << "\n";
+            userDictonaryFile.write(_word.toUtf8());
+            userDictonaryFile.write("\n");
             userDictonaryFile.close();
         }
     }
@@ -298,8 +296,6 @@ SpellChecker::Language SpellChecker::spellingLanguage() const
 
 SpellChecker::SpellChecker(const QString& _userDictionaryPath) :
     m_spellingLanguage(SpellChecker::Undefined),
-    m_checker(0),
-    m_checkerTextCodec(0),
     m_userDictionaryPath(_userDictionaryPath)
 {
 }
@@ -407,7 +403,7 @@ QString SpellChecker::mythesFilePath(SpellChecker::Language _language, FileType 
 
 void SpellChecker::addWordToChecker(const QString& _word) const
 {
-    if (m_checker != 0) {
+    if (m_checker != nullptr) {
         //
         // Преобразуем слово в кодировку словаря и добавляем его в словарный запас
         //

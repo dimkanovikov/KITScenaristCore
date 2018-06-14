@@ -152,12 +152,12 @@ private:
     /**
      * @brief Объект проверяющий орфографию
      */
-    Hunspell* m_checker;
+    Hunspell* m_checker = nullptr;
 
     /**
      * @brief Кодировка, которую использует проверяющий
      */
-    QTextCodec* m_checkerTextCodec;
+    QTextCodec* m_checkerTextCodec = nullptr;
 
     /**
      * @brief Путь к файлу со словарём пользователя
