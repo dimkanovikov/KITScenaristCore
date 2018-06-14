@@ -591,7 +591,7 @@ void ScenarioModel::updateSceneNumbers()
     // Обновим номера
     //
     QString prevPrefix = "";
-    unsigned sceneNumberCounter = 0;
+    unsigned sceneNumberCounter = m_sceneStartNumber;
 
     for (int i = 0; i != scenes.size(); ++i) {
 
@@ -786,6 +786,11 @@ void ScenarioModel::changeSceneNumbersLocking(bool _lock)
 bool ScenarioModel::isAnySceneLocked()
 {
     return m_anySceneLocked;
+}
+
+void ScenarioModel::setSceneStartNumber(int _startNumber)
+{
+    m_sceneStartNumber = _startNumber;
 }
 
 int ScenarioModel::scenesCount() const

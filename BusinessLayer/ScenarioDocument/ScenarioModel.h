@@ -111,6 +111,11 @@ namespace BusinessLogic
         bool isAnySceneLocked();
 
         /**
+         * @brief Задать стартовый номер сцен
+         */
+        void setSceneStartNumber(int _startNumber);
+
+        /**
          * @brief Количество сцен в сценарии
          */
         int scenesCount() const;
@@ -178,6 +183,11 @@ namespace BusinessLogic
          * @brief Счётчик количества сцен
          */
         int m_scenesCount;
+
+        /**
+         * @brief Стартовый номер сцен
+         */
+        int m_sceneStartNumber = 0;
 
         /**
          * @brief Есть ли зафиксированные сцены

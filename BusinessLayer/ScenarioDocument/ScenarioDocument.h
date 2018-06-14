@@ -239,6 +239,11 @@ namespace BusinessLogic
          */
         bool isAnySceneLocked();
 
+        /**
+         * @brief Задать стартовый номер сцен
+         */
+        void setSceneStartNumber(int _startNumber);
+
     public:
         /**
          * @brief Вспомогательные функции для обработчика xml

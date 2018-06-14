@@ -42,6 +42,16 @@ void ScenarioDataStorage::setSceneNumbersPrefix(const QString& _prefix)
     saveData(ScenarioData::SCENE_NUMBERS_PREFIX_KEY, _prefix);
 }
 
+QString ScenarioDataStorage::sceneStartNumber() const
+{
+    return data(ScenarioData::SCENE_START_NUMBER)->value();
+}
+
+void ScenarioDataStorage::setSceneStartNumber(const QString& _startNumber)
+{
+    saveData(ScenarioData::SCENE_START_NUMBER, _startNumber);
+}
+
 QString ScenarioDataStorage::logline() const
 {
 	return data(ScenarioData::LOGLINE_KEY)->value();

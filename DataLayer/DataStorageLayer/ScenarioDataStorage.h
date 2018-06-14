@@ -37,6 +37,14 @@ namespace DataStorageLayer
         void setSceneNumbersPrefix(const QString& _prefix);
         /** @} */
 
+        /**
+         * @brief Старт номеров сцен
+         */
+        /** @{ */
+        QString sceneStartNumber() const;
+        void setSceneStartNumber(const QString& _startNumber);
+        /** @} */
+
 		/**
 		 * @brief Логлайн сценария
 		 */
