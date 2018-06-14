@@ -239,6 +239,16 @@ namespace BusinessLogic
          */
         bool isAnySceneLocked();
 
+        /**
+         * @brief Задать стартовый номер сцен
+         */
+        void setSceneStartNumber(int _startNumber);
+
+        /**
+         * @brief Задать новый номер сцены
+         */
+        void setNewSceneNumber(const QString& _newSceneNumber, int _position);
+
     public:
         /**
          * @brief Вспомогательные функции для обработчика xml

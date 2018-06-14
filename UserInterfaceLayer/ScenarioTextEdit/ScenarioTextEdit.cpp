@@ -625,6 +625,37 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         menu->insertSeparator(firstAction);
     }
 
+    if (!isReadOnly()) {
+        const QTextCursor cursor = cursorForPosition(_pos);
+
+        //
+        // Находим ближайший сверху блок, который является заголовком сцены
+        //
+        const SceneHeadingBlockInfo* blockInfo = nullptr;
+        QTextBlock block = cursor.block();
+        for (; block.isValid(); block = block.previous()) {
+            blockInfo = dynamic_cast<SceneHeadingBlockInfo*>(block.userData());
+            if (blockInfo) {
+                break;
+            }
+        }
+
+        //
+        // Если нашли и он зафиксирован, то даем пользователю возможность переименовать
+        //
+        if (blockInfo && blockInfo->isSceneNumberFixed()) {
+            QAction* firstAction = menu->actions().first();
+            QAction* renameSceneNumber = new QAction(tr("Rename scene number"), menu);
+            menu->insertAction(firstAction, renameSceneNumber);
+            menu->insertSeparator(firstAction);
+            const QString oldSceneNumber = blockInfo->sceneNumber();
+            int position = block.position();
+            connect(renameSceneNumber, &QAction::triggered, this, [this, oldSceneNumber, position] {
+                emit renameSceneNumberRequested(oldSceneNumber, position);
+            });
+        }
+    }
+
     return menu;
 }
 
