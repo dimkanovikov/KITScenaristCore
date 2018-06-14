@@ -200,7 +200,7 @@ QString ResearchMapper::insertStatement(DomainObject* _subject, QVariantList& _i
     QString insertStatement =
             QString("INSERT INTO " + TABLE_NAME +
                     " (" + COLUMNS + ") "
-                    " VALUES(?, ?, ?, ?, ?, ?, ?, ?) "
+                    " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?) "
                     );
 
     Research* research = dynamic_cast<Research*>(_subject );
@@ -210,6 +210,7 @@ QString ResearchMapper::insertStatement(DomainObject* _subject, QVariantList& _i
     _insertValues.append(research->type());
     _insertValues.append(research->name());
     _insertValues.append(research->description());
+    _insertValues.append(research->color().isValid() ? research->color().name() : QVariant());
     _insertValues.append(research->url());
     _insertValues.append(QByteArray()); // Вместо изображения пустой массив байт
     _insertValues.append(research->sortOrder());
@@ -238,7 +239,7 @@ QString ResearchMapper::updateStatement(DomainObject* _subject, QVariantList& _u
     _updateValues.append(research->name());
     _updateValues.append(research->description());
     _updateValues.append(research->url());
-    _updateValues.append(research->color().name());
+    _updateValues.append(research->color().isValid() ? research->color().name() : QVariant());
     _updateValues.append(research->sortOrder());
     _updateValues.append(research->id().value());
 

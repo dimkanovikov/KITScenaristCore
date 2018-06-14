@@ -3,13 +3,18 @@
 
 #include "Handlers/KeyPressHandlerFacade.h"
 
+#include <Domain/Research.h>
+
+#include <BusinessLayer/Import/FountainImporter.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockInfo.h>
+#include <BusinessLayer/ScenarioDocument/ScenarioTextBlockParsers.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioReviewModel.h>
 #include <BusinessLayer/ScenarioDocument/ScriptTextCorrector.h>
 
-#include <BusinessLayer/Import/FountainImporter.h>
+#include <DataLayer/DataStorageLayer/ResearchStorage.h>
+#include <DataLayer/DataStorageLayer/StorageFacade.h>
 
 #include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Helpers/ColorHelper.h>
@@ -1091,13 +1096,10 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
     {
         QPainter painter(viewport());
         if (m_highlightBlocks) {
-            int opacity = 10;
-            const int horizontalMargin = 10;
-            const int width = viewport()->width();
-            const int bottom = verticalScrollBar()->maximum() + viewport()->height();
+            const int opacity = 33;
 
             //
-            // Если курсор в блоке реплики, закрасить всё вокруг блока диалога
+            // Если курсор в блоке реплики, закрасить примыкающие блоки диалогов
             //
             {
                 const QVector<ScenarioBlockStyle::Type> dialogueTypes = { ScenarioBlockStyle::Character,
@@ -1106,7 +1108,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                                                           ScenarioBlockStyle::Lyrics};
                 if (dialogueTypes.contains(scenarioBlockType())) {
                     //
-                    // Идём до начала блока диалога
+                    // Идём до самого начала блоков диалогов
                     //
                     QTextCursor cursor = textCursor();
                     while (cursor.movePosition(QTextCursor::PreviousBlock)) {
@@ -1115,41 +1117,53 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                             break;
                         }
                     }
-                    const QRect topCursorRect = cursorRect(cursor);
-                    const QRect topNoizeRect(horizontalMargin*2, 0, width - horizontalMargin*4, topCursorRect.top() - verticalMargin);
-                    QColor noizeColor = textColor();
-                    noizeColor.setAlpha(opacity);
-                    painter.fillRect(topNoizeRect, noizeColor);
 
                     //
-                    // Идём до конца блока диалога
+                    // Проходим каждый из блоков по-очереди
                     //
-                    cursor = textCursor();
-                    while (cursor.movePosition(QTextCursor::NextBlock)) {
-                        if (!dialogueTypes.contains(ScenarioBlockStyle::forBlock(cursor.block()))) {
-                            cursor.movePosition(QTextCursor::PreviousBlock);
-                            break;
+                    do {
+                        const QRect topCursorRect = cursorRect(cursor);
+                        const QString characterName = BusinessLogic::CharacterParser::name(cursor.block().text());
+                        const Domain::Research* character = DataStorageLayer::StorageFacade::researchStorage()->character(characterName);
+                        const QColor characterColor = character == nullptr ? QColor() : character->color();
+
+                        //
+                        // Идём до конца блока диалога
+                        //
+                        while (cursor.movePosition(QTextCursor::NextBlock)) {
+                            const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(cursor.block());
+                            //
+                            // Если дошли до персонажа, или до конца диалога, возвращаемся на блок назад и раскрашиваем
+                            //
+                            if (blockType == ScenarioBlockStyle::Character
+                                || !dialogueTypes.contains(blockType)) {
+                                cursor.movePosition(QTextCursor::StartOfBlock);
+                                cursor.movePosition(QTextCursor::PreviousCharacter);
+                                break;
+                            }
                         }
-                    }
-                    cursor.movePosition(QTextCursor::EndOfBlock);
-                    const QRect bottomCursorRect = cursorRect(cursor);
-                    const QRect bottomNoizeRect(horizontalMargin*2, bottomCursorRect.bottom() + verticalMargin, width - horizontalMargin*4, bottom);
-                    painter.fillRect(bottomNoizeRect, noizeColor);
+                        const QRect bottomCursorRect = cursorRect(cursor);
+                        cursor.movePosition(QTextCursor::NextBlock);
 
-                    //
-                    // Соединяем бока
-                    //
-                    const QRect leftNoizeRect(0, 0, horizontalMargin*2, bottom);
-                    painter.fillRect(leftNoizeRect, noizeColor);
-                    const QRect rightNoizeRect(width - horizontalMargin*2, 0, horizontalMargin*2, bottom);
-                    painter.fillRect(rightNoizeRect, noizeColor);
-                }
-                //
-                // В противном случае увеличиваем прозрачность закраски области вокруг сцены, чтобы она
-                // была такой же, как и в случае с диалогом
-                //
-                else {
-                    opacity *= 2;
+                        if (characterName.isEmpty()
+                            && !characterColor.isValid()) {
+                            continue;
+                        }
+
+                        //
+                        // Раскрашиваем
+                        //
+                        verticalMargin = topCursorRect.height() / 2;
+                        QColor noizeColor = textColor();
+                        if (characterColor.isValid()) {
+                            noizeColor = characterColor;
+                        }
+                        noizeColor.setAlpha(opacity);
+                        const QRect noizeRect(QPoint(textLeft + leftDelta, topCursorRect.top() - verticalMargin),
+                                              QPoint(textRight + leftDelta, bottomCursorRect.bottom() + verticalMargin));
+                        painter.fillRect(noizeRect, noizeColor);
+                    } while(!cursor.atEnd()
+                            && dialogueTypes.contains(ScenarioBlockStyle::forBlock(cursor.block())));
                 }
             }
 
@@ -1298,8 +1312,10 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             //
             QTextBlock block = topBlock;
             const QRectF viewportGeometry = viewport()->geometry();
-            int lastBlockBottom = 0;
+            int lastSceneBlockBottom = 0;
             QColor lastSceneColor;
+            int lastCharacterBlockBottom = 0;
+            QColor lastCharacterColor;
 
             QTextCursor cursor(document());
             while (block.isValid() && block != bottomBlock) {
@@ -1315,11 +1331,11 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     const QRect cursorREnd = cursorRect(cursor);
 
                     //
-                    // Определим цвет
+                    // Определим цвет сцены
                     //
                     if (blockType == ScenarioBlockStyle::SceneHeading
                         || blockType == ScenarioBlockStyle::FolderHeader) {
-                        lastBlockBottom = cursorR.top();
+                        lastSceneBlockBottom = cursorR.top();
                         verticalMargin = cursorR.height() / 2;
                         colorRectWidth = QFontMetrics(cursor.charFormat().font()).width(".");
                         lastSceneColor = QColor();
@@ -1331,23 +1347,55 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     }
 
                     //
-                    // Нарисуем цвет
+                    // Нарисуем цвет сцены
                     //
                     if (lastSceneColor.isValid()) {
-                        painter.save();
-                        QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                        const QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
                                         ? textRight + leftDelta
                                         : textLeft - colorRectWidth + leftDelta,
-                                        lastBlockBottom - verticalMargin);
-                        QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                        lastSceneBlockBottom - verticalMargin);
+                        const QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
                                             ? textRight + colorRectWidth + leftDelta
                                             : textLeft + leftDelta,
                                             cursorREnd.bottom() + verticalMargin);
-                        QRectF rect(topLeft, bottomRight);
-                        painter.setPen(lastSceneColor);
-                        painter.setBrush(lastSceneColor);
-                        painter.drawRect(rect);
-                        painter.restore();
+                        const QRectF rect(topLeft, bottomRight);
+                        painter.fillRect(rect, lastSceneColor);
+                    }
+
+                    //
+                    // Определим цвет персонажа
+                    //
+                    if (blockType == ScenarioBlockStyle::Character) {
+                        lastCharacterBlockBottom = cursorR.top();
+                        verticalMargin = cursorR.height() / 2;
+                        colorRectWidth = QFontMetrics(cursor.charFormat().font()).width(".");
+                        lastCharacterColor = QColor();
+                        const QString characterName = BusinessLogic::CharacterParser::name(block.text());
+                        if (auto character = DataStorageLayer::StorageFacade::researchStorage()->character(characterName)) {
+                            if (character->color().isValid()) {
+                                lastCharacterColor = character->color();
+                            }
+                        }
+                    } else if (blockType != ScenarioBlockStyle::Parenthetical
+                               && blockType != ScenarioBlockStyle::Dialogue
+                               && blockType != ScenarioBlockStyle::Lyrics) {
+                        lastCharacterColor = QColor();
+                    }
+
+                    //
+                    // Нарисуем цвет персонажа
+                    //
+                    if (lastCharacterColor.isValid()) {
+                        const QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
+                                        ? textLeft - colorRectWidth + leftDelta
+                                        : textRight + leftDelta,
+                                        lastCharacterBlockBottom - verticalMargin);
+                        const QPointF bottomRight(QLocale().textDirection() == Qt::LeftToRight
+                                            ? textLeft + leftDelta
+                                            : textRight + colorRectWidth + leftDelta,
+                                            cursorREnd.bottom() + verticalMargin);
+                        const QRectF rect(topLeft, bottomRight);
+                        painter.fillRect(rect, lastCharacterColor);
                     }
 
                     //
@@ -1517,7 +1565,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         }
                     }
 
-                    lastBlockBottom = cursorREnd.bottom();
+                    lastSceneBlockBottom = cursorREnd.bottom();
                 }
 
                 block = block.next();

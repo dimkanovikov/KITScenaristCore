@@ -139,7 +139,7 @@ namespace {
                                         PageMetrics::mmToPx(_margins.right) - distanceBetweenSceneNumberAndText,
                                         blockRect.height());
                             _painter->drawText(sceneNumberRect, Qt::AlignLeft | Qt::AlignTop,
-                                               "." + blockInfo->sceneNumber() + sceneNumbersPrefix);
+                                               "." + blockInfo->sceneNumber() + QChar(0x202B) + sceneNumbersPrefix);
                         }
                     }
                 }
