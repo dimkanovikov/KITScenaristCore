@@ -72,8 +72,8 @@ namespace BusinessLogic
         /**
          * @brief Порядковый номер в группе фиксации
          */
-        unsigned numberSuffix() const;
-        void setNumberSuffix(unsigned _numberSuffix);
+        int numberSuffix() const;
+        void setNumberSuffix(int _numberSuffix);
 
         /**
          * @brief Заголовок элемента
@@ -196,7 +196,7 @@ namespace BusinessLogic
         /**
          * @brief Номер суффикса для номера сцены
          */
-        unsigned m_numberSuffix = 0;
+        int m_numberSuffix = 0;
 
         /**
          * @brief Заголовок элемента

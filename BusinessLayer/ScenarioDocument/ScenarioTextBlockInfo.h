@@ -116,12 +116,12 @@ namespace BusinessLogic
         /**
          * @brief Номер в группе фиксации
          */
-        unsigned sceneNumberSuffix() const;
+        int sceneNumberSuffix() const;
 
         /**
          * @brief Задать номер в группе фиксации
          */
-        void setSceneNumberSuffix(unsigned sceneNumberSuffix);
+        void setSceneNumberSuffix(int sceneNumberSuffix);
 
         /**
          * @brief Получить цвета сцены

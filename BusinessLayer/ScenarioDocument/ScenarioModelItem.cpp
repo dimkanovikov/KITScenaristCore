@@ -124,12 +124,12 @@ void ScenarioModelItem::setFixNesting(unsigned _fix_nesting)
     m_fixNesting = _fix_nesting;
 }
 
-unsigned ScenarioModelItem::numberSuffix() const
+int ScenarioModelItem::numberSuffix() const
 {
     return m_numberSuffix;
 }
 
-void ScenarioModelItem::setNumberSuffix(unsigned _numberSuffix)
+void ScenarioModelItem::setNumberSuffix(int _numberSuffix)
 {
     m_numberSuffix = _numberSuffix;
 }

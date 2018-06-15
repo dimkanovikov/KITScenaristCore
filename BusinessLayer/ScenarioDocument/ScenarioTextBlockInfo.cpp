@@ -86,12 +86,12 @@ void SceneHeadingBlockInfo::setSceneNumberFixNesting(unsigned sceneNumberFixNest
     m_sceneNumberFixNesting = sceneNumberFixNesting;
 }
 
-unsigned SceneHeadingBlockInfo::sceneNumberSuffix() const
+int SceneHeadingBlockInfo::sceneNumberSuffix() const
 {
     return m_sceneNumberSuffix;
 }
 
-void SceneHeadingBlockInfo::setSceneNumberSuffix(unsigned sceneNumberSuffix)
+void SceneHeadingBlockInfo::setSceneNumberSuffix(int sceneNumberSuffix)
 {
     m_sceneNumberSuffix = sceneNumberSuffix;
 }
