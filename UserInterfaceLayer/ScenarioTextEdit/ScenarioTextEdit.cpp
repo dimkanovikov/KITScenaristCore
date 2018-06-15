@@ -634,8 +634,8 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         const SceneHeadingBlockInfo* blockInfo = nullptr;
         QTextBlock block = cursor.block();
         for (; block.isValid(); block = block.previous()) {
-            blockInfo = dynamic_cast<SceneHeadingBlockInfo*>(block.userData());
-            if (blockInfo) {
+            if (ScenarioBlockStyle::forBlock(block) == ScenarioBlockStyle::SceneHeading) {
+                blockInfo = dynamic_cast<SceneHeadingBlockInfo*>(block.userData());
                 break;
             }
         }
