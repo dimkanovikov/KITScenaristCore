@@ -1412,6 +1412,15 @@ bool ScenarioDocument::isAnySceneLocked()
     return m_model->isAnySceneLocked();
 }
 
+void ScenarioDocument::setNewSceneNumber(const QString& _newSceneNumber, int _position)
+{
+    ScenarioModelItem* modelItem = itemForPosition(_position);
+    modelItem->setSceneNumber(_newSceneNumber);
+    updateDocumentScenesAndDialoguesNumbers();
+    aboutContentsChange(_position, 0, 0);
+    //refresh();
+}
+
 void ScenarioDocument::load(const QString& _scenario)
 {
     //
