@@ -591,7 +591,7 @@ void ScenarioModel::updateSceneNumbers()
     // Обновим номера
     //
     QString prevPrefix = "";
-    unsigned sceneNumberCounter = m_sceneStartNumber;
+    int sceneNumberCounter = m_sceneStartNumber;
 
     for (int i = 0; i != scenes.size(); ++i) {
 
@@ -638,7 +638,7 @@ void ScenarioModel::updateSceneNumbers()
                     // чем у предыдущей по отношению к текущей. Теперь надо найти последнюю сцену из этой группы фиксации
                     // и взять ее номер
                     //
-                    unsigned maxSuffix = scenes[nearestNextFixed]->numberSuffix();
+                    int maxSuffix = scenes[nearestNextFixed]->numberSuffix();
                     for (int j = nearestNextFixed + 1; j != scenes.size(); ++j) {
                         if (scenes[j]->fixNesting() >= scenes[i - 1]->fixNesting()) {
                             //
@@ -678,7 +678,7 @@ void ScenarioModel::updateSceneNumbers()
                 // Нам нужен максимальный суффикс из сцены, у которой fixNesting
                 // совпадает с fixNesting первой зафиксированной сцены
                 //
-                unsigned maxSuffix = 0;
+                int maxSuffix = 0;
                 unsigned fixNesting = 0;
                 for (int j = 1; j != scenes.size(); ++j) {
                     if ((scenes[j]->fixNesting() == fixNesting
