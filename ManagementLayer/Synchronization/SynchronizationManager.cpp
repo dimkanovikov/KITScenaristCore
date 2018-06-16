@@ -918,7 +918,9 @@ void SynchronizationManager::unshareProject(int _projectId, const QString& _user
 void SynchronizationManager::prepareToFullSynchronization()
 {
     m_lastChangesSyncDatetime.clear();
+    m_lastChangesLoadDatetime = 0;
     m_lastDataSyncDatetime.clear();
+    m_lastDataLoadDatetime = 0;
 }
 
 void SynchronizationManager::aboutFullSyncScenario()
@@ -930,6 +932,7 @@ void SynchronizationManager::aboutFullSyncScenario()
         // изменений произведённых с этого момента
         //
         const QString lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
+        const qint64 lastChangesLoadDatetime = QDateTime::currentMSecsSinceEpoch();
 
         //
         // Получить список патчей проекта
@@ -1064,6 +1067,7 @@ void SynchronizationManager::aboutFullSyncScenario()
         // Синхронизация удалась, запомним её время
         //
         m_lastChangesSyncDatetime = lastChangesSyncDatetime;
+        m_lastChangesLoadDatetime = lastChangesLoadDatetime;
     }
 }
 
@@ -1126,17 +1130,19 @@ void SynchronizationManager::aboutWorkSyncScenario()
         }
 
         //
-        // Загружаем и применяем изменения от других пользователей за последние LAST_MINUTES минут
+        // Загружаем и применяем изменения от других пользователей за последние lastMimutes минут,
+        // но как минимум за две минуты, если последние изменения были получены не так давно
         //
         {
-            const int LAST_MINUTES = 2;
+            const qint64 currentChangesLoadDatetime = QDateTime::currentMSecsSinceEpoch();
+            const int lastMinutes = 2 + (currentChangesLoadDatetime - m_lastChangesLoadDatetime) / 1000 / 60;
 
             NetworkRequest loader;
             loader.setRequestMethod(NetworkRequestMethod::Post);
             loader.clearRequestAttributes();
             loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
             loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
-            loader.addRequestAttribute(KEY_FROM_LAST_MINUTES, LAST_MINUTES);
+            loader.addRequestAttribute(KEY_FROM_LAST_MINUTES, lastMinutes);
             QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_LIST);
 
             QXmlStreamReader changesReader(response);
@@ -1199,6 +1205,13 @@ void SynchronizationManager::aboutWorkSyncScenario()
                     }
                 }
             }
+
+            //
+            // Если удалось получить изменения, обновим время последней успешной синхронизации
+            //
+            if (!changes.isEmpty()) {
+                m_lastChangesLoadDatetime = currentChangesLoadDatetime;
+            }
         }
     }
 }
@@ -1212,6 +1225,7 @@ void SynchronizationManager::aboutFullSyncData()
         // изменений произведённых с этого момента
         //
         const QString lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
+        const qint64 lastDataLoadDatetime = QDateTime::currentMSecsSinceEpoch();
 
         //
         // Получить список всех изменений данных на сервере
@@ -1295,6 +1309,7 @@ void SynchronizationManager::aboutFullSyncData()
         // Синхронизация удалась, запомним её время
         //
         m_lastDataSyncDatetime = lastDataSyncDatetime;
+        m_lastDataLoadDatetime = lastDataLoadDatetime;
     }
 }
 
@@ -1305,10 +1320,10 @@ void SynchronizationManager::aboutWorkSyncData()
     //
     if (isCanSync()) {
         //
-        // Защитимся от множественных выховов
+        // Защитимся от множественных вызовов
         //
-        static bool s_isInWorkSyncData = false;
-        if (s_isInWorkSyncData) {
+        const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
+        if (!canRun) {
             return;
         }
 
@@ -1317,8 +1332,6 @@ void SynchronizationManager::aboutWorkSyncData()
             return;
         }
 #endif
-
-        s_isInWorkSyncData = true;
 
         //
         // Если данные ещё не были полностью синхронизирован, делаем это
@@ -1330,7 +1343,6 @@ void SynchronizationManager::aboutWorkSyncData()
         // Если синхронизироваться так и не удалось, прерываем выполнение до следующего раза
         //
         if (m_lastDataSyncDatetime.isEmpty()) {
-            s_isInWorkSyncData = false;
             return;
         }
 
@@ -1360,22 +1372,23 @@ void SynchronizationManager::aboutWorkSyncData()
         }
 
         //
-        // Загружаем и применяем изменения от других пользователей за последние LAST_MINUTES минут
+        // Загружаем и применяем изменения от других пользователей за последние lastMimutes минут,
+        // но как минимум за две минуты, если последние изменения были получены не так давно
         //
         {
-            const int LAST_MINUTES = 2;
+            const qint64 currentDataLoadDatetime = QDateTime::currentMSecsSinceEpoch();
+            const int lastMinutes = 2 + (currentDataLoadDatetime - m_lastDataLoadDatetime) / 1000 / 60;
 
             NetworkRequest loader;
             loader.setRequestMethod(NetworkRequestMethod::Post);
             loader.clearRequestAttributes();
             loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
             loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
-            loader.addRequestAttribute(KEY_FROM_LAST_MINUTES, LAST_MINUTES);
+            loader.addRequestAttribute(KEY_FROM_LAST_MINUTES, lastMinutes);
             QByteArray response = loader.loadSync(URL_SCENARIO_DATA_LIST);
 
             QXmlStreamReader changesReader(response);
             if (!isOperationSucceed(changesReader)) {
-                s_isInWorkSyncData = false;
                 return;
             }
 
@@ -1412,9 +1425,14 @@ void SynchronizationManager::aboutWorkSyncData()
             // ... скачиваем и сохраняем
             //
             downloadAndSaveScenarioData(changesForDownload.join(";"));
-        }
 
-        s_isInWorkSyncData = false;
+            //
+            // Если удалось получить изменения, обновим время последней успешной синхронизации
+            //
+            if (!changesForDownload.isEmpty()) {
+                m_lastDataLoadDatetime = currentDataLoadDatetime;
+            }
+        }
     }
 }
 

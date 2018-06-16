@@ -356,14 +356,24 @@ namespace ManagementLayer
         //
 
         /**
-         * @brief Дата и время последней синхронизации изменений сценария
+         * @brief Дата и время последней успешной отправки изменений сценария
          */
         QString m_lastChangesSyncDatetime;
 
         /**
-         * @brief Дата и время последней синхронизации изменений данных
+         * @brief Дата и время последней успешной загрузки изменений из облака, linux timestamp в милисекундах
+         */
+        qint64 m_lastChangesLoadDatetime = 0;
+
+        /**
+         * @brief Дата и время последней успешной отправки изменений данных
          */
         QString m_lastDataSyncDatetime;
+
+        /**
+         * @brief Дата и время последней успешной загрузки данных из облака, linux timestamp в милисекундах
+         */
+        qint64 m_lastDataLoadDatetime = 0;
 
         /**
          * @brief Активно ли соединение с интернетом

@@ -624,13 +624,6 @@ void ScenarioTextDocument::removeIdenticalParts(QPair<DiffMatchPatchHelper::Chan
                     .firstChildElement("v")
                     .childNodes()
                     .at(0).toCDATASection().data());
-        const QString targetCurrentNodeText =
-                TextEditHelper::fromHtmlEscaped(
-                    targetNodes
-                    .at(targetCurrentNodePosition)
-                    .firstChildElement("v")
-                    .childNodes()
-                    .at(0).toCDATASection().data());
 
         //
         // Если идёт проход вперёд, то
