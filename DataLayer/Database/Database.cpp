@@ -239,10 +239,14 @@ Database::States Database::checkState(QSqlDatabase& _database)
         //
         if (q_checker.exec(
                 QString("SELECT value as version FROM system_variables WHERE variable = '%1' ")
-                .arg(::applicationVersionKey()))
-            && q_checker.next()
-            && q_checker.record().value("version").toString() != QApplication::applicationVersion()) {
-            states = states | Database::OldVersionFlag;
+                .arg(applicationVersionKey()))) {
+            //
+            // Если версия не задана, или она не соответствует текущей, то надо обновить файл
+            //
+            if (!q_checker.next()
+                || q_checker.record().value("version").toString() != QApplication::applicationVersion()) {
+                states = states | Database::OldVersionFlag;
+            }
         }
     }
 
@@ -531,10 +535,19 @@ void Database::updateDatabase(QSqlDatabase& _database)
     //
     q_checker.exec(
                 QString("SELECT value as version FROM system_variables WHERE variable = '%1' ")
-                .arg(::applicationVersionKey())
+                .arg(applicationVersionKey())
                 );
-    q_checker.next();
     QString databaseVersion = q_checker.record().value("version").toString();
+    //
+    // ... если версии нет (файл пришёл из другой версии мобильная-десктоп), то создадим её
+    //
+    if (databaseVersion.isEmpty()) {
+        q_checker.exec(
+                    QString("INSERT INTO system_variables VALUES ('%1', '%2')")
+                    .arg(applicationVersionKey())
+                    .arg(QApplication::applicationVersion())
+                    );
+    }
     //
     // Некоторые версии выходили с ошибками, их заменяем на предыдущие
     //

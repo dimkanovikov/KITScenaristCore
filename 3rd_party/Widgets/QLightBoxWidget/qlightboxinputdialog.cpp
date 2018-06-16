@@ -116,7 +116,6 @@ QString QLightBoxInputDialog::text() const
 
 QLightBoxInputDialog::~QLightBoxInputDialog()
 {
-    qDebug("dtor");
 }
 
 QLightBoxInputDialog::QLightBoxInputDialog(QWidget* _parent, bool _isContentStretchable) :
@@ -132,7 +131,6 @@ QLightBoxInputDialog::QLightBoxInputDialog(QWidget* _parent, bool _isContentStre
     m_listWidget(new QListWidget(this)),
     m_buttons(new QDialogButtonBox(this))
 {
-    qDebug("ctor");
 }
 
 void QLightBoxInputDialog::initView()

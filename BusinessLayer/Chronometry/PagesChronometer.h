@@ -17,7 +17,7 @@ namespace BusinessLogic
         /**
          * @brief Наименование хронометра
          */
-        QString name() const;
+        QString name() const override;
 
         /**
          * @brief Подсчитать длительность заданного текста определённого типа

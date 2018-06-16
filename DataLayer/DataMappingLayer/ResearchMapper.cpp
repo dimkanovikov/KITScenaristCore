@@ -210,9 +210,9 @@ QString ResearchMapper::insertStatement(DomainObject* _subject, QVariantList& _i
     _insertValues.append(research->type());
     _insertValues.append(research->name());
     _insertValues.append(research->description());
-    _insertValues.append(research->color().isValid() ? research->color().name() : QVariant());
     _insertValues.append(research->url());
     _insertValues.append(QByteArray()); // Вместо изображения пустой массив байт
+    _insertValues.append(research->color().isValid() ? research->color().name() : QVariant());
     _insertValues.append(research->sortOrder());
 
     return insertStatement;

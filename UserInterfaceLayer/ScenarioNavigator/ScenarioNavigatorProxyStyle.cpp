@@ -117,8 +117,8 @@ void ScenarioNavigatorProxyStyle::drawPrimitive(QStyle::PrimitiveElement _elemen
         const qreal arrowHeight = StyleSheetHelper::dpToPx(8.);
         const qreal arrowHalfWidth = StyleSheetHelper::dpToPx(7.);
 #else
-        const qreal arrowHeight = StyleSheetHelper::dpToPx(5.5);
-        const qreal arrowHalfWidth = StyleSheetHelper::dpToPx(4.);
+        const int arrowHeight = StyleSheetHelper::dpToPx(5.5);
+        const int arrowHalfWidth = StyleSheetHelper::dpToPx(4.);
 #endif
         //
         // ... открытый
@@ -126,10 +126,10 @@ void ScenarioNavigatorProxyStyle::drawPrimitive(QStyle::PrimitiveElement _elemen
         if (_option->state & QStyle::State_Open) {
             int x = _option->rect.center().x();
             int y = _option->rect.center().y() + arrowHeight/2;
-            QPolygonF treangle;
-            treangle <<  QPointF(x, y)
-                     << QPointF(x - arrowHalfWidth,  y - arrowHeight)
-                     << QPointF(x + arrowHalfWidth,  y - arrowHeight);
+            QPolygon treangle;
+            treangle << QPoint(x, y)
+                     << QPoint(x - arrowHalfWidth,  y - arrowHeight)
+                     << QPoint(x + arrowHalfWidth,  y - arrowHeight);
             _painter->drawPolygon(treangle);
         }
         //
@@ -138,15 +138,15 @@ void ScenarioNavigatorProxyStyle::drawPrimitive(QStyle::PrimitiveElement _elemen
         else {
             int x = _option->rect.center().x() + arrowHeight/2;
             int y = _option->rect.center().y();
-            QPolygonF treangle;
+            QPolygon treangle;
             if (QLocale().textDirection() == Qt::LeftToRight) {
-                treangle << QPointF(x, y)
-                         << QPointF(x - arrowHeight,  y - arrowHalfWidth)
-                         << QPointF(x - arrowHeight,  y + arrowHalfWidth);
+                treangle << QPoint(x, y)
+                         << QPoint(x - arrowHeight,  y - arrowHalfWidth)
+                         << QPoint(x - arrowHeight,  y + arrowHalfWidth);
             } else {
-                treangle << QPointF(x,  y - arrowHalfWidth)
-                         << QPointF(x, y + arrowHalfWidth)
-                         << QPointF(x - arrowHeight,  y);
+                treangle << QPoint(x,  y - arrowHalfWidth)
+                         << QPoint(x, y + arrowHalfWidth)
+                         << QPoint(x - arrowHeight,  y);
             }
             _painter->drawPolygon(treangle);
         }
