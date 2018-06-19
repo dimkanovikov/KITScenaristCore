@@ -469,7 +469,7 @@ Türkçe: Recep Burak Yak
     <name>BusinessLogic::ResearchModel</name>
     <message>
         <source>Scenario</source>
-        <translation>Roteiro</translation>
+        <translation type="vanished">Roteiro</translation>
     </message>
     <message>
         <source>Title Page</source>
@@ -490,6 +490,14 @@ Türkçe: Recep Burak Yak
     <message>
         <source>Documents</source>
         <translation>Documentos</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation type="unfinished">Roteiro</translation>
+    </message>
+    <message>
+        <source>Logline</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1202,7 +1210,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Print scenes numbers with prefix</source>
-        <translation>Imprimir os números das cenas com prefixos</translation>
+        <translation type="vanished">Imprimir os números das cenas com prefixos</translation>
     </message>
     <message>
         <source>Print dialogues numbers</source>
@@ -1211,6 +1219,10 @@ Türkçe: Recep Burak Yak
     <message>
         <source>Print watermark:</source>
         <translation>Imprimir marca d`água:</translation>
+    </message>
+    <message>
+        <source>Print scenes numbers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2050,6 +2062,14 @@ O projeto não foi sincronizado.</translation>
         <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Tem certeza de remover a pesquisa:&lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Limpar</translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ScenarioCardsManager</name>
@@ -2091,6 +2111,33 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>On/off Fullscreen Mode</source>
         <translation>Ligar/Desligar modo de tela cheia</translation>
+    </message>
+    <message>
+        <source>Changing scenes numbers locking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to unlock scenes numbers or lock again?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lock</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ManagementLayer::ScenarioTextEditManager</name>
+    <message>
+        <source>Enter new scene number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New scene number</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3087,12 +3134,20 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
         <translation>Adicionar materiais de pesquisa, como texto, páginas da web e imagens na árvore. Use os botões da barra de ferramentas e o menu de contexto para adicionar ou remover materiais de pesquisa na árvore.</translation>
     </message>
     <message>
+        <source>Scene numbers prefix:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start scenes numbering from:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4645,6 +4700,10 @@ O aplicativo vai iniciar em poucos segundos.</translation>
         <source>Show/hide script bookmarks</source>
         <translation>Mostrar/ocultar marcações do roteiro</translation>
     </message>
+    <message>
+        <source>Clear all colors</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioReviewPanel</name>
@@ -4736,6 +4795,10 @@ O aplicativo vai iniciar em poucos segundos.</translation>
         <source>Add bookmark</source>
         <translation>Adicionar marcação</translation>
     </message>
+    <message>
+        <source>Change scene number</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioTextEditWidget</name>
@@ -4782,6 +4845,10 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <message>
         <source>Find and replace</source>
         <translation>Buscar e substituir</translation>
+    </message>
+    <message>
+        <source>Lock/unlock scene numbers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5117,7 +5184,7 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Compare script versions</source>
-        <translation>Comparar versões do roteiro</translation>
+        <translation type="vanished">Comparar versões do roteiro</translation>
     </message>
     <message>
         <source>Restore script from backup</source>

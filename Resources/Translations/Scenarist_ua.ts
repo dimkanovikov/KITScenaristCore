@@ -425,7 +425,7 @@ Türkçe: Recep Burak Yak
     <name>BusinessLogic::ResearchModel</name>
     <message>
         <source>Scenario</source>
-        <translation>Сценарій</translation>
+        <translation type="vanished">Сценарій</translation>
     </message>
     <message>
         <source>Title Page</source>
@@ -446,6 +446,14 @@ Türkçe: Recep Burak Yak
     <message>
         <source>Documents</source>
         <translation>Документи</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation type="unfinished">Сценарій</translation>
+    </message>
+    <message>
+        <source>Logline</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1154,7 +1162,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Print scenes numbers with prefix</source>
-        <translation>Друкувати номери сцен з префіксом</translation>
+        <translation type="vanished">Друкувати номери сцен з префіксом</translation>
     </message>
     <message>
         <source>Print dialogues numbers</source>
@@ -1163,6 +1171,10 @@ Türkçe: Recep Burak Yak
     <message>
         <source>Print watermark:</source>
         <translation>Друкувати водяний знак:</translation>
+    </message>
+    <message>
+        <source>Print scenes numbers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1994,6 +2006,14 @@ Project didn&apos;t synchronized.</source>
         <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Ви впевнені, що хочете видалити розробку: &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Очистити</translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ScenarioCardsManager</name>
@@ -2035,6 +2055,33 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>On/off Fullscreen Mode</source>
         <translation>Вкл/викл Повноекранний режим</translation>
+    </message>
+    <message>
+        <source>Changing scenes numbers locking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to unlock scenes numbers or lock again?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lock</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ManagementLayer::ScenarioTextEditManager</name>
+    <message>
+        <source>Enter new scene number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New scene number</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3057,6 +3104,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
         <translation>Додайте до дерева матеріали, такі як текст, веб-сторінки та зображення. Використовуйте кнопки панелі інструментів та контекстне меню для додавання або видалення дослідницьких матеріалів у дереві.</translation>
+    </message>
+    <message>
+        <source>Scene numbers prefix:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start scenes numbering from:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4611,6 +4666,10 @@ The application will start in few seconds.</source>
         <source>Show/hide script bookmarks</source>
         <translation>Показати/сховати закладки сценарію</translation>
     </message>
+    <message>
+        <source>Clear all colors</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioReviewPanel</name>
@@ -4702,6 +4761,10 @@ The application will start in few seconds.</source>
         <source>Add bookmark</source>
         <translation>Додати закладку</translation>
     </message>
+    <message>
+        <source>Change scene number</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioTextEditWidget</name>
@@ -4748,6 +4811,10 @@ The application will start in few seconds.</source>
     <message>
         <source>Find and replace</source>
         <translation>Знайти і замінити</translation>
+    </message>
+    <message>
+        <source>Lock/unlock scene numbers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5087,7 +5154,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Compare script versions</source>
-        <translation>Порівняти версії сценарію</translation>
+        <translation type="vanished">Порівняти версії сценарію</translation>
     </message>
     <message>
         <source>Restore script from backup</source>

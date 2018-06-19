@@ -645,7 +645,7 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
         //
         if (blockInfo && blockInfo->isSceneNumberFixed()) {
             QAction* firstAction = menu->actions().first();
-            QAction* renameSceneNumber = new QAction(tr("Rename scene number"), menu);
+            QAction* renameSceneNumber = new QAction(tr("Change scene number"), menu);
             menu->insertAction(firstAction, renameSceneNumber);
             menu->insertSeparator(firstAction);
             const QString oldSceneNumber = blockInfo->sceneNumber();
