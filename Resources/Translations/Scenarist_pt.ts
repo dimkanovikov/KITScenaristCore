@@ -493,11 +493,11 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Script</source>
-        <translation type="unfinished">Roteiro</translation>
+        <translation>Roteiro</translation>
     </message>
     <message>
         <source>Logline</source>
-        <translation type="unfinished"></translation>
+        <translation>Logline</translation>
     </message>
 </context>
 <context>
@@ -1222,7 +1222,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Print scenes numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimir os números das cenas</translation>
     </message>
 </context>
 <context>
@@ -2064,11 +2064,11 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Limpar</translation>
+        <translation>Limpar</translation>
     </message>
 </context>
 <context>
@@ -2114,30 +2114,30 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Changing scenes numbers locking</source>
-        <translation type="unfinished"></translation>
+        <translation>Alterar o bloqueamento dos números das cenas</translation>
     </message>
     <message>
         <source>Do you want to unlock scenes numbers or lock again?</source>
-        <translation type="unfinished"></translation>
+        <translation>Você quer desbloquear os números das cenas ou mantê-los bloqueados?</translation>
     </message>
     <message>
         <source>Unlock</source>
-        <translation type="unfinished"></translation>
+        <translation>Desbloquear</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Bloquear</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ScenarioTextEditManager</name>
     <message>
         <source>Enter new scene number</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicione novo número de cena</translation>
     </message>
     <message>
         <source>New scene number</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo número de cena</translation>
     </message>
 </context>
 <context>
@@ -3135,7 +3135,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Scene numbers prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Prefixo do número de cena:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -3143,11 +3143,11 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Start scenes numbering from:</source>
-        <translation type="unfinished"></translation>
+        <translation>Começar a numerar as cenas a partir de:</translation>
     </message>
 </context>
 <context>
@@ -4702,7 +4702,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Clear all colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover todas as cores</translation>
     </message>
 </context>
 <context>
@@ -4797,7 +4797,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Change scene number</source>
-        <translation type="unfinished"></translation>
+        <translation>Alterar o número da cena</translation>
     </message>
 </context>
 <context>
@@ -4848,7 +4848,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Lock/unlock scene numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Bloquear/desbloquear os números das cenas</translation>
     </message>
 </context>
 <context>
