@@ -1702,6 +1702,7 @@ bool ScenarioTextEdit::canInsertFromMimeData(const QMimeData* _source) const
 QMimeData* ScenarioTextEdit::createMimeDataFromSelection() const
 {
     QMimeData* mimeData = new QMimeData;
+    mimeData->setData("text/plain", textCursor().selection().toPlainText().toUtf8());
 
     //
     // Поместим в буфер данные о тексте в специальном формате
@@ -1717,7 +1718,6 @@ QMimeData* ScenarioTextEdit::createMimeDataFromSelection() const
                                                   textCursor().selectionEnd()).toUtf8());
     }
 
-    mimeData->setData("text/plain", textCursor().selection().toPlainText().toUtf8());
     return mimeData;
 }
 
@@ -1740,6 +1740,7 @@ void ScenarioTextEdit::insertFromMimeData(const QMimeData* _source)
         changeScenarioBlockType(type);
     }
 
+#ifndef MOBILE_OS
     QString textToInsert;
 
     //
@@ -1757,7 +1758,14 @@ void ScenarioTextEdit::insertFromMimeData(const QMimeData* _source)
         FountainImporter fountainImporter;
         textToInsert = fountainImporter.importScript("\n" + _source->text());
     }
+
     m_document->insertFromMime(cursor.position(), textToInsert);
+#else
+    //
+    // На мобилках мы можем оперировать только текстом
+    //
+    cursor.insertText(_source->text());
+#endif
 
     cursor.endEditBlock();
 }

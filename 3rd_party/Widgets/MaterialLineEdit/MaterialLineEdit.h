@@ -68,6 +68,11 @@ public:
     void setNeedCorrectScreenPosition(bool _needCorrect);
 
     /**
+     * @brief Установить валидатор для редактора текста
+     */
+    void setValidator(const QValidator* _validator);
+
+    /**
      * @brief Запретить/разрешить измнение содержимого
      */
     void setReadOnly(bool _readOnly);

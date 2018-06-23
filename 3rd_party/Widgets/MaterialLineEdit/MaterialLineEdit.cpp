@@ -153,6 +153,11 @@ void MaterialLineEdit::setNeedCorrectScreenPosition(bool _needCorrect)
     m_lineEdit->setNeedCorrectPosition(_needCorrect);
 }
 
+void MaterialLineEdit::setValidator(const QValidator* _validator)
+{
+    m_lineEdit->setValidator(_validator);
+}
+
 void MaterialLineEdit::setReadOnly(bool _readOnly)
 {
     m_lineEdit->setReadOnly(_readOnly);

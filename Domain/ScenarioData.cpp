@@ -7,7 +7,7 @@ using namespace Domain;
 
 const QString ScenarioData::NAME_KEY = "name";
 const QString ScenarioData::SCENE_NUMBERS_PREFIX_KEY = "scene_numbers_prefix";
-const QString ScenarioData::SCENE_START_NUMBER = "scene_start_number";
+const QString ScenarioData::SCENE_START_NUMBER_KEY = "scene_start_number";
 const QString ScenarioData::ADDITIONAL_INFO_KEY= "additional_info";
 const QString ScenarioData::GENRE_KEY= "genre";
 const QString ScenarioData::AUTHOR_KEY= "author";
