@@ -65,7 +65,7 @@ void InputView::updateViewSize()
             const QScreen* screen = QApplication::primaryScreen();
             QSize newSize = screen->size();
             newSize.setHeight(newSize.height() - keyboardRect.height() - additionalHeight());
-            setFixedHeight(newSize.height());
+            setMaximumHeight(newSize.height());
 
             needReupdate = false;
             qApp->setAutoSipEnabled(false);

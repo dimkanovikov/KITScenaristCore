@@ -275,6 +275,7 @@ void PageTextEditPrivate::_q_adjustScrollbars()
 
     QSize viewportSize = viewport->size();
     QSize docSize = documentSize(control);
+    const int lastVbarValue = vbar->value();
 
     // due to the recursion guard we have to repeat this step a few times,
     // as adding/removing a scroll bar will cause the document or viewport
@@ -330,6 +331,15 @@ void PageTextEditPrivate::_q_adjustScrollbars()
         if (viewportSize == oldViewportSize && docSize == oldDocSize)
             break;
     }
+
+    //
+    // Восстанавливаем значение вертикального ползунка, если были размера скакал перед этим
+    //
+    if (vbar->maximum() >= lastVbarValue
+        && vbar->value() != lastVbarValue) {
+        vbar->setValue(lastVbarValue);
+    }
+
     ignoreAutomaticScrollbarAdjustment = false;
 }
 #endif
