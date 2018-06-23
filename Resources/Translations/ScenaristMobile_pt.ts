@@ -173,7 +173,7 @@
     <name>BusinessLogic::ResearchModel</name>
     <message>
         <source>Scenario</source>
-        <translation>Cenário</translation>
+        <translation type="vanished">Cenário</translation>
     </message>
     <message>
         <source>Title Page</source>
@@ -193,6 +193,14 @@
     </message>
     <message>
         <source>Documents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation type="unfinished">Roteiro</translation>
+    </message>
+    <message>
+        <source>Logline</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1685,7 +1693,7 @@ Your subscription is active until</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Scenes prefix</source>
+        <source>Print watermark</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1807,6 +1815,14 @@ Your subscription is active until</source>
         <source>words</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Scenes numbers prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start scenes numbering from</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioTextEdit</name>
@@ -1816,6 +1832,10 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>Add bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change scene number</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
