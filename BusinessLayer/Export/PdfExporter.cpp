@@ -291,11 +291,11 @@ namespace {
             //
             QFont font;
             font.setBold(true);
-            font.setPointSize(400);
+            font.setPixelSize(400);
             const int maxWidth = sqrt(pow(_body.height(), 2) + pow(_body.width(), 2));
             QFontMetrics fontMetrics(font);
             while (fontMetrics.width(watermark) > maxWidth) {
-                font.setPointSize(font.pointSize() - 2);
+                font.setPixelSize(font.pixelSize() - 2);
                 fontMetrics = QFontMetrics(font);
             }
 
