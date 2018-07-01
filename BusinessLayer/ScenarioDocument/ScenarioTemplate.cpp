@@ -257,6 +257,13 @@ void ScenarioBlockStyle::setLeftMargin(qreal _leftMargin)
     }
 }
 
+void ScenarioBlockStyle::setLeftMarginSplitted(qreal _leftMargin)
+{
+    if (m_leftMarginSplitted != _leftMargin) {
+        m_leftMarginSplitted = _leftMargin;
+    }
+}
+
 void ScenarioBlockStyle::setTopMargin(qreal _topMargin)
 {
     if (m_topMargin != _topMargin) {
@@ -272,6 +279,13 @@ void ScenarioBlockStyle::setRightMargin(qreal _rightMargin)
         m_rightMargin = _rightMargin;
 
         m_blockFormat.setRightMargin(PageMetrics::mmToPx(m_rightMargin));
+    }
+}
+
+void ScenarioBlockStyle::setRightMarginSplitted(qreal _rightMargin)
+{
+    if (m_rightMarginSplitted != _rightMargin) {
+        m_rightMarginSplitted = _rightMargin;
     }
 }
 
@@ -428,8 +442,10 @@ ScenarioBlockStyle::ScenarioBlockStyle(const QXmlStreamAttributes& _blockAttribu
     m_topSpace = _blockAttributes.value("top_space").toInt();
     m_bottomSpace = _blockAttributes.value("bottom_space").toInt();
     m_leftMargin = _blockAttributes.value("left_margin").toDouble();
+    m_leftMarginSplitted = _blockAttributes.value("left_margin_splitted").toDouble();
     m_topMargin = _blockAttributes.value("top_margin").toDouble();
     m_rightMargin = _blockAttributes.value("right_margin").toDouble();
+    m_rightMarginSplitted = _blockAttributes.value("right_margin_splitted").toDouble();
     m_bottomMargin = _blockAttributes.value("bottom_margin").toDouble();
     m_lineSpacing = ::lineSpacingFromString(_blockAttributes.value("line_spacing").toString());
     m_lineSpacingValue = _blockAttributes.value("line_spacing_value").toDouble();
@@ -742,8 +758,10 @@ void ScenarioTemplate::saveToFile(const QString& _filePath) const
             writer.writeAttribute("top_space", ::toString(blockStyle.topSpace()));
             writer.writeAttribute("bottom_space", ::toString(blockStyle.bottomSpace()));
             writer.writeAttribute("left_margin", ::toString(blockStyle.leftMargin()));
+            writer.writeAttribute("left_margin_splitted", ::toString(blockStyle.leftMarginSplitted()));
             writer.writeAttribute("top_margin", ::toString(blockStyle.topMargin()));
             writer.writeAttribute("right_margin", ::toString(blockStyle.rightMargin()));
+            writer.writeAttribute("right_margin_splitted", ::toString(blockStyle.rightMarginSplitted()));
             writer.writeAttribute("bottom_margin", ::toString(blockStyle.bottomMargin()));
             writer.writeAttribute("line_spacing", ::toString(blockStyle.lineSpacing()));
             writer.writeAttribute("line_spacing_value", ::toString(blockStyle.lineSpacingValue()));

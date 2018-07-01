@@ -107,7 +107,7 @@ namespace BusinessLogic
         };
 
     public:
-        ScenarioBlockStyle() : m_type(Undefined), m_isActive(false), m_font(QFont("Courier New", 12)) {}
+        ScenarioBlockStyle() : m_font(QFont("Courier New", 12)) {}
 
         /**
          * @brief Получить тип блока
@@ -145,6 +145,11 @@ namespace BusinessLogic
         qreal leftMargin() const { return m_leftMargin; }
 
         /**
+         * @brief Отсуп слева в режиме разделения страницы, мм
+         */
+        qreal leftMarginSplitted() const { return m_leftMarginSplitted; }
+
+        /**
          * @brief Отступ сверху, мм
          */
         qreal topMargin() const { return m_topMargin; }
@@ -153,6 +158,11 @@ namespace BusinessLogic
          * @brief Отступ справа, мм
          */
         qreal rightMargin() const { return m_rightMargin; }
+
+        /**
+         * @brief Отсуп справа в режиме разделения страницы, мм
+         */
+        qreal rightMarginSplitted() const { return m_rightMarginSplitted; }
 
         /**
          * @brief Отступ снизу, мм
@@ -210,6 +220,11 @@ namespace BusinessLogic
         void setLeftMargin(qreal _leftMargin);
 
         /**
+         * @brief Установить левый отступ в режиме разделения, мм
+         */
+        void setLeftMarginSplitted(qreal _leftMargin);
+
+        /**
          * @brief Установить верхний отступ, мм
          */
         void setTopMargin(qreal _topMargin);
@@ -218,6 +233,11 @@ namespace BusinessLogic
          * @brief Установить правый отступ, мм
          */
         void setRightMargin(qreal _rightMargin);
+
+        /**
+         * @brief Установить правый отступ в режиме разделения, мм
+         */
+        void setRightMarginSplitted(qreal _rightMargin);
 
         /**
          * @brief Установить нижний отступ, мм
@@ -342,12 +362,12 @@ namespace BusinessLogic
         /**
          * @brief Тип блока
          */
-        Type m_type;
+        Type m_type = Undefined;
 
         /**
          * @brief Активен ли блок
          */
-        bool m_isActive;
+        bool m_isActive = false;
 
         /**
          * @brief Шрифт блока
@@ -357,47 +377,57 @@ namespace BusinessLogic
         /**
          * @brief Выравнивание блока
          */
-        Qt::Alignment m_align;
+        Qt::Alignment m_align = Qt::AlignLeft;
 
         /**
          * @brief Отступ сверху, линий
          */
-        int m_topSpace;
+        int m_topSpace = 0;
 
         /**
          * @brief Отступ снизу, линий
          */
-        int m_bottomSpace;
+        int m_bottomSpace = 0;
 
         /**
          * @brief Отступ слева, мм
          */
-        qreal m_leftMargin;
+        qreal m_leftMargin = 0.0;
+
+        /**
+         * @brief Отсуп слева в режиме разделения, мм
+         */
+        qreal m_leftMarginSplitted = 0.0;
 
         /**
          * @brief Отступ сверху, мм
          */
-        qreal m_topMargin;
+        qreal m_topMargin = 0.0;
 
         /**
          * @brief Отступ справа, мм
          */
-        qreal m_rightMargin;
+        qreal m_rightMargin = 0.0;
+
+        /**
+         * @brief Отсуп справа в режиме разделения, мм
+         */
+        qreal m_rightMarginSplitted = 0.0;
 
         /**
          * @brief Отступ снизу, мм
          */
-        qreal m_bottomMargin;
+        qreal m_bottomMargin = 0.0;
 
         /**
          * @brief Межстрочный интервал
          */
-        LineSpacing m_lineSpacing;
+        LineSpacing m_lineSpacing = SingleLineSpacing;
 
         /**
          * @brief Значение межстрочного интервала для FixedLineSpacing, мм
          */
-        qreal m_lineSpacingValue;
+        qreal m_lineSpacingValue = 0.0;
 
         /**
          * @brief Формат блока

@@ -54,6 +54,12 @@ namespace {
      * @note Используется для корректировки скрола при совместном редактировании
      */
     const char* CURSOR_RECT = "cursorRect";
+
+    /**
+      * @brief Позиция мыши в момент вызова контекстного меню
+      * @note Используется для определения над каким блоком было вызвано действие контекстного меню
+      */
+    const char* kLastMousePosKey = "lastMousePos";
 }
 
 
@@ -576,6 +582,33 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
             menu->insertAction(firstAction, addBookmark);
         }
         menu->insertSeparator(firstAction);
+    }
+
+    //
+    // Добавляем возможность преобразовать в сдвоенный диалог и обратно
+    //
+    {
+        QAction* makeDualDialogue = new QAction(tr("Split block"), menu);
+        makeDualDialogue->setCheckable(true);
+        makeDualDialogue->setProperty(kLastMousePosKey, _pos);
+        connect(makeDualDialogue, &QAction::toggled, this, [this] {
+            const QPoint cursorPos = sender()->property(kLastMousePosKey).toPoint();
+            QTextCursor cursor = cursorForPosition(cursorPos);
+            cursor.movePosition(QTextCursor::StartOfBlock);
+            QTextTableFormat format;
+            format.setWidth(QTextLength{QTextLength::FixedLength, 500});
+            format.setColumnWidthConstraints({ QTextLength{QTextLength::FixedLength, 250},
+                                               QTextLength{QTextLength::FixedLength, 250} });
+                format.setBorderStyle(QTextFrameFormat::BorderStyle_None);
+            auto table = cursor.insertTable(1, 2, format);
+            //    format = table->format();
+            //    const int tableWidth = cursor.block().layout()->boundingRect().width();
+            //    format.setWidth(QTextLength{QTextLength::FixedLength, tableWidth});
+            //    format.setColumnWidthConstraints({ QTextLength{QTextLength::FixedLength, tableWidth/2},
+            //                                       QTextLength{QTextLength::FixedLength, tableWidth/2} });
+            //    table->setFormat(format);
+        });
+        menu->insertAction(menu->actions().first(), makeDualDialogue);
     }
 
     //
