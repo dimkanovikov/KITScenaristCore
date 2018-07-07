@@ -49,6 +49,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Hungarian:
             code = "hu_HU";
             break;
+        case Italian:
+            code = "it_IT";
+            break;
         case Kazakh:
             code = "kk_KZ";
             break;

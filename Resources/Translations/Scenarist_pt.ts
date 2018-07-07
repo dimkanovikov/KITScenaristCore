@@ -137,7 +137,7 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation>Nossos heróis, que nos ajudaram a criar as versões internacionais:
+        <translation type="vanished">Nossos heróis, que nos ajudaram a criar as versões internacionais:
 Deutsch: Michael Krämer
 English: Dimka Novikov
 Español: Felipe Vece, Pedro Terrero
@@ -153,6 +153,26 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Deutsch: Michael Krämer
+English: Dimka Novikov
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1461,6 +1481,10 @@ Türkçe: Recep Burak Yak
         <source>Magyar</source>
         <translation></translation>
     </message>
+    <message>
+        <source>Italiano</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -2637,6 +2661,10 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     <message>
         <source>Magyar</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Italiano</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4025,7 +4053,7 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     </message>
     <message>
         <source>mm:</source>
-        <translation>milímetros:</translation>
+        <translation type="vanished">milímetros:</translation>
     </message>
     <message>
         <source>Uppercase</source>
@@ -4087,6 +4115,14 @@ Valor, mm</translation>
     <message>
         <source>Framing brackets</source>
         <translation>Suportes de enquadramento</translation>
+    </message>
+    <message>
+        <source>In full page width, mm:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In splitted mode, mm:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4799,6 +4835,10 @@ O aplicativo vai iniciar em poucos segundos.</translation>
         <source>Change scene number</source>
         <translation>Alterar o número da cena</translation>
     </message>
+    <message>
+        <source>Split block</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioTextEditWidget</name>
@@ -5027,6 +5067,10 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     <message>
         <source>Hungarian</source>
         <translation>Húngaro</translation>
+    </message>
+    <message>
+        <source>Italian</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

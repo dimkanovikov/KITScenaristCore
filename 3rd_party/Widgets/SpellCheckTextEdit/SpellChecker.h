@@ -39,7 +39,8 @@ public:
         Hebrew,
         Polish,
         Turkish,
-        Hungarian
+        Hungarian,
+        Italian
     };
 
     /**

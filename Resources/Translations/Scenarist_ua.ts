@@ -97,6 +97,7 @@ Deutsch: Michael Krämer
 English: Dimka Novikov
 Español: Felipe Vece, Pedro Terrero
 Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
 Қазақ: Алпамыс Баткалов
 Magyar: Gabor
 Polski: Rafał Puka
@@ -1415,6 +1416,10 @@ Türkçe: Recep Burak Yak
         <source>Magyar</source>
         <translation></translation>
     </message>
+    <message>
+        <source>Italiano</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -2585,6 +2590,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <source>Magyar</source>
         <translation>Magyar</translation>
+    </message>
+    <message>
+        <source>Italiano</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3984,7 +3993,7 @@ Paragraph</source>
     </message>
     <message>
         <source>mm:</source>
-        <translation>мм:</translation>
+        <translation type="vanished">мм:</translation>
     </message>
     <message>
         <source>Uppercase</source>
@@ -4045,6 +4054,14 @@ Paragraph</source>
     <message>
         <source>Framing brackets</source>
         <translation>Обрамляти дужками</translation>
+    </message>
+    <message>
+        <source>In full page width, mm:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In splitted mode, mm:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4765,6 +4782,10 @@ The application will start in few seconds.</source>
         <source>Change scene number</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Split block</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioTextEditWidget</name>
@@ -4997,6 +5018,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <source>Hungarian</source>
         <translation>Hungarian</translation>
+    </message>
+    <message>
+        <source>Italian</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
