@@ -11,6 +11,7 @@
 #include "ResearchStorage.h"
 #include "SettingsStorage.h"
 #include "DatabaseHistoryStorage.h"
+#include "ScriptVersionStorage.h"
 
 using namespace DataStorageLayer;
 
@@ -42,6 +43,7 @@ void StorageFacade::clearStorages()
     scenarioChangeStorage()->clear();
     scenarioDataStorage()->clear();
     researchStorage()->clear();
+    scriptVersionStorage()->clear();
 }
 
 void StorageFacade::refreshStorages()
@@ -53,6 +55,7 @@ void StorageFacade::refreshStorages()
     timeStorage()->refresh();
     characterStateStorage()->refresh();
     scenarioDataStorage()->refresh();
+    scriptVersionStorage()->refresh();
 
     //
     // Хранилища со списком изменений сценария и сам сценарий обновляются по другому принципу
@@ -149,6 +152,14 @@ DatabaseHistoryStorage* StorageFacade::databaseHistoryStorage()
     return s_databaseHistoryStorage;
 }
 
+ScriptVersionStorage*StorageFacade::scriptVersionStorage()
+{
+    if (s_scriptVersionStorage == nullptr) {
+        s_scriptVersionStorage = new ScriptVersionStorage;
+    }
+    return s_scriptVersionStorage;
+}
+
 PlaceStorage* StorageFacade::s_placeStorage = nullptr;
 ScenarioDayStorage* StorageFacade::s_scenarioDayStorage = nullptr;
 TimeStorage* StorageFacade::s_timeStorage = nullptr;
@@ -160,3 +171,4 @@ ScenarioDataStorage* StorageFacade::s_scenarioDataStorage = nullptr;
 ResearchStorage* StorageFacade::s_researchStorage = nullptr;
 SettingsStorage* StorageFacade::s_settingsStorage = nullptr;
 DatabaseHistoryStorage* StorageFacade::s_databaseHistoryStorage = nullptr;
+ScriptVersionStorage* StorageFacade::s_scriptVersionStorage = nullptr;

@@ -5,7 +5,7 @@ using namespace Domain;
 
 bool DomainObject::isValid(const DomainObject* _object)
 {
-	bool isValid = (_object != 0);
+    bool isValid = (_object != nullptr);
 	return isValid;
 }
 

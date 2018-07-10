@@ -103,7 +103,7 @@ void ScenarioChange::setIsDraft(bool _isDraft)
 // ****
 
 namespace {
-	const int COLUMN_COUNT = 1;
+	const int kColumnCount = 1;
 }
 
 ScenarioChangesTable::ScenarioChangesTable(QObject* _parent) :
@@ -113,7 +113,7 @@ ScenarioChangesTable::ScenarioChangesTable(QObject* _parent) :
 
 int ScenarioChangesTable::columnCount(const QModelIndex&) const
 {
-	return COLUMN_COUNT;
+	return kColumnCount;
 }
 
 QVariant ScenarioChangesTable::data(const QModelIndex& _index, int _role) const

@@ -16,6 +16,8 @@ namespace DataMappingLayer
     class AbstractMapper
     {
     public:
+        virtual ~AbstractMapper() = default;
+
         /**
          * @brief Очистить все загруженные ранее данные
          */

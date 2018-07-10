@@ -31,7 +31,7 @@ bool CharacterState::equal(const QString& _name) const
 // ****
 
 namespace {
-	const int COLUMN_COUNT = 1;
+	const int kColumnCount = 1;
 }
 
 CharacterStatesTable::CharacterStatesTable(QObject* _parent) :
@@ -41,7 +41,7 @@ CharacterStatesTable::CharacterStatesTable(QObject* _parent) :
 
 int CharacterStatesTable::columnCount(const QModelIndex&) const
 {
-	return COLUMN_COUNT;
+	return kColumnCount;
 }
 
 QVariant CharacterStatesTable::data(const QModelIndex& _index, int _role) const

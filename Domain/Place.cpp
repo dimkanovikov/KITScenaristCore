@@ -44,7 +44,7 @@ bool Place::equal(const QString& _name) const
 // ****
 
 namespace {
-	const int COLUMN_COUNT = 1;
+    const int kColumnCount = 1;
 }
 
 PlacesTable::PlacesTable(QObject* _parent) :
@@ -54,7 +54,7 @@ PlacesTable::PlacesTable(QObject* _parent) :
 
 int PlacesTable::columnCount(const QModelIndex&) const
 {
-	return COLUMN_COUNT;
+    return kColumnCount;
 }
 
 QVariant PlacesTable::data(const QModelIndex& _index, int _role) const

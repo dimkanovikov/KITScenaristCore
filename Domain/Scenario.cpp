@@ -56,7 +56,7 @@ void Scenario::setIsDraft(bool _isDraft)
 // ****
 
 namespace {
-	const int COLUMN_COUNT = 1;
+	const int kColumnCount = 1;
 }
 
 ScenariosTable::ScenariosTable(QObject* _parent) :
@@ -66,7 +66,7 @@ ScenariosTable::ScenariosTable(QObject* _parent) :
 
 int ScenariosTable::columnCount(const QModelIndex&) const
 {
-	return COLUMN_COUNT;
+	return kColumnCount;
 }
 
 QVariant ScenariosTable::data(const QModelIndex& _index, int _role) const

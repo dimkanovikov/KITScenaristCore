@@ -12,9 +12,9 @@ using namespace DataMappingLayer;
 
 
 namespace {
-    const QString COLUMNS = " id, parent_id, type, name, description, url, image, color, sort_order ";
+    const QString kColumns = " id, parent_id, type, name, description, url, image, color, sort_order ";
     const QString IMAGE_COLUMN = "image";
-    const QString TABLE_NAME = " research ";
+    const QString kTableName = " research ";
     const QString CHARACTERS_FILTER = QString(" WHERE type = %1 ORDER BY name").arg(Research::Character);
     const QString LOCATIONS_FILTER = QString(" WHERE type = %1 ORDER BY name").arg(Research::Location);
 }
@@ -46,7 +46,7 @@ QPixmap ResearchImageMapper::image(const DomainObject* _forObject) const
         //
         QSqlQuery query = DatabaseLayer::Database::query();
         query.prepare(QString("SELECT " + IMAGE_COLUMN +
-                              " FROM " + TABLE_NAME +
+                              " FROM " + kTableName +
                               " WHERE id = %1 "
                               )
                       .arg(objectId));
@@ -90,7 +90,7 @@ void ResearchImageMapper::save(const DomainObject* _forObject, QSqlQuery* _query
     // Извлекаем изображение из списка несохранённых и сохраняем его в базе данных
     //
     if (_query != nullptr) {
-        _query->prepare(QString("UPDATE " + TABLE_NAME +
+        _query->prepare(QString("UPDATE " + kTableName +
                                " SET " + IMAGE_COLUMN + " = ? "
                                                         " WHERE id = %1 "
                                )
@@ -182,8 +182,8 @@ void ResearchMapper::refreshLocations(DomainObjectsItemModel* _model)
 QString ResearchMapper::findStatement(const Identifier& _id) const
 {
     QString findStatement =
-            QString("SELECT " + COLUMNS +
-                    " FROM " + TABLE_NAME +
+            QString("SELECT " + kColumns +
+                    " FROM " + kTableName +
                     " WHERE id = %1 "
                     )
             .arg(_id.value());
@@ -192,14 +192,14 @@ QString ResearchMapper::findStatement(const Identifier& _id) const
 
 QString ResearchMapper::findAllStatement() const
 {
-    return "SELECT " + COLUMNS + " FROM  " + TABLE_NAME;
+    return "SELECT " + kColumns + " FROM  " + kTableName;
 }
 
 QString ResearchMapper::insertStatement(DomainObject* _subject, QVariantList& _insertValues) const
 {
     QString insertStatement =
-            QString("INSERT INTO " + TABLE_NAME +
-                    " (" + COLUMNS + ") "
+            QString("INSERT INTO " + kTableName +
+                    " (" + kColumns + ") "
                     " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?) "
                     );
 
@@ -221,7 +221,7 @@ QString ResearchMapper::insertStatement(DomainObject* _subject, QVariantList& _i
 QString ResearchMapper::updateStatement(DomainObject* _subject, QVariantList& _updateValues) const
 {
     QString updateStatement =
-            QString("UPDATE " + TABLE_NAME +
+            QString("UPDATE " + kTableName +
                     " SET parent_id = ?, "
                     " type = ?, "
                     " name = ?, "
@@ -248,7 +248,7 @@ QString ResearchMapper::updateStatement(DomainObject* _subject, QVariantList& _u
 
 QString ResearchMapper::deleteStatement(DomainObject* _subject, QVariantList& _deleteValues) const
 {
-    QString deleteStatement = "DELETE FROM " + TABLE_NAME + " WHERE id = ?";
+    QString deleteStatement = "DELETE FROM " + kTableName + " WHERE id = ?";
 
     _deleteValues.clear();
     _deleteValues.append(_subject->id().value());

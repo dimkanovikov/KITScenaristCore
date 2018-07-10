@@ -11,6 +11,7 @@
 #include "ResearchMapper.h"
 #include "SettingsMapper.h"
 #include "DatabaseHistoryMapper.h"
+#include "ScriptVersionMapper.h"
 
 using namespace DataMappingLayer;
 
@@ -103,6 +104,14 @@ DatabaseHistoryMapper* MapperFacade::databaseHistoryMapper()
     return s_databaseHistoryMapper;
 }
 
+ScriptVersionMapper* MapperFacade::scriptVersionMapper()
+{
+    if (s_scriptVersionMapper == nullptr) {
+        s_scriptVersionMapper = new ScriptVersionMapper;
+    }
+    return s_scriptVersionMapper;
+}
+
 PlaceMapper* MapperFacade::s_placeMapper = nullptr;
 ScenarioDayMapper* MapperFacade::s_scenarioDayMapper = nullptr;
 TimeMapper* MapperFacade::s_timeMapper = nullptr;
@@ -114,3 +123,4 @@ ScenarioDataMapper* MapperFacade::s_scenarioDataMapper = nullptr;
 ResearchMapper* MapperFacade::s_researchMapper = nullptr;
 SettingsMapper* MapperFacade::s_settingsMapper = nullptr;
 DatabaseHistoryMapper* MapperFacade::s_databaseHistoryMapper = nullptr;
+ScriptVersionMapper* MapperFacade::s_scriptVersionMapper = nullptr;

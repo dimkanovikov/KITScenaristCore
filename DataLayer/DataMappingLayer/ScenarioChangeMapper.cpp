@@ -11,8 +11,8 @@ using namespace DataMappingLayer;
 
 
 namespace {
-    const QString COLUMNS = " id, uuid, datetime, username, undo_patch, redo_patch, is_draft ";
-    const QString TABLE_NAME = " scenario_changes ";
+    const QString kColumns = " id, uuid, datetime, username, undo_patch, redo_patch, is_draft ";
+    const QString kTableName = " scenario_changes ";
 }
 
 ScenarioChange* ScenarioChangeMapper::find(const Identifier& _id)
@@ -22,7 +22,7 @@ ScenarioChange* ScenarioChangeMapper::find(const Identifier& _id)
 
 ScenarioChangesTable* ScenarioChangeMapper::findLastOne()
 {
-    QString queryFilter = "WHERE id IN (SELECT MAX(id) FROM " + TABLE_NAME + ")";
+    QString queryFilter = "WHERE id IN (SELECT MAX(id) FROM " + kTableName + ")";
     return findAll(queryFilter);
 }
 
@@ -44,7 +44,7 @@ void ScenarioChangeMapper::update(ScenarioChange* _change)
 bool ScenarioChangeMapper::containsUuid(const QString& _uuid)
 {
     QSqlQuery checker = DatabaseLayer::Database::query();
-    checker.prepare("SELECT COUNT(id) FROM " + TABLE_NAME + " WHERE uuid = ?");
+    checker.prepare("SELECT COUNT(id) FROM " + kTableName + " WHERE uuid = ?");
     checker.addBindValue(_uuid);
     checker.exec();
     checker.next();
@@ -54,7 +54,7 @@ bool ScenarioChangeMapper::containsUuid(const QString& _uuid)
 QList<QString> ScenarioChangeMapper::uuids() const
 {
     QSqlQuery loader = DatabaseLayer::Database::query();
-    loader.exec("SELECT uuid FROM " + TABLE_NAME);
+    loader.exec("SELECT uuid FROM " + kTableName);
     QList<QString> uuids;
     while (loader.next()) {
         uuids.append(loader.value(0).toString());
@@ -65,7 +65,7 @@ QList<QString> ScenarioChangeMapper::uuids() const
 ScenarioChange ScenarioChangeMapper::change(const QString& _uuid) const
 {
     QSqlQuery loader = DatabaseLayer::Database::query();
-    loader.prepare("SELECT " + COLUMNS + " FROM " + TABLE_NAME + " WHERE uuid = ? ");
+    loader.prepare("SELECT " + kColumns + " FROM " + kTableName + " WHERE uuid = ? ");
     loader.addBindValue(_uuid);
     loader.exec();
     loader.next();
@@ -78,8 +78,8 @@ ScenarioChange ScenarioChangeMapper::change(const QString& _uuid) const
 QString ScenarioChangeMapper::findStatement(const Identifier& _id) const
 {
     QString findStatement =
-            QString("SELECT " + COLUMNS +
-                    " FROM " + TABLE_NAME +
+            QString("SELECT " + kColumns +
+                    " FROM " + kTableName +
                     " WHERE id = %1 "
                     )
             .arg(_id.value());
@@ -88,14 +88,14 @@ QString ScenarioChangeMapper::findStatement(const Identifier& _id) const
 
 QString ScenarioChangeMapper::findAllStatement() const
 {
-    return "SELECT " + COLUMNS + " FROM  " + TABLE_NAME;
+    return "SELECT " + kColumns + " FROM  " + kTableName;
 }
 
 QString ScenarioChangeMapper::insertStatement(DomainObject* _subject, QVariantList& _insertValues) const
 {
     QString insertStatement =
-            QString("INSERT INTO " + TABLE_NAME +
-                    " (" + COLUMNS + ") "
+            QString("INSERT INTO " + kTableName +
+                    " (" + kColumns + ") "
                     " VALUES(?, ?, ?, ?, ?, ?, ?) "
                     );
 
@@ -115,7 +115,7 @@ QString ScenarioChangeMapper::insertStatement(DomainObject* _subject, QVariantLi
 QString ScenarioChangeMapper::updateStatement(DomainObject* _subject, QVariantList& _updateValues) const
 {
     QString updateStatement =
-            QString("UPDATE " + TABLE_NAME +
+            QString("UPDATE " + kTableName +
                     " SET uuid = ?, "
                     " datetime = ?, "
                     " username = ?, "
@@ -140,7 +140,7 @@ QString ScenarioChangeMapper::updateStatement(DomainObject* _subject, QVariantLi
 
 QString ScenarioChangeMapper::deleteStatement(DomainObject* _subject, QVariantList& _deleteValues) const
 {
-    QString deleteStatement = "DELETE FROM " + TABLE_NAME + " WHERE id = ?";
+    QString deleteStatement = "DELETE FROM " + kTableName + " WHERE id = ?";
 
     _deleteValues.clear();
     _deleteValues.append(_subject->id().value());

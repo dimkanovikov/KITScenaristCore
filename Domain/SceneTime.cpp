@@ -31,7 +31,7 @@ bool SceneTime::equal(const QString& _name) const
 // ****
 
 namespace {
-	const int COLUMN_COUNT = 1;
+	const int kColumnCount = 1;
 }
 
 SceneTimesTable::SceneTimesTable(QObject* _parent) :
@@ -41,7 +41,7 @@ SceneTimesTable::SceneTimesTable(QObject* _parent) :
 
 int SceneTimesTable::columnCount(const QModelIndex&) const
 {
-	return COLUMN_COUNT;
+	return kColumnCount;
 }
 
 QVariant SceneTimesTable::data(const QModelIndex& _index, int _role) const

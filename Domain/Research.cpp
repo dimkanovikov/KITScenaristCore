@@ -290,7 +290,7 @@ Research* ResearchBuilder::create(const Identifier& _id, Research* _parent, Rese
 
 
 namespace {
-    const int COLUMN_COUNT = 1;
+    const int kColumnCount = 1;
 }
 
 ResearchTable::ResearchTable(QObject* _parent) :
@@ -300,7 +300,7 @@ ResearchTable::ResearchTable(QObject* _parent) :
 
 int ResearchTable::columnCount(const QModelIndex&) const
 {
-    return COLUMN_COUNT;
+    return kColumnCount;
 }
 
 QVariant ResearchTable::data(const QModelIndex& _index, int _role) const

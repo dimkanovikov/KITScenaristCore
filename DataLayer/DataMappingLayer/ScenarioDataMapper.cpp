@@ -6,8 +6,8 @@ using namespace DataMappingLayer;
 
 
 namespace {
-	const QString COLUMNS = " id, data_name, data_value ";
-	const QString TABLE_NAME = " scenario_data ";
+	const QString kColumns = " id, data_name, data_value ";
+	const QString kTableName = " scenario_data ";
 }
 
 ScenarioData* ScenarioDataMapper::find(const Identifier& _id)
@@ -33,8 +33,8 @@ void ScenarioDataMapper::update(ScenarioData* _scenaryData)
 QString ScenarioDataMapper::findStatement(const Identifier& _id) const
 {
 	QString findStatement =
-			QString("SELECT " + COLUMNS +
-					" FROM " + TABLE_NAME +
+			QString("SELECT " + kColumns +
+					" FROM " + kTableName +
 					" WHERE id = %1 "
 					)
 			.arg(_id.value());
@@ -43,13 +43,13 @@ QString ScenarioDataMapper::findStatement(const Identifier& _id) const
 
 QString ScenarioDataMapper::findAllStatement() const
 {
-	return "SELECT " + COLUMNS + " FROM  " + TABLE_NAME;
+	return "SELECT " + kColumns + " FROM  " + kTableName;
 }
 
 QString ScenarioDataMapper::insertStatement(DomainObject* _subject, QVariantList& _insertValues) const
 {
 	QString insertStatement =
-			QString("INSERT INTO " + TABLE_NAME +
+			QString("INSERT INTO " + kTableName +
 					" (id, data_name, data_value) "
 					" VALUES(?, ?, ?) "
 					);
@@ -66,7 +66,7 @@ QString ScenarioDataMapper::insertStatement(DomainObject* _subject, QVariantList
 QString ScenarioDataMapper::updateStatement(DomainObject* _subject, QVariantList& _updateValues) const
 {
 	QString updateStatement =
-			QString("UPDATE " + TABLE_NAME +
+			QString("UPDATE " + kTableName +
 					" SET data_value = ? "
 					" WHERE data_name = ? "
 					);
@@ -81,7 +81,7 @@ QString ScenarioDataMapper::updateStatement(DomainObject* _subject, QVariantList
 
 QString ScenarioDataMapper::deleteStatement(DomainObject* _subject, QVariantList& _deleteValues) const
 {
-	QString deleteStatement = "DELETE FROM " + TABLE_NAME + " WHERE id = ?";
+	QString deleteStatement = "DELETE FROM " + kTableName + " WHERE id = ?";
 
 	_deleteValues.clear();
 	_deleteValues.append(_subject->id().value());

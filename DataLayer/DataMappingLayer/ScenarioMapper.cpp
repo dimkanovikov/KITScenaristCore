@@ -6,8 +6,8 @@ using namespace DataMappingLayer;
 
 
 namespace {
-	const QString COLUMNS = " id, scheme, text, is_draft ";
-	const QString TABLE_NAME = " scenario ";
+	const QString kColumns = " id, scheme, text, is_draft ";
+	const QString kTableName = " scenario ";
 }
 
 Scenario* ScenarioMapper::find(const Identifier& _id)
@@ -33,8 +33,8 @@ void ScenarioMapper::update(Scenario* _scenario)
 QString ScenarioMapper::findStatement(const Identifier& _id) const
 {
 	QString findStatement =
-			QString("SELECT " + COLUMNS +
-					" FROM " + TABLE_NAME +
+			QString("SELECT " + kColumns +
+					" FROM " + kTableName +
 					" WHERE id = %1 "
 					)
 			.arg(_id.value());
@@ -43,14 +43,14 @@ QString ScenarioMapper::findStatement(const Identifier& _id) const
 
 QString ScenarioMapper::findAllStatement() const
 {
-	return "SELECT " + COLUMNS + " FROM  " + TABLE_NAME;
+	return "SELECT " + kColumns + " FROM  " + kTableName;
 }
 
 QString ScenarioMapper::insertStatement(DomainObject* _subject, QVariantList& _insertValues) const
 {
 	QString insertStatement =
-			QString("INSERT INTO " + TABLE_NAME +
-					" (" + COLUMNS + ") "
+			QString("INSERT INTO " + kTableName +
+					" (" + kColumns + ") "
 					" VALUES(?, ?, ?, ?) "
 					);
 
@@ -67,7 +67,7 @@ QString ScenarioMapper::insertStatement(DomainObject* _subject, QVariantList& _i
 QString ScenarioMapper::updateStatement(DomainObject* _subject, QVariantList& _updateValues) const
 {
 	QString updateStatement =
-			QString("UPDATE " + TABLE_NAME +
+			QString("UPDATE " + kTableName +
 					" SET scheme = ?, "
 					" text = ?, "
 					" is_draft = ? "
@@ -86,7 +86,7 @@ QString ScenarioMapper::updateStatement(DomainObject* _subject, QVariantList& _u
 
 QString ScenarioMapper::deleteStatement(DomainObject* _subject, QVariantList& _deleteValues) const
 {
-	QString deleteStatement = "DELETE FROM " + TABLE_NAME + " WHERE id = ?";
+	QString deleteStatement = "DELETE FROM " + kTableName + " WHERE id = ?";
 
 	_deleteValues.clear();
 	_deleteValues.append(_subject->id().value());

@@ -17,6 +17,7 @@ namespace DataStorageLayer
     class ResearchStorage;
     class SettingsStorage;
     class DatabaseHistoryStorage;
+    class ScriptVersionStorage;
 
     class StorageFacade
     {
@@ -49,6 +50,7 @@ namespace DataStorageLayer
         static ResearchStorage* researchStorage();
         static SettingsStorage* settingsStorage();
         static DatabaseHistoryStorage* databaseHistoryStorage();
+        static ScriptVersionStorage* scriptVersionStorage();
 
     private:
         static PlaceStorage* s_placeStorage;
@@ -62,6 +64,7 @@ namespace DataStorageLayer
         static ResearchStorage* s_researchStorage;
         static SettingsStorage* s_settingsStorage;
         static DatabaseHistoryStorage* s_databaseHistoryStorage;
+        static ScriptVersionStorage* s_scriptVersionStorage;
     };
 }
 

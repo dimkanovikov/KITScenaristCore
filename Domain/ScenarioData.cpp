@@ -47,7 +47,7 @@ void ScenarioData::setValue(const QString& _value)
 // ****
 
 namespace {
-	const int COLUMN_COUNT = 2;
+	const int kColumnCount = 2;
 }
 
 ScenarioDataTable::ScenarioDataTable(QObject* _parent) :
@@ -57,7 +57,7 @@ ScenarioDataTable::ScenarioDataTable(QObject* _parent) :
 
 int ScenarioDataTable::columnCount(const QModelIndex&) const
 {
-	return COLUMN_COUNT;
+	return kColumnCount;
 }
 
 QVariant ScenarioDataTable::data(const QModelIndex& _index, int _role) const

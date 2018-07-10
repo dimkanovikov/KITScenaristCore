@@ -6,8 +6,8 @@ using namespace DataMappingLayer;
 
 
 namespace {
-    const QString COLUMNS = " id, name ";
-    const QString TABLE_NAME = " transitions ";
+    const QString kColumns = " id, name ";
+    const QString kTableName = " transitions ";
 }
 
 Transition* TransitionMapper::find(const Identifier& _id)
@@ -38,8 +38,8 @@ void TransitionMapper::remove(Transition* _transition)
 QString TransitionMapper::findStatement(const Identifier& _id) const
 {
     QString findStatement =
-            QString("SELECT " + COLUMNS +
-                    " FROM " + TABLE_NAME +
+            QString("SELECT " + kColumns +
+                    " FROM " + kTableName +
                     " WHERE id = %1 "
                     )
             .arg(_id.value());
@@ -48,13 +48,13 @@ QString TransitionMapper::findStatement(const Identifier& _id) const
 
 QString TransitionMapper::findAllStatement() const
 {
-    return "SELECT " + COLUMNS + " FROM  " + TABLE_NAME + " ORDER BY id ";
+    return "SELECT " + kColumns + " FROM  " + kTableName + " ORDER BY id ";
 }
 
 QString TransitionMapper::insertStatement(DomainObject* _subject, QVariantList& _insertValues) const
 {
     QString insertStatement =
-            QString("INSERT INTO " + TABLE_NAME +
+            QString("INSERT INTO " + kTableName +
                     " (id, name) "
                     " VALUES(?, ?) "
                     );
@@ -70,7 +70,7 @@ QString TransitionMapper::insertStatement(DomainObject* _subject, QVariantList& 
 QString TransitionMapper::updateStatement(DomainObject* _subject, QVariantList& _updateValues) const
 {
     QString updateStatement =
-            QString("UPDATE " + TABLE_NAME +
+            QString("UPDATE " + kTableName +
                     " SET name = ? "
                     " WHERE id = ? "
                     );
@@ -85,7 +85,7 @@ QString TransitionMapper::updateStatement(DomainObject* _subject, QVariantList& 
 
 QString TransitionMapper::deleteStatement(DomainObject* _subject, QVariantList& _deleteValues) const
 {
-    QString deleteStatement = "DELETE FROM " + TABLE_NAME + " WHERE id = ?";
+    QString deleteStatement = "DELETE FROM " + kTableName + " WHERE id = ?";
 
     _deleteValues.clear();
     _deleteValues.append(_subject->id().value());

@@ -15,6 +15,7 @@ namespace DataMappingLayer
     class ResearchMapper;
     class SettingsMapper;
     class DatabaseHistoryMapper;
+    class ScriptVersionMapper;
 
     class MapperFacade
     {
@@ -30,6 +31,7 @@ namespace DataMappingLayer
         static ResearchMapper* researchMapper();
         static SettingsMapper* settingsMapper();
         static DatabaseHistoryMapper* databaseHistoryMapper();
+        static ScriptVersionMapper* scriptVersionMapper();
 
     private:
         static PlaceMapper* s_placeMapper;
@@ -43,6 +45,7 @@ namespace DataMappingLayer
         static ResearchMapper* s_researchMapper;
         static SettingsMapper* s_settingsMapper;
         static DatabaseHistoryMapper* s_databaseHistoryMapper;
+        static ScriptVersionMapper* s_scriptVersionMapper;
     };
 }
 

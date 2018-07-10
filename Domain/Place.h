@@ -45,7 +45,7 @@ namespace Domain
 		Q_OBJECT
 
 	public:
-		explicit PlacesTable(QObject* _parent = 0);
+        explicit PlacesTable(QObject* _parent = nullptr);
 
 	public:
 		enum Column {

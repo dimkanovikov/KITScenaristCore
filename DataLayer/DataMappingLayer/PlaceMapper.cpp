@@ -6,8 +6,8 @@ using namespace DataMappingLayer;
 
 
 namespace {
-	const QString COLUMNS = " id, name ";
-	const QString TABLE_NAME = " places ";
+	const QString kColumns = " id, name ";
+	const QString kTableName = " places ";
 }
 
 Place* PlaceMapper::find(const Identifier& _id)
@@ -38,8 +38,8 @@ void PlaceMapper::remove(Place* _place)
 QString PlaceMapper::findStatement(const Identifier& _id) const
 {
 	QString findStatement =
-			QString("SELECT " + COLUMNS +
-					" FROM " + TABLE_NAME +
+			QString("SELECT " + kColumns +
+					" FROM " + kTableName +
 					" WHERE id = %1 "
 					)
 			.arg(_id.value());
@@ -48,13 +48,13 @@ QString PlaceMapper::findStatement(const Identifier& _id) const
 
 QString PlaceMapper::findAllStatement() const
 {
-	return "SELECT " + COLUMNS + " FROM  " + TABLE_NAME;
+	return "SELECT " + kColumns + " FROM  " + kTableName;
 }
 
 QString PlaceMapper::insertStatement(DomainObject* _subject, QVariantList& _insertValues) const
 {
 	QString insertStatement =
-			QString("INSERT INTO " + TABLE_NAME +
+			QString("INSERT INTO " + kTableName +
 					" (id, name) "
 					" VALUES(?, ?) "
 					);
@@ -70,7 +70,7 @@ QString PlaceMapper::insertStatement(DomainObject* _subject, QVariantList& _inse
 QString PlaceMapper::updateStatement(DomainObject* _subject, QVariantList& _updateValues) const
 {
 	QString updateStatement =
-			QString("UPDATE " + TABLE_NAME +
+			QString("UPDATE " + kTableName +
 					" SET name = ? "
 					" WHERE id = ? "
 					);
@@ -85,7 +85,7 @@ QString PlaceMapper::updateStatement(DomainObject* _subject, QVariantList& _upda
 
 QString PlaceMapper::deleteStatement(DomainObject* _subject, QVariantList& _deleteValues) const
 {
-	QString deleteStatement = "DELETE FROM " + TABLE_NAME + " WHERE id = ?";
+	QString deleteStatement = "DELETE FROM " + kTableName + " WHERE id = ?";
 
 	_deleteValues.clear();
 	_deleteValues.append(_subject->id().value());

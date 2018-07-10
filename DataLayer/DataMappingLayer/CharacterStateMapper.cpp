@@ -6,8 +6,8 @@ using namespace DataMappingLayer;
 
 
 namespace {
-	const QString COLUMNS = " id, name ";
-	const QString TABLE_NAME = " character_states ";
+	const QString kColumns = " id, name ";
+	const QString kTableName = " character_states ";
 }
 
 CharacterState* CharacterStateMapper::find(const Identifier& _id)
@@ -38,8 +38,8 @@ void CharacterStateMapper::remove(CharacterState* _characterState)
 QString CharacterStateMapper::findStatement(const Identifier& _id) const
 {
 	QString findStatement =
-			QString("SELECT " + COLUMNS +
-					" FROM " + TABLE_NAME +
+			QString("SELECT " + kColumns +
+					" FROM " + kTableName +
 					" WHERE id = %1 "
 					)
 			.arg(_id.value());
@@ -48,13 +48,13 @@ QString CharacterStateMapper::findStatement(const Identifier& _id) const
 
 QString CharacterStateMapper::findAllStatement() const
 {
-	return "SELECT " + COLUMNS + " FROM  " + TABLE_NAME;
+	return "SELECT " + kColumns + " FROM  " + kTableName;
 }
 
 QString CharacterStateMapper::insertStatement(DomainObject* _subject, QVariantList& _insertValues) const
 {
 	QString insertStatement =
-			QString("INSERT INTO " + TABLE_NAME +
+			QString("INSERT INTO " + kTableName +
 					" (id, name) "
 					" VALUES(?, ?) "
 					);
@@ -70,7 +70,7 @@ QString CharacterStateMapper::insertStatement(DomainObject* _subject, QVariantLi
 QString CharacterStateMapper::updateStatement(DomainObject* _subject, QVariantList& _updateValues) const
 {
 	QString updateStatement =
-			QString("UPDATE " + TABLE_NAME +
+			QString("UPDATE " + kTableName +
 					" SET name = ? "
 					" WHERE id = ? "
 					);
@@ -85,7 +85,7 @@ QString CharacterStateMapper::updateStatement(DomainObject* _subject, QVariantLi
 
 QString CharacterStateMapper::deleteStatement(DomainObject* _subject, QVariantList& _deleteValues) const
 {
-	QString deleteStatement = "DELETE FROM " + TABLE_NAME + " WHERE id = ?";
+	QString deleteStatement = "DELETE FROM " + kTableName + " WHERE id = ?";
 
 	_deleteValues.clear();
 	_deleteValues.append(_subject->id().value());

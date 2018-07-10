@@ -372,6 +372,19 @@ void Database::createTables(QSqlDatabase& _database)
                    ")"
                    );
 
+    //
+    // Таблица "Версии сценария"
+    //
+    q_creator.exec("CREATE TABLE script_versions "
+                   "( "
+                   "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                   "datetime TEXT NOT NULL, "
+                   "color TEXT DEFAULT(NULL), "
+                   "name TEXT UNIQUE NOT NULL, "
+                   "description TEXT DEFAULT(NULL) "
+                   "); "
+                   );
+
     _database.commit();
 }
 
@@ -1477,6 +1490,19 @@ void Database::updateDatabaseTo_0_7_2(QSqlDatabase& _database)
     // Добавляем колонку цветов в разработку
     //
     q_updater.exec("ALTER TABLE research ADD COLUMN color TEXT DEFAULT(NULL)");
+
+    //
+    // Таблица "Версии сценария"
+    //
+    q_updater.exec("CREATE TABLE script_versions "
+                   "( "
+                   "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                   "datetime TEXT NOT NULL, "
+                   "color TEXT DEFAULT(NULL), "
+                   "name TEXT UNIQUE NOT NULL, "
+                   "description TEXT DEFAULT(NULL) "
+                   "); "
+                   );
 
     _database.commit();
 }

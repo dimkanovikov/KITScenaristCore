@@ -31,7 +31,7 @@ bool ScenarioDay::equal(const QString& _name) const
 // ****
 
 namespace {
-	const int COLUMN_COUNT = 1;
+	const int kColumnCount = 1;
 }
 
 ScenarioDaysTable::ScenarioDaysTable(QObject* _parent) :
@@ -41,7 +41,7 @@ ScenarioDaysTable::ScenarioDaysTable(QObject* _parent) :
 
 int ScenarioDaysTable::columnCount(const QModelIndex&) const
 {
-	return COLUMN_COUNT;
+	return kColumnCount;
 }
 
 QVariant ScenarioDaysTable::data(const QModelIndex& _index, int _role) const
