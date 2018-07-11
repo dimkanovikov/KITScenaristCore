@@ -1777,7 +1777,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Save As...</source>
-        <translation>Salvar como...</translation>
+        <translation type="vanished">Salvar como...</translation>
     </message>
     <message>
         <source>Import...</source>
@@ -1789,11 +1789,11 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Print Preview</source>
-        <translation>Imprimir Pré-visualização</translation>
+        <translation type="vanished">Imprimir Pré-visualização</translation>
     </message>
     <message>
         <source>Two Panel Mode</source>
-        <translation>Modo de dois painéis </translation>
+        <translation type="vanished">Modo de dois painéis </translation>
     </message>
     <message>
         <source>%1[*] - KIT Scenarist</source>
@@ -1942,6 +1942,22 @@ Project didn&apos;t synchronized.</source>
         <translation>Você tem versão desatualizada do aplicativo. Por favor, instale a última versão do aplicativo para restaurar o acesso ao projeto.
 
 O projeto não foi sincronizado.</translation>
+    </message>
+    <message>
+        <source>Save version...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save as...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print preview</source>
+        <translation type="unfinished">Pré-visualização de impressão</translation>
+    </message>
+    <message>
+        <source>Two panel mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2415,6 +2431,10 @@ Você pode tentar recarregar a atualização.</translation>
     <message>
         <source>Quit from cabinet</source>
         <translation>Sair do armário</translation>
+    </message>
+    <message>
+        <source>Save current project version...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

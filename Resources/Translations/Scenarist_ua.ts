@@ -1616,7 +1616,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Save As...</source>
-        <translation>Зберегти Як...</translation>
+        <translation type="vanished">Зберегти Як...</translation>
     </message>
     <message>
         <source>Import...</source>
@@ -1628,11 +1628,11 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Print Preview</source>
-        <translation>Попередній Перегляд</translation>
+        <translation type="vanished">Попередній Перегляд</translation>
     </message>
     <message>
         <source>Two Panel Mode</source>
-        <translation>Двопанельний Режим</translation>
+        <translation type="vanished">Двопанельний Режим</translation>
     </message>
     <message>
         <source>%1[*] - KIT Scenarist</source>
@@ -1867,6 +1867,22 @@ Project didn&apos;t synchronized.</source>
         <translation>Ви маєте застарілу версію програми. Будь ласка, встановіть останню версію програми для відновлення доступу до проекту.
 
 Проект не синхронізовано.</translation>
+    </message>
+    <message>
+        <source>Save version...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save as...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print preview</source>
+        <translation type="unfinished">Попередній перегляд</translation>
+    </message>
+    <message>
+        <source>Two panel mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2340,6 +2356,10 @@ You can try to reload update.</source>
     <message>
         <source>Quit from cabinet</source>
         <translation>Вийти з кабінету</translation>
+    </message>
+    <message>
+        <source>Save current project version...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
