@@ -321,30 +321,7 @@ void ScenarioTextEdit::changeScenarioBlockTypeForSelection(ScenarioBlockStyle::T
 
 void ScenarioTextEdit::applyScenarioTypeToBlockText(ScenarioBlockStyle::Type _blockType)
 {
-    QTextCursor cursor = textCursor();
-    cursor.beginEditBlock();
-
-    ScenarioBlockStyle newBlockStyle = ScenarioTemplateFacade::getTemplate().blockStyle(_blockType);
-
-    //
-    // Обновим стили
-    //
-    cursor.setBlockCharFormat(newBlockStyle.charFormat());
-    cursor.setBlockFormat(newBlockStyle.blockFormat());
-
-    //
-    // Применим стиль текста ко всему блоку, выделив его,
-    // т.к. в блоке могут находиться фрагменты в другом стиле
-    //
-    cursor.select(QTextCursor::BlockUnderCursor);
-    cursor.mergeCharFormat(newBlockStyle.charFormat());
-
-    //
-    // Принудительно обновим ревизию блока
-    //
-    ScenarioTextDocument::updateBlockRevision(cursor);
-
-    cursor.endEditBlock();
+    applyScenarioTypeToBlock(_blockType);
 
     emit styleChanged();
 }
@@ -588,27 +565,11 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     // Добавляем возможность преобразовать в сдвоенный диалог и обратно
     //
     {
-        QAction* makeDualDialogue = new QAction(tr("Split block"), menu);
-        makeDualDialogue->setCheckable(true);
-        makeDualDialogue->setProperty(kLastMousePosKey, _pos);
-        connect(makeDualDialogue, &QAction::toggled, this, [this] {
-            const QPoint cursorPos = sender()->property(kLastMousePosKey).toPoint();
-            QTextCursor cursor = cursorForPosition(cursorPos);
-            cursor.movePosition(QTextCursor::StartOfBlock);
-            QTextTableFormat format;
-            format.setWidth(QTextLength{QTextLength::FixedLength, 500});
-            format.setColumnWidthConstraints({ QTextLength{QTextLength::FixedLength, 250},
-                                               QTextLength{QTextLength::FixedLength, 250} });
-                format.setBorderStyle(QTextFrameFormat::BorderStyle_None);
-            auto table = cursor.insertTable(1, 2, format);
-            //    format = table->format();
-            //    const int tableWidth = cursor.block().layout()->boundingRect().width();
-            //    format.setWidth(QTextLength{QTextLength::FixedLength, tableWidth});
-            //    format.setColumnWidthConstraints({ QTextLength{QTextLength::FixedLength, tableWidth/2},
-            //                                       QTextLength{QTextLength::FixedLength, tableWidth/2} });
-            //    table->setFormat(format);
-        });
-        menu->insertAction(menu->actions().first(), makeDualDialogue);
+        QAction* splitPage = new QAction(tr("Split block"), menu);
+        splitPage->setCheckable(true);
+        splitPage->setProperty(kLastMousePosKey, _pos);
+        connect(splitPage, &QAction::toggled, this, &ScenarioTextEdit::splitPage);
+        menu->insertAction(menu->actions().first(), splitPage);
     }
 
     //
@@ -695,7 +656,72 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
 bool ScenarioTextEdit::isRedoAvailable() const
 {
     return m_document != nullptr
-           && m_document->isRedoAvailableReimpl();
+                         && m_document->isRedoAvailableReimpl();
+}
+
+void ScenarioTextEdit::splitPage()
+{
+    //
+    // Получим курсор для блока, который хочет разделить пользователь
+    //
+    const QPoint cursorPos = sender()->property(kLastMousePosKey).toPoint();
+    QTextCursor cursor = cursorForPosition(cursorPos);
+    cursor.movePosition(QTextCursor::StartOfBlock);
+    cursor.beginEditBlock();
+
+    //
+    // Сохраним текущий формат блока и вырежем его текст, или текст выделения
+    //
+    const ScenarioBlockStyle::Type lastBlockType = ScenarioBlockStyle::forBlock(cursor.block());
+    if (!textCursor().hasSelection()) {
+        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        setTextCursor(cursor);
+    }
+    QScopedPointer<QMimeData> mime(createMimeDataFromSelection());
+    textCursor().removeSelectedText();
+
+    //
+    // Назначим блоку формат PageSplitter
+    //
+    changeScenarioBlockType(ScenarioBlockStyle::PageSplitter);
+
+    //
+    // Вставляем таблицу
+    //
+    const auto scriptTemplate = ScenarioTemplateFacade::getTemplate();
+    const qreal tableWidth = m_document->pageSize().width()
+                             - document()->rootFrame()->frameFormat().leftMargin()
+                             - document()->rootFrame()->frameFormat().rightMargin();
+    const qreal leftColumnWidth = tableWidth * scriptTemplate.splitterLeftSidePercents() / 100;
+    const qreal rightColumnWidth = tableWidth - leftColumnWidth;
+    QTextTableFormat format;
+    format.setWidth(QTextLength{ QTextLength::FixedLength, tableWidth });
+    format.setColumnWidthConstraints({ QTextLength{QTextLength::FixedLength, leftColumnWidth},
+                                       QTextLength{QTextLength::FixedLength, rightColumnWidth} });
+//    format.setBorderStyle(QTextFrameFormat::BorderStyle_None);
+    cursor.insertTable(1, 2, format);
+
+    //
+    // Вставляем параграф после таблицы - это обязательное условие, чтобы после таблицы всегда
+    // оставался один параграф, чтобы пользователь всегда мог выйти из таблицы
+    //
+    addScenarioBlock(lastBlockType);
+    moveCursor(QTextCursor::PreviousBlock);
+
+    //
+    // Применяем сохранённый формат блока каждой из колонок
+    //
+    moveCursor(QTextCursor::PreviousCharacter);
+    changeScenarioBlockType(lastBlockType);
+    moveCursor(QTextCursor::PreviousCharacter);
+    changeScenarioBlockType(lastBlockType);
+
+    //
+    // Вставляем текст в первую колонку
+    //
+    insertFromMimeData(mime.data());
+
+    cursor.endEditBlock();
 }
 
 void ScenarioTextEdit::setTextBold(bool _bold)

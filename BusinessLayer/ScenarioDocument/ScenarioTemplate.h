@@ -38,7 +38,9 @@ namespace BusinessLogic
             SceneDescription,	//!< Описание элемента сценария
             Lyrics,             //!< Лирика (стихи, песни)
             //
-            SceneHeadingShadow	//!< Время - место, для вспомогательных разрывов
+            SceneHeadingShadow,	//!< Время - место, для вспомогательных разрывов
+            //
+            PageSplitter        //!< Разделитель страницы (для блоков внутри которых находятся таблицы)
         };
 
         /**
@@ -526,6 +528,11 @@ namespace BusinessLogic
         Qt::Alignment numberingAlignment() const { return m_numberingAlignment; }
 
         /**
+         * @brief Процент ширины страницы для левой части разделителя
+         */
+        int splitterLeftSidePercents() const { return m_splitterLeftSidePercents; }
+
+        /**
          * @brief Получить стиль блока заданного типа
          */
         ScenarioBlockStyle blockStyle(ScenarioBlockStyle::Type _forType) const;
@@ -621,6 +628,11 @@ namespace BusinessLogic
          * @brief Расположение нумерации
          */
         Qt::Alignment m_numberingAlignment;
+
+        /**
+         * @brief Процент от ширины страницы, которые занимает левая часть разделения
+         */
+        int m_splitterLeftSidePercents = 50;
 
         /**
          * @brief Стили блоков текста

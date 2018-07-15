@@ -180,6 +180,8 @@ namespace UserInterface
          */
         bool isRedoAvailable() const;
 
+        void splitPage();
+
         /**
          * @brief Настроить форматирование выделенного текста
          */

@@ -742,29 +742,29 @@ void ScenarioTemplate::saveToFile(const QString& _filePath) const
         writer.writeAttribute("description", m_description);
         writer.writeAttribute("page_format", PageMetrics::stringFromPageSizeId(m_pageSizeId));
         writer.writeAttribute("page_margins", ::stringFromMargins(m_pageMargins));
-        writer.writeAttribute("numbering_alignment", ::toString(m_numberingAlignment));
+        writer.writeAttribute("numbering_alignment", toString(m_numberingAlignment));
         foreach (const ScenarioBlockStyle& blockStyle, m_blockStyles.values()) {
             writer.writeStartElement("block");
-            writer.writeAttribute("id", ::toString(blockStyle.type()));
-            writer.writeAttribute("active", ::toString(blockStyle.isActive()));
+            writer.writeAttribute("id", toString(blockStyle.type()));
+            writer.writeAttribute("active", toString(blockStyle.isActive()));
             writer.writeAttribute("font_family", blockStyle.font().family());
-            writer.writeAttribute("font_size", ::toString(blockStyle.font().pointSize()));
-            writer.writeAttribute("bold", ::toString(blockStyle.font().bold()));
-            writer.writeAttribute("italic", ::toString(blockStyle.font().italic()));
-            writer.writeAttribute("underline", ::toString(blockStyle.font().underline()));
-            writer.writeAttribute("uppercase", ::toString(blockStyle.font().capitalization()
+            writer.writeAttribute("font_size", toString(blockStyle.font().pointSize()));
+            writer.writeAttribute("bold", toString(blockStyle.font().bold()));
+            writer.writeAttribute("italic", toString(blockStyle.font().italic()));
+            writer.writeAttribute("underline", toString(blockStyle.font().underline()));
+            writer.writeAttribute("uppercase", toString(blockStyle.font().capitalization()
                                                           == QFont::AllUppercase));
-            writer.writeAttribute("alignment", ::toString(blockStyle.align()));
-            writer.writeAttribute("top_space", ::toString(blockStyle.topSpace()));
-            writer.writeAttribute("bottom_space", ::toString(blockStyle.bottomSpace()));
-            writer.writeAttribute("left_margin", ::toString(blockStyle.leftMargin()));
-            writer.writeAttribute("left_margin_splitted", ::toString(blockStyle.leftMarginSplitted()));
-            writer.writeAttribute("top_margin", ::toString(blockStyle.topMargin()));
-            writer.writeAttribute("right_margin", ::toString(blockStyle.rightMargin()));
-            writer.writeAttribute("right_margin_splitted", ::toString(blockStyle.rightMarginSplitted()));
-            writer.writeAttribute("bottom_margin", ::toString(blockStyle.bottomMargin()));
-            writer.writeAttribute("line_spacing", ::toString(blockStyle.lineSpacing()));
-            writer.writeAttribute("line_spacing_value", ::toString(blockStyle.lineSpacingValue()));
+            writer.writeAttribute("alignment", toString(blockStyle.align()));
+            writer.writeAttribute("top_space", toString(blockStyle.topSpace()));
+            writer.writeAttribute("bottom_space", toString(blockStyle.bottomSpace()));
+            writer.writeAttribute("left_margin", toString(blockStyle.leftMargin()));
+            writer.writeAttribute("left_margin_splitted", toString(blockStyle.leftMarginSplitted()));
+            writer.writeAttribute("top_margin", toString(blockStyle.topMargin()));
+            writer.writeAttribute("right_margin", toString(blockStyle.rightMargin()));
+            writer.writeAttribute("right_margin_splitted", toString(blockStyle.rightMarginSplitted()));
+            writer.writeAttribute("bottom_margin", toString(blockStyle.bottomMargin()));
+            writer.writeAttribute("line_spacing", toString(blockStyle.lineSpacing()));
+            writer.writeAttribute("line_spacing_value", toString(blockStyle.lineSpacingValue()));
             writer.writeAttribute("prefix", blockStyle.prefix());
             writer.writeAttribute("postfix", blockStyle.postfix());
             writer.writeEndElement(); // block
@@ -1052,8 +1052,7 @@ void ScenarioTemplate::load(const QString& _fromFile)
             //
             if (!m_blockStyles.contains(ScenarioBlockStyle::SceneDescription)) {
                 ScenarioBlockStyle sceneDescriptionStyle = m_blockStyles.value(ScenarioBlockStyle::Action);
-                sceneDescriptionStyle.m_type = ScenarioBlockStyle::SceneDescription;
-                sceneDescriptionStyle.m_blockFormat.setProperty(ScenarioBlockStyle::PropertyType, sceneDescriptionStyle.type());
+                sceneDescriptionStyle.setType(ScenarioBlockStyle::SceneDescription);
                 m_blockStyles.insert(sceneDescriptionStyle.type(), sceneDescriptionStyle);
             }
 
@@ -1064,6 +1063,19 @@ void ScenarioTemplate::load(const QString& _fromFile)
                 ScenarioBlockStyle sceneHeadingShadowStyle = m_blockStyles.value(ScenarioBlockStyle::SceneHeading);
                 sceneHeadingShadowStyle.setType(ScenarioBlockStyle::SceneHeadingShadow);
                 setBlockStyle(sceneHeadingShadowStyle);
+            }
+
+            //
+            // Создаём стиль для блоков хранящих внутри себя таблицу разделающую страницу
+            //
+            if (!m_blockStyles.contains(ScenarioBlockStyle::PageSplitter)) {
+                ScenarioBlockStyle pageSplitterStyle = m_blockStyles.value(ScenarioBlockStyle::Action);
+                pageSplitterStyle.setType(ScenarioBlockStyle::PageSplitter);
+                pageSplitterStyle.setTopMargin(0.0);
+                pageSplitterStyle.setLeftMargin(0.0);
+                pageSplitterStyle.setRightMargin(0.0);
+                pageSplitterStyle.setBottomMargin(0.0);
+                m_blockStyles.insert(pageSplitterStyle.type(), pageSplitterStyle);
             }
         }
     }
