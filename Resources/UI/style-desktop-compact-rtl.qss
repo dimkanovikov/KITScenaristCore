@@ -812,6 +812,11 @@ QPushButton[menuButtonTopBordered=true] {
     border-top-color: palette(dark);
 }
 
+QPushButton[menuUpdateButton=true] {
+    background-color: palette(highlight);
+    color: palette(highlighted-text);
+}
+
 /*
  * Ссылка
  */
