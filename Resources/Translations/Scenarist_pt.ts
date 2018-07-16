@@ -157,7 +157,7 @@ Türkçe: Recep Burak Yak
     <message>
         <source>Our heroes, who help us to create international versions:
 Deutsch: Michael Krämer
-English: Dimka Novikov
+English: Eric Wayne &amp; Soyung Key
 Español: Felipe Vece, Pedro Terrero
 Français: Felipe Vece, Antonio, Armand Robin
 Italiano: Luca Giliberto
@@ -2281,7 +2281,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
-        <translation>Versão lançada%1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt; Instalar &lt;/a&gt;</translation>
+        <translation type="vanished">Versão lançada%1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt; Instalar &lt;/a&gt;</translation>
     </message>
     <message>
         <source>Can&apos;t install update. There are some problems with downloaded file.
@@ -2434,6 +2434,10 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Save current project version...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Update</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2774,6 +2778,25 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     <message>
         <source>Move project to the cloud</source>
         <translation>Mover projeto para a nuvem</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectVersionDialog</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix date and time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nome</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Descrição</translation>
     </message>
 </context>
 <context>
@@ -3770,11 +3793,11 @@ Parágrafo</translation>
     </message>
     <message>
         <source>version</source>
-        <translation>versão</translation>
+        <translation type="vanished">versão</translation>
     </message>
     <message>
         <source>0.0.0</source>
-        <translation>0,0,0</translation>
+        <translation type="vanished">0,0,0</translation>
     </message>
     <message>
         <source>Open Project</source>
@@ -3782,7 +3805,7 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Released version 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;download&lt;/a&gt; or &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;read more&lt;/a&gt;.</source>
-        <translation>123/5000
+        <translation type="vanished">123/5000
 Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt; download &lt;/a&gt; ou &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt; leia mais &lt;/a &gt;.</translation>
     </message>
     <message>
@@ -3844,6 +3867,17 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     <message>
         <source>Used 0 Gb from 0 Gb</source>
         <translation type="vanished">0 Gb usados de 0 Gb</translation>
+    </message>
+    <message>
+        <source>
+
+New to KIT Scenarist?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Learn how to write your own stories and explore KIT Scenarist through our help articles and tutorials.
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
