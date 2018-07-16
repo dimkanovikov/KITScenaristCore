@@ -94,7 +94,7 @@ Türkçe: Recep Burak Yak
     <message>
         <source>Our heroes, who help us to create international versions:
 Deutsch: Michael Krämer
-English: Dimka Novikov
+English: Eric Wayne &amp; Soyung Key
 Español: Felipe Vece, Pedro Terrero
 Français: Felipe Vece, Antonio, Armand Robin
 Italiano: Luca Giliberto
@@ -2214,7 +2214,7 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
-        <translation>Випущена версія %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Встановити&lt;/a&gt;</translation>
+        <translation type="vanished">Випущена версія %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Встановити&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Undo</source>
@@ -2359,6 +2359,10 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>Save current project version...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Update</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2703,6 +2707,25 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <source>Move project to the cloud</source>
         <translation>Перемістити проект до хмари</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectVersionDialog</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Fix date and time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Ім&apos;я</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Опис</translation>
     </message>
 </context>
 <context>
@@ -3715,11 +3738,11 @@ Paragraph</source>
     </message>
     <message>
         <source>version</source>
-        <translation>версія</translation>
+        <translation type="vanished">версія</translation>
     </message>
     <message>
         <source>0.0.0</source>
-        <translation>0.0.0</translation>
+        <translation type="vanished">0.0.0</translation>
     </message>
     <message>
         <source>Create Project</source>
@@ -3735,7 +3758,7 @@ Paragraph</source>
     </message>
     <message>
         <source>Released version 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;download&lt;/a&gt; or &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;read more&lt;/a&gt;.</source>
-        <translation>Released version 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;завантажити&lt;/a&gt; or &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;read more&lt;/a&gt;.</translation>
+        <translation type="vanished">Released version 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;завантажити&lt;/a&gt; or &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;read more&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
@@ -3788,6 +3811,17 @@ Paragraph</source>
     <message>
         <source>Used 0 Gb from 0 Gb</source>
         <translation type="vanished">Використано 0 Гб з 0 Гб</translation>
+    </message>
+    <message>
+        <source>
+
+New to KIT Scenarist?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Learn how to write your own stories and explore KIT Scenarist through our help articles and tutorials.
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
