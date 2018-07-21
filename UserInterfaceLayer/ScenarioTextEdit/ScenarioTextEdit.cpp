@@ -681,9 +681,15 @@ void ScenarioTextEdit::splitPage()
     textCursor().removeSelectedText();
 
     //
-    // Назначим блоку формат PageSplitter
+    // Назначим блоку перед таблицей формат PageSplitter
     //
     changeScenarioBlockType(ScenarioBlockStyle::PageSplitter);
+    //
+    // ... и запретим позиционировать в нём курсор
+    //
+    auto pageSplitterBlockFormat = textCursor().blockFormat();
+    pageSplitterBlockFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
+    textCursor().setBlockFormat(pageSplitterBlockFormat);
 
     //
     // Вставляем таблицу
@@ -700,6 +706,15 @@ void ScenarioTextEdit::splitPage()
                                        QTextLength{QTextLength::FixedLength, rightColumnWidth} });
 //    format.setBorderStyle(QTextFrameFormat::BorderStyle_None);
     cursor.insertTable(1, 2, format);
+
+    //
+    // Назначим блоку после таблицы формат PageSplitter
+    //
+    changeScenarioBlockType(ScenarioBlockStyle::PageSplitter);
+    //
+    // ... и запретим позиционировать в нём курсор
+    //
+    textCursor().setBlockFormat(pageSplitterBlockFormat);
 
     //
     // Вставляем параграф после таблицы - это обязательное условие, чтобы после таблицы всегда
@@ -993,6 +1008,7 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
         moveCursor(QTextCursor::NextCharacter);
         while (!textCursor().atEnd()
                && (!textCursor().block().isVisible()
+                   || ScenarioBlockStyle::forBlock(textCursor().block()) == ScenarioBlockStyle::PageSplitter
                    || textCursor().blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection))) {
             moveCursor(QTextCursor::NextBlock);
         }
@@ -1004,6 +1020,7 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
         moveCursor(QTextCursor::PreviousCharacter);
         while (!textCursor().atStart()
                && (!textCursor().block().isVisible()
+                   || ScenarioBlockStyle::forBlock(textCursor().block()) == ScenarioBlockStyle::PageSplitter
                    || textCursor().blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection))) {
             moveCursor(QTextCursor::StartOfBlock);
             moveCursor(QTextCursor::PreviousCharacter);
@@ -1526,6 +1543,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         // Прорисовка символа пустой строки
                         //
                         if (!block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)
+                            && blockType != ScenarioBlockStyle::PageSplitter
                             && block.text().simplified().isEmpty()) {
                             //
                             // Определим область для отрисовки и выведем символ в редактор

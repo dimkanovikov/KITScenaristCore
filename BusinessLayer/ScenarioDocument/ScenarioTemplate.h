@@ -285,6 +285,7 @@ namespace BusinessLogic
          * @brief Разрешено изменять текст блока
          */
         bool isCanModify() const;
+        void setCanModify(bool _can);
 
         /**
          * @brief Имеет ли стиль обрамление

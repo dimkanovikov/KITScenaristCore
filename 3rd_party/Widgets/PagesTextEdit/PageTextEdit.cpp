@@ -2022,7 +2022,9 @@ QPoint PageTextEditPrivate::correctMousePosition(const QPoint& _eventPos)
                         do {
                             cursor.movePosition(QTextCursor::PreviousBlock);
                             cursor.movePosition(QTextCursor::StartOfBlock);
-                        } while (!cursor.atStart() && !cursor.block().isVisible());
+                        } while (!cursor.atStart()
+                                 && (cursor.block().blockFormat().boolProperty(PageTextEdit::PropertyDontShowCursor)
+                                     || !cursor.block().isVisible()));
                     }
                     break;
                 }
@@ -2054,15 +2056,16 @@ QPoint PageTextEditPrivate::correctMousePosition(const QPoint& _eventPos)
                 //
                 // Всегда используем более низкий блок
                 //
-                if (minSpace > space
-                    || (minSpace == space && cursor.atBlockStart())) {
+                if (minSpace >= space) {
                     minSpace = space;
                 } else {
                     if (cursor.atBlockEnd()) {
                         do {
                             cursor.movePosition(QTextCursor::NextBlock);
                             cursor.movePosition(QTextCursor::EndOfBlock);
-                        } while (!cursor.atEnd() && !cursor.block().isVisible());
+                        } while (!cursor.atEnd()
+                                 && (cursor.block().blockFormat().boolProperty(PageTextEdit::PropertyDontShowCursor)
+                                     || !cursor.block().isVisible()));
                     }
                     break;
                 }
@@ -2074,8 +2077,10 @@ QPoint PageTextEditPrivate::correctMousePosition(const QPoint& _eventPos)
     // Обрабатываем случай, когда курсор убежал в самый низ и стоит в невидимом блоке.
     // Просто идём назад, до первого видимого блока
     //
-    if (cursor.atEnd() && !cursor.block().isVisible()) {
-        while (!cursor.atStart() && !cursor.block().isVisible()) {
+    if (cursor.atEnd()
+        && !cursor.block().isVisible()) {
+        while (!cursor.atStart()
+               && !cursor.block().isVisible()) {
             cursor.movePosition(QTextCursor::PreviousBlock);
             cursor.movePosition(QTextCursor::StartOfBlock);
         }
@@ -2114,12 +2119,18 @@ QPoint PageTextEditPrivate::correctMousePosition(const QPoint& _eventPos)
         } while (!cursor.atBlockEnd());
     }
 
+
+    //
+    // TODO: Нужно корректировать позицию, если курсор попадёт за правую границу таблицы
+    //       т.к. там нельзя ему быть
+    //
+
+
     //
     // Настраиваем координаты найденной точки
     //
     localPos.setY(q->cursorRect(cursor).center().y());
     localPos = viewport->mapToParent(localPos);
-
     return localPos;
 }
 

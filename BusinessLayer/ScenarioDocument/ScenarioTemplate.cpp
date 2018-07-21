@@ -336,6 +336,13 @@ bool ScenarioBlockStyle::isCanModify() const
     return m_charFormat.boolProperty(ScenarioBlockStyle::PropertyIsCanModify);
 }
 
+void ScenarioBlockStyle::setCanModify(bool _can)
+{
+    if (isCanModify() != _can) {
+        m_charFormat.setProperty(ScenarioBlockStyle::PropertyIsCanModify, _can);
+    }
+}
+
 bool ScenarioBlockStyle::hasDecoration() const
 {
     return !prefix().isEmpty() || !postfix().isEmpty();
@@ -1075,6 +1082,7 @@ void ScenarioTemplate::load(const QString& _fromFile)
                 pageSplitterStyle.setLeftMargin(0.0);
                 pageSplitterStyle.setRightMargin(0.0);
                 pageSplitterStyle.setBottomMargin(0.0);
+                pageSplitterStyle.setCanModify(false);
                 m_blockStyles.insert(pageSplitterStyle.type(), pageSplitterStyle);
             }
         }
