@@ -11,6 +11,7 @@
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockParsers.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioReviewModel.h>
+#include <BusinessLayer/ScenarioDocument/ScriptTextCursor.h>
 #include <BusinessLayer/ScenarioDocument/ScriptTextCorrector.h>
 
 #include <DataLayer/DataStorageLayer/ResearchStorage.h>
@@ -2030,16 +2031,16 @@ void ScenarioTextEdit::cleanScenarioTypeFromBlock()
 
 void ScenarioTextEdit::applyScenarioTypeToBlock(ScenarioBlockStyle::Type _blockType)
 {
-    QTextCursor cursor = textCursor();
+    ScriptTextCursor cursor = textCursor();
     cursor.beginEditBlock();
 
-    ScenarioBlockStyle newBlockStyle = ScenarioTemplateFacade::getTemplate().blockStyle(_blockType);
+    const ScenarioBlockStyle newBlockStyle = ScenarioTemplateFacade::getTemplate().blockStyle(_blockType);
 
     //
     // Обновим стили
     //
     cursor.setBlockCharFormat(newBlockStyle.charFormat());
-    cursor.setBlockFormat(newBlockStyle.blockFormat());
+    cursor.setBlockFormat(newBlockStyle.blockFormat(cursor.isBlockInTable()));
 
     //
     // Применим стиль текста ко всему блоку, выделив его,
@@ -2117,7 +2118,7 @@ void ScenarioTextEdit::applyScenarioTypeToBlock(ScenarioBlockStyle::Type _blockT
         cursor.movePosition(QTextCursor::PreviousCharacter);
 
         cursor.setBlockCharFormat(headerStyle.charFormat());
-        cursor.setBlockFormat(headerStyle.blockFormat());
+        cursor.setBlockFormat(headerStyle.blockFormat(cursor.isBlockInTable()));
 
         cursor.insertText(newBlockStyle.header());
     }
@@ -2156,7 +2157,7 @@ void ScenarioTextEdit::applyScenarioTypeToBlock(ScenarioBlockStyle::Type _blockT
         //
         cursor.insertBlock();
         cursor.setBlockCharFormat(footerStyle.charFormat());
-        cursor.setBlockFormat(footerStyle.blockFormat());
+        cursor.setBlockFormat(footerStyle.blockFormat(cursor.isBlockInTable()));
 
         //
         // т.к. вставлен блок, нужно вернуть курсор на место

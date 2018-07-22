@@ -258,8 +258,9 @@ namespace BusinessLogic
 
         /**
          * @brief Настройки стиля отображения блока
+         * @param _splitted - находится ли блок внутри разделителя
          */
-        QTextBlockFormat blockFormat() const { return m_blockFormat; }
+        QTextBlockFormat blockFormat(bool _splitted = false) const;
 
         /**
          * @brief Установить цвет фона блока

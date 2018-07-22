@@ -5,6 +5,7 @@
 #include "ScenarioModelItem.h"
 #include "ScenarioTemplate.h"
 #include "ScenarioTextBlockInfo.h"
+#include "ScriptTextCursor.h"
 
 #include <3rd_party/Helpers/TextEditHelper.h>
 
@@ -1380,7 +1381,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
     //
     // Начинаем операцию вставки
     //
-    QTextCursor cursor(m_scenario->document());
+    ScriptTextCursor cursor(m_scenario->document());
     cursor.setPosition(_position);
     cursor.beginEditBlock();
 
@@ -1431,7 +1432,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         //
                         // Установим стиль блока
                         //
-                        cursor.setBlockFormat(currentStyle.blockFormat());
+                        cursor.setBlockFormat(currentStyle.blockFormat(cursor.isBlockInTable()));
                         cursor.setBlockCharFormat(currentStyle.charFormat());
                         cursor.setCharFormat(currentStyle.charFormat());
                     }

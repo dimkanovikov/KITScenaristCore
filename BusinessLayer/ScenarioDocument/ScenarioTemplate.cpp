@@ -316,6 +316,18 @@ void ScenarioBlockStyle::setLineSpacingValue(qreal _value)
     }
 }
 
+QTextBlockFormat ScenarioBlockStyle::blockFormat(bool _splitted) const
+{
+    if (!_splitted) {
+        return m_blockFormat;
+    }
+
+    auto splittedBlockFormat = m_blockFormat;
+    splittedBlockFormat.setRightMargin(PageMetrics::mmToPx(m_rightMarginSplitted));
+    splittedBlockFormat.setLeftMargin(PageMetrics::mmToPx(m_leftMarginSplitted));
+    return splittedBlockFormat;
+}
+
 void ScenarioBlockStyle::setBackgroundColor(const QColor& _color)
 {
     m_blockFormat.setBackground(_color);
