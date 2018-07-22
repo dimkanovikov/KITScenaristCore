@@ -13,8 +13,8 @@ namespace {
 	 * @brief Ключи для формирования xml из импортируемого документа
 	 */
 	/** @{ */
-	const QString NODE_SCENARIO = "scenario";
-	const QString NODE_VALUE = "v";
+	const QString kNodeScript = "scenario";
+	const QString kNodeValue = "v";
 
 	const QString ATTRIBUTE_VERSION = "version";
 	/** @} */
@@ -43,7 +43,7 @@ QString TrelbyImporter::importScript(const BusinessLogic::ImportParameters& _imp
 		//
 		QXmlStreamWriter writer(&scenarioXml);
 		writer.writeStartDocument();
-		writer.writeStartElement(NODE_SCENARIO);
+		writer.writeStartElement(kNodeScript);
 		writer.writeAttribute(ATTRIBUTE_VERSION, "1.0");
 
 		//
@@ -102,7 +102,7 @@ QString TrelbyImporter::importScript(const BusinessLogic::ImportParameters& _imp
 				//
 				const QString blockTypeName = ScenarioBlockStyle::typeName(blockType);
 				writer.writeStartElement(blockTypeName);
-				writer.writeStartElement(NODE_VALUE);
+				writer.writeStartElement(kNodeValue);
 				writer.writeCDATA(paragraphText);
 				writer.writeEndElement();
 				writer.writeEndElement();

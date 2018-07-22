@@ -431,6 +431,9 @@ private:
             addTag("scene_description", s_tagsMap, s_charIndex);
             addTag("undefined", s_tagsMap, s_charIndex);
             addTag("lyrics", s_tagsMap, s_charIndex);
+            s_tagsMap.insert("<splitter_start/>", QChar(s_charIndex++));
+            s_tagsMap.insert("<splitter/>", QChar(s_charIndex++));
+            s_tagsMap.insert("<splitter_end/>", QChar(s_charIndex++));
 
             /*
                 ("<scene_heading>", "가")
