@@ -8,6 +8,7 @@
 #include "ScriptTextCursor.h"
 
 #include <3rd_party/Helpers/TextEditHelper.h>
+#include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
 
 #include <QApplication>
 #include <QStringBuilder>
@@ -298,7 +299,7 @@ QString ScenarioXml::scenarioToXml()
                 if (cursor.currentTable() != nullptr
                     && cursor.currentTable()->cellAt(cursor).column() == 1) { // вторая колонка
                     isSecondColumn = true;
-                    resultXml.append(QString("<%1/>").arg(kNodeSplitter));
+                    resultXml.append(QString("<%1/>\n").arg(kNodeSplitter));
                 }
             }
         }
@@ -607,7 +608,7 @@ QString ScenarioXml::scenarioToXml()
             }
 
             else if (currentType == ScenarioBlockStyle::PageSplitter) {
-                currentBlockXml.append(QString("<%1/>").arg(isInTable
+                currentBlockXml.append(QString("<%1/>\n").arg(isInTable
                                                             ? kNodeSplitterStart
                                                             : kNodeSplitterEnd));
             }
@@ -617,7 +618,6 @@ QString ScenarioXml::scenarioToXml()
         }
         currentBlock = currentBlock.next();
 
-        qDebug() << resultXml;
 
     } while (currentBlock.isValid());
 
@@ -1578,6 +1578,87 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                 // Обработка остальных тэгов
                 //
                 else {
+                    //
+                    // Таблица
+                    //
+                    // вставка таблицы
+                    //
+                    if (tokenName == kNodeSplitterStart) {
+                        //
+                        // Вставим блок в котором будет располагаться таблица
+                        //
+                        cursor.insertBlock();
+
+                        //
+                        // Назначим блоку перед таблицей формат PageSplitter
+                        //
+                        const auto splitterStyle = ScenarioTemplateFacade::getTemplate().blockStyle(ScenarioBlockStyle::PageSplitter);
+                        cursor.setBlockCharFormat(splitterStyle.charFormat());
+                        cursor.setCharFormat(splitterStyle.charFormat());
+                        //
+                        // ... и запретим позиционировать в нём курсор
+                        //
+                        auto splitterBlockFormat = splitterStyle.blockFormat();
+                        splitterBlockFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
+                        cursor.setBlockFormat(splitterBlockFormat);
+
+                        //
+                        // Вставляем таблицу
+                        //
+                        const qreal tableWidth = 100;
+                        const qreal leftColumnWidth = ScenarioTemplateFacade::getTemplate().splitterLeftSidePercents();
+                        const qreal rightColumnWidth = tableWidth - leftColumnWidth;
+                        QTextTableFormat tableFormat;
+                        tableFormat.setWidth(QTextLength{QTextLength::PercentageLength, tableWidth});
+                        tableFormat.setColumnWidthConstraints({ QTextLength{QTextLength::PercentageLength, leftColumnWidth},
+                                                                QTextLength{QTextLength::PercentageLength, rightColumnWidth} });
+                        tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_None);
+                        cursor.insertTable(1, 2, tableFormat);
+
+                        //
+                        // После вставки таблицы курсор находится внутри первой ячейки,
+                        // поэтому просто "перезапишем" её содержимое
+                        //
+                        firstBlockHandling = true;
+                        needChangeFirstBlockType = true;
+                    }
+                    //
+                    // разделение между колонками
+                    //
+                    else if (tokenName == kNodeSplitter) {
+                        //
+                        // Переход ко второй колонке
+                        //
+                        cursor.movePosition(QTextCursor::NextBlock);
+
+                        //
+                        // Перезапишем содержимое второй ячейки
+                        //
+                        firstBlockHandling = true;
+                        needChangeFirstBlockType = true;
+                    }
+                    //
+                    // завершение вставки таблицы
+                    //
+                    else if (tokenName == kNodeSplitterEnd) {
+                        //
+                        // Выход из таблицы
+                        //
+                        cursor.movePosition(QTextCursor::NextBlock);
+                        //
+                        // Назначим блоку после таблицы формат PageSplitter
+                        //
+                        const auto splitterStyle = ScenarioTemplateFacade::getTemplate().blockStyle(ScenarioBlockStyle::PageSplitter);
+                        cursor.setBlockCharFormat(splitterStyle.charFormat());
+                        cursor.setCharFormat(splitterStyle.charFormat());
+                        //
+                        // ... и запретим позиционировать в нём курсор
+                        //
+                        auto splitterBlockFormat = splitterStyle.blockFormat();
+                        splitterBlockFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
+                        cursor.setBlockFormat(splitterBlockFormat);
+                    }
+
                     //
                     // Редакторские заметки
                     //

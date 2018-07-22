@@ -696,17 +696,15 @@ void ScenarioTextEdit::splitPage()
     // Вставляем таблицу
     //
     const auto scriptTemplate = ScenarioTemplateFacade::getTemplate();
-    const qreal tableWidth = m_document->pageSize().width()
-                             - document()->rootFrame()->frameFormat().leftMargin()
-                             - document()->rootFrame()->frameFormat().rightMargin();
-    const qreal leftColumnWidth = tableWidth * scriptTemplate.splitterLeftSidePercents() / 100;
+    const qreal tableWidth = 100;
+    const qreal leftColumnWidth = scriptTemplate.splitterLeftSidePercents();
     const qreal rightColumnWidth = tableWidth - leftColumnWidth;
-    QTextTableFormat format;
-    format.setWidth(QTextLength{ QTextLength::FixedLength, tableWidth });
-    format.setColumnWidthConstraints({ QTextLength{QTextLength::FixedLength, leftColumnWidth},
-                                       QTextLength{QTextLength::FixedLength, rightColumnWidth} });
-//    format.setBorderStyle(QTextFrameFormat::BorderStyle_None);
-    cursor.insertTable(1, 2, format);
+    QTextTableFormat tableFormat;
+    tableFormat.setWidth(QTextLength{QTextLength::PercentageLength, tableWidth});
+    tableFormat.setColumnWidthConstraints({ QTextLength{QTextLength::PercentageLength, leftColumnWidth},
+                                            QTextLength{QTextLength::PercentageLength, rightColumnWidth} });
+    tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_None);
+    cursor.insertTable(1, 2, tableFormat);
 
     //
     // Назначим блоку после таблицы формат PageSplitter
@@ -718,8 +716,7 @@ void ScenarioTextEdit::splitPage()
     textCursor().setBlockFormat(pageSplitterBlockFormat);
 
     //
-    // Вставляем параграф после таблицы - это обязательное условие, чтобы после таблицы всегда
-    // оставался один параграф, чтобы пользователь всегда мог выйти из таблицы
+    // Вставляем параграф после таблицы
     //
     addScenarioBlock(lastBlockType);
     moveCursor(QTextCursor::PreviousBlock);
