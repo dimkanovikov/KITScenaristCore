@@ -180,7 +180,15 @@ namespace UserInterface
          */
         bool isRedoAvailable() const;
 
+        /**
+         * @brief Разделить страницу
+         */
         void splitPage();
+
+        /**
+         * @brief Отменить разделение страницы
+         */
+        void unsplitPage();
 
         /**
          * @brief Настроить форматирование выделенного текста

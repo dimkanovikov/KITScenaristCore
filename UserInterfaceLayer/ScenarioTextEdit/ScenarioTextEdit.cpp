@@ -41,6 +41,7 @@
 #include <QTextBlock>
 #include <QTextCursor>
 #include <QTextDocumentFragment>
+#include <QTextTable>
 #include <QTimer>
 #include <QWheelEvent>
 #include <QWidgetAction>
@@ -563,13 +564,19 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     }
 
     //
-    // Добавляем возможность преобразовать в сдвоенный диалог и обратно
+    // Добавляем возможность разделить страницу и обратно
     //
-    {
-        QAction* splitPage = new QAction(tr("Split block"), menu);
+    if (!isReadOnly()) {
+        const ScriptTextCursor cursor = cursorForPosition(_pos);
+        QAction* splitPage = new QAction(tr("Split page"), menu);
         splitPage->setCheckable(true);
         splitPage->setProperty(kLastMousePosKey, _pos);
-        connect(splitPage, &QAction::toggled, this, &ScenarioTextEdit::splitPage);
+        if (cursor.isBlockInTable()) {
+            splitPage->setChecked(true);
+            connect(splitPage, &QAction::toggled, this, &ScenarioTextEdit::unsplitPage);
+        } else {
+            connect(splitPage, &QAction::toggled, this, &ScenarioTextEdit::splitPage);
+        }
         menu->insertAction(menu->actions().first(), splitPage);
     }
 
@@ -678,7 +685,8 @@ void ScenarioTextEdit::splitPage()
         cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
         setTextCursor(cursor);
     }
-    QScopedPointer<QMimeData> mime(createMimeDataFromSelection());
+    const QString mime = m_document->mimeFromSelection(textCursor().selectionStart(),
+                                                       textCursor().selectionEnd());
     textCursor().removeSelectedText();
 
     //
@@ -703,7 +711,7 @@ void ScenarioTextEdit::splitPage()
     tableFormat.setWidth(QTextLength{QTextLength::PercentageLength, tableWidth});
     tableFormat.setColumnWidthConstraints({ QTextLength{QTextLength::PercentageLength, leftColumnWidth},
                                             QTextLength{QTextLength::PercentageLength, rightColumnWidth} });
-    tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_None);
+//    tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_None);
     cursor.insertTable(1, 2, tableFormat);
 
     //
@@ -732,7 +740,80 @@ void ScenarioTextEdit::splitPage()
     //
     // Вставляем текст в первую колонку
     //
-    insertFromMimeData(mime.data());
+    m_document->insertFromMime(textCursor().position(), mime);
+
+    cursor.endEditBlock();
+}
+
+void ScenarioTextEdit::unsplitPage()
+{
+    //
+    // Получим курсор для блока, из которого пользователь хочет убрать разделение
+    //
+    const QPoint cursorPos = sender()->property(kLastMousePosKey).toPoint();
+    ScriptTextCursor cursor = cursorForPosition(cursorPos);
+    cursor.movePosition(QTextCursor::StartOfBlock);
+    cursor.beginEditBlock();
+
+    //
+    // Идём до начала таблицы
+    //
+    while (ScenarioBlockStyle::forBlock(cursor.block()) != ScenarioBlockStyle::PageSplitter) {
+        cursor.movePosition(QTextCursor::PreviousBlock);
+    }
+
+    //
+    // Выделяем и сохраняем текст из первой ячейки
+    //
+    cursor.movePosition(QTextCursor::NextBlock);
+    QTextTable* table = cursor.currentTable();
+    while (table->cellAt(cursor).column() == 0) {
+        cursor.movePosition(QTextCursor::NextBlock, QTextCursor::KeepAnchor);
+    }
+    cursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::KeepAnchor);
+    const QString firstColumnData =
+            cursor.selectedText().isEmpty()
+            ? QString()
+            : m_document->mimeFromSelection(cursor.selectionStart(), cursor.selectionEnd());
+    cursor.removeSelectedText();
+
+    //
+    // Выделяем и сохраняем текст из второй ячейки
+    //
+    cursor.movePosition(QTextCursor::NextBlock);
+    while (cursor.movePosition(QTextCursor::NextBlock, QTextCursor::KeepAnchor));
+    cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+    const QString secondColumnData =
+            cursor.selectedText().isEmpty()
+            ? QString()
+            : m_document->mimeFromSelection(cursor.selectionStart(), cursor.selectionEnd());
+    cursor.removeSelectedText();
+
+    //
+    // Удаляем таблицу
+    // Делается это только таким костылём, как удалить таблицу по-человечески я не нашёл...
+    //
+    cursor.movePosition(QTextCursor::NextBlock);
+    cursor.movePosition(QTextCursor::NextBlock);
+    cursor.movePosition(QTextCursor::PreviousBlock, QTextCursor::KeepAnchor);
+    cursor.movePosition(QTextCursor::PreviousBlock, QTextCursor::KeepAnchor);
+    cursor.deletePreviousChar();
+
+    //
+    // Вставляем текст из удалённых ячеек
+    //
+    cursor.movePosition(QTextCursor::StartOfBlock);
+    cursor.movePosition(QTextCursor::PreviousCharacter);
+    const int insertPosition = cursor.position();
+    if (!secondColumnData.isEmpty()) {
+        cursor.insertBlock();
+        m_document->insertFromMime(cursor.position(), secondColumnData);
+        cursor.setPosition(insertPosition);
+    }
+    if (!firstColumnData.isEmpty()) {
+        cursor.insertBlock();
+        m_document->insertFromMime(cursor.position(), firstColumnData);
+    }
 
     cursor.endEditBlock();
 }
