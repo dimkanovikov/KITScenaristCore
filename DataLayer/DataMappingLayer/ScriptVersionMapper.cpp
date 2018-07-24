@@ -6,7 +6,7 @@ using namespace DataMappingLayer;
 
 
 namespace {
-    const QString kColumns = " id, datetime, color, name, description ";
+    const QString kColumns = " id, fk_script_id, datetime, color, name, description ";
     const QString kTableName = " script_versions ";
 }
 
@@ -55,13 +55,14 @@ QString ScriptVersionMapper::insertStatement(DomainObject* _subject, QVariantLis
 {
     QString insertStatement =
             QString("INSERT INTO " + kTableName +
-                    " (id, datetime, name, color) "
-                    " VALUES(?, ?, ?, ?, ?) "
+                    " (id, fk_script_id, datetime, color, name, description) "
+                    " VALUES(?, ?, ?, ?, ?, ?) "
                     );
 
     ScriptVersion* scriptVersion = dynamic_cast<ScriptVersion*>(_subject );
     _insertValues.clear();
     _insertValues.append(scriptVersion->id().value());
+    _insertValues.append(1);
     _insertValues.append(scriptVersion->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz"));
     _insertValues.append(scriptVersion->color().name());
     _insertValues.append(scriptVersion->name());

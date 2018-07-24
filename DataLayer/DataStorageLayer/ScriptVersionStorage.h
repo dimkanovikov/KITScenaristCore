@@ -19,6 +19,7 @@ namespace DataStorageLayer
 {
     class ScriptVersionStorage
     {
+    public:
         /**
          * @brief Получить все версии сценария
          */
