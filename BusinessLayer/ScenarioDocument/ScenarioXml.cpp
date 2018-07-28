@@ -1450,6 +1450,13 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
     bool needChangeFirstBlockType = false;
 
     //
+    // Находимся ли в данный момент внутри таблицы вставленной рамках текущей операции
+    // NOTE: Отдельный флаг нужен потому что при вставке таблицы в рамках текущей транзакции,
+    //       она не определяется курсором до момента фиксации транзакции работы с текстом
+    //
+    bool isInTable = false;
+
+    //
     // Начинаем операцию вставки
     //
     ScriptTextCursor cursor(m_scenario->document());
@@ -1503,7 +1510,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         //
                         // Установим стиль блока
                         //
-                        cursor.setBlockFormat(currentStyle.blockFormat(cursor.isBlockInTable()));
+                        cursor.setBlockFormat(currentStyle.blockFormat(cursor.isBlockInTable() || isInTable));
                         cursor.setBlockCharFormat(currentStyle.charFormat());
                         cursor.setCharFormat(currentStyle.charFormat());
                     }
@@ -1585,6 +1592,13 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                     //
                     if (tokenName == kNodeSplitterStart) {
                         //
+                        // Игнорируем попытку вставить таблицу в таблицу
+                        //
+                        if (cursor.isBlockInTable()) {
+                            break;
+                        }
+
+                        //
                         // Вставим блок в котором будет располагаться таблица
                         //
                         cursor.insertBlock();
@@ -1621,11 +1635,19 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         //
                         firstBlockHandling = true;
                         needChangeFirstBlockType = true;
+                        isInTable = true;
                     }
                     //
                     // разделение между колонками
                     //
                     else if (tokenName == kNodeSplitter) {
+                        //
+                        // Игнорируем попытку вставить таблицу в таблицу
+                        //
+                        if (cursor.isBlockInTable()) {
+                            break;
+                        }
+
                         //
                         // Переход ко второй колонке
                         //
@@ -1642,6 +1664,13 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                     //
                     else if (tokenName == kNodeSplitterEnd) {
                         //
+                        // Игнорируем попытку вставить таблицу в таблицу
+                        //
+                        if (cursor.isBlockInTable()) {
+                            break;
+                        }
+
+                        //
                         // Выход из таблицы
                         //
                         cursor.movePosition(QTextCursor::NextBlock);
@@ -1657,6 +1686,8 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         auto splitterBlockFormat = splitterStyle.blockFormat();
                         splitterBlockFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
                         cursor.setBlockFormat(splitterBlockFormat);
+
+                        isInTable = false;
                     }
 
                     //
