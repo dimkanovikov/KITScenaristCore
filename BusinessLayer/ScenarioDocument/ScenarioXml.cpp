@@ -1627,7 +1627,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         tableFormat.setWidth(QTextLength{QTextLength::PercentageLength, tableWidth});
                         tableFormat.setColumnWidthConstraints({ QTextLength{QTextLength::PercentageLength, leftColumnWidth},
                                                                 QTextLength{QTextLength::PercentageLength, rightColumnWidth} });
-//                        tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_None);
+                        tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_None);
                         cursor.insertTable(1, 2, tableFormat);
 
                         //

@@ -711,7 +711,7 @@ void ScenarioTextEdit::splitPage()
     tableFormat.setWidth(QTextLength{QTextLength::PercentageLength, tableWidth});
     tableFormat.setColumnWidthConstraints({ QTextLength{QTextLength::PercentageLength, leftColumnWidth},
                                             QTextLength{QTextLength::PercentageLength, rightColumnWidth} });
-//    tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_None);
+    tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_None);
     cursor.insertTable(1, 2, tableFormat);
 
     //
@@ -1273,6 +1273,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
     const int leftDelta = (QLocale().textDirection() == Qt::LeftToRight ? -1 : 1) * horizontalScrollBar()->value();
     int colorRectWidth = 0;
     int verticalMargin = 0;
+    int splitterX = leftDelta + textLeft + (textRight - textLeft) * ScenarioTemplateFacade::getTemplate().splitterLeftSidePercents() / 100;
 
 
 
@@ -1503,7 +1504,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             int lastCharacterBlockBottom = 0;
             QColor lastCharacterColor;
 
-            QTextCursor cursor(document());
+            ScriptTextCursor cursor(document());
             while (block.isValid() && block != bottomBlock) {
                 //
                 // Стиль текущего блока
@@ -1515,6 +1516,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     const QRect cursorR = cursorRect(cursor);
                     cursor.movePosition(QTextCursor::EndOfBlock);
                     const QRect cursorREnd = cursorRect(cursor);
+                    //
+                    verticalMargin = cursorR.height() / 2;
 
                     //
                     // Определим цвет сцены
@@ -1522,7 +1525,6 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     if (blockType == ScenarioBlockStyle::SceneHeading
                         || blockType == ScenarioBlockStyle::FolderHeader) {
                         lastSceneBlockBottom = cursorR.top();
-                        verticalMargin = cursorR.height() / 2;
                         colorRectWidth = QFontMetrics(cursor.charFormat().font()).width(".");
                         lastSceneColor = QColor();
                         if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(block.userData())) {
@@ -1553,7 +1555,6 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     //
                     if (blockType == ScenarioBlockStyle::Character) {
                         lastCharacterBlockBottom = cursorR.top();
-                        verticalMargin = cursorR.height() / 2;
                         colorRectWidth = QFontMetrics(cursor.charFormat().font()).width(".");
                         lastCharacterColor = QColor();
                         const QString characterName = BusinessLogic::CharacterParser::name(block.text());
@@ -1616,6 +1617,14 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                             painter.setPen(Qt::white);
                         } else {
                             painter.setPen(palette().text().color());
+                        }
+
+                        //
+                        // Прорисовка разделителя страницы
+                        //
+                        if (cursor.isBlockInTable()) {
+                            painter.drawLine(QPointF(splitterX, cursorR.top() - verticalMargin),
+                                             QPointF(splitterX, cursorREnd.bottom() + verticalMargin));
                         }
 
                         //
