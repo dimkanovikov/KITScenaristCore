@@ -289,6 +289,7 @@ QString ScenarioXml::scenarioToXml()
             //
             if (currentType == ScenarioBlockStyle::PageSplitter) {
                 isInTable = !isInTable;
+                isSecondColumn = false;
             }
             //
             // Если начало второй колонки, запишем разделитель
