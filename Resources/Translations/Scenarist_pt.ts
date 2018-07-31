@@ -1485,6 +1485,10 @@ Türkçe: Recep Burak Yak
         <source>Italiano</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Azərbaycan</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -2437,7 +2441,7 @@ Você pode tentar recarregar a atualização.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Download Update</source>
+        <source>DOWNLOAD UPDATE</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2690,6 +2694,10 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
         <source>Italiano</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Azərbaycan</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PhotoLabel</name>
@@ -2783,20 +2791,24 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
 <context>
     <name>ProjectVersionDialog</name>
     <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fix date and time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Name</source>
         <translation type="unfinished">Nome</translation>
     </message>
     <message>
         <source>Description</source>
         <translation type="unfinished">Descrição</translation>
+    </message>
+    <message>
+        <source>Save new version of the script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dd.MM.yyyy hh:mm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version date and time</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4890,7 +4902,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
         <translation>Alterar o número da cena</translation>
     </message>
     <message>
-        <source>Split block</source>
+        <source>Split page</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5124,6 +5136,10 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Italian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Azerbaijani</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

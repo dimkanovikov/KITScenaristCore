@@ -1420,6 +1420,10 @@ Türkçe: Recep Burak Yak
         <source>Italiano</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Azərbaycan</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -2362,7 +2366,7 @@ You can try to reload update.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Download Update</source>
+        <source>DOWNLOAD UPDATE</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2619,6 +2623,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
         <source>Italiano</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Azərbaycan</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PhotoLabel</name>
@@ -2713,11 +2721,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <name>ProjectVersionDialog</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
-    </message>
-    <message>
-        <source>Fix date and time</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Форма</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2726,6 +2730,18 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <source>Description</source>
         <translation type="unfinished">Опис</translation>
+    </message>
+    <message>
+        <source>Save new version of the script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dd.MM.yyyy hh:mm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version date and time</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4837,7 +4853,7 @@ The application will start in few seconds.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Split block</source>
+        <source>Split page</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5075,6 +5091,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Italian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Azerbaijani</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
