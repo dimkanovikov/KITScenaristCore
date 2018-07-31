@@ -109,7 +109,12 @@ QModelIndex DomainObjectsItemModel::indexForItem(DomainObject* _item) const
 
 QList<DomainObject*> DomainObjectsItemModel::toList() const
 {
-	return domainObjects();
+    return domainObjects();
+}
+
+bool DomainObjectsItemModel::isEmpty() const
+{
+    return domainObjects().isEmpty();
 }
 
 int DomainObjectsItemModel::size() const
@@ -176,7 +181,7 @@ void DomainObjectsItemModel::itemChanged(DomainObject* _domainObject)
 	emit dataChanged(itemIndex, itemIndex);
 }
 
-QList<DomainObject*> DomainObjectsItemModel::domainObjects() const
+const QList<DomainObject*>& DomainObjectsItemModel::domainObjects() const
 {
 	return m_domainObjects;
 }

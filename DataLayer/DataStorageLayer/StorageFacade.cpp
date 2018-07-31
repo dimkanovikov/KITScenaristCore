@@ -152,7 +152,7 @@ DatabaseHistoryStorage* StorageFacade::databaseHistoryStorage()
     return s_databaseHistoryStorage;
 }
 
-ScriptVersionStorage*StorageFacade::scriptVersionStorage()
+ScriptVersionStorage* StorageFacade::scriptVersionStorage()
 {
     if (s_scriptVersionStorage == nullptr) {
         s_scriptVersionStorage = new ScriptVersionStorage;

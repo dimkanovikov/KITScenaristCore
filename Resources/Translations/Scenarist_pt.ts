@@ -156,6 +156,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Our heroes, who help us to create international versions:
+Azərbaycan: Tarlan Rasulzadeh
 Deutsch: Michael Krämer
 English: Eric Wayne &amp; Soyung Key
 Español: Felipe Vece, Pedro Terrero

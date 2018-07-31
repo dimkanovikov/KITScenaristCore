@@ -26,6 +26,11 @@ namespace DataStorageLayer
         ScriptVersionsTable* all();
 
         /**
+         * @brief Получить название текущей версии
+         */
+        QString currentVersionName();
+
+        /**
          * @brief Сохранить версию
          */
         ScriptVersion* storeScriptVersion(const QDateTime& _datetime, const QColor& _color,

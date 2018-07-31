@@ -7,6 +7,8 @@
 
 #include <3rd_party/Helpers/TextEditHelper.h>
 
+#include <QApplication>
+
 using namespace DataStorageLayer;
 using namespace DataMappingLayer;
 
@@ -19,7 +21,18 @@ ScriptVersionsTable* ScriptVersionStorage::all()
     return m_all;
 }
 
-ScriptVersion*ScriptVersionStorage::storeScriptVersion(const QDateTime& _datetime, const QColor& _color,
+QString ScriptVersionStorage::currentVersionName()
+{
+    if (all()->isEmpty()) {
+        return QApplication::translate("DataStorageLayer::ScriptVersionStorage", "First draft");
+    }
+
+    auto versionObject = all()->toList().last();
+    auto version = dynamic_cast<Domain::ScriptVersion*>(versionObject);
+    return version->name();
+}
+
+ScriptVersion* ScriptVersionStorage::storeScriptVersion(const QDateTime& _datetime, const QColor& _color,
                                                        const QString& _name, const QString& _description)
 {
     //

@@ -887,6 +887,7 @@ QLabel[link=true] {
  * Стиль календаря
  */
 #qt_calendar_navigationbar {
+    max-height: 32px;
     background-color: palette(window);
     border-top: 1px solid palette(dark);
 }
@@ -905,12 +906,14 @@ QLabel[link=true] {
 
 #qt_calendar_prevmonth {
     border-left: 1px solid palette(dark);
-    image: url(:/ui/chevron-left_THEME_POSTFIX.png);
+    padding: 11px 4px 11px 0px;
+    image: url(:/Interface/UI/leftarrow_THEME_POSTFIX.png);
 }
 
 #qt_calendar_nextmonth {
     border-right: 1px solid palette(dark);
-    image: url(:/ui/chevron-right_THEME_POSTFIX.png);
+    padding: 11px 0px 11px 4px;
+    image: url(:/Interface/UI/rightarrow_THEME_POSTFIX.png);
 }
 
 #qt_calendar_monthbutton, #qt_calendar_yearbutton {

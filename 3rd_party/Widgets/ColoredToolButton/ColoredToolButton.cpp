@@ -123,6 +123,11 @@ void ColoredToolButton::setColorsPane(ColoredToolButton::ColorsPaneType _pane)
     }
 }
 
+void ColoredToolButton::disableColor(const QColor& _color)
+{
+    m_colorsPane->disableColor(_color);
+}
+
 QColor ColoredToolButton::currentColor() const
 {
     QColor result;
@@ -130,6 +135,13 @@ QColor ColoredToolButton::currentColor() const
         result = m_colorsPane->currentColor();
     }
     return result;
+}
+
+void ColoredToolButton::selectFirstEnabledColor()
+{
+    m_colorsPane->selectFirstEnabledColor();
+
+    updateColor(m_colorsPane->currentColor());
 }
 
 void ColoredToolButton::setColor(const QColor& _color)

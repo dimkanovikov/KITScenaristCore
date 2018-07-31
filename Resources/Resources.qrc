@@ -122,6 +122,7 @@
         <file>Iconset/bookmark-plus.svg</file>
         <file>Iconset/lock-open.svg</file>
         <file>Iconset/lock.svg</file>
+        <file>Iconset/playlist-plus.svg</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>
@@ -135,6 +136,10 @@
         <file>UI/style-desktop-compact.qss</file>
         <file>UI/style-desktop-rtl.qss</file>
         <file>UI/style-desktop-compact-rtl.qss</file>
+        <file>UI/leftarrow.png</file>
+        <file>UI/leftarrow-dark.png</file>
+        <file>UI/rightarrow.png</file>
+        <file>UI/rightarrow-dark.png</file>
     </qresource>
     <qresource prefix="/Templates">
         <file>Templates/russian.kitss</file>
