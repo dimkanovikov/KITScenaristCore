@@ -90,8 +90,11 @@ void ScriptVersions::initView()
 
 int ScriptVersions::versionRow(ScriptVersionWidget* _version) const
 {
+    //
+    // Инвертируем индекс, т.к. на экране мы отображаем от новых к старым
+    //
     QVBoxLayout* layout = dynamic_cast<QVBoxLayout*>(widget()->layout());
-    return layout->indexOf(_version);
+    return layout->count() - layout->indexOf(_version) - 2; // Отнимаем два т.к. индексы с 0 + одна позиция на спейсер
 }
 
 void ScriptVersions::handleRemoveClick()
