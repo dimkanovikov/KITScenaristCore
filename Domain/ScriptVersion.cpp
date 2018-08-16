@@ -71,10 +71,6 @@ void ScriptVersion::setColor(const QColor& _color)
 
 // ****
 
-namespace {
-    const int kColumnCount = 3;
-}
-
 Domain::ScriptVersionsTable::ScriptVersionsTable(QObject* _parent)
     : DomainObjectsItemModel(_parent)
 {
@@ -93,24 +89,24 @@ QVariant Domain::ScriptVersionsTable::data(const QModelIndex& _index, int _role)
         || _role == Qt::EditRole) {
         DomainObject *domainObject = domainObjects().value(_index.row());
         ScriptVersion* version = dynamic_cast<ScriptVersion*>(domainObject);
-        const Column column = sectionToColumn(_index.column());
+        const Column column = static_cast<Column>(_index.column());
         switch (column) {
-            case Datetime: {
+            case kDatetime: {
                 resultData = version->datetime();
                 break;
             }
 
-            case Color: {
+            case kColor: {
                 resultData = version->color();
                 break;
             }
 
-            case Name: {
+            case kName: {
                 resultData = version->name();
                 break;
             }
 
-            case Description: {
+            case kDescription: {
                 resultData = version->description();
                 break;
             }
@@ -122,15 +118,4 @@ QVariant Domain::ScriptVersionsTable::data(const QModelIndex& _index, int _role)
     }
 
     return resultData;
-}
-
-Domain::ScriptVersionsTable::Column Domain::ScriptVersionsTable::sectionToColumn(int _section) const
-{
-    switch (_section) {
-        case 0: return Datetime;
-        case 1: return Color;
-        case 2: return Name;
-        case 3: return Description;
-        default: return Undefined;
-    }
 }

@@ -11,8 +11,7 @@ using UserInterface::ProjectFileWidget;
 
 
 ProjectsList::ProjectsList(QWidget* _parent) :
-    QScrollArea(_parent),
-    m_model(nullptr)
+    QScrollArea(_parent)
 {
     initView();
 }
@@ -26,8 +25,8 @@ void ProjectsList::setModel(QAbstractItemModel* _model, bool _isRemote)
     //
     while (layout->count() > 0) {
         QLayoutItem* item = layout->takeAt(0);
-        if (item && item->widget()) {
-            item->widget()->hide();
+        if (item != nullptr
+            && item->widget() != nullptr) {
             item->widget()->deleteLater();
         }
     }
@@ -78,11 +77,6 @@ void ProjectsList::setModel(QAbstractItemModel* _model, bool _isRemote)
 
         layout->addStretch(1);
     }
-}
-
-QAbstractItemModel* ProjectsList::model() const
-{
-    return m_model;
 }
 
 void ProjectsList::setProjectName(int _index, const QString& _name)

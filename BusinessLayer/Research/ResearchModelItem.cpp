@@ -90,6 +90,11 @@ QIcon ResearchModelItem::icon() const
                 break;
             }
 
+            case Research::Versions: {
+                iconPath = ":/Graphics/Iconset/text-subject.svg";
+                break;
+            }
+
             default: {
                 iconPath = ":/Graphics/Iconset/file-document-box.svg";
                 break;

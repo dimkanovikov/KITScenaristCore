@@ -92,20 +92,18 @@ namespace Domain
 
     public:
         enum Column {
-            Undefined,
-            Id,
-            Datetime,
-            Color,
-            Name,
-            Description
+            kUndefined,
+            kId,
+            kDatetime,
+            kColor,
+            kName,
+            kDescription,
+            kColumnCount
         };
 
     public:
         int columnCount(const QModelIndex&) const;
         QVariant data(const QModelIndex& _index, int _role) const;
-
-    private:
-        Column sectionToColumn(int _section) const;
     };
 }
 

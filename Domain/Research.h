@@ -30,6 +30,7 @@ namespace Domain
             Image,
             MindMap,
             Logline,
+            Versions,
             CharactersRoot = 100, // оставляем резервное место для новых элементов разработки
             Character,
             LocationsRoot = 200,

@@ -389,6 +389,13 @@ namespace {
                     _cursor.insertHtml(research->description());
                     break;
                 }
+
+                default: {
+                    //
+                    // Ничего не делаем с остальными элементами, они не нужны в экспорте
+                    //
+                    break;
+                }
             }
         }
     }

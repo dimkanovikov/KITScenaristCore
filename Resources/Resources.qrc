@@ -123,6 +123,7 @@
         <file>Iconset/lock-open.svg</file>
         <file>Iconset/lock.svg</file>
         <file>Iconset/playlist-plus.svg</file>
+        <file>Iconset/text-subject.svg</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>

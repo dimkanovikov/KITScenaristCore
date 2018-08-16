@@ -18,17 +18,12 @@ namespace UserInterface
         Q_OBJECT
 
     public:
-        explicit ProjectsList(QWidget* _parent = 0);
+        explicit ProjectsList(QWidget* _parent = nullptr);
 
         /**
          * @brief Установить модель проектов
          */
         void setModel(QAbstractItemModel* _model, bool _isRemote);
-
-        /**
-         * @brief Получить модель проектов
-         */
-        QAbstractItemModel* model() const;
 
         /**
          * @brief Установить название проекта
@@ -109,7 +104,7 @@ namespace UserInterface
         /**
          * @brief Модель списка проектов
          */
-        QAbstractItemModel* m_model;
+        QAbstractItemModel* m_model = nullptr;
     };
 }
 

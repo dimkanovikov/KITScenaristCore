@@ -131,6 +131,14 @@ ResearchModel::ResearchModel(QObject* _parent) :
             ResearchBuilder::create(Domain::Identifier(), nullptr, Research::Synopsis, 2, tr("Synopsis"))
         );
     scenarioItem->appendItem(synopsisItem);
+    //
+    // Версии сценария
+    //
+    ResearchModelItem* scriptVersionsItem =
+        new ResearchModelItem(
+            ResearchBuilder::create(Domain::Identifier(), nullptr, Research::Versions, 3, tr("Versions"))
+        );
+    scenarioItem->appendItem(scriptVersionsItem);
 
     //
     // Персонажи
