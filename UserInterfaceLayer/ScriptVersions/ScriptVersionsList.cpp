@@ -1,4 +1,4 @@
-#include "ScriptVersions.h"
+#include "ScriptVersionsList.h"
 #include "ScriptVersionWidget.h"
 
 #include <Domain/ScriptVersion.h>
@@ -9,17 +9,17 @@
 #include <QVBoxLayout>
 
 using Domain::ScriptVersionsTable;
-using UserInterface::ScriptVersions;
+using UserInterface::ScriptVersionsList;
 using UserInterface::ScriptVersionWidget;
 
 
-ScriptVersions::ScriptVersions(QWidget* _parent)
+ScriptVersionsList::ScriptVersionsList(QWidget* _parent)
     : QScrollArea(_parent)
 {
     initView();
 }
 
-void ScriptVersions::setModel(QAbstractItemModel* _model)
+void ScriptVersionsList::setModel(QAbstractItemModel* _model)
 {
     QVBoxLayout* layout = dynamic_cast<QVBoxLayout*>(widget()->layout());
 
@@ -54,13 +54,18 @@ void ScriptVersions::setModel(QAbstractItemModel* _model)
             ScriptVersionWidget* version = new ScriptVersionWidget;
             const QString versionName = m_model->index(row, ScriptVersionsTable::kName).data().toString();
             const QString versionDateTime = m_model->index(row, ScriptVersionsTable::kDatetime).data().toDateTime().toString("dd.MM.yyyy hh:mm:ss");
-            version->setTitle(QString("%1 %2").arg(versionName).arg(TextUtils::directedText(versionDateTime, '[', ']')));
+            const QString versionUser = m_model->index(row, ScriptVersionsTable::kUsername).data().toString();
+            version->setTitle(QString("%1 %2 %3 %4")
+                              .arg(versionName)
+                              .arg(TextUtils::directedText(versionDateTime, '[', ']'))
+                              .arg(tr("started by"))
+                              .arg(versionUser));
             const QString versionDescription = m_model->index(row, ScriptVersionsTable::kDescription).data().toString();
             version->setDescription(versionDescription);
             const QColor versionColor = m_model->index(row, ScriptVersionsTable::kColor).data().value<QColor>();
             version->setColor(versionColor);
             //
-            connect(version, &ScriptVersionWidget::removeClicked, this, &ScriptVersions::handleRemoveClick);
+            connect(version, &ScriptVersionWidget::removeClicked, this, &ScriptVersionsList::handleRemoveClick);
 
             layout->addWidget(version);
         }
@@ -75,7 +80,7 @@ void ScriptVersions::setModel(QAbstractItemModel* _model)
     connect(m_model, &QAbstractItemModel::rowsRemoved, this, [this] { setModel(m_model); });
 }
 
-void ScriptVersions::initView()
+void ScriptVersionsList::initView()
 {
     QVBoxLayout* layout = new QVBoxLayout;
     layout->setContentsMargins(QMargins());
@@ -88,7 +93,7 @@ void ScriptVersions::initView()
     setWidgetResizable(true);
 }
 
-int ScriptVersions::versionRow(ScriptVersionWidget* _version) const
+int ScriptVersionsList::versionRow(ScriptVersionWidget* _version) const
 {
     //
     // Инвертируем индекс, т.к. на экране мы отображаем от новых к старым
@@ -97,7 +102,7 @@ int ScriptVersions::versionRow(ScriptVersionWidget* _version) const
     return layout->count() - layout->indexOf(_version) - 2; // Отнимаем два т.к. индексы с 0 + одна позиция на спейсер
 }
 
-void ScriptVersions::handleRemoveClick()
+void ScriptVersionsList::handleRemoveClick()
 {
     if (ScriptVersionWidget* version = qobject_cast<ScriptVersionWidget*>(sender())) {
         emit removeRequested(m_model->index(versionRow(version), 0));

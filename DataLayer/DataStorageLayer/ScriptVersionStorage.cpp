@@ -32,13 +32,15 @@ QString ScriptVersionStorage::currentVersionName()
     return version->name();
 }
 
-ScriptVersion* ScriptVersionStorage::storeScriptVersion(const QDateTime& _datetime, const QColor& _color,
-                                                       const QString& _name, const QString& _description)
+ScriptVersion*ScriptVersionStorage::storeScriptVersion(const QString& _username, const QDateTime& _datetime,
+                                                       const QColor& _color, const QString& _name,
+                                                       const QString& _description, const QString& _scriptText)
 {
     //
     // Создаём новую версию
     //
-    ScriptVersion* newScriptVersion = new ScriptVersion(Identifier(), _datetime, _color, _name, _description);
+    ScriptVersion* newScriptVersion
+            = new ScriptVersion(Identifier(), _username, _datetime, _color, _name, _description, _scriptText);
 
     //
     // И сохраняем её

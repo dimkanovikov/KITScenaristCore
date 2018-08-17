@@ -574,7 +574,7 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("application/uuid", QUuid::createUuid().toString());
     m_defaultValues.insert("application/app-was-configured", "0");
     m_defaultValues.insert("application/language", "-1");
-    m_defaultValues.insert("application/user-name", ::systemUserName());
+    m_defaultValues.insert("application/username", ::systemUserName());
     m_defaultValues.insert("application/use-dark-theme", "1");
     m_defaultValues.insert("application/autosave", "1");
     m_defaultValues.insert("application/autosave-interval", "5");

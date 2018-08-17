@@ -379,10 +379,12 @@ void Database::createTables(QSqlDatabase& _database)
                    "( "
                    "id INTEGER PRIMARY KEY AUTOINCREMENT, "
                    "fk_script_id INTEGER NOT NULL, "
+                   "username TEXT NOT NULL, "
                    "datetime TEXT NOT NULL, "
                    "color TEXT DEFAULT(NULL), "
                    "name TEXT UNIQUE NOT NULL, "
-                   "description TEXT DEFAULT(NULL) "
+                   "description TEXT DEFAULT(NULL), "
+                   "script_text TEXT NOT NULL"
                    "); "
                    );
 
@@ -1499,10 +1501,12 @@ void Database::updateDatabaseTo_0_7_2(QSqlDatabase& _database)
                    "( "
                    "id INTEGER PRIMARY KEY AUTOINCREMENT, "
                    "fk_script_id INTEGER NOT NULL, "
+                   "username TEXT NOT NULL, "
                    "datetime TEXT NOT NULL, "
                    "color TEXT DEFAULT(NULL), "
                    "name TEXT UNIQUE NOT NULL, "
-                   "description TEXT DEFAULT(NULL) "
+                   "description TEXT DEFAULT(NULL), "
+                   "script_text TEXT NOT NULL"
                    "); "
                    );
 

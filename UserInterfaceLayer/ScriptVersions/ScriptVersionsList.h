@@ -1,5 +1,5 @@
-#ifndef SCRIPTVERSIONS_H
-#define SCRIPTVERSIONS_H
+#ifndef SCRIPTVERSIONSLIST_H
+#define SCRIPTVERSIONSLIST_H
 
 #include <QScrollArea>
 
@@ -13,12 +13,12 @@ namespace UserInterface
     /**
      * @brief Виджет списка версий
      */
-    class ScriptVersions : public QScrollArea
+    class ScriptVersionsList : public QScrollArea
     {
         Q_OBJECT
 
     public:
-        explicit ScriptVersions(QWidget *parent = nullptr);
+        explicit ScriptVersionsList(QWidget *parent = nullptr);
 
         /**
          * @brief Установить модель версий
@@ -57,4 +57,4 @@ namespace UserInterface
     };
 }
 
-#endif // SCRIPTVERSIONS_H
+#endif // SCRIPTVERSIONSLIST_H
