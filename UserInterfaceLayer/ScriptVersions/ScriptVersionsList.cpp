@@ -51,15 +51,16 @@ void ScriptVersionsList::setModel(QAbstractItemModel* _model)
     //
     if (m_model != nullptr) {
         for (int row = m_model->rowCount() - 1; row >= 0; --row) {
-            ScriptVersionWidget* version = new ScriptVersionWidget;
+            const bool isFirstDraft = row == 0;
+            ScriptVersionWidget* version = new ScriptVersionWidget(isFirstDraft);
             const QString versionName = m_model->index(row, ScriptVersionsTable::kName).data().toString();
             const QString versionDateTime = m_model->index(row, ScriptVersionsTable::kDatetime).data().toDateTime().toString("dd.MM.yyyy hh:mm:ss");
             const QString versionUser = m_model->index(row, ScriptVersionsTable::kUsername).data().toString();
             version->setTitle(QString("%1 %2 %3 %4")
                               .arg(versionName)
                               .arg(TextUtils::directedText(versionDateTime, '[', ']'))
-                              .arg(tr("started by"))
-                              .arg(versionUser));
+                              .arg(isFirstDraft ? QString{} : tr("started by"))
+                              .arg(isFirstDraft ? QString{} : versionUser));
             const QString versionDescription = m_model->index(row, ScriptVersionsTable::kDescription).data().toString();
             version->setDescription(versionDescription);
             const QColor versionColor = m_model->index(row, ScriptVersionsTable::kColor).data().value<QColor>();
@@ -71,13 +72,13 @@ void ScriptVersionsList::setModel(QAbstractItemModel* _model)
         }
 
         layout->addStretch(1);
-    }
 
-    //
-    // FIXME: сделать нормальное управление изменениями модели
-    //
-    connect(m_model, &QAbstractItemModel::rowsInserted, this, [this] { setModel(m_model); });
-    connect(m_model, &QAbstractItemModel::rowsRemoved, this, [this] { setModel(m_model); });
+        //
+        // FIXME: сделать нормальное управление изменениями модели
+        //
+        connect(m_model, &QAbstractItemModel::rowsInserted, this, [this] { setModel(m_model); });
+        connect(m_model, &QAbstractItemModel::rowsRemoved, this, [this] { setModel(m_model); });
+    }
 }
 
 void ScriptVersionsList::initView()

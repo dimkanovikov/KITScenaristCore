@@ -17,7 +17,7 @@ namespace UserInterface
         Q_OBJECT
 
     public:
-        explicit ScriptVersionWidget(QWidget* parent = nullptr);
+        explicit ScriptVersionWidget(bool _isFirstVersion, QWidget* parent = nullptr);
         ~ScriptVersionWidget();
 
         /**
@@ -79,6 +79,11 @@ namespace UserInterface
          * @brief Интерфейс
          */
         Ui::ScriptVersionWidget* m_ui = nullptr;
+
+        /**
+         * @brief Является ли версия первой
+         */
+        const bool m_isFirstVersion;
     };
 }
 

@@ -6,9 +6,10 @@
 using UserInterface::ScriptVersionWidget;
 
 
-ScriptVersionWidget::ScriptVersionWidget(QWidget *parent) :
+ScriptVersionWidget::ScriptVersionWidget(bool _isFirstVersion, QWidget *parent) :
     QFrame(parent),
-    m_ui(new Ui::ScriptVersionWidget)
+    m_ui(new Ui::ScriptVersionWidget),
+    m_isFirstVersion(_isFirstVersion)
 {
     m_ui->setupUi(this);
 
@@ -96,7 +97,8 @@ void ScriptVersionWidget::setMouseHover(bool _hover)
     setStyleSheet(styleSheet);
 
     //
-    // Показываем, или скрываем кнопки параметров
+    // Показываем, или скрываем кнопки параметров,
+    // для первой версии кнопки не отображаются
     //
-    m_ui->remove->setVisible(_hover);
+    m_ui->remove->setVisible(!m_isFirstVersion && _hover);
 }
