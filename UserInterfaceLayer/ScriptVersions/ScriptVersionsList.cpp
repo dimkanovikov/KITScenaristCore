@@ -56,11 +56,15 @@ void ScriptVersionsList::setModel(QAbstractItemModel* _model)
             const QString versionName = m_model->index(row, ScriptVersionsTable::kName).data().toString();
             const QString versionDateTime = m_model->index(row, ScriptVersionsTable::kDatetime).data().toDateTime().toString("dd.MM.yyyy hh:mm:ss");
             const QString versionUser = m_model->index(row, ScriptVersionsTable::kUsername).data().toString();
-            version->setTitle(QString("%1 %2 %3 %4")
-                              .arg(versionName)
-                              .arg(TextUtils::directedText(versionDateTime, '[', ']'))
-                              .arg(isFirstDraft ? QString{} : tr("started by"))
-                              .arg(isFirstDraft ? QString{} : versionUser));
+            if (isFirstDraft) {
+                version->setTitle(versionName);
+            } else {
+                version->setTitle(QString("%1 %2 %3 %4")
+                                  .arg(versionName)
+                                  .arg(TextUtils::directedText(versionDateTime, '[', ']'))
+                                  .arg(tr("started by"))
+                                  .arg(versionUser));
+            }
             const QString versionDescription = m_model->index(row, ScriptVersionsTable::kDescription).data().toString();
             version->setDescription(versionDescription);
             const QColor versionColor = m_model->index(row, ScriptVersionsTable::kColor).data().value<QColor>();

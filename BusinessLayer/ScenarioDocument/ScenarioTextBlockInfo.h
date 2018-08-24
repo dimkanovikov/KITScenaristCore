@@ -11,6 +11,16 @@ namespace BusinessLogic
     class TextBlockInfo : public QTextBlockUserData
     {
     public:
+        /**
+         * @brief Тип блока при сравнении сценариев
+         */
+        enum DiffType {
+            kDiffEqual,
+            kDiffAdded,
+            kDiffRemoved
+        };
+
+    public:
         TextBlockInfo() = default;
 
         /**
@@ -43,6 +53,16 @@ namespace BusinessLogic
          */
         void setBookmarkColor(const QColor& _color);
 
+        /**
+         * @brief Получить цвет фона, при сравнении документов
+         */
+        QColor diffColor() const;
+
+        /**
+         * @brief Задать цвет фона, при сравнении документов
+         */
+        void setDiffType(DiffType _type);
+
     private:
         /**
          * @brief Установлена ли закладка для блока
@@ -58,6 +78,11 @@ namespace BusinessLogic
          * @brief Цвет закладки
          */
         QColor m_bookmarkColor;
+
+        /**
+         * @brief Цвет фона, при сравнении документов
+         */
+        QColor m_diffColor;
     };
 
     /**

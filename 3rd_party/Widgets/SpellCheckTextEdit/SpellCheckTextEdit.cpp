@@ -356,6 +356,10 @@ QTextCursor SpellCheckTextEdit::moveCursorToEndWord(QTextCursor cursor) const
 
 void SpellCheckTextEdit::rehighlighWithNewCursor()
 {
+    if (!m_spellCheckHighlighter->useSpellChecker()) {
+        return;
+    }
+
     //
     // Если редактирование документа не закончено, но позиция курсора сменилась, откладываем проверку орфографии
     //
