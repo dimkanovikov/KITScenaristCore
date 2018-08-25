@@ -37,6 +37,32 @@ void TextBlockInfo::setBookmarkColor(const QColor& _color)
     m_bookmarkColor = _color;
 }
 
+QColor TextBlockInfo::diffColor() const
+{
+    return m_diffColor;
+}
+
+void TextBlockInfo::setDiffType(TextBlockInfo::DiffType _type)
+{
+    switch (_type) {
+        case kDiffAdded: {
+            m_diffColor = Qt::green;
+            break;
+        }
+
+        case kDiffRemoved: {
+            m_diffColor = Qt::red;
+            break;
+        }
+
+        default: break;
+    }
+
+    if (m_diffColor.isValid()) {
+        m_diffColor.setAlpha(120);
+    }
+}
+
 
 // ****
 

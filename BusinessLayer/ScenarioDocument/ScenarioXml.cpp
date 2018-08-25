@@ -59,6 +59,8 @@ namespace {
     const QString ATTRIBUTE_SCENE_NUMBER = "number";
     const QString ATTRIBUTE_SCENE_NUMBER_FIX_NESTING = "number_fix_nesting";
     const QString ATTRIBUTE_SCENE_NUMBER_SUFFIX = "number_suffix";
+    const QString ATTRIBUTE_DIFF_ADDED = "diff_added";
+    const QString ATTRIBUTE_DIFF_REMOVED = "diff_removed";
 
     const QString SCENARIO_XML_VERSION = "1.0";
 
@@ -1572,6 +1574,28 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         blockInfo->setHasBookmark(true);
                         blockInfo->setBookmark(reader.attributes().value(ATTRIBUTE_BOOKMARK).toString());
                         blockInfo->setBookmarkColor(reader.attributes().value(ATTRIBUTE_BOOKMARK_COLOR).toString());
+                        cursor.block().setUserData(blockInfo);
+                    }
+
+                    //
+                    // Загружаем дифы, если заданы
+                    //
+                    if (reader.attributes().hasAttribute(ATTRIBUTE_DIFF_ADDED)
+                        || reader.attributes().hasAttribute(ATTRIBUTE_DIFF_REMOVED)) {
+                        TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(cursor.block().userData());
+                        if (blockInfo == nullptr) {
+                            if (tokenType == ScenarioBlockStyle::Character) {
+                                blockInfo = new CharacterBlockInfo;
+                            } else {
+                                blockInfo = new TextBlockInfo;
+                            }
+                        }
+
+                        if (reader.attributes().hasAttribute(ATTRIBUTE_DIFF_ADDED)) {
+                            blockInfo->setDiffType(TextBlockInfo::kDiffAdded);
+                        } else if (reader.attributes().hasAttribute(ATTRIBUTE_DIFF_REMOVED)) {
+                            blockInfo->setDiffType(TextBlockInfo::kDiffRemoved);
+                        }
                         cursor.block().setUserData(blockInfo);
                     }
 

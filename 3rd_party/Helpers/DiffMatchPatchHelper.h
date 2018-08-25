@@ -230,9 +230,10 @@ public:
             //
             // Рассчитаем метрики для формирования xml для обновления
             //
+            int patchesDelta = 0;
             for (const Patch& patch : patches) {
-                int oldStartPos = patch.start1;
-                int oldEndPos = patch.start1 + patch.length1;
+                int oldStartPos = patch.start1 - patchesDelta;
+                int oldEndPos = patch.start1 + patch.length1 - patchesDelta;
                 int oldDistance = patch.length2 - patch.length1;
                 int newStartPos = patch.start2;
                 int newEndPos = patch.start2 + patch.length2;
@@ -247,6 +248,7 @@ public:
                         }
                     }
                 }
+                patchesDelta += patch.length2 - patch.length1;
 
                 //
                 // Для случая, когда текста остаётся ровно столько же, сколько и было

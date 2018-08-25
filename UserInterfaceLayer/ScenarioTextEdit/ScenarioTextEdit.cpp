@@ -1276,6 +1276,45 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
     int splitterX = leftDelta + textLeft + (textRight - textLeft) * ScenarioTemplateFacade::getTemplate().splitterLeftSidePercents() / 100;
 
 
+    //
+    // Определим начальный и конечный блоки на экране
+    //
+    QTextBlock topBlock = document()->lastBlock();
+    {
+        QTextCursor topCursor;
+        for (int delta = 0 ; delta < viewport()->height()/4; delta += 10) {
+            topCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, delta)));
+            if (topCursor.block().isVisible()
+                && topBlock.blockNumber() > topCursor.block().blockNumber()) {
+                topBlock = topCursor.block();
+            }
+        }
+    }
+    //
+    // ... идём до начала сцены
+    //
+    while (ScenarioBlockStyle::forBlock(topBlock) != ScenarioBlockStyle::SceneHeading
+           && ScenarioBlockStyle::forBlock(topBlock) != ScenarioBlockStyle::FolderHeader
+           && topBlock != document()->firstBlock()) {
+        topBlock = topBlock.previous();
+    }
+    //
+    QTextBlock bottomBlock = document()->firstBlock();
+    {
+        QTextCursor bottomCursor;
+        for (int delta = viewport()->height() ; delta > viewport()->height()*3/4; delta -= 10) {
+            bottomCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, delta)));
+            if (bottomCursor.block().isVisible()
+                && bottomBlock.blockNumber() < bottomCursor.block().blockNumber()) {
+                bottomBlock = bottomCursor.block();
+            }
+        }
+    }
+    if (bottomBlock == document()->firstBlock()) {
+        bottomBlock = document()->lastBlock();
+    }
+    bottomBlock = bottomBlock.next();
+
 
     //
     // Подсветка блоков и строки, если нужно
@@ -1440,6 +1479,32 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             lineColor.setAlpha(40);
             painter.fillRect(highlightRect, lineColor);
         }
+
+        //
+        // Подсветка дифов
+        //
+        {
+            QTextBlock block = topBlock;
+            ScriptTextCursor cursor(document());
+            while (block.isValid() && block != bottomBlock) {
+                TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+                if (blockInfo != nullptr
+                    && blockInfo->diffColor().isValid()) {
+                    cursor.setPosition(block.position());
+                    const QRect topCursorRect = cursorRect(cursor);
+                    cursor.movePosition(QTextCursor::EndOfBlock);
+                    const QRect bottomCursorRect = cursorRect(cursor);
+                    //
+                    const int topMargin = std::max(block.blockFormat().topMargin(), block.previous().blockFormat().bottomMargin()) / 2;
+                    const int bottomMargin = std::max(block.blockFormat().bottomMargin(), block.next().blockFormat().topMargin()) / 2;
+                    const QRect diffRect(QPoint(pageLeft, topCursorRect.top() - topMargin),
+                                         QPoint(pageRight, bottomCursorRect.bottom() + bottomMargin));
+                    painter.fillRect(diffRect, blockInfo->diffColor());
+                }
+
+                block = block.next();
+            }
+        }
     }
 
     CompletableTextEdit::paintEvent(_event);
@@ -1454,45 +1519,6 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
         {
             QPainter painter(viewport());
             clipPageDecorationRegions(&painter);
-
-            //
-            // Определим начальный и конечный блоки на экране
-            //
-            QTextBlock topBlock = document()->lastBlock();
-            {
-                QTextCursor topCursor;
-                for (int delta = 0 ; delta < viewport()->height()/4; delta += 10) {
-                    topCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, delta)));
-                    if (topCursor.block().isVisible()
-                        && topBlock.blockNumber() > topCursor.block().blockNumber()) {
-                        topBlock = topCursor.block();
-                    }
-                }
-            }
-            //
-            // ... идём до начала сцены
-            //
-            while (ScenarioBlockStyle::forBlock(topBlock) != ScenarioBlockStyle::SceneHeading
-                   && ScenarioBlockStyle::forBlock(topBlock) != ScenarioBlockStyle::FolderHeader
-                   && topBlock != document()->firstBlock()) {
-                topBlock = topBlock.previous();
-            }
-            //
-            QTextBlock bottomBlock = document()->firstBlock();
-            {
-                QTextCursor bottomCursor;
-                for (int delta = viewport()->height() ; delta > viewport()->height()*3/4; delta -= 10) {
-                    bottomCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, delta)));
-                    if (bottomCursor.block().isVisible()
-                        && bottomBlock.blockNumber() < bottomCursor.block().blockNumber()) {
-                        bottomBlock = bottomCursor.block();
-                    }
-                }
-            }
-            if (bottomBlock == document()->firstBlock()) {
-                bottomBlock = document()->lastBlock();
-            }
-            bottomBlock = bottomBlock.next();
 
             //
             // Проходим блоки на экране и декорируем их
