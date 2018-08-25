@@ -40,8 +40,8 @@ Project::Role Project::roleFromString(const QString& _role)
 QString Project::remoteProjectsDirPath()
 {
     const QString appDataFolderPath = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
-    const QString login = DataStorageLayer::StorageFacade::username();
-    return QString("%1%4%2%4%3").arg(appDataFolderPath).arg("Projects").arg(login).arg(QDir::separator());
+    const QString email = DataStorageLayer::StorageFacade::userEmail();
+    return QString("%1%4%2%4%3").arg(appDataFolderPath).arg("Projects").arg(email).arg(QDir::separator());
 }
 
 Project::Project() :

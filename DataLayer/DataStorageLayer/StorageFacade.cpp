@@ -18,7 +18,7 @@
 using namespace DataStorageLayer;
 
 
-QString StorageFacade::username()
+QString StorageFacade::userName()
 {
     //
     // Если пользователь авторизован, то используем его логин и имейл
@@ -33,6 +33,11 @@ QString StorageFacade::username()
     // А если не авторизован, то используем имя пользователя из системы
     //
     return username;
+}
+
+QString StorageFacade::userEmail()
+{
+    return settingsStorage()->value("application/email", SettingsStorage::ApplicationSettings);;
 }
 
 void StorageFacade::clearStorages()

@@ -269,7 +269,7 @@ bool AbstractMapper::executeSql(QSqlQuery& _sqlQuery)
             //
             // ... имя пользовтаеля
             //
-            q_history.addBindValue(DataStorageLayer::StorageFacade::username());
+            q_history.addBindValue(DataStorageLayer::StorageFacade::userName());
             //
             // ... время выполнения
             //

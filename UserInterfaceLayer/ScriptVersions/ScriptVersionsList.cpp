@@ -71,13 +71,13 @@ void ScriptVersionsList::setModel(QAbstractItemModel* _model)
         }
 
         layout->addStretch(1);
-    }
 
-    //
-    // FIXME: сделать нормальное управление изменениями модели
-    //
-    connect(m_model, &QAbstractItemModel::rowsInserted, this, [this] { setModel(m_model); });
-    connect(m_model, &QAbstractItemModel::rowsRemoved, this, [this] { setModel(m_model); });
+        //
+        // FIXME: сделать нормальное управление изменениями модели
+        //
+        connect(m_model, &QAbstractItemModel::rowsInserted, this, [this] { setModel(m_model); });
+        connect(m_model, &QAbstractItemModel::rowsRemoved, this, [this] { setModel(m_model); });
+    }
 }
 
 void ScriptVersionsList::initView()
