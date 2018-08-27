@@ -1,6 +1,11 @@
 #include "ScriptVersion.h"
 
+#include <3rd_party/Helpers/TextUtils.h>
+
+#include <QApplication>
+
 using Domain::ScriptVersion;
+using Domain::ScriptVersionsTable;
 
 
 ScriptVersion::ScriptVersion(const Domain::Identifier& _id, const QString& _username, const QDateTime& _datetime,
@@ -107,12 +112,12 @@ Domain::ScriptVersionsTable::ScriptVersionsTable(QObject* _parent)
 {
 }
 
-int Domain::ScriptVersionsTable::columnCount(const QModelIndex&) const
+int ScriptVersionsTable::columnCount(const QModelIndex&) const
 {
     return kColumnCount;
 }
 
-QVariant Domain::ScriptVersionsTable::data(const QModelIndex& _index, int _role) const
+QVariant ScriptVersionsTable::data(const QModelIndex& _index, int _role) const
 {
     QVariant resultData;
 
@@ -138,7 +143,17 @@ QVariant Domain::ScriptVersionsTable::data(const QModelIndex& _index, int _role)
             }
 
             case kName: {
-                resultData = version->name();
+                if (domainObject == domainObjects().last()) {
+                    resultData
+                            = QString("%1 %2")
+                              .arg(version->name())
+                              .arg(TextUtils::directedText(
+                                       QApplication::translate("Domain::ScriptVersionsTable", "current version"),
+                                       '[', ']')
+                                   );
+                } else {
+                    resultData = version->name();
+                }
                 break;
             }
 

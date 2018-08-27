@@ -76,7 +76,7 @@ namespace Domain
     public:
         virtual QModelIndex index(int _row, int _column, const QModelIndex& _parent = QModelIndex()) const;
         virtual QModelIndex parent(const QModelIndex &) const;
-        virtual int rowCount(const QModelIndex&) const;
+        virtual int rowCount(const QModelIndex& = QModelIndex()) const;
         virtual int columnCount(const QModelIndex&) const;
         virtual QVariant data(const QModelIndex&, int) const;
 
