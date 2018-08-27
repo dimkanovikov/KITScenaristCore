@@ -113,6 +113,10 @@ QString CompareScriptVersionsTool::compareScripts(const QString& _firstScript, c
             //     так что добавим его как удалённый, а новый будет добавлен позже
             //
             else {
+                //
+                // TODO: тут нужно добавить сравнение блоков посимвольно, чтобы показывать,
+                //       какой именно текст в абзаце был изменён между версиями
+                //
                 auto oldDataElement = oldDataNode.toElement();
                 oldDataElement.setAttribute(kAttributeDiffRemoved, 1);
                 storeNode(oldDataElement, resultData);
