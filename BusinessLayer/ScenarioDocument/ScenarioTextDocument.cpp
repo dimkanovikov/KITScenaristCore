@@ -52,7 +52,7 @@ namespace {
      * @brief Сохранить изменение
      */
     static Domain::ScenarioChange* saveChange(const QString& _undoPatch, const QString& _redoPatch) {
-        const QString username = DataStorageLayer::StorageFacade::username();
+        const QString username = DataStorageLayer::StorageFacade::userName();
         return DataStorageLayer::StorageFacade::scenarioChangeStorage()->append(username, _undoPatch, _redoPatch);
     }
 }
@@ -201,6 +201,7 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     // Определим xml для применения патча
     //
     const QString patchUncopressed = DatabaseHelper::uncompress(_patch);
+    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
     auto xmlsForUpdate = DiffMatchPatchHelper::changedXml(m_scenarioXml, patchUncopressed);
 
     //

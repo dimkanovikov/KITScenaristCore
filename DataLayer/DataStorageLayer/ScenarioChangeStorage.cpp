@@ -146,7 +146,7 @@ QList<QString> ScenarioChangeStorage::newUuids(const QString& _fromDatetime)
     //
     // Отправляем изменения только от локального пользователя
     //
-    const QString username = DataStorageLayer::StorageFacade::username();
+    const QString username = DataStorageLayer::StorageFacade::userName();
 
     QList<QString> allNew;
     for (DomainObject* domainObject : all()->toList()) {

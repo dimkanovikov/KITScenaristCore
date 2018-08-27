@@ -25,7 +25,12 @@ namespace DataStorageLayer
         /**
          * @brief Получить имя пользователя
          */
-        static QString username();
+        static QString userName();
+
+        /**
+         * @brief Получить имейл пользователя
+         */
+        static QString userEmail();
 
         /**
          * @brief Очистить все хранилища

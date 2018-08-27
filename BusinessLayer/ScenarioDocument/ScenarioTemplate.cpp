@@ -845,6 +845,11 @@ void ScenarioTemplate::setNumberingAlignment(Qt::Alignment _alignment)
     }
 }
 
+void ScenarioTemplate::setSplitterLeftSidePercents(int _percents)
+{
+    m_splitterLeftSidePercents = _percents;
+}
+
 void ScenarioTemplate::setBlockStyle(const BusinessLogic::ScenarioBlockStyle& _blockStyle)
 {
     m_blockStyles.insert(_blockStyle.type(), _blockStyle);

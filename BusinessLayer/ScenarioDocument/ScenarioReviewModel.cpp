@@ -30,7 +30,7 @@ namespace {
         //
         if (!_cursor.charFormat().hasProperty(ScenarioBlockStyle::PropertyComments)) {
             format.setProperty(ScenarioBlockStyle::PropertyComments, QStringList() << "");
-            format.setProperty(ScenarioBlockStyle::PropertyCommentsAuthors, QStringList() << DataStorageLayer::StorageFacade::username());
+            format.setProperty(ScenarioBlockStyle::PropertyCommentsAuthors, QStringList() << DataStorageLayer::StorageFacade::userName());
             format.setProperty(ScenarioBlockStyle::PropertyCommentsDates, QStringList() << QDateTime::currentDateTime().toString(Qt::ISODate));
         }
 
@@ -223,7 +223,7 @@ void ScenarioReviewModel::setReviewMarkComment(int _startPosition, int _length, 
         QTextCharFormat format;
         format.setProperty(ScenarioBlockStyle::PropertyIsReviewMark, true);
         format.setProperty(ScenarioBlockStyle::PropertyComments, QStringList() << _comment);
-        format.setProperty(ScenarioBlockStyle::PropertyCommentsAuthors, QStringList() << DataStorageLayer::StorageFacade::username());
+        format.setProperty(ScenarioBlockStyle::PropertyCommentsAuthors, QStringList() << DataStorageLayer::StorageFacade::userName());
         format.setProperty(ScenarioBlockStyle::PropertyCommentsDates, QStringList() << QDateTime::currentDateTime().toString(Qt::ISODate));
 
         ScenarioTextDocument::updateBlockRevision(cursor);
@@ -256,7 +256,7 @@ void ScenarioReviewModel::addReviewMarkComment(const QModelIndex& _index, const 
         QStringList dates = format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList();
 
         comments << _comment;
-        authors << DataStorageLayer::StorageFacade::username();
+        authors << DataStorageLayer::StorageFacade::userName();
         dates << QDateTime::currentDateTime().toString(Qt::ISODate);
 
         format.setProperty(ScenarioBlockStyle::PropertyComments, comments);

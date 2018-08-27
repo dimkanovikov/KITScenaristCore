@@ -1356,7 +1356,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         //
                         // Идём до конца блока диалога
                         //
-                        while (cursor.movePosition(QTextCursor::NextBlock)) {
+                        while (cursor.movePosition(QTextCursor::EndOfBlock)
+                               && cursor.movePosition(QTextCursor::NextBlock)) {
                             const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(cursor.block());
                             //
                             // Если дошли до персонажа, или до конца диалога, возвращаемся на блок назад и раскрашиваем

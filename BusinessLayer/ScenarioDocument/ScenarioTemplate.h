@@ -570,6 +570,11 @@ namespace BusinessLogic
         void setNumberingAlignment(Qt::Alignment _alignment);
 
         /**
+         * @brief Установить значения процента ширины страницы для левой части разделителя
+         */
+        void setSplitterLeftSidePercents(int _percents);
+
+        /**
          * @brief Установить стиль блока
          */
         void setBlockStyle(const ScenarioBlockStyle& _blockStyle);
