@@ -316,6 +316,18 @@ void ScenarioBlockStyle::setLineSpacingValue(qreal _value)
     }
 }
 
+QTextBlockFormat ScenarioBlockStyle::blockFormat(bool _splitted) const
+{
+    if (!_splitted) {
+        return m_blockFormat;
+    }
+
+    auto splittedBlockFormat = m_blockFormat;
+    splittedBlockFormat.setRightMargin(PageMetrics::mmToPx(m_rightMarginSplitted));
+    splittedBlockFormat.setLeftMargin(PageMetrics::mmToPx(m_leftMarginSplitted));
+    return splittedBlockFormat;
+}
+
 void ScenarioBlockStyle::setBackgroundColor(const QColor& _color)
 {
     m_blockFormat.setBackground(_color);
@@ -334,6 +346,13 @@ bool ScenarioBlockStyle::isFirstUppercase() const
 bool ScenarioBlockStyle::isCanModify() const
 {
     return m_charFormat.boolProperty(ScenarioBlockStyle::PropertyIsCanModify);
+}
+
+void ScenarioBlockStyle::setCanModify(bool _can)
+{
+    if (isCanModify() != _can) {
+        m_charFormat.setProperty(ScenarioBlockStyle::PropertyIsCanModify, _can);
+    }
 }
 
 bool ScenarioBlockStyle::hasDecoration() const
@@ -826,6 +845,11 @@ void ScenarioTemplate::setNumberingAlignment(Qt::Alignment _alignment)
     }
 }
 
+void ScenarioTemplate::setSplitterLeftSidePercents(int _percents)
+{
+    m_splitterLeftSidePercents = _percents;
+}
+
 void ScenarioTemplate::setBlockStyle(const BusinessLogic::ScenarioBlockStyle& _blockStyle)
 {
     m_blockStyles.insert(_blockStyle.type(), _blockStyle);
@@ -1075,6 +1099,7 @@ void ScenarioTemplate::load(const QString& _fromFile)
                 pageSplitterStyle.setLeftMargin(0.0);
                 pageSplitterStyle.setRightMargin(0.0);
                 pageSplitterStyle.setBottomMargin(0.0);
+                pageSplitterStyle.setCanModify(false);
                 m_blockStyles.insert(pageSplitterStyle.type(), pageSplitterStyle);
             }
         }

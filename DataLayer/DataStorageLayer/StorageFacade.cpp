@@ -13,23 +13,31 @@
 #include "DatabaseHistoryStorage.h"
 #include "ScriptVersionStorage.h"
 
+#include <3rd_party/Helpers/TextUtils.h>
+
 using namespace DataStorageLayer;
 
 
-QString StorageFacade::username()
+QString StorageFacade::userName()
 {
     //
-    // Если пользователь авторизован, то используем его логин
+    // Если пользователь авторизован, то используем его логин и имейл
     //
-    const QString login = settingsStorage()->value("application/email", SettingsStorage::ApplicationSettings);
-    if (!login.isEmpty()) {
-        return login;
+    const QString email = settingsStorage()->value("application/email", SettingsStorage::ApplicationSettings);
+    const QString username = settingsStorage()->value("application/username", SettingsStorage::ApplicationSettings);
+    if (!email.isEmpty()) {
+        return QString("%1 %2").arg(username).arg(TextUtils::directedText(email, '[', ']'));
     }
 
     //
     // А если не авторизован, то используем имя пользователя из системы
     //
-    return settingsStorage()->value("application/user-name", SettingsStorage::ApplicationSettings);
+    return username;
+}
+
+QString StorageFacade::userEmail()
+{
+    return settingsStorage()->value("application/email", SettingsStorage::ApplicationSettings);;
 }
 
 void StorageFacade::clearStorages()
@@ -152,7 +160,7 @@ DatabaseHistoryStorage* StorageFacade::databaseHistoryStorage()
     return s_databaseHistoryStorage;
 }
 
-ScriptVersionStorage*StorageFacade::scriptVersionStorage()
+ScriptVersionStorage* StorageFacade::scriptVersionStorage()
 {
     if (s_scriptVersionStorage == nullptr) {
         s_scriptVersionStorage = new ScriptVersionStorage;

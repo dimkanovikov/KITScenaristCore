@@ -40,7 +40,8 @@ public:
         Polish,
         Turkish,
         Hungarian,
-        Italian
+        Italian,
+        Azerbaijani
     };
 
     /**

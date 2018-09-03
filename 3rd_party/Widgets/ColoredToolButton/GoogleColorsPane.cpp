@@ -62,34 +62,19 @@ GoogleColorsPane::GoogleColorsPane(QWidget* _parent) :
 	//
 	setCursor(Qt::PointingHandCursor);
 
-	initColors();
+    initColors();
 }
 
-QColor GoogleColorsPane::currentColor() const
+void GoogleColorsPane::selectFirstEnabledColor()
 {
-    return m_currentColorInfo.color;
-}
-
-bool GoogleColorsPane::contains(const QColor& _color) const
-{
-    bool contains = false;
-    foreach (const ColorKeyInfo& _colorKeyInfo, m_colorInfos) {
-        if (_colorKeyInfo.color == _color) {
-            contains = true;
+    constexpr int startEnabledColorIndex = 10;
+    for (int colorIndex = startEnabledColorIndex; colorIndex < colorsInfos().size(); ++colorIndex) {
+        const auto& colorInfo = colorsInfos()[colorIndex];
+        if (colorInfo.isEnabled) {
+            setCurrentColor(colorInfo.color);
             break;
         }
     }
-    return contains;
-}
-
-void GoogleColorsPane::setCurrentColor(const QColor& _color)
-{
-	for (int colorIndex = 0; colorIndex < m_colorInfos.count(); ++colorIndex) {
-		if (m_colorInfos[colorIndex].color == _color) {
-			m_currentColorInfo = m_colorInfos[colorIndex];
-			break;
-		}
-	}
 }
 
 void GoogleColorsPane::paintEvent(QPaintEvent * _event)
@@ -101,38 +86,45 @@ void GoogleColorsPane::paintEvent(QPaintEvent * _event)
 	//
 	// Рисуем квадратики с цветами
 	//
-	foreach (const ColorKeyInfo& colorInfo, m_colorInfos) {
+    const QPoint mousePos = mapFromGlobal(QCursor::pos());
+    for (const auto& colorInfo : colorsInfos()) {
+        //
+        // Неактивный
+        //
+        if (colorInfo.isEnabled == false) {
+            continue;
+        }
+
+        //
+        // Сам цвет
+        //
 		painter.fillRect(colorInfo.rect, colorInfo.color);
-	}
 
-	//
-	// Обрамление
-	//
-	const QPoint mousePos = mapFromGlobal(QCursor::pos());
-	for(int colorIndex = 0; colorIndex < m_colorInfos.count(); ++colorIndex) {
-		if(m_colorInfos[colorIndex].rect.contains(mousePos))
-		{
-			QRectF borderRect = m_colorInfos[colorIndex].rect;
-			borderRect.setTop(borderRect.top() - 2);
-			borderRect.setLeft(borderRect.left() - 2);
-			borderRect.setBottom(borderRect.bottom() + 1);
-			borderRect.setRight(borderRect.right() + 1);
+        //
+        // Под мышкой
+        //
+        if (colorInfo.rect.contains(mousePos)) {
+            QRectF borderRect = colorInfo.rect;
+            borderRect.setTop(borderRect.top() - 2);
+            borderRect.setLeft(borderRect.left() - 2);
+            borderRect.setBottom(borderRect.bottom() + 1);
+            borderRect.setRight(borderRect.right() + 1);
 
-			painter.setPen(palette().text().color());
-			painter.drawRect(borderRect);
-
-			break;
-		}
-	}
+            painter.save();
+            painter.setPen(palette().text().color());
+            painter.drawRect(borderRect);
+            painter.restore();
+        }
+    }
 
 	//
 	// Текущий
 	//
-	if (m_currentColorInfo.isValid()) {
+    if (currentColorInfo().isValid()) {
 		//
 		// ... рамка
 		//
-		QRectF borderRect = m_currentColorInfo.rect;
+        QRectF borderRect = currentColorInfo().rect;
 		borderRect.setTop(borderRect.top() - 2);
 		borderRect.setLeft(borderRect.left() - 2);
 		borderRect.setBottom(borderRect.bottom() + 1);
@@ -162,10 +154,17 @@ void GoogleColorsPane::mouseMoveEvent(QMouseEvent* _event)
 
 void GoogleColorsPane::mousePressEvent(QMouseEvent* _event)
 {
-	for (int colorIndex = 0; colorIndex < m_colorInfos.count(); ++colorIndex) {
-		if (m_colorInfos[colorIndex].rect.contains(_event->pos())) {
-			m_currentColorInfo = m_colorInfos[colorIndex];
-			emit selected(m_currentColorInfo.color);
+    for (int colorIndex = 0; colorIndex < colorsInfos().count(); ++colorIndex) {
+        if (colorsInfos()[colorIndex].rect.contains(_event->pos())) {
+            //
+            // Ничего не делаем, если пользователь хочет выбрать недоступный цвет
+            //
+            if (colorsInfos()[colorIndex].isEnabled == false) {
+                break;
+            }
+
+            currentColorInfo() = colorsInfos()[colorIndex];
+            emit selected(currentColorInfo().color);
 
 			repaint();
 			break;
@@ -198,7 +197,7 @@ void GoogleColorsPane::initColors()
 		colorRect.setWidth(COLOR_RECT_SIZE);
 		colorRect.setHeight(COLOR_RECT_SIZE);
 
-		m_colorInfos.append(ColorKeyInfo(colors.at(column), colorRect));
+        colorsInfos().append(ColorKeyInfo(colors.at(column), colorRect));
 
 		leftMargin += COLOR_RECT_SIZE + COLOR_RECT_SPACE;
 	}
@@ -227,7 +226,7 @@ void GoogleColorsPane::initColors()
 		colorRect.setWidth(COLOR_RECT_SIZE);
 		colorRect.setHeight(COLOR_RECT_SIZE);
 
-		m_colorInfos.append(ColorKeyInfo(colors.at(column), colorRect));
+        colorsInfos().append(ColorKeyInfo(colors.at(column), colorRect));
 
 		leftMargin += COLOR_RECT_SIZE + COLOR_RECT_SPACE;
 	}
@@ -307,7 +306,7 @@ void GoogleColorsPane::initColors()
 			colorRect.setWidth(COLOR_RECT_SIZE);
 			colorRect.setHeight(COLOR_RECT_SIZE);
 
-			m_colorInfos.append(ColorKeyInfo(colors.at((row * kColorRectColumns) + column), colorRect));
+            colorsInfos().append(ColorKeyInfo(colors.at((row * kColorRectColumns) + column), colorRect));
 
 			leftMargin += COLOR_RECT_SIZE + COLOR_RECT_SPACE;
 		}

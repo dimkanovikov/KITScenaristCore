@@ -16,10 +16,10 @@ namespace {
      * @brief Ключ для формирования xml из импортируемого документа
      */
     /** @{ */
-    const QString NODE_SCENARIO = "scenario";
-    const QString NODE_VALUE = "v";
-    const QString NODE_FORMAT_GROUP = "formatting";
-    const QString NODE_FORMAT = "format";
+    const QString kNodeScript = "scenario";
+    const QString kNodeValue = "v";
+    const QString kNodeFormatGroup = "formatting";
+    const QString kNodeFormat = "format";
 
     const QString ATTRIBUTE_FORMAT_FROM = "from";
     const QString ATTRIBUTE_FORMAT_LENGTH = "length";
@@ -85,7 +85,7 @@ QString FountainImporter::importScript(const QString& _scriptText) const {
     writer.setAutoFormatting(true);
     writer.setAutoFormattingIndent(true);
     writer.writeStartDocument();
-    writer.writeStartElement(NODE_SCENARIO);
+    writer.writeStartElement(kNodeScript);
     writer.writeAttribute(ATTRIBUTE_VERSION, "1.0");
 
     //
@@ -810,7 +810,7 @@ void FountainImporter::appendBlock(const QString& _paragraphText, ScenarioBlockS
 
     const QString& blockTypeName = ScenarioBlockStyle::typeName(_type);
     _writer.writeStartElement(blockTypeName);
-    _writer.writeStartElement(NODE_VALUE);
+    _writer.writeStartElement(kNodeValue);
     _writer.writeCDATA(paragraphText);
     _writer.writeEndElement();
 
@@ -833,9 +833,9 @@ void FountainImporter::appendBlock(const QString& _paragraphText, ScenarioBlockS
     // Пишем форматирование, если оно есть
     //
     if (!m_formats.isEmpty()) {
-        _writer.writeStartElement(NODE_FORMAT_GROUP);
+        _writer.writeStartElement(kNodeFormatGroup);
         for (const TextFormat& format : m_formats) {
-            _writer.writeStartElement(NODE_FORMAT);
+            _writer.writeStartElement(kNodeFormat);
             //
             // Данные пользовательского форматирования
             //

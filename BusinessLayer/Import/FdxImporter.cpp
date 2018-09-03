@@ -14,10 +14,10 @@ namespace {
      * @brief Ключи для формирования xml из импортируемого документа
      */
     /** @{ */
-    const QString NODE_SCENARIO = "scenario";
-    const QString NODE_VALUE = "v";
-    const QString NODE_FORMAT_GROUP = "formatting";
-    const QString NODE_FORMAT = "format";
+    const QString kNodeScript = "scenario";
+    const QString kNodeValue = "v";
+    const QString kNodeFormatGroup = "formatting";
+    const QString kNodeFormat = "format";
 
     const QString ATTRIBUTE_VERSION = "version";
     const QString ATTRIBUTE_DESCRIPTION = "description";
@@ -57,7 +57,7 @@ QString FdxImporter::importScript(const ImportParameters& _importParameters) con
         //
         QXmlStreamWriter writer(&scenarioXml);
         writer.writeStartDocument();
-        writer.writeStartElement(NODE_SCENARIO);
+        writer.writeStartElement(kNodeScript);
         writer.writeAttribute(ATTRIBUTE_VERSION, "1.0");
 
         //
@@ -167,13 +167,13 @@ QString FdxImporter::importScript(const ImportParameters& _importParameters) con
                     writer.writeAttribute(ATTRIBUTE_TITLE, sceneTitle);
                 }
             }
-            writer.writeStartElement(NODE_VALUE);
+            writer.writeStartElement(kNodeValue);
             writer.writeCDATA(paragraphText);
             writer.writeEndElement();
             if (!formatting.isEmpty()) {
-                writer.writeStartElement(NODE_FORMAT_GROUP);
+                writer.writeStartElement(kNodeFormatGroup);
                 for (const TextFormat& format : formatting){
-                    writer.writeStartElement(NODE_FORMAT);
+                    writer.writeStartElement(kNodeFormat);
                     //
                     // Данные пользовательского форматирования
                     //
@@ -194,7 +194,7 @@ QString FdxImporter::importScript(const ImportParameters& _importParameters) con
             //
             if (!sceneDescription.isEmpty()) {
                 writer.writeStartElement(ScenarioBlockStyle::typeName(ScenarioBlockStyle::SceneDescription));
-                writer.writeStartElement(NODE_VALUE);
+                writer.writeStartElement(kNodeValue);
                 writer.writeCDATA(sceneDescription);
                 writer.writeEndElement();
                 writer.writeEndElement();

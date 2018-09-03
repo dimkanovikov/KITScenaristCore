@@ -76,7 +76,7 @@ namespace Domain
     public:
         virtual QModelIndex index(int _row, int _column, const QModelIndex& _parent = QModelIndex()) const;
         virtual QModelIndex parent(const QModelIndex &) const;
-        virtual int rowCount(const QModelIndex&) const;
+        virtual int rowCount(const QModelIndex& = QModelIndex()) const;
         virtual int columnCount(const QModelIndex&) const;
         virtual QVariant data(const QModelIndex&, int) const;
 
@@ -86,10 +86,18 @@ namespace Domain
         QList<DomainObject*> toList() const;
 
         /**
+         * @brief Пуст ли список
+         */
+        bool isEmpty() const;
+
+        /**
          * @brief Синоним для rowCount
          */
         int size() const;
 
+        /**
+         * @brief Содержится ли объект в списке
+         */
         bool contains(DomainObject*) const;
 
         /**
@@ -107,7 +115,7 @@ namespace Domain
         void itemChanged(DomainObject*);
 
     protected:
-        QList<DomainObject*> domainObjects() const;
+        const QList<DomainObject*>& domainObjects() const;
 
     private:
         QList<DomainObject*> m_domainObjects;

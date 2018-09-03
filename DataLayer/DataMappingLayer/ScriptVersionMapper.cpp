@@ -6,7 +6,7 @@ using namespace DataMappingLayer;
 
 
 namespace {
-    const QString kColumns = " id, datetime, color, name, description ";
+    const QString kColumns = " id, fk_script_id, username, datetime, color, name, description, script_text ";
     const QString kTableName = " script_versions ";
 }
 
@@ -55,17 +55,20 @@ QString ScriptVersionMapper::insertStatement(DomainObject* _subject, QVariantLis
 {
     QString insertStatement =
             QString("INSERT INTO " + kTableName +
-                    " (id, datetime, name, color) "
-                    " VALUES(?, ?, ?, ?, ?) "
+                    " (id, fk_script_id, username, datetime, color, name, description, script_text) "
+                    " VALUES(?, ?, ?, ?, ?, ?, ?, ?) "
                     );
 
     ScriptVersion* scriptVersion = dynamic_cast<ScriptVersion*>(_subject );
     _insertValues.clear();
     _insertValues.append(scriptVersion->id().value());
+    _insertValues.append(1);
+    _insertValues.append(scriptVersion->username());
     _insertValues.append(scriptVersion->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz"));
     _insertValues.append(scriptVersion->color().name());
     _insertValues.append(scriptVersion->name());
     _insertValues.append(scriptVersion->description());
+    _insertValues.append(scriptVersion->scriptText());
 
     return insertStatement;
 }
@@ -74,19 +77,23 @@ QString ScriptVersionMapper::updateStatement(DomainObject* _subject, QVariantLis
 {
     QString updateStatement =
             QString("UPDATE " + kTableName +
-                    " SET datetime = ?, "
+                    " SET username = ?, "
+                    " datetime = ?, "
                     " color = ?, "
                     " name = ?, "
-                    " description = ? "
+                    " description = ?, "
+                    " script_text = ? "
                     " WHERE id = ? "
                     );
 
     ScriptVersion* scriptVersion = dynamic_cast<ScriptVersion*>(_subject);
     _updateValues.clear();
+    _updateValues.append(scriptVersion->username());
     _updateValues.append(scriptVersion->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz"));
     _updateValues.append(scriptVersion->color().name());
     _updateValues.append(scriptVersion->name());
     _updateValues.append(scriptVersion->description());
+    _updateValues.append(scriptVersion->scriptText());
     _updateValues.append(scriptVersion->id().value());
 
     return updateStatement;
@@ -104,17 +111,22 @@ QString ScriptVersionMapper::deleteStatement(DomainObject* _subject, QVariantLis
 
 DomainObject* ScriptVersionMapper::doLoad(const Identifier& _id, const QSqlRecord& _record)
 {
+    const QString username = _record.value("username").toString();
     const QDateTime datetime = QDateTime::fromString(_record.value("datetime").toString(), "yyyy-MM-dd hh:mm:ss:zzz");
     const QColor color = QColor(_record.value("color").toString());
     const QString name = _record.value("name").toString();
     const QString description = _record.value("description").toString();
+    const QString scriptText = _record.value("script_text").toString();
 
-    return new ScriptVersion(_id, datetime, color, name, description);
+    return new ScriptVersion(_id, username, datetime, color, name, description, scriptText);
 }
 
 void ScriptVersionMapper::doLoad(DomainObject* _domainObject, const QSqlRecord& _record)
 {
     if (ScriptVersion* scriptVersion = dynamic_cast<ScriptVersion*>(_domainObject)) {
+        const QString username = _record.value("username").toString();
+        scriptVersion->setUsername(username);
+
         const QDateTime datetime = QDateTime::fromString(_record.value("datetime").toString(), "yyyy-MM-dd hh:mm:ss:zzz");
         scriptVersion->setDatetime(datetime);
 
@@ -126,6 +138,9 @@ void ScriptVersionMapper::doLoad(DomainObject* _domainObject, const QSqlRecord& 
 
         const QString description = _record.value("description").toString();
         scriptVersion->setDescription(description);
+
+        const QString scriptText = _record.value("script_text").toString();
+        scriptVersion->setName(scriptText);
     }
 }
 

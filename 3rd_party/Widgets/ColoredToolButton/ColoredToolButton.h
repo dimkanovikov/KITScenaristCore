@@ -35,11 +35,20 @@ public:
     void setColorsPane(ColorsPaneType _pane);
 
     /**
+     * @brief Отключить возможность выбора заданного цвета
+     */
+    void disableColor(const QColor& _color);
+
+    /**
      * @brief Текущий цвет
      */
     QColor currentColor() const;
 
-public slots:
+    /**
+     * @brief Выбрать первый доступный к выбору цвет
+     */
+    void selectFirstEnabledColor();
+
     /**
      * @brief Установить цвет
      * @note Если устанавливается невалидный цвет, панель переходит в режим "цвет не выбран"

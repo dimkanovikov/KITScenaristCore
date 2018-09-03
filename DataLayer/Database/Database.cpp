@@ -378,10 +378,13 @@ void Database::createTables(QSqlDatabase& _database)
     q_creator.exec("CREATE TABLE script_versions "
                    "( "
                    "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                   "fk_script_id INTEGER NOT NULL, "
+                   "username TEXT NOT NULL, "
                    "datetime TEXT NOT NULL, "
                    "color TEXT DEFAULT(NULL), "
                    "name TEXT UNIQUE NOT NULL, "
-                   "description TEXT DEFAULT(NULL) "
+                   "description TEXT DEFAULT(NULL), "
+                   "script_text TEXT NOT NULL"
                    "); "
                    );
 
@@ -406,8 +409,14 @@ void Database::createEnums(QSqlDatabase& _database)
                     );
         q_creator.exec(
                     QString("INSERT INTO system_variables VALUES ('%1', '%2')")
-                    .arg(::applicationVersionKey())
+                    .arg(applicationVersionKey())
                     .arg(QApplication::applicationVersion())
+                    );
+        q_creator.exec(
+                    QString("INSERT INTO script_versions (id, fk_script_id, username, datetime, name, script_text) "
+                            "VALUES (null, 0, '', '%1', '%2', '')")
+                    .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss:zzz"))
+                    .arg(QApplication::translate("DatabaseLayer::Database", "First draft"))
                     );
     }
 
@@ -1497,12 +1506,24 @@ void Database::updateDatabaseTo_0_7_2(QSqlDatabase& _database)
     q_updater.exec("CREATE TABLE script_versions "
                    "( "
                    "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                   "fk_script_id INTEGER NOT NULL, "
+                   "username TEXT NOT NULL, "
                    "datetime TEXT NOT NULL, "
                    "color TEXT DEFAULT(NULL), "
                    "name TEXT UNIQUE NOT NULL, "
-                   "description TEXT DEFAULT(NULL) "
+                   "description TEXT DEFAULT(NULL), "
+                   "script_text TEXT NOT NULL"
                    "); "
                    );
+    //
+    // ... и первая версия
+    //
+    q_updater.exec(
+                QString("INSERT INTO script_versions (id, fk_script_id, username, datetime, color, name, script_text) "
+                        "VALUES (null, 0, '', '%1', '#ffffff', '%2', '')")
+                .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss:zzz"))
+                .arg(QApplication::translate("DatabaseLayer::Database", "First draft"))
+                );
 
     _database.commit();
 }

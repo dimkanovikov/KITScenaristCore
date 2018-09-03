@@ -11,6 +11,7 @@
 #include <BusinessLayer/ScenarioDocument/ScenarioTextBlockParsers.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioReviewModel.h>
+#include <BusinessLayer/ScenarioDocument/ScriptTextCursor.h>
 #include <BusinessLayer/ScenarioDocument/ScriptTextCorrector.h>
 
 #include <DataLayer/DataStorageLayer/ResearchStorage.h>
@@ -40,6 +41,7 @@
 #include <QTextBlock>
 #include <QTextCursor>
 #include <QTextDocumentFragment>
+#include <QTextTable>
 #include <QTimer>
 #include <QWheelEvent>
 #include <QWidgetAction>
@@ -562,13 +564,19 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     }
 
     //
-    // Добавляем возможность преобразовать в сдвоенный диалог и обратно
+    // Добавляем возможность разделить страницу и обратно
     //
-    {
-        QAction* splitPage = new QAction(tr("Split block"), menu);
+    if (!isReadOnly()) {
+        const ScriptTextCursor cursor = cursorForPosition(_pos);
+        QAction* splitPage = new QAction(tr("Split page"), menu);
         splitPage->setCheckable(true);
         splitPage->setProperty(kLastMousePosKey, _pos);
-        connect(splitPage, &QAction::toggled, this, &ScenarioTextEdit::splitPage);
+        if (cursor.isBlockInTable()) {
+            splitPage->setChecked(true);
+            connect(splitPage, &QAction::toggled, this, &ScenarioTextEdit::unsplitPage);
+        } else {
+            connect(splitPage, &QAction::toggled, this, &ScenarioTextEdit::splitPage);
+        }
         menu->insertAction(menu->actions().first(), splitPage);
     }
 
@@ -677,33 +685,46 @@ void ScenarioTextEdit::splitPage()
         cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
         setTextCursor(cursor);
     }
-    QScopedPointer<QMimeData> mime(createMimeDataFromSelection());
+    const QString mime = m_document->mimeFromSelection(textCursor().selectionStart(),
+                                                       textCursor().selectionEnd());
     textCursor().removeSelectedText();
 
     //
-    // Назначим блоку формат PageSplitter
+    // Назначим блоку перед таблицей формат PageSplitter
     //
     changeScenarioBlockType(ScenarioBlockStyle::PageSplitter);
+    //
+    // ... и запретим позиционировать в нём курсор
+    //
+    auto pageSplitterBlockFormat = textCursor().blockFormat();
+    pageSplitterBlockFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
+    textCursor().setBlockFormat(pageSplitterBlockFormat);
 
     //
     // Вставляем таблицу
     //
     const auto scriptTemplate = ScenarioTemplateFacade::getTemplate();
-    const qreal tableWidth = m_document->pageSize().width()
-                             - document()->rootFrame()->frameFormat().leftMargin()
-                             - document()->rootFrame()->frameFormat().rightMargin();
-    const qreal leftColumnWidth = tableWidth * scriptTemplate.splitterLeftSidePercents() / 100;
+    const qreal tableWidth = 100;
+    const qreal leftColumnWidth = scriptTemplate.splitterLeftSidePercents();
     const qreal rightColumnWidth = tableWidth - leftColumnWidth;
-    QTextTableFormat format;
-    format.setWidth(QTextLength{ QTextLength::FixedLength, tableWidth });
-    format.setColumnWidthConstraints({ QTextLength{QTextLength::FixedLength, leftColumnWidth},
-                                       QTextLength{QTextLength::FixedLength, rightColumnWidth} });
-//    format.setBorderStyle(QTextFrameFormat::BorderStyle_None);
-    cursor.insertTable(1, 2, format);
+    QTextTableFormat tableFormat;
+    tableFormat.setWidth(QTextLength{QTextLength::PercentageLength, tableWidth});
+    tableFormat.setColumnWidthConstraints({ QTextLength{QTextLength::PercentageLength, leftColumnWidth},
+                                            QTextLength{QTextLength::PercentageLength, rightColumnWidth} });
+    tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_None);
+    cursor.insertTable(1, 2, tableFormat);
 
     //
-    // Вставляем параграф после таблицы - это обязательное условие, чтобы после таблицы всегда
-    // оставался один параграф, чтобы пользователь всегда мог выйти из таблицы
+    // Назначим блоку после таблицы формат PageSplitter
+    //
+    changeScenarioBlockType(ScenarioBlockStyle::PageSplitter);
+    //
+    // ... и запретим позиционировать в нём курсор
+    //
+    textCursor().setBlockFormat(pageSplitterBlockFormat);
+
+    //
+    // Вставляем параграф после таблицы
     //
     addScenarioBlock(lastBlockType);
     moveCursor(QTextCursor::PreviousBlock);
@@ -719,7 +740,80 @@ void ScenarioTextEdit::splitPage()
     //
     // Вставляем текст в первую колонку
     //
-    insertFromMimeData(mime.data());
+    m_document->insertFromMime(textCursor().position(), mime);
+
+    cursor.endEditBlock();
+}
+
+void ScenarioTextEdit::unsplitPage()
+{
+    //
+    // Получим курсор для блока, из которого пользователь хочет убрать разделение
+    //
+    const QPoint cursorPos = sender()->property(kLastMousePosKey).toPoint();
+    ScriptTextCursor cursor = cursorForPosition(cursorPos);
+    cursor.movePosition(QTextCursor::StartOfBlock);
+    cursor.beginEditBlock();
+
+    //
+    // Идём до начала таблицы
+    //
+    while (ScenarioBlockStyle::forBlock(cursor.block()) != ScenarioBlockStyle::PageSplitter) {
+        cursor.movePosition(QTextCursor::PreviousBlock);
+    }
+
+    //
+    // Выделяем и сохраняем текст из первой ячейки
+    //
+    cursor.movePosition(QTextCursor::NextBlock);
+    QTextTable* table = cursor.currentTable();
+    while (table->cellAt(cursor).column() == 0) {
+        cursor.movePosition(QTextCursor::NextBlock, QTextCursor::KeepAnchor);
+    }
+    cursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::KeepAnchor);
+    const QString firstColumnData =
+            cursor.selectedText().isEmpty()
+            ? QString()
+            : m_document->mimeFromSelection(cursor.selectionStart(), cursor.selectionEnd());
+    cursor.removeSelectedText();
+
+    //
+    // Выделяем и сохраняем текст из второй ячейки
+    //
+    cursor.movePosition(QTextCursor::NextBlock);
+    while (cursor.movePosition(QTextCursor::NextBlock, QTextCursor::KeepAnchor));
+    cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+    const QString secondColumnData =
+            cursor.selectedText().isEmpty()
+            ? QString()
+            : m_document->mimeFromSelection(cursor.selectionStart(), cursor.selectionEnd());
+    cursor.removeSelectedText();
+
+    //
+    // Удаляем таблицу
+    // Делается это только таким костылём, как удалить таблицу по-человечески я не нашёл...
+    //
+    cursor.movePosition(QTextCursor::NextBlock);
+    cursor.movePosition(QTextCursor::NextBlock);
+    cursor.movePosition(QTextCursor::PreviousBlock, QTextCursor::KeepAnchor);
+    cursor.movePosition(QTextCursor::PreviousBlock, QTextCursor::KeepAnchor);
+    cursor.deletePreviousChar();
+
+    //
+    // Вставляем текст из удалённых ячеек
+    //
+    cursor.movePosition(QTextCursor::StartOfBlock);
+    cursor.movePosition(QTextCursor::PreviousCharacter);
+    const int insertPosition = cursor.position();
+    if (!secondColumnData.isEmpty()) {
+        cursor.insertBlock();
+        m_document->insertFromMime(cursor.position(), secondColumnData);
+        cursor.setPosition(insertPosition);
+    }
+    if (!firstColumnData.isEmpty()) {
+        cursor.insertBlock();
+        m_document->insertFromMime(cursor.position(), firstColumnData);
+    }
 
     cursor.endEditBlock();
 }
@@ -993,6 +1087,7 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
         moveCursor(QTextCursor::NextCharacter);
         while (!textCursor().atEnd()
                && (!textCursor().block().isVisible()
+                   || ScenarioBlockStyle::forBlock(textCursor().block()) == ScenarioBlockStyle::PageSplitter
                    || textCursor().blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection))) {
             moveCursor(QTextCursor::NextBlock);
         }
@@ -1004,6 +1099,7 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
         moveCursor(QTextCursor::PreviousCharacter);
         while (!textCursor().atStart()
                && (!textCursor().block().isVisible()
+                   || ScenarioBlockStyle::forBlock(textCursor().block()) == ScenarioBlockStyle::PageSplitter
                    || textCursor().blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection))) {
             moveCursor(QTextCursor::StartOfBlock);
             moveCursor(QTextCursor::PreviousCharacter);
@@ -1177,7 +1273,47 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
     const int leftDelta = (QLocale().textDirection() == Qt::LeftToRight ? -1 : 1) * horizontalScrollBar()->value();
     int colorRectWidth = 0;
     int verticalMargin = 0;
+    int splitterX = leftDelta + textLeft + (textRight - textLeft) * ScenarioTemplateFacade::getTemplate().splitterLeftSidePercents() / 100;
 
+
+    //
+    // Определим начальный и конечный блоки на экране
+    //
+    QTextBlock topBlock = document()->lastBlock();
+    {
+        QTextCursor topCursor;
+        for (int delta = 0 ; delta < viewport()->height()/4; delta += 10) {
+            topCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, delta)));
+            if (topCursor.block().isVisible()
+                && topBlock.blockNumber() > topCursor.block().blockNumber()) {
+                topBlock = topCursor.block();
+            }
+        }
+    }
+    //
+    // ... идём до начала сцены
+    //
+    while (ScenarioBlockStyle::forBlock(topBlock) != ScenarioBlockStyle::SceneHeading
+           && ScenarioBlockStyle::forBlock(topBlock) != ScenarioBlockStyle::FolderHeader
+           && topBlock != document()->firstBlock()) {
+        topBlock = topBlock.previous();
+    }
+    //
+    QTextBlock bottomBlock = document()->firstBlock();
+    {
+        QTextCursor bottomCursor;
+        for (int delta = viewport()->height() ; delta > viewport()->height()*3/4; delta -= 10) {
+            bottomCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, delta)));
+            if (bottomCursor.block().isVisible()
+                && bottomBlock.blockNumber() < bottomCursor.block().blockNumber()) {
+                bottomBlock = bottomCursor.block();
+            }
+        }
+    }
+    if (bottomBlock == document()->firstBlock()) {
+        bottomBlock = document()->lastBlock();
+    }
+    bottomBlock = bottomBlock.next();
 
 
     //
@@ -1220,7 +1356,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         //
                         // Идём до конца блока диалога
                         //
-                        while (cursor.movePosition(QTextCursor::NextBlock)) {
+                        while (cursor.movePosition(QTextCursor::EndOfBlock)
+                               && cursor.movePosition(QTextCursor::NextBlock)) {
                             const ScenarioBlockStyle::Type blockType = ScenarioBlockStyle::forBlock(cursor.block());
                             //
                             // Если дошли до персонажа, или до конца диалога, возвращаемся на блок назад и раскрашиваем
@@ -1343,6 +1480,32 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             lineColor.setAlpha(40);
             painter.fillRect(highlightRect, lineColor);
         }
+
+        //
+        // Подсветка дифов
+        //
+        {
+            QTextBlock block = topBlock;
+            ScriptTextCursor cursor(document());
+            while (block.isValid() && block != bottomBlock) {
+                TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(block.userData());
+                if (blockInfo != nullptr
+                    && blockInfo->diffColor().isValid()) {
+                    cursor.setPosition(block.position());
+                    const QRect topCursorRect = cursorRect(cursor);
+                    cursor.movePosition(QTextCursor::EndOfBlock);
+                    const QRect bottomCursorRect = cursorRect(cursor);
+                    //
+                    const int topMargin = std::max(block.blockFormat().topMargin(), block.previous().blockFormat().bottomMargin()) / 2;
+                    const int bottomMargin = std::max(block.blockFormat().bottomMargin(), block.next().blockFormat().topMargin()) / 2;
+                    const QRect diffRect(QPoint(pageLeft, topCursorRect.top() - topMargin),
+                                         QPoint(pageRight, bottomCursorRect.bottom() + bottomMargin));
+                    painter.fillRect(diffRect, blockInfo->diffColor());
+                }
+
+                block = block.next();
+            }
+        }
     }
 
     CompletableTextEdit::paintEvent(_event);
@@ -1359,45 +1522,6 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             clipPageDecorationRegions(&painter);
 
             //
-            // Определим начальный и конечный блоки на экране
-            //
-            QTextBlock topBlock = document()->lastBlock();
-            {
-                QTextCursor topCursor;
-                for (int delta = 0 ; delta < viewport()->height()/4; delta += 10) {
-                    topCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, delta)));
-                    if (topCursor.block().isVisible()
-                        && topBlock.blockNumber() > topCursor.block().blockNumber()) {
-                        topBlock = topCursor.block();
-                    }
-                }
-            }
-            //
-            // ... идём до начала сцены
-            //
-            while (ScenarioBlockStyle::forBlock(topBlock) != ScenarioBlockStyle::SceneHeading
-                   && ScenarioBlockStyle::forBlock(topBlock) != ScenarioBlockStyle::FolderHeader
-                   && topBlock != document()->firstBlock()) {
-                topBlock = topBlock.previous();
-            }
-            //
-            QTextBlock bottomBlock = document()->firstBlock();
-            {
-                QTextCursor bottomCursor;
-                for (int delta = viewport()->height() ; delta > viewport()->height()*3/4; delta -= 10) {
-                    bottomCursor = cursorForPosition(viewport()->mapFromParent(QPoint(0, delta)));
-                    if (bottomCursor.block().isVisible()
-                        && bottomBlock.blockNumber() < bottomCursor.block().blockNumber()) {
-                        bottomBlock = bottomCursor.block();
-                    }
-                }
-            }
-            if (bottomBlock == document()->firstBlock()) {
-                bottomBlock = document()->lastBlock();
-            }
-            bottomBlock = bottomBlock.next();
-
-            //
             // Проходим блоки на экране и декорируем их
             //
             QTextBlock block = topBlock;
@@ -1407,7 +1531,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
             int lastCharacterBlockBottom = 0;
             QColor lastCharacterColor;
 
-            QTextCursor cursor(document());
+            ScriptTextCursor cursor(document());
             while (block.isValid() && block != bottomBlock) {
                 //
                 // Стиль текущего блока
@@ -1419,6 +1543,8 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     const QRect cursorR = cursorRect(cursor);
                     cursor.movePosition(QTextCursor::EndOfBlock);
                     const QRect cursorREnd = cursorRect(cursor);
+                    //
+                    verticalMargin = cursorR.height() / 2;
 
                     //
                     // Определим цвет сцены
@@ -1426,7 +1552,6 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     if (blockType == ScenarioBlockStyle::SceneHeading
                         || blockType == ScenarioBlockStyle::FolderHeader) {
                         lastSceneBlockBottom = cursorR.top();
-                        verticalMargin = cursorR.height() / 2;
                         colorRectWidth = QFontMetrics(cursor.charFormat().font()).width(".");
                         lastSceneColor = QColor();
                         if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(block.userData())) {
@@ -1457,7 +1582,6 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                     //
                     if (blockType == ScenarioBlockStyle::Character) {
                         lastCharacterBlockBottom = cursorR.top();
-                        verticalMargin = cursorR.height() / 2;
                         colorRectWidth = QFontMetrics(cursor.charFormat().font()).width(".");
                         lastCharacterColor = QColor();
                         const QString characterName = BusinessLogic::CharacterParser::name(block.text());
@@ -1523,9 +1647,18 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         }
 
                         //
+                        // Прорисовка разделителя страницы
+                        //
+                        if (cursor.isBlockInTable()) {
+                            painter.drawLine(QPointF(splitterX, cursorR.top() - verticalMargin),
+                                             QPointF(splitterX, cursorREnd.bottom() + verticalMargin));
+                        }
+
+                        //
                         // Прорисовка символа пустой строки
                         //
                         if (!block.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection)
+                            && blockType != ScenarioBlockStyle::PageSplitter
                             && block.text().simplified().isEmpty()) {
                             //
                             // Определим область для отрисовки и выведем символ в редактор
@@ -2012,16 +2145,16 @@ void ScenarioTextEdit::cleanScenarioTypeFromBlock()
 
 void ScenarioTextEdit::applyScenarioTypeToBlock(ScenarioBlockStyle::Type _blockType)
 {
-    QTextCursor cursor = textCursor();
+    ScriptTextCursor cursor = textCursor();
     cursor.beginEditBlock();
 
-    ScenarioBlockStyle newBlockStyle = ScenarioTemplateFacade::getTemplate().blockStyle(_blockType);
+    const ScenarioBlockStyle newBlockStyle = ScenarioTemplateFacade::getTemplate().blockStyle(_blockType);
 
     //
     // Обновим стили
     //
     cursor.setBlockCharFormat(newBlockStyle.charFormat());
-    cursor.setBlockFormat(newBlockStyle.blockFormat());
+    cursor.setBlockFormat(newBlockStyle.blockFormat(cursor.isBlockInTable()));
 
     //
     // Применим стиль текста ко всему блоку, выделив его,
@@ -2099,7 +2232,7 @@ void ScenarioTextEdit::applyScenarioTypeToBlock(ScenarioBlockStyle::Type _blockT
         cursor.movePosition(QTextCursor::PreviousCharacter);
 
         cursor.setBlockCharFormat(headerStyle.charFormat());
-        cursor.setBlockFormat(headerStyle.blockFormat());
+        cursor.setBlockFormat(headerStyle.blockFormat(cursor.isBlockInTable()));
 
         cursor.insertText(newBlockStyle.header());
     }
@@ -2138,7 +2271,7 @@ void ScenarioTextEdit::applyScenarioTypeToBlock(ScenarioBlockStyle::Type _blockT
         //
         cursor.insertBlock();
         cursor.setBlockCharFormat(footerStyle.charFormat());
-        cursor.setBlockFormat(footerStyle.blockFormat());
+        cursor.setBlockFormat(footerStyle.blockFormat(cursor.isBlockInTable()));
 
         //
         // т.к. вставлен блок, нужно вернуть курсор на место

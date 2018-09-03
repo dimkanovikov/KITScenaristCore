@@ -5,8 +5,10 @@
 #include "ScenarioModelItem.h"
 #include "ScenarioTemplate.h"
 #include "ScenarioTextBlockInfo.h"
+#include "ScriptTextCursor.h"
 
 #include <3rd_party/Helpers/TextEditHelper.h>
+#include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
 
 #include <QApplication>
 #include <QStringBuilder>
@@ -14,19 +16,23 @@
 #include <QTextCursor>
 #include <QTextBlock>
 #include <QTextCursor>
+#include <QTextTable>
 #include <QXmlStreamReader>
 #include <QXmlStreamWriter>
 
 using namespace BusinessLogic;
 
 namespace {
-    const QString NODE_SCENARIO = "scenario";
-    const QString NODE_VALUE = "v";
-    const QString NODE_REVIEW_GROUP = "reviews";
-    const QString NODE_REVIEW = "review";
-    const QString NODE_REVIEW_COMMENT = "review_comment";
-    const QString NODE_FORMAT_GROUP = "formatting";
-    const QString NODE_FORMAT = "format";
+    const QString kNodeScript = "scenario";
+    const QString kNodeValue = "v";
+    const QString kNodeReviewGroup = "reviews";
+    const QString kNodeReview = "review";
+    const QString kNodeReviewComment = "review_comment";
+    const QString kNodeFormatGroup = "formatting";
+    const QString kNodeFormat = "format";
+    const QString kNodeSplitterStart = "splitter_start";
+    const QString kNodeSplitter = "splitter";
+    const QString kNodeSplitterEnd = "splitter_end";
 
     const QString ATTRIBUTE_VERSION = "version";
     const QString ATTRIBUTE_DESCRIPTION = "description";
@@ -53,6 +59,8 @@ namespace {
     const QString ATTRIBUTE_SCENE_NUMBER = "number";
     const QString ATTRIBUTE_SCENE_NUMBER_FIX_NESTING = "number_fix_nesting";
     const QString ATTRIBUTE_SCENE_NUMBER_SUFFIX = "number_suffix";
+    const QString ATTRIBUTE_DIFF_ADDED = "diff_added";
+    const QString ATTRIBUTE_DIFF_REMOVED = "diff_removed";
 
     const QString SCENARIO_XML_VERSION = "1.0";
 
@@ -263,27 +271,58 @@ QString ScenarioXml::scenarioToXml()
 
     QTextBlock currentBlock = m_scenario->document()->begin();
     QString currentBlockXml;
+    bool isInTable = false;
+    bool isSecondColumn = false;
     do {
         currentBlockXml.clear();
-        const uint currentBlockHash = ::blockHash(currentBlock);
+        const uint currentBlockHash = blockHash(currentBlock);
 
         //
-        // Если для блока есть кэш, и блок не разорван по середине используем его
+        // Определим тип текущего блока
+        //
+        ScenarioBlockStyle::Type currentType = ScenarioBlockStyle::forBlock(currentBlock);
+
+        //
+        // Выполним проверки необходимые для корректной обработки таблиц
+        //
+        {
+            //
+            // Собственно проверяем, что попали или вышли из таблицы
+            //
+            if (currentType == ScenarioBlockStyle::PageSplitter) {
+                isInTable = !isInTable;
+                isSecondColumn = false;
+            }
+            //
+            // Если начало второй колонки, запишем разделитель
+            //
+            if (isInTable
+                && !isSecondColumn) {
+                QTextCursor cursor(currentBlock);
+                if (cursor.currentTable() != nullptr
+                    && cursor.currentTable()->cellAt(cursor).column() == 1) { // вторая колонка
+                    isSecondColumn = true;
+                    resultXml.append(QString("<%1/>\n").arg(kNodeSplitter));
+                }
+            }
+        }
+
+        //
+        // Используем кэшированное значение, если
+        // - для блока есть кэш
+        // - блок не разорван по середине
+        // - блок не является границей таблицы
         //
         if (m_xmlCache.contains(currentBlockHash)
             && !currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)
-            && !currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd)) {
+            && !currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd)
+            && currentType != ScenarioBlockStyle::PageSplitter) {
             resultXml.append(m_xmlCache[currentBlockHash]);
         }
         //
         // В противном случае формируем xml
         //
         else {
-            //
-            // Определим тип текущего блока
-            //
-            ScenarioBlockStyle::Type currentType = ScenarioBlockStyle::forBlock(currentBlock);
-
             //
             // Получить текст под курсором
             //
@@ -308,6 +347,11 @@ QString ScenarioXml::scenarioToXml()
 
                 case ScenarioBlockStyle::FolderHeader: {
                     canHaveColors = true;
+                    break;
+                }
+
+                case ScenarioBlockStyle::PageSplitter: {
+                    needWrite = false;
                     break;
                 }
 
@@ -393,14 +437,14 @@ QString ScenarioXml::scenarioToXml()
                 //
                 // Пишем текст текущего элемента
                 //
-                currentBlockXml.append(QString("<%1><![CDATA[%2]]></%1>\n").arg(NODE_VALUE, textToSave));
+                currentBlockXml.append(QString("<%1><![CDATA[%2]]></%1>\n").arg(kNodeValue, textToSave));
 
                 //
                 // Пишем редакторские комментарии, если они есть в блоке
                 //
                 if (::hasReviewMarks(currentBlock)) {
                     auto writeReviewMark = [&currentBlockXml] (const QTextLayout::FormatRange& _range) {
-                        currentBlockXml.append(QString("<%1").arg(NODE_REVIEW));
+                        currentBlockXml.append(QString("<%1").arg(kNodeReview));
                         //
                         // Данные редакторского выделения
                         //
@@ -424,7 +468,7 @@ QString ScenarioXml::scenarioToXml()
                         const QStringList authors = _range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList();
                         const QStringList dates = _range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList();
                         for (int commentIndex = 0; commentIndex < comments.size(); ++commentIndex) {
-                            currentBlockXml.append(QString("<%1").arg(NODE_REVIEW_COMMENT));
+                            currentBlockXml.append(QString("<%1").arg(kNodeReviewComment));
                             currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_COMMENT,
                                 TextEditHelper::toHtmlEscaped(comments.at(commentIndex))));
                             currentBlockXml.append(QString(" %1=\"%2\"").arg(ATTRIBUTE_REVIEW_AUTHOR, authors.at(commentIndex)));
@@ -432,13 +476,13 @@ QString ScenarioXml::scenarioToXml()
                             currentBlockXml.append("/>\n");
                         }
                         //
-                        currentBlockXml.append(QString("</%1>\n").arg(NODE_REVIEW));
+                        currentBlockXml.append(QString("</%1>\n").arg(kNodeReview));
                     };
 
                     //
                     // Пишем начало
                     //
-                    currentBlockXml.append(QString("<%1>\n").arg(NODE_REVIEW_GROUP));
+                    currentBlockXml.append(QString("<%1>\n").arg(kNodeReviewGroup));
                     //
                     // Пишем тело
                     //
@@ -481,7 +525,7 @@ QString ScenarioXml::scenarioToXml()
                     //
                     // Пишем конец
                     //
-                    currentBlockXml.append(QString("</%1>\n").arg(NODE_REVIEW_GROUP));
+                    currentBlockXml.append(QString("</%1>\n").arg(kNodeReviewGroup));
                 }
 
                 //
@@ -489,7 +533,7 @@ QString ScenarioXml::scenarioToXml()
                 //
                 if (::hasFormatting(currentBlock)) {
                     auto writeFormatting = [&currentBlockXml] (const QTextLayout::FormatRange& _range) {
-                        currentBlockXml.append(QString("<%1").arg(NODE_FORMAT));
+                        currentBlockXml.append(QString("<%1").arg(kNodeFormat));
                         //
                         // Данные пользовательского форматирования
                         //
@@ -514,7 +558,7 @@ QString ScenarioXml::scenarioToXml()
                     //
                     // Пишем начало
                     //
-                    currentBlockXml.append(QString("<%1>\n").arg(NODE_FORMAT_GROUP));
+                    currentBlockXml.append(QString("<%1>\n").arg(kNodeFormatGroup));
                     //
                     // Пишем тело
                     //
@@ -557,7 +601,7 @@ QString ScenarioXml::scenarioToXml()
                     //
                     // Пишем конец
                     //
-                    currentBlockXml.append(QString("</%1>\n").arg(NODE_FORMAT_GROUP));
+                    currentBlockXml.append(QString("</%1>\n").arg(kNodeFormatGroup));
                 }
 
                 //
@@ -566,10 +610,18 @@ QString ScenarioXml::scenarioToXml()
                 currentBlockXml.append(QString("</%1>\n").arg(currentNode));
             }
 
+            else if (currentType == ScenarioBlockStyle::PageSplitter) {
+                currentBlockXml.append(QString("<%1/>\n").arg(isInTable
+                                                            ? kNodeSplitterStart
+                                                            : kNodeSplitterEnd));
+            }
+
             m_xmlCache.insert(currentBlockHash, new QString(currentBlockXml));
             resultXml.append(currentBlockXml);
         }
         currentBlock = currentBlock.next();
+
+
     } while (currentBlock.isValid());
 
     return makeMimeFromXml(resultXml);
@@ -616,9 +668,11 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
     writer.setAutoFormatting(true);
     writer.setAutoFormattingIndent(0);
     writer.writeStartDocument();
-    writer.writeStartElement(NODE_SCENARIO);
+    writer.writeStartElement(kNodeScript);
     writer.writeAttribute(ATTRIBUTE_VERSION, "1.0");
     bool isFirstBlock = true;
+    bool isInTable = false;
+    bool isSecondColumn = false;
     do {
         //
         // Для всего документа сохраняем блоками
@@ -693,9 +747,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
 
                 case ScenarioBlockStyle::FolderHeader: {
                     canHaveUuidColorsAndTitle = true;
-
                     ++openedFolders;
-
                     break;
                 }
 
@@ -709,6 +761,12 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     } else {
                         needWrite = false;
                     }
+                    break;
+                }
+
+                case ScenarioBlockStyle::PageSplitter: {
+                    isInTable = !isInTable;
+                    needWrite = false;
                     break;
                 }
 
@@ -746,6 +804,17 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
             // Дописать xml
             //
             if (needWrite) {
+                //
+                // Если начало второй колонки, запишем разделитель
+                //
+                if (isInTable
+                    && !isSecondColumn
+                    && cursor.currentTable() != nullptr
+                    && cursor.currentTable()->cellAt(cursor).column() == 1) { // вторая колонка
+                    isSecondColumn = true;
+                    writer.writeEmptyElement(kNodeSplitter);
+                }
+
                 //
                 // Открыть ячейку текущего элемента
                 //
@@ -795,7 +864,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 //
                 // Пишем текст текущего элемента
                 //
-                writer.writeStartElement(NODE_VALUE);
+                writer.writeStartElement(kNodeValue);
                 writer.writeCDATA(textToSave);
                 writer.writeEndElement();
 
@@ -805,7 +874,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 //
                 if (::hasReviewMarks(currentBlock)) {
                     auto writeReviewMark = [&writer] (const QTextLayout::FormatRange& _range) {
-                        writer.writeStartElement(NODE_REVIEW);
+                        writer.writeStartElement(kNodeReview);
                         //
                         // Данные редакторского выделения
                         //
@@ -828,7 +897,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                         const QStringList authors = _range.format.property(ScenarioBlockStyle::PropertyCommentsAuthors).toStringList();
                         const QStringList dates = _range.format.property(ScenarioBlockStyle::PropertyCommentsDates).toStringList();
                         for (int commentIndex = 0; commentIndex < comments.size(); ++commentIndex) {
-                            writer.writeEmptyElement(NODE_REVIEW_COMMENT);
+                            writer.writeEmptyElement(kNodeReviewComment);
                             writer.writeAttribute(ATTRIBUTE_REVIEW_COMMENT, TextEditHelper::toHtmlEscaped(comments.at(commentIndex)));
                             writer.writeAttribute(ATTRIBUTE_REVIEW_AUTHOR, authors.at(commentIndex));
                             writer.writeAttribute(ATTRIBUTE_REVIEW_DATE, dates.at(commentIndex));
@@ -840,7 +909,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     //
                     // Пишем начало
                     //
-                    writer.writeStartElement(NODE_REVIEW_GROUP);
+                    writer.writeStartElement(kNodeReviewGroup);
                     //
                     // Пишем тело
                     //
@@ -929,7 +998,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 //
                 if (::hasFormatting(currentBlock)) {
                     auto writeFormatting = [&writer] (const QTextLayout::FormatRange& _range) {
-                        writer.writeStartElement(NODE_FORMAT);
+                        writer.writeStartElement(kNodeFormat);
                         //
                         // Данные пользовательского форматирования
                         //
@@ -951,7 +1020,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     //
                     // Пишем начало
                     //
-                    writer.writeStartElement(NODE_FORMAT_GROUP);
+                    writer.writeStartElement(kNodeFormatGroup);
                     //
                     // Пишем тело
                     //
@@ -1041,6 +1110,12 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 //
                 writer.writeEndElement();
             }
+            //
+            // Если граница таблицы
+            //
+            else if (currentType == ScenarioBlockStyle::PageSplitter) {
+                writer.writeEmptyElement(isInTable ? kNodeSplitterStart : kNodeSplitterEnd);
+            }
 
             //
             // Снимем выделение
@@ -1095,7 +1170,7 @@ void ScenarioXml::xmlToScenario(int _position, const QString& _xml, bool _rebuil
 {
     QXmlStreamReader reader(_xml);
     if (reader.readNextStartElement()
-        && reader.name().toString() == NODE_SCENARIO) {
+        && reader.name().toString() == kNodeScript) {
         const QString version = reader.attributes().value(ATTRIBUTE_VERSION).toString();
         if (version.isEmpty()) {
             xmlToScenarioV0(_position, _xml);
@@ -1378,9 +1453,16 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
     bool needChangeFirstBlockType = false;
 
     //
+    // Находимся ли в данный момент внутри таблицы вставленной рамках текущей операции
+    // NOTE: Отдельный флаг нужен потому что при вставке таблицы в рамках текущей транзакции,
+    //       она не определяется курсором до момента фиксации транзакции работы с текстом
+    //
+    bool isInTable = false;
+
+    //
     // Начинаем операцию вставки
     //
-    QTextCursor cursor(m_scenario->document());
+    ScriptTextCursor cursor(m_scenario->document());
     cursor.setPosition(_position);
     cursor.beginEditBlock();
 
@@ -1431,7 +1513,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         //
                         // Установим стиль блока
                         //
-                        cursor.setBlockFormat(currentStyle.blockFormat());
+                        cursor.setBlockFormat(currentStyle.blockFormat(cursor.isBlockInTable() || isInTable));
                         cursor.setBlockCharFormat(currentStyle.charFormat());
                         cursor.setCharFormat(currentStyle.charFormat());
                     }
@@ -1496,6 +1578,28 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                     }
 
                     //
+                    // Загружаем дифы, если заданы
+                    //
+                    if (reader.attributes().hasAttribute(ATTRIBUTE_DIFF_ADDED)
+                        || reader.attributes().hasAttribute(ATTRIBUTE_DIFF_REMOVED)) {
+                        TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(cursor.block().userData());
+                        if (blockInfo == nullptr) {
+                            if (tokenType == ScenarioBlockStyle::Character) {
+                                blockInfo = new CharacterBlockInfo;
+                            } else {
+                                blockInfo = new TextBlockInfo;
+                            }
+                        }
+
+                        if (reader.attributes().hasAttribute(ATTRIBUTE_DIFF_ADDED)) {
+                            blockInfo->setDiffType(TextBlockInfo::kDiffAdded);
+                        } else if (reader.attributes().hasAttribute(ATTRIBUTE_DIFF_REMOVED)) {
+                            blockInfo->setDiffType(TextBlockInfo::kDiffRemoved);
+                        }
+                        cursor.block().setUserData(blockInfo);
+                    }
+
+                    //
                     // Скрываем блоки, которых не должно быть видно в текщем режиме сценария
                     //
                     if (!m_scenario->document()->visibleBlocksTypes().contains(tokenType)) {
@@ -1507,9 +1611,114 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                 //
                 else {
                     //
+                    // Таблица
+                    //
+                    // вставка таблицы
+                    //
+                    if (tokenName == kNodeSplitterStart) {
+                        //
+                        // Игнорируем попытку вставить таблицу в таблицу
+                        //
+                        if (cursor.isBlockInTable()) {
+                            break;
+                        }
+
+                        //
+                        // Вставим блок в котором будет располагаться таблица
+                        //
+                        cursor.insertBlock();
+
+                        //
+                        // Назначим блоку перед таблицей формат PageSplitter
+                        //
+                        const auto splitterStyle = ScenarioTemplateFacade::getTemplate().blockStyle(ScenarioBlockStyle::PageSplitter);
+                        cursor.setBlockCharFormat(splitterStyle.charFormat());
+                        cursor.setCharFormat(splitterStyle.charFormat());
+                        //
+                        // ... и запретим позиционировать в нём курсор
+                        //
+                        auto splitterBlockFormat = splitterStyle.blockFormat();
+                        splitterBlockFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
+                        cursor.setBlockFormat(splitterBlockFormat);
+
+                        //
+                        // Вставляем таблицу
+                        //
+                        const qreal tableWidth = 100;
+                        const qreal leftColumnWidth = ScenarioTemplateFacade::getTemplate().splitterLeftSidePercents();
+                        const qreal rightColumnWidth = tableWidth - leftColumnWidth;
+                        QTextTableFormat tableFormat;
+                        tableFormat.setWidth(QTextLength{QTextLength::PercentageLength, tableWidth});
+                        tableFormat.setColumnWidthConstraints({ QTextLength{QTextLength::PercentageLength, leftColumnWidth},
+                                                                QTextLength{QTextLength::PercentageLength, rightColumnWidth} });
+                        tableFormat.setBorderStyle(QTextFrameFormat::BorderStyle_None);
+                        cursor.insertTable(1, 2, tableFormat);
+
+                        //
+                        // После вставки таблицы курсор находится внутри первой ячейки,
+                        // поэтому просто "перезапишем" её содержимое
+                        //
+                        firstBlockHandling = true;
+                        needChangeFirstBlockType = true;
+                        isInTable = true;
+                    }
+                    //
+                    // разделение между колонками
+                    //
+                    else if (tokenName == kNodeSplitter) {
+                        //
+                        // Игнорируем попытку вставить таблицу в таблицу
+                        //
+                        if (cursor.isBlockInTable()) {
+                            break;
+                        }
+
+                        //
+                        // Переход ко второй колонке
+                        //
+                        cursor.movePosition(QTextCursor::NextBlock);
+
+                        //
+                        // Перезапишем содержимое второй ячейки
+                        //
+                        firstBlockHandling = true;
+                        needChangeFirstBlockType = true;
+                    }
+                    //
+                    // завершение вставки таблицы
+                    //
+                    else if (tokenName == kNodeSplitterEnd) {
+                        //
+                        // Игнорируем попытку вставить таблицу в таблицу
+                        //
+                        if (cursor.isBlockInTable()) {
+                            break;
+                        }
+
+                        //
+                        // Выход из таблицы
+                        //
+                        cursor.movePosition(QTextCursor::NextBlock);
+                        //
+                        // Назначим блоку после таблицы формат PageSplitter
+                        //
+                        const auto splitterStyle = ScenarioTemplateFacade::getTemplate().blockStyle(ScenarioBlockStyle::PageSplitter);
+                        cursor.setBlockCharFormat(splitterStyle.charFormat());
+                        cursor.setCharFormat(splitterStyle.charFormat());
+                        //
+                        // ... и запретим позиционировать в нём курсор
+                        //
+                        auto splitterBlockFormat = splitterStyle.blockFormat();
+                        splitterBlockFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
+                        cursor.setBlockFormat(splitterBlockFormat);
+
+                        isInTable = false;
+                    }
+
+                    //
                     // Редакторские заметки
                     //
-                    if (tokenName == NODE_REVIEW) {
+                    if (tokenName == kNodeReview) {
                         const int start = reader.attributes().value(ATTRIBUTE_REVIEW_FROM).toInt();
                         const int length = reader.attributes().value(ATTRIBUTE_REVIEW_LENGTH).toInt();
                         const bool highlight = reader.attributes().value(ATTRIBUTE_REVIEW_IS_HIGHLIGHT).toString() == "true";
@@ -1521,7 +1730,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         //
                         QStringList comments, authors, dates;
                         while (reader.readNextStartElement()) {
-                            if (reader.name() == NODE_REVIEW_COMMENT) {
+                            if (reader.name() == kNodeReviewComment) {
                                 comments << TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_REVIEW_COMMENT).toString());
                                 authors << reader.attributes().value(ATTRIBUTE_REVIEW_AUTHOR).toString();
                                 dates << reader.attributes().value(ATTRIBUTE_REVIEW_DATE).toString();
@@ -1566,7 +1775,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                     //
                     // Форматирование
                     //
-                    if (tokenName == NODE_FORMAT) {
+                    if (tokenName == kNodeFormat) {
                         const int start = reader.attributes().value(ATTRIBUTE_FORMAT_FROM).toInt();
                         const int length = reader.attributes().value(ATTRIBUTE_FORMAT_LENGTH).toInt();
                         const bool bold = reader.attributes().value(ATTRIBUTE_FORMAT_BOLD).toString() == "true";

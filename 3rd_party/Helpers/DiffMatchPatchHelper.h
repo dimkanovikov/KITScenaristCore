@@ -15,21 +15,21 @@ namespace {
      * @brief Является ли строка тэгом
      */
     static bool isTag(const QString& _tag) {
-        return _tag.startsWith("<") && _tag.endsWith(">");
+        return !_tag.isEmpty() && _tag.startsWith("<") && _tag.endsWith(">");
     }
 
     /**
      * @brief Является ли тэг открывающим
      */
     static bool isOpenTag(const QString& _tag) {
-        return isTag(_tag) && !_tag.isEmpty() && !_tag.contains("/");
+        return isTag(_tag) && !_tag.contains("/");
     }
 
     /**
      * @brief Является ли тэг закрывающим
      */
     static bool isCloseTag(const QString& _tag) {
-        return isTag(_tag) && !_tag.isEmpty() && _tag.contains("/");
+        return isTag(_tag) && _tag.contains("/");
     }
 
     /**
@@ -71,11 +71,12 @@ namespace {
         result = result.remove("</format>\n");
         result = result.remove("<format/>\n");
 
-        foreach (const QString& tag, _tagsMap.keys()) {
+        for (const QString& tag : _tagsMap.keys()) {
             //
-            // Для CDATA не убираем перенос строки
+            // Для CDATA и тэгов начала и конца таблицы не убираем перенос строки,
+            // т.к. он должен учитываться за отдельный символ
             //
-            const QString suffix = isTag(tag) ? "\n" : "";
+            const QString suffix = (isTag(tag) && !tag.startsWith("<splitter_")) ? "\n" : "";
             result = result.remove(tag + suffix);
         }
 
@@ -203,9 +204,9 @@ public:
 
     /**
      * @brief Определить куски xml из документов, которые затрагивает данное изменение
-     * @return Пара: 1) текст, который был изменён; 2) текст замены
+     * @return Вектор пар <текст, который был изменён | текст замены>
      */
-    static QPair<ChangeXml, ChangeXml> changedXml(const QString& _xml, const QString& _patch) {
+    static QVector<QPair<ChangeXml, ChangeXml>> changedXml(const QString& _xml, const QString& _patch) {
         //
         // Применим патчи
         //
@@ -218,7 +219,7 @@ public:
         //
         const QString newPatch = makePatch(oldXml, newXml);
 
-        QPair<ChangeXml, ChangeXml> result;
+        QVector<QPair<ChangeXml, ChangeXml>> result;
         if (!newPatch.isEmpty()) {
             //
             // Разберём патчи на список
@@ -229,129 +230,118 @@ public:
             //
             // Рассчитаем метрики для формирования xml для обновления
             //
-            int oldStartPos = -1;
-            int oldEndPos = -1;
-            int oldDistance = 0;
-            int newStartPos = -1;
-            int newEndPos = -1;
-            foreach (const Patch& patch, patches) {
-                //
-                // ... для старого
-                //
-                if (oldStartPos == -1
-                    || patch.start1 < oldStartPos) {
-                    oldStartPos = patch.start1;
+            int patchesDelta = 0;
+            for (const Patch& patch : patches) {
+                int oldStartPos = patch.start1 - patchesDelta;
+                int oldEndPos = patch.start1 + patch.length1 - patchesDelta;
+                int oldDistance = patch.length2 - patch.length1;
+                int newStartPos = patch.start2;
+                int newEndPos = patch.start2 + patch.length2;
+                for (const auto& diff : patch.diffs) {
+                    if (diff.operation == EQUAL) {
+                        if (diff == patch.diffs.first()) {
+                            oldStartPos += diff.text.length();
+                            newStartPos += diff.text.length();
+                        } else if (diff == patch.diffs.last()) {
+                            oldEndPos -= diff.text.length();
+                            newEndPos -= diff.text.length();
+                        }
+                    }
                 }
-                if (oldEndPos == -1
-                    || oldEndPos < (patch.start1 + patch.length1 - oldDistance)) {
-                    oldEndPos = patch.start1 + patch.length1 - oldDistance;
-                }
-                oldDistance += patch.length2 - patch.length1;
+                patchesDelta += patch.length2 - patch.length1;
+
                 //
-                // ... для нового
+                // Для случая, когда текста остаётся ровно столько же, сколько и было
                 //
-                if (newStartPos == -1
-                    || patch.start2 < newStartPos) {
-                    newStartPos = patch.start2;
+                if (oldDistance == 0) {
+                    oldEndPos = newEndPos;
                 }
-                if (newEndPos == -1
-                    || newEndPos < (patch.start2 + patch.length2)) {
-                    newEndPos = patch.start2 + patch.length2;
+                //
+                // Отнимаем один символ, т.к. в патче указан индекс символа начиная с 1
+                //
+                --oldStartPos;
+                --oldEndPos;
+                --newStartPos;
+                --newEndPos;
+
+                //
+                // Определим кусок xml из текущего документа для обновления
+                //
+                int oldStartPosForXml = oldStartPos;
+                for (; oldStartPosForXml > 0; --oldStartPosForXml) {
+                    //
+                    // Идём до открывающего тега
+                    //
+                    if (isOpenTag(tagsMap().key(oldXml.at(oldStartPosForXml)))) {
+                        break;
+                    }
                 }
+                int oldEndPosForXml = oldEndPos;
+                for (; oldEndPosForXml < oldXml.length(); ++oldEndPosForXml) {
+                    //
+                    // Идём до закрывающего тэга, он находится в конце строки
+                    //
+                    if (isCloseTag(tagsMap().key(oldXml.at(oldEndPosForXml)))) {
+                        ++oldEndPosForXml;
+                        break;
+                    }
+                }
+                const QString oldXmlForUpdate = oldXml.mid(oldStartPosForXml, oldEndPosForXml - oldStartPosForXml);
+
+
+                //
+                // Определим кусок из нового документа для обновления
+                //
+                int newStartPosForXml = newStartPos;
+                for (; newStartPosForXml > 0; --newStartPosForXml) {
+                    //
+                    // Идём до открывающего тега
+                    //
+                    if (isOpenTag(tagsMap().key(newXml.at(newStartPosForXml)))) {
+                        break;
+                    }
+                }
+                int newEndPosForXml = newEndPos;
+                for (; newEndPosForXml < newXml.length(); ++newEndPosForXml) {
+                    //
+                    // Идём до закрывающего тэга, он находится в конце строки
+                    //
+                    if (isCloseTag(tagsMap().key(newXml.at(newEndPosForXml)))) {
+                        ++newEndPosForXml;
+                        break;
+                    }
+                }
+                const QString newXmlForUpdate = newXml.mid(newStartPosForXml, newEndPosForXml - newStartPosForXml);
+
+
+                //
+                // Определим позиции xml в тексте без тэгов
+                //
+                const QString oldXmlPart = oldXml.left(oldStartPosForXml);
+                const int oldXmlPartLength = oldXmlPart.length();
+                const int oldPlainPartLength = ::removeXmlTagsForScenario(plainToXml(oldXmlPart), tagsMap()).length();
+                int oldStartPosForPlain = oldStartPosForXml - (oldXmlPartLength - oldPlainPartLength);
+                //
+                const QString newXmlPart = newXml.left(newStartPosForXml);
+                const int newXmlPartLength = newXmlPart.length();
+                const int newPlainPartLength = ::removeXmlTagsForScenario(plainToXml(newXmlPart), tagsMap()).length();
+                int newStartPosForPlain = newStartPosForXml - (newXmlPartLength - newPlainPartLength);
+
+
+    //            qDebug() << oldStartPosForXml
+    //                     << oldXmlPartLength
+    //                     << oldPlainPartLength
+    //                     << oldStartPosForPlain << "\n\n--------------------------\n"
+    //                     << oldXmlPart << "\n\n--------------------------\n";
+    //            qDebug() << qPrintable(oldXml) << "\n\n--------------------------\n"
+    //                     << qPrintable(newXml) << "\n\n--------------------------\n"
+    //                     << qPrintable(oldXmlForUpdate) << "\n\n--------------------------\n"
+    //                     << qPrintable(newXmlForUpdate) << "\n\n\n****\n\n\n";
+
+
+                result.append({ ChangeXml(plainToXml(oldXmlForUpdate), oldStartPosForPlain),
+                                ChangeXml(plainToXml(newXmlForUpdate), newStartPosForPlain) });
             }
-            //
-            // Для случая, когда текста остаётся ровно столько же, сколько и было
-            //
-            if (oldDistance == 0) {
-                oldEndPos = newEndPos;
-            }
-            //
-            // Отнимает один символ, т.к. в патче указан индекс символа начиная с 1
-            //
-            oldEndPos -= 1;
-            newEndPos -= 1;
-
-
-            //
-            // Определим кусок xml из текущего документа для обновления
-            //
-            int oldStartPosForXml = oldStartPos;
-            for (; oldStartPosForXml > 0; --oldStartPosForXml) {
-                //
-                // Идём до открывающего тега
-                //
-                if (isOpenTag(tagsMap().key(oldXml.at(oldStartPosForXml)))) {
-                    break;
-                }
-            }
-            int oldEndPosForXml = oldEndPos;
-            for (; oldEndPosForXml < oldXml.length(); ++oldEndPosForXml) {
-                //
-                // Идём до закрывающего тэга, он находится в конце строки
-                //
-                if (isCloseTag(tagsMap().key(oldXml.at(oldEndPosForXml)))) {
-                    ++oldEndPosForXml;
-                    break;
-                }
-            }
-            const QString oldXmlForUpdate = oldXml.mid(oldStartPosForXml, oldEndPosForXml - oldStartPosForXml);
-
-
-            //
-            // Определим кусок из нового документа для обновления
-            //
-            int newStartPosForXml = newStartPos;
-            for (; newStartPosForXml > 0; --newStartPosForXml) {
-                //
-                // Идём до открывающего тега
-                //
-                if (isOpenTag(tagsMap().key(newXml.at(newStartPosForXml)))) {
-                    break;
-                }
-            }
-            int newEndPosForXml = newEndPos;
-            for (; newEndPosForXml < newXml.length(); ++newEndPosForXml) {
-                //
-                // Идём до закрывающего тэга, он находится в конце строки
-                //
-                if (isCloseTag(tagsMap().key(newXml.at(newEndPosForXml)))) {
-                    ++newEndPosForXml;
-                    break;
-                }
-            }
-            const QString newXmlForUpdate = newXml.mid(newStartPosForXml, newEndPosForXml - newStartPosForXml);
-
-
-            //
-            // Определим позиции xml в тексте без тэгов
-            //
-            const QString oldXmlPart = oldXml.left(oldStartPosForXml);
-            const int oldXmlPartLength = oldXmlPart.length();
-            const int oldPlainPartLength = ::removeXmlTagsForScenario(plainToXml(oldXmlPart), tagsMap()).length();
-            int oldStartPosForPlain = oldStartPosForXml - (oldXmlPartLength - oldPlainPartLength);
-            //
-            const QString newXmlPart = newXml.left(newStartPosForXml);
-            const int newXmlPartLength = newXmlPart.length();
-            const int newPlainPartLength = ::removeXmlTagsForScenario(plainToXml(newXmlPart), tagsMap()).length();
-            int newStartPosForPlain = newStartPosForXml - (newXmlPartLength - newPlainPartLength);
-
-
-//            qDebug() << oldStartPosForXml
-//                     << oldXmlPartLength
-//                     << oldPlainPartLength
-//                     << oldStartPosForPlain << "\n\n--------------------------\n"
-//                     << oldXmlPart << "\n\n--------------------------\n";
-//            qDebug() << qPrintable(oldXml) << "\n\n--------------------------\n"
-//                     << qPrintable(newXml) << "\n\n--------------------------\n"
-//                     << qPrintable(oldXmlForUpdate) << "\n\n--------------------------\n"
-//                     << qPrintable(newXmlForUpdate) << "\n\n\n****\n\n\n";
-
-
-            result =
-                    QPair<ChangeXml, ChangeXml>(
-                        ChangeXml(plainToXml(oldXmlForUpdate), oldStartPosForPlain),
-                        ChangeXml(plainToXml(newXmlForUpdate), newStartPosForPlain)
-                        );
         }
 
         return result;
@@ -431,6 +421,9 @@ private:
             addTag("scene_description", s_tagsMap, s_charIndex);
             addTag("undefined", s_tagsMap, s_charIndex);
             addTag("lyrics", s_tagsMap, s_charIndex);
+            s_tagsMap.insert("<splitter_start/>", QChar(s_charIndex++));
+            s_tagsMap.insert("<splitter/>", QChar(s_charIndex++));
+            s_tagsMap.insert("<splitter_end/>", QChar(s_charIndex++));
 
             /*
                 ("<scene_heading>", "가")

@@ -84,27 +84,6 @@ void ProjectFileWidget::addCollaborator(const QString& _email, const QString& _n
     m_users.append(user);
 }
 
-void ProjectFileWidget::setMouseHover(bool _hover)
-{
-    //
-    // Выделяем если курсор над виджетом
-    //
-    QString styleSheet;
-    if (_hover) {
-        styleSheet = "QFrame { background-color: palette(alternate-base); }";
-    } else {
-        styleSheet = "QFrame { background-color: palette(window); }";
-    }
-    setStyleSheet(styleSheet);
-
-#ifndef MOBILE_OS
-    //
-    // Показываем, или скрываем кнопки параметров
-    //
-    m_ui->optionsPanel->setVisible(_hover);
-#endif
-}
-
 void ProjectFileWidget::setMenuVisible(bool _isVisible)
 {
     m_ui->openMenu->setVisible(_isVisible);
@@ -117,7 +96,7 @@ void ProjectFileWidget::mousePressEvent(QMouseEvent* _event)
     m_clickedAt = QDateTime::currentMSecsSinceEpoch();
     WAF::Animation::circleFillIn(this, _event->globalPos(), color);
 
-    QWidget::mousePressEvent(_event);
+    QFrame::mousePressEvent(_event);
 }
 
 void ProjectFileWidget::mouseReleaseEvent(QMouseEvent* _event)
@@ -129,25 +108,26 @@ void ProjectFileWidget::mouseReleaseEvent(QMouseEvent* _event)
         const int delay = qMax(m_clickedAt + 400 - QDateTime::currentMSecsSinceEpoch(), quint64(0));
         m_clickEmitter.start(delay);
     }
-    QWidget::mouseReleaseEvent(_event);
+    QFrame::mouseReleaseEvent(_event);
 }
 
 #ifndef MOBILE_OS
 void ProjectFileWidget::enterEvent(QEvent* _event)
 {
     setMouseHover(true);
-    QWidget::enterEvent(_event);
+    QFrame::enterEvent(_event);
 }
 
 void ProjectFileWidget::leaveEvent(QEvent* _event)
 {
     setMouseHover(false);
-    QWidget::leaveEvent(_event);
+    QFrame::leaveEvent(_event);
 }
 #endif
 
 void ProjectFileWidget::initView()
 {
+    setAttribute(Qt::WA_Hover, true);
     setMouseTracking(true);
     setMouseHover(false);
 
@@ -235,4 +215,25 @@ void ProjectFileWidget::initStylesheet()
     m_ui->share->setProperty("projectAction", true);
     m_ui->shareDetails->setProperty("projectAction", true);
     m_ui->openMenu->setProperty("projectActionMenu", true);
+}
+
+void ProjectFileWidget::setMouseHover(bool _hover)
+{
+    //
+    // Выделяем если курсор над виджетом
+    //
+    QString styleSheet;
+    if (_hover) {
+        styleSheet = "QFrame { background-color: palette(alternate-base); }";
+    } else {
+        styleSheet = "QFrame { background-color: palette(window); }";
+    }
+    setStyleSheet(styleSheet);
+
+#ifndef MOBILE_OS
+    //
+    // Показываем, или скрываем кнопки параметров
+    //
+    m_ui->optionsPanel->setVisible(_hover);
+#endif
 }

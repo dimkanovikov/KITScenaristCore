@@ -19,16 +19,22 @@ namespace DataStorageLayer
 {
     class ScriptVersionStorage
     {
+    public:
         /**
          * @brief Получить все версии сценария
          */
         ScriptVersionsTable* all();
 
         /**
+         * @brief Получить название текущей версии
+         */
+        QString currentVersionName();
+
+        /**
          * @brief Сохранить версию
          */
-        ScriptVersion* storeScriptVersion(const QDateTime& _datetime, const QColor& _color,
-                                          const QString& _name, const QString& _description);
+        ScriptVersion* storeScriptVersion(const QString& _username, const QDateTime& _datetime, const QColor& _color,
+                                          const QString& _name, const QString& _description, const QString& _scriptText);
 
         /**
          * @brief Обновить версию сценария

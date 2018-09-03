@@ -103,31 +103,9 @@ WordHighlightColorsPane::WordHighlightColorsPane(QWidget* _parent) :
     initColors();
 }
 
-QColor WordHighlightColorsPane::currentColor() const
+void WordHighlightColorsPane::selectFirstEnabledColor()
 {
-    return m_currentColorInfo.color;
-}
 
-bool WordHighlightColorsPane::contains(const QColor& _color) const
-{
-    bool contains = false;
-    foreach (const ColorKeyInfo& _colorKeyInfo, m_colorInfos) {
-        if (_colorKeyInfo.color == _color) {
-            contains = true;
-            break;
-        }
-    }
-    return contains;
-}
-
-void WordHighlightColorsPane::setCurrentColor(const QColor& _color)
-{
-    for (int colorIndex = 0; colorIndex < m_colorInfos.count(); ++colorIndex) {
-        if (m_colorInfos[colorIndex].color == _color) {
-            m_currentColorInfo = m_colorInfos[colorIndex];
-            break;
-        }
-    }
 }
 
 void WordHighlightColorsPane::paintEvent(QPaintEvent * _event)
@@ -140,7 +118,7 @@ void WordHighlightColorsPane::paintEvent(QPaintEvent * _event)
     //
     // Рисуем панель
     //
-    foreach (const ColorKeyInfo& colorInfo, m_colorInfos) {
+    foreach (const ColorKeyInfo& colorInfo, colorsInfos()) {
         painter.fillRect(colorInfo.rect, colorInfo.color);
     }
 
@@ -148,10 +126,10 @@ void WordHighlightColorsPane::paintEvent(QPaintEvent * _event)
     // Обрамление
     //
     const QPoint mousePos = mapFromGlobal(QCursor::pos());
-    for(int colorIndex = 0; colorIndex < m_colorInfos.count(); ++colorIndex) {
-        if(m_colorInfos[colorIndex].rect.contains(mousePos))
+    for(int colorIndex = 0; colorIndex < colorsInfos().count(); ++colorIndex) {
+        if(colorsInfos()[colorIndex].rect.contains(mousePos))
         {
-            QRectF borderRect = m_colorInfos[colorIndex].rect;
+            QRectF borderRect = colorsInfos()[colorIndex].rect;
             borderRect.setTop(borderRect.top() - 2);
             borderRect.setLeft(borderRect.left() - 2);
             borderRect.setBottom(borderRect.bottom() + 1);
@@ -167,12 +145,12 @@ void WordHighlightColorsPane::paintEvent(QPaintEvent * _event)
     //
     // Текущий
     //
-    if (m_currentColorInfo.isValid()) {
+    if (currentColorInfo().isValid()) {
 #ifdef MOBILE_OS
         //
         // ... метка в центре
         //
-        const QPointF center = m_currentColorInfo.rect.center();
+        const QPointF center = currentColorInfo().rect.center();
         QRectF markRect(center.x() - kColorMarkSize() / 2, center.y() - kColorMarkSize() / 2,
             kColorMarkSize(), kColorMarkSize());
         painter.fillRect(markRect, palette().text());
@@ -182,7 +160,7 @@ void WordHighlightColorsPane::paintEvent(QPaintEvent * _event)
         //
         // ... рамка
         //
-        QRectF borderRect = m_currentColorInfo.rect;
+        QRectF borderRect = currentColorInfo().rect;
         borderRect.setTop(borderRect.top() - 2);
         borderRect.setLeft(borderRect.left() - 2);
         borderRect.setBottom(borderRect.bottom() + 1);
@@ -213,10 +191,10 @@ void WordHighlightColorsPane::mouseMoveEvent(QMouseEvent* _event)
 
 void WordHighlightColorsPane::mousePressEvent(QMouseEvent* _event)
 {
-    for (int colorIndex = 0; colorIndex < m_colorInfos.count(); ++colorIndex) {
-        if (m_colorInfos[colorIndex].rect.contains(_event->pos())) {
-            m_currentColorInfo = m_colorInfos[colorIndex];
-            emit selected(m_currentColorInfo.color);
+    for (int colorIndex = 0; colorIndex < colorsInfos().count(); ++colorIndex) {
+        if (colorsInfos()[colorIndex].rect.contains(_event->pos())) {
+            currentColorInfo() = colorsInfos()[colorIndex];
+            emit selected(currentColorInfo().color);
 
             repaint();
             break;
@@ -256,7 +234,7 @@ void WordHighlightColorsPane::initColors()
             colorRect.setWidth(kColorRectSize());
             colorRect.setHeight(kColorRectSize());
 
-            m_colorInfos.append(ColorKeyInfo(colors.at((row * kColorRectColumns) + column), colorRect));
+            colorsInfos().append(ColorKeyInfo(colors.at((row * kColorRectColumns) + column), colorRect));
 
             leftMargin += kColorRectSize() + kColorRectSpace;
         }

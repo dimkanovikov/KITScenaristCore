@@ -36,13 +36,13 @@ namespace {
      * @brief Ключ для формирования xml из импортируемого документа
      */
     /** @{ */
-    const QString NODE_SCENARIO = "scenario";
-    const QString NODE_VALUE = "v";
-    const QString NODE_REVIEW_GROUP = "reviews";
-    const QString NODE_REVIEW = "review";
-    const QString NODE_REVIEW_COMMENT = "review_comment";
-    const QString NODE_FORMAT_GROUP = "formatting";
-    const QString NODE_FORMAT = "format";
+    const QString kNodeScript = "scenario";
+    const QString kNodeValue = "v";
+    const QString kNodeReviewGroup = "reviews";
+    const QString kNodeReview = "review";
+    const QString kNodeReviewComment = "review_comment";
+    const QString kNodeFormatGroup = "formatting";
+    const QString kNodeFormat = "format";
 
     const QString ATTRIBUTE_REVIEW_FROM = "from";
     const QString ATTRIBUTE_REVIEW_LENGTH = "length";
@@ -92,7 +92,7 @@ QString CeltxImporter::importScript(const BusinessLogic::ImportParameters& _impo
         writer.setAutoFormatting(true);
         writer.setAutoFormattingIndent(true);
         writer.writeStartDocument();
-        writer.writeStartElement(NODE_SCENARIO);
+        writer.writeStartElement(kNodeScript);
         writer.writeAttribute(ATTRIBUTE_VERSION, "1.0");
 
         //
@@ -118,7 +118,7 @@ QString CeltxImporter::importScript(const BusinessLogic::ImportParameters& _impo
 
             const QString& blockTypeName = ScenarioBlockStyle::typeName(blockType);
             writer.writeStartElement(blockTypeName);
-            writer.writeStartElement(NODE_VALUE);
+            writer.writeStartElement(kNodeValue);
             //
             // Сформируем текст
             //
@@ -176,9 +176,9 @@ QString CeltxImporter::importScript(const BusinessLogic::ImportParameters& _impo
             // Добавляем форматирование
             //
             if (!formatting.isEmpty()) {
-                writer.writeStartElement(NODE_FORMAT_GROUP);
+                writer.writeStartElement(kNodeFormatGroup);
                 for (const TextFormat& format : formatting){
-                    writer.writeStartElement(NODE_FORMAT);
+                    writer.writeStartElement(kNodeFormat);
                     //
                     // Данные пользовательского форматирования
                     //
@@ -197,16 +197,16 @@ QString CeltxImporter::importScript(const BusinessLogic::ImportParameters& _impo
             // Добавляем заметки
             //
             if (!notes.isEmpty()) {
-                writer.writeStartElement(NODE_REVIEW_GROUP);
+                writer.writeStartElement(kNodeReviewGroup);
                 for (const TextNote& note : notes) {
-                    writer.writeStartElement(NODE_REVIEW);
+                    writer.writeStartElement(kNodeReview);
                     writer.writeAttribute(ATTRIBUTE_REVIEW_FROM, "0");
                     writer.writeAttribute(ATTRIBUTE_REVIEW_LENGTH, QString::number(paragraphText.length()));
                     writer.writeAttribute(ATTRIBUTE_REVIEW_COLOR, "#000000");
                     writer.writeAttribute(ATTRIBUTE_REVIEW_BGCOLOR, note.color.name());
                     writer.writeAttribute(ATTRIBUTE_REVIEW_IS_HIGHLIGHT, "false");
 
-                    writer.writeEmptyElement(NODE_REVIEW_COMMENT);
+                    writer.writeEmptyElement(kNodeReviewComment);
                     writer.writeAttribute(ATTRIBUTE_REVIEW_COMMENT, note.comment);
 
                     writer.writeEndElement();

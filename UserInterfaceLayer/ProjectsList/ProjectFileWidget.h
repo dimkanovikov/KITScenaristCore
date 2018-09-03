@@ -24,7 +24,7 @@ namespace UserInterface
         Q_OBJECT
 
     public:
-        explicit ProjectFileWidget(QWidget *parent = 0);
+        explicit ProjectFileWidget(QWidget* parent = nullptr);
 
         /**
          * @brief Установить название проекта
@@ -46,11 +46,6 @@ namespace UserInterface
          * @brief Добавить соавтора
          */
         void addCollaborator(const QString& _email, const QString& _name, const QString& _role, bool _isOwner);
-
-        /**
-         * @brief Находится ли мышка над элементом
-         */
-        void setMouseHover(bool _hover);
 
         /**
          * @brief Сделать кнопку открытия меню видимым/невидимым
@@ -127,6 +122,11 @@ namespace UserInterface
          * @brief Настроить стиль
          */
         void initStylesheet();
+
+        /**
+         * @brief Установить флаг обозначающий находится ли мышка над элементом
+         */
+        void setMouseHover(bool _hover);
 
     private:
         /**

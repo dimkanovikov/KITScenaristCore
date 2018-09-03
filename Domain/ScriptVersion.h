@@ -16,8 +16,18 @@ namespace Domain
     class ScriptVersion : public DomainObject
     {
     public:
-        ScriptVersion(const Identifier& _id, const QDateTime& _datetime, const QColor& _color,
-                      const QString& _name, const QString& _description);
+        ScriptVersion(const Identifier& _id, const QString& _username, const QDateTime& _datetime, const QColor& _color,
+                      const QString& _name, const QString& _description, const QString& _scriptText);
+
+        /**
+         * @brief Получить имя пользовтеля сохранившего версию
+         */
+        QString username() const;
+
+        /**
+         * @brief Задать имя пользовтеля сохранившего версию
+         */
+        void setUsername(const QString& _username);
 
         /**
          * @brief Получить дату версии
@@ -59,7 +69,22 @@ namespace Domain
          */
         void setDescription(const QString& _description);
 
+        /**
+         * @brief Получить текст сценария версии
+         */
+        QString scriptText() const;
+
+        /**
+         * @brief Задать текст сценария версии
+         */
+        void setScriptText(const QString& _scriptText);
+
     private:
+        /**
+         * @brief Имя пользователя
+         */
+        QString m_username;
+
         /**
          * @brief Дата версии
          */
@@ -79,6 +104,11 @@ namespace Domain
          * @brief Описание версии
          */
         QString m_description;
+
+        /**
+         * @brief Текст сценария
+         */
+        QString m_scriptText;
     };
 
     // ****
@@ -92,20 +122,20 @@ namespace Domain
 
     public:
         enum Column {
-            Undefined,
-            Id,
-            Datetime,
-            Color,
-            Name,
-            Description
+            kUndefined,
+            kId,
+            kUsername,
+            kDatetime,
+            kColor,
+            kName,
+            kDescription,
+            kScriptText,
+            kColumnCount
         };
 
     public:
         int columnCount(const QModelIndex&) const;
         QVariant data(const QModelIndex& _index, int _role) const;
-
-    private:
-        Column sectionToColumn(int _section) const;
     };
 }
 

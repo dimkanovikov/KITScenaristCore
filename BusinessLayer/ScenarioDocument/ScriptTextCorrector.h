@@ -9,12 +9,13 @@
 
 class QTextBlock;
 class QTextBlockFormat;
-class QTextCursor;
 class QTextDocument;
 
 
 namespace BusinessLogic
 {
+    class ScriptTextCursor;
+
     /**
      * @brief Класс корректирующий текст сценария
      */
@@ -76,32 +77,32 @@ namespace BusinessLogic
          */
         void moveCurrentBlockWithThreePreviousToNextPage(const QTextBlock& _prePrePreviousBlock,
             const QTextBlock& _prePreviousBlock, const QTextBlock& _previousBlock, qreal _pageHeight,
-            QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
+            ScriptTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
 
         /**
          * @brief Сместить текущий блок вместе с двумя предыдущими на следующую страницу
          */
         void moveCurrentBlockWithTwoPreviousToNextPage(const QTextBlock& _prePreviousBlock,
-            const QTextBlock& _previousBlock, qreal _pageHeight, QTextCursor& _cursor,
+            const QTextBlock& _previousBlock, qreal _pageHeight, ScriptTextCursor& _cursor,
             QTextBlock& _block, qreal& _lastBlockHeight);
 
         /**
          * @brief Сместить текущий блок вместе с предыдущим на следующую страницу
          */
         void moveCurrentBlockWithPreviousToNextPage(const QTextBlock& _previousBlock,
-            qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
+            qreal _pageHeight, ScriptTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
 
         /**
          * @brief Сместить текущий блок на следующую страницу
          */
         void moveCurrentBlockToNextPage(const QTextBlockFormat& _blockFormat, qreal _blockHeight,
-            qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
+            qreal _pageHeight, ScriptTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
 
         /**
          * @brief Разорвать блок диалога
          */
         void breakDialogue(const QTextBlockFormat& _blockFormat, qreal _blockHeight,
-            qreal _pageHeight, qreal _pageWidth, QTextCursor& _cursor, QTextBlock& _block,
+            qreal _pageHeight, qreal _pageWidth, ScriptTextCursor& _cursor, QTextBlock& _block,
             qreal& _lastBlockHeight);
 
         //
@@ -126,7 +127,7 @@ namespace BusinessLogic
          * @param _cursor - курсор редактироуемого документа
          */
         void moveBlockToNextPage(const QTextBlock& _block, qreal _spaceToPageEnd, qreal _pageHeight,
-            QTextCursor& _cursor);
+            ScriptTextCursor& _cursor);
 
     private:
         /**

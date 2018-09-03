@@ -28,6 +28,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case ArmenianWestern:
             code = "arm_ARM_west";
             break;
+        case Azerbaijani:
+            code = "az_AZ";
+            break;
         case Belorussian:
             code = "be_BY";
             break;

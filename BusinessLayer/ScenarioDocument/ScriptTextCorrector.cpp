@@ -3,6 +3,7 @@
 #include "ScenarioTemplate.h"
 #include "ScenarioTextBlockInfo.h"
 #include "ScenarioTextBlockParsers.h"
+#include "ScriptTextCursor.h"
 
 #include <3rd_party/Helpers/RunOnce.h>
 #include <3rd_party/Widgets/PagesTextEdit/PageTextEdit.h>
@@ -18,6 +19,7 @@ using BusinessLogic::ScenarioBlockStyle;
 using BusinessLogic::ScenarioTemplateFacade;
 using BusinessLogic::SceneHeadingBlockInfo;
 using BusinessLogic::ScriptTextCorrector;
+using BusinessLogic::ScriptTextCursor;
 
 namespace {
     /**
@@ -152,7 +154,7 @@ void ScriptTextCorrector::correctCharactersNames(int _position, int _charsRemove
     //
     // Начинаем работу с документом
     //
-    QTextCursor cursor(m_document);
+    ScriptTextCursor cursor(m_document);
     cursor.beginEditBlock();
 
     //
@@ -316,7 +318,7 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
     //
     // Начинаем работу с документом
     //
-    QTextCursor cursor(m_document);
+    ScriptTextCursor cursor(m_document);
     cursor.beginEditBlock();
 
     //
@@ -435,8 +437,8 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
         //
         if (blockFormat.boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
             cursor.setPosition(block.position());
-            cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
-            cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor);
+            cursor.movePosition(ScriptTextCursor::EndOfBlock, ScriptTextCursor::KeepAnchor);
+            cursor.movePosition(ScriptTextCursor::NextCharacter, ScriptTextCursor::KeepAnchor);
             cursor.deleteChar();
             //
             // ... и продолжим со следующего блока
@@ -449,9 +451,9 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
         //
         else if (blockFormat.boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)) {
             cursor.setPosition(block.position());
-            cursor.movePosition(QTextCursor::EndOfBlock);
+            cursor.movePosition(ScriptTextCursor::EndOfBlock);
             do {
-                cursor.movePosition(QTextCursor::NextBlock, QTextCursor::KeepAnchor);
+                cursor.movePosition(ScriptTextCursor::NextBlock, ScriptTextCursor::KeepAnchor);
             } while (cursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection));
             //
             // ... если дошли до конца разрыва, то сшиваем его
@@ -463,7 +465,7 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
             // ... а если после начала разрыва идёт другой блок, то просто убираем декорации
             //
             else {
-                cursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::KeepAnchor);
+                cursor.movePosition(ScriptTextCursor::PreviousCharacter, ScriptTextCursor::KeepAnchor);
                 if (cursor.hasSelection()) {
                     cursor.deleteChar();
                 }
@@ -732,12 +734,12 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
                                     //
                                     QTextBlockFormat breakStartFormat = blockFormat;
                                     breakStartFormat.setProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart, true);
-                                    cursor.movePosition(QTextCursor::PreviousBlock);
+                                    cursor.movePosition(ScriptTextCursor::PreviousBlock);
                                     cursor.setBlockFormat(breakStartFormat);
                                     //
                                     QTextBlockFormat breakEndFormat = blockFormat;
                                     breakEndFormat.setProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd, true);
-                                    cursor.movePosition(QTextCursor::NextBlock);
+                                    cursor.movePosition(ScriptTextCursor::NextBlock);
                                     cursor.setBlockFormat(breakEndFormat);
                                     //
                                     // ... обновим лэйаут оторванного блока
@@ -932,12 +934,12 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
                                     //
                                     QTextBlockFormat breakStartFormat = blockFormat;
                                     breakStartFormat.setProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart, true);
-                                    cursor.movePosition(QTextCursor::PreviousBlock);
+                                    cursor.movePosition(ScriptTextCursor::PreviousBlock);
                                     cursor.setBlockFormat(breakStartFormat);
                                     //
                                     QTextBlockFormat breakEndFormat = blockFormat;
                                     breakEndFormat.setProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionEnd, true);
-                                    cursor.movePosition(QTextCursor::NextBlock);
+                                    cursor.movePosition(ScriptTextCursor::NextBlock);
                                     cursor.setBlockFormat(breakEndFormat);
                                     //
                                     // ... переносим оторванный конец на следующую страницу,
@@ -1046,7 +1048,7 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
     cursor.endEditBlock();
 }
 
-void ScriptTextCorrector::moveCurrentBlockWithThreePreviousToNextPage(const QTextBlock& _prePrePreviousBlock, const QTextBlock& _prePreviousBlock, const QTextBlock& _previousBlock, qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight)
+void ScriptTextCorrector::moveCurrentBlockWithThreePreviousToNextPage(const QTextBlock& _prePrePreviousBlock, const QTextBlock& _prePreviousBlock, const QTextBlock& _previousBlock, qreal _pageHeight, ScriptTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight)
 {
     --m_currentBlockNumber;
     --m_currentBlockNumber;
@@ -1082,7 +1084,7 @@ void ScriptTextCorrector::moveCurrentBlockWithThreePreviousToNextPage(const QTex
 }
 
 void ScriptTextCorrector::moveCurrentBlockWithTwoPreviousToNextPage(const QTextBlock& _prePreviousBlock,
-    const QTextBlock& _previousBlock, qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block,
+    const QTextBlock& _previousBlock, qreal _pageHeight, ScriptTextCursor& _cursor, QTextBlock& _block,
     qreal& _lastBlockHeight)
 {
     --m_currentBlockNumber;
@@ -1114,7 +1116,7 @@ void ScriptTextCorrector::moveCurrentBlockWithTwoPreviousToNextPage(const QTextB
 }
 
 void ScriptTextCorrector::moveCurrentBlockWithPreviousToNextPage(const QTextBlock& _previousBlock,
-    qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight)
+    qreal _pageHeight, ScriptTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight)
 {
     --m_currentBlockNumber;
 
@@ -1140,7 +1142,7 @@ void ScriptTextCorrector::moveCurrentBlockWithPreviousToNextPage(const QTextBloc
 }
 
 void ScriptTextCorrector::moveCurrentBlockToNextPage(const QTextBlockFormat& _blockFormat,
-    qreal _blockHeight, qreal _pageHeight, QTextCursor& _cursor, QTextBlock& _block,
+    qreal _blockHeight, qreal _pageHeight, ScriptTextCursor& _cursor, QTextBlock& _block,
     qreal& _lastBlockHeight)
 {
     const qreal sizeToPageEnd = _pageHeight - _lastBlockHeight;
@@ -1157,7 +1159,7 @@ void ScriptTextCorrector::moveCurrentBlockToNextPage(const QTextBlockFormat& _bl
 }
 
 void ScriptTextCorrector::breakDialogue(const QTextBlockFormat& _blockFormat, qreal _blockHeight,
-    qreal _pageHeight, qreal _pageWidth, QTextCursor& _cursor, QTextBlock& _block,
+    qreal _pageHeight, qreal _pageWidth, ScriptTextCursor& _cursor, QTextBlock& _block,
     qreal& _lastBlockHeight)
 {
     //
@@ -1165,13 +1167,13 @@ void ScriptTextCorrector::breakDialogue(const QTextBlockFormat& _blockFormat, qr
     //
     _cursor.setPosition(_block.position());
     _cursor.insertBlock();
-    _cursor.movePosition(QTextCursor::PreviousBlock);
+    _cursor.movePosition(ScriptTextCursor::PreviousBlock);
     //
     // Оформить его, как ремарку
     //
     ScenarioBlockStyle parentheticalStyle =
         ScenarioTemplateFacade::getTemplate(m_templateName).blockStyle(ScenarioBlockStyle::Parenthetical);
-    QTextBlockFormat parentheticalFormat = parentheticalStyle.blockFormat();
+    QTextBlockFormat parentheticalFormat = parentheticalStyle.blockFormat(_cursor.isBlockInTable());
     parentheticalFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrection, true);
     parentheticalFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrectionContinued, true);
     parentheticalFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
@@ -1192,7 +1194,7 @@ void ScriptTextCorrector::breakDialogue(const QTextBlockFormat& _blockFormat, qr
     // Перенести текущий блок на следующую страницу, если на текущей влезает
     // ещё хотя бы одна строка текста
     //
-    _cursor.movePosition(QTextCursor::NextBlock);
+    _cursor.movePosition(ScriptTextCursor::NextBlock);
     _block = _cursor.block();
     const qreal sizeToPageEnd = _pageHeight - _lastBlockHeight - moreBlockHeight;
     if (sizeToPageEnd >= _blockFormat.topMargin() + _blockFormat.lineHeight()) {
@@ -1217,7 +1219,7 @@ void ScriptTextCorrector::breakDialogue(const QTextBlockFormat& _blockFormat, qr
         //
         _cursor.setPosition(_block.position());
         _cursor.insertBlock();
-        _cursor.movePosition(QTextCursor::PreviousBlock);
+        _cursor.movePosition(ScriptTextCursor::PreviousBlock);
         //
         // Оформляем его, как имя персонажа
         //
@@ -1278,7 +1280,7 @@ QTextBlock ScriptTextCorrector::findNextBlock(const QTextBlock& _block)
 }
 
 void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _spaceToPageEnd,
-    qreal _pageHeight, QTextCursor& _cursor)
+    qreal _pageHeight, ScriptTextCursor& _cursor)
 {
     //
     // Смещаем курсор в начало блока
@@ -1307,7 +1309,7 @@ void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _s
         // Декорируем
         //
         _cursor.insertBlock();
-        _cursor.movePosition(QTextCursor::PreviousBlock);
+        _cursor.movePosition(ScriptTextCursor::PreviousBlock);
         _cursor.setBlockFormat(decorationFormat);
         //
         // Сохраним данные блока, чтобы перенести их к реальному владельцу
@@ -1330,7 +1332,7 @@ void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _s
         //
         // Переведём курсор на блок после декорации
         //
-        _cursor.movePosition(QTextCursor::NextBlock);
+        _cursor.movePosition(ScriptTextCursor::NextBlock);
         if (sceneBlockInfo != nullptr) {
             _cursor.block().setUserData(sceneBlockInfo);
         }

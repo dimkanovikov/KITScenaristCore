@@ -47,13 +47,13 @@ namespace {
      * @brief Ключи для формирования xml из импортируемого документа
      */
     /** @{ */
-    const QString NODE_SCENARIO = "scenario";
-    const QString NODE_VALUE = "v";
-    const QString NODE_REVIEW_GROUP = "reviews";
-    const QString NODE_REVIEW = "review";
-    const QString NODE_REVIEW_COMMENT = "review_comment";
-    const QString NODE_FORMAT_GROUP = "formatting";
-    const QString NODE_FORMAT = "format";
+    const QString kNodeScript = "scenario";
+    const QString kNodeValue = "v";
+    const QString kNodeReviewGroup = "reviews";
+    const QString kNodeReview = "review";
+    const QString kNodeReviewComment = "review_comment";
+    const QString kNodeFormatGroup = "formatting";
+    const QString kNodeFormat = "format";
 
     const QString ATTRIBUTE_VERSION = "version";
     const QString ATTRIBUTE_REVIEW_FROM = "from";
@@ -313,7 +313,7 @@ QString DocumentImporter::importScript(const ImportParameters& _importParameters
 
     QXmlStreamWriter writer(&scenarioXml);
     writer.writeStartDocument();
-    writer.writeStartElement(NODE_SCENARIO);
+    writer.writeStartElement(kNodeScript);
     writer.writeAttribute(ATTRIBUTE_VERSION, "1.0");
 
     //
@@ -364,7 +364,7 @@ QString DocumentImporter::importScript(const ImportParameters& _importParameters
             //
             // Пишем текст
             //
-            writer.writeStartElement(NODE_VALUE);
+            writer.writeStartElement(kNodeValue);
             writer.writeCDATA(blockText);
             writer.writeEndElement();
 
@@ -374,13 +374,13 @@ QString DocumentImporter::importScript(const ImportParameters& _importParameters
             if (_importParameters.saveReviewMarks) {
                 const QTextBlock currentBlock = cursor.block();
                 if (!currentBlock.textFormats().isEmpty()) {
-                    writer.writeStartElement(NODE_REVIEW_GROUP);
+                    writer.writeStartElement(kNodeReviewGroup);
                     foreach (const QTextLayout::FormatRange& range, currentBlock.textFormats()) {
                         if (range.format.boolProperty(Docx::IsForeground)
                             || range.format.boolProperty(Docx::IsBackground)
                             || range.format.boolProperty(Docx::IsHighlight)
                             || range.format.boolProperty(Docx::IsComment)) {
-                            writer.writeStartElement(NODE_REVIEW);
+                            writer.writeStartElement(kNodeReview);
                             writer.writeAttribute(ATTRIBUTE_REVIEW_FROM, QString::number(range.start));
                             writer.writeAttribute(ATTRIBUTE_REVIEW_LENGTH, QString::number(range.length));
                             if (range.format.hasProperty(QTextFormat::ForegroundBrush)) {
@@ -400,7 +400,7 @@ QString DocumentImporter::importScript(const ImportParameters& _importParameters
                             const QStringList authors = range.format.property(Docx::CommentsAuthors).toStringList();
                             const QStringList dates = range.format.property(Docx::CommentsDates).toStringList();
                             for (int commentIndex = 0; commentIndex < comments.size(); ++commentIndex) {
-                                writer.writeEmptyElement(NODE_REVIEW_COMMENT);
+                                writer.writeEmptyElement(kNodeReviewComment);
                                 writer.writeAttribute(ATTRIBUTE_REVIEW_COMMENT, comments.at(commentIndex));
                                 writer.writeAttribute(ATTRIBUTE_REVIEW_AUTHOR, authors.at(commentIndex));
                                 writer.writeAttribute(ATTRIBUTE_REVIEW_DATE, dates.at(commentIndex));
@@ -419,13 +419,13 @@ QString DocumentImporter::importScript(const ImportParameters& _importParameters
             {
                 const QTextBlock currentBlock = cursor.block();
                 if (!currentBlock.textFormats().isEmpty()) {
-                    writer.writeStartElement(NODE_FORMAT_GROUP);
+                    writer.writeStartElement(kNodeFormatGroup);
                     for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
                         if (range.format != currentBlock.charFormat()
                             && (range.format.fontWeight() != currentBlock.charFormat().fontWeight()
                                 || range.format.fontItalic() != currentBlock.charFormat().fontItalic()
                                 || range.format.fontUnderline() != currentBlock.charFormat().fontUnderline())) {
-                            writer.writeStartElement(NODE_FORMAT);
+                            writer.writeStartElement(kNodeFormat);
                             writer.writeAttribute(ATTRIBUTE_FORMAT_FROM, QString::number(range.start));
                             writer.writeAttribute(ATTRIBUTE_FORMAT_LENGTH, QString::number(range.length));
                             if (range.format.hasProperty(QTextFormat::FontWeight)) {
