@@ -457,6 +457,10 @@ Türkçe: Recep Burak Yak
         <source>Logline</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Versions</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioBlockStyle</name>
@@ -952,6 +956,13 @@ Türkçe: Recep Burak Yak
     </message>
 </context>
 <context>
+    <name>DataStorageLayer::ScriptVersionStorage</name>
+    <message>
+        <source>First draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DatabaseLayer::Database</name>
     <message>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
@@ -1076,12 +1087,23 @@ Türkçe: Recep Burak Yak
         <source>FADE TO BLACK</source>
         <translation></translation>
     </message>
+    <message>
+        <source>First draft</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DocxReader</name>
     <message>
         <source>Unable to open archive.</source>
         <translation>Неможливо відкрити архів.</translation>
+    </message>
+</context>
+<context>
+    <name>Domain::ScriptVersionsTable</name>
+    <message>
+        <source>current version</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1874,10 +1896,6 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронізовано.</translation>
     </message>
     <message>
-        <source>Save version...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Save as...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1887,6 +1905,10 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Two panel mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New script version...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2039,6 +2061,10 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>Clear</source>
         <translation type="unfinished">Очистити</translation>
+    </message>
+    <message>
+        <source>Do you really want to delete script version named &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2263,6 +2289,10 @@ You can try to reload update.</source>
         <source>Bytes</source>
         <translation>Байтів</translation>
     </message>
+    <message>
+        <source>Choose versions to compare</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuView</name>
@@ -2363,11 +2393,11 @@ You can try to reload update.</source>
         <translation>Вийти з кабінету</translation>
     </message>
     <message>
-        <source>Save current project version...</source>
+        <source>DOWNLOAD UPDATE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>DOWNLOAD UPDATE</source>
+        <source>Start new version...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2733,15 +2763,15 @@ And the text editor of the script. The editor has many auxiliary functions that 
         <translation type="unfinished">Опис</translation>
     </message>
     <message>
-        <source>Save new version of the script</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>dd.MM.yyyy hh:mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Version date and time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start a new version of the script</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3152,7 +3182,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -3164,7 +3194,7 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -3214,6 +3244,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Act</source>
         <translation>Акт</translation>
+    </message>
+</context>
+<context>
+    <name>ScriptVersionWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Титр</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Опис</translation>
+    </message>
+    <message>
+        <source>Remove version</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4134,6 +4183,18 @@ New to KIT Scenarist?</source>
         <source>In splitted mode, mm:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Split page, %:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left page side:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right page side:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ToolsSettings</name>
@@ -4152,6 +4213,14 @@ New to KIT Scenarist?</source>
     <message>
         <source>Back to tools list</source>
         <translation>Повернутись до списку інструментів</translation>
+    </message>
+    <message>
+        <source>Compare</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4960,6 +5029,13 @@ The application will start in few seconds.</source>
     </message>
 </context>
 <context>
+    <name>UserInterface::ScriptVersionsList</name>
+    <message>
+        <source>started by</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UserInterface::ScriptZenModeControls</name>
     <message>
         <source>Typewriter sound</source>
@@ -5254,7 +5330,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Compare script versions</source>
-        <translation type="vanished">Порівняти версії сценарію</translation>
+        <translation>Порівняти версії сценарію</translation>
     </message>
     <message>
         <source>Restore script from backup</source>

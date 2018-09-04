@@ -520,6 +520,10 @@ Türkçe: Recep Burak Yak
         <source>Logline</source>
         <translation>Logline</translation>
     </message>
+    <message>
+        <source>Versions</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioBlockStyle</name>
@@ -1018,6 +1022,13 @@ Türkçe: Recep Burak Yak
     </message>
 </context>
 <context>
+    <name>DataStorageLayer::ScriptVersionStorage</name>
+    <message>
+        <source>First draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DatabaseLayer::Database</name>
     <message>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
@@ -1143,12 +1154,23 @@ Türkçe: Recep Burak Yak
         <source>FADE TO BLACK</source>
         <translation>ESCURECER</translation>
     </message>
+    <message>
+        <source>First draft</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DocxReader</name>
     <message>
         <source>Unable to open archive.</source>
         <translation>Não foi possível abrir o arquivo.</translation>
+    </message>
+</context>
+<context>
+    <name>Domain::ScriptVersionsTable</name>
+    <message>
+        <source>current version</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1949,10 +1971,6 @@ Project didn&apos;t synchronized.</source>
 O projeto não foi sincronizado.</translation>
     </message>
     <message>
-        <source>Save version...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Save as...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1962,6 +1980,10 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Two panel mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New script version...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2114,6 +2136,10 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Clear</source>
         <translation>Limpar</translation>
+    </message>
+    <message>
+        <source>Do you really want to delete script version named &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2338,6 +2364,10 @@ Você pode tentar recarregar a atualização.</translation>
         <source>Bytes</source>
         <translation></translation>
     </message>
+    <message>
+        <source>Choose versions to compare</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuView</name>
@@ -2438,11 +2468,11 @@ Você pode tentar recarregar a atualização.</translation>
         <translation>Sair do armário</translation>
     </message>
     <message>
-        <source>Save current project version...</source>
+        <source>DOWNLOAD UPDATE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>DOWNLOAD UPDATE</source>
+        <source>Start new version...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2800,15 +2830,15 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
         <translation type="unfinished">Descrição</translation>
     </message>
     <message>
-        <source>Save new version of the script</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>dd.MM.yyyy hh:mm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Version date and time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start a new version of the script</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3222,16 +3252,16 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
         <translation>Prefixo do número de cena:</translation>
     </message>
     <message>
+        <source>Start scenes numbering from:</source>
+        <translation>Começar a numerar as cenas a partir de:</translation>
+    </message>
+    <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Start scenes numbering from:</source>
-        <translation>Começar a numerar as cenas a partir de:</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3265,6 +3295,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Act</source>
         <translation>Ato</translation>
+    </message>
+</context>
+<context>
+    <name>ScriptVersionWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Título</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Descrição</translation>
+    </message>
+    <message>
+        <source>Remove version</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4191,6 +4240,18 @@ Valor, mm</translation>
         <source>In splitted mode, mm:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Split page, %:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left page side:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right page side:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ToolsSettings</name>
@@ -4201,6 +4262,14 @@ Valor, mm</translation>
     <message>
         <source>Back to tools list</source>
         <translation>Voltar para a lista de ferramentas</translation>
+    </message>
+    <message>
+        <source>Compare</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>with</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5005,6 +5074,13 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
 </context>
 <context>
+    <name>UserInterface::ScriptVersionsList</name>
+    <message>
+        <source>started by</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UserInterface::ScriptZenModeControls</name>
     <message>
         <source>Typewriter sound</source>
@@ -5299,7 +5375,7 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Compare script versions</source>
-        <translation type="vanished">Comparar versões do roteiro</translation>
+        <translation>Comparar versões do roteiro</translation>
     </message>
     <message>
         <source>Restore script from backup</source>
