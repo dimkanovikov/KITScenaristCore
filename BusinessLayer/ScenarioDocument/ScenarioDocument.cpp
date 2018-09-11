@@ -446,8 +446,7 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
                 && ScenarioBlockStyle::forBlock(nextBlock) == ScenarioBlockStyle::SceneDescription) {
                 cursor.movePosition(QTextCursor::NextBlock);
             } else {
-                cursor.insertBlock(descriptionBlockStyle.blockFormat(cursor.isBlockInTable()),
-                                   descriptionBlockStyle.charFormat());
+                cursor.insertBlock(descriptionBlockStyle.blockFormat(), descriptionBlockStyle.charFormat());
             }
             //
             // ... вставляем новый
@@ -457,8 +456,7 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
             } else {
                 foreach (const QString& descriptionLine, _description.split("\n")) {
                     if (!cursor.block().text().isEmpty()) {
-                        cursor.insertBlock(descriptionBlockStyle.blockFormat(cursor.isBlockInTable()),
-                                           descriptionBlockStyle.charFormat());
+                        cursor.insertBlock(descriptionBlockStyle.blockFormat(), descriptionBlockStyle.charFormat());
                     }
                     cursor.block().setVisible(m_document->outlineMode());
                     cursor.insertText(descriptionLine);
@@ -492,8 +490,7 @@ void ScenarioDocument::copyItemDescriptionToScript(int _position)
     const ScenarioBlockStyle actionBlockStyle =
             ScenarioTemplateFacade::getTemplate().blockStyle(ScenarioBlockStyle::Action);
     for (const QString& textLine : description.split('\n')) {
-        cursor.insertBlock(actionBlockStyle.blockFormat(cursor.isBlockInTable()),
-                           actionBlockStyle.charFormat());
+        cursor.insertBlock(actionBlockStyle.blockFormat(), actionBlockStyle.charFormat());
         cursor.insertText(textLine);
     }
     cursor.endEditBlock();

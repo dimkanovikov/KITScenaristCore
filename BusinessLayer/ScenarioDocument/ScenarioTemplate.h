@@ -147,11 +147,6 @@ namespace BusinessLogic
         qreal leftMargin() const { return m_leftMargin; }
 
         /**
-         * @brief Отсуп слева в режиме разделения страницы, мм
-         */
-        qreal leftMarginSplitted() const { return m_leftMarginSplitted; }
-
-        /**
          * @brief Отступ сверху, мм
          */
         qreal topMargin() const { return m_topMargin; }
@@ -160,11 +155,6 @@ namespace BusinessLogic
          * @brief Отступ справа, мм
          */
         qreal rightMargin() const { return m_rightMargin; }
-
-        /**
-         * @brief Отсуп справа в режиме разделения страницы, мм
-         */
-        qreal rightMarginSplitted() const { return m_rightMarginSplitted; }
 
         /**
          * @brief Отступ снизу, мм
@@ -258,9 +248,8 @@ namespace BusinessLogic
 
         /**
          * @brief Настройки стиля отображения блока
-         * @param _splitted - находится ли блок внутри разделителя
          */
-        QTextBlockFormat blockFormat(bool _splitted = false) const;
+        QTextBlockFormat blockFormat() const;
 
         /**
          * @brief Установить цвет фона блока
@@ -399,11 +388,6 @@ namespace BusinessLogic
         qreal m_leftMargin = 0.0;
 
         /**
-         * @brief Отсуп слева в режиме разделения, мм
-         */
-        qreal m_leftMarginSplitted = 0.0;
-
-        /**
          * @brief Отступ сверху, мм
          */
         qreal m_topMargin = 0.0;
@@ -412,11 +396,6 @@ namespace BusinessLogic
          * @brief Отступ справа, мм
          */
         qreal m_rightMargin = 0.0;
-
-        /**
-         * @brief Отсуп справа в режиме разделения, мм
-         */
-        qreal m_rightMarginSplitted = 0.0;
 
         /**
          * @brief Отступ снизу, мм
@@ -530,11 +509,6 @@ namespace BusinessLogic
         Qt::Alignment numberingAlignment() const { return m_numberingAlignment; }
 
         /**
-         * @brief Процент ширины страницы для левой части разделителя
-         */
-        int splitterLeftSidePercents() const { return m_splitterLeftSidePercents; }
-
-        /**
          * @brief Получить стиль блока заданного типа
          */
         ScenarioBlockStyle blockStyle(ScenarioBlockStyle::Type _forType) const;
@@ -568,11 +542,6 @@ namespace BusinessLogic
          * @brief Установить расположение нумерации
          */
         void setNumberingAlignment(Qt::Alignment _alignment);
-
-        /**
-         * @brief Установить значения процента ширины страницы для левой части разделителя
-         */
-        void setSplitterLeftSidePercents(int _percents);
 
         /**
          * @brief Установить стиль блока
@@ -635,11 +604,6 @@ namespace BusinessLogic
          * @brief Расположение нумерации
          */
         Qt::Alignment m_numberingAlignment;
-
-        /**
-         * @brief Процент от ширины страницы, которые занимает левая часть разделения
-         */
-        int m_splitterLeftSidePercents = 50;
 
         /**
          * @brief Стили блоков текста
