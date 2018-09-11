@@ -45,7 +45,7 @@ namespace BusinessLogic
         /**
          * @brief Сформировать xml из сценария и рассчитать его хэш
          */
-        void updateScenarioXml();
+        bool updateScenarioXml();
 
         /**
          * @brief Получить xml сценария

@@ -82,7 +82,7 @@ ScenarioTextDocument::ScenarioTextDocument(QObject *parent, ScenarioXml* _xmlHan
     connect(m_bookmarksModel, &ScriptBookmarksModel::modelChanged, this, &ScenarioTextDocument::bookmarksChanged);
 }
 
-void ScenarioTextDocument::updateScenarioXml()
+bool ScenarioTextDocument::updateScenarioXml()
 {
     if (!m_isPatchApplyProcessed) {
         const QString newScenarioXml = m_xmlHandler->scenarioToXml();
@@ -94,8 +94,10 @@ void ScenarioTextDocument::updateScenarioXml()
         if (newScenarioXmlHash != m_scenarioXmlHash) {
             m_scenarioXml = newScenarioXml;
             m_scenarioXmlHash = newScenarioXmlHash;
+            return true;
         }
     }
+    return false;
 }
 
 QString ScenarioTextDocument::scenarioXml() const
@@ -201,7 +203,6 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     // Определим xml для применения патча
     //
     const QString patchUncopressed = DatabaseHelper::uncompress(_patch);
-    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
     auto xmlsForUpdate = DiffMatchPatchHelper::changedXml(m_scenarioXml, patchUncopressed);
 
     //
