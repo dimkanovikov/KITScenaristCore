@@ -425,6 +425,7 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
 
                     currentBlockType = ScenarioBlockStyle::forBlock(cursor.block());
                 }
+                cursor.removeSelectedText();
 
                 //
                 // ... после того, как стёрли все описания действия, возвращаем курсор в позицию,
