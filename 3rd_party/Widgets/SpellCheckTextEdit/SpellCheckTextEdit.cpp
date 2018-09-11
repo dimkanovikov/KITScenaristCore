@@ -328,13 +328,13 @@ QTextCursor SpellCheckTextEdit::moveCursorToStartWord(QTextCursor cursor) const
     //
     // Цикл ниже необходим, потому что movePosition(StartOfWord)
     // считает - и ' другими словами
-    // Примеры "кт-" - еще не закончив печатать слово, получим
+    // Примеры "кто-" - еще не закончив печатать слово, получим
     // его подсветку
     //
     while (cursor.positionInBlock() > 0 &&
            (text[cursor.positionInBlock()] == '\''
-           || text[cursor.positionInBlock()] == '-'
-           || text[cursor.positionInBlock() - 1] == '\''
+            || text[cursor.positionInBlock()] == '-'
+            || text[cursor.positionInBlock() - 1] == '\''
             || text[cursor.positionInBlock() - 1] == '-')) {
             cursor.movePosition(QTextCursor::PreviousCharacter);
             cursor.movePosition(QTextCursor::StartOfWord);

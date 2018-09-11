@@ -164,10 +164,18 @@ bool SpellChecker::spellCheckWord(const QString& _word) const
 
     bool spelled = false;
     if (m_checker != nullptr) {
+        QString correctedWord = _word;
+        //
+        // Для слов заканчивающихся на s с апострофом убираем апостроф в конце, т.к. ханспел его не умеет
+        //
+        if (correctedWord.endsWith("s'", Qt::CaseInsensitive)) {
+            correctedWord.chop(1);
+        }
+
         //
         // Преобразуем слово в кодировку словаря и осуществим проверку
         //
-        QByteArray encodedWordData = m_checkerTextCodec->fromUnicode(_word);
+        QByteArray encodedWordData = m_checkerTextCodec->fromUnicode(correctedWord);
         const char* encodedWord = encodedWordData.constData();
         spelled = m_checker->spell(encodedWord);
     }
