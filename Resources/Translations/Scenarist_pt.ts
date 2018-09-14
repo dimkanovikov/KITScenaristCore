@@ -2368,6 +2368,10 @@ Você pode tentar recarregar a atualização.</translation>
         <source>Choose versions to compare</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Script was restored.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuView</name>
@@ -4169,7 +4173,7 @@ New to KIT Scenarist?</source>
     </message>
     <message>
         <source>mm:</source>
-        <translation type="vanished">milímetros:</translation>
+        <translation>milímetros:</translation>
     </message>
     <message>
         <source>Uppercase</source>
@@ -4231,26 +4235,6 @@ Valor, mm</translation>
     <message>
         <source>Framing brackets</source>
         <translation>Suportes de enquadramento</translation>
-    </message>
-    <message>
-        <source>In full page width, mm:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>In splitted mode, mm:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Split page, %:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Left page side:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Right page side:</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4970,10 +4954,6 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <message>
         <source>Change scene number</source>
         <translation>Alterar o número da cena</translation>
-    </message>
-    <message>
-        <source>Split page</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

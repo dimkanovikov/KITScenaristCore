@@ -2293,6 +2293,10 @@ You can try to reload update.</source>
         <source>Choose versions to compare</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Script was restored.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuView</name>
@@ -4113,7 +4117,7 @@ New to KIT Scenarist?</source>
     </message>
     <message>
         <source>mm:</source>
-        <translation type="vanished">мм:</translation>
+        <translation>мм:</translation>
     </message>
     <message>
         <source>Uppercase</source>
@@ -4174,26 +4178,6 @@ New to KIT Scenarist?</source>
     <message>
         <source>Framing brackets</source>
         <translation>Обрамляти дужками</translation>
-    </message>
-    <message>
-        <source>In full page width, mm:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>In splitted mode, mm:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Split page, %:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Left page side:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Right page side:</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4920,10 +4904,6 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Change scene number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Split page</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
