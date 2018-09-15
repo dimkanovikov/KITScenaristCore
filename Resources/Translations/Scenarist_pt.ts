@@ -1976,7 +1976,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Print preview</source>
-        <translation type="unfinished">Pré-visualização de impressão</translation>
+        <translation type="obsolete">Pré-visualização de impressão</translation>
     </message>
     <message>
         <source>Two panel mode</source>
@@ -1984,6 +1984,10 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>New script version...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print preview script</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2417,7 +2421,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Print preview</source>
-        <translation>Pré-visualização de impressão</translation>
+        <translation type="vanished">Pré-visualização de impressão</translation>
     </message>
     <message>
         <source>version</source>
@@ -2477,6 +2481,10 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Start new version...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print preview script</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

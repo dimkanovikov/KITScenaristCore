@@ -1901,7 +1901,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Print preview</source>
-        <translation type="unfinished">Попередній перегляд</translation>
+        <translation type="obsolete">Попередній перегляд</translation>
     </message>
     <message>
         <source>Two panel mode</source>
@@ -1909,6 +1909,10 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>New script version...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print preview script</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2342,7 +2346,7 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>Print preview</source>
-        <translation>Попередній перегляд</translation>
+        <translation type="vanished">Попередній перегляд</translation>
     </message>
     <message>
         <source>version</source>
@@ -2402,6 +2406,10 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>Start new version...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print preview script</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

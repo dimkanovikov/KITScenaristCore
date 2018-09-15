@@ -892,7 +892,7 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent* _event)
             });
             QHBoxLayout* stampLayout = new QHBoxLayout(stampWidget);
             stampLayout->setContentsMargins(QMargins(34, 2, 5, 3));
-            stampLayout->setSpacing(2);
+            stampLayout->setSpacing(5);
             stampLayout->addWidget(new QLabel(tr("Stamp:"), stampWidget));
             stampLayout->addWidget(stampEditor);
             stateAction->setDefaultWidget(stampWidget);
