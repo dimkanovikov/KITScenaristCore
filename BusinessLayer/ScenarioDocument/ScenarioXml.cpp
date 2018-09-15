@@ -102,7 +102,7 @@ namespace {
                        % "#"
                        % shBlockInfo->stamp()
                        % "#"
-                       % shBlockInfo->title()
+                       % shBlockInfo->name()
                        % "#"
                        % shBlockInfo->description()
                        % "#"
@@ -406,8 +406,8 @@ QString ScenarioXml::scenarioToXml()
                     if (!info->stamp().isEmpty()) {
                         uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_STAMP, info->stamp());
                     }
-                    if (!info->title().isEmpty()) {
-                        uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->title()));
+                    if (!info->name().isEmpty()) {
+                        uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->name()));
                     }
                     if (!info->sceneNumber().isEmpty() && info->isSceneNumberFixed()) {
                         uuidColorsAndTitle += QString(" %1=\"%2\"").arg(ATTRIBUTE_SCENE_NUMBER, TextEditHelper::toHtmlEscaped(info->sceneNumber()));
@@ -839,8 +839,8 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     if (!info->stamp().isEmpty()) {
                         writer.writeAttribute(ATTRIBUTE_STAMP, info->stamp());
                     }
-                    if (!info->title().isEmpty()) {
-                        writer.writeAttribute(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->title()));
+                    if (!info->name().isEmpty()) {
+                        writer.writeAttribute(ATTRIBUTE_TITLE, TextEditHelper::toHtmlEscaped(info->name()));
                     }
                     if (!info->sceneNumber().isEmpty() && info->isSceneNumberFixed()) {
                         writer.writeAttribute(ATTRIBUTE_SCENE_NUMBER, TextEditHelper::toHtmlEscaped(info->sceneNumber()));
@@ -1537,7 +1537,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                             info->setStamp(reader.attributes().value(ATTRIBUTE_STAMP).toString());
                         }
                         if (reader.attributes().hasAttribute(ATTRIBUTE_TITLE)) {
-                            info->setTitle(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));
+                            info->setName(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));
                         }
                         if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER)) {
                             info->setSceneNumber(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER).toString());

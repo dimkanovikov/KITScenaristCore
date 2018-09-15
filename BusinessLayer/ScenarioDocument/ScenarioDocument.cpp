@@ -294,7 +294,7 @@ QString ScenarioDocument::itemTitle(ScenarioModelItem* _item) const
     QString title;
     QTextBlockUserData* textBlockData = cursor.block().userData();
     if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
-        title = info->title();
+        title = info->name();
     }
     return title;
 }
@@ -305,7 +305,7 @@ void ScenarioDocument::setItemTitleAtPosition(int _position, const QString& _tit
         //
         // Установить название в элемент
         //
-        item->setTitle(_title);
+        item->setName(_title);
         m_model->updateItem(item);
 
         //
@@ -319,7 +319,7 @@ void ScenarioDocument::setItemTitleAtPosition(int _position, const QString& _tit
         if (info == 0) {
             info = new SceneHeadingBlockInfo(item->uuid());
         }
-        info->setTitle(_title);
+        info->setName(_title);
         cursor.block().setUserData(info);
 
         ScenarioTextDocument::updateBlockRevision(cursor);
@@ -1286,7 +1286,7 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
     _item->setFixNesting(sceneNumberFixNesting);
     _item->setFixed(sceneNumberFixed);
     _item->setNumberSuffix(numberSuffix);
-    _item->setTitle(title);
+    _item->setName(title);
     _item->setText(itemText);
     _item->setDescription(description);
     _item->setDuration(itemDuration);

@@ -171,12 +171,12 @@ namespace BusinessLogic
         /**
          * @brief Получить название сцены
          */
-        QString title() const;
+        QString name() const;
 
         /**
          * @brief Установить название сцены
          */
-        void setTitle(const QString& _title);
+        void setName(const QString& _name);
 
         /**
          * @brief Получить описание
@@ -230,7 +230,7 @@ namespace BusinessLogic
         /**
          * @brief Название
          */
-        QString m_title;
+        QString m_name;
 
         /**
          * @brief Текст описания

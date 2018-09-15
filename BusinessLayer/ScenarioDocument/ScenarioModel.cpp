@@ -344,7 +344,7 @@ QVariant ScenarioModel::data(const QModelIndex& _index, int _role) const
         // Название сцены
         //
         case TitleIndex: {
-            result = item->title();
+            result = item->name();
             break;
         }
 
@@ -888,9 +888,9 @@ namespace {
         QString actXml = "<act ";
         actXml.append(QString("id=\"%1\" ").arg(_item->uuid()));
         actXml.append(QString("title=\"%1\" ")
-                       .arg(_item->title().isEmpty()
+                       .arg(_item->name().isEmpty()
                             ? TextEditHelper::toHtmlEscaped(TextEditHelper::smartToUpper(_item->header()))
-                            : TextEditHelper::toHtmlEscaped(TextEditHelper::smartToUpper(_item->title()))));
+                            : TextEditHelper::toHtmlEscaped(TextEditHelper::smartToUpper(_item->name()))));
         actXml.append(QString("description=\"%1\" ")
                        .arg(_item->description().isEmpty()
                             ? TextEditHelper::toHtmlEscaped(_item->fullText())
@@ -912,9 +912,9 @@ namespace {
         cardXml.append(QString("is_folder=\"%1\"").arg(_item->type() == ScenarioModelItem::Folder ? "true" : "false"));
         cardXml.append(QString("number=\"%1\" ").arg(_item->sceneNumber()));
         cardXml.append(QString("title=\"%1\" ")
-                       .arg(_item->title().isEmpty()
+                       .arg(_item->name().isEmpty()
                             ? TextEditHelper::toHtmlEscaped(TextEditHelper::smartToUpper(_item->header()))
-                            : TextEditHelper::toHtmlEscaped(TextEditHelper::smartToUpper(_item->title()))));
+                            : TextEditHelper::toHtmlEscaped(TextEditHelper::smartToUpper(_item->name()))));
         cardXml.append(QString("description=\"%1\" ")
                        .arg(_item->description().isEmpty()
                             ? TextEditHelper::toHtmlEscaped(_item->fullText())

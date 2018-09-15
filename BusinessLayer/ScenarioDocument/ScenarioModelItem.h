@@ -102,8 +102,8 @@ namespace BusinessLogic
         /**
          * @brief Название
          */
-        QString title() const;
-        void setTitle(const QString& _title);
+        QString name() const;
+        void setName(const QString& _name);
 
         /**
          * @brief Описание элемента
@@ -221,7 +221,7 @@ namespace BusinessLogic
         /**
          * @brief Название элемента
          */
-        QString m_title;
+        QString m_name;
 
         /**
          * @brief Описание элемента
