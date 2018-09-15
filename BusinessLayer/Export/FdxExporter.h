@@ -7,20 +7,20 @@ class QXmlStreamWriter;
 
 namespace BusinessLogic
 {
-	class ScenarioDocument;
+    class ScenarioDocument;
 
 
-	/**
-	 * @brief Экспортер в FDX
-	 */
-	class FdxExporter : public AbstractExporter
-	{
-	public:
-		FdxExporter();
+    /**
+     * @brief Экспортер в FDX
+     */
+    class FdxExporter : public AbstractExporter
+    {
+    public:
+        FdxExporter();
 
-		/**
-		 * @brief Экспорт заданного документа в указанный файл
-		 */
+        /**
+         * @brief Экспорт заданного документа в указанный файл
+         */
         void exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const override;
 
         /**
@@ -29,17 +29,22 @@ namespace BusinessLogic
         void exportTo(const ResearchModelCheckableProxy* _researchModel,
                       const ExportParameters& _exportParameters) const override;
 
-	private:
-		/**
-		 * @brief Записать текст сценария
-		 */
-		void writeContent(QXmlStreamWriter& _writer, ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const;
+    private:
+        /**
+         * @brief Записать текст сценария
+         */
+        void writeContent(QXmlStreamWriter& _writer, ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const;
 
-		/**
-		 * @brief Записать параметры сценария
-		 */
-		void writeSettings(QXmlStreamWriter& _writer) const;
-	};
+        /**
+         * @brief Записать параметры сценария
+         */
+        void writeSettings(QXmlStreamWriter& _writer) const;
+
+        /**
+         * @brief Записать титульную страницу
+         */
+        void writeTitlePage(QXmlStreamWriter& _writer, const ExportParameters& _exportParameters) const;
+    };
 }
 
 #endif // FDXEXPORTER_H
