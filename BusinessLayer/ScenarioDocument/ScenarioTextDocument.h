@@ -171,6 +171,28 @@ namespace BusinessLogic
 
     private:
         /**
+         * @brief Процедура удаления одинаковый первых и последних частей в xml-строках у _xmls
+         * _reversed = false - удаляем первые, = true - удаляем последние
+         */
+        void removeIdenticalParts(QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml>& _xmls, bool _reversed);
+
+        /**
+         * @brief Обновляет в структуре ChangeXml поля plainLength и plainPos
+         */
+        void processLenghtPos(DiffMatchPatchHelper::ChangeXml& _xmls, int _k, bool _reversed);
+
+        /**
+         * @brief Возвращает позицию следующего тега после _prev, имеющего внутри себя тег <v>
+         */
+        int getNextChild(QDomNodeList& _list, int _prev);
+
+        /**
+         * @brief Возвращает позицию предыдущего тега перед _prev, имеющего внутри себя тек <v>
+         */
+        int getPrevChild(QDomNodeList& _list, int _prev);
+
+    private:
+        /**
          * @brief Обработчик xml
          */
         ScenarioXml* m_xmlHandler;

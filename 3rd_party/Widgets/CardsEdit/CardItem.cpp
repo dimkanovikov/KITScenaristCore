@@ -428,10 +428,6 @@ void CardItem::putOnBoard()
     setCursor(Qt::OpenHandCursor);
 
     if (zValue() == 10000) {
-        if (m_animation->state() == QAbstractAnimation::Running) {
-            m_animation->stop();
-        }
-
         qreal newZValue = 1;
         for (QGraphicsItem* item : collidingItems()) {
             if (item->zValue() >= newZValue) {
@@ -440,8 +436,16 @@ void CardItem::putOnBoard()
         }
         setZValue(newZValue);
 
+        if (m_animation->state() == QAbstractAnimation::Running) {
+            m_animation->pause();
+        }
+
         m_animation->setDirection(QAbstractAnimation::Backward);
-        m_animation->start();
+        if (m_animation->state() == QAbstractAnimation::Paused) {
+            m_animation->resume();
+        } else {
+            m_animation->start();
+        }
     }
 }
 

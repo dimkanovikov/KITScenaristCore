@@ -27,7 +27,7 @@ QString CompareScriptVersionsTool::compareScripts(const QString& _firstScript, c
     // Получить дифы между сценариями
     //
     const auto patch = DiffMatchPatchHelper::makePatchXml(_firstScript, _secondScript);
-    const auto diffs = DiffMatchPatchHelper::changedXml(_firstScript, patch);
+    const auto diffs = DiffMatchPatchHelper::changedXmlList(_firstScript, patch);
     //
     // ... если блок удаляется имеем его в выделении, но не имеем в добавлении
     // ... если блок вставляется имеем его в добавлении, но не имеем во вставлении

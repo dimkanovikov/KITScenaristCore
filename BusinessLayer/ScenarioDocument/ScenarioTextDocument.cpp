@@ -55,6 +55,18 @@ namespace {
         const QString username = DataStorageLayer::StorageFacade::userName();
         return DataStorageLayer::StorageFacade::scenarioChangeStorage()->append(username, _undoPatch, _redoPatch);
     }
+
+    const QString kScriptTag = "scenario";
+
+    /**
+     * @brief Сконвертировать QDomNode в строку
+     */
+    static QString nodeToString(const QDomNode& _node) {
+            QString ret;
+            QTextStream textStream(&ret);
+            _node.save(textStream, 0);
+            return ret;
+    }
 }
 
 
@@ -205,55 +217,52 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     const QString patchUncopressed = DatabaseHelper::uncompress(_patch);
     auto xmlsForUpdate = DiffMatchPatchHelper::changedXml(m_scenarioXml, patchUncopressed);
 
+    xmlsForUpdate.first.xml = ScenarioXml::makeMimeFromXml(xmlsForUpdate.first.xml);
+    xmlsForUpdate.second.xml = ScenarioXml::makeMimeFromXml(xmlsForUpdate.second.xml);
+
     //
-    // Применяем патчи
+    // Удалим одинаковые первые и последние символы
+    //
+    removeIdenticalParts(xmlsForUpdate, false);
+    removeIdenticalParts(xmlsForUpdate, true);
+
+    //
+    // Выделяем текст сценария, соответствующий xml для обновления
     //
     QTextCursor cursor(this);
     cursor.beginEditBlock();
-    int lastPatchEndPos = 0;
-    for (int patchIndex = xmlsForUpdate.size() - 1; patchIndex >= 0; --patchIndex) {
-        auto& xmlPatch = xmlsForUpdate[patchIndex];
-
-        xmlPatch.first.xml = ScenarioXml::makeMimeFromXml(xmlPatch.first.xml);
-        xmlPatch.second.xml = ScenarioXml::makeMimeFromXml(xmlPatch.second.xml);
-
-        //
-        // Определим позицию курсора в соответствии с декорациями
-        //
-        const int selectionStartPos = m_corrector->correctedPosition(xmlPatch.first.plainPos);
-        const int selectionEndPos = m_corrector->correctedPosition(xmlPatch.first.plainPos
-                                                                   + xmlPatch.first.plainLength);
-        //
-        // ... собственно выделение
-        //
-        setCursorPosition(cursor, selectionStartPos);
-        setCursorPosition(cursor, selectionEndPos, QTextCursor::KeepAnchor);
+    //
+    // Определим позицию курсора в соответствии с декорациями
+    //
+    const int selectionStartPos = m_corrector->correctedPosition(xmlsForUpdate.first.plainPos);
+    const int selectionEndPos = m_corrector->correctedPosition(xmlsForUpdate.first.plainPos
+                                                               + xmlsForUpdate.first.plainLength);
+    //
+    // ... собственно выделение
+    //
+    setCursorPosition(cursor, selectionStartPos);
+    setCursorPosition(cursor, selectionEndPos, QTextCursor::KeepAnchor);
 
 #ifdef PATCH_DEBUG
-        qDebug() << "===================================================================";
-        qDebug() << cursor.selectedText();
-        qDebug() << "###################################################################";
-        qDebug() << qUtf8Printable(xmlPatch.first.xml);
-        qDebug() << "###################################################################";
-        qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
-        qDebug() << "###################################################################";
-        qDebug() << qUtf8Printable(xmlPatch.second.xml);
+    qDebug() << "===================================================================";
+    qDebug() << cursor.selectedText();
+    qDebug() << "###################################################################";
+    qDebug() << qUtf8Printable(xmlsForUpdate.first.xml);
+    qDebug() << "###################################################################";
+    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
+    qDebug() << "###################################################################";
+    qDebug() << qUtf8Printable(xmlsForUpdate.second.xml);
 #endif
 
-        //
-        // Замещаем его обновлённым
-        //
-        cursor.removeSelectedText();
-        //
-        // ... при этом не изменяем идентификаторов сцен, которые находятся в сценарии
-        //
-        const bool dontRebuildUuids = false;
-        m_xmlHandler->xmlToScenario(selectionStartPos, xmlPatch.second.xml, dontRebuildUuids);
-
-        if (lastPatchEndPos == 0) {
-            lastPatchEndPos = selectionEndPos;
-        }
-    }
+    //
+    // Замещаем его обновлённым
+    //
+    cursor.removeSelectedText();
+    //
+    // ... при этом не изменяем идентификаторов сцен, которые находятся в сценарии
+    //
+    const bool dontRebuildUuids = false;
+    m_xmlHandler->xmlToScenario(selectionStartPos, xmlsForUpdate.second.xml, dontRebuildUuids);
 
     //
     // Запомним новый текст
@@ -276,7 +285,7 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     //
     cursor.endEditBlock();
 
-    return lastPatchEndPos;
+    return selectionStartPos;
 }
 
 void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
@@ -560,4 +569,164 @@ void ScenarioTextDocument::setCorrectionOptions(bool _needToCorrectCharactersNam
 void ScenarioTextDocument::correct(int _position, int _charsRemoved, int _charsAdded)
 {
     m_corrector->correct(_position, _charsRemoved, _charsAdded);
+}
+
+void ScenarioTextDocument::removeIdenticalParts(QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml>& _xmls, bool _reversed)
+{
+    //
+    // Распарсим документы
+    //
+    QDomDocument sourceDocument;
+    sourceDocument.setContent(_xmls.first.xml);
+
+    QDomDocument targetDocument;
+    targetDocument.setContent(_xmls.second.xml);
+
+    //
+    // Получим список обрабатываемых тегов
+    //
+    QDomNodeList sourceNodes = sourceDocument.firstChildElement(kScriptTag).childNodes();
+    QDomNodeList targetNodes = targetDocument.firstChildElement(kScriptTag).childNodes();
+
+    //
+    // Позиции первых/последних (в зависимости от _reversed) тегов из childs, содержащих тег <v>
+    //
+    int sourceCurrentNodePosition = _reversed ? getPrevChild(sourceNodes, sourceNodes.size())
+                                              : getNextChild(sourceNodes, -1);
+    int targetCurrentNodePosition = _reversed ? getPrevChild(targetNodes, targetNodes.size())
+                                              : getNextChild(targetNodes, -1);
+
+    //
+    // Предыдущие значения i1 и i2. Необходимы, поскольку последний удаляемые тег удалять не нужно.
+    // Нужно заменить его текст пустой строкой
+    //
+    int sourcePreviousNodePosition = -1;
+    int targetPreviousNodePosition = -1;
+
+    //
+    // Разбираем текст
+    //
+    while (((!_reversed                                                        // пока не дошли до конца, для прохода вперёд
+             && sourceCurrentNodePosition < sourceNodes.size() - 1
+             && targetCurrentNodePosition < targetNodes.size() - 1)
+            || (_reversed                                                      // или пока не дошли до начала, для прохода назад
+                && sourceCurrentNodePosition > 0
+                && targetCurrentNodePosition > 0))
+           && (nodeToString(sourceNodes.at(sourceCurrentNodePosition))         // и текст элементов совпадает
+               == nodeToString(targetNodes.at(targetCurrentNodePosition)))) {
+
+        //
+        // Получим текущие обрабатываемые строки
+        //
+        const QString sourceCurrentNodeText =
+                TextEditHelper::fromHtmlEscaped(
+                    sourceNodes
+                    .at(sourceCurrentNodePosition)
+                    .firstChildElement("v")
+                    .childNodes()
+                    .at(0).toCDATASection().data());
+
+        //
+        // Если идёт проход вперёд, то
+        //
+        if (!_reversed) {
+            //
+            // ... удаляем предыдущую пустую ячейку, если есть
+            //
+            if (sourcePreviousNodePosition != -1
+                && targetPreviousNodePosition != -1) {
+                sourceDocument.firstChildElement(kScriptTag).removeChild(sourceNodes.at(sourcePreviousNodePosition));
+                --sourceCurrentNodePosition;
+                //
+                targetDocument.firstChildElement(kScriptTag).removeChild(targetNodes.at(targetPreviousNodePosition));
+                --targetCurrentNodePosition;
+
+                //
+                // ... скорректируем позицию затрагиваемую патчем на символ переноса строки
+                //
+                _xmls.first.plainPos += 1;
+                _xmls.first.plainLength -= 1;
+            }
+
+            //
+            // ... затираем текст ячеек
+            //
+            sourceNodes.at(sourceCurrentNodePosition).firstChildElement("v").firstChild().toCDATASection().setData("");
+            QDomElement sourceNodeReviews = sourceNodes.at(sourceCurrentNodePosition).firstChildElement("reviews");
+            sourceNodes.at(sourceCurrentNodePosition).removeChild(sourceNodeReviews);
+            //
+            targetNodes.at(targetCurrentNodePosition).firstChildElement("v").firstChild().toCDATASection().setData("");
+            QDomElement targetNodeReviews = targetNodes.at(targetCurrentNodePosition).firstChildElement("reviews");
+            targetNodes.at(targetCurrentNodePosition).removeChild(targetNodeReviews);
+
+            //
+            // ... скорректируем позицию затрагиваемую патчем на длину стёртой строки
+            //
+            _xmls.first.plainPos += sourceCurrentNodeText.size();
+            _xmls.first.plainLength -= sourceCurrentNodeText.size();
+        }
+        //
+        // Если идёт проход назад, то
+        //
+        else {
+            //
+            // ... убираем блок полностью
+            //
+            sourceDocument.firstChildElement(kScriptTag).removeChild(sourceNodes.at(sourceCurrentNodePosition));
+            targetDocument.firstChildElement(kScriptTag).removeChild(targetNodes.at(targetCurrentNodePosition));
+
+            //
+            // ... скорректируем позицию затрагиваемую патчем на длину строки + символ переноса строки
+            //
+            _xmls.first.plainLength -= sourceCurrentNodeText.size() + 1;
+        }
+
+        //
+        // Запомним предыдущие значения
+        //
+        sourcePreviousNodePosition = sourceCurrentNodePosition;
+        targetPreviousNodePosition = targetCurrentNodePosition;
+
+        //
+        // Получим новые
+        //
+        sourceCurrentNodePosition = _reversed ? getPrevChild(sourceNodes, sourceCurrentNodePosition)
+                                              : getNextChild(sourceNodes, sourceCurrentNodePosition);
+        targetCurrentNodePosition = _reversed ? getPrevChild(targetNodes, targetCurrentNodePosition)
+                                              : getNextChild(targetNodes, targetCurrentNodePosition);
+    }
+
+    //
+    // Результаты
+    //
+    _xmls.first.xml = sourceDocument.toString();
+    _xmls.second.xml = targetDocument.toString();
+}
+
+void ScenarioTextDocument::processLenghtPos(DiffMatchPatchHelper::ChangeXml& _xmls, int _k, bool _reversed)
+{
+    _xmls.plainLength -= _k;
+    if (!_reversed) {
+        _xmls.plainPos += _k;
+    }
+}
+
+int ScenarioTextDocument::getNextChild(QDomNodeList& list, int prev) {
+    for(int i = prev + 1; i < list.size(); ++i) {
+        QDomElement elem = list.at(i).firstChildElement("v");
+        if (!elem.isNull()) {
+            return i;
+        }
+    }
+    return list.size();
+}
+
+int ScenarioTextDocument::getPrevChild(QDomNodeList& list, int prev) {
+    for(int i = prev - 1; i >= 0; --i) {
+        QDomElement elem = list.at(i).firstChildElement("v");
+        if (!elem.isNull()) {
+            return i;
+        }
+    }
+    return -1;
 }

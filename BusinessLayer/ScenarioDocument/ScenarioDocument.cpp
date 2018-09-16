@@ -694,10 +694,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
     //
     // Сохраняем изменённый xml и его хэш
     //
-    if (_charsAdded == _charsRemoved
-        and not m_document->updateScenarioXml()) {
-        return;
-    }
+    m_document->updateScenarioXml();
 
     //
     // Если были удалены данные
@@ -725,7 +722,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
         QVector<ScenarioModelItem*> itemsToDelete;
         while (iter != m_modelItems.end()
                && iter.key() >= position
-               && iter.key() <= (position + _charsRemoved)) {
+               && iter.key() < (position + _charsRemoved)) {
             //
             // Элемент для удаления
             //
