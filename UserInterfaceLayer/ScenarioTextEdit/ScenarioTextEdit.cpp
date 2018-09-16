@@ -1069,7 +1069,8 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
     //
     else if (_event->modifiers().testFlag(Qt::MetaModifier)
              && _event->modifiers().testFlag(Qt::AltModifier)
-             && _event->key() == Qt::Key_Period) {
+             && (_event->key() == Qt::Key_Period
+                 || _event->key() == 1070)) {
         insertPlainText(".");
     }
     //
@@ -1077,7 +1078,8 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
     //
     else if (_event->modifiers().testFlag(Qt::MetaModifier)
              && _event->modifiers().testFlag(Qt::AltModifier)
-             && _event->key() == Qt::Key_Comma) {
+             && (_event->key() == Qt::Key_Comma
+                || _event->key() == 1041)) {
         insertPlainText(",");
     }
 #endif
