@@ -38,7 +38,24 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Наши герои - участники проекта, кто помогал создавать международные версии:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Dimka Novikov
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Tömör Gábor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+</translation>
     </message>
     <message>
         <source>Our heroes, who help us to create international versions:
@@ -584,7 +601,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="139"/>
         <source>Versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Версии</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="148"/>
@@ -1212,7 +1229,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../DataLayer/DataStorageLayer/ScriptVersionStorage.cpp" line="27"/>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Первая версия</translation>
     </message>
 </context>
 <context>
@@ -1226,7 +1243,7 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../DataLayer/Database/Database.cpp" line="419"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1525"/>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Первая версия</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="427"/>
@@ -1400,7 +1417,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../Domain/ScriptVersion.cpp" line="151"/>
         <source>current version</source>
-        <translation type="unfinished"></translation>
+        <translation>текущая версия</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1791,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="169"/>
         <source>Azərbaycan</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="183"/>
@@ -1829,7 +1846,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="155"/>
         <source>Italiano</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="53"/>
@@ -1891,8 +1908,8 @@ Português: Ricardo Graça, Ronaldo German
 <context>
     <name>ManagementLayer::ApplicationManager</name>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="519"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="775"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="526"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="782"/>
         <source>Scenarist project files (*%1)</source>
         <translation>Файл проекта сценария (*%1)</translation>
     </message>
@@ -1901,7 +1918,7 @@ Português: Ricardo Graça, Ronaldo German
         <translation type="vanished">Выберите файл для сохранения проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="773"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="780"/>
         <source>Choose project file to open</source>
         <translation>Выберите файл проекта для открытия</translation>
     </message>
@@ -1911,32 +1928,32 @@ Português: Ricardo Graça, Ronaldo German
         <translation> - изменён</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1419"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1426"/>
         <source>Closing Database Connections and remove temporary files.</source>
         <translation>Закрытие соединения с базой данных и удаление временных файлов.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1689"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1696"/>
         <source>Save project changes?</source>
         <translation>Сохранить изменения проекта?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1690"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1697"/>
         <source>Project was modified. Save changes?</source>
         <translation>Проект был изменён. Сохранить изменения?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1913"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1920"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1080"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1087"/>
         <source>Connection active</source>
         <translation>Соединение установлено</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="424"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="431"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
         <translation>Нельзя создать проект в папке &lt;b&gt;%1&lt;/b&gt;, т.к. её не существует. Пожалуйста выберите другую папку.</translation>
     </message>
@@ -1945,25 +1962,25 @@ Português: Ricardo Graça, Ronaldo German
         <translation type="vanished">Не удаётся записать файл. Возможно он открыт в другом приложении. Пожалуйста, закройте все приложения использующие этот файл и повторите попытку.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="431"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="438"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
         <translatorcomment>Can&apos;t write to file. Please, check permissions to write for choosed folder and retry, or choose other folder.</translatorcomment>
         <translation>Не удаётся записать файл. Пожалуйста проверьте разрешение на запись в выбранную папку и повторите попытку, или выберите другую папку.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="433"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="440"/>
         <source>Create project error</source>
         <translation>Ошибка создания проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="578"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="665"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="686"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="585"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="672"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="693"/>
         <source>Saving error</source>
         <translation>Ошибка сохранения</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="579"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="586"/>
         <source>Can&apos;t save project as &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Please check permissions and retry.</source>
         <translation>Не удалось сохранить проект в файл &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Пожалуйста проверьте разрешение на запись в выбранную папку и повторите попытку, или выберите другую папку.</translation>
     </message>
@@ -1972,10 +1989,10 @@ Português: Ricardo Graça, Ronaldo German
         <translation type="vanished">Не удаётся записать изменения в файл &lt;b&gt;%1&lt;/b&gt; потому что файла не существует. Пожалуйста верните файл обратно и попробуйте вновь сохранить проект. Попробовать сохранить ещё раз?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="477"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="797"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="891"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="984"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="484"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="804"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="898"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="991"/>
         <source>Can&apos;t open project file</source>
         <translation>Не удаётся открыть проект</translation>
     </message>
@@ -1984,73 +2001,73 @@ Português: Ricardo Graça, Ronaldo German
         <translation type="vanished">Не удаётся записать изменения. Произошла внутренняя ошибка базы данных: %1. Пожалуйста проверьте, что вы имеете разрешение на запись в него. Попробовать сохранить ещё раз?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="798"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="892"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="805"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="899"/>
         <source>Ignore and try to open project?</source>
         <translation>Игнорировать и попробовать открыть проект?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="912"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="919"/>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
         <translation>Скрыть проект &lt;b&gt;%1&lt;/b&gt; из списка недавних файлов?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="932"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="939"/>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
         <translation>Для перемещения проектов в облако вам необходимо быть авторизованным в облачном сервисе КИТ Сценарист.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="995"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1002"/>
         <source>Change project name</source>
         <translation>Изменить название проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="996"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1003"/>
         <source>Enter new name for project</source>
         <translation>Введите новое название проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1086"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1093"/>
         <source>Project synchronized</source>
         <translation>Проект синхронизирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1099"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1106"/>
         <source>Connection inactive</source>
         <translation>Отсутствует соединение</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1100"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1107"/>
         <source>Project didn&apos;t synchronized</source>
         <translation>Проект не синхронизирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1143"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1150"/>
         <source>Modified</source>
         <translation>Изменён</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1171"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1178"/>
         <source>Network error</source>
         <translation>Ошибка сети</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1193"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1200"/>
         <source>Incorrect username or password.</source>
         <translation>Не верное имя пользователя или пароль.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1204"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1211"/>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
         <translation>Сохранённый пароль не подходит и, похоже, потому что вы меняли пароль. Пожалуйста введите новый пароль.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1214"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1221"/>
         <source>Subscription ended</source>
         <translation>Подписка закончена</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1228"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1235"/>
         <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
@@ -2059,18 +2076,18 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1241"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1248"/>
         <source>Session closed</source>
         <translation>Сессия закрыта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1262"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1273"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1269"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1280"/>
         <source>Project not available</source>
         <translation>Проект недоступен</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1227"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1234"/>
         <source>Network Error</source>
         <translation>Ошибка сети</translation>
     </message>
@@ -2085,38 +2102,38 @@ Project didn&apos;t synchronized.</source>
         <translation>Файлы &lt;b&gt;DOC&lt;/b&gt; не поддерживаются. Вам необходимо сохранить его в формате &lt;b&gt;DOCX&lt;/b&gt; и повторите импорт.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="428"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="435"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry.</source>
         <translation>Не удаётся записать файл. Возможно он открыт в другом приложении. Пожалуйста, закройте все приложения использующие этот файл и повторите попытку.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="517"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="524"/>
         <source>Choose file to save project</source>
         <translation>Выберите файл для сохранения проекта</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="611"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="618"/>
         <source>Possible save error</source>
         <translation>Потенциальная ошибка сохранения</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="612"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="619"/>
         <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
         <translation>У вас осталось меньше 50 мегабайт свободного места на диске. Это может привести к проблемам сохранения проекта. Рекоммендуем освободить больше свободного места и перепроверить корректно ли сохраняется проект.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="666"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="673"/>
         <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
         <translation>Не удаётся записать изменения. Произошла внутренняя ошибка базы данных: %1. Пожалуйста проверьте, что вы имеете разрешение на запись в него. Попробовать сохранить ещё раз?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="687"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="694"/>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
         <translation>Не удаётся записать изменения в файл &lt;b&gt;%1&lt;/b&gt; потому что файла не существует. Пожалуйста верните файл обратно и попробуйте вновь сохранить проект. Попробовать сохранить ещё раз?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="931"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="937"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="938"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="944"/>
         <source>Moving project to the cloud failed</source>
         <translation>Не удалось переместить проект в облако</translation>
     </message>
@@ -2125,27 +2142,27 @@ Project didn&apos;t synchronized.</source>
         <translation type="vanished">Для перемещения проектов в облако вам необходимо быть авторизованным в облачном сервисе КИТ Сценарист.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="938"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="945"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
         <translation>Для перемещения проектов в облако у вас должна быть активна подписка в облачном сервисе КИТ Сценарист.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1028"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1035"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Удалить проект &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1037"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1044"/>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Отписать от проекта &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1058"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1065"/>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
         <translation>Отписать пользввателя &lt;b&gt;%1&lt;/b&gt; от проекта &lt;b&gt;%2&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1173"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1180"/>
         <source>Project didn&apos;t synchronized.</source>
         <translation>Проект не синхронизирован.</translation>
     </message>
@@ -2154,7 +2171,7 @@ Project didn&apos;t synchronized.</source>
         <translation type="vanished">Сохранённый пароль не подходит и, похоже, потому что вы меняли пароль. Пожалуйста введите новый пароль.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1215"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1222"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
@@ -2171,7 +2188,7 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1242"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1249"/>
         <source>New session for you account started at other device.
 
 Project didn&apos;t synchronized.</source>
@@ -2180,17 +2197,17 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1252"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1259"/>
         <source>Share error</source>
         <translation>Ошибка доступа</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1253"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1260"/>
         <source>You can&apos;t share project with yourself.</source>
         <translation>Нельзя открыть доступ к проекту самому себе.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1263"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1270"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
@@ -2199,7 +2216,7 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1274"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1281"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
@@ -2208,12 +2225,12 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1284"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1291"/>
         <source>Sync not available</source>
         <translation>Синхронизация недоступна</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1285"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1292"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
@@ -2222,12 +2239,12 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1295"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1302"/>
         <source>Project sync not available</source>
         <translation>Синхронизация проекта недоступна</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1296"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1303"/>
         <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
 
 Project didn&apos;t synchronized.</source>
@@ -2236,37 +2253,37 @@ Project didn&apos;t synchronized.</source>
 Проект не синхронизирован.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1306"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1313"/>
         <source>Email already exist</source>
         <translation>Адрес электронной почты уже зарегистрирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1315"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1322"/>
         <source>Password too weak</source>
         <translation>Слишком слабый пароль</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1324"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1331"/>
         <source>Invalid old password</source>
         <translation>Не верно введён старый пароль</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1333"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1340"/>
         <source>Wrong validation code</source>
         <translation>Неверный код подтверждения</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1342"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1349"/>
         <source>Wrong email</source>
         <translation>Адрес электронной почты не зарегистрирован</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1351"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1358"/>
         <source>Unknown Error</source>
         <translation>Неизвестная ошибка</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1419"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1426"/>
         <source>Exit from Application</source>
         <translation>Выход из программы</translation>
     </message>
@@ -2275,118 +2292,118 @@ Project didn&apos;t synchronized.</source>
         <translation type="vanished">Закрытие соединения с базой данных и удаление временных файлов.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1719"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1726"/>
         <source>Loading Scenario</source>
         <translation>Загрузка сценария</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1719"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1726"/>
         <source>Please wait. Loading can take few minutes.</source>
         <translation>Немного терпения. Загрузка может длиться несколько минут.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1769"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1776"/>
         <source>Sync scenario with cloud service.</source>
         <translation>Немного терпения. Сценарий синхронизируется с облаком.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1799"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1806"/>
         <source>Import</source>
         <translation>Импорт</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1799"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1806"/>
         <source>Please wait. Import can take few minutes.</source>
         <translation>Немного терпения. Импорт может длиться несколько минут.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1922"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1929"/>
         <source>New window</source>
         <translation>Новое окно</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1937"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1948"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1944"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1955"/>
         <source>Start</source>
         <translation>Начало</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1938"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1949"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1945"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1956"/>
         <source>Research</source>
         <translation>Разработка</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1939"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1950"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1946"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1957"/>
         <source>Cards</source>
         <translation>Карточки</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1940"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1951"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1947"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1958"/>
         <source>Scenario</source>
         <translation>Сценарий</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1941"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1952"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1948"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1959"/>
         <source>Statistics</source>
         <translation>Статистика</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1942"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1953"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1949"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1960"/>
         <source>Tools</source>
         <translation>Инструменты</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1943"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1954"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1950"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1961"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2032"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2039"/>
         <source>File</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2033"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2040"/>
         <source>Edit</source>
         <translation>Правка</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2038"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2045"/>
         <source>New</source>
         <translation>Новый</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2039"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2046"/>
         <source>Open</source>
         <translation>Открыть</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2040"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2047"/>
         <source>Save</source>
         <translation>Сохранить</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2053"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2060"/>
         <source>Print preview script</source>
-        <translation type="unfinished"></translation>
+        <translation>Предпросмотр сценария</translation>
     </message>
     <message>
         <source>Save As...</source>
         <translation type="vanished">Сохранить как...</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2049"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2056"/>
         <source>Import...</source>
         <translation>Импорт...</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2051"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2058"/>
         <source>Export to...</source>
         <translation>Экспорт...</translation>
     </message>
@@ -2399,36 +2416,36 @@ Project didn&apos;t synchronized.</source>
         <translation type="vanished">Двухпанельный режим</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2469"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2476"/>
         <source>in cloud</source>
         <translation>в облаке</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2468"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2475"/>
         <source>on local computer</source>
         <translation>на компьютере</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2043"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2050"/>
         <source>Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить как...</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2047"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2054"/>
         <source>New script version...</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая версия сценария...</translation>
     </message>
     <message>
         <source>Print preview</source>
         <translation type="obsolete">Предпросмотр</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2058"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2065"/>
         <source>Two panel mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Двухпанельный режим</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2474"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2481"/>
         <source>%1[*] - KIT Scenarist</source>
         <translation>%1 [*] - КИТ Сценарист</translation>
     </message>
@@ -2614,7 +2631,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="708"/>
         <source>Do you really want to delete script version named &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить версию сценария под названием &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="866"/>
@@ -2625,71 +2642,69 @@ Project didn&apos;t synchronized.</source>
 <context>
     <name>ManagementLayer::ScenarioCardsManager</name>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioCardsManager.cpp" line="240"/>
         <source>Add card</source>
-        <translation>Добавить новую карточку</translation>
+        <translation type="vanished">Добавить новую карточку</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioCardsManager.cpp" line="280"/>
         <source>Edit card</source>
-        <translation>Изменить карточку</translation>
+        <translation type="vanished">Изменить карточку</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ScenarioManager</name>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="569"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="563"/>
         <source>Characters to delete</source>
         <translation>Будут удалены</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="575"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="569"/>
         <source>Characters to save</source>
         <translation>Будут сохранены</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="577"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="645"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="571"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="639"/>
         <source>Apply refreshing</source>
         <translation>Применить результаты поиска</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="636"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="630"/>
         <source>Locations to delete</source>
         <translation>Будут удалены</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="642"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="636"/>
         <source>Locations to save</source>
         <translation>Будут сохранены</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="799"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="793"/>
         <source>Chron.</source>
         <translation>Хрон.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1069"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1063"/>
         <source>On/off Fullscreen Mode</source>
         <translation>Включить/выключить полноэкранный режим</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1275"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1269"/>
         <source>Changing scenes numbers locking</source>
         <translation>Изменение блокировки номеров сцен</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1276"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1270"/>
         <source>Do you want to unlock scenes numbers or lock again?</source>
         <translation>Разблокировать номера сцен, или заблокировать повторно?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1279"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1273"/>
         <source>Unlock</source>
         <translation>Разблокировать</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1280"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1274"/>
         <source>Lock</source>
         <translation>Заблокировать</translation>
     </message>
@@ -2697,12 +2712,12 @@ Project didn&apos;t synchronized.</source>
 <context>
     <name>ManagementLayer::ScenarioTextEditManager</name>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="286"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="280"/>
         <source>Enter new scene number</source>
         <translation>Введите новый номер для сцены</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="286"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="280"/>
         <source>New scene number</source>
         <translation>Новый номер сцены</translation>
     </message>
@@ -2894,12 +2909,12 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="153"/>
         <source>Choose versions to compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите версии для сравнения</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="223"/>
         <source>Script was restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарий восстановлен</translation>
     </message>
 </context>
 <context>
@@ -2937,7 +2952,7 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="331"/>
         <source>Print preview script</source>
-        <translation type="unfinished"></translation>
+        <translation>Предпросмотр сценария</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="348"/>
@@ -2947,7 +2962,7 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="519"/>
         <source>DOWNLOAD UPDATE</source>
-        <translation type="unfinished"></translation>
+        <translation>ЗАГРУЗИТЬ ОБНОВЛЕНИЕ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="585"/>
@@ -3002,7 +3017,7 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="280"/>
         <source>Start new version...</source>
-        <translation type="unfinished"></translation>
+        <translation>Начать новую версию</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="297"/>
@@ -3172,12 +3187,12 @@ You can try to reload update.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="242"/>
         <source>Italiano</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="249"/>
         <source>Azərbaycan</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="328"/>
@@ -3463,27 +3478,27 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="102"/>
         <source>Name</source>
-        <translation type="unfinished">Название</translation>
+        <translation>Название</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="42"/>
         <source>dd.MM.yyyy hh:mm</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="20"/>
         <source>Start a new version of the script</source>
-        <translation type="unfinished"></translation>
+        <translation>Начать новую версию сценария</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="26"/>
         <source>Version date and time</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата и время версии</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="112"/>
         <source>Description</source>
-        <translation type="unfinished">Описание</translation>
+        <translation>Описание</translation>
     </message>
 </context>
 <context>
@@ -3793,6 +3808,15 @@ And the text editor of the script. The editor has many auxiliary functions that 
         <translation>Контакты:</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="306"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="317"/>
         <source>Year:</source>
         <translation>Год:</translation>
@@ -3912,15 +3936,6 @@ And the text editor of the script. The editor has many auxiliary functions that 
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="194"/>
         <source>Start scenes numbering from:</source>
         <translation>Начать нумерацию сцен с:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="306"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="635"/>
@@ -4059,26 +4074,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>ScenarioSchemeItemDialog</name>
+    <name>ScenarioItemDialog</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="26"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="26"/>
         <source>Add scheme item</source>
         <translation>Добавить элемент</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="60"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="56"/>
+        <source>Description:</source>
+        <translation>Описание:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="80"/>
+        <source>Header:</source>
+        <translation>Заголовок:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="87"/>
+        <source>Name:</source>
+        <translation>Название:</translation>
+    </message>
+</context>
+<context>
+    <name>ScenarioSchemeItemDialog</name>
+    <message>
+        <source>Add scheme item</source>
+        <translation type="vanished">Добавить элемент</translation>
+    </message>
+    <message>
         <source>Act</source>
-        <translation>Акт</translation>
+        <translation type="vanished">Акт</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="94"/>
         <source>Description</source>
-        <translation>Описание</translation>
+        <translation type="vanished">Описание</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.ui" line="41"/>
         <source>Scene</source>
-        <translation>Сцена</translation>
+        <translation type="vanished">Сцена</translation>
     </message>
 </context>
 <context>
@@ -4086,22 +4120,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="17"/>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="78"/>
         <source>Title</source>
-        <translation type="unfinished">Титр</translation>
+        <translation>Титр</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="91"/>
         <source>Description</source>
-        <translation type="unfinished">Описание</translation>
+        <translation>Описание</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="113"/>
         <source>Remove version</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить версию</translation>
     </message>
 </context>
 <context>
@@ -4822,26 +4856,33 @@ Paragraph</source>
         <source>
 
 New to KIT Scenarist?</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Впервые с КИТ Сценарист?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="168"/>
-        <source>Learn how to write your own stories and explore KIT Scenarist through our help articles and tutorials.
+        <source>Learn how to write your own stories
+and explore KIT Scenarist through 
+our help articles and tutorials.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Исследуйте возможности программы
+и узнайте, как писать сценрии в ней
+при помощи справочных материалов.
+</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="198"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="200"/>
         <source>Update recent projects list</source>
         <translation>Обновить список недавно используемых проектов</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="291"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="293"/>
         <source>Projects from local computer</source>
         <translation>Проекты на компьютере</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="304"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="306"/>
         <source>Projects from kitscenarist.ru</source>
         <translation>Проекты на kitscenarist.ru</translation>
     </message>
@@ -5233,12 +5274,12 @@ New to KIT Scenarist?</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="95"/>
         <source>Compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Сравнить</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="105"/>
         <source>with</source>
-        <translation type="unfinished"></translation>
+        <translation>с</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -5853,29 +5894,58 @@ The application will start in few seconds.</source>
 <context>
     <name>UserInterface::ScenarioItemDialog</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="75"/>
         <source>Add scenario item</source>
-        <translation>Добавить элемент сценария</translation>
+        <translation type="vanished">Добавить элемент сценария</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="82"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="146"/>
         <source>Folder</source>
         <translation>Папка</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="79"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="145"/>
         <source>Scene</source>
         <translation>Сцена</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="27"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="19"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="34"/>
         <source>Add</source>
         <translation>Добавить</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="103"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="32"/>
+        <source>Add Scene</source>
+        <translation>Добавить сцену</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
+        <source>Add Folder</source>
+        <translation>Добавить папку</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
+        <source>Add Act</source>
+        <translation>Добавить акт</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="40"/>
+        <source>Edit Scene</source>
+        <translation>Изменить сцену</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="41"/>
+        <source>Edit Act</source>
+        <translation>Изменить акт</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="42"/>
+        <source>Save</source>
+        <translation>Сохранить</translation>
+    </message>
+    <message>
         <source>Scene Description</source>
-        <translation>Описание сцены</translation>
+        <translation type="vanished">Описание сцены</translation>
     </message>
 </context>
 <context>
@@ -6079,15 +6149,12 @@ The application will start in few seconds.</source>
 <context>
     <name>UserInterface::ScenarioSchemeItemDialog</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.cpp" line="14"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.cpp" line="30"/>
         <source>Add</source>
-        <translation>Добавить</translation>
+        <translation type="vanished">Добавить</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioSchemeItemDialog.cpp" line="60"/>
         <source>Save</source>
-        <translation>Сохранить</translation>
+        <translation type="vanished">Сохранить</translation>
     </message>
 </context>
 <context>
@@ -6111,17 +6178,17 @@ The application will start in few seconds.</source>
 <context>
     <name>UserInterface::ScenarioTextEditWidget</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="740"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="729"/>
         <source>Current Text Block Style</source>
         <translation>Формат текущего блока текста</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="746"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="735"/>
         <source>Undo last action</source>
         <translation>Отменить последнее действие</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="749"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="738"/>
         <source>Redo last action</source>
         <translation>Повторить последнее действие</translation>
     </message>
@@ -6131,42 +6198,42 @@ The application will start in few seconds.</source>
         <translation>ЧЕРНОВИК</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="538"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="527"/>
         <source>Undo</source>
         <translation>Отменить</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="539"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="528"/>
         <source>Redo</source>
         <translation>Повторить</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="541"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="530"/>
         <source>Find and replace</source>
         <translation>Поиск и замена</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="737"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="726"/>
         <source>Outline mode</source>
         <translation>Аутлайн</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="753"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="742"/>
         <source>Search and Replace</source>
         <translation>Поиск и замена</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="758"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="747"/>
         <source>Text Fast Format</source>
         <translation>Быстрое форматирование текста</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="763"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="752"/>
         <source>Duration from Start to Cursor Position | Full Duration</source>
         <translation>Хронометраж от начала до текущей позиции курсора | Полный хронометраж сценария</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="783"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="772"/>
         <source>Lock/unlock scene numbers</source>
         <translation>Заблокировать/снять блокировку номеров сцен</translation>
     </message>
@@ -6236,7 +6303,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionsList.cpp" line="65"/>
         <source>started by</source>
-        <translation type="unfinished"></translation>
+        <translation>начата</translation>
     </message>
 </context>
 <context>
@@ -6335,13 +6402,13 @@ The application will start in few seconds.</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="206"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="767"/>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>Итальянский</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="211"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="759"/>
         <source>Azerbaijani</source>
-        <translation type="unfinished"></translation>
+        <translation>Азербайджанский</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="757"/>

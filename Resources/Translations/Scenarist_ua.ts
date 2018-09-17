@@ -2075,11 +2075,11 @@ Project didn&apos;t synchronized.</source>
     <name>ManagementLayer::ScenarioCardsManager</name>
     <message>
         <source>Add card</source>
-        <translation>Додати нову картку</translation>
+        <translation type="vanished">Додати нову картку</translation>
     </message>
     <message>
         <source>Edit card</source>
-        <translation>Редагувати картку</translation>
+        <translation type="vanished">Редагувати картку</translation>
     </message>
 </context>
 <context>
@@ -3194,7 +3194,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -3206,7 +3206,7 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -3240,22 +3240,41 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>ScenarioItemDialog</name>
+    <message>
+        <source>Add scheme item</source>
+        <translation type="unfinished">Додати елемент схеми</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation type="unfinished">Опис:</translation>
+    </message>
+    <message>
+        <source>Header:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Назва:</translation>
+    </message>
+</context>
+<context>
     <name>ScenarioSchemeItemDialog</name>
     <message>
         <source>Add scheme item</source>
-        <translation>Додати елемент схеми</translation>
+        <translation type="vanished">Додати елемент схеми</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Опис</translation>
+        <translation type="vanished">Опис</translation>
     </message>
     <message>
         <source>Scene</source>
-        <translation>Сцена</translation>
+        <translation type="vanished">Сцена</translation>
     </message>
     <message>
         <source>Act</source>
-        <translation>Акт</translation>
+        <translation type="vanished">Акт</translation>
     </message>
 </context>
 <context>
@@ -3897,7 +3916,9 @@ New to KIT Scenarist?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Learn how to write your own stories and explore KIT Scenarist through our help articles and tutorials.
+        <source>Learn how to write your own stories
+and explore KIT Scenarist through 
+our help articles and tutorials.
 </source>
         <translation type="unfinished"></translation>
     </message>
@@ -4710,7 +4731,7 @@ The application will start in few seconds.</source>
     <name>UserInterface::ScenarioItemDialog</name>
     <message>
         <source>Add scenario item</source>
-        <translation>Додати елемент сценарію</translation>
+        <translation type="vanished">Додати елемент сценарію</translation>
     </message>
     <message>
         <source>Scene</source>
@@ -4722,11 +4743,35 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Scene Description</source>
-        <translation>Опис сцени</translation>
+        <translation type="vanished">Опис сцени</translation>
     </message>
     <message>
         <source>Add</source>
         <translation>Додати</translation>
+    </message>
+    <message>
+        <source>Add Scene</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Folder</source>
+        <translation type="unfinished">Додати папку</translation>
+    </message>
+    <message>
+        <source>Add Act</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Scene</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Act</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Зберегти</translation>
     </message>
 </context>
 <context>
@@ -4893,11 +4938,11 @@ The application will start in few seconds.</source>
     <name>UserInterface::ScenarioSchemeItemDialog</name>
     <message>
         <source>Add</source>
-        <translation>Додати</translation>
+        <translation type="vanished">Додати</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Зберегти</translation>
+        <translation type="vanished">Зберегти</translation>
     </message>
 </context>
 <context>
