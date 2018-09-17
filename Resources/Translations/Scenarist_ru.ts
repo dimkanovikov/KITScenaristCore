@@ -4867,8 +4867,8 @@ and explore KIT Scenarist through
 our help articles and tutorials.
 </source>
         <translation>Исследуйте возможности программы
-и узнайте, как писать сценрии в ней
-при помощи справочных материалов.
+при помощи справочных материалов
+и узнайте, как писать сценарии в ней.
 </translation>
     </message>
     <message>
