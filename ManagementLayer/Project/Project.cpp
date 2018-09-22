@@ -15,8 +15,8 @@ using DataStorageLayer::StorageFacade;
 using DataStorageLayer::SettingsStorage;
 
 namespace {
-    const QString kProjectFleExtension = "kitsp"; // kit scenarist project
-    const QString kBackupVersionsExtension = "kitsrc"; // kit scenarist reserve copies
+    const QString kProjectFleExtension = "dps"; // kit scenarist project
+    const QString kBackupVersionsExtension = "dpsrc"; // kit scenarist reserve copies
 }
 
 

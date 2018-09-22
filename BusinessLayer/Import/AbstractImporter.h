@@ -155,9 +155,9 @@ namespace BusinessLogic
          */
         static QString filters() {
             QString filters;
-            filters.append(QApplication::translate("BusinessLogic::AbstractImporter", "All supported files") + QLatin1String(" (*.kitsp *.fdx *.trelby *.docx *.doc *.odt *.fountain *.celtx)"));
+            filters.append(QApplication::translate("BusinessLogic::AbstractImporter", "All supported files") + QLatin1String(" (*.dps *.fdx *.trelby *.docx *.doc *.odt *.fountain *.celtx)"));
             filters.append(";;");
-            filters.append(QApplication::translate("BusinessLogic::AbstractImporter","Digipitch Screenwriter project") + QLatin1String(" (*.kitsp)"));
+            filters.append(QApplication::translate("BusinessLogic::AbstractImporter","Digipitch Screenwriter project") + QLatin1String(" (*.dps)"));
             filters.append(";;");
             filters.append(QApplication::translate("BusinessLogic::AbstractImporter","Final Draft screenplay") + QLatin1String(" (*.fdx)"));
             filters.append(";;");
