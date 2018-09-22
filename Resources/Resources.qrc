@@ -124,7 +124,7 @@
         <file>Iconset/lock.svg</file>
         <file>Iconset/playlist-plus.svg</file>
         <file>Iconset/text-subject.svg</file>
-        <file>Images/default-screenplay-poster.jpg</file>
+        <file>Images/screenplay-poster.png</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>
