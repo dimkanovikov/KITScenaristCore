@@ -158,15 +158,15 @@ void SceneHeadingBlockInfo::setStamp(const QString& _stamp)
     }
 }
 
-QString SceneHeadingBlockInfo::title() const
+QString SceneHeadingBlockInfo::name() const
 {
-    return m_title;
+    return m_name;
 }
 
-void SceneHeadingBlockInfo::setTitle(const QString& _title)
+void SceneHeadingBlockInfo::setName(const QString& _name)
 {
-    if (m_title != _title) {
-        m_title = _title;
+    if (m_name != _name) {
+        m_name = _name;
     }
 }
 
@@ -194,7 +194,7 @@ SceneHeadingBlockInfo* SceneHeadingBlockInfo::clone() const
     copy->m_sceneNumberSuffix = m_sceneNumberSuffix;
     copy->m_colors = m_colors;
     copy->m_stamp = m_stamp;
-    copy->m_title = m_title;
+    copy->m_name = m_name;
     copy->m_description = m_description;
     return copy;
 }

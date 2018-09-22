@@ -182,15 +182,15 @@ void ScenarioModelItem::setStamp(const QString& _stamp)
     }
 }
 
-QString ScenarioModelItem::title() const
+QString ScenarioModelItem::name() const
 {
-    return m_title;
+    return m_name;
 }
 
-void ScenarioModelItem::setTitle(const QString& _title)
+void ScenarioModelItem::setName(const QString& _name)
 {
-    if (m_title != _title) {
-        m_title = _title;
+    if (m_name != _name) {
+        m_name = _name;
     }
 }
 

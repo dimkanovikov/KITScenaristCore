@@ -1173,7 +1173,7 @@ void ScriptTextCorrector::breakDialogue(const QTextBlockFormat& _blockFormat, qr
     //
     ScenarioBlockStyle parentheticalStyle =
         ScenarioTemplateFacade::getTemplate(m_templateName).blockStyle(ScenarioBlockStyle::Parenthetical);
-    QTextBlockFormat parentheticalFormat = parentheticalStyle.blockFormat(_cursor.isBlockInTable());
+    QTextBlockFormat parentheticalFormat = parentheticalStyle.blockFormat();
     parentheticalFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrection, true);
     parentheticalFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrectionContinued, true);
     parentheticalFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);

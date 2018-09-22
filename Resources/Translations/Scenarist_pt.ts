@@ -1976,7 +1976,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Print preview</source>
-        <translation type="unfinished">Pré-visualização de impressão</translation>
+        <translation type="obsolete">Pré-visualização de impressão</translation>
     </message>
     <message>
         <source>Two panel mode</source>
@@ -1984,6 +1984,10 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>New script version...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print preview script</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2146,11 +2150,11 @@ O projeto não foi sincronizado.</translation>
     <name>ManagementLayer::ScenarioCardsManager</name>
     <message>
         <source>Add card</source>
-        <translation>Adicionar cartão</translation>
+        <translation type="vanished">Adicionar cartão</translation>
     </message>
     <message>
         <source>Edit card</source>
-        <translation>editar cartão</translation>
+        <translation type="vanished">editar cartão</translation>
     </message>
 </context>
 <context>
@@ -2368,6 +2372,10 @@ Você pode tentar recarregar a atualização.</translation>
         <source>Choose versions to compare</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Script was restored.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuView</name>
@@ -2413,7 +2421,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Print preview</source>
-        <translation>Pré-visualização de impressão</translation>
+        <translation type="vanished">Pré-visualização de impressão</translation>
     </message>
     <message>
         <source>version</source>
@@ -2473,6 +2481,10 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Start new version...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print preview script</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3259,8 +3271,8 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3279,22 +3291,41 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>ScenarioItemDialog</name>
+    <message>
+        <source>Add scheme item</source>
+        <translation type="unfinished">Adicionar item de esquema</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation type="unfinished">Descrição:</translation>
+    </message>
+    <message>
+        <source>Header:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nome:</translation>
+    </message>
+</context>
+<context>
     <name>ScenarioSchemeItemDialog</name>
     <message>
         <source>Add scheme item</source>
-        <translation>Adicionar item de esquema</translation>
+        <translation type="vanished">Adicionar item de esquema</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Descrição</translation>
+        <translation type="vanished">Descrição</translation>
     </message>
     <message>
         <source>Scene</source>
-        <translation>Cena</translation>
+        <translation type="vanished">Cena</translation>
     </message>
     <message>
         <source>Act</source>
-        <translation>Ato</translation>
+        <translation type="vanished">Ato</translation>
     </message>
 </context>
 <context>
@@ -3937,7 +3968,9 @@ New to KIT Scenarist?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Learn how to write your own stories and explore KIT Scenarist through our help articles and tutorials.
+        <source>Learn how to write your own stories
+and explore KIT Scenarist through 
+our help articles and tutorials.
 </source>
         <translation type="unfinished"></translation>
     </message>
@@ -4169,7 +4202,7 @@ New to KIT Scenarist?</source>
     </message>
     <message>
         <source>mm:</source>
-        <translation type="vanished">milímetros:</translation>
+        <translation>milímetros:</translation>
     </message>
     <message>
         <source>Uppercase</source>
@@ -4231,26 +4264,6 @@ Valor, mm</translation>
     <message>
         <source>Framing brackets</source>
         <translation>Suportes de enquadramento</translation>
-    </message>
-    <message>
-        <source>In full page width, mm:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>In splitted mode, mm:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Split page, %:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Left page side:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Right page side:</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4767,7 +4780,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <name>UserInterface::ScenarioItemDialog</name>
     <message>
         <source>Add scenario item</source>
-        <translation>Adicionar item de roteiro</translation>
+        <translation type="vanished">Adicionar item de roteiro</translation>
     </message>
     <message>
         <source>Scene</source>
@@ -4779,11 +4792,35 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Scene Description</source>
-        <translation>Descrição de cena</translation>
+        <translation type="vanished">Descrição de cena</translation>
     </message>
     <message>
         <source>Add</source>
         <translation>Adicionar</translation>
+    </message>
+    <message>
+        <source>Add Scene</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Folder</source>
+        <translation type="unfinished">Adicionar pasta</translation>
+    </message>
+    <message>
+        <source>Add Act</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Scene</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Act</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4950,11 +4987,11 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <name>UserInterface::ScenarioSchemeItemDialog</name>
     <message>
         <source>Add</source>
-        <translation>Adicionar</translation>
+        <translation type="vanished">Adicionar</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Salve</translation>
+        <translation type="vanished">Salve</translation>
     </message>
 </context>
 <context>
@@ -4970,10 +5007,6 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <message>
         <source>Change scene number</source>
         <translation>Alterar o número da cena</translation>
-    </message>
-    <message>
-        <source>Split page</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

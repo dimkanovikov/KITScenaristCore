@@ -257,13 +257,6 @@ void ScenarioBlockStyle::setLeftMargin(qreal _leftMargin)
     }
 }
 
-void ScenarioBlockStyle::setLeftMarginSplitted(qreal _leftMargin)
-{
-    if (m_leftMarginSplitted != _leftMargin) {
-        m_leftMarginSplitted = _leftMargin;
-    }
-}
-
 void ScenarioBlockStyle::setTopMargin(qreal _topMargin)
 {
     if (m_topMargin != _topMargin) {
@@ -279,13 +272,6 @@ void ScenarioBlockStyle::setRightMargin(qreal _rightMargin)
         m_rightMargin = _rightMargin;
 
         m_blockFormat.setRightMargin(PageMetrics::mmToPx(m_rightMargin));
-    }
-}
-
-void ScenarioBlockStyle::setRightMarginSplitted(qreal _rightMargin)
-{
-    if (m_rightMarginSplitted != _rightMargin) {
-        m_rightMarginSplitted = _rightMargin;
     }
 }
 
@@ -316,16 +302,9 @@ void ScenarioBlockStyle::setLineSpacingValue(qreal _value)
     }
 }
 
-QTextBlockFormat ScenarioBlockStyle::blockFormat(bool _splitted) const
+QTextBlockFormat ScenarioBlockStyle::blockFormat() const
 {
-    if (!_splitted) {
-        return m_blockFormat;
-    }
-
-    auto splittedBlockFormat = m_blockFormat;
-    splittedBlockFormat.setRightMargin(PageMetrics::mmToPx(m_rightMarginSplitted));
-    splittedBlockFormat.setLeftMargin(PageMetrics::mmToPx(m_leftMarginSplitted));
-    return splittedBlockFormat;
+    return m_blockFormat;
 }
 
 void ScenarioBlockStyle::setBackgroundColor(const QColor& _color)
@@ -461,10 +440,8 @@ ScenarioBlockStyle::ScenarioBlockStyle(const QXmlStreamAttributes& _blockAttribu
     m_topSpace = _blockAttributes.value("top_space").toInt();
     m_bottomSpace = _blockAttributes.value("bottom_space").toInt();
     m_leftMargin = _blockAttributes.value("left_margin").toDouble();
-    m_leftMarginSplitted = _blockAttributes.value("left_margin_splitted").toDouble();
     m_topMargin = _blockAttributes.value("top_margin").toDouble();
     m_rightMargin = _blockAttributes.value("right_margin").toDouble();
-    m_rightMarginSplitted = _blockAttributes.value("right_margin_splitted").toDouble();
     m_bottomMargin = _blockAttributes.value("bottom_margin").toDouble();
     m_lineSpacing = ::lineSpacingFromString(_blockAttributes.value("line_spacing").toString());
     m_lineSpacingValue = _blockAttributes.value("line_spacing_value").toDouble();
@@ -777,10 +754,8 @@ void ScenarioTemplate::saveToFile(const QString& _filePath) const
             writer.writeAttribute("top_space", toString(blockStyle.topSpace()));
             writer.writeAttribute("bottom_space", toString(blockStyle.bottomSpace()));
             writer.writeAttribute("left_margin", toString(blockStyle.leftMargin()));
-            writer.writeAttribute("left_margin_splitted", toString(blockStyle.leftMarginSplitted()));
             writer.writeAttribute("top_margin", toString(blockStyle.topMargin()));
             writer.writeAttribute("right_margin", toString(blockStyle.rightMargin()));
-            writer.writeAttribute("right_margin_splitted", toString(blockStyle.rightMarginSplitted()));
             writer.writeAttribute("bottom_margin", toString(blockStyle.bottomMargin()));
             writer.writeAttribute("line_spacing", toString(blockStyle.lineSpacing()));
             writer.writeAttribute("line_spacing_value", toString(blockStyle.lineSpacingValue()));
@@ -843,11 +818,6 @@ void ScenarioTemplate::setNumberingAlignment(Qt::Alignment _alignment)
     if (m_numberingAlignment != _alignment) {
         m_numberingAlignment = _alignment;
     }
-}
-
-void ScenarioTemplate::setSplitterLeftSidePercents(int _percents)
-{
-    m_splitterLeftSidePercents = _percents;
 }
 
 void ScenarioTemplate::setBlockStyle(const BusinessLogic::ScenarioBlockStyle& _blockStyle)

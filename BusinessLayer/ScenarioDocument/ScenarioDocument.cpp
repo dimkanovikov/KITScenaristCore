@@ -294,7 +294,7 @@ QString ScenarioDocument::itemTitle(ScenarioModelItem* _item) const
     QString title;
     QTextBlockUserData* textBlockData = cursor.block().userData();
     if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
-        title = info->title();
+        title = info->name();
     }
     return title;
 }
@@ -305,7 +305,7 @@ void ScenarioDocument::setItemTitleAtPosition(int _position, const QString& _tit
         //
         // Установить название в элемент
         //
-        item->setTitle(_title);
+        item->setName(_title);
         m_model->updateItem(item);
 
         //
@@ -319,7 +319,7 @@ void ScenarioDocument::setItemTitleAtPosition(int _position, const QString& _tit
         if (info == 0) {
             info = new SceneHeadingBlockInfo(item->uuid());
         }
-        info->setTitle(_title);
+        info->setName(_title);
         cursor.block().setUserData(info);
 
         ScenarioTextDocument::updateBlockRevision(cursor);
@@ -425,6 +425,7 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
 
                     currentBlockType = ScenarioBlockStyle::forBlock(cursor.block());
                 }
+                cursor.removeSelectedText();
 
                 //
                 // ... после того, как стёрли все описания действия, возвращаем курсор в позицию,
@@ -446,8 +447,7 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
                 && ScenarioBlockStyle::forBlock(nextBlock) == ScenarioBlockStyle::SceneDescription) {
                 cursor.movePosition(QTextCursor::NextBlock);
             } else {
-                cursor.insertBlock(descriptionBlockStyle.blockFormat(cursor.isBlockInTable()),
-                                   descriptionBlockStyle.charFormat());
+                cursor.insertBlock(descriptionBlockStyle.blockFormat(), descriptionBlockStyle.charFormat());
             }
             //
             // ... вставляем новый
@@ -457,8 +457,7 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
             } else {
                 foreach (const QString& descriptionLine, _description.split("\n")) {
                     if (!cursor.block().text().isEmpty()) {
-                        cursor.insertBlock(descriptionBlockStyle.blockFormat(cursor.isBlockInTable()),
-                                           descriptionBlockStyle.charFormat());
+                        cursor.insertBlock(descriptionBlockStyle.blockFormat(), descriptionBlockStyle.charFormat());
                     }
                     cursor.block().setVisible(m_document->outlineMode());
                     cursor.insertText(descriptionLine);
@@ -492,8 +491,7 @@ void ScenarioDocument::copyItemDescriptionToScript(int _position)
     const ScenarioBlockStyle actionBlockStyle =
             ScenarioTemplateFacade::getTemplate().blockStyle(ScenarioBlockStyle::Action);
     for (const QString& textLine : description.split('\n')) {
-        cursor.insertBlock(actionBlockStyle.blockFormat(cursor.isBlockInTable()),
-                           actionBlockStyle.charFormat());
+        cursor.insertBlock(actionBlockStyle.blockFormat(), actionBlockStyle.charFormat());
         cursor.insertText(textLine);
     }
     cursor.endEditBlock();
@@ -1285,7 +1283,7 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
     _item->setFixNesting(sceneNumberFixNesting);
     _item->setFixed(sceneNumberFixed);
     _item->setNumberSuffix(numberSuffix);
-    _item->setTitle(title);
+    _item->setName(title);
     _item->setText(itemText);
     _item->setDescription(description);
     _item->setDuration(itemDuration);

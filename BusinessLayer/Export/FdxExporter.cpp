@@ -60,6 +60,10 @@ void FdxExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
         //
         writeSettings(writer);
         //
+        // Титульная страница
+        //
+        writeTitlePage(writer, _exportParameters);
+        //
         // Конец документа
         //
         writer.writeEndDocument();
@@ -263,4 +267,56 @@ void FdxExporter::writeSettings(QXmlStreamWriter& _writer) const
     _writer.writeAttribute("CastListElement", "Cast List");
     //
     _writer.writeEndElement(); // PageLayout
+}
+
+void FdxExporter::writeTitlePage(QXmlStreamWriter& _writer, const ExportParameters& _exportParameters) const
+{
+    if (not _exportParameters.printTilte) {
+        return;
+    }
+
+    auto writeLine =
+            [&_writer] (const QString& _alignment = "Left",
+                        const QString& _content = QString{},
+                        const QString& _style = QString{}) {
+        _writer.writeStartElement("Paragraph");
+        _writer.writeAttribute("Type", "General");
+        _writer.writeAttribute("Alignment", _alignment);
+        _writer.writeAttribute("LeftIndent", "1.25");
+        _writer.writeAttribute("RightIndent", "7.25");
+        _writer.writeAttribute("SpaceBefore", "0");
+        _writer.writeAttribute("Spacing", "1.0");
+        _writer.writeAttribute("StartsNewPage", "No");
+        if (not _content.isEmpty()) {
+            _writer.writeStartElement("Text");
+            if (not _style.isEmpty()) {
+                _writer.writeAttribute("Style", _style);
+            }
+            _writer.writeCharacters(_content);
+            _writer.writeEndElement(); // Text
+        }
+        _writer.writeEndElement(); // Paragraph
+    };
+    auto writeEmptyLines = [&writeLine] (int _count) {
+        for (int i = 0; i < _count; ++i) {
+            writeLine();
+        }
+    };
+
+    _writer.writeStartElement("TitlePage");
+    _writer.writeStartElement("Content");
+    //
+    writeEmptyLines(16);
+    writeLine("Center", _exportParameters.scriptName, "Underline");
+    writeEmptyLines(3);
+    writeLine("Center", "Written by");
+    writeEmptyLines(1);
+    writeLine("Center", _exportParameters.scriptAuthor);
+    writeEmptyLines(20);
+    writeLine("Left", _exportParameters.scriptYear);
+    writeEmptyLines(1);
+    writeLine("Left", _exportParameters.scriptContacts);
+
+    _writer.writeEndElement(); // Content
+    _writer.writeEndElement(); // Title Page
 }
