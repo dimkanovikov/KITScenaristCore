@@ -102,6 +102,12 @@ void ProjectsList::setMenusVisible(bool _isVisible)
     }
 }
 
+bool ProjectsList::hasProjects() const
+{
+    return m_model != nullptr
+           && m_model->rowCount() > 0;
+}
+
 int ProjectsList::projectRow(UserInterface::ProjectFileWidget* _project) const
 {
     QVBoxLayout* layout = dynamic_cast<QVBoxLayout*>(widget()->layout());

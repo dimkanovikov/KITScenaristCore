@@ -35,6 +35,11 @@ namespace UserInterface
          */
         void setMenusVisible(bool _isVisible);
 
+        /**
+         * @brief Есть ли хотя бы один проект в списке
+         */
+        bool hasProjects() const;
+
     signals:
         /**
          * @brief Был выбран проект для открытия
