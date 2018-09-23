@@ -90,6 +90,7 @@
         <file>Iconset/view-list.svg</file>
         <file>Iconset/web.svg</file>
         <file>Iconset/wrench.svg</file>
+        <file>Iconset/playlist-plus.svg</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/ScenaristMobile_ru.qm</file>
