@@ -44,6 +44,7 @@ private:
     const int m_topMargin;
     const int m_bottomMargin;
     const int m_itemsSpacing;
+    const int m_checkMarkSize;
     /** @} */
 
     /**

@@ -25,7 +25,8 @@ TreeViewItemDelegate::TreeViewItemDelegate(QObject* _parent) :
     m_iconSize(StyleSheetHelper::dpToPx(ICON_SIZE)),
     m_topMargin(StyleSheetHelper::dpToPx(TOP_MARGIN)),
     m_bottomMargin(StyleSheetHelper::dpToPx(BOTTOM_MARGIN)),
-    m_itemsSpacing(StyleSheetHelper::dpToPx(ITEMS_SPACING))
+    m_itemsSpacing(StyleSheetHelper::dpToPx(ITEMS_SPACING)),
+    m_checkMarkSize(StyleSheetHelper::dpToPx(16))
 {
 }
 
@@ -122,8 +123,6 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
         // ... если есть флажёк, то рисуем его
         //
         if (!_index.data(Qt::CheckStateRole).isNull()) {
-            _painter->save();
-            _painter->translate(iconRect.center().x(), iconRect.center().y());
             QStyleOptionButton checkBoxOption;
             checkBoxOption.state = QStyle::State_Enabled;
             const int checkState = _index.data(Qt::CheckStateRole).toInt();
@@ -132,8 +131,9 @@ void TreeViewItemDelegate::paint(QPainter* _painter, const QStyleOptionViewItem&
                                     : checkState == Qt::PartiallyChecked
                                       ? QStyle::State_NoChange
                                       : QStyle::State_Off;
-            qApp->style()->drawControl(QStyle::CE_CheckBox, &checkBoxOption, _painter);
-            _painter->restore();
+            checkBoxOption.rect = QRect((m_iconSize - m_checkMarkSize) / 2, (opt.rect.height() - m_checkMarkSize) / 2,
+                                        m_checkMarkSize, m_checkMarkSize);
+            qApp->style()->drawPrimitive(QStyle::PE_IndicatorCheckBox, &checkBoxOption, _painter);
         }
         //
         // ... в противном случае иконку

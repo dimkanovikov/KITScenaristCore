@@ -558,13 +558,13 @@ QCheckBox::indicator {
     height: 16dp;
 }
 
-QCheckBox::indicator:unchecked {
+/*QCheckBox::indicator:unchecked {
     image: url(:/Interface/UI/checkbox-unchecked_THEME_POSTFIX.png);
 }
 
 QCheckBox::indicator:checked {
     image: url(:/Interface/UI/checkbox-checked.png);
-}
+}*/
 
 /********************************************
  * Стиль кнопок стилей в редакторе сценария
