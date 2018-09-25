@@ -26,15 +26,24 @@ ScriptVersionWidget::~ScriptVersionWidget()
 void UserInterface::ScriptVersionWidget::setColor(const QColor& _color)
 {
     const int size = 16;
+#ifndef MOBILE_OS
+    const int topMargin = size;
+    const int leftMargin = 0;
+#else
+    const int topMargin = 24;
+    const int leftMargin = size / 2;
+#endif
     const QString styleSheet
-            = QString("margin-top: %1dp; "
-                      "min-width: %1dp; max-width: %1dp; "
-                      "min-height: %1dp; max-height: %1dp; "
-                      "border-radius: %2dp; "
-                      "background-color: %3;")
-            .arg(size)
-            .arg(size / 2)
-            .arg(_color.name());
+            = QString("margin-top: %1dp; margin-left: %2dp;"
+                      "min-width: %3dp; max-width: %3dp; "
+                      "min-height: %3dp; max-height: %3dp; "
+                      "border-radius: %4dp; "
+                      "background-color: %5;")
+              .arg(topMargin)
+              .arg(leftMargin)
+              .arg(size)
+              .arg(size / 2)
+              .arg(_color.name());
     m_ui->color->setStyleSheet(StyleSheetHelper::computeDeviceInpedendentSize(styleSheet));
 }
 
