@@ -271,7 +271,7 @@ void FdxExporter::writeSettings(QXmlStreamWriter& _writer) const
 
 void FdxExporter::writeTitlePage(QXmlStreamWriter& _writer, const ExportParameters& _exportParameters) const
 {
-    if (not _exportParameters.printTilte) {
+    if (!_exportParameters.printTilte) {
         return;
     }
 
@@ -287,9 +287,9 @@ void FdxExporter::writeTitlePage(QXmlStreamWriter& _writer, const ExportParamete
         _writer.writeAttribute("SpaceBefore", "0");
         _writer.writeAttribute("Spacing", "1.0");
         _writer.writeAttribute("StartsNewPage", "No");
-        if (not _content.isEmpty()) {
+        if (!_content.isEmpty()) {
             _writer.writeStartElement("Text");
-            if (not _style.isEmpty()) {
+            if (!_style.isEmpty()) {
                 _writer.writeAttribute("Style", _style);
             }
             _writer.writeCharacters(_content);
