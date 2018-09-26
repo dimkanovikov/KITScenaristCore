@@ -1730,8 +1730,9 @@ bool ScenarioXml::isScenarioHaveUuid(const QString& _uuid) const
         const ScenarioBlockStyle::Type currentBlockType = ScenarioBlockStyle::forBlock(currentBlock);
         if (currentBlockType == ScenarioBlockStyle::SceneHeading
             || currentBlockType == ScenarioBlockStyle::FolderHeader) {
-            if (SceneHeadingBlockInfo* info = static_cast<SceneHeadingBlockInfo*>(currentBlock.userData())) {
-                if (info->uuid() == _uuid) {
+            if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(currentBlock.userData())) {
+                if (info != nullptr
+                    && info->uuid() == _uuid) {
                     return true;
                 }
             }
