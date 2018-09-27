@@ -207,6 +207,10 @@
         <source>Logline</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Versions</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLogic::ScenarioBlockStyle</name>
@@ -445,6 +449,13 @@
     </message>
 </context>
 <context>
+    <name>DataStorageLayer::ScriptVersionStorage</name>
+    <message>
+        <source>First draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DatabaseLayer::Database</name>
     <message>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
@@ -569,12 +580,23 @@
         <source>FADE TO BLACK</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>First draft</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DocxReader</name>
     <message>
         <source>Unable to open archive.</source>
         <translation>Неможливо відкрити архів.</translation>
+    </message>
+</context>
+<context>
+    <name>Domain::ScriptVersionsTable</name>
+    <message>
+        <source>current version</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -585,7 +607,7 @@
     </message>
     <message>
         <source>Export script</source>
-        <translation>Експорт сценарію</translation>
+        <translation type="vanished">Експорт сценарію</translation>
     </message>
     <message>
         <source>Check page breaks</source>
@@ -610,6 +632,10 @@
     <message>
         <source>Dialogues numbers</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished">Експорт</translation>
     </message>
 </context>
 <context>
@@ -1501,6 +1527,25 @@ Let&apos;s create the first one!</source>
     </message>
 </context>
 <context>
+    <name>ScriptVersionWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished">Титр</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove version</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SettingsView</name>
     <message>
         <source>Navigator</source>
@@ -1707,6 +1752,14 @@ Your subscription is active until</source>
         <source>Print watermark</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>RESEARCH</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SCRIPT</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::LoginView</name>
@@ -1847,6 +1900,13 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>Change scene number</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScriptVersionsList</name>
+    <message>
+        <source>started by</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
