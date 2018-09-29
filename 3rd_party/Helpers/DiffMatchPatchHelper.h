@@ -80,26 +80,31 @@ namespace {
             result = result.remove(tag + suffix);
         }
 
-        result = result.remove(QRegularExpression("<scene_heading(.*)>\n"));
-        result = result.remove(QRegularExpression("<scene_group_header(.*)>\n"));
-        result = result.remove(QRegularExpression("<folder_header(.*)>\n"));
-        result = result.remove(QRegularExpression("<review(.*)>\n"));
-        result = result.remove(QRegularExpression("<review_comment(.*)>\n"));
-        result = result.remove(QRegularExpression("<format(.*)>\n"));
+        auto cleanResult = [&result] (const QString& _pattern) {
+            result = result.remove(QRegularExpression(_pattern, QRegularExpression::MultilineOption
+                                                      | QRegularExpression::DotMatchesEverythingOption
+                                                      | QRegularExpression::InvertedGreedinessOption));
+        };
+        cleanResult("<scene_heading(.*)>\n");
+        cleanResult("<scene_group_header(.*)>\n");
+        cleanResult("<folder_header(.*)>\n");
+        cleanResult("<review(.*)>\n");
+        cleanResult("<review_comment(.*)>\n");
+        cleanResult("<format(.*)>\n");
         //
-        result = result.remove(QRegularExpression("<scene_characters(.*)>\n"));
-        result = result.remove(QRegularExpression("<action(.*)>\n"));
-        result = result.remove(QRegularExpression("<character(.*)>\n"));
-        result = result.remove(QRegularExpression("<parenthetical(.*)>\n"));
-        result = result.remove(QRegularExpression("<dialog(.*)>\n"));
-        result = result.remove(QRegularExpression("<transition(.*)>\n"));
-        result = result.remove(QRegularExpression("<note(.*)>\n"));
-        result = result.remove(QRegularExpression("<title_header(.*)>\n"));
-        result = result.remove(QRegularExpression("<title(.*)>\n"));
-        result = result.remove(QRegularExpression("<noprintable_text(.*)>\n"));
-        result = result.remove(QRegularExpression("<scene_description(.*)>\n"));
-        result = result.remove(QRegularExpression("<undefined(.*)>\n"));
-        result = result.remove(QRegularExpression("<lyrics(.*)>\n"));
+        cleanResult("<scene_characters(.*)>\n");
+        cleanResult("<action(.*)>\n");
+        cleanResult("<character(.*)>\n");
+        cleanResult("<parenthetical(.*)>\n");
+        cleanResult("<dialog(.*)>\n");
+        cleanResult("<transition(.*)>\n");
+        cleanResult("<note(.*)>\n");
+        cleanResult("<title_header(.*)>\n");
+        cleanResult("<title(.*)>\n");
+        cleanResult("<noprintable_text(.*)>\n");
+        cleanResult("<scene_description(.*)>\n");
+        cleanResult("<undefined(.*)>\n");
+        cleanResult("<lyrics(.*)>\n");
 
         result = TextEditHelper::removeXmlTags(result);
         result = TextEditHelper::fromHtmlEscaped(result);
@@ -185,9 +190,9 @@ public:
                 //
                 // Считаем длину убирая xml-тэги и последний перевод строки
                 //
-                QString plain = ::removeXmlTagsForScenario(xml, tagsMap());
+                QString plain = removeXmlTagsForScenario(xml, tagsMap());
                 if (plain.endsWith("\n")) {
-                    plain = plain.left(plain.length() - 1);
+                    plain.chop(1);
                 }
                 plainLength = plain.length();
             }
