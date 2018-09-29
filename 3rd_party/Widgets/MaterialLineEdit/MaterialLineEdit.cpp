@@ -72,7 +72,10 @@ MaterialLineEdit::MaterialLineEdit(QWidget* _parent) :
 
     m_lineEdit->installEventFilter(this);
     m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints()
-                                    | Qt::ImhNoPredictiveText);
+#ifdef Q_OS_ANDROID
+                                    | Qt::ImhNoPredictiveText
+#endif
+                                    );
 
     QVBoxLayout* layout = new QVBoxLayout;
     layout->setContentsMargins(QMargins());
