@@ -539,7 +539,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Versões</translation>
     </message>
 </context>
 <context>
@@ -1042,7 +1042,7 @@ Türkçe: Recep Burak Yak
     <name>DataStorageLayer::ScriptVersionStorage</name>
     <message>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Primeiro tratamento</translation>
     </message>
 </context>
 <context>
@@ -1173,7 +1173,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Primeiro tratamento</translation>
     </message>
 </context>
 <context>
@@ -1187,7 +1187,7 @@ Türkçe: Recep Burak Yak
     <name>Domain::ScriptVersionsTable</name>
     <message>
         <source>current version</source>
-        <translation type="unfinished"></translation>
+        <translation>versão atual</translation>
     </message>
 </context>
 <context>
@@ -2001,11 +2001,11 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>New script version...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nova versão do roteiro...</translation>
     </message>
     <message>
         <source>Print preview script</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimir pré-visualização do roteiro</translation>
     </message>
 </context>
 <context>
@@ -2160,7 +2160,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Do you really want to delete script version named &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Você realmente deseja excluir a versão do script nomeada &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
 </context>
 <context>
@@ -2387,11 +2387,11 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Choose versions to compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha as versões para comparar</translation>
     </message>
     <message>
         <source>Script was restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro foi recuperado</translation>
     </message>
 </context>
 <context>
@@ -2494,15 +2494,15 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>DOWNLOAD UPDATE</source>
-        <translation type="unfinished"></translation>
+        <translation>BAIXAR ATUALIZAÇÃO</translation>
     </message>
     <message>
         <source>Start new version...</source>
-        <translation type="unfinished"></translation>
+        <translation>Começar nova versão...</translation>
     </message>
     <message>
         <source>Print preview script</source>
-        <translation type="unfinished"></translation>
+        <translation>Imprimir pré-visualização do roteiro</translation>
     </message>
 </context>
 <context>
@@ -2864,11 +2864,11 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Version date and time</source>
-        <translation type="unfinished"></translation>
+        <translation>Data e hora da versão</translation>
     </message>
     <message>
         <source>Start a new version of the script</source>
-        <translation type="unfinished"></translation>
+        <translation>Começar uma nova versão do roteiro</translation>
     </message>
 </context>
 <context>
@@ -3319,7 +3319,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Header:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cabeçalho:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3361,7 +3361,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remove version</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover versão</translation>
     </message>
 </context>
 <context>
@@ -3982,14 +3982,18 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
         <source>
 
 New to KIT Scenarist?</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Primeira vez no KIT Scenarist?</translation>
     </message>
     <message>
         <source>Learn how to write your own stories
 and explore KIT Scenarist through 
 our help articles and tutorials.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Aprenda a escrever suas próprias 
+histórias e usar o KIT Scenarist através 
+dos nossos artigos de ajuda e tutoriais</translation>
     </message>
 </context>
 <context>
@@ -4295,11 +4299,11 @@ Valor, mm</translation>
     </message>
     <message>
         <source>Compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Compare</translation>
     </message>
     <message>
         <source>with</source>
-        <translation type="unfinished"></translation>
+        <translation>com</translation>
     </message>
 </context>
 <context>
@@ -4817,7 +4821,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Add Scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar cena</translation>
     </message>
     <message>
         <source>Add Folder</source>
@@ -4825,15 +4829,15 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Add Act</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar ato</translation>
     </message>
     <message>
         <source>Edit Scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar cena</translation>
     </message>
     <message>
         <source>Edit Act</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar ato</translation>
     </message>
     <message>
         <source>Save</source>
@@ -5127,7 +5131,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <name>UserInterface::ScriptVersionsList</name>
     <message>
         <source>started by</source>
-        <translation type="unfinished"></translation>
+        <translation>iniciado por</translation>
     </message>
 </context>
 <context>
@@ -5263,11 +5267,11 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>Italiano</translation>
     </message>
     <message>
         <source>Azerbaijani</source>
-        <translation type="unfinished"></translation>
+        <translation>Azerbaijanês</translation>
     </message>
 </context>
 <context>

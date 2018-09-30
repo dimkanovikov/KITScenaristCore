@@ -110,7 +110,24 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Наші герої, які допомагають нам створювати міжнародні версії:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+</translation>
     </message>
 </context>
 <context>
@@ -193,7 +210,7 @@ Türkçe: Recep Burak Yak
     <name>BusinessLayer::AbstractExporter</name>
     <message>
         <source>Real name: </source>
-        <translation>Справжнє ім&apos;я:</translation>
+        <translation>Справжнє ім&apos;я: </translation>
     </message>
 </context>
 <context>
@@ -309,7 +326,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Character</source>
-        <translation>Герой</translation>
+        <translation>Персонаж</translation>
     </message>
     <message>
         <source>Total Dialogues</source>
@@ -332,7 +349,7 @@ Türkçe: Recep Burak Yak
     <name>BusinessLogic::CharacterReport</name>
     <message>
         <source>Characters Dialogues</source>
-        <translation>Діалоги героїв</translation>
+        <translation>Діалоги персонажів</translation>
     </message>
     <message>
         <source>Scene/Dialogue</source>
@@ -355,7 +372,7 @@ Türkçe: Recep Burak Yak
     <name>BusinessLogic::CharactersActivityPlot</name>
     <message>
         <source>Characters Activity Plot</source>
-        <translation>Активність героїв</translation>
+        <translation>Активність персонажів</translation>
     </message>
     <message>
         <source>Scene</source>
@@ -439,7 +456,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Characters</source>
-        <translation>Герої</translation>
+        <translation>Персонажі</translation>
     </message>
     <message>
         <source>Locations</source>
@@ -451,15 +468,15 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Script</source>
-        <translation type="unfinished">Сценарій</translation>
+        <translation>Сценарій</translation>
     </message>
     <message>
         <source>Logline</source>
-        <translation type="unfinished"></translation>
+        <translation>Логлайн</translation>
     </message>
     <message>
         <source>Versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Версії</translation>
     </message>
 </context>
 <context>
@@ -474,7 +491,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Scene Characters</source>
-        <translation>Герої сцени</translation>
+        <translation>Персонажі сцени</translation>
     </message>
     <message>
         <source>Action</source>
@@ -482,7 +499,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Character</source>
-        <translation>Герой</translation>
+        <translation>Персонаж</translation>
     </message>
     <message>
         <source>Parenthetical</source>
@@ -533,8 +550,8 @@ Türkçe: Recep Burak Yak
     <message>
         <source>SC</source>
         <extracomment>Reduction of Scene Characters</extracomment>
-        <translatorcomment>Зкорочення від Герої сцени</translatorcomment>
-        <translation>ГС</translation>
+        <translatorcomment>Зкорочення від Персонажі сцени</translatorcomment>
+        <translation>ПС</translation>
     </message>
     <message>
         <source>A</source>
@@ -545,8 +562,8 @@ Türkçe: Recep Burak Yak
     <message>
         <source>C</source>
         <extracomment>Reduction of Character</extracomment>
-        <translatorcomment>Зкорочення від Герой</translatorcomment>
-        <translation>Г</translation>
+        <translatorcomment>Зкорочення від Персонаж</translatorcomment>
+        <translation>П</translation>
     </message>
     <message>
         <source>P</source>
@@ -694,7 +711,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Scene/Characters</source>
-        <translation>Сцена/Герої</translation>
+        <translation>Сцена/Персонажі</translation>
     </message>
     <message>
         <source>Number</source>
@@ -706,7 +723,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Characters</source>
-        <translation>Героїв</translation>
+        <translation>Персонажів</translation>
     </message>
     <message>
         <source>Chron</source>
@@ -745,7 +762,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Characters Count</source>
-        <translation>Кількість героїв</translation>
+        <translation>Кількість персонажів</translation>
     </message>
     <message>
         <source>Dialogs Count</source>
@@ -820,7 +837,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Characters</source>
-        <translation>Герої</translation>
+        <translation>Персонажі</translation>
     </message>
     <message>
         <source>Dialogues count</source>
@@ -959,7 +976,7 @@ Türkçe: Recep Burak Yak
     <name>DataStorageLayer::ScriptVersionStorage</name>
     <message>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Перша чернетка</translation>
     </message>
 </context>
 <context>
@@ -1089,7 +1106,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Перша чернетка</translation>
     </message>
 </context>
 <context>
@@ -1103,7 +1120,7 @@ Türkçe: Recep Burak Yak
     <name>Domain::ScriptVersionsTable</name>
     <message>
         <source>current version</source>
-        <translation type="unfinished"></translation>
+        <translation>поточна версія</translation>
     </message>
 </context>
 <context>
@@ -1198,7 +1215,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Print scenes numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Друкувати номери сцен</translation>
     </message>
 </context>
 <context>
@@ -1354,7 +1371,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Find characters and locations</source>
-        <translation>Визначити героїв та локації</translation>
+        <translation>Визначити персонажів та локації</translation>
     </message>
     <message>
         <source>Save review marks</source>
@@ -1441,11 +1458,11 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Italiano</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Azərbaycan</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1897,7 +1914,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти як...</translation>
     </message>
     <message>
         <source>Print preview</source>
@@ -1905,15 +1922,15 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Two panel mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Двопанельний режим</translation>
     </message>
     <message>
         <source>New script version...</source>
-        <translation type="unfinished"></translation>
+        <translation>Нова версія сценарію...</translation>
     </message>
     <message>
         <source>Print preview script</source>
-        <translation type="unfinished"></translation>
+        <translation>Попередній перегляд сценарію</translation>
     </message>
 </context>
 <context>
@@ -1983,7 +2000,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Characters import</source>
-        <translation>Імпорт героїв</translation>
+        <translation>Імпорт персонажів</translation>
     </message>
     <message>
         <source>Locations import</source>
@@ -2048,7 +2065,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Find All Characters from Script</source>
-        <translation>Знайти всіх героїв у сценарії</translation>
+        <translation>Знайти всіх персонажів у сценарії</translation>
     </message>
     <message>
         <source>Find All Locations from Script</source>
@@ -2060,15 +2077,15 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Очистити</translation>
+        <translation>Очистити</translation>
     </message>
     <message>
         <source>Do you really want to delete script version named &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви дійсно хочете видалити версію сценарію з назвою &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
 </context>
 <context>
@@ -2086,11 +2103,11 @@ Project didn&apos;t synchronized.</source>
     <name>ManagementLayer::ScenarioManager</name>
     <message>
         <source>Characters to delete</source>
-        <translation>Герої для видалення</translation>
+        <translation>Персонажії для видалення</translation>
     </message>
     <message>
         <source>Characters to save</source>
-        <translation>Герої для збереження</translation>
+        <translation>Персонажі для збереження</translation>
     </message>
     <message>
         <source>Apply refreshing</source>
@@ -2114,30 +2131,30 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Changing scenes numbers locking</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміна номерів сцен заблокована</translation>
     </message>
     <message>
         <source>Do you want to unlock scenes numbers or lock again?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви хочете розблокувати номери сцен чи заблокувати знов?</translation>
     </message>
     <message>
         <source>Unlock</source>
-        <translation type="unfinished"></translation>
+        <translation>Розблокувати</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Заблокувати</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ScenarioTextEditManager</name>
     <message>
         <source>Enter new scene number</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть новий номер сцени</translation>
     </message>
     <message>
         <source>New scene number</source>
-        <translation type="unfinished"></translation>
+        <translation>Новий номер сцени</translation>
     </message>
 </context>
 <context>
@@ -2295,11 +2312,11 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>Choose versions to compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть версію для порівняння</translation>
     </message>
     <message>
         <source>Script was restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарій відновлено.</translation>
     </message>
 </context>
 <context>
@@ -2402,15 +2419,15 @@ You can try to reload update.</source>
     </message>
     <message>
         <source>DOWNLOAD UPDATE</source>
-        <translation type="unfinished"></translation>
+        <translation>ЗАВАНТАЖИТИ ОНОВЛЕННЯ</translation>
     </message>
     <message>
         <source>Start new version...</source>
-        <translation type="unfinished"></translation>
+        <translation>Запустіть нову версію ...</translation>
     </message>
     <message>
         <source>Print preview script</source>
-        <translation type="unfinished"></translation>
+        <translation>Попередній перегляд сценарію</translation>
     </message>
 </context>
 <context>
@@ -2664,11 +2681,11 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>Italiano</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Azərbaycan</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2768,23 +2785,23 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Ім&apos;я</translation>
+        <translation>Ім&apos;я</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished">Опис</translation>
+        <translation>Опис</translation>
     </message>
     <message>
         <source>dd.MM.yyyy hh:mm</source>
-        <translation type="unfinished"></translation>
+        <translation>дд.ММ.рррр гг:хх</translation>
     </message>
     <message>
         <source>Version date and time</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата та час версії</translation>
     </message>
     <message>
         <source>Start a new version of the script</source>
-        <translation type="unfinished"></translation>
+        <translation>Почати нову версію сценарію</translation>
     </message>
 </context>
 <context>
@@ -2939,7 +2956,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>Character</source>
-        <translation>Герой</translation>
+        <translation>Персонаж</translation>
     </message>
     <message>
         <source>Location</source>
@@ -3098,11 +3115,11 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>Add characters to project.</source>
-        <translation>Додати героїв в проект.</translation>
+        <translation>Додати персонажів в проект.</translation>
     </message>
     <message>
         <source>Character Name:</source>
-        <translation>Ім&apos;я героя:</translation>
+        <translation>Ім&apos;я персонажа:</translation>
     </message>
     <message>
         <source>Real Name:</source>
@@ -3218,11 +3235,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Scene numbers prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Префікс номера сцени:</translation>
     </message>
     <message>
         <source>Start scenes numbering from:</source>
-        <translation type="unfinished"></translation>
+        <translation>Почати нумерацію сцени з:</translation>
     </message>
 </context>
 <context>
@@ -3243,19 +3260,19 @@ p, li { white-space: pre-wrap; }
     <name>ScenarioItemDialog</name>
     <message>
         <source>Add scheme item</source>
-        <translation type="unfinished">Додати елемент схеми</translation>
+        <translation>Додати елемент схеми</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished">Опис:</translation>
+        <translation>Опис:</translation>
     </message>
     <message>
         <source>Header:</source>
-        <translation type="unfinished"></translation>
+        <translation>Заголовок:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Назва:</translation>
+        <translation>Назва:</translation>
     </message>
 </context>
 <context>
@@ -3281,19 +3298,19 @@ p, li { white-space: pre-wrap; }
     <name>ScriptVersionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Титр</translation>
+        <translation>Назва</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished">Опис</translation>
+        <translation>Опис</translation>
     </message>
     <message>
         <source>Remove version</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити версію</translation>
     </message>
 </context>
 <context>
@@ -3328,7 +3345,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>In character</source>
-        <translation>В блоках &quot;Герой&quot;</translation>
+        <translation>В блоках &quot;Персонаж&quot;</translation>
     </message>
     <message>
         <source>In dialogue</source>
@@ -3531,7 +3548,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>For scene heading and character paragraphs.</source>
-        <translation>Для блоків &quot;Місце і час&quot; та &quot;Герой&quot;.</translation>
+        <translation>Для блоків &quot;Місце і час&quot; та &quot;Персонаж&quot;.</translation>
     </message>
     <message>
         <source>Use MS Word like review highlighting colors</source>
@@ -3587,11 +3604,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Characters Chronometry</source>
-        <translation>Тривалість героїв</translation>
+        <translation>Тривалість персонажів</translation>
     </message>
     <message>
         <source>Characters</source>
-        <translation>Герої</translation>
+        <translation>Персонажі</translation>
     </message>
     <message>
         <source>Consider Spaces</source>
@@ -3913,14 +3930,19 @@ Paragraph</source>
         <source>
 
 New to KIT Scenarist?</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Нове в KIT Scenarist?</translation>
     </message>
     <message>
         <source>Learn how to write your own stories
 and explore KIT Scenarist through 
 our help articles and tutorials.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Дізнайтеся, як написати свої власні історії
+і вивчити КІТ-сценаріст через
+наші довідкові статті та навчальні посібники.
+</translation>
     </message>
 </context>
 <context>
@@ -3939,7 +3961,7 @@ our help articles and tutorials.
     </message>
     <message>
         <source>Characters statistics</source>
-        <translation>Статистика по героям</translation>
+        <translation>Статистика по персонажам</translation>
     </message>
     <message>
         <source>Sort scenes</source>
@@ -3971,7 +3993,7 @@ our help articles and tutorials.
     </message>
     <message>
         <source>Show characters</source>
-        <translation>Показувати героїв</translation>
+        <translation>Показувати персонажів</translation>
     </message>
     <message>
         <source>Extended view</source>
@@ -4003,7 +4025,7 @@ our help articles and tutorials.
     </message>
     <message>
         <source>Sort characters</source>
-        <translation>Сортувати героїв</translation>
+        <translation>Сортувати персонажів</translation>
     </message>
     <message>
         <source>from most to least scenes</source>
@@ -4039,7 +4061,7 @@ our help articles and tutorials.
     </message>
     <message>
         <source>Characters Count</source>
-        <translation>Кількість героїв</translation>
+        <translation>Кількість персонажів</translation>
     </message>
     <message>
         <source>Dialogues Count</source>
@@ -4229,11 +4251,11 @@ our help articles and tutorials.
     </message>
     <message>
         <source>Compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Порівняти</translation>
     </message>
     <message>
         <source>with</source>
-        <translation type="unfinished"></translation>
+        <translation>з</translation>
     </message>
 </context>
 <context>
@@ -4751,27 +4773,27 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Add Scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати Сцену</translation>
     </message>
     <message>
         <source>Add Folder</source>
-        <translation type="unfinished">Додати папку</translation>
+        <translation>Додати Папку</translation>
     </message>
     <message>
         <source>Add Act</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати Акт</translation>
     </message>
     <message>
         <source>Edit Scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати Сцену</translation>
     </message>
     <message>
         <source>Edit Act</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати Акт</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Зберегти</translation>
+        <translation>Зберегти</translation>
     </message>
 </context>
 <context>
@@ -4862,7 +4884,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Clear all colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистити всі кольори</translation>
     </message>
 </context>
 <context>
@@ -4957,7 +4979,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Change scene number</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити номер сцени</translation>
     </message>
 </context>
 <context>
@@ -5008,7 +5030,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Lock/unlock scene numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Заблокувати/розблокувати номери сцен</translation>
     </message>
 </context>
 <context>
@@ -5065,7 +5087,7 @@ The application will start in few seconds.</source>
     <name>UserInterface::ScriptVersionsList</name>
     <message>
         <source>started by</source>
-        <translation type="unfinished"></translation>
+        <translation>розпочато</translation>
     </message>
 </context>
 <context>
@@ -5201,11 +5223,11 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Azerbaijani</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -5310,7 +5332,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Characters dialogues</source>
-        <translation>Діалоги героїв</translation>
+        <translation>Діалоги персонажів</translation>
     </message>
     <message>
         <source>Plots</source>
@@ -5322,7 +5344,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Characters activity</source>
-        <translation>Активність героїв</translation>
+        <translation>Активність персонажів</translation>
     </message>
     <message>
         <source>Duration, minutes</source>
