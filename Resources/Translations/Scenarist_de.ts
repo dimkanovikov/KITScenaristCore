@@ -38,7 +38,7 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Our heroes, who help us to create international versions:
@@ -630,7 +630,7 @@ Hebräisch: Ronkin Maxim
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="139"/>
         <source>Versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Versionen</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="148"/>
@@ -1319,7 +1319,7 @@ Hebräisch: Ronkin Maxim
     <message>
         <location filename="../../DataLayer/DataStorageLayer/ScriptVersionStorage.cpp" line="27"/>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Erster Entwurf</translation>
     </message>
 </context>
 <context>
@@ -1333,7 +1333,7 @@ Hebräisch: Ronkin Maxim
         <location filename="../../DataLayer/Database/Database.cpp" line="419"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1525"/>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Erster Entwurf</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="427"/>
@@ -1509,7 +1509,7 @@ Hebräisch: Ronkin Maxim
     <message>
         <location filename="../../Domain/ScriptVersion.cpp" line="151"/>
         <source>current version</source>
-        <translation type="unfinished"></translation>
+        <translation>Derzeitige Version</translation>
     </message>
 </context>
 <context>
@@ -1935,12 +1935,12 @@ Hebräisch: Ronkin Maxim
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="155"/>
         <source>Italiano</source>
-        <translation type="unfinished"></translation>
+        <translation>Italiano</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="169"/>
         <source>Azərbaycan</source>
-        <translation type="unfinished"></translation>
+        <translation>Azərbaycan</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="176"/>
@@ -2625,17 +2625,17 @@ Das Projekt wurde nicht synchronisiert.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2050"/>
         <source>Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Speichern als...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2054"/>
         <source>New script version...</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue Drehbuchversion erstellen...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2060"/>
         <source>Print preview script</source>
-        <translation type="unfinished"></translation>
+        <translation>Druckvorschau</translation>
     </message>
     <message>
         <source>Print preview</source>
@@ -2644,7 +2644,7 @@ Das Projekt wurde nicht synchronisiert.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2065"/>
         <source>Two panel mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwei-Panel-Modus</translation>
     </message>
     <message>
         <source>Save As...</source>
@@ -2917,7 +2917,7 @@ Das Projekt wurde nicht synchronisiert.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="708"/>
         <source>Do you really want to delete script version named &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wollen Sie die Drehbuchversion &lt;b&gt;%1&lt;/b&gt; wirklich löschen?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="866"/>
@@ -3234,12 +3234,12 @@ Versuchen Sie den Download zu wiederholen.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="153"/>
         <source>Choose versions to compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Drehbuchversion zum Vergleichen wählen</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="223"/>
         <source>Script was restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>DAS Drehbuch wurde wieder hergestellt.</translation>
     </message>
 </context>
 <context>
@@ -3262,7 +3262,7 @@ Versuchen Sie den Download zu wiederholen.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="331"/>
         <source>Print preview script</source>
-        <translation type="unfinished"></translation>
+        <translation>Druckvorschau</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="501"/>
@@ -3302,7 +3302,7 @@ Versuchen Sie den Download zu wiederholen.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="280"/>
         <source>Start new version...</source>
-        <translation type="unfinished"></translation>
+        <translation>Erstelle neue Version...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="297"/>
@@ -3326,7 +3326,7 @@ Versuchen Sie den Download zu wiederholen.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="519"/>
         <source>DOWNLOAD UPDATE</source>
-        <translation type="unfinished"></translation>
+        <translation>UPDATE HERUNTERLADEN</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="585"/>
@@ -3492,12 +3492,12 @@ Versuchen Sie den Download zu wiederholen.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="242"/>
         <source>Italiano</source>
-        <translation type="unfinished"></translation>
+        <translation>Italiano</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="249"/>
         <source>Azərbaycan</source>
-        <translation type="unfinished"></translation>
+        <translation>Azərbaycan</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="286"/>
@@ -3803,27 +3803,27 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="102"/>
         <source>Name</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="42"/>
         <source>dd.MM.yyyy hh:mm</source>
-        <translation type="unfinished"></translation>
+        <translation>dd.MM.yyyy hh:mm</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="20"/>
         <source>Start a new version of the script</source>
-        <translation type="unfinished"></translation>
+        <translation>Erstelle eine neue Version des Drehbuchs</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="26"/>
         <source>Version date and time</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum und Uhrzeit des Drehbuchverison</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="112"/>
         <source>Description</source>
-        <translation type="unfinished">Beschreibung</translation>
+        <translation>Beschreibung</translation>
     </message>
 </context>
 <context>
@@ -4436,22 +4436,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="26"/>
         <source>Add scheme item</source>
-        <translation type="unfinished">Element zum Schema hinzufügen</translation>
+        <translation>Element hinzufügen</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="56"/>
         <source>Description:</source>
-        <translation type="unfinished">Beschreibung:</translation>
+        <translation>Beschreibung:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="80"/>
         <source>Header:</source>
-        <translation type="unfinished"></translation>
+        <translation>Überschrift:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="87"/>
         <source>Name:</source>
-        <translation type="unfinished">Name:</translation>
+        <translation>Name:</translation>
     </message>
 </context>
 <context>
@@ -4486,22 +4486,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="17"/>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="78"/>
         <source>Title</source>
-        <translation type="unfinished">Titel</translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="91"/>
         <source>Description</source>
-        <translation type="unfinished">Beschreibung</translation>
+        <translation>Beschreibung</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="113"/>
         <source>Remove version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version entfernen</translation>
     </message>
 </context>
 <context>
@@ -5214,7 +5214,9 @@ Absatz</translation>
         <source>
 
 New to KIT Scenarist?</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Neu bei KIT Scenarist?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="168"/>
@@ -5222,7 +5224,10 @@ New to KIT Scenarist?</source>
 and explore KIT Scenarist through 
 our help articles and tutorials.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Entdecken Sie KIT Scenarist!
+Unsere Hilfe und unsere Tutorials
+ermöglichen Ihnen einen einfachen Einstieg.
+</translation>
     </message>
     <message>
         <source>Released version 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;download&lt;/a&gt; or &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;read more&lt;/a&gt;.</source>
@@ -5639,12 +5644,12 @@ our help articles and tutorials.
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="95"/>
         <source>Compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Vergleichen</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="105"/>
         <source>with</source>
-        <translation type="unfinished"></translation>
+        <translation>mit</translation>
     </message>
 </context>
 <context>
@@ -6371,32 +6376,32 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="32"/>
         <source>Add Scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Szene hinzufügen</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
         <source>Add Folder</source>
-        <translation type="unfinished">Ordner hinzufügen</translation>
+        <translation>Ordner hinzufügen</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
         <source>Add Act</source>
-        <translation type="unfinished"></translation>
+        <translation>Akt hinzufügen</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="40"/>
         <source>Edit Scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Szene bearbeiten</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="41"/>
         <source>Edit Act</source>
-        <translation type="unfinished"></translation>
+        <translation>Akt bearbeiten</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="42"/>
         <source>Save</source>
-        <translation type="unfinished">Speichern</translation>
+        <translation>Speichern</translation>
     </message>
     <message>
         <source>Add scenario item</source>
@@ -6792,7 +6797,7 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionsList.cpp" line="65"/>
         <source>started by</source>
-        <translation type="unfinished"></translation>
+        <translation>starten bei...</translation>
     </message>
 </context>
 <context>
@@ -6888,13 +6893,13 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="206"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="767"/>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>Italienisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="211"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="759"/>
         <source>Azerbaijani</source>
-        <translation type="unfinished"></translation>
+        <translation>Aserbaidschanisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="591"/>

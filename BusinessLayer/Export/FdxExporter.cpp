@@ -276,9 +276,9 @@ void FdxExporter::writeTitlePage(QXmlStreamWriter& _writer, const ExportParamete
     }
 
     auto writeLine =
-            [&_writer] (const QString& _alignment = "Left",
-                        const QString& _content = QString{},
-                        const QString& _style = QString{}) {
+            [&_writer] (const QString& _alignment,
+                        const QString& _content,
+                        const QString& _style) {
         _writer.writeStartElement("Paragraph");
         _writer.writeAttribute("Type", "General");
         _writer.writeAttribute("Alignment", _alignment);
@@ -299,7 +299,7 @@ void FdxExporter::writeTitlePage(QXmlStreamWriter& _writer, const ExportParamete
     };
     auto writeEmptyLines = [&writeLine] (int _count) {
         for (int i = 0; i < _count; ++i) {
-            writeLine();
+            writeLine(QString("Left"), QString{}, QString{});
         }
     };
 
@@ -309,13 +309,13 @@ void FdxExporter::writeTitlePage(QXmlStreamWriter& _writer, const ExportParamete
     writeEmptyLines(16);
     writeLine("Center", _exportParameters.scriptName, "Underline");
     writeEmptyLines(3);
-    writeLine("Center", "Written by");
+    writeLine("Center", "Written by", QString{});
     writeEmptyLines(1);
-    writeLine("Center", _exportParameters.scriptAuthor);
+    writeLine("Center", _exportParameters.scriptAuthor, QString{});
     writeEmptyLines(20);
-    writeLine("Left", _exportParameters.scriptYear);
+    writeLine("Left", _exportParameters.scriptYear, QString{});
     writeEmptyLines(1);
-    writeLine("Left", _exportParameters.scriptContacts);
+    writeLine("Left", _exportParameters.scriptContacts, QString{});
 
     _writer.writeEndElement(); // Content
     _writer.writeEndElement(); // Title Page
