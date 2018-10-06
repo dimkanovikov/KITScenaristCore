@@ -31,6 +31,17 @@ namespace {
                 "application-version";
 #endif
     }
+    /**
+     * @brief Инвертированный ключ хранения номера версии, для проверок
+     */
+    static QString invertedApplicationVersionKey() {
+        return
+#ifdef MOBILE_OS
+                "application-version";
+#else
+                "application-version-mobile";
+#endif
+    }
 }
 
 
@@ -555,21 +566,21 @@ void Database::updateDatabase(QSqlDatabase& _database)
     //
     // Определим версию базы данных
     //
-    q_checker.exec(
-                QString("SELECT value as version FROM system_variables WHERE variable = '%1' ")
-                .arg(applicationVersionKey())
-                );
+    q_checker.prepare("SELECT value as version FROM system_variables WHERE variable = ? ");
+    q_checker.addBindValue(applicationVersionKey());
+    q_checker.exec();
+    q_checker.next();
     QString databaseVersion = q_checker.record().value("version").toString();
     //
-    // ... если версии нет (файл пришёл из другой версии мобильная-десктоп), то создадим её
+    // ... если версии нет (файл пришёл из другой версии мобильная <-> десктоп), то создадим её
     //
     if (databaseVersion.isEmpty()) {
-        q_checker.exec(
-                    QString("INSERT INTO system_variables VALUES ('%1', '%2')")
-                    .arg(applicationVersionKey())
-                    .arg(QApplication::applicationVersion())
-                    );
+        q_checker.addBindValue(invertedApplicationVersionKey());
+        q_checker.exec();
+        q_checker.next();
+        databaseVersion = q_checker.record().value("version").toString();
     }
+
     //
     // Некоторые версии выходили с ошибками, их заменяем на предыдущие
     //
