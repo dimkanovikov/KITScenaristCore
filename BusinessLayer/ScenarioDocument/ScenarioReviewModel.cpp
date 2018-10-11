@@ -492,15 +492,15 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
         //
         // Прорабатываем добавление
         //
-        int searchPosition = _position - _removed;
-        int searchPositionEnd = _position + _added - _removed;
+        int searchPosition = _position;
+        int searchPositionEnd = _position + _added;
         if (_added > 0) {
             for (int markIndex = startMarkIndex; markIndex < m_reviewMarks.size(); ++markIndex) {
                 ReviewMarkInfo& mark = m_reviewMarks[markIndex];
                 //
                 // Скорректировать позицию заметки после вставленного текст
                 //
-                if (mark.startPosition > _position + _added) {
+                if (mark.startPosition > _position) {
                     mark.startPosition += _added;
                 }
                 //
@@ -512,11 +512,11 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
                     // Корректируем начальную позицию поиска и количество добавленных символов,
                     // чтобы включить удалённый комментарий целиком
                     //
-                    if (searchPosition > mark.startPosition - _removed) {
-                        searchPosition = mark.startPosition - _removed;
+                    if (searchPosition > mark.startPosition) {
+                        searchPosition = mark.startPosition;
                     }
-                    if (searchPositionEnd < mark.endPosition() + _removed) {
-                        searchPositionEnd = mark.endPosition() + _removed;
+                    if (searchPositionEnd < mark.endPosition()) {
+                        searchPositionEnd = mark.endPosition();
                     }
 
                     //
