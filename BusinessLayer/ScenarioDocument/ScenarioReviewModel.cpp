@@ -500,7 +500,7 @@ void ScenarioReviewModel::aboutUpdateReviewModel(int _position, int _removed, in
                 //
                 // Скорректировать позицию заметки после вставленного текст
                 //
-                if (mark.startPosition > _position + _added) {
+                if (mark.startPosition > _position) {
                     mark.startPosition += _added;
                 }
                 //
