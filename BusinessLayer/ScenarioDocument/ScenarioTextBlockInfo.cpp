@@ -102,7 +102,7 @@ void SceneHeadingBlockInfo::setSceneNumberFixed(bool _fixed)
     m_fixed = _fixed;
 }
 
-unsigned SceneHeadingBlockInfo::sceneNumberFixNesting() const
+int SceneHeadingBlockInfo::sceneNumberFixNesting() const
 {
     return m_sceneNumberFixNesting;
 }

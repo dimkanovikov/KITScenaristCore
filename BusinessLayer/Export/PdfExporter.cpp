@@ -292,7 +292,7 @@ namespace {
             QFont font;
             font.setBold(true);
             font.setPixelSize(400);
-            const int maxWidth = sqrt(pow(_body.height(), 2) + pow(_body.width(), 2));
+            const int maxWidth = static_cast<int>(sqrt(pow(_body.height(), 2) + pow(_body.width(), 2)));
             QFontMetrics fontMetrics(font);
             while (fontMetrics.width(watermark) > maxWidth) {
                 font.setPixelSize(font.pixelSize() - 2);
@@ -509,6 +509,10 @@ PdfExporter::PdfExporter(QObject* _parent) :
 {
 }
 
+PdfExporter::~PdfExporter()
+{
+}
+
 void PdfExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& _exportParameters) const
 {
     //
@@ -581,7 +585,7 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     //
     // Настроим принтер
     //
-    QPrinter* printer = preparePrinter();
+    QScopedPointer<QPrinter> printer(preparePrinter());
 
     //
     // Сформируем документ
@@ -589,7 +593,7 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     ExportParameters fakeParameters = _exportParameters;
     fakeParameters.printScenesNumbers = false;
     fakeParameters.printDialoguesNumbers = false;
-    QTextDocument* preparedDocument = prepareDocument(_scenario, fakeParameters);
+    QScopedPointer<QTextDocument> preparedDocument(prepareDocument(_scenario, fakeParameters));
     //
     // ... настроим документ для печати
     //
@@ -605,20 +609,20 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     //
     // Сохраним указатель на документ для печати
     //
-    m_documentForPrint = preparedDocument;
+    m_documentForPrint.swap(preparedDocument);
 
     //
     // Настроим диалог предварительного просмотра
     //
-    QPrintPreviewDialog printDialog(printer, qApp->activeWindow());
+    QPrintPreviewDialog printDialog(printer.data(), qApp->activeWindow());
     printDialog.setWindowState(Qt::WindowMaximized);
     connect(&printDialog, &QPrintPreviewDialog::paintRequested, this, &PdfExporter::aboutPrint);
     if (m_lastScriptPreviewScrollPosition.first == _scenario) {
         //
         // Если осуществляется повторный предпросмотр документа, пробуем восстановить положение полосы прокрутки
         //
-        connect(this, &PdfExporter::printed, [this, &printDialog] {
-            QTimer::singleShot(300, [this, &printDialog] {
+        connect(this, &PdfExporter::printed, [&printDialog] {
+            QTimer::singleShot(300, [&printDialog] {
                 setPrintPreviewScrollValue(printDialog, m_lastScriptPreviewScrollPosition.second);
             });
         });
@@ -634,16 +638,7 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     //
     // Сохраняем позицию прокрутки
     //
-    m_lastScriptPreviewScrollPosition.second = ::printPreviewScrollValue(printDialog);
-
-    //
-    // Освобождаем память
-    //
-    m_documentForPrint = 0;
-    delete printer;
-    printer = 0;
-    delete preparedDocument;
-    preparedDocument = 0;
+    m_lastScriptPreviewScrollPosition.second = printPreviewScrollValue(printDialog);
 }
 
 void PdfExporter::printPreview(const ResearchModelCheckableProxy* _researchModel, const ExportParameters& _exportParameters)
@@ -651,24 +646,24 @@ void PdfExporter::printPreview(const ResearchModelCheckableProxy* _researchModel
     //
     // Настроим принтер
     //
-    QPrinter* printer = preparePrinter();
+    QScopedPointer<QPrinter> printer(preparePrinter());
 
     //
     // Сформируем документ
     //
-    QTextDocument* preparedDocument = prepareDocument(_researchModel, _exportParameters);
+    QScopedPointer<QTextDocument> preparedDocument(prepareDocument(_researchModel, _exportParameters));
     preparedDocument->setProperty(PRINT_TITLE_KEY, false);
     preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, true);
 
     //
     // Сохраним указатель на документ для печати
     //
-    m_documentForPrint = preparedDocument;
+    m_documentForPrint.swap(preparedDocument);
 
     //
     // Настроим диалог предварительного просмотра
     //
-    QPrintPreviewDialog printDialog(printer, qApp->activeWindow());
+    QPrintPreviewDialog printDialog(printer.data(), qApp->activeWindow());
     printDialog.setWindowState(Qt::WindowMaximized);
     connect(&printDialog, &QPrintPreviewDialog::paintRequested, this, &PdfExporter::aboutPrint);
 
@@ -680,21 +675,12 @@ void PdfExporter::printPreview(const ResearchModelCheckableProxy* _researchModel
     //
     // Сохраняем позицию прокрутки
     //
-    m_lastScriptPreviewScrollPosition.second = ::printPreviewScrollValue(printDialog);
-
-    //
-    // Освобождаем память
-    //
-    m_documentForPrint = nullptr;
-    delete printer;
-    printer = nullptr;
-    delete preparedDocument;
-    preparedDocument = nullptr;
+    m_lastScriptPreviewScrollPosition.second = printPreviewScrollValue(printDialog);
 }
 
 void PdfExporter::aboutPrint(QPrinter* _printer)
 {
-    ::printDocument(m_documentForPrint, _printer);
+    printDocument(m_documentForPrint.data(), _printer);
 
     emit printed();
 }
