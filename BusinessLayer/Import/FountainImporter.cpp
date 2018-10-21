@@ -808,26 +808,126 @@ void FountainImporter::appendBlock(const QString& _paragraphText, ScenarioBlockS
         paragraphText = paragraphText.mid(1);
     }
 
+    //
+    // У нас осталось незакрытое форматирование, а значит его нужно не закрыть, а убрать
+    //
+    if (m_lastFormat.isValid()) {
+        QVector<TextFormat> removedFormats;
+        if (!m_formats.empty()) {
+            for (int i = m_formats.size() - 1; i >= 0; --i) {
+                TextFormat& elem = m_formats[i];
+                TextFormat removed;
+
+                //
+                // У нас остался незакрытый жирный формат
+                //
+                if (m_lastFormat.bold) {
+                    if (!elem.bold) {
+                        //
+                        // Формат, начиная отсюда не является жирным. Значит, предыдущий был открывающим
+                        // Значит, на место предыдущего надо вернуть звездочки, а жирный незакрытый мы больше не ищем
+                        //
+                        m_lastFormat.bold = false;
+                        removed.bold = true;
+                    } else {
+                        //
+                        // Формат здесь все еще является жирным, значит просто перестаем его таковым считать
+                        //
+                        elem.bold = false;
+                    }
+                }
+
+                //
+                // Аналогично для остальных форматов
+                //
+                if (m_lastFormat.italic) {
+                    if (!elem.italic) {
+                        m_lastFormat.italic = false;
+                        removed.italic = true;
+                    }
+                    else {
+                        elem.italic = false;
+                    }
+                }
+
+                if (m_lastFormat.underline) {
+                    if (!elem.underline) {
+                        m_lastFormat.underline = false;
+                        removed.underline = true;
+                    } else {
+                        elem.underline = false;
+                    }
+                }
+
+                //
+                // У нас есть формат, который мы удалили (нам важна его позиция, чтобы вернуть символы)
+                //
+                if (removed.isValid()) {
+                    removed.start = m_lastFormat.start;
+                    removedFormats.push_back(removed);
+                }
+                m_lastFormat.start = elem.start;
+
+                //
+                // Может быть текущий формат стал бесполезным
+                //
+                if (!elem.isValid()) {
+                    m_formats.removeAt(i);
+                }
+
+                //
+                // Все закрыли, мы молодцы
+                //
+                if (!m_lastFormat.isValid()) {
+                    break;
+                }
+
+            }
+        }
+
+        //
+        // Что то еще осталось (это нормально), поэтому просто тоже вернем эти символы форматировани
+        //
+        if (m_lastFormat.isValid()) {
+            removedFormats.push_back(m_lastFormat);
+            m_lastFormat.clear();
+        }
+
+        //
+        // Возвращаем символы форматирования
+        //
+        for (const auto& format : removedFormats) {
+            QString addedStr;
+            if (format.bold) {
+                addedStr += "**";
+            }
+            if (format.italic) {
+                addedStr += "*";
+            }
+            if (format.underline) {
+                addedStr += "_";
+            }
+
+            //
+            // Сдвигаем/увеличиваем форматы на длину добавленных символов
+            //
+            for (auto& innerFormat : m_formats) {
+                if (innerFormat.start < format.start
+                        && innerFormat.start + innerFormat.length >= format.start) {
+                    innerFormat.length += addedStr.size();
+                } else if (innerFormat.start >= format.start) {
+                    innerFormat.start += addedStr.size();
+                }
+            }
+            paragraphText.insert(format.start, addedStr);
+        }
+    }
+
     const QString& blockTypeName = ScenarioBlockStyle::typeName(_type);
     _writer.writeStartElement(blockTypeName);
     _writer.writeStartElement(kNodeValue);
     _writer.writeCDATA(paragraphText);
     _writer.writeEndElement();
-
-    //
-    // Если есть форматирование, которое распространяется на несколько блоков
-    //
-    if (m_lastFormat.isValid()) {
-        //
-        // Добавим его в список форматов текущего блока
-        //
-        m_lastFormat.length = _paragraphText.trimmed().length() - m_lastFormat.start;
-        m_formats.append(m_lastFormat);
-        //
-        // Для следующего блока он будет начинаться с первого символа
-        //
-        m_lastFormat.start = m_lastFormat.length = 0;
-    }
 
     //
     // Пишем форматирование, если оно есть
