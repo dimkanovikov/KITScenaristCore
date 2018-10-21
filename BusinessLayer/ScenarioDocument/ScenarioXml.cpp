@@ -23,6 +23,16 @@
 using namespace BusinessLogic;
 
 namespace {
+    /**
+     * @brief Шаг увеличения размера кэша при его заполнении
+     */
+    const int kCostIncreaseStep = 100;
+
+    /**
+     * @brief Начальное значение размера кэша
+     */
+    const int kInitialCost  = 3000;
+
     const QString kNodeScript = "scenario";
     const QString kNodeValue = "v";
     const QString kNodeReviewGroup = "reviews";
@@ -255,11 +265,24 @@ ScenarioXml::ScenarioXml(ScenarioDocument* _scenario) :
 {
     Q_ASSERT(m_scenario);
 
-    m_xmlCache.setMaxCost(3000);
+    m_xmlCache.setMaxCost(kInitialCost);
 }
 
 QString ScenarioXml::scenarioToXml()
 {
+    //
+    // Проверим, чтобы ёмкость кэша была достаточной
+    //
+    {
+        const int maxCost = m_xmlCache.maxCost();
+        const int currentCost = m_scenario->document()->blockCount();
+        if (maxCost < currentCost
+            || maxCost > currentCost * 2) {
+            m_xmlCache.setMaxCost(currentCost + kCostIncreaseStep);
+        }
+    }
+
+
     //
     // Для формирования xml не используем QXmlStreamWriter, т.к. нам нужно хранить по отдельности
     // xml каждого блока, а QXmlStreamWriter не всегда закрывает последний записанный тэг,
