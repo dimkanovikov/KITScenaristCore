@@ -21,7 +21,12 @@ namespace BusinessLogic
         };
 
     public:
-        TextBlockInfo() = default;
+        TextBlockInfo();
+
+        /**
+         * @brief Получить айди блока
+         */
+        uint id() const;
 
         /**
          * @brief Установлена ли на блоке закладка
@@ -64,6 +69,11 @@ namespace BusinessLogic
         void setDiffType(DiffType _type);
 
     private:
+        /**
+         * @brief Глобальный айди блока, используется в качестве хэша
+         */
+        uint m_id = 0;
+
         /**
          * @brief Установлена ли закладка для блока
          */
@@ -249,7 +259,7 @@ namespace BusinessLogic
         /**
          * @brief Получить номер реплики
          */
-        int dialogueNumbder() const;
+        int dialogueNumber() const;
 
         /**
          * @brief Установить номер реплики

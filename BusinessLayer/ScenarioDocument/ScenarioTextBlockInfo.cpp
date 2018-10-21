@@ -6,6 +6,23 @@
 
 using namespace BusinessLogic;
 
+namespace {
+    /**
+     * @brief Счётчик идентификаторов блоков, используется в качестве хэша для быстрого поиска блоков
+     */
+    static uint g_idCounter = 0;
+}
+
+
+TextBlockInfo::TextBlockInfo()
+    : m_id(++g_idCounter)
+{
+}
+
+uint TextBlockInfo::id() const
+{
+    return m_id;
+}
 
 bool TextBlockInfo::hasBookmark() const
 {
@@ -203,7 +220,7 @@ SceneHeadingBlockInfo* SceneHeadingBlockInfo::clone() const
 // ****
 
 
-int CharacterBlockInfo::dialogueNumbder() const
+int CharacterBlockInfo::dialogueNumber() const
 {
     return m_dialogueNumber;
 }

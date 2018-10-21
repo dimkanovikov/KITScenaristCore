@@ -760,7 +760,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                     //
                     if (_exportParameters.printDialoguesNumbers
                         && characterInfo != nullptr) {
-                        const QString dialogueNumber = QString("%1: ").arg(characterInfo->dialogueNumbder());
+                        const QString dialogueNumber = QString("%1: ").arg(characterInfo->dialogueNumber());
                         destDocumentCursor.insertText(dialogueNumber);
                         additionalSpaceForNumber = dialogueNumber.length();
                     }

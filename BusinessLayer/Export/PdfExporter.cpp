@@ -158,7 +158,7 @@ namespace {
                         _painter->setFont(font);
                         //
                         if (QLocale().textDirection() == Qt::LeftToRight) {
-                            const QString dialogueNumber = QString("%1:").arg(blockInfo->dialogueNumbder());
+                            const QString dialogueNumber = QString("%1:").arg(blockInfo->dialogueNumber());
                             const int numberDelta = _painter->fontMetrics().width(dialogueNumber);
                             QRectF dialogueNumberRect;
                             if (block.blockFormat().leftMargin() > numberDelta) {
@@ -179,7 +179,7 @@ namespace {
                             }
                             _painter->drawText(dialogueNumberRect, Qt::AlignRight | Qt::AlignTop, dialogueNumber);
                         } else {
-                            const QString dialogueNumber = QString(":%1").arg(blockInfo->dialogueNumbder());
+                            const QString dialogueNumber = QString(":%1").arg(blockInfo->dialogueNumber());
                             const int numberDelta = _painter->fontMetrics().width(dialogueNumber);
                             QRectF dialogueNumberRect;
                             if (block.blockFormat().rightMargin() > numberDelta) {

@@ -83,6 +83,10 @@ namespace {
         // TODO: Нужно оптимизировать формирование хэша, т.к. от него напрямую зависит
         //       скорость формирования xml-документа сценария
         //
+        TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(_block.userData());
+        if (blockInfo != nullptr) {
+            return blockInfo->id();
+        }
 
         //
         // Формируем уникальную строку, главное, чтобы два разных блока не имели одинакового хэша,
@@ -1574,19 +1578,21 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         }
                         cursor.block().setUserData(info);
                     }
+                    //
+                    // Для всех остальных блоков создаём структурку с данными о блоке
+                    //
+                    else {
+                        TextBlockInfo* info = tokenType == ScenarioBlockStyle::Character
+                                              ? new CharacterBlockInfo
+                                              : new TextBlockInfo;
+                        cursor.block().setUserData(info);
+                    }
 
                     //
                     // Загружаем закладки, если установлены
                     //
                     if (reader.attributes().hasAttribute(ATTRIBUTE_BOOKMARK)) {
                         TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(cursor.block().userData());
-                        if (blockInfo == nullptr) {
-                            if (tokenType == ScenarioBlockStyle::Character) {
-                                blockInfo = new CharacterBlockInfo;
-                            } else {
-                                blockInfo = new TextBlockInfo;
-                            }
-                        }
                         blockInfo->setHasBookmark(true);
                         blockInfo->setBookmark(reader.attributes().value(ATTRIBUTE_BOOKMARK).toString());
                         blockInfo->setBookmarkColor(reader.attributes().value(ATTRIBUTE_BOOKMARK_COLOR).toString());
@@ -1599,13 +1605,6 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                     if (reader.attributes().hasAttribute(ATTRIBUTE_DIFF_ADDED)
                         || reader.attributes().hasAttribute(ATTRIBUTE_DIFF_REMOVED)) {
                         TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(cursor.block().userData());
-                        if (blockInfo == nullptr) {
-                            if (tokenType == ScenarioBlockStyle::Character) {
-                                blockInfo = new CharacterBlockInfo;
-                            } else {
-                                blockInfo = new TextBlockInfo;
-                            }
-                        }
 
                         if (reader.attributes().hasAttribute(ATTRIBUTE_DIFF_ADDED)) {
                             blockInfo->setDiffType(TextBlockInfo::kDiffAdded);

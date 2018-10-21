@@ -1372,7 +1372,14 @@ void ScenarioDocument::updateDocumentScenesAndDialoguesNumbers()
                 break;
             }
 
-            default: break;
+            default: {
+                QTextBlockUserData* textBlockData = block.userData();
+                if (textBlockData == nullptr) {
+                    textBlockData = new TextBlockInfo;
+                    block.setUserData(textBlockData);
+                }
+                break;
+            }
         }
 
         block = block.next();

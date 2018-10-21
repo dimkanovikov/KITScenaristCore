@@ -1542,7 +1542,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                 // Определим номер реплики
                                 //
                                 if (CharacterBlockInfo* info = dynamic_cast<CharacterBlockInfo*>(blockInfo)) {
-                                    const QString dialogueNumber = QString::number(info->dialogueNumbder()) + ":";
+                                    const QString dialogueNumber = QString::number(info->dialogueNumber()) + ":";
 
                                     //
                                     // Определим область для отрисовки и выведем номер реплики в редактор
