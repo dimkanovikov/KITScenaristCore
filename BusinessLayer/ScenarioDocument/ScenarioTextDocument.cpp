@@ -1,6 +1,7 @@
 #include "ScenarioTextDocument.h"
 
 #include "ScenarioReviewModel.h"
+#include "ScenarioTextBlockInfo.h"
 #include "ScenarioXml.h"
 #include "ScriptBookmarksModel.h"
 #include "ScriptTextCorrector.h"
@@ -90,6 +91,7 @@ ScenarioTextDocument::ScenarioTextDocument(QObject *parent, ScenarioXml* _xmlHan
     m_outlineMode(false),
     m_corrector(new ScriptTextCorrector(this))
 {
+    connect(this, &ScenarioTextDocument::contentsChange, this, &ScenarioTextDocument::updateBlocksIds);
     connect(m_reviewModel, &ScenarioReviewModel::reviewChanged, this, &ScenarioTextDocument::reviewChanged);
     connect(m_bookmarksModel, &ScriptBookmarksModel::modelChanged, this, &ScenarioTextDocument::bookmarksChanged);
 }
@@ -569,6 +571,21 @@ void ScenarioTextDocument::setCorrectionOptions(bool _needToCorrectCharactersNam
 void ScenarioTextDocument::correct(int _position, int _charsRemoved, int _charsAdded)
 {
     m_corrector->correct(_position, _charsRemoved, _charsAdded);
+}
+
+void ScenarioTextDocument::updateBlocksIds(int _position, int _charsRemoved, int _charsAdded)
+{
+    Q_UNUSED(_charsRemoved);
+
+    auto block = findBlock(_position);
+    while (block.isValid()
+           && block.position() < _position + _charsAdded) {
+        if (auto blockInfo = dynamic_cast<TextBlockInfo*>(block.userData())) {
+            blockInfo->updateId();
+        }
+
+        block = block.next();
+    }
 }
 
 void ScenarioTextDocument::removeIdenticalParts(QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml>& _xmls, bool _reversed)

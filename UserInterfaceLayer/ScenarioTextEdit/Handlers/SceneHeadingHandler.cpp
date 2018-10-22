@@ -126,7 +126,7 @@ void SceneHeadingHandler::handleEnter(QKeyEvent* _event)
         //
         // Если нужно автоматически перепрыгиваем к следующему блоку
         //
-        if (_event != 0 // ... чтобы таб не переводил на новую строку
+        if (_event != nullptr // ... чтобы таб не переводил на новую строку
             && autoJumpToNextBlock()
             && currentSection == SceneHeadingParser::SectionTime) {
             //
@@ -381,7 +381,7 @@ void SceneHeadingHandler::complete(const QString& _currentBlockText, const QStri
     //
     // Получим модель подсказок для текущей секции и выведем пользователю
     //
-    QAbstractItemModel* sectionModel = 0;
+    QAbstractItemModel* sectionModel = nullptr;
     //
     // ... в соответствии со введённым в секции текстом
     //

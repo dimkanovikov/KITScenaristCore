@@ -10,18 +10,23 @@ namespace {
     /**
      * @brief Счётчик идентификаторов блоков, используется в качестве хэша для быстрого поиска блоков
      */
-    static uint g_idCounter = 0;
+    static quint64 g_idCounter = 0;
 }
 
 
 TextBlockInfo::TextBlockInfo()
-    : m_id(++g_idCounter)
 {
+    updateId();
 }
 
-uint TextBlockInfo::id() const
+quint64 TextBlockInfo::id() const
 {
     return m_id;
+}
+
+void TextBlockInfo::updateId()
+{
+    m_id = ++g_idCounter;
 }
 
 bool TextBlockInfo::hasBookmark() const
@@ -31,7 +36,10 @@ bool TextBlockInfo::hasBookmark() const
 
 void TextBlockInfo::setHasBookmark(bool _hasBookmark)
 {
-    m_hasBookmark = _hasBookmark;
+    if (m_hasBookmark != _hasBookmark) {
+        m_hasBookmark = _hasBookmark;
+        updateId();
+    }
 }
 
 QString TextBlockInfo::bookmark() const
@@ -41,7 +49,10 @@ QString TextBlockInfo::bookmark() const
 
 void TextBlockInfo::setBookmark(const QString& _bookmark)
 {
-    m_bookmark = _bookmark;
+    if (m_bookmark != _bookmark) {
+        m_bookmark = _bookmark;
+        updateId();
+    }
 }
 
 QColor TextBlockInfo::bookmarkColor() const
@@ -51,7 +62,10 @@ QColor TextBlockInfo::bookmarkColor() const
 
 void TextBlockInfo::setBookmarkColor(const QColor& _color)
 {
-    m_bookmarkColor = _color;
+    if (m_bookmarkColor != _color) {
+        m_bookmarkColor = _color;
+        updateId();
+    }
 }
 
 QColor TextBlockInfo::diffColor() const
@@ -78,6 +92,8 @@ void TextBlockInfo::setDiffType(TextBlockInfo::DiffType _type)
     if (m_diffColor.isValid()) {
         m_diffColor.setAlpha(120);
     }
+
+    updateId();
 }
 
 
@@ -101,6 +117,7 @@ void SceneHeadingBlockInfo::setUuid(const QString& _uuid)
 {
     if (m_uuid != _uuid) {
         m_uuid = _uuid;
+        updateId();
     }
 }
 
@@ -116,7 +133,10 @@ bool SceneHeadingBlockInfo::isSceneNumberFixed() const
 
 void SceneHeadingBlockInfo::setSceneNumberFixed(bool _fixed)
 {
-    m_fixed = _fixed;
+    if (m_fixed != _fixed) {
+        m_fixed = _fixed;
+        updateId();
+    }
 }
 
 int SceneHeadingBlockInfo::sceneNumberFixNesting() const
@@ -124,9 +144,12 @@ int SceneHeadingBlockInfo::sceneNumberFixNesting() const
     return m_sceneNumberFixNesting;
 }
 
-void SceneHeadingBlockInfo::setSceneNumberFixNesting(unsigned sceneNumberFixNesting)
+void SceneHeadingBlockInfo::setSceneNumberFixNesting(int _sceneNumberFixNesting)
 {
-    m_sceneNumberFixNesting = sceneNumberFixNesting;
+    if (m_sceneNumberFixNesting != _sceneNumberFixNesting) {
+        m_sceneNumberFixNesting = _sceneNumberFixNesting;
+        updateId();
+    }
 }
 
 int SceneHeadingBlockInfo::sceneNumberSuffix() const
@@ -136,7 +159,10 @@ int SceneHeadingBlockInfo::sceneNumberSuffix() const
 
 void SceneHeadingBlockInfo::setSceneNumberSuffix(int sceneNumberSuffix)
 {
-    m_sceneNumberSuffix = sceneNumberSuffix;
+    if (m_sceneNumberSuffix != sceneNumberSuffix) {
+        m_sceneNumberSuffix = sceneNumberSuffix;
+        updateId();
+    }
 }
 
 QString SceneHeadingBlockInfo::sceneNumber() const
@@ -148,6 +174,7 @@ void SceneHeadingBlockInfo::setSceneNumber(const QString& _number)
 {
     if (m_sceneNumber != _number) {
         m_sceneNumber = _number;
+        updateId();
     }
 }
 
@@ -160,6 +187,7 @@ void SceneHeadingBlockInfo::setColors(const QString& _colors)
 {
     if (m_colors != _colors) {
         m_colors = _colors;
+        updateId();
     }
 }
 
@@ -172,6 +200,7 @@ void SceneHeadingBlockInfo::setStamp(const QString& _stamp)
 {
     if (m_stamp != _stamp) {
         m_stamp = _stamp;
+        updateId();
     }
 }
 
@@ -184,6 +213,7 @@ void SceneHeadingBlockInfo::setName(const QString& _name)
 {
     if (m_name != _name) {
         m_name = _name;
+        updateId();
     }
 }
 
@@ -199,6 +229,7 @@ void SceneHeadingBlockInfo::setDescription(const QString& _description)
     //
     if (m_description != _description) {
         m_description = _description;
+        updateId();
     }
 }
 
@@ -229,6 +260,7 @@ void CharacterBlockInfo::setDialogueNumber(int _number)
 {
     if (m_dialogueNumber != _number) {
         m_dialogueNumber = _number;
+        updateId();
     }
 }
 

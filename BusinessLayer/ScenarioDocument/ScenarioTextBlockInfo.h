@@ -26,7 +26,12 @@ namespace BusinessLogic
         /**
          * @brief Получить айди блока
          */
-        uint id() const;
+        quint64 id() const;
+
+        /**
+         * @brief Обновить айди блока
+         */
+        void updateId();
 
         /**
          * @brief Установлена ли на блоке закладка
@@ -72,7 +77,7 @@ namespace BusinessLogic
         /**
          * @brief Глобальный айди блока, используется в качестве хэша
          */
-        uint m_id = 0;
+        quint64 m_id = 0;
 
         /**
          * @brief Установлена ли закладка для блока
@@ -146,7 +151,7 @@ namespace BusinessLogic
         /**
          * @brief Задать группу фиксации
          */
-        void setSceneNumberFixNesting(unsigned sceneNumberFixNesting);
+        void setSceneNumberFixNesting(int sceneNumberFixNesting);
 
         /**
          * @brief Номер в группе фиксации

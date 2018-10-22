@@ -66,8 +66,8 @@ namespace BusinessLogic
         /**
          * @brief Вложенность (группа) номера фиксации
          */
-        unsigned fixNesting() const;
-        void setFixNesting(unsigned _fix_nesting);
+        int fixNesting() const;
+        void setFixNesting(int _fixNesting);
 
         /**
          * @brief Порядковый номер в группе фиксации
@@ -191,7 +191,7 @@ namespace BusinessLogic
         /**
          * @brief Вложенность фиксации номера сцены
          */
-        unsigned m_fixNesting = 0;
+        int m_fixNesting = 0;
 
         /**
          * @brief Номер суффикса для номера сцены

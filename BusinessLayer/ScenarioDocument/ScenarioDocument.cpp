@@ -1148,9 +1148,9 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
     // .. зафиксирован ли номер сцены
     const bool sceneNumberFixed = itemSceneIsFixed(_item);
     // .. номер в группе фиксации
-    const unsigned numberSuffix = itemSceneNumberSuffix(_item);
+    const int numberSuffix = itemSceneNumberSuffix(_item);
     // .. группа фиксации (сколько раз была зафиксирована)
-    const unsigned sceneNumberFixNesting = itemSceneFixNesting(_item);
+    const int sceneNumberFixNesting = itemSceneFixNesting(_item);
     // ... текст и описание
     QString itemText;
     QString description;
@@ -1373,10 +1373,8 @@ void ScenarioDocument::updateDocumentScenesAndDialoguesNumbers()
             }
 
             default: {
-                QTextBlockUserData* textBlockData = block.userData();
-                if (textBlockData == nullptr) {
-                    textBlockData = new TextBlockInfo;
-                    block.setUserData(textBlockData);
+                if (block.userData() == nullptr) {
+                    block.setUserData(new TextBlockInfo);
                 }
                 break;
             }

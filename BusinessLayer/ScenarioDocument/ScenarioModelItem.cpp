@@ -114,14 +114,14 @@ void ScenarioModelItem::setFixed(bool _fixed)
     m_fixed = _fixed;
 }
 
-unsigned ScenarioModelItem::fixNesting() const
+int ScenarioModelItem::fixNesting() const
 {
     return m_fixNesting;
 }
 
-void ScenarioModelItem::setFixNesting(unsigned _fix_nesting)
+void ScenarioModelItem::setFixNesting(int _fixNesting)
 {
-    m_fixNesting = _fix_nesting;
+    m_fixNesting = _fixNesting;
 }
 
 int ScenarioModelItem::numberSuffix() const

@@ -171,6 +171,11 @@ namespace BusinessLogic
 
     private:
         /**
+         * @brief Обновить идентификаторы изменившихся блоков
+         */
+        void updateBlocksIds(int _position, int _charsRemoved, int _charsAdded);
+
+        /**
          * @brief Процедура удаления одинаковый первых и последних частей в xml-строках у _xmls
          * _reversed = false - удаляем первые, = true - удаляем последние
          */
