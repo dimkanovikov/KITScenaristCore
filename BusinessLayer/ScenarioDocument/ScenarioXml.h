@@ -113,7 +113,7 @@ namespace BusinessLogic
          * @brief Закешированное xml-содержимое блоков
          * @note Используется, для ускорения формирования xml всего сценария
          */
-        QCache<uint, QString> m_xmlCache;
+        QCache<quint64, QString> m_xmlCache;
     };
 }
 

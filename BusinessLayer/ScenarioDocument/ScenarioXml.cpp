@@ -77,7 +77,7 @@ namespace {
     /**
      * @brief Сформировать хэш для текстового блока
      */
-    static inline uint blockHash(const QTextBlock& _block)
+    static inline quint64 blockHash(const QTextBlock& _block)
     {
         //
         // TODO: Нужно оптимизировать формирование хэша, т.к. от него напрямую зависит
@@ -280,9 +280,10 @@ QString ScenarioXml::scenarioToXml()
     {
         const int maxCost = m_xmlCache.maxCost();
         const int currentCost = m_scenario->document()->blockCount();
-        if (maxCost < currentCost
-            || maxCost > currentCost * 2) {
-            m_xmlCache.setMaxCost(currentCost + kCostIncreaseStep);
+        if (currentCost > kInitialCost
+            && (maxCost < currentCost
+                || maxCost > currentCost * 2)) {
+            m_xmlCache.setMaxCost(std::max(kInitialCost, currentCost + kCostIncreaseStep));
         }
     }
 
@@ -302,7 +303,7 @@ QString ScenarioXml::scenarioToXml()
     bool isSecondColumn = false;
     do {
         currentBlockXml.clear();
-        const uint currentBlockHash = blockHash(currentBlock);
+        const quint64 currentBlockHash = blockHash(currentBlock);
 
         //
         // Определим тип текущего блока
@@ -1571,10 +1572,10 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                             info->setSceneNumberFixed(true);
                         }
                         if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING)) {
-                            info->setSceneNumberFixNesting(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING).toUInt());
+                            info->setSceneNumberFixNesting(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING).toInt());
                         }
                         if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER_SUFFIX)) {
-                            info->setSceneNumberSuffix(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_SUFFIX).toUInt());
+                            info->setSceneNumberSuffix(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_SUFFIX).toInt());
                         }
                         cursor.block().setUserData(info);
                     }
