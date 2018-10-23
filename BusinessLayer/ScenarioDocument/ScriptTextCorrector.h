@@ -7,6 +7,8 @@
 #include <QSizeF>
 #include <QVector>
 
+#include <cmath>
+
 class QTextBlock;
 class QTextBlockFormat;
 class QTextDocument;
@@ -169,26 +171,33 @@ namespace BusinessLogic
          */
         struct BlockInfo {
             BlockInfo() = default;
-            BlockInfo(qreal _height, qreal _top) :
+            explicit BlockInfo(qreal _height, qreal _top) :
                 height(_height),
                 top(_top)
             {}
 
             /**
+             * @brief Валиден ли блок
+             */
+            bool isValid() const {
+                return !std::isnan(height) && !std::isnan(top);
+            }
+
+            /**
              * @brief Высота блока
              */
-            qreal height = 0.0;
+            qreal height = std::numeric_limits<qreal>::quiet_NaN();
 
             /**
              * @brief Позиция блока от начала страницы
              */
-            qreal top = 0.0;
+            qreal top = std::numeric_limits<qreal>::quiet_NaN();
         };
 
         /**
-         * @brief Модель блоков <порядковый номер блока, параметры блока>
+         * @brief Модель параметров блоков
          */
-        QHash<int, BlockInfo> m_blockItems;
+        QVector<BlockInfo> m_blockItems;
 
         /**
          * @brief Список декораций документа <позиция, длина>

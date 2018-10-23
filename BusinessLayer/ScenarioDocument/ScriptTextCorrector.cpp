@@ -290,10 +290,20 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
     //
     // Если размер изменился, необходимо пересчитать все блоки
     //
-    if (m_lastDocumentSize.width() != pageWidth
-        || m_lastDocumentSize.height() != pageHeight) {
+    if (!qFuzzyCompare(m_lastDocumentSize.width(), pageWidth)
+        || !qFuzzyCompare(m_lastDocumentSize.height(), pageHeight)) {
         m_blockItems.clear();
         m_lastDocumentSize = QSizeF(pageWidth, pageHeight);
+    }
+
+    //
+    // При необходимости скорректируем размер модели параметров блоков для дальнейшего использования
+    //
+    {
+        const int blocksCount = m_document->blockCount();
+        if (m_blockItems.size() < blocksCount) {
+            m_blockItems.resize(blocksCount * 2);
+        }
     }
 
     //
@@ -304,13 +314,19 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
     //
     // Определим список блоков для принудительной ручной проверки
     // NOTE: Это необходимо для того, чтобы корректно обрабатывать изменение текста
-    //       в следующих за переносом блоках
+    //       в предыдущих и следующих за переносом блоках
     //
     QSet<int> blocksToRecheck;
     if (_position != -1) {
         QTextBlock blockToRecheck = m_document->findBlock(_position);
         //
-        // Максимальное количество блоков которое может быть перенесено на новую страницу
+        // ... спускаемся на два блока вперёд
+        //
+        blockToRecheck = blockToRecheck.next();
+        blockToRecheck = blockToRecheck.next();
+        //
+        // ... и возвращаемся на пять блоков назад
+        // NOTE: максимальное количество блоков которое может быть перенесено на новую страницу
         //
         int recheckBlocksCount = 5;
         do {
@@ -336,9 +352,14 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
     //
     // ... значение нижней позиции последнего блока относительно начала страницы
     //
-    qreal lastBlockHeight = 0;
+    qreal lastBlockHeight = 0.0;
     m_currentBlockNumber = 0;
     while (block.isValid()) {
+        if (block.text().contains("Камера спускается")) {
+            int i = 0;
+            ++i;
+        }
+
         //
         // Пропускаем невидимые блоки
         //
@@ -359,7 +380,7 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
         // ... если блок первый на странице, то для него не нужно учитывать верхний отступ
         //
         const qreal blockHeight =
-                lastBlockHeight == 0
+                qFuzzyCompare(lastBlockHeight, 0.0)
                 ? blockLineHeight * blockLineCount + blockFormat.bottomMargin()
                 : blockLineHeight * blockLineCount + blockFormat.topMargin() + blockFormat.bottomMargin();
         //
@@ -398,9 +419,9 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
         // Проверяем, изменилась ли позиция блока,
         // и что текущий блок это не изменённый блок под курсором
         //
-        if (m_blockItems.contains(m_currentBlockNumber)
-            && m_blockItems[m_currentBlockNumber].height == blockHeight
-            && m_blockItems[m_currentBlockNumber].top == lastBlockHeight
+        if (m_blockItems[m_currentBlockNumber].isValid()
+            && qFuzzyCompare(m_blockItems[m_currentBlockNumber].height, blockHeight)
+            && qFuzzyCompare(m_blockItems[m_currentBlockNumber].top, lastBlockHeight)
             && !blocksToRecheck.contains(m_currentBlockNumber)) {
             //
             // Если не изменилась
@@ -490,7 +511,7 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
             // ... и проработаем текущий блок с начала
             //
             block = cursor.block();
-            updateBlockLayout(pageWidth, block);
+            updateBlockLayout(static_cast<int>(pageWidth), block);
             continue;
         }
 
