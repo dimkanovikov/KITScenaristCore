@@ -137,7 +137,9 @@ void PageTextEditPrivate::createAutoBulletList()
     cursor.createList(listFmt);
 
     cursor.endEditBlock();
-    control->setTextCursor(cursor);
+
+    Q_Q(PageTextEdit);
+    q->doSetTextCursor(cursor);
 }
 
 void PageTextEditPrivate::init(const QString &html)
@@ -145,6 +147,7 @@ void PageTextEditPrivate::init(const QString &html)
     Q_Q(PageTextEdit);
     control = new PageTextEditControl(q);
     control->setPalette(q->palette());
+    control->setCursorWidth(0);
 
     QObject::connect(control, SIGNAL(microFocusChanged()), q, SLOT(updateMicroFocus()));
     QObject::connect(control, SIGNAL(documentSizeChanged(QSizeF)), q, SLOT(_q_adjustScrollbars()));
@@ -186,9 +189,6 @@ void PageTextEditPrivate::init(const QString &html)
     q->setInputMethodHints(Qt::ImhMultiLine);
 #ifndef QT_NO_CURSOR
     viewport->setCursor(Qt::IBeamCursor);
-#endif
-#if 0 // Used to be included in Qt4 for Q_WS_WIN
-    setSingleFingerPanEnabled(true);
 #endif
 }
 
@@ -243,7 +243,9 @@ void PageTextEditPrivate::pageUpDown(QTextCursor::MoveOperation op, QTextCursor:
             vbar->triggerAction(QAbstractSlider::SliderPageStepAdd);
         }
     }
-    control->setTextCursor(cursor);
+
+    Q_Q(PageTextEdit);
+    q->doSetTextCursor(cursor);
 }
 
 #ifndef QT_NO_SCROLLBAR
@@ -764,7 +766,7 @@ void PageTextEdit::setAlignment(Qt::Alignment a)
     fmt.setAlignment(a);
     QTextCursor cursor = d->control->textCursor();
     cursor.mergeBlockFormat(fmt);
-    d->control->setTextCursor(cursor);
+    doSetTextCursor(cursor);
 }
 
 /*!
@@ -849,6 +851,7 @@ void PageTextEdit::doSetTextCursor(const QTextCursor &cursor)
 {
     Q_D(PageTextEdit);
     d->control->setTextCursor(cursor);
+    d->control->setCursorWidth(0);
 }
 
 /*!
@@ -1889,6 +1892,33 @@ void PageTextEditPrivate::paintWatermark(QPainter* _painter)
     }
 }
 
+void PageTextEditPrivate::paintCursor(QPainter* _painter)
+{
+    Q_Q(PageTextEdit);
+
+    static bool isCursorVisible = true;
+    isCursorVisible = !isCursorVisible;
+    if (isCursorVisible
+        && q->hasFocus()) {
+        _painter->save();
+        auto rect = q->cursorRect();
+        rect.setWidth(1);
+        //
+        // Для RTL делаем ручную корректировку позиции отображения курсора
+        //
+        if (q->isRightToLeft() && q->textCursor().block().text().isEmpty()) {
+            const qreal textRight = viewport->width()
+                                  - q->document()->rootFrame()->frameFormat().rightMargin()
+                                  + hbar->value();
+            rect.moveLeft(static_cast<int>(textRight));
+        }
+        _painter->setBrush(q->textCursor().charFormat().foreground());
+        _painter->setPen(Qt::transparent);
+        _painter->drawRect(rect);
+        _painter->restore();
+    }
+}
+
 void PageTextEditPrivate::clipPageDecorationRegions(QPainter* _painter)
 {
     Q_Q(PageTextEdit);
@@ -2172,9 +2202,8 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
     const int xOffset = horizontalOffset();
     const int yOffset = verticalOffset();
 
-    QRect r = e->rect();
+    p->save();
     p->translate(-xOffset, -yOffset);
-    r.translate(xOffset, yOffset);
 
     QTextDocument *doc = control->document();
     QTextDocumentLayout *layout = qobject_cast<QTextDocumentLayout *>(doc->documentLayout());
@@ -2184,6 +2213,8 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
     if (layout)
         layout->setViewport(viewport->rect());
 
+    QRect r = e->rect();
+    r.translate(xOffset, yOffset);
     control->drawContents(p, r, q_func());
 
     if (layout)
@@ -2201,6 +2232,10 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
         const int margin = int(doc->documentMargin());
         p->drawText(viewport->rect().adjusted(margin, margin, -margin, -margin), Qt::AlignTop | Qt::TextWordWrap, placeholderText);
     }
+
+    p->restore();
+
+    paintCursor(p);
 }
 
 /*! \fn void PageTextEdit::paintEvent(QPaintEvent *event)
@@ -2700,24 +2735,6 @@ void PageTextEdit::setTabStopWidth(int width)
         return;
     opt.setTabStop(width);
     d->control->document()->setDefaultTextOption(opt);
-}
-
-/*!
-    \since 4.2
-    \property PageTextEdit::cursorWidth
-
-    This property specifies the width of the cursor in pixels. The default value is 1.
-*/
-int PageTextEdit::cursorWidth() const
-{
-    Q_D(const PageTextEdit);
-    return d->control->cursorWidth();
-}
-
-void PageTextEdit::setCursorWidth(int width)
-{
-    Q_D(PageTextEdit);
-    d->control->setCursorWidth(width);
 }
 
 /*!

@@ -167,6 +167,11 @@ public:
     void paintWatermark(QPainter* _painter);
 
     /**
+     * @brief Нарисовать курсор
+     */
+    void paintCursor(QPainter* _painter);
+
+    /**
      * @brief Установить область обрезки так, чтобы вырезалось всё, что выходит на поля страницы
      */
     void clipPageDecorationRegions(QPainter* _painter);

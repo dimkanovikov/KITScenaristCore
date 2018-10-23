@@ -74,7 +74,6 @@ class PageTextEdit : public QAbstractScrollArea
     Q_PROPERTY(bool overwriteMode READ overwriteMode WRITE setOverwriteMode)
     Q_PROPERTY(int tabStopWidth READ tabStopWidth WRITE setTabStopWidth)
     Q_PROPERTY(bool acceptRichText READ acceptRichText WRITE setAcceptRichText)
-    Q_PROPERTY(int cursorWidth READ cursorWidth WRITE setCursorWidth)
     Q_PROPERTY(Qt::TextInteractionFlags textInteractionFlags READ textInteractionFlags WRITE setTextInteractionFlags)
     Q_PROPERTY(QTextDocument *document READ document WRITE setDocument DESIGNABLE false)
     Q_PROPERTY(QString placeholderText READ placeholderText WRITE setPlaceholderText)
@@ -198,9 +197,6 @@ public:
 
     int tabStopWidth() const;
     void setTabStopWidth(int width);
-
-    int cursorWidth() const;
-    void setCursorWidth(int width);
 
     bool acceptRichText() const;
     void setAcceptRichText(bool accept);
