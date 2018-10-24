@@ -36,7 +36,7 @@
 #include <QStringListModel>
 #include <QStyleHints>
 #ifndef MOBILE_OS
-#include <QSound>
+#include <QSoundEffect>
 #endif
 #include <QTextBlock>
 #include <QTextCursor>
@@ -696,29 +696,33 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
     // Музицируем
     //
     if (m_keyboardSoundEnabled) {
-        static QSound s_returnSound(":/Audio/Sound/return.wav");
-        static QSound s_spaceSound(":/Audio/Sound/space.wav");
-        static QSound s_deleteSound(":/Audio/Sound/backspace.wav");
-        static QSound s_key1Sound(":/Audio/Sound/key-01.wav");
-        static QSound s_key2Sound(":/Audio/Sound/key-02.wav");
-        static QSound s_key3Sound(":/Audio/Sound/key-03.wav");
-        static QSound s_key4Sound(":/Audio/Sound/key-04.wav");
-        static QVector<QSound*> s_keySounds = { &s_key1Sound, &s_key2Sound, &s_key3Sound, &s_key4Sound };
+        auto makeSound = [this] (const QString& path) {
+            QSoundEffect* sound = new QSoundEffect(this);
+            sound->setSource(QUrl::fromLocalFile(path));
+            return sound;
+        };
+        static auto s_returnSound = makeSound(":/Audio/Sound/return.wav");
+        static auto s_spaceSound = makeSound(":/Audio/Sound/space.wav");
+        static auto s_deleteSound = makeSound(":/Audio/Sound/backspace.wav");
+        static QVector<QSoundEffect*> s_keySounds = { makeSound(":/Audio/Sound/key-01.wav"),
+                                                      makeSound(":/Audio/Sound/key-02.wav"),
+                                                      makeSound(":/Audio/Sound/key-03.wav"),
+                                                      makeSound(":/Audio/Sound/key-04.wav") };
         switch (_event->key()) {
             case Qt::Key_Return:
             case Qt::Key_Enter: {
-                s_returnSound.play();
+                s_returnSound->play();
                 break;
             }
 
             case Qt::Key_Space: {
-                s_spaceSound.play();
+                s_spaceSound->play();
                 break;
             }
 
             case Qt::Key_Backspace:
             case Qt::Key_Delete: {
-                s_deleteSound.play();
+                s_deleteSound->play();
                 break;
             }
 
