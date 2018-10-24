@@ -550,6 +550,11 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
             } else {
                 m_blockText.append(_paragraphText[i]);
             }
+            //
+            // Раз мы добавляем символ через '/',
+            // то он не должен участвовать в какой-либо обработке
+            //
+            prevSymbol = '\0';
             continue;
         }
 
@@ -557,11 +562,6 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
         switch (curSymbol) {
             case '\\':
             {
-                if (m_isNotation) {
-                    m_note.append(_paragraphText[i]);
-                } else {
-                    m_blockText.append(_paragraphText[i]);
-                }
                 break;
             }
 
