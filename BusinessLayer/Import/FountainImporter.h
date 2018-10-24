@@ -81,12 +81,12 @@ namespace BusinessLogic
                        bool _forCurrentCharacter = false) const ;
 
         /**
-         * @brief Может ли это быть началом форматирования
+         * @brief Может ли предыдущий символ быть началом форматирования
          */
         bool canStartEmphasis() const;
 
         /**
-         * @brief Может ли это быть концом форматирования
+         * @brief Может ли предыдущий символ быть концом форматирования
          */
         bool canEndEmphasis(const QString& _paragraphText, int _pos) const;
 

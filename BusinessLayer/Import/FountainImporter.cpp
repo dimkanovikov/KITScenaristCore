@@ -511,16 +511,8 @@ bool FountainImporter::canStartEmphasis() const {
 }
 
 bool FountainImporter::canEndEmphasis(const QString& _paragraphText, int _pos) const {
-    int i = _pos;
-    for (; i != _paragraphText.size(); ++i) {
-        if (i != '*'
-                && i != '_') {
-            break;
-        }
-    }
-
-    return i >= _paragraphText.size()
-            || !_paragraphText[i].isLetterOrNumber();
+    return _pos >= _paragraphText.size()
+            || !_paragraphText[_pos].isLetterOrNumber();
 }
 
 void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlockStyle::Type _type,
@@ -700,14 +692,14 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
             }
         }
 
-        bool isCanStartEmphasis = canStartEmphasis();
-        bool isCanEndEmphasis = canEndEmphasis(_paragraphText, i);
+        const bool isCanStartEmphasis = canStartEmphasis();
+        const bool isCanEndEmphasis = canEndEmphasis(_paragraphText, i);
         //
         // Underline
         //
         if (prevSymbol == '_') {
             if (!processFormat(false, false, true, curSymbol == '*', isCanStartEmphasis, isCanEndEmphasis)) {
-                m_blockText.insert(std::max(0, m_blockText.size() - 1), '_');
+                m_blockText.insert(std::max(0, m_blockText.size() - 1), prevSymbol);
             }
         }
 
@@ -741,11 +733,7 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
                     break;
                 }
 
-                default:
-                {
-                    success = false;
-                    break;
-                }
+                default: break;
             }
             if (!success) {
                 for (int i = 0; i != asteriskLen; ++i) {
@@ -763,7 +751,7 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
     //
     if (prevSymbol == '_') {
         if (!processFormat(false, false, true, true, false, true)) {
-            m_blockText.append('_');
+            m_blockText.append(prevSymbol);
         }
     }
 
@@ -796,11 +784,7 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
             break;
         }
 
-        default:
-        {
-            success = false;
-            break;
-        }
+        default: break;
     }
 
     if (!success) {
@@ -860,14 +844,14 @@ void FountainImporter::appendBlock(const QString& _paragraphText, ScenarioBlockS
         QVector<TextFormat> removedFormats;
         if (!m_formats.empty()) {
             for (int i = m_formats.size() - 1; i >= 0; --i) {
-                TextFormat& elem = m_formats[i];
+                TextFormat& format = m_formats[i];
                 TextFormat removed;
 
                 //
                 // У нас остался незакрытый жирный формат
                 //
                 if (m_lastFormat.bold) {
-                    if (!elem.bold) {
+                    if (!format.bold) {
                         //
                         // Формат, начиная отсюда не является жирным. Значит, предыдущий был открывающим
                         // Значит, на место предыдущего надо вернуть звездочки, а жирный незакрытый мы больше не ищем
@@ -878,7 +862,7 @@ void FountainImporter::appendBlock(const QString& _paragraphText, ScenarioBlockS
                         //
                         // Формат здесь все еще является жирным, значит просто перестаем его таковым считать
                         //
-                        elem.bold = false;
+                        format.bold = false;
                     }
                 }
 
@@ -886,21 +870,21 @@ void FountainImporter::appendBlock(const QString& _paragraphText, ScenarioBlockS
                 // Аналогично для остальных форматов
                 //
                 if (m_lastFormat.italic) {
-                    if (!elem.italic) {
+                    if (!format.italic) {
                         m_lastFormat.italic = false;
                         removed.italic = true;
                     }
                     else {
-                        elem.italic = false;
+                        format.italic = false;
                     }
                 }
 
                 if (m_lastFormat.underline) {
-                    if (!elem.underline) {
+                    if (!format.underline) {
                         m_lastFormat.underline = false;
                         removed.underline = true;
                     } else {
-                        elem.underline = false;
+                        format.underline = false;
                     }
                 }
 
@@ -911,12 +895,12 @@ void FountainImporter::appendBlock(const QString& _paragraphText, ScenarioBlockS
                     removed.start = m_lastFormat.start;
                     removedFormats.push_back(removed);
                 }
-                m_lastFormat.start = elem.start;
+                m_lastFormat.start = format.start;
 
                 //
                 // Может быть текущий формат стал бесполезным
                 //
-                if (!elem.isValid()) {
+                if (!format.isValid()) {
                     m_formats.removeAt(i);
                 }
 
