@@ -505,6 +505,24 @@ QVariantMap FountainImporter::importResearch(const ImportParameters &_importPara
     return result;
 }
 
+bool FountainImporter::canStartEmphasis() const {
+    return m_blockText.size() <= 1
+            || !m_blockText[m_blockText.size() - 2].isLetterOrNumber();
+}
+
+bool FountainImporter::canEndEmphasis(const QString& _paragraphText, int _pos) const {
+    int i = _pos;
+    for (; i != _paragraphText.size(); ++i) {
+        if (i != '*'
+                && i != '_') {
+            break;
+        }
+    }
+
+    return i >= _paragraphText.size()
+            || !_paragraphText[i].isLetterOrNumber();
+}
+
 void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlockStyle::Type _type,
     QXmlStreamWriter& _writer) const
 {
@@ -682,21 +700,26 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
             }
         }
 
+        bool isCanStartEmphasis = canStartEmphasis();
+        bool isCanEndEmphasis = canEndEmphasis(_paragraphText, i);
         //
         // Underline
         //
         if (prevSymbol == '_') {
-            processFormat(false, false, true, curSymbol == '*');
+            if (!processFormat(false, false, true, curSymbol == '*', isCanStartEmphasis, isCanEndEmphasis)) {
+                m_blockText.insert(std::max(0, m_blockText.size() - 1), '_');
+            }
         }
 
         if (curSymbol != '*') {
+            bool success = false;
             switch (asteriskLen) {
                 //
                 // Italics
                 //
                 case 1:
                 {
-                    processFormat(true, false, false, curSymbol == '_');
+                    success = processFormat(true, false, false, curSymbol == '_', isCanStartEmphasis, isCanEndEmphasis);
                     break;
                 }
 
@@ -705,7 +728,7 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
                 //
                 case 2:
                 {
-                    processFormat(false, true, false, curSymbol == '_');
+                    success = processFormat(false, true, false, curSymbol == '_', isCanStartEmphasis, isCanEndEmphasis);
                     break;
                 }
 
@@ -714,11 +737,20 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
                 //
                 case 3:
                 {
-                    processFormat(true, true, false, curSymbol == '_');
+                    success = processFormat(true, true, false, curSymbol == '_', isCanStartEmphasis, isCanEndEmphasis);
                     break;
                 }
 
-                default: break;
+                default:
+                {
+                    success = false;
+                    break;
+                }
+            }
+            if (!success) {
+                for (int i = 0; i != asteriskLen; ++i) {
+                    m_blockText.insert(std::max(0, m_blockText.size() - 1), '*');
+                }
             }
             asteriskLen = 0;
         }
@@ -730,16 +762,19 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
     // Underline
     //
     if (prevSymbol == '_') {
-        processFormat(false, false, true, true);
+        if (!processFormat(false, false, true, true, false, true)) {
+            m_blockText.append('_');
+        }
     }
 
+    bool success = false;
     switch(asteriskLen) {
         //
         // Italics
         //
         case 1:
         {
-            processFormat(true, false, false, true);
+            success = processFormat(true, false, false, true, false, true);
             break;
         }
 
@@ -748,7 +783,7 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
         //
         case 2:
         {
-            processFormat(false, true, false, true);
+            success = processFormat(false, true, false, true, false, true);
             break;
         }
 
@@ -757,11 +792,21 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
         //
         case 3:
         {
-            processFormat(true, true, false, true);
+            success = processFormat(true, true, false, true, false, true);
             break;
         }
 
-        default: break;
+        default:
+        {
+            success = false;
+            break;
+        }
+    }
+
+    if (!success) {
+        for (int i = 0; i != asteriskLen; ++i) {
+            m_blockText.append('*');
+        }
     }
     asteriskLen = 0;
 
@@ -1008,13 +1053,18 @@ QString FountainImporter::simplify(const QString& _value) const
     return res;
 }
 
-void FountainImporter::processFormat(bool _italics, bool _bold, bool _underline,
-                                     bool _forCurrentCharacter) const
+bool FountainImporter::processFormat(bool _italics, bool _bold, bool _underline,
+                                     bool _forCurrentCharacter,
+                                     bool _isCanStartEmphasis, bool _isCanEndEmphasis) const
 {
     //
     // Новый формат, который еще не начат
     //
     if (!m_lastFormat.isValid()) {
+        if (!_isCanStartEmphasis) {
+            return false;
+        }
+
         m_lastFormat.bold = _bold;
         m_lastFormat.italic = _italics;
         m_lastFormat.underline = _underline;
@@ -1022,11 +1072,29 @@ void FountainImporter::processFormat(bool _italics, bool _bold, bool _underline,
         if (!_forCurrentCharacter) {
             --m_lastFormat.start;
         }
+        return true;
     }
     //
     // Формат уже начат
     //
     else {
+        if ((m_lastFormat.bold & _bold) == _bold
+                && (m_lastFormat.italic & _italics) == _italics
+                && (m_lastFormat.underline & _underline) == _underline) {
+            //
+            // Если тут появилось что то новенькое, то может ли это быть началом
+            //
+            if (!_isCanEndEmphasis) {
+                return false;
+            }
+        } else {
+            //
+            // Иначе, может ли быть концом
+            //
+            if (!_isCanStartEmphasis) {
+                return false;
+            }
+        }
         //
         // Добавим его в список форматов
         //
@@ -1055,6 +1123,7 @@ void FountainImporter::processFormat(bool _italics, bool _bold, bool _underline,
         else {
             m_lastFormat.clear();
         }
+        return true;
     }
 }
 
