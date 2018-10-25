@@ -1217,176 +1217,176 @@ Português: Ricardo Graça, Ronaldo German
 <context>
     <name>DatabaseLayer::Database</name>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="59"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="70"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
         <translation>Жоба кейінгі нұсқадағы бағдарламада өзгертілген. Ашу үшін сізге бағдарламаны жаңарту керек.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="419"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1525"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="430"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1536"/>
         <source>First draft</source>
         <translation>Алғашқы жазба</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="427"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="438"/>
         <source>INT</source>
         <translatorcomment>Интерьер</translatorcomment>
         <translation>ИНТ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="431"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="442"/>
         <source>EXT</source>
         <translatorcomment>СЫРТТАН</translatorcomment>
         <translation>СЫРТ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="435"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="446"/>
         <source>INT./EXT</source>
         <translation>ИНТ./СЫРТ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="443"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="454"/>
         <source>DAY</source>
         <translation>КҮНДІЗ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="447"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="458"/>
         <source>NIGHT</source>
         <translation>ТҮН</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="451"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="716"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="462"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="727"/>
         <source>MORNING</source>
         <translation>ТАҢ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="455"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="466"/>
         <source>AFTERNOON</source>
         <translation>ТҮСТЕН КЕЙІН</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="459"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="720"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="470"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="731"/>
         <source>EVENING</source>
         <translation>КЕШ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="463"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="474"/>
         <source>LATER</source>
         <translation>КЕЙІНІРЕК</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="467"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="478"/>
         <source>MOMENTS LATER</source>
         <translation>СӘТТЕРДЕН КЕЙІН</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="471"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="482"/>
         <source>CONTINUOUS</source>
         <translation>ҮЗДІКСІЗ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="475"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="486"/>
         <source>THE NEXT DAY</source>
         <translation>КЕЛЕСІ КҮНІ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="484"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="495"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
         <translatorcomment>Кадрдан Тыс Дауыс</translatorcomment>
         <translation>К.Т.Д.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="489"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="500"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
         <translatorcomment>Назарынан Тыс</translatorcomment>
         <translation>Н.Т.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="494"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="505"/>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
         <translatorcomment>Камерадан тыс</translatorcomment>
         <translation>К.Т.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="499"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="510"/>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
         <translation>СУБТИТР</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="504"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="515"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
         <translation>ЖАЛҒАСЫ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="512"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1463"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="523"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1474"/>
         <source>CUT TO:</source>
         <translation>КАДР АУЫСАДЫ:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="516"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1467"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="527"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1478"/>
         <source>FADE IN:</source>
         <translation>КЕЛЕСІДЕН ШЫҒУ:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="520"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1471"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="531"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1482"/>
         <source>FADE OUT</source>
         <translation>АҚЫРЫН СӨНУ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="524"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1475"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="535"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1486"/>
         <source>FADE TO:</source>
         <translation>КЕЛЕСІГЕ СӨНУ:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="528"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1479"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="539"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1490"/>
         <source>DISSOLVE TO:</source>
         <translation>КЕЛЕСІГЕ АЙНАЛУ:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="532"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1483"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="543"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1494"/>
         <source>BACK TO:</source>
         <translation>КЕЛЕСІГЕ ҚАЙТУ:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="536"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1487"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="547"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1498"/>
         <source>MATCH CUT TO:</source>
         <translation>КЕЛЕСІГЕ СӘЙКЕС АУЫСУ:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="540"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1491"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="551"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1502"/>
         <source>JUMP CUT TO:</source>
         <translation>КЕЛЕСІГЕ СЕКІРІП КЕТУ:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="544"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1495"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="555"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1506"/>
         <source>FADE TO BLACK</source>
         <translation>ҚАРАҒА СӨНУ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1341"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1412"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
         <source>Photos</source>
         <translation>Суреттер</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1363"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1434"/>
         <source>Unnamed image</source>
         <translation>Атаусыз сурет</translation>
     </message>
@@ -3505,7 +3505,7 @@ The application will start in few seconds.</source>
         <translation>Титр:</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1134"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1162"/>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
         <translation>ПАПКА СОҢЫ</translation>
@@ -6599,52 +6599,52 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <translation>Ағымды есептемені жаңарту</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="312"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="313"/>
         <source>Reports</source>
         <translation>Есептемелер</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="314"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="315"/>
         <source>Summary statistics</source>
         <translation>Суммарлы статистика</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="318"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="319"/>
         <source>Scene report</source>
         <translation>Сахна есептемесі</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="322"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="323"/>
         <source>Location report</source>
         <translation>Мекенжай есептемесі</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="326"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="327"/>
         <source>Cast report</source>
         <translation>Кейіпкерлер тізімі</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="330"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="331"/>
         <source>Characters dialogues</source>
         <translation>Кейіпкерлер диалогы</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="339"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="340"/>
         <source>Plots</source>
         <translation>Кестелер</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="341"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="342"/>
         <source>Story structure analysis</source>
         <translation>Оқиғалардың құрылымдық талдауы</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="345"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="346"/>
         <source>Characters activity</source>
         <translation>Кейіпкерлердің белсенділіктері</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="436"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="437"/>
         <source>Duration, minutes</source>
         <translation>Хронометраж, минут</translation>
     </message>
@@ -6688,12 +6688,12 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <translation>Сценарийді қалпына келтіру</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="130"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="131"/>
         <source>Compare script versions</source>
         <translation>Сценарий нұсқаларын салыстыру</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="127"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="128"/>
         <source>Restore script from backup</source>
         <translation>Сценарийді көшірмеден келтіру</translation>
     </message>

@@ -38,7 +38,24 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Uluslararası sürümleri yaratmamıza yardım eden kahramanlarımız:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+</translation>
     </message>
     <message>
         <source>Our heroes, who help us to create international versions:
@@ -523,7 +540,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="107"/>
         <source>Script</source>
-        <translation type="unfinished">Senaryo</translation>
+        <translation>Senaryo</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="115"/>
@@ -533,7 +550,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="123"/>
         <source>Logline</source>
-        <translation type="unfinished"></translation>
+        <translation>(Logline) Önerme</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="131"/>
@@ -543,7 +560,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="139"/>
         <source>Versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürümler</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="148"/>
@@ -1171,180 +1188,180 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../DataLayer/DataStorageLayer/ScriptVersionStorage.cpp" line="27"/>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>İlk taslak</translation>
     </message>
 </context>
 <context>
     <name>DatabaseLayer::Database</name>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="59"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="70"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
         <translation>Projeye daha üst bir sürümde düzenlenmiş. Açmak içi programı son sürümüne güncellemeniz gerekiyor.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="419"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1525"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="430"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1536"/>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>İlk taslak</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="427"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="438"/>
         <source>INT</source>
         <translation>İÇ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="431"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="442"/>
         <source>EXT</source>
         <translation>DIŞ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="435"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="446"/>
         <source>INT./EXT</source>
         <translation>İÇ./DIŞ</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="443"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="454"/>
         <source>DAY</source>
         <translation>GÜN</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="447"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="458"/>
         <source>NIGHT</source>
         <translation>GECE</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="451"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="716"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="462"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="727"/>
         <source>MORNING</source>
         <translation>SABAH</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="455"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="466"/>
         <source>AFTERNOON</source>
         <translation>ÖĞLEDEN SONRA</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="459"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="720"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="470"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="731"/>
         <source>EVENING</source>
         <translation>AKŞAM</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="463"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="474"/>
         <source>LATER</source>
         <translation>SONRA</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="467"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="478"/>
         <source>MOMENTS LATER</source>
         <translation>BİRAZ SONRA</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="471"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="482"/>
         <source>CONTINUOUS</source>
         <translation>DEVAMLI</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="475"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="486"/>
         <source>THE NEXT DAY</source>
         <translation>SONRAKİ GÜN</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="484"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="495"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
         <translatorcomment>Üst Ses</translatorcomment>
         <translation>Ü.S.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="489"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="500"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
         <translatorcomment>Ekran-Dışı</translatorcomment>
         <translation>E.D.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="494"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="505"/>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
         <translatorcomment>Kamera-Dışı</translatorcomment>
         <translation>K.D.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="499"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="510"/>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
         <translation>ALTYAZI</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="504"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="515"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
         <translation>DEVAMI</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="512"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1463"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="523"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1474"/>
         <source>CUT TO:</source>
         <translation>KES:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="516"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1467"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="527"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1478"/>
         <source>FADE IN:</source>
         <translation>AÇILMA:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="520"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1471"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="531"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1482"/>
         <source>FADE OUT</source>
         <translation>KARARMA</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="524"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1475"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="535"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1486"/>
         <source>FADE TO:</source>
         <translation>KARARIP AÇILARAK GEÇİŞ:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="528"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1479"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="539"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1490"/>
         <source>DISSOLVE TO:</source>
         <translation>SOLARAK GEÇİŞ:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="532"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1483"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="543"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1494"/>
         <source>BACK TO:</source>
         <translation>DÖNÜŞ:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="536"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1487"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="547"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1498"/>
         <source>MATCH CUT TO:</source>
         <translation>EŞLEMELİ KESME:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="540"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1491"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="551"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1502"/>
         <source>JUMP CUT TO:</source>
         <translation>ATLAMALI KESME:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="544"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1495"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="555"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1506"/>
         <source>FADE TO BLACK</source>
         <translation>SİYAHA KARARMA</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1341"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1412"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
         <source>Photos</source>
         <translation>Fotoğraflar</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1363"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1434"/>
         <source>Unnamed image</source>
         <translation>Adsız görüntü</translation>
     </message>
@@ -1362,7 +1379,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../Domain/ScriptVersion.cpp" line="151"/>
         <source>current version</source>
-        <translation type="unfinished"></translation>
+        <translation>geçerli sürüm</translation>
     </message>
 </context>
 <context>
@@ -1439,7 +1456,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="480"/>
         <source>Print scenes numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayfa numaralarını yazdır</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="500"/>
@@ -1776,12 +1793,12 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="155"/>
         <source>Italiano</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="169"/>
         <source>Azərbaycan</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="190"/>
@@ -2299,22 +2316,22 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2050"/>
         <source>Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Farklı Kaydet...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2054"/>
         <source>New script version...</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni senaryo sürümü...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2060"/>
         <source>Print preview script</source>
-        <translation type="unfinished"></translation>
+        <translation>Önizleme senaryosunu yazdır</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2065"/>
         <source>Two panel mode</source>
-        <translation type="unfinished"></translation>
+        <translation>İki Panel Kipi</translation>
     </message>
     <message>
         <source>Save As...</source>
@@ -2497,12 +2514,12 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="584"/>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="590"/>
         <source>Clear</source>
-        <translation type="unfinished">Temizle</translation>
+        <translation>Temizle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="604"/>
@@ -2527,7 +2544,7 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="708"/>
         <source>Do you really want to delete script version named &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; isimli senaryo sürümünü gerçekten silmek istiyor musunuz?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="866"/>
@@ -2587,22 +2604,22 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1269"/>
         <source>Changing scenes numbers locking</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahne numarası kilitlenmesini değiştirme</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1270"/>
         <source>Do you want to unlock scenes numbers or lock again?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahne numaralarını kilitlemek ya da kilidini açmak istiyor musunuz?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1273"/>
         <source>Unlock</source>
-        <translation type="unfinished"></translation>
+        <translation>Kilit aç</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1274"/>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Kilitle</translation>
     </message>
 </context>
 <context>
@@ -2610,12 +2627,12 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="280"/>
         <source>Enter new scene number</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni sahne numarası girin</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="280"/>
         <source>New scene number</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni sahne numarası</translation>
     </message>
 </context>
 <context>
@@ -2623,7 +2640,7 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScriptDictionariesManager.cpp" line="91"/>
         <source>Enter new item name</source>
-        <translation>Yeni öğe adı gir</translation>
+        <translation>Yeni öğe adı girin</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScriptDictionariesManager.cpp" line="136"/>
@@ -2793,12 +2810,12 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="153"/>
         <source>Choose versions to compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Karşılaştırılacak sürümleri seçin</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="223"/>
         <source>Script was restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryo onarıldı.</translation>
     </message>
 </context>
 <context>
@@ -2821,7 +2838,7 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="331"/>
         <source>Print preview script</source>
-        <translation type="unfinished"></translation>
+        <translation>Önizleme senaryosunu yazdır</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="501"/>
@@ -2861,7 +2878,7 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="280"/>
         <source>Start new version...</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni sürüme başla...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="297"/>
@@ -2885,7 +2902,7 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="519"/>
         <source>DOWNLOAD UPDATE</source>
-        <translation type="unfinished"></translation>
+        <translation>GÜNCELLEŞTİRMEYİ İNDİR</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="585"/>
@@ -3051,12 +3068,12 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="242"/>
         <source>Italiano</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="249"/>
         <source>Azərbaycan</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="286"/>
@@ -3362,27 +3379,27 @@ Program birkaç saniye içinde açılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="102"/>
         <source>Name</source>
-        <translation type="unfinished">İsim</translation>
+        <translation>İsim</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="42"/>
         <source>dd.MM.yyyy hh:mm</source>
-        <translation type="unfinished"></translation>
+        <translation>gg.AA.yyyy ss.dd</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="20"/>
         <source>Start a new version of the script</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryonun yeni bir sürümüne başla</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="26"/>
         <source>Version date and time</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürüm tarih ve saati</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="112"/>
         <source>Description</source>
-        <translation type="unfinished">Tanımlama</translation>
+        <translation>Tanımlama</translation>
     </message>
 </context>
 <context>
@@ -3479,7 +3496,7 @@ Program birkaç saniye içinde açılacak.</translation>
         <translation>Başlık:</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1134"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1162"/>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
         <translation>KLASÖRÜN SONU</translation>
@@ -3641,7 +3658,11 @@ Program birkaç saniye içinde açılacak.</translation>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="367"/>
@@ -3672,12 +3693,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="184"/>
         <source>Scene numbers prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahne numaraları öneki:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="194"/>
         <source>Start scenes numbering from:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahneleri numaralandırmaya şuradan başla:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="225"/>
@@ -3970,22 +3991,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="26"/>
         <source>Add scheme item</source>
-        <translation type="unfinished">Şema öğesi ekle</translation>
+        <translation>Şema öğesi ekle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="56"/>
         <source>Description:</source>
-        <translation type="unfinished">Tanımlama:</translation>
+        <translation>Tanımlama:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="80"/>
         <source>Header:</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="87"/>
         <source>Name:</source>
-        <translation type="unfinished">Ad:</translation>
+        <translation>Ad:</translation>
     </message>
 </context>
 <context>
@@ -4012,22 +4033,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="17"/>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="78"/>
         <source>Title</source>
-        <translation type="unfinished">Başlık</translation>
+        <translation>Başlık</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="91"/>
         <source>Description</source>
-        <translation type="unfinished">Tanımlama</translation>
+        <translation>Tanımlama</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="113"/>
         <source>Remove version</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürümü kaldır</translation>
     </message>
 </context>
 <context>
@@ -4723,7 +4744,9 @@ Saniyeler</translation>
         <source>
 
 New to KIT Scenarist?</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+KIT Scenarist&apos;te yeni misiniz?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="151"/>
@@ -4736,7 +4759,10 @@ New to KIT Scenarist?</source>
 and explore KIT Scenarist through 
 our help articles and tutorials.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Yardım makalelerimiz ve eğitimlerimiz doğrultusunda
+kendi hikayelerinizi nasıl yazacağınızı
+ve KIT Scenarist&apos;i keşfedin.
+</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="200"/>
@@ -5141,12 +5167,12 @@ our help articles and tutorials.
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="95"/>
         <source>Compare</source>
-        <translation type="unfinished"></translation>
+        <translation>Karşılaştır</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="105"/>
         <source>with</source>
-        <translation type="unfinished"></translation>
+        <translation>şununla</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -5773,32 +5799,32 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="32"/>
         <source>Add Scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahne Ekle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
         <source>Add Folder</source>
-        <translation type="unfinished">Klasör Ekle</translation>
+        <translation>Klasör Ekle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
         <source>Add Act</source>
-        <translation type="unfinished"></translation>
+        <translation>Eylem Ekle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="40"/>
         <source>Edit Scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahneyi Düzenle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="41"/>
         <source>Edit Act</source>
-        <translation type="unfinished"></translation>
+        <translation>Eylemi Düzenle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="42"/>
         <source>Save</source>
-        <translation type="unfinished">Kaydet</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="145"/>
@@ -5830,7 +5856,7 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="254"/>
         <source>Clear all colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm renkleri temizle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="270"/>
@@ -6039,7 +6065,7 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="633"/>
         <source>Change scene number</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahne numarasını değiştir</translation>
     </message>
 </context>
 <context>
@@ -6102,7 +6128,7 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="772"/>
         <source>Lock/unlock scene numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahne numaralarını kilitle/çöz</translation>
     </message>
 </context>
 <context>
@@ -6170,7 +6196,7 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionsList.cpp" line="65"/>
         <source>started by</source>
-        <translation type="unfinished"></translation>
+        <translation>tarafından başlanıldı</translation>
     </message>
 </context>
 <context>
@@ -6272,13 +6298,13 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="206"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="767"/>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>Italian</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="211"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="759"/>
         <source>Azerbaijani</source>
-        <translation type="unfinished"></translation>
+        <translation>Azerbaijani</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="591"/>
@@ -6435,52 +6461,52 @@ projeyi her 3 saniyede bir kaydeder, ancak eğer aralıksız çalışıyorsanız
         <translation>Geçerli raporu güncelle</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="312"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="313"/>
         <source>Reports</source>
         <translation>Raporlar</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="314"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="315"/>
         <source>Summary statistics</source>
         <translation>Özet istatistikler</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="318"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="319"/>
         <source>Scene report</source>
         <translation>Sahne raporu</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="322"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="323"/>
         <source>Location report</source>
         <translation>Mekan raporu</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="326"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="327"/>
         <source>Cast report</source>
         <translation>Kast raporu</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="330"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="331"/>
         <source>Characters dialogues</source>
         <translation>Karakterlerin Diyalogları</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="339"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="340"/>
         <source>Plots</source>
         <translation>Çizelgeler</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="341"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="342"/>
         <source>Story structure analysis</source>
         <translation>Hikaye yapısı çözümlemesi</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="345"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="346"/>
         <source>Characters activity</source>
         <translation>Karakterlerin etkinliği</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="436"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="437"/>
         <source>Duration, minutes</source>
         <translation>Süreler, dakikalar</translation>
     </message>
@@ -6524,12 +6550,12 @@ projeyi her 3 saniyede bir kaydeder, ancak eğer aralıksız çalışıyorsanız
         <translation>Senaryoyu onar</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="130"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="131"/>
         <source>Compare script versions</source>
         <translation>Senaryo sürümlerini karşılaştır</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="127"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="128"/>
         <source>Restore script from backup</source>
         <translation>Senaryoyu yedekleme dosyasıyla kurtar</translation>
     </message>

@@ -1209,175 +1209,175 @@ Português: Ricardo Graça, Ronaldo German
 <context>
     <name>DatabaseLayer::Database</name>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="59"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="70"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
         <translation>El proyecto fue modificado con una versión más reciente. Actualiza la aplicación para abrirlo.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="419"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1525"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="430"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1536"/>
         <source>First draft</source>
         <translation>Borrador final</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="427"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="438"/>
         <source>INT</source>
         <translatorcomment>Interiores</translatorcomment>
         <translation>INT</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="431"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="442"/>
         <source>EXT</source>
         <translatorcomment>Exteriores</translatorcomment>
         <translation>EXT</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="435"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="446"/>
         <source>INT./EXT</source>
         <translation>INT./EXT</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="443"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="454"/>
         <source>DAY</source>
         <translation>DÍA</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="447"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="458"/>
         <source>NIGHT</source>
         <translation>NOCHE</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="451"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="716"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="462"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="727"/>
         <source>MORNING</source>
         <translation>MAÑANA</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="455"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="466"/>
         <source>AFTERNOON</source>
         <translation>TARDE</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="459"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="720"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="470"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="731"/>
         <source>EVENING</source>
         <translation>ANOCHECER</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="463"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="474"/>
         <source>LATER</source>
         <translation>MÁS TARDE</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="467"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="478"/>
         <source>MOMENTS LATER</source>
         <translation>MOMENTOS DESPUÉS</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="471"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="482"/>
         <source>CONTINUOUS</source>
         <translation>CONTINUO</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="475"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="486"/>
         <source>THE NEXT DAY</source>
         <translation>AL DÍA SIGUIENTE</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="484"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="495"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
         <translatorcomment>Voz en Off</translatorcomment>
         <translation>V.O.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="489"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="500"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
         <translatorcomment>off-screen/ fuera de escena</translatorcomment>
         <translation>O.S.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="494"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="505"/>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
         <translation>O.C.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="499"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="510"/>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
         <translation>SUBTÍTULO</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="504"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="515"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
         <translation>A Continuación</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="512"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1463"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="523"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1474"/>
         <source>CUT TO:</source>
         <translation>CORTE A:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="516"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1467"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="527"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1478"/>
         <source>FADE IN:</source>
         <translation>FUNDIDO:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="520"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1471"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="531"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1482"/>
         <source>FADE OUT</source>
         <translation>FUNDIDO A NEGRO</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="524"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1475"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="535"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1486"/>
         <source>FADE TO:</source>
         <translation>FUNDE A:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="528"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1479"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="539"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1490"/>
         <source>DISSOLVE TO:</source>
         <translation>FUNDE A:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="532"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1483"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="543"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1494"/>
         <source>BACK TO:</source>
         <translation>VUELVE A:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="536"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1487"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="547"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1498"/>
         <source>MATCH CUT TO:</source>
         <translation>MATCH CUT A:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="540"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1491"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="551"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1502"/>
         <source>JUMP CUT TO:</source>
         <translation>JUMP CUT A:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="544"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1495"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="555"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1506"/>
         <source>FADE TO BLACK</source>
         <translation>FUNDIDO A NEGRO</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1341"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1412"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
         <source>Photos</source>
         <translation>Fotos</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1363"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1434"/>
         <source>Unnamed image</source>
         <translation>Imagen sin nombre</translation>
     </message>
@@ -3488,7 +3488,7 @@ Y el editor de texto de guión. El editor tiene muchas funciones que simplifican
         <translation>Titulo:</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1134"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1162"/>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
         <translation>FINAL DE LA CARPETA</translation>
@@ -6576,52 +6576,52 @@ o el ratón y mientras estés trabajando se guardará cada %1 minutos.</translat
         <translation>Actualizar informe</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="312"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="313"/>
         <source>Reports</source>
         <translation>Informes</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="314"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="315"/>
         <source>Summary statistics</source>
         <translation>Resumen del informe</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="330"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="331"/>
         <source>Characters dialogues</source>
         <translation>Diálogos de personajes</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="339"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="340"/>
         <source>Plots</source>
         <translation>Argumentos</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="341"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="342"/>
         <source>Story structure analysis</source>
         <translation>Estructura de la historia y análisis</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="345"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="346"/>
         <source>Characters activity</source>
         <translation>Actividades del personaje</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="436"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="437"/>
         <source>Duration, minutes</source>
         <translation>Duración en minutos</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="318"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="319"/>
         <source>Scene report</source>
         <translation>Informe de escena</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="322"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="323"/>
         <source>Location report</source>
         <translation>Informe de localizaciones</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="326"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="327"/>
         <source>Cast report</source>
         <translation>Informe de personajes</translation>
     </message>
@@ -6665,12 +6665,12 @@ o el ratón y mientras estés trabajando se guardará cada %1 minutos.</translat
         <translation>Restaurar guion</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="130"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="131"/>
         <source>Compare script versions</source>
         <translation>Comparar versiones de guion</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="127"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="128"/>
         <source>Restore script from backup</source>
         <translation>Restaurar guion desde copia de seguridad</translation>
     </message>
