@@ -1912,7 +1912,7 @@ void PageTextEditPrivate::paintCursor(QPainter* _painter)
                                   + hbar->value();
             rect.moveLeft(static_cast<int>(textRight));
         }
-        _painter->setBrush(q->textCursor().charFormat().foreground());
+        _painter->setBrush(q->textCursor().charFormat().foreground().color());
         _painter->setPen(Qt::transparent);
         _painter->drawRect(rect);
         _painter->restore();
