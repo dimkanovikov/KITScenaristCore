@@ -1646,7 +1646,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                 foreach (const QString& username, m_additionalCursorsCorrected.keys()) {
                     QTextCursor cursor(m_document);
                     m_document->setCursorPosition(cursor, m_additionalCursorsCorrected.value(username));
-                    const QRect cursorR = cursorRect(cursor);
+                    const QRect cursorR = cursorRect(cursor).adjusted(0, 0, 1, 0);
 
                     //
                     // Если курсор на экране
