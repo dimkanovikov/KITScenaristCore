@@ -575,10 +575,11 @@ void ScenarioTextDocument::correct(int _position, int _charsRemoved, int _charsA
 
 void ScenarioTextDocument::updateBlocksIds(int _position, int _charsRemoved, int _charsAdded)
 {
+    Q_UNUSED(_charsRemoved);
+
     auto block = findBlock(_position);
-    const int maxEditedBlockPosition = _position + std::max(_charsRemoved, _charsAdded);
     while (block.isValid()
-           && block.position() <= maxEditedBlockPosition) {
+           && block.position() <= _position + _charsAdded) {
         if (auto blockInfo = dynamic_cast<TextBlockInfo*>(block.userData())) {
             blockInfo->updateId();
         }

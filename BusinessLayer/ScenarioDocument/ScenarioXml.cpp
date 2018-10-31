@@ -179,7 +179,9 @@ namespace {
      */
     static bool isReviewFormatEquals(const QTextCharFormat& _lhs, const QTextCharFormat& _rhs) {
         return
-                _lhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)
+                _lhs.foreground().color() == _rhs.foreground().color()
+                && _lhs.background().color() == _rhs.background().color()
+                && _lhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)
                 && _lhs.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsHighlight)
                 && _lhs.boolProperty(ScenarioBlockStyle::PropertyIsDone) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsDone)
                 && _lhs.property(ScenarioBlockStyle::PropertyComments) == _rhs.property(ScenarioBlockStyle::PropertyComments)
