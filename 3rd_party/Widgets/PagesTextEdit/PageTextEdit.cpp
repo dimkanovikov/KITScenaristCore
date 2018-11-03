@@ -833,6 +833,20 @@ void PageTextEdit::setPlaceholderText(const QString &placeholderText)
     }
 }
 
+void PageTextEdit::setCursorWidth(int width)
+{
+    Q_D(PageTextEdit);
+    if (d->cursorWidth != width) {
+        d->cursorWidth = width;
+    }
+}
+
+int PageTextEdit::cursorWidth() const
+{
+    Q_D(const PageTextEdit);
+    return d->cursorWidth;
+}
+
 /*!
     Sets the visible \a cursor.
 */
@@ -1902,7 +1916,7 @@ void PageTextEditPrivate::paintCursor(QPainter* _painter)
         && q->hasFocus()) {
         _painter->save();
         auto rect = q->cursorRect();
-        rect.setWidth(1);
+        rect.setWidth(cursorWidth);
         //
         // Для RTL делаем ручную корректировку позиции отображения курсора
         //
