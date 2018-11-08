@@ -382,10 +382,7 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     StorageFacade::settingsStorage()->setValue("application/username",
                                                userName,
                                                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue("application/reviewVersion",
-                                               QString::number(reviewVersion),
-                                               SettingsStorage::ApplicationSettings);
-    emit loginAccepted(userName, m_userEmail, paymentMonth, reviewVersion);
+    emit loginAccepted(userName, m_userEmail, paymentMonth);
     //
     // ... и о подписке
     //
@@ -1584,10 +1581,7 @@ void SynchronizationManager::fakeLogin()
         const int paymentMonth = StorageFacade::settingsStorage()->value(
                                      "application/subscriptionPaymentMonth",
                                      SettingsStorage::ApplicationSettings).toInt();
-        const int reviewVersion = StorageFacade::settingsStorage()->value(
-                                      "application/reviewVersion",
-                                      SettingsStorage::ApplicationSettings).toInt();
-        emit loginAccepted(userName, m_userEmail, paymentMonth, reviewVersion);
+        emit loginAccepted(userName, m_userEmail, paymentMonth);
         //
         // ... детальную информацию о подписке и использованном месте
         //
