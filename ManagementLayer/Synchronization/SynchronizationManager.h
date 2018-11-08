@@ -86,7 +86,12 @@ namespace ManagementLayer
         /**
          * @brief Продлить подписку
          */
-        void renewSubscription(unsigned _duration, unsigned _type);
+        void renewSubscription(int _month, int _type);
+
+        /**
+         * @brief Сохранить успешно прошедший через InApp Purchase заказ
+         */
+        void saveRenewOrder(int _month, const QString& _orderId, const QString& _price);
 
         /**
          * @brief Сменить имя пользователя
@@ -141,7 +146,7 @@ namespace ManagementLayer
         //
         // Методы работы с конкретным проектом
         //
-    public slots:
+
         /**
          * @brief Подготовить менеджер к синхронизации
          */
@@ -220,6 +225,11 @@ namespace ManagementLayer
          */
         void subscriptionInfoLoaded(bool _isActive, const QString& _expiredDate, quint64 _usedSpace,
                                     quint64 _availableSpace);
+
+        /**
+         * @brief Заказ оплаченный через InApp Purchase был успешно сохранён
+         */
+        void renewOrderSaved();
 
         /**
          * @brief Успешно изменен пароль
