@@ -147,7 +147,6 @@ void PageTextEditPrivate::init(const QString &html)
     Q_Q(PageTextEdit);
     control = new PageTextEditControl(q);
     control->setPalette(q->palette());
-    control->setCursorWidth(0);
 
     QObject::connect(control, SIGNAL(microFocusChanged()), q, SLOT(updateMicroFocus()));
     QObject::connect(control, SIGNAL(documentSizeChanged(QSizeF)), q, SLOT(_q_adjustScrollbars()));
@@ -865,7 +864,9 @@ void PageTextEdit::doSetTextCursor(const QTextCursor &cursor)
 {
     Q_D(PageTextEdit);
     d->control->setTextCursor(cursor);
+#ifndef MOBILE_OS
     d->control->setCursorWidth(0);
+#endif
 }
 
 /*!
@@ -2252,7 +2253,9 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
 
     p->restore();
 
+#ifndef MOBILE_OS
     paintCursor(p);
+#endif
 }
 
 /*! \fn void PageTextEdit::paintEvent(QPaintEvent *event)
