@@ -147,7 +147,6 @@ void PageTextEditPrivate::init(const QString &html)
     Q_Q(PageTextEdit);
     control = new PageTextEditControl(q);
     control->setPalette(q->palette());
-    control->setCursorWidth(0);
 
     QObject::connect(control, SIGNAL(microFocusChanged()), q, SLOT(updateMicroFocus()));
     QObject::connect(control, SIGNAL(documentSizeChanged(QSizeF)), q, SLOT(_q_adjustScrollbars()));
@@ -833,6 +832,20 @@ void PageTextEdit::setPlaceholderText(const QString &placeholderText)
     }
 }
 
+void PageTextEdit::setCursorWidth(int width)
+{
+    Q_D(PageTextEdit);
+    if (d->cursorWidth != width) {
+        d->cursorWidth = width;
+    }
+}
+
+int PageTextEdit::cursorWidth() const
+{
+    Q_D(const PageTextEdit);
+    return d->cursorWidth;
+}
+
 /*!
     Sets the visible \a cursor.
 */
@@ -851,7 +864,9 @@ void PageTextEdit::doSetTextCursor(const QTextCursor &cursor)
 {
     Q_D(PageTextEdit);
     d->control->setTextCursor(cursor);
+#ifndef MOBILE_OS
     d->control->setCursorWidth(0);
+#endif
 }
 
 /*!
@@ -1902,7 +1917,7 @@ void PageTextEditPrivate::paintCursor(QPainter* _painter)
         && q->hasFocus()) {
         _painter->save();
         auto rect = q->cursorRect();
-        rect.setWidth(1);
+        rect.setWidth(cursorWidth);
         //
         // Для RTL делаем ручную корректировку позиции отображения курсора
         //
@@ -1912,9 +1927,12 @@ void PageTextEditPrivate::paintCursor(QPainter* _painter)
                                   + hbar->value();
             rect.moveLeft(static_cast<int>(textRight));
         }
-        _painter->setBrush(q->textCursor().charFormat().foreground().color());
-        _painter->setPen(Qt::transparent);
-        _painter->drawRect(rect);
+        const QColor cursorColor = q->textCursor().charFormat().foreground().style() != Qt::NoBrush
+                             ? q->textCursor().charFormat().foreground().color()
+                             : q->textCursor().blockCharFormat().foreground().style() != Qt::NoBrush
+                               ? q->textCursor().blockCharFormat().foreground().color()
+                               : q->palette().text().color();
+        _painter->fillRect(rect, cursorColor);
         _painter->restore();
     }
 }
@@ -2235,7 +2253,9 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
 
     p->restore();
 
+#ifndef MOBILE_OS
     paintCursor(p);
+#endif
 }
 
 /*! \fn void PageTextEdit::paintEvent(QPaintEvent *event)

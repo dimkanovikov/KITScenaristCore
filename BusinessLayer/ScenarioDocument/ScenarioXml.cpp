@@ -179,7 +179,9 @@ namespace {
      */
     static bool isReviewFormatEquals(const QTextCharFormat& _lhs, const QTextCharFormat& _rhs) {
         return
-                _lhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)
+                _lhs.foreground().color() == _rhs.foreground().color()
+                && _lhs.background().color() == _rhs.background().color()
+                && _lhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)
                 && _lhs.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsHighlight)
                 && _lhs.boolProperty(ScenarioBlockStyle::PropertyIsDone) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsDone)
                 && _lhs.property(ScenarioBlockStyle::PropertyComments) == _rhs.property(ScenarioBlockStyle::PropertyComments)
@@ -1194,7 +1196,7 @@ QString ScenarioXml::scenarioToXml(ScenarioModelItem* _fromItem, ScenarioModelIt
     return scenarioToXml(startPosition, endPosition);
 }
 
-void ScenarioXml::xmlToScenario(int _position, const QString& _xml, bool _rebuildUuids)
+void ScenarioXml::xmlToScenario(int _position, const QString& _xml, bool _remainLinkedData)
 {
     QXmlStreamReader reader(_xml);
     if (reader.readNextStartElement()
@@ -1203,7 +1205,7 @@ void ScenarioXml::xmlToScenario(int _position, const QString& _xml, bool _rebuil
         if (version.isEmpty()) {
             xmlToScenarioV0(_position, _xml);
         } else if (version == "1.0") {
-            xmlToScenarioV1(_position, _xml, _rebuildUuids);
+            xmlToScenarioV1(_position, _xml, _remainLinkedData);
         }
     }
 }
@@ -1469,7 +1471,7 @@ void ScenarioXml::xmlToScenarioV0(int _position, const QString& _xml)
     cursor.endEditBlock();
 }
 
-void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebuildUuids)
+void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _remainLinkedData)
 {
     //
     // Происходит ли обработка первого блока
@@ -1554,7 +1556,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
                         if (reader.attributes().hasAttribute(ATTRIBUTE_UUID)) {
                             const QString uuid = reader.attributes().value(ATTRIBUTE_UUID).toString();
-                            if (!_rebuildUuids || !isScenarioHaveUuid(uuid)) {
+                            if (!_remainLinkedData || !isScenarioHaveUuid(uuid)) {
                                 info->setUuid(uuid);
                             }
                         }
@@ -1567,7 +1569,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         if (reader.attributes().hasAttribute(ATTRIBUTE_TITLE)) {
                             info->setName(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));
                         }
-                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER)) {
+                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER) && !_remainLinkedData) {
                             info->setSceneNumber(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER).toString());
                             info->setSceneNumberFixed(true);
                         }

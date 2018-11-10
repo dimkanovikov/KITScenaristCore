@@ -83,6 +83,7 @@ namespace {
     const QUrl URL_LOGOUT = QUrl("https://kitscenarist.ru/api/account/logout/");
     const QUrl URL_UPDATE = QUrl("https://kitscenarist.ru/api/account/update/");
     const QUrl URL_SUBSCRIBE_STATE = QUrl("https://kitscenarist.ru/api/account/subscribe/state/");
+    const QUrl URL_SAVE_ORDER = QUrl("https://kitscenarist.ru/api/subscribe/mobile/");
     //
     const QUrl URL_PROJECTS = QUrl("https://kitscenarist.ru/api/projects/");
     const QUrl URL_CREATE_PROJECT = QUrl("https://kitscenarist.ru/api/projects/create/");
@@ -119,6 +120,10 @@ namespace {
     //
     const QString KEY_PROJECT_ID = "project_id";
     const QString KEY_PROJECT_NAME = "project_name";
+    //
+    const QString KEY_SUBSCRIPTION_MONTH = "month";
+    const QString KEY_SUBSCRIPTION_ORDER = "order_id";
+    const QString KEY_SUBSCRIPTION_PRICE = "price";
     /** @} */
 
     //
@@ -377,10 +382,7 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     StorageFacade::settingsStorage()->setValue("application/username",
                                                userName,
                                                SettingsStorage::ApplicationSettings);
-    StorageFacade::settingsStorage()->setValue("application/reviewVersion",
-                                               QString::number(reviewVersion),
-                                               SettingsStorage::ApplicationSettings);
-    emit loginAccepted(userName, m_userEmail, paymentMonth, reviewVersion);
+    emit loginAccepted(userName, m_userEmail, paymentMonth);
     //
     // ... и о подписке
     //
@@ -578,17 +580,41 @@ void SynchronizationManager::logout()
     m_internetConnectionStatus = Undefined;
 }
 
-void SynchronizationManager::renewSubscription(unsigned _duration,
-                                                 unsigned _type)
+void SynchronizationManager::renewSubscription(int _month,
+                                                 int _type)
 {
     QDesktopServices::openUrl(QUrl(QString("http://kitscenarist.ru/api/account/subscribe/?"
-                                           "user=%1&month=%2&payment_type=%3").
-                                   arg(m_userEmail).arg(_duration).
-                                   arg(_type == 0
+                                           "user=%1&month=%2&payment_type=%3")
+                                   .arg(m_userEmail)
+                                   .arg(_month)
+                                   .arg(_type == 0
                                        ? "paypal"
                                        : _type == 1
                                          ? "AC"
                                          : "PC")));
+}
+
+void SynchronizationManager::saveRenewOrder(int _month, const QString& _orderId, const QString& _price)
+{
+    NetworkRequest loader;
+    loader.setRequestMethod(NetworkRequestMethod::Post);
+    loader.clearRequestAttributes();
+    loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
+    loader.addRequestAttribute(KEY_SUBSCRIPTION_MONTH, _month);
+    loader.addRequestAttribute(KEY_SUBSCRIPTION_ORDER, _orderId);
+    loader.addRequestAttribute(KEY_SUBSCRIPTION_PRICE, _price);
+    QByteArray response = loader.loadSync(URL_SAVE_ORDER);
+
+    //
+    // Считываем результат авторизации
+    //
+    QXmlStreamReader responseReader(response);
+
+    if (!isOperationSucceed(responseReader)) {
+        return;
+    }
+
+    emit renewOrderSaved();
 }
 
 void SynchronizationManager::changeUserName(const QString &_newUserName)
@@ -1555,10 +1581,7 @@ void SynchronizationManager::fakeLogin()
         const int paymentMonth = StorageFacade::settingsStorage()->value(
                                      "application/subscriptionPaymentMonth",
                                      SettingsStorage::ApplicationSettings).toInt();
-        const int reviewVersion = StorageFacade::settingsStorage()->value(
-                                      "application/reviewVersion",
-                                      SettingsStorage::ApplicationSettings).toInt();
-        emit loginAccepted(userName, m_userEmail, paymentMonth, reviewVersion);
+        emit loginAccepted(userName, m_userEmail, paymentMonth);
         //
         // ... детальную информацию о подписке и использованном месте
         //

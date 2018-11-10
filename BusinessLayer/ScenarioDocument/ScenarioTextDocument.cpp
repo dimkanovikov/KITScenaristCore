@@ -579,7 +579,7 @@ void ScenarioTextDocument::updateBlocksIds(int _position, int _charsRemoved, int
 
     auto block = findBlock(_position);
     while (block.isValid()
-           && block.position() < _position + _charsAdded) {
+           && block.position() <= _position + _charsAdded) {
         if (auto blockInfo = dynamic_cast<TextBlockInfo*>(block.userData())) {
             blockInfo->updateId();
         }

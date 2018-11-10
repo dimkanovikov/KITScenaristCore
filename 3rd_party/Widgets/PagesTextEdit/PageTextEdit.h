@@ -114,6 +114,9 @@ public:
     void setPlaceholderText(const QString &placeholderText);
     QString placeholderText() const;
 
+    void setCursorWidth(int width);
+    int cursorWidth() const;
+
     void setTextCursor(const QTextCursor &cursor);
     QTextCursor textCursor() const;
 

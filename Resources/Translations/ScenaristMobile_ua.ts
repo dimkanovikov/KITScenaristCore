@@ -1335,6 +1335,10 @@ Project didn&apos;t synchronized.</source>
         <source>Research</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished">Поділитись</translation>
+    </message>
 </context>
 <context>
     <name>NavigatorView</name>
@@ -1996,6 +2000,26 @@ Your subscription is active until</source>
     <message>
         <source>12 month (12% off) - %1 rubles</source>
         <translation>12 місяців (12% знижка) - %1 рублів</translation>
+    </message>
+    <message>
+        <source>1 month - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2 month - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3 month - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>6 month (6% off) - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>12 month (12% off) - %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

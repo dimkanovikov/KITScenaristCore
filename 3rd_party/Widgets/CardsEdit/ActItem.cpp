@@ -1,5 +1,6 @@
 #include "ActItem.h"
 
+#include <3rd_party/Helpers/ColorHelper.h>
 #include <3rd_party/Helpers/TextUtils.h>
 
 #include <QApplication>
@@ -199,7 +200,11 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
         QFont font = _painter->font();
         font.setBold(true);
         _painter->setFont(font);
-        _painter->setPen(palette.text().color());
+        if (!colors.isEmpty()) {
+            _painter->setPen(ColorHelper::textColor(QColor(colors.first())));
+        } else {
+            _painter->setPen(palette.text().color());
+        }
         const int titleWidth = _painter->fontMetrics().width(m_title);
         const int titleHeight = _painter->fontMetrics().height();
         const int titleXPos = QLocale().textDirection() == Qt::LeftToRight

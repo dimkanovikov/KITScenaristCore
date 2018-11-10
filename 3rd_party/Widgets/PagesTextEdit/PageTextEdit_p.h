@@ -126,6 +126,8 @@ public:
 
     QString placeholderText;
 
+    int cursorWidth = 1;
+
 #ifdef QT_KEYPAD_NAVIGATION
     QBasicTimer deleteAllTimer;
 #endif

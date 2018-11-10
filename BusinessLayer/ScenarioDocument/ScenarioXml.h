@@ -63,7 +63,7 @@ namespace BusinessLogic
          * @param _xml текст сценария
          * @param _rebuildUuids нужно ли пересоздавать идентификаторы сцен, при наличии таких в сценарии
          */
-        void xmlToScenario(int _position, const QString& _xml, bool _rebuildUuids = true);
+        void xmlToScenario(int _position, const QString& _xml, bool _remainLinkedData = true);
 
         /**
          * @brief Загрузить сценарий из xml после заданного элемента для его родителя
@@ -88,7 +88,7 @@ namespace BusinessLogic
         /**
          * @brief Преобразование xml-текста в сценарий (сценарий созданый с версии 0.5.3)
          */
-        void xmlToScenarioV1(int _position, const QString& _xml, bool _rebuildUuids);
+        void xmlToScenarioV1(int _position, const QString& _xml, bool _remainLinkedData);
 
         /**
          * @brief Есть ли в документе элемент с таким идентификатором
