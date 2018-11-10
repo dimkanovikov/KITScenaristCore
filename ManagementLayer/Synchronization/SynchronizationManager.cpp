@@ -603,7 +603,7 @@ void SynchronizationManager::saveRenewOrder(int _month, const QString& _orderId,
     loader.addRequestAttribute(KEY_SUBSCRIPTION_MONTH, _month);
     loader.addRequestAttribute(KEY_SUBSCRIPTION_ORDER, _orderId);
     loader.addRequestAttribute(KEY_SUBSCRIPTION_PRICE, _price);
-    QByteArray response = loader.loadSync(URL_UPDATE);
+    QByteArray response = loader.loadSync(URL_SAVE_ORDER);
 
     //
     // Считываем результат авторизации
