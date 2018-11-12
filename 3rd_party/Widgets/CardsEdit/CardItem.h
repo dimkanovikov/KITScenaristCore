@@ -1,7 +1,7 @@
 #ifndef CARDITEM_H
 #define CARDITEM_H
 
-#include <QGraphicsItem>
+#include <QGraphicsObject>
 
 #include <QGraphicsDropShadowEffect>
 #include <QParallelAnimationGroup>
@@ -10,7 +10,7 @@
 /**
  * @brief Элемент сцены являющий собой сцену или папку сценария
  */
-class CardItem : public QObject, public QGraphicsItem
+class CardItem : public QGraphicsObject
 {
     Q_OBJECT
     Q_PROPERTY(QPointF pos READ pos WRITE setPos)

@@ -342,6 +342,9 @@ void SceneHeadingHandler::handleOther(QKeyEvent*)
 
 void SceneHeadingHandler::handleInput(QInputMethodEvent* _event)
 {
+#ifndef Q_OS_ANDROID
+    Q_UNUSED(_event)
+#endif
     //
     // Получим необходимые значения
     //

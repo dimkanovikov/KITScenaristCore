@@ -22,6 +22,9 @@ ColoredToolButton::ColoredToolButton(const QIcon& _icon, QWidget* _parent, QWidg
     m_colorNotChoosedYet(true),
     m_colorsPane(nullptr)
 {
+#ifndef MOBILE_OS
+    Q_UNUSED(_topLevelParent)
+#endif
     setIcon(_icon);
     setFocusPolicy(Qt::NoFocus);
     aboutUpdateIcon(palette().text().color());
@@ -39,6 +42,9 @@ ColoredToolButton::ColoredToolButton(QWidget* _parent, QWidget* _topLevelParent)
     m_colorNotChoosedYet(true),
     m_colorsPane(nullptr)
 {
+#ifndef MOBILE_OS
+    Q_UNUSED(_topLevelParent)
+#endif
     setFocusPolicy(Qt::NoFocus);
 
 #ifdef MOBILE_OS

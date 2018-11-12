@@ -1238,7 +1238,7 @@ ScenarioTemplateFacade::ScenarioTemplateFacade()
     //
     // Обновим шаблон по умолчанию
     //
-    auto updateDefaultTemplate = [this, templatesFolderPath] (const QString& _templateName) {
+    auto updateDefaultTemplate = [templatesFolderPath] (const QString& _templateName) {
         const QString defaultTemplatePath =
                 templatesFolderPath + QDir::separator() + _templateName + SCENARIO_TEMPLATE_FILE_EXTENSION;
         QFile defaultTemplateFile(defaultTemplatePath);

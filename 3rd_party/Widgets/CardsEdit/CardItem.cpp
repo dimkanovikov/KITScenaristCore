@@ -36,8 +36,7 @@ namespace {
 const QString CardItem::MimeType = "application/kit-card";
 
 CardItem::CardItem(QGraphicsItem* _parent) :
-    QObject(),
-    QGraphicsItem(_parent),
+    QGraphicsObject(_parent),
     m_shadowEffect(new QGraphicsDropShadowEffect),
     m_animation(new QParallelAnimationGroup)
 {
@@ -56,8 +55,7 @@ CardItem::CardItem(QGraphicsItem* _parent) :
 }
 
 CardItem::CardItem(const QByteArray& mimeData, QGraphicsItem* _parent) :
-    QObject(),
-    QGraphicsItem(_parent),
+    QGraphicsObject(_parent),
     m_shadowEffect(new QGraphicsDropShadowEffect)
 {
     setFlag(QGraphicsItem::ItemIsMovable, true);

@@ -679,7 +679,7 @@ void ScenarioModel::updateSceneNumbers()
                 // совпадает с fixNesting первой зафиксированной сцены
                 //
                 int maxSuffix = 0;
-                unsigned fixNesting = 0;
+                int fixNesting = 0;
                 for (int j = 1; j != scenes.size(); ++j) {
                     if ((scenes[j]->fixNesting() == fixNesting
                          || fixNesting == 0)

@@ -106,11 +106,11 @@ void TreeViewProxyStyle::drawPrimitive(QStyle::PrimitiveElement _element, const 
         _painter->setBrush(brush);
 
 #ifdef MOBILE_OS
-        const int arrowHeight = StyleSheetHelper::dpToPx(8.);
-        const int arrowHalfWidth = StyleSheetHelper::dpToPx(7.);
+        const int arrowHeight = StyleSheetHelper::dpToPx(8);
+        const int arrowHalfWidth = StyleSheetHelper::dpToPx(7);
 #else
-        const int arrowHeight = StyleSheetHelper::dpToPx(5.5);
-        const int arrowHalfWidth = StyleSheetHelper::dpToPx(4.);
+        const int arrowHeight = StyleSheetHelper::dpToPx(5);
+        const int arrowHalfWidth = StyleSheetHelper::dpToPx(4);
 #endif
         //
         // ... открытый

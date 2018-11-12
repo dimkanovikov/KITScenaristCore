@@ -25,8 +25,7 @@ namespace {
 
 
 ActItem::ActItem(QGraphicsItem* _parent) :
-    QObject(),
-    QGraphicsItem(_parent),
+    QGraphicsObject(_parent),
     m_shadowEffect(new QGraphicsDropShadowEffect)
 {
     setFlag(QGraphicsItem::ItemIsSelectable, true);
