@@ -93,6 +93,7 @@
         <file>Iconset/playlist-plus.svg</file>
         <file>Iconset/text-subject.svg</file>
         <file>Iconset/share-variant.svg</file>
+        <file>Images/corkboard.jpg</file>
     </qresource>
     <qresource prefix="/Translations">
         <file>Translations/ScenaristMobile_ru.qm</file>

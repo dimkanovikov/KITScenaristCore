@@ -16,7 +16,7 @@ class CardsView : public QWidget
     Q_OBJECT
 
 public:
-    explicit CardsView(QWidget* _parent = 0);
+    explicit CardsView(QWidget* _parent = nullptr);
     ~CardsView();
 
     /**
