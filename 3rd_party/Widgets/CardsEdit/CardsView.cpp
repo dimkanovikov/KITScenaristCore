@@ -4,6 +4,10 @@
 #include "CardsUndoStack.h"
 #include "ScalableGraphicsView.h"
 
+#ifdef MOBILE_OS
+#include <3rd_party/Helpers/ScrollerHelper.h>
+#endif
+
 #include <QEvent>
 #include <QScrollBar>
 #include <QVariant>
@@ -85,6 +89,13 @@ void CardsView::setFixedMode(bool _isFixed)
 {
     m_scene->setFixedMode(_isFixed);
 }
+
+#ifdef MOBILE_OS
+void CardsView::addScroller()
+{
+    ScrollerHelper::addScroller(m_view);
+}
+#endif
 
 QString CardsView::lastItemUuid() const
 {
