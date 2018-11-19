@@ -55,6 +55,11 @@ public:
     bool isFixedMode() const;
 
     /**
+     * @brief Получить идентификатор выделенного элемента
+     */
+    QString selectedItemUuid() const;
+
+    /**
      * @brief Получить идентификатор последнего элемента
      */
     QString lastItemUuid() const;

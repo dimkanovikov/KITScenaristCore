@@ -114,6 +114,20 @@ bool CardsScene::isFixedMode() const
     return m_isFixedMode;
 }
 
+QString CardsScene::selectedItemUuid() const
+{
+    QString uuid;
+    if (!selectedItems().isEmpty()) {
+        QGraphicsItem* item = selectedItems().first();
+        if (ActItem* act = qgraphicsitem_cast<ActItem*>(item)) {
+            uuid = act->uuid();
+        } else if (CardItem* card = qgraphicsitem_cast<CardItem*>(item)) {
+            uuid = card->uuid();
+        }
+    }
+    return uuid;
+}
+
 QString CardsScene::lastItemUuid() const
 {
     QString lastItemUuid;

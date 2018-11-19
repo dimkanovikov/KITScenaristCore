@@ -80,6 +80,11 @@ public:
 #endif
 
     /**
+     * @brief Получить идентификатор выделенной карточки
+     */
+    QString selectedItemUuid() const;
+
+    /**
      * @brief Получить идентификатор последнего элемента
      */
     QString lastItemUuid() const;
