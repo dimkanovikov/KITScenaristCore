@@ -5,6 +5,7 @@
 
 #include <3rd_party/Helpers/ColorHelper.h>
 #include <3rd_party/Helpers/ImageHelper.h>
+#include <3rd_party/Helpers/StyleSheetHelper.h>
 #include <3rd_party/Helpers/TextUtils.h>
 
 #include <QApplication>
@@ -382,7 +383,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         //
         if (isSelected()) {
             _painter->setBrush(Qt::transparent);
-            _painter->setPen(QPen(palette.highlight(), 1, Qt::SolidLine, Qt::SquareCap, Qt::MiterJoin));
+            _painter->setPen(QPen(palette.highlight(), StyleSheetHelper::dpToPx(2), Qt::SolidLine, Qt::SquareCap, Qt::MiterJoin));
             _painter->drawRect(cardRect);
         }
     }
