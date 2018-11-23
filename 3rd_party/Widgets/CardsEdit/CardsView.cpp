@@ -90,17 +90,10 @@ void CardsView::setFixedMode(bool _isFixed)
     m_scene->setFixedMode(_isFixed);
 }
 
-#ifdef MOBILE_OS
-void CardsView::addScroller()
-{
-    ScrollerHelper::addScroller(m_view);
-}
-
 QString CardsView::selectedItemUuid() const
 {
     return m_scene->selectedItemUuid();
 }
-#endif
 
 QString CardsView::lastItemUuid() const
 {

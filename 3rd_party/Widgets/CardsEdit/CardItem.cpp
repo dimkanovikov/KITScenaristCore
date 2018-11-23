@@ -522,12 +522,7 @@ void CardItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* _event)
 {
     QGraphicsItem::mouseReleaseEvent(_event);
 
-    //
-    // Положим карточку обратно, если это не вложение
-    //
-//    if (cardForEmbedUuid().isEmpty()) {
-        putOnBoard();
-//    }
+    putOnBoard();
 }
 
 void CardItem::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* _event)
@@ -541,12 +536,5 @@ void CardItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* _event)
 {
     QGraphicsItem::hoverLeaveEvent(_event);
 
-    //
-    // Положим карточку обратно, если это не вложение
-    //
-//    if (cardForEmbedUuid().isEmpty()) {
-        putOnBoard();
-//    } else {
-
-//    }
+    putOnBoard();
 }

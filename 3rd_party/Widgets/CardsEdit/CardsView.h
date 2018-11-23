@@ -72,13 +72,6 @@ public:
      */
     void setFixedMode(bool _isFixed);
 
-#ifdef MOBILE_OS
-    /**
-     * @brief Добавить прокрутчик
-     */
-    void addScroller();
-#endif
-
     /**
      * @brief Получить идентификатор выделенной карточки
      */

@@ -6,7 +6,6 @@
 #include <QGraphicsDropShadowEffect>
 #include <QParallelAnimationGroup>
 
-
 /**
  * @brief Элемент сцены являющий собой сцену или папку сценария
  */
@@ -29,8 +28,8 @@ public:
     static const QString MimeType;
 
 public:
-    explicit CardItem(QGraphicsItem* _parent = 0);
-    explicit CardItem(const QByteArray& mimeData, QGraphicsItem* _parent = 0);
+    explicit CardItem(QGraphicsItem* _parent = nullptr);
+    explicit CardItem(const QByteArray& mimeData, QGraphicsItem* _parent = nullptr);
 
     /**
      * @brief Идентификатор

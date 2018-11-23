@@ -21,7 +21,7 @@ public:
     static const int Type = UserType + 16;
 
 public:
-    explicit ActItem(QGraphicsItem* _parent = 0);
+    explicit ActItem(QGraphicsItem* _parent = nullptr);
 
     /**
      * @brief Идентификатор

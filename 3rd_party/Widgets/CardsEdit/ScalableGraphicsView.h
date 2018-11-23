@@ -3,6 +3,10 @@
 
 #include <QGraphicsView>
 
+#ifdef MOBILE_OS
+#include <QTimer>
+#endif
+
 class QGestureEvent;
 
 
@@ -14,7 +18,7 @@ class ScalableGraphicsView : public QGraphicsView
     Q_OBJECT
 
 public:
-    explicit ScalableGraphicsView(QWidget *parent = 0);
+    explicit ScalableGraphicsView(QWidget* _parent = nullptr);
 
     /**
      * @brief Методы масштабирования
@@ -60,7 +64,7 @@ protected:
     /** @} */
 
     /**
-     * @brief Реализация перетаскивания
+     * @brief Реализация перетаскивания/прокрутки
      */
     /** @{ */
     void mousePressEvent(QMouseEvent* _event);
@@ -94,6 +98,19 @@ private:
      * @brief Инерционный тормоз масштабирования при помощи жестов
      */
     int m_gestureZoomInertionBreak = 0;
+
+#ifdef MOBILE_OS
+    /**
+     * @brief Флаг определяеющий можно ли перетаскивать карточку в данный момент
+     */
+    bool m_canDragCard = true;
+
+    /**
+     * @brief Таймер ожидающий начала перетаскивания
+     * @note Используется чтобы разрулить конфликт перетаскивания и прокрутки
+     */
+    QTimer m_dragWaitingTimer;
+#endif
 };
 
 #endif // SCALABLEGRAPHICSVIEW_H
