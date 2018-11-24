@@ -170,18 +170,24 @@ void SearchWidget::aboutReplaceOne()
 void SearchWidget::aboutReplaceAll()
 {
     const QString replaceText = m_replaceText->text();
+    const QString searchText = m_searchText->text();
+    int diffSize = replaceText.size() - searchText.size();
     if (m_editor) {
         aboutFindNext();
         QTextCursor cursor = m_editor->textCursor();
         cursor.beginEditBlock();
-        const int firstCursorPosition = cursor.selectionStart();
+        int firstCursorPosition = cursor.selectionStart();
         while (cursor.hasSelection()) {
             cursor.insertText(replaceText);
             aboutFindNext();
             cursor = m_editor->textCursor();
 
+            if (cursor.selectionStart() < firstCursorPosition) {
+                firstCursorPosition += diffSize;
+            }
+
             //
-            // Прерываем случай, когда пользователь пытается заменить слово без учёта регистра
+            // Прерываем случай, когда пользователь пытается заменить слово без учёта регистра или на слово подлиннее
             // на такое же, например "иван" на "Иван", но т.к. поиск производится без учёта регистра,
             // он зацикливается
             //
