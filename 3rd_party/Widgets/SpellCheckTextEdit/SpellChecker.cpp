@@ -73,6 +73,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Swedish:
             code = "sv_SE";
             break;
+        case Telugu:
+            code = "te_IN";
+            break;
         case Turkish:
             code = "tr_TR";
             break;

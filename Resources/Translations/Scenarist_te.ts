@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="tr_TR" sourcelanguage="en">
+<TS version="2.1" language="te_IN">
 <context>
     <name>AboutDialog</name>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="20"/>
         <source>About the app</source>
-        <translation>Program Hakkında</translation>
+        <translation>ఆప్ గురించి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="26"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The cat Alexander illustrations created by &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kedi Alexander illüstrasyonları &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt; tarafından yaratılmıştır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="46"/>
         <source>KIT Scenarist</source>
-        <translation>KIT Scenarist</translation>
+        <translation>కిట్ సినరిస్ట్</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="85"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="147"/>
@@ -42,158 +47,14 @@ Türkçe: Recep Burak Yak
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Our heroes, who help us to create international versions:
-Azərbaycan: Tarlan Rasulzadeh
-Deutsch: Michael Krämer
-English: Eric Wayne &amp; Soyung Key
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Italiano: Luca Giliberto
-Қазақ: Алпамыс Баткалов
-Magyar: Gabor
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</source>
-        <translation type="vanished">Uluslararası sürümleri yaratmamıza yardım eden kahramanlarımız:
-Azərbaycan: Tarlan Rasulzadeh
-Deutsch: Michael Krämer
-English: Eric Wayne &amp; Soyung Key
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Italiano: Luca Giliberto
-Қазақ: Алпамыс Баткалов
-Magyar: Gabor
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</translation>
-    </message>
-    <message>
-        <source>Our heroes, who help us to create international versions:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Magyar: Gabor
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</source>
-        <translation type="vanished">Uluslararası sürümleri yaratmamıza yardım eden kahramanlarımız:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Magyar: Tömör Gábor
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="207"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; featuring &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bu yalın ve güçlü senaryo düzenleyicisi &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; tarafından &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt; ortaklığıyla geliştirilmiştir&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="223"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The application logo designed by &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Programın logosu &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt; tarafından tasarlanmıştır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bu yalın ve güçlü senaryo düzenleyicisi &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; tarafından geliştirilmiştir&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="85"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bu yazılım &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; lisansı altında dağıtılmıştır, kaynak kodu &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt; buradadır.&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Our heroes, who help us to create international versions:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</source>
-        <translation type="vanished">Uluslararası sürümleri yaratmamıza yardım eden kahramanlarımız:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</translation>
-    </message>
-    <message>
-        <source>Our heroes, who help us to create international versions:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</source>
-        <translation type="vanished">Uluslararası sürümleri yaratmamıza yardım eden kahramanlarımız:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -201,12 +62,12 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../3rd_party/Widgets/AcceptebleLineEdit/AcceptebleLineEdit.cpp" line="32"/>
         <source>Text</source>
-        <translation>Metin</translation>
+        <translation>మూల గ్రంథము</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/AcceptebleLineEdit/AcceptebleLineEdit.cpp" line="98"/>
         <source>was changed from &lt;b&gt;%1&lt;/b&gt; to &lt;b&gt;%2&lt;/b&gt;. Apply changes?</source>
-        <translation>&lt;b&gt;%1&lt;/b&gt; &apos;den &lt;b&gt;%2&lt;/b&gt;&apos;ye değiştirildi. Değişikleri uygula?</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -214,12 +75,12 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../3rd_party/Widgets/ImagesPane/AddImageButton.cpp" line="28"/>
         <source>Choose image</source>
-        <translation>Görüntü seç</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/ImagesPane/AddImageButton.cpp" line="30"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
-        <translation>Görüntüler (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -227,59 +88,59 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="20"/>
         <source>Add New Project</source>
-        <translation>Yeni Proje Ekle</translation>
+        <translation>క్రొత్త ప్రాజెక్ట్ను జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="44"/>
         <source>Enter Name of New Project:</source>
-        <translation>Yeni Projenin Adını Girin:</translation>
+        <translation>కొత్త ప్రాజెక్ట్ పేరు నమోదు చేయండి:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="57"/>
         <source>File exists. It will be replaced after creating.</source>
-        <translation>Dosya zaten mevcut. Oluşturulan dosyayla değiştirilecek.</translation>
+        <translation>ఫైల్ ఉంది. సృష్టించిన తర్వాత ఇది భర్తీ చేయబడుతుంది.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="104"/>
         <source>Choose Location for New Project File:</source>
-        <translation>Yeni Proje Dosyası için Konum Seçin:</translation>
+        <translation>ప్రాంతాని ఎంచుకోండి:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="127"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="173"/>
         <source>Browse...</source>
-        <translation>Gözat...</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="130"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="176"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="150"/>
         <source>Choose File with Project to Import:</source>
-        <translation>Projeyle İçe Aktarılacak Bir Dosya Seçin:</translation>
+        <translation>దిగుమతి చేసిన ప్రాజెక్ట్తో ఫైల్ను ఎంచుకోండి:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="199"/>
         <source>Local</source>
-        <translation>Yerel</translation>
+        <translation>స్తానికమైన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="215"/>
         <source>Remote</source>
-        <translation>Uzaktan</translation>
+        <translation>రిమోట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="242"/>
         <source>Advanced</source>
-        <translation>Gelişmiş</translation>
+        <translation>ఆధునిక</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="249"/>
         <source>Sorry, but you need to have active internet connection for creating new projects in cloud.</source>
-        <translation>Üzgünüz, ama bulut içinde yeni projeler yaratabilmek için etkin internet erişimine sahip olmalısınız.</translation>
+        <translation>క్షమించండి, కానీ క్లౌడ్లో కొత్త ప్రాజెక్ట్లను సృష్టించడానికి మీరు సక్రియ ఇంటర్నెట్ కనెక్షన్ను కలిగి ఉండాలి.</translation>
     </message>
 </context>
 <context>
@@ -287,7 +148,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.ui" line="32"/>
         <source>Bookmark text</source>
-        <translation>Sayfa işareti metni</translation>
+        <translation>బుక్మార్క్ టెక్స్ట్</translation>
     </message>
 </context>
 <context>
@@ -295,7 +156,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Export/AbstractExporter.cpp" line="379"/>
         <source>Real name: </source>
-        <translation>Gerçek ad: </translation>
+        <translation>అసలు పేరు: </translation>
     </message>
 </context>
 <context>
@@ -303,28 +164,27 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="15"/>
         <source>INT</source>
-        <translation>İÇ</translation>
+        <translation>లో</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="16"/>
         <source>EXT</source>
-        <translation>DIŞ</translation>
+        <translation>బ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="17"/>
         <source>EST</source>
-        <translatorcomment>Tesbit</translatorcomment>
-        <translation>TSB</translation>
+        <translation>నిర్దిష్ట సమయం</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="18"/>
         <source>INT./EXT</source>
-        <translation>İÇ./DIŞ</translation>
+        <translation>లో./బ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="19"/>
         <source>INT/EXT</source>
-        <translation>İÇ/DIŞ</translation>
+        <translation>లో/బ</translation>
     </message>
 </context>
 <context>
@@ -332,33 +192,32 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="36"/>
         <source>INT</source>
-        <translation>İÇ</translation>
+        <translation>లోపల</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="37"/>
         <source>EXT</source>
-        <translation>DIŞ</translation>
+        <translation>బయట</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="38"/>
         <source>EST</source>
-        <translatorcomment>Tesbit</translatorcomment>
-        <translation>TSB</translation>
+        <translation>నిర్దిష్ట సమయం</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="39"/>
         <source>INT./EXT</source>
-        <translation>İÇ./DIŞ</translation>
+        <translation>లోపల./బయట</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="40"/>
         <source>INT/EXT</source>
-        <translation>İÇ/DIŞ</translation>
+        <translation>లోపల/బయట</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="41"/>
         <source>I/E</source>
-        <translation>İ/D</translation>
+        <translation>లో/బ</translation>
     </message>
 </context>
 <context>
@@ -366,47 +225,47 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="158"/>
         <source>All supported files</source>
-        <translation>Tüm desteklenen dosyalar</translation>
+        <translation>అన్ని సపోర్ట్ చేసే ఫైల్స్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="160"/>
         <source>KIT Scenarist project</source>
-        <translation>KIT Scenarist projesi</translation>
+        <translation>కిట్ సినరిస్ట్ ప్రాజెక్ట్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="162"/>
         <source>Final Draft screenplay</source>
-        <translation>Final Draft senaryosu</translation>
+        <translation>ఫైనల్ డ్రాఫ్ట్ స్క్రీన్ ప్లే</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="164"/>
         <source>Final Draft template</source>
-        <translation>Final Draft teması</translation>
+        <translation>ఫైనల్ డ్రాఫ్ట్ టెంప్లేట్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="166"/>
         <source>Trelby screenplay</source>
-        <translation>Trelby senaryosu</translation>
+        <translation>ట్రెబ్బి స్క్రీన్ ప్లే</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="168"/>
         <source>Office Open XML</source>
-        <translation>Office Open XML</translation>
+        <translation>ఆఫీస్ ఓపెన్ XML</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="170"/>
         <source>OpenDocument text</source>
-        <translation>OpenDocument metni</translation>
+        <translation>ఓపెన్ డాక్యుమెంట్ టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="172"/>
         <source>Fountain text</source>
-        <translation>Fountain metni</translation>
+        <translation>ఫౌంటెన్ టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="174"/>
         <source>Celtx project</source>
-        <translation>Celtx projesi</translation>
+        <translation>సెల్ట్క్స్ ప్రాజెక్ట్</translation>
     </message>
 </context>
 <context>
@@ -414,32 +273,32 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="23"/>
         <source>Cast Report</source>
-        <translation>Kast Raporu</translation>
+        <translation>తారాగణం నివేదిక</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="232"/>
         <source>Character</source>
-        <translation>Karakter</translation>
+        <translation>పాత్ర</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="234"/>
         <source>Total Dialogues</source>
-        <translation>Toplam Diyalog Sayısı</translation>
+        <translation>మొత్తం సంభాషణలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="237"/>
         <source>Speaking Scenes</source>
-        <translation>Konuştuğu Sahneler</translation>
+        <translation>సంభాషణలు ఉన్న సనివేశాలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="239"/>
         <source>Non-Sp. Scenes</source>
-        <translation>Konuşmadığı Sahneler</translation>
+        <translation>సంభాషణలు లేని సనివేశాలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="242"/>
         <source>Total Scenes</source>
-        <translation>Toplam Sahne</translation>
+        <translation>మొత్తం సనివేశాలు</translation>
     </message>
 </context>
 <context>
@@ -447,27 +306,27 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="29"/>
         <source>Characters Dialogues</source>
-        <translation>Karakterlerin Diyalogları</translation>
+        <translation>పాత్రలు సంభాషణలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="112"/>
         <source>Scene/Dialogue</source>
-        <translation>Sahne/Diyalog</translation>
+        <translation>సనివేశాలు/సంభాషణలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="114"/>
         <source>Number</source>
-        <translation>Numara</translation>
+        <translation>సంఖ్య</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="116"/>
         <source>Page</source>
-        <translation>Sayfa</translation>
+        <translation>పుట</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="142"/>
         <source>[UNDEFINED]</source>
-        <translation>[TANIMSIZ]</translation>
+        <translation>[నిర్వచించబడనిది]</translation>
     </message>
 </context>
 <context>
@@ -475,17 +334,17 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="51"/>
         <source>Characters Activity Plot</source>
-        <translation>Karakterlerin Etkinlik Çizelgesi</translation>
+        <translation>పాత్రల క్రియాశీలమైన ప్లాట్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="212"/>
         <source>Scene</source>
-        <translation>Sahne</translation>
+        <translation>సనివేశం</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="217"/>
         <source>Dialogues count:</source>
-        <translation>Diyalog Sayımı:</translation>
+        <translation>సంభాషణలు లెక్క:</translation>
     </message>
 </context>
 <context>
@@ -493,17 +352,17 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="175"/>
         <source>Pages</source>
-        <translation>Sayfalar</translation>
+        <translation>పుటలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="182"/>
         <source>Words</source>
-        <translation>Kelimeler</translation>
+        <translation>పదాలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="189"/>
         <source>Symbols</source>
-        <translation>Semboller</translation>
+        <translation>చిహ్నాలు</translation>
     </message>
 </context>
 <context>
@@ -511,38 +370,38 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="29"/>
         <source>Location Report</source>
-        <translation>Mekan Raporu</translation>
+        <translation>ప్రాంతంయోక్క నివేదిక</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="147"/>
         <source>Location/Scene</source>
-        <translation>Mekan/Sahne</translation>
+        <translation>ప్రాంతం/సనివేశం</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="149"/>
         <source>Number</source>
-        <translation>Numara</translation>
+        <translation>సంఖ్య</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="151"/>
         <source>Page</source>
-        <translation>Sayfa</translation>
+        <translation>పుట</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="153"/>
         <source>Scenes</source>
-        <translation>Sahne</translation>
+        <translation>సనివేశం</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="155"/>
         <source>Chron</source>
-        <translation>Süre</translation>
+        <translation>చొర్న్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="164"/>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="208"/>
         <source>[UNDEFINED]</source>
-        <translation>[TANIMSIZ]</translation>
+        <translation>[నిర్వచించబడనిది]</translation>
     </message>
 </context>
 <context>
@@ -550,57 +409,53 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Statistics/StatisticsFacade.cpp" line="75"/>
         <source>generated</source>
-        <translation>Oluşturulduğu zaman</translation>
+        <translation>ఉత్పత్తిచేయబడిన</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ResearchModel</name>
     <message>
-        <source>Scenario</source>
-        <translation type="vanished">Senaryo</translation>
-    </message>
-    <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="107"/>
         <source>Script</source>
-        <translation>Senaryo</translation>
+        <translation>రచన</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="115"/>
         <source>Title Page</source>
-        <translation>Başlık Sayfası</translation>
+        <translation>శీర్షిక</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="123"/>
         <source>Logline</source>
-        <translation>(Logline) Önerme</translation>
+        <translation>ఒక వాక్యంలో</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="131"/>
         <source>Synopsis</source>
-        <translation>Sinopsis</translation>
+        <translation>సంక్షిప్తముగ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="139"/>
         <source>Versions</source>
-        <translation>Sürümler</translation>
+        <translation>సంస్కరణలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="148"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="251"/>
         <source>Characters</source>
-        <translation>Karakterler</translation>
+        <translation>పాత్రలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="157"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="256"/>
         <source>Locations</source>
-        <translation>Mekanlar</translation>
+        <translation>ప్రాంతాలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="166"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="261"/>
         <source>Documents</source>
-        <translation>Belgeler</translation>
+        <translation>పత్రాలు</translation>
     </message>
 </context>
 <context>
@@ -609,172 +464,172 @@ Türkçe: Recep Burak Yak
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="66"/>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="92"/>
         <source>Undefined</source>
-        <translation>Tanımsız</translation>
+        <translation>నిర్వచించబడని</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="67"/>
         <source>Scene Heading</source>
-        <translation>Sahne Başlığı</translation>
+        <translation>సనివేశ శిర్షిక</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="68"/>
         <source>Scene Characters</source>
-        <translation>Sahne Karakterleri</translation>
+        <translation>సనివేశ పాత్రలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="69"/>
         <source>Action</source>
-        <translation>Eylem</translation>
+        <translation>నటన</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="70"/>
         <source>Character</source>
-        <translation>Karakter</translation>
+        <translation>పాత్ర</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="71"/>
         <source>Parenthetical</source>
-        <translation>Parantez</translation>
+        <translation>పరెంథెటికల్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="72"/>
         <source>Dialog</source>
-        <translation>Diyalog</translation>
+        <translation>సంభాషణ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="73"/>
         <source>Transition</source>
-        <translation>Geçişler</translation>
+        <translation>మారుపద్దతి</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="74"/>
         <source>Shot</source>
-        <translation>Çekim</translation>
+        <translation>షాట్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="75"/>
         <source>Title Header</source>
-        <translation>Başlık Üstbilgisi</translation>
+        <translation>టైటిల్ హెడర్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="76"/>
         <source>Title</source>
-        <translation>Başlık</translation>
+        <translation>టైటిల్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="77"/>
         <source>Noprintable Text</source>
-        <translation>Yazdırılamaz Metin</translation>
+        <translation>ముద్రించకూడని టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="78"/>
         <source>Folder</source>
-        <translation>Klasör</translation>
+        <translation>ఫోల్డర్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="79"/>
         <source>Folder Footer</source>
-        <translation>Klasör Altbilgisi</translation>
+        <translation>ఫోల్డర్ ఫుటర్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="80"/>
         <source>Scene Description</source>
-        <translation>Sahne Tanımı</translation>
+        <translation>సనివేశ వివరణ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="81"/>
         <source>Lyrics</source>
-        <translation>Lirikler</translation>
+        <translation>సాహిత్యం</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="94"/>
         <source>SH</source>
         <extracomment>Reduction of Scene Heading</extracomment>
-        <translation>SB</translation>
+        <translation>స.శి</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="96"/>
         <source>SC</source>
         <extracomment>Reduction of Scene Characters</extracomment>
-        <translation>SK</translation>
+        <translation>స.పా</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="98"/>
         <source>A</source>
         <extracomment>Reduction of Action</extracomment>
-        <translation>E</translation>
+        <translation>న</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="100"/>
         <source>C</source>
         <extracomment>Reduction of Character</extracomment>
-        <translation>K</translation>
+        <translation>పా</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="102"/>
         <source>P</source>
         <extracomment>Reduction of Parenthetical</extracomment>
-        <translation>P</translation>
+        <translation>ప</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="104"/>
         <source>D</source>
         <extracomment>Reduction of Dialog</extracomment>
-        <translation>D</translation>
+        <translation>సం</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="106"/>
         <source>Tr</source>
         <extracomment>Reduction of Transition</extracomment>
-        <translation>G</translation>
+        <translation>మా.ప</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="108"/>
         <source>S</source>
         <extracomment>Reduction of Shot</extracomment>
-        <translation>Ç</translation>
+        <translation>షా</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="110"/>
         <source>TH</source>
         <extracomment>Reduction of Title Header</extracomment>
-        <translation>BÜ</translation>
+        <translation>టై.హె</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="112"/>
         <source>Ti</source>
         <extracomment>Reduction of Title</extracomment>
-        <translation>Ba</translation>
+        <translation>టై</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="114"/>
         <source>NT</source>
         <extracomment>Reduction of Noprintable Text</extracomment>
-        <translation>YM</translation>
+        <translation>ము.టె</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="116"/>
         <source>F</source>
         <extracomment>Reduction of Folder</extracomment>
-        <translation>K</translation>
+        <translation>ఫో</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="118"/>
         <source>FF</source>
         <extracomment>Reduction of Folder Footer</extracomment>
-        <translation>KA</translation>
+        <translation>ఫో.ఫు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="120"/>
         <source>SD</source>
         <extracomment>Reduction of Scene Description</extracomment>
-        <translation>ST</translation>
+        <translation>స.వి</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="122"/>
         <source>L</source>
         <extracomment>Reduction of Lyrics</extracomment>
-        <translation>L</translation>
+        <translation>సా</translation>
     </message>
 </context>
 <context>
@@ -782,7 +637,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="405"/>
         <source>FADE IN:</source>
-        <translation>AÇILMA:</translation>
+        <translation>ఫేడ్ ఇన్:</translation>
     </message>
 </context>
 <context>
@@ -790,77 +645,77 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="634"/>
         <source>Final Draft screenplay (A4)</source>
-        <translation>Final Draft senaryosu (A4)</translation>
+        <translation>ఫైనల్ డ్రాఫ్ట్ స్క్రీన్ ప్లే (A4)</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="639"/>
         <source>Final Draft screenplay (Letter)</source>
-        <translation>Final Draft senaryosu (Letter)</translation>
+        <translation>ఫైనల్ డ్రాఫ్ట్ స్క్రీన్ ప్లే (లెటర్)</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="644"/>
         <source>Russian screenplay</source>
-        <translation>Rusça senaryo</translation>
+        <translation>రష్యన్ స్క్రీన్ ప్లే</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="649"/>
         <source>Russian screenplay with Courier Prime</source>
-        <translation>Rusça senaryo Courier Prime&apos;la</translation>
+        <translation>రష్యన్ స్క్రీన్ ప్లే కొరియర్ ప్రైం తో</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="654"/>
         <source>Chinese screenplay</source>
-        <translation>Çince senaryo</translation>
+        <translation>చైనీస్ స్క్రీన్ ప్లే</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="659"/>
         <source>Hebrew screenplay</source>
-        <translation>İbranice senaryo</translation>
+        <translation>హిబ్రూ స్క్రీన్ ప్లే</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="664"/>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation>A4 sayfa boyutunda uluslararası senaryo standart şablonu.</translation>
+        <translation>A4 పేజీ పరిమాణానికి అంతర్జాతీయ స్క్రీన్ ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="669"/>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation>Letter sayfa boyutunda uluslararası senaryo standart şablonu.</translation>
+        <translation>లెటర్ పేజీ పరిమాణానికి అంతర్జాతీయ స్క్రీన్ ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="674"/>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation>Rusça ve CIS senaryo standart şablonu.</translation>
+        <translation>రష్యన్ మరియు CIS స్క్రీన్ ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="679"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation>Rusça ve CIS senaryo standart şablonu, Courier New yerine Courier Prime fontuyla.</translation>
+        <translation>కొరియర్ న్యూ బదులుగా కొరియర్ ప్రధాన ఫాంట్తో రష్యన్ మరియు CIS స్క్రీన్ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="684"/>
         <source>Chinese screenplay standard template.</source>
-        <translation>Çince senaryo standart şablonu.</translation>
+        <translation>చైనీస్ స్క్రీన్ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="689"/>
         <source>Hebrew screenplay standard template.</source>
-        <translation>İbranice senaryo standart şablonu.</translation>
+        <translation>హిబ్రూ స్క్రీన్ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="704"/>
         <source>Default</source>
-        <translation>Varsayılan</translation>
+        <translation>డిఫాల్ట్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="709"/>
         <source>Default with Courier Prime</source>
-        <translation>Varsayılan, Courier Prime&apos;la</translation>
+        <translation>కొరియర్ ప్రైమ్తో డిఫాల్ట్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="725"/>
         <source>Copy of </source>
-        <translation>Şunun kopyası </translation>
+        <translation>కాపీ యొక్క </translation>
     </message>
 </context>
 <context>
@@ -868,37 +723,37 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="36"/>
         <source>Scene Report</source>
-        <translation>Sahne Raporu</translation>
+        <translation>సనివేశ నివేదిక</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="237"/>
         <source>Scene/Characters</source>
-        <translation>Sahne/Karakterler</translation>
+        <translation>సనివేశం/పాత్రలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="239"/>
         <source>Number</source>
-        <translation>Numara</translation>
+        <translation>సంఖ్య</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="241"/>
         <source>Page</source>
-        <translation>Sayfa</translation>
+        <translation>పుట</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="243"/>
         <source>Characters</source>
-        <translation>Karakter</translation>
+        <translation>పాత్రలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="245"/>
         <source>Chron</source>
-        <translation>Süre</translation>
+        <translation>చొర్న్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="259"/>
         <source>[UNDEFINED]</source>
-        <translation>[TANIMSIZ]</translation>
+        <translation>[నిర్వచించబడనిది]</translation>
     </message>
 </context>
 <context>
@@ -907,12 +762,12 @@ Türkçe: Recep Burak Yak
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="34"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation>DEVAMI</translation>
+        <translation>కొనసాగింపు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="39"/>
         <source>MORE</source>
-        <translation>DAHA VAR</translation>
+        <translation>అదనపు</translation>
     </message>
 </context>
 <context>
@@ -921,41 +776,41 @@ Türkçe: Recep Burak Yak
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="37"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="261"/>
         <source>Scene Duration</source>
-        <translation>Sahne Süresi</translation>
+        <translation>సనివేశ నిడివి</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="40"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="272"/>
         <source>Action Duration</source>
-        <translation>Eylem Süresi</translation>
+        <translation>నటన నిడివి</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="43"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="283"/>
         <source>Dialogues Duration</source>
-        <translation>Diyalog Süresi</translation>
+        <translation>సంభాషణ నిడివి</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="46"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="294"/>
         <source>Characters Count</source>
-        <translation>Karakter Sayımı</translation>
+        <translation>పాత్రల లెక్క</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="49"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="305"/>
         <source>Dialogs Count</source>
-        <translation>Diyalog Sayımı</translation>
+        <translation>సంభాషణల లెక్క</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="58"/>
         <source>Story Structure Analisys Plot</source>
-        <translation>Hikaye Yapısı Analiz Çizelgesi</translation>
+        <translation>కథ నిర్మాణం విశ్లేషణ ప్లాట్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="198"/>
         <source>Scene</source>
-        <translation>Sahne</translation>
+        <translation>సనివేశం</translation>
     </message>
 </context>
 <context>
@@ -963,38 +818,38 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="67"/>
         <source>Summary report</source>
-        <translation>Özet rapor</translation>
+        <translation>సారాంశం నివేది</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="157"/>
         <source>Chronometry</source>
-        <translation>Süreölçüm</translation>
+        <translation>కోనోమెట్రి</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="159"/>
         <source>Pages</source>
-        <translation>Sayfa</translation>
+        <translation>పుటలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="161"/>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="182"/>
         <source>Words</source>
-        <translation>Kelime Sayısı</translation>
+        <translation>పదాలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="163"/>
         <source>Characters with/without spaces</source>
-        <translation>Karakterler boşluklu/boşluksuz</translation>
+        <translation>అక్షరాలు ఖాళీలు తో/లేకుండా</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="174"/>
         <source>Text</source>
-        <translation>Metin</translation>
+        <translation>టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="178"/>
         <source>Paragraph</source>
-        <translation>Paragraf</translation>
+        <translation>పేరా</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="180"/>
@@ -1002,7 +857,7 @@ Türkçe: Recep Burak Yak
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="297"/>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="361"/>
         <source>Size</source>
-        <translation>Boyut</translation>
+        <translation>పరిమాణం</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="184"/>
@@ -1010,57 +865,57 @@ Türkçe: Recep Burak Yak
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="299"/>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="363"/>
         <source>Percents</source>
-        <translation>Yüzdeler</translation>
+        <translation>శాతాలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="211"/>
         <source>Scenes</source>
-        <translation>Sahneler</translation>
+        <translation>సనివేశాలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="235"/>
         <source>Time</source>
-        <translation>Zaman</translation>
+        <translation>సమయం</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="252"/>
         <source>[UNDEFINED]</source>
-        <translation>[TANIMSIZ]</translation>
+        <translation>[నిర్వచించబడనిది]</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="271"/>
         <source>Locations</source>
-        <translation>Mekanlar</translation>
+        <translation>ప్రాంతాలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="295"/>
         <source>Place</source>
-        <translation>Alan</translation>
+        <translation>స్థలం</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="328"/>
         <source>Characters</source>
-        <translation>Karakterler</translation>
+        <translation>పాత్రలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="359"/>
         <source>Dialogues count</source>
-        <translation>Diyalog sayımı</translation>
+        <translation>సంభాషణల లెక్క</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="373"/>
         <source>More 10 dialogues</source>
-        <translation>10&apos;dan çok diyaloglular</translation>
+        <translation>మరిన్ని 10 సంభాషణలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="380"/>
         <source>About 10 dialogues</source>
-        <translation>Yaklaşık 10 diyaloglular</translation>
+        <translation>గురించి 10 సంభాషణలు</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="387"/>
         <source>Nonspeaking</source>
-        <translation>Konuşmasızlar</translation>
+        <translation>సంభాషణలులేని</translation>
     </message>
 </context>
 <context>
@@ -1068,47 +923,47 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="14"/>
         <source>Form</source>
-        <translation>Biçim</translation>
+        <translation>నుండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="35"/>
         <source>Card size:</source>
-        <translation>Kart boyutu:</translation>
+        <translation>కార్డు పరిమాణం:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="42"/>
         <source>Card ratio:</source>
-        <translation>Kart oranı:</translation>
+        <translation>కార్డు నిష్పత్తి :</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="78"/>
         <source>Layout by</source>
-        <translation>Şuna göre diz</translation>
+        <translation>లేఅవుట్ ద్వారా</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="87"/>
         <source>rows</source>
-        <translation>satırlar</translation>
+        <translation>వరుసలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="97"/>
         <source>columns</source>
-        <translation>sütunlar</translation>
+        <translation>నిలువు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="135"/>
         <source>Distance:</source>
-        <translation>Mesafe:</translation>
+        <translation>దూరం:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="157"/>
         <source>Arrange</source>
-        <translation>Yerleştir</translation>
+        <translation>అమర్చు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="180"/>
         <source>cards in Row</source>
-        <translation>Satır başına kart</translation>
+        <translation>కార్డ్స్ లో వరుస</translation>
     </message>
 </context>
 <context>
@@ -1116,52 +971,52 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="801"/>
         <source>Go to text</source>
-        <translation>Metne git</translation>
+        <translation>టెక్స్ట్కి వెళ్లండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="806"/>
         <source>Convert to scene</source>
-        <translation>Sahneye dönüştür</translation>
+        <translation>సన్నివేశాన్ని మార్చండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="807"/>
         <source>Convert to folder</source>
-        <translation>Klasöre dönüştür</translation>
+        <translation>ఫోల్డర్కు మార్చండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="813"/>
         <source>Edit</source>
-        <translation>Düzenle</translation>
+        <translation>కూర్పు</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="829"/>
         <source>Color %1</source>
-        <translation>Renk %1</translation>
+        <translation>రంగు %1</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="831"/>
         <source>Clear</source>
-        <translation>Temizle</translation>
+        <translation>క్లియర్</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="849"/>
         <source>Add color</source>
-        <translation>Renk ekle</translation>
+        <translation>రంగును జోడించండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="867"/>
         <source>Create card</source>
-        <translation>Kart oluştur</translation>
+        <translation>కార్డును సృష్టించండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="868"/>
         <source>Remove</source>
-        <translation>Kaldır</translation>
+        <translation>తొలగించు</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="910"/>
         <source>Stamp:</source>
-        <translation>Damga:</translation>
+        <translation>స్టాంప్:</translation>
     </message>
 </context>
 <context>
@@ -1169,17 +1024,17 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.ui" line="26"/>
         <source>Change password</source>
-        <translation>Parola değiştir</translation>
+        <translation>పాస్ వర్డ్ ను మార్చండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.ui" line="32"/>
         <source>Old Password</source>
-        <translation>Eski parola</translation>
+        <translation>పాత పాస్వర్డ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.ui" line="55"/>
         <source>New Password</source>
-        <translation>Yeni parola</translation>
+        <translation>కొత్త పాస్వర్డ్</translation>
     </message>
 </context>
 <context>
@@ -1187,22 +1042,22 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="14"/>
         <source>Application error was detected</source>
-        <translation>Program hatası tespit edildi</translation>
+        <translation>అప్లికేషన్ లో లోపం గుర్తించబడింది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="20"/>
         <source>Please, send error report to developer. This will help to make application better.</source>
-        <translation>Lütfen, hatayı geliştiriciye yollayın. Bu, programın daha iyi olmasına yardımcı olacak.</translation>
+        <translation>దయచేసి డెవలపర్కు దోష నివేదికను పంపండి. ఇది అప్లికేషన్ను మెరుగుపరచడానికి సహాయం చేస్తుంది.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="43"/>
         <source>Your email:</source>
-        <translation>Epostanız:</translation>
+        <translation>మీ ఇమెయిల్:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="53"/>
         <source>Message to developer:</source>
-        <translation>Geliştiriciye ilet:</translation>
+        <translation>డెవలపర్కు సందేశం:</translation>
     </message>
 </context>
 <context>
@@ -1210,7 +1065,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../DataLayer/DataStorageLayer/ScriptVersionStorage.cpp" line="27"/>
         <source>First draft</source>
-        <translation>İlk taslak</translation>
+        <translation>మొదటి డ్రాఫ్ట్</translation>
     </message>
 </context>
 <context>
@@ -1218,174 +1073,171 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="70"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
-        <translation>Projeye daha üst bir sürümde düzenlenmiş. Açmak içi programı son sürümüne güncellemeniz gerekiyor.</translation>
+        <translation>ఉన్నత సంస్కరణలో ప్రాజెక్ట్ సవరించబడింది. మీరు దీన్ని తెరవడానికి తాజా వెర్షన్కు అప్లికేషన్ అప్డేట్ చేయాలి.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="430"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1536"/>
         <source>First draft</source>
-        <translation>İlk taslak</translation>
+        <translation>మొదటి డ్రాఫ్ట్</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="438"/>
         <source>INT</source>
-        <translation>İÇ</translation>
+        <translation>లో</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="442"/>
         <source>EXT</source>
-        <translation>DIŞ</translation>
+        <translation>బ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="446"/>
         <source>INT./EXT</source>
-        <translation>İÇ./DIŞ</translation>
+        <translation>లో./బ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="454"/>
         <source>DAY</source>
-        <translation>GÜN</translation>
+        <translation>పగలు</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="458"/>
         <source>NIGHT</source>
-        <translation>GECE</translation>
+        <translation>రాత్రి</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="462"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="727"/>
         <source>MORNING</source>
-        <translation>SABAH</translation>
+        <translation>ఉదయం</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="466"/>
         <source>AFTERNOON</source>
-        <translation>ÖĞLEDEN SONRA</translation>
+        <translation>మద్యాహ్నం</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="470"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="731"/>
         <source>EVENING</source>
-        <translation>AKŞAM</translation>
+        <translation>సాయంత్రం</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="474"/>
         <source>LATER</source>
-        <translation>SONRA</translation>
+        <translation>తర్వాత</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="478"/>
         <source>MOMENTS LATER</source>
-        <translation>BİRAZ SONRA</translation>
+        <translation>క్షణాల తర్వాత</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="482"/>
         <source>CONTINUOUS</source>
-        <translation>DEVAMLI</translation>
+        <translation>నిరంతర</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="486"/>
         <source>THE NEXT DAY</source>
-        <translation>SONRAKİ GÜN</translation>
+        <translation>మరుసటి రోజు</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="495"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
-        <translatorcomment>Üst Ses</translatorcomment>
-        <translation>Ü.S.</translation>
+        <translation>వా.ఓ.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="500"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
-        <translatorcomment>Ekran-Dışı</translatorcomment>
-        <translation>E.D.</translation>
+        <translation>తె.వె.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="505"/>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
-        <translatorcomment>Kamera-Dışı</translatorcomment>
-        <translation>K.D.</translation>
+        <translation>కె.వె.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="510"/>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
-        <translation>ALTYAZI</translation>
+        <translation>సబ్టైటిల్</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="515"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation>DEVAMI</translation>
+        <translation>కొనసాగింపు</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="523"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1474"/>
         <source>CUT TO:</source>
-        <translation>KES:</translation>
+        <translation>కట్ టూ:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="527"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1478"/>
         <source>FADE IN:</source>
-        <translation>AÇILMA:</translation>
+        <translation>ఫేడ్ ఇన్:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="531"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1482"/>
         <source>FADE OUT</source>
-        <translation>KARARMA</translation>
+        <translation>ఫేడ్ అవుట్</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="535"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1486"/>
         <source>FADE TO:</source>
-        <translation>KARARIP AÇILARAK GEÇİŞ:</translation>
+        <translation>ఫేడ్ టూ:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="539"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1490"/>
         <source>DISSOLVE TO:</source>
-        <translation>SOLARAK GEÇİŞ:</translation>
+        <translation>డిస్సొల్వె టూ:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="543"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1494"/>
         <source>BACK TO:</source>
-        <translation>DÖNÜŞ:</translation>
+        <translation>తిరిగి:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="547"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1498"/>
         <source>MATCH CUT TO:</source>
-        <translation>EŞLEMELİ KESME:</translation>
+        <translation>మ్యాచ్ కట్ టూ:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="551"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1502"/>
         <source>JUMP CUT TO:</source>
-        <translation>ATLAMALI KESME:</translation>
+        <translation>జుంప్ కట్ టూ:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="555"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1506"/>
         <source>FADE TO BLACK</source>
-        <translation>SİYAHA KARARMA</translation>
+        <translation>ఫేడ్ టూ బ్లాక్</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
         <source>Photos</source>
-        <translation>Fotoğraflar</translation>
+        <translation>ఫోటోలు</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="1363"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1434"/>
         <source>Unnamed image</source>
-        <translation>Adsız görüntü</translation>
+        <translation>పేరు పెట్టని చిత్రం</translation>
     </message>
 </context>
 <context>
@@ -1393,7 +1245,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../../libs/fileformats/docx_reader.cpp" line="145"/>
         <source>Unable to open archive.</source>
-        <translation>Arşiv açılamıyor.</translation>
+        <translation>ఆర్కైవ్ ను తెరవడం సాధ్యపడలేదు.</translation>
     </message>
 </context>
 <context>
@@ -1401,7 +1253,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../Domain/ScriptVersion.cpp" line="151"/>
         <source>current version</source>
-        <translation>geçerli sürüm</translation>
+        <translation>ప్రస్తుత సంస్కరణ</translation>
     </message>
 </context>
 <context>
@@ -1409,25 +1261,25 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="32"/>
         <source>Export Scenario</source>
-        <translation>Senaryoyu Dışa Aktar</translation>
+        <translation>ఎగుమతి సినారియొ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="132"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="254"/>
         <source>Choose file to export:</source>
-        <translation>Dışa aktarılacak klasörü seçin:</translation>
+        <translation>ఎగుమతి చేయడానికి ఫైల్ను ఎంచుకోండి:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="168"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="267"/>
         <source>File exists. It will be replaced after exporting.</source>
-        <translation>Dosya zaten mevcut. Oluşturulan dosyayla değiştirilecek.</translation>
+        <translation>ఫైల్ ఉంది. సృష్టించిన తర్వాత ఇది భర్తీ చేయబడుతుంది.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="208"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="322"/>
         <source>Browse...</source>
-        <translation>Gözat...</translation>
+        <translation>బ్రౌజ్...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="211"/>
@@ -1438,91 +1290,87 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="355"/>
         <source>Format:</source>
-        <translation>Biçim:</translation>
+        <translation>ఫార్మాట్:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="365"/>
         <source>DOCX</source>
-        <translation>DOCX</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="375"/>
         <source>PDF</source>
-        <translation>PDF</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="385"/>
         <source>FDX</source>
-        <translation>FDX</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="392"/>
         <source>Fountain</source>
-        <translation>Fountain</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="420"/>
         <source>Additional (Numbering, Title Page etc.)</source>
-        <translation>Ek Bilgiler (Numaralandırma, Başlık Sayfası vs.)</translation>
+        <translation>అదనపు (నంబరింగ్, శీర్షిక పేజీ మొదలైనవి.)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="449"/>
         <source>Print watermark:</source>
-        <translation>Çıktı gizli damgası (filigran):</translation>
+        <translation>వాటర్మార్క్ను ప్రింట్ చేయండి:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="462"/>
         <source>Template:</source>
-        <translation>Şablon:</translation>
+        <translation>టెంప్లటె:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="479"/>
         <source>Print scenes numbers</source>
-        <translation>Sayfa numaralarını yazdır</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="499"/>
-        <source>Print Title Page</source>
-        <translation>Başlık Sayfasını Yazdır</translation>
+        <translation>సన్నివేశాల సంఖ్యలను ముద్రించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="489"/>
         <source>Print pages numbers</source>
-        <translation>Sayfa numaralarını yazdır</translation>
+        <translation>పేజీల సంఖ్యలను ముద్రించండి</translation>
     </message>
     <message>
-        <source>Print scenes numbers with prefix</source>
-        <translation type="vanished">Sayfa numaralarını önek ile yazdır</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="499"/>
+        <source>Print Title Page</source>
+        <translation>శీర్షిక పేజీ ముద్రించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="509"/>
         <source>Print dialogues numbers</source>
-        <translation>Diyalog numaralarını yazdır</translation>
+        <translation>సంభాషణ సంఖ్యలను ముద్రించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="516"/>
         <source>Save Review Marks</source>
-        <translation>İnceleme İşaretlerini Kaydet</translation>
+        <translation>రివ్యూ మార్క్స్ను సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="526"/>
         <source>Check Page Breaks</source>
-        <translation>Sayfa Sonlarını Denetle</translation>
+        <translation>పేజీ బ్రేక్స్ ను తనిఖీ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="571"/>
         <source>Export</source>
-        <translation>Dışa Aktar</translation>
+        <translation>ఎగుమతి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="581"/>
         <source>Print Preview</source>
-        <translation>Yazdırma Önizlemesi</translation>
+        <translation>ప్రింట్ ప్రివ్యు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="588"/>
         <source>Cancel</source>
-        <translation>İptal</translation>
+        <translation>రద్దు చేయు</translation>
     </message>
 </context>
 <context>
@@ -1530,27 +1378,27 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="71"/>
         <source>OpenDocument Text</source>
-        <translation>OpenDocument Metni</translation>
+        <translation>ఓపెన్ డాక్యుమెంట్ టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="73"/>
         <source>Office Open XML</source>
-        <translation>Office Open XML</translation>
+        <translation>ఆఫీస్ ఓపెన్ XML</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="75"/>
         <source>Rich Text Format</source>
-        <translation>Zengin Metin Biçimi</translation>
+        <translation>రిచ్ టెక్స్ట్ ఫార్మాట్</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="77"/>
         <source>Plain Text</source>
-        <translation>Düz Metin</translation>
+        <translation>ప్లెన్ టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="107"/>
         <source>All Supported Files</source>
-        <translation>Tüm Desteklenen Dosyalar</translation>
+        <translation>అన్ని సపోర్ట్ చేసే ఫైల్స్</translation>
     </message>
 </context>
 <context>
@@ -1559,7 +1407,7 @@ Türkçe: Recep Burak Yak
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="255"/>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="398"/>
         <source>END OF </source>
-        <translation>SONU </translation>
+        <translation>ఎండ్ ఆఫ్ </translation>
     </message>
 </context>
 <context>
@@ -1567,27 +1415,27 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="121"/>
         <source>Couldn&apos;t parse XML file.</source>
-        <translation>XML dosyası çözümlenemedi.</translation>
+        <translation>XML ఫైల్ను అన్వయించడం సాధ్యం కాలేదు.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="299"/>
         <source>Couldn&apos;t read file.</source>
-        <translation>Dosya okunamadı.</translation>
+        <translation>ఫైల్ చదవలేకపోయింది.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="368"/>
         <source>Couldn&apos;t open file to write.</source>
-        <translation>Dosya yazmak için açılamadı.</translation>
+        <translation>వ్రాయడానికి ఫైల్ను తెరవడం సాధ్యం కాలేదు.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="376"/>
         <source>Saved.</source>
-        <translation>Kaydedildi.</translation>
+        <translation>సేవెడ్.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="398"/>
         <source>MindMap exported as </source>
-        <translation>ZihinHaritası bu biçimde dışa aktarıldı </translation>
+        <translation>MindMap గా ఎగుమతి చేయబడింది </translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="439"/>
@@ -1603,73 +1451,73 @@ Türkçe: Recep Burak Yak
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="749"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="848"/>
         <source>No active node.</source>
-        <translation>Etkin düğüm yok.</translation>
+        <translation>అక్టివ్ క్రియాశీల నోడ్ లేదు.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="503"/>
         <source>No active node</source>
-        <translation>Etkin düğüm yok</translation>
+        <translation>అక్టివ్ క్రియాశీల నోడ్ లేదు</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="517"/>
         <source>Node hasn&apos;t parent for add sibling node</source>
-        <translation>Düğüm, kardeş düğüm eklemek için ebeveyne sahip değil</translation>
+        <translation>నోడ్ జతబడ్డ నోడ్ కోసం పేరెంట్ కాదు</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="541"/>
         <source>Base node cannot be deleted.</source>
-        <translation>Kaynak düğüm silinemez.</translation>
+        <translation>బేస్ నోడ్ తొలగించబడదు.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="579"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="608"/>
         <source>Too much scaling.</source>
-        <translation>Çok fazla büyütme.</translation>
+        <translation>చాలా స్కేలింగ్.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="639"/>
         <source>Select node color</source>
-        <translation>Düğüm rengi seç</translation>
+        <translation>నోడ్ రంగును ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="692"/>
         <source>Select text color</source>
-        <translation>Metin rengi seç</translation>
+        <translation>టెక్స్ట్ రంగును ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="735"/>
         <source>Add edge: select destination node.</source>
-        <translation>Bağ ekle: hedef düğümü seç.</translation>
+        <translation>అంచు జోడించు: గమ్య నోడ్ను ఎంచుకోండి.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="741"/>
         <source>Delete edge: select other end-node.</source>
-        <translation>Bağ sil: diğer son düğümü seç.</translation>
+        <translation>అంచు తొలగించు: ఇతర ముగింపు-నోడ్ను ఎంచుకోండి.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="800"/>
         <source>Edge adding cancelled.</source>
-        <translation>Bağ ekleme iptal edildi.</translation>
+        <translation>ఎడ్జ్ జోడింపు రద్దు చేయబడింది.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="807"/>
         <source>Edge deleting cancelled.</source>
-        <translation>Bağ silme iptal edildi.</translation>
+        <translation>ఎడ్జ్ తొలగించడం రద్దు చేయబడింది.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="909"/>
         <source>Can&apos;t add edge between single node.</source>
-        <translation>Tek düğüme bağ eklenemez.</translation>
+        <translation>ఒకే నోడ్ మధ్య అంచుని జోడించలేరు.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="915"/>
         <source>There is already an edge between these two nodes.</source>
-        <translation>Bu iki düğüm arasında zaten bir bağ var.</translation>
+        <translation>ఈ రెండు నోడ్స్ మధ్య ఒక అంచు ఇప్పటికే ఉంది.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="946"/>
         <source>There is no edge between these two nodes.</source>
-        <translation>Bu iki düğüm arasında bir bağ yok.</translation>
+        <translation>ఈ రెండు నోడ్స్ మధ్య అంచు లేదు.</translation>
     </message>
 </context>
 <context>
@@ -1677,22 +1525,22 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="20"/>
         <source>Import Scenario</source>
-        <translation>Senaryo İçe Aktar</translation>
+        <translation>దిగుమతి సినారియొ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="35"/>
         <source>Scenario</source>
-        <translation>Senaryo</translation>
+        <translation>సినారియొ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="45"/>
         <source>Outline</source>
-        <translation>Anahat</translation>
+        <translation>అవుట్లైన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="80"/>
         <source>Browse...</source>
-        <translation>Gözat...</translation>
+        <translation>బ్రౌజ్...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="83"/>
@@ -1702,42 +1550,42 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="103"/>
         <source>Choose File with Project to Import:</source>
-        <translation>Projeyle İçe Aktarılacak Bir Dosya Seçin:</translation>
+        <translation>దిగుమతి చేసిన ప్రాజెక్ట్తో ఫైల్ను ఎంచుకోండి:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="113"/>
         <source>Remove scenes numbers</source>
-        <translation>Sayfa numaralarını kaldır</translation>
+        <translation>సన్నివేశాల సంఖ్యలు తొలగించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="123"/>
         <source>Insert To</source>
-        <translation>Dahil Et</translation>
+        <translation>చొప్పించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="129"/>
         <source>Replace scenario</source>
-        <translation>Senaryoyu yer değiştir</translation>
+        <translation>సినారియొ పునఃస్థాపించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="139"/>
         <source>Current cursor position</source>
-        <translation>Geçerli imleç konumu</translation>
+        <translation>ప్రస్తుత కర్సర్ స్థానం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="146"/>
         <source>End of scenario</source>
-        <translation>Senaryonun sonu</translation>
+        <translation>సినారియొ ముగింపు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="156"/>
         <source>Find characters and locations</source>
-        <translation>Karakterleri ve mekanları bul</translation>
+        <translation>పాత్రలను మరియు స్థానాలను కనుగొనండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="166"/>
         <source>Save review marks</source>
-        <translation>İnceleme İşaretlerini Kaydet</translation>
+        <translation>సమీక్ష మార్కులను సేవ్ చేయండి</translation>
     </message>
 </context>
 <context>
@@ -1745,31 +1593,11 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="20"/>
         <source>Choose application language</source>
-        <translation>Programın dilini seçin</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="87"/>
-        <source>English</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="70"/>
-        <source>Detect language from system locale</source>
-        <translation>Dili sistemin dilinden algıla</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="80"/>
-        <source>Українська</source>
-        <translation></translation>
+        <translation>భాష ఎంపిక</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="26"/>
         <source>Español</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="162"/>
-        <source>Қазақ</source>
         <translation></translation>
     </message>
     <message>
@@ -1778,29 +1606,44 @@ Türkçe: Recep Burak Yak
         <translation></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="60"/>
-        <source>Русский</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="53"/>
         <source>Français</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="176"/>
-        <source>فارْسِى</source>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="60"/>
+        <source>Русский</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="70"/>
+        <source>Detect language from system locale</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="80"/>
+        <source>Українська</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="87"/>
+        <source>English</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="97"/>
+        <source>Português</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="107"/>
+        <source>Polski</source>
         <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="128"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Tercih ettiğiniz dil bulunamadı? Kendiniz eklemek için okuyun.&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="183"/>
-        <source>汉语</source>
-        <translation></translation>
+        <translation>&lt;a href = &quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one- యొక్క -ఎందుకంటే%3F &quot;style =&quot; color: # 2b78da; &quot;&gt; ప్రాధాన్య భాష కనుగొనబడలేదు? మీరు దాన్ని ఎలా జోడించవచ్చో చదవండి. &lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="138"/>
@@ -1818,8 +1661,23 @@ Türkçe: Recep Burak Yak
         <translation></translation>
     </message>
     <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="162"/>
+        <source>Қазақ</source>
+        <translation></translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="169"/>
         <source>Azərbaycan</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="176"/>
+        <source>فارْسِى</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="183"/>
+        <source>汉语</source>
         <translation></translation>
     </message>
     <message>
@@ -1832,16 +1690,6 @@ Türkçe: Recep Burak Yak
         <source>తెలుగు</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="97"/>
-        <source>Português</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="107"/>
-        <source>Polski</source>
-        <translation></translation>
-    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -1849,49 +1697,49 @@ Türkçe: Recep Burak Yak
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="66"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="247"/>
         <source>&amp;Email</source>
-        <translation>&amp;Eposta</translation>
+        <translation>&amp;Email</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="86"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="260"/>
         <source>&amp;Password</source>
-        <translation>&amp;Parola</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="135"/>
         <source>ErrorLabel</source>
-        <translation>HataEtiketi</translation>
+        <translation>లోపం లేబుల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hata &amp;amp;mesajı&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head&gt; &lt;body&gt; &lt;p&gt; లోపం &amp; సందేశాన్ని &lt;/ p&gt; &lt;/ body&gt; &lt;/ html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="202"/>
         <source>Restore Password</source>
-        <translation>Parolayı Yenile</translation>
+        <translation>పాస్వర్డ్ పునరుద్ధరించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="309"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="457"/>
         <source>Error Icon</source>
-        <translation>Hata İconu</translation>
+        <translation>లోపం ఐకాన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="325"/>
         <source>Error &amp;message</source>
-        <translation>Hata &amp;mesajı</translation>
+        <translation>లోపం &amp;message</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="408"/>
         <source>&amp;Verification code</source>
-        <translation>&amp;Doğrulama kodu</translation>
+        <translation>&amp;Verification కోడ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="473"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &lt;/p&gt;&lt;p&gt;&amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hata &lt;/p&gt;&lt;p&gt;&amp;amp;mesajı&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head&gt; &lt;body&gt; &lt;p&gt; లోపం &lt;/ p&gt; &lt;p&gt; &amp; amp; సందేశం &lt;/ p&gt; &lt;/ body&gt; &lt;/ html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1899,37 +1747,37 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="114"/>
         <source> - changed</source>
-        <translation> - değiştirildi</translation>
+        <translation> - మార్చబడింది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="329"/>
         <source>File format not supported</source>
-        <translation>Dosya biçimi desteklenmiyor</translation>
+        <translation>ఫైల్ ఫార్మాట్ మద్దతు ఇవ్వ లేదు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="330"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation>Microsoft &lt;b&gt;DOC&lt;/b&gt; dosyaları desteklenmiyor. Dosyayı &lt;b&gt;DOCX&lt;/b&gt; biçimine çevirmeli ve yeniden içe aktarmalısınız.</translation>
+        <translation>Microsoft &lt;b&gt; DOC &lt;/ b&gt; ఫైళ్లకు మద్దతు లేదు. మీరు దీన్ని &lt;b&gt; DOCX &lt;/ b&gt; ఫైల్కు సేవ్ చేసి, రీమార్పోర్ట్కు సేవ్ చేయాలి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="432"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
-        <translation>Projeyi var olmayan bir klasörde oluşturmayı deniyorsunuz &lt;b&gt;%1&lt;/b&gt;. Lütfen, yeni projeniz için başka bir konum seçin.</translation>
+        <translation>&lt;B&gt;%1 &lt;/ b&gt; లేని ఫోల్డర్లో ప్రాజెక్ట్ను సృష్టించడానికి మీరు ప్రయత్నిస్తారు. దయచేసి కొత్త ప్రాజెక్ట్ కోసం ఇతర స్థానాన్ని ఎంచుకోండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="436"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry.</source>
-        <translation>Dosyaya yazma işlemi gerçekleştirilemiyor. Dosya başka bir program tarafından kullanılıyor olabilir. Lütfen programı kapayıp yeniden deneyin.</translation>
+        <translation>ఫైల్ వ్రాయడానికి సాధ్యపడదు. దీనికి మరొక అప్లికేషన్ ద్వారా తెరవబడుతుంది. దయచేసి దీన్ని మూసివేసి, మళ్లీ ప్రయత్నించండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="439"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>Dosyaya yazma işlemi gerçekleştirilemiyor. Yazmak için seçtiğiniz klasörün izinlerini gözden geçirin. Lütfen, başka bir klasör seçin.</translation>
+        <translation>ఫైల్ను వ్రాయడం సాధ్యపడదు. ఎంచుకున్న ఫోల్డర్లో వ్రాయడానికి అనుమతులను తనిఖీ చేయండి. దయచేసి ఇతర ఫోల్డర్ను ఎంచుకోండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="441"/>
         <source>Create project error</source>
-        <translation>Proje oluşturma hatası</translation>
+        <translation>ప్రాజెక్ట్ లోపాన్ని సృష్టించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="485"/>
@@ -1937,470 +1785,458 @@ Türkçe: Recep Burak Yak
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="899"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="992"/>
         <source>Can&apos;t open project file</source>
-        <translation>Proje dosyası açılamıyor</translation>
+        <translation>ప్రాజెక్ట్ ఫైల్ను తెరవడం సాధ్యపడదు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="525"/>
         <source>Choose file to save project</source>
-        <translation>Projeyi kaydetmek için konum seçin</translation>
+        <translation>ప్రాజెక్ట్ను సేవ్ చేయడానికి ఫైల్ను ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="527"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="783"/>
         <source>Scenarist project files (*%1)</source>
-        <translation>Scenarist proje dosyaları (*%1)</translation>
+        <translation>సినరిస్ట్ ప్రాజెక్ట్ ఫైల్లు (*%1)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="586"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="673"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="694"/>
         <source>Saving error</source>
-        <translation>Kaydetme hatası</translation>
+        <translation>సేవ్ చేయడంలో లోపం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="587"/>
         <source>Can&apos;t save project as &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Please check permissions and retry.</source>
-        <translation>Farklı kaydedilemiyor &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Lütfen izinleri gözden geçirip yeniden deneyin.</translation>
+        <translation>ప్రాజెక్ట్ను &lt;b&gt;%1 &lt;/ b&gt; గా సేవ్ చేయలేము. &lt;br/&gt; దయచేసి అనుమతులను తనిఖీ చేసి మళ్ళీ ప్రయత్నించండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="619"/>
         <source>Possible save error</source>
-        <translation>Muhtemel kaydetme hatası</translation>
+        <translation>సాధ్యం సేవ్ లోపం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="620"/>
         <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
-        <translation>50 megabyte&apos;tan az disk alanınız var. Bu projeyi kaydederken sorunlara sebep olabilir. Disk alanı açıp dosyanın doğru kaydedilip kaydedilmediğini gözden geçirmenizi öneririz.</translation>
+        <translation>మీకు 50 మెగాబైట్ల ఉచిత డిస్క్ స్థలం ఉంది. ఇది ప్రాజెక్ట్ను సేవ్ చేయడంలో సమస్యలకు దారి తీస్తుంది. మీరు మరింత ఖాళీని ఖాళీ చేయాలని మరియు ప్రాజెక్ట్ సరిగ్గా సేవ్ చేయబడిందో లేదో మేము సిఫార్సు చేస్తున్నాము.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="674"/>
         <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
-        <translation>Değişiklikleriniz proje dosyasına kaydedilemedi. Burada dahili bir veritabanı hatası bulunuyor: %1 Lütfen, bu dosyanın bulunup bulunmadığını ve yazma izninizin olup olmadığını gözden geçirin. Tekrar dene (kaydet)?</translation>
+        <translation>ప్రాజెక్ట్లో మీ మార్పులను రాయలేరు. అంతర్గత డేటాబేస్ లోపం ఉంది:%1 దయచేసి ఈ ఫైల్ ఉనికిలో ఉన్నట్లయితే మరియు మీకు వ్రాసే అనుమతులు ఉంటే తనిఖీ చేయండి. మళ్ళీ ప్రయత్నించాలా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="695"/>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
-        <translation>&lt;b&gt;%1&lt;/b&gt; konumunda dosya mevcut olmadığı için değişiklikleriniz projeye kaydedilemedi. Lütfen dosyayı geri taşıyıp yeniden deneyin. Kaydetmeyi yeniden deneyin</translation>
+        <translation>ఫైల్ ఉనికిలో లేనందున &lt;b&gt;%1 &lt;/ b&gt; వద్ద ఉన్న మీ మార్పులను వ్రాయలేము. దయచేసి ఫైల్ను తిరిగి తరలించి సేవ్ చేయడాన్ని మళ్లీ ప్రయత్నించండి. సేవ్ చేయడానికి మళ్లీ ప్రయత్నించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="781"/>
         <source>Choose project file to open</source>
-        <translation>Açmak için proje dosyası seçin</translation>
+        <translation>తెరవడానికి ప్రాజెక్ట్ ఫైల్ను ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="806"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="900"/>
         <source>Ignore and try to open project?</source>
-        <translation>Yoksay ve dosyayı açmayı dene?</translation>
+        <translation>విస్మరించండి మరియు ప్రాజెక్ట్ను తెరవడానికి ప్రయత్నించాలా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="920"/>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation>&lt;b&gt;%1&lt;/b&gt; adlı projeyi son kullanılanlardan gizlemek istediğinize emin misiniz?</translation>
+        <translation>మీరు ఇటీవల &lt;b&gt;%1 &lt;/ b&gt; ను ఇటీవల నుండి దాచాలని అనుకుంటున్నారా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="939"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="945"/>
         <source>Moving project to the cloud failed</source>
-        <translation>Projeyi buluta taşıma başarısız oldu</translation>
+        <translation>మేఘానికి ప్రాజెక్ట్ను తరలించడం విఫలమైంది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="940"/>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
-        <translation>Projelerinizi buluta taşıyabilmek için KIT Scenarist bulut hizmetinde oturum açmış olmanız gerekli.</translation>
+        <translation>క్లౌడ్కు ప్రాజెక్ట్లను కదిలేందుకు మీరు కిట్ సెన్సార్ క్లౌడ్ సేవలో లాగిన్ చేయాలి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="946"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
-        <translation>Dosyalarınızı buluta taşıyabilmek için KIT Scenarist bulut hizmetindeki aboneliğiniz etkin olmalı.</translation>
+        <translation>క్లౌడ్ కు ప్రాజెక్ట్లను కదిలేందుకు కిట్ సెన్సార్ క్లౌడ్ సేవలో మీ సబ్స్క్రిప్షన్ క్రియాశీలకంగా ఉండాలి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1003"/>
         <source>Change project name</source>
-        <translation>Proje adını değiştirin</translation>
+        <translation>ప్రాజెక్ట్ పేరుని మార్చండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1004"/>
         <source>Enter new name for project</source>
-        <translation>Proje için yeni bir ad girin</translation>
+        <translation>ప్రాజెక్ట్ కోసం కొత్త పేరు నమోదు చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1036"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>&lt;b&gt;%1&lt;/b&gt; projesini kaldırmak istediğinize emin misiniz?</translation>
+        <translation>మీరు ప్రాజెక్ట్ &lt;b&gt;%1 &lt;/ b&gt; ను తొలగించాలని నిశ్చయించుకున్నారా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1051"/>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>&lt;b&gt;%1&lt;/b&gt; projesinden aboneliğinizi kaldırmak istediğinize emin misiniz?</translation>
+        <translation>మీరు &lt;b&gt;%1 &lt;/ b&gt; ప్రాజెక్ట్కు మీ చందాని తొలగించాలని నిశ్చయించుకున్నారా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1078"/>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
-        <translation>&lt;b&gt;%1&lt;/b&gt; adlı kullanıcının &lt;b&gt;%2&lt;/b&gt; projesine olan aboneliğini kaldırmak istediğinize emin misiniz?</translation>
+        <translation>మీరు &lt;b&gt;%1 &lt;/ b&gt; ను &lt;b&gt;%2 &lt;/ b&gt; ప్రాజెక్ట్కు సబ్స్క్రిప్షన్ తొలగించాలని నిశ్చయించుకున్నారా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1100"/>
         <source>Connection active</source>
-        <translation>Bağlantı etkin</translation>
+        <translation>కనెక్షన్ క్రియాశీలమైనది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1106"/>
         <source>Project synchronized</source>
-        <translation>Proje eşitlendi</translation>
+        <translation>ప్రాజెక్ట్ సమకాలీకరించబడింది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1119"/>
         <source>Connection inactive</source>
-        <translation>Bağlantı aktif değil</translation>
+        <translation>కనెక్షన్ క్రియారహిత</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1120"/>
         <source>Project didn&apos;t synchronized</source>
-        <translation>Proje eşitlenmedi</translation>
+        <translation>ప్రాజెక్ట్ సమకాలీకరించలేదు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1163"/>
         <source>Modified</source>
-        <translation>Değiştirildi</translation>
+        <translation>సవరించిన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1191"/>
         <source>Network error</source>
-        <translation>Bağlantı hatası</translation>
+        <translation>నెట్వర్క్ లోపం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1193"/>
         <source>Project didn&apos;t synchronized.</source>
-        <translation>Proje eşitlenmedi.</translation>
+        <translation>ప్రాజెక్ట్ సమకాలీకరించలేదు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1213"/>
         <source>Incorrect username or password.</source>
-        <translation>Geçersiz kullanıcı adı yada parola.</translation>
+        <translation>సరికాని వినియోగదారు పేరు లేదా పాస్వర్డ్.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1224"/>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
-        <translation>Kaydedilen parola geçersiz. Görünüşe göre parolanızı değiştirmişsiniz. Lütfen, yeni parolayı girin.</translation>
+        <translation>సేవ్ చేసిన పాస్వర్డ్ తప్పు. మీరు పాస్వర్డ్ను మార్చినట్లుగా కనిపిస్తోంది. దయచేసి కొత్త పాస్వర్డ్ను నమోదు చేయండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1234"/>
         <source>Subscription ended</source>
-        <translation>Abonelik sona erdi</translation>
+        <translation>చందా ముగిసింది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1235"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Satın alınan abonelik dönemi sonlandı.
+        <translation>కొనుగోలు చేసిన చందా కాలం పూర్తయింది.
 
-Proje eşitlenmedi.</translation>
+ప్రాజెక్ట్ సమకాలీకరించలేదు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1247"/>
         <source>Network Error</source>
-        <translation>Bağlantı Hatası</translation>
+        <translation>నెట్వర్క్ లోపం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1248"/>
         <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Tüm veri, hizmetten düzgün bir şekilde yüklenemedi. Lütfeninternet bağlantınızı gözden geçirin ve eşitlemeyi tazeleyin.
+        <translation>సేవ నుండి మొత్తం డేటాను సరిగ్గా లోడ్ చేయలేరు. దయచేసి మీ ఇంటర్నెట్ కనెక్షన్ను తనిఖీ చేసి, సమకాలీకరణను రిఫ్రెష్ చేయండి.
 
-Proje eşitlenmedi.</translation>
+ప్రాజెక్ట్ సమకాలీకరించలేదు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1261"/>
         <source>Session closed</source>
-        <translation>Oturum kapatıldı</translation>
+        <translation>సెషన్ మూసివేయబడింది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1262"/>
         <source>New session for you account started at other device.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Sizin hesabınızla başka bir cihazda oturum açıldı.
+        <translation>మీ ఖాతా కోసం ew సెషన్ ఇతర పరికరంలో ప్రారంభమైంది.
 
-Proje eşitlenmedi.</translation>
+ప్రాజెక్ట్ సమకాలీకరించలేదు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1272"/>
         <source>Share error</source>
-        <translation>Paylaşma hatası</translation>
+        <translation>భాగస్వామ్యం లోపం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1273"/>
         <source>You can&apos;t share project with yourself.</source>
-        <translation>Projeyi kendinizle paylaşamazsınız.</translation>
+        <translation>మీతో ప్రాజెక్ట్ పంచుకోలేరు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1282"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1293"/>
         <source>Project not available</source>
-        <translation>Proje kullanılabilir değil</translation>
+        <translation>ప్రాజెక్ట్ అందుబాటులో లేదు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1283"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Geçerli proje şuanda eşitleme için uygun değil, çünkü projenin sahibinin aboneliği sona erdi.
+        <translation>ప్రాజెక్ట్ యొక్క యజమాని చందా ముగిసినందున ప్రస్తుతం సమకాలీకరణ కోసం ప్రస్తుత ప్రాజెక్ట్ అందుబాటులో లేదు.
 
-Proje eşitlenmedi.</translation>
+ప్రాజెక్ట్ సమకాలీకరించలేదు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1294"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Geçerli proje şuanda eşitleme için uygun değil, çünkü projenin sahibi sizin projeye erişiminizi kapadı.
+        <translation>ప్రస్తుతం ప్రాజెక్ట్ సమకాలీకరణ కోసం అందుబాటులో లేదు, ఎందుకంటే ప్రాజెక్ట్ యజమాని మీ కోసం ప్రాజెక్ట్కు యాక్సెస్ మూసివేశారు.
 
-Proje eşitlenmedi.</translation>
+ప్రాజెక్ట్ సమకాలీకరించలేదు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1304"/>
         <source>Sync not available</source>
-        <translation>Eştlm. kullanılamaz</translation>
+        <translation>సమకాలీకరణ అందుబాటులో లేదు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1305"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Sunucudaki tüm kullanılabilir alanı tükettiniz.
+        <translation>సర్వర్లో ఖాళీ స్థలాన్ని ఉపయోగించడం కోసం మీరు అందుబాటులో ఉన్న అన్నింటినీ అలసిపోయాము.
 
-Proje eşitlenmedi.</translation>
+ప్రాజెక్ట్ సమకాలీకరించలేదు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1315"/>
         <source>Project sync not available</source>
-        <translation>Proje eşitleme kullanılamaz</translation>
+        <translation>ప్రాజెక్ట్ సమకాలీకరణ అందుబాటులో లేదు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1316"/>
         <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Programın kullandığınız sürümünün tarihi geçmiş. Projeye erişimi onarmak için lütfen programın en son sürümünü kurunuz.
+        <translation>మీరు దరఖాస్తు యొక్క పాత వెర్షన్ను కలిగి ఉన్నారు. దయచేసి ప్రాజెక్ట్కు ప్రాప్యతను పునరుద్ధరించడానికి తాజా అనువర్తనం సంస్కరణను ఇన్స్టాల్ చేయండి.
 
-Proje eşitlenmedi.</translation>
+ప్రాజెక్ట్ సమకాలీకరించలేదు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1326"/>
         <source>Email already exist</source>
-        <translation>Eposta zaten mevcut</translation>
+        <translation>ఇమెయిల్ ఇంతకుముందే ఉంది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1335"/>
         <source>Password too weak</source>
-        <translation>Parola çok zayıf</translation>
+        <translation>పాస్వర్డ్ చాలా వీక్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1344"/>
         <source>Invalid old password</source>
-        <translation>Geçersiz eski parola</translation>
+        <translation>చెల్లని పాత పాస్వర్డ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1353"/>
         <source>Wrong validation code</source>
-        <translation>Yanlış onaylama kodu</translation>
+        <translation>తప్పు ధ్రువీకరణ కోడ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1362"/>
         <source>Wrong email</source>
-        <translation>Yanlış eposta</translation>
+        <translation>తప్పు ఇమెయిల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1371"/>
         <source>Unknown Error</source>
-        <translation>Bilinmeyen Hata</translation>
+        <translation>తెలియని ఎర్రర్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1439"/>
         <source>Exit from Application</source>
-        <translation>Programdan Çık</translation>
+        <translation>అప్లికేషన్ నుండి నిష్క్రమించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1439"/>
         <source>Closing Database Connections and remove temporary files.</source>
-        <translation>Veritabanı ve Bağlantılar kapatılıyor ve geçici dosyalar kaldırılıyor.</translation>
+        <translation>డేటాబేస్ కనెక్షన్లను మూసివేయడం మరియు తాత్కాలిక ఫైళ్ళను తొలగించండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1709"/>
         <source>Save project changes?</source>
-        <translation>Proje değişikliklerini kaydet?</translation>
+        <translation>ప్రాజెక్ట్ మార్పులను సేవ్ చేయాలా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1710"/>
         <source>Project was modified. Save changes?</source>
-        <translation>Proje değiştirilmiş. Değişiklikleri kaydet?</translation>
+        <translation>ప్రాజెక్ట్ సవరించబడింది. మార్పులను ఊంచు?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1739"/>
         <source>Loading Scenario</source>
-        <translation>Senaryo Yükleniyor</translation>
+        <translation>సినారియొ లోడ్ అవుతోంది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1739"/>
         <source>Please wait. Loading can take few minutes.</source>
-        <translation>Lütfen bekleyin. Yükleme birkaç dakika sürebilir.</translation>
+        <translation>దయచేసి వేచి ఉండండి. లోడ్ కొద్ది నిమిషాలు పట్టవచ్చు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1789"/>
         <source>Sync scenario with cloud service.</source>
-        <translation>Senaryoyu bulut hizmetiyle eşitle.</translation>
+        <translation>క్లౌడ్ సేవతో సమకాలీకరణ సినారియొ.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1811"/>
         <source>Import</source>
-        <translation>İçe Aktar</translation>
+        <translation>దిగుమతి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1811"/>
         <source>Please wait. Import can take few minutes.</source>
-        <translation>Lütfen bekleyin. İçe aktarma birkaç dakika sürebilir.</translation>
+        <translation>దయచేసి వేచి ఉండండి. దిగుమతి కొద్ది నిమిషాలు పట్టవచ్చు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1937"/>
         <source>Menu</source>
-        <translation>Menü</translation>
+        <translation>మెనూ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1946"/>
         <source>New window</source>
-        <translation>Yeni pencere</translation>
+        <translation>క్రొత్త విండో</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1961"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1972"/>
         <source>Start</source>
-        <translation>Başlangıç</translation>
+        <translation>ప్రారంభం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1962"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1973"/>
         <source>Research</source>
-        <translation>Araştırma</translation>
+        <translation>పరిశోధన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1963"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1974"/>
         <source>Cards</source>
-        <translation>Kartlar</translation>
+        <translation>కార్డులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1964"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1975"/>
         <source>Scenario</source>
-        <translation>Senaryo</translation>
+        <translation>సినారియొ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1965"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1976"/>
         <source>Statistics</source>
-        <translation>İstatistikler</translation>
+        <translation>గణాంకాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1966"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1977"/>
         <source>Tools</source>
-        <translation>Araçlar</translation>
+        <translation>టూల్స్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1967"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1978"/>
         <source>Settings</source>
-        <translation>Ayarlar</translation>
+        <translation>సెట్టింగులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2056"/>
         <source>File</source>
-        <translation>Dosya</translation>
+        <translation>ఫైలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2057"/>
         <source>Edit</source>
-        <translation>Düzenle</translation>
+        <translation>కూర్పు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2062"/>
         <source>New</source>
-        <translation>Yeni</translation>
+        <translation>కొత్త</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2063"/>
         <source>Open</source>
-        <translation>Aç</translation>
+        <translation>ఓపెన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2064"/>
         <source>Save</source>
-        <translation>Kaydet</translation>
+        <translation>సేవ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2067"/>
         <source>Save as...</source>
-        <translation>Farklı Kaydet...</translation>
+        <translation>ఇలా సేవ్ చెయ్యి ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2071"/>
         <source>New script version...</source>
-        <translation>Yeni senaryo sürümü...</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2077"/>
-        <source>Print preview script</source>
-        <translation>Önizleme senaryosunu yazdır</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2082"/>
-        <source>Two panel mode</source>
-        <translation>İki Panel Kipi</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2481"/>
-        <source>KIT Scenarist</source>
-        <translation type="unfinished">KIT Scenarist</translation>
-    </message>
-    <message>
-        <source>Save As...</source>
-        <translation type="vanished">Farklı Kaydet...</translation>
+        <translation>క్రొత్త స్క్రిప్ట్ సంస్కరణ ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2073"/>
         <source>Import...</source>
-        <translation>İçe Aktar...</translation>
+        <translation>దిగుమతి...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2075"/>
         <source>Export to...</source>
-        <translation>Dışa Aktar...</translation>
+        <translation>దిగుమతి కూడా...</translation>
     </message>
     <message>
-        <source>Print Preview</source>
-        <translation type="vanished">Yazdırma Önizlemesi</translation>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2077"/>
+        <source>Print preview script</source>
+        <translation>ప్రివ్యూ స్క్రిప్ట్ను ముద్రించండి</translation>
     </message>
     <message>
-        <source>Two Panel Mode</source>
-        <translation type="vanished">İki Panel Kipi</translation>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2082"/>
+        <source>Two panel mode</source>
+        <translation>రెండు ప్యానెల్ మోడ్</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2481"/>
+        <source>KIT Scenarist</source>
+        <translation>కిట్ సినరిస్ట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2497"/>
         <source>on local computer</source>
-        <translation>yerel bilgisayarda</translation>
+        <translation>స్థానిక కంప్యూటర్లో</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2498"/>
         <source>in cloud</source>
-        <translation>bulutta</translation>
+        <translation>క్లౌడ్ లో</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2503"/>
         <source>%1[*] - KIT Scenarist</source>
-        <translation>%1[*] - KIT Scenarist</translation>
+        <translation>%1[*] - కిట్ సినరిస్ట్ ప్రాజెక్ట్</translation>
     </message>
 </context>
 <context>
@@ -2408,42 +2244,42 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="76"/>
         <source>Export</source>
-        <translation>Dışa Aktar</translation>
+        <translation>దిగుమతి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="76"/>
         <source>Please wait. Export can take few minutes.</source>
-        <translation>Lütfen bekleyin. Dışa aktarma birkaç dakika sürebilir.</translation>
+        <translation>దయచేసి వేచి ఉండండి. ఎగుమతి కొద్ది నిమిషాలు పట్టవచ్చు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="140"/>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
-        <translation>Projeyi var olmayan bir klasörde oluşturmayı deniyorsunuz &lt;b&gt;%1&lt;/b&gt;. Lütfen, yeni projeniz için başka bir konum seçin.</translation>
+        <translation>మీరు &lt;b&gt;%1 &lt;/ b&gt; లేని ఎగుమతికి ఎగుమతి చేసేందుకు ప్రయత్నిస్తున్నారు. దయచేసి ఎగుమతి చేసిన ఫైల్ కోసం ఇతర స్థానాన్ని ఎంచుకోండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="144"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry export.</source>
-        <translation>Dosyaya yazma işlemi gerçekleştirilemiyor. Dosya başka bir program tarafından kullanılıyor olabilir. Lütfen programı kapayıp yeniden deneyin.</translation>
+        <translation>ఫైల్ వ్రాయడానికి సాధ్యపడదు. దీనికి మరొక అప్లికేషన్ ద్వారా తెరవబడుతుంది. దయచేసి దీన్ని మూసివేసి, ఎగుమతి మళ్ళీ ప్రయత్నించండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="147"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>Dosyaya yazma işlemi gerçekleştirilemiyor. Yazmak için seçtiğiniz klasörün izinlerini gözden geçirin. Lütfen, başka bir klasör seçin.</translation>
+        <translation>ఫైల్ను వ్రాయడం సాధ్యపడదు. ఎంచుకున్న ఫోల్డర్లో వ్రాయడానికి అనుమతులను తనిఖీ చేయండి. దయచేసి ఇతర ఫోల్డర్ను ఎంచుకోండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="149"/>
         <source>Export error</source>
-        <translation>Dışa aktarma hatası</translation>
+        <translation>ఎగుమతి లోపం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="176"/>
         <source>Print Preview</source>
-        <translation>Yazdırma Önizlemesi</translation>
+        <translation>ప్రింట్ ప్రివ్యు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="176"/>
         <source>Please wait. Preparing document to preview can take few minutes.</source>
-        <translation>Lütfen bekleyin. Belgeyi önizlemeye hazırlamak birkaç dakika sürebilir.</translation>
+        <translation>దయచేసి వేచి ఉండండి. ప్రివ్యూకు పత్రాన్ని సిద్ధం చేయడం కొన్ని నిమిషాలు పట్టవచ్చు.</translation>
     </message>
 </context>
 <context>
@@ -2451,57 +2287,57 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="323"/>
         <source>Characters import</source>
-        <translation>Karakterlerin içe aktarımı</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="334"/>
         <source>Locations import</source>
-        <translation>Mekanların içe aktarımı</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="345"/>
         <source>Documents import</source>
-        <translation>Belgelerin içe aktarımı</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="373"/>
         <source>File format not supported</source>
-        <translation>Dosya biçimi desteklenmiyor</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="374"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation>Microsoft &lt;b&gt;DOC&lt;/b&gt; dosyaları desteklenmiyor. Dosyayı &lt;b&gt;DOCX&lt;/b&gt; biçimine çevirmeli ve yeniden içe aktarmalısınız.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="382"/>
         <source>File doesn&apos;t exists</source>
-        <translation>Dosya mevcut değil</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="383"/>
         <source>Please choose existing file and retry import.</source>
-        <translation>Lütfen varolan bir dosya seçip içe aktarmayı tekrar deneyin.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="391"/>
         <source>Import</source>
-        <translation>İçe Aktar</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="391"/>
         <source>Please wait. Import can take few minutes.</source>
-        <translation>Lütfen bekleyin. İçe aktarma birkaç dakika sürebilir.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="402"/>
         <source>Import aborted</source>
-        <translation>İçe aktarma kesildi</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="403"/>
         <source>File to import is empty. Please check that you select correct file and retry import.</source>
-        <translation>İçe aktarılacak dosya boş. Lütfen, doğru dosyayı seçtiğinizi gözden geçirin ve içe aktarmayı yeniden deneyin.</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2509,13 +2345,13 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="194"/>
         <source>Password successfully changed</source>
-        <translation>Parola başarıyla değiştirildi</translation>
+        <translation>పాస్వర్డ్ విజయవంతంగా మార్చబడింది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="209"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="245"/>
         <source>Can not change password</source>
-        <translation>Parola değiştirilemiyor</translation>
+        <translation>పాస్వర్డ్ను మార్చలేరు</translation>
     </message>
 </context>
 <context>
@@ -2523,17 +2359,17 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="27"/>
         <source>Owner</source>
-        <translation>Sahip</translation>
+        <translation>యజమాని</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="28"/>
         <source>Redactor</source>
-        <translation>Gözden Geçirici</translation>
+        <translation>రీడాక్టర్</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="29"/>
         <source>Commentator</source>
-        <translation>Yorumcu</translation>
+        <translation>వ్యాఖ్యాత</translation>
     </message>
 </context>
 <context>
@@ -2541,58 +2377,47 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="486"/>
         <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>&lt;b&gt;%1&lt;/b&gt; adlı araştırmayı kaldırmak istediğinize emin misiniz?</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="584"/>
         <source>Color</source>
-        <translation>Renk</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="590"/>
         <source>Clear</source>
-        <translation>Temizle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="604"/>
         <source>Add New</source>
-        <translation>Yeni Ekle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="609"/>
         <source>Remove</source>
-        <translation>Kaldır</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="616"/>
         <source>Find All Characters from Script</source>
-        <translation>Tüm Karakterleri Senaryodan Bul</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="617"/>
         <source>Find All Locations from Script</source>
-        <translation>Tüm Mekanları Senaryodan Bul</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="708"/>
         <source>Do you really want to delete script version named &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>&lt;b&gt;%1&lt;/b&gt; isimli senaryo sürümünü gerçekten silmek istiyor musunuz?</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="866"/>
         <source>Unnamed image</source>
-        <translation>Adsız görüntü</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::ScenarioCardsManager</name>
-    <message>
-        <source>Add card</source>
-        <translation type="vanished">Kart ekle</translation>
-    </message>
-    <message>
-        <source>Edit card</source>
-        <translation type="vanished">Kartı düzenle</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2600,58 +2425,58 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="563"/>
         <source>Characters to delete</source>
-        <translation>Silinecek karakterler</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="569"/>
         <source>Characters to save</source>
-        <translation>Kaydedilecek karakterler</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="571"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="639"/>
         <source>Apply refreshing</source>
-        <translation>Tazeleme uygula</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="630"/>
         <source>Locations to delete</source>
-        <translation>Silinecek mekanlar</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="636"/>
         <source>Locations to save</source>
-        <translation>Kaydedilecek mekanlar</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="793"/>
         <source>Chron.</source>
-        <translation>Süre.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1063"/>
         <source>On/off Fullscreen Mode</source>
-        <translation>Tam Ekran Halini Aç/Kapa</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1269"/>
         <source>Changing scenes numbers locking</source>
-        <translation>Sahne numarası kilitlenmesini değiştirme</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1270"/>
         <source>Do you want to unlock scenes numbers or lock again?</source>
-        <translation>Sahne numaralarını kilitlemek ya da kilidini açmak istiyor musunuz?</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1273"/>
         <source>Unlock</source>
-        <translation>Kilit aç</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1274"/>
         <source>Lock</source>
-        <translation>Kilitle</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2659,12 +2484,12 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="280"/>
         <source>Enter new scene number</source>
-        <translation>Yeni sahne numarası girin</translation>
+        <translation>క్రొత్త సన్నివేశం సంఖ్యను నమోదు చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="280"/>
         <source>New scene number</source>
-        <translation>Yeni sahne numarası</translation>
+        <translation>కొత్త సన్నివేశం సంఖ్య</translation>
     </message>
 </context>
 <context>
@@ -2672,12 +2497,12 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScriptDictionariesManager.cpp" line="91"/>
         <source>Enter new item name</source>
-        <translation>Yeni öğe adı girin</translation>
+        <translation>కొత్త అంశం పేరు నమోదు చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScriptDictionariesManager.cpp" line="136"/>
         <source>Are you sure to remove &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>Şu öğeyi kaldırmak istediğinize emin misiniz?: &lt;b&gt;%1&lt;/b&gt;</translation>
+        <translation>మీరు ఖచ్చితంగా &lt;b&gt;%1 &lt;/ b&gt; ను తీసివేయాలా</translation>
     </message>
 </context>
 <context>
@@ -2685,85 +2510,85 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="141"/>
         <source>Restoring</source>
-        <translation>Eski Haline Getiriliyor</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="142"/>
         <source>Please wait. Restoring settings to default values can take few minutes.</source>
-        <translation>Lütfen bekleyin. Ayarları varsayılan değerlere geri getirmek birkaç dakika sürebilir.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="165"/>
         <source>Language will be changed after application restart.</source>
-        <translation>Dil, program yeniden başlatıldıktan sonra değişmiş olacak.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="355"/>
         <source>Dictionary loading</source>
-        <translation>Sözlük yükleniyor</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="355"/>
         <source>Please wait, loading of spell checking dictionary can take a few minutes.</source>
-        <translation>Lütfen bekleyin, yazım denetimi sözlüğünü yüklemek birkaç dakika sürebilir.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="401"/>
         <source>Can&apos;t enable spell checking</source>
-        <translation>Yazım denetimi etkinleştirilemiyor</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="402"/>
         <source>Can&apos;t download spelling dictionary. Please check internet connection and retry to activate spell checking</source>
-        <translation>Yazım denetimi sözlüğü indirilemiyor. Lütfen internet bağlantınızı gözden geçirin ve yazım denetimini etkinleştirmeyi yeniden deneyin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="670"/>
         <source>Choose file to load</source>
-        <translation>Yüklenecek klasörü seçin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="671"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="695"/>
         <source>Scenario Template Files (*.%1)</source>
-        <translation>Senaryo Şablon Dosyaları (*.%1)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="694"/>
         <source>Choose file to save</source>
-        <translation>Kaydedilecek dosyayı seçin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1072"/>
         <source>Press in paragraph&apos;s end</source>
-        <translation>Paragrafın sonunda bas</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1074"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1079"/>
         <source>Tab</source>
-        <translation>Tab</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1075"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1080"/>
         <source>Enter</source>
-        <translation>Enter</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1077"/>
         <source>Press in empty paragraph</source>
-        <translation>Boş paragrafta bas</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1083"/>
         <source>Block Name</source>
-        <translation>Öbek İsmi</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1084"/>
         <source>Shortcut</source>
-        <translation>Kısayol</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2771,37 +2596,25 @@ Proje eşitlenmedi.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsTemplatesManager.cpp" line="31"/>
         <source>Choose base template</source>
-        <translation>Taban şablon seç</translation>
+        <translation>బేస్ టెంప్లేట్ ను ఎంచుకోండి</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::StartUpManager</name>
     <message>
-        <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
-        <translation type="vanished">Yıyınlanan sürüm %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Yükle&lt;/a&gt;</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="298"/>
         <source>Undo</source>
-        <translation>Geri Al</translation>
+        <translation>అన్ డు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="301"/>
         <source>Redo</source>
-        <translation>İleri Al</translation>
+        <translation>రీడు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="368"/>
         <source>&lt;p&gt;Can&apos;t install update. There are some problems with downloaded file.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Güncelleme gerçekleştirilemedi. İndirilen dosyayla ilgili bazı sorunlar var.&lt;/p&gt;&lt;p&gt;Güncellemeyi yeniden yüklemeyi ya da &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;resmi web sitesinden&lt;/a&gt; el ile indirmeyi deneyebilirsiniz.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Can&apos;t install update. There are some problems with downloaded file.
-
-You can try to reload update.</source>
-        <translation type="vanished">Güncelleştirme yüklenemiyor. İndirilen dosyada bazı sorunlar var.
-
-Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
+        <translation>&lt;p&gt; నవీకరణను ఇన్స్టాల్ చేయలేరు. డౌన్లోడ్ చేయబడిన ఫైల్ తో కొన్ని సమస్యలు ఉన్నాయి. &lt;/ P&gt; &lt;p&gt; &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt; అధికారిక వెబ్సైటు &lt;/a&gt; నుండే మీరు అప్డేట్ను రీలోడ్ చెయ్యవచ్చు లేదా మానవీయంగా లోడ్ చెయ్యవచ్చు. . &lt;/ p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2809,22 +2622,22 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="105"/>
         <source>Can&apos;t estabilish network connection.</source>
-        <translation>Ağ bağlantısı kurulamıyor.</translation>
+        <translation>నెట్వర్క్ కనెక్షన్ను ఏర్పాటు చేయలేము.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="109"/>
         <source>Session key not found.</source>
-        <translation>Oturum anahtarı bulunamadı.</translation>
+        <translation>సెషన్ కీ కనుగొనబడలేదు.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
         <source>Wrong validation code.</source>
-        <translation>Yanlış onaylama kodu.</translation>
+        <translation>తప్పు ధ్రువీకరణ కోడ్.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="117"/>
         <source>Got wrong response from server.</source>
-        <translation>Sunucudan alınan yanıt hatalı.</translation>
+        <translation>సర్వర్ నుండి తప్పు స్పందన వచ్చింది.</translation>
     </message>
 </context>
 <context>
@@ -2832,22 +2645,22 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="120"/>
         <source>Choose backup from list</source>
-        <translation>Listeden yedekleme seçin</translation>
+        <translation>జాబితా నుండి బ్యాకప్ ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="136"/>
         <source>Bytes</source>
-        <translation>Byte</translation>
+        <translation>బైట్లు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="153"/>
         <source>Choose versions to compare</source>
-        <translation>Karşılaştırılacak sürümleri seçin</translation>
+        <translation>సరిపోల్చడానికి సంస్కరణలను ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="223"/>
         <source>Script was restored.</source>
-        <translation>Senaryo onarıldı.</translation>
+        <translation>స్క్రిప్ట్ పునరుద్ధరించబడింది.</translation>
     </message>
 </context>
 <context>
@@ -2855,86 +2668,82 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="14"/>
         <source>Form</source>
-        <translation>Biçim</translation>
+        <translation>నుండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="77"/>
         <source>Log in to get access to the cloud service</source>
-        <translation>Bulut hizmetine erişim sağlamak için oturum açın</translation>
+        <translation>క్లౌడ్ సేవకు యాక్సెస్ పొందడానికి లాగిన్ అవ్వండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="121"/>
         <source>Login</source>
-        <translation>Oturum aç</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="331"/>
-        <source>Print preview script</source>
-        <translation>Önizleme senaryosunu yazdır</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="501"/>
-        <source>version</source>
-        <translation>sürüm</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="485"/>
-        <source>About the app</source>
-        <translation>Program hakkında</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="424"/>
-        <source>KIT Scenarist</source>
-        <translation>KIT Scenarist</translation>
+        <translation>లాగిన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="212"/>
         <source>Create new project</source>
-        <translation>Yeni proje oluştur</translation>
+        <translation>క్రొత్త ప్రాజెక్ట్ను సృష్టించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="229"/>
         <source>Open project</source>
-        <translation>Proje aç</translation>
+        <translation>ప్రాజెక్ట్ తెరవండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="246"/>
         <source>Save current project</source>
-        <translation>Geçerli projeyi kaydet</translation>
+        <translation>ప్రస్తుత ప్రాజెక్ట్ను సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="263"/>
         <source>Save current project as...</source>
-        <translation>Geçerli projeyi farklı kaydet...</translation>
+        <translation>ప్రస్తుత ప్రాజెక్ట్ను ఇలా సేవ్ చెయ్యి ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="280"/>
         <source>Start new version...</source>
-        <translation>Yeni sürüme başla...</translation>
+        <translation>క్రొత్త సంస్కరణను ప్రారంభించండి ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="297"/>
         <source>Import...</source>
-        <translation>İçe aktar...</translation>
+        <translation>దిగుమతి...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="314"/>
         <source>Export...</source>
-        <translation>Dışa Aktar...</translation>
+        <translation>దిగుమతి కూడా...</translation>
     </message>
     <message>
-        <source>Print preview</source>
-        <translation type="vanished">Yazdırma Önizlemesi</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="331"/>
+        <source>Print preview script</source>
+        <translation>ప్రివ్యూ స్క్రిప్ట్ను ముద్రించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="348"/>
         <source>How to use the application</source>
-        <translation>Bu program nasıl kullanılır</translation>
+        <translation>అప్లికేషన్ ఎలా ఉపయోగించాలి</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="424"/>
+        <source>KIT Scenarist</source>
+        <translation>కిట్ సినరిస్ట్</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="485"/>
+        <source>About the app</source>
+        <translation>ఆప్ గురించి</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="501"/>
+        <source>version</source>
+        <translation>సంస్కరణ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="519"/>
         <source>DOWNLOAD UPDATE</source>
-        <translation>GÜNCELLEŞTİRMEYİ İNDİR</translation>
+        <translation>డౌన్లోడ్ UPDATE</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="585"/>
@@ -2944,12 +2753,12 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="605"/>
         <source>User name:</source>
-        <translation>Kullanıcı adı:</translation>
+        <translation>వాడుకరి పేరు:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="615"/>
         <source>Account is active until:</source>
-        <translation>Hesap şu ana kadar etkin:</translation>
+        <translation>ఖాతా క్రియాశీలకంగా ఉంది:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="625"/>
@@ -2959,27 +2768,27 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="658"/>
         <source>UserName</source>
-        <translation>KullanıcıAdı</translation>
+        <translation>వాడుకరి పేరు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="665"/>
         <source>Used 0 Gb from 0 Gb</source>
-        <translation>0 Gb&apos;tan 0 Gb kullanıldı</translation>
+        <translation>0 Gb నుండి 0 Gb వాడినది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="677"/>
         <source>Renew subscription</source>
-        <translation>Aboneliği yenile</translation>
+        <translation>చందాను పునరుద్ధరించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="694"/>
         <source>Change Password</source>
-        <translation>Parola Değiştir</translation>
+        <translation>పాస్ వర్డ్ ను మార్చండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="711"/>
         <source>Quit from cabinet</source>
-        <translation>Oturum kapat</translation>
+        <translation>క్యాబినెట్ నుండి నిష్క్రమించండి</translation>
     </message>
 </context>
 <context>
@@ -2987,7 +2796,7 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../../libs/fileformats/odt_reader.cpp" line="77"/>
         <source>Unable to open archive.</source>
-        <translation>Arşiv açılamıyor.</translation>
+        <translation>ఆర్కైవ్ ను తెరవడం సాధ్యపడలేదు.</translation>
     </message>
 </context>
 <context>
@@ -2995,62 +2804,47 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="14"/>
         <source>KIT Scenarist. Setup of basic features.</source>
-        <translation>KIT Scenarist. Temel özelliklerin kurulumu.</translation>
+        <translation>కిట్ సినరిస్ట్ ప్రాథమిక లక్షణాలు సెటప్.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="20"/>
         <source>Skip</source>
-        <translation>Geç</translation>
+        <translation>దాటవేయి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="40"/>
         <source>Back</source>
-        <translation>Geri</translation>
+        <translation>వెనుకకు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="63"/>
         <source>Next</source>
-        <translation>İleri</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="270"/>
-        <source>עִבְרִית</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="256"/>
-        <source>فارْسِى</source>
-        <translation></translation>
+        <translation>తరువాత</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="106"/>
         <source>Қазақ</source>
-        <translation></translation>
+        <translation>కజఖ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="113"/>
         <source>Português</source>
-        <translation></translation>
+        <translation>పోర్చుగీస్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="123"/>
         <source>Русский</source>
-        <translation></translation>
+        <translation>రష్యన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="133"/>
         <source>Français</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="263"/>
-        <source>汉语</source>
-        <translation></translation>
+        <translation>ఫ్రెంచ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="140"/>
         <source>English</source>
-        <translation></translation>
+        <translation>ఇంగ్లీష్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="150"/>
@@ -3060,17 +2854,17 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="161"/>
         <source>Choose language</source>
-        <translation>Dil seçin</translation>
+        <translation>భాషను ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="168"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Tercih ettiğiniz dil bulunamadı? Kendiniz eklemek için okuyun.&lt;/a&gt;</translation>
+        <translation>&lt;a href = &quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one- యొక్క -ఎందుకంటే%3F &quot;style =&quot; color: # 2b78da; &quot;&gt; ప్రాధాన్య భాష కనుగొనబడలేదు? మీరు దాన్ని ఎలా జోడించవచ్చో చదవండి. &lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="191"/>
         <source>Detect language from system locale</source>
-        <translation>Dili sistemin dilinden algıla</translation>
+        <translation>సిస్టమ్ లొకేల్ నుండి భాషను గుర్తించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="201"/>
@@ -3108,6 +2902,21 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
         <translation></translation>
     </message>
     <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="256"/>
+        <source>فارْسِى</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="263"/>
+        <source>汉语</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="270"/>
+        <source>עִבְרִית</source>
+        <translation></translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="277"/>
         <source>తెలుగు</source>
         <translation type="unfinished"></translation>
@@ -3115,32 +2924,32 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="293"/>
         <source>Choose application theme</source>
-        <translation>Programın temasını seçin</translation>
+        <translation>అప్లికేషన్ థీమ్ను ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="306"/>
         <source>Dark theme</source>
-        <translation>Koyu tema</translation>
+        <translation>డార్క్ థీమ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="335"/>
         <source>Theme is convenient for work with sufficient light.</source>
-        <translation>Yeterli ışık ortamında çalışmaya uyumlu tema.</translation>
+        <translation>థీమ్ తగినంత కాంతితో పనిచేయడానికి అనుకూలమైనది.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="370"/>
         <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
-        <translation>Loş ışık ortamında ve ayrıca akşam ya da gece çalışmaya daha elverişli tema.</translation>
+        <translation>థీమ్ dimly వెలిగించి గదుల్లో పని కోసం మరింత అనుకూలంగా ఉంటుంది, మరియు కూడా సాయంత్రం లేదా రాత్రి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="405"/>
         <source>Light theme</source>
-        <translation>Açık tema</translation>
+        <translation>లైట్ థీమ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="438"/>
         <source>Use research module</source>
-        <translation>Araştırma kipini kullan</translation>
+        <translation>పరిశోధన మాడ్యూల్ ఉపయోగించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="448"/>
@@ -3149,40 +2958,40 @@ Güncellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
 Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
 
 Also, in research tab you can store a variety of materials (text documents, images, links to web pages and mindmaps) associated with your project, organizing them in a convenient manner.</source>
-        <translation>Bu kipte projeniz için gerekli tüm materyalleri tek bir yerde toplayabilirsiniz. Senaryo hakkında; sinopsis, önerme ve senaryonun adı gibi başlıca bilgileri kaydedebilir, aynı zamanda senaryonun başlık sayfasını da doldurabilirsiniz.
+        <translation>మీరు ఒకే స్థలంలో అవసరమైన అన్ని పదార్థాలను సేకరించవచ్చు. దీనిలో, మీరు దాని పేరు, లాగ్లైన్, సంగ్రహం మరియు రచన యొక్క టైటిల్ పేజిలో కూడా రచన గురించి ప్రాథమిక సమాచారాన్ని సేవ్ చేయవచ్చు.
 
-Burada karakterlerin ve konumların listesini yönetebilirsiniz. Yenilerini ekleyebilir, tanım ve fotoğraf ekleyebilir, yeniden adlandırabilir ve hepsini düzen altına alabilirsiniz.
+ఇక్కడ మీరు పాత్రల మరియు స్థానాల జాబితాలను నిర్వహించవచ్చు. క్రొత్త వాటిని సృష్టించండి, వివరణలు, ఫోటోలు, పేరు మార్చడం మరియు వాటిని నిర్వహించండి.
 
-Ayrıca, araştırma sekmesinde projenizle ilintili çeşitli materyalleri (metin belgeleri, web sayfaları ve zihinharitaları) saklayabilir ve kullanışlı bir biçimde tertip edebilirsiniz.</translation>
+ఇంకా, పరిశోధనా టాబ్లో మీరు మీ ప్రాజెక్ట్తో అనుసంధానించబడిన వివిధ రకాల పదార్థాలు (టెక్స్ట్ పత్రాలు, చిత్రాలు, వెబ్ పేజీలు మరియు మనస్మాప్లకు లింక్లు) నిల్వ చేయవచ్చు, వాటిని ఒక అనుకూలమైన పద్ధతిలో నిర్వహించవచ్చు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="469"/>
         <source>Research</source>
-        <translation>Araştırma</translation>
+        <translation>పరిశోధన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="513"/>
         <source>Cards</source>
-        <translation>Kartlar</translation>
+        <translation>కార్డులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="520"/>
         <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
 
 You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
-        <translation>Kart kipi, senaryonuzu mantar pano üzerine yerleştirilmiş kartlar biçiminde görmenize olanak verir, böylelikle yapı üzerinde çalışmanıza olanak sağlayan görsel bir yöntem sağlar.
+        <translation>కార్డుల మాడ్యూల్ మీరు కార్క్బోర్డుపై ఉంచిన కార్డుల రూపంలో స్క్రిప్ట్ను చూడడానికి అనుమతిస్తుంది, తద్వారా నిర్మాణంతో పని చేయడానికి దృశ్యమాన మార్గాన్ని అందిస్తుంది.
 
-Kartlara renkler ekleyebilir damgalayabilir, yerlerini değiştirebilir ve onları gruplandırabilirsiniz ve de kartlarda yapacağınız tüm değişiklikler senaryo metnine yansır.</translation>
+మీరు రంగులను జోడించవచ్చు మరియు కార్డులకు స్టాంప్ చేయవచ్చు, తరలించండి మరియు సమూహం చేయగలరు మరియు కార్డులతో చేసిన అన్ని మార్పులు స్క్రిప్ట్ యొక్క టెక్స్ట్లో ప్రదర్శించబడతాయి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="554"/>
         <source>Use cards module</source>
-        <translation>Kart kipini kullan</translation>
+        <translation>కార్డుల మాడ్యూల్ ఉపయోగించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="588"/>
         <source>Script</source>
-        <translation>Senaryo</translation>
+        <translation>రచన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="595"/>
@@ -3191,110 +3000,110 @@ Kartlara renkler ekleyebilir damgalayabilir, yerlerini değiştirebilir ve onlar
 Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
 
 And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
-        <translation>Senaryo kipi, senaryo üzerinde çalışmanıza olanak verir.
+        <translation>రచన మాడ్యూల్ మీరు కధనం తో పని అనుమతిస్తుంది.
 
-Kipin içinde bir senaryo gezinti aracı bulunur. Bu sahnelerin bir listesidir. Fareyle listeden bir sahnenin üzerine tıkladığınızda ekranda senaryonun o sahnesi gösterilir.
+మాడ్యూల్ రచన నావిగేటర్ను కలిగి ఉంటుంది. ఇది సన్నివేశాల జాబితా. జాబితా నుండి సన్నివేశానికి మౌస్ క్లిక్ చేస్తే తెరపై ఎంచుకున్న సన్నివేశాన్ని టెక్స్ట్ ప్రదర్శిస్తుంది.
 
-Ve senaryonun metin düzenleyicisi. Bu düzenleyici girilen metni senaryo standartlarına uygun bir şekilde sadeleştiren birçok yardımcı işleve sahiptir ve ayrıca metin içi arama yapmanıza ve metne notlar almanıza imkan sağlar.</translation>
+మరియు స్క్రిప్ట్ యొక్క టెక్స్ట్ ఎడిటర్. ఎడిటర్ అనేక సహాయక ఫంక్షన్లను కలిగి ఉంది, ఇది స్క్రిప్ట్ రైటింగ్ యొక్క ప్రామాణికతకు అనుగుణంగా టెక్స్ట్ ఇన్పుట్ను సరళీకృతం చేస్తుంది మరియు మీరు స్క్రిప్ట్ యొక్క టెక్స్ట్ను శోధించడం మరియు టెక్స్ట్కు గమనికలను వదలడానికి అనుమతిస్తుంది.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="631"/>
         <source>Use script module</source>
-        <translation>Senaryo kipini kullan</translation>
+        <translation>రచన మాడ్యూల్ ఉపయోగించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="665"/>
         <source>Choose script template</source>
-        <translation>Senaryo şablonu seçin</translation>
+        <translation>రచన టెంప్లేట్ను ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="699"/>
         <source>Russian screenplay with Courier Prime</source>
-        <translation>Rusça senaryo Courier Prime&apos;la</translation>
+        <translation>రష్యన్ స్క్రీన్ ప్లే కొరియర్ ప్రైం తో</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="712"/>
         <source>Russian screenplay</source>
-        <translation>Rusça senaryo</translation>
+        <translation>రష్యన్ స్క్రీన్ ప్లే</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="725"/>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation>A4 sayfa boyutunda uluslararası senaryo standart şablonu.</translation>
+        <translation>A4 పేజీ పరిమాణానికి అంతర్జాతీయ స్క్రీన్ ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="744"/>
         <source>Final Draft screenplay (A4)</source>
-        <translation>Final Draft senaryosu (A4)</translation>
+        <translation>ఫైనల్ డ్రాఫ్ట్ స్క్రీన్ ప్లే (A4)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="776"/>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation>Letter sayfa boyutunda uluslararası senaryo standart şablonu.</translation>
+        <translation>లెటర్ పేజీ పరిమాణానికి అంతర్జాతీయ స్క్రీన్ ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="808"/>
         <source>Chinese screenplay</source>
-        <translation>Çince senaryo</translation>
+        <translation>చైనీస్ స్క్రీన్ ప్లే</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="821"/>
         <source>Chinese screenplay standard template.</source>
-        <translation>Çince senaryo standart şablonu.</translation>
+        <translation>చైనీస్ స్క్రీన్ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="840"/>
         <source>Hebrew screenplay</source>
-        <translation>İbranice senaryo</translation>
+        <translation>హిబ్రూ స్క్రీన్ ప్లే</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="853"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation>Rusça ve CIS senaryo standart şablonu, Courier New yerine Courier Prime fontuyla.</translation>
+        <translation>కొరియర్ న్యూ బదులుగా కొరియర్ ప్రధాన ఫాంట్తో రష్యన్ మరియు CIS స్క్రీన్ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="872"/>
         <source>Hebrew screenplay standard template.</source>
-        <translation>İbranice senaryo standart şablonu.</translation>
+        <translation>హిబ్రూ స్క్రీన్ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="971"/>
         <source>Final Draft screenplay (Letter)</source>
-        <translation>Final Draft senaryosu (Letter)</translation>
+        <translation>ఫైనల్ డ్రాఫ్ట్ స్క్రీన్ ప్లే (లెటర్)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="984"/>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation>Rusça ve CIS senaryo standart şablonu.</translation>
+        <translation>రష్యన్ మరియు CIS స్క్రీన్ ప్లే ప్రామాణిక టెంప్లేట్.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1102"/>
         <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
-        <translation>İstatistik kipi size senaryo üzerinde detaylı prodüksiyon raporları alma imkanı sunar, bununla birlikte sahne dinamikleri ve senaryo üzerinden karakterlerin etkinlik grafiklerine bakmanıza da imkan tanır.</translation>
+        <translation>గణాంక మాడ్యూల్ రచనలో వివరణాత్మక ఉత్పత్తి నివేదికలను పొందటానికి, రచన అలాగే స్క్రిప్ట్ మరియు సన్నివేశాల డైనమిక్స్ అంతటా పాత్రల కార్యాచరణ యొక్క గ్రాఫ్స్ చూడండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1119"/>
         <source>Statistics</source>
-        <translation>İstatistikler</translation>
+        <translation>గణాంకాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1132"/>
         <source>Use statistics module</source>
-        <translation>İstatistik kipini kullan</translation>
+        <translation>గణాంకాలు మాడ్యూల్ ఉపయోగించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1162"/>
         <source>Thank you. The most common application settings were configured.
 
 The application will start in few seconds.</source>
-        <translation>Teşekkür ederiz. En genel program ayarları yapılandırıldı.
+        <translation>ధన్యవాదాలు. అత్యంత సాధారణ అప్లికేషన్ సెట్టింగులు కాన్ఫిగర్ చేయబడ్డాయి.
 
-Program birkaç saniye içinde açılacak.</translation>
+అప్లికేషన్ కొద్ది సెకన్లలో ప్రారంభమవుతుంది.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1181"/>
         <source>Starting application</source>
-        <translation>Program başlatılıyor</translation>
+        <translation>అప్లికేషన్ ప్రారంభమవుతుంది</translation>
     </message>
 </context>
 <context>
@@ -3302,12 +3111,12 @@ Program birkaç saniye içinde açılacak.</translation>
     <message>
         <location filename="../../3rd_party/Widgets/PhotosChooser/PhotoLabel.cpp" line="80"/>
         <source>Choose image</source>
-        <translation>Görüntü seçin</translation>
+        <translation>చిత్రాన్ని ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/PhotosChooser/PhotoLabel.cpp" line="81"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
-        <translation>Görüntüler (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
+        <translation>చిత్రాలు (* .png * .jpeg * .jpg * .bmp * .tif * .tif *. Gif)</translation>
     </message>
 </context>
 <context>
@@ -3315,62 +3124,62 @@ Program birkaç saniye içinde açılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="14"/>
         <source>Print cards</source>
-        <translation>Kartları yazdır</translation>
+        <translation>ముద్రించు కార్డులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="22"/>
         <source>Cards on page:</source>
-        <translation>Sayfadaki kartlar:</translation>
+        <translation>పేజీలోని కార్డ్లు:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="29"/>
         <source>1</source>
-        <translation>1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="39"/>
         <source>2</source>
-        <translation>2</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="46"/>
         <source>4</source>
-        <translation>4</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="53"/>
         <source>6</source>
-        <translation>6</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="60"/>
         <source>8</source>
-        <translation>8</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="382"/>
         <source>Page orientation:</source>
-        <translation>Sayfa yönü:</translation>
+        <translation>పేజీ ధోరణి:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="389"/>
         <source>Portrait</source>
-        <translation>Dikey</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="399"/>
         <source>Landscape</source>
-        <translation>Yatay</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="450"/>
         <source>Print Preview</source>
-        <translation>Yazdırma Önizlemesi</translation>
+        <translation>ప్రింట్ ప్రివ్యు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="457"/>
         <source>Cancel</source>
-        <translation>İptal</translation>
+        <translation>రద్దు చేయు</translation>
     </message>
 </context>
 <context>
@@ -3378,65 +3187,61 @@ Program birkaç saniye içinde açılacak.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="129"/>
         <source>Change project name</source>
-        <translation>Proje adını değiştir</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="152"/>
         <source>Remove project</source>
-        <translation>Projeyi kaldır</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="175"/>
         <source>Hide project from recent</source>
-        <translation>Projeyi son kullanılanlardan gizle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="198"/>
         <source>Move project to the cloud</source>
-        <translation>Projeyi buluta taşı</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="221"/>
         <source>Add cowriter</source>
-        <translation>Yardımcı yazar ekle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="244"/>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="273"/>
         <source>Show cowriters</source>
-        <translation>Yardımcı yazarları göster</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>ProjectVersionDialog</name>
     <message>
-        <source>Form</source>
-        <translation type="obsolete">Biçim</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="102"/>
-        <source>Name</source>
-        <translation>İsim</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="42"/>
-        <source>dd.MM.yyyy hh:mm</source>
-        <translation>gg.AA.yyyy ss.dd</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="20"/>
         <source>Start a new version of the script</source>
-        <translation>Senaryonun yeni bir sürümüne başla</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="26"/>
         <source>Version date and time</source>
-        <translation>Sürüm tarih ve saati</translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="42"/>
+        <source>dd.MM.yyyy hh:mm</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="102"/>
+        <source>Name</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="112"/>
         <source>Description</source>
-        <translation>Tanımlama</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3444,7 +3249,7 @@ Program birkaç saniye içinde açılacak.</translation>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="33"/>
         <source>Node added to &quot;</source>
-        <translation>Düğüm buraya eklendi: &quot;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="35"/>
@@ -3459,17 +3264,17 @@ Program birkaç saniye içinde açılacak.</translation>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="426"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="467"/>
         <source>Base node</source>
-        <translation>Kaynak düğüm</translation>
+        <translation>బేస్ నోడ్</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="103"/>
         <source>Node added to scene</source>
-        <translation>Düğüm sahneye eklendi</translation>
+        <translation>నోడ్ సన్నివేశానికి జోడించబడింది</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="150"/>
         <source>Node deleted &quot;</source>
-        <translation>Düğüm silindi &quot;</translation>
+        <translation>నోడ్ తొలగించబడింది &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="153"/>
@@ -3480,23 +3285,23 @@ Program birkaç saniye içinde açılacak.</translation>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="429"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="470"/>
         <source> with subtree</source>
-        <translation> altağacıyla birlikte</translation>
+        <translation> subtree తో</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="205"/>
         <source>Edge added between &quot;</source>
-        <translation>Bağ bu iki düğüm arasına eklendi: &quot;</translation>
+        <translation>ఎడ్జ్ మధ్య జోడించారు&quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="209"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="261"/>
         <source>&quot; and &quot;</source>
-        <translation>&quot; ve &quot;</translation>
+        <translation>&quot;మరియు&quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="257"/>
         <source>Edge deleted between &quot;</source>
-        <translation>Bu iki düğüm arasındaki bağ silini: &quot;</translation>
+        <translation>మధ్య ఎడ్జ్ తొలగించబడింది&quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="293"/>
@@ -3504,45 +3309,45 @@ Program birkaç saniye içinde açılacak.</translation>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="424"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="465"/>
         <source>Node &quot;</source>
-        <translation>Düğüm &quot;</translation>
+        <translation>నోడ్&quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="353"/>
         <source>Changing color of node: &quot;</source>
-        <translation>Düğümün renk değişimi: &quot;</translation>
+        <translation>నోడ్ యొక్క రంగు మార్చడం: &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="393"/>
         <source>Changing textcolor of node: &quot;</source>
-        <translation>Düğümün metin renginin değişimi: &quot;</translation>
+        <translation>నోడ్ యొక్క టెక్స్ట్ రంగు మార్చడం: &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="924"/>
         <source>The graph is acyclic, edge added as secondary edge.</source>
-        <translation>Grafik döngüsüz halde, bağ ikincil bir bağ olarak eklendi.</translation>
+        <translation>గ్రాఫ్ అనేది సైక్లికల్,ఎడ్జ్ ద్వితీయ ఎడ్జ్గా జోడించబడింది.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="27"/>
         <source>Scenario</source>
-        <translation>Senaryo</translation>
+        <translation>సినారియొ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="495"/>
         <source>Title:</source>
         <comment>ScenarioBlockStyle</comment>
-        <translation>Başlık:</translation>
+        <translation>టైటిల్:</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1164"/>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
-        <translation>KLASÖRÜN SONU</translation>
+        <translation>ఫోల్డర్ యొక్క ముగింపు</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEditHelpers.cpp" line="23"/>
         <source>END OF</source>
         <comment>ScenarioTextEditHelpers</comment>
-        <translation>SONU</translation>
+        <translation>ఎండ్ ఆఫ్</translation>
     </message>
 </context>
 <context>
@@ -3550,7 +3355,7 @@ Program birkaç saniye içinde açılacak.</translation>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/node.cpp" line="36"/>
         <source>&lt;b&gt;Root node&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Kök düğüm&lt;/b&gt;</translation>
+        <translation>&lt;b&gt; రూట్ నోడ్ &lt;/ b&gt;</translation>
     </message>
 </context>
 <context>
@@ -3559,47 +3364,47 @@ Program birkaç saniye içinde açılacak.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="20"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="45"/>
         <source>Renew subscription</source>
-        <translation>Aboneliği yenile</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="60"/>
         <source>for</source>
-        <translation>için</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="70"/>
         <source>for 300 rubles</source>
-        <translation>için 300 ruble</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="87"/>
         <source>with a</source>
-        <translation>bir taneyle birlikte</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="95"/>
         <source>PayPal</source>
-        <translation>PayPal</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="100"/>
         <source>Bank card</source>
-        <translation>Banka kartı</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="105"/>
         <source>Yandex money</source>
-        <translation>Yandex parası</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="119"/>
         <source>Thanks! Your subscription is active until </source>
-        <translation>Teşekkürler! Aboneliğiniz şu süreye kadar etkin olacak </translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="129"/>
         <source>22.17.2010</source>
-        <translation>22.17.2010</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3607,52 +3412,52 @@ Program birkaç saniye içinde açılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="20"/>
         <source>Add Research Item</source>
-        <translation>Araştırma Öğesi Ekle</translation>
+        <translation>పరిశోధన అంశం జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="31"/>
         <source>Character</source>
-        <translation>Karakter</translation>
+        <translation>పాత్ర</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="47"/>
         <source>Location</source>
-        <translation>Mekan</translation>
+        <translation>స్థానం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="63"/>
         <source>Folder</source>
-        <translation>Klasör</translation>
+        <translation>ఫోల్డర్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="79"/>
         <source>Text</source>
-        <translation>Metin</translation>
+        <translation>టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="109"/>
         <source>Mind Map</source>
-        <translation>Zihin Haritası</translation>
+        <translation>మైండ్ మ్యాప్ని</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="114"/>
         <source>Images Gallery</source>
-        <translation>Görüntü Galerisi</translation>
+        <translation>చిత్రాలు గ్యాలరీ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="119"/>
         <source>Url</source>
-        <translation>Url</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="142"/>
         <source>Name</source>
-        <translation>İsim</translation>
+        <translation>పేరు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="156"/>
         <source>Insert into &quot;Folder name&quot;</source>
-        <translation>&quot;Klasör adı&quot; içine yerleştir</translation>
+        <translation>&quot;ఫోల్డర్ పేరు&quot; లోకి చొప్పించు</translation>
     </message>
 </context>
 <context>
@@ -3660,33 +3465,90 @@ Program birkaç saniye içinde açılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="14"/>
         <source>Form</source>
-        <translation>Biçim</translation>
+        <translation>నుండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="57"/>
         <source>Research</source>
-        <translation>Araştırma</translation>
+        <translation>పరిశోదన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="64"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="89"/>
         <source>Delete research item (Del)</source>
-        <translation>Araştırma öğesini sil (Del)</translation>
+        <translation>పరిశోధన అంశాన్ని తొలగించండి (డెల్)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="75"/>
         <source>Add reseach item</source>
-        <translation>Araştırma öğesi ekle</translation>
+        <translation>పరిశోధక అంశం జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="110"/>
         <source>Search</source>
-        <translation>Arama</translation>
+        <translation>వెతకడం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="117"/>
         <source>Ctrl+Tab</source>
-        <translation>Ctrl+Tab</translation>
+        <translation>Ctrl + Tab</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="163"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="205"/>
+        <source>Scenario Name:</source>
+        <translation>సినారియొ పేరు:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="184"/>
+        <source>Scene numbers prefix:</source>
+        <translation>సీన్ సంఖ్యలు ప్రత్యయము:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="194"/>
+        <source>Start scenes numbering from:</source>
+        <translation>నుండి సంఖ్యలను ప్రారంభించడం:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="215"/>
+        <source>Scenario name.</source>
+        <translation>సినారియొ పేరు.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="225"/>
+        <source>Genre:</source>
+        <translation>జెనర్:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="235"/>
+        <source>Scenario genre.</source>
+        <translation>సినారియొ జెనర్.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="245"/>
+        <source>Author:</source>
+        <translation>రచయిత:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="255"/>
+        <source>Scenario author.</source>
+        <translation>సినారియొ రచయిత.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="265"/>
+        <source>Additional:</source>
+        <translation>అదనపు:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="275"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="279"/>
+        <source>Original scenario</source>
+        <translation>అసలు సినారియొ</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="287"/>
+        <source>Contacts:</source>
+        <translation>కాంటాక్ట్స్:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="306"/>
@@ -3695,315 +3557,242 @@ Program birkaç saniye içinde açılacak.</translation>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="367"/>
-        <source>words:</source>
-        <translation>kelimeler:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="360"/>
-        <source>Logline:</source>
-        <translation>Önerme (Logline):</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="163"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="205"/>
-        <source>Scenario Name:</source>
-        <translation>Senaryo Adı:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="386"/>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="215"/>
-        <source>Scenario name.</source>
-        <translation>Senaryo adı.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="184"/>
-        <source>Scene numbers prefix:</source>
-        <translation>Sahne numaraları öneki:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="194"/>
-        <source>Start scenes numbering from:</source>
-        <translation>Sahneleri numaralandırmaya şuradan başla:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="225"/>
-        <source>Genre:</source>
-        <translation>Tür:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="235"/>
-        <source>Scenario genre.</source>
-        <translation>Senaryo türü.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="245"/>
-        <source>Author:</source>
-        <translation>Yazar:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="255"/>
-        <source>Scenario author.</source>
-        <translation>Senaryo yazarı.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="265"/>
-        <source>Additional:</source>
-        <translation>İlaveten:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="275"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="279"/>
-        <source>Original scenario</source>
-        <translation>Özgün senaryo</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="287"/>
-        <source>Contacts:</source>
-        <translation>İletişim:</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="317"/>
         <source>Year:</source>
-        <translation>Yıl:</translation>
+        <translation>సంవత్సరము:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="327"/>
         <source>Scenario wirting year.</source>
-        <translation>Senaryonun yazıldığı yıl.</translation>
+        <translation>సినారియొ వ్రాయు సంవత్సరం.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="360"/>
+        <source>Logline:</source>
+        <translation>ఒక వాక్యంలో:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="367"/>
+        <source>words:</source>
+        <translation>పదాలు:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="386"/>
+        <source>0</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="410"/>
         <source>Synopsis</source>
-        <translation>Sinopsis</translation>
+        <translation>సంక్షిప్తముగ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="460"/>
         <source>Add characters to project.</source>
-        <translation>Projeye karakter ekle.</translation>
+        <translation>ప్రాజెక్ట్లకు పాత్రలను జోడించండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="483"/>
         <source>Character Name:</source>
-        <translation>Karakter Adı:</translation>
+        <translation>పాత్ర పేరు:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="503"/>
         <source>Real Name:</source>
-        <translation>Gerçek Adı:</translation>
+        <translation>అసలు పేరు:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="523"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="587"/>
         <source>Description</source>
-        <translation>Tanımlama</translation>
+        <translation>వివరణ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="544"/>
         <source>Add locations to project.</source>
-        <translation>Projeye mekan ekleyin.</translation>
+        <translation>ప్రాజెక్ట్లకు ప్రాంతాలను జోడించండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="567"/>
         <source>Location Name:</source>
-        <translation>Mekan Adı:</translation>
+        <translation>స్థానం పేరు:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="611"/>
         <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
-        <translation>Ağaca; metin belgesi, görüntüler ve web sayfaları gibi araştırma öğeleri ekleyin. Ağaca araştırma öğeleri eklemek ya da çıkarmak için araç çubuğu tuşlarını ve içerik menüsünü kullanın.</translation>
+        <translation>చెట్టుకు టెక్స్ట్, వెబ్ పేజీలు మరియు చిత్రాల వంటి పరిశోధన సామగ్రిని జోడించండి. చెట్టులో పరిశోధనా పదార్థాలను జోడించడం లేదా తొలగించడం కోసం టూల్బార్ బటన్లను మరియు సందర్భ మెనుని ఉపయోగించండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="635"/>
         <source>&lt;h2&gt;Folder&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Klasör&lt;/h2&gt;</translation>
+        <translation>&lt;H2&gt; ఫోల్డర్ &lt;/ h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="648"/>
         <source>Folders let you group research data in hierarchy.</source>
-        <translation>Klasörler araştırma verilerini hiyerarşi içinde gruplandırmanızı sağlar.</translation>
+        <translation>ఫోల్డర్లు మిమ్మల్ని గుంపులుగా పరిశోధన డేటాను సమూహపరుస్తాయి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="661"/>
         <source>Add Folder</source>
-        <translation>Klasör Ekle</translation>
+        <translation>ఫోల్డర్ జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="698"/>
         <source>&lt;h2&gt;Text Document&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Metin Belgesi&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt; టెక్స్ట్ పత్రా &lt;/ h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="711"/>
         <source>Text let you store formatted text documents.</source>
-        <translation>Metin, size biçimlendirilmiş metin belgelerini saklama imkanı verir.</translation>
+        <translation>టెక్స్ట్ ఫార్మాట్ చేయబడిన టెక్స్ట్ పత్రాలను నిల్వ చేయడానికి వీలు కల్పిస్తుంది.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="724"/>
         <source>Add Text</source>
-        <translation>Metin Ekle</translation>
+        <translation>టెక్స్ట్ జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="761"/>
         <source>&lt;h2&gt;Mind Map&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Zihin Haritası&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;మైండ్ మ్యాప్ని&lt;h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="774"/>
         <source>Mind map let you create schemes with your thoughts.</source>
-        <translation>Zihin Haritası düşüncelerinize dair şemalar oluşturmanızı sağlar.</translation>
+        <translation>మీ ఆలోచనలు మీకు స్కీమ్లను సృష్టించేందుకు మైండ్ మాప్ను అనుమతిస్తాయి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="787"/>
         <source>Add Mind Map</source>
-        <translation>Zihin Haritası Ekle</translation>
+        <translation>మైండ్ మ్యాప్ జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="824"/>
         <source>&lt;h2&gt;Images Gallery&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Görüntü Galerisi&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;చిత్రాలు గ్యాలరీ&lt;h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="837"/>
         <source>Images gallery let you store group of images.</source>
-        <translation>Görüntü galerisi, görüntü gruplarını saklamanızı sağlar.</translation>
+        <translation>చిత్రాలు గ్యాలరీ మీరు చిత్రాల సమూహాన్ని నిల్వ చేయనివ్వండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="850"/>
         <source>Add Images Gallery</source>
-        <translation>Görüntü Galerisi Ekle</translation>
+        <translation>చిత్రాల గ్యాలరీని జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="887"/>
         <source>&lt;h2&gt;Url&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Url&lt;/h2&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="900"/>
         <source>Url let you have a link to useful web-based documents.</source>
-        <translation>Url işe yarar web tabanlı belgelere bağlantı kurmanızı sağlar.</translation>
+        <translation>Url మీకు ఉపయోగకరమైన వెబ్ ఆధారిత పత్రాలకు లింక్ను కలిగి ఉండటానికి వీలు కల్పిస్తుంది.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="913"/>
         <source>Add Url</source>
-        <translation>Url Ekle</translation>
+        <translation>Url ను జోడించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1026"/>
         <source>Url:</source>
-        <translation>Url:</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1033"/>
         <source>Load</source>
-        <translation>Yükle</translation>
+        <translation>లోడ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1071"/>
         <source>Change</source>
-        <translation>Değiştir</translation>
+        <translation>మార్చు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1101"/>
         <source>Image:</source>
-        <translation>Görüntü:</translation>
+        <translation>చిత్రం:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1167"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1260"/>
         <source>Node text color</source>
-        <translation>Düğüm metini rengi</translation>
+        <translation>నోడ్ టెక్స్ట్ రంగు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1170"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1263"/>
         <source>Text color</source>
-        <translation>Metin rengi</translation>
+        <translation>టెక్స్ట్ రంగు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1190"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1193"/>
         <source>Add child node</source>
-        <translation>Yavru düğüm ekle</translation>
+        <translation>చైల్డ్ నోడ్ జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1204"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1207"/>
         <source>Add sibling node</source>
-        <translation>Kardeş düğüm ekle</translation>
+        <translation>తోబుట్టువు నోడ్ జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1218"/>
         <source>Delete node (Del)</source>
-        <translation>Düğüm sil (Del)</translation>
+        <translation>నోడ్ తొలగించు (డెల్)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1221"/>
         <source>Delete node</source>
-        <translation>Düğüm sil</translation>
+        <translation>నోడ్ తొలగించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1232"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1235"/>
         <source>Scale up node</source>
-        <translation>Düğümü büyüt</translation>
+        <translation>నోడ్ అప్ స్కేల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1246"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1249"/>
         <source>Scale down node</source>
-        <translation>Düğümü küçült</translation>
+        <translation>నోడ్ డౌన్ స్కేల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1283"/>
         <source>Node background color</source>
-        <translation>Düğüm arkaplan rengi</translation>
+        <translation>నోడ్ నేపథ్య రంగు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1286"/>
         <source>Background color</source>
-        <translation>Arkaplan rengi</translation>
+        <translation>నేపథ్య రంగు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1306"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1309"/>
         <source>Add edge</source>
-        <translation>Bağ ekle</translation>
+        <translation>ఎడ్జ్ జోడించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1320"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1323"/>
         <source>Delete edge</source>
-        <translation>Bağı sil</translation>
+        <translation>ఎడ్జ్ తొలగించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1334"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1337"/>
         <source>Save mind map as image file</source>
-        <translation>Zihin Haritası&apos;nı görüntü dosyası olarak kaydet</translation>
+        <translation>మైండ్ మ్యాప్ను ఇమేజ్ ఫైల్గాగా సేవ్ చేయండి</translation>
     </message>
 </context>
 <context>
@@ -4012,7 +3801,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="341"/>
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="345"/>
         <source>Not a supported RTF file.</source>
-        <translation>Desteklenen bir RTF dosyası değil.</translation>
+        <translation>మద్దతు లేని RTF ఫైల్ కాదు.</translation>
     </message>
 </context>
 <context>
@@ -4020,7 +3809,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../../libs/fileformats/rtf_tokenizer.cpp" line="151"/>
         <source>Unexpectedly reached end of file.</source>
-        <translation>Beklenmedik bir şekilde dosyanın sonuna erişildi.</translation>
+        <translation>ఊహించని విధంగా ఫైలు ముగిసింది.</translation>
     </message>
 </context>
 <context>
@@ -4028,41 +3817,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="26"/>
         <source>Add scheme item</source>
-        <translation>Şema öğesi ekle</translation>
+        <translation>స్కిం అంశాన్ని జోడించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="56"/>
         <source>Description:</source>
-        <translation>Tanımlama:</translation>
+        <translation>వివరణ:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="80"/>
         <source>Header:</source>
-        <translation>Başlık:</translation>
+        <translation>హెడర్:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="87"/>
         <source>Name:</source>
-        <translation>Ad:</translation>
-    </message>
-</context>
-<context>
-    <name>ScenarioSchemeItemDialog</name>
-    <message>
-        <source>Add scheme item</source>
-        <translation type="vanished">Şema öğesi ekle</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="vanished">Sahne</translation>
-    </message>
-    <message>
-        <source>Act</source>
-        <translation type="vanished">Eylem</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation type="vanished">Tanımlama</translation>
+        <translation>పేరు:</translation>
     </message>
 </context>
 <context>
@@ -4070,22 +3840,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="17"/>
         <source>Form</source>
-        <translation>Biçim</translation>
+        <translation>నుండి</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="78"/>
         <source>Title</source>
-        <translation>Başlık</translation>
+        <translation>టైటిల్</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="91"/>
         <source>Description</source>
-        <translation>Tanımlama</translation>
+        <translation>వివరణ</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="113"/>
         <source>Remove version</source>
-        <translation>Sürümü kaldır</translation>
+        <translation>సంస్కరణను తొలగించండి</translation>
     </message>
 </context>
 <context>
@@ -4093,72 +3863,72 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="49"/>
         <source>Find...</source>
-        <translation>Bul...</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="60"/>
         <source>Case Sensitive</source>
-        <translation>Büyük/Küçük Hassas</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="71"/>
         <source>Find Prev</source>
-        <translation>Öncekini Bul</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="83"/>
         <source>Find Next</source>
-        <translation>Sonrakini Bul</translation>
+        <translation>తదుపరిది కనుగొనండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="86"/>
         <source>In whoole document</source>
-        <translation>Tüm belgede</translation>
+        <translation>మొత్తం పత్రంలో</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="87"/>
         <source>In scene heading</source>
-        <translation>Sahne başlığında</translation>
+        <translation>సన్నివేశం హెడింగ్లో</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="88"/>
         <source>In action</source>
-        <translation>Eylem içinde</translation>
+        <translation>నటన లో</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="89"/>
         <source>In character</source>
-        <translation>Karakterlerde</translation>
+        <translation>పాత్ర లో</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="90"/>
         <source>In dialogue</source>
-        <translation>Diyaloglarda</translation>
+        <translation>సంభాషణ లో</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="91"/>
         <source>In parenthetical</source>
-        <translation>Parantezlerde</translation>
+        <translation>పరెంథెటికల్ లో</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="92"/>
         <source>In lyrics</source>
-        <translation>Liriklerde</translation>
+        <translation>సాహిత్యం లో</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="96"/>
         <source>Replace with...</source>
-        <translation>Yerine yaz...</translation>
+        <translation>దీనితో భర్తీ చేయి ...</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="99"/>
         <source>Replace</source>
-        <translation>Değiştir</translation>
+        <translation>పునఃస్థాపించుము</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="103"/>
         <source>All</source>
-        <translation>Tümü</translation>
+        <translation>అన్ని</translation>
     </message>
 </context>
 <context>
@@ -4167,12 +3937,12 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="14"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2218"/>
         <source>Dialog</source>
-        <translation>Diyalog</translation>
+        <translation>సంభాషణ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="51"/>
         <source>Settings</source>
-        <translation>Ayarlar</translation>
+        <translation>సెట్టింగులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="80"/>
@@ -4182,57 +3952,57 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="85"/>
         <source>Application</source>
-        <translation>Program</translation>
+        <translation>అప్లికేషన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="94"/>
         <source>Research</source>
-        <translation>Araştırma</translation>
+        <translation>పరిశోధన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="103"/>
         <source>Cards</source>
-        <translation>Kartlar</translation>
+        <translation>కార్డులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="112"/>
         <source>Scenario Editor</source>
-        <translation>Senaryo Düzenleyici</translation>
+        <translation>సినారియొ సంపాదకుడు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="121"/>
         <source>Navigator</source>
-        <translation>Gezinti Aracı</translation>
+        <translation>నావిగేటర్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="130"/>
         <source>Chronometry/Counters</source>
-        <translation>Süreler/Sayaçlar</translation>
+        <translation>కోనోమెట్రి/కౌంటర్లు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="139"/>
         <source>Templates Library</source>
-        <translation>Şablon Kütüphanesi</translation>
+        <translation>టెంప్లేట్లు లైబ్రరీ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="151"/>
         <source>Reset Settings</source>
-        <translation>Ayarları Sıfırla</translation>
+        <translation>రీసెట్ సెట్టింగులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="228"/>
         <source>Two Panel Mode (F2)</source>
-        <translation>İki Panel Kipi (F2)</translation>
+        <translation>రెండు ప్యానెల్ మోడ్ (F2)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="240"/>
         <source>Save Backups</source>
-        <translation>Kurtarmaları Kaydet</translation>
+        <translation>బ్యాకప్లను సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="285"/>
         <source>Browse...</source>
-        <translation>Gözat...</translation>
+        <translation>బ్రౌజ్...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="288"/>
@@ -4242,72 +4012,72 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="312"/>
         <source>Automatically Save Every</source>
-        <translation>Kendiliğinden Kaydet Her</translation>
+        <translation>స్వయంచాలకంగా ప్రతి ఒక్కటి సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="335"/>
         <source>Minutes</source>
-        <translation>Dakikada</translation>
+        <translation>నిమిషములు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="351"/>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
-        <translation>Kendiliğinden kaydetme çok hassas çalışır. Eğer fare ya da klavyeyi kullanmıyorsanız projeyi her 3 saniyede bir kaydeder, ancak eğer aralıksız çalışıyorsanız her 5 dakikada bir kaydeder.</translation>
+        <translation>ఆటో సేవ్ చాలా ఖచ్చితత్వం పనిచేస్తుంది. మీరు మౌస్ లేదా కీబోర్డ్ను ఉపయోగించకపోతే, ప్రతి 3 సెకన్లు ప్రాజెక్ట్ను సేవ్ చేస్తుంది, కానీ ఏవైనా రద్దులతో పని చేస్తే, ప్రతి 5 నిమిషాలకు ప్రాజెక్ట్ ఆదా అవుతుంది.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="395"/>
         <source>Use Dark Theme</source>
-        <translation>Koyu Temayı Kullan</translation>
+        <translation>డార్క్ థీమ్ ఉపయోగించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="405"/>
         <source>Compact Mode</source>
-        <translation>Sıkı Kip</translation>
+        <translation>కాంపాక్ట్ మోడ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="414"/>
         <source>Language:</source>
-        <translation>Dil:</translation>
+        <translation>భాష:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="421"/>
         <source>Russian</source>
-        <translation>Rusça</translation>
+        <translation>రష్యన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="428"/>
         <source>Change</source>
-        <translation>Değiştir</translation>
+        <translation>మార్చు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="454"/>
         <source>Research module</source>
-        <translation>Araştırma kipi</translation>
+        <translation>పరిశోధన మాడ్యూల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="461"/>
         <source>Cards module</source>
-        <translation>Kart kipi</translation>
+        <translation>కార్డ్స్ మాడ్యూల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="468"/>
         <source>Scenario module</source>
-        <translation>Senaryo kipi</translation>
+        <translation>సినారియొ మాడ్యూల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="475"/>
         <source>Statistics module</source>
-        <translation>İstatistik kipi</translation>
+        <translation>గణాంకాలు మాడ్యూల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="482"/>
         <source>Tools module</source>
-        <translation>Araç kipi</translation>
+        <translation>టూల్స్ మాడ్యూల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="545"/>
         <source>Default font for text documents:</source>
-        <translation>Belgeler için varsayılan yazı tipi:</translation>
+        <translation>డిఫాల్ట్ ఫాంట్ టెక్స్ట్ పత్రాలకు:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="559"/>
@@ -4317,202 +4087,202 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="642"/>
         <source>Use corkboad background</source>
-        <translation>Mantar pano arkaplanı kullan</translation>
+        <translation>Corkboad నేపథ్య ఉపయోగించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="652"/>
         <source>Use color background</source>
-        <translation>Düz renk arkaplanı kullan</translation>
+        <translation>రంగు నేపథ్యాన్ని ఉపయోగించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="662"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="921"/>
         <source>Themes colors</source>
-        <translation>Temalara göre renkler</translation>
+        <translation>థీమ్స్ రంగులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="721"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1051"/>
         <source>Background:</source>
-        <translation>Arkaplan:</translation>
+        <translation>నేపథ్య:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="728"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="937"/>
         <source>Dark Theme</source>
-        <translation>Koyu Tema</translation>
+        <translation>డార్క్ థీమ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="735"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="930"/>
         <source>Light Theme</source>
-        <translation>Açık Tema</translation>
+        <translation>లైట్ థీమ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="900"/>
         <source>Page View</source>
-        <translation>Sayfa Görünümü</translation>
+        <translation>పేజీ వీక్షణ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="907"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1805"/>
         <source>Show Scenes Numbers</source>
-        <translation>Sahne Numaralarını Göster</translation>
+        <translation>సన్నివేశాల నంబర్లను చూపించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="914"/>
         <source>Highlight Current Line</source>
-        <translation>Geçerli Satırı Vurgula</translation>
+        <translation>హైలైట్ ప్రస్తుత పంక్తి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="944"/>
         <source>Text:</source>
-        <translation>Metin:</translation>
+        <translation>టెక్స్ట్:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1158"/>
         <source>Folder text:</source>
-        <translation>Klasör metni:</translation>
+        <translation>ఫోల్డర్ టెక్స్ట్:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1265"/>
         <source>Folder background:</source>
-        <translation>Klasör arkaplanı:</translation>
+        <translation>ఫోల్డర్ నేపథ్యం:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1372"/>
         <source>Noneprintable text:</source>
-        <translation>Yazdırılamaz metin:</translation>
+        <translation>ముద్రించకూడని టెక్స్ట్:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1508"/>
         <source>Hide all panels in fullscreen mode</source>
-        <translation>Tüm panelleri tam ekran halinde gizle</translation>
+        <translation>పూర్తి స్క్రీన్ మోడ్లో అన్ని ప్యానెల్లను దాచిపెట్టు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1518"/>
         <source>Show dialogues numbers</source>
-        <translation>Diyalog numaralarını göster</translation>
+        <translation>సంభాషణ సంఖ్యలు చూపించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1525"/>
         <source>Highlight blocks</source>
-        <translation>Öbekleri vurgula</translation>
+        <translation>హైలైట్ బ్లాక్స్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1539"/>
         <source>Editor Text Template:</source>
-        <translation>Düzenleyici Metin Şablonu:</translation>
+        <translation>సంపాదకుడు టెక్స్ట్ టెంప్లేట్:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1562"/>
         <source>Spell Checking</source>
-        <translation>Yazım Denetimi</translation>
+        <translation>స్పెల్ చెకింగ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1572"/>
         <source>Text corrections</source>
-        <translation>Metin düzeltmeleri</translation>
+        <translation>టెక్స్ట్ దిద్దుబాట్లు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1578"/>
         <source>Automatically continue dialogue</source>
-        <translation>Diyalog devamlılığını kendiliğinden yaz</translation>
+        <translation>స్వయంచాలకంగా సంభాషణ కొనసాగించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1585"/>
         <source>Automatically corrections on page breaks</source>
-        <translation>Sayfa sonlarında kendiliğinden düzeltme yap</translation>
+        <translation>పేజీ బ్రేక్లలో స్వయంచాలకంగా దిద్దుబాట్లు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1592"/>
         <source>Capitalize first word</source>
-        <translation>İlk harfi büyüt</translation>
+        <translation>మొదటి పదం క్యాపిటల్స్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1599"/>
         <source>Correct DOuble CApitals</source>
-        <translation>Çift BÜyük HArfleri Düzelt</translation>
+        <translation>సరైన DOuble CApitals</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1606"/>
         <source>Replace three single dots to threedots character.</source>
-        <translation>Üç ayrı nokta bulduğunda üçnokta karakteriyle değiştir.</translation>
+        <translation>మూడు ఒంటరి చుక్కలను మూడు పదాల పాత్రకు పునఃస్థాపించండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1613"/>
         <source>Smart quotes</source>
-        <translation>Akkılı tırnaklar</translation>
+        <translation>స్మార్ట్ కోట్స్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1638"/>
         <source>Automatically jump to next paragraph</source>
-        <translation>Sıradaki paragrafa kendiliğinden atla</translation>
+        <translation>స్వయంచాలకంగా తదుపరి పేరాకు వెళ్ళు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1654"/>
         <source>For scene heading and character paragraphs.</source>
-        <translation>Sahne başlıkları ve karakter paragrafları için.</translation>
+        <translation>సన్నివేశం హెడింగ్ మరియు పాత్రల పేరాలకు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1685"/>
         <source>Use MS Word like review highlighting colors</source>
-        <translation>MS Word biçimi vurgulama renklerini kullan</translation>
+        <translation>సమీక్ష హైలైటింగ్ రంగులు వంటి MS Word ఉపయోగించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1692"/>
         <source>Autocomplete next character for dialogue</source>
-        <translation>Diyalog için sonraki karakteri kendiliğinden tamamla</translation>
+        <translation>సంభాషణ కోసం స్వీయపూర్తి తదుపరి పాత్ర</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1715"/>
         <source>Use open bracket in dialogue for jump to parenthetical</source>
-        <translation>Diyalogtayken parantez biçimine geçmek için parantez kullan</translation>
+        <translation>పెంటెరేక్టికల్కు జంప్ కోసం డైలాగ్లో ఓపెన్ బ్రాకెట్ను ఉపయోగించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1818"/>
         <source>Show scene description</source>
-        <translation>Sahne tanımlamasını göster</translation>
+        <translation>సన్నివేశం వివరణను చూపు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1829"/>
         <source>Scene text</source>
-        <translation>Sahne metni</translation>
+        <translation>సనివేశ టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1839"/>
         <source>Scene synopsis</source>
-        <translation>Sahne sinopsisi</translation>
+        <translation>సనివేశ సంక్షిప్తముగ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1863"/>
         <source>Description height, lines:</source>
-        <translation>Tanım yüksekliği, satırlar:</translation>
+        <translation>వివరణ ఎత్తు, పంక్తులు:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1924"/>
         <source>Show Scene Title instead of Scene Heading</source>
-        <translation>Sahne Başlığı yerine Sahne Adın&apos;ı göster</translation>
+        <translation>సన్నివేశం హెడింగ్ హెడింగ్కు బదులుగా సన్నివేశం టైటిల్ను చూపించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1981"/>
         <source>Chronometry</source>
-        <translation>Süreölçüm</translation>
+        <translation>కోనోమెట్రి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1992"/>
         <source>Pages Chronometry</source>
-        <translation>Sayfa Süreölçümü</translation>
+        <translation>పేజీలు క్రోనోమెట్రీ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2008"/>
         <source>For standard template and compatible</source>
-        <translation>Standart şablon ve uyumlu olanlar için</translation>
+        <translation>ప్రామాణిక టెంప్లేట్ మరియు అనుకూలత కోసం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2048"/>
         <source>Page</source>
-        <translation>Sayfa</translation>
+        <translation>పుట</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2055"/>
@@ -4524,32 +4294,32 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2069"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2132"/>
         <source>Seconds</source>
-        <translation>Saniye</translation>
+        <translation>క్షణాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2095"/>
         <source>Characters Chronometry</source>
-        <translation>Karakter Süreölçümü</translation>
+        <translation>పాత్రల క్రోనోమెట్రీ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2139"/>
         <source>Characters</source>
-        <translation>Karakter</translation>
+        <translation>పాత్రలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2146"/>
         <source>Consider Spaces</source>
-        <translation>Boşlukları Dikkate Al</translation>
+        <translation>Spaces పరిగణించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2172"/>
         <source>Configurable Chronometry</source>
-        <translation>Ayarlanabilir Süreölçüm</translation>
+        <translation>కాన్ఫిగర్ క్రోమోమెట్రీ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2188"/>
         <source>Scene Heading</source>
-        <translation>Sahne Başlığı</translation>
+        <translation>సనివేశ శిర్షిక</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2225"/>
@@ -4562,110 +4332,110 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2235"/>
         <source>Seconds per
 50 characters</source>
-        <translation>50 karakter
-başına saniye</translation>
+        <translation>సెకనుల శాతం
+50 అక్షరాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2262"/>
         <source>Action</source>
-        <translation>Eylem</translation>
+        <translation>నటన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2349"/>
         <source>Seconds for
 Paragraph</source>
-        <translation>Paragrafa göre
-Saniyeler</translation>
+        <translation>సెకనుల కోసం
+పేరా</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2395"/>
         <source>Counters</source>
-        <translation>Sayaçlar</translation>
+        <translation>కౌంటర్లు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2409"/>
         <source>Pages</source>
-        <translation>Sayfalar</translation>
+        <translation>పుటలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2422"/>
         <source>Pages Mode only</source>
-        <translation>Sadece Sayfa Görünümü</translation>
+        <translation>Pages Mode only</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2440"/>
         <source>Words</source>
-        <translation>Kelimeler</translation>
+        <translation>పదాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2452"/>
         <source>Symbols</source>
-        <translation>Semboller</translation>
+        <translation>చిహ్నాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2465"/>
         <source>Symbols without spaces | Symbols with spaces</source>
-        <translation>Boşluksuz karakterler | Boşluklarla karakterler</translation>
+        <translation>ఖాళీలు లేకుండా చిహ్నాలు | ఖాళీలతో చిహ్నాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2599"/>
         <source>Apply Selected Template</source>
-        <translation>Seçili Şablonu Uygula</translation>
+        <translation>ఎంచుకున్న టెంప్లేట్ను వర్తించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2602"/>
         <source>Apply</source>
-        <translation>Uygula</translation>
+        <translation>వర్తించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2613"/>
         <source>Add Template</source>
-        <translation>Şablon Ekle</translation>
+        <translation>టెంప్లేట్ను జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2616"/>
         <source>New</source>
-        <translation>Yeni</translation>
+        <translation>కొత్త</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2627"/>
         <source>Edit Selected Template</source>
-        <translation>Seçili Şablonu Düzenle</translation>
+        <translation>ఎంచుకున్న టెంప్లేట్ను సవరించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2630"/>
         <source>Edit</source>
-        <translation>Düzenle</translation>
+        <translation>సవరించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2641"/>
         <source>Delete Selected Template</source>
-        <translation>Seçili Şablonu Sil</translation>
+        <translation>ఎంచుకున్న టెంప్లేట్ను తొలగించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2644"/>
         <source>Remove</source>
-        <translation>Kaldır</translation>
+        <translation>తొలగించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2655"/>
         <source>Load Template From File</source>
-        <translation>Dosyada şablon yükle</translation>
+        <translation>ఫైల్ నుండి టెంప్లేట్ను లోడ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2658"/>
         <source>Load</source>
-        <translation>Yükle</translation>
+        <translation>లోడ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2669"/>
         <source>Save Template To File</source>
-        <translation>Şablonu Dosyaya Kaydet</translation>
+        <translation>ఫైల్ నుండి టెంప్లేట్ను సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2672"/>
         <source>Save As...</source>
-        <translation>Farklı Kaydet...</translation>
+        <translation>ఇలా సేవ్ చెయ్యి ...</translation>
     </message>
 </context>
 <context>
@@ -4673,27 +4443,27 @@ Saniyeler</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="20"/>
         <source>Share project</source>
-        <translation>Projeyi paylaş</translation>
+        <translation>ప్రాజెక్ట్ను భాగస్వామ్యం చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="26"/>
         <source>Email</source>
-        <translation>Eposta</translation>
+        <translation>ఇమెయిల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="36"/>
         <source>User role</source>
-        <translation>Kullanıcının görevi</translation>
+        <translation>వినియోగదారు పాత్ర</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="44"/>
         <source>Redactor</source>
-        <translation>Gözden Geçirici</translation>
+        <translation>రీడాక్టర్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="49"/>
         <source>Commentator</source>
-        <translation>Yorumcu</translation>
+        <translation>వ్యాఖ్యాత</translation>
     </message>
 </context>
 <context>
@@ -4701,32 +4471,32 @@ Saniyeler</translation>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="186"/>
         <source>Make text bold</source>
-        <translation>Metn kalın yap</translation>
+        <translation>టెక్స్ట్ బోల్డ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="190"/>
         <source>Make text italic</source>
-        <translation>Metni eğik yap</translation>
+        <translation>టెక్స్ట్ ఇటాలిక్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="194"/>
         <source>Make text underline</source>
-        <translation>Metnin altını çiz</translation>
+        <translation>టెక్స్ట్ క్రింది గీత చేయండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="197"/>
         <source>Change text color</source>
-        <translation>Metin rengini değiştir</translation>
+        <translation>టెక్స్ట్ రంగు మార్చండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="200"/>
         <source>Change text background color</source>
-        <translation>Metnin arkaplan rengini değiştir</translation>
+        <translation>టెక్స్ట్ నేపథ్య రంగు మార్చండి</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="202"/>
         <source>Clear formatting</source>
-        <translation>Biçimlendirmeyi temizle</translation>
+        <translation>ఫార్మాటింగ్ క్లియర్ చేయండి</translation>
     </message>
 </context>
 <context>
@@ -4734,17 +4504,18 @@ Saniyeler</translation>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="43"/>
         <source>Ignore</source>
-        <translation>Yoksay</translation>
+        <translation>పట్టించుకోకుండా
+పట్టించుకోకుండా</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="46"/>
         <source>Add to dictionary</source>
-        <translation>Sözlüğe ekle</translation>
+        <translation>నిఘంటువుకు జోడించు</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="152"/>
         <source>Suggestions not found</source>
-        <translation>Öneriler bulunamadı</translation>
+        <translation>సలహాలు కనుగొనబడలేదు</translation>
     </message>
 </context>
 <context>
@@ -4752,29 +4523,17 @@ Saniyeler</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="14"/>
         <source>Form</source>
-        <translation>Biçim</translation>
-    </message>
-    <message>
-        <source>version</source>
-        <translation type="vanished">sürüm</translation>
-    </message>
-    <message>
-        <source>0.0.0</source>
-        <translation type="vanished">0.0.0</translation>
-    </message>
-    <message>
-        <source>Released version 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;download&lt;/a&gt; or &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;read more&lt;/a&gt;.</source>
-        <translation type="vanished">Yıyınlanan sürüm 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;indirin&lt;/a&gt; yada &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;dahasını okuyun&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="115"/>
-        <source>Help</source>
-        <translation>Yardım</translation>
+        <translation>నుండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="95"/>
         <source>Open Project</source>
-        <translation>Proje Aç</translation>
+        <translation>ప్రాజెక్ట్ తెరవండి</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="115"/>
+        <source>Help</source>
+        <translation>సహాయం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="139"/>
@@ -4783,12 +4542,12 @@ Saniyeler</translation>
 New to KIT Scenarist?</source>
         <translation>
 
-KIT Scenarist&apos;te yeni misiniz?</translation>
+కిట్ సినరిస్ట్ కొత్తదా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="151"/>
         <source>Create Project</source>
-        <translation>Proje Oluştur</translation>
+        <translation>ప్రాజెక్ట్ను సృష్టించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="168"/>
@@ -4796,194 +4555,182 @@ KIT Scenarist&apos;te yeni misiniz?</translation>
 and explore KIT Scenarist through 
 our help articles and tutorials.
 </source>
-        <translation>Yardım makalelerimiz ve eğitimlerimiz doğrultusunda
-kendi hikayelerinizi nasıl yazacağınızı
-ve KIT Scenarist&apos;i keşfedin.
+        <translation>మీ స్వంత కథనాలను ఎలా రాయాలో తెలుసుకోండి
+మరియు కిట్ సినరిస్ట్ ద్వారా అన్వేషించండి
+మా సహాయ కథనాలు మరియు ట్యుటోరియల్స్.
 </translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="200"/>
         <source>Update recent projects list</source>
-        <translation>Son kullanılan projeler listesini güncelle</translation>
+        <translation>ఇటీవలి ప్రాజెక్టుల జాబితాను నవీకరించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="293"/>
         <source>Projects from local computer</source>
-        <translation>Bilgisayar üstündeki projeler</translation>
+        <translation>స్థానిక కంప్యూటర్ నుండి ప్రాజెక్ట్లు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="306"/>
         <source>Projects from kitscenarist.ru</source>
-        <translation>Kitscenarist.ru üzerindeki projeler</translation>
+        <translation>Kitscenarist.ru నుండి ప్రాజెక్ట్స్</translation>
     </message>
 </context>
 <context>
     <name>StatisticsSettings</name>
     <message>
-        <source>StackedWidget</source>
-        <translation type="vanished">YığınAraç</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="35"/>
+        <source>Back to tools list</source>
+        <translation>టూల్స్ జాబితాకు తిరిగి వెళ్ళు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="63"/>
         <source>Summary text statistics</source>
-        <translation>Özet metin istatistikleri</translation>
+        <translation>సారాంశం టెక్స్ట్ గణాంకాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="73"/>
         <source>Scenes statistics</source>
-        <translation>Sahne istatistikleri</translation>
+        <translation>సన్నివేశాల గణాంకాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="83"/>
         <source>Locations statistics</source>
-        <translation>Mekan istatistikleri</translation>
+        <translation>ప్రాంతల గణాంకాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="93"/>
         <source>Characters statistics</source>
-        <translation>Karakter istatistikleri</translation>
+        <translation>పాత్రల గణాంకాలు</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="107"/>
+        <source>Show characters</source>
+        <translation>పాత్రలను చూపించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="117"/>
         <source>Sort scenes</source>
-        <translation>Sahneleri sırala</translation>
+        <translation>సన్నివేశాలను క్రమబద్ధీకరించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="128"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="186"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="244"/>
         <source>by script order</source>
-        <translation>senaryo sırasına göre</translation>
+        <translation>రచన ఆజ్ఞ ద్వారా</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="133"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="191"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="249"/>
         <source>by alphabetical order</source>
-        <translation>alfabetik olarak</translation>
+        <translation>అక్షర క్రమం ద్వారా</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="138"/>
         <source>from longest to shortest scene</source>
-        <translation>en uzundan en kısaya diz</translation>
+        <translation>పొడవైన నుండి చిన్నదైన సన్నివేశం వరకు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="143"/>
         <source>from shortest to longest scene</source>
-        <translation>en kısadan en uzuna diz</translation>
+        <translation>చిన్నది నుండి పొడవైన సన్నివేశం వరకు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="148"/>
         <source>from massive to unmanned scene</source>
-        <translation>en kalabalıktan adsız sahneye diz</translation>
+        <translation>భారీ నుండి మానవరూప సన్నివేశానికి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="153"/>
         <source>from unmanned to massive scene</source>
-        <translation>adsız sahneden en kalabalığa diz</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="107"/>
-        <source>Show characters</source>
-        <translation>Karakterleri göster</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="35"/>
-        <source>Back to tools list</source>
-        <translation>Araçlar listesine dön</translation>
+        <translation>మానవరహిత నుండి భారీ సన్నివేశానికి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="165"/>
         <source>Extended view</source>
-        <translation>Genişletilmiş görünüm</translation>
+        <translation>విస్తరించిన వీక్షణ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="175"/>
         <source>Sort locations</source>
-        <translation>Mekanları sırala</translation>
+        <translation>ప్రాంతలను క్రమబద్ధీకరించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="196"/>
         <source>from most to least occurences</source>
-        <translation>en çok geçenden en aza diz</translation>
+        <translation>చాలా వరకు కనీసం సందర్భాలలో</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="201"/>
         <source>from least to most occurences</source>
-        <translation>en az geçenden en çoka diz</translation>
+        <translation>కనీసం నుండి చాలా సందర్భాలలో</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="206"/>
         <source>from longest to shortest chron</source>
-        <translation>en uzun sürenden en kısaya diz</translation>
+        <translation>పొడవైన నుండి చిన్నదైన క్రోన్ వరకు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="211"/>
         <source>from shortest to longest chron</source>
-        <translation>en kısa sürenden en uzununa diz</translation>
+        <translation>చిన్నది నుండి పొడవైన క్రోన్ వరకు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="223"/>
         <source>Show speaking and non-speaking scenes count</source>
-        <translation>Konuşulan ve konuşulmayan sahne sayımlarını göster</translation>
+        <translation>మాట్లాడే మరియు మాటలు లేని సన్నివేశాలను లెక్కించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="233"/>
         <source>Sort characters</source>
-        <translation>Karakterleri sırala</translation>
+        <translation>పాత్రలను క్రమబద్ధీకరించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="254"/>
         <source>from most to least scenes</source>
-        <translation>en çok sahnede gözükenden en aza diz</translation>
+        <translation>చాలా వరకు కనీసం సన్నివేశాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="259"/>
         <source>from least to most scenes</source>
-        <translation>en az sahnede gözükenden en çoka diz</translation>
+        <translation>కనీసం చాలా సన్నివేశాలు వరకు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="264"/>
         <source>from most to least dialogues</source>
-        <translation>en çok diyalogludan en aza diz</translation>
+        <translation>చాలా వరకు కనీసం సంభాషణలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="269"/>
         <source>from least to most dialogues</source>
-        <translation>en az diyalogludan en çoka diz</translation>
-    </message>
-    <message>
-        <source>Choose character:</source>
-        <translation type="vanished">Karakter seç:</translation>
+        <translation>కనీసం చాలా సంభాషణలు వరకు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="316"/>
         <source>Scene Duration</source>
-        <translation>Sahne Süresi</translation>
+        <translation>సనివేశ నిడివి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="326"/>
         <source>Action Duration</source>
-        <translation>Eylem Süresi</translation>
+        <translation>నటన నిడివి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="336"/>
         <source>Dialogues Duration</source>
-        <translation>Diyalog Süresi</translation>
+        <translation>సంభాషణ నిడివి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="346"/>
         <source>Characters Count</source>
-        <translation>Karakter Sayımı</translation>
+        <translation>పాత్రల లెక్క</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="356"/>
         <source>Dialogues Count</source>
-        <translation>Diyalog Sayımı</translation>
-    </message>
-    <message>
-        <source>Choose characters:</source>
-        <translation type="vanished">Karakterleri seç:</translation>
+        <translation>సంభాషణల లెక్క</translation>
     </message>
 </context>
 <context>
@@ -4991,45 +4738,45 @@ ve KIT Scenarist&apos;i keşfedin.
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="14"/>
         <source>Edit Scenario Template</source>
-        <translation>Senaryo Şablonunu Düzenle</translation>
+        <translation>సినారియొ టెంప్లేట్ను సవరించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="20"/>
         <source>Common</source>
-        <translation>Genel</translation>
+        <translation>సాధారణ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="38"/>
         <source>Top</source>
-        <translation>Üstte</translation>
+        <translation>పైన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="43"/>
         <source>Bottom</source>
-        <translation>Aşağıda</translation>
+        <translation>దిగువ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="61"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="585"/>
         <source>Left</source>
-        <translation>Solda</translation>
+        <translation>ఎడమ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="66"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="590"/>
         <source>Center</source>
-        <translation>Ortada</translation>
+        <translation>సెంటర్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="71"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="595"/>
         <source>Right</source>
-        <translation>Sağda</translation>
+        <translation>కుడి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="97"/>
         <source>Description:</source>
-        <translation>Tanımlama:</translation>
+        <translation>వివరణ:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="106"/>
@@ -5039,181 +4786,169 @@ ve KIT Scenarist&apos;i keşfedin.
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="116"/>
         <source>Letter</source>
-        <translation>Letter</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="139"/>
         <source>Fields, mm:</source>
-        <translation>Alanlar, mm:</translation>
+        <translation>ఫీల్డ్స్, mm:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="146"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="440"/>
         <source>Left:</source>
-        <translation>Sol:</translation>
+        <translation>ఎడమ:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="166"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="358"/>
         <source>Top:</source>
-        <translation>Üst:</translation>
+        <translation>పైన:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="186"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="457"/>
         <source>Right:</source>
-        <translation>Sağ:</translation>
+        <translation>కుడి:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="206"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="389"/>
         <source>Bottom:</source>
-        <translation>Alt:</translation>
+        <translation>దిగువ:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="241"/>
         <source>Numbering:</source>
-        <translation>Numaralandırma:</translation>
+        <translation>నంబరింగ్:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="248"/>
         <source>Page format:</source>
-        <translation>Sayfa biçimi:</translation>
+        <translation>పేజీ ఫార్మాట్:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="258"/>
         <source>Name:</source>
-        <translation>Ad:</translation>
+        <translation>పేరు:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="290"/>
         <source>Active</source>
-        <translation>Etkin</translation>
+        <translation>క్రియాశీలమైన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="338"/>
         <source>Spacing</source>
-        <translation>Boşluklandırma</translation>
+        <translation>అంతరం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="345"/>
         <source>Lines</source>
-        <translation>Satırlar</translation>
+        <translation>పంక్తులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="350"/>
         <source>mm</source>
-        <translation>mm</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="433"/>
         <source>mm:</source>
-        <translation>mm:</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="477"/>
         <source>Uppercase</source>
-        <translation>Büyük harflerle</translation>
+        <translation>పెద్ద</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="484"/>
         <source>Underline</source>
-        <translation>Altı çizili</translation>
+        <translation>క్రింది గీత</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="493"/>
         <source>Line spacing:</source>
-        <translation>Satır aralıkları:</translation>
+        <translation>పంక్తులు అంతరం:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="501"/>
         <source>Single</source>
-        <translation>Tek</translation>
+        <translation>ఒంటరిగా</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="506"/>
         <source>One and Half</source>
-        <translation>Bir buçuk</translation>
+        <translation>ఒకటి మరియు సగము</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="511"/>
         <source>Double</source>
-        <translation>Çift</translation>
+        <translation>రెట్టింపు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="516"/>
         <source>Fixed</source>
-        <translation>Belirtilmiş</translation>
+        <translation>స్థిరమైన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="527"/>
         <source>value, mm</source>
-        <translation>değer, mm</translation>
+        <translation>విలువ, mm</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="562"/>
         <source>Italic</source>
-        <translation>Eğik</translation>
+        <translation>ఇటాలిక్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="571"/>
         <source>Alignment:</source>
-        <translation>Hizalama:</translation>
+        <translation>అమరిక:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="600"/>
         <source>Justify</source>
-        <translation>İki Yana Yaslı</translation>
+        <translation>న్యాయంచేయటానికి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="625"/>
         <source>Font:</source>
-        <translation>Yazı Tipi:</translation>
+        <translation>ఫాంట్:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="645"/>
         <source>pt</source>
-        <translation>pt</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="660"/>
         <source>Bold</source>
-        <translation>Kalın</translation>
+        <translation>బోల్డ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="670"/>
         <source>Framing brackets</source>
-        <translation>Çerçeveleme köşelikleri</translation>
+        <translation>ఫ్రేమింగ్ బ్రాకెట్లలో</translation>
     </message>
 </context>
 <context>
     <name>ToolsSettings</name>
     <message>
-        <source>Form</source>
-        <translation type="vanished">Biçim</translation>
-    </message>
-    <message>
-        <source>Apply Selected Template</source>
-        <translation type="vanished">Seçili Şablonu Uygula</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="35"/>
         <source>Back to tools list</source>
-        <translation>Araçlar listesine dön</translation>
+        <translation>టూల్స్ జాబితాకు తిరిగి వెళ్ళు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="95"/>
         <source>Compare</source>
-        <translation>Karşılaştır</translation>
+        <translation>సరిపోల్చండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="105"/>
         <source>with</source>
-        <translation>şununla</translation>
-    </message>
-    <message>
-        <source>Apply</source>
-        <translation type="vanished">Uygula</translation>
+        <translation>తో</translation>
     </message>
 </context>
 <context>
@@ -5221,166 +4956,166 @@ ve KIT Scenarist&apos;i keşfedin.
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="14"/>
         <source>Form</source>
-        <translation>Biçim</translation>
+        <translation>నుండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="24"/>
         <source>Palette colors</source>
-        <translation>Palet renkleri</translation>
+        <translation>పాలెట్ రంగులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="30"/>
         <source>Inactive</source>
-        <translation>Etkin değil</translation>
+        <translation>క్రియారహిత</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="37"/>
         <source>WindowText</source>
-        <translation>PencereMetni</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="53"/>
         <source>Active</source>
-        <translation>Etkin</translation>
+        <translation>క్రియాశీలమైన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="66"/>
         <source>Light</source>
-        <translation>Açık</translation>
+        <translation>లైట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="94"/>
         <source>Button</source>
-        <translation>Tuş</translation>
+        <translation>బటన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="109"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/qpalette.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Info&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/qpalette.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Bilgi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://doc.qt.io/qt-5/qpalette.html&quot;&gt; &lt;span style = &quot;text-decoration: అండర్లైన్; రంగు: # 0000ff; &quot;&gt; సమాచారం &lt;/ span&gt; &lt;/a&gt; &lt;/ p&gt; &lt;/ body&gt; &lt;/ html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="119"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="381"/>
         <source>Reset to defaults</source>
-        <translation>Varsayılana sıfırla</translation>
+        <translation>డిఫాల్ట్లకు రీసెట్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="139"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="401"/>
         <source>Save</source>
-        <translation>Kaydet</translation>
+        <translation>సేవ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="146"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="408"/>
         <source>Load</source>
-        <translation>Yükle</translation>
+        <translation>లోడ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="153"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="415"/>
         <source>Apply</source>
-        <translation>Uygula</translation>
+        <translation>వర్తించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="162"/>
         <source>BrightText</source>
-        <translation>AçıkMetin</translation>
+        <translation>బ్రైట్ టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="169"/>
         <source>Midlight</source>
-        <translation>Ortaışık</translation>
+        <translation>మధ్య కాంతి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="185"/>
         <source>Dark</source>
-        <translation>Koyu</translation>
+        <translation>చీకటి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="201"/>
         <source>Mid</source>
-        <translation>Orta</translation>
+        <translation>మధ్య</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="208"/>
         <source>Disabled</source>
-        <translation>Devre dışı</translation>
+        <translation>డిసేబుల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="224"/>
         <source>Text</source>
-        <translation>Metin</translation>
+        <translation>టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="243"/>
         <source>ButtonText</source>
-        <translation>TuşMetni</translation>
+        <translation>బటన్ టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="262"/>
         <source>Shadow</source>
-        <translation>Gölge</translation>
+        <translation>నీడ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="278"/>
         <source>Highlight</source>
-        <translation>Vurgulama</translation>
+        <translation>హైలైట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="294"/>
         <source>HighlightedText</source>
-        <translation>VurgulanmışMetin</translation>
+        <translation>హైలైట్ టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="310"/>
         <source>AlternateBase</source>
-        <translation>AlternatifTaban</translation>
+        <translation>ప్రత్యామ్నాయ బేస్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="323"/>
         <source>Base</source>
-        <translation>Taban</translation>
+        <translation>బేస్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="339"/>
         <source>Window</source>
-        <translation>Pencere</translation>
+        <translation>విండో</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="360"/>
         <source>Style sheet</source>
-        <translation>Biçem dökümü</translation>
+        <translation>శైలి షీట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="371"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/stylesheet-reference.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Info&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/stylesheet-reference.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Bilgi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://doc.qt.io/qt-5/stylesheet-reference.html&quot;&gt; &lt;span style = &quot;text-decoration: underline; రంగు: # 0000ff; &quot;&gt; సమాచారం &lt;/ span&gt; &lt;/a&gt; &lt;/ p&gt; &lt;/ body&gt; &lt;/ html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="246"/>
         <source>Save palette to file</source>
-        <translation>Paleti dosyaya kaydet</translation>
+        <translation>ఫైల్కి పాలెట్ను సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="306"/>
         <source>Open file with palette</source>
-        <translation>Paletle dosya aç</translation>
+        <translation>పాలెట్తో ఫైల్ను తెరవండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="373"/>
         <source>Save style sheet to file</source>
-        <translation>Biçem dökümünü dosyaya kaydet</translation>
+        <translation>ఫైల్ శైలి షీట్ను సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="384"/>
         <source>Open file with style sheet</source>
-        <translation>Biçem dökümüyle dosya aç</translation>
+        <translation>శైలి షీట్తో ఫైల్ను తెరవండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="472"/>
         <source>Choose color</source>
-        <translation>Renk seç</translation>
+        <translation>రంగును ఎంచుకోండి</translation>
     </message>
 </context>
 <context>
@@ -5388,43 +5123,43 @@ ve KIT Scenarist&apos;i keşfedin.
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="26"/>
         <source>New version is available</source>
-        <translation>Yeni sürüm mevcut</translation>
+        <translation>క్రొత్త సంస్కరణ అందుబాటులో ఉంది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="45"/>
         <source>KIT Scenarist doesn&apos;t support auto update on your OS now. &lt;br&gt;
 Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;link&lt;/a&gt;</source>
-        <translation>KIT Scenarist sizin işletim sisteminizde kendiliğinden güncelleme özelliğini desteklemiyor. &lt;br&gt;
-Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;bağlantı&lt;/a&gt;</translation>
+        <translation>కిట్ సినరిస్ట్ ఇప్పుడు మీ OS లో స్వీయ నవీకరణకు మద్దతు ఇవ్వదు. &lt;br&gt;
+దయచేసి, &lt;a href = &quot;https://kitscenarist.ru/en/download.html&quot; style = &quot;color: #2b78da;&quot; ద్వారా క్రొత్త సంస్కరణను డౌన్లోడ్ చేయండి. &gt; లింక్ &lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="70"/>
         <source>I&apos;m sure want to download beta version</source>
-        <translation>Beta sürümünü indirmek istediğime eminim</translation>
+        <translation>నేను ఖచ్చితంగా బీటా సంస్కరణను డౌన్లోడ్ చేయాలనుకుంటున్నాను</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="83"/>
         <source>&lt;html&gt;&lt;body&gt;&lt;p&gt;Beta version is an early version of a program or application that contains most of the major features, but is not yet complete. These versions are released to the general public, for testing and feedback.
 &lt;br&gt;&lt;br&gt;If you use beta version and send feedback to developer you helps him to make application better.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;body&gt;&lt;p&gt;Beta sürümü bir program ya da uygulamanın ana özelliklerin çoğunu barındıran ama henüz tamamlanmamış halinin erken bir sürümüdür.
-&lt;br&gt;&lt;br&gt;Eğer sürümünü kullanır ve geliştiriciye geri bildirimde bulunursanız onun programı daha iyi yapmasına yardım etmiş olursunuz.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;body&gt; &lt;p&gt; బీటా సంస్కరణ అనేది ప్రధాన ప్రోగ్రామ్లన్నింటినీ కలిగి ఉన్న ప్రోగ్రామ్ లేదా అనువర్తనం యొక్క ప్రారంభ వెర్షన్, కానీ ఇంకా పూర్తి కాలేదు. పరీక్షలు మరియు ఫీడ్బ్యాక్ కోసం ఈ వెర్షన్లు సాధారణ ప్రజలకు విడుదల చేయబడతాయి.
+మీరు బీటా సంస్కరణను ఉపయోగించుకుని డెవలపర్కు అభిప్రాయాన్ని పంపితే, అప్లికేషన్ను మెరుగుపర్చడానికి మీకు సహాయపడుతుంది. &lt;/ p&gt;
+&lt;/ Body&gt; &lt;/ html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="120"/>
         <source>Download</source>
-        <translation>İndir</translation>
+        <translation>డౌన్లోడ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="127"/>
         <source>Skip</source>
-        <translation>Geç</translation>
+        <translation>దాటవేయి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="134"/>
         <source>Cancel</source>
-        <translation>İptal</translation>
+        <translation>రద్దు చేయు</translation>
     </message>
 </context>
 <context>
@@ -5432,7 +5167,7 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.cpp" line="21"/>
         <source>version</source>
-        <translation>sürüm</translation>
+        <translation>సంస్కరణ</translation>
     </message>
 </context>
 <context>
@@ -5440,22 +5175,22 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="182"/>
         <source>Create</source>
-        <translation>Oluştur</translation>
+        <translation>సృష్టించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="187"/>
         <source>New Project</source>
-        <translation>Yeni Proje</translation>
+        <translation>కొత్త ప్రాజెక్ట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="228"/>
         <source>Choose file for new project</source>
-        <translation>Projeyi kaydetmek için konum seçin</translation>
+        <translation>క్రొత్త ప్రాజెక్ట్ కోసం ఫైల్ను ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="242"/>
         <source>Choose file to import</source>
-        <translation>İçe aktarmak için konum seçin</translation>
+        <translation>దిగుమతి చేయడానికి ఫైల్ను ఎంచుకోండి</translation>
     </message>
 </context>
 <context>
@@ -5463,7 +5198,7 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/ApplicationView.cpp" line="21"/>
         <source>KIT Scenarist</source>
-        <translation>KIT Scenarist</translation>
+        <translation>కిట్ సినారిస్ట్</translation>
     </message>
 </context>
 <context>
@@ -5471,12 +5206,12 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.cpp" line="12"/>
         <source>Add new bookmark</source>
-        <translation>Yeni sayfa işareti ekle</translation>
+        <translation>క్రొత్త బుక్ మార్క్ ను జోడించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.cpp" line="12"/>
         <source>Update bookmark</source>
-        <translation>Sayfa işaretini güncelle</translation>
+        <translation>బుక్ మార్క్ అప్డేట్ చేయండి</translation>
     </message>
 </context>
 <context>
@@ -5484,7 +5219,7 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.cpp" line="27"/>
         <source>Change</source>
-        <translation>Değiştir</translation>
+        <translation>మార్చు</translation>
     </message>
 </context>
 <context>
@@ -5492,12 +5227,12 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.cpp" line="41"/>
         <source>Send report</source>
-        <translation>Raporu gönder</translation>
+        <translation>నివేదికను పంపు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.cpp" line="42"/>
         <source>Don&apos;t send</source>
-        <translation>Gönderme</translation>
+        <translation>పంపవద్దు</translation>
     </message>
 </context>
 <context>
@@ -5505,33 +5240,33 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="253"/>
         <source>Choose file to export research</source>
-        <translation>Araştırmayı dışa aktarmak için klasör seçin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="255"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="316"/>
         <source>%1 files (*%2)</source>
-        <translation>%1 dosyalar (*%2)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="314"/>
         <source>Choose file to export scenario</source>
-        <translation>Senaryonun dışa aktarılacağı klasörü seçin</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="407"/>
         <source>Export research</source>
-        <translation>Araştırmayı dışa aktar</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="408"/>
         <source>Export outline</source>
-        <translation>Anahatı dışa aktar</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="409"/>
         <source>Export script</source>
-        <translation>Senaryoyu dışa aktar</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -5539,12 +5274,12 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="51"/>
         <source>Import</source>
-        <translation>İçe aktar</translation>
+        <translation>దిగుమతి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="82"/>
         <source>Choose file to import</source>
-        <translation>İçe aktarılacak dosyayı seçin</translation>
+        <translation>దిగుమతి చేయడానికి ఫైల్ను ఎంచుకోండి</translation>
     </message>
 </context>
 <context>
@@ -5553,34 +5288,34 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="41"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="249"/>
         <source>Login</source>
-        <translation>Oturum Aç</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="42"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="250"/>
         <source>Sign Up</source>
-        <translation>Kaydol</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="114"/>
         <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a confirmation code.</source>
-        <translation>Sizin &lt;b&gt;%1&lt;/b&gt; e-postanıza onaylama kodunun bulunduğu bir belge gönderildi.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="125"/>
         <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a password.</source>
-        <translation>Sizin &lt;b&gt;%1&lt;/b&gt; e-postanıza parolanın bulunduğu bir belge gönderildi.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="178"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="190"/>
         <source>Email is invalid</source>
-        <translation>Eposta geçersiz</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="280"/>
         <source>Email is empty</source>
-        <translation>Eposta boş</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -5588,27 +5323,27 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="143"/>
         <source>Connect</source>
-        <translation>Bağlan</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="153"/>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Oturum Aç&lt;/a&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="191"/>
         <source>Account is active until:</source>
-        <translation>Hesap şu süreye kadar etkin:</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="194"/>
         <source>Account is inactive</source>
-        <translation>Hesap aktif değil</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="205"/>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation>%1 Gb&apos;tan %2 Gb kullanıldı</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -5616,21 +5351,21 @@ Lütfen yeni sürümü buradan indirin: &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="199"/>
         <source>Next</source>
-        <translation>İleri</translation>
+        <translation>తరువాత</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="233"/>
         <source>Finish</source>
-        <translation>Tamamla</translation>
+        <translation>ముగింపు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="251"/>
         <source>Will be used default settings.
 
 The application will start in few seconds.</source>
-        <translation>Varsayılan ayarlar kullanılacak.
+        <translation>డిఫాల్ట్ సెట్టింగులు ఉపయోగించబడతాయి.
 
-Uygulama birkaç saniye sonra başlatılacak.</translation>
+అప్లికేషన్ కొద్ది సెకన్లలో ప్రారంభమవుతుంది.</translation>
     </message>
 </context>
 <context>
@@ -5638,7 +5373,7 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectsList.cpp" line="51"/>
         <source>no changes</source>
-        <translation>değişiklik yok</translation>
+        <translation>మార్పులు లేవు</translation>
     </message>
 </context>
 <context>
@@ -5646,47 +5381,47 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="35"/>
         <source>Renew</source>
-        <translation>Yenile</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="64"/>
         <source>Cancel</source>
-        <translation>İptal Et</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="78"/>
         <source>Close</source>
-        <translation>Kapat</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="88"/>
         <source>for %1 rubles</source>
-        <translation>için %1 ruble</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="122"/>
         <source>1 month</source>
-        <translation>1 ay</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="123"/>
         <source>2 month</source>
-        <translation>2 ay</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="124"/>
         <source>3 month</source>
-        <translation>3 ay</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="125"/>
         <source>6 month (6% discount)</source>
-        <translation>6 ay (6% indirim)</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="126"/>
         <source>12 month (12% discount)</source>
-        <translation>12 ay (12% indirim)</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -5694,12 +5429,12 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.cpp" line="18"/>
         <source>Add</source>
-        <translation>Ekle</translation>
+        <translation>జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.cpp" line="36"/>
         <source>Insert into &quot;%1&quot;</source>
-        <translation>Buraya dahil et &quot;%1&quot;</translation>
+        <translation>&quot;%1&quot; లోకి చొప్పించు</translation>
     </message>
 </context>
 <context>
@@ -5707,42 +5442,42 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="275"/>
         <source>Find All Characters from Script</source>
-        <translation>Senaryodaki Tüm Karakterleri Bul</translation>
+        <translation>రచన నుండి అన్ని పాత్రలు కనుగొనండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="301"/>
         <source>Find All Locations from Script</source>
-        <translation>Senaryodaki Tüm Mekanları Bul</translation>
+        <translation>రచన నుండి అన్ని స్థానాలను కనుగొనండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="648"/>
         <source>Save mind map</source>
-        <translation>Zihin Haritasını Kaydet</translation>
+        <translation>మైండ్ మ్యాప్ని సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="648"/>
         <source>PNG files (*.png)</source>
-        <translation>PNG dosyaları (*.png)</translation>
+        <translation>PNG ఫైళ్లు (* .png)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="693"/>
         <source>Character name</source>
-        <translation>Karakter adı</translation>
+        <translation>పాత్ర పేరు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="695"/>
         <source>Location name</source>
-        <translation>Mekan adı</translation>
+        <translation>స్థానం పేరు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="851"/>
         <source>Choose image</source>
-        <translation>Görüntü seç</translation>
+        <translation>చిత్రాన్ని ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="852"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
-        <translation>Görüntüler (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
+        <translation>చిత్రాలు (* .png * .jpeg * .jpg * .bmp * .tif * .tif *. Gif)</translation>
     </message>
 </context>
 <context>
@@ -5750,57 +5485,57 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="93"/>
         <source>Cards.png</source>
-        <translation>Kartlar.png</translation>
+        <translation>కార్డు.png</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="94"/>
         <source>Save cards</source>
-        <translation>Kartları kaydet</translation>
+        <translation>కార్డులు సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="94"/>
         <source>PNG files (*.png)</source>
-        <translation>PNG dosyaları (*.png)</translation>
+        <translation>PNG ఫైళ్లు (* .png)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="196"/>
         <source>Draft</source>
-        <translation>Taslak</translation>
+        <translation>డ్రాఫ్ట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="201"/>
         <source>Script</source>
-        <translation>Senaryo</translation>
+        <translation>రచన</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="207"/>
         <source>Add new card</source>
-        <translation>Yeni kart ekle</translation>
+        <translation>కొత్త కార్డును జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="210"/>
         <source>Remove selected card</source>
-        <translation>Seçili kartı kaldır</translation>
+        <translation>ఎంచుకున్న కార్డ్ని తీసివేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="213"/>
         <source>Sort cards</source>
-        <translation>Kartları sırala</translation>
+        <translation>కార్డులను క్రమబద్ధీకరించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="227"/>
         <source>Save cards to file</source>
-        <translation>Kartları dosyaya kaydet</translation>
+        <translation>కార్డులను ఫైల్ కి సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="230"/>
         <source>Print cards</source>
-        <translation>Kartları yazdır</translation>
+        <translation>ముద్రించు కార్డులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="234"/>
         <source>On/off Fullscreen Mode</source>
-        <translation>Tam Ekran Halini Aç/Kapa</translation>
+        <translation>ఆన్/ఆఫ్ పూర్తి స్క్రీన్ మోడ్</translation>
     </message>
 </context>
 <context>
@@ -5808,12 +5543,12 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioFastFormatWidget.cpp" line="58"/>
         <source>↑ Prev</source>
-        <translation>↑ Öneki</translation>
+        <translation>↑ పూర్వ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioFastFormatWidget.cpp" line="79"/>
         <source>↓ Next</source>
-        <translation>↓ Sonraki</translation>
+        <translation>↓ తదుపరి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioFastFormatWidget.cpp" line="136"/>
@@ -5827,55 +5562,47 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="19"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="34"/>
         <source>Add</source>
-        <translation>Ekle</translation>
-    </message>
-    <message>
-        <source>Add scenario item</source>
-        <translation type="vanished">Senaryo öğesi ekle</translation>
+        <translation>జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="32"/>
         <source>Add Scene</source>
-        <translation>Sahne Ekle</translation>
+        <translation>సనివేశం జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
         <source>Add Folder</source>
-        <translation>Klasör Ekle</translation>
+        <translation>ఫోల్డర్ జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
         <source>Add Act</source>
-        <translation>Eylem Ekle</translation>
+        <translation>అక్ట్ జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="40"/>
         <source>Edit Scene</source>
-        <translation>Sahneyi Düzenle</translation>
+        <translation>సనివేశాలు సవరించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="41"/>
         <source>Edit Act</source>
-        <translation>Eylemi Düzenle</translation>
+        <translation>అక్ట్ జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="42"/>
         <source>Save</source>
-        <translation>Kaydet</translation>
+        <translation>సేవ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="145"/>
         <source>Scene</source>
-        <translation>Sahne</translation>
+        <translation>సనివేశం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="146"/>
         <source>Folder</source>
-        <translation>Klasör</translation>
-    </message>
-    <message>
-        <source>Scene Description</source>
-        <translation type="vanished">Sahne Tanımı</translation>
+        <translation>ఫోల్డర్</translation>
     </message>
 </context>
 <context>
@@ -5883,112 +5610,112 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="228"/>
         <source>Convert to scene</source>
-        <translation>Sahneye dönüştür</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="230"/>
         <source>Convert to folder</source>
-        <translation>Klasöre dönüştür</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="254"/>
         <source>Clear all colors</source>
-        <translation>Tüm renkleri temizle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="270"/>
         <source>Color %1</source>
-        <translation>Renk %1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="272"/>
         <source>Clear</source>
-        <translation>Temizle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="292"/>
         <source>Add color</source>
-        <translation>Renk ekle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="310"/>
         <source>Create After</source>
-        <translation>Ardından Oluştur</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="311"/>
         <source>Remove</source>
-        <translation>Kaldır</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="371"/>
         <source>Draft:</source>
-        <translation>Taslak:</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="373"/>
         <source>Scenes:</source>
-        <translation>Sahneler:</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="375"/>
         <source>Scenes Count</source>
-        <translation>Sahne Sayımı</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="379"/>
         <source>Add Scenario Item After Selected</source>
-        <translation>Seçili Olanın Ardına Senaryo Öğesi Ekle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="382"/>
         <source>Remove Selected Scenario Item</source>
-        <translation>Seçili Senaryo Öğesini Kaldır</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="387"/>
         <source>Show/hide additional panels</source>
-        <translation>Ek panelleri göster/gizle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="395"/>
         <source>Draft</source>
-        <translation>Taslak</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="397"/>
         <source>Show/hide draft</source>
-        <translation>Taslağı göster/gizle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="400"/>
         <source>Scene description</source>
-        <translation>Sahne tanımı</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="401"/>
         <source>Show/hide scene note</source>
-        <translation>Sahne notlarını göster/gizle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="405"/>
         <source>Script bookmarks</source>
-        <translation>Senaryo imleri</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="406"/>
         <source>Show/hide script bookmarks</source>
-        <translation>Senaryo imlerini göster/gizle</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="410"/>
         <source>Script dictionaries</source>
-        <translation>Senaryo sözlükleri</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="411"/>
         <source>Show/hide script dictionaries</source>
-        <translation>Senaryo sözlüklerini göster/gizle</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -5996,42 +5723,42 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="205"/>
         <source>Comment</source>
-        <translation>Yorum</translation>
+        <translation>అభిప్రాయం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="271"/>
         <source>Review</source>
-        <translation>Gözden geçirme</translation>
+        <translation>సమీక్ష</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="276"/>
         <source>Change text color</source>
-        <translation>Metin rengini değiştir</translation>
+        <translation>టెక్స్ట్ రంగు మార్చండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="280"/>
         <source>Change text background</source>
-        <translation>Metnin arkaplan rengini değiştir</translation>
+        <translation>టెక్స్ట్ నేపథ్య మార్చండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="284"/>
         <source>Highlight text</source>
-        <translation>Metni vurgula</translation>
+        <translation>హైలైట్ టెక్స్ట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="288"/>
         <source>Add comment</source>
-        <translation>Yorum ekle</translation>
+        <translation>అభిప్రాయం జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="292"/>
         <source>Mark as done</source>
-        <translation>Tamamlandı olarak işaretle</translation>
+        <translation>ఐపోయినట్టుగా గుర్తుపెట్టు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="294"/>
         <source>Clear</source>
-        <translation>Temizle</translation>
+        <translation>క్లియర్</translation>
     </message>
 </context>
 <context>
@@ -6039,28 +5766,28 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="131"/>
         <source>Edit</source>
-        <translation>Düzenle</translation>
+        <translation>కూర్పు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="132"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="217"/>
         <source>Reply</source>
-        <translation>Yanıtla</translation>
+        <translation>ప్రత్యుత్తరం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="133"/>
         <source>Done</source>
-        <translation>Tamamlandı</translation>
+        <translation>పూర్తయింది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="136"/>
         <source>Remove</source>
-        <translation>Kaldır</translation>
+        <translation>తొలగించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="198"/>
         <source>Comment</source>
-        <translation>Yorum</translation>
+        <translation>అభిప్రాయం</translation>
     </message>
 </context>
 <context>
@@ -6068,23 +5795,12 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="109"/>
         <source>Copy scene description to the script</source>
-        <translation>Sahne tanımını senaryoya kopyala</translation>
+        <translation>స్క్రిప్ట్కు సన్నివేశం వివరణను కాపీ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="118"/>
         <source>Description of:</source>
-        <translation>Bu sahnenin tanımı:</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::ScenarioSchemeItemDialog</name>
-    <message>
-        <source>Add</source>
-        <translation type="vanished">Ekle</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">Kaydet</translation>
+        <translation>వివరణ:</translation>
     </message>
 </context>
 <context>
@@ -6092,17 +5808,17 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="547"/>
         <source>Remove bookmark</source>
-        <translation>Sayfa işaretini kaldır</translation>
+        <translation>బుక్ మార్క్ తీసివేయండి</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="552"/>
         <source>Add bookmark</source>
-        <translation>Sayfa işareti ekle</translation>
+        <translation>బుక్ మార్క్ ను జోడించు</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="627"/>
         <source>Change scene number</source>
-        <translation>Sahne numarasını değiştir</translation>
+        <translation>సన్నివేశం సంఖ్య మార్చండి</translation>
     </message>
 </context>
 <context>
@@ -6110,62 +5826,62 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="121"/>
         <source>DRAFT</source>
-        <translation>TASLAK</translation>
+        <translation>డ్రాఫ్ట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="527"/>
         <source>Undo</source>
-        <translation>Geri Al</translation>
+        <translation>అన్ డు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="528"/>
         <source>Redo</source>
-        <translation>İleri Al</translation>
+        <translation>రీడు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="530"/>
         <source>Find and replace</source>
-        <translation>Bul ve değiştir</translation>
+        <translation>కనుగొనండి మరియు భర్తీ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="726"/>
         <source>Outline mode</source>
-        <translation>Anahat görünümü</translation>
+        <translation>అవుట్లైన్ మోడ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="729"/>
         <source>Current Text Block Style</source>
-        <translation>Geçerli Metin Öbeği Biçemi</translation>
+        <translation>ప్రస్తుత టెక్స్ట్ బ్లాక్ శైలి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="735"/>
         <source>Undo last action</source>
-        <translation>Son hareketi geri al</translation>
+        <translation>చివరి చర్యను రద్దు చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="738"/>
         <source>Redo last action</source>
-        <translation>Son hareketi ileri al</translation>
+        <translation>చివరి చర్యను పునరావృతం చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="742"/>
         <source>Search and Replace</source>
-        <translation>Ara ve Değiştir</translation>
+        <translation>శోధించండి మరియు భర్తీ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="747"/>
         <source>Text Fast Format</source>
-        <translation>Metin Biçimi Hızlı Erişim</translation>
+        <translation>టెక్స్ట్ ఫాస్ట్ ఫార్మాట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="752"/>
         <source>Duration from Start to Cursor Position | Full Duration</source>
-        <translation>En Baştan İmleç Konumuna olan Senaryo Süresi | Toplam Süre</translation>
+        <translation>ప్రారంభం నుండి కర్సర్ స్థానం వరకు వ్యవధి | పూర్తి వ్యవధి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="772"/>
         <source>Lock/unlock scene numbers</source>
-        <translation>Sahne numaralarını kilitle/çöz</translation>
+        <translation>సన్నివేశం సంఖ్యలను లాక్ / అన్లాక్ చేయండి</translation>
     </message>
 </context>
 <context>
@@ -6173,21 +5889,17 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="50"/>
         <source>Bookmarks</source>
-        <translation>Sayfa İşaretleri</translation>
+        <translation>బుక్ మార్క్స్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="53"/>
         <source>Edit selected bookmark</source>
-        <translation>Seçili sayfa işaretini düzenle</translation>
+        <translation>ఎంచుకున్న బుక్ మార్క్ సవరించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="56"/>
         <source>Remove selected bookmark</source>
-        <translation>Seçili sayfa işaretini kaldır</translation>
-    </message>
-    <message>
-        <source>Remove seleted bookmark</source>
-        <translation type="vanished">Seçili sayfa işaretini kaldır</translation>
+        <translation>ఎంచుకున్న బుక్ మార్క్ తీసివేయండి</translation>
     </message>
 </context>
 <context>
@@ -6195,37 +5907,37 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="39"/>
         <source>Scene intros</source>
-        <translation>Sahne girişleri</translation>
+        <translation>సన్నివేశం పరిచయం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="40"/>
         <source>Scene times</source>
-        <translation>Sahne zamanları</translation>
+        <translation>సన్నివేశం సమయం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="41"/>
         <source>Scene days</source>
-        <translation>Sahne günleri</translation>
+        <translation>సన్నివేశం రోజులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="42"/>
         <source>Character states</source>
-        <translation>Karakter durumları</translation>
+        <translation>పాత్ర పేర్కొంది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="43"/>
         <source>Transitions</source>
-        <translation>Geçişler</translation>
+        <translation>మారుపద్దతి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="46"/>
         <source>Add dictionary item</source>
-        <translation>Sözlük öğesi ekle</translation>
+        <translation>నిఘంటువు అంశం జోడించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="49"/>
         <source>Remove selected item</source>
-        <translation>Seçili öğeyi kaldır</translation>
+        <translation>ఎంచుకున్న అంశాన్ని తీసివేయండి</translation>
     </message>
 </context>
 <context>
@@ -6233,7 +5945,7 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionsList.cpp" line="65"/>
         <source>started by</source>
-        <translation>tarafından başlanıldı</translation>
+        <translation>ప్రారంభించారు</translation>
     </message>
 </context>
 <context>
@@ -6241,7 +5953,7 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScriptZenModeControls.cpp" line="83"/>
         <source>Typewriter sound</source>
-        <translation>Daktilo sesi</translation>
+        <translation>టైప్రైటర్ సౌండ్</translation>
     </message>
 </context>
 <context>
@@ -6249,99 +5961,99 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="131"/>
         <source>System</source>
-        <translation>Sistem</translation>
+        <translation>సిస్టం</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="136"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="778"/>
         <source>Russian</source>
-        <translation>Russian</translation>
+        <translation>రష్యన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="141"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="779"/>
         <source>Spanish</source>
-        <translation>Spanish</translation>
+        <translation>స్పానిష్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="146"/>
         <source>English</source>
-        <translation>English</translation>
+        <translation>ఇంగ్లీష్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="151"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="769"/>
         <source>French</source>
-        <translation>French</translation>
+        <translation>ఫ్రెంచ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="156"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="773"/>
         <source>Kazakh</source>
-        <translation>Kazakh</translation>
+        <translation>కజఖ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="161"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="783"/>
         <source>Ukrainian</source>
-        <translation>Ukrainian</translation>
+        <translation>ఉక్రేనియన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="166"/>
         <source>German</source>
-        <translation>German</translation>
+        <translation>జర్మన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="171"/>
         <source>Portuguese</source>
-        <translation>Portuguese</translation>
+        <translation>పోర్చుగీస్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="176"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="768"/>
         <source>Farsi</source>
-        <translation>Farsi</translation>
+        <translation>ఫార్సీ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="181"/>
         <source>Chinese</source>
-        <translation>Chinese</translation>
+        <translation>చైనీస్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="186"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="770"/>
         <source>Hebrew</source>
-        <translation>Hebrew</translation>
+        <translation>హిబ్రూ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="191"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="774"/>
         <source>Polish</source>
-        <translation>Polish</translation>
+        <translation>పోలిష్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="196"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="782"/>
         <source>Turkish</source>
-        <translation>Türkçe</translation>
+        <translation>టర్కిష్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="201"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="771"/>
         <source>Hungarian</source>
-        <translation>Hungarian</translation>
+        <translation>హంగేరియన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="206"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="772"/>
         <source>Italian</source>
-        <translation>Italian</translation>
+        <translation>ఇటాలియన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="211"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="764"/>
         <source>Azerbaijani</source>
-        <translation>Azerbaijani</translation>
+        <translation>ఆజెర్బైజని</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="216"/>
@@ -6352,80 +6064,80 @@ Uygulama birkaç saniye sonra başlatılacak.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="596"/>
         <source>Choose backups saving folder</source>
-        <translation>Yedeklemelerin kayıt klasörünü seçin</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="777"/>
-        <source>Russian with Yo</source>
-        <translation>Russian with Yo</translation>
+        <translation>బ్యాకప్లను ఎంచుకోండి సేవ్ ఫోల్డర్ నుంచి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="762"/>
         <source>Armenian (Eastern)</source>
-        <translation>Armenian (Eastern)</translation>
+        <translation>అర్మేనియన్ (తూర్పు)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="763"/>
         <source>Armenian (Western)</source>
-        <translation>Armenian (Western)</translation>
+        <translation>అర్మేనియన్ (పాశ్చాత్య)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="765"/>
         <source>Belorussian</source>
-        <translation>Belorussian</translation>
+        <translation>బెలోరుస్సియన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="766"/>
         <source>English (GB)</source>
-        <translation>English (GB)</translation>
+        <translation>ఇంగ్లీష్ (GB)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="767"/>
         <source>English (US)</source>
-        <translation>English (US)</translation>
+        <translation>ఇంగ్లీష్ (యుఎస్)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="775"/>
         <source>Portuguese (Brazil)</source>
-        <translation>Portuguese (Brazil)</translation>
+        <translation>పోర్చుగీస్ (బ్రెజిల్)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="776"/>
         <source>Portuguese (Portugal)</source>
-        <translation>Portuguese (Portugal)</translation>
+        <translation>పోర్చుగీస్ (పోర్చుగల్)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="777"/>
+        <source>Russian with Yo</source>
+        <translation>యో తో రష్యన్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="780"/>
         <source>Swedish</source>
-        <translation>Swedish</translation>
+        <translation>స్వీడిష్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="800"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="807"/>
         <source>Common</source>
-        <translation>Genel</translation>
+        <translation>సాధారణ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="801"/>
         <source>Modules</source>
-        <translation>Kipler</translation>
+        <translation>గుణకాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="808"/>
         <source>Editing</source>
-        <translation>Düzenleme</translation>
+        <translation>ఎడిటింగ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="809"/>
         <source>Shortcuts</source>
-        <translation>Kısayollar</translation>
+        <translation>షార్ట్ కట్స్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="843"/>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
 but if you work with no terminations it saves project every %1 minutes.</source>
-        <translation>Kendiliğinden kaydetme çok hassas çalışır. Eğer fare ya da klavyeyi kullanmıyorsanız, 
-projeyi her 3 saniyede bir kaydeder, ancak eğer aralıksız çalışıyorsanız her %1 dakikada bir kaydeder.</translation>
+        <translation>ఆటో సేవ్ చాలా ఖచ్చితత్వం పనిచేస్తుంది. మౌస్ లేదా కీబోర్డును ఉపయోగించకపోతే ప్రతి 3 సెకన్లు ప్రాజెక్ట్ను సేవ్ చేస్తుంది, 
+కానీ మీరు ఎటువంటి ముగింపులు లేకుండా పని చేస్తే ప్రతి%1 నిమిషాల్లో ప్రాజెక్ట్ను సేవ్ చేస్తుంది.</translation>
     </message>
 </context>
 <context>
@@ -6433,7 +6145,7 @@ projeyi her 3 saniyede bir kaydeder, ancak eğer aralıksız çalışıyorsanız
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.cpp" line="38"/>
         <source>Share</source>
-        <translation>Paylaş</translation>
+        <translation>షేర్</translation>
     </message>
 </context>
 <context>
@@ -6441,117 +6153,117 @@ projeyi her 3 saniyede bir kaydeder, ancak eğer aralıksız çalışıyorsanız
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="78"/>
         <source>Statistics</source>
-        <translation>İstatistikler</translation>
+        <translation>గణాంకాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="166"/>
         <source>Preparing report</source>
-        <translation>Rapor hazırlanıyor</translation>
+        <translation>నివేదికను సిద్ధం చేస్తోంది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="166"/>
         <source>Please wait. Preparing report to preview can take few minutes.</source>
-        <translation>Lütfen bekleyin. Raporu önizlemeye hazırlamak birkaç dakika sürebilir.</translation>
+        <translation>దయచేసి వేచి ఉండండి. ప్రివ్యూకు నివేదికను సిద్ధం చేస్తోంది కొద్ది నిమిషాలు పట్టవచ్చు.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="261"/>
         <source>Report.pdf</source>
-        <translation>Rapor.pdf</translation>
+        <translation>నివేదిక.pdf</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="262"/>
         <source>Save report</source>
-        <translation>Raporu kaydet</translation>
+        <translation>నివేదికను సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="262"/>
         <source>PDF files (*.pdf)</source>
-        <translation>PDF dosyaları (*.pdf)</translation>
+        <translation>PDF ఫైళ్లు (* .pdf)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="280"/>
         <source>Plot.png</source>
-        <translation>Çizelge.png</translation>
+        <translation>ప్లాట్.png</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="281"/>
         <source>Save plot</source>
-        <translation>Çizelgeyi kaydet</translation>
+        <translation>ప్లాట్లు సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="281"/>
         <source>PNG files (*.png)</source>
-        <translation>PNG dosyaları (*.png)</translation>
+        <translation>PNG ఫైళ్లు (* .png)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="299"/>
         <source>Report settings</source>
-        <translation>Rapor ayarları</translation>
+        <translation>నివేదన సెట్టింగ్లు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="302"/>
         <source>Print preview</source>
-        <translation>Önizlemeyi yazdır</translation>
+        <translation>ప్రింట్ ప్రివ్యు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="304"/>
         <source>Save report to file</source>
-        <translation>Raporu dosyaya kaydet</translation>
+        <translation>ఫైల్కు నివేదికను సేవ్ చేయండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="306"/>
         <source>Update current report</source>
-        <translation>Geçerli raporu güncelle</translation>
+        <translation>ప్రస్తుత నివేదికను నవీకరించండి</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="313"/>
         <source>Reports</source>
-        <translation>Raporlar</translation>
+        <translation>నివేదికలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="315"/>
         <source>Summary statistics</source>
-        <translation>Özet istatistikler</translation>
+        <translation>సారాంశం గణాంకాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="319"/>
         <source>Scene report</source>
-        <translation>Sahne raporu</translation>
+        <translation>సనివేశ నివేదిక</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="323"/>
         <source>Location report</source>
-        <translation>Mekan raporu</translation>
+        <translation>ప్రాంతంయోక్క నివేదిక</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="327"/>
         <source>Cast report</source>
-        <translation>Kast raporu</translation>
+        <translation>తారాగణం నివేదిక</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="331"/>
         <source>Characters dialogues</source>
-        <translation>Karakterlerin Diyalogları</translation>
+        <translation>పాత్రల సంభాషణలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="340"/>
         <source>Plots</source>
-        <translation>Çizelgeler</translation>
+        <translation>ప్లాట్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="342"/>
         <source>Story structure analysis</source>
-        <translation>Hikaye yapısı çözümlemesi</translation>
+        <translation>కథ నిర్మాణ విశ్లేషణ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="346"/>
         <source>Characters activity</source>
-        <translation>Karakterlerin etkinliği</translation>
+        <translation>పాత్రల కార్యకలాపాలు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="437"/>
         <source>Duration, minutes</source>
-        <translation>Süreler, dakikalar</translation>
+        <translation>నిడివి, నిమిషాలు</translation>
     </message>
 </context>
 <context>
@@ -6559,7 +6271,7 @@ projeyi her 3 saniyede bir kaydeder, ancak eğer aralıksız çalışıyorsanız
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.cpp" line="98"/>
         <source>Unnamed Template</source>
-        <translation>Adsız Şablon</translation>
+        <translation>పేరు పెట్టని టెంప్లేట్</translation>
     </message>
 </context>
 <context>
@@ -6567,45 +6279,45 @@ projeyi her 3 saniyede bir kaydeder, ancak eğer aralıksız çalışıyorsanız
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.cpp" line="71"/>
         <source>Back to the tools list</source>
-        <translation>Araçlar listesine geri dön</translation>
+        <translation>టూల్స్ జాబితాకు తిరిగి వెళ్ళు</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ToolsView</name>
     <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="51"/>
+        <source>Choose tool from list</source>
+        <translation>జాబితా నుండి టూల్ ఎంచుకోండి</translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="99"/>
         <source>Didn&apos;t find any backups for the current project</source>
-        <translation>Geçerli proje için hiçbir yedekleme bulunamadı</translation>
+        <translation>ప్రస్తుత ప్రాజెక్ట్ కోసం బ్యాకప్లను కనుగొనలేదు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="117"/>
         <source>Tools</source>
-        <translation>Araçlar</translation>
+        <translation>టూల్స్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="120"/>
         <source>Tool settings</source>
-        <translation>Araç ayarları</translation>
+        <translation>టూల్ సెట్టింగులు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="122"/>
         <source>Restore script</source>
-        <translation>Senaryoyu onar</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="131"/>
-        <source>Compare script versions</source>
-        <translation>Senaryo sürümlerini karşılaştır</translation>
+        <translation>స్క్రిప్ట్ పునరుద్ధరించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="128"/>
         <source>Restore script from backup</source>
-        <translation>Senaryoyu yedekleme dosyasıyla kurtar</translation>
+        <translation>బ్యాకప్ నుండి స్క్రిప్ట్ను పునరుద్ధరించండి</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="51"/>
-        <source>Choose tool from list</source>
-        <translation>Listeden araç seçin</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="131"/>
+        <source>Compare script versions</source>
+        <translation>స్క్రిప్ట్ సంస్కరణలను సరిపోల్చండి</translation>
     </message>
 </context>
 <context>
@@ -6613,30 +6325,22 @@ projeyi her 3 saniyede bir kaydeder, ancak eğer aralıksız çalışıyorsanız
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="39"/>
         <source>New version %1 is available</source>
-        <translation>Yeni sürüm %1 mevut</translation>
+        <translation>క్రొత్త సంస్కరణ %1 అందుబాటులో ఉంది</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="44"/>
         <source>Download</source>
-        <translation>İndir</translation>
+        <translation>డౌన్లోడ్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="56"/>
         <source>Install</source>
-        <translation>Yükle</translation>
+        <translation>ఇన్స్టాల్</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="61"/>
         <source>&lt;p&gt;Error during download update.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Güncellemeyi indirirken hata oluştu.&lt;/p&gt;&lt;p&gt;Güncellemeyi yeniden yüklemeyi ya da &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;resmi web sitesinden&lt;/a&gt; el ile indirmeyi deneyebilirsiniz.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Error during download update.
-
-You can try to reload update.</source>
-        <translation type="vanished">Güncellemeyi indirirken hata oluştu.
-
-Gücellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
+        <translation>&lt;p&gt; డౌన్లోడ్ నవీకరణ సమయంలో లోపం. &lt;/ p&gt; &lt;p&gt; &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt; అధికారిక వెబ్ సైట్ &lt;/a&gt; నుండీ మీరు అప్డేట్ను మళ్ళీ లోడ్ చెయ్యడానికి ప్రయత్నించవచ్చు లేదా మానవీయంగా లోడ్ చెయ్యవచ్చు. . &lt;/ p&gt;</translation>
     </message>
 </context>
 <context>
@@ -6644,7 +6348,7 @@ Gücellemeyi yeniden yüklemeyi deneyebilirsiniz.</translation>
     <message>
         <location filename="../../../../libs/webloader/src/WebLoader.cpp" line="311"/>
         <source>Sorry, we have some error while loading. Error is: %1</source>
-        <translation>Üzgünüz, yükleme esnasında bir hatayla karşılaştık. Kaşılaşılan hata: %1</translation>
+        <translation>క్షమించండి, లోడ్ చేస్తున్నప్పుడు మాకు కొంత లోపం ఉంది. లోపం:&apos;%1</translation>
     </message>
 </context>
 </TS>
