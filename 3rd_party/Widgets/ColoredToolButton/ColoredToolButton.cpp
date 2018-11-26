@@ -22,9 +22,6 @@ ColoredToolButton::ColoredToolButton(const QIcon& _icon, QWidget* _parent) :
     m_colorNotChoosedYet(true),
     m_colorsPane(nullptr)
 {
-#ifndef MOBILE_OS
-    Q_UNUSED(_topLevelParent)
-#endif
     setIcon(_icon);
     setFocusPolicy(Qt::NoFocus);
     aboutUpdateIcon(palette().text().color());
@@ -42,9 +39,6 @@ ColoredToolButton::ColoredToolButton(QWidget* _parent) :
     m_colorNotChoosedYet(true),
     m_colorsPane(nullptr)
 {
-#ifndef MOBILE_OS
-    Q_UNUSED(_topLevelParent)
-#endif
     setFocusPolicy(Qt::NoFocus);
 
 #ifdef MOBILE_OS
@@ -64,6 +58,7 @@ ColoredToolButton::~ColoredToolButton()
 #endif
 }
 
+#ifdef MOBILE_OS
 void ColoredToolButton::setSlidingPanelParent(QWidget* _parent)
 {
     m_colorsPanel->setParent(_parent);
@@ -73,6 +68,7 @@ void ColoredToolButton::setSlidingPanelCorner(Qt::Corner _corner)
 {
     m_colorsPanelCorner = _corner;
 }
+#endif
 
 void ColoredToolButton::setColorsPane(ColoredToolButton::ColorsPaneType _pane)
 {

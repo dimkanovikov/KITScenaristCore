@@ -41,7 +41,8 @@ public:
         Turkish,
         Hungarian,
         Italian,
-        Azerbaijani
+        Azerbaijani,
+        Telugu
     };
 
     /**

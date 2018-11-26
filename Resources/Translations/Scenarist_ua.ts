@@ -110,7 +110,7 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation>Наші герої, які допомагають нам створювати міжнародні версії:
+        <translation type="vanished">Наші герої, які допомагають нам створювати міжнародні версії:
 Azərbaycan: Tarlan Rasulzadeh
 Deutsch: Michael Krämer
 English: Eric Wayne &amp; Soyung Key
@@ -128,6 +128,28 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1464,6 +1486,10 @@ Türkçe: Recep Burak Yak
         <source>Azərbaycan</source>
         <translation></translation>
     </message>
+    <message>
+        <source>తెలుగు</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -1931,6 +1957,10 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>Print preview script</source>
         <translation>Попередній перегляд сценарію</translation>
+    </message>
+    <message>
+        <source>KIT Scenarist</source>
+        <translation type="unfinished">КІТ Сценарист</translation>
     </message>
 </context>
 <context>
@@ -2686,6 +2716,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <source>Azərbaycan</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>తెలుగు</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5228,6 +5262,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <source>Azerbaijani</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Telugu</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

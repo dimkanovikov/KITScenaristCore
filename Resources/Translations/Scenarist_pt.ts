@@ -173,7 +173,7 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation>Nossos heróis, que nos ajudaram a criar as versões internacionais:
+        <translation type="vanished">Nossos heróis, que nos ajudaram a criar as versões internacionais:
 Azərbaycan: Tarlan Rasulzadeh
 Deutsch: Michael Krämer
 English: Eric Wayne &amp; Soyung Key
@@ -191,6 +191,28 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1529,6 +1551,10 @@ Türkçe: Recep Burak Yak
         <source>Azərbaycan</source>
         <translation></translation>
     </message>
+    <message>
+        <source>తెలుగు</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -2006,6 +2032,10 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Print preview script</source>
         <translation>Imprimir pré-visualização do roteiro</translation>
+    </message>
+    <message>
+        <source>KIT Scenarist</source>
+        <translation type="unfinished">KIT Scenarist</translation>
     </message>
 </context>
 <context>
@@ -2757,6 +2787,10 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     <message>
         <source>Azərbaycan</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>తెలుగు</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5272,6 +5306,10 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     <message>
         <source>Azerbaijani</source>
         <translation>Azerbaijanês</translation>
+    </message>
+    <message>
+        <source>Telugu</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
