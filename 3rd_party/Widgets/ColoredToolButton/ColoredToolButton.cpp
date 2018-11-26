@@ -227,11 +227,16 @@ void ColoredToolButton::aboutClicked()
     }
 
 #ifdef MOBILE_OS
-    m_colorsPanel->raise();
-    m_colorsPanel->resize(m_colorsPanel->sizeHint());
-    const QPoint cornerPos = m_colorsPanelCorner == Qt::BottomLeftCorner ? QPoint{0, 0} : QPoint{width(), height()};
-    m_colorsPanel->setFixedCornerPos(mapTo(m_colorsPanel->parentWidget(), cornerPos), m_colorsPanelCorner);
-    WAF::Animation::slideIn(m_colorsPanel, WAF::FromBottomToTop, true, true);
+    if (!m_colorsPanel->isVisible()
+        || m_colorsPanel->size().isEmpty()) {
+        m_colorsPanel->raise();
+        m_colorsPanel->resize(m_colorsPanel->sizeHint());
+        const QPoint cornerPos = m_colorsPanelCorner == Qt::BottomLeftCorner ? QPoint{0, 0} : QPoint{width(), height()};
+        m_colorsPanel->setFixedCornerPos(mapTo(m_colorsPanel->parentWidget(), cornerPos), m_colorsPanelCorner);
+        WAF::Animation::slideIn(m_colorsPanel, WAF::FromBottomToTop, true, true);
+    } else {
+        WAF::Animation::slideOut(m_colorsPanel, WAF::FromBottomToTop, true, true);
+    }
 #endif
 
     emit clicked(m_colorsPane->currentColor());

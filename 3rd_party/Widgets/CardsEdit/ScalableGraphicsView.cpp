@@ -31,7 +31,7 @@ ScalableGraphicsView::ScalableGraphicsView(QWidget *_parent) :
     ScrollerHelper::addScroller(this);
 
     m_dragWaitingTimer.setSingleShot(true);
-    m_dragWaitingTimer.setInterval(600);
+    m_dragWaitingTimer.setInterval(200);
     connect(&m_dragWaitingTimer, &QTimer::timeout, this, [this] {
         m_canDragCard = false;
         m_inScrolling = false;
@@ -242,6 +242,7 @@ void ScalableGraphicsView::mouseMoveEvent(QMouseEvent* _event)
 void ScalableGraphicsView::mouseReleaseEvent(QMouseEvent* _event)
 {
 #ifdef MOBILE_OS
+    m_dragWaitingTimer.stop();
     m_canDragCard = true;
 #endif
 

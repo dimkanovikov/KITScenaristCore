@@ -449,6 +449,49 @@
     </message>
 </context>
 <context>
+    <name>CardsScene</name>
+    <message>
+        <source>Go to text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Convert to scene</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Convert to folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stamp:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DataStorageLayer::ScriptVersionStorage</name>
     <message>
         <source>First draft</source>
@@ -1339,6 +1382,10 @@ Project didn&apos;t synchronized.</source>
         <source>Share</source>
         <translation type="unfinished">Поділитись</translation>
     </message>
+    <message>
+        <source>Cards</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NavigatorView</name>
@@ -1531,6 +1578,32 @@ Let&apos;s create the first one!</source>
     </message>
 </context>
 <context>
+    <name>ScriptCardView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ADD</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ScriptCardsView</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ScriptVersionWidget</name>
     <message>
         <source>Form</source>
@@ -1581,6 +1654,14 @@ Let&apos;s create the first one!</source>
     </message>
     <message>
         <source>Show dialogues numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use corkboard background</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1908,6 +1989,45 @@ Your subscription is active until</source>
     </message>
 </context>
 <context>
+    <name>UserInterface::ScriptCardView</name>
+    <message>
+        <source>ADD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SAVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ACT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SCENE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Header</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stamp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit card</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UserInterface::ScriptVersionsList</name>
     <message>
         <source>started by</source>
@@ -1957,6 +2077,18 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>Research and script editors font size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cards size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cards ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance between cards</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
