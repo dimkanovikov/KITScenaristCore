@@ -914,7 +914,12 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
     // ... перевод курсора к следующему символу
     //
     if (_event == QKeySequence::MoveToNextChar) {
-        moveCursor(QTextCursor::NextCharacter);
+        if (textCursor().block().textDirection() == Qt::LeftToRight) {
+            moveCursor(QTextCursor::NextCharacter);
+        } else {
+            moveCursor(QTextCursor::PreviousCharacter);
+        }
+
         while (!textCursor().atEnd()
                && (!textCursor().block().isVisible()
                    || ScenarioBlockStyle::forBlock(textCursor().block()) == ScenarioBlockStyle::PageSplitter
@@ -926,13 +931,21 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
     // ... перевод курсора к предыдущему символу
     //
     else if (_event == QKeySequence::MoveToPreviousChar) {
-        moveCursor(QTextCursor::PreviousCharacter);
+        if (textCursor().block().textDirection() == Qt::LeftToRight) {
+            moveCursor(QTextCursor::PreviousCharacter);
+        } else {
+            moveCursor(QTextCursor::NextCharacter);
+        }
         while (!textCursor().atStart()
                && (!textCursor().block().isVisible()
                    || ScenarioBlockStyle::forBlock(textCursor().block()) == ScenarioBlockStyle::PageSplitter
                    || textCursor().blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection))) {
             moveCursor(QTextCursor::StartOfBlock);
-            moveCursor(QTextCursor::PreviousCharacter);
+            if (textCursor().block().textDirection() == Qt::LeftToRight) {
+                moveCursor(QTextCursor::PreviousCharacter);
+            } else {
+                moveCursor(QTextCursor::NextCharacter);
+            }
         }
     }
     //

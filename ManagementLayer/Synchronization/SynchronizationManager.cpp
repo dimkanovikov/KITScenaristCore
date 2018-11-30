@@ -306,7 +306,6 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
     int paymentMonth = -1;
     quint64 usedSpace = 0;
     quint64 availableSpace = 0;
-    int reviewVersion = 0;
 
     //
     // Найдем наш ключ сессии, имя пользователя, информацию о подписке
@@ -343,10 +342,6 @@ void SynchronizationManager::login(const QString &_email, const QString &_passwo
         } else if (responseReader.name().toString() == "available_space") {
             responseReader.readNext();
             availableSpace = responseReader.text().toULongLong();
-            responseReader.readNext();
-        } else if (responseReader.name().toString() == "review_version") {
-            responseReader.readNext();
-            reviewVersion = responseReader.text().toInt();
             responseReader.readNext();
         }
     }
