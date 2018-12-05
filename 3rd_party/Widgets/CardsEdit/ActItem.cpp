@@ -1,6 +1,7 @@
 #include "ActItem.h"
 
 #include <3rd_party/Helpers/ColorHelper.h>
+#include <3rd_party/Helpers/StyleSheetHelper.h>
 #include <3rd_party/Helpers/TextUtils.h>
 
 #include <QApplication>
@@ -33,10 +34,10 @@ ActItem::ActItem(QGraphicsItem* _parent) :
 
     setCacheMode(QGraphicsItem::NoCache);
 
-    m_shadowEffect->setBlurRadius(12);
+    m_shadowEffect->setBlurRadius(StyleSheetHelper::dpToPx(12));
     m_shadowEffect->setColor(QColor(63, 63, 63, 210));
     m_shadowEffect->setXOffset(0);
-    m_shadowEffect->setYOffset(1);
+    m_shadowEffect->setYOffset(StyleSheetHelper::dpToPx(1));
     setGraphicsEffect(m_shadowEffect.data());
 }
 
@@ -101,7 +102,7 @@ void ActItem::setBoundingRect(const QRectF& _boundingRect)
     if (m_boundingRect != _boundingRect) {
         prepareGeometryChange();
         QRectF boundingRectCorrected = _boundingRect;
-        boundingRectCorrected.setWidth(qMax(120.0, boundingRectCorrected.width()));
+        boundingRectCorrected.setWidth(StyleSheetHelper::dpToPx(qMax(120.0, boundingRectCorrected.width())));
         m_boundingRect = boundingRectCorrected;
     }
 }
@@ -173,7 +174,7 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
             // ... если они есть
             //
             if (!colorsNamesList.isEmpty()) {
-                const qreal additionalColorWidth = 20;
+                const qreal additionalColorWidth = StyleSheetHelper::dpToPx(20);
                 const int colorsCount = colorsNamesList.size() - 1;
                 const int actXPos = QLocale().textDirection() == Qt::LeftToRight
                                     ? actRect.left()
@@ -208,9 +209,9 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
         const int titleWidth = _painter->fontMetrics().width(m_title);
         const int titleHeight = _painter->fontMetrics().height();
         const int titleXPos = QLocale().textDirection() == Qt::LeftToRight
-                              ? actRect.left() + 7
-                              : actRect.right() - 7 - titleWidth;
-        const QRectF titleRect(titleXPos, 9, titleWidth, titleHeight);
+                              ? actRect.left() + StyleSheetHelper::dpToPx(7)
+                              : actRect.right() - StyleSheetHelper::dpToPx(7) - titleWidth;
+        const QRectF titleRect(titleXPos, StyleSheetHelper::dpToPx(9), titleWidth, titleHeight);
         _painter->drawText(titleRect, m_title, textoption);
 
         //
@@ -223,9 +224,9 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
                                     ? titleRect.right() + spacing
                                     : actRect.left();
         const int descriptionWidth = QLocale().textDirection() == Qt::LeftToRight
-                                     ? actRect.size().width() - titleRect.width() - spacing - 7
-                                     : actRect.size().width() - titleRect.width() - spacing*2 - 7;
-        const QRectF descriptionRect(descriptionXPos, 9, descriptionWidth, titleHeight);
+                                     ? actRect.size().width() - titleRect.width() - spacing - StyleSheetHelper::dpToPx(7)
+                                     : actRect.size().width() - titleRect.width() - spacing*2 - StyleSheetHelper::dpToPx(7);
+        const QRectF descriptionRect(descriptionXPos, StyleSheetHelper::dpToPx(9), descriptionWidth, titleHeight);
         _painter->drawText(descriptionRect, m_description, textoption);
 
         //
@@ -233,7 +234,7 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
         //
         if (isSelected()) {
             _painter->setBrush(Qt::transparent);
-            _painter->setPen(QPen(palette.highlight(), 1, Qt::SolidLine, Qt::SquareCap, Qt::MiterJoin));
+            _painter->setPen(QPen(palette.highlight(), StyleSheetHelper::dpToPx(1), Qt::SolidLine, Qt::SquareCap, Qt::MiterJoin));
             _painter->drawRect(actRect);
         }
     }
