@@ -695,7 +695,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
     // Сохраняем изменённый xml и его хэш
     //
     m_document->updateScenarioXml();
-    bool needAppedPosition = false;
+    bool needIncrementPosition = false;
 
     //
     // Если были удалены данные
@@ -720,7 +720,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
         if (_charsRemoved > _charsAdded
             && _position > 0
             && m_modelItems.contains(_position)) {
-            needAppedPosition = true;
+            needIncrementPosition = true;
         }
 
         //
@@ -780,7 +780,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
     // Скорректируем позицию на случай, если мы удаляем первый символ блока.
     // В этом случае, нам нужно сдвинуть на один символ вперед
     //
-    if (needAppedPosition) {
+    if (needIncrementPosition) {
         ++_position;
     }
 
