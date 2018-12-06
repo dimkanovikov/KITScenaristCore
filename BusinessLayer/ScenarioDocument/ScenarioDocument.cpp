@@ -695,6 +695,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
     // Сохраняем изменённый xml и его хэш
     //
     m_document->updateScenarioXml();
+    bool needIncrementPosition = false;
 
     //
     // Если были удалены данные
@@ -710,6 +711,16 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
             if (m_document->characterAt(_position) == QChar(QChar::ParagraphSeparator)) {
                 ++position;
             }
+        }
+
+        //
+        // Скорректируем позицию на случай, если мы удаляем первый символ блока.
+        // В этом случае, нам нужно сдвинуть на один символ вперед
+        //
+        if (_charsRemoved > _charsAdded
+            && _position > 0
+            && m_modelItems.contains(_position)) {
+            needIncrementPosition = true;
         }
 
         //
@@ -766,10 +777,10 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
 
 
     //
-    // Скорректируем позицию
+    // Скорректируем позицию на случай, если мы удаляем первый символ блока.
+    // В этом случае, нам нужно сдвинуть на один символ вперед
     //
-    if (_charsRemoved > _charsAdded
-        && _position > 0) {
+    if (needIncrementPosition) {
         ++_position;
     }
 
