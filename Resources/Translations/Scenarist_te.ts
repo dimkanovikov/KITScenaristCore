@@ -1642,7 +1642,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="128"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation>&lt;a href = &quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one- యొక్క -ఎందుకంటే%3F &quot;style =&quot; color: # 2b78da; &quot;&gt; ప్రాధాన్య భాష కనుగొనబడలేదు? మీరు దాన్ని ఎలా జోడించవచ్చో చదవండి. &lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot;style=&quot;color: # 2b78da;&quot;&gt; ప్రాధాన్య భాష కనుగొనబడలేదు? మీరు దాన్ని ఎలా జోడించవచ్చో చదవండి. &lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="138"/>
@@ -1756,7 +1756,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="431"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
-        <translation>&lt;B&gt;%1 &lt;/ b&gt; లేని ఫోల్డర్లో ప్రాజెక్ట్ను సృష్టించడానికి మీరు ప్రయత్నిస్తారు. దయచేసి కొత్త ప్రాజెక్ట్ కోసం ఇతర స్థానాన్ని ఎంచుకోండి.</translation>
+        <translation>&lt;b&gt;%1 &lt;/b&gt; లేని ఫోల్డర్లో ప్రాజెక్ట్ను సృష్టించడానికి మీరు ప్రయత్నిస్తారు. దయచేసి కొత్త ప్రాజెక్ట్ కోసం ఇతర స్థానాన్ని ఎంచుకోండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="435"/>
@@ -1802,7 +1802,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="586"/>
         <source>Can&apos;t save project as &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Please check permissions and retry.</source>
-        <translation>ప్రాజెక్ట్ను &lt;b&gt;%1 &lt;/ b&gt; గా సేవ్ చేయలేము. &lt;br/&gt; దయచేసి అనుమతులను తనిఖీ చేసి మళ్ళీ ప్రయత్నించండి.</translation>
+        <translation>ప్రాజెక్ట్ను &lt;b&gt;%1 &lt;/b&gt; గా సేవ్ చేయలేము. &lt;br/&gt; దయచేసి అనుమతులను తనిఖీ చేసి మళ్ళీ ప్రయత్నించండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="618"/>
@@ -1822,7 +1822,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="694"/>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
-        <translation>ఫైల్ ఉనికిలో లేనందున &lt;b&gt;%1 &lt;/ b&gt; వద్ద ఉన్న మీ మార్పులను వ్రాయలేము. దయచేసి ఫైల్ను తిరిగి తరలించి సేవ్ చేయడాన్ని మళ్లీ ప్రయత్నించండి. సేవ్ చేయడానికి మళ్లీ ప్రయత్నించు</translation>
+        <translation>ఫైల్ ఉనికిలో లేనందున &lt;b&gt;%1 &lt;/b&gt; వద్ద ఉన్న మీ మార్పులను వ్రాయలేము. దయచేసి ఫైల్ను తిరిగి తరలించి సేవ్ చేయడాన్ని మళ్లీ ప్రయత్నించండి. సేవ్ చేయడానికి మళ్లీ ప్రయత్నించు</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="780"/>
@@ -1838,7 +1838,7 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="919"/>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation>మీరు ఇటీవల &lt;b&gt;%1 &lt;/ b&gt; ను ఇటీవల నుండి దాచాలని అనుకుంటున్నారా?</translation>
+        <translation>మీరు ఇటీవల &lt;b&gt;%1 &lt;/b&gt; ను ఇటీవల నుండి దాచాలని అనుకుంటున్నారా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="938"/>
@@ -1869,17 +1869,17 @@ Türkçe: Recep Burak Yak
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1035"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>మీరు ప్రాజెక్ట్ &lt;b&gt;%1 &lt;/ b&gt; ను తొలగించాలని నిశ్చయించుకున్నారా?</translation>
+        <translation>మీరు ప్రాజెక్ట్ &lt;b&gt;%1 &lt;/b&gt; ను తొలగించాలని నిశ్చయించుకున్నారా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1050"/>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>మీరు &lt;b&gt;%1 &lt;/ b&gt; ప్రాజెక్ట్కు మీ చందాని తొలగించాలని నిశ్చయించుకున్నారా?</translation>
+        <translation>మీరు &lt;b&gt;%1 &lt;/b&gt; ప్రాజెక్ట్కు మీ చందాని తొలగించాలని నిశ్చయించుకున్నారా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1077"/>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
-        <translation>మీరు &lt;b&gt;%1 &lt;/ b&gt; ను &lt;b&gt;%2 &lt;/ b&gt; ప్రాజెక్ట్కు సబ్స్క్రిప్షన్ తొలగించాలని నిశ్చయించుకున్నారా?</translation>
+        <translation>మీరు &lt;b&gt;%1 &lt;/b&gt; ను &lt;b&gt;%2 &lt;/b&gt; ప్రాజెక్ట్కు సబ్స్క్రిప్షన్ తొలగించాలని నిశ్చయించుకున్నారా?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1099"/>
@@ -2108,7 +2108,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1936"/>
         <source>Menu</source>
-        <translation>విషయసూచిక</translation>
+        <translation>మెను</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1945"/>
@@ -2248,7 +2248,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="140"/>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
-        <translation>మీరు &lt;b&gt;%1 &lt;/ b&gt; లేని ఎగుమతికి ఎగుమతి చేసేందుకు ప్రయత్నిస్తున్నారు. దయచేసి ఎగుమతి చేసిన ఫైల్ కోసం ఇతర స్థానాన్ని ఎంచుకోండి.</translation>
+        <translation>మీరు &lt;b&gt;%1 &lt;/b&gt; లేని ఎగుమతికి ఎగుమతి చేసేందుకు ప్రయత్నిస్తున్నారు. దయచేసి ఎగుమతి చేసిన ఫైల్ కోసం ఇతర స్థానాన్ని ఎంచుకోండి.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="144"/>
@@ -2496,7 +2496,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScriptDictionariesManager.cpp" line="136"/>
         <source>Are you sure to remove &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>మీరు ఖచ్చితంగా &lt;b&gt;%1 &lt;/ b&gt; ను తీసివేయాలా</translation>
+        <translation>మీరు ఖచ్చితంగా &lt;b&gt;%1 &lt;/b&gt; ను తీసివేయాలా</translation>
     </message>
 </context>
 <context>
@@ -2608,7 +2608,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="367"/>
         <source>&lt;p&gt;Can&apos;t install update. There are some problems with downloaded file.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt; నవీకరణను ఇన్స్టాల్ చేయలేరు. డౌన్లోడ్ చేయబడిన ఫైల్ తో కొన్ని సమస్యలు ఉన్నాయి. &lt;/ P&gt; &lt;p&gt; &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt; అధికారిక వెబ్సైటు &lt;/a&gt; నుండే మీరు అప్డేట్ను రీలోడ్ చెయ్యవచ్చు లేదా మానవీయంగా లోడ్ చెయ్యవచ్చు. . &lt;/ p&gt;</translation>
+        <translation>&lt;p&gt; నవీకరణను ఇన్స్టాల్ చేయలేరు. డౌన్లోడ్ చేయబడిన ఫైల్ తో కొన్ని సమస్యలు ఉన్నాయి. &lt;/p&gt; &lt;p&gt; &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt; అధికారిక వెబ్సైటు &lt;/a&gt; నుండే మీరు అప్డేట్ను రీలోడ్ చెయ్యవచ్చు లేదా మానవీయంగా లోడ్ చెయ్యవచ్చు. . &lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2853,7 +2853,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="168"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation>&lt;a href = &quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one- యొక్క -ఎందుకంటే%3F &quot;style =&quot; color: # 2b78da; &quot;&gt; ప్రాధాన్య భాష కనుగొనబడలేదు? మీరు దాన్ని ఎలా జోడించవచ్చో చదవండి. &lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot;style=&quot;color: # 2b78da;&quot;&gt; ప్రాధాన్య భాష కనుగొనబడలేదు? మీరు దాన్ని ఎలా జోడించవచ్చో చదవండి. &lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="191"/>
@@ -4980,7 +4980,7 @@ our help articles and tutorials.
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="109"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/qpalette.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Info&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://doc.qt.io/qt-5/qpalette.html&quot;&gt; &lt;span style = &quot;text-decoration: అండర్లైన్; రంగు: # 0000ff; &quot;&gt; సమాచారం &lt;/ span&gt; &lt;/a&gt; &lt;/ p&gt; &lt;/ body&gt; &lt;/ html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://doc.qt.io/qt-5/qpalette.html&quot;&gt; &lt;span style = &quot; text-decoration: underline; color:#0000ff;&quot;&gt; సమాచారం &lt;/ span&gt; &lt;/a&gt; &lt;/ p&gt; &lt;/ body&gt; &lt;/ html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="119"/>
@@ -5079,7 +5079,7 @@ our help articles and tutorials.
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="371"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/stylesheet-reference.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Info&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://doc.qt.io/qt-5/stylesheet-reference.html&quot;&gt; &lt;span style = &quot;text-decoration: underline; రంగు: # 0000ff; &quot;&gt; సమాచారం &lt;/ span&gt; &lt;/a&gt; &lt;/ p&gt; &lt;/ body&gt; &lt;/ html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://doc.qt.io/qt-5/stylesheet-reference.html&quot;&gt; &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt; సమాచారం &lt;/ span&gt; &lt;/a&gt; &lt;/ p&gt; &lt;/ body&gt; &lt;/ html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="246"/>
@@ -5119,7 +5119,7 @@ our help articles and tutorials.
         <source>KIT Scenarist doesn&apos;t support auto update on your OS now. &lt;br&gt;
 Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;link&lt;/a&gt;</source>
         <translation>కిట్ సినరిస్ట్ ఇప్పుడు మీ OS లో స్వీయ నవీకరణకు మద్దతు ఇవ్వదు. &lt;br&gt;
-దయచేసి, &lt;a href = &quot;https://kitscenarist.ru/en/download.html&quot; style = &quot;color: #2b78da;&quot; ద్వారా క్రొత్త సంస్కరణను డౌన్లోడ్ చేయండి. &gt; లింక్ &lt;/a&gt;</translation>
+దయచేసి, ద్వారా క్రొత్త సంస్కరణను డౌన్లోడ్ చేయండి &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color: #2b78da;&quot;&gt; లింక్ &lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="70"/>
@@ -6323,7 +6323,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="61"/>
         <source>&lt;p&gt;Error during download update.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt; డౌన్లోడ్ నవీకరణ సమయంలో లోపం. &lt;/ p&gt; &lt;p&gt; &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt; అధికారిక వెబ్ సైట్ &lt;/a&gt; నుండీ మీరు అప్డేట్ను మళ్ళీ లోడ్ చెయ్యడానికి ప్రయత్నించవచ్చు లేదా మానవీయంగా లోడ్ చెయ్యవచ్చు. . &lt;/ p&gt;</translation>
+        <translation>&lt;p&gt; డౌన్లోడ్ నవీకరణ సమయంలో లోపం. &lt;/p&gt; &lt;p&gt; &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt; అధికారిక వెబ్ సైట్ &lt;/a&gt; నుండీ మీరు అప్డేట్ను మళ్ళీ లోడ్ చెయ్యడానికి ప్రయత్నించవచ్చు లేదా మానవీయంగా లోడ్ చెయ్యవచ్చు. . &lt;/p&gt;</translation>
     </message>
 </context>
 <context>
