@@ -322,11 +322,9 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
                     case ScenarioBlockStyle::Action:
                     {
                         //
-                        // Чтобы действия шли друг за другом более аккуратно,
-                        // не будем разделять подряд идущие действия пустой строкой
+                        // Если не первое действие, то отделим его пустой строкой от предыдущего
                         //
-                        if (prevType != ScenarioBlockStyle::Action
-                            && !isFirst) {
+                        if (!isFirst) {
                             paragraphText.prepend('\n');
                         }
                         break;
