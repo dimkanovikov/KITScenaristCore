@@ -14,7 +14,7 @@ SpellCheckHighlighter::SpellCheckHighlighter(QTextDocument* _parent, SpellChecke
 	//
 	// Настроим стиль выделения текста не прошедшего проверку
 	//
-	m_misspeledCharFormat.setUnderlineStyle(QTextCharFormat::DashUnderline);
+    m_misspeledCharFormat.setUnderlineStyle(QTextCharFormat::WaveUnderline);
 	m_misspeledCharFormat.setUnderlineColor(Qt::red);
 }
 
