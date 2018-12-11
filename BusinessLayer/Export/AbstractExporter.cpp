@@ -783,7 +783,8 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                 // Добавим (ПРОД) к имени персонажа, если необходимо
                 //
                 if (!sourceDocumentCursor.block().text().isEmpty()
-                    && sourceDocumentCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCharacterContinued)) {
+                    && sourceDocumentCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCharacterContinued)
+                    && !sourceDocumentCursor.block().text().contains(ScriptTextCorrector::continuedTerm())) {
                     destDocumentCursor.insertText(ScriptTextCorrector::continuedTerm());
                 }
 
