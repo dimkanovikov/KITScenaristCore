@@ -355,11 +355,6 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
     qreal lastBlockHeight = 0.0;
     m_currentBlockNumber = 0;
     while (block.isValid()) {
-        if (block.text().contains("Камера спускается")) {
-            int i = 0;
-            ++i;
-        }
-
         //
         // Пропускаем невидимые блоки
         //
@@ -418,8 +413,14 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
         //
         // Проверяем, изменилась ли позиция блока,
         // и что текущий блок это не изменённый блок под курсором
+        // и что текущий блок это не пустая декорация в начале страницы
         //
+        const bool isBlockEmptyDecorationOnTopOfThePage
+                = blockFormat.boolProperty(ScenarioBlockStyle::PropertyIsCorrection)
+                  && block.text().isEmpty()
+                  && qFuzzyCompare(m_blockItems[m_currentBlockNumber].top, 0.0);
         if (m_blockItems[m_currentBlockNumber].isValid()
+            && !isBlockEmptyDecorationOnTopOfThePage
             && qFuzzyCompare(m_blockItems[m_currentBlockNumber].height, blockHeight)
             && qFuzzyCompare(m_blockItems[m_currentBlockNumber].top, lastBlockHeight)
             && !blocksToRecheck.contains(m_currentBlockNumber)) {
