@@ -149,7 +149,25 @@ Türkçe: Recep Burak Yak
 עִבְרִית: Maxim Ronkin
 తెలుగు: Eshwar Mittapalli
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Наші герої, які допомагають нам створювати міжнародні версії:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</translation>
     </message>
 </context>
 <context>
@@ -1488,7 +1506,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>తెలుగు</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1960,7 +1978,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>KIT Scenarist</source>
-        <translation type="unfinished">КІТ Сценарист</translation>
+        <translation>КІТ Сценарист</translation>
     </message>
 </context>
 <context>
@@ -2719,7 +2737,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>తెలుగు</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4437,7 +4455,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>I&apos;m sure want to download beta version</source>
-        <translation>Я впевнений, що хочу завантажити бета-версію</translation>
+        <translation type="vanished">Я впевнений, що хочу завантажити бета-версію</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;body&gt;&lt;p&gt;Beta version is an early version of a program or application that contains most of the major features, but is not yet complete. These versions are released to the general public, for testing and feedback.
@@ -4458,6 +4476,10 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Cancel</source>
         <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>I&apos;m sure. I want to download beta version</source>
+        <translation>Я впевнений, що хочу завантажити бета-версію</translation>
     </message>
 </context>
 <context>
@@ -4547,6 +4569,14 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Export script</source>
         <translation>Експорт сценарію</translation>
+    </message>
+    <message>
+        <source>Rewrite</source>
+        <translation>Переписати</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Експорт</translation>
     </message>
 </context>
 <context>
@@ -5265,7 +5295,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Telugu</source>
-        <translation type="unfinished"></translation>
+        <translation>Телугу</translation>
     </message>
 </context>
 <context>

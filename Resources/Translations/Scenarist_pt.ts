@@ -212,7 +212,25 @@ Türkçe: Recep Burak Yak
 עִבְרִית: Maxim Ronkin
 తెలుగు: Eshwar Mittapalli
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Nossos heróis, que nos ajudaram a criar as versões internacionais:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</translation>
     </message>
 </context>
 <context>
@@ -1553,7 +1571,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>తెలుగు</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2035,7 +2053,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>KIT Scenarist</source>
-        <translation type="unfinished">KIT Scenarist</translation>
+        <translation>KIT Scenarist</translation>
     </message>
 </context>
 <context>
@@ -2790,7 +2808,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>తెలుగు</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4485,7 +4503,7 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>I&apos;m sure want to download beta version</source>
-        <translation>Tenho certeza de que desejo baixar a versão beta</translation>
+        <translation type="vanished">Tenho certeza de que desejo baixar a versão beta</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;body&gt;&lt;p&gt;Beta version is an early version of a program or application that contains most of the major features, but is not yet complete. These versions are released to the general public, for testing and feedback.
@@ -4506,6 +4524,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Cancel</source>
         <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>I&apos;m sure. I want to download beta version</source>
+        <translation>Tenho certeza de que desejo baixar a versão beta</translation>
     </message>
 </context>
 <context>
@@ -4595,6 +4617,14 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>Export script</source>
         <translation>Exporar roteiro</translation>
+    </message>
+    <message>
+        <source>Rewrite</source>
+        <translation>Reescrever</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportar</translation>
     </message>
 </context>
 <context>
@@ -5309,7 +5339,7 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Telugu</source>
-        <translation type="unfinished"></translation>
+        <translation>Télugo</translation>
     </message>
 </context>
 <context>
