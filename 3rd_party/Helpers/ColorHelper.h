@@ -62,16 +62,16 @@ public:
             "#0b5394",
             "#351c75",
             "#741b47",
-            "#590f00",
-            "#650000",
+            "#5a0f00",
+            "#660000",
             "#783f04",
             "#7f6000",
             "#274e13",
             "#0c343d",
-            "#1c4485",
-            "#073762",
-            "#1f124c",
-            "#4b112f"
+            "#1c4587",
+            "#073763",
+            "#20124d",
+            "#4c1130"
         };
         if (s_lightTextColorBackgrounds.contains(_forBackgroundColor.name())) {
             return QColor("#ebebeb");
