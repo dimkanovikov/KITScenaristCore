@@ -16,6 +16,7 @@
 #include <QFontMetrics>
 #include <QPainter>
 #include <QPdfWriter>
+#include <QPointer>
 #ifndef MOBILE_OS
 #include <QPrinter>
 #include <QPrintPreviewDialog>
@@ -410,28 +411,35 @@ namespace {
     /**
      * @brief Прокрутить диалог предпросмотра к заданной позиции
      */
-    static bool setPrintPreviewScrollValue(QPrintPreviewDialog& _dialog, int _value) {
-        foreach (QAbstractScrollArea* child, _dialog.findChildren<QAbstractScrollArea*>()) {
+    static bool setPrintPreviewScrollValue(const QPointer<QPrintPreviewDialog>& _dialog, int _value) {
+        if (_dialog.isNull()) {
+            return false;
+        }
+
+        for (QAbstractScrollArea* child : _dialog->findChildren<QAbstractScrollArea*>()) {
             if (QString(child->metaObject()->className()) == "GraphicsView") {
                 child->verticalScrollBar()->setValue(_value);
-                break;
+                return true;
             }
         }
-        return true;
+
+        return false;
     }
 
     /**
      * @brief Получить позиции прокрутки диалога предпросмотра печати
      */
-    static int printPreviewScrollValue(const QPrintPreviewDialog& _dialog) {
-        int value = 0;
-        foreach (const QAbstractScrollArea* child, _dialog.findChildren<QAbstractScrollArea*>()) {
+    static int printPreviewScrollValue(const QPointer<QPrintPreviewDialog>& _dialog) {
+        if (_dialog.isNull()) {
+            return 0;
+        }
+
+        for (const QAbstractScrollArea* child : _dialog->findChildren<QAbstractScrollArea*>()) {
             if (QString(child->metaObject()->className()) == "GraphicsView") {
-                value = child->verticalScrollBar()->value();
-                break;
+                return child->verticalScrollBar()->value();
             }
         }
-        return value;
+        return 0;
     }
 #else
     /**
@@ -614,14 +622,14 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     //
     // Настроим диалог предварительного просмотра
     //
-    QPrintPreviewDialog printDialog(printer.data(), qApp->activeWindow());
-    printDialog.setWindowState(Qt::WindowMaximized);
-    connect(&printDialog, &QPrintPreviewDialog::paintRequested, this, &PdfExporter::aboutPrint);
+    QPointer<QPrintPreviewDialog> printDialog = new QPrintPreviewDialog(printer.data(), qApp->activeWindow());
+    printDialog->setWindowState(Qt::WindowMaximized);
+    connect(printDialog.data(), &QPrintPreviewDialog::paintRequested, this, &PdfExporter::aboutPrint);
     if (m_lastScriptPreviewScrollPosition.first == _scenario) {
         //
         // Если осуществляется повторный предпросмотр документа, пробуем восстановить положение полосы прокрутки
         //
-        connect(this, &PdfExporter::printed, [&printDialog] {
+        connect(this, &PdfExporter::printed, printDialog.data(), [&printDialog] {
             QTimer::singleShot(300, [&printDialog] {
                 setPrintPreviewScrollValue(printDialog, m_lastScriptPreviewScrollPosition.second);
             });
@@ -633,7 +641,7 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     //
     // Вызываем диалог предварительного просмотра и печати
     //
-    printDialog.exec();
+    printDialog->exec();
 
     //
     // Сохраняем позицию прокрутки
@@ -663,14 +671,14 @@ void PdfExporter::printPreview(const ResearchModelCheckableProxy* _researchModel
     //
     // Настроим диалог предварительного просмотра
     //
-    QPrintPreviewDialog printDialog(printer.data(), qApp->activeWindow());
-    printDialog.setWindowState(Qt::WindowMaximized);
-    connect(&printDialog, &QPrintPreviewDialog::paintRequested, this, &PdfExporter::aboutPrint);
+    QPointer<QPrintPreviewDialog> printDialog = new QPrintPreviewDialog(printer.data(), qApp->activeWindow());
+    printDialog->setWindowState(Qt::WindowMaximized);
+    connect(printDialog.data(), &QPrintPreviewDialog::paintRequested, this, &PdfExporter::aboutPrint);
 
     //
     // Вызываем диалог предварительного просмотра и печати
     //
-    printDialog.exec();
+    printDialog->exec();
 
     //
     // Сохраняем позицию прокрутки
