@@ -87,7 +87,7 @@ void ScriptTextCorrector::setNeedToCorrectCharactersNames(bool _need)
 {
     if (m_needToCorrectCharactersNames != _need) {
         m_needToCorrectCharactersNames = _need;
-        correctCharactersNames();
+        correct();
     }
 }
 
@@ -96,7 +96,7 @@ void ScriptTextCorrector::setNeedToCorrectPageBreaks(bool _need)
     if (m_needToCorrectPageBreaks != _need) {
         m_needToCorrectPageBreaks = _need;
         clear();
-        correctPageBreaks();
+        correct();
     }
 }
 
@@ -109,6 +109,14 @@ void ScriptTextCorrector::clear()
 
 void ScriptTextCorrector::correct(int _position, int _charRemoved, int _charAdded)
 {
+    //
+    // Избегаем рекурсии
+    //
+    const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
+    if (!canRun) {
+        return;
+    }
+
     //
     // Первой обязательно выполняется корректировка текста имён персонажей,
     // т.к. она может привести к изменению кол-ва строк имени персонажа
@@ -263,14 +271,6 @@ void ScriptTextCorrector::correctCharactersNames(int _position, int _charsRemove
 
 void ScriptTextCorrector::correctPageBreaks(int _position)
 {
-    //
-    // Избегаем рекурсии
-    //
-    const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
-    if (!canRun) {
-        return;
-    }
-
     //
     // Определим высоту страницы
     //
