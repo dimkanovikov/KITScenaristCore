@@ -218,6 +218,10 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     //
     const QString patchUncopressed = DatabaseHelper::uncompress(_patch);
     auto xmlsForUpdate = DiffMatchPatchHelper::changedXml(m_scenarioXml, patchUncopressed);
+    if (!xmlsForUpdate.first.isValid()
+        || !xmlsForUpdate.second.isValid()) {
+        return -1;
+    }
 
     xmlsForUpdate.first.xml = ScenarioXml::makeMimeFromXml(xmlsForUpdate.first.xml);
     xmlsForUpdate.second.xml = ScenarioXml::makeMimeFromXml(xmlsForUpdate.second.xml);
@@ -302,6 +306,7 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
     int currentIndex = 0, max = _patches.size();
     for (const QString& patch : _patches) {
         const QString patchUncopressed = DatabaseHelper::uncompress(patch);
+        auto oldXml = newXml;
         newXml = DiffMatchPatchHelper::applyPatchXml(newXml, patchUncopressed);
         QLightBoxProgress::setProgressValue(++currentIndex, max);
         QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
@@ -397,7 +402,7 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
     return change;
 }
 
-int ScenarioTextDocument::undoReimpl()
+int ScenarioTextDocument::undoReimpl(bool _forced)
 {
 #ifdef MOBILE_OS
     QApplication::inputMethod()->commit();
@@ -414,15 +419,23 @@ int ScenarioTextDocument::undoReimpl()
         qDebug() << change->uuid().toString() << change->user() << characterCount() << change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz");
 #endif
 
-        m_redoStack.append(change);
-        emit redoAvailableChanged(true);
+        //
+        // Перенесём действие в список действий доступных к повторению
+        //
+        if (!_forced) {
+            m_redoStack.append(change);
+            emit redoAvailableChanged(true);
+        }
+
         pos = applyPatch(change->undoPatch());
 
         //
         // Сохраним изменения
         //
-        Domain::ScenarioChange* newChange = ::saveChange(change->redoPatch(), change->undoPatch());
-        newChange->setIsDraft(change->isDraft());
+        if (!_forced) {
+            Domain::ScenarioChange* newChange = ::saveChange(change->redoPatch(), change->undoPatch());
+            newChange->setIsDraft(change->isDraft());
+        }
     }
     return pos;
 }

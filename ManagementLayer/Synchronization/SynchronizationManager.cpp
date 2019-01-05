@@ -1126,30 +1126,9 @@ void SynchronizationManager::aboutWorkSyncScenario()
         }
 
         //
-        // Отправляем новые изменения
-        //
-        {
-            //
-            // Запоминаем время синхронизации изменений сценария
-            //
-            const QString currentChangesSyncDatetime =
-                    QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
-
-            //
-            // Отправляем
-            //
-            const QList<QString> newChanges =
-                    StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime);
-            const bool changesUploaded = uploadScenarioChanges(newChanges);
-
-            //
-            // Обновляем время последней синхронизации, если изменения были отправлены
-            //
-            if (changesUploaded) {
-                m_lastChangesSyncDatetime = currentChangesSyncDatetime;
-            }
-        }
-
+        // В первую очередь необходимо применить загруженные с сервера изменения, в случае, если
+        // изменения текущего пользователя будут конфликтовать с изменениями соавтора, которые уже
+        // в облаке, то изменения текущего откатываются до момента нормализации состояния сценария
         //
         // Загружаем и применяем изменения от других пользователей за последние lastMimutes минут,
         // но как минимум за две минуты, если последние изменения были получены не так давно
@@ -1219,8 +1198,6 @@ void SynchronizationManager::aboutWorkSyncScenario()
                         //
                         // ... применяем
                         //
-//                        qDebug() << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
-//                        qDebug() << change.value(SCENARIO_CHANGE_ID);
                         emit applyPatchRequested(change.value(SCENARIO_CHANGE_REDO_PATCH),
                                                  change.value(SCENARIO_CHANGE_IS_DRAFT).toInt());
                     }
@@ -1232,6 +1209,32 @@ void SynchronizationManager::aboutWorkSyncScenario()
             //
             if (!changes.isEmpty()) {
                 m_lastChangesLoadDatetime = currentChangesLoadDatetime;
+            }
+        }
+
+        //
+        // Отправляем новые изменения только после того, как все изменения полученные с облака
+        // удалось успешно накатить
+        //
+        {
+            //
+            // Запоминаем время синхронизации изменений сценария
+            //
+            const QString currentChangesSyncDatetime =
+                    QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
+
+            //
+            // Отправляем
+            //
+            const QList<QString> newChanges =
+                    StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime);
+            const bool changesUploaded = uploadScenarioChanges(newChanges);
+
+            //
+            // Обновляем время последней синхронизации, если изменения были отправлены
+            //
+            if (changesUploaded) {
+                m_lastChangesSyncDatetime = currentChangesSyncDatetime;
             }
         }
     }

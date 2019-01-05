@@ -41,6 +41,11 @@ void ScenarioChangeMapper::update(ScenarioChange* _change)
     abstractUpdate(_change);
 }
 
+void ScenarioChangeMapper::remove(ScenarioChange* _change)
+{
+    abstractDelete(_change);
+}
+
 bool ScenarioChangeMapper::containsUuid(const QString& _uuid)
 {
     QSqlQuery checker = DatabaseLayer::Database::query();

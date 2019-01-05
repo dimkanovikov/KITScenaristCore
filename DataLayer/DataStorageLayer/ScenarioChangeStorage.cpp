@@ -85,6 +85,26 @@ ScenarioChange* ScenarioChangeStorage::append(const QString& _user, const QStrin
                    _user, _undoPatch, _redoPatch, _isDraft);
 }
 
+void ScenarioChangeStorage::removeLast()
+{
+    auto lastChange = all()->last();
+
+    //
+    // Если изменение ещё не сохранено, то просто удаляем его из списков
+    //
+    if (!allToSave()->isEmpty()) {
+        allToSave()->remove(lastChange);
+        all()->remove(lastChange);
+    }
+    //
+    // В противном случае удаляем последнее изменение из базы данных
+    //
+    else {
+        MapperFacade::scenarioChangeMapper()->remove(lastChange);
+        all()->remove(lastChange);
+    }
+}
+
 void ScenarioChangeStorage::store()
 {
     //

@@ -175,14 +175,14 @@ public:
         /**
          * @brief Позиция изменения
          */
-        int plainPos;
+        int plainPos = -1;
 
         /**
          * @brief Длина текста
          */
-        int plainLength;
+        int plainLength = -1;
 
-        ChangeXml() : plainPos(-1), plainLength(-1) {}
+        ChangeXml() = default;
         ChangeXml(const QString& _xml, const int _pos, const int _length = -1) :
             xml(_xml), plainPos(_pos), plainLength(_length)
         {
@@ -204,6 +204,13 @@ public:
             xml.remove("</folder>");
             xml.remove("<scene_group>");
             xml.remove("</scene_group>");
+        }
+
+        /**
+         * @brief Валидно ли изменение
+         */
+        bool isValid() const {
+            return plainPos != -1 && plainLength != -1;
         }
     };
 
