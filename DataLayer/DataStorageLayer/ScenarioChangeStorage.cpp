@@ -88,11 +88,12 @@ ScenarioChange* ScenarioChangeStorage::append(const QString& _user, const QStrin
 void ScenarioChangeStorage::removeLast()
 {
     auto lastChange = all()->last();
+    m_uuids.remove(lastChange->uuid().toString());
 
     //
     // Если изменение ещё не сохранено, то просто удаляем его из списков
     //
-    if (!allToSave()->isEmpty()) {
+    if (allToSave()->contains(lastChange)) {
         allToSave()->remove(lastChange);
         all()->remove(lastChange);
     }
@@ -103,6 +104,7 @@ void ScenarioChangeStorage::removeLast()
         MapperFacade::scenarioChangeMapper()->remove(lastChange);
         all()->remove(lastChange);
     }
+
 }
 
 void ScenarioChangeStorage::store()

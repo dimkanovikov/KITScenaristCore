@@ -253,7 +253,7 @@ namespace ManagementLayer
          * @brief Необходимо применить патч
          */
         /** @{ */
-        void applyPatchRequested(const QString& _patch, bool _isDraft);
+        void applyPatchRequested(const QString& _patch, bool _isDraft, int _newChangesSize);
         void applyPatchesRequested(const QList<QString>& _patch, bool _isDraft);
         /** @} */
 

@@ -147,7 +147,7 @@ namespace {
      * @brief Ключи для доступа к данным об изменении сценария
      */
     /** @{ */
-    const QString SCENARIO_CHANGE_ID = "id";
+    const QString SCENARIO_CHANGE_UUID = "id";
     const QString SCENARIO_CHANGE_DATETIME = "datetime";
     const QString SCENARIO_CHANGE_USERNAME = "username";
     const QString SCENARIO_CHANGE_UNDO_PATCH = "undo_patch";
@@ -1056,7 +1056,7 @@ void SynchronizationManager::aboutFullSyncScenario()
                     //
                     auto* addedChange =
                             DataStorageLayer::StorageFacade::scenarioChangeStorage()->append(
-                                change.value(SCENARIO_CHANGE_ID), change.value(SCENARIO_CHANGE_DATETIME),
+                                change.value(SCENARIO_CHANGE_UUID), change.value(SCENARIO_CHANGE_DATETIME),
                                 change.value(SCENARIO_CHANGE_USERNAME), change.value(SCENARIO_CHANGE_UNDO_PATCH),
                                 change.value(SCENARIO_CHANGE_REDO_PATCH), change.value(SCENARIO_CHANGE_IS_DRAFT).toInt());
                     if (addedChange != nullptr) {
@@ -1186,21 +1186,24 @@ void SynchronizationManager::aboutWorkSyncScenario()
             QHash<QString, QString> change;
             foreach (change, changes) {
                 if (!change.isEmpty()) {
+                    if (StorageFacade::scenarioChangeStorage()->contains(change.value(SCENARIO_CHANGE_UUID))) {
+                        continue;
+                    }
+
+                    //
+                    // ... применяем
+                    //
+                    const int newChangesSize =
+                            StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime).size();
+                    emit applyPatchRequested(change.value(SCENARIO_CHANGE_REDO_PATCH),
+                                             change.value(SCENARIO_CHANGE_IS_DRAFT).toInt(), newChangesSize);
                     //
                     // ... сохраняем
                     //
-                    auto* addedChange =
-                            StorageFacade::scenarioChangeStorage()->append(
-                                change.value(SCENARIO_CHANGE_ID), change.value(SCENARIO_CHANGE_DATETIME),
-                                change.value(SCENARIO_CHANGE_USERNAME), change.value(SCENARIO_CHANGE_UNDO_PATCH),
-                                change.value(SCENARIO_CHANGE_REDO_PATCH), change.value(SCENARIO_CHANGE_IS_DRAFT).toInt());
-                    if (addedChange != nullptr) {
-                        //
-                        // ... применяем
-                        //
-                        emit applyPatchRequested(change.value(SCENARIO_CHANGE_REDO_PATCH),
-                                                 change.value(SCENARIO_CHANGE_IS_DRAFT).toInt());
-                    }
+                    StorageFacade::scenarioChangeStorage()->append(
+                        change.value(SCENARIO_CHANGE_UUID), change.value(SCENARIO_CHANGE_DATETIME),
+                        change.value(SCENARIO_CHANGE_USERNAME), change.value(SCENARIO_CHANGE_UNDO_PATCH),
+                        change.value(SCENARIO_CHANGE_REDO_PATCH), change.value(SCENARIO_CHANGE_IS_DRAFT).toInt());
                 }
             }
 
@@ -1699,7 +1702,7 @@ bool SynchronizationManager::uploadScenarioChanges(const QList<QString>& _change
 
             xmlWriter.writeStartElement("change");
 
-            xmlWriter.writeTextElement(SCENARIO_CHANGE_ID, change.uuid().toString());
+            xmlWriter.writeTextElement(SCENARIO_CHANGE_UUID, change.uuid().toString());
 
             xmlWriter.writeTextElement(SCENARIO_CHANGE_DATETIME, change.datetime().toString("yyyy-MM-dd hh:mm:ss"));
 
