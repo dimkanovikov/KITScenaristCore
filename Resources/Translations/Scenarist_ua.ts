@@ -149,7 +149,7 @@ Türkçe: Recep Burak Yak
 עִבְרִית: Maxim Ronkin
 తెలుగు: Eshwar Mittapalli
 </source>
-        <translation>Наші герої, які допомагають нам створювати міжнародні версії:
+        <translation type="vanished">Наші герої, які допомагають нам створювати міжнародні версії:
 Azərbaycan: Tarlan Rasulzadeh
 Deutsch: Michael Krämer
 English: Eric Wayne &amp; Soyung Key
@@ -168,6 +168,28 @@ Türkçe: Recep Burak Yak
 עִבְרִית: Maxim Ronkin
 తెలుగు: Eshwar Mittapalli
 </translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1508,6 +1530,10 @@ Türkçe: Recep Burak Yak
         <source>తెలుగు</source>
         <translation></translation>
     </message>
+    <message>
+        <source>Português brasileiro</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -2738,6 +2764,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <source>తెలుగు</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Português brasileiro</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5296,6 +5326,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <source>Telugu</source>
         <translation>Телугу</translation>
+    </message>
+    <message>
+        <source>Brazilian Portuguese</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
