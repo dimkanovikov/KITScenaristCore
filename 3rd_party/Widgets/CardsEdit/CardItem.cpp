@@ -342,7 +342,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         if (!m_stamp.isEmpty()) {
             _painter->setOpacity(0.33);
             QFont stateFont = font;
-            stateFont.setPointSize(stateFont.pointSize()*8);
+            stateFont.setPixelSize(stateFont.pixelSize()*8);
             stateFont.setBold(true);
             stateFont.setCapitalization(QFont::AllUppercase);
             //
@@ -351,11 +351,11 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
             // размерам базового шрифта
             //
             QFontMetricsF stateFontMetrics(stateFont);
-            while (stateFont.pointSize() > font.pointSizeF()*1.2) {
+            while (stateFont.pixelSize() > 1.2*font.pixelSize()) {
                 if (stateFontMetrics.width(m_stamp) < cardRect.width() - 7*2) {
                     break;
                 }
-                stateFont.setPointSize(stateFont.pointSize() - 1);
+                stateFont.setPixelSize(stateFont.pixelSize() - 1);
                 stateFontMetrics = QFontMetricsF(stateFont);
             }
             _painter->setFont(stateFont);
