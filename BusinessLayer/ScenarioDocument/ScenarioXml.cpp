@@ -1569,7 +1569,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rema
                         if (reader.attributes().hasAttribute(ATTRIBUTE_TITLE)) {
                             info->setName(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));
                         }
-                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER) && !_remainLinkedData) {
+                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER)) {
                             info->setSceneNumber(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER).toString());
                             info->setSceneNumberFixed(true);
                         }
