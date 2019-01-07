@@ -42,7 +42,8 @@ public:
         Hungarian,
         Italian,
         Azerbaijani,
-        Telugu
+        Telugu,
+        German
     };
 
     /**
