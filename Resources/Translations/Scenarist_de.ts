@@ -39,7 +39,25 @@ Türkçe: Recep Burak Yak
 עִבְרִית: Maxim Ronkin
 తెలుగు: Eshwar Mittapalli
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Unsere Helden, die an der Internationalisierung helfen:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</translation>
     </message>
     <message>
         <source>Our heroes, who help us to create international versions:
@@ -378,12 +396,12 @@ Hebräisch: Ronkin Maxim
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="15"/>
         <source>INT</source>
-        <translation>INNEN</translation>
+        <translation>INN</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="16"/>
         <source>EXT</source>
-        <translation>AUSSEN</translation>
+        <translation>AUSS</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="17"/>
@@ -393,12 +411,12 @@ Hebräisch: Ronkin Maxim
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="18"/>
         <source>INT./EXT</source>
-        <translation>INNEN./AUSSEN</translation>
+        <translation>INN./AUSS</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="19"/>
         <source>INT/EXT</source>
-        <translation>INNEN/AUSSEN</translation>
+        <translation>INN/AUSS</translation>
     </message>
 </context>
 <context>
@@ -406,12 +424,12 @@ Hebräisch: Ronkin Maxim
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="36"/>
         <source>INT</source>
-        <translation>INNEN</translation>
+        <translation>INN</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="37"/>
         <source>EXT</source>
-        <translation>AUSSEN</translation>
+        <translation>AUSS</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="38"/>
@@ -421,12 +439,12 @@ Hebräisch: Ronkin Maxim
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="39"/>
         <source>INT./EXT</source>
-        <translation>INNEN./AUSSEN</translation>
+        <translation>INN./AUSS</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="40"/>
         <source>INT/EXT</source>
-        <translation>INNEN/AUSSEN</translation>
+        <translation>INN/AUSS</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="41"/>
@@ -1379,17 +1397,17 @@ Hebräisch: Ronkin Maxim
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="438"/>
         <source>INT</source>
-        <translation>INNEN</translation>
+        <translation>INN</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="442"/>
         <source>EXT</source>
-        <translation>AUSSEN</translation>
+        <translation>AUSS</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="446"/>
         <source>INT./EXT</source>
-        <translation>INNEN./AUSSEN</translation>
+        <translation>INN./AUSS</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="454"/>
@@ -1996,7 +2014,7 @@ Hebräisch: Ronkin Maxim
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="204"/>
         <source>Português brasileiro</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="128"/>
@@ -3563,7 +3581,7 @@ Versuchen Sie den Download zu wiederholen.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="284"/>
         <source>Português brasileiro</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="303"/>
@@ -6990,7 +7008,7 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="221"/>
         <source>Brazilian Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Brasilianisches Portugiesisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="601"/>
