@@ -1184,22 +1184,30 @@ void SynchronizationManager::aboutWorkSyncScenario()
             //
             const QList<QHash<QString, QString> > changes = downloadScenarioChanges(changesForDownload.join(";"));
             QHash<QString, QString> change;
+            //
+            // ... применяем
+            //
             foreach (change, changes) {
                 if (!change.isEmpty()) {
                     if (StorageFacade::scenarioChangeStorage()->contains(change.value(SCENARIO_CHANGE_UUID))) {
                         continue;
                     }
 
-                    //
-                    // ... применяем
-                    //
                     const int newChangesSize =
                             StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime).size();
                     emit applyPatchRequested(change.value(SCENARIO_CHANGE_REDO_PATCH),
                                              change.value(SCENARIO_CHANGE_IS_DRAFT).toInt(), newChangesSize);
-                    //
-                    // ... сохраняем
-                    //
+                }
+            }
+            //
+            // ... сохраняем
+            //
+            foreach (change, changes) {
+                if (!change.isEmpty()) {
+                    if (StorageFacade::scenarioChangeStorage()->contains(change.value(SCENARIO_CHANGE_UUID))) {
+                        continue;
+                    }
+
                     StorageFacade::scenarioChangeStorage()->append(
                         change.value(SCENARIO_CHANGE_UUID), change.value(SCENARIO_CHANGE_DATETIME),
                         change.value(SCENARIO_CHANGE_USERNAME), change.value(SCENARIO_CHANGE_UNDO_PATCH),

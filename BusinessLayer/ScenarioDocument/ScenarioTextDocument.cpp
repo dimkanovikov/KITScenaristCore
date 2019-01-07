@@ -306,7 +306,6 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
     int currentIndex = 0, max = _patches.size();
     for (const QString& patch : _patches) {
         const QString patchUncopressed = DatabaseHelper::uncompress(patch);
-        auto oldXml = newXml;
         newXml = DiffMatchPatchHelper::applyPatchXml(newXml, patchUncopressed);
         QLightBoxProgress::setProgressValue(++currentIndex, max);
         QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
@@ -438,6 +437,11 @@ int ScenarioTextDocument::undoReimpl(bool _forced)
         }
     }
     return pos;
+}
+
+void ScenarioTextDocument::addUndoChange(ScenarioChange* change)
+{
+    m_undoStack.append(change);
 }
 
 int ScenarioTextDocument::redoReimpl()

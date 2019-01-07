@@ -95,6 +95,7 @@ namespace BusinessLogic
          */
         /** @{ */
         int undoReimpl(bool _forced = false);
+        void addUndoChange(Domain::ScenarioChange* change);
         int redoReimpl();
         /** @} */
 
