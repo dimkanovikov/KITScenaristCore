@@ -149,7 +149,8 @@ void ScenarioTextDocument::load(const QString& _scenarioXml)
     //
     // Загружаем проект
     //
-    m_xmlHandler->xmlToScenario(0, scenarioXml);
+    const bool remainLinkedData = true;
+    m_xmlHandler->xmlToScenario(0, scenarioXml, remainLinkedData);
     m_scenarioXml = scenarioXml;
     m_scenarioXmlHash = ::textMd5Hash(scenarioXml);
     m_lastSavedScenarioXml = m_scenarioXml;
@@ -267,8 +268,8 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     //
     // ... при этом не изменяем идентификаторов сцен, которые находятся в сценарии
     //
-    const bool dontRebuildUuids = false;
-    m_xmlHandler->xmlToScenario(selectionStartPos, xmlsForUpdate.second.xml, dontRebuildUuids);
+    const bool remainLinkedData = true;
+    m_xmlHandler->xmlToScenario(selectionStartPos, xmlsForUpdate.second.xml, remainLinkedData);
 
     //
     // Запомним новый текст
@@ -325,8 +326,8 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
     //
     // ... при этом не изменяем идентификаторов сцен, которые находятся в сценарии
     //
-    const bool dontRebuildUuids = false;
-    m_xmlHandler->xmlToScenario(0, ScenarioXml::makeMimeFromXml(newXml), dontRebuildUuids);
+    const bool remainLinkedData = true;
+    m_xmlHandler->xmlToScenario(0, ScenarioXml::makeMimeFromXml(newXml), remainLinkedData);
 
     //
     // Запомним новый текст

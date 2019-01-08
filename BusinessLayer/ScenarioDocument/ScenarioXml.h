@@ -61,9 +61,9 @@ namespace BusinessLogic
          * @brief Загрузить сценарий из xml в документ
          * @param _position позиция вставки
          * @param _xml текст сценария
-         * @param _rebuildUuids нужно ли пересоздавать идентификаторы сцен, при наличии таких в сценарии
+         * @param _remainLinkedData нужно ли сохранять данные о сцене (айди и номер), или пересоздавать их
          */
-        void xmlToScenario(int _position, const QString& _xml, bool _remainLinkedData = true);
+        void xmlToScenario(int _position, const QString& _xml, bool _remainLinkedData = false);
 
         /**
          * @brief Загрузить сценарий из xml после заданного элемента для его родителя

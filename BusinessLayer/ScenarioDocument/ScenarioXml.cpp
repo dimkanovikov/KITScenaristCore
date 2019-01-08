@@ -1274,7 +1274,8 @@ int ScenarioXml::xmlToScenario(ScenarioModelItem* _insertParent, ScenarioModelIt
         //
         // Вставка данных
         //
-        xmlToScenario(insertPosition, _xml);
+        const bool remainLinkedData = _removeLastMime;
+        xmlToScenario(insertPosition, _xml, remainLinkedData);
 
         //
         // Завершаем операцию
@@ -1556,7 +1557,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rema
                         SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
                         if (reader.attributes().hasAttribute(ATTRIBUTE_UUID)) {
                             const QString uuid = reader.attributes().value(ATTRIBUTE_UUID).toString();
-                            if (!_remainLinkedData || !isScenarioHaveUuid(uuid)) {
+                            if (_remainLinkedData || !isScenarioHaveUuid(uuid)) {
                                 info->setUuid(uuid);
                             }
                         }
@@ -1569,7 +1570,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rema
                         if (reader.attributes().hasAttribute(ATTRIBUTE_TITLE)) {
                             info->setName(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));
                         }
-                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER)) {
+                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER) && _remainLinkedData) {
                             info->setSceneNumber(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER).toString());
                             info->setSceneNumberFixed(true);
                         }
