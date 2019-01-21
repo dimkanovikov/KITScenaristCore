@@ -1730,7 +1730,30 @@ bool ScenarioTextEdit::canInsertFromMimeData(const QMimeData* _source) const
 QMimeData* ScenarioTextEdit::createMimeDataFromSelection() const
 {
     QMimeData* mimeData = new QMimeData;
-    mimeData->setData("text/plain", textCursor().selection().toPlainText().toUtf8());
+
+    //
+    // TODO: экспорт в фонтан
+    //
+    {
+        QByteArray text;
+        QTextCursor cursor = textCursor();
+        cursor.setPosition(textCursor().selectionStart());
+        do {
+            cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+            if (cursor.position() > textCursor().selectionEnd()) {
+                cursor.setPosition(textCursor().selectionEnd(), QTextCursor::KeepAnchor);
+            }
+            if (!text.isEmpty()) {
+                text.append("\r\n");
+            }
+            text.append(cursor.blockCharFormat().fontCapitalization() == QFont::AllUppercase
+                        ? cursor.selectedText().toUpper()
+                        : cursor.selectedText());
+            cursor.movePosition(QTextCursor::NextBlock);
+        } while (cursor.position() < textCursor().selectionEnd()
+                 && !cursor.atEnd());
+        mimeData->setData("text/plain", text);
+    }
 
     //
     // Поместим в буфер данные о тексте в специальном формате
