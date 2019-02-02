@@ -1605,12 +1605,12 @@ Project didn&apos;t synchronized.</source>
 <context>
     <name>ManagementLayer::ScriptManager</name>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="749"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="778"/>
         <source>Scenes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="750"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="779"/>
         <source>Chron.</source>
         <translation>计时</translation>
     </message>

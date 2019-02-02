@@ -1620,12 +1620,12 @@ El proyecto no ha podido sincronizarse</translation>
 <context>
     <name>ManagementLayer::ScriptManager</name>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="749"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="778"/>
         <source>Scenes</source>
         <translation>Escenas</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="750"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="779"/>
         <source>Chron.</source>
         <translation>Duración</translation>
     </message>
