@@ -1191,6 +1191,7 @@ void CardsScene::updateActBoundingRect(const QRectF& _sceneRect, ActItem* _act)
     } else {
         actRect.setWidth(m_cardsSize.width() + actDelta()*2);
     }
+    actRect.setHeight(qMax(actRect.height(), QFontMetricsF(font()).lineSpacing() * 2));
     _act->setBoundingRect(actRect);
 }
 

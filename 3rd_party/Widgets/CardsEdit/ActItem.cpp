@@ -100,11 +100,12 @@ int ActItem::type() const
 void ActItem::setBoundingRect(const QRectF& _boundingRect)
 {
     if (m_boundingRect != _boundingRect) {
-        prepareGeometryChange();
-        QRectF boundingRectCorrected = _boundingRect;
-        boundingRectCorrected.setWidth(StyleSheetHelper::dpToPx(qMax(120.0, boundingRectCorrected.width())));
-        m_boundingRect = boundingRectCorrected;
-    }
+            prepareGeometryChange();
+            QRectF boundingRectCorrected = _boundingRect;
+            boundingRectCorrected.setWidth(qMax(static_cast<qreal>(StyleSheetHelper::dpToPx(120.0)),
+                                                boundingRectCorrected.width()));
+            m_boundingRect = boundingRectCorrected;
+        }
 }
 
 QRectF ActItem::boundingRect() const
