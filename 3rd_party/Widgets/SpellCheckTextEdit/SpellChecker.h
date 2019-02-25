@@ -43,7 +43,8 @@ public:
         Italian,
         Azerbaijani,
         Telugu,
-        German
+        German,
+        Catalan
     };
 
     /**
