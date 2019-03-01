@@ -37,6 +37,11 @@ namespace UserInterface
 
     signals:
         /**
+         * @brief Нажат проект
+         */
+        void clicked();
+
+        /**
          * @brief Нажата кнопка удалить
          */
         void removeClicked();
@@ -51,6 +56,11 @@ namespace UserInterface
         void enterEvent(QEvent* _event) override;
         void leaveEvent(QEvent* _event) override;
         /** @} */
+
+        /**
+         * @brief Переопределяем для реализации события клика на версии
+         */
+        void mouseReleaseEvent(QMouseEvent* _event) override;
 #endif
 
     private:

@@ -69,6 +69,12 @@ void ScriptVersionWidget::leaveEvent(QEvent* _event)
     setMouseHover(false);
     QFrame::leaveEvent(_event);
 }
+
+void ScriptVersionWidget::mouseReleaseEvent(QMouseEvent* _event)
+{
+    Q_UNUSED(_event);
+    emit clicked();
+}
 #endif
 
 void ScriptVersionWidget::initView()

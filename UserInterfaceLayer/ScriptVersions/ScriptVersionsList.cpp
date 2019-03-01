@@ -70,6 +70,7 @@ void ScriptVersionsList::setModel(QAbstractItemModel* _model)
             const QColor versionColor = m_model->index(row, ScriptVersionsTable::kColor).data().value<QColor>();
             version->setColor(versionColor);
             //
+            connect(version, &ScriptVersionWidget::clicked, this, &ScriptVersionsList::handleClick);
             connect(version, &ScriptVersionWidget::removeClicked, this, &ScriptVersionsList::handleRemoveClick);
 
             layout->addWidget(version);
@@ -105,6 +106,13 @@ int ScriptVersionsList::versionRow(ScriptVersionWidget* _version) const
     //
     QVBoxLayout* layout = dynamic_cast<QVBoxLayout*>(widget()->layout());
     return layout->count() - layout->indexOf(_version) - 2; // Отнимаем два т.к. индексы с 0 + одна позиция на спейсер
+}
+
+void ScriptVersionsList::handleClick()
+{
+    if (ScriptVersionWidget* version = qobject_cast<ScriptVersionWidget*>(sender())) {
+        emit versionClicked(m_model->index(versionRow(version), 0));
+    }
 }
 
 void ScriptVersionsList::handleRemoveClick()
