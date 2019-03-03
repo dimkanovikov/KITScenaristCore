@@ -633,6 +633,8 @@ private:
                 ("</scene_description>", "갥")
                 ("<undefined>", "갦")
                 ("</undefined>", "갧")
+                ("<lirycs>", "갨")
+                ("</lirycs>", "갩")
              */
         }
         return s_tagsMap;

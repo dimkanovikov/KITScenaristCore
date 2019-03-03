@@ -575,9 +575,7 @@ QString ScenarioDocument::save() const
 
 void ScenarioDocument::clear()
 {
-    QTextCursor cursor(m_document);
-    cursor.select(QTextCursor::Document);
-    cursor.removeSelectedText();
+    load({});
 }
 
 void ScenarioDocument::refresh()
