@@ -221,6 +221,17 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     auto xmlsForUpdate = DiffMatchPatchHelper::changedXml(m_scenarioXml, patchUncopressed);
     if (!xmlsForUpdate.first.isValid()
         || !xmlsForUpdate.second.isValid()) {
+
+#ifdef PATCH_DEBUG
+    qDebug() << "===================================================================";
+    qDebug() << "uncompress failed";
+    qDebug() << "###################################################################";
+    qDebug() << qUtf8Printable(xmlsForUpdate.first.xml);
+    qDebug() << "###################################################################";
+    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
+    qDebug() << "###################################################################";
+    qDebug() << qUtf8Printable(xmlsForUpdate.second.xml);
+#endif
         return -1;
     }
 
@@ -305,9 +316,41 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
     //
     QString newXml = m_scenarioXml;
     int currentIndex = 0, max = _patches.size();
+
+#ifdef PATCH_DEBUG
+    QString lastXml;
+#endif
+
     for (const QString& patch : _patches) {
+
+#ifdef PATCH_DEBUG
+        lastXml = newXml;
+#endif
+
         const QString patchUncopressed = DatabaseHelper::uncompress(patch);
         newXml = DiffMatchPatchHelper::applyPatchXml(newXml, patchUncopressed);
+
+#ifdef PATCH_DEBUG
+        QDomDocument doc;
+        QString error;
+        int line =0, column = 0;
+        bool ok = doc.setContent(ScenarioXml::makeMimeFromXml(newXml), &error, &line, &column);
+        if (!ok) {
+            qDebug() << "===================================================================";
+            qDebug() << error << line << column;
+            qDebug() << "********************************";
+            qDebug() << qUtf8Printable(lastXml);
+            qDebug() << "********************************";
+            qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
+            qDebug() << "********************************";
+            qDebug() << qUtf8Printable(newXml);
+        } else {
+            qDebug() << "===================================================================";
+            qDebug() << "***************" << currentIndex << "*****************";
+            qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
+        }
+#endif
+
         QLightBoxProgress::setProgressValue(++currentIndex, max);
         QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
     }
