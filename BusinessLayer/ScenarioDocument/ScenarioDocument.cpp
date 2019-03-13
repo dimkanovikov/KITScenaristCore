@@ -575,7 +575,7 @@ QString ScenarioDocument::save() const
 
 void ScenarioDocument::clear()
 {
-    load({});
+    load(QString{});
 }
 
 void ScenarioDocument::refresh()
