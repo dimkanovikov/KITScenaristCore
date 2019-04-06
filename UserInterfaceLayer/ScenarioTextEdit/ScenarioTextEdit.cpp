@@ -1471,7 +1471,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         if (blockInfo != nullptr
                             && blockInfo->hasBookmark()) {
                             //
-                            // Определим область для отрисовки и выведем номер сцены в редактор
+                            // Определим область для отрисовки и выведем закладку в редактор
                             //
                             QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
                                             ? pageLeft + leftDelta

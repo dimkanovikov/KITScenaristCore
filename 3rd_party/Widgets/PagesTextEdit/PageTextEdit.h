@@ -381,6 +381,14 @@ public Q_SLOTS:
     void setWatermark(const QString& _watermark);
 
     /**
+     * @brief Задать колонтитулы
+     */
+    /** @{ */
+    void setHeader(const QString& _header);
+    void setFooter(const QString& _footer);
+    /** @} */
+
+    /**
      * @brief Установить область обрезки так, чтобы вырезалось всё, что выходит на поля страницы
      */
     void clipPageDecorationRegions(QPainter* _painter);

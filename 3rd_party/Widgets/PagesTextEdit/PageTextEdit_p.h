@@ -164,6 +164,16 @@ public:
     void paintPageNumber(QPainter* _painter, const QRectF& _rect, bool _isHeader, int _number);
 
     /**
+     * @brief Нарисовать верхний колонтитул
+     */
+    void paintHeader(QPainter* _painter, const QRectF& _rect);
+
+    /**
+     * @brief Нарисовать нижний колонтитул
+     */
+    void paintFooter(QPainter* _painter, const QRectF& _rect);
+
+    /**
      * @brief Нарисовать водяной знак
      */
     void paintWatermark(QPainter* _painter);
@@ -216,6 +226,12 @@ public:
      */
     QString m_watermark;
     QString m_watermarkMulti;
+
+    /**
+     * @brief Колонтитулы
+     */
+    QString m_header = "header";
+    QString m_footer = "footer";
 
     //
     // Дополнения для корректной работы с мышью при наличии невидимых текстовых блоков в документе

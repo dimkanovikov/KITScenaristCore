@@ -65,6 +65,14 @@ namespace BusinessLogic
         /** @} */
 
         /**
+         * @brief Колонтитулы
+         */
+        /** @{ */
+        QString scriptHeader;
+        QString scriptFooter;
+        /** @} */
+
+        /**
          * @brief Логлайн
          */
         QString logline;

@@ -1821,6 +1821,7 @@ void PageTextEditPrivate::paintPageNumbers(QPainter* _painter)
         //
         if (curHeight - pageMargins.top() >= 0) {
             QRectF topMarginRect(leftMarginPosition, curHeight - pageSize.height(), marginWidth, pageMargins.top());
+            paintHeader(_painter, topMarginRect);
             paintPageNumber(_painter, topMarginRect, true, pageNumber);
         }
 
@@ -1832,6 +1833,7 @@ void PageTextEditPrivate::paintPageNumbers(QPainter* _painter)
             // Определить прямоугольник нижнего поля
             //
             QRect bottomMarginRect(leftMarginPosition, curHeight - pageMargins.bottom(), marginWidth, pageMargins.bottom());
+            paintFooter(_painter, bottomMarginRect);
             paintPageNumber(_painter, bottomMarginRect, false, pageNumber);
 
             //
@@ -1843,6 +1845,7 @@ void PageTextEditPrivate::paintPageNumbers(QPainter* _painter)
             // Определить прямоугольник верхнего поля следующей страницы
             //
             QRect topMarginRect(leftMarginPosition, curHeight, marginWidth, pageMargins.top());
+            paintHeader(_painter, topMarginRect);
             paintPageNumber(_painter, topMarginRect, true, pageNumber);
 
             curHeight += pageSize.height();
@@ -1885,6 +1888,30 @@ void PageTextEditPrivate::paintPageNumber(QPainter* _painter, const QRectF& _rec
                 QString("%1.").arg(_number));
         }
     }
+}
+
+void PageTextEditPrivate::paintHeader(QPainter* _painter, const QRectF& _rect)
+{
+    Qt::Alignment alignment = Qt::AlignVCenter;
+    if (m_pageNumbersAlignment.testFlag(Qt::AlignTop)
+        && m_pageNumbersAlignment.testFlag(Qt::AlignLeft)) {
+        alignment |= Qt::AlignRight;
+    } else {
+        alignment |= Qt::AlignLeft;
+    }
+    _painter->drawText(_rect, alignment, m_header);
+}
+
+void PageTextEditPrivate::paintFooter(QPainter* _painter, const QRectF& _rect)
+{
+    Qt::Alignment alignment = Qt::AlignVCenter;
+    if (m_pageNumbersAlignment.testFlag(Qt::AlignBottom)
+        && m_pageNumbersAlignment.testFlag(Qt::AlignLeft)) {
+        alignment |= Qt::AlignRight;
+    } else {
+        alignment |= Qt::AlignLeft;
+    }
+    _painter->drawText(_rect, alignment, m_footer);
 }
 
 void PageTextEditPrivate::paintWatermark(QPainter* _painter)
@@ -3600,6 +3627,30 @@ void PageTextEdit::setWatermark(const QString& _watermark)
 
         d->relayoutDocument();
     }
+}
+
+void PageTextEdit::setHeader(const QString& _header)
+{
+    Q_D(PageTextEdit);
+
+    if (d->m_header == _header) {
+        return;
+    }
+
+    d->m_header = _header;
+    d->relayoutDocument();
+}
+
+void PageTextEdit::setFooter(const QString& _footer)
+{
+    Q_D(PageTextEdit);
+
+    if (d->m_footer == _footer) {
+        return;
+    }
+
+    d->m_footer = _footer;
+    d->relayoutDocument();
 }
 
 void PageTextEdit::clipPageDecorationRegions(QPainter* _painter)
