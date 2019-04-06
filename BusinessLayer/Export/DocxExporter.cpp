@@ -80,6 +80,24 @@ namespace {
     }
 
     /**
+     * @brief Необходимо ли писать верхний колонтитул
+     */
+    static bool needWriteHeader(const ExportParameters& _exportParameters) {
+        return (_exportParameters.printPagesNumbers
+                && exportStyle().numberingAlignment().testFlag(Qt::AlignTop))
+                || !_exportParameters.scriptHeader.isEmpty();
+    }
+
+    /**
+     * @brief Необходимо ли писать нижний колонтитул
+     */
+    static bool needWriteFooter(const ExportParameters& _exportParameters) {
+        return (_exportParameters.printPagesNumbers
+                && exportStyle().numberingAlignment().testFlag(Qt::AlignBottom))
+                || !_exportParameters.scriptFooter.isEmpty();
+    }
+
+    /**
      * @brief Сформировать строку DOCX-стиля из стиля блока
      */
     static QString docxBlockStyle(const ScenarioBlockStyle& _style, const QString& _defaultFontFamily) {
@@ -585,12 +603,11 @@ void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _e
     //
     // ... необходимы ли колонтитулы
     //
-    if (_exportParameters.printPagesNumbers) {
-        if (::exportStyle().numberingAlignment().testFlag(Qt::AlignTop)) {
-            contentTypesXml.append("<Override PartName=\"/word/header1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml\"/>");
-        } else {
-            contentTypesXml.append("<Override PartName=\"/word/footer1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml\"/>");
-        }
+    if (needWriteHeader(_exportParameters)) {
+        contentTypesXml.append("<Override PartName=\"/word/header1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml\"/>");
+    }
+    if (needWriteFooter(_exportParameters)) {
+        contentTypesXml.append("<Override PartName=\"/word/footer1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml\"/>");
     }
     contentTypesXml.append(
             "<Override PartName=\"/word/document.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml\"/>"
@@ -618,12 +635,11 @@ void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _e
     //
     // ... необходимы ли колонтитулы
     //
-    if (_exportParameters.printPagesNumbers) {
-        if (::exportStyle().numberingAlignment().testFlag(Qt::AlignTop)) {
-            documentXmlRels.append("<Relationship Id=\"docRId2\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/header\" Target=\"header1.xml\"/>");
-        } else {
-            documentXmlRels.append("<Relationship Id=\"docRId3\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer\" Target=\"footer1.xml\"/>");
-        }
+    if (needWriteHeader(_exportParameters)) {
+        documentXmlRels.append("<Relationship Id=\"docRId2\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/header\" Target=\"header1.xml\"/>");
+    }
+    if (needWriteFooter(_exportParameters)) {
+        documentXmlRels.append("<Relationship Id=\"docRId3\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer\" Target=\"footer1.xml\"/>");
     }
     documentXmlRels.append("<Relationship Id=\"docRId4\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings\" Target=\"settings.xml\"/>");
     //
@@ -740,23 +756,41 @@ void DocxExporter::writeHeader(QtZipWriter* _zip, const ExportParameters& _expor
     //
     // Если нужна нумерация вверху
     //
-    if (_exportParameters.printPagesNumbers
-        && ::exportStyle().numberingAlignment().testFlag(Qt::AlignTop)) {
+    const bool needPrintPageNumbers = _exportParameters.printPagesNumbers
+                                      && exportStyle().numberingAlignment().testFlag(Qt::AlignTop);
+    if (needPrintPageNumbers
+        || !_exportParameters.scriptHeader.isEmpty()) {
         QString headerXml =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
                 "<w:hdr xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:w10=\"urn:schemas-microsoft-com:office:word\" xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\">";
 
 
         headerXml.append("<w:p><w:pPr><w:jc w:val=\"");
-        if (::exportStyle().numberingAlignment().testFlag(Qt::AlignLeft)) {
+        if (exportStyle().numberingAlignment().testFlag(Qt::AlignLeft) || !needPrintPageNumbers) {
             headerXml.append("left");
-        } else if (::exportStyle().numberingAlignment().testFlag(Qt::AlignCenter)) {
+        } else if (exportStyle().numberingAlignment().testFlag(Qt::AlignCenter)) {
             headerXml.append("center");
         } else {
             headerXml.append("right");
         }
-        headerXml.append("\"/><w:rPr/></w:pPr><w:r><w:rPr/><w:fldChar w:fldCharType=\"begin\"/></w:r><w:r><w:instrText> PAGE </w:instrText></w:r><w:r><w:fldChar w:fldCharType=\"separate\"/></w:r><w:r><w:t>0</w:t></w:r><w:r><w:fldChar w:fldCharType=\"end\"/></w:r></w:p>");
-        headerXml.append("</w:hdr>");
+        headerXml.append("\"/><w:rPr/></w:pPr>");
+
+        const QString pageNumbersXml = needPrintPageNumbers
+                                       ? "<w:r><w:rPr/><w:fldChar w:fldCharType=\"begin\"/></w:r><w:r><w:instrText> PAGE </w:instrText></w:r><w:r><w:fldChar w:fldCharType=\"separate\"/></w:r><w:r><w:t>0</w:t></w:r><w:r><w:fldChar w:fldCharType=\"end\"/></w:r>"
+                                       : "";
+        const QString pageHeaderXml = QString("<w:r><w:rPr/><w:t>%1</w:t></w:r>").arg(_exportParameters.scriptHeader);
+        const QString pageHeaderSeparatorXml = "<w:r><w:rPr/><w:t> </w:t></w:r>";
+        if (exportStyle().numberingAlignment().testFlag(Qt::AlignRight)) {
+            headerXml.append(pageHeaderXml);
+            headerXml.append(pageHeaderSeparatorXml);
+            headerXml.append(pageNumbersXml);
+        } else {
+            headerXml.append(pageNumbersXml);
+            headerXml.append(pageHeaderSeparatorXml);
+            headerXml.append(pageHeaderXml);
+        }
+
+        headerXml.append("</w:p></w:hdr>");
 
         //
         // Запишем верхний колонтитул в архив
@@ -770,22 +804,41 @@ void DocxExporter::writeFooter(QtZipWriter* _zip, const ExportParameters& _expor
     //
     // Если нужна нумерация внизу
     //
-    if (_exportParameters.printPagesNumbers
-        && ::exportStyle().numberingAlignment().testFlag(Qt::AlignBottom)) {
+    const bool needPrintPageNumbers = _exportParameters.printPagesNumbers
+                                      && exportStyle().numberingAlignment().testFlag(Qt::AlignBottom);
+    if (needPrintPageNumbers
+        || !_exportParameters.scriptFooter.isEmpty()) {
         QString footerXml =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
                 "<w:ftr xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:w10=\"urn:schemas-microsoft-com:office:word\" xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\">";
 
         footerXml.append("<w:p><w:pPr><w:jc w:val=\"");
-        if (::exportStyle().numberingAlignment().testFlag(Qt::AlignLeft)) {
+        if (exportStyle().numberingAlignment().testFlag(Qt::AlignLeft)
+            || !needPrintPageNumbers) {
             footerXml.append("left");
-        } else if (::exportStyle().numberingAlignment().testFlag(Qt::AlignCenter)) {
+        } else if (exportStyle().numberingAlignment().testFlag(Qt::AlignCenter)) {
             footerXml.append("center");
         } else {
             footerXml.append("right");
         }
-        footerXml.append("\"/><w:rPr/></w:pPr><w:r><w:rPr/><w:fldChar w:fldCharType=\"begin\"/></w:r><w:r><w:instrText> PAGE </w:instrText></w:r><w:r><w:fldChar w:fldCharType=\"separate\"/></w:r><w:r><w:t>0</w:t></w:r><w:r><w:fldChar w:fldCharType=\"end\"/></w:r></w:p>");
-        footerXml.append("</w:ftr>");
+        footerXml.append("\"/><w:rPr/></w:pPr>");
+
+        const QString pageNumbersXml = needPrintPageNumbers
+                                       ? "<w:r><w:rPr/><w:fldChar w:fldCharType=\"begin\"/></w:r><w:r><w:instrText> PAGE </w:instrText></w:r><w:r><w:fldChar w:fldCharType=\"separate\"/></w:r><w:r><w:t>0</w:t></w:r><w:r><w:fldChar w:fldCharType=\"end\"/></w:r>"
+                                       : "";
+        const QString pageFooterXml = QString("<w:r><w:rPr/><w:t>%1</w:t></w:r>").arg(_exportParameters.scriptFooter);
+        const QString pageFooterSeparatorXml = "<w:r><w:rPr/><w:t> </w:t></w:r>";
+        if (exportStyle().numberingAlignment().testFlag(Qt::AlignRight)) {
+            footerXml.append(pageFooterXml);
+            footerXml.append(pageFooterSeparatorXml);
+            footerXml.append(pageNumbersXml);
+        } else {
+            footerXml.append(pageNumbersXml);
+            footerXml.append(pageFooterSeparatorXml);
+            footerXml.append(pageFooterXml);
+        }
+
+        footerXml.append("</w:p></w:ftr>");
 
         //
         // Запишем верхний колонтитул в архив
@@ -830,12 +883,11 @@ void DocxExporter::writeDocument(QtZipWriter* _zip, ScenarioDocument* _scenario,
     //
     // ... колонтитулы
     //
-    if (_exportParameters.printPagesNumbers) {
-        if (style.numberingAlignment().testFlag(Qt::AlignTop)) {
+    if (needWriteHeader(_exportParameters)) {
             documentXml.append("<w:headerReference w:type=\"default\" r:id=\"docRId2\"/>");
-        } else {
-            documentXml.append("<w:footerReference w:type=\"default\" r:id=\"docRId3\"/>");
         }
+    if (needWriteFooter(_exportParameters)) {
+        documentXml.append("<w:footerReference w:type=\"default\" r:id=\"docRId3\"/>");
     }
     //
     // ... размер страницы
