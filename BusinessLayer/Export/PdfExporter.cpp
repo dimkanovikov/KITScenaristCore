@@ -47,16 +47,18 @@ namespace {
     /**
      * @brief Есть ли в документе титульная страница
      */
-    const char* PRINT_TITLE_KEY = "print_title";
+    const char* kPrintTitleKey = "print_title";
 
     /**
-     * @brief Необходимо ли печатать номера страниц, сцен и реплик
+     * @brief Дополнительные параметры печати
      */
     /** @{ */
-    const char* PRINT_PAGE_NUMBERS_KEY = "page_numbers";
-    const char* PRINT_SCENES_NUMBERS_KEY = "scenes_numbers";
-    const char* SCENE_NUMBERS_PREFIX_KEY = "scene_numbers_prefix";
-    const char* PRINT_DIALOGUES_NUMBERS_KEY = "dialogues_numbers";
+    const char* kPageHeaderKey = "page_header";
+    const char* kPageFooterKey = "page_footer";
+    const char* kPrintPageNumbersKey = "page_numbers";
+    const char* kPrintScnesNumbersKey = "scenes_numbers";
+    const char* kSceneNumbersPrefixKey = "scene_numbers_prefix";
+    const char* kPrintDialoguesNumbersKey = "dialogues_numbers";
     /** @} */
 
     /**
@@ -89,9 +91,9 @@ namespace {
         //
         // Печатаем номера сцен и реплик, если нужно
         //
-        const bool needPrintScenesNumbers = _document->property(PRINT_SCENES_NUMBERS_KEY).toBool();
-        const QString sceneNumbersPrefix = _document->property(SCENE_NUMBERS_PREFIX_KEY).toString();
-        const bool needPrintDialoguesNumbers = _document->property(PRINT_DIALOGUES_NUMBERS_KEY).toBool();
+        const bool needPrintScenesNumbers = _document->property(kPrintScnesNumbersKey).toBool();
+        const QString sceneNumbersPrefix = _document->property(kSceneNumbersPrefixKey).toString();
+        const bool needPrintDialoguesNumbers = _document->property(kPrintDialoguesNumbersKey).toBool();
         if (needPrintScenesNumbers
             || needPrintDialoguesNumbers) {
             _painter->save();
@@ -212,8 +214,8 @@ namespace {
         //
         // Если необходимо рисуем нумерацию страниц
         //
-        const bool needPrintPageNumbers = _document->property(PRINT_PAGE_NUMBERS_KEY).toBool();
-        const bool needPrintTitlePage = _document->property(PRINT_TITLE_KEY).toBool();
+        const bool needPrintPageNumbers = _document->property(kPrintPageNumbersKey).toBool();
+        const bool needPrintTitlePage = _document->property(kPrintTitleKey).toBool();
         if (needPrintPageNumbers) {
             //
             // На титульной и на первой странице сценария
@@ -274,6 +276,73 @@ namespace {
                 _painter->drawText(
                     numberingRect, numberingAlignment,
                     QString(QLocale().textDirection() == Qt::LeftToRight ? "%1." : ".%1").arg(_pageNumber + titleDelta));
+                _painter->restore();
+            }
+        }
+
+        //
+        // Печатаем колонтитулы, если необходимо
+        //
+        const QString pageHeader = _document->property(kPageHeaderKey).toString();
+        const QString pageFooter = _document->property(kPageFooterKey).toString();
+        if (!pageHeader.isEmpty() || !pageFooter.isEmpty()) {
+            //
+            // пропускаем титульную страницу
+            //
+            if (needPrintTitlePage && _pageNumber == 1) {
+                //
+                // ... не печатаем колонтитулы
+                //
+            }
+            //
+            // Печатаем колонтитулы
+            //
+            else {
+                _painter->save();
+                QFont font = exportTemplate().blockStyle(ScenarioBlockStyle::Action).charFormat().font();
+                const qreal fontSize = font.pointSize() / qMin(_painter->viewport().height() / _body.height(),
+                                                               _painter->viewport().width() / _body.width());
+                font.setPointSizeF(fontSize);
+                _painter->setFont(font);
+
+                //
+                // Середины верхнего и нижнего полей
+                //
+                qreal headerY = pageYPos - PageMetrics::mmToPx(_margins.top) / 2;
+                qreal footerY = pageYPos + currentPageRect.height() + PageMetrics::mmToPx(_margins.bottom) / 2;
+
+                //
+                // Области для прорисовки текста на полях
+                //
+                QRectF headerRect(0, headerY, currentPageRect.width(), 20);
+                QRectF footerRect(0, footerY - 20, currentPageRect.width(), 20);
+
+                //
+                // Определяем где положено находиться нумерации
+                //
+                Qt::Alignment headerAlignment = Qt::AlignVCenter;
+                Qt::Alignment footerAlignment = Qt::AlignVCenter;
+                if (exportTemplate().numberingAlignment().testFlag(Qt::AlignTop)) {
+                    if (exportTemplate().numberingAlignment().testFlag(Qt::AlignLeft)) {
+                        headerAlignment |= Qt::AlignRight;
+                    } else {
+                        headerAlignment |= Qt::AlignLeft;
+                    }
+                } else {
+                    if (exportTemplate().numberingAlignment().testFlag(Qt::AlignLeft)) {
+                        footerAlignment |= Qt::AlignRight;
+                    } else {
+                        footerAlignment |= Qt::AlignLeft;
+                    }
+                }
+
+                //
+                // Рисуем колонтитулы
+                //
+                _painter->setClipRect(headerRect);
+                _painter->drawText(headerRect, headerAlignment, pageHeader);
+                _painter->setClipRect(footerRect);
+                _painter->drawText(footerRect, footerAlignment, pageFooter);
                 _painter->restore();
             }
         }
@@ -545,11 +614,13 @@ void PdfExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters& 
     //
     // ... настроим документ для печати
     //
-    preparedDocument->setProperty(PRINT_TITLE_KEY, _exportParameters.printTilte);
-    preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, _exportParameters.printPagesNumbers);
-    preparedDocument->setProperty(SCENE_NUMBERS_PREFIX_KEY, _exportParameters.scenesPrefix);
-    preparedDocument->setProperty(PRINT_SCENES_NUMBERS_KEY, _exportParameters.printScenesNumbers);
-    preparedDocument->setProperty(PRINT_DIALOGUES_NUMBERS_KEY, _exportParameters.printDialoguesNumbers);
+    preparedDocument->setProperty(kPrintTitleKey, _exportParameters.printTilte);
+    preparedDocument->setProperty(kPageHeaderKey, _exportParameters.scriptHeader);
+    preparedDocument->setProperty(kPageFooterKey, _exportParameters.scriptFooter);
+    preparedDocument->setProperty(kPrintPageNumbersKey, _exportParameters.printPagesNumbers);
+    preparedDocument->setProperty(kSceneNumbersPrefixKey, _exportParameters.scenesPrefix);
+    preparedDocument->setProperty(kPrintScnesNumbersKey, _exportParameters.printScenesNumbers);
+    preparedDocument->setProperty(kPrintDialoguesNumbersKey, _exportParameters.printDialoguesNumbers);
     if (_exportParameters.printWatermark) {
         preparedDocument->setProperty(WATERMARK_KEY, _exportParameters.watermark);
     }
@@ -578,8 +649,8 @@ void PdfExporter::exportTo(const ResearchModelCheckableProxy* _researchModel, co
     // Сформируем документ
     //
     QTextDocument* preparedDocument = prepareDocument(_researchModel, _exportParameters);
-    preparedDocument->setProperty(PRINT_TITLE_KEY, false);
-    preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, true);
+    preparedDocument->setProperty(kPrintTitleKey, false);
+    preparedDocument->setProperty(kPrintPageNumbersKey, true);
 
     //
     // Печатаем документ
@@ -605,11 +676,13 @@ void PdfExporter::printPreview(ScenarioDocument* _scenario, const ExportParamete
     //
     // ... настроим документ для печати
     //
-    preparedDocument->setProperty(PRINT_TITLE_KEY, _exportParameters.printTilte);
-    preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, _exportParameters.printPagesNumbers);
-    preparedDocument->setProperty(SCENE_NUMBERS_PREFIX_KEY, _exportParameters.scenesPrefix);
-    preparedDocument->setProperty(PRINT_SCENES_NUMBERS_KEY, _exportParameters.printScenesNumbers);
-    preparedDocument->setProperty(PRINT_DIALOGUES_NUMBERS_KEY, _exportParameters.printDialoguesNumbers);
+    preparedDocument->setProperty(kPrintTitleKey, _exportParameters.printTilte);
+    preparedDocument->setProperty(kPageHeaderKey, _exportParameters.scriptHeader);
+    preparedDocument->setProperty(kPageFooterKey, _exportParameters.scriptFooter);
+    preparedDocument->setProperty(kPrintPageNumbersKey, _exportParameters.printPagesNumbers);
+    preparedDocument->setProperty(kSceneNumbersPrefixKey, _exportParameters.scenesPrefix);
+    preparedDocument->setProperty(kPrintScnesNumbersKey, _exportParameters.printScenesNumbers);
+    preparedDocument->setProperty(kPrintDialoguesNumbersKey, _exportParameters.printDialoguesNumbers);
     if (_exportParameters.printWatermark) {
         preparedDocument->setProperty(WATERMARK_KEY, _exportParameters.watermark);
     }
@@ -660,8 +733,8 @@ void PdfExporter::printPreview(const ResearchModelCheckableProxy* _researchModel
     // Сформируем документ
     //
     QScopedPointer<QTextDocument> preparedDocument(prepareDocument(_researchModel, _exportParameters));
-    preparedDocument->setProperty(PRINT_TITLE_KEY, false);
-    preparedDocument->setProperty(PRINT_PAGE_NUMBERS_KEY, true);
+    preparedDocument->setProperty(kPrintTitleKey, false);
+    preparedDocument->setProperty(kPrintPageNumbersKey, true);
 
     //
     // Сохраним указатель на документ для печати
