@@ -8,12 +8,14 @@
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
 #include <BusinessLayer/ScenarioDocument/ScenarioDocument.h>
+#include <BusinessLayer/ScenarioDocument/ScenarioTextBlockInfo.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTemplate.h>
 
 #include <Domain/Scenario.h>
 
 #include <3rd_party/Helpers/TextEditHelper.h>
+#include <3rd_party/Widgets/PagesTextEdit/PageMetrics.h>
 
 #include <QTextDocument>
 #include <QTextCursor>
@@ -335,14 +337,15 @@ namespace {
     /**
      * @brief Сформировать текст блока документа в зависимости от его стиля и оформления
      */
-    static QString docxText(QMap<int, QStringList>& _comments, const QTextCursor& _cursor) {
+    static QString docxText(QMap<int, QStringList>& _comments, const QTextCursor& _cursor,
+        const ExportParameters& _exportParameters) {
+
         QString documentXml;
 
         //
         // Получим стиль параграфа
         //
-        ScenarioBlockStyle::Type currentBlockType =
-                (ScenarioBlockStyle::Type)_cursor.blockFormat().property(ScenarioBlockStyle::PropertyType).toInt();
+        ScenarioBlockStyle::Type currentBlockType = ScenarioBlockStyle::forBlock(_cursor.block());
 
         //
         // Запишем параграф в документ
@@ -351,6 +354,19 @@ namespace {
             documentXml =
                 QString("<w:p><w:pPr><w:pStyle w:val=\"%1\"/>")
                 .arg(ScenarioBlockStyle::typeName(currentBlockType).toUpper().replace("_", ""));
+
+            if (currentBlockType == ScenarioBlockStyle::SceneHeading
+                && _exportParameters.printScenesNumbers) {
+                if (SceneHeadingBlockInfo* sceneInfo = dynamic_cast<SceneHeadingBlockInfo*>(_cursor.block().userData())) {
+                    const QString sceneNumber = QString("%1%2. ").arg(_exportParameters.scenesPrefix)
+                                                                 .arg(sceneInfo->sceneNumber());
+                    const QFontMetrics fontMetrics(exportStyle().blockStyle(currentBlockType).font());
+                    documentXml.append(
+                                QString("<w:ind w:left=\"-%1\" w:right=\"0\" w:hanging=\"0\" />")
+                                .arg(mmToTwips(PageMetrics::pxToMm(fontMetrics.width(sceneNumber))))
+                                );
+                }
+            }
 
             //
             //  ... текст абзаца
@@ -552,7 +568,7 @@ void DocxExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters&
             //
             // ... шрифты
             //
-            if (::needWriteFonts()) {
+            if (needWriteFonts()) {
                 writeFonts(&zip);
             }
             //
@@ -595,7 +611,7 @@ void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _e
             "<Override PartName=\"/word/_rels/document.xml.rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/>"
             "<Override PartName=\"/word/styles.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml\"/>"
             "<Override PartName=\"/word/comments.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.comments+xml\"/>";
-    if (::needWriteFonts()) {
+    if (needWriteFonts()) {
         contentTypesXml.append(
             "<Default Extension=\"odttf\" ContentType=\"application/vnd.openxmlformats-officedocument.obfuscatedFont\"/>"
             "<Override PartName=\"/word/fontTable.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.fontTable+xml\"/>");
@@ -645,7 +661,7 @@ void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _e
     //
     // ... необходимы ли шрифты
     //
-    if (::needWriteFonts()) {
+    if (needWriteFonts()) {
         documentXmlRels.append("<Relationship Id=\"docRId5\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable\" Target=\"fontTable.xml\"/>");
     }
     documentXmlRels.append("</Relationships>");
@@ -654,7 +670,7 @@ void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _e
     //
     // Связи шрифтов
     //
-    if (::needWriteFonts()) {
+    if (needWriteFonts()) {
         _zip->addFile(QString::fromLatin1("word/_rels/fontTable.xml.rels"),
                       "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
                       "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\">"
@@ -671,7 +687,7 @@ void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _e
     QString wordSettings =
             "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
             "<w:settings xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w10=\"urn:schemas-microsoft-com:office:word\" xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:sl=\"http://schemas.openxmlformats.org/schemaLibrary/2006/main\">";
-    if (::needWriteFonts()) {
+    if (needWriteFonts()) {
         wordSettings += "<w:embedTrueTypeFonts w:val=\"true\"/><w:embedSystemFonts w:val=\"false\"/>";
     }
     wordSettings +=
@@ -698,8 +714,8 @@ void DocxExporter::writeStyles(QtZipWriter* _zip) const
     ScenarioTemplate style = ::exportStyle();
     const QString defaultFontFamily = style.blockStyle(ScenarioBlockStyle::Action).font().family();
     foreach (int blockNumber, ::blockTypes().keys()) {
-        ScenarioBlockStyle blockStyle = style.blockStyle(::blockTypes().value(blockNumber));
-        styleXml.append(::docxBlockStyle(blockStyle, defaultFontFamily));
+        ScenarioBlockStyle blockStyle = style.blockStyle(blockTypes().value(blockNumber));
+        styleXml.append(docxBlockStyle(blockStyle, defaultFontFamily));
     }
 
     styleXml.append("</w:styles>");
@@ -866,7 +882,7 @@ void DocxExporter::writeDocument(QtZipWriter* _zip, ScenarioDocument* _scenario,
     //
     QTextCursor documentCursor(preparedDocument);
     while (!documentCursor.atEnd()) {
-        documentXml.append(::docxText(_comments, documentCursor));
+        documentXml.append(docxText(_comments, documentCursor, _exportParameters));
 
         //
         // Переходим к следующему параграфу
@@ -895,20 +911,20 @@ void DocxExporter::writeDocument(QtZipWriter* _zip, ScenarioDocument* _scenario,
     QSizeF paperSize = QPageSize(style.pageSizeId()).size(QPageSize::Millimeter);
     documentXml.append(
         QString("<w:pgSz w:w=\"%1\" w:h=\"%2\"/>")
-        .arg(::mmToTwips(paperSize.width()))
-        .arg(::mmToTwips(paperSize.height()))
+        .arg(mmToTwips(paperSize.width()))
+        .arg(mmToTwips(paperSize.height()))
         );
     //
     // ... поля документа
     //
     documentXml.append(
         QString("<w:pgMar w:left=\"%1\" w:right=\"%2\" w:top=\"%3\" w:bottom=\"%4\" w:header=\"%5\" w:footer=\"%6\" w:gutter=\"0\"/>")
-        .arg(::mmToTwips(style.pageMargins().left()))
-        .arg(::mmToTwips(style.pageMargins().right()))
-        .arg(::mmToTwips(style.pageMargins().top()))
-        .arg(::mmToTwips(style.pageMargins().bottom()))
-        .arg(::mmToTwips(style.pageMargins().top() / 2))
-        .arg(::mmToTwips(style.pageMargins().bottom() / 2))
+        .arg(mmToTwips(style.pageMargins().left()))
+        .arg(mmToTwips(style.pageMargins().right()))
+        .arg(mmToTwips(style.pageMargins().top()))
+        .arg(mmToTwips(style.pageMargins().bottom()))
+        .arg(mmToTwips(style.pageMargins().top() / 2))
+        .arg(mmToTwips(style.pageMargins().bottom() / 2))
         );
     //
     // ... нужна ли титульная страница
