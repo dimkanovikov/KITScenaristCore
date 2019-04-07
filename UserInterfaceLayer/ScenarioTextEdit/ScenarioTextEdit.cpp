@@ -801,9 +801,9 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
             CompletableTextEdit::keyPressEvent(_event);
         }
 
-        updateEnteredText(_event->text());
+//        updateEnteredText(_event->text());
 
-        TextEditHelper::beautifyDocument(textCursor(), _event->text(), m_replaceThreeDots, m_smartQuotes);
+//        TextEditHelper::beautifyDocument(textCursor(), _event->text(), m_replaceThreeDots, m_smartQuotes);
     }
 
     //
@@ -820,6 +820,14 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
     // Завершим блок операций
     //
     cursor.endEditBlock();
+
+    //
+    // Сохраним изменение и затем сделаем корректировку текста, чтобы пользователь мог её отменить
+    //
+    m_document->updateScenarioXml();
+    m_document->saveChanges();
+    updateEnteredText(_event->text());
+    TextEditHelper::beautifyDocument(textCursor(), _event->text(), m_replaceThreeDots, m_smartQuotes);
 
     //
     // Убедимся, что курсор виден
