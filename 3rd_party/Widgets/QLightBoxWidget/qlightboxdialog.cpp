@@ -139,7 +139,7 @@ void QLightBoxDialog::init()
         //
         // Устанавливаем фокус после того, как диалог будет полностью показан
         //
-        connect(this, &QLightBoxDialog::showed, [=] { focusedOnExec()->setFocus(); });
+        connect(this, &QLightBoxDialog::showed, this, [this] { focusedOnExec()->setFocus(); });
 
         //
         // Настраиваем прогресс

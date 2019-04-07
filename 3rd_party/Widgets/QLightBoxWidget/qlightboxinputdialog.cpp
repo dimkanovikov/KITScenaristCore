@@ -181,7 +181,7 @@ void QLightBoxInputDialog::initConnections()
 
 QWidget* QLightBoxInputDialog::focusedOnExec() const
 {
-    QWidget* focusTarget = m_label;
+    QWidget* focusTarget = m_buttons;
     if (m_lineEdit->property(::focusProperty).toBool()) {
         focusTarget = m_lineEdit;
     } else if (m_textEdit->property(::focusProperty).toBool()) {
