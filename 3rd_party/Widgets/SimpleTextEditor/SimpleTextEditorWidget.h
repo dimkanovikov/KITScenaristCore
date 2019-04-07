@@ -123,6 +123,15 @@ private:
     QWidget* m_toolbar;
 
     /**
+     * @brief Кнопки отмены/повтора последнего действия
+     */
+    /** @{ */
+    FlatButton* m_undo = nullptr;
+    FlatButton* m_redo = nullptr;
+    /** @} */
+
+
+    /**
      * @brief Выпадающий список шрифтов
      */
     QComboBox* m_textFont;
