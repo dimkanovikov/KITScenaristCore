@@ -230,8 +230,8 @@ public:
     /**
      * @brief Колонтитулы
      */
-    QString m_header = "header";
-    QString m_footer = "footer";
+    QString m_header;
+    QString m_footer;
 
     //
     // Дополнения для корректной работы с мышью при наличии невидимых текстовых блоков в документе
