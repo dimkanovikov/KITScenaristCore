@@ -122,6 +122,11 @@ namespace ManagementLayer
         bool isCommentOnly() const;
 
         /**
+         * @brief Файл проекта доступен только для чтения
+         */
+        bool isWritable() const;
+
+        /**
          * @brief Список пользователей
          */
         QStringList users() const;

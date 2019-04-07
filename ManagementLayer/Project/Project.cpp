@@ -185,6 +185,11 @@ bool Project::isCommentOnly() const
     return m_role == Commentator;
 }
 
+bool Project::isWritable() const
+{
+    return QFileInfo(path()).isWritable();
+}
+
 QStringList Project::users() const
 {
     return m_users;
