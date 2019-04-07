@@ -2006,6 +2006,14 @@ Project didn&apos;t synchronized.</source>
         <source>KIT Scenarist</source>
         <translation>КІТ Сценарист</translation>
     </message>
+    <message>
+        <source>A file will be opened in read-only mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you want to edit a file, please check it&apos;s permissions for your account.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -3323,6 +3331,22 @@ p, li { white-space: pre-wrap; }
         <source>Start scenes numbering from:</source>
         <translation>Почати нумерацію сцени з:</translation>
     </message>
+    <message>
+        <source>Footer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Header:</source>
+        <translation type="unfinished">Заголовок:</translation>
+    </message>
+    <message>
+        <source>Undo last action</source>
+        <translation type="unfinished">Відмінити останню дію</translation>
+    </message>
+    <message>
+        <source>Redo previously undone action</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RtfReader</name>
@@ -3910,6 +3934,14 @@ Paragraph</source>
         <source>Clear formatting</source>
         <translation>Очистити форматування</translation>
     </message>
+    <message>
+        <source>Undo last action</source>
+        <translation type="unfinished">Відмінити останню дію</translation>
+    </message>
+    <message>
+        <source>Redo previously undone action</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SpellCheckTextEdit</name>
@@ -4025,6 +4057,25 @@ our help articles and tutorials.
 і вивчити КІТ-сценаріст через
 наші довідкові статті та навчальні посібники.
 </translation>
+    </message>
+    <message>
+        <source>
+
+We launch crowdfunding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We have already collected %1K rubles of 1M aim! Join us and then you can use all power of the new version!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Together we will make KIT Scenarist
+the best program for creating stories!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Join campaign</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5329,6 +5380,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Brazilian Portuguese</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Catalan</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
