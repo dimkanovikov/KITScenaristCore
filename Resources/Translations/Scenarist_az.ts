@@ -39,7 +39,25 @@ Türkçe: Recep Burak Yak
 עִבְרִית: Maxim Ronkin
 తెలుగు: Eshwar Mittapalli
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Proqramın beynəlxalq versiyalarının yaradılmasında bizə yardım edən qəhrəmanlarımız:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</translation>
     </message>
     <message>
         <source>Our heroes, who help us to create international versions:
@@ -1853,7 +1871,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="46"/>
         <source>Português brasileiro</source>
-        <translation type="unfinished"></translation>
+        <translation>Português brasileiro</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="56"/>
@@ -2019,12 +2037,12 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="927"/>
         <source>A file will be opened in read-only mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Fayl yalnız oxunuş üçün rejimdə yenidən açılacaq</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="928"/>
         <source>If you want to edit a file, please check it&apos;s permissions for your account.</source>
-        <translation type="unfinished"></translation>
+        <translation>Əgər faylı redaktə etmək istəyirsinizsə, onda sizin hesabınıza daxil olmaq icazəsini yoxlayın.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="941"/>
@@ -3162,7 +3180,7 @@ Onu yenidən yükləyə bilərsiz.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="191"/>
         <source>Português brasileiro</source>
-        <translation type="unfinished"></translation>
+        <translation>Português brasileiro</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="306"/>
@@ -3997,12 +4015,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1201"/>
         <source>Undo last action</source>
-        <translation type="unfinished">Son əməli ləğv etmək</translation>
+        <translation>Son əməli ləğv etmək</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1215"/>
         <source>Redo previously undone action</source>
-        <translation type="unfinished"></translation>
+        <translation>Bundan əvvəl ləğv etmək əməlini təkrar etmək</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1229"/>
@@ -4027,12 +4045,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="198"/>
         <source>Footer:</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Aşağı kolontitulda yazılan qeyd yeri</translatorcomment>
+        <translation>Haşiyə</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="205"/>
         <source>Header:</source>
-        <translation type="unfinished">Başlıq:</translation>
+        <translatorcomment>Baş tərəfdə qeyd üçün ayrılan yer</translatorcomment>
+        <translation>Başlıq:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1266"/>
@@ -4790,12 +4810,12 @@ görə saniyələr</translation>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="181"/>
         <source>Undo last action</source>
-        <translation type="unfinished">Son əməli ləğv etmək</translation>
+        <translation>Son əməli ləğv etmək</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="184"/>
         <source>Redo previously undone action</source>
-        <translation type="unfinished"></translation>
+        <translation>Əvvəlki ləğv əməlini təkrar etmək</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="194"/>
@@ -4870,7 +4890,7 @@ görə saniyələr</translation>
         <source>
 
 We launch crowdfunding</source>
-        <translation type="unfinished"></translation>
+        <translation>Biz kraudfandinq aksiyasına start vermişik</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="108"/>
@@ -4909,18 +4929,19 @@ məqalə və təlimatlardan öyrənin.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="207"/>
         <source>We have already collected %1K rubles of 1M aim! Join us and then you can use all power of the new version!</source>
-        <translation type="unfinished"></translation>
+        <translation>Biz artıq 1M nəzərdə tutulandan %1K rubl yığmışıq! Bizə qoşulun və onda yeni versiyanın bütün imkanlarından istifadə edə bilərsiz!</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="217"/>
         <source>Together we will make KIT Scenarist
 the best program for creating stories!</source>
-        <translation type="unfinished"></translation>
+        <translation>Biz bir yerdə KIT Scenarist-i yeni əhvalatlar
+yaratmaq üçün ən yaxşı proqrama çevirəcəyik!</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="231"/>
         <source>Join campaign</source>
-        <translation type="unfinished"></translation>
+        <translation>Kampaniyaya qoşulmaq</translation>
     </message>
     <message>
         <source>Learn how to write your own stories and explore KIT Scenarist through our help articles and tutorials.
@@ -6507,7 +6528,7 @@ Proqram bir neçə saniyədən sonra işə düşəcək.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="221"/>
         <source>Brazilian Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Braziliya Portuqal dili</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="601"/>
@@ -6517,7 +6538,7 @@ Proqram bir neçə saniyədən sonra işə düşəcək.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="771"/>
         <source>Catalan</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalon dili</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="784"/>
