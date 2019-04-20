@@ -254,7 +254,7 @@ namespace ManagementLayer
          */
         /** @{ */
         void applyPatchRequested(const QString& _patch, bool _isDraft, int _newChangesSize);
-        void applyPatchesRequested(const QList<QString>& _patch, bool _isDraft);
+        void applyPatchesRequested(const QList<QString>& _patches, bool _isDraft, QList<QString>& _newChangesUuids);
         /** @} */
 
         /**

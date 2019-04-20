@@ -975,13 +975,13 @@ void SynchronizationManager::aboutFullSyncScenario()
         //
         // ... считываем изменения (uuid)
         //
-        QList<QString> remoteChanges;
+        QList<QString> remoteChangesUuids;
         while (!changesReader.atEnd()) {
             changesReader.readNextStartElement();
             if (changesReader.name() == "change") {
                 const QString changeUuid = changesReader.attributes().value("id").toString();
                 if (!changeUuid.isEmpty()) {
-                    remoteChanges.append(changeUuid);
+                    remoteChangesUuids.append(changeUuid);
                 }
             }
         }
@@ -990,37 +990,29 @@ void SynchronizationManager::aboutFullSyncScenario()
         //
         // Сформируем список изменений сценария хранящихся локально
         //
-        QList<QString> localChanges = StorageFacade::scenarioChangeStorage()->uuids();
+        QList<QString> localChangesUuids = StorageFacade::scenarioChangeStorage()->uuids();
         //
         // ... обрабатываем крайний случай, если пользователь сделал изменения, они не успели синхронизироваться
         //     и пропал интернет, таким образом они не смогут быть извлечены из БД, но могут из списка текущих правок
         //
         for (const QString& uuid : StorageFacade::scenarioChangeStorage()->newUuids(QString())) {
-            if (!localChanges.contains(uuid)) {
-                localChanges.append(uuid);
+            if (!localChangesUuids.contains(uuid)) {
+                localChangesUuids.append(uuid);
             }
         }
-
-
         //
-        // Отправить на сайт все изменения, которых там нет
+        // ... отфильтруем изменения, которых в облаке ещё нет
         //
-        {
-            QList<QString> changesForUpload;
-            foreach (const QString& changeUuid, localChanges) {
-                //
-                // ... отправлять нужно, если такого изменения нет на сайте
-                //
-                const bool needUpload = !remoteChanges.contains(changeUuid);
+        QList<QString> changesForUploadUuids;
+        foreach (const QString& changeUuid, localChangesUuids) {
+            //
+            // ... отправлять нужно, если такого изменения нет на сайте
+            //
+            const bool needUpload = !remoteChangesUuids.contains(changeUuid);
 
-                if (needUpload) {
-                    changesForUpload.append(changeUuid);
-                }
+            if (needUpload) {
+                changesForUploadUuids.append(changeUuid);
             }
-            //
-            // ... отправляем
-            //
-            uploadScenarioChanges(changesForUpload);
         }
 
         //
@@ -1028,11 +1020,11 @@ void SynchronizationManager::aboutFullSyncScenario()
         //
         {
             QStringList changesForDownload;
-            foreach (const QString& changeUuid, remoteChanges) {
+            foreach (const QString& changeUuid, remoteChangesUuids) {
                 //
                 // ... сохранять нужно, если такого изменения нет в локальной БД
                 //
-                const bool needDownload = !localChanges.contains(changeUuid);
+                const bool needDownload = !localChangesUuids.contains(changeUuid);
 
                 if (needDownload) {
                     changesForDownload.append(changeUuid);
@@ -1050,32 +1042,40 @@ void SynchronizationManager::aboutFullSyncScenario()
             QList<QString> draftPatches;
             QHash<QString, QString> change;
             foreach (change, changes) {
-                if (!change.isEmpty()) {
-                    //
-                    // ... добавляем
-                    //
-                    auto* addedChange =
-                            DataStorageLayer::StorageFacade::scenarioChangeStorage()->append(
-                                change.value(SCENARIO_CHANGE_UUID), change.value(SCENARIO_CHANGE_DATETIME),
-                                change.value(SCENARIO_CHANGE_USERNAME), change.value(SCENARIO_CHANGE_UNDO_PATCH),
-                                change.value(SCENARIO_CHANGE_REDO_PATCH), change.value(SCENARIO_CHANGE_IS_DRAFT).toInt());
-                    if (addedChange != nullptr) {
-                        if (change.value(SCENARIO_CHANGE_IS_DRAFT).toInt()) {
-                            draftPatches.append(change.value(SCENARIO_CHANGE_REDO_PATCH));
-                        } else {
-                            cleanPatches.append(change.value(SCENARIO_CHANGE_REDO_PATCH));
-                        }
-                    }
+                if (change.isEmpty()) {
+                    continue;
+                }
+
+                if (change.value(SCENARIO_CHANGE_IS_DRAFT).toInt()) {
+                    draftPatches.append(change.value(SCENARIO_CHANGE_REDO_PATCH));
+                } else {
+                    cleanPatches.append(change.value(SCENARIO_CHANGE_REDO_PATCH));
                 }
             }
             //
             // ... применяем
+            //     в этот момент, список идентификаторов для отправки может быть изменён. Это будет
+            //     зависеть от того, удастся ли их слить с версией, находящейся на сервере или нет
             //
             if (!cleanPatches.isEmpty()) {
-                emit applyPatchesRequested(cleanPatches, IS_CLEAN);
+                emit applyPatchesRequested(cleanPatches, IS_CLEAN, changesForUploadUuids);
             }
             if (!draftPatches.isEmpty()) {
-                emit applyPatchesRequested(draftPatches, IS_DRAFT);
+                emit applyPatchesRequested(draftPatches, IS_DRAFT, changesForUploadUuids);
+            }
+
+            //
+            // ... добавляем
+            //
+            foreach (change, changes) {
+                if (change.isEmpty()) {
+                    continue;
+                }
+
+                DataStorageLayer::StorageFacade::scenarioChangeStorage()->append(
+                    change.value(SCENARIO_CHANGE_UUID), change.value(SCENARIO_CHANGE_DATETIME),
+                    change.value(SCENARIO_CHANGE_USERNAME), change.value(SCENARIO_CHANGE_UNDO_PATCH),
+                    change.value(SCENARIO_CHANGE_REDO_PATCH), change.value(SCENARIO_CHANGE_IS_DRAFT).toInt());
             }
 
             //
@@ -1083,6 +1083,12 @@ void SynchronizationManager::aboutFullSyncScenario()
             //
             DataStorageLayer::StorageFacade::scenarioChangeStorage()->store();
         }
+
+
+        //
+        // Отправить на сайт все изменения, которых там нет
+        //
+        uploadScenarioChanges(changesForUploadUuids);
 
         //
         // Синхронизация удалась, запомним её время

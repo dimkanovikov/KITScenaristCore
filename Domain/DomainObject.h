@@ -106,7 +106,8 @@ namespace Domain
         void clear(bool _removeItems = true);
 
     public:
-        virtual void append(DomainObject*);
+        void append(DomainObject*);
+        void prepend(DomainObject*);
         void remove(DomainObject*);
 
         /**

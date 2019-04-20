@@ -20,9 +20,9 @@ ScenarioChange* ScenarioChangeMapper::find(const Identifier& _id)
     return dynamic_cast<ScenarioChange*>(abstractFind(_id));
 }
 
-ScenarioChangesTable* ScenarioChangeMapper::findLastOne()
+ScenarioChangesTable* ScenarioChangeMapper::findLast(int _count)
 {
-    QString queryFilter = "WHERE id IN (SELECT MAX(id) FROM " + kTableName + ")";
+    QString queryFilter = QString("WHERE id IN (SELECT id FROM %1 ORDER BY datetime DESC LIMIT %2)").arg(kTableName).arg(_count);
     return findAll(queryFilter);
 }
 

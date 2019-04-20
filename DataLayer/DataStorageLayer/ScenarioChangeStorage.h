@@ -24,6 +24,11 @@ namespace DataStorageLayer
         ScenarioChangesTable* all();
 
         /**
+         * @brief Загрузить заданное количество последних изменений
+         */
+        void loadLast(int _size);
+
+        /**
          * @brief Последнее изменение сценария
          */
         ScenarioChange* last();

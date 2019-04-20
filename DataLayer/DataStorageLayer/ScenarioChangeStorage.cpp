@@ -21,10 +21,28 @@ ScenarioChangesTable* ScenarioChangeStorage::all()
     // сделанными с момента открытия проекта
     //
     if (m_all == 0) {
-        m_all = MapperFacade::scenarioChangeMapper()->findLastOne();
+        m_all = MapperFacade::scenarioChangeMapper()->findLast(1);
 //        m_all = MapperFacade::scenarioChangeMapper()->findAll();
     }
     return m_all;
+}
+
+void ScenarioChangeStorage::loadLast(int _size)
+{
+    if (m_all->size() >= _size) {
+        return;
+    }
+
+    QScopedPointer<ScenarioChangesTable> lastModel(
+            MapperFacade::scenarioChangeMapper()->findLast(_size));
+    if (lastModel->size() == 0) {
+        return;
+    }
+
+    for (int changeIndex = _size - m_all->size() - 1; changeIndex >= 0; --changeIndex) {
+        DomainObject* change = lastModel->toList()[changeIndex];
+        m_all->prepend(change);
+    }
 }
 
 ScenarioChange* ScenarioChangeStorage::last()
@@ -104,7 +122,6 @@ void ScenarioChangeStorage::removeLast()
         MapperFacade::scenarioChangeMapper()->remove(lastChange);
         all()->remove(lastChange);
     }
-
 }
 
 void ScenarioChangeStorage::store()

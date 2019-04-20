@@ -18,7 +18,7 @@ namespace DataMappingLayer
     {
     public:
         ScenarioChange* find(const Identifier& _id);
-        ScenarioChangesTable* findLastOne();
+        ScenarioChangesTable* findLast(int count);
         ScenarioChangesTable* findAll(const QString& _queryFilter = QString());
         void insert(ScenarioChange* _change);
         void update(ScenarioChange* _change);

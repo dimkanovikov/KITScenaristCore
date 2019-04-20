@@ -488,6 +488,18 @@ void ScenarioTextDocument::addUndoChange(ScenarioChange* change)
     m_undoStack.append(change);
 }
 
+void ScenarioTextDocument::updateUndoStack()
+{
+    m_undoStack.clear();
+    m_redoStack.clear();
+    foreach (DomainObject* obj, DataStorageLayer::StorageFacade::scenarioChangeStorage()->all()->toList()) {
+        ScenarioChange* ch = dynamic_cast<ScenarioChange*>(obj);
+        if (!ch->isDraft()) {
+            m_undoStack.append(ch);
+        }
+    }
+}
+
 int ScenarioTextDocument::redoReimpl()
 {
 #ifdef MOBILE_OS
