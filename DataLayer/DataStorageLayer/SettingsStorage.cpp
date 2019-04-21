@@ -576,6 +576,13 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("application/language", "-1");
     m_defaultValues.insert("application/username", ::systemUserName());
     m_defaultValues.insert("application/use-dark-theme", "1");
+    m_defaultValues.insert("application/use-preedit",
+#ifdef Q_OS_ANDROID
+                           "0"
+#else
+                           "1"
+#endif
+                           );
     m_defaultValues.insert("application/autosave", "1");
     m_defaultValues.insert("application/autosave-interval", "5");
     m_defaultValues.insert("application/save-backups", "1");

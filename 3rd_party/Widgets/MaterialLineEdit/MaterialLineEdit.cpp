@@ -161,6 +161,15 @@ void MaterialLineEdit::setValidator(const QValidator* _validator)
     m_lineEdit->setValidator(_validator);
 }
 
+void MaterialLineEdit::setUsePreedit(bool _use)
+{
+    if (_use) {
+        m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints() ^ Qt::ImhNoPredictiveText);
+    } else {
+        m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints() | Qt::ImhNoPredictiveText);
+    }
+}
+
 void MaterialLineEdit::setReadOnly(bool _readOnly)
 {
     m_lineEdit->setReadOnly(_readOnly);
