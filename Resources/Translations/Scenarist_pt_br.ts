@@ -202,7 +202,7 @@ Français: Felipe Vece, Antonio, Armand Robin
 Italiano: Luca Giliberto
 Қазақ: Алпамыс Баткалов
 Magyar: Gabor
-Polski: Rafał Puka
+Polski: Rafał Puka, Bartłomiej Jaskulski
 Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
 Русский: Димка Новиков
 Türkçe: Recep Burak Yak
@@ -2265,6 +2265,18 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Lock</source>
         <translation>Bloquear</translation>
+    </message>
+    <message>
+        <source>Conflicted version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script changes conflict detected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

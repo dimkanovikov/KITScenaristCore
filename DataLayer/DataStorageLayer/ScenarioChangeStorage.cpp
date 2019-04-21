@@ -67,7 +67,12 @@ ScenarioChange* ScenarioChangeStorage::append(const QString& _id, const QString&
     if (!changeDatetime.isValid()) {
         changeDatetime = QDateTime::fromString(_datetime, "yyyy-MM-dd hh:mm:ss");
     }
-
+    //
+    // ... если даже это не помогло, то устанавливаем текущую
+    //
+    if (!changeDatetime.isValid()) {
+        changeDatetime = QDateTime::currentDateTimeUtc();
+    }
 
     //
     // Формируем изменение

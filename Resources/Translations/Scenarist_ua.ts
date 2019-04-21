@@ -189,6 +189,46 @@ Türkçe: Recep Burak Yak
 עִבְרִית: Maxim Ronkin
 తెలుగు: Eshwar Mittapalli
 </source>
+        <translation type="vanished">Наші герої, які допомагають нам створювати міжнародні версії:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka, Bartłomiej Jaskulski
+Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1532,7 +1572,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Português brasileiro</source>
-        <translation type="unfinished"></translation>
+        <translation>Português brasileiro</translation>
     </message>
 </context>
 <context>
@@ -2008,11 +2048,11 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>A file will be opened in read-only mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл буде відкрито в режимі читання</translation>
     </message>
     <message>
         <source>If you want to edit a file, please check it&apos;s permissions for your account.</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо ви хочете редагувати файл, будь ласка, перевірте, чи ваш акаунт має дозвіл.</translation>
     </message>
 </context>
 <context>
@@ -2226,6 +2266,18 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>Lock</source>
         <translation>Заблокувати</translation>
+    </message>
+    <message>
+        <source>Conflicted version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script changes conflict detected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2775,7 +2827,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>Português brasileiro</source>
-        <translation type="unfinished"></translation>
+        <translation>Português brasileiro</translation>
     </message>
 </context>
 <context>
@@ -3333,19 +3385,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Footer:</source>
-        <translation type="unfinished"></translation>
+        <translation>Колонтитул:</translation>
     </message>
     <message>
         <source>Header:</source>
-        <translation type="unfinished">Заголовок:</translation>
+        <translation>Заголовок:</translation>
     </message>
     <message>
         <source>Undo last action</source>
-        <translation type="unfinished">Відмінити останню дію</translation>
+        <translation>Відмінити останню дію</translation>
     </message>
     <message>
         <source>Redo previously undone action</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторити попередньо скасовану дію</translation>
     </message>
 </context>
 <context>
@@ -3936,11 +3988,11 @@ Paragraph</source>
     </message>
     <message>
         <source>Undo last action</source>
-        <translation type="unfinished">Відмінити останню дію</translation>
+        <translation>Відмінити останню дію</translation>
     </message>
     <message>
         <source>Redo previously undone action</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторити попередньо скасовану дію</translation>
     </message>
 </context>
 <context>
@@ -4062,20 +4114,23 @@ our help articles and tutorials.
         <source>
 
 We launch crowdfunding</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Ми запускаємо краудфандінг</translation>
     </message>
     <message>
         <source>We have already collected %1K rubles of 1M aim! Join us and then you can use all power of the new version!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ми вже зібрали %1К рублів з 1М мети! Приєднуйтесь до нас, і тоді ви зможете використовувати всю силу нової версії!</translation>
     </message>
     <message>
         <source>Together we will make KIT Scenarist
 the best program for creating stories!</source>
-        <translation type="unfinished"></translation>
+        <translation>Разом ми зробимо KIT Scenarist,
+найкращою програмою для створення історій!</translation>
     </message>
     <message>
         <source>Join campaign</source>
-        <translation type="unfinished"></translation>
+        <translation>Приєднатися до кампанії</translation>
     </message>
 </context>
 <context>
@@ -5380,11 +5435,11 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Brazilian Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Brazilian Portuguese</translation>
     </message>
     <message>
         <source>Catalan</source>
-        <translation type="unfinished"></translation>
+        <translation>Catalan</translation>
     </message>
 </context>
 <context>
