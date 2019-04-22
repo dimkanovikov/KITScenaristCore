@@ -204,6 +204,11 @@ namespace ManagementLayer
         bool m_isSyncAvailable;
         int m_errorCode;
         /** @} */
+
+        /**
+         * @brief Возможна ли запись в файл
+         */
+        bool m_isWritable = true;
     };
 
     /**

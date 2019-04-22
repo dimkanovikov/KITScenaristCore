@@ -97,6 +97,11 @@ Project::Project(Type _type, const QString& _name, const QString& _path,
         //
         m_isSyncAvailable = true;
     }
+
+    //
+    // Определить возможность записи в файл
+    //
+    m_isWritable = QFileInfo(m_path).isWritable();
 }
 
 Project::Type Project::type() const
@@ -187,7 +192,7 @@ bool Project::isCommentOnly() const
 
 bool Project::isWritable() const
 {
-    return QFileInfo(path()).isWritable();
+    return m_isWritable;
 }
 
 QStringList Project::users() const
