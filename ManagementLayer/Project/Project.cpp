@@ -97,11 +97,12 @@ Project::Project(Type _type, const QString& _name, const QString& _path,
         //
         m_isSyncAvailable = true;
     }
-
     //
-    // Определить возможность записи в файл
+    // Определить возможность записи в файл для локальных проектов
     //
-    m_isWritable = QFileInfo(m_path).isWritable();
+    else {
+        m_isWritable = QFileInfo(m_path).isWritable();
+    }
 }
 
 Project::Type Project::type() const
