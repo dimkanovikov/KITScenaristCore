@@ -93,10 +93,7 @@ namespace ManagementLayer
         /**
          * @brief Путь к проекту
          */
-        /** @{ */
         QString path() const;
-        void setPath(const QString& _path);
-        /** @} */
 
         /**
          * @brief Дата и время последнего изменения проекта

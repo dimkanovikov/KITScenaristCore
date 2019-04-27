@@ -46,32 +46,34 @@ void ScenarioChangeMapper::remove(ScenarioChange* _change)
     abstractDelete(_change);
 }
 
-bool ScenarioChangeMapper::containsUuid(const QString& _uuid)
+bool ScenarioChangeMapper::contains(const QString& _uuid, const QString& _datetime)
 {
     QSqlQuery checker = DatabaseLayer::Database::query();
-    checker.prepare("SELECT COUNT(id) FROM " + kTableName + " WHERE uuid = ?");
+    checker.prepare("SELECT COUNT(id) FROM " + kTableName + " WHERE uuid = ? AND datetime = ?");
     checker.addBindValue(_uuid);
+    checker.addBindValue(_datetime);
     checker.exec();
     checker.next();
     return checker.value(0).toInt();
 }
 
-QList<QString> ScenarioChangeMapper::uuids() const
+QList<QPair<QString, QString>> ScenarioChangeMapper::uuids() const
 {
     QSqlQuery loader = DatabaseLayer::Database::query();
-    loader.exec("SELECT uuid FROM " + kTableName);
-    QList<QString> uuids;
+    loader.exec("SELECT uuid, datetime FROM " + kTableName);
+    QList<QPair<QString, QString>> uuids;
     while (loader.next()) {
-        uuids.append(loader.value(0).toString());
+        uuids.append({loader.value(0).toString(), loader.value(1).toString()});
     }
     return uuids;
 }
 
-ScenarioChange ScenarioChangeMapper::change(const QString& _uuid) const
+ScenarioChange ScenarioChangeMapper::change(const QString& _uuid, const QString& _datetime) const
 {
     QSqlQuery loader = DatabaseLayer::Database::query();
-    loader.prepare("SELECT " + kColumns + " FROM " + kTableName + " WHERE uuid = ? ");
+    loader.prepare("SELECT " + kColumns + " FROM " + kTableName + " WHERE uuid = ? AND datetime = ? ");
     loader.addBindValue(_uuid);
+    loader.addBindValue(_datetime);
     loader.exec();
     loader.next();
     return

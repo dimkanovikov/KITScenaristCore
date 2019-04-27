@@ -27,17 +27,17 @@ namespace DataMappingLayer
         /**
          * @brief Существуюет ли изменение с заданным uuid
          */
-        bool containsUuid(const QString& _uuid);
+        bool contains(const QString& _uuid, const QString& _datetime);
 
         /**
          * @brief Получить список uuid'ов всех локальных изменений
          */
-        QList<QString> uuids() const;
+        QList<QPair<QString, QString> > uuids() const;
 
         /**
          * @brief Получить изменение по uuid'у не загружая в кучу
          */
-        ScenarioChange change(const QString& _uuid) const;
+        ScenarioChange change(const QString& _uuid, const QString& _datetime) const;
 
     protected:
         QString findStatement(const Identifier& _id) const;

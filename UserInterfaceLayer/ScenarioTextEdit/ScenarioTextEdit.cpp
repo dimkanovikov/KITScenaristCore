@@ -801,9 +801,9 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
             CompletableTextEdit::keyPressEvent(_event);
         }
 
-//        updateEnteredText(_event->text());
+        updateEnteredText(_event->text());
 
-//        TextEditHelper::beautifyDocument(textCursor(), _event->text(), m_replaceThreeDots, m_smartQuotes);
+        TextEditHelper::beautifyDocument(textCursor(), _event->text(), m_replaceThreeDots, m_smartQuotes);
     }
 
     //
@@ -822,12 +822,16 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
     cursor.endEditBlock();
 
     //
-    // Сохраним изменение и затем сделаем корректировку текста, чтобы пользователь мог её отменить
+    // FIXME: пока убираем, т.к. при таком подходе сохраняется каждий введённый символ,
+    //        а нужно делать сохранение только в том случае, когда корректировка имеет место
     //
-    m_document->updateScenarioXml();
-    m_document->saveChanges();
-    updateEnteredText(_event->text());
-    TextEditHelper::beautifyDocument(textCursor(), _event->text(), m_replaceThreeDots, m_smartQuotes);
+//    //
+//    // Сохраним изменение и затем сделаем корректировку текста, чтобы пользователь мог её отменить
+//    //
+//    m_document->updateScenarioXml();
+//    m_document->saveChanges();
+//    updateEnteredText(_event->text());
+//    TextEditHelper::beautifyDocument(textCursor(), _event->text(), m_replaceThreeDots, m_smartQuotes);
 
     //
     // Убедимся, что курсор виден

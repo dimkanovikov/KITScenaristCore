@@ -254,7 +254,7 @@ namespace ManagementLayer
          */
         /** @{ */
         void applyPatchRequested(const QString& _patch, bool _isDraft, int _newChangesSize);
-        void applyPatchesRequested(const QList<QString>& _patches, bool _isDraft, QList<QString>& _newChangesUuids);
+        void applyPatchesRequested(const QList<QString>& _patches, bool _isDraft, QList<QPair<QString, QString>>& _newChangesUuids);
         /** @} */
 
         /**
@@ -294,7 +294,7 @@ namespace ManagementLayer
          * @brief Отправить изменения сценария на сервер
          * @return Удалось ли отправить данные
          */
-        bool uploadScenarioChanges(const QList<QString>& _changesUuids);
+        bool uploadScenarioChanges(const QList<QPair<QString, QString>>& _changesUuids);
 
         /**
          * @brief Скачать изменения с сервера

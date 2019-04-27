@@ -32,7 +32,6 @@ QString CompareScriptVersionsTool::compareScripts(const QString& _firstScript, c
     // ... если блок удаляется имеем его в выделении, но не имеем в добавлении
     // ... если блок вставляется имеем его в добавлении, но не имеем во вставлении
     // ... если блок изменяется имеем предыдущую версию в выделении и новую в добавлении
-
     //
     auto nodeValue = [] (const QDomNode& _node) {
         return _node.childNodes().at(0).toElement().text();

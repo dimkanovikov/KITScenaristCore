@@ -62,22 +62,22 @@ namespace DataStorageLayer
         /**
          * @brief Есть ли такое изменение
          */
-        bool contains(const QString& _uuid);
+        bool contains(const QString& _uuid, const QString& _datetime);
 
         /**
          * @brief Получить список uuid'ов всех локальных изменений
          */
-        QList<QString> uuids() const;
+        QList<QPair<QString, QString> > uuids() const;
 
         /**
          * @brief Изменения сценария с заданной даты
          */
-        QList<QString> newUuids(const QString& _fromDatetime);
+        QList<QPair<QString, QString> > newUuids(const QString& _fromDatetime);
 
         /**
          * @brief Получить изменение по uuid'у не загружая в кучу
          */
-        ScenarioChange change(const QString& _uuid);
+        ScenarioChange change(const QString& _uuid, const QString& _datetime);
 
     private:
         /**
@@ -95,7 +95,7 @@ namespace DataStorageLayer
         /**
          * @brief Список изменений не сохранённых в БД
          */
-        QSet<QString> m_uuids;
+        QSet<QPair<QString, QString>> m_uuids;
 
     private:
         ScenarioChangeStorage();

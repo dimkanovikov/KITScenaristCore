@@ -53,8 +53,8 @@ ScenarioChange* ScenarioChangeStorage::last()
 ScenarioChange* ScenarioChangeStorage::append(const QString& _id, const QString& _datetime,
     const QString& _user, const QString& _undoPatch, const QString& _redoPatch, bool _isDraft)
 {
-    if (m_uuids.contains(_id)) {
-        return nullptr;
+    if (m_uuids.contains({ _id, _datetime })) {
+        Q_ASSERT(0);
     }
 
     //
@@ -92,7 +92,7 @@ ScenarioChange* ScenarioChangeStorage::append(const QString& _id, const QString&
     //
     // Сохраняем идентификатор в списке
     //
-    m_uuids.insert(_id);
+    m_uuids.insert({ _id, _datetime });
 
     //
     // Возвращаем клиенту
@@ -111,7 +111,7 @@ ScenarioChange* ScenarioChangeStorage::append(const QString& _user, const QStrin
 void ScenarioChangeStorage::removeLast()
 {
     auto lastChange = all()->last();
-    m_uuids.remove(lastChange->uuid().toString());
+    m_uuids.remove({ lastChange->uuid().toString(), lastChange->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz") });
 
     //
     // Если изменение ещё не сохранено, то просто удаляем его из списков
@@ -158,60 +158,63 @@ void ScenarioChangeStorage::clear()
     delete m_allToSave;
     m_allToSave = 0;
 
+    m_uuids.clear();
+
     MapperFacade::scenarioChangeMapper()->clear();
 }
 
-bool ScenarioChangeStorage::contains(const QString& _uuid)
+bool ScenarioChangeStorage::contains(const QString& _uuid, const QString& _datetime)
 {
     bool contains = false;
 
     //
     // Проверяем в новых изменениях ещё не сохранённых в БД
     //
-    contains = m_uuids.contains(_uuid);
+    contains = m_uuids.contains({ _uuid, _datetime });
 
     //
     // Проверяем в БД
     //
     if (!contains) {
-        contains = MapperFacade::scenarioChangeMapper()->containsUuid(_uuid);
+        contains = MapperFacade::scenarioChangeMapper()->contains(_uuid, _datetime);
     }
 
     return contains;
 }
 
-QList<QString> ScenarioChangeStorage::uuids() const
+QList<QPair<QString, QString>> ScenarioChangeStorage::uuids() const
 {
     return MapperFacade::scenarioChangeMapper()->uuids();
 }
 
-QList<QString> ScenarioChangeStorage::newUuids(const QString& _fromDatetime)
+QList<QPair<QString, QString>> ScenarioChangeStorage::newUuids(const QString& _fromDatetime)
 {
     //
     // Отправляем изменения только от локального пользователя
     //
     const QString username = DataStorageLayer::StorageFacade::userName();
 
-    QList<QString> allNew;
+    QList<QPair<QString, QString>> allNew;
     for (DomainObject* domainObject : all()->toList()) {
         ScenarioChange* change = dynamic_cast<ScenarioChange*>(domainObject);
         if (change->user() == username
             && change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz") >= _fromDatetime) {
-            allNew.append(change->uuid().toString());
+            allNew.append({change->uuid().toString(), change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz")});
         }
     }
     return allNew;
 }
 
-ScenarioChange ScenarioChangeStorage::change(const QString& _uuid)
+ScenarioChange ScenarioChangeStorage::change(const QString& _uuid, const QString& _datetime)
 {
     //
     // Если изменение ещё не сохранено, берём его из списке несохранённых
     //
-    if (m_uuids.contains(_uuid)) {
+    if (m_uuids.contains({ _uuid, _datetime })) {
         foreach (DomainObject* domainObject, all()->toList()) {
             ScenarioChange* change = dynamic_cast<ScenarioChange*>(domainObject);
-            if (change->uuid().toString() == _uuid) {
+            if (change->uuid().toString() == _uuid
+                && change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz") == _datetime) {
                 return *change;
             }
         }
@@ -220,7 +223,7 @@ ScenarioChange ScenarioChangeStorage::change(const QString& _uuid)
     //
     // А если сохранено, то из БД
     //
-    return MapperFacade::scenarioChangeMapper()->change(_uuid);
+    return MapperFacade::scenarioChangeMapper()->change(_uuid, _datetime);
 }
 
 ScenarioChangesTable* ScenarioChangeStorage::allToSave()

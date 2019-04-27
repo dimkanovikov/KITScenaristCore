@@ -26,7 +26,7 @@
 //
 // Для отладки работы с патчами
 //
-//#define PATCH_DEBUG
+#define PATCH_DEBUG
 #ifdef PATCH_DEBUG
 #include <QDebug>
 #endif
@@ -38,7 +38,7 @@ namespace {
     /**
      * @brief Доступный размер изменений в редакторе
      */
-    const int MAX_UNDO_REDO_STACK_SIZE = 50;
+    const int MAX_UNDO_REDO_STACK_SIZE = 100;
 
     /**
      * @brief Получить хэш текста
@@ -319,6 +319,7 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
 
 #ifdef PATCH_DEBUG
     QString lastXml;
+    bool needPrintXml = true;
 #endif
 
     for (const QString& patch : _patches) {
@@ -333,17 +334,25 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
 #ifdef PATCH_DEBUG
         QDomDocument doc;
         QString error;
-        int line =0, column = 0;
+        int line = 0, column = 0;
         bool ok = doc.setContent(ScenarioXml::makeMimeFromXml(newXml), &error, &line, &column);
-        if (!ok) {
+        if (!ok
+            || lastXml == newXml) {
             qDebug() << "===================================================================";
+            qDebug() << "***************" << currentIndex << "*****************";
             qDebug() << error << line << column;
-            qDebug() << "********************************";
-            qDebug() << qUtf8Printable(lastXml);
+            if (needPrintXml) {
+                qDebug() << "********************************";
+                qDebug() << qUtf8Printable(lastXml);
+            }
             qDebug() << "********************************";
             qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
-            qDebug() << "********************************";
-            qDebug() << qUtf8Printable(newXml);
+            if (needPrintXml) {
+                qDebug() << "********************************";
+                qDebug() << qUtf8Printable(newXml);
+            }
+
+            needPrintXml = false;
         } else {
             qDebug() << "===================================================================";
             qDebug() << "***************" << currentIndex << "*****************";
