@@ -342,6 +342,7 @@ void CardsScene::insertCard(const QString& _uuid, bool _isFolder, const QString&
 
     if (m_itemsMap.contains(_uuid)) {
         Q_ASSERT_X(false, Q_FUNC_INFO, "Try to add contained item to scene");
+        return;
     }
 
     CardItem* card = nullptr;
