@@ -946,6 +946,11 @@ void SynchronizationManager::prepareToFullSynchronization()
 
 void SynchronizationManager::aboutFullSyncScenario()
 {
+    const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
+    if (!canRun) {
+        return;
+    }
+
     if (isCanSync()) {
         //
         // Запоминаем время синхронизации изменений сценария
@@ -1264,6 +1269,11 @@ void SynchronizationManager::aboutWorkSyncScenario()
 
 void SynchronizationManager::aboutFullSyncData()
 {
+    const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
+    if (!canRun) {
+        return;
+    }
+
     if (isCanSync()) {
         //
         // Запоминаем время синхронизации изменений сценария
