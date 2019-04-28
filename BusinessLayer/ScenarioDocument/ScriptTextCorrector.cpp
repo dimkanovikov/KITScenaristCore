@@ -300,7 +300,10 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
     // При необходимости скорректируем размер модели параметров блоков для дальнейшего использования
     //
     {
-        const int blocksCount = m_document->blockCount();
+        //
+        // ... для сравнения, используем минимальный запас в 10 процентов
+        //
+        const int blocksCount = m_document->blockCount() * 1.1;
         if (m_blockItems.size() < blocksCount) {
             m_blockItems.resize(blocksCount * 2);
         }
