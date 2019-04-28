@@ -232,6 +232,12 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     qDebug() << "###################################################################";
     qDebug() << qUtf8Printable(xmlsForUpdate.second.xml);
 #endif
+
+        //
+        // Патч не был применён
+        //
+        m_isPatchApplyProcessed = false;
+
         return -1;
     }
 
