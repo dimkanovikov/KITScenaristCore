@@ -22,7 +22,7 @@ ScenarioChange* ScenarioChangeMapper::find(const Identifier& _id)
 
 ScenarioChangesTable* ScenarioChangeMapper::findLast(int _count)
 {
-    QString queryFilter = QString("WHERE id IN (SELECT id FROM %1 ORDER BY datetime DESC LIMIT %2)").arg(kTableName).arg(_count);
+    QString queryFilter = QString("WHERE id IN (SELECT id FROM %1 ORDER BY id DESC LIMIT %2)").arg(kTableName).arg(_count);
     return findAll(queryFilter);
 }
 
