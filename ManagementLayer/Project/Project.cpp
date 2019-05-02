@@ -157,6 +157,14 @@ QString Project::path() const
     return m_path;
 }
 
+void Project::setPath(const QString& _path)
+{
+    if (m_path != _path) {
+        m_path = _path;
+        m_isWritable = QFileInfo(m_path).isWritable();
+    }
+}
+
 QDateTime Project::lastEditDatetime() const
 {
     return m_lastEditDatetime;
