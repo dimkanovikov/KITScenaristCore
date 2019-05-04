@@ -164,6 +164,29 @@ void PageTextEditPrivate::init(const QString &html)
 
     QObject::connect(control, SIGNAL(textChanged()), q, SLOT(updateMicroFocus()));
 
+#ifdef Q_OS_ANDROID
+    //
+    // В андройде имеем занятную багу с перекликиванием во время прокрутки, поэтому когда курсор
+    // уходит с экрана, сбрасываем состояние клавиатуры, чтобы его избежать©≠
+    //
+    QObject::connect(vbar, &QScrollBar::valueChanged, q, [this, q] {
+        if (q->document()->docHandle()->isInEditBlock()) {
+            return;
+        }
+
+        if (!control->isPreediting()) {
+            return;
+        }
+
+        const QRect cursorR = q->cursorRect();
+        const int viewportBottom = q->viewport()->geometry().bottom();
+        if (cursorR.top() < 0
+            || cursorR.bottom() > viewportBottom) {
+            QApplication::inputMethod()->reset();
+        }
+    });
+#endif
+
     QTextDocument *doc = control->document();
     // set a null page size initially to avoid any relayouting until the textedit
     // is shown. relayoutDocument() will take care of setting the page size to the
@@ -1428,12 +1451,6 @@ void PageTextEdit::keyReleaseEvent(QKeyEvent *e)
     }
 #endif
     e->ignore();
-
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
-#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
-                                           | Qt::ImAnchorRectangle
-#endif
-                                           );
 }
 
 /*!
@@ -2370,12 +2387,6 @@ void PageTextEdit::mouseReleaseEvent(QMouseEvent *e)
     if (!isReadOnly() && rect().contains(e->pos()))
         d->handleSoftwareInputPanel(e->button(), d->clickCausedFocus);
     d->clickCausedFocus = 0;
-
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
-#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
-                                           | Qt::ImAnchorRectangle
-#endif
-                                           );
 }
 
 /*! \reimp
@@ -2384,12 +2395,6 @@ void PageTextEdit::mouseDoubleClickEvent(QMouseEvent *e)
 {
     Q_D(PageTextEdit);
     d->sendControlMouseEvent(e);
-
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
-#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
-                                           | Qt::ImAnchorRectangle
-#endif
-                                           );
 }
 
 /*! \reimp
@@ -2481,12 +2486,6 @@ void PageTextEdit::inputMethodEvent(QInputMethodEvent *e)
 #endif
     d->sendControlEvent(e);
     ensureCursorVisible();
-
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
-#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
-                                           | Qt::ImAnchorRectangle
-#endif
-                                           );
 }
 
 /*!\reimp

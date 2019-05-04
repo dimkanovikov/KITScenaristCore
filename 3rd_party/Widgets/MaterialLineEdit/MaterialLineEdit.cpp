@@ -71,11 +71,6 @@ MaterialLineEdit::MaterialLineEdit(QWidget* _parent) :
     m_helper->setWordWrap(true);
 
     m_lineEdit->installEventFilter(this);
-    m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints()
-#ifdef Q_OS_ANDROID
-                                    | Qt::ImhNoPredictiveText
-#endif
-                                    );
 
     QVBoxLayout* layout = new QVBoxLayout;
     layout->setContentsMargins(QMargins());
@@ -159,15 +154,6 @@ void MaterialLineEdit::setNeedCorrectScreenPosition(bool _needCorrect)
 void MaterialLineEdit::setValidator(const QValidator* _validator)
 {
     m_lineEdit->setValidator(_validator);
-}
-
-void MaterialLineEdit::setUsePreedit(bool _use)
-{
-    if (_use) {
-        m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints() ^ Qt::ImhNoPredictiveText);
-    } else {
-        m_lineEdit->setInputMethodHints(m_lineEdit->inputMethodHints() | Qt::ImhNoPredictiveText);
-    }
 }
 
 void MaterialLineEdit::setReadOnly(bool _readOnly)

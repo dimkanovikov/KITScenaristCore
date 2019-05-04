@@ -73,11 +73,6 @@ public:
     void setValidator(const QValidator* _validator);
 
     /**
-     * @brief Установить необходимость использования интеллектуального ввода
-     */
-    void setUsePreedit(bool _use);
-
-    /**
      * @brief Запретить/разрешить измнение содержимого
      */
     void setReadOnly(bool _readOnly);
