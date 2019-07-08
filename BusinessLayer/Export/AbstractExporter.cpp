@@ -551,6 +551,18 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
         centerFormat.setLineHeight(
                     TextEditHelper::fontLineHeight(titleFormat.font()),
                     QTextBlockFormat::FixedHeight);
+        //
+        // ... выравниваем центрирование, чтобы было симметрично относительно боков
+        //
+        if (exportStyle.pageMargins().left() > exportStyle.pageMargins().right()) {
+            centerFormat.setRightMargin(
+                PageMetrics::mmToPx(exportStyle.pageMargins().left()
+                                    - exportStyle.pageMargins().right()));
+        } else if (exportStyle.pageMargins().left() < exportStyle.pageMargins().right()) {
+            centerFormat.setLeftMargin(
+                PageMetrics::mmToPx(exportStyle.pageMargins().right()
+                                    - exportStyle.pageMargins().left()));
+        }
         QTextBlockFormat rightFormat;
         rightFormat.setAlignment(Qt::AlignRight);
         rightFormat.setLineHeight(
@@ -604,13 +616,13 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
             currentLineNumber += 2;
         }
         //
-        // необходимое количество пустых строк до 30ой
+        // необходимое количество пустых строк до 37ой
         //
-        while ((currentLineNumber++) < 44) {
+        while ((currentLineNumber++) < 37) {
             insertLine(destDocumentCursor, centerFormat, titleFormat);
         }
         //
-        // Контакты [45 строка]
+        // Контакты [38 строка]
         //
         insertLine(destDocumentCursor, leftFormat, titleFormat);
         destDocumentCursor.insertText(_exportParameters.scriptContacts);

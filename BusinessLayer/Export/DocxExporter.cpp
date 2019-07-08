@@ -528,6 +528,14 @@ namespace {
                     break;
                 }
             }
+            if (_cursor.blockFormat().rightMargin() > 0
+                || _cursor.blockFormat().leftMargin() > 0) {
+                documentXml.append(
+                            QString("<w:ind w:left=\"%1\" w:right=\"%2\" w:hanging=\"0\" />")
+                            .arg(mmToTwips(PageMetrics::pxToMm(_cursor.blockFormat().leftMargin())))
+                            .arg(mmToTwips(PageMetrics::pxToMm(_cursor.blockFormat().rightMargin())))
+                            );
+            }
             documentXml.append(
                 QString("<w:rPr/></w:pPr><w:r><w:rPr/><w:t>%1</w:t></w:r></w:p>")
                 .arg(TextEditHelper::toHtmlEscaped(_cursor.block().text()))
