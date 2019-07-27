@@ -19,6 +19,16 @@ ShortcutsManager::ShortcutsManager(UserInterface::ScenarioTextEdit* _editor) :
     m_editor(_editor)
 {
     Q_ASSERT(_editor);
+}
+
+void ShortcutsManager::setContextWidget(QWidget* _context)
+{
+    if (m_context == _context) {
+        return;
+    }
+
+    m_context = _context;
+    qDeleteAll(m_shortcuts);
 
     //
     // Создаём шорткаты
@@ -77,6 +87,10 @@ void ShortcutsManager::changeTextBlock(int _blockType) const
 
 void ShortcutsManager::createOrUpdateShortcut(int _forBlockType)
 {
+    if (m_context == nullptr) {
+        return;
+    }
+
     ScenarioBlockStyle::Type blockType = (ScenarioBlockStyle::Type)_forBlockType;
     const QString typeShortName = ScenarioBlockStyle::typeName(blockType);
     const QString keySequenceText =
@@ -91,7 +105,7 @@ void ShortcutsManager::createOrUpdateShortcut(int _forBlockType)
         shortcut = m_shortcuts.value(_forBlockType);
         shortcut->setKey(keySequence);
     } else {
-        shortcut = new QShortcut(keySequence, m_editor->parentWidget(), 0, 0, Qt::WidgetWithChildrenShortcut);
+        shortcut = new QShortcut(keySequence, m_context, 0, 0, Qt::WidgetWithChildrenShortcut);
     }
 
     m_shortcuts[_forBlockType] = shortcut;

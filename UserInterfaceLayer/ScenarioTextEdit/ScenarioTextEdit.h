@@ -189,6 +189,11 @@ namespace UserInterface
         void setTextUnderline(bool _underline);
         /** @} */
 
+        /**
+         * @brief Задать контекст для менеджера горячих клавиш
+         */
+        void setShortcutsContextWidget(QWidget* _context);
+
     signals:
         /**
          * @brief Запрос на отмену последнего действия

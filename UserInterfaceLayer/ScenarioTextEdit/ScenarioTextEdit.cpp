@@ -725,6 +725,11 @@ void ScenarioTextEdit::setTextUnderline(bool _underline)
     }
 }
 
+void ScenarioTextEdit::setShortcutsContextWidget(QWidget* _context)
+{
+    m_shortcutsManager->setContextWidget(_context);
+}
+
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 {
 #ifndef MOBILE_OS
