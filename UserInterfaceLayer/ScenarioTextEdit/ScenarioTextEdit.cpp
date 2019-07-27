@@ -651,10 +651,24 @@ void ScenarioTextEdit::setTextBold(bool _bold)
         return;
     }
 
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontWeight(_bold ? QFont::Bold : QFont::Normal);
-    cursor.mergeCharFormat(format);
+    int position = qMin(cursor.selectionStart(), cursor.selectionEnd());
+    const int lastPosition = qMax(cursor.selectionStart(), cursor.selectionEnd());
+    while (position < lastPosition) {
+        cursor.setPosition(position);
+        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        if (cursor.position() < lastPosition) {
+            cursor.setPosition(lastPosition, QTextCursor::KeepAnchor);
+        }
+
+        QTextCharFormat format = cursor.charFormat();
+        format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+        format.setFontWeight(_bold ? QFont::Bold : QFont::Normal);
+        cursor.mergeCharFormat(format);
+
+        cursor.movePosition(QTextCursor::NextCharacter);
+
+        position = cursor.position();
+    }
 }
 
 void ScenarioTextEdit::setTextItalic(bool _italic)
@@ -664,10 +678,24 @@ void ScenarioTextEdit::setTextItalic(bool _italic)
         return;
     }
 
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontItalic(_italic);
-    cursor.mergeCharFormat(format);
+    int position = qMin(cursor.selectionStart(), cursor.selectionEnd());
+    const int lastPosition = qMax(cursor.selectionStart(), cursor.selectionEnd());
+    while (position < lastPosition) {
+        cursor.setPosition(position);
+        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        if (cursor.position() < lastPosition) {
+            cursor.setPosition(lastPosition, QTextCursor::KeepAnchor);
+        }
+
+        QTextCharFormat format = cursor.charFormat();
+        format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+        format.setFontItalic(_italic);
+        cursor.mergeCharFormat(format);
+
+        cursor.movePosition(QTextCursor::NextCharacter);
+
+        position = cursor.position();
+    }
 }
 
 void ScenarioTextEdit::setTextUnderline(bool _underline)
@@ -677,10 +705,24 @@ void ScenarioTextEdit::setTextUnderline(bool _underline)
         return;
     }
 
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontUnderline(_underline);
-    cursor.mergeCharFormat(format);
+    int position = qMin(cursor.selectionStart(), cursor.selectionEnd());
+    const int lastPosition = qMax(cursor.selectionStart(), cursor.selectionEnd());
+    while (position < lastPosition) {
+        cursor.setPosition(position);
+        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        if (cursor.position() < lastPosition) {
+            cursor.setPosition(lastPosition, QTextCursor::KeepAnchor);
+        }
+
+        QTextCharFormat format = cursor.charFormat();
+        format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+        format.setFontUnderline(_underline);
+        cursor.mergeCharFormat(format);
+
+        cursor.movePosition(QTextCursor::NextCharacter);
+
+        position = cursor.position();
+    }
 }
 
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
