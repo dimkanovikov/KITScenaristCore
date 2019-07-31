@@ -12,6 +12,11 @@
         <file alias="Courier New Bold">Fonts/courb.ttf</file>
         <file alias="Courier New Bold Italic">Fonts/courbi.ttf</file>
         <file alias="Courier New Italic">Fonts/couri.ttf</file>
+        <file alias="Roboto Regular">Fonts/Roboto-Regular.ttf</file>
+        <file alias="Roboto Medium">Fonts/Roboto-Medium.ttf</file>
+        <file alias="Roboto Black">Fonts/Roboto-Black.ttf</file>
+        <file alias="Roboto Bold">Fonts/Roboto-Bold.ttf</file>
+        <file alias="Roboto Thin">Fonts/Roboto-Thin.ttf</file>
     </qresource>
     <qresource prefix="/Graphics">
         <file>Icons/help.png</file>

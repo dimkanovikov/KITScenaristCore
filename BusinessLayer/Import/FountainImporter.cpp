@@ -505,6 +505,16 @@ QVariantMap FountainImporter::importResearch(const ImportParameters &_importPara
     return result;
 }
 
+bool FountainImporter::canStartEmphasis() const {
+    return m_blockText.size() <= 1
+            || !m_blockText[m_blockText.size() - 2].isLetterOrNumber();
+}
+
+bool FountainImporter::canEndEmphasis(const QString& _paragraphText, int _pos) const {
+    return _pos >= _paragraphText.size()
+            || !_paragraphText[_pos].isLetterOrNumber();
+}
+
 void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlockStyle::Type _type,
     QXmlStreamWriter& _writer) const
 {
@@ -540,6 +550,11 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
             } else {
                 m_blockText.append(_paragraphText[i]);
             }
+            //
+            // Раз мы добавляем символ через '/',
+            // то он не должен участвовать в какой-либо обработке
+            //
+            prevSymbol = '\0';
             continue;
         }
 
@@ -547,11 +562,6 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
         switch (curSymbol) {
             case '\\':
             {
-                if (m_isNotation) {
-                    m_note.append(_paragraphText[i]);
-                } else {
-                    m_blockText.append(_paragraphText[i]);
-                }
                 break;
             }
 
@@ -682,21 +692,26 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
             }
         }
 
+        const bool isCanStartEmphasis = canStartEmphasis();
+        const bool isCanEndEmphasis = canEndEmphasis(_paragraphText, i);
         //
         // Underline
         //
         if (prevSymbol == '_') {
-            processFormat(false, false, true, curSymbol == '*');
+            if (!processFormat(false, false, true, curSymbol == '*', isCanStartEmphasis, isCanEndEmphasis)) {
+                m_blockText.insert(std::max(0, m_blockText.size() - 1), prevSymbol);
+            }
         }
 
         if (curSymbol != '*') {
+            bool success = false;
             switch (asteriskLen) {
                 //
                 // Italics
                 //
                 case 1:
                 {
-                    processFormat(true, false, false, curSymbol == '_');
+                    success = processFormat(true, false, false, curSymbol == '_', isCanStartEmphasis, isCanEndEmphasis);
                     break;
                 }
 
@@ -705,7 +720,7 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
                 //
                 case 2:
                 {
-                    processFormat(false, true, false, curSymbol == '_');
+                    success = processFormat(false, true, false, curSymbol == '_', isCanStartEmphasis, isCanEndEmphasis);
                     break;
                 }
 
@@ -714,11 +729,16 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
                 //
                 case 3:
                 {
-                    processFormat(true, true, false, curSymbol == '_');
+                    success = processFormat(true, true, false, curSymbol == '_', isCanStartEmphasis, isCanEndEmphasis);
                     break;
                 }
 
                 default: break;
+            }
+            if (!success) {
+                for (int i = 0; i != asteriskLen; ++i) {
+                    m_blockText.insert(std::max(0, m_blockText.size() - 1), '*');
+                }
             }
             asteriskLen = 0;
         }
@@ -730,16 +750,19 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
     // Underline
     //
     if (prevSymbol == '_') {
-        processFormat(false, false, true, true);
+        if (!processFormat(false, false, true, true, false, true)) {
+            m_blockText.append(prevSymbol);
+        }
     }
 
+    bool success = false;
     switch(asteriskLen) {
         //
         // Italics
         //
         case 1:
         {
-            processFormat(true, false, false, true);
+            success = processFormat(true, false, false, true, false, true);
             break;
         }
 
@@ -748,7 +771,7 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
         //
         case 2:
         {
-            processFormat(false, true, false, true);
+            success = processFormat(false, true, false, true, false, true);
             break;
         }
 
@@ -757,11 +780,17 @@ void FountainImporter::processBlock(const QString& _paragraphText, ScenarioBlock
         //
         case 3:
         {
-            processFormat(true, true, false, true);
+            success = processFormat(true, true, false, true, false, true);
             break;
         }
 
         default: break;
+    }
+
+    if (!success) {
+        for (int i = 0; i != asteriskLen; ++i) {
+            m_blockText.append('*');
+        }
     }
     asteriskLen = 0;
 
@@ -808,26 +837,126 @@ void FountainImporter::appendBlock(const QString& _paragraphText, ScenarioBlockS
         paragraphText = paragraphText.mid(1);
     }
 
+    //
+    // У нас осталось незакрытое форматирование, а значит его нужно не закрыть, а убрать
+    //
+    if (m_lastFormat.isValid()) {
+        QVector<TextFormat> removedFormats;
+        if (!m_formats.empty()) {
+            for (int i = m_formats.size() - 1; i >= 0; --i) {
+                TextFormat& format = m_formats[i];
+                TextFormat removed;
+
+                //
+                // У нас остался незакрытый жирный формат
+                //
+                if (m_lastFormat.bold) {
+                    if (!format.bold) {
+                        //
+                        // Формат, начиная отсюда не является жирным. Значит, предыдущий был открывающим
+                        // Значит, на место предыдущего надо вернуть звездочки, а жирный незакрытый мы больше не ищем
+                        //
+                        m_lastFormat.bold = false;
+                        removed.bold = true;
+                    } else {
+                        //
+                        // Формат здесь все еще является жирным, значит просто перестаем его таковым считать
+                        //
+                        format.bold = false;
+                    }
+                }
+
+                //
+                // Аналогично для остальных форматов
+                //
+                if (m_lastFormat.italic) {
+                    if (!format.italic) {
+                        m_lastFormat.italic = false;
+                        removed.italic = true;
+                    }
+                    else {
+                        format.italic = false;
+                    }
+                }
+
+                if (m_lastFormat.underline) {
+                    if (!format.underline) {
+                        m_lastFormat.underline = false;
+                        removed.underline = true;
+                    } else {
+                        format.underline = false;
+                    }
+                }
+
+                //
+                // У нас есть формат, который мы удалили (нам важна его позиция, чтобы вернуть символы)
+                //
+                if (removed.isValid()) {
+                    removed.start = m_lastFormat.start;
+                    removedFormats.push_back(removed);
+                }
+                m_lastFormat.start = format.start;
+
+                //
+                // Может быть текущий формат стал бесполезным
+                //
+                if (!format.isValid()) {
+                    m_formats.removeAt(i);
+                }
+
+                //
+                // Все закрыли, мы молодцы
+                //
+                if (!m_lastFormat.isValid()) {
+                    break;
+                }
+
+            }
+        }
+
+        //
+        // Что то еще осталось (это нормально), поэтому просто тоже вернем эти символы форматировани
+        //
+        if (m_lastFormat.isValid()) {
+            removedFormats.push_back(m_lastFormat);
+            m_lastFormat.clear();
+        }
+
+        //
+        // Возвращаем символы форматирования
+        //
+        for (const auto& format : removedFormats) {
+            QString addedStr;
+            if (format.bold) {
+                addedStr += "**";
+            }
+            if (format.italic) {
+                addedStr += "*";
+            }
+            if (format.underline) {
+                addedStr += "_";
+            }
+
+            //
+            // Сдвигаем/увеличиваем форматы на длину добавленных символов
+            //
+            for (auto& innerFormat : m_formats) {
+                if (innerFormat.start < format.start
+                        && innerFormat.start + innerFormat.length >= format.start) {
+                    innerFormat.length += addedStr.size();
+                } else if (innerFormat.start >= format.start) {
+                    innerFormat.start += addedStr.size();
+                }
+            }
+            paragraphText.insert(format.start, addedStr);
+        }
+    }
+
     const QString& blockTypeName = ScenarioBlockStyle::typeName(_type);
     _writer.writeStartElement(blockTypeName);
     _writer.writeStartElement(kNodeValue);
     _writer.writeCDATA(paragraphText);
     _writer.writeEndElement();
-
-    //
-    // Если есть форматирование, которое распространяется на несколько блоков
-    //
-    if (m_lastFormat.isValid()) {
-        //
-        // Добавим его в список форматов текущего блока
-        //
-        m_lastFormat.length = _paragraphText.trimmed().length() - m_lastFormat.start;
-        m_formats.append(m_lastFormat);
-        //
-        // Для следующего блока он будет начинаться с первого символа
-        //
-        m_lastFormat.start = m_lastFormat.length = 0;
-    }
 
     //
     // Пишем форматирование, если оно есть
@@ -908,13 +1037,18 @@ QString FountainImporter::simplify(const QString& _value) const
     return res;
 }
 
-void FountainImporter::processFormat(bool _italics, bool _bold, bool _underline,
-                                     bool _forCurrentCharacter) const
+bool FountainImporter::processFormat(bool _italics, bool _bold, bool _underline,
+                                     bool _forCurrentCharacter,
+                                     bool _isCanStartEmphasis, bool _isCanEndEmphasis) const
 {
     //
     // Новый формат, который еще не начат
     //
     if (!m_lastFormat.isValid()) {
+        if (!_isCanStartEmphasis) {
+            return false;
+        }
+
         m_lastFormat.bold = _bold;
         m_lastFormat.italic = _italics;
         m_lastFormat.underline = _underline;
@@ -922,11 +1056,29 @@ void FountainImporter::processFormat(bool _italics, bool _bold, bool _underline,
         if (!_forCurrentCharacter) {
             --m_lastFormat.start;
         }
+        return true;
     }
     //
     // Формат уже начат
     //
     else {
+        if ((m_lastFormat.bold & _bold) == _bold
+                && (m_lastFormat.italic & _italics) == _italics
+                && (m_lastFormat.underline & _underline) == _underline) {
+            //
+            // Если тут появилось что то новенькое, то может ли это быть началом
+            //
+            if (!_isCanEndEmphasis) {
+                return false;
+            }
+        } else {
+            //
+            // Иначе, может ли быть концом
+            //
+            if (!_isCanStartEmphasis) {
+                return false;
+            }
+        }
         //
         // Добавим его в список форматов
         //
@@ -955,6 +1107,7 @@ void FountainImporter::processFormat(bool _italics, bool _bold, bool _underline,
         else {
             m_lastFormat.clear();
         }
+        return true;
     }
 }
 

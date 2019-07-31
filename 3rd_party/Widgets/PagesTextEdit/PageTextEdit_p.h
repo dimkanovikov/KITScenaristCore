@@ -126,6 +126,8 @@ public:
 
     QString placeholderText;
 
+    int cursorWidth = 1;
+
 #ifdef QT_KEYPAD_NAVIGATION
     QBasicTimer deleteAllTimer;
 #endif
@@ -162,9 +164,24 @@ public:
     void paintPageNumber(QPainter* _painter, const QRectF& _rect, bool _isHeader, int _number);
 
     /**
+     * @brief Нарисовать верхний колонтитул
+     */
+    void paintHeader(QPainter* _painter, const QRectF& _rect);
+
+    /**
+     * @brief Нарисовать нижний колонтитул
+     */
+    void paintFooter(QPainter* _painter, const QRectF& _rect);
+
+    /**
      * @brief Нарисовать водяной знак
      */
     void paintWatermark(QPainter* _painter);
+
+    /**
+     * @brief Нарисовать курсор
+     */
+    void paintCursor(QPainter* _painter);
 
     /**
      * @brief Установить область обрезки так, чтобы вырезалось всё, что выходит на поля страницы
@@ -209,6 +226,12 @@ public:
      */
     QString m_watermark;
     QString m_watermarkMulti;
+
+    /**
+     * @brief Колонтитулы
+     */
+    QString m_header;
+    QString m_footer;
 
     //
     // Дополнения для корректной работы с мышью при наличии невидимых текстовых блоков в документе

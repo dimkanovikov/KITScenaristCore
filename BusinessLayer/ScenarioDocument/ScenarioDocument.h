@@ -112,7 +112,7 @@ namespace BusinessLogic
         /**
          * @brief Порядковый номер сцены в своей группе фиксации
          */
-        unsigned itemSceneNumberSuffix(ScenarioModelItem* _item) const;
+        int itemSceneNumberSuffix(ScenarioModelItem* _item) const;
 
         /**
          * @brief Зафиксирована ли сцена
@@ -122,7 +122,7 @@ namespace BusinessLogic
         /**
          * @brief Группа фиксации (сколько раз сцена была зафиксирована)
          */
-        unsigned itemSceneFixNesting(ScenarioModelItem* _item) const;
+        int itemSceneFixNesting(ScenarioModelItem* _item) const;
 
         /**
          * @brief Установить цвет для сцены в указанной позиции

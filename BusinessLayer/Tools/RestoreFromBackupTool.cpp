@@ -13,7 +13,8 @@ namespace {
     /**
      * @brief Название соединения для БД с резервными копиями сценария
      */
-    const QString kBackupDbConnectionName = "restore_backup_db";
+    const QString kBackupInfoDbConnectionName = "restore_backup_info_connection";
+    const QString kBackupDbConnectionName = "restore_backup_connection";
 }
 
 
@@ -37,7 +38,7 @@ void RestoreFromBackupTool::loadBackupInfo(const QString& _backupFilePath)
     // Открыть базу данных в указанном файле
     //
     {
-        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", kBackupDbConnectionName);
+        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", kBackupInfoDbConnectionName);
         db.setDatabaseName(m_lastBackupFile);
         db.open();
         //

@@ -90,9 +90,13 @@ namespace BusinessLogic
 
         /**
          * @brief Собственные реализации отмены/повтора последнего действия
+         * @param _forced - при задании истинным, отменяемое действие не переносится в список
+         *                  действий доступных к повторению и не помещается в историю изменений
          */
         /** @{ */
-        int undoReimpl();
+        int undoReimpl(bool _forced = false);
+        void addUndoChange(Domain::ScenarioChange* change);
+        void updateUndoStack();
         int redoReimpl();
         /** @} */
 
@@ -170,6 +174,11 @@ namespace BusinessLogic
         void redoAvailableChanged(bool _isRedoAvailable);
 
     private:
+        /**
+         * @brief Обновить идентификаторы изменившихся блоков
+         */
+        void updateBlocksIds(int _position, int _charsRemoved, int _charsAdded);
+
         /**
          * @brief Процедура удаления одинаковый первых и последних частей в xml-строках у _xmls
          * _reversed = false - удаляем первые, = true - удаляем последние

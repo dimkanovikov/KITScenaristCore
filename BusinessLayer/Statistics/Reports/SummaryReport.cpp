@@ -49,7 +49,10 @@ namespace {
             case 8: color = "#88abad"; break;
         }
 
-        const float widthPercent = _count == 0 ? 0.1 : ((float)_count * 100. / (float)_max);
+        qreal widthPercent = _count == 0 ? 0.1 : (static_cast<qreal>(_count) * 100.0 / _max);
+        if (widthPercent < 0.1) {
+            widthPercent = 0.1;
+        }
         const QString percentText =
                 QString("%1%")
                 .arg(_count == 0

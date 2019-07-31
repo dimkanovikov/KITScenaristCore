@@ -110,7 +110,7 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation>Наші герої, які допомагають нам створювати міжнародні версії:
+        <translation type="vanished">Наші герої, які допомагають нам створювати міжнародні версії:
 Azərbaycan: Tarlan Rasulzadeh
 Deutsch: Michael Krämer
 English: Eric Wayne &amp; Soyung Key
@@ -128,6 +128,108 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</source>
+        <translation type="vanished">Наші герої, які допомагають нам створювати міжнародні версії:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</source>
+        <translation type="vanished">Наші герої, які допомагають нам створювати міжнародні версії:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka
+Português: Ricardo Graça, Ronaldo German 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</translation>
+    </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka, Bartłomiej Jaskulski
+Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1464,6 +1566,14 @@ Türkçe: Recep Burak Yak
         <source>Azərbaycan</source>
         <translation></translation>
     </message>
+    <message>
+        <source>తెలుగు</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Português brasileiro</source>
+        <translation>Português brasileiro</translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -1932,6 +2042,18 @@ Project didn&apos;t synchronized.</source>
         <source>Print preview script</source>
         <translation>Попередній перегляд сценарію</translation>
     </message>
+    <message>
+        <source>KIT Scenarist</source>
+        <translation>КІТ Сценарист</translation>
+    </message>
+    <message>
+        <source>A file will be opened in read-only mode</source>
+        <translation>Файл буде відкрито в режимі читання</translation>
+    </message>
+    <message>
+        <source>If you want to edit a file, please check it&apos;s permissions for your account.</source>
+        <translation>Якщо ви хочете редагувати файл, будь ласка, перевірте, чи ваш акаунт має дозвіл.</translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -2144,6 +2266,18 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>Lock</source>
         <translation>Заблокувати</translation>
+    </message>
+    <message>
+        <source>Conflicted version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script changes conflict detected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2686,6 +2820,14 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <source>Azərbaycan</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>తెలుగు</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Português brasileiro</source>
+        <translation>Português brasileiro</translation>
     </message>
 </context>
 <context>
@@ -3240,6 +3382,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Start scenes numbering from:</source>
         <translation>Почати нумерацію сцени з:</translation>
+    </message>
+    <message>
+        <source>Footer:</source>
+        <translation>Колонтитул:</translation>
+    </message>
+    <message>
+        <source>Header:</source>
+        <translation>Заголовок:</translation>
+    </message>
+    <message>
+        <source>Undo last action</source>
+        <translation>Відмінити останню дію</translation>
+    </message>
+    <message>
+        <source>Redo previously undone action</source>
+        <translation>Повторити попередньо скасовану дію</translation>
     </message>
 </context>
 <context>
@@ -3828,6 +3986,14 @@ Paragraph</source>
         <source>Clear formatting</source>
         <translation>Очистити форматування</translation>
     </message>
+    <message>
+        <source>Undo last action</source>
+        <translation>Відмінити останню дію</translation>
+    </message>
+    <message>
+        <source>Redo previously undone action</source>
+        <translation>Повторити попередньо скасовану дію</translation>
+    </message>
 </context>
 <context>
     <name>SpellCheckTextEdit</name>
@@ -3943,6 +4109,28 @@ our help articles and tutorials.
 і вивчити КІТ-сценаріст через
 наші довідкові статті та навчальні посібники.
 </translation>
+    </message>
+    <message>
+        <source>
+
+We launch crowdfunding</source>
+        <translation>
+
+Ми запускаємо краудфандінг</translation>
+    </message>
+    <message>
+        <source>We have already collected %1K rubles of 1M aim! Join us and then you can use all power of the new version!</source>
+        <translation>Ми вже зібрали %1К рублів з 1М мети! Приєднуйтесь до нас, і тоді ви зможете використовувати всю силу нової версії!</translation>
+    </message>
+    <message>
+        <source>Together we will make KIT Scenarist
+the best program for creating stories!</source>
+        <translation>Разом ми зробимо KIT Scenarist,
+найкращою програмою для створення історій!</translation>
+    </message>
+    <message>
+        <source>Join campaign</source>
+        <translation>Приєднатися до кампанії</translation>
     </message>
 </context>
 <context>
@@ -4403,7 +4591,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>I&apos;m sure want to download beta version</source>
-        <translation>Я впевнений, що хочу завантажити бета-версію</translation>
+        <translation type="vanished">Я впевнений, що хочу завантажити бета-версію</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;body&gt;&lt;p&gt;Beta version is an early version of a program or application that contains most of the major features, but is not yet complete. These versions are released to the general public, for testing and feedback.
@@ -4424,6 +4612,10 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Cancel</source>
         <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>I&apos;m sure. I want to download beta version</source>
+        <translation>Я впевнений, що хочу завантажити бета-версію</translation>
     </message>
 </context>
 <context>
@@ -4513,6 +4705,14 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>Export script</source>
         <translation>Експорт сценарію</translation>
+    </message>
+    <message>
+        <source>Rewrite</source>
+        <translation>Переписати</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Експорт</translation>
     </message>
 </context>
 <context>
@@ -5228,6 +5428,18 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <source>Azerbaijani</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>Telugu</source>
+        <translation>Телугу</translation>
+    </message>
+    <message>
+        <source>Brazilian Portuguese</source>
+        <translation>Brazilian Portuguese</translation>
+    </message>
+    <message>
+        <source>Catalan</source>
+        <translation>Catalan</translation>
     </message>
 </context>
 <context>

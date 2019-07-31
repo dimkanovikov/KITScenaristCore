@@ -530,6 +530,59 @@
     </message>
 </context>
 <context>
+    <name>CardsScene</name>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="801"/>
+        <source>Go to text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="806"/>
+        <source>Convert to scene</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="807"/>
+        <source>Convert to folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="813"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="829"/>
+        <source>Color %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="831"/>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="849"/>
+        <source>Add color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="867"/>
+        <source>Create card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="868"/>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="910"/>
+        <source>Stamp:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DataStorageLayer::ScriptVersionStorage</name>
     <message>
         <location filename="../../DataLayer/DataStorageLayer/ScriptVersionStorage.cpp" line="27"/>
@@ -540,171 +593,171 @@
 <context>
     <name>DatabaseLayer::Database</name>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="59"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="70"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
         <translation>Le projet a été modifié dans une version plus récente. Vous devez mettre à jour l&apos;application pour l&apos;ouvrir.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="419"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1525"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="430"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1536"/>
         <source>First draft</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="427"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="438"/>
         <source>INT</source>
         <translation>INT</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="431"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="442"/>
         <source>EXT</source>
         <translation>EXT</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="435"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="446"/>
         <source>INT./EXT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="443"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="454"/>
         <source>DAY</source>
         <translation>JOUR</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="447"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="458"/>
         <source>NIGHT</source>
         <translation>NUIT</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="451"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="716"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="462"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="727"/>
         <source>MORNING</source>
         <translation>MATIN</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="455"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="466"/>
         <source>AFTERNOON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="459"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="720"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="470"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="731"/>
         <source>EVENING</source>
         <translation>SOIR</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="463"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="474"/>
         <source>LATER</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="467"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="478"/>
         <source>MOMENTS LATER</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="471"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="482"/>
         <source>CONTINUOUS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="475"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="486"/>
         <source>THE NEXT DAY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="484"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="495"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
         <translation>V.O.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="489"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="500"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
         <translation>O.S.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="494"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="505"/>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="499"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="510"/>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="504"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="515"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
         <translation>Ci-dessous</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="512"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1463"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="523"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1474"/>
         <source>CUT TO:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="516"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1467"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="527"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1478"/>
         <source>FADE IN:</source>
         <translation type="unfinished">FADE IN:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="520"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1471"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="531"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1482"/>
         <source>FADE OUT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="524"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1475"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="535"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1486"/>
         <source>FADE TO:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="528"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1479"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="539"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1490"/>
         <source>DISSOLVE TO:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="532"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1483"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="543"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1494"/>
         <source>BACK TO:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="536"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1487"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="547"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1498"/>
         <source>MATCH CUT TO:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="540"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1491"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="551"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1502"/>
         <source>JUMP CUT TO:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="544"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1495"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="555"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1506"/>
         <source>FADE TO BLACK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1341"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1412"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
         <source>Photos</source>
         <translation>Photos</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1363"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1434"/>
         <source>Unnamed image</source>
         <translation>Image sans nom</translation>
     </message>
@@ -712,7 +765,7 @@
 <context>
     <name>DocxReader</name>
     <message>
-        <location filename="../../../../libs/fileformats/docx_reader.cpp" line="144"/>
+        <location filename="../../../../libs/fileformats/docx_reader.cpp" line="145"/>
         <source>Unable to open archive.</source>
         <translation>Impossible d&apos;ouvrir l&apos;archive.</translation>
     </message>
@@ -961,50 +1014,40 @@
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="156"/>
-        <source>Create a new project</source>
+        <source>Leave review</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="161"/>
-        <source>Script editing</source>
+        <source>Create a new project</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="166"/>
-        <source>Script navigation</source>
+        <source>Research</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="171"/>
-        <source>Title page</source>
+        <source>Cards</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="176"/>
-        <source>Saving the script</source>
+        <source>Script editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="181"/>
-        <source>Script import</source>
+        <source>Script navigation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="186"/>
-        <source>Script export</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="191"/>
-        <source>Secret features</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="227"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="237"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;t first glance&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After installing and running the application, you will see a screen with a list of projects. Other application pages have a similar arrangement of elements, so let&apos;s look at it in more detail.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;At the top of the page is the main toolbar. In the left part of toolbar placed a button for calling the menu. On other pages, instead of the menu button, there may be a button to return to the previous page. In the middle is the title of the current page. And one or more auxiliary buttons can be located to the right (on the page with the list of projects this is the button for creating a new project).&lt;/span&gt;&lt;/p&gt;
@@ -1012,7 +1055,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Finally, at the bottom of the screen, there may be an additional toolbar.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;1&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;M&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;enu&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;When the menu button is pressed, a panel with a list of actions available at the moment will appear on the left side of the screen.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After starting the application, the menu contains four items: authorization, projects, settings, and help.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After starting the application, the menu contains five items: authorization, projects, settings, help, and leave review.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Let&apos;s consider each of them in more detail.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;2&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;uthorization in cloud service&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;When you click on the menu item &amp;quot;Authorization&amp;quot;, the page for entering the private account of the cloud service KIT Scenarist will open.&lt;/span&gt;&lt;/p&gt;
@@ -1025,47 +1068,76 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Each of the projects in the list has an &amp;quot;Options&amp;quot; button, the click of which brings up a list of actions available for the project. Depending on the location of the project, this can be: changing the project name, deleting the project, managing the list of co-authors.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;4&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;ettings&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The menu item &amp;quot;Settings&amp;quot; leads to the same page. On it, you can configure the application in a convenient way.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Here you can choose the language of the application, set the color scheme (dark is more suitable for work in dimly lit rooms, and also in the evening or at night, and light is convenient for work with sufficient light), and also configure the script editor and navigator.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Here you can choose the language of the application, set the color scheme (dark is more suitable for work in dimly lit rooms, and also in the evening or at night, and light is convenient for work with sufficient light), and also configure the corkboard, script editor and navigator.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;5&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;H&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;elp&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;When you click the Help menu item, a list of sections with reference information leading to this document opens.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;6&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;reate a new project&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;6&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;L&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;eave review&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Clicking the &amp;quot;Leave review&amp;quot; button will redirect you to the application page in the application store of your operating system, here you can leave feedback about the application - report a problem, share your impressions of it and even suggest improvements that you think might be useful for the application.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;7&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;reate a new project&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;To create a new project, go to the projects page and click the appropriate button (it&apos;s in the upper right corner). Pressing the button will display the page for creating a new project.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;You need to set the project name different from the names of existing projects on the device. If a project with the name like you entered already exists, a warning message will be displayed on the screen.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After the project name is set, you need to click the &amp;quot;Create&amp;quot; button, and, the program will create a new project and redirect you to the script editing page. In addition, additional items related to the current project will be available on the menu:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Title page&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens the title page of the script for completion;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Script&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens a page with the text of the script;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Save&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - saves current project changes;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Import&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens the page with the import &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;instruction;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Export&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens the script export page.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After the project name is set, you need to click the &amp;quot;Create&amp;quot; button, and, the program will create a new project and redirect you to the research tree page. In addition, additional items related to the current project will be available on the menu:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Research&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens the current project research tree;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Cards&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens a page with cards of scenarios and acts;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Script&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens a page with the text of the script;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Save&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - saves current project changes;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Import&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens the page with the import instruction&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Export&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - opens the script export page;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Share&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - provides the ability to send the project entirely to any application installed on the device.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;In more detail, each of them will be considered below.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;7&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript editing&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;8&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;R&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;esearch&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The research page serves as an entry point to the list of author&apos;s notes on the project. Here are the script parameters, title page, logline, and synopsis. Also in the general research tree are the list of characters, the list of locations and the list of notes (Documents element of the tree).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;To edit an item from the research tree, simply touch it. If the selected item has data and it can be changed, the program will go to the data editor of the selected item. You can edit the following items:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Script&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - you can set the name of the script and its additional parameters;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Title page&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - you can customize the name of the author/authors, the year the script was created, etc.;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Logline&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - the text of the logline;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Synopsis&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - the text of the synopsis;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Versions&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - view a list of project versions;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Character&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - the character&apos;s name is configured in the script, also his real name and detailed description;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Location&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - the name of the location and its description;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Folder&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - the name and description of the group of documents;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Text document&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - the name and the actual text of the note.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;In the upper right corner of the element editor there is a button for navigating to the document tree. When you click this button at the moment when you returned to the document tree and the edited item is selected, the edit and delete buttons for the current item become available in the top toolbar.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;If the element cannot be edited (for example, for the upper-level elements &amp;quot;Characters&amp;quot;, &amp;quot;Locations&amp;quot;, &amp;quot;Documents&amp;quot;) or if others can be nested into the currently selected element, the add button of the nested element will appear in the top toolbar. Pressing it displays the page where you can select the type of the newly added development element, as well as set its name. Clicking the add Item button will add a new item inside the item selected in the previous step.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;9&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;ards&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The cards page provides access to the corkboard, on which acts and scenes of the script are located.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;To move the card to another place you need to use a long touch. You clamp the card, and when it is ready for dragging, it rises from the board. Now it can be transferred to the desired place and released there. Along with this action, the scene to which this card belongs will also be moved to the script.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Editing and deleting a card is based on the same principle - first you need to capture the card and after that you can edit or delete it using the special buttons in the control panel.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;10&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript editing&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The script editing page at the top has a toolbar on which there are: a menu button, a script name, and a navigator button. The main part of the window is occupied by the text area in which the script is located. And at the bottom of the window, with the active keyboard, there is an additional panel with a list of block formats and a text search bar (the top toolbar is hidden while working with the text).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The script during the text input and the transition between different blocks is immediately formatted. The script template is slightly changed for the convenience of working on mobile devices, but in general, it is close to the standard, so you will not have any problems with determining the location of blocks of text and their purpose.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The bottom formats panel contains a list of available block formats. Abbreviations mean the first letters of the names:&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;SH&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Scene heading&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Action&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Character&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;P&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Parenthetical&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;D&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Dialogue&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;SC&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Scene characters&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Shot&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Tr&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Transition&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;NT&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Note on the text&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Folder&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The bottom formats panel contains a list of available block formats. Abbreviations mean the first letters of the names:&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;SH&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Scene heading&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Action&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Character&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;P&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Parenthetical&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;D&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Dialogue&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;SC&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Scene characters&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Shot&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;Tr&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Transition&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;NT&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Note on the text&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Folder&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt; font-weight:600;&quot;&gt;L&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt; - Lyrics&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The format of the current block where the cursor is located is highlighted in the panel.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;In order to set the paragraph of the text to the desired format, you must place the cursor in this paragraph and select the desired format in blocks formats panel.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;When you click on the search icon, the format panel changes to the search bar. You will have to enter the search text and move on to the next or previous match.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;8&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript navigation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;11&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript navigation&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Pressing the navigation button (it is in the upper right corner of the script page with the hidden keyboard) will open the corresponding page in the application.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;On top of the navigation page, is a button for calling the menu, the name of the project and a button to return to the text of the script.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;In the center is the list of scenes of the current screenplay. The information for each scene consists of the scene number, the scene title (scene heading block or folder name), scene duration and scene text. In the settings, you can specify the need to display the scene numbers, as well as the number of displayed lines of the text of the scene.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Clicking on the scene will move you to the page with the text of the script and cursor will be placed at the scene start.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;At the bottom of the navigator page, is a panel with summary information of the script - the number of scenes and the overall timing.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;9&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;itle page&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The transition to the title page data is carried out using the menu item of the same name.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After filling the title page information, it will be placed in the exported scenario if you check the &amp;quot;Print title page&amp;quot; checkbox in the export settings.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;10&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;aving the script&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;12&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;aving the script&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;When you work with the project, the application automatically saves all the changes made if you have not interacted with the device for 5 seconds, or every 5 minutes, if you work without stopping.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;If the current changes have not yet been saved, the menu will contain the &amp;quot;Save&amp;quot; item. Pressing it will save all changes. And the menu item itself turns into the line &amp;quot;Changes saved&amp;quot;, notifying about the success of the operation.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;If the saving was not successful, an information message with details of the problem and a suggestion of a method for solving it will be displayed.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;11&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript import&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;13&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript import&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;The app supports import of scripts from the files docx, fdx, fountain, txt and own format kitsp.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;To import a script from a file, or from another app, you need to touch the file (in the file manager or in another application) and select the KIT Scenarist in the list of proposed programs to open it.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After that, the page with the import parameters will open in the program. After setting the necessary parameters, you should select the project in which the script will be imported by clicking the &amp;quot;Existing project&amp;quot; button or import it into the new project by clicking the &amp;quot;New project&amp;quot; button and specifying its name.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;After the import is complete, a page with the text of the script will open.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;12&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript export&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Clicking the menu item &amp;quot;Export&amp;quot; will open the page with export settings for the script.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Then you can select the format of the file to export, the script template and other parameters related to the export.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Pressing the &amp;quot;Export&amp;quot; button (at the bottom of the page) will generate a script file in accordance with all selected settings. After that, a system dialog will be opened for selecting a program to save or send an exported script file.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;13&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;ecret features&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;How to switch to the navigator in a more convenient way?&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;You need to swipe from right to left, and to move from the navigator to the text of the script, you need to swipe in the opposite direction.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;14&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;cript export&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Pressing the &amp;quot;Export&amp;quot; menu item will open a page with export options. At the top of the page is the switch of the exported sections — development and script, each of which opens additional parameters related to the export of data of the selected section.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;In the export settings of research documents, you can mark the documents required for export, and in the export settings of the script, you can select the file format to export to, the template of the script and other parameters depending on the type of the exported file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;Pressing the &amp;quot;Export&amp;quot; button (at the bottom of the page) will generate an exported file in accordance with all selected settings. After that, a system dialog will be opened for selecting a program to save or send an exported file.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;15&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;ecret features&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;How convenient to switch between pages?&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;To conveniently switch between pages, you can use the swipe gesture from right to left and in the opposite direction. Thus, you can navigate between virtually all screens of the application.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="186"/>
+        <source>Saving the script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="191"/>
+        <source>Script import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="196"/>
+        <source>Script export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="201"/>
+        <source>Secret features</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1153,39 +1225,39 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ManagementLayer::ApplicationManager</name>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="593"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="595"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
         <translation>Vous essayez de créer un projet dans un dossier n&apos;existant pas. &lt;b&gt;%1&lt;/b&gt;. S&apos;il vous plait choisissez un autre emplacement pour le nouveau projet.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="597"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="599"/>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
         <translation>Impossible d&apos;écrire le fichier. Peut être qu&apos;il s&apos;ouvre avec une autre application. S&apos;il vous plaît, fermez et ressayez.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="600"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="602"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
         <translation>Impossible d&apos;écrire le fichier. Vérifiez les autorisations pour écrire dans le dossier choisi. S&apos;il vous plaît, choisissez un autre dossier.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="602"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="604"/>
         <source>Create project error</source>
         <translation>Erreur de création de projet</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1126"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1149"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1136"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1159"/>
         <source>Saving error</source>
         <translation>Erreur de sauvegarde</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1150"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1160"/>
         <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
         <translation>Impossible d&apos;écrire vos changements dans le projet à l&apos;emplacement&lt;b&gt;%1&lt;/b&gt;  car le fichier n&apos;existe pas. S&apos;il vous plaît déplacer la sauvegarde et essayez de sauvegarder. Essayer de sauvegarder?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="635"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="806"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="637"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="816"/>
         <source>Can&apos;t open project file</source>
         <translation>Imossible d&apos;ouvrir le fichier du projet</translation>
     </message>
@@ -1204,116 +1276,116 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Ignorer et essayer d&apos;ouvrir le projet?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="896"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="985"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="906"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="995"/>
         <source>Change project name</source>
         <translation>Changer le nom du projet</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="897"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="986"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="907"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="996"/>
         <source>Enter new name for project</source>
         <translation>Entrer le nouveau nom du projet</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="931"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="941"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1025"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1035"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Ëtes-vous sur de vouloir supprimer le projet &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1042"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1052"/>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Etes vous sur de vouloir supprimer votre abonnement au projet &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1075"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1085"/>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
         <translation>Etes vous sur de vouloir supprimer l&apos;abonnement de l&apos;utilisateur &lt;b&gt;%1&lt;/b&gt; pour le projet &lt;b&gt;%2&lt;/b&gt;?</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="265"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="267"/>
         <source>Connection active</source>
         <translation>Connexion active</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="313"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="315"/>
         <source>Network error</source>
         <translation>Erreur réseau</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="331"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="333"/>
         <source>Incorrect username or password.</source>
         <translation>Identifiant ou mot de passe incorrect.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="351"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="353"/>
         <source>Subscription ended</source>
         <translation>Abonnement terminé</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="399"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="410"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="401"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="412"/>
         <source>Project not available</source>
         <translation>Projet indisponible</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1127"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1137"/>
         <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
         <translation>Impossible d&apos;écrire vos changement sur le projet. Il y a une erreur dans la base de données: %1 Veuillez vérifier que le fichier existe et que vous avez les permissions en écriture. Réessayer de sauvegarder? </translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="364"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="366"/>
         <source>Network Error</source>
         <translation>Erreur réseau</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="113"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="130"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="114"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="131"/>
         <source>Import error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="114"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="115"/>
         <source>Can&apos;t get file path to import. Try to download it and open in file browser.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="130"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="131"/>
         <source>Can&apos;t create temporatry file for import.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="271"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="273"/>
         <source>Project synchronized</source>
         <translation>Projet synchronisé</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="284"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="286"/>
         <source>Connection inactive</source>
         <translation>Connexion inactive</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="285"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="287"/>
         <source>Project didn&apos;t synchronized</source>
         <translation>Le projet n&apos;a pas été synchronisé</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="315"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="317"/>
         <source>Project didn&apos;t synchronized.</source>
         <translation>Le projet n&apos;a pas été synchronisé.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="341"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="343"/>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="352"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="354"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
@@ -1322,7 +1394,7 @@ Project didn&apos;t synchronized.</source>
 Le projet n&apos;a pas été synchronisé.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="365"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="367"/>
         <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
@@ -1331,17 +1403,17 @@ Project didn&apos;t synchronized.</source>
 Le projet n&apos;a pas été synchronisé.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="389"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="391"/>
         <source>Share error</source>
         <translation>Erreur de partage</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="390"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="392"/>
         <source>You can&apos;t share project with yourself.</source>
         <translation>Vous ne pouvez pas partager le projet avec vous-même.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="400"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="402"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
@@ -1350,7 +1422,7 @@ Project didn&apos;t synchronized.</source>
 Le projet n&apos;a pas été synchronisé. </translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="411"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="413"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
@@ -1359,12 +1431,12 @@ Project didn&apos;t synchronized.</source>
 Le projet n&apos;a pas été synchronisé.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="421"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="423"/>
         <source>Sync not available</source>
         <translation>Synchronisation indisponible</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="422"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="424"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
@@ -1373,63 +1445,63 @@ Project didn&apos;t synchronized.</source>
 Le projet n&apos;a pas été synchronisé.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="432"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="434"/>
         <source>Email already exist</source>
         <translation>Cet email existe déjà</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="441"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="443"/>
         <source>Password too weak</source>
         <translation>Le mot de passe est trop faible</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="468"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="470"/>
         <source>Wrong email</source>
         <translation>Mauvais email</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="477"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="479"/>
         <source>Unknown Error</source>
         <translation>Erreur inconnue</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="653"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="655"/>
         <source>Loading Scenario</source>
         <translation>Chargement du scénario</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="653"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="655"/>
         <source>Please wait. Loading can take few minutes.</source>
         <translation>S&apos;il vous plaît, attendez. le chargement peut prendre quelques minutes.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="685"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="687"/>
         <source>Sync scenario with cloud service.</source>
         <translation>Synchroniser le scénario avec le cloud.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="955"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="961"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="965"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="971"/>
         <source>Moving project to the cloud failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="956"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="966"/>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="962"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="972"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1196"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1210"/>
         <source>on device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1196"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1210"/>
         <source>in cloud</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1447,27 +1519,27 @@ Le projet n&apos;a pas été synchronisé.</translation>
         <translation>S&apos;il vous plaît, attendez. L&apos;exportation peut prendre quelques minutes.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="158"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="160"/>
         <source>Send script to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="180"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="182"/>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry export.</source>
         <translation>Impossible d&apos;écire dans le fichier. Il est peut-être ouvert dans une autre application. S&apos;il vous plaît, fermez et relancez l&apos;exportation.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="183"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="185"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
         <translation>Impossible d&apos;écire dans le fichier. Vérifiez les autorisations en écriture dans le dossier choisi. S&apos;il vous plaît, choisissez un autre dossier.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="185"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="187"/>
         <source>Export error</source>
         <translation>Erreur d&apos;exportation</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="176"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="178"/>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
         <translation>Vous essayez d&apos;exportation vers un dossier inexistant &lt;b&gt;%1&lt;/b&gt; S&apos;il vous plaît, choisissez un autre emplacement pour le fichier exporté.</translation>
     </message>
@@ -1532,12 +1604,12 @@ Le projet n&apos;a pas été synchronisé.</translation>
 <context>
     <name>ManagementLayer::ScriptManager</name>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="630"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="778"/>
         <source>Scenes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="631"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="779"/>
         <source>Chron.</source>
         <translation>Chronomètre.</translation>
     </message>
@@ -1592,36 +1664,46 @@ Le projet n&apos;a pas été synchronisé.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="176"/>
+        <source>Cards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="190"/>
         <source>Script</source>
         <translation>Scénario</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="190"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="204"/>
         <source>Save</source>
         <translation>Enregistrer</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="201"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="215"/>
+        <source>Share</source>
+        <translation type="unfinished">Partager</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="229"/>
         <source>Import</source>
         <translation>Importer</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="215"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="243"/>
         <source>Export</source>
         <translation>Exporter</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="229"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="257"/>
         <source>Settings</source>
         <translation>Paramètres</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="240"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="268"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="251"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="279"/>
         <source>Leave review</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1732,7 +1814,7 @@ Let&apos;s create the first one!</source>
         <translation>Titre:</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1134"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1164"/>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
         <translation>FIN DU DOSSIER</translation>
@@ -1878,6 +1960,37 @@ Let&apos;s create the first one!</source>
     </message>
 </context>
 <context>
+    <name>ScriptCardView</name>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.ui" line="56"/>
+        <source>Add card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.ui" line="141"/>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.ui" line="162"/>
+        <source>ADD</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ScriptCardsView</name>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardsView.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ScriptVersionWidget</name>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="17"/>
@@ -1903,7 +2016,7 @@ Let&apos;s create the first one!</source>
 <context>
     <name>SettingsView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="181"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="204"/>
         <source>Navigator</source>
         <translation>Navigateur</translation>
     </message>
@@ -1924,22 +2037,32 @@ Let&apos;s create the first one!</source>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="160"/>
+        <source>Cards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="176"/>
+        <source>Use corkboard background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="183"/>
         <source>Script editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="167"/>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="188"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="190"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="211"/>
         <source>Show scene numbers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="174"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="197"/>
         <source>Show dialogues numbers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="195"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="218"/>
         <source>Show scene description, lines</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2083,12 +2206,12 @@ Your subscription is active until</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="64"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="63"/>
         <source>Email</source>
         <translation>Email</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="65"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="64"/>
         <source>Login</source>
         <translation>S&apos;identifier</translation>
     </message>
@@ -2212,12 +2335,12 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::MenuView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="111"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="118"/>
         <source>Save</source>
         <translation>Enregistrer</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="111"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="118"/>
         <source>Changes saved</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2315,18 +2438,66 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::ScenarioTextEdit</name>
     <message>
-        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="553"/>
+        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="547"/>
         <source>Remove bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="558"/>
+        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="552"/>
         <source>Add bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="633"/>
+        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="627"/>
         <source>Change scene number</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserInterface::ScriptCardView</name>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="53"/>
+        <source>ADD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="50"/>
+        <source>Add card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="60"/>
+        <source>Edit card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="61"/>
+        <source>SAVE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="149"/>
+        <source>ACT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="150"/>
+        <source>SCENE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="152"/>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="159"/>
+        <source>Header</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="171"/>
+        <source>Stamp</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2341,12 +2512,12 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::ScriptView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="223"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="226"/>
         <source>DRAFT</source>
         <translation>RÉDIGER</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="840"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="999"/>
         <source>Comment</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2355,7 +2526,7 @@ Your subscription is active until</source>
     <name>UserInterface::SettingsView</name>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="36"/>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="166"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="194"/>
         <source>System</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2385,12 +2556,27 @@ Your subscription is active until</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="165"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="193"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="169"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="197"/>
+        <source>Cards size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="200"/>
+        <source>Cards ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="203"/>
+        <source>Distance between cards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="206"/>
         <source>Research and script editors font size</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2421,28 +2607,53 @@ Your subscription is active until</source>
 <context>
     <name>UserInterface::SubscriptionView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="57"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="56"/>
         <source>1 month - %1 rubles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="58"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="57"/>
         <source>2 month - %1 rubles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="59"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="58"/>
         <source>3 month - %1 rubles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="60"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="59"/>
         <source>6 month (6% off) - %1 rubles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="61"/>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="60"/>
         <source>12 month (12% off) - %1 rubles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="67"/>
+        <source>1 month - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="72"/>
+        <source>2 month - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="77"/>
+        <source>3 month - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="82"/>
+        <source>6 month (6% off) - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="87"/>
+        <source>12 month (12% off) - %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

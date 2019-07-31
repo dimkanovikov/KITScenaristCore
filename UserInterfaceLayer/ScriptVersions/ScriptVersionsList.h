@@ -27,9 +27,14 @@ namespace UserInterface
 
     signals:
         /**
+         * @brief Пользователь кликнул на заданной версии
+         */
+        void versionClicked(const QModelIndex& _versionIndex);
+
+        /**
          * @brief Запрос на удаление версии
          */
-        void removeRequested(const QModelIndex& _projectIndex);
+        void removeRequested(const QModelIndex& _versionIndex);
 
     private:
         /**
@@ -46,6 +51,7 @@ namespace UserInterface
          * @brief Обработать нажатия соответствующих кнопок-действий над проектом
          */
         /** @{ */
+        void handleClick();
         void handleRemoveClick();
         /** @} */
 

@@ -233,7 +233,8 @@ namespace TextEditHelper
             if (_cursor.selectedText() == "...") {
                 _cursor.insertText("…");
             }
-        } else if (_smartQuotes && _enteredText == "\"") {
+        }
+        if (_smartQuotes && _enteredText == "\"") {
             //
             // Выделим введённый символ
             //

@@ -23,7 +23,8 @@ namespace BusinessLogic
 		Q_OBJECT
 
 	public:
-		explicit PdfExporter(QObject* _parent = 0);
+        explicit PdfExporter(QObject* _parent = nullptr);
+        ~PdfExporter();
 
 		/**
 		 * @brief Экспорт заданного документа в указанный файл
@@ -70,7 +71,7 @@ namespace BusinessLogic
 		/**
 		 * @brief Документ для печати
 		 */
-        QTextDocument* m_documentForPrint = nullptr;
+        QScopedPointer<QTextDocument> m_documentForPrint;
 
         /**
          * @brief Последняя позиция прокрутки предпросмотра сценария

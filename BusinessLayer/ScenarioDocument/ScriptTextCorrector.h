@@ -7,6 +7,8 @@
 #include <QSizeF>
 #include <QVector>
 
+#include <cmath>
+
 class QTextBlock;
 class QTextBlockFormat;
 class QTextDocument;
@@ -77,26 +79,28 @@ namespace BusinessLogic
          */
         void moveCurrentBlockWithThreePreviousToNextPage(const QTextBlock& _prePrePreviousBlock,
             const QTextBlock& _prePreviousBlock, const QTextBlock& _previousBlock, qreal _pageHeight,
-            ScriptTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
+            qreal _pageWidth, ScriptTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
 
         /**
          * @brief Сместить текущий блок вместе с двумя предыдущими на следующую страницу
          */
         void moveCurrentBlockWithTwoPreviousToNextPage(const QTextBlock& _prePreviousBlock,
-            const QTextBlock& _previousBlock, qreal _pageHeight, ScriptTextCursor& _cursor,
-            QTextBlock& _block, qreal& _lastBlockHeight);
+            const QTextBlock& _previousBlock, qreal _pageHeight, qreal _pageWidth,
+            ScriptTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
 
         /**
          * @brief Сместить текущий блок вместе с предыдущим на следующую страницу
          */
         void moveCurrentBlockWithPreviousToNextPage(const QTextBlock& _previousBlock,
-            qreal _pageHeight, ScriptTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
+            qreal _pageHeight, qreal _pageWidth, ScriptTextCursor& _cursor, QTextBlock& _block,
+            qreal& _lastBlockHeight);
 
         /**
          * @brief Сместить текущий блок на следующую страницу
          */
         void moveCurrentBlockToNextPage(const QTextBlockFormat& _blockFormat, qreal _blockHeight,
-            qreal _pageHeight, ScriptTextCursor& _cursor, QTextBlock& _block, qreal& _lastBlockHeight);
+            qreal _pageHeight, qreal _pageWidth, ScriptTextCursor& _cursor, QTextBlock& _block,
+            qreal& _lastBlockHeight);
 
         /**
          * @brief Разорвать блок диалога
@@ -127,7 +131,7 @@ namespace BusinessLogic
          * @param _cursor - курсор редактироуемого документа
          */
         void moveBlockToNextPage(const QTextBlock& _block, qreal _spaceToPageEnd, qreal _pageHeight,
-            ScriptTextCursor& _cursor);
+            qreal _pageWidth, ScriptTextCursor& _cursor);
 
     private:
         /**
@@ -167,26 +171,33 @@ namespace BusinessLogic
          */
         struct BlockInfo {
             BlockInfo() = default;
-            BlockInfo(qreal _height, qreal _top) :
+            explicit BlockInfo(qreal _height, qreal _top) :
                 height(_height),
                 top(_top)
             {}
 
             /**
+             * @brief Валиден ли блок
+             */
+            bool isValid() const {
+                return !std::isnan(height) && !std::isnan(top);
+            }
+
+            /**
              * @brief Высота блока
              */
-            qreal height = 0.0;
+            qreal height = std::numeric_limits<qreal>::quiet_NaN();
 
             /**
              * @brief Позиция блока от начала страницы
              */
-            qreal top = 0.0;
+            qreal top = std::numeric_limits<qreal>::quiet_NaN();
         };
 
         /**
-         * @brief Модель блоков <порядковый номер блока, параметры блока>
+         * @brief Модель параметров блоков
          */
-        QHash<int, BlockInfo> m_blockItems;
+        QVector<BlockInfo> m_blockItems;
 
         /**
          * @brief Список декораций документа <позиция, длина>

@@ -753,6 +753,16 @@ void GraphLogic::insertPicture(const QString &picture)
     m_activeNode->insertPicture(picture);
 }
 
+void GraphLogic::undo()
+{
+    m_undoStack->undo();
+}
+
+void GraphLogic::redo()
+{
+    m_undoStack->redo();
+}
+
 void GraphLogic::nodeChanged()
 {
     emit contentChanged();

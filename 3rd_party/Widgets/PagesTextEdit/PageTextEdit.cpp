@@ -137,7 +137,9 @@ void PageTextEditPrivate::createAutoBulletList()
     cursor.createList(listFmt);
 
     cursor.endEditBlock();
-    control->setTextCursor(cursor);
+
+    Q_Q(PageTextEdit);
+    q->doSetTextCursor(cursor);
 }
 
 void PageTextEditPrivate::init(const QString &html)
@@ -161,6 +163,29 @@ void PageTextEditPrivate::init(const QString &html)
     QObject::connect(control, SIGNAL(cursorPositionChanged()), q, SLOT(_q_cursorPositionChanged()));
 
     QObject::connect(control, SIGNAL(textChanged()), q, SLOT(updateMicroFocus()));
+
+#ifdef Q_OS_ANDROID
+    //
+    // В андройде имеем занятную багу с перекликиванием во время прокрутки, поэтому когда курсор
+    // уходит с экрана, сбрасываем состояние клавиатуры, чтобы его избежать©≠
+    //
+    QObject::connect(vbar, &QScrollBar::valueChanged, q, [this, q] {
+        if (q->document()->docHandle()->isInEditBlock()) {
+            return;
+        }
+
+        if (!control->isPreediting()) {
+            return;
+        }
+
+        const QRect cursorR = q->cursorRect();
+        const int viewportBottom = q->viewport()->geometry().bottom();
+        if (cursorR.top() < 0
+            || cursorR.bottom() > viewportBottom) {
+            QApplication::inputMethod()->reset();
+        }
+    });
+#endif
 
     QTextDocument *doc = control->document();
     // set a null page size initially to avoid any relayouting until the textedit
@@ -186,9 +211,6 @@ void PageTextEditPrivate::init(const QString &html)
     q->setInputMethodHints(Qt::ImhMultiLine);
 #ifndef QT_NO_CURSOR
     viewport->setCursor(Qt::IBeamCursor);
-#endif
-#if 0 // Used to be included in Qt4 for Q_WS_WIN
-    setSingleFingerPanEnabled(true);
 #endif
 }
 
@@ -243,7 +265,9 @@ void PageTextEditPrivate::pageUpDown(QTextCursor::MoveOperation op, QTextCursor:
             vbar->triggerAction(QAbstractSlider::SliderPageStepAdd);
         }
     }
-    control->setTextCursor(cursor);
+
+    Q_Q(PageTextEdit);
+    q->doSetTextCursor(cursor);
 }
 
 #ifndef QT_NO_SCROLLBAR
@@ -764,7 +788,7 @@ void PageTextEdit::setAlignment(Qt::Alignment a)
     fmt.setAlignment(a);
     QTextCursor cursor = d->control->textCursor();
     cursor.mergeBlockFormat(fmt);
-    d->control->setTextCursor(cursor);
+    doSetTextCursor(cursor);
 }
 
 /*!
@@ -831,6 +855,20 @@ void PageTextEdit::setPlaceholderText(const QString &placeholderText)
     }
 }
 
+void PageTextEdit::setCursorWidth(int width)
+{
+    Q_D(PageTextEdit);
+    if (d->cursorWidth != width) {
+        d->cursorWidth = width;
+    }
+}
+
+int PageTextEdit::cursorWidth() const
+{
+    Q_D(const PageTextEdit);
+    return d->cursorWidth;
+}
+
 /*!
     Sets the visible \a cursor.
 */
@@ -849,6 +887,9 @@ void PageTextEdit::doSetTextCursor(const QTextCursor &cursor)
 {
     Q_D(PageTextEdit);
     d->control->setTextCursor(cursor);
+#ifndef MOBILE_OS
+    d->control->setCursorWidth(0);
+#endif
 }
 
 /*!
@@ -1410,12 +1451,6 @@ void PageTextEdit::keyReleaseEvent(QKeyEvent *e)
     }
 #endif
     e->ignore();
-
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
-#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
-                                           | Qt::ImAnchorRectangle
-#endif
-                                           );
 }
 
 /*!
@@ -1803,6 +1838,7 @@ void PageTextEditPrivate::paintPageNumbers(QPainter* _painter)
         //
         if (curHeight - pageMargins.top() >= 0) {
             QRectF topMarginRect(leftMarginPosition, curHeight - pageSize.height(), marginWidth, pageMargins.top());
+            paintHeader(_painter, topMarginRect);
             paintPageNumber(_painter, topMarginRect, true, pageNumber);
         }
 
@@ -1814,6 +1850,7 @@ void PageTextEditPrivate::paintPageNumbers(QPainter* _painter)
             // Определить прямоугольник нижнего поля
             //
             QRect bottomMarginRect(leftMarginPosition, curHeight - pageMargins.bottom(), marginWidth, pageMargins.bottom());
+            paintFooter(_painter, bottomMarginRect);
             paintPageNumber(_painter, bottomMarginRect, false, pageNumber);
 
             //
@@ -1825,6 +1862,7 @@ void PageTextEditPrivate::paintPageNumbers(QPainter* _painter)
             // Определить прямоугольник верхнего поля следующей страницы
             //
             QRect topMarginRect(leftMarginPosition, curHeight, marginWidth, pageMargins.top());
+            paintHeader(_painter, topMarginRect);
             paintPageNumber(_painter, topMarginRect, true, pageNumber);
 
             curHeight += pageSize.height();
@@ -1869,6 +1907,30 @@ void PageTextEditPrivate::paintPageNumber(QPainter* _painter, const QRectF& _rec
     }
 }
 
+void PageTextEditPrivate::paintHeader(QPainter* _painter, const QRectF& _rect)
+{
+    Qt::Alignment alignment = Qt::AlignVCenter;
+    if (m_pageNumbersAlignment.testFlag(Qt::AlignTop)
+        && m_pageNumbersAlignment.testFlag(Qt::AlignLeft)) {
+        alignment |= Qt::AlignRight;
+    } else {
+        alignment |= Qt::AlignLeft;
+    }
+    _painter->drawText(_rect, alignment, m_header);
+}
+
+void PageTextEditPrivate::paintFooter(QPainter* _painter, const QRectF& _rect)
+{
+    Qt::Alignment alignment = Qt::AlignVCenter;
+    if (m_pageNumbersAlignment.testFlag(Qt::AlignBottom)
+        && m_pageNumbersAlignment.testFlag(Qt::AlignLeft)) {
+        alignment |= Qt::AlignRight;
+    } else {
+        alignment |= Qt::AlignLeft;
+    }
+    _painter->drawText(_rect, alignment, m_footer);
+}
+
 void PageTextEditPrivate::paintWatermark(QPainter* _painter)
 {
     if (!m_watermark.isEmpty()) {
@@ -1885,6 +1947,36 @@ void PageTextEditPrivate::paintWatermark(QPainter* _painter)
         _painter->rotate(45);
         _painter->drawText(0, 0, m_watermarkMulti);
 
+        _painter->restore();
+    }
+}
+
+void PageTextEditPrivate::paintCursor(QPainter* _painter)
+{
+    Q_Q(PageTextEdit);
+
+    static bool isCursorVisible = true;
+    isCursorVisible = !isCursorVisible;
+    if (isCursorVisible
+        && q->hasFocus()) {
+        _painter->save();
+        auto rect = q->cursorRect();
+        rect.setWidth(cursorWidth);
+        //
+        // Для RTL делаем ручную корректировку позиции отображения курсора
+        //
+        if (q->isRightToLeft() && q->textCursor().block().text().isEmpty()) {
+            const qreal textRight = viewport->width()
+                                  - q->document()->rootFrame()->frameFormat().rightMargin()
+                                  + hbar->value();
+            rect.moveLeft(static_cast<int>(textRight));
+        }
+        const QColor cursorColor = q->textCursor().charFormat().foreground().style() != Qt::NoBrush
+                             ? q->textCursor().charFormat().foreground().color()
+                             : q->textCursor().blockCharFormat().foreground().style() != Qt::NoBrush
+                               ? q->textCursor().blockCharFormat().foreground().color()
+                               : q->palette().text().color();
+        _painter->fillRect(rect, cursorColor);
         _painter->restore();
     }
 }
@@ -2172,9 +2264,8 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
     const int xOffset = horizontalOffset();
     const int yOffset = verticalOffset();
 
-    QRect r = e->rect();
+    p->save();
     p->translate(-xOffset, -yOffset);
-    r.translate(xOffset, yOffset);
 
     QTextDocument *doc = control->document();
     QTextDocumentLayout *layout = qobject_cast<QTextDocumentLayout *>(doc->documentLayout());
@@ -2184,6 +2275,8 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
     if (layout)
         layout->setViewport(viewport->rect());
 
+    QRect r = e->rect();
+    r.translate(xOffset, yOffset);
     control->drawContents(p, r, q_func());
 
     if (layout)
@@ -2201,6 +2294,12 @@ void PageTextEditPrivate::paint(QPainter *p, QPaintEvent *e)
         const int margin = int(doc->documentMargin());
         p->drawText(viewport->rect().adjusted(margin, margin, -margin, -margin), Qt::AlignTop | Qt::TextWordWrap, placeholderText);
     }
+
+    p->restore();
+
+#ifndef MOBILE_OS
+    paintCursor(p);
+#endif
 }
 
 /*! \fn void PageTextEdit::paintEvent(QPaintEvent *event)
@@ -2288,12 +2387,6 @@ void PageTextEdit::mouseReleaseEvent(QMouseEvent *e)
     if (!isReadOnly() && rect().contains(e->pos()))
         d->handleSoftwareInputPanel(e->button(), d->clickCausedFocus);
     d->clickCausedFocus = 0;
-
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
-#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
-                                           | Qt::ImAnchorRectangle
-#endif
-                                           );
 }
 
 /*! \reimp
@@ -2302,12 +2395,6 @@ void PageTextEdit::mouseDoubleClickEvent(QMouseEvent *e)
 {
     Q_D(PageTextEdit);
     d->sendControlMouseEvent(e);
-
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
-#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
-                                           | Qt::ImAnchorRectangle
-#endif
-                                           );
 }
 
 /*! \reimp
@@ -2399,12 +2486,6 @@ void PageTextEdit::inputMethodEvent(QInputMethodEvent *e)
 #endif
     d->sendControlEvent(e);
     ensureCursorVisible();
-
-    QGuiApplication::inputMethod()->update(Qt::ImCursorRectangle
-#if QT_VERSION > QT_VERSION_CHECK(5,9,0)
-                                           | Qt::ImAnchorRectangle
-#endif
-                                           );
 }
 
 /*!\reimp
@@ -2700,24 +2781,6 @@ void PageTextEdit::setTabStopWidth(int width)
         return;
     opt.setTabStop(width);
     d->control->document()->setDefaultTextOption(opt);
-}
-
-/*!
-    \since 4.2
-    \property PageTextEdit::cursorWidth
-
-    This property specifies the width of the cursor in pixels. The default value is 1.
-*/
-int PageTextEdit::cursorWidth() const
-{
-    Q_D(const PageTextEdit);
-    return d->control->cursorWidth();
-}
-
-void PageTextEdit::setCursorWidth(int width)
-{
-    Q_D(PageTextEdit);
-    d->control->setCursorWidth(width);
 }
 
 /*!
@@ -3563,6 +3626,30 @@ void PageTextEdit::setWatermark(const QString& _watermark)
 
         d->relayoutDocument();
     }
+}
+
+void PageTextEdit::setHeader(const QString& _header)
+{
+    Q_D(PageTextEdit);
+
+    if (d->m_header == _header) {
+        return;
+    }
+
+    d->m_header = _header;
+    d->relayoutDocument();
+}
+
+void PageTextEdit::setFooter(const QString& _footer)
+{
+    Q_D(PageTextEdit);
+
+    if (d->m_footer == _footer) {
+        return;
+    }
+
+    d->m_footer = _footer;
+    d->relayoutDocument();
 }
 
 void PageTextEdit::clipPageDecorationRegions(QPainter* _painter)

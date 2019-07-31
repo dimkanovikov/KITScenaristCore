@@ -86,7 +86,12 @@ namespace ManagementLayer
         /**
          * @brief Продлить подписку
          */
-        void renewSubscription(unsigned _duration, unsigned _type);
+        void renewSubscription(int _month, int _type);
+
+        /**
+         * @brief Сохранить успешно прошедший через InApp Purchase заказ
+         */
+        void saveRenewOrder(int _month, const QString& _orderId, const QString& _price);
 
         /**
          * @brief Сменить имя пользователя
@@ -141,7 +146,7 @@ namespace ManagementLayer
         //
         // Методы работы с конкретным проектом
         //
-    public slots:
+
         /**
          * @brief Подготовить менеджер к синхронизации
          */
@@ -187,8 +192,7 @@ namespace ManagementLayer
         /**
          * @brief Авторизация пройдена успешно
          */
-        void loginAccepted(const QString& _userName, const QString& _userEmail,
-                           int _paymentMonth, int _reviewVersion);
+        void loginAccepted(const QString& _userName, const QString& _userEmail, int _paymentMonth);
 
         /**
          * @brief Сервер успешно принял данные пользователя на регистрацию
@@ -222,6 +226,11 @@ namespace ManagementLayer
                                     quint64 _availableSpace);
 
         /**
+         * @brief Заказ оплаченный через InApp Purchase был успешно сохранён
+         */
+        void renewOrderSaved();
+
+        /**
          * @brief Успешно изменен пароль
          */
         void passwordChanged();
@@ -244,8 +253,8 @@ namespace ManagementLayer
          * @brief Необходимо применить патч
          */
         /** @{ */
-        void applyPatchRequested(const QString& _patch, bool _isDraft);
-        void applyPatchesRequested(const QList<QString>& _patch, bool _isDraft);
+        void applyPatchRequested(const QString& _patch, bool _isDraft, int _newChangesSize);
+        void applyPatchesRequested(const QList<QString>& _patches, bool _isDraft, QList<QPair<QString, QString>>& _newChangesUuids);
         /** @} */
 
         /**
@@ -285,7 +294,7 @@ namespace ManagementLayer
          * @brief Отправить изменения сценария на сервер
          * @return Удалось ли отправить данные
          */
-        bool uploadScenarioChanges(const QList<QString>& _changesUuids);
+        bool uploadScenarioChanges(const QList<QPair<QString, QString>>& _changesUuids);
 
         /**
          * @brief Скачать изменения с сервера

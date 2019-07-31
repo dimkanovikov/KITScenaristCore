@@ -122,8 +122,6 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
         //
         // Тип предыдущего блока
         //
-        ScenarioBlockStyle::Type prevType = ScenarioBlockStyle::Undefined;
-
         while (!documentCursor.atEnd()) {
             QString paragraphText;
             if (!documentCursor.block().text().isEmpty()) {
@@ -322,11 +320,9 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
                     case ScenarioBlockStyle::Action:
                     {
                         //
-                        // Чтобы действия шли друг за другом более аккуратно,
-                        // не будем разделять подряд идущие действия пустой строкой
+                        // Если не первое действие, то отделим его пустой строкой от предыдущего
                         //
-                        if (prevType != ScenarioBlockStyle::Action
-                            && !isFirst) {
+                        if (!isFirst) {
                             paragraphText.prepend('\n');
                         }
                         break;
@@ -427,8 +423,6 @@ void FountainExporter::exportTo(ScenarioDocument *_scenario, const ExportParamet
                         }
                     }
                 }
-
-                prevType = ScenarioBlockStyle::forBlock(documentCursor.block());
 
                 //
                 // Запишем получившуюся строку

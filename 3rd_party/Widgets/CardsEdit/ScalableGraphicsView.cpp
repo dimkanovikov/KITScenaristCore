@@ -1,5 +1,9 @@
 #include "ScalableGraphicsView.h"
 
+#ifdef MOBILE_OS
+#include <3rd_party/Helpers/ScrollerHelper.h>
+#endif
+
 #include <QApplication>
 #include <QEvent>
 #include <QGestureEvent>
@@ -9,8 +13,8 @@
 #include <QWheelEvent>
 
 
-ScalableGraphicsView::ScalableGraphicsView(QWidget *parent) :
-    QGraphicsView(parent)
+ScalableGraphicsView::ScalableGraphicsView(QWidget *_parent) :
+    QGraphicsView(_parent)
 {
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -22,6 +26,19 @@ ScalableGraphicsView::ScalableGraphicsView(QWidget *parent) :
     //
     grabGesture(Qt::PinchGesture);
     grabGesture(Qt::SwipeGesture);
+
+#ifdef MOBILE_OS
+    ScrollerHelper::addScroller(this);
+
+    m_dragWaitingTimer.setSingleShot(true);
+    m_dragWaitingTimer.setInterval(200);
+    connect(&m_dragWaitingTimer, &QTimer::timeout, this, [this] {
+        m_canDragCard = false;
+        m_inScrolling = false;
+        QMouseEvent fakeEvent(QEvent::MouseButtonPress, mapFromGlobal(QCursor::pos()), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+        mousePressEvent(&fakeEvent);
+    });
+#endif
 }
 
 void ScalableGraphicsView::zoomIn()
@@ -95,9 +112,9 @@ void ScalableGraphicsView::gestureEvent(QGestureEvent* _event)
             //
             const bool needZoomIn = pinch->scaleFactor() > 1;
             const bool needZoomOut = pinch->scaleFactor() < 1;
-            if (zoomDelta != 0 && needZoomIn) {
+            if (!qFuzzyCompare(zoomDelta, 0.0) && needZoomIn) {
                 zoomIn();
-            } else if (zoomDelta != 0 && needZoomOut) {
+            } else if (!qFuzzyCompare(zoomDelta, 0.0) && needZoomOut) {
                 zoomOut();
             }
 
@@ -181,10 +198,19 @@ void ScalableGraphicsView::keyReleaseEvent(QKeyEvent* _event)
 
 void ScalableGraphicsView::mousePressEvent(QMouseEvent* _event)
 {
+#ifdef MOBILE_OS
+    if (m_canDragCard) {
+        m_dragWaitingTimer.start();
+        m_inScrolling = true;
+    }
+#endif
+
     if (m_inScrolling
         && _event->buttons() & Qt::LeftButton) {
         m_scrollingLastPos = _event->globalPos();
+#ifndef MOBILE_OS
         QApplication::setOverrideCursor(QCursor(Qt::ClosedHandCursor));
+#endif
         return;
     }
 
@@ -193,6 +219,10 @@ void ScalableGraphicsView::mousePressEvent(QMouseEvent* _event)
 
 void ScalableGraphicsView::mouseMoveEvent(QMouseEvent* _event)
 {
+#ifdef MOBILE_OS
+    m_dragWaitingTimer.stop();
+#endif
+
     //
     // Если в данный момент происходит прокрутка полотна
     //
@@ -211,8 +241,15 @@ void ScalableGraphicsView::mouseMoveEvent(QMouseEvent* _event)
 
 void ScalableGraphicsView::mouseReleaseEvent(QMouseEvent* _event)
 {
+#ifdef MOBILE_OS
+    m_dragWaitingTimer.stop();
+    m_canDragCard = true;
+#endif
+
     if (m_inScrolling) {
+#ifndef MOBILE_OS
         QApplication::restoreOverrideCursor();
+#endif
     }
 
     QGraphicsView::mouseReleaseEvent(_event);

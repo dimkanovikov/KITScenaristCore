@@ -8,31 +8,36 @@ class QWidget;
 
 namespace UserInterface
 {
-	/**
-	 * @brief Класс для управления шорткатами блоков редактора сценария
-	 */
-	class ShortcutsManager : public QObject
-	{
-		Q_OBJECT
+    /**
+     * @brief Класс для управления шорткатами блоков редактора сценария
+     */
+    class ShortcutsManager : public QObject
+    {
+        Q_OBJECT
 
-	public:
-		ShortcutsManager(ScenarioTextEdit* _editor);
+    public:
+        ShortcutsManager(ScenarioTextEdit* _editor);
 
-		/**
-		 * @brief Считать значения горячих клавиш из настроек
-		 */
-		void update();
+        /**
+         * @brief Задать контекст для горячих клавиш
+         */
+        void setContextWidget(QWidget* _context);
 
-		/**
-		 * @brief Получить шорткат для блока
-		 */
-		QString shortcut(int _forBlockType) const;
+        /**
+         * @brief Считать значения горячих клавиш из настроек
+         */
+        void update();
 
-	private slots:
-		/**
-		 * @brief Сменить стиль текущего блока редактора на заданный
-		 */
-		void changeTextBlock(int _blockType) const;
+        /**
+         * @brief Получить шорткат для блока
+         */
+        QString shortcut(int _forBlockType) const;
+
+    private slots:
+        /**
+         * @brief Сменить стиль текущего блока редактора на заданный
+         */
+        void changeTextBlock(int _blockType) const;
 
     private:
         /**
@@ -40,17 +45,22 @@ namespace UserInterface
          */
         void createOrUpdateShortcut(int _forBlockType);
 
-	private:
-		/**
-		 * @brief Редактор сценария
-		 */
-		ScenarioTextEdit* m_editor;
+    private:
+        /**
+         * @brief Редактор сценария
+         */
+        ScenarioTextEdit* m_editor = nullptr;
 
-		/**
-		 * @brief Тип блока - горячие клавиши
-		 */
-		QHash<int, QShortcut*> m_shortcuts;
-	};
+        /**
+         * @brief Виджет в контексте которого будут активироваться горячие клавиши
+         */
+        QWidget* m_context = nullptr;
+
+        /**
+         * @brief Тип блока - горячие клавиши
+         */
+        QHash<int, QShortcut*> m_shortcuts;
+    };
 }
 
 #endif // SCENARIOTEXTEDITPRIVATE_H

@@ -217,6 +217,9 @@ void TransitionHandler::handleOther(QKeyEvent*)
 
 void TransitionHandler::handleInput(QInputMethodEvent* _event)
 {
+#ifndef Q_OS_ANDROID
+    Q_UNUSED(_event)
+#endif
     //
     // Получим необходимые значения
     //

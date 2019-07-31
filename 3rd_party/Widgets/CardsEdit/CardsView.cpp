@@ -4,6 +4,10 @@
 #include "CardsUndoStack.h"
 #include "ScalableGraphicsView.h"
 
+#ifdef MOBILE_OS
+#include <3rd_party/Helpers/ScrollerHelper.h>
+#endif
+
 #include <QEvent>
 #include <QScrollBar>
 #include <QVariant>
@@ -84,6 +88,11 @@ void CardsView::setOrderByRows(bool _orderByRows)
 void CardsView::setFixedMode(bool _isFixed)
 {
     m_scene->setFixedMode(_isFixed);
+}
+
+QString CardsView::selectedItemUuid() const
+{
+    return m_scene->selectedItemUuid();
 }
 
 QString CardsView::lastItemUuid() const

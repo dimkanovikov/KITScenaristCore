@@ -147,7 +147,7 @@ QString ScenarioDocument::itemUuid(ScenarioModelItem* _item) const
     cursor.setPosition(_item->position());
     QTextBlockUserData* textBlockData = cursor.block().userData();
     SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
-    if (info == 0) {
+    if (info == nullptr) {
         info = new SceneHeadingBlockInfo(_item->uuid());
     }
     cursor.block().setUserData(info);
@@ -178,9 +178,9 @@ QString ScenarioDocument::itemSceneNumber(ScenarioModelItem *_item) const
     return number;
 }
 
-unsigned ScenarioDocument::itemSceneNumberSuffix(ScenarioModelItem *_item) const
+int ScenarioDocument::itemSceneNumberSuffix(ScenarioModelItem *_item) const
 {
-    unsigned number = 0;
+    int number = 0;
     QTextBlockUserData* textBlockData = m_document->findBlock(_item->position()).userData();
     if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
         number = info->sceneNumberSuffix();
@@ -198,9 +198,9 @@ bool ScenarioDocument::itemSceneIsFixed(ScenarioModelItem *_item) const
     return isFixed;
 }
 
-unsigned ScenarioDocument::itemSceneFixNesting(ScenarioModelItem *_item) const
+int ScenarioDocument::itemSceneFixNesting(ScenarioModelItem *_item) const
 {
-    unsigned sceneFixNesting = 0;
+    int sceneFixNesting = 0;
     QTextBlockUserData* textBlockData = m_document->findBlock(_item->position()).userData();
     if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData)) {
         sceneFixNesting = info->sceneNumberFixNesting();
@@ -225,7 +225,7 @@ void ScenarioDocument::setItemColorsAtPosition(int _position, const QString& _co
 
         QTextBlockUserData* textBlockData = cursor.block().userData();
         SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
-        if (info == 0) {
+        if (info == nullptr) {
             info = new SceneHeadingBlockInfo(item->uuid());
         }
         info->setColors(_colors);
@@ -266,7 +266,7 @@ void ScenarioDocument::setItemStampAtPosition(int _position, const QString& _sta
 
         QTextBlockUserData* textBlockData = cursor.block().userData();
         SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
-        if (info == 0) {
+        if (info == nullptr) {
             info = new SceneHeadingBlockInfo(item->uuid());
         }
         info->setStamp(_stamp);
@@ -316,7 +316,7 @@ void ScenarioDocument::setItemTitleAtPosition(int _position, const QString& _tit
 
         QTextBlockUserData* textBlockData = cursor.block().userData();
         SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
-        if (info == 0) {
+        if (info == nullptr) {
             info = new SceneHeadingBlockInfo(item->uuid());
         }
         info->setName(_title);
@@ -369,7 +369,7 @@ void ScenarioDocument::setItemDescriptionAtPosition(int _position, const QString
 
             QTextBlockUserData* textBlockData = cursor.block().userData();
             SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
-            if (info == 0) {
+            if (info == nullptr) {
                 info = new SceneHeadingBlockInfo(item->uuid());
             }
             info->setDescription(_description);
@@ -575,9 +575,7 @@ QString ScenarioDocument::save() const
 
 void ScenarioDocument::clear()
 {
-    QTextCursor cursor(m_document);
-    cursor.select(QTextCursor::Document);
-    cursor.removeSelectedText();
+    load(QString{});
 }
 
 void ScenarioDocument::refresh()
@@ -641,7 +639,7 @@ int ScenarioDocument::positionToInsertMime(ScenarioModelItem* _insertParent, Sce
     //
     // Если необходимо вставить перед заданным элементом
     //
-    if (_insertBefore != 0) {
+    if (_insertBefore != nullptr) {
         int insertBeforeItemStartPos = m_modelItems.key(_insertBefore);
 
         //
@@ -695,6 +693,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
     // Сохраняем изменённый xml и его хэш
     //
     m_document->updateScenarioXml();
+    bool needIncrementPosition = false;
 
     //
     // Если были удалены данные
@@ -713,6 +712,16 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
         }
 
         //
+        // Скорректируем позицию на случай, если мы удаляем первый символ блока.
+        // В этом случае, нам нужно сдвинуть на один символ вперед
+        //
+        if (_charsRemoved > _charsAdded
+            && _position > 0
+            && m_modelItems.contains(_position)) {
+            needIncrementPosition = true;
+        }
+
+        //
         // Удаляем элементы начиная с того, который находится под курсором, если курсор в начале
         // строки, или со следующего за курсором, если курсор не в начале строки
         //
@@ -728,7 +737,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
             //
             ScenarioModelItem* itemToDelete = iter.value();
 
-            if (itemToDelete != 0) {
+            if (itemToDelete != nullptr) {
                 //
                 // Расширяем диапозон последующего построения дерева, для включения в него всех
                 // кто был удалён тут по причине не самого оптимального алгоритма
@@ -766,10 +775,10 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
 
 
     //
-    // Скорректируем позицию
+    // Скорректируем позицию на случай, если мы удаляем первый символ блока.
+    // В этом случае, нам нужно сдвинуть на один символ вперед
     //
-    if (_charsRemoved > _charsAdded
-        && _position > 0) {
+    if (needIncrementPosition) {
         ++_position;
     }
 
@@ -846,7 +855,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
         // Обновляем структуру
         //
 
-        ScenarioModelItem* currentItem = 0;
+        ScenarioModelItem* currentItem = nullptr;
         int currentItemStartPos = 0;
 
         //
@@ -876,7 +885,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
         //
         // Текущий родитель
         //
-        ScenarioModelItem* currentParent = 0;
+        ScenarioModelItem* currentParent = nullptr;
 
         QTextCursor cursor(m_document);
         if (currentItemStartPos > 0) {
@@ -976,7 +985,7 @@ void ScenarioDocument::aboutContentsChange(int _position, int _charsRemoved, int
             //
             // Определим родителя если ещё не определён
             //
-            if (currentParent == 0) {
+            if (currentParent == nullptr) {
                 if (currentItem->type() == ScenarioModelItem::Scene
                     || currentItem->type() == ScenarioModelItem::Undefined) {
                     currentParent = currentItem->parent();
@@ -1148,9 +1157,9 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
     // .. зафиксирован ли номер сцены
     const bool sceneNumberFixed = itemSceneIsFixed(_item);
     // .. номер в группе фиксации
-    const unsigned numberSuffix = itemSceneNumberSuffix(_item);
+    const int numberSuffix = itemSceneNumberSuffix(_item);
     // .. группа фиксации (сколько раз была зафиксирована)
-    const unsigned sceneNumberFixNesting = itemSceneFixNesting(_item);
+    const int sceneNumberFixNesting = itemSceneFixNesting(_item);
     // ... текст и описание
     QString itemText;
     QString description;
@@ -1294,7 +1303,7 @@ void ScenarioDocument::updateItem(ScenarioModelItem* _item, int _itemStartPos, i
 
 ScenarioModelItem* ScenarioDocument::itemForPosition(int _position, bool _findNear) const
 {
-    ScenarioModelItem* item = m_modelItems.value(_position, 0);
+    ScenarioModelItem* item = m_modelItems.value(_position, nullptr);
     if (item == nullptr) {
         //
         // Если необходимо ищем ближайшего
@@ -1343,7 +1352,7 @@ void ScenarioDocument::updateDocumentScenesAndDialoguesNumbers()
                 if (ScenarioModelItem* item = itemForPosition(block.position())) {
                     QTextBlockUserData* textBlockData = block.userData();
                     SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(textBlockData);
-                    if (info == 0) {
+                    if (info == nullptr) {
                         info = new SceneHeadingBlockInfo(item->uuid());
                     }
                     info->setSceneNumber(item->sceneNumber());
@@ -1372,7 +1381,12 @@ void ScenarioDocument::updateDocumentScenesAndDialoguesNumbers()
                 break;
             }
 
-            default: break;
+            default: {
+                if (block.userData() == nullptr) {
+                    block.setUserData(new TextBlockInfo);
+                }
+                break;
+            }
         }
 
         block = block.next();

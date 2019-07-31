@@ -1,19 +1,11 @@
 #include "GoogleColorsPane.h"
 
+#include <3rd_party/Helpers/StyleSheetHelper.h>
+
 #include <QPainter>
 #include <QMouseEvent>
 
 namespace {
-    /**
-     * @brief Размер ребра квадрата с цветом
-     */
-    const int COLOR_RECT_SIZE = 20;
-
-    /**
-     * @brief Расстояние между двумя соседними квадратами с цветом
-     */
-    const int COLOR_RECT_SPACE = 3;
-
     /**
      * @brief Количество колонок с цветовыми квадратами
      */
@@ -24,15 +16,61 @@ namespace {
      */
     const int kColorRectRows = 8;
 
+#ifdef MOBILE_OS
+    /**
+     * @brief Размер ребра квадрата с цветом
+     */
+    static int kColorRectSize() {
+        static const int s_colorRectSize = StyleSheetHelper::dpToPx(46);
+        return s_colorRectSize;
+    }
+
+    /**
+     * @brief Расстояние между двумя соседними квадратами с цветом
+     */
+    const int kColorRectSpace = 0;
+
     /**
      * @brief Отступы панели
      */
-    const int PANEL_MARGIN = 16;
+    const int kPanelMargin = 0;
 
     /**
      * @brief Размер метки текущего цвета
      */
-    const int kColorMarkSize = 5;
+    static int kColorMarkSize() {
+        static const int s_colorMarkSize = StyleSheetHelper::dpToPx(16);
+        return s_colorMarkSize;
+    }
+
+    /**
+     * @brief Ширина рамки метки текущего цвета
+     */
+    static int kMarkBorderWidth() {
+        static const int s_markBorderWidth = StyleSheetHelper::dpToPx(3);
+        return s_markBorderWidth;
+    }
+#else
+    /**
+     * @brief Размер ребра квадрата с цветом
+     */
+    static int kColorRectSize() { return 20; }
+
+    /**
+     * @brief Расстояние между двумя соседними квадратами с цветом
+     */
+    const int kColorRectSpace = 3;
+
+    /**
+     * @brief Отступы панели
+     */
+    const int kPanelMargin = 16;
+
+    /**
+     * @brief Размер метки текущего цвета
+     */
+    static int kColorMarkSize() { return 5; }
+#endif
 }
 
 
@@ -43,13 +81,13 @@ GoogleColorsPane::GoogleColorsPane(QWidget* _parent) :
     // Рассчитаем фиксированный размер панели
     //
     const int width =
-            (COLOR_RECT_SIZE * kColorRectColumns) // ширина цветовых квадратов
-            + (COLOR_RECT_SPACE * (kColorRectColumns - 1)) // ширина оступов между квадратами
-            + (PANEL_MARGIN * 2); // ширина полей
+            (kColorRectSize() * kColorRectColumns) // ширина цветовых квадратов
+            + (kColorRectSpace * (kColorRectColumns - 1)) // ширина оступов между квадратами
+            + (kPanelMargin * 2); // ширина полей
     const int height =
-            (COLOR_RECT_SIZE * kColorRectRows) // высота цветовых квадратов
-            + (COLOR_RECT_SPACE * (kColorRectRows + 3)) // высота отступов между ними (+3 т.к. между 1, 2 и 3 увеличенные отступы)
-            + (PANEL_MARGIN * 2); // высота полей
+            (kColorRectSize() * kColorRectRows) // высота цветовых квадратов
+            + (kColorRectSpace * (kColorRectRows + 3)) // высота отступов между ними (+3 т.к. между 1, 2 и 3 увеличенные отступы)
+            + (kPanelMargin * 2); // высота полей
     setFixedSize(width, height);
 
     //
@@ -137,8 +175,8 @@ void GoogleColorsPane::paintEvent(QPaintEvent * _event)
         // ... метка в центре
         //
         const QPointF center = borderRect.center();
-        QRectF markRect(center.x() - kColorMarkSize / 2, center.y() - kColorMarkSize / 2,
-            kColorMarkSize, kColorMarkSize);
+        QRectF markRect(center.x() - kColorMarkSize() / 2, center.y() - kColorMarkSize() / 2,
+            kColorMarkSize(), kColorMarkSize());
         painter.fillRect(markRect, palette().text());
         painter.setPen(palette().base().color());
         painter.drawRect(markRect);
@@ -177,8 +215,8 @@ void GoogleColorsPane::initColors()
     //
     // Формируем первый ряд
     //
-    int topMargin = PANEL_MARGIN;
-    int leftMargin = PANEL_MARGIN;
+    int topMargin = kPanelMargin;
+    int leftMargin = kPanelMargin;
     QList<QColor> colors;
     colors << QColor(0,0,0)
            << QColor(67,67,67)
@@ -194,20 +232,20 @@ void GoogleColorsPane::initColors()
         QRectF colorRect;
         colorRect.setLeft(leftMargin);
         colorRect.setTop(topMargin);
-        colorRect.setWidth(COLOR_RECT_SIZE);
-        colorRect.setHeight(COLOR_RECT_SIZE);
+        colorRect.setWidth(kColorRectSize());
+        colorRect.setHeight(kColorRectSize());
 
         colorsInfos().append(ColorKeyInfo(colors.at(column), colorRect));
 
-        leftMargin += COLOR_RECT_SIZE + COLOR_RECT_SPACE;
+        leftMargin += kColorRectSize() + kColorRectSpace;
     }
-    topMargin += COLOR_RECT_SIZE + (COLOR_RECT_SPACE * 3);
+    topMargin += kColorRectSize() + (kColorRectSpace * 3);
 
 
     //
     // Второй ряд
     //
-    leftMargin = PANEL_MARGIN;
+    leftMargin = kPanelMargin;
     colors.clear();
     colors << QColor(152,0,0)
            << QColor(255,0,0)
@@ -223,14 +261,14 @@ void GoogleColorsPane::initColors()
         QRectF colorRect;
         colorRect.setLeft(leftMargin);
         colorRect.setTop(topMargin);
-        colorRect.setWidth(COLOR_RECT_SIZE);
-        colorRect.setHeight(COLOR_RECT_SIZE);
+        colorRect.setWidth(kColorRectSize());
+        colorRect.setHeight(kColorRectSize());
 
         colorsInfos().append(ColorKeyInfo(colors.at(column), colorRect));
 
-        leftMargin += COLOR_RECT_SIZE + COLOR_RECT_SPACE;
+        leftMargin += kColorRectSize() + kColorRectSpace;
     }
-    topMargin += COLOR_RECT_SIZE + (COLOR_RECT_SPACE * 3);
+    topMargin += kColorRectSize() + (kColorRectSpace * 3);
 
 
     //
@@ -298,18 +336,18 @@ void GoogleColorsPane::initColors()
            << QColor("#20124d")
            << QColor("#4c1130");
     for (int row = 0; row < (kColorRectRows - 2); ++row) {
-        leftMargin = PANEL_MARGIN;
+        leftMargin = kPanelMargin;
         for (int column = 0; column < kColorRectColumns; ++column) {
             QRectF colorRect;
             colorRect.setLeft(leftMargin);
             colorRect.setTop(topMargin);
-            colorRect.setWidth(COLOR_RECT_SIZE);
-            colorRect.setHeight(COLOR_RECT_SIZE);
+            colorRect.setWidth(kColorRectSize());
+            colorRect.setHeight(kColorRectSize());
 
             colorsInfos().append(ColorKeyInfo(colors.at((row * kColorRectColumns) + column), colorRect));
 
-            leftMargin += COLOR_RECT_SIZE + COLOR_RECT_SPACE;
+            leftMargin += kColorRectSize() + kColorRectSpace;
         }
-        topMargin += COLOR_RECT_SIZE + COLOR_RECT_SPACE;
+        topMargin += kColorRectSize() + kColorRectSpace;
     }
 }

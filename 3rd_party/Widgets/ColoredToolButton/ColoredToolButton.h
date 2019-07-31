@@ -25,9 +25,21 @@ public:
     };
 
 public:
-    ColoredToolButton(const QIcon& _icon, QWidget* _parent = nullptr, QWidget* _topLevelParent = nullptr);
-    ColoredToolButton(QWidget* _parent = nullptr, QWidget* _topLevelParent = nullptr);
+    ColoredToolButton(const QIcon& _icon, QWidget* _parent = nullptr);
+    ColoredToolButton(QWidget* _parent = nullptr);
     ~ColoredToolButton();
+
+#ifdef MOBILE_OS
+    /**
+     * @brief Задать родительский виджет для выезжающей панели с цветами
+     */
+    void setSlidingPanelParent(QWidget* _parent);
+
+    /**
+     * @brief Задать угол относительно которого будет происходить анимация панели с цветами
+     */
+    void setSlidingPanelCorner(Qt::Corner _corner);
+#endif
 
     /**
      * @brief Установить цветовую панель
@@ -109,6 +121,11 @@ private:
      * @brief Выезжающая панель палитры
      */
     SlidingPanel* m_colorsPanel = nullptr;
+
+    /**
+     * @brief Угол фиксации цветовой панели
+     */
+    Qt::Corner m_colorsPanelCorner = Qt::BottomLeftCorner;
 #endif
 };
 

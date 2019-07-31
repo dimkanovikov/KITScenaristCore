@@ -570,12 +570,19 @@ SettingsStorage::SettingsStorage()
     //
     // Настроим значения параметров по умолчанию
     //
-    m_defaultValues.insert("application/current-app-review-version", "11");
+    m_defaultValues.insert("application/current-app-review-version", "12");
     m_defaultValues.insert("application/uuid", QUuid::createUuid().toString());
     m_defaultValues.insert("application/app-was-configured", "0");
     m_defaultValues.insert("application/language", "-1");
     m_defaultValues.insert("application/username", ::systemUserName());
     m_defaultValues.insert("application/use-dark-theme", "1");
+    m_defaultValues.insert("application/use-preedit",
+#ifdef Q_OS_ANDROID
+                           "0"
+#else
+                           "1"
+#endif
+                           );
     m_defaultValues.insert("application/autosave", "1");
     m_defaultValues.insert("application/autosave-interval", "5");
     m_defaultValues.insert("application/save-backups", "1");

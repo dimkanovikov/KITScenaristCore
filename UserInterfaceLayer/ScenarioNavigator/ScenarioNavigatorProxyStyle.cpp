@@ -114,11 +114,11 @@ void ScenarioNavigatorProxyStyle::drawPrimitive(QStyle::PrimitiveElement _elemen
         _painter->setBrush(brush);
 
 #ifdef MOBILE_OS
-        const qreal arrowHeight = StyleSheetHelper::dpToPx(8.);
-        const qreal arrowHalfWidth = StyleSheetHelper::dpToPx(7.);
+        const qreal arrowHeight = StyleSheetHelper::dpToPx(8);
+        const qreal arrowHalfWidth = StyleSheetHelper::dpToPx(7);
 #else
-        const int arrowHeight = StyleSheetHelper::dpToPx(5.5);
-        const int arrowHalfWidth = StyleSheetHelper::dpToPx(4.);
+        const int arrowHeight = StyleSheetHelper::dpToPx(5);
+        const int arrowHalfWidth = StyleSheetHelper::dpToPx(4);
 #endif
         //
         // ... открытый

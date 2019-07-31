@@ -3,7 +3,9 @@
 #include "ActItem.h"
 #include "CardsScene.h"
 
+#include <3rd_party/Helpers/ColorHelper.h>
 #include <3rd_party/Helpers/ImageHelper.h>
+#include <3rd_party/Helpers/StyleSheetHelper.h>
 #include <3rd_party/Helpers/TextUtils.h>
 
 #include <QApplication>
@@ -35,8 +37,7 @@ namespace {
 const QString CardItem::MimeType = "application/kit-card";
 
 CardItem::CardItem(QGraphicsItem* _parent) :
-    QObject(),
-    QGraphicsItem(_parent),
+    QGraphicsObject(_parent),
     m_shadowEffect(new QGraphicsDropShadowEffect),
     m_animation(new QParallelAnimationGroup)
 {
@@ -48,16 +49,16 @@ CardItem::CardItem(QGraphicsItem* _parent) :
 
     setAcceptHoverEvents(true);
 
-    m_shadowEffect->setBlurRadius(7);
+    m_shadowEffect->setBlurRadius(StyleSheetHelper::dpToPx(7));
     m_shadowEffect->setXOffset(0);
-    m_shadowEffect->setYOffset(1);
+    m_shadowEffect->setYOffset(StyleSheetHelper::dpToPx(1));
     setGraphicsEffect(m_shadowEffect.data());
 }
 
 CardItem::CardItem(const QByteArray& mimeData, QGraphicsItem* _parent) :
-    QObject(),
-    QGraphicsItem(_parent),
-    m_shadowEffect(new QGraphicsDropShadowEffect)
+    QGraphicsObject(_parent),
+    m_shadowEffect(new QGraphicsDropShadowEffect),
+    m_animation(new QParallelAnimationGroup)
 {
     setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
@@ -68,8 +69,9 @@ CardItem::CardItem(const QByteArray& mimeData, QGraphicsItem* _parent) :
     QDataStream mimeStream(mimeData);
     mimeStream >> m_isFolder >> m_title >> m_description >> m_stamp >> m_colors;
 
-    m_shadowEffect->setBlurRadius(2);
-    m_shadowEffect->setOffset(1);
+    m_shadowEffect->setBlurRadius(StyleSheetHelper::dpToPx(7));
+    m_shadowEffect->setXOffset(0);
+    m_shadowEffect->setYOffset(StyleSheetHelper::dpToPx(1));
     setGraphicsEffect(m_shadowEffect.data());
 }
 
@@ -219,7 +221,7 @@ QRectF CardItem::boundingRectCorrected() const
     if (m_isFolder) {
         return boundingRect();
     }
-    return boundingRect().adjusted(0, 9, 0, 0);
+    return boundingRect().adjusted(0, StyleSheetHelper::dpToPx(9), 0, 0);
 }
 
 void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option, QWidget* _widget)
@@ -227,13 +229,11 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
     Q_UNUSED(_option);
     Q_UNUSED(_widget);
 
-    _painter->save();
-
     {
         const QPalette palette = QApplication::palette();
-        const QRectF cardRect = boundingRect().adjusted(0, 9, 0, 0);
+        const QRectF cardRect = boundingRectCorrected();
         const QStringList colors = m_colors.split(";", QString::SkipEmptyParts);
-        const int additionalColorsHeight = (colors.size() > 1) ? 10 : 0;
+        const int additionalColorsHeight = (colors.size() > 1) ? StyleSheetHelper::dpToPx(10) : 0;
 
         //
         // Рисуем фон
@@ -258,19 +258,20 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
              _painter->setBrush(palette.base());
              _painter->setPen(palette.base().color());
         }
-        _painter->drawRect(cardRect);
+        _painter->fillRect(cardRect, _painter->brush());
 
         //
         // Если это группирующий элемент, рисуем декорацию папки
         //
         if (m_isFolder) {
             if (isSelected()) {
-                _painter->setPen(QPen(palette.highlight(), 1));
+                _painter->setPen(QPen(palette.highlight(), StyleSheetHelper::dpToPx(1)));
             } else {
-                _painter->setPen(QPen(palette.dark(), 1));
+                _painter->setPen(QPen(palette.dark(), StyleSheetHelper::dpToPx(1)));
             }
-            const int margin = 9;
-            for (int distance = margin; distance >= 0; distance -= 3) {
+            const int margin = StyleSheetHelper::dpToPx(9);
+            const int delta = margin / 3;
+            for (int distance = margin; distance >= 0; distance -= delta) {
                 _painter->drawPolygon(QPolygonF()
                                       << QPointF(distance, margin)
                                       << QPointF(distance, margin - distance)
@@ -319,9 +320,15 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         QFont font = _painter->font();
         font.setBold(true);
         _painter->setFont(font);
-        _painter->setPen(palette.text().color());
+        if (!colors.isEmpty()) {
+            _painter->setPen(ColorHelper::textColor(QColor(colors.first())));
+        } else {
+            _painter->setPen(palette.text().color());
+        }
         const int titleHeight = _painter->fontMetrics().height();
-        const QRectF titleRect(7, 18, cardRect.size().width() - 7*2, titleHeight);
+        const int titleTopMargin = StyleSheetHelper::dpToPx(7);
+        const QRectF titleRect(titleTopMargin, StyleSheetHelper::dpToPx(18),
+                               cardRect.size().width() - titleTopMargin*2, titleHeight);
         QString titleText = title();
         if (!isFolder()) {
             titleText.prepend(QString("%1. ").arg(number()));
@@ -335,7 +342,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         if (!m_stamp.isEmpty()) {
             _painter->setOpacity(0.33);
             QFont stateFont = font;
-            stateFont.setPointSize(stateFont.pointSize()*8);
+            stateFont.setPixelSize(stateFont.pixelSize()*8);
             stateFont.setBold(true);
             stateFont.setCapitalization(QFont::AllUppercase);
             //
@@ -344,11 +351,11 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
             // размерам базового шрифта
             //
             QFontMetricsF stateFontMetrics(stateFont);
-            while (stateFont.pointSize() > font.pointSizeF()*1.2) {
+            while (stateFont.pixelSize() > 1.2*font.pixelSize()) {
                 if (stateFontMetrics.width(m_stamp) < cardRect.width() - 7*2) {
                     break;
                 }
-                stateFont.setPointSize(stateFont.pointSize() - 1);
+                stateFont.setPixelSize(stateFont.pixelSize() - 1);
                 stateFontMetrics = QFontMetricsF(stateFont);
             }
             _painter->setFont(stateFont);
@@ -368,7 +375,9 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
             font.setBold(false);
             _painter->setFont(font);
             const int spacing = titleRect.height() / 2;
-            const QRectF descriptionRect(9, titleRect.bottom() + spacing, cardRect.size().width() - 18, cardRect.size().height() - titleRect.bottom() - spacing - 9);
+            const QRectF descriptionRect(StyleSheetHelper::dpToPx(9), titleRect.bottom() + spacing,
+                                         cardRect.size().width() - StyleSheetHelper::dpToPx(18),
+                                         cardRect.size().height() - titleRect.bottom() - spacing - StyleSheetHelper::dpToPx(9));
             QString descriptionText = TextUtils::elidedText(m_description, _painter->font(), descriptionRect.size(), textoption);
             descriptionText.replace("\n", "\n\n");
             _painter->drawText(descriptionRect, descriptionText, textoption);
@@ -379,12 +388,10 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         //
         if (isSelected()) {
             _painter->setBrush(Qt::transparent);
-            _painter->setPen(QPen(palette.highlight(), 1, Qt::SolidLine, Qt::SquareCap, Qt::MiterJoin));
+            _painter->setPen(QPen(palette.highlight(), StyleSheetHelper::dpToPx(2), Qt::SolidLine, Qt::SquareCap, Qt::MiterJoin));
             _painter->drawRect(cardRect);
         }
     }
-
-    _painter->restore();
 }
 
 void CardItem::takeFromBoard()
@@ -518,12 +525,7 @@ void CardItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* _event)
 {
     QGraphicsItem::mouseReleaseEvent(_event);
 
-    //
-    // Положим карточку обратно, если это не вложение
-    //
-//    if (cardForEmbedUuid().isEmpty()) {
-        putOnBoard();
-//    }
+    putOnBoard();
 }
 
 void CardItem::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* _event)
@@ -537,12 +539,5 @@ void CardItem::hoverLeaveEvent(QGraphicsSceneHoverEvent* _event)
 {
     QGraphicsItem::hoverLeaveEvent(_event);
 
-    //
-    // Положим карточку обратно, если это не вложение
-    //
-//    if (cardForEmbedUuid().isEmpty()) {
-        putOnBoard();
-//    } else {
-
-//    }
+    putOnBoard();
 }

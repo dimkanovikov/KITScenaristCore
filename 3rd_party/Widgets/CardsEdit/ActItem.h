@@ -1,7 +1,7 @@
 #ifndef ACTITEM_H
 #define ACTITEM_H
 
-#include <QGraphicsItem>
+#include <QGraphicsObject>
 
 #include <QGraphicsDropShadowEffect>
 
@@ -9,7 +9,7 @@
 /**
  * @brief Элемент сцены являющий собой акт сценария
  */
-class ActItem : public QObject, public QGraphicsItem
+class ActItem : public QGraphicsObject
 {
     Q_OBJECT
     Q_PROPERTY(QPointF pos READ pos WRITE setPos)
@@ -21,7 +21,7 @@ public:
     static const int Type = UserType + 16;
 
 public:
-    explicit ActItem(QGraphicsItem* _parent = 0);
+    explicit ActItem(QGraphicsItem* _parent = nullptr);
 
     /**
      * @brief Идентификатор

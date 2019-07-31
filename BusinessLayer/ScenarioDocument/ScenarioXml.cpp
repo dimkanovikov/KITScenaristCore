@@ -23,6 +23,16 @@
 using namespace BusinessLogic;
 
 namespace {
+    /**
+     * @brief Шаг увеличения размера кэша при его заполнении
+     */
+    const int kCostIncreaseStep = 100;
+
+    /**
+     * @brief Начальное значение размера кэша
+     */
+    const int kInitialCost  = 3000;
+
     const QString kNodeScript = "scenario";
     const QString kNodeValue = "v";
     const QString kNodeReviewGroup = "reviews";
@@ -67,12 +77,16 @@ namespace {
     /**
      * @brief Сформировать хэш для текстового блока
      */
-    static inline uint blockHash(const QTextBlock& _block)
+    static inline quint64 blockHash(const QTextBlock& _block)
     {
         //
         // TODO: Нужно оптимизировать формирование хэша, т.к. от него напрямую зависит
         //       скорость формирования xml-документа сценария
         //
+        TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(_block.userData());
+        if (blockInfo != nullptr) {
+            return blockInfo->id();
+        }
 
         //
         // Формируем уникальную строку, главное, чтобы два разных блока не имели одинакового хэша,
@@ -165,7 +179,9 @@ namespace {
      */
     static bool isReviewFormatEquals(const QTextCharFormat& _lhs, const QTextCharFormat& _rhs) {
         return
-                _lhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)
+                _lhs.foreground().color() == _rhs.foreground().color()
+                && _lhs.background().color() == _rhs.background().color()
+                && _lhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)
                 && _lhs.boolProperty(ScenarioBlockStyle::PropertyIsHighlight) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsHighlight)
                 && _lhs.boolProperty(ScenarioBlockStyle::PropertyIsDone) == _rhs.boolProperty(ScenarioBlockStyle::PropertyIsDone)
                 && _lhs.property(ScenarioBlockStyle::PropertyComments) == _rhs.property(ScenarioBlockStyle::PropertyComments)
@@ -255,11 +271,25 @@ ScenarioXml::ScenarioXml(ScenarioDocument* _scenario) :
 {
     Q_ASSERT(m_scenario);
 
-    m_xmlCache.setMaxCost(3000);
+    m_xmlCache.setMaxCost(kInitialCost);
 }
 
 QString ScenarioXml::scenarioToXml()
 {
+    //
+    // Проверим, чтобы ёмкость кэша была достаточной
+    //
+    {
+        const int maxCost = m_xmlCache.maxCost();
+        const int currentCost = m_scenario->document()->blockCount();
+        if (currentCost > kInitialCost
+            && (maxCost < currentCost
+                || maxCost > currentCost * 2)) {
+            m_xmlCache.setMaxCost(std::max(kInitialCost, currentCost + kCostIncreaseStep));
+        }
+    }
+
+
     //
     // Для формирования xml не используем QXmlStreamWriter, т.к. нам нужно хранить по отдельности
     // xml каждого блока, а QXmlStreamWriter не всегда закрывает последний записанный тэг,
@@ -275,7 +305,7 @@ QString ScenarioXml::scenarioToXml()
     bool isSecondColumn = false;
     do {
         currentBlockXml.clear();
-        const uint currentBlockHash = blockHash(currentBlock);
+        const quint64 currentBlockHash = blockHash(currentBlock);
 
         //
         // Определим тип текущего блока
@@ -1166,7 +1196,7 @@ QString ScenarioXml::scenarioToXml(ScenarioModelItem* _fromItem, ScenarioModelIt
     return scenarioToXml(startPosition, endPosition);
 }
 
-void ScenarioXml::xmlToScenario(int _position, const QString& _xml, bool _rebuildUuids)
+void ScenarioXml::xmlToScenario(int _position, const QString& _xml, bool _remainLinkedData)
 {
     QXmlStreamReader reader(_xml);
     if (reader.readNextStartElement()
@@ -1175,7 +1205,7 @@ void ScenarioXml::xmlToScenario(int _position, const QString& _xml, bool _rebuil
         if (version.isEmpty()) {
             xmlToScenarioV0(_position, _xml);
         } else if (version == "1.0") {
-            xmlToScenarioV1(_position, _xml, _rebuildUuids);
+            xmlToScenarioV1(_position, _xml, _remainLinkedData);
         }
     }
 }
@@ -1244,7 +1274,8 @@ int ScenarioXml::xmlToScenario(ScenarioModelItem* _insertParent, ScenarioModelIt
         //
         // Вставка данных
         //
-        xmlToScenario(insertPosition, _xml);
+        const bool remainLinkedData = _removeLastMime;
+        xmlToScenario(insertPosition, _xml, remainLinkedData);
 
         //
         // Завершаем операцию
@@ -1441,7 +1472,7 @@ void ScenarioXml::xmlToScenarioV0(int _position, const QString& _xml)
     cursor.endEditBlock();
 }
 
-void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebuildUuids)
+void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _remainLinkedData)
 {
     //
     // Происходит ли обработка первого блока
@@ -1526,7 +1557,7 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
                         if (reader.attributes().hasAttribute(ATTRIBUTE_UUID)) {
                             const QString uuid = reader.attributes().value(ATTRIBUTE_UUID).toString();
-                            if (!_rebuildUuids || !isScenarioHaveUuid(uuid)) {
+                            if (_remainLinkedData || !isScenarioHaveUuid(uuid)) {
                                 info->setUuid(uuid);
                             }
                         }
@@ -1539,16 +1570,25 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                         if (reader.attributes().hasAttribute(ATTRIBUTE_TITLE)) {
                             info->setName(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));
                         }
-                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER)) {
+                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER) && _remainLinkedData) {
                             info->setSceneNumber(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER).toString());
                             info->setSceneNumberFixed(true);
                         }
                         if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING)) {
-                            info->setSceneNumberFixNesting(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING).toUInt());
+                            info->setSceneNumberFixNesting(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING).toInt());
                         }
                         if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER_SUFFIX)) {
-                            info->setSceneNumberSuffix(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_SUFFIX).toUInt());
+                            info->setSceneNumberSuffix(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_SUFFIX).toInt());
                         }
+                        cursor.block().setUserData(info);
+                    }
+                    //
+                    // Для всех остальных блоков создаём структурку с данными о блоке
+                    //
+                    else {
+                        TextBlockInfo* info = tokenType == ScenarioBlockStyle::Character
+                                              ? new CharacterBlockInfo
+                                              : new TextBlockInfo;
                         cursor.block().setUserData(info);
                     }
 
@@ -1557,13 +1597,6 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                     //
                     if (reader.attributes().hasAttribute(ATTRIBUTE_BOOKMARK)) {
                         TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(cursor.block().userData());
-                        if (blockInfo == nullptr) {
-                            if (tokenType == ScenarioBlockStyle::Character) {
-                                blockInfo = new CharacterBlockInfo;
-                            } else {
-                                blockInfo = new TextBlockInfo;
-                            }
-                        }
                         blockInfo->setHasBookmark(true);
                         blockInfo->setBookmark(reader.attributes().value(ATTRIBUTE_BOOKMARK).toString());
                         blockInfo->setBookmarkColor(reader.attributes().value(ATTRIBUTE_BOOKMARK_COLOR).toString());
@@ -1576,13 +1609,6 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rebu
                     if (reader.attributes().hasAttribute(ATTRIBUTE_DIFF_ADDED)
                         || reader.attributes().hasAttribute(ATTRIBUTE_DIFF_REMOVED)) {
                         TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(cursor.block().userData());
-                        if (blockInfo == nullptr) {
-                            if (tokenType == ScenarioBlockStyle::Character) {
-                                blockInfo = new CharacterBlockInfo;
-                            } else {
-                                blockInfo = new TextBlockInfo;
-                            }
-                        }
 
                         if (reader.attributes().hasAttribute(ATTRIBUTE_DIFF_ADDED)) {
                             blockInfo->setDiffType(TextBlockInfo::kDiffAdded);

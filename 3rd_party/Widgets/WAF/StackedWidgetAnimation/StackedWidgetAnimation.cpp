@@ -72,9 +72,6 @@ void StackedWidgetAnimation::slideOverOut(QStackedWidget* _container, QWidget* _
 
 void StackedWidgetAnimation::slideOver(QStackedWidget* _container, QWidget* _widget, WAF::AnimationDirection _direction, bool _in)
 {
-    if (_container->currentWidget() == _widget)
-        return;
-
     const StackedWidgetAnimationPrivate::AnimatorType animatorType = StackedWidgetAnimationPrivate::SlideOver;
     AbstractAnimator* animator = 0;
     if (pimpl()->hasAnimator(_widget, animatorType)) {

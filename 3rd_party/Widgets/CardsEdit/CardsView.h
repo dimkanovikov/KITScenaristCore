@@ -16,7 +16,7 @@ class CardsView : public QWidget
     Q_OBJECT
 
 public:
-    explicit CardsView(QWidget* _parent = 0);
+    explicit CardsView(QWidget* _parent = nullptr);
     ~CardsView();
 
     /**
@@ -71,6 +71,11 @@ public:
      * @brief Установить режим привязки карточек к сетке
      */
     void setFixedMode(bool _isFixed);
+
+    /**
+     * @brief Получить идентификатор выделенной карточки
+     */
+    QString selectedItemUuid() const;
 
     /**
      * @brief Получить идентификатор последнего элемента

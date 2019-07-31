@@ -58,6 +58,21 @@ private slots:
 	void aboutReplaceAll();
 
 private:
+    /**
+     * @brief Настроить представление
+     */
+    void initView(bool _showTypesCombo);
+
+    /**
+     * @brief Настроить внешний вид
+     */
+    void initStyleSheet();
+
+    /**
+     * @brief Настроить соединения
+     */
+    void initConnections();
+
 	/**
 	 * @brief Поиск текста в заданном направлении
 	 */

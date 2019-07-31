@@ -77,8 +77,18 @@ namespace BusinessLogic
          * @param _atCurrentCharacter - начинается/заканчивается ли форматирование
          *        в текущей позиции (true), или захватывает последний символ (false)
          */
-        void processFormat(bool _italics, bool _bold, bool _underline,
+        bool processFormat(bool _italics, bool _bold, bool _underline, bool _isCanStartEmphasis, bool _isCanEndEmphasis,
                        bool _forCurrentCharacter = false) const ;
+
+        /**
+         * @brief Может ли предыдущий символ быть началом форматирования
+         */
+        bool canStartEmphasis() const;
+
+        /**
+         * @brief Может ли предыдущий символ быть концом форматирования
+         */
+        bool canEndEmphasis(const QString& _paragraphText, int _pos) const;
 
     private:
         //

@@ -36,7 +36,7 @@
 #include <QStringListModel>
 #include <QStyleHints>
 #ifndef MOBILE_OS
-#include <QSound>
+#include <QSoundEffect>
 #endif
 #include <QTextBlock>
 #include <QTextCursor>
@@ -56,12 +56,6 @@ namespace {
      * @note Используется для корректировки скрола при совместном редактировании
      */
     const char* CURSOR_RECT = "cursorRect";
-
-    /**
-      * @brief Позиция мыши в момент вызова контекстного меню
-      * @note Используется для определения над каким блоком было вызвано действие контекстного меню
-      */
-    const char* kLastMousePosKey = "lastMousePos";
 }
 
 
@@ -657,10 +651,24 @@ void ScenarioTextEdit::setTextBold(bool _bold)
         return;
     }
 
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontWeight(_bold ? QFont::Bold : QFont::Normal);
-    cursor.mergeCharFormat(format);
+    int position = qMin(cursor.selectionStart(), cursor.selectionEnd());
+    const int lastPosition = qMax(cursor.selectionStart(), cursor.selectionEnd());
+    while (position < lastPosition) {
+        cursor.setPosition(position);
+        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        if (cursor.position() < lastPosition) {
+            cursor.setPosition(lastPosition, QTextCursor::KeepAnchor);
+        }
+
+        QTextCharFormat format = cursor.charFormat();
+        format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+        format.setFontWeight(_bold ? QFont::Bold : QFont::Normal);
+        cursor.mergeCharFormat(format);
+
+        cursor.movePosition(QTextCursor::NextCharacter);
+
+        position = cursor.position();
+    }
 }
 
 void ScenarioTextEdit::setTextItalic(bool _italic)
@@ -670,10 +678,24 @@ void ScenarioTextEdit::setTextItalic(bool _italic)
         return;
     }
 
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontItalic(_italic);
-    cursor.mergeCharFormat(format);
+    int position = qMin(cursor.selectionStart(), cursor.selectionEnd());
+    const int lastPosition = qMax(cursor.selectionStart(), cursor.selectionEnd());
+    while (position < lastPosition) {
+        cursor.setPosition(position);
+        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        if (cursor.position() < lastPosition) {
+            cursor.setPosition(lastPosition, QTextCursor::KeepAnchor);
+        }
+
+        QTextCharFormat format = cursor.charFormat();
+        format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+        format.setFontItalic(_italic);
+        cursor.mergeCharFormat(format);
+
+        cursor.movePosition(QTextCursor::NextCharacter);
+
+        position = cursor.position();
+    }
 }
 
 void ScenarioTextEdit::setTextUnderline(bool _underline)
@@ -683,10 +705,29 @@ void ScenarioTextEdit::setTextUnderline(bool _underline)
         return;
     }
 
-    QTextCharFormat format = cursor.charFormat();
-    format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
-    format.setFontUnderline(_underline);
-    cursor.mergeCharFormat(format);
+    int position = qMin(cursor.selectionStart(), cursor.selectionEnd());
+    const int lastPosition = qMax(cursor.selectionStart(), cursor.selectionEnd());
+    while (position < lastPosition) {
+        cursor.setPosition(position);
+        cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+        if (cursor.position() < lastPosition) {
+            cursor.setPosition(lastPosition, QTextCursor::KeepAnchor);
+        }
+
+        QTextCharFormat format = cursor.charFormat();
+        format.setProperty(ScenarioBlockStyle::PropertyIsFormatting, true);
+        format.setFontUnderline(_underline);
+        cursor.mergeCharFormat(format);
+
+        cursor.movePosition(QTextCursor::NextCharacter);
+
+        position = cursor.position();
+    }
+}
+
+void ScenarioTextEdit::setShortcutsContextWidget(QWidget* _context)
+{
+    m_shortcutsManager->setContextWidget(_context);
 }
 
 void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
@@ -696,29 +737,33 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
     // Музицируем
     //
     if (m_keyboardSoundEnabled) {
-        static QSound s_returnSound(":/Audio/Sound/return.wav");
-        static QSound s_spaceSound(":/Audio/Sound/space.wav");
-        static QSound s_deleteSound(":/Audio/Sound/backspace.wav");
-        static QSound s_key1Sound(":/Audio/Sound/key-01.wav");
-        static QSound s_key2Sound(":/Audio/Sound/key-02.wav");
-        static QSound s_key3Sound(":/Audio/Sound/key-03.wav");
-        static QSound s_key4Sound(":/Audio/Sound/key-04.wav");
-        static QVector<QSound*> s_keySounds = { &s_key1Sound, &s_key2Sound, &s_key3Sound, &s_key4Sound };
+        auto makeSound = [this] (const QString& path) {
+            QSoundEffect* sound = new QSoundEffect(this);
+            sound->setSource(QUrl::fromLocalFile(path));
+            return sound;
+        };
+        static auto s_returnSound = makeSound(":/Audio/Sound/return.wav");
+        static auto s_spaceSound = makeSound(":/Audio/Sound/space.wav");
+        static auto s_deleteSound = makeSound(":/Audio/Sound/backspace.wav");
+        static QVector<QSoundEffect*> s_keySounds = { makeSound(":/Audio/Sound/key-01.wav"),
+                                                      makeSound(":/Audio/Sound/key-02.wav"),
+                                                      makeSound(":/Audio/Sound/key-03.wav"),
+                                                      makeSound(":/Audio/Sound/key-04.wav") };
         switch (_event->key()) {
             case Qt::Key_Return:
             case Qt::Key_Enter: {
-                s_returnSound.play();
+                s_returnSound->play();
                 break;
             }
 
             case Qt::Key_Space: {
-                s_spaceSound.play();
+                s_spaceSound->play();
                 break;
             }
 
             case Qt::Key_Backspace:
             case Qt::Key_Delete: {
-                s_deleteSound.play();
+                s_deleteSound->play();
                 break;
             }
 
@@ -824,6 +869,18 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
     cursor.endEditBlock();
 
     //
+    // FIXME: пока убираем, т.к. при таком подходе сохраняется каждий введённый символ,
+    //        а нужно делать сохранение только в том случае, когда корректировка имеет место
+    //
+//    //
+//    // Сохраним изменение и затем сделаем корректировку текста, чтобы пользователь мог её отменить
+//    //
+//    m_document->updateScenarioXml();
+//    m_document->saveChanges();
+//    updateEnteredText(_event->text());
+//    TextEditHelper::beautifyDocument(textCursor(), _event->text(), m_replaceThreeDots, m_smartQuotes);
+
+    //
     // Убедимся, что курсор виден
     //
     if (handler->needEnsureCursorVisible()) {
@@ -916,7 +973,12 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
     // ... перевод курсора к следующему символу
     //
     if (_event == QKeySequence::MoveToNextChar) {
-        moveCursor(QTextCursor::NextCharacter);
+        if (textCursor().block().textDirection() == Qt::LeftToRight) {
+            moveCursor(QTextCursor::NextCharacter);
+        } else {
+            moveCursor(QTextCursor::PreviousCharacter);
+        }
+
         while (!textCursor().atEnd()
                && (!textCursor().block().isVisible()
                    || ScenarioBlockStyle::forBlock(textCursor().block()) == ScenarioBlockStyle::PageSplitter
@@ -928,13 +990,21 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
     // ... перевод курсора к предыдущему символу
     //
     else if (_event == QKeySequence::MoveToPreviousChar) {
-        moveCursor(QTextCursor::PreviousCharacter);
+        if (textCursor().block().textDirection() == Qt::LeftToRight) {
+            moveCursor(QTextCursor::PreviousCharacter);
+        } else {
+            moveCursor(QTextCursor::NextCharacter);
+        }
         while (!textCursor().atStart()
                && (!textCursor().block().isVisible()
                    || ScenarioBlockStyle::forBlock(textCursor().block()) == ScenarioBlockStyle::PageSplitter
                    || textCursor().blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection))) {
             moveCursor(QTextCursor::StartOfBlock);
-            moveCursor(QTextCursor::PreviousCharacter);
+            if (textCursor().block().textDirection() == Qt::LeftToRight) {
+                moveCursor(QTextCursor::PreviousCharacter);
+            } else {
+                moveCursor(QTextCursor::NextCharacter);
+            }
         }
     }
     //
@@ -1460,7 +1530,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         if (blockInfo != nullptr
                             && blockInfo->hasBookmark()) {
                             //
-                            // Определим область для отрисовки и выведем номер сцены в редактор
+                            // Определим область для отрисовки и выведем закладку в редактор
                             //
                             QPointF topLeft(QLocale().textDirection() == Qt::LeftToRight
                                             ? pageLeft + leftDelta
@@ -1542,7 +1612,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                                 // Определим номер реплики
                                 //
                                 if (CharacterBlockInfo* info = dynamic_cast<CharacterBlockInfo*>(blockInfo)) {
-                                    const QString dialogueNumber = QString::number(info->dialogueNumbder()) + ":";
+                                    const QString dialogueNumber = QString::number(info->dialogueNumber()) + ":";
 
                                     //
                                     // Определим область для отрисовки и выведем номер реплики в редактор
@@ -1642,7 +1712,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                 foreach (const QString& username, m_additionalCursorsCorrected.keys()) {
                     QTextCursor cursor(m_document);
                     m_document->setCursorPosition(cursor, m_additionalCursorsCorrected.value(username));
-                    const QRect cursorR = cursorRect(cursor);
+                    const QRect cursorR = cursorRect(cursor).adjusted(0, 0, 1, 0);
 
                     //
                     // Если курсор на экране
@@ -1719,7 +1789,30 @@ bool ScenarioTextEdit::canInsertFromMimeData(const QMimeData* _source) const
 QMimeData* ScenarioTextEdit::createMimeDataFromSelection() const
 {
     QMimeData* mimeData = new QMimeData;
-    mimeData->setData("text/plain", textCursor().selection().toPlainText().toUtf8());
+
+    //
+    // TODO: экспорт в фонтан
+    //
+    {
+        QByteArray text;
+        QTextCursor cursor = textCursor();
+        cursor.setPosition(textCursor().selectionStart());
+        do {
+            cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
+            if (cursor.position() > textCursor().selectionEnd()) {
+                cursor.setPosition(textCursor().selectionEnd(), QTextCursor::KeepAnchor);
+            }
+            if (!text.isEmpty()) {
+                text.append("\r\n");
+            }
+            text.append(cursor.blockCharFormat().fontCapitalization() == QFont::AllUppercase
+                        ? cursor.selectedText().toUpper()
+                        : cursor.selectedText());
+            cursor.movePosition(QTextCursor::NextBlock);
+        } while (cursor.position() < textCursor().selectionEnd()
+                 && !cursor.atEnd());
+        mimeData->setData("text/plain", text);
+    }
 
     //
     // Поместим в буфер данные о тексте в специальном формате

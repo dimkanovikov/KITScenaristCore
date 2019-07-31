@@ -97,6 +97,12 @@ Project::Project(Type _type, const QString& _name, const QString& _path,
         //
         m_isSyncAvailable = true;
     }
+    //
+    // Определить возможность записи в файл для локальных проектов
+    //
+    else {
+        m_isWritable = QFileInfo(m_path).isWritable();
+    }
 }
 
 Project::Type Project::type() const
@@ -155,6 +161,7 @@ void Project::setPath(const QString& _path)
 {
     if (m_path != _path) {
         m_path = _path;
+        m_isWritable = QFileInfo(m_path).isWritable();
     }
 }
 
@@ -183,6 +190,11 @@ bool Project::isUserOwner() const
 bool Project::isCommentOnly() const
 {
     return m_role == Commentator;
+}
+
+bool Project::isWritable() const
+{
+    return m_isWritable;
 }
 
 QStringList Project::users() const

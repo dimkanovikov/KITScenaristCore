@@ -34,6 +34,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Belorussian:
             code = "be_BY";
             break;
+        case Catalan:
+            code = "ca_CA";
+            break;
         case EnglishGB:
             code = "en_GB";
             break;
@@ -45,6 +48,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
             break;
         case French:
             code = "fr_FR";
+            break;
+        case German:
+            code = "de_DE";
             break;
         case Hebrew:
             code = "he_IL";
@@ -72,6 +78,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
             break;
         case Swedish:
             code = "sv_SE";
+            break;
+        case Telugu:
+            code = "te_IN";
             break;
         case Turkish:
             code = "tr_TR";

@@ -39,6 +39,8 @@ SimpleTextEditorWidget::SimpleTextEditorWidget(QWidget *parent) :
     m_editor(new SimpleTextEditor(this)),
     m_editorWrapper(new ScalableWrapper(m_editor, this)),
     m_toolbar(new QWidget(this)),
+    m_undo(new FlatButton(this)),
+    m_redo(new FlatButton(this)),
     m_textFont(new QComboBox(this)),
     m_textFontSize(new QComboBox(this)),
     m_textBold(new FlatButton(this)),
@@ -174,6 +176,12 @@ void SimpleTextEditorWidget::initView()
     m_editorWrapper->setZoomRange(settings.value("simple-editor/zoom-range", 0).toDouble());
     m_editor->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
+    m_undo->setShortcut(QKeySequence::Undo);
+    m_undo->setIcons(QIcon(":/Graphics/Iconset/undo.svg"));
+    m_undo->setToolTip(ShortcutHelper::makeToolTip(tr("Undo last action"), m_undo->shortcut()));
+    m_redo->setShortcut(QKeySequence::Redo);
+    m_redo->setIcons(QIcon(":/Graphics/Iconset/redo.svg"));
+    m_redo->setToolTip(ShortcutHelper::makeToolTip(tr("Redo previously undone action"), m_redo->shortcut()));
     m_textFont->setModel(new QStringListModel(QFontDatabase().families(), m_textFont));
     m_textFont->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     m_textFont->setEditable(true);
@@ -208,6 +216,8 @@ void SimpleTextEditorWidget::initView()
     QHBoxLayout* toolbarLayout = new QHBoxLayout;
     toolbarLayout->setSpacing(0);
     toolbarLayout->setContentsMargins(QMargins());
+    toolbarLayout->addWidget(m_undo);
+    toolbarLayout->addWidget(m_redo);
     toolbarLayout->addWidget(m_textFont);
     toolbarLayout->addWidget(m_textFontSize);
     toolbarLayout->addWidget(m_textBold);
@@ -276,9 +286,14 @@ void SimpleTextEditorWidget::initConnections()
         m_isInTextFormatUpdate = false;
     });
     //
+    // ... отмена/повтор последнего действия
+    //
+    connect(m_undo, &FlatButton::clicked, m_editor, &SimpleTextEditor::undo);
+    connect(m_redo, &FlatButton::clicked, m_editor, &SimpleTextEditor::redo);
+    //
     // ... шрифт
     //
-    connect(m_textFont, &QComboBox::currentTextChanged, [this] {
+    connect(m_textFont, &QComboBox::currentTextChanged, this, [this] {
         if (!m_isInTextFormatUpdate) {
             QFont font(m_textFont->currentText(), m_textFontSize->currentText().toInt());
             m_editor->setTextFont(font);
@@ -287,7 +302,7 @@ void SimpleTextEditorWidget::initConnections()
     //
     // ... размер шрифта
     //
-    connect(m_textFontSize, &QComboBox::currentTextChanged, [this] {
+    connect(m_textFontSize, &QComboBox::currentTextChanged, this, [this] {
         if (!m_isInTextFormatUpdate) {
             QFont font(m_textFont->currentText(), m_textFontSize->currentText().toInt());
             m_editor->setTextFont(font);
@@ -296,17 +311,17 @@ void SimpleTextEditorWidget::initConnections()
     //
     // ... начертания
     //
-    connect(m_textBold, &FlatButton::toggled, [this] (bool _checked) {
+    connect(m_textBold, &FlatButton::toggled, this, [this] (bool _checked) {
         if (!m_isInTextFormatUpdate) {
             m_editor->setTextBold(_checked);
         }
     });
-    connect(m_textItalic, &FlatButton::toggled, [this] (bool _checked) {
+    connect(m_textItalic, &FlatButton::toggled, this, [this] (bool _checked) {
         if (!m_isInTextFormatUpdate) {
             m_editor->setTextItalic(_checked);
         }
     });
-    connect(m_textUnderline, &FlatButton::toggled, [this] (bool _checked) {
+    connect(m_textUnderline, &FlatButton::toggled, this, [this] (bool _checked) {
         if (!m_isInTextFormatUpdate) {
             m_editor->setTextUnderline(_checked);
         }
@@ -314,7 +329,7 @@ void SimpleTextEditorWidget::initConnections()
     //
     // ... цвет текста
     //
-    connect(m_textColor, &ColoredToolButton::clicked, [this] (const QColor& _color) {
+    connect(m_textColor, &ColoredToolButton::clicked, this, [this] (const QColor& _color) {
         if (!m_isInTextFormatUpdate) {
             m_editor->setTextColor(_color);
         }
@@ -322,7 +337,7 @@ void SimpleTextEditorWidget::initConnections()
     //
     // ... цвет фона текста
     //
-    connect(m_textBackgroundColor, &ColoredToolButton::clicked, [this] (const QColor& _color) {
+    connect(m_textBackgroundColor, &ColoredToolButton::clicked, this, [this] (const QColor& _color) {
         if (!m_isInTextFormatUpdate) {
             m_editor->setTextBackgroundColor(_color);
         }
@@ -330,7 +345,7 @@ void SimpleTextEditorWidget::initConnections()
     //
     // ... очистить форматирование
     //
-    connect(m_clearFormatting, &FlatButton::clicked, [this] {
+    connect(m_clearFormatting, &FlatButton::clicked, this, [this] {
         if (!m_isInTextFormatUpdate) {
             m_editor->clearFormat();
         }
@@ -339,6 +354,9 @@ void SimpleTextEditorWidget::initConnections()
 
 void SimpleTextEditorWidget::initStyleSheet()
 {
+    m_undo->setProperty("inTopPanel", true);
+    m_undo->setProperty("topPanelLeftBordered", true);
+    m_redo->setProperty("inTopPanel", true);
     m_textFont->setProperty("inTopPanel", true);
     m_textFont->setProperty("topPanelTopBordered", true);
     m_textFont->setProperty("topPanelLeftBordered", true);

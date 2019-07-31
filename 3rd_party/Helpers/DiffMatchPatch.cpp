@@ -1480,8 +1480,8 @@ int diff_match_patch::match_bitap(const QString &text, const QString &pattern,
 
   int bin_min, bin_mid;
   int bin_max = pattern.length() + text.length();
-  int *rd;
-  int *last_rd = NULL;
+  int *rd = nullptr;
+  int *last_rd = nullptr;
   for (int d = 0; d < pattern.length(); d++) {
     // Scan for the best match; each iteration allows for one more error.
     // Run a binary search to determine how far from 'loc' we can stray at
@@ -1517,7 +1517,7 @@ int diff_match_patch::match_bitap(const QString &text, const QString &pattern,
         rd[j] = ((rd[j + 1] << 1) | 1) & charMatch;
       } else {
         // Subsequent passes: fuzzy match.
-        rd[j] = ((rd[j + 1] << 1) | 1) & charMatch
+        rd[j] = (((rd[j + 1] << 1) | 1) & charMatch)
             | (((last_rd[j + 1] | last_rd[j]) << 1) | 1)
             | last_rd[j + 1];
       }

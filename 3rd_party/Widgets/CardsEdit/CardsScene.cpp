@@ -114,6 +114,20 @@ bool CardsScene::isFixedMode() const
     return m_isFixedMode;
 }
 
+QString CardsScene::selectedItemUuid() const
+{
+    QString uuid;
+    if (!selectedItems().isEmpty()) {
+        QGraphicsItem* item = selectedItems().first();
+        if (ActItem* act = qgraphicsitem_cast<ActItem*>(item)) {
+            uuid = act->uuid();
+        } else if (CardItem* card = qgraphicsitem_cast<CardItem*>(item)) {
+            uuid = card->uuid();
+        }
+    }
+    return uuid;
+}
+
 QString CardsScene::lastItemUuid() const
 {
     QString lastItemUuid;
@@ -328,6 +342,7 @@ void CardsScene::insertCard(const QString& _uuid, bool _isFolder, const QString&
 
     if (m_itemsMap.contains(_uuid)) {
         Q_ASSERT_X(false, Q_FUNC_INFO, "Try to add contained item to scene");
+        return;
     }
 
     CardItem* card = nullptr;
@@ -1177,6 +1192,7 @@ void CardsScene::updateActBoundingRect(const QRectF& _sceneRect, ActItem* _act)
     } else {
         actRect.setWidth(m_cardsSize.width() + actDelta()*2);
     }
+    actRect.setHeight(qMax(actRect.height(), QFontMetricsF(font()).lineSpacing() * 2));
     _act->setBoundingRect(actRect);
 }
 

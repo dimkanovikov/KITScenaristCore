@@ -5,7 +5,7 @@
     <name>AboutDialog</name>
     <message>
         <source>About the app</source>
-        <translation>Sobre o aplicativo</translation>
+        <translation>Sobre a aplicação</translation>
     </message>
     <message>
         <source>KIT Scenarist</source>
@@ -118,7 +118,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The application logo designed by &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A logo do aplicativo desenhada por &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A logo da aplicação desenhada por &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Our heroes, who help us to create international versions:
@@ -173,7 +173,7 @@ Türkçe: Recep Burak Yak
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 </source>
-        <translation>Nossos heróis, que nos ajudaram a criar as versões internacionais:
+        <translation type="vanished">Nossos heróis, que nos ajudaram a criar as versões internacionais:
 Azərbaycan: Tarlan Rasulzadeh
 Deutsch: Michael Krämer
 English: Eric Wayne &amp; Soyung Key
@@ -192,6 +192,28 @@ Türkçe: Recep Burak Yak
 עִבְרִית: Maxim Ronkin
 </translation>
     </message>
+    <message>
+        <source>Our heroes, who help us to create international versions:
+Azərbaycan: Tarlan Rasulzadeh
+Deutsch: Michael Krämer
+English: Eric Wayne &amp; Soyung Key
+Español: Felipe Vece, Pedro Terrero
+Français: Felipe Vece, Antonio, Armand Robin
+Italiano: Luca Giliberto
+Қазақ: Алпамыс Баткалов
+Magyar: Gabor
+Polski: Rafał Puka, Bartłomiej Jaskulski
+Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
+Русский: Димка Новиков
+Türkçe: Recep Burak Yak
+Українська: Myroslav S 
+فارْسِى: Arash Aneessee
+汉语: Stepan Chernetskiy, Barron Kang
+עִבְרִית: Maxim Ronkin
+తెలుగు: Eshwar Mittapalli
+</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AcceptebleLineEdit</name>
@@ -208,18 +230,18 @@ Türkçe: Recep Burak Yak
     <name>AddImageButton</name>
     <message>
         <source>Choose image</source>
-        <translation>Escolha imagem</translation>
+        <translation>Escolher imagem</translation>
     </message>
     <message>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
-        <translation>Imagens(*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
+        <translation>Imagens (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
     </message>
 </context>
 <context>
     <name>AddProjectDialog</name>
     <message>
         <source>Add New Project</source>
-        <translation>Adicionar Novo Projeto</translation>
+        <translation>Adicionar Novo projeto</translation>
     </message>
     <message>
         <source>Local</source>
@@ -243,11 +265,11 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Enter Name of New Project:</source>
-        <translation>Entre com o nome do novo projeto:</translation>
+        <translation>Digite o nome do novo projeto:</translation>
     </message>
     <message>
         <source>Choose File with Project to Import:</source>
-        <translation>Escolha o arquivo com o Projeto para importar:</translation>
+        <translation>Escolha o arquivo com o projeto para importar:</translation>
     </message>
     <message>
         <source>File exists. It will be replaced after creating.</source>
@@ -259,7 +281,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Sorry, but you need to have active internet connection for creating new projects in cloud.</source>
-        <translation>Desculpe, mas você precisa ter conexão de internet ativa para criar projetos novos na nuvem.</translation>
+        <translation>Desculpe, mas você precisa ter uma conexão de internet ativa para criar projetos novos na nuvem.</translation>
     </message>
 </context>
 <context>
@@ -338,11 +360,11 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Final Draft screenplay</source>
-        <translation>Roteiro Final</translation>
+        <translation>Roteiro de Final Draft</translation>
     </message>
     <message>
         <source>Trelby screenplay</source>
-        <translation>Roteiro Trelby</translation>
+        <translation>Roteiro de Trelby</translation>
     </message>
     <message>
         <source>Office Open XML</source>
@@ -397,7 +419,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Speaking Scenes</source>
-        <translation>Cenas de Fala</translation>
+        <translation>Cenas com Fala</translation>
     </message>
     <message>
         <source>Non-Sp. Scenes</source>
@@ -424,7 +446,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Page</source>
-        <translation>P´agina</translation>
+        <translation>Página</translation>
     </message>
     <message>
         <source>[UNDEFINED]</source>
@@ -435,7 +457,7 @@ Türkçe: Recep Burak Yak
     <name>BusinessLogic::CharactersActivityPlot</name>
     <message>
         <source>Characters Activity Plot</source>
-        <translation>Plot de atividade de Personagens</translation>
+        <translation>Atividade do personagem na trama</translation>
     </message>
     <message>
         <source>Scene</source>
@@ -458,11 +480,11 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Simbols</source>
-        <translation type="vanished">Símbolos</translation>
+        <translation type="vanished">Caracteres</translation>
     </message>
     <message>
         <source>Symbols</source>
-        <translation>Símbolos</translation>
+        <translation>Caracteres</translation>
     </message>
 </context>
 <context>
@@ -523,7 +545,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Locations</source>
-        <translation>Locais</translation>
+        <translation>Locações</translation>
     </message>
     <message>
         <source>Documents</source>
@@ -590,7 +612,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Noprintable Text</source>
-        <translation>Texto não imprimível</translation>
+        <translation>Texto não-imprimível</translation>
     </message>
     <message>
         <source>Folder</source>
@@ -667,7 +689,7 @@ Türkçe: Recep Burak Yak
     <message>
         <source>NT</source>
         <extracomment>Reduction of Noprintable Text</extracomment>
-        <translatorcomment>Redução de Não imprimível</translatorcomment>
+        <translatorcomment>Redução de Não-imprimível</translatorcomment>
         <translation>NP</translation>
     </message>
     <message>
@@ -766,7 +788,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Copy of </source>
-        <translation>Cópia de</translation>
+        <translation>Cópia de </translation>
     </message>
 </context>
 <context>
@@ -816,15 +838,15 @@ Türkçe: Recep Burak Yak
     <name>BusinessLogic::StoryStructureAnalisysPlot</name>
     <message>
         <source>Scene Duration</source>
-        <translation>Duração de Cena</translation>
+        <translation>Duração da Cena</translation>
     </message>
     <message>
         <source>Action Duration</source>
-        <translation>Duração de Ação</translation>
+        <translation>Duração da Ação</translation>
     </message>
     <message>
         <source>Dialogues Duration</source>
-        <translation>Duração de Diálogos</translation>
+        <translation>Duração dos Diálogos</translation>
     </message>
     <message>
         <source>Characters Count</source>
@@ -836,7 +858,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Story Structure Analisys Plot</source>
-        <translation>Plot de Análise da Estrutura da História</translation>
+        <translation>Estrutura da História / Análise da Trama</translation>
     </message>
     <message>
         <source>Scene</source>
@@ -863,7 +885,8 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Characters with/without spaces</source>
-        <translation>Personagens com/sem espaços</translation>
+        <translatorcomment>Não confundir com personagens!</translatorcomment>
+        <translation>Caracteres com/sem espaços</translation>
     </message>
     <message>
         <source>Text</source>
@@ -879,7 +902,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Percents</source>
-        <translation>Por cento</translation>
+        <translation>Porcentagem</translation>
     </message>
     <message>
         <source>Scenes</source>
@@ -895,7 +918,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Locations</source>
-        <translation>Localizações</translation>
+        <translation>Locações</translation>
     </message>
     <message>
         <source>Place</source>
@@ -911,11 +934,11 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>More 10 dialogues</source>
-        <translation>Mais 10 Diálogos</translation>
+        <translation>Mais de 10 falas</translation>
     </message>
     <message>
         <source>About 10 dialogues</source>
-        <translation>Cerca de 10 Diálogos</translation>
+        <translation>Cerca de 10 falas</translation>
     </message>
     <message>
         <source>Nonspeaking</source>
@@ -965,11 +988,11 @@ Türkçe: Recep Burak Yak
     <name>CardsScene</name>
     <message>
         <source>Convert to scene</source>
-        <translation>Converter em cena</translation>
+        <translation>Converter para cena</translation>
     </message>
     <message>
         <source>Convert to folder</source>
-        <translation>Converter em pasta</translation>
+        <translation>Converter para pasta</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -993,7 +1016,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Stamp:</source>
-        <translation>Carimbo:</translation>
+        <translation>Identificador:</translation>
     </message>
     <message>
         <source>Go to text</source>
@@ -1023,11 +1046,11 @@ Türkçe: Recep Burak Yak
     <name>CrashReportDialog</name>
     <message>
         <source>Application error was detected</source>
-        <translation>Um erro no aplicativo foi detectado</translation>
+        <translation>Foi detectado um erro na aplicação</translation>
     </message>
     <message>
         <source>Please, send error report to developer. This will help to make application better.</source>
-        <translation>Por favor, envie um relatório de erro ao desenvolvedor. Isso ajudará a fazer o aplicativo melhor.</translation>
+        <translation>Por favor, envie um relatório de erro ao desenvolvedor. Isso o ajudará a melhorar a aplicação.</translation>
     </message>
     <message>
         <source>Your email:</source>
@@ -1049,7 +1072,7 @@ Türkçe: Recep Burak Yak
     <name>DatabaseLayer::Database</name>
     <message>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
-        <translation>Projeto foi modificado em versão superior. Você precisa do aplicativo de atualização para a versão mais recente para abri-lo.</translation>
+        <translation>Projeto foi modificado em versão superior. Você precisa atualizar a aplicação para a versão mais recente para abri-lo.</translation>
     </message>
     <message>
         <source>INT</source>
@@ -1091,7 +1114,7 @@ Türkçe: Recep Burak Yak
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
         <translatorcomment>Continua</translatorcomment>
-        <translation>CONT</translation>
+        <translation>CONT.</translation>
     </message>
     <message>
         <source>Photos</source>
@@ -1099,7 +1122,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Unnamed image</source>
-        <translation>Imagem sem nome</translation>
+        <translation>Imagem sem título</translation>
     </message>
     <message>
         <source>INT./EXT</source>
@@ -1206,7 +1229,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Print Title Page</source>
-        <translation>Imprimir Título da Página</translation>
+        <translation>Imprimir Folha de Rosto</translation>
     </message>
     <message>
         <source>Check Page Breaks</source>
@@ -1214,7 +1237,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Browse...</source>
-        <translation>Buscar...</translation>
+        <translation>Procurar...</translation>
     </message>
     <message>
         <source>...</source>
@@ -1222,7 +1245,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>File exists. It will be replaced after exporting.</source>
-        <translation>Arquivo existe. Ele será substituído após a exportação.</translation>
+        <translation>O arquivo já existe. Ele será substituído após a exportação.</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -1254,7 +1277,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Additional (Numbering, Title Page etc.)</source>
-        <translation>Adicional ( Numeração,  Título, Páginas, etc. )</translation>
+        <translation>Adicional ( Numeração, Título, Páginas, etc. )</translation>
     </message>
     <message>
         <source>Fountain</source>
@@ -1262,11 +1285,11 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Choose file to export:</source>
-        <translation>Escolha arquivo para exportar:</translation>
+        <translation>Escolha o arquivo para exportar:</translation>
     </message>
     <message>
         <source>Print pages numbers</source>
-        <translation>Imprimir os números das páginas</translation>
+        <translation>Imprimir numeração das páginas</translation>
     </message>
     <message>
         <source>Print scenes numbers with prefix</source>
@@ -1274,7 +1297,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Print dialogues numbers</source>
-        <translation>Imprimir os números dos diálogos</translation>
+        <translation>Imprimir numeração dos diálogos</translation>
     </message>
     <message>
         <source>Print watermark:</source>
@@ -1282,14 +1305,14 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Print scenes numbers</source>
-        <translation>Imprimir os números das cenas</translation>
+        <translation>Imprimir numeração das cenas</translation>
     </message>
 </context>
 <context>
     <name>FormatManager</name>
     <message>
         <source>OpenDocument Text</source>
-        <translation>Texto OpenDocument </translation>
+        <translation>Texto OpenDocument</translation>
     </message>
     <message>
         <source>Office Open XML</source>
@@ -1301,8 +1324,8 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Plain Text</source>
-        <translatorcomment>( texto plano )</translatorcomment>
-        <translation>Plain Text</translation>
+        <translatorcomment>(texto puro)</translatorcomment>
+        <translation>Texto sem formatação</translation>
     </message>
     <message>
         <source>All Supported Files</source>
@@ -1337,7 +1360,7 @@ Türkçe: Recep Burak Yak
     <message>
         <source>MindMap exported as </source>
         <translatorcomment>MindMap = Mapa Mental</translatorcomment>
-        <translation>MindMap exportado como</translation>
+        <translation>MindMap exportado como </translation>
     </message>
     <message>
         <source>No active node.</source>
@@ -1357,7 +1380,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Too much scaling.</source>
-        <translation>Escala demais.</translation>
+        <translation>Tamanho máximo excedido.</translation>
     </message>
     <message>
         <source>Select node color</source>
@@ -1369,38 +1392,38 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Add edge: select destination node.</source>
-        <translation>Adicionar borda: selecione o nó de destino.</translation>
+        <translation>Adicionar ligação: selecione o nó de destino.</translation>
     </message>
     <message>
         <source>Delete edge: select other end-node.</source>
-        <translation>Apagar borda: selecione outro nó da extremidade.</translation>
+        <translation>Apagar ligação: selecione outro nó da extremidade.</translation>
     </message>
     <message>
         <source>Edge adding cancelled.</source>
-        <translation>A adição de bordas foi cancelada.</translation>
+        <translation>A adição de ligação foi cancelada.</translation>
     </message>
     <message>
         <source>Edge deleting cancelled.</source>
-        <translation>Exclusão de borda cancelada.</translation>
+        <translation>Exclusão de ligação cancelada.</translation>
     </message>
     <message>
         <source>There is already an edge between these two nodes.</source>
-        <translation>Já existe uma borda entre esses dois nós.</translation>
+        <translation>Já existe uma ligação entre esses dois nós.</translation>
     </message>
     <message>
         <source>There is no edge between these two nodes.</source>
-        <translation>Não há nenhuma borda entre esses dois nós.</translation>
+        <translation>Não há nenhuma ligação entre estes dois nós.</translation>
     </message>
     <message>
         <source>Can&apos;t add edge between single node.</source>
-        <translation></translation>
+        <translation>Não é possível ligar o nó com ele mesmo.</translation>
     </message>
 </context>
 <context>
     <name>ImportDialog</name>
     <message>
         <source>Import Scenario</source>
-        <translation>Importar roteiro </translation>
+        <translation>Importar roteiro</translation>
     </message>
     <message>
         <source>Scenario</source>
@@ -1408,11 +1431,12 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Outline</source>
-        <translation>Borda</translation>
+        <translatorcomment>Outline como no processo que cita os principais pontos da história.</translatorcomment>
+        <translation>Outline</translation>
     </message>
     <message>
         <source>Browse...</source>
-        <translation>Buscar...</translation>
+        <translation>Procurar...</translation>
     </message>
     <message>
         <source>...</source>
@@ -1420,31 +1444,31 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Choose File with Project to Import:</source>
-        <translation>Escolha Arquivo com o Projeto para Importar:</translation>
+        <translation>Escolha o Arquivo do Projeto para Importação:</translation>
     </message>
     <message>
         <source>Remove scenes numbers</source>
-        <translation>Remover números de cenas</translation>
+        <translation>Remover  numeração das cenas</translation>
     </message>
     <message>
         <source>Insert To</source>
-        <translation>Inserir para</translation>
+        <translation>Inserir</translation>
     </message>
     <message>
         <source>Replace scenario</source>
-        <translation>Trocar roteiro</translation>
+        <translation>Substituir roteiro</translation>
     </message>
     <message>
         <source>Current cursor position</source>
-        <translation>Posição atual do cursor</translation>
+        <translation>Na posição atual do cursor</translation>
     </message>
     <message>
         <source>End of scenario</source>
-        <translation>Fim do roteiro</translation>
+        <translation>No fim do roteiro</translation>
     </message>
     <message>
         <source>Find characters and locations</source>
-        <translation>Localizar personagens e locais</translation>
+        <translation>Localizar personagens e locações</translation>
     </message>
     <message>
         <source>Save review marks</source>
@@ -1455,7 +1479,7 @@ Türkçe: Recep Burak Yak
     <name>LanguageDialog</name>
     <message>
         <source>Choose application language</source>
-        <translation>Escolha o idioma do aplicativo</translation>
+        <translation>Escolha o idioma da aplicação</translation>
     </message>
     <message>
         <source>Қазақ</source>
@@ -1529,6 +1553,14 @@ Türkçe: Recep Burak Yak
         <source>Azərbaycan</source>
         <translation></translation>
     </message>
+    <message>
+        <source>తెలుగు</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Português brasileiro</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -1577,7 +1609,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
-        <translation>Você tentou criar projeto na pasta inexistente &lt;b&gt;%1&lt;/b&gt;. Por favor, escolha outro local para o novo projeto.</translation>
+        <translation>Você tentou criar projeto em uma pasta inexistente &lt;b&gt;%1&lt;/b&gt;. Por favor, escolha outro local para o novo projeto.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
@@ -1585,7 +1617,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>Não é possível gravar no arquivo. Verifique as permissões para escrever na pasta escolhida. Por favor, escolha outra pasta.</translation>
+        <translation>Não é possível gravar o arquivo. Verifique as permissões de escrita na pasta escolhida. Por favor, escolha outra pasta.</translation>
     </message>
     <message>
         <source>Create project error</source>
@@ -1621,7 +1653,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Choose project file to open</source>
-        <translation>Escolha o arquivo do projeto para abrir</translation>
+        <translation>Escolha o arquivo de projeto para abrir</translation>
     </message>
     <message>
         <source>Change project name</source>
@@ -1629,19 +1661,19 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Enter new name for project</source>
-        <translation>Entrar com novo nome para o projeto</translation>
+        <translation>Digite um novo nome para o projeto</translation>
     </message>
     <message>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Tem certeza em remover o projeto &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation>Tem certeza que deseja remover o projeto &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Tem a certeza de remover a inscrição do projecto &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation>Tem a certeza que deseja remover a subscrição ao projeto &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
-        <translation>Tem certeza em remover a inscrição do utilizador &lt;b&gt;%1&lt;/b&gt; do projecto &lt;b&gt;%2&lt;/b&gt;?</translation>
+        <translation>Tem certeza que deseja remover a subscrição do utilizador &lt;b&gt;%1&lt;/b&gt; do projeto &lt;b&gt;%2&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Connection active</source>
@@ -1707,7 +1739,7 @@ O projeto não foi sincronizado.</translation>
         <source>New session for you account started at other device.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Nova sessão para sua conta iniciada em outro dispositivo.
+        <translation>Uma nova sessão para sua conta foi iniciada em outro dispositivo.
 
 O projeto não foi sincronizado.</translation>
     </message>
@@ -1725,7 +1757,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Email already exist</source>
-        <translation>Email já existe</translation>
+        <translation>O Email já existe</translation>
     </message>
     <message>
         <source>Password too weak</source>
@@ -1749,7 +1781,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Exit from Application</source>
-        <translation>Sair do Aplicativo</translation>
+        <translation>Sair da Aplicação</translation>
     </message>
     <message>
         <source>Closing Databse Connections and Remove Temporatry Files.</source>
@@ -1761,7 +1793,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Project was modified. Save changes?</source>
-        <translation>Projeto foi modificado. Salvar alterações?</translation>
+        <translation>O projeto foi modificado. Salvar alterações?</translation>
     </message>
     <message>
         <source>Loading Scenario</source>
@@ -1769,7 +1801,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Please wait. Loading can take few minutes.</source>
-        <translation>Por favor, espere. A carga pode demorar alguns minutos.</translation>
+        <translation>Por favor, espere. O carregamento pode demorar alguns minutos.</translation>
     </message>
     <message>
         <source>Sync scenario with cloud service.</source>
@@ -1871,7 +1903,7 @@ O projeto não foi sincronizado.</translation>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Você esgotou todos os recursos para o uso do espaço em um servidor.
+        <translation>Você esgotou todo o espaço de armazenamento no servidor.
 
 O projeto não foi sincronizado.</translation>
     </message>
@@ -1881,7 +1913,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation>Tem certeza que quer ocultar o projeto &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation>Tem certeza que deseja ocultar o projeto &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>in cloud</source>
@@ -1909,7 +1941,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation>Arquivos &lt;b&gt;DOC&lt;/b&gt; da Microsoft não são suportados. Você precisa salvá-lo no arquivo &lt;b&gt;DOCX &lt;/b&gt; e reimportar.</translation>
+        <translation>Arquivos &lt;b&gt;DOC&lt;/b&gt; da Microsoft não são suportados. Você precisa salvá-lo como arquivo &lt;b&gt;DOCX &lt;/b&gt; e reimportar.</translation>
     </message>
     <message>
         <source>Moving project to the cloud failed</source>
@@ -1921,7 +1953,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
-        <translation>Para mover projetos para a nuvem sua assinatura no serviço da nuvem do KIT Scenarist precisa estar ativa.</translation>
+        <translation>Para mover projetos para a nuvem sua assinatura no serviço de nuvem do KIT Scenarist precisa estar ativa.</translation>
     </message>
     <message>
         <source>Saved password is incorrect. Look like you changed the password. Please, enter the new password.</source>
@@ -1945,7 +1977,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
-        <translation>Não é possível escrever alterações no projeto. Há algum erro de banco de dados interno:%1 Verifique se o arquivo existe e se você tem permissão para gravá-lo. Tentar novamente para salvar?</translation>
+        <translation>Não é possível escrever alterações no projeto. Há algum erro de banco de dados interno:%1 Verifique se o arquivo existe e se você tem permissão para gravá-lo. Tentar salvar novamente?</translation>
     </message>
     <message>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
@@ -1953,23 +1985,23 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
-        <translation>Para mover projetos para a nuvem você deve estar logado no serviço da nuvem do KIT Scenaist.</translation>
+        <translation>Para mover projetos para a nuvem você deve estar logado no serviço de nuvem do KIT Scenaist.</translation>
     </message>
     <message>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
-        <translation>A senha salva está incorreta. Parece que você alterou a senha. Por favor entre com a nova senha.</translation>
+        <translation>A senha salva está incorreta. Parece que você alterou a senha. Por favor digite a nova senha.</translation>
     </message>
     <message>
         <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Não é possível carregar todos os dados do serviço corretamente. Verifique a qualidade da sua conecção à Internet e atualize a sincronização.
+        <translation>Não é possível carregar todos os dados do serviço corretamente. Verifique a qualidade da sua conexão à Internet e atualize a sincronização.
 
 O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Closing Database Connections and remove temporary files.</source>
-        <translation>Fechar conexões de banco de dados e remover arquivos temporários.</translation>
+        <translation>Fechando conexões de banco de dados e removendo arquivos temporários.</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -1977,13 +2009,13 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Project sync not available</source>
-        <translation>Sincronização não disponível</translation>
+        <translation>Sincronização de projeto não disponível</translation>
     </message>
     <message>
         <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Você tem versão desatualizada do aplicativo. Por favor, instale a última versão do aplicativo para restaurar o acesso ao projeto.
+        <translation>Você tem versão desatualizada da aplicação. Por favor, instale a última versão da aplicação para restaurar o acesso ao projeto.
 
 O projeto não foi sincronizado.</translation>
     </message>
@@ -1997,7 +2029,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Two panel mode</source>
-        <translation>Modo de dois painéis </translation>
+        <translation>Modo de dois painéis</translation>
     </message>
     <message>
         <source>New script version...</source>
@@ -2006,6 +2038,18 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Print preview script</source>
         <translation>Imprimir pré-visualização do roteiro</translation>
+    </message>
+    <message>
+        <source>KIT Scenarist</source>
+        <translation>KIT Scenarist</translation>
+    </message>
+    <message>
+        <source>A file will be opened in read-only mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you want to edit a file, please check it&apos;s permissions for your account.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2020,7 +2064,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
-        <translation>Você tenta exportar para uma pasta inexistente &lt;b&gt;%1&lt;/b&gt;. Por favor, escolha outro local para o arquivo exportado.</translation>
+        <translation>Você tentou exportar para uma pasta inexistente &lt;b&gt;%1&lt;/b&gt;. Por favor, escolha outro local para o arquivo exportado.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry export.</source>
@@ -2044,7 +2088,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry export.</source>
-        <translation>Não é possível gravar no arquivo. Talvez esteja aberto em outra aplicação. Feche-o e repita a exportação.</translation>
+        <translation>Não é possível gravar no arquivo. Talvez ele esteja aberto em outra aplicação. Feche-a e repita a exportação.</translation>
     </message>
 </context>
 <context>
@@ -2063,7 +2107,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation>Arquivos &lt;b&gt;DOC&lt;/b&gt; da Microsoft não são suportados. Você precisa salvá-lo no arquivo &lt;b&gt;DOCX &lt;/b&gt; e reimportar.</translation>
+        <translation>Arquivos &lt;b&gt;DOC&lt;/b&gt; da Microsoft não são suportados. Você precisa salvá-lo como arquivo &lt;b&gt;DOCX &lt;/b&gt; e reimportar.</translation>
     </message>
     <message>
         <source>Import aborted</source>
@@ -2071,7 +2115,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>File to import is empty. Please check that you select correct file and retry import.</source>
-        <translation>O arquivo para importar não foi encontrado. Por favor verifique se selecionou o arquivo correto e tente novamente.</translation>
+        <translation>O arquivo para importar está vazio. Por favor, verifique se você selecionou o arquivo correto e tente novamente.</translation>
     </message>
     <message>
         <source>Characters import</source>
@@ -2091,7 +2135,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Please choose existing file and retry import.</source>
-        <translation>Por favor selecione um arquivo existente e importe novamente.</translation>
+        <translation>Por favor selecione um arquivo existente e tente novamente.</translation>
     </message>
 </context>
 <context>
@@ -2128,7 +2172,8 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Add New</source>
-        <translation>Adicionar Novo</translation>
+        <translatorcomment>Adicionado o substantivo &quot;item&quot; no fim da frase, buscando clareza e evitar conflito de gênero com as opções (Texto s.m. e Pasta s.f.)</translatorcomment>
+        <translation>Adicionar novo item</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2136,7 +2181,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Unnamed image</source>
-        <translation>Imagem sem nome</translation>
+        <translation>Imagem sem título</translation>
     </message>
     <message>
         <source>Find All Characters from Script</source>
@@ -2144,11 +2189,12 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Find All Locations from Script</source>
-        <translation>Localizar todos os locais do roteiro</translation>
+        <translation>Localizar todas as locações do roteiro</translation>
     </message>
     <message>
         <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Tem certeza de remover a pesquisa:&lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translatorcomment>Item se encaixa melhor do que pesquisa nesse contexto.</translatorcomment>
+        <translation>Tem certeza de remover o item:&lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <source>Color</source>
@@ -2190,11 +2236,11 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Locations to delete</source>
-        <translation>Locais a eliminar</translation>
+        <translation>Locações a eliminar</translation>
     </message>
     <message>
         <source>Locations to save</source>
-        <translation>Locais para salvar</translation>
+        <translation>Locações para salvar</translation>
     </message>
     <message>
         <source>Chron.</source>
@@ -2206,11 +2252,11 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Changing scenes numbers locking</source>
-        <translation>Alterar o bloqueamento dos números das cenas</translation>
+        <translation>Bloqueio de númeração das cenas</translation>
     </message>
     <message>
         <source>Do you want to unlock scenes numbers or lock again?</source>
-        <translation>Você quer desbloquear os números das cenas ou mantê-los bloqueados?</translation>
+        <translation>Você deseja desbloquear a numeração das cenas ou mantê-la bloqueada?</translation>
     </message>
     <message>
         <source>Unlock</source>
@@ -2219,6 +2265,18 @@ O projeto não foi sincronizado.</translation>
     <message>
         <source>Lock</source>
         <translation>Bloquear</translation>
+    </message>
+    <message>
+        <source>Conflicted version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script changes conflict detected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2240,7 +2298,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Are you sure to remove &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>Tem certeza que quer remover &lt;b&gt;%1&lt;/b&gt;</translation>
+        <translation>Tem certeza que deseja remover &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -2295,7 +2353,7 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Enter</source>
-        <translation>Entre</translation>
+        <translation>Enter</translation>
     </message>
     <message>
         <source>Press in empty paragraph</source>
@@ -2318,7 +2376,7 @@ O projeto não foi sincronizado.</translation>
     <name>ManagementLayer::SettingsTemplatesManager</name>
     <message>
         <source>Choose base template</source>
-        <translation>Escolha o modelo de base</translation>
+        <translation>Escolha o modelo base</translation>
     </message>
 </context>
 <context>
@@ -2372,14 +2430,14 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Got wrong response from server.</source>
-        <translation>Recebi resposta errada do servidor.</translation>
+        <translation>Resposta errada recebida do servidor.</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ToolsManager</name>
     <message>
         <source>Choose backup from list</source>
-        <translation>Escolha o back up da lista</translation>
+        <translation>Escolha o backup na lista</translation>
     </message>
     <message>
         <source>Bytes</source>
@@ -2391,7 +2449,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Script was restored.</source>
-        <translation>Roteiro foi recuperado</translation>
+        <translation>O roteiro foi recuperado.</translation>
     </message>
 </context>
 <context>
@@ -2402,7 +2460,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>Logue</translation>
+        <translation>Login</translation>
     </message>
     <message>
         <source>Log in to get access to the cloud service</source>
@@ -2414,19 +2472,21 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Open project</source>
-        <translation>Projeto aberto</translation>
+        <translation>Abrir projeto</translation>
     </message>
     <message>
         <source>Save current project</source>
-        <translation>Salvar projeto atual</translation>
+        <translatorcomment>Retirei o &quot;atual&quot; pois não o julgo necessário.</translatorcomment>
+        <translation>Salvar projeto</translation>
     </message>
     <message>
         <source>How to use the application</source>
-        <translation>Como usar o aplicativo</translation>
+        <translation>Como usar a aplicação</translation>
     </message>
     <message>
         <source>Save current project as...</source>
-        <translation>Salvar projeto atual como...</translation>
+        <translatorcomment>Retirei o &quot;atual&quot; pois não o julgo necessário.</translatorcomment>
+        <translation>Salvar projeto como...</translation>
     </message>
     <message>
         <source>Import...</source>
@@ -2450,7 +2510,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>About the app</source>
-        <translation>Sobre o aplicativo</translation>
+        <translation>Sobre a aplicação</translation>
     </message>
     <message>
         <source>KIT Scenarist</source>
@@ -2462,11 +2522,11 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>User name:</source>
-        <translation>Nome do usuário:</translation>
+        <translation>Nome do utilizador:</translation>
     </message>
     <message>
         <source>Account is active until:</source>
-        <translation>A conta está ativa até:</translation>
+        <translation>A conta estará ativa até:</translation>
     </message>
     <message>
         <source>22.02.2017</source>
@@ -2474,7 +2534,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>UserName</source>
-        <translation>Nome de usuário</translation>
+        <translation>Nome de utilizador</translation>
     </message>
     <message>
         <source>Used 0 Gb from 0 Gb</source>
@@ -2490,7 +2550,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Quit from cabinet</source>
-        <translation>Sair do armário</translation>
+        <translation>Sair da conta</translation>
     </message>
     <message>
         <source>DOWNLOAD UPDATE</source>
@@ -2516,7 +2576,7 @@ Você pode tentar recarregar a atualização.</translation>
     <name>OnboardingView</name>
     <message>
         <source>Next</source>
-        <translation>Próx</translation>
+        <translation>Próximo</translation>
     </message>
     <message>
         <source>Skip</source>
@@ -2528,7 +2588,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Não encontrou o idioma preferido? Leia como você pode adicioná-lo você mesmo.&lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Não encontrou o seu idioma? Leia como você pode fazer para adicioná-lo.&lt;/a&gt;</translation>
     </message>
     <message>
         <source>English</source>
@@ -2580,7 +2640,7 @@ Você pode tentar recarregar a atualização.</translation>
     </message>
     <message>
         <source>Choose application theme</source>
-        <translation>Escolha o tema do aplicativo</translation>
+        <translation>Escolha o tema da aplicação</translation>
     </message>
     <message>
         <source>Dark theme</source>
@@ -2600,11 +2660,11 @@ Você pode tentar recarregar a atualização.</translation>
 Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
 
 Also, in research tab you can store a variety of materials (text documents, images, links to web pages and mindmaps) associated with your project, organizing them in a convenient manner.</source>
-        <translation>Você pode reunir todo material necessário para o projeto em um local. Neste local pode salvar a informação básica sobre o roteiro, tal como nome, logline, sinopse e também preencher a página do título do roteiro.
+        <translation>Você pode reunir todo material necessário para o projeto em um único local. Nele, você pode salvar informações básicas sobre o roteiro, como por exemplo o nome, logline, sinopse e também preencher a página do título do roteiro.
 
-Aqui você pode gerenciar a lista de personagens e locações. Criar outros, adicionar descrições, fotos, renomeá-los e organizá-los.
+Aqui você pode gerenciar a lista de personagens e locações. Você pode criar outros, adicionar descrições, fotos, renomeá-los e organizá-los.
 
-Também na aba de pesquisa você pode armazenar uma variedade de materiais (documentos de texto, imagens, links de páginas da WEB e mapas mentais) associados ao seu projeto, organizando-os numa forma conveniente.</translation>
+Também na aba de pesquisa você pode armazenar uma grande variedade de materiais (documentos de texto, imagens, links de páginas da web e mapas mentais) associados ao seu projeto, organizando-os de forma conveniente.</translation>
     </message>
     <message>
         <source>Research</source>
@@ -2618,9 +2678,10 @@ Também na aba de pesquisa você pode armazenar uma variedade de materiais (docu
         <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
 
 You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
-        <translation>O módulo dos cartões permite que você visualize o roteiro na forma de cartões colocados sobre um quadro de cortiça, numa forma visual de trabalhar com estrutura.
+        <translatorcomment>Leve alteração do texto buscando clareza.</translatorcomment>
+        <translation>O módulo dos cartões permite que você visualize o roteiro na forma de cartões colocados sobre um quadro de cortiça, numa forma visual de trabalhar com a estrutura do roteiro.
 
-Você pode adicionar cores e identificações aos cartões, movê-los e agrupá-los, e todas as alterações feitas nos cartões são exibidas no texto do roteiro.</translation>
+Você pode adicionar cores e identificadores aos cartões, movê-los e agrupá-los. Todas as alterações nos cartões são também feitas no texto do roteiro.</translation>
     </message>
     <message>
         <source>Use cards module</source>
@@ -2644,7 +2705,7 @@ Você pode adicionar cores e identificações aos cartões, movê-los e agrupá-
     </message>
     <message>
         <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
-        <translation>O módulo de estatísticas permite que você obtenha relatórios de produção detalhados do script, bem como analisar os gráficos da atividade dos personagens ao longo do script e a dinâmica das cenas.</translation>
+        <translation>O módulo de estatísticas permite que você obtenha relatórios detalhados de produção sobre o roteiro, assim como te permite analisar os gráficos de atividade dos personagens ao longo da trama e as dinâmicas das cenas.</translation>
     </message>
     <message>
         <source>Use statistics module</source>
@@ -2656,11 +2717,11 @@ Você pode adicionar cores e identificações aos cartões, movê-los e agrupá-
     </message>
     <message>
         <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
-        <translation>Tema é mais adequado para ambientes pouco iluminados e também entardecer e à noite.</translation>
+        <translation>O tema escuro é mais adequado para ambientes pouco iluminados, no entardecer ou à noite.</translation>
     </message>
     <message>
         <source>Theme is convenient for work with sufficient light.</source>
-        <translation>Tema é conveniente para trabalhar em ambiente com luz suficiente.</translation>
+        <translation>O tema claro é conveniente para trabalhar em ambiente com luz suficiente.</translation>
     </message>
     <message>
         <source>Final Draft screenplay (Letter)</source>
@@ -2714,13 +2775,13 @@ Você pode adicionar cores e identificações aos cartões, movê-los e agrupá-
         <source>Thank you. The most common application settings were configured.
 
 The application will start in few seconds.</source>
-        <translation>Obrigado. As configurações mais comuns do aplicativo foram realizadas.
+        <translation>Obrigado. A configuração básica da aplicação foi realizada.
 
-O aplicativo vai iniciar em poucos segundos.</translation>
+A aplicação vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Starting application</source>
-        <translation>Iniciando o aplicativo</translation>
+        <translation>Iniciando a aplicação</translation>
     </message>
     <message>
         <source>Script module allows you to work with screenplay.
@@ -2728,11 +2789,12 @@ O aplicativo vai iniciar em poucos segundos.</translation>
 Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
 
 And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
+        <translatorcomment>Grande reescrita, buscando clareza e objetividade</translatorcomment>
         <translation>O módulo de roteiro permite que você trabalhe no roteiro.
 
-O módulo inclui o navegador de roteiro. É uma lista de cenas. Clicar o mouse na cena da lista exibirá o texto da cena selecionada na tela.
+O módulo inclui o navegador de roteiro, uma lista de cenas onde é possível interagir com os elementos. Ao clicar em algum elemento da lista você será trasnportado para o local do texto na janela do editor de texto do roteiro
 
-E o editor de texto do roteiro. O editor tem várias funções auxiliares que simplificam a inserção do texto de acordo com os padrões da escrita de roteiros, e também permite você procurar o texto do roteiro e escrever notas.</translation>
+Temos também o editor de texto do roteiro. Este editor tem várias funções auxiliares que simplificam a inserção do texto de acordo com os padrões da escrita de roteiros. Ele também tem a função de busca de palavras no corpo do roteiro e a possibilidade de fazer anotações.</translation>
     </message>
     <message>
         <source>Polski</source>
@@ -2758,6 +2820,14 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
         <source>Azərbaycan</source>
         <translation></translation>
     </message>
+    <message>
+        <source>తెలుగు</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Português brasileiro</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PhotoLabel</name>
@@ -2778,7 +2848,8 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Cards on page:</source>
-        <translation>Cartões na página: </translation>
+        <translatorcomment>Adicionado N°, clareza</translatorcomment>
+        <translation>N° de cartões na página:</translation>
     </message>
     <message>
         <source>1</source>
@@ -2833,7 +2904,8 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Hide project from recent</source>
-        <translation>Ocultar projeto do recente</translation>
+        <translatorcomment>clareza</translatorcomment>
+        <translation>Ocultar projeto da lista recente</translation>
     </message>
     <message>
         <source>Add cowriter</source>
@@ -2887,15 +2959,15 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Node deleted &quot;</source>
-        <translation>Node excluído &quot;</translation>
+        <translation>Nó excluído &quot;</translation>
     </message>
     <message>
         <source> with subtree</source>
-        <translation> Com subárvore</translation>
+        <translation> Com sub-árvore</translation>
     </message>
     <message>
         <source>Edge added between &quot;</source>
-        <translation>Aresta adicionado entre &quot;</translation>
+        <translation>Ligação adicionada entre &quot;</translation>
     </message>
     <message>
         <source>&quot; and &quot;</source>
@@ -2903,7 +2975,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Edge deleted between &quot;</source>
-        <translation>Aresta apagada entre &quot;</translation>
+        <translation>Ligação apagada entre &quot;</translation>
     </message>
     <message>
         <source>Node &quot;</source>
@@ -2919,7 +2991,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>The graph is acyclic, edge added as secondary edge.</source>
-        <translation>O gráfico é acíclico, aresta adicionada como aresta secundária.</translation>
+        <translation>O gráfico é acíclico, aresta adicionada como ligação secundária.</translation>
     </message>
     <message>
         <source>Scenario</source>
@@ -2964,7 +3036,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>with a</source>
-        <translation>Com um</translation>
+        <translation>Com:</translation>
     </message>
     <message>
         <source>Bank card</source>
@@ -3050,7 +3122,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Search</source>
-        <translation>Busca</translation>
+        <translation>Procurar</translation>
     </message>
     <message>
         <source>words:</source>
@@ -3078,7 +3150,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Scenario genre.</source>
-        <translation>Roteiro gênero.</translation>
+        <translation>Gênero do roteiro.</translation>
     </message>
     <message>
         <source>Author:</source>
@@ -3126,7 +3198,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Change</source>
-        <translation>Mudança</translation>
+        <translation>Alterar</translation>
     </message>
     <message>
         <source>Image:</source>
@@ -3158,11 +3230,11 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Scale up node</source>
-        <translation>Nó de escalonamento</translation>
+        <translation>Aumentar nó</translation>
     </message>
     <message>
         <source>Scale down node</source>
-        <translation>Escalar nó para baixo</translation>
+        <translation>Diminuir nó</translation>
     </message>
     <message>
         <source>Node background color</source>
@@ -3174,11 +3246,11 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Add edge</source>
-        <translation>Adicionar aresta</translation>
+        <translation>Adicionar ligação</translation>
     </message>
     <message>
         <source>Delete edge</source>
-        <translation>Apagar aresta</translation>
+        <translation>Apagar ligação</translation>
     </message>
     <message>
         <source>Ctrl+Tab</source>
@@ -3186,11 +3258,11 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Add characters to project.</source>
-        <translation>Adicione personagens ao projeto.</translation>
+        <translation>Adicionar personagens ao projeto.</translation>
     </message>
     <message>
         <source>Character Name:</source>
-        <translation>Nome do Personagem: </translation>
+        <translation>Nome do Personagem:</translation>
     </message>
     <message>
         <source>Real Name:</source>
@@ -3202,11 +3274,11 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Add locations to project.</source>
-        <translation>Adicionar locais ao projeto.</translation>
+        <translation>Adicionar locações ao projeto.</translation>
     </message>
     <message>
         <source>Location Name:</source>
-        <translation>Nome do local:</translation>
+        <translation>Nome da locação:</translation>
     </message>
     <message>
         <source>&lt;h2&gt;Folder&lt;/h2&gt;</source>
@@ -3214,7 +3286,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Folders let you group research data in hierarchy.</source>
-        <translation>As pastas permitem agrupar dados de pesquisa em hierarquia.</translation>
+        <translation>As pastas permitem agrupar os dados de pesquisa em uma hierarquia.</translation>
     </message>
     <message>
         <source>Add Folder</source>
@@ -3222,11 +3294,11 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>&lt;h2&gt;Text Document&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Documento texto&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;Documento de texto&lt;/h2&gt;</translation>
     </message>
     <message>
         <source>Text let you store formatted text documents.</source>
-        <translation>Texto permite armazenar documentos de texto formatados.</translation>
+        <translation>O documento de texto permite o armazenamento de documentos de texto formatados.</translation>
     </message>
     <message>
         <source>Add Text</source>
@@ -3238,7 +3310,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Mind map let you create schemes with your thoughts.</source>
-        <translation>O mapa mental permite que você crie esquemas com seus pensamentos.</translation>
+        <translation>O mapa mental permite que você crie diagramas com suas ideias.</translation>
     </message>
     <message>
         <source>Add Mind Map</source>
@@ -3250,7 +3322,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Images gallery let you store group of images.</source>
-        <translation>A galeria de imagens permite armazenar um grupo de imagens.</translation>
+        <translation>A galeria de imagens permite o armazenamento de um grupo de imagens.</translation>
     </message>
     <message>
         <source>Add Images Gallery</source>
@@ -3262,7 +3334,7 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Url let you have a link to useful web-based documents.</source>
-        <translation>O URL permite que você tenha um link para documentos úteis baseados na Web.</translation>
+        <translation>O URL permite que você anexe e visualize páginas da Web que contenham informações úteis.</translation>
     </message>
     <message>
         <source>Add Url</source>
@@ -3274,7 +3346,8 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
     </message>
     <message>
         <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
-        <translation>Adicionar materiais de pesquisa, como texto, páginas da web e imagens na árvore. Use os botões da barra de ferramentas e o menu de contexto para adicionar ou remover materiais de pesquisa na árvore.</translation>
+        <translatorcomment>Árvore é a palavra correta mas não fazia muito sentido no contexto</translatorcomment>
+        <translation>Adicione materiais de pesquisa, como texto, páginas da web e imagens. Use os botões da barra de ferramentas e o menu de contexto para adicionar ou remover materiais de pesquisa da hierarquia.</translation>
     </message>
     <message>
         <source>Scene numbers prefix:</source>
@@ -3285,12 +3358,28 @@ E o editor de texto do roteiro. O editor tem várias funções auxiliares que si
         <translation>Começar a numerar as cenas a partir de:</translation>
     </message>
     <message>
+        <source>Footer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Header:</source>
+        <translation type="unfinished">Cabeçalho:</translation>
+    </message>
+    <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undo last action</source>
+        <translation type="unfinished">Desfazer última ação</translation>
+    </message>
+    <message>
+        <source>Redo previously undone action</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3349,7 +3438,7 @@ p, li { white-space: pre-wrap; }
     <name>ScriptVersionWidget</name>
     <message>
         <source>Form</source>
-        <translation></translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <source>Title</source>
@@ -3368,7 +3457,7 @@ p, li { white-space: pre-wrap; }
     <name>SearchWidget</name>
     <message>
         <source>Find...</source>
-        <translation>Encontrar...</translation>
+        <translation>Procurar...</translation>
     </message>
     <message>
         <source>Case Sensitive</source>
@@ -3380,7 +3469,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Find Next</source>
-        <translation>Encontre o próximo</translation>
+        <translation>Encontrar próxima</translation>
     </message>
     <message>
         <source>In whoole document</source>
@@ -3392,15 +3481,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>In action</source>
-        <translation>Em ação</translation>
+        <translation>Na ação</translation>
     </message>
     <message>
         <source>In character</source>
-        <translation>Em personagem</translation>
+        <translation>Nos personagens</translation>
     </message>
     <message>
         <source>In dialogue</source>
-        <translation>Em diálogo</translation>
+        <translation>No diálogo</translation>
     </message>
     <message>
         <source>In parenthetical</source>
@@ -3459,7 +3548,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Use Dark Theme</source>
-        <translation>Use o tema escuro</translation>
+        <translation>Usar o tema escuro</translation>
     </message>
     <message>
         <source>Automatically Save Every</source>
@@ -3491,11 +3580,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Russian</source>
-        <translation>russo</translation>
+        <translation>Russo</translation>
     </message>
     <message>
         <source>Change</source>
-        <translation>Mudança</translation>
+        <translation>Alterar</translation>
     </message>
     <message>
         <source>Research module</source>
@@ -3515,7 +3604,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Use corkboad background</source>
-        <translation>Use o fundo da placa da cortiça</translation>
+        <translation>Usear textura de placa de cortiça como fundo</translation>
     </message>
     <message>
         <source>Use color background</source>
@@ -3523,7 +3612,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Themes colors</source>
-        <translation>Cores dos temas</translation>
+        <translation>Cores do tema</translation>
     </message>
     <message>
         <source>Background:</source>
@@ -3539,11 +3628,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Page View</source>
-        <translation>Exibição de página</translation>
+        <translatorcomment>Clareza</translatorcomment>
+        <translation>Mostrar roteiro como página</translation>
     </message>
     <message>
         <source>Show Scenes Numbers</source>
-        <translation>Mostrar Números de Cenas</translation>
+        <translation>Mostrar Numeração de Cenas</translation>
     </message>
     <message>
         <source>Highlight Current Line</source>
@@ -3559,11 +3649,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Folder background:</source>
-        <translation>Fundo da pasta:</translation>
+        <translation>Cor de fundo da pasta:</translation>
     </message>
     <message>
         <source>Noneprintable text:</source>
-        <translation>Nenhum texto imprimível:</translation>
+        <translation>Texto não-imprimível:</translation>
     </message>
     <message>
         <source>Editor Text Template:</source>
@@ -3575,23 +3665,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Text corrections</source>
-        <translation>Correções de texto</translation>
+        <translation>Corretor de texto</translation>
     </message>
     <message>
         <source>Capitalize first word</source>
-        <translation>Capitalizar a primeira palavra</translation>
+        <translation>Capitularizar a primeira palavra</translation>
     </message>
     <message>
         <source>Correct DOuble CApitals</source>
-        <translation>Corrigir Capitals duplo</translation>
+        <translation>Corrigir caixa alta dupla</translation>
     </message>
     <message>
         <source>Replace three single dots to threedots character.</source>
-        <translation>Substitua três pontos únicos por três caracteres.</translation>
+        <translation>Substituir três pontos pelo caractere único reticências.</translation>
     </message>
     <message>
         <source>Smart quotes</source>
-        <translation>Cotações inteligentes</translation>
+        <translation>Citações inteligentes</translation>
     </message>
     <message>
         <source>Automatically jump to next paragraph</source>
@@ -3599,11 +3689,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>For scene heading and character paragraphs.</source>
-        <translation>Para cabeçalho de cena e parágrafos de caracteres.</translation>
+        <translation>Para cabeçalho de cena e parágrafos de personagens.</translation>
     </message>
     <message>
         <source>Use MS Word like review highlighting colors</source>
-        <translation>Use o MS Word como revisão destacando cores</translation>
+        <translation>Use as cores de destaque para revisão como no MS Word</translation>
     </message>
     <message>
         <source>Autocomplete next character for dialogue</source>
@@ -3623,11 +3713,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Description height, lines:</source>
-        <translation>Tamanho da Descrição,linhas:</translation>
+        <translation>Tamanho da Descrição, em linhas:</translation>
     </message>
     <message>
         <source>Show Scene Title instead of Scene Heading</source>
-        <translation>Mostrar o título da cena em vez do cabeçalho da cena</translation>
+        <translation>Mostrar o título da cena ao invés do cabeçalho da cena</translation>
     </message>
     <message>
         <source>Chronometry</source>
@@ -3655,11 +3745,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Characters Chronometry</source>
-        <translation>Cronometria de Personagens</translation>
+        <translation>Cronometria de caracteres</translation>
     </message>
     <message>
         <source>Characters</source>
-        <translation>Personagens</translation>
+        <translation>Caracteres</translation>
     </message>
     <message>
         <source>Consider Spaces</source>
@@ -3685,12 +3775,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Action</source>
-        <translation>Açao</translation>
+        <translation>Ação</translation>
     </message>
     <message>
         <source>Seconds for
 Paragraph</source>
-        <translation>Segundos para
+        <translation>Segundos por
 Parágrafo</translation>
     </message>
     <message>
@@ -3711,11 +3801,11 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Simbols</source>
-        <translation type="vanished">Símbolos</translation>
+        <translation type="vanished">Caracteres</translation>
     </message>
     <message>
         <source>Simbols without spaces | Simbols with spaces</source>
-        <translation type="vanished">Símbolos sem espaços | Símbolos com espaços</translation>
+        <translation type="vanished">Caracteres sem espaços | Caracteres com espaços</translation>
     </message>
     <message>
         <source>Apply Selected Template</source>
@@ -3723,7 +3813,7 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation>Aplique</translation>
+        <translation>Aplicar</translation>
     </message>
     <message>
         <source>Add Template</source>
@@ -3755,11 +3845,11 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Load</source>
-        <translation>Carga</translation>
+        <translation>Carregar</translation>
     </message>
     <message>
         <source>Save Template To File</source>
-        <translation>Salvar modelo para arquivo</translation>
+        <translation>Salvar modelo como...</translation>
     </message>
     <message>
         <source>Save As...</source>
@@ -3791,43 +3881,44 @@ Parágrafo</translation>
     </message>
     <message>
         <source>pt</source>
+        <translatorcomment>pontos</translatorcomment>
         <translation>pt</translation>
     </message>
     <message>
         <source>Hide all panels in fullscreen mode</source>
-        <translation>Esconda todos os painéis no modo tela cheia</translation>
+        <translation>Esconder todos os painéis no modo tela cheia</translation>
     </message>
     <message>
         <source>Show dialogues numbers</source>
-        <translation>Mostre os números dos diálogos</translation>
+        <translation>Mostrar numeração dos diálogos</translation>
     </message>
     <message>
         <source>Highlight blocks</source>
-        <translation>Destaque os blocos</translation>
+        <translation>Destacar blocos</translation>
     </message>
     <message>
         <source>Automatically continue dialogue</source>
-        <translation>Continue automaticamente o diálogo</translation>
+        <translation>Continue o diálogo automaticamente</translation>
     </message>
     <message>
         <source>Automatically corrections on page breaks</source>
-        <translation>Correções automaticamente em quebras de página</translation>
+        <translation>Corrigir quebras de página automaticamente</translation>
     </message>
     <message>
         <source>Use open bracket in dialogue for jump to parenthetical</source>
-        <translation>Use o suporte aberto no diálogo para saltar para entre parênteses</translation>
+        <translation>Usar parêntese aberto no modo de diálogo para trocar para o modo entre parênteses</translation>
     </message>
     <message>
         <source>Symbols</source>
-        <translation>Símbolos</translation>
+        <translation>Caracteres</translation>
     </message>
     <message>
         <source>Symbols without spaces | Symbols with spaces</source>
-        <translation>Símbolos sem espaços | Símbolos com espaços</translation>
+        <translation>Caracteres sem espaços | Caracteres com espaços</translation>
     </message>
     <message>
         <source>Tools module</source>
-        <translation>Módulo das Ferramentas</translation>
+        <translation>Módulo de Ferramentas</translation>
     </message>
 </context>
 <context>
@@ -3838,11 +3929,11 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Email</source>
-        <translation>O email</translation>
+        <translation>Email</translation>
     </message>
     <message>
         <source>User role</source>
-        <translation>Papel do usuário</translation>
+        <translation>Papel do utilizador</translation>
     </message>
     <message>
         <source>Redactor</source>
@@ -3857,11 +3948,11 @@ Parágrafo</translation>
     <name>SimpleTextEditorWidget</name>
     <message>
         <source>Make text bold</source>
-        <translation>Tornar o texto em negrito</translation>
+        <translation>Ativar texto em negrito</translation>
     </message>
     <message>
         <source>Make text italic</source>
-        <translation>Tornar o texto em itálico</translation>
+        <translation>Ativar texto em itálico</translation>
     </message>
     <message>
         <source>Make text underline</source>
@@ -3873,11 +3964,19 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Change text background color</source>
-        <translation>Mude a cor do fundo do texto</translation>
+        <translation>Alterar cor de fundo do texto</translation>
     </message>
     <message>
         <source>Clear formatting</source>
-        <translation>Apagar a formatação</translation>
+        <translation>Limpar formatação</translation>
+    </message>
+    <message>
+        <source>Undo last action</source>
+        <translation type="unfinished">Desfazer última ação</translation>
+    </message>
+    <message>
+        <source>Redo previously undone action</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3899,7 +3998,7 @@ Parágrafo</translation>
     <name>StartUpView</name>
     <message>
         <source>Form</source>
-        <translation>Formato</translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <source>version</source>
@@ -3911,7 +4010,7 @@ Parágrafo</translation>
     </message>
     <message>
         <source>Open Project</source>
-        <translation>Projeto aberto</translation>
+        <translation>Abrir Projeto</translation>
     </message>
     <message>
         <source>Released version 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;download&lt;/a&gt; or &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;read more&lt;/a&gt;.</source>
@@ -3932,7 +4031,7 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     </message>
     <message>
         <source>UserName</source>
-        <translation type="vanished">Nome de usuário</translation>
+        <translation type="vanished">Nome de utilizador</translation>
     </message>
     <message>
         <source>Renew subscription</source>
@@ -3968,11 +4067,11 @@ Versão lançada 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;
     </message>
     <message>
         <source>Projects from local computer</source>
-        <translation>Projetos de computador local</translation>
+        <translation>Projetos no computador</translation>
     </message>
     <message>
         <source>Projects from kitscenarist.ru</source>
-        <translation>Projetos de kitscenarist.ru</translation>
+        <translation>Projetos no kitscenarist.ru</translation>
     </message>
     <message>
         <source>Used 0 Gb from 0 Gb</source>
@@ -3993,7 +4092,27 @@ our help articles and tutorials.
 </source>
         <translation>Aprenda a escrever suas próprias 
 histórias e usar o KIT Scenarist através 
-dos nossos artigos de ajuda e tutoriais</translation>
+dos nossos artigos de ajuda e tutoriais.
+</translation>
+    </message>
+    <message>
+        <source>
+
+We launch crowdfunding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We have already collected %1K rubles of 1M aim! Join us and then you can use all power of the new version!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Together we will make KIT Scenarist
+the best program for creating stories!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Join campaign</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4004,7 +4123,7 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>Summary text statistics</source>
-        <translation>Estatísticas de texto de resumo</translation>
+        <translation>Sumário das estatísticas de texto</translation>
     </message>
     <message>
         <source>Scenes statistics</source>
@@ -4012,7 +4131,7 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>Locations statistics</source>
-        <translation>Estatísticas das localidades</translation>
+        <translation>Estatísticas das locações</translation>
     </message>
     <message>
         <source>Characters statistics</source>
@@ -4024,7 +4143,7 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>by script order</source>
-        <translation>Por ordem de roteiro</translation>
+        <translation>Por ordem no roteiro</translation>
     </message>
     <message>
         <source>by alphabetical order</source>
@@ -4036,67 +4155,67 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>from shortest to longest scene</source>
-        <translation>Da mais curta à mais longa cena</translation>
+        <translation>Da cena mais curta à mais longa</translation>
     </message>
     <message>
         <source>from massive to unmanned scene</source>
-        <translation>Da cena maciça à não tripulada</translation>
+        <translation>Da cena com mais personagens à com menos</translation>
     </message>
     <message>
         <source>from unmanned to massive scene</source>
-        <translation>De não tripulados para cena maciça</translation>
+        <translation>Da cena com menos personagens à com mais</translation>
     </message>
     <message>
         <source>Show characters</source>
-        <translation>Mostrar caracteres</translation>
+        <translation>Mostrar personagens</translation>
     </message>
     <message>
         <source>Extended view</source>
-        <translation>Vista estendida</translation>
+        <translation>Exibir detalhes</translation>
     </message>
     <message>
         <source>Sort locations</source>
-        <translation>Ordenar locais</translation>
+        <translation>Ordenar locações</translation>
     </message>
     <message>
         <source>from most to least occurences</source>
-        <translation>Desde a maioria até as menores ocorrências</translation>
+        <translation>Do maior número de ocorrências ao menor</translation>
     </message>
     <message>
         <source>from least to most occurences</source>
-        <translation>Do menor para a maioria das ocorrências</translation>
+        <translation>Do menor número de ocorrências ao maior</translation>
     </message>
     <message>
         <source>from longest to shortest chron</source>
-        <translation>Do mais longo ao mais curto cron</translation>
+        <translation>Do cron mais longo ao mais curto</translation>
     </message>
     <message>
         <source>from shortest to longest chron</source>
-        <translation>Do mais curto ao mais longo cron</translation>
+        <translation>Do cron mais curto ao mais longo</translation>
     </message>
     <message>
         <source>Show speaking and non-speaking scenes count</source>
-        <translation>Mostrar cenas de fala e de não-fala</translation>
+        <translation>Especificar número de cenas com fala e sem-fala</translation>
     </message>
     <message>
         <source>Sort characters</source>
-        <translation>Classificar caracteres</translation>
+        <translation>Classificar personagens</translation>
     </message>
     <message>
         <source>from most to least scenes</source>
-        <translation>Da maioria para menos cenas</translation>
+        <translation>Do maior número de cenas para o menor</translation>
     </message>
     <message>
         <source>from least to most scenes</source>
-        <translation>De menos para a maioria das cenas</translation>
+        <translation>Do menor número de cenas para o maior</translation>
     </message>
     <message>
         <source>from most to least dialogues</source>
-        <translation>Da maioria para menos diálogos</translation>
+        <translation>Do maior número de falas para o menor</translation>
     </message>
     <message>
         <source>from least to most dialogues</source>
-        <translation>Do menos para a maioria dos diálogos</translation>
+        <translation>Do menor número de falas para o maior</translation>
     </message>
     <message>
         <source>Choose character:</source>
@@ -4116,11 +4235,11 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>Characters Count</source>
-        <translation>Caracteres contagem</translation>
+        <translation>Contagem de Personagens</translation>
     </message>
     <message>
         <source>Dialogues Count</source>
-        <translation>Contagem de diálogos</translation>
+        <translation>Número de diálogos</translation>
     </message>
     <message>
         <source>Choose characters:</source>
@@ -4159,7 +4278,7 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Certo</translation>
+        <translation>Direita</translation>
     </message>
     <message>
         <source>Description:</source>
@@ -4175,7 +4294,7 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>Fields, mm:</source>
-        <translation>Campos, mm:</translation>
+        <translation>Margens, mm:</translation>
     </message>
     <message>
         <source>Left:</source>
@@ -4187,7 +4306,7 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>Right:</source>
-        <translation>Certo:</translation>
+        <translation>Direita:</translation>
     </message>
     <message>
         <source>Bottom:</source>
@@ -4199,7 +4318,7 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>Page format:</source>
-        <translation>Formato da página:</translation>
+        <translation>Tamanho de papel:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -4223,7 +4342,7 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>mm:</source>
-        <translation>milímetros:</translation>
+        <translation>Milímetros:</translation>
     </message>
     <message>
         <source>Uppercase</source>
@@ -4239,7 +4358,7 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>Single</source>
-        <translation>solteiro</translation>
+        <translation>Simples</translation>
     </message>
     <message>
         <source>One and Half</source>
@@ -4255,12 +4374,11 @@ dos nossos artigos de ajuda e tutoriais</translation>
     </message>
     <message>
         <source>value, mm</source>
-        <translation>9/5000
-Valor, mm</translation>
+        <translation>Valor, em mm</translation>
     </message>
     <message>
         <source>Italic</source>
-        <translation>itálico</translation>
+        <translation>Itálico</translation>
     </message>
     <message>
         <source>Alignment:</source>
@@ -4268,7 +4386,7 @@ Valor, mm</translation>
     </message>
     <message>
         <source>Justify</source>
-        <translation>Justificar</translation>
+        <translation>Justificado</translation>
     </message>
     <message>
         <source>Font:</source>
@@ -4276,7 +4394,8 @@ Valor, mm</translation>
     </message>
     <message>
         <source>pt</source>
-        <translation>Pt</translation>
+        <translatorcomment>pontos</translatorcomment>
+        <translation>pt</translation>
     </message>
     <message>
         <source>Bold</source>
@@ -4284,7 +4403,7 @@ Valor, mm</translation>
     </message>
     <message>
         <source>Framing brackets</source>
-        <translation>Suportes de enquadramento</translation>
+        <translation>Utilizar parênteses</translation>
     </message>
 </context>
 <context>
@@ -4299,7 +4418,7 @@ Valor, mm</translation>
     </message>
     <message>
         <source>Compare</source>
-        <translation>Compare</translation>
+        <translation>Comparar</translation>
     </message>
     <message>
         <source>with</source>
@@ -4330,7 +4449,7 @@ Valor, mm</translation>
     </message>
     <message>
         <source>Light</source>
-        <translation>Luz</translation>
+        <translation>Claro</translation>
     </message>
     <message>
         <source>Button</source>
@@ -4346,11 +4465,11 @@ Valor, mm</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Salve</translation>
+        <translation>Salvar</translation>
     </message>
     <message>
         <source>Load</source>
-        <translation>Carga</translation>
+        <translation>Carregar</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -4418,11 +4537,11 @@ Valor, mm</translation>
     </message>
     <message>
         <source>Save palette to file</source>
-        <translation>Salvar paleta para arquivar</translation>
+        <translation>Salvar paleta para o arquivo</translation>
     </message>
     <message>
         <source>Open file with palette</source>
-        <translation>Abrir arquivo com paleta</translation>
+        <translation>Abrir arquivo de paleta</translation>
     </message>
     <message>
         <source>Save style sheet to file</source>
@@ -4434,7 +4553,7 @@ Valor, mm</translation>
     </message>
     <message>
         <source>Choose color</source>
-        <translation>Escolha a cor</translation>
+        <translation>Escolher cor</translation>
     </message>
 </context>
 <context>
@@ -4446,19 +4565,19 @@ Valor, mm</translation>
     <message>
         <source>KIT Scenarist doesn&apos;t support auto update on your OS now. &lt;br&gt;
 Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;link&lt;/a&gt;</source>
-        <translation>O KIT Scenarist não suporta atualização automática em seu sistema operacional agora. &lt;br&gt;
+        <translation>O KIT Scenarist ainda não suporta atualização automática em seu sistema operacional. &lt;br&gt;
 Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https://kitscenarist.ru/en/download.html&quot; style = &quot;color: # 2b78da;&quot; &gt; Link &lt;/a&gt;</translation>
     </message>
     <message>
         <source>I&apos;m sure want to download beta version</source>
-        <translation>Tenho certeza de que desejo baixar a versão beta</translation>
+        <translation type="vanished">Tenho certeza de que desejo baixar a versão beta</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;body&gt;&lt;p&gt;Beta version is an early version of a program or application that contains most of the major features, but is not yet complete. These versions are released to the general public, for testing and feedback.
 &lt;br&gt;&lt;br&gt;If you use beta version and send feedback to developer you helps him to make application better.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;Html&gt; &lt;body&gt; &lt;p&gt; A versão beta é uma versão inicial de um programa ou aplicativo que contém a maioria dos recursos principais, mas ainda não está completa. Essas versões são divulgadas ao público em geral, para testes e feedback.
-&lt;br&gt; &lt;br&gt; Se você usar a versão beta e enviar comentários ao desenvolvedor você ajuda-lo a tornar a aplicação melhor. &lt;/P&gt;
+        <translation>&lt;Html&gt; &lt;body&gt; &lt;p&gt; A versão beta é uma versão em desenvolvimento de um programa ou aplicação que contém a maioria dos recursos principais, mas ainda não está completa. Essas versões são geralmente divulgadas ao público em geral, para testes e feedback.
+&lt;br&gt; &lt;br&gt; Se você usa a versão beta e envia comentários construtivos ao desenvolvedor você o-ajuda a tornar a aplicação melhor. &lt;/P&gt;
 &lt;/Body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
@@ -4473,6 +4592,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
+    <message>
+        <source>I&apos;m sure. I want to download beta version</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::AboutDialog</name>
@@ -4485,7 +4608,7 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <name>UserInterface::AddProjectDialog</name>
     <message>
         <source>Create</source>
-        <translation>Crio</translation>
+        <translation>Criar</translation>
     </message>
     <message>
         <source>Choose file for new project</source>
@@ -4533,14 +4656,14 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>Don&apos;t send</source>
-        <translation>Não envie</translation>
+        <translation>Não enviar</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ExportDialog</name>
     <message>
         <source>Choose file to export scenario</source>
-        <translation>Escolher arquivo para exportar o roteiro</translation>
+        <translation>Escolha o arquivo para exportar o roteiro</translation>
     </message>
     <message>
         <source>%1 files (*%2)</source>
@@ -4556,11 +4679,19 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>Export outline</source>
-        <translation>Exportar esboço</translation>
+        <translation>Exportar outline</translation>
     </message>
     <message>
         <source>Export script</source>
         <translation>Exporar roteiro</translation>
+    </message>
+    <message>
+        <source>Rewrite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished">Exportar</translation>
     </message>
 </context>
 <context>
@@ -4594,11 +4725,11 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>Sign Up</source>
-        <translation>Assinar</translation>
+        <translation>Criar Conta</translation>
     </message>
     <message>
         <source>Email is empty</source>
-        <translation>Email vazio</translation>
+        <translation>O Email está vazio</translation>
     </message>
 </context>
 <context>
@@ -4609,7 +4740,7 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Logue&lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Account is active until:</source>
@@ -4628,7 +4759,7 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <name>UserInterface::OnboardingView</name>
     <message>
         <source>Next</source>
-        <translation>Próx</translation>
+        <translation>Próximo</translation>
     </message>
     <message>
         <source>Finish</source>
@@ -4640,7 +4771,7 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
 The application will start in few seconds.</source>
         <translation>Serão usadas configurações padrão.
 
-O aplicativo vai iniciar em poucos segundos.</translation>
+A aplicação vai iniciar em poucos segundos.</translation>
     </message>
 </context>
 <context>
@@ -4662,7 +4793,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>for %1 rubles</source>
-        <translation>para %1 rublos</translation>
+        <translation>por %1 rublos</translation>
     </message>
     <message>
         <source>Renew</source>
@@ -4704,7 +4835,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <name>UserInterface::ResearchView</name>
     <message>
         <source>Choose image</source>
-        <translation>Escolha imagem</translation>
+        <translation>Escolher imagem</translation>
     </message>
     <message>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
@@ -4716,7 +4847,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Find All Locations from Script</source>
-        <translation>Localizar todos os locais do roteiro</translation>
+        <translation>Localizar todas as locações do roteiro</translation>
     </message>
     <message>
         <source>Character name</source>
@@ -4724,7 +4855,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Location name</source>
-        <translation>Nome do local</translation>
+        <translation>Nome da locação</translation>
     </message>
     <message>
         <source>Save mind map</source>
@@ -4747,7 +4878,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Cards.png</source>
-        <translation>cartões.png</translation>
+        <translation>Cartões.png</translation>
     </message>
     <message>
         <source>Save cards</source>
@@ -4786,7 +4917,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <name>UserInterface::ScenarioFastFormatWidget</name>
     <message>
         <source>↑ Prev</source>
-        <translation>↑ Ante</translation>
+        <translation>↑ Anter</translation>
     </message>
     <message>
         <source>↓ Next</source>
@@ -4872,7 +5003,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Scenes Count</source>
-        <translation>Contagem de cena</translation>
+        <translation>Contagem de cenas</translation>
     </message>
     <message>
         <source>Add Scenario Item After Selected</source>
@@ -4904,7 +5035,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Show/hide additional panels</source>
-        <translation>Mostre/oculte os painéis adicionais</translation>
+        <translation>Mostrar/ocultar os painéis adicionais</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -4916,11 +5047,11 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Script dictionaries</source>
-        <translation>Dicionários do roteiro</translation>
+        <translation>Dicionários de roteiro</translation>
     </message>
     <message>
         <source>Show/hide script dictionaries</source>
-        <translation>Mostre/oculte os dicionários do roteiro</translation>
+        <translation>Mostrar/ocultar os dicionários de roteiro</translation>
     </message>
     <message>
         <source>Script bookmarks</source>
@@ -4951,7 +5082,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Change text background</source>
-        <translation>Mudar texto de fundo</translation>
+        <translation>Mudar cor de fundo do texto</translation>
     </message>
     <message>
         <source>Highlight text</source>
@@ -5001,7 +5132,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Copy scene description to the script</source>
-        <translation>Copie a descrição da cena para o roteiro</translation>
+        <translation>Copiar a descrição da cena para o roteiro</translation>
     </message>
 </context>
 <context>
@@ -5038,15 +5169,15 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Outline mode</source>
-        <translation>Modo contorno </translation>
+        <translation>Modo Outline</translation>
     </message>
     <message>
         <source>Current Text Block Style</source>
-        <translation>Estilo atual de Bloco de Texto</translation>
+        <translation>Estilo de Bloco de Texto atual</translation>
     </message>
     <message>
         <source>Undo last action</source>
-        <translation>Desfazer última ação  </translation>
+        <translation>Desfazer última ação</translation>
     </message>
     <message>
         <source>Redo last action</source>
@@ -5054,7 +5185,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Search and Replace</source>
-        <translation>Buscar e substituir</translation>
+        <translation>Encontrar e substituir</translation>
     </message>
     <message>
         <source>Text Fast Format</source>
@@ -5074,11 +5205,11 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Find and replace</source>
-        <translation>Buscar e substituir</translation>
+        <translation>Encontrar e substituir</translation>
     </message>
     <message>
         <source>Lock/unlock scene numbers</source>
-        <translation>Bloquear/desbloquear os números das cenas</translation>
+        <translation>Bloquear/desbloquear a numeração das cenas</translation>
     </message>
 </context>
 <context>
@@ -5100,11 +5231,11 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <name>UserInterface::ScriptDictionaries</name>
     <message>
         <source>Scene intros</source>
-        <translation>Introduções das cenas</translation>
+        <translation>Introdução das cenas</translation>
     </message>
     <message>
         <source>Scene times</source>
-        <translation>Tempos das cenas</translation>
+        <translation>Tempo das cenas</translation>
     </message>
     <message>
         <source>Scene days</source>
@@ -5120,11 +5251,11 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Add dictionary item</source>
-        <translation>Adicione um item do dicionário</translation>
+        <translation>Adicione um item ao dicionário</translation>
     </message>
     <message>
         <source>Remove selected item</source>
-        <translation>Remova o item selecionado</translation>
+        <translation>Remover o item selecionado</translation>
     </message>
 </context>
 <context>
@@ -5138,7 +5269,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <name>UserInterface::ScriptZenModeControls</name>
     <message>
         <source>Typewriter sound</source>
-        <translation>Som da máquina de escrever</translation>
+        <translation>Som de máquina de escrever</translation>
     </message>
 </context>
 <context>
@@ -5177,11 +5308,11 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Choose backups saving folder</source>
-        <translation>Escolha sua pasta de salvar backups</translation>
+        <translation>Escolha sua pasta para salvar backups</translation>
     </message>
     <message>
         <source>Russian with Yo</source>
-        <translation>Russo com Yo </translation>
+        <translation>Russo com Yo</translation>
     </message>
     <message>
         <source>Armenian (Eastern)</source>
@@ -5238,8 +5369,8 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     <message>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
 but if you work with no terminations it saves project every %1 minutes.</source>
-        <translation>Autosave (salvamento automático) funciona com muita precisão. Ele salva o projeto a cada 3 segundos se você não usar o mouse ou o teclado; 
-mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</translation>
+        <translation>O salvamento automático funciona com muita precisão. Ele salva o projeto a cada 3 segundos em períodos de inatividade; 
+quando você estiver trabalhando ele salvará o projeto a cada %1 minutos.</translation>
     </message>
     <message>
         <source>Farsi</source>
@@ -5272,6 +5403,18 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     <message>
         <source>Azerbaijani</source>
         <translation>Azerbaijanês</translation>
+    </message>
+    <message>
+        <source>Telugu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Brazilian Portuguese</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Catalan</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5328,11 +5471,11 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Plot.png</source>
-        <translation>Plot.png</translation>
+        <translation>Enredo.png</translation>
     </message>
     <message>
         <source>Save plot</source>
-        <translation>Salvar Plot</translation>
+        <translation>Salvar enredo</translation>
     </message>
     <message>
         <source>PNG files (*.png)</source>
@@ -5368,7 +5511,7 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Location report</source>
-        <translation>Relatório de locais</translation>
+        <translation>Relatório de locação</translation>
     </message>
     <message>
         <source>Cast report</source>
@@ -5380,7 +5523,7 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Plots</source>
-        <translation>Plots</translation>
+        <translation>Enredos</translation>
     </message>
     <message>
         <source>Story structure analysis</source>
@@ -5403,7 +5546,7 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     <name>UserInterface::TemplateDialog</name>
     <message>
         <source>Unnamed Template</source>
-        <translation>Template sem nome</translation>
+        <translation>Modelo sem título</translation>
     </message>
 </context>
 <context>
@@ -5433,7 +5576,7 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Restore script from backup</source>
-        <translation>Recuperar roteiro à partir do back up</translation>
+        <translation>Recuperar roteiro à partir do backup</translation>
     </message>
     <message>
         <source>Choose tool from list</source>
@@ -5441,7 +5584,7 @@ mas se você trabalhar continuamente, ele salva o projeto a cada %1 minutos.</tr
     </message>
     <message>
         <source>Didn&apos;t find any backups for the current project</source>
-        <translation>Não foi encontrado nenhum back up do projeto atual</translation>
+        <translation>Não foi encontrado nenhum backup do projeto atual</translation>
     </message>
 </context>
 <context>
@@ -5475,7 +5618,7 @@ Você pode tentar recarregar a atualização.</translation>
     <name>WebLoader</name>
     <message>
         <source>Sorry, we have some error while loading. Error is: %1</source>
-        <translation>Lamentamos, nós tivemos algum erro ao carregar. O erro é:%1</translation>
+        <translation>Lamentamos, ocorreu um erro ao carregar. O erro é:%1</translation>
     </message>
 </context>
 </TS>

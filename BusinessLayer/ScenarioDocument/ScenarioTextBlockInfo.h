@@ -21,7 +21,17 @@ namespace BusinessLogic
         };
 
     public:
-        TextBlockInfo() = default;
+        TextBlockInfo();
+
+        /**
+         * @brief Получить айди блока
+         */
+        quint64 id() const;
+
+        /**
+         * @brief Обновить айди блока
+         */
+        void updateId();
 
         /**
          * @brief Установлена ли на блоке закладка
@@ -64,6 +74,11 @@ namespace BusinessLogic
         void setDiffType(DiffType _type);
 
     private:
+        /**
+         * @brief Глобальный айди блока, используется в качестве хэша
+         */
+        quint64 m_id = 0;
+
         /**
          * @brief Установлена ли закладка для блока
          */
@@ -131,12 +146,12 @@ namespace BusinessLogic
         /**
          * @brief Группа фиксации
          */
-        unsigned sceneNumberFixNesting() const;
+        int sceneNumberFixNesting() const;
 
         /**
          * @brief Задать группу фиксации
          */
-        void setSceneNumberFixNesting(unsigned sceneNumberFixNesting);
+        void setSceneNumberFixNesting(int sceneNumberFixNesting);
 
         /**
          * @brief Номер в группе фиксации
@@ -213,8 +228,8 @@ namespace BusinessLogic
          * @brief Вложенность фиксации номера сцены
          */
         /** {@ */
-        unsigned m_sceneNumberFixNesting = 0;
-        unsigned m_sceneNumberSuffix = 0;
+        int m_sceneNumberFixNesting = 0;
+        int m_sceneNumberSuffix = 0;
         /** @} */
 
         /**
@@ -249,7 +264,7 @@ namespace BusinessLogic
         /**
          * @brief Получить номер реплики
          */
-        int dialogueNumbder() const;
+        int dialogueNumber() const;
 
         /**
          * @brief Установить номер реплики

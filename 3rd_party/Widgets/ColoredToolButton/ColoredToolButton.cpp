@@ -16,7 +16,7 @@
 #include <QWidgetAction>
 
 
-ColoredToolButton::ColoredToolButton(const QIcon& _icon, QWidget* _parent, QWidget* _topLevelParent) :
+ColoredToolButton::ColoredToolButton(const QIcon& _icon, QWidget* _parent) :
     QToolButton(_parent),
     m_icon(_icon),
     m_colorNotChoosedYet(true),
@@ -27,14 +27,14 @@ ColoredToolButton::ColoredToolButton(const QIcon& _icon, QWidget* _parent, QWidg
     aboutUpdateIcon(palette().text().color());
 
 #ifdef MOBILE_OS
-    m_colorsPanel = new SlidingPanel(_topLevelParent);
+    m_colorsPanel = new SlidingPanel(_parent->parentWidget());
     m_colorsPanel->hide();
 #endif
 
     connect(this, static_cast<void (QToolButton::*)(bool)>(&QToolButton::clicked), this, &ColoredToolButton::aboutClicked);
 }
 
-ColoredToolButton::ColoredToolButton(QWidget* _parent, QWidget* _topLevelParent) :
+ColoredToolButton::ColoredToolButton(QWidget* _parent) :
     QToolButton(_parent),
     m_colorNotChoosedYet(true),
     m_colorsPane(nullptr)
@@ -42,11 +42,11 @@ ColoredToolButton::ColoredToolButton(QWidget* _parent, QWidget* _topLevelParent)
     setFocusPolicy(Qt::NoFocus);
 
 #ifdef MOBILE_OS
-    m_colorsPanel = new SlidingPanel(_topLevelParent);
+    m_colorsPanel = new SlidingPanel(_parent->parentWidget());
     m_colorsPanel->hide();
+#endif
 
     connect(this, static_cast<void (QToolButton::*)(bool)>(&QToolButton::clicked), this, &ColoredToolButton::aboutClicked);
-#endif
 }
 
 ColoredToolButton::~ColoredToolButton()
@@ -57,6 +57,18 @@ ColoredToolButton::~ColoredToolButton()
     }
 #endif
 }
+
+#ifdef MOBILE_OS
+void ColoredToolButton::setSlidingPanelParent(QWidget* _parent)
+{
+    m_colorsPanel->setParent(_parent);
+}
+
+void ColoredToolButton::setSlidingPanelCorner(Qt::Corner _corner)
+{
+    m_colorsPanelCorner = _corner;
+}
+#endif
 
 void ColoredToolButton::setColorsPane(ColoredToolButton::ColorsPaneType _pane)
 {
@@ -211,10 +223,16 @@ void ColoredToolButton::aboutClicked()
     }
 
 #ifdef MOBILE_OS
-    m_colorsPanel->raise();
-    m_colorsPanel->resize(m_colorsPanel->sizeHint());
-    m_colorsPanel->setFixedCornerPos(mapTo(m_colorsPanel->parentWidget(), pos()), Qt::BottomLeftCorner);
-    WAF::Animation::slideIn(m_colorsPanel, WAF::FromBottomToTop, true, true);
+    if (!m_colorsPanel->isVisible()
+        || m_colorsPanel->size().isEmpty()) {
+        m_colorsPanel->raise();
+        m_colorsPanel->resize(m_colorsPanel->sizeHint());
+        const QPoint cornerPos = m_colorsPanelCorner == Qt::BottomLeftCorner ? QPoint{0, 0} : QPoint{width(), height()};
+        m_colorsPanel->setFixedCornerPos(mapTo(m_colorsPanel->parentWidget(), cornerPos), m_colorsPanelCorner);
+        WAF::Animation::slideIn(m_colorsPanel, WAF::FromBottomToTop, true, true);
+    } else {
+        WAF::Animation::slideOut(m_colorsPanel, WAF::FromBottomToTop, true, true);
+    }
 #endif
 
     emit clicked(m_colorsPane->currentColor());

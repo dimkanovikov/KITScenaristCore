@@ -551,6 +551,18 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
         centerFormat.setLineHeight(
                     TextEditHelper::fontLineHeight(titleFormat.font()),
                     QTextBlockFormat::FixedHeight);
+        //
+        // ... выравниваем центрирование, чтобы было симметрично относительно боков
+        //
+        if (exportStyle.pageMargins().left() > exportStyle.pageMargins().right()) {
+            centerFormat.setRightMargin(
+                PageMetrics::mmToPx(exportStyle.pageMargins().left()
+                                    - exportStyle.pageMargins().right()));
+        } else if (exportStyle.pageMargins().left() < exportStyle.pageMargins().right()) {
+            centerFormat.setLeftMargin(
+                PageMetrics::mmToPx(exportStyle.pageMargins().right()
+                                    - exportStyle.pageMargins().left()));
+        }
         QTextBlockFormat rightFormat;
         rightFormat.setAlignment(Qt::AlignRight);
         rightFormat.setLineHeight(
@@ -567,21 +579,21 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
         // Название [17 строка]
         //
         while ((currentLineNumber++) < 16) {
-            ::insertLine(destDocumentCursor, centerFormat, headerFormat);
+            insertLine(destDocumentCursor, centerFormat, headerFormat);
         }
-        ::insertLine(destDocumentCursor, centerFormat, headerFormat);
+        insertLine(destDocumentCursor, centerFormat, headerFormat);
         destDocumentCursor.insertText(TextEditHelper::smartToUpper(_exportParameters.scriptName));
         //
         // Две строки отступа от заголовка
         //
-        ::insertLine(destDocumentCursor, centerFormat, titleFormat);
-        ::insertLine(destDocumentCursor, centerFormat, titleFormat);
+        insertLine(destDocumentCursor, centerFormat, titleFormat);
+        insertLine(destDocumentCursor, centerFormat, titleFormat);
         //
         // Жанр [через одну под предыдущим]
         //
         if (!_exportParameters.scriptGenre.isEmpty()) {
-            ::insertLine(destDocumentCursor, centerFormat, titleFormat);
-            ::insertLine(destDocumentCursor, centerFormat, titleFormat);
+            insertLine(destDocumentCursor, centerFormat, titleFormat);
+            insertLine(destDocumentCursor, centerFormat, titleFormat);
             destDocumentCursor.insertText(_exportParameters.scriptGenre);
             currentLineNumber += 2;
         }
@@ -589,8 +601,8 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
         // Автор [через одну под предыдущим]
         //
         if (!_exportParameters.scriptAuthor.isEmpty()) {
-            ::insertLine(destDocumentCursor, centerFormat, titleFormat);
-            ::insertLine(destDocumentCursor, centerFormat, titleFormat);
+            insertLine(destDocumentCursor, centerFormat, titleFormat);
+            insertLine(destDocumentCursor, centerFormat, titleFormat);
             destDocumentCursor.insertText(_exportParameters.scriptAuthor);
             currentLineNumber += 2;
         }
@@ -598,31 +610,31 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
         // Доп. инфо [через одну под предыдущим]
         //
         if (!_exportParameters.scriptAdditionalInfo.isEmpty()) {
-            ::insertLine(destDocumentCursor, centerFormat, titleFormat);
-            ::insertLine(destDocumentCursor, centerFormat, titleFormat);
+            insertLine(destDocumentCursor, centerFormat, titleFormat);
+            insertLine(destDocumentCursor, centerFormat, titleFormat);
             destDocumentCursor.insertText(_exportParameters.scriptAdditionalInfo);
             currentLineNumber += 2;
         }
         //
-        // необходимое количество пустых строк до 30ой
+        // необходимое количество пустых строк до 37ой
         //
-        while ((currentLineNumber++) < 44) {
-            ::insertLine(destDocumentCursor, centerFormat, titleFormat);
+        while ((currentLineNumber++) < 37) {
+            insertLine(destDocumentCursor, centerFormat, titleFormat);
         }
         //
-        // Контакты [45 строка]
+        // Контакты [38 строка]
         //
-        ::insertLine(destDocumentCursor, leftFormat, titleFormat);
+        insertLine(destDocumentCursor, leftFormat, titleFormat);
         destDocumentCursor.insertText(_exportParameters.scriptContacts);
 
         //
         // Год печатается на последней строке документа
         //
-        LineType currentLineType = ::currentLine(preparedDocument, centerFormat, titleFormat);
+        LineType currentLineType = currentLine(preparedDocument, centerFormat, titleFormat);
         while (currentLineType != LastPageLine) {
             ++currentLineNumber;
-            ::insertLine(destDocumentCursor, centerFormat, titleFormat);
-            currentLineType = ::currentLine(preparedDocument, centerFormat, titleFormat);
+            insertLine(destDocumentCursor, centerFormat, titleFormat);
+            currentLineType = currentLine(preparedDocument, centerFormat, titleFormat);
         }
         destDocumentCursor.insertText(_exportParameters.scriptYear);
     }
@@ -651,19 +663,19 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
         //
         // Если блок содержит текст, который необходимо вывести на печать
         //
-        if (::needPrintBlock(currentBlockType, _exportParameters)) {
+        if (needPrintBlock(currentBlockType, _exportParameters)) {
 
             //
             // Определим стили и настроим курсор
             //
-            QTextBlockFormat blockFormat = ::blockFormatForType(currentBlockType);
-            QTextCharFormat charFormat = ::charFormatForType(currentBlockType);
+            QTextBlockFormat blockFormat = blockFormatForType(currentBlockType);
+            QTextCharFormat charFormat = charFormatForType(currentBlockType);
 
             //
             // Если вставляется не первый блок текста, возможно следует сделать отступы
             //
             {
-                LineType currentLineType = ::currentLine(preparedDocument, blockFormat, charFormat);
+                LineType currentLineType = currentLine(preparedDocument, blockFormat, charFormat);
                 if (currentLineType == MiddlePageLine) {
                     int emptyLines = exportStyle.blockStyle(currentBlockType).topSpace();
                     //
@@ -686,8 +698,8 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                         //
                         // ... вставим линию и настроим её стиль
                         //
-                        ::insertLine(destDocumentCursor, blockFormat, charFormat);
-                        currentLineType = ::currentLine(preparedDocument, blockFormat, charFormat);
+                        insertLine(destDocumentCursor, blockFormat, charFormat);
+                        currentLineType = currentLine(preparedDocument, blockFormat, charFormat);
                     }
                 }
             }
@@ -704,7 +716,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                     //
                     // ... вставим новый абзац для наполнения текстом
                     //
-                    ::insertLine(destDocumentCursor, blockFormat, charFormat);
+                    insertLine(destDocumentCursor, blockFormat, charFormat);
                 }
 
                 //
@@ -760,7 +772,7 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                     //
                     if (_exportParameters.printDialoguesNumbers
                         && characterInfo != nullptr) {
-                        const QString dialogueNumber = QString("%1: ").arg(characterInfo->dialogueNumbder());
+                        const QString dialogueNumber = QString("%1: ").arg(characterInfo->dialogueNumber());
                         destDocumentCursor.insertText(dialogueNumber);
                         additionalSpaceForNumber = dialogueNumber.length();
                     }
@@ -782,36 +794,20 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                 //
                 // Добавим (ПРОД) к имени персонажа, если необходимо
                 //
-                if (sourceDocumentCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCharacterContinued)) {
+                if (!sourceDocumentCursor.block().text().isEmpty()
+                    && sourceDocumentCursor.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCharacterContinued)
+                    && !sourceDocumentCursor.block().text().contains(ScriptTextCorrector::continuedTerm())) {
                     destDocumentCursor.insertText(ScriptTextCorrector::continuedTerm());
                 }
 
                 //
-                // Добавляем редакторские пометки, если необходимо
-                //
-                if (_exportParameters.saveReviewMarks) {
-                    //
-                    // Если в блоке есть пометки, добавляем их
-                    //
-                    if (!sourceDocumentCursor.block().textFormats().isEmpty()) {
-                        const int startBlockPosition = destDocumentCursor.block().position();
-                        foreach (const QTextLayout::FormatRange& range, sourceDocumentCursor.block().textFormats()) {
-                            if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
-                                destDocumentCursor.setPosition(startBlockPosition + range.start + additionalSpaceForNumber);
-                                destDocumentCursor.setPosition(destDocumentCursor.position() + range.length, QTextCursor::KeepAnchor);
-                                destDocumentCursor.mergeCharFormat(range.format);
-                            }
-                        }
-                        destDocumentCursor.movePosition(QTextCursor::EndOfBlock);
-                    }
-                }
-
-                //
                 // Если в блоке есть форматирование отличное от стандартного, добавляем его
+                // NOTE: Должно идти перед редакторскими заметками, чтобы не затирался цвет текста,
+                //       который устанавливается заметками и выделениями
                 //
                 if (!sourceDocumentCursor.block().textFormats().isEmpty()) {
                     const int startBlockPosition = destDocumentCursor.block().position();
-                    foreach (const QTextLayout::FormatRange& range, sourceDocumentCursor.block().textFormats()) {
+                    for (const QTextLayout::FormatRange& range : sourceDocumentCursor.block().textFormats()) {
                         const bool isFormatting =
                                 range.format.font().bold() != sourceDocumentCursor.blockCharFormat().font().bold()
                                 || range.format.font().italic() != sourceDocumentCursor.blockCharFormat().font().italic()
@@ -828,13 +824,33 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                     }
                     destDocumentCursor.movePosition(QTextCursor::EndOfBlock);
                 }
+
+                //
+                // Добавляем редакторские пометки, если необходимо
+                //
+                if (_exportParameters.saveReviewMarks) {
+                    //
+                    // Если в блоке есть пометки, добавляем их
+                    //
+                    if (!sourceDocumentCursor.block().textFormats().isEmpty()) {
+                        const int startBlockPosition = destDocumentCursor.block().position();
+                        for (const QTextLayout::FormatRange& range : sourceDocumentCursor.block().textFormats()) {
+                            if (range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
+                                destDocumentCursor.setPosition(startBlockPosition + range.start + additionalSpaceForNumber);
+                                destDocumentCursor.setPosition(destDocumentCursor.position() + range.length, QTextCursor::KeepAnchor);
+                                destDocumentCursor.mergeCharFormat(range.format);
+                            }
+                        }
+                        destDocumentCursor.movePosition(QTextCursor::EndOfBlock);
+                    }
+                }
             }
 
             //
             // После текста, так же возможно следует сделать отступы
             //
             {
-                LineType currentLineType = ::currentLine(preparedDocument, blockFormat, charFormat);
+                LineType currentLineType = currentLine(preparedDocument, blockFormat, charFormat);
                 if (currentLineType == MiddlePageLine) {
                     int emptyLines = exportStyle.blockStyle(currentBlockType).bottomSpace();
                     //
@@ -850,8 +866,8 @@ QTextDocument* AbstractExporter::prepareDocument(const BusinessLogic::ScenarioDo
                         //
                         // ... вставим линию и настроим её стиль
                         //
-                        ::insertLine(destDocumentCursor, blockFormat, charFormat);
-                        currentLineType = ::currentLine(preparedDocument, blockFormat, charFormat);
+                        insertLine(destDocumentCursor, blockFormat, charFormat);
+                        currentLineType = currentLine(preparedDocument, blockFormat, charFormat);
                     }
                 }
             }

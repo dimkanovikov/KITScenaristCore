@@ -1,6 +1,7 @@
 #include "ScenarioTextDocument.h"
 
 #include "ScenarioReviewModel.h"
+#include "ScenarioTextBlockInfo.h"
 #include "ScenarioXml.h"
 #include "ScriptBookmarksModel.h"
 #include "ScriptTextCorrector.h"
@@ -37,7 +38,7 @@ namespace {
     /**
      * @brief Доступный размер изменений в редакторе
      */
-    const int MAX_UNDO_REDO_STACK_SIZE = 50;
+    const int MAX_UNDO_REDO_STACK_SIZE = 100;
 
     /**
      * @brief Получить хэш текста
@@ -90,6 +91,7 @@ ScenarioTextDocument::ScenarioTextDocument(QObject *parent, ScenarioXml* _xmlHan
     m_outlineMode(false),
     m_corrector(new ScriptTextCorrector(this))
 {
+    connect(this, &ScenarioTextDocument::contentsChange, this, &ScenarioTextDocument::updateBlocksIds);
     connect(m_reviewModel, &ScenarioReviewModel::reviewChanged, this, &ScenarioTextDocument::reviewChanged);
     connect(m_bookmarksModel, &ScriptBookmarksModel::modelChanged, this, &ScenarioTextDocument::bookmarksChanged);
 }
@@ -147,7 +149,8 @@ void ScenarioTextDocument::load(const QString& _scenarioXml)
     //
     // Загружаем проект
     //
-    m_xmlHandler->xmlToScenario(0, scenarioXml);
+    const bool remainLinkedData = true;
+    m_xmlHandler->xmlToScenario(0, scenarioXml, remainLinkedData);
     m_scenarioXml = scenarioXml;
     m_scenarioXmlHash = ::textMd5Hash(scenarioXml);
     m_lastSavedScenarioXml = m_scenarioXml;
@@ -216,6 +219,27 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     //
     const QString patchUncopressed = DatabaseHelper::uncompress(_patch);
     auto xmlsForUpdate = DiffMatchPatchHelper::changedXml(m_scenarioXml, patchUncopressed);
+    if (!xmlsForUpdate.first.isValid()
+        || !xmlsForUpdate.second.isValid()) {
+
+#ifdef PATCH_DEBUG
+    qDebug() << "===================================================================";
+    qDebug() << "uncompress failed";
+    qDebug() << "###################################################################";
+    qDebug() << qUtf8Printable(xmlsForUpdate.first.xml);
+    qDebug() << "###################################################################";
+    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
+    qDebug() << "###################################################################";
+    qDebug() << qUtf8Printable(xmlsForUpdate.second.xml);
+#endif
+
+        //
+        // Патч не был применён
+        //
+        m_isPatchApplyProcessed = false;
+
+        return -1;
+    }
 
     xmlsForUpdate.first.xml = ScenarioXml::makeMimeFromXml(xmlsForUpdate.first.xml);
     xmlsForUpdate.second.xml = ScenarioXml::makeMimeFromXml(xmlsForUpdate.second.xml);
@@ -261,8 +285,8 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     //
     // ... при этом не изменяем идентификаторов сцен, которые находятся в сценарии
     //
-    const bool dontRebuildUuids = false;
-    m_xmlHandler->xmlToScenario(selectionStartPos, xmlsForUpdate.second.xml, dontRebuildUuids);
+    const bool remainLinkedData = true;
+    m_xmlHandler->xmlToScenario(selectionStartPos, xmlsForUpdate.second.xml, remainLinkedData);
 
     //
     // Запомним новый текст
@@ -298,9 +322,50 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
     //
     QString newXml = m_scenarioXml;
     int currentIndex = 0, max = _patches.size();
+
+#ifdef PATCH_DEBUG
+    QString lastXml;
+    bool needPrintXml = true;
+#endif
+
     for (const QString& patch : _patches) {
+
+#ifdef PATCH_DEBUG
+        lastXml = newXml;
+#endif
+
         const QString patchUncopressed = DatabaseHelper::uncompress(patch);
         newXml = DiffMatchPatchHelper::applyPatchXml(newXml, patchUncopressed);
+
+#ifdef PATCH_DEBUG
+        QDomDocument doc;
+        QString error;
+        int line = 0, column = 0;
+        bool ok = doc.setContent(ScenarioXml::makeMimeFromXml(newXml), &error, &line, &column);
+        if (!ok
+            || lastXml == newXml) {
+            qDebug() << "===================================================================";
+            qDebug() << "***************" << currentIndex << "*****************";
+            qDebug() << error << line << column;
+            if (needPrintXml) {
+                qDebug() << "********************************";
+                qDebug() << qUtf8Printable(lastXml);
+            }
+            qDebug() << "********************************";
+            qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
+            if (needPrintXml) {
+                qDebug() << "********************************";
+                qDebug() << qUtf8Printable(newXml);
+            }
+
+            needPrintXml = false;
+        } else {
+            qDebug() << "===================================================================";
+            qDebug() << "***************" << currentIndex << "*****************";
+            qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
+        }
+#endif
+
         QLightBoxProgress::setProgressValue(++currentIndex, max);
         QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
     }
@@ -319,8 +384,8 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
     //
     // ... при этом не изменяем идентификаторов сцен, которые находятся в сценарии
     //
-    const bool dontRebuildUuids = false;
-    m_xmlHandler->xmlToScenario(0, ScenarioXml::makeMimeFromXml(newXml), dontRebuildUuids);
+    const bool remainLinkedData = true;
+    m_xmlHandler->xmlToScenario(0, ScenarioXml::makeMimeFromXml(newXml), remainLinkedData);
 
     //
     // Запомним новый текст
@@ -395,7 +460,7 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
     return change;
 }
 
-int ScenarioTextDocument::undoReimpl()
+int ScenarioTextDocument::undoReimpl(bool _forced)
 {
 #ifdef MOBILE_OS
     QApplication::inputMethod()->commit();
@@ -412,17 +477,42 @@ int ScenarioTextDocument::undoReimpl()
         qDebug() << change->uuid().toString() << change->user() << characterCount() << change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz");
 #endif
 
-        m_redoStack.append(change);
-        emit redoAvailableChanged(true);
+        //
+        // Перенесём действие в список действий доступных к повторению
+        //
+        if (!_forced) {
+            m_redoStack.append(change);
+            emit redoAvailableChanged(true);
+        }
+
         pos = applyPatch(change->undoPatch());
 
         //
         // Сохраним изменения
         //
-        Domain::ScenarioChange* newChange = ::saveChange(change->redoPatch(), change->undoPatch());
-        newChange->setIsDraft(change->isDraft());
+        if (!_forced) {
+            Domain::ScenarioChange* newChange = ::saveChange(change->redoPatch(), change->undoPatch());
+            newChange->setIsDraft(change->isDraft());
+        }
     }
     return pos;
+}
+
+void ScenarioTextDocument::addUndoChange(ScenarioChange* change)
+{
+    m_undoStack.append(change);
+}
+
+void ScenarioTextDocument::updateUndoStack()
+{
+    m_undoStack.clear();
+    m_redoStack.clear();
+    foreach (DomainObject* obj, DataStorageLayer::StorageFacade::scenarioChangeStorage()->all()->toList()) {
+        ScenarioChange* ch = dynamic_cast<ScenarioChange*>(obj);
+        if (!ch->isDraft()) {
+            m_undoStack.append(ch);
+        }
+    }
 }
 
 int ScenarioTextDocument::redoReimpl()
@@ -569,6 +659,21 @@ void ScenarioTextDocument::setCorrectionOptions(bool _needToCorrectCharactersNam
 void ScenarioTextDocument::correct(int _position, int _charsRemoved, int _charsAdded)
 {
     m_corrector->correct(_position, _charsRemoved, _charsAdded);
+}
+
+void ScenarioTextDocument::updateBlocksIds(int _position, int _charsRemoved, int _charsAdded)
+{
+    Q_UNUSED(_charsRemoved);
+
+    auto block = findBlock(_position);
+    while (block.isValid()
+           && block.position() <= _position + _charsAdded) {
+        if (auto blockInfo = dynamic_cast<TextBlockInfo*>(block.userData())) {
+            blockInfo->updateId();
+        }
+
+        block = block.next();
+    }
 }
 
 void ScenarioTextDocument::removeIdenticalParts(QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml>& _xmls, bool _reversed)

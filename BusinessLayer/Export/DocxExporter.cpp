@@ -8,12 +8,14 @@
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
 #include <BusinessLayer/ScenarioDocument/ScenarioDocument.h>
+#include <BusinessLayer/ScenarioDocument/ScenarioTextBlockInfo.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTextDocument.h>
 #include <BusinessLayer/ScenarioDocument/ScenarioTemplate.h>
 
 #include <Domain/Scenario.h>
 
 #include <3rd_party/Helpers/TextEditHelper.h>
+#include <3rd_party/Widgets/PagesTextEdit/PageMetrics.h>
 
 #include <QTextDocument>
 #include <QTextCursor>
@@ -77,6 +79,24 @@ namespace {
         }
 
         return false;
+    }
+
+    /**
+     * @brief Необходимо ли писать верхний колонтитул
+     */
+    static bool needWriteHeader(const ExportParameters& _exportParameters) {
+        return (_exportParameters.printPagesNumbers
+                && exportStyle().numberingAlignment().testFlag(Qt::AlignTop))
+                || !_exportParameters.scriptHeader.isEmpty();
+    }
+
+    /**
+     * @brief Необходимо ли писать нижний колонтитул
+     */
+    static bool needWriteFooter(const ExportParameters& _exportParameters) {
+        return (_exportParameters.printPagesNumbers
+                && exportStyle().numberingAlignment().testFlag(Qt::AlignBottom))
+                || !_exportParameters.scriptFooter.isEmpty();
     }
 
     /**
@@ -317,14 +337,15 @@ namespace {
     /**
      * @brief Сформировать текст блока документа в зависимости от его стиля и оформления
      */
-    static QString docxText(QMap<int, QStringList>& _comments, const QTextCursor& _cursor) {
+    static QString docxText(QMap<int, QStringList>& _comments, const QTextCursor& _cursor,
+        const ExportParameters& _exportParameters) {
+
         QString documentXml;
 
         //
         // Получим стиль параграфа
         //
-        ScenarioBlockStyle::Type currentBlockType =
-                (ScenarioBlockStyle::Type)_cursor.blockFormat().property(ScenarioBlockStyle::PropertyType).toInt();
+        ScenarioBlockStyle::Type currentBlockType = ScenarioBlockStyle::forBlock(_cursor.block());
 
         //
         // Запишем параграф в документ
@@ -333,6 +354,19 @@ namespace {
             documentXml =
                 QString("<w:p><w:pPr><w:pStyle w:val=\"%1\"/>")
                 .arg(ScenarioBlockStyle::typeName(currentBlockType).toUpper().replace("_", ""));
+
+            if (currentBlockType == ScenarioBlockStyle::SceneHeading
+                && _exportParameters.printScenesNumbers) {
+                if (SceneHeadingBlockInfo* sceneInfo = dynamic_cast<SceneHeadingBlockInfo*>(_cursor.block().userData())) {
+                    const QString sceneNumber = QString("%1%2. ").arg(_exportParameters.scenesPrefix)
+                                                                 .arg(sceneInfo->sceneNumber());
+                    const QFontMetrics fontMetrics(exportStyle().blockStyle(currentBlockType).font());
+                    documentXml.append(
+                                QString("<w:ind w:left=\"-%1\" w:right=\"0\" w:hanging=\"0\" />")
+                                .arg(mmToTwips(PageMetrics::pxToMm(fontMetrics.width(sceneNumber))))
+                                );
+                }
+            }
 
             //
             //  ... текст абзаца
@@ -494,6 +528,14 @@ namespace {
                     break;
                 }
             }
+            if (_cursor.blockFormat().rightMargin() > 0
+                || _cursor.blockFormat().leftMargin() > 0) {
+                documentXml.append(
+                            QString("<w:ind w:left=\"%1\" w:right=\"%2\" w:hanging=\"0\" />")
+                            .arg(mmToTwips(PageMetrics::pxToMm(_cursor.blockFormat().leftMargin())))
+                            .arg(mmToTwips(PageMetrics::pxToMm(_cursor.blockFormat().rightMargin())))
+                            );
+            }
             documentXml.append(
                 QString("<w:rPr/></w:pPr><w:r><w:rPr/><w:t>%1</w:t></w:r></w:p>")
                 .arg(TextEditHelper::toHtmlEscaped(_cursor.block().text()))
@@ -534,7 +576,7 @@ void DocxExporter::exportTo(ScenarioDocument* _scenario, const ExportParameters&
             //
             // ... шрифты
             //
-            if (::needWriteFonts()) {
+            if (needWriteFonts()) {
                 writeFonts(&zip);
             }
             //
@@ -577,7 +619,7 @@ void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _e
             "<Override PartName=\"/word/_rels/document.xml.rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/>"
             "<Override PartName=\"/word/styles.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml\"/>"
             "<Override PartName=\"/word/comments.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.comments+xml\"/>";
-    if (::needWriteFonts()) {
+    if (needWriteFonts()) {
         contentTypesXml.append(
             "<Default Extension=\"odttf\" ContentType=\"application/vnd.openxmlformats-officedocument.obfuscatedFont\"/>"
             "<Override PartName=\"/word/fontTable.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.fontTable+xml\"/>");
@@ -585,12 +627,11 @@ void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _e
     //
     // ... необходимы ли колонтитулы
     //
-    if (_exportParameters.printPagesNumbers) {
-        if (::exportStyle().numberingAlignment().testFlag(Qt::AlignTop)) {
-            contentTypesXml.append("<Override PartName=\"/word/header1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml\"/>");
-        } else {
-            contentTypesXml.append("<Override PartName=\"/word/footer1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml\"/>");
-        }
+    if (needWriteHeader(_exportParameters)) {
+        contentTypesXml.append("<Override PartName=\"/word/header1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml\"/>");
+    }
+    if (needWriteFooter(_exportParameters)) {
+        contentTypesXml.append("<Override PartName=\"/word/footer1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml\"/>");
     }
     contentTypesXml.append(
             "<Override PartName=\"/word/document.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml\"/>"
@@ -618,18 +659,17 @@ void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _e
     //
     // ... необходимы ли колонтитулы
     //
-    if (_exportParameters.printPagesNumbers) {
-        if (::exportStyle().numberingAlignment().testFlag(Qt::AlignTop)) {
-            documentXmlRels.append("<Relationship Id=\"docRId2\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/header\" Target=\"header1.xml\"/>");
-        } else {
-            documentXmlRels.append("<Relationship Id=\"docRId3\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer\" Target=\"footer1.xml\"/>");
-        }
+    if (needWriteHeader(_exportParameters)) {
+        documentXmlRels.append("<Relationship Id=\"docRId2\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/header\" Target=\"header1.xml\"/>");
+    }
+    if (needWriteFooter(_exportParameters)) {
+        documentXmlRels.append("<Relationship Id=\"docRId3\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer\" Target=\"footer1.xml\"/>");
     }
     documentXmlRels.append("<Relationship Id=\"docRId4\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings\" Target=\"settings.xml\"/>");
     //
     // ... необходимы ли шрифты
     //
-    if (::needWriteFonts()) {
+    if (needWriteFonts()) {
         documentXmlRels.append("<Relationship Id=\"docRId5\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable\" Target=\"fontTable.xml\"/>");
     }
     documentXmlRels.append("</Relationships>");
@@ -638,7 +678,7 @@ void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _e
     //
     // Связи шрифтов
     //
-    if (::needWriteFonts()) {
+    if (needWriteFonts()) {
         _zip->addFile(QString::fromLatin1("word/_rels/fontTable.xml.rels"),
                       "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
                       "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\">"
@@ -655,7 +695,7 @@ void DocxExporter::writeStaticData(QtZipWriter* _zip, const ExportParameters& _e
     QString wordSettings =
             "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
             "<w:settings xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w10=\"urn:schemas-microsoft-com:office:word\" xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:sl=\"http://schemas.openxmlformats.org/schemaLibrary/2006/main\">";
-    if (::needWriteFonts()) {
+    if (needWriteFonts()) {
         wordSettings += "<w:embedTrueTypeFonts w:val=\"true\"/><w:embedSystemFonts w:val=\"false\"/>";
     }
     wordSettings +=
@@ -682,8 +722,8 @@ void DocxExporter::writeStyles(QtZipWriter* _zip) const
     ScenarioTemplate style = ::exportStyle();
     const QString defaultFontFamily = style.blockStyle(ScenarioBlockStyle::Action).font().family();
     foreach (int blockNumber, ::blockTypes().keys()) {
-        ScenarioBlockStyle blockStyle = style.blockStyle(::blockTypes().value(blockNumber));
-        styleXml.append(::docxBlockStyle(blockStyle, defaultFontFamily));
+        ScenarioBlockStyle blockStyle = style.blockStyle(blockTypes().value(blockNumber));
+        styleXml.append(docxBlockStyle(blockStyle, defaultFontFamily));
     }
 
     styleXml.append("</w:styles>");
@@ -740,23 +780,41 @@ void DocxExporter::writeHeader(QtZipWriter* _zip, const ExportParameters& _expor
     //
     // Если нужна нумерация вверху
     //
-    if (_exportParameters.printPagesNumbers
-        && ::exportStyle().numberingAlignment().testFlag(Qt::AlignTop)) {
+    const bool needPrintPageNumbers = _exportParameters.printPagesNumbers
+                                      && exportStyle().numberingAlignment().testFlag(Qt::AlignTop);
+    if (needPrintPageNumbers
+        || !_exportParameters.scriptHeader.isEmpty()) {
         QString headerXml =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
                 "<w:hdr xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:w10=\"urn:schemas-microsoft-com:office:word\" xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\">";
 
 
         headerXml.append("<w:p><w:pPr><w:jc w:val=\"");
-        if (::exportStyle().numberingAlignment().testFlag(Qt::AlignLeft)) {
+        if (exportStyle().numberingAlignment().testFlag(Qt::AlignLeft) || !needPrintPageNumbers) {
             headerXml.append("left");
-        } else if (::exportStyle().numberingAlignment().testFlag(Qt::AlignCenter)) {
+        } else if (exportStyle().numberingAlignment().testFlag(Qt::AlignCenter)) {
             headerXml.append("center");
         } else {
             headerXml.append("right");
         }
-        headerXml.append("\"/><w:rPr/></w:pPr><w:r><w:rPr/><w:fldChar w:fldCharType=\"begin\"/></w:r><w:r><w:instrText> PAGE </w:instrText></w:r><w:r><w:fldChar w:fldCharType=\"separate\"/></w:r><w:r><w:t>0</w:t></w:r><w:r><w:fldChar w:fldCharType=\"end\"/></w:r></w:p>");
-        headerXml.append("</w:hdr>");
+        headerXml.append("\"/><w:rPr/></w:pPr>");
+
+        const QString pageNumbersXml = needPrintPageNumbers
+                                       ? "<w:r><w:rPr/><w:fldChar w:fldCharType=\"begin\"/></w:r><w:r><w:instrText> PAGE </w:instrText></w:r><w:r><w:fldChar w:fldCharType=\"separate\"/></w:r><w:r><w:t>0</w:t></w:r><w:r><w:fldChar w:fldCharType=\"end\"/></w:r>"
+                                       : "";
+        const QString pageHeaderXml = QString("<w:r><w:rPr/><w:t>%1</w:t></w:r>").arg(_exportParameters.scriptHeader);
+        const QString pageHeaderSeparatorXml = "<w:r><w:rPr/><w:t> </w:t></w:r>";
+        if (exportStyle().numberingAlignment().testFlag(Qt::AlignRight)) {
+            headerXml.append(pageHeaderXml);
+            headerXml.append(pageHeaderSeparatorXml);
+            headerXml.append(pageNumbersXml);
+        } else {
+            headerXml.append(pageNumbersXml);
+            headerXml.append(pageHeaderSeparatorXml);
+            headerXml.append(pageHeaderXml);
+        }
+
+        headerXml.append("</w:p></w:hdr>");
 
         //
         // Запишем верхний колонтитул в архив
@@ -770,22 +828,41 @@ void DocxExporter::writeFooter(QtZipWriter* _zip, const ExportParameters& _expor
     //
     // Если нужна нумерация внизу
     //
-    if (_exportParameters.printPagesNumbers
-        && ::exportStyle().numberingAlignment().testFlag(Qt::AlignBottom)) {
+    const bool needPrintPageNumbers = _exportParameters.printPagesNumbers
+                                      && exportStyle().numberingAlignment().testFlag(Qt::AlignBottom);
+    if (needPrintPageNumbers
+        || !_exportParameters.scriptFooter.isEmpty()) {
         QString footerXml =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
                 "<w:ftr xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:w10=\"urn:schemas-microsoft-com:office:word\" xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\">";
 
         footerXml.append("<w:p><w:pPr><w:jc w:val=\"");
-        if (::exportStyle().numberingAlignment().testFlag(Qt::AlignLeft)) {
+        if (exportStyle().numberingAlignment().testFlag(Qt::AlignLeft)
+            || !needPrintPageNumbers) {
             footerXml.append("left");
-        } else if (::exportStyle().numberingAlignment().testFlag(Qt::AlignCenter)) {
+        } else if (exportStyle().numberingAlignment().testFlag(Qt::AlignCenter)) {
             footerXml.append("center");
         } else {
             footerXml.append("right");
         }
-        footerXml.append("\"/><w:rPr/></w:pPr><w:r><w:rPr/><w:fldChar w:fldCharType=\"begin\"/></w:r><w:r><w:instrText> PAGE </w:instrText></w:r><w:r><w:fldChar w:fldCharType=\"separate\"/></w:r><w:r><w:t>0</w:t></w:r><w:r><w:fldChar w:fldCharType=\"end\"/></w:r></w:p>");
-        footerXml.append("</w:ftr>");
+        footerXml.append("\"/><w:rPr/></w:pPr>");
+
+        const QString pageNumbersXml = needPrintPageNumbers
+                                       ? "<w:r><w:rPr/><w:fldChar w:fldCharType=\"begin\"/></w:r><w:r><w:instrText> PAGE </w:instrText></w:r><w:r><w:fldChar w:fldCharType=\"separate\"/></w:r><w:r><w:t>0</w:t></w:r><w:r><w:fldChar w:fldCharType=\"end\"/></w:r>"
+                                       : "";
+        const QString pageFooterXml = QString("<w:r><w:rPr/><w:t>%1</w:t></w:r>").arg(_exportParameters.scriptFooter);
+        const QString pageFooterSeparatorXml = "<w:r><w:rPr/><w:t> </w:t></w:r>";
+        if (exportStyle().numberingAlignment().testFlag(Qt::AlignRight)) {
+            footerXml.append(pageFooterXml);
+            footerXml.append(pageFooterSeparatorXml);
+            footerXml.append(pageNumbersXml);
+        } else {
+            footerXml.append(pageNumbersXml);
+            footerXml.append(pageFooterSeparatorXml);
+            footerXml.append(pageFooterXml);
+        }
+
+        footerXml.append("</w:p></w:ftr>");
 
         //
         // Запишем верхний колонтитул в архив
@@ -813,7 +890,7 @@ void DocxExporter::writeDocument(QtZipWriter* _zip, ScenarioDocument* _scenario,
     //
     QTextCursor documentCursor(preparedDocument);
     while (!documentCursor.atEnd()) {
-        documentXml.append(::docxText(_comments, documentCursor));
+        documentXml.append(docxText(_comments, documentCursor, _exportParameters));
 
         //
         // Переходим к следующему параграфу
@@ -830,12 +907,11 @@ void DocxExporter::writeDocument(QtZipWriter* _zip, ScenarioDocument* _scenario,
     //
     // ... колонтитулы
     //
-    if (_exportParameters.printPagesNumbers) {
-        if (style.numberingAlignment().testFlag(Qt::AlignTop)) {
+    if (needWriteHeader(_exportParameters)) {
             documentXml.append("<w:headerReference w:type=\"default\" r:id=\"docRId2\"/>");
-        } else {
-            documentXml.append("<w:footerReference w:type=\"default\" r:id=\"docRId3\"/>");
         }
+    if (needWriteFooter(_exportParameters)) {
+        documentXml.append("<w:footerReference w:type=\"default\" r:id=\"docRId3\"/>");
     }
     //
     // ... размер страницы
@@ -843,20 +919,20 @@ void DocxExporter::writeDocument(QtZipWriter* _zip, ScenarioDocument* _scenario,
     QSizeF paperSize = QPageSize(style.pageSizeId()).size(QPageSize::Millimeter);
     documentXml.append(
         QString("<w:pgSz w:w=\"%1\" w:h=\"%2\"/>")
-        .arg(::mmToTwips(paperSize.width()))
-        .arg(::mmToTwips(paperSize.height()))
+        .arg(mmToTwips(paperSize.width()))
+        .arg(mmToTwips(paperSize.height()))
         );
     //
     // ... поля документа
     //
     documentXml.append(
         QString("<w:pgMar w:left=\"%1\" w:right=\"%2\" w:top=\"%3\" w:bottom=\"%4\" w:header=\"%5\" w:footer=\"%6\" w:gutter=\"0\"/>")
-        .arg(::mmToTwips(style.pageMargins().left()))
-        .arg(::mmToTwips(style.pageMargins().right()))
-        .arg(::mmToTwips(style.pageMargins().top()))
-        .arg(::mmToTwips(style.pageMargins().bottom()))
-        .arg(::mmToTwips(style.pageMargins().top() / 2))
-        .arg(::mmToTwips(style.pageMargins().bottom() / 2))
+        .arg(mmToTwips(style.pageMargins().left()))
+        .arg(mmToTwips(style.pageMargins().right()))
+        .arg(mmToTwips(style.pageMargins().top()))
+        .arg(mmToTwips(style.pageMargins().bottom()))
+        .arg(mmToTwips(style.pageMargins().top() / 2))
+        .arg(mmToTwips(style.pageMargins().bottom() / 2))
         );
     //
     // ... нужна ли титульная страница

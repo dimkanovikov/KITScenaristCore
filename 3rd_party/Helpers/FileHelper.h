@@ -18,7 +18,7 @@ public:
 #ifdef Q_OS_WIN
         // Не надо заменять двоеточие после названия диска
         if (result.size() > 4) {
-            result = result.left(4) + result.mid(4).replace("\"", "_").replace(":", "_");
+            result = result.left(4) + result.mid(4).replace("\"", "_").replace(":", "_").replace("?", "_");
         }
 #endif
         return result;

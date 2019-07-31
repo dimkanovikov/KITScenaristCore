@@ -5,6 +5,8 @@
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
 
+#include <3rd_party/Helpers/TextEditHelper.h>
+
 #include <QDir>
 #include <QFileInfo>
 #include <QList>
@@ -368,7 +370,7 @@ void ProjectsManager::setRemoteProjects(const QString& _xml)
         projectsReader.readNext();
         if (projectsReader.tokenType() == QXmlStreamReader::StartElement
             && projectsReader.name().toString() == "project") {
-            const QString name = projectsReader.attributes().value("name").toString();
+            const QString name = TextEditHelper::fromHtmlEscaped(projectsReader.attributes().value("name").toString());
             const QString path = QString();
             const QString lastEditDatetimeText = projectsReader.attributes().value("modified_at").toString();
             const QDateTime lastEditDatetime = QDateTime::fromString(lastEditDatetimeText, "yyyy-MM-dd hh:mm:ss");
