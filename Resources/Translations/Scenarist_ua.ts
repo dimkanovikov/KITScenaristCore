@@ -1574,6 +1574,10 @@ Türkçe: Recep Burak Yak
         <source>Português brasileiro</source>
         <translation>Português brasileiro</translation>
     </message>
+    <message>
+        <source>Slovenščina</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
