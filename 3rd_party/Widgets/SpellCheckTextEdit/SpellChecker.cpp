@@ -88,6 +88,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Ukrainian:
             code = "uk_UA";
             break;
+        case Slovenian:
+            code = "sl_SL";
+            break;
         default:
             break;
     }

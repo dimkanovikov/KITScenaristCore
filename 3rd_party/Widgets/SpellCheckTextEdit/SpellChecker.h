@@ -44,7 +44,8 @@ public:
         Azerbaijani,
         Telugu,
         German,
-        Catalan
+        Catalan,
+        Slovenian
     };
 
     /**
