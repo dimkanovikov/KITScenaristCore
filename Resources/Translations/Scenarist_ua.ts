@@ -1491,32 +1491,8 @@ Türkçe: Recep Burak Yak
         <translation>Виберіть мову програми</translation>
     </message>
     <message>
-        <source>Français</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Español</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>English</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Русский</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Detect language from system locale</source>
         <translation>Використовувати системні мовні налаштування</translation>
-    </message>
-    <message>
-        <source>Қазақ</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Deutsch</source>
-        <translation></translation>
     </message>
     <message>
         <source>Українська мова</source>
@@ -1527,56 +1503,8 @@ Türkçe: Recep Burak Yak
         <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Не знайшли свою мову? Дізнайтеся, як ви можете додати її самостійно.&lt;/a&gt;</translation>
     </message>
     <message>
-        <source>Português</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>فارْسِى</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>汉语</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>עִבְרִית</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Polski</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Українська</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Türkçe</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Magyar</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Italiano</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Azərbaycan</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>తెలుగు</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Português brasileiro</source>
-        <translation>Português brasileiro</translation>
-    </message>
-    <message>
-        <source>Slovenščina</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Português brasileiro</translation>
     </message>
 </context>
 <context>
@@ -2594,22 +2522,6 @@ You can try to reload update.</source>
         <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Не знайшли свою мову? Дізнайтеся, як ви можете додати її самостійно.&lt;/a&gt;</translation>
     </message>
     <message>
-        <source>English</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Português</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Español</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Français</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Detect language from system locale</source>
         <translation>Використовувати системні мовні налаштування</translation>
     </message>
@@ -2618,32 +2530,8 @@ You can try to reload update.</source>
         <translation type="vanished">Українська</translation>
     </message>
     <message>
-        <source>汉语</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>فارْسِى</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Deutsch</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Русский</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Choose language</source>
         <translation>Виберіть  мову</translation>
-    </message>
-    <message>
-        <source>Қазақ</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>עִבְרִית</source>
-        <translation></translation>
     </message>
     <message>
         <source>Choose application theme</source>
@@ -2802,36 +2690,12 @@ And the text editor of the script. The editor has many auxiliary functions that 
 І текстовий редактор сценарію. Редактор має багато допоміжних функцій, які спрощують введення тексту відповідно до стандарту написання сценаріїв, а також дозволяє виконувати пошук тексту в сценарію та залишати примітки до тексту.</translation>
     </message>
     <message>
-        <source>Polski</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Українська</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Türkçe</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Magyar</source>
-        <translation>Magyar</translation>
-    </message>
-    <message>
-        <source>Italiano</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Azərbaycan</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>తెలుగు</source>
-        <translation></translation>
+        <translation type="vanished">Magyar</translation>
     </message>
     <message>
         <source>Português brasileiro</source>
-        <translation>Português brasileiro</translation>
+        <translation type="vanished">Português brasileiro</translation>
     </message>
 </context>
 <context>
@@ -5444,6 +5308,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <source>Catalan</source>
         <translation>Catalan</translation>
+    </message>
+    <message>
+        <source>Slovenian</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1482,88 +1482,12 @@ Türkçe: Recep Burak Yak
         <translation>Escolha o idioma do aplicativo</translation>
     </message>
     <message>
-        <source>Қазақ</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>English</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Français</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Español</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Deutsch</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Detect language from system locale</source>
         <translation>Detectar idioma pela região do sistema</translation>
     </message>
     <message>
-        <source>Русский</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Não encontrou o idioma preferido? Leia como você pode adicioná-lo você mesmo.&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>Português</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>فارْسِى</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>汉语</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>עִבְרִית</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Polski</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Українська</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Türkçe</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Magyar</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Italiano</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Azərbaycan</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>తెలుగు</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Português brasileiro</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Slovenščina</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2595,52 +2519,12 @@ Você pode tentar recarregar a atualização.</translation>
         <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Não encontrou o seu idioma? Leia como você pode fazer para adicioná-lo.&lt;/a&gt;</translation>
     </message>
     <message>
-        <source>English</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Português</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Español</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Français</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Detect language from system locale</source>
         <translation>Detectar idioma pela região do sistema</translation>
     </message>
     <message>
-        <source>汉语</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>فارْسِى</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Deutsch</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Русский</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Choose language</source>
         <translation>Escolha o idioma</translation>
-    </message>
-    <message>
-        <source>Қазақ</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>עִבְרִית</source>
-        <translation></translation>
     </message>
     <message>
         <source>Choose application theme</source>
@@ -2799,38 +2683,6 @@ And the text editor of the script. The editor has many auxiliary functions that 
 O módulo inclui o navegador de roteiro, uma lista de cenas onde é possível interagir com os elementos. Ao clicar em algum elemento da lista você será trasnportado para o local do texto na janela do editor de texto do roteiro
 
 Temos também o editor de texto do roteiro. Este editor tem várias funções auxiliares que simplificam a inserção do texto de acordo com os padrões da escrita de roteiros. Ele também tem a função de busca de palavras no corpo do roteiro e a possibilidade de fazer anotações.</translation>
-    </message>
-    <message>
-        <source>Polski</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Українська</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Türkçe</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Magyar</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Italiano</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Azərbaycan</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>తెలుగు</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Português brasileiro</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5418,6 +5270,10 @@ quando você estiver trabalhando ele salvará o projeto a cada %1 minutos.</tran
     </message>
     <message>
         <source>Catalan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Slovenian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

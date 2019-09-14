@@ -11,7 +11,7 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="26"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The cat Alexander illustrations created by &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ilustracija mačka Alexandra ustvarjena v &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ilustracija mačka Alexandra so ustvarili v &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="46"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="85"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ta programska oprema se distribuira pod licenco &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt;, izvorna koda je na voljo na &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ta programska oprema se razširja pod dovoljenjem &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt;, izvorna koda je na voljo na &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="147"/>
@@ -62,7 +62,6 @@ sindščina: Arash Aneessee
 kitajščina: Stepan Chernetskiy, Barron Kang
 hebrejščina: Maxim Ronkin
 teluščina: Eshwar Mittapalli
-slovenščina: Andraž Pušnik
 </translation>
     </message>
     <message>
@@ -86,7 +85,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../3rd_party/Widgets/AcceptebleLineEdit/AcceptebleLineEdit.cpp" line="98"/>
         <source>was changed from &lt;b&gt;%1&lt;/b&gt; to &lt;b&gt;%2&lt;/b&gt;. Apply changes?</source>
-        <translation>je bilo spremenjeno iz &lt;b&gt;%1&lt;/b&gt; v &lt;b&gt;%2&lt;/b&gt;. Uporabi spremembe?</translation>
+        <translation>je bilo spremenjeno iz &lt;b&gt;%1&lt;/b&gt; v &lt;b&gt;%2&lt;/b&gt;. Ali želite uveljaviti spremembe?</translation>
     </message>
 </context>
 <context>
@@ -112,23 +111,23 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="44"/>
         <source>Enter Name of New Project:</source>
-        <translation>Vnesi ime novega projekta:</translation>
+        <translation>Vnesite ime novega projekta:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="57"/>
         <source>File exists. It will be replaced after creating.</source>
-        <translation>Datoteka že obstaja. Po ustvarjanju bo zamenjana.</translation>
+        <translation>Datoteka obstaja. Po ustvarjanju bo zamenjana.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="104"/>
         <source>Choose Location for New Project File:</source>
-        <translation>Izberi lokacijo za datoteko novega projekta:</translation>
+        <translation>Izberite mesto za datoteko novega projekta:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="127"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="173"/>
         <source>Browse...</source>
-        <translation>Prebrskaj...</translation>
+        <translation>Prebrskaj ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="130"/>
@@ -139,12 +138,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="150"/>
         <source>Choose File with Project to Import:</source>
-        <translation>Izberi datoteko s projektom za uvoz:</translation>
+        <translation>Izberite datoteko s projektom za uvoz:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="199"/>
         <source>Local</source>
-        <translation>Lokalno</translation>
+        <translation>Krajevno</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="215"/>
@@ -159,7 +158,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="249"/>
         <source>Sorry, but you need to have active internet connection for creating new projects in cloud.</source>
-        <translation>Za ustvarjanje novih projektov v oblaku, morate imeti aktivno internetno povezavo.</translation>
+        <translation>Žal morate imeti aktivno internetno povezavo za ustvarjanje novih projektov v oblaku.</translation>
     </message>
 </context>
 <context>
@@ -167,7 +166,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.ui" line="32"/>
         <source>Bookmark text</source>
-        <translation>Besedilo zaznamka</translation>
+        <translation>Zaznamek besedila</translation>
     </message>
 </context>
 <context>
@@ -188,22 +187,22 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="16"/>
         <source>EXT</source>
-        <translation>EXT</translation>
+        <translation>EKST</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="17"/>
         <source>EST</source>
-        <translation>EST</translation>
+        <translation>VZP</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="18"/>
         <source>INT./EXT</source>
-        <translation>INT./EXT</translation>
+        <translation>INT/EKST</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="19"/>
         <source>INT/EXT</source>
-        <translation>INT/EXT</translation>
+        <translation>INT/EKST</translation>
     </message>
 </context>
 <context>
@@ -221,7 +220,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="38"/>
         <source>EST</source>
-        <translation>EST</translation>
+        <translation>VZP</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="39"/>
@@ -249,22 +248,22 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="160"/>
         <source>KIT Scenarist project</source>
-        <translation>KIT Scenarist projekt</translation>
+        <translation>Projekt KIT Scenarist</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="162"/>
         <source>Final Draft screenplay</source>
-        <translation>Final Draft scenarij</translation>
+        <translation>Scenarij Final Draft</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="164"/>
         <source>Final Draft template</source>
-        <translation>Final Draft predloga</translation>
+        <translation>Predloga Final Draft</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="166"/>
         <source>Trelby screenplay</source>
-        <translation>Trelby scenarij</translation>
+        <translation>Scenarij Trelby</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="168"/>
@@ -274,17 +273,17 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="170"/>
         <source>OpenDocument text</source>
-        <translation>OpenDocument besedilo</translation>
+        <translation>Besedilo OpenDocument</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="172"/>
         <source>Fountain text</source>
-        <translation>Fountain besedilo</translation>
+        <translation>Besedilo Fountain</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="174"/>
         <source>Celtx project</source>
-        <translation>Celtx projekt</translation>
+        <translation>Projekt Celtx</translation>
     </message>
 </context>
 <context>
@@ -292,12 +291,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="23"/>
         <source>Cast Report</source>
-        <translation>Poročilo zasedbe</translation>
+        <translation>Poročilo o zasedbi</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="232"/>
         <source>Character</source>
-        <translation>Oseba</translation>
+        <translation>Lik</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="234"/>
@@ -307,17 +306,17 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="237"/>
         <source>Speaking Scenes</source>
-        <translation>Govorjene scene</translation>
+        <translation>Prizori z dialogi</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="239"/>
         <source>Non-Sp. Scenes</source>
-        <translation>Negovorjene scene</translation>
+        <translation>Prizori brez dialoga</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="242"/>
         <source>Total Scenes</source>
-        <translation>Vse scene</translation>
+        <translation>Vsi prizori</translation>
     </message>
 </context>
 <context>
@@ -325,17 +324,17 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="29"/>
         <source>Characters Dialogues</source>
-        <translation>Dialogi oseb</translation>
+        <translation>Dialogi likov</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="112"/>
         <source>Scene/Dialogue</source>
-        <translation>Scena/dialog</translation>
+        <translation>Prizor/dialog</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="114"/>
         <source>Number</source>
-        <translation>Število</translation>
+        <translation>Številka</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="116"/>
@@ -345,7 +344,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="142"/>
         <source>[UNDEFINED]</source>
-        <translation>[NEDEFINIRANO]</translation>
+        <translation>[NEDOLOČENO]</translation>
     </message>
 </context>
 <context>
@@ -353,12 +352,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="51"/>
         <source>Characters Activity Plot</source>
-        <translation>Graf aktivnosti oseb</translation>
+        <translation>Graf dejavnosti oseb</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="212"/>
         <source>Scene</source>
-        <translation>Scena</translation>
+        <translation>Prizor</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="217"/>
@@ -389,12 +388,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="29"/>
         <source>Location Report</source>
-        <translation>Poročilo lokacij</translation>
+        <translation>Poročilo o prizoriščih</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="147"/>
         <source>Location/Scene</source>
-        <translation>Lokacija/scena</translation>
+        <translation>Prizorišče/prizor</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="149"/>
@@ -409,7 +408,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="153"/>
         <source>Scenes</source>
-        <translation>Scene</translation>
+        <translation>Prizori</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="155"/>
@@ -420,7 +419,7 @@ slovenščina: Andraž Pušnik
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="164"/>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="208"/>
         <source>[UNDEFINED]</source>
-        <translation>[NEDEFINIRANO]</translation>
+        <translation>[NEDOLOČENO]</translation>
     </message>
 </context>
 <context>
@@ -441,12 +440,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="115"/>
         <source>Title Page</source>
-        <translation>Naslovna stran</translation>
+        <translation>Naslovnica</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="123"/>
         <source>Logline</source>
-        <translation>Povzetek</translation>
+        <translation>Enovrstični povzetek</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="131"/>
@@ -462,13 +461,13 @@ slovenščina: Andraž Pušnik
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="148"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="251"/>
         <source>Characters</source>
-        <translation>Osebe</translation>
+        <translation>Liki</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="157"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="256"/>
         <source>Locations</source>
-        <translation>Lokacije</translation>
+        <translation>Prizorišča</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="166"/>
@@ -483,27 +482,27 @@ slovenščina: Andraž Pušnik
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="66"/>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="92"/>
         <source>Undefined</source>
-        <translation>Nedefinirano</translation>
+        <translation>Nedoločeno</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="67"/>
         <source>Scene Heading</source>
-        <translation>Glava scene</translation>
+        <translation>Naslov prizora</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="68"/>
         <source>Scene Characters</source>
-        <translation>Osebe scene</translation>
+        <translation>Liki prizora</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="69"/>
         <source>Action</source>
-        <translation>Akcija</translation>
+        <translation>Dejanje</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="70"/>
         <source>Character</source>
-        <translation>Oseba</translation>
+        <translation>Lik</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="71"/>
@@ -523,7 +522,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="74"/>
         <source>Shot</source>
-        <translation>Posnetek</translation>
+        <translation>Kader</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="75"/>
@@ -538,7 +537,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="77"/>
         <source>Noprintable Text</source>
-        <translation>Nenatisnjeno besedilo</translation>
+        <translation>Nenatisljivo besedilo</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="78"/>
@@ -548,12 +547,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="79"/>
         <source>Folder Footer</source>
-        <translation>Noga</translation>
+        <translation>Noga mape</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="80"/>
         <source>Scene Description</source>
-        <translation>Opis scene</translation>
+        <translation>Opis prizora</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="81"/>
@@ -565,63 +564,63 @@ slovenščina: Andraž Pušnik
         <source>SH</source>
         <extracomment>Reduction of Scene Heading</extracomment>
         <translatorcomment>Kratica za naslov scene</translatorcomment>
-        <translation>NS</translation>
+        <translation>NP</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="96"/>
         <source>SC</source>
         <extracomment>Reduction of Scene Characters</extracomment>
         <translatorcomment>Kratica za  osebe scene</translatorcomment>
-        <translation>OS</translation>
+        <translation>LP</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="98"/>
         <source>A</source>
         <extracomment>Reduction of Action</extracomment>
         <translatorcomment>Kratica za akcija</translatorcomment>
-        <translation>A</translation>
+        <translation>De</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="100"/>
         <source>C</source>
         <extracomment>Reduction of Character</extracomment>
         <translatorcomment>Kratica za oseba</translatorcomment>
-        <translation>O</translation>
+        <translation>L</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="102"/>
         <source>P</source>
         <extracomment>Reduction of Parenthetical</extracomment>
         <translatorcomment>Kratica za didaskalije</translatorcomment>
-        <translation>D</translation>
+        <translation>OG</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="104"/>
         <source>D</source>
         <extracomment>Reduction of Dialog</extracomment>
         <translatorcomment>Kratica za dialog</translatorcomment>
-        <translation>D</translation>
+        <translation>Di</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="106"/>
         <source>Tr</source>
         <extracomment>Reduction of Transition</extracomment>
         <translatorcomment>Kratica za prehod</translatorcomment>
-        <translation>Pr</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="108"/>
         <source>S</source>
         <extracomment>Reduction of Shot</extracomment>
         <translatorcomment>Kratica za posnetek</translatorcomment>
-        <translation>P</translation>
+        <translation>K</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="110"/>
         <source>TH</source>
         <extracomment>Reduction of Title Header</extracomment>
         <translatorcomment>Kratica za naslovna pozicija</translatorcomment>
-        <translation>NP</translation>
+        <translation>NS</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="112"/>
@@ -656,7 +655,7 @@ slovenščina: Andraž Pušnik
         <source>SD</source>
         <extracomment>Reduction of Scene Description</extracomment>
         <translatorcomment>Kratica za opis scene</translatorcomment>
-        <translation>OpS</translation>
+        <translation>OpP</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="122"/>
@@ -671,7 +670,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="405"/>
         <source>FADE IN:</source>
-        <translation>FADE IN:</translation>
+        <translation>ODTEMNITEV:</translation>
     </message>
 </context>
 <context>
@@ -679,12 +678,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="634"/>
         <source>Final Draft screenplay (A4)</source>
-        <translation>Final Draft scenarij (A4)</translation>
+        <translation>Scenarij Final Draft (A4)</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="639"/>
         <source>Final Draft screenplay (Letter)</source>
-        <translation>Final Draft scenarij (Letter)</translation>
+        <translation>Scenarij Final Draft (letter)</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="644"/>
@@ -694,7 +693,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="649"/>
         <source>Russian screenplay with Courier Prime</source>
-        <translation>Ruski scenarij s Courier Prime</translation>
+        <translation>Ruski scenarij s pisavo Courier Prime</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="654"/>
@@ -709,32 +708,32 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="664"/>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation>Predloga mednarodnega standarda scenarija za velikost papirja A4.</translation>
+        <translation>Mednarodna standardizirana predloga scenarija za papir velikosti A4.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="669"/>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation>Predloga mednarodnega standarda scenarija za velikost papirja Letter.</translation>
+        <translation>Mednarodna standardizirana predloga scenarija za papir velikosti »letter«.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="674"/>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation>Predloga ruskega in CIS standarda scenarija.</translation>
+        <translation>Ruska in CIS standardizirana predloga scenarija.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="679"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation>Predloga ruskega in CIS standarda scenarija s pisavo Courier Prime namesto Courier New.</translation>
+        <translation>Ruska in CIS standardizirana predloga scenarija s pisavo Courier Prime namesto Courier New.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="684"/>
         <source>Chinese screenplay standard template.</source>
-        <translation>Predloga kitajskega standarda scenarija.</translation>
+        <translation>Kitajska standardizirana predloga scenarija.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="689"/>
         <source>Hebrew screenplay standard template.</source>
-        <translation>Predloga hebrejskega standarda scenarija.</translation>
+        <translation>Hebrejska standardizirana predloga scenarija.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="704"/>
@@ -744,7 +743,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="709"/>
         <source>Default with Courier Prime</source>
-        <translation>Privzeto z Courier Prime</translation>
+        <translation>Privzeto s pisavo Courier Prime</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="725"/>
@@ -757,12 +756,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="36"/>
         <source>Scene Report</source>
-        <translation>Poročilo scen</translation>
+        <translation>Poročilo o prizorih</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="237"/>
         <source>Scene/Characters</source>
-        <translation>Scena/oseba</translation>
+        <translation>Prizor/liki</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="239"/>
@@ -777,7 +776,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="243"/>
         <source>Characters</source>
-        <translation>Osebe</translation>
+        <translation>Znaki</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="245"/>
@@ -787,7 +786,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="259"/>
         <source>[UNDEFINED]</source>
-        <translation>[NEDEFINIRANO]</translation>
+        <translation>[NEDOLOČENO]</translation>
     </message>
 </context>
 <context>
@@ -797,12 +796,12 @@ slovenščina: Andraž Pušnik
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
         <translatorcomment>Nadaljevano</translatorcomment>
-        <translation>CONT&apos;D</translation>
+        <translation>NADALJEVANJE</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="39"/>
         <source>MORE</source>
-        <translation>MORE</translation>
+        <translation>SE NADALJUJE</translation>
     </message>
 </context>
 <context>
@@ -811,25 +810,25 @@ slovenščina: Andraž Pušnik
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="37"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="261"/>
         <source>Scene Duration</source>
-        <translation>Dolžina scene</translation>
+        <translation>Trajanje prizora</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="40"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="272"/>
         <source>Action Duration</source>
-        <translation>Dolžina akcije</translation>
+        <translation>Trajanje dogajanja</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="43"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="283"/>
         <source>Dialogues Duration</source>
-        <translation>Dolžina dialogov</translation>
+        <translation>Trajanje dialogov</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="46"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="294"/>
         <source>Characters Count</source>
-        <translation>Število oseb</translation>
+        <translation>Število znakov</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="49"/>
@@ -845,7 +844,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="198"/>
         <source>Scene</source>
-        <translation>Scena</translation>
+        <translation>Prizor</translation>
     </message>
 </context>
 <context>
@@ -853,12 +852,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="70"/>
         <source>Summary report</source>
-        <translation>Poročilo povzetka</translation>
+        <translation>Poročilo s povzetkom</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="160"/>
         <source>Chronometry</source>
-        <translation>Trajanje</translation>
+        <translation>Ocena trajanja</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="162"/>
@@ -884,7 +883,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="181"/>
         <source>Paragraph</source>
-        <translation>Besedilni blok</translation>
+        <translation>Odstavek</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="183"/>
@@ -892,7 +891,7 @@ slovenščina: Andraž Pušnik
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="300"/>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="364"/>
         <source>Size</source>
-        <translation>Število</translation>
+        <translation>Velikost</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="187"/>
@@ -905,7 +904,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="214"/>
         <source>Scenes</source>
-        <translation>Scene</translation>
+        <translation>Prizori</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="238"/>
@@ -915,22 +914,22 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="255"/>
         <source>[UNDEFINED]</source>
-        <translation>[NEDEFINIRANO]</translation>
+        <translation>[NEDOLOČENO]</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="274"/>
         <source>Locations</source>
-        <translation>Lokacija</translation>
+        <translation>Prizorišča</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="298"/>
         <source>Place</source>
-        <translation>Mesto</translation>
+        <translation>Kraj</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="331"/>
         <source>Characters</source>
-        <translation>Osebe</translation>
+        <translation>Liki</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="362"/>
@@ -940,12 +939,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="376"/>
         <source>More 10 dialogues</source>
-        <translation>Več 10 dialogov</translation>
+        <translation>Več deset dialogov</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="383"/>
         <source>About 10 dialogues</source>
-        <translation>Približno 10 dialogov</translation>
+        <translation>Približno deset dialogov</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="390"/>
@@ -973,7 +972,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="78"/>
         <source>Layout by</source>
-        <translation>Razporedi po</translation>
+        <translation>Razporeditev v</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="87"/>
@@ -993,12 +992,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="157"/>
         <source>Arrange</source>
-        <translation>Število kartic v vrsti</translation>
+        <translation>Razporedi</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="180"/>
         <source>cards in Row</source>
-        <translation></translation>
+        <translation>kartice v vrsti</translation>
     </message>
 </context>
 <context>
@@ -1011,7 +1010,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="807"/>
         <source>Convert to scene</source>
-        <translation>Pretvori v sceno</translation>
+        <translation>Pretvori v prizor</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="808"/>
@@ -1129,7 +1128,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="446"/>
         <source>INT./EXT</source>
-        <translation>INT./EXT</translation>
+        <translation>INT/EXT</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="454"/>
@@ -1182,22 +1181,22 @@ slovenščina: Andraž Pušnik
         <location filename="../../DataLayer/Database/Database.cpp" line="495"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
-        <translatorcomment>Voice over</translatorcomment>
-        <translation>V.O.</translation>
+        <translatorcomment>Pripovedovalec/pripovedovalka oz. njegov/njen glas</translatorcomment>
+        <translation>PRIP.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="500"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
-        <translatorcomment>Off-screen</translatorcomment>
-        <translation>O.S.</translation>
+        <translatorcomment>Izven izreza kadra</translatorcomment>
+        <translation>IZV.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="505"/>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
-        <translatorcomment>Off-camera</translatorcomment>
-        <translation>O.C.</translation>
+        <translatorcomment>Vstran, stran od kamere</translatorcomment>
+        <translation>VSTR.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="510"/>
@@ -1211,67 +1210,67 @@ slovenščina: Andraž Pušnik
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
         <translatorcomment>Nadaljevano</translatorcomment>
-        <translation>CONT&apos;D</translation>
+        <translation>SE NADALJUJE</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="523"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1474"/>
         <source>CUT TO:</source>
-        <translation>CUT TO:</translation>
+        <translation>REZ NA:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="527"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1478"/>
         <source>FADE IN:</source>
-        <translation>FADE IN:</translation>
+        <translation>ODTEMNITEV:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="531"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1482"/>
         <source>FADE OUT</source>
-        <translation>FADE OUT</translation>
+        <translation>ZATEMNITEV</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="535"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1486"/>
         <source>FADE TO:</source>
-        <translation>FADE TO:</translation>
+        <translation>ZATEMNITEV V:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="539"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1490"/>
         <source>DISSOLVE TO:</source>
-        <translation>DISSOLVE TO:</translation>
+        <translation>PRELIV V:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="543"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1494"/>
         <source>BACK TO:</source>
-        <translation>BACK TO:</translation>
+        <translation>NAZAJ NA:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="547"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1498"/>
         <source>MATCH CUT TO:</source>
-        <translation>MATCH CUT TO:</translation>
+        <translation>UJEMAJOČ REZ NA:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="551"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1502"/>
         <source>JUMP CUT TO:</source>
-        <translation>JUMP CUT TO:</translation>
+        <translation>SKOKOVIT REZ NA:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="555"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1506"/>
         <source>FADE TO BLACK</source>
-        <translation>FADE TO BLACK</translation>
+        <translation>ZATEMNITEV</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
         <source>Photos</source>
-        <translation>Slike</translation>
+        <translation>Fotografije</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="1363"/>
@@ -1307,7 +1306,7 @@ slovenščina: Andraž Pušnik
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="132"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="254"/>
         <source>Choose file to export:</source>
-        <translation>Izberi datoteko za izvoz:</translation>
+        <translation>Izberite datoteko za izvoz:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="168"/>
@@ -1319,7 +1318,7 @@ slovenščina: Andraž Pušnik
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="208"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="322"/>
         <source>Browse...</source>
-        <translation>Prebrskaj...</translation>
+        <translation>Prebrskaj ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="211"/>
@@ -1330,7 +1329,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="355"/>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation>Oblika:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="365"/>
@@ -1355,7 +1354,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="420"/>
         <source>Additional (Numbering, Title Page etc.)</source>
-        <translation>Dodatno (številčenje, naslovna stran itd.)</translation>
+        <translation>Dodatno (številčenje, naslovnica itn.)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="449"/>
@@ -1370,22 +1369,22 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="479"/>
         <source>Print scenes numbers</source>
-        <translation>Natisni števila scen</translation>
+        <translation>Natisni številke prizorov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="489"/>
         <source>Print pages numbers</source>
-        <translation>Natisni števila strani</translation>
+        <translation>Natisni številke strani</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="499"/>
         <source>Print Title Page</source>
-        <translation>Natisni naslovno stran</translation>
+        <translation>Natisni naslovnico</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="509"/>
         <source>Print dialogues numbers</source>
-        <translation>Natisni števila dialogov</translation>
+        <translation>Natisni številke dialogov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="516"/>
@@ -1418,7 +1417,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="71"/>
         <source>OpenDocument Text</source>
-        <translation>OpenDocument besedilo</translation>
+        <translation>Besedilo OpenDocument</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="73"/>
@@ -1428,12 +1427,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="75"/>
         <source>Rich Text Format</source>
-        <translation>Format z obogatenim besedilom</translation>
+        <translation>Obogateno besedilo</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="77"/>
         <source>Plain Text</source>
-        <translation>Osnovno besedilo</translation>
+        <translation>Navadno besedilo</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="107"/>
@@ -1447,7 +1446,7 @@ slovenščina: Andraž Pušnik
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="255"/>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="398"/>
         <source>END OF </source>
-        <translation>END OF </translation>
+        <translation>KONEC </translation>
     </message>
 </context>
 <context>
@@ -1455,7 +1454,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="121"/>
         <source>Couldn&apos;t parse XML file.</source>
-        <translation>XML datoteke ni mogoče združiti.</translation>
+        <translation>XML-datoteke ni mogoče razčleniti.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="299"/>
@@ -1491,22 +1490,22 @@ slovenščina: Andraž Pušnik
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="749"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="858"/>
         <source>No active node.</source>
-        <translation>Ni aktivnega gradnika.</translation>
+        <translation>Ni aktivnega vozlišča.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="503"/>
         <source>No active node</source>
-        <translation>Ni aktivnega gradnika</translation>
+        <translation>Ni aktivnega vozlišča</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="517"/>
         <source>Node hasn&apos;t parent for add sibling node</source>
-        <translation>Ni nadrejenega gradnika, da bi lahko dodali sorodnega</translation>
+        <translation>Ni nadrejenega vozlišča, da bi lahko dodali sorodnega</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="541"/>
         <source>Base node cannot be deleted.</source>
-        <translation>Osnovni gradnik ne more biti izbrisan.</translation>
+        <translation>Osnovnega vozlišča ni dovoljeno izbrisati.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="579"/>
@@ -1517,7 +1516,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="639"/>
         <source>Select node color</source>
-        <translation>Izberi barvo gradnika</translation>
+        <translation>Izberi barvo vozlišča</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="692"/>
@@ -1527,12 +1526,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="735"/>
         <source>Add edge: select destination node.</source>
-        <translation>Dodaj povezavo: izberi ciljni gradnik.</translation>
+        <translation>Dodaj povezavo: izberi ciljno vozlišče.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="741"/>
         <source>Delete edge: select other end-node.</source>
-        <translation>Izbriši povezavo: izberi drug končni gradnik.</translation>
+        <translation>Izbriši povezavo: izberi drugo končno vozlišče.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="810"/>
@@ -1547,17 +1546,17 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="919"/>
         <source>Can&apos;t add edge between single node.</source>
-        <translation>Dodanjanje povezave med posameznim gradnikom ni mogoče.</translation>
+        <translation>Dodajanje povezav posameznemu vozlišču ni mogoče.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="925"/>
         <source>There is already an edge between these two nodes.</source>
-        <translation>Povezava med tema dvema gradnikoma že obstaja.</translation>
+        <translation>Povezava med tema vozliščema že obstaja.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="956"/>
         <source>There is no edge between these two nodes.</source>
-        <translation>Ni povezave med tema dvema gradnikoma.</translation>
+        <translation>Ni povezave med tema vozliščema.</translation>
     </message>
 </context>
 <context>
@@ -1575,12 +1574,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="45"/>
         <source>Outline</source>
-        <translation>Povzetek</translation>
+        <translation>Oris</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="80"/>
         <source>Browse...</source>
-        <translation>Prebrskaj...</translation>
+        <translation>Prebrskaj ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="83"/>
@@ -1590,12 +1589,12 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="103"/>
         <source>Choose File with Project to Import:</source>
-        <translation>Izberi datoteko s projektom za uvoz:</translation>
+        <translation>Izberite datoteko s projektom za uvoz:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="113"/>
         <source>Remove scenes numbers</source>
-        <translation>Odstrani števila scen</translation>
+        <translation>Odstrani številke prizorov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="123"/>
@@ -1610,7 +1609,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="139"/>
         <source>Current cursor position</source>
-        <translation>Trenutna pozicija kurzorja</translation>
+        <translation>Trenutni položaj kazalke</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="146"/>
@@ -1620,7 +1619,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="156"/>
         <source>Find characters and locations</source>
-        <translation>Poišči osebe in lokacije</translation>
+        <translation>Poišči like in prizorišča</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="166"/>
@@ -1636,104 +1635,90 @@ slovenščina: Andraž Pušnik
         <translation>Izberi jezik programa</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="29"/>
         <source>Türkçe</source>
-        <translation>turščina</translation>
+        <translation type="vanished">turški</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="39"/>
         <source>Magyar</source>
-        <translation>madžarščina</translation>
+        <translation type="vanished">madžarski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="46"/>
         <source>Português brasileiro</source>
-        <translation>brazilska portugalščina</translation>
+        <translation type="vanished">brazilski portugalski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="56"/>
+        <source>Slovenščina</source>
+        <translation type="vanished">slovenski</translation>
+    </message>
+    <message>
         <source>Português</source>
-        <translation>portugalščina</translation>
+        <translation type="vanished">portugalski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="66"/>
         <source>Українська</source>
-        <translation>ukrajinščina</translation>
+        <translation type="vanished">ukrajinski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="73"/>
         <source>Русский</source>
-        <translation>ruščina</translation>
+        <translation type="vanished">ruski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="83"/>
         <source>Polski</source>
-        <translation>poljščina</translation>
+        <translation type="vanished">poljski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="93"/>
         <source>Español</source>
-        <translation>španščina</translation>
+        <translation type="vanished">španski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="113"/>
         <source>Deutsch</source>
-        <translation>nemščina</translation>
+        <translation type="vanished">nemški</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="120"/>
         <source>Français</source>
-        <translation>francoščina</translation>
+        <translation type="vanished">francoski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="127"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="36"/>
         <source>Detect language from system locale</source>
         <translation>Zaznaj jezik operacijskega sistema</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="137"/>
         <source>English</source>
-        <translation>angleščina</translation>
+        <translation type="vanished">angleški</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="147"/>
         <source>Italiano</source>
-        <translation>italijanščina</translation>
+        <translation type="vanished">italijanski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="154"/>
         <source>Қазақ</source>
-        <translation>kazaščina</translation>
+        <translation type="vanished">kazaški</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="161"/>
         <source>Azərbaycan</source>
-        <translation>azerbajdžanščina</translation>
+        <translation type="vanished">azerbajdžanski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="168"/>
         <source>فارْسِى</source>
-        <translation>sindščina</translation>
+        <translation type="vanished">sindski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="175"/>
         <source>汉语</source>
-        <translation>kitajščina</translation>
+        <translation type="vanished">kitajski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="182"/>
         <source>עִבְרִית</source>
-        <translation>hebrejščina</translation>
+        <translation type="vanished">hebrejski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="189"/>
         <source>తెలుగు</source>
-        <translation>teluščina</translation>
+        <translation type="vanished">teluški</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="220"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="136"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Niste našli željenega jezika? Preberite kako ga lahko dodate sami.&lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Ne najdete želenega jezika? Preberite, kako ga lahko dodate sami.&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -1758,7 +1743,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sporočilo &amp;amp;napake&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sporočilo o &amp;amp;napaki&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="202"/>
@@ -1774,7 +1759,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="325"/>
         <source>Error &amp;message</source>
-        <translation>Napaka &amp;sporočilo</translation>
+        <translation>&amp;Sporočilo o napaki</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="408"/>
@@ -1784,7 +1769,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="473"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &lt;/p&gt;&lt;p&gt;&amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sporočilo &lt;/p&gt;&lt;p&gt;&amp;amp;napake&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sporočilo o &lt;/p&gt;&lt;p&gt;&amp;amp;napaki&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1792,37 +1777,37 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="115"/>
         <source> - changed</source>
-        <translation> - spremenjeno</translation>
+        <translation> – spremenjeno</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="351"/>
         <source>File format not supported</source>
-        <translation>Format datoteke ni podprt</translation>
+        <translation>Vrsta datoteke ni podprta</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="352"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation>Microsoft &lt;b&gt;DOC&lt;/b&gt; datoteke niso podprte. Shranite v &lt;b&gt;DOCX&lt;/b&gt; datoteki in ponovno uvozite.</translation>
+        <translation>Datoteke Microsoft &lt;b&gt;DOC&lt;/b&gt; niso podprte. Shranite v datoteko &lt;b&gt;DOCX&lt;/b&gt; in ponovno uvozite.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="454"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
-        <translation>Poskušate ustvariti projekt v neobstoječi mapi &lt;b&gt;%1&lt;/b&gt;. Prosimo izberite drugo lokacijo za nov projekt.</translation>
+        <translation>Poskušate ustvariti projekt v neobstoječi mapi &lt;b&gt;%1&lt;/b&gt;. Prosimo, izberite drugo mesto za nov projekt.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="458"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry.</source>
-        <translation>Ni mogoče zapisati v datoteko. Mogoče je odprta v drugem programu. Prosimo zaprite datoteko in poskusite ponovno.</translation>
+        <translation>V datoteko ni mogoče pisati. Mogoče je odprta v drugem programu. Prosimo, zaprite datoteko in poskusite znova.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="461"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>Ni mogoče zapisati v datoteko. Preverite dovoljenje za zapisovanje v izbrani mapi. Prosimo izberite drugo mapo.</translation>
+        <translation>V datoteko ni mogoče pisati. Preverite pravice za pisanje v izbrani mapi. Prosimo, izberite drugo mapo.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="463"/>
         <source>Create project error</source>
-        <translation>Napaka ustvarjanja projekta</translation>
+        <translation>Napaka pri ustvarjanju projekta</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="507"/>
@@ -1841,39 +1826,39 @@ slovenščina: Andraž Pušnik
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="549"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="813"/>
         <source>Scenarist project files (*%1)</source>
-        <translation>Scenarist datoteke projekta (*%1)</translation>
+        <translation>Datoteke projekta Scenarist (*%1)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="608"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="703"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="724"/>
         <source>Saving error</source>
-        <translation>Napaka shranjevanja</translation>
+        <translation>Napaka pri shranjevanju</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="609"/>
         <source>Can&apos;t save project as &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Please check permissions and retry.</source>
-        <translation>Projekta ni mogoče shraniti kot &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Prosimo preverite dovoljenja in poskusite ponovno.</translation>
+        <translation>Projekta ni mogoče shraniti kot &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Prosimo, preverite pravice in poskusite znova.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="649"/>
         <source>Possible save error</source>
-        <translation>Verjetna napaka shranjevanja</translation>
+        <translation>Verjetna napaka pri shranjevanju</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="650"/>
         <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
-        <translation>Na disku imate manj kot 50 MB prostora. To lahko privede do težav pri shranjevanju projekta. Priporočamo da ustvarite več prostora in preverite, če je projekt shranjen pravilno.</translation>
+        <translation>Na disku imate manj kot 50 MB prostora. To lahko privede do težav pri shranjevanju projekta. Priporočamo, da zagotovite več prostora in preverite, da je projekt shranjen pravilno.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="704"/>
         <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
-        <translation>Sprememb v projekt ni mogoče shraniti. Prišlo je do notranje napake v bazi: %1 Prosimo preverite, če datoteka obstaja in če imate dovoljenje za pisanje. Poskusi ponovno?</translation>
+        <translation>Sprememb v projekt ni mogoče shraniti. Prišlo je do notranje napake v zbirki podatkov: %1 Prosimo, preverite, če datoteka obstaja in če imate ustrezne pravice za pisanje. Ali želite znova poskusiti?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="725"/>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
-        <translation>Sprememb v projekt shranjen v &lt;b&gt;%1&lt;/b&gt; ni mogoče zapisati, ker datoteka ne obstaja. Prosimo prestavite datoteko nazaj in poskusite shraniti ponovno</translation>
+        <translation>Sprememb v projekt, shranjen v &lt;b&gt;%1&lt;/b&gt;, ni mogoče zapisati, ker datoteka ne obstaja. Prosimo, prestavite datoteko nazaj in poskusite znova shraniti</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="811"/>
@@ -1884,7 +1869,7 @@ slovenščina: Andraž Pušnik
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="836"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="936"/>
         <source>Ignore and try to open project?</source>
-        <translation>Prezri in poskušaj odpreti projekt?</translation>
+        <translation>Ali želite prezreti in poskusiti odpreti projekt?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="950"/>
@@ -1894,7 +1879,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="951"/>
         <source>If you want to edit a file, please check it&apos;s permissions for your account.</source>
-        <translation>Če želite urejati datoteko, prosim preverite dovoljenje za vaš račun.</translation>
+        <translation>Če želite urejati datoteko, prosimo, preverite pravice svojega računa.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="964"/>
@@ -1905,17 +1890,17 @@ slovenščina: Andraž Pušnik
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="983"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="989"/>
         <source>Moving project to the cloud failed</source>
-        <translation>Premikanje projekta na oblak ni uspelo</translation>
+        <translation>Premik projekta v oblak je spodletel</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="984"/>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
-        <translation>Za premikanje projektov na oblak morate biti prijavljeni v KIT Scenarist oblačno storitev.</translation>
+        <translation>Za premik projektov v oblak morate biti prijavljeni v oblačno storitev KIT Scenarist.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="990"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
-        <translation>Za premikanje projektov na oblak mora biti vaša naročnina na KIT Scenarist oblačno storitev aktivna.</translation>
+        <translation>Za premik projektov v oblak morate imeti aktivirano naročnino na oblačno storitev KIT Scenarist.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1047"/>
@@ -1980,7 +1965,7 @@ slovenščina: Andraž Pušnik
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1257"/>
         <source>Incorrect username or password.</source>
-        <translation>Napačno uporabniško ime ali geslo.</translation>
+        <translation>Nepravilno uporabniško ime ali geslo.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1268"/>
@@ -2011,7 +1996,7 @@ Projekt ni sinhroniziran.</translation>
         <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Vseh podatkov iz storitve ni bilo mogoče pravilno naložiti. Prosimo preverite vašo internetno povezavo in osvežite sinhronizacijo.
+        <translation>Vseh podatkov iz storitve ni bilo mogoče pravilno naložiti. Prosimo, preverite svojo internetno povezavo in osvežite sinhronizacijo.
 
 Projekt ni sinhroniziran.</translation>
     </message>
@@ -2025,14 +2010,14 @@ Projekt ni sinhroniziran.</translation>
         <source>New session for you account started at other device.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Nova seja za vaš račun je bila začeta na drugi napravi.
+        <translation>Nova seja za vaš račun je odprta na drugi napravi.
 
 Projekt ni sinhroniziran.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1316"/>
         <source>Share error</source>
-        <translation>Napaka deljenja</translation>
+        <translation>Napaka skupne rabe</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1317"/>
@@ -2050,7 +2035,7 @@ Projekt ni sinhroniziran.</translation>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Trenutni projekt trenutno ni na voljo za sinhronizacijo, ker je lastnikova naročnina končana.
+        <translation>Trenutni projekt trenutno ni na voljo za sinhronizacijo, ker je lastniku naročnina potekla.
 
 Projekt ni sinhroniziran.</translation>
     </message>
@@ -2059,7 +2044,7 @@ Projekt ni sinhroniziran.</translation>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Trenutni projekt trenutno ni na voljo za sinhronizacijo, ker je lastnik za vas zaprl dostop.
+        <translation>Trenutni projekt trenutno ni na voljo za sinhronizacijo, ker vam je lastnik zavrnil dostop.
 
 Projekt ni sinhroniziran.</translation>
     </message>
@@ -2087,7 +2072,7 @@ Projekt ni sinhroniziran.</translation>
         <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Uporabljate zastarelo različico programa. Prosimo namestite zadnjo verzijo za obnovitev dostopa do projekta.
+        <translation>Uporabljate zastarelo različico programa. Prosimo, namestite zadnjo verzijo za obnovitev dostopa do projekta.
 
 Projekt ni sinhroniziran.</translation>
     </message>
@@ -2129,17 +2114,17 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1483"/>
         <source>Closing Database Connections and remove temporary files.</source>
-        <translation>Zapiranje povezav z bazo in odstranjevanje začasnih datotek.</translation>
+        <translation>Zapiranje povezav z zbirko podatkov in odstranjevanje začasnih datotek.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1757"/>
         <source>Save project changes?</source>
-        <translation>Shrani spremembe projekta?</translation>
+        <translation>Ali želite shraniti spremembe projekta?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1758"/>
         <source>Project was modified. Save changes?</source>
-        <translation>Projekt je bil spremenjen. Shrani spremembe?</translation>
+        <translation>Projekt je bil spremenjen. Ali želite shraniti spremembe?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1786"/>
@@ -2149,7 +2134,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1786"/>
         <source>Please wait. Loading can take few minutes.</source>
-        <translation>Prosimo počakajte. Nalaganje lahko traja nekaj minut.</translation>
+        <translation>Prosimo, počakajte. Nalaganje lahko traja nekaj minut.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1846"/>
@@ -2164,7 +2149,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1868"/>
         <source>Please wait. Import can take few minutes.</source>
-        <translation>Prosimo počakajte. Uvoz lahko traja nekaj minut.</translation>
+        <translation>Prosimo, počakajte. Uvoz lahko traja nekaj minut.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1996"/>
@@ -2246,22 +2231,22 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2126"/>
         <source>Save as...</source>
-        <translation>Shrani kot...</translation>
+        <translation>Shrani kot ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2130"/>
         <source>New script version...</source>
-        <translation>Nova različica scenarija...</translation>
+        <translation>Nova različica scenarija ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2132"/>
         <source>Import...</source>
-        <translation>Uvozi...</translation>
+        <translation>Uvozi ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2134"/>
         <source>Export to...</source>
-        <translation>Izvozi v...</translation>
+        <translation>Izvozi v ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2136"/>
@@ -2271,7 +2256,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2141"/>
         <source>Two panel mode</source>
-        <translation>Način dvojnega vstavljanja</translation>
+        <translation>Način dveh podoken</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2551"/>
@@ -2281,7 +2266,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2567"/>
         <source>on local computer</source>
-        <translation>na lokalnem računalniku</translation>
+        <translation>krajevno na računalniku</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2568"/>
@@ -2291,7 +2276,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2573"/>
         <source>%1[*] - KIT Scenarist</source>
-        <translation>%1[*] - KIT Scenarist</translation>
+        <translation>%1[*] – KIT Scenarist</translation>
     </message>
 </context>
 <context>
@@ -2304,27 +2289,27 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="76"/>
         <source>Please wait. Export can take few minutes.</source>
-        <translation>Prosimo počakajte. Izvoz lahko traja nekaj minut.</translation>
+        <translation>Prosimo, počakajte. Izvoz lahko traja nekaj minut.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="142"/>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
-        <translation>Poskušate izvoziti v neobstoječi mapi &lt;b&gt;%1&lt;/b&gt;. Prosimo izberite drugo lokacijo za izvoženo datoteko.</translation>
+        <translation>Poskušate izvoziti v neobstoječo mapo &lt;b&gt;%1&lt;/b&gt;. Prosimo, izberite drugo mesto za izvoženo datoteko.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="146"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry export.</source>
-        <translation>Ni mogoče zapisati v datoteko. Mogoče je odprta v drugem programu. Prosimo zaprite datoteko in poskusite izvoziti ponovno.</translation>
+        <translation>V datoteko ni mogoče pisati. Mogoče je odprta v drugem programu. Prosimo, zaprite datoteko in poskusite znova izvoziti.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="149"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>Ni mogoče zapisati v datoteko. Preverite dovoljenje za zapisovanje v izbrani mapi. Prosimo izberite drugo mapo.</translation>
+        <translation>V datoteko ni mogoče pisati. Preverite pravice za pisanje v izbrani mapi. Prosimo, izberite drugo mapo.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="151"/>
         <source>Export error</source>
-        <translation>Napaka izvoza</translation>
+        <translation>Napaka pri izvozu</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="178"/>
@@ -2334,7 +2319,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="178"/>
         <source>Please wait. Preparing document to preview can take few minutes.</source>
-        <translation>Prosimo počakajte. Pripravljanje dokumenta za predogled lahko traja nekaj minut.</translation>
+        <translation>Prosimo, počakajte. Pripravljanje dokumenta za predogled lahko traja nekaj minut.</translation>
     </message>
 </context>
 <context>
@@ -2342,12 +2327,12 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="331"/>
         <source>Characters import</source>
-        <translation>Uvoz oseb</translation>
+        <translation>Uvoz likov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="342"/>
         <source>Locations import</source>
-        <translation>Uvoz lokacij</translation>
+        <translation>Uvoz prizorišč</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="353"/>
@@ -2357,12 +2342,12 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="381"/>
         <source>File format not supported</source>
-        <translation>Format datoteke ni podprt</translation>
+        <translation>Vrsta datoteke ni podprta</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="382"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation>Microsoft &lt;b&gt;DOC&lt;/b&gt; datoteke niso podprte. Shranite v &lt;b&gt;DOCX&lt;/b&gt; datoteki in ponovno uvozite.</translation>
+        <translation>Datoteke Microsoft &lt;b&gt;DOC&lt;/b&gt; niso podprte. Shranite v datoteko &lt;b&gt;DOCX&lt;/b&gt; in znova uvozite.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="390"/>
@@ -2372,7 +2357,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="391"/>
         <source>Please choose existing file and retry import.</source>
-        <translation>Prosimo izberite obstoječo datoteko in ponovno uvozite.</translation>
+        <translation>Prosimo, izberite obstoječo datoteko in znova uvozite.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="399"/>
@@ -2382,7 +2367,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="399"/>
         <source>Please wait. Import can take few minutes.</source>
-        <translation>Prosimo počakajte. Uvoz lahko traja nekaj minut.</translation>
+        <translation>Prosimo, počakajte. Uvoz lahko traja nekaj minut.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="410"/>
@@ -2392,7 +2377,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="411"/>
         <source>File to import is empty. Please check that you select correct file and retry import.</source>
-        <translation>Datoteka za uvoz je prazna. Prosimo preverite, da ste izbrali pravilno datoteko in ponovno uvozite.</translation>
+        <translation>Datoteka za uvoz je prazna. Prosimo, preverite, da ste izbrali pravilno datoteko in znova uvozite.</translation>
     </message>
 </context>
 <context>
@@ -2419,7 +2404,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="28"/>
         <source>Redactor</source>
-        <translation>Urednik</translation>
+        <translation>Redaktor</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="29"/>
@@ -2457,17 +2442,17 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="686"/>
         <source>Find All Characters from Script</source>
-        <translation>Poišči vse osebe iz scenarija</translation>
+        <translation>Poišči vse like v scenariju</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="687"/>
         <source>Find All Locations from Script</source>
-        <translation>Poišči vse lokacije iz scenarija</translation>
+        <translation>Poišči vsa prizorišča v scenariju</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="810"/>
         <source>Do you really want to delete script version named &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Ali res želite izbrisati različico scenarija poimenovano &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation>Ali res želite izbrisati različico scenarija &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="968"/>
@@ -2480,12 +2465,12 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="575"/>
         <source>Characters to delete</source>
-        <translation>Osebe za izbris</translation>
+        <translation>Liki za izbris</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="581"/>
         <source>Characters to save</source>
-        <translation>Osebe za shranjevanje</translation>
+        <translation>Liki za shranjevanje</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="583"/>
@@ -2496,12 +2481,12 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="642"/>
         <source>Locations to delete</source>
-        <translation>Lokacije za izbris</translation>
+        <translation>Prizorišča za izbris</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="648"/>
         <source>Locations to save</source>
-        <translation>Lokacije za shranjevanje</translation>
+        <translation>Prizorišča za shranjevanje</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="773"/>
@@ -2521,22 +2506,22 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="904"/>
         <source>Chron.</source>
-        <translation>Trajanje</translation>
+        <translation>Ocena trajanja</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1174"/>
         <source>On/off Fullscreen Mode</source>
-        <translation>Vklop/Izklop celozaslonskega načina</translation>
+        <translation>Vklopi/izklopi celozaslonski način</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1380"/>
         <source>Changing scenes numbers locking</source>
-        <translation>Spreminjanje zaklepa števil scen</translation>
+        <translation>Sprememba zaklepa številke prizorov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1381"/>
         <source>Do you want to unlock scenes numbers or lock again?</source>
-        <translation>Ali želite odkleniti scene ali jih ponovno zakleniti?</translation>
+        <translation>Ali želite odkleniti številke prizorov ali jih ponovno zakleniti?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1384"/>
@@ -2554,12 +2539,12 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="290"/>
         <source>Enter new scene number</source>
-        <translation>Vnesi novo številko scene</translation>
+        <translation>Vnesi novo številko prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="290"/>
         <source>New scene number</source>
-        <translation>Nova številka scene</translation>
+        <translation>Nova številka prizora</translation>
     </message>
 </context>
 <context>
@@ -2585,7 +2570,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="142"/>
         <source>Please wait. Restoring settings to default values can take few minutes.</source>
-        <translation>Prosimo počakajte. Ponastavljanje vrednosti privzetih nastavitev lahko traja nekaj minut.</translation>
+        <translation>Prosimo, počakajte. Ponastavljanje vrednosti privzetih nastavitev lahko traja nekaj minut.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="165"/>
@@ -2600,7 +2585,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="359"/>
         <source>Please wait, loading of spell checking dictionary can take a few minutes.</source>
-        <translation>Prosimo počakajte, nalaganje slovarja za pregled črkovanja lahko traja nekaj minut.</translation>
+        <translation>Prosimo, počakajte, nalaganje slovarja za preverjanje črkovanja lahko traja nekaj minut.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="405"/>
@@ -2610,7 +2595,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="406"/>
         <source>Can&apos;t download spelling dictionary. Please check internet connection and retry to activate spell checking</source>
-        <translation>Prenos slovarja črkovanja ni mogoč. Prosimo preverite internetno povezavo in ponovno aktivirajte pregled črkovanja</translation>
+        <translation>Prenos slovarja za preverjanje črkovanja ni mogoč. Prosimo, preverite internetno povezavo in ponovno aktivirajte pregled črkovanja</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="674"/>
@@ -2637,13 +2622,13 @@ Projekt ni sinhroniziran.</translation>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1078"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1083"/>
         <source>Tab</source>
-        <translation>Tab</translation>
+        <translation>Tabulatorka</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1079"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1084"/>
         <source>Enter</source>
-        <translation>Enter</translation>
+        <translation>Vnašalka</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1081"/>
@@ -2658,7 +2643,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1088"/>
         <source>Shortcut</source>
-        <translation>Bližnjica</translation>
+        <translation>Bljižnica</translation>
     </message>
 </context>
 <context>
@@ -2666,7 +2651,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsTemplatesManager.cpp" line="31"/>
         <source>Choose base template</source>
-        <translation>Izberi osnovno predlogo</translation>
+        <translation>Izberite osnovno predlogo</translation>
     </message>
 </context>
 <context>
@@ -2679,12 +2664,12 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="309"/>
         <source>Redo</source>
-        <translation>Uveljavi</translation>
+        <translation>Ponovi</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="376"/>
         <source>&lt;p&gt;Can&apos;t install update. There are some problems with downloaded file.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Posodobitve ni mogoče namestiti. Težava je v preneseni datoteki.&lt;/p&gt;&lt;p&gt;Posodobitev lahko sami poskušate naložiti iz &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;uradne spletne strani&lt;/a&gt;.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Posodobitve ni mogoče namestiti. Težava je v preneseni datoteki.&lt;/p&gt;&lt;p&gt;Posodobitev lahko sami poskusite naložiti iz &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;uradne spletne strani&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2697,7 +2682,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="109"/>
         <source>Session key not found.</source>
-        <translation>Ključ seje ni najden.</translation>
+        <translation>Ključa seje ni mogoče najti.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
@@ -2730,7 +2715,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="223"/>
         <source>Script was restored.</source>
-        <translation>Scenarij je bil obnovljen.</translation>
+        <translation>Scenarij je obnovljen.</translation>
     </message>
 </context>
 <context>
@@ -2738,7 +2723,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="14"/>
         <source>Form</source>
-        <translation>Oblika</translation>
+        <translation>Obrazec</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="77"/>
@@ -2768,32 +2753,32 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="263"/>
         <source>Save current project as...</source>
-        <translation>Shrani trenuten projekt kot...</translation>
+        <translation>Shrani trenuten projekt kot ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="280"/>
         <source>Start new version...</source>
-        <translation>Začni novo različico...</translation>
+        <translation>Začni novo različico ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="297"/>
         <source>Import...</source>
-        <translation>Uvozi...</translation>
+        <translation>Uvozi ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="314"/>
         <source>Export...</source>
-        <translation>Izvozi...</translation>
+        <translation>Izvozi ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="331"/>
         <source>Print preview script</source>
-        <translation>Natisni predogled tiskanja</translation>
+        <translation>Predogled tiskanja scenarija</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="348"/>
         <source>How to use the application</source>
-        <translation>Kako uporabljati program</translation>
+        <translation>Kako uporabljati program?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="424"/>
@@ -2866,7 +2851,7 @@ Projekt ni sinhroniziran.</translation>
     <message>
         <location filename="../../../../libs/fileformats/odt_reader.cpp" line="77"/>
         <source>Unable to open archive.</source>
-        <translation>Ni mogoče odpreti arhiva.</translation>
+        <translation>Arhiva ni mogoče odpreti.</translation>
     </message>
 </context>
 <context>
@@ -2892,184 +2877,166 @@ Projekt ni sinhroniziran.</translation>
         <translation>Naprej</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="80"/>
         <source>Português</source>
-        <translation>portugalščina</translation>
+        <translation type="vanished">portugalski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="103"/>
         <source>Polski</source>
-        <translation>poljščina</translation>
+        <translation type="vanished">poljski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="113"/>
         <source>Français</source>
-        <translation>francoščina</translation>
+        <translation type="vanished">francoski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="120"/>
         <source>Українська</source>
-        <translation>ukrajinščina</translation>
+        <translation type="vanished">ukrajinski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="140"/>
         <source>Italiano</source>
-        <translation>italijanščina</translation>
+        <translation type="vanished">italijanski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="147"/>
         <source>తెలుగు</source>
-        <translation>teluščina</translation>
+        <translation type="vanished">teluški</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="154"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="80"/>
         <source>Detect language from system locale</source>
         <translation>Zaznaj jezik operacijskega sistema</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="164"/>
         <source>Deutsch</source>
-        <translation>nemščina</translation>
+        <translation type="vanished">nemški</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="171"/>
         <source>English</source>
-        <translation>angleščina</translation>
+        <translation type="vanished">angleški</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="181"/>
         <source>Русский</source>
-        <translation>ruščina</translation>
+        <translation type="vanished">ruski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="191"/>
         <source>Português brasileiro</source>
-        <translation>brazilska portugalščina</translation>
+        <translation type="vanished">brazilski portugalski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="201"/>
         <source>Қазақ</source>
-        <translation>kazaščina</translation>
+        <translation type="vanished">kazaški</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="208"/>
         <source>Magyar</source>
-        <translation>madžarščina</translation>
+        <translation type="vanished">madžarski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="215"/>
         <source>Azərbaycan</source>
-        <translation>azerbajdžanščina</translation>
+        <translation type="vanished">azerbajdžanski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="222"/>
         <source>Español</source>
-        <translation>španščina</translation>
+        <translation type="vanished">španski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="229"/>
         <source>Türkçe</source>
-        <translation>turščina</translation>
+        <translation type="vanished">turški</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="239"/>
         <source>فارْسِى</source>
-        <translation>sindščina</translation>
+        <translation type="vanished">sindski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="246"/>
         <source>עִבְרִית</source>
-        <translation>hebrejščina</translation>
+        <translation type="vanished">hebrejski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="253"/>
         <source>汉语</source>
-        <translation>kitajščina</translation>
+        <translation type="vanished">kitajski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="280"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="165"/>
         <source>Choose language</source>
         <translation>Izberite jezik</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="287"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="240"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Niste našli željenega jezika? Preberite kako ga lahko dodate sami.&lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Ne najdete želenega jezika? Preberite, kako ga lahko dodate sami.&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="306"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="316"/>
         <source>Choose application theme</source>
         <translation>Izberite temo programa</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="319"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="329"/>
         <source>Dark theme</source>
         <translation>Temna tema</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="348"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="358"/>
         <source>Theme is convenient for work with sufficient light.</source>
         <translation>Tema je primerna za delo z dovolj svetlobe.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="383"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="393"/>
         <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
         <translation>Tema je bolj primerna za delo v slabo osvetljenih prostorih, pa tudi zvečer in ponoči.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="418"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="428"/>
         <source>Light theme</source>
         <translation>Svetla tema</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="451"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="461"/>
         <source>Use research module</source>
         <translation>Uporabi modul raziskave</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="461"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="471"/>
         <source>You can collect all the necessary materials for the project in one place. In it, you can save basic information about the script, such as its name, logline, synopsis, and also fill in the title page of the script.
 
 Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
 
 Also, in research tab you can store a variety of materials (text documents, images, links to web pages and mindmaps) associated with your project, organizing them in a convenient manner.</source>
-        <translation>Na enem mestu lahko zberete vse potrebne materiale za projekt. V njem lahko shranite osnovne informacije o scenariju, kot so ime, dnevnik, sinopsis, izpolnite pa lahko tudi naslovno stran.
+        <translation>Na enem mestu lahko zberete vse potrebno gradivo za projekt. V njem lahko shranite osnovne informacije o scenariju, kot so ime, enovrstični povzetek, sinopsis, izpolnite pa lahko tudi naslovnico.
 
-Tukaj lahko urejate seznam oseb in lokacij. Lahko ustvarite tudi nove, dodate opise, slike, jih preimenujete in organizirate.
+Tukaj lahko urejate seznam likov in prizorišč. Lahko ustvarite tudi nove, dodate opise, fotografije, jih preimenujete in organizirate.
 
-V zavihku raziskav lahko shranite raznovrstno gradivo (besedilne dokumente, slike, povezave do spletnih strani in miselne vzorce) povezano z vašim projektom in ga na primeren način organizirate.</translation>
+V zavihku raziskav lahko shranite raznovrstno gradivo (besedilne dokumente, slike, povezave do spletnih strani in miselne vzorce), povezano z vašim projektom, in ga na primeren način organizirate.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="482"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="492"/>
         <source>Research</source>
         <translation>Raziskava</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="526"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="536"/>
         <source>Cards</source>
         <translation>Kartice</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="533"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="543"/>
         <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
 
 You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
-        <translation>Modul s karticami vam omogoča, da vidite scenarij v obliki kartic, ki so postavljene na plutovinasti tabli, kar omogoča vizualni način dela s strukturo.
+        <translation>Modul s karticami omogoča, da vidite scenarij v obliki kartic, ki so postavljene na plutovinasti tabli, kar omogoča vizualni način dela s strukturo.
 
-Karticam lahko dodate barve in žig, jih premikate in združite, vse spremembe narejene s karticami pa so prikazane v besedilu scenarija.</translation>
+Karticam lahko dodate barve in žig, jih premikate in združite, vse spremembe, opravljene s karticami, pa so prikazane v besedilu scenarija.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="567"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="577"/>
         <source>Use cards module</source>
         <translation>Uporabi modul s karticami</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="601"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="611"/>
         <source>Script</source>
         <translation>Scenarij</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="608"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="618"/>
         <source>Script module allows you to work with screenplay.
 
 Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
@@ -3077,108 +3044,108 @@ Module includes the script navigator. It is a list of scenes. Clicking the mouse
 And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
         <translation>Modul scenarija vam omogoča delo s scenarijem.
 
-Modul vključuje krmarja scenarija. To je seznam s scenami. S klikom miške na sceno s seznama, se na zaslonu prikaže besedilo izbrane scene.
+Modul vključuje krmarja po scenariju. To je seznam s prizori. S klikom miške na prizor s seznama se na zaslonu prikaže besedilo izbranega prizora.
 
-In urejevalnik besedila scenarija. Urejevalnik ima veliko pomožnih funkcij, ki poenostavijo vnos besedila v skladu s standardom pisanja scenarijev in omogoča iskanje po besedilu ter ustvarjanje opomb k besedilu.</translation>
+In urejevalnik besedila scenarija. Urejevalnik ima veliko pomožnih funkcij, ki poenostavijo vnos besedila v skladu s standardi pisanja scenarijev in omogoča iskanje po besedilu ter ustvarjanje opomb k besedilu.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="644"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="654"/>
         <source>Use script module</source>
         <translation>Uporabi modul scenarija</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="678"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="688"/>
         <source>Choose script template</source>
         <translation>Izberi predlogo scenarija</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="712"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="722"/>
         <source>Russian screenplay with Courier Prime</source>
         <translation>Ruski scenarij s Courier Prime</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="725"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="735"/>
         <source>Russian screenplay</source>
         <translation>Ruski scenarij</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="738"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="748"/>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation>Predloga mednarodnega standarda scenarija za velikost papirja A4.</translation>
+        <translation>Mednarodna standardizirana predloga scenarija za velikost papirja A4.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="757"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="767"/>
         <source>Final Draft screenplay (A4)</source>
-        <translation>Final Draft scenarij (A4)</translation>
+        <translation>Scenarij Final Draft (A4)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="789"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="799"/>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation>Predloga mednarodnega standarda scenarija za velikost papirja Letter.</translation>
+        <translation>Mednarodna standardizirana predloga scenarija za velikost papirja Letter.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="821"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="831"/>
         <source>Chinese screenplay</source>
         <translation>Kitajski scenarij</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="834"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="844"/>
         <source>Chinese screenplay standard template.</source>
-        <translation>Predloga kitajskega standarda scenarija.</translation>
+        <translation>Kitajska standardizirana predloga scenarija.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="853"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="863"/>
         <source>Hebrew screenplay</source>
         <translation>Hebrejski scenarij</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="866"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="876"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation>Predloga ruskega in CIS standarda scenarija s pisavo Courier Prime namesto Courier New.</translation>
+        <translation>Ruska in CIS standardizirana predloga scenarija s pisavo Courier Prime namesto Courier New.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="885"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="895"/>
         <source>Hebrew screenplay standard template.</source>
-        <translation>Predloga hebrejskega standarda scenarija.</translation>
+        <translation>Hebrejsa standardizirana predloga scenarija.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="984"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="994"/>
         <source>Final Draft screenplay (Letter)</source>
-        <translation>Final Draft scenarij (Letter)</translation>
+        <translation>Scenarij Final Draft (letter)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="997"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1007"/>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation>Predloga ruskega in CIS standarda scenarija.</translation>
+        <translation>Ruska in CIS standardizirana predloga scenarija.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1115"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1125"/>
         <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
-        <translation>Modul za statistiko vam omogoča, da dobite podrobna poročila o scenariju, pa tudi pregled grafov dejavnosti oseb po celotnem scenariju in dinamike prizorov.</translation>
+        <translation>Modul za statistiko omogoča izdelavo podrobnih poročil o scenariju, pa tudi pregled grafov dejavnosti likov po celotnem scenariju in dinamike prizorov.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1132"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1142"/>
         <source>Statistics</source>
         <translation>Statistika</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1145"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1155"/>
         <source>Use statistics module</source>
         <translation>Uporabi modul s statistiko</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1175"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1185"/>
         <source>Thank you. The most common application settings were configured.
 
 The application will start in few seconds.</source>
-        <translation>Hvala vam. Konfigurirane so najpogostejše nastavitve programa.
+        <translation>Hvala. Določene so najosnovnejše nastavitve programa.
 
 Program se bo zagnal v nekaj sekundah.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1194"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1204"/>
         <source>Starting application</source>
-        <translation>Zagon programa</translation>
+        <translation>Program se zaganja</translation>
     </message>
 </context>
 <context>
@@ -3186,7 +3153,7 @@ Program se bo zagnal v nekaj sekundah.</translation>
     <message>
         <location filename="../../3rd_party/Widgets/PhotosChooser/PhotoLabel.cpp" line="80"/>
         <source>Choose image</source>
-        <translation>Izberi sliko</translation>
+        <translation>Izberite sliko</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/PhotosChooser/PhotoLabel.cpp" line="81"/>
@@ -3204,7 +3171,7 @@ Program se bo zagnal v nekaj sekundah.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="22"/>
         <source>Cards on page:</source>
-        <translation>Kartice na strani:</translation>
+        <translation>Število kartic na stran:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="29"/>
@@ -3234,17 +3201,17 @@ Program se bo zagnal v nekaj sekundah.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="382"/>
         <source>Page orientation:</source>
-        <translation>Postavitev strani:</translation>
+        <translation>Usmeritev strani:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="389"/>
         <source>Portrait</source>
-        <translation>Pokončno</translation>
+        <translation>pokončno</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="399"/>
         <source>Landscape</source>
-        <translation>Ležeče</translation>
+        <translation>ležeče</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="450"/>
@@ -3282,13 +3249,13 @@ Program se bo zagnal v nekaj sekundah.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="221"/>
         <source>Add cowriter</source>
-        <translation>Dodaj soavtorja</translation>
+        <translation>Dodaj koscenarista</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="244"/>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="273"/>
         <source>Show cowriters</source>
-        <translation>Pokaži soavtorje</translation>
+        <translation>Pokaži koscenariste</translation>
     </message>
 </context>
 <context>
@@ -3324,7 +3291,7 @@ Program se bo zagnal v nekaj sekundah.</translation>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="33"/>
         <source>Node added to &quot;</source>
-        <translation>Gradnik dodan &quot;</translation>
+        <translation>Vozlišče dodano k &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="35"/>
@@ -3339,17 +3306,17 @@ Program se bo zagnal v nekaj sekundah.</translation>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="426"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="467"/>
         <source>Base node</source>
-        <translation>Osnovni gradnik</translation>
+        <translation>Osnovno vozlišče</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="103"/>
         <source>Node added to scene</source>
-        <translation>Gradnik dodan v sceno</translation>
+        <translation>Vozlišče dodano v prizor</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="150"/>
         <source>Node deleted &quot;</source>
-        <translation>Gradnik izbrisan &quot;</translation>
+        <translation>Vozlišče izbrisano &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="153"/>
@@ -3384,17 +3351,17 @@ Program se bo zagnal v nekaj sekundah.</translation>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="424"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="465"/>
         <source>Node &quot;</source>
-        <translation>Gradnik &quot;</translation>
+        <translation>Vozlišče &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="353"/>
         <source>Changing color of node: &quot;</source>
-        <translation>Spreminjanje barve gradnika: &quot;</translation>
+        <translation>Spreminjanje barve vozlišča: &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="393"/>
         <source>Changing textcolor of node: &quot;</source>
-        <translation>Spreminjanje barve besedila gradnika: &quot;</translation>
+        <translation>Spreminjanje barve besedila vozlišča: &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="934"/>
@@ -3431,7 +3398,7 @@ Program se bo zagnal v nekaj sekundah.</translation>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/node.cpp" line="36"/>
         <source>&lt;b&gt;Root node&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Osnovni gradnik&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Osnovno vozlišče&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -3450,7 +3417,7 @@ Program se bo zagnal v nekaj sekundah.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="70"/>
         <source>for 300 rubles</source>
-        <translation>za 300 rubljev</translation>
+        <translation>za 300 rubijev</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="87"/>
@@ -3470,7 +3437,7 @@ Program se bo zagnal v nekaj sekundah.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="105"/>
         <source>Yandex money</source>
-        <translation>Yandex denarjem</translation>
+        <translation>plačilom Yandex</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="119"/>
@@ -3493,12 +3460,12 @@ Program se bo zagnal v nekaj sekundah.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="31"/>
         <source>Character</source>
-        <translation>Oseba</translation>
+        <translation>Lik</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="47"/>
         <source>Location</source>
-        <translation>Lokacija</translation>
+        <translation>Prizorišče</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="63"/>
@@ -3568,12 +3535,12 @@ Program se bo zagnal v nekaj sekundah.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="167"/>
         <source>Start scenes numbering from:</source>
-        <translation>Začni številčenje scen od:</translation>
+        <translation>Začni številčenje prizorov z:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="177"/>
         <source>Scene numbers prefix:</source>
-        <translation>Predpona števil scene:</translation>
+        <translation>Predpona številke prizora:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="198"/>
@@ -3619,12 +3586,12 @@ Program se bo zagnal v nekaj sekundah.</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="286"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="290"/>
         <source>Original scenario</source>
-        <translation>Izvorni scenarij</translation>
+        <translation>Izvirni scenarij</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="298"/>
         <source>Contacts:</source>
-        <translation>Kontakti:</translation>
+        <translation>Stiki:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="317"/>
@@ -3652,12 +3619,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="371"/>
         <source>Logline:</source>
-        <translation>Povzetek:</translation>
+        <translation>Enovrstični povzetek:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="378"/>
         <source>words:</source>
-        <translation>besede:</translation>
+        <translation>besed:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="397"/>
@@ -3672,12 +3639,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="494"/>
         <source>Add characters to project.</source>
-        <translation>Dodaj osebe v projekt.</translation>
+        <translation>Dodaj like v projekt.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="517"/>
         <source>Character Name:</source>
-        <translation>Ime osebe:</translation>
+        <translation>Ime lika:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="537"/>
@@ -3693,12 +3660,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="578"/>
         <source>Add locations to project.</source>
-        <translation>Dodaj lokacijo v projekt.</translation>
+        <translation>Dodaj prizorišče v projekt.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="601"/>
         <source>Location Name:</source>
-        <translation>Ime lokacije:</translation>
+        <translation>Ime prizorišča:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="645"/>
@@ -3713,7 +3680,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="682"/>
         <source>Folders let you group research data in hierarchy.</source>
-        <translation>Mape vam omogočajo združevanje podatkov o raziskavah v hierarhiji.</translation>
+        <translation>Mape vam omogočajo hierarhično združevanje podatkov raziskave.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="695"/>
@@ -3728,7 +3695,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="745"/>
         <source>Text let you store formatted text documents.</source>
-        <translation>Besedilo vam omogoča shranjevanje oblikovanih besedilnih dokumentov.</translation>
+        <translation>Besedilo omogoča shranjevanje oblikovanih besedilnih dokumentov.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="758"/>
@@ -3743,7 +3710,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="808"/>
         <source>Mind map let you create schemes with your thoughts.</source>
-        <translation>Miselni vzorec vam omogoča, da ustvarite sheme svojih misli.</translation>
+        <translation>Miselni vzorec omogoča, da ustvarite sheme svojih misli.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="821"/>
@@ -3758,7 +3725,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="871"/>
         <source>Images gallery let you store group of images.</source>
-        <translation>Galerija slik vam omogoča shranjevanje zbirke slik.</translation>
+        <translation>Galerija slik omogoča shranjevanje zbirke slik.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="884"/>
@@ -3773,7 +3740,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="934"/>
         <source>Url let you have a link to useful web-based documents.</source>
-        <translation>Povezava vam omogoče povezavo do koristnih spletnih dokumentov.</translation>
+        <translation>Povezava omogoče povezavo do koristnih spletnih dokumentov.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="947"/>
@@ -3811,18 +3778,18 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1252"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1255"/>
         <source>Add child node</source>
-        <translation>Dodaj podrejeni gradnik</translation>
+        <translation>Dodaj podrejeno vozlišče</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1215"/>
         <source>Redo previously undone action</source>
-        <translation>Uveljavi prejšnji razveljavljen korak</translation>
+        <translation>Ponovi prej razveljavljeni korak</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1229"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1322"/>
         <source>Node text color</source>
-        <translation>Dodaj nov gradnik</translation>
+        <translation>Barva besedila vozlišča</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1232"/>
@@ -3834,34 +3801,34 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1266"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1269"/>
         <source>Add sibling node</source>
-        <translation>Dodaj prirejeni gradnik</translation>
+        <translation>Dodaj enakovredno vozlišče</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1280"/>
         <source>Delete node (Del)</source>
-        <translation>Izbriši gradnik (Del)</translation>
+        <translation>Izbriši vozlišče (brisalka)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1283"/>
         <source>Delete node</source>
-        <translation>Izbriši gradnik</translation>
+        <translation>Izbriši vozlišče</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1294"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1297"/>
         <source>Scale up node</source>
-        <translation>Povečaj gradnik</translation>
+        <translation>Povečaj vozlišče</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1308"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1311"/>
         <source>Scale down node</source>
-        <translation>Pomanjšaj gradnik</translation>
+        <translation>Pomanjšaj vozlišče</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1345"/>
         <source>Node background color</source>
-        <translation>Barva ozadja gradnika</translation>
+        <translation>Barva ozadja vozlišča</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1348"/>
@@ -3898,7 +3865,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1463"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1477"/>
         <source>Ctrl+Tab</source>
-        <translation>Ctrl+Tab</translation>
+        <translation>Krmilka+tabulatorka</translation>
     </message>
 </context>
 <context>
@@ -3907,7 +3874,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="341"/>
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="345"/>
         <source>Not a supported RTF file.</source>
-        <translation>Nepodprta RTF datoteka.</translation>
+        <translation>Nepodprta datoteka RTF.</translation>
     </message>
 </context>
 <context>
@@ -3969,12 +3936,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="119"/>
         <source>Find...</source>
-        <translation>Najdi...</translation>
+        <translation>Najdi ...</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="127"/>
         <source>Case Sensitive</source>
-        <translation>Občutljivo na velike in male črke</translation>
+        <translation>Razlikuj velike in male črke</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="138"/>
@@ -3994,17 +3961,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="150"/>
         <source>In scene heading</source>
-        <translation>V glavi scene</translation>
+        <translation>V naslovu prizora</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="151"/>
         <source>In action</source>
-        <translation>V akciji</translation>
+        <translation>V dejanju</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="152"/>
         <source>In character</source>
-        <translation>V osebi</translation>
+        <translation>V liku</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="153"/>
@@ -4014,7 +3981,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="154"/>
         <source>In parenthetical</source>
-        <translation>V didaskalijah</translation>
+        <translation>V opisu govora</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="155"/>
@@ -4024,7 +3991,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="159"/>
         <source>Replace with...</source>
-        <translation>Zamenjaj z...</translation>
+        <translation>Zamenjaj z ...</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="162"/>
@@ -4043,7 +4010,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="14"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2232"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>Pogovorno okno</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="51"/>
@@ -4078,12 +4045,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="121"/>
         <source>Navigator</source>
-        <translation>Navigator</translation>
+        <translation>Krmar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="130"/>
         <source>Chronometry/Counters</source>
-        <translation>Trajanje/Števci</translation>
+        <translation>Ocena trajanja/števci</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="139"/>
@@ -4108,7 +4075,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="261"/>
         <source>Russian</source>
-        <translation>ruščina</translation>
+        <translation>ruski</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="268"/>
@@ -4118,12 +4085,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="292"/>
         <source>Automatically Save Every</source>
-        <translation>Shrani na koliko minut?</translation>
+        <translation>Samodejno shrani vsakih</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="315"/>
         <source>Minutes</source>
-        <translation></translation>
+        <translation>minut</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="331"/>
@@ -4138,7 +4105,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="425"/>
         <source>Browse...</source>
-        <translation>Prebrskaj...</translation>
+        <translation>Prebrskaj ...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="428"/>
@@ -4148,7 +4115,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="450"/>
         <source>Two Panel Mode (F2)</source>
-        <translation>Način dvojnega vstavljanja (F2)</translation>
+        <translation>Način dveh podoken (F2)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="457"/>
@@ -4158,7 +4125,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="467"/>
         <source>Compact Mode</source>
-        <translation>Kompaktni način</translation>
+        <translation>Strnjeni način</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="478"/>
@@ -4193,7 +4160,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="583"/>
         <source>pt</source>
-        <translation>pt</translation>
+        <translation>tč</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="666"/>
@@ -4238,12 +4205,12 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="931"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1819"/>
         <source>Show Scenes Numbers</source>
-        <translation>Pokaži števila scen</translation>
+        <translation>Pokaži številke prizorov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="938"/>
         <source>Highlight Current Line</source>
-        <translation>Označi trenutno vrstico</translation>
+        <translation>Poudari trenutno vrstico</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="968"/>
@@ -4263,22 +4230,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1396"/>
         <source>Noneprintable text:</source>
-        <translation>Nenatisnjeno besedilo:</translation>
+        <translation>Nenatisljivo besedilo:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1532"/>
         <source>Hide all panels in fullscreen mode</source>
-        <translation>Skrij vse panele v celozaslonskem načinu</translation>
+        <translation>Skrij vsa podokna v celozaslonskem načinu</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1542"/>
         <source>Show dialogues numbers</source>
-        <translation>Pokaži števila dialogov</translation>
+        <translation>Pokaži številke dialogov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1549"/>
         <source>Highlight blocks</source>
-        <translation>Označi bloke</translation>
+        <translation>Poudari bloke</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1565"/>
@@ -4288,22 +4255,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1581"/>
         <source>For scene heading and character paragraphs.</source>
-        <translation>Za naslove scen in odstavke oseb.</translation>
+        <translation>Za odstavke naslovov prizorov in likov.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1612"/>
         <source>Use MS Word like review highlighting colors</source>
-        <translation>Uporabite način MS Wordovega označevanja barv</translation>
+        <translation>Uporabi označevalne barve pregleda kot MS Word</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1619"/>
         <source>Autocomplete next character for dialogue</source>
-        <translation>Samodejno predlagaj naslednjo osebo za dialog</translation>
+        <translation>Samodejno dokončaj naslednji lik za dialog</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1642"/>
         <source>Use open bracket in dialogue for jump to parenthetical</source>
-        <translation>Uporabi odprt oklepaj v dialogu za skok na didaskalije</translation>
+        <translation>Uporabi odprt oklepaj v dialogu za preklop na opis govora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1652"/>
@@ -4338,27 +4305,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1709"/>
         <source>Replace three single dots to threedots character.</source>
-        <translation>Zamenjaj tri posamezne pike z znakom tropičja</translation>
+        <translation>Zamenjaj tri pike z znakom tropičja.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1716"/>
         <source>Smart quotes</source>
-        <translation>Pametni citati</translation>
+        <translation>Pametni narekovaji</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1832"/>
         <source>Show scene description</source>
-        <translation>Pokaži opis scene</translation>
+        <translation>Pokaži opis prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1843"/>
         <source>Scene text</source>
-        <translation>Besedilo scene</translation>
+        <translation>Besedilo prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1853"/>
         <source>Scene synopsis</source>
-        <translation>Sinopsis scene</translation>
+        <translation>Sinopsis prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1877"/>
@@ -4368,22 +4335,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1938"/>
         <source>Show Scene Title instead of Scene Heading</source>
-        <translation>Prikaži naslov scene namesto glave scene</translation>
+        <translation>Prikaži naslov prizora namesto glave prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1995"/>
         <source>Chronometry</source>
-        <translation>Trajanje</translation>
+        <translation>Ocena trajanja</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2006"/>
         <source>Pages Chronometry</source>
-        <translation>Trajanje strani</translation>
+        <translation>Ocena trajanja strani</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2022"/>
         <source>For standard template and compatible</source>
-        <translation>Za standardne in kompatibilne predloge</translation>
+        <translation>Za standardne predloge in združljive</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2062"/>
@@ -4405,12 +4372,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2109"/>
         <source>Characters Chronometry</source>
-        <translation>Trajanje znakov</translation>
+        <translation>Ocena časovne izpostavljenosti likov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2153"/>
         <source>Characters</source>
-        <translation>znakov</translation>
+        <translation>Osebe</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2160"/>
@@ -4420,12 +4387,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2186"/>
         <source>Configurable Chronometry</source>
-        <translation>Nastavljivo trajanje</translation>
+        <translation>Nastavljivo ocenjevanje trajanja</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2202"/>
         <source>Scene Heading</source>
-        <translation>Poglavje scene</translation>
+        <translation>Naslov prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2239"/>
@@ -4438,19 +4405,19 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2249"/>
         <source>Seconds per
 50 characters</source>
-        <translation>Sekund na
+        <translation>sekund na
 50 znakov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2276"/>
         <source>Action</source>
-        <translation>Akcija</translation>
+        <translation>Dejanje</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2363"/>
         <source>Seconds for
 Paragraph</source>
-        <translation>Sekunde za
+        <translation>Sekund za
 odstavek</translation>
     </message>
     <message>
@@ -4466,7 +4433,7 @@ odstavek</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2436"/>
         <source>Pages Mode only</source>
-        <translation>Način strani</translation>
+        <translation>Samo način strani</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2454"/>
@@ -4541,7 +4508,7 @@ odstavek</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2686"/>
         <source>Save As...</source>
-        <translation>Shrani kot...</translation>
+        <translation>Shrani kot ...</translation>
     </message>
 </context>
 <context>
@@ -4549,7 +4516,7 @@ odstavek</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="20"/>
         <source>Share project</source>
-        <translation>Deli projekt</translation>
+        <translation>Deli projekt z drugimi</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="26"/>
@@ -4564,7 +4531,7 @@ odstavek</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="44"/>
         <source>Redactor</source>
-        <translation>Urednik</translation>
+        <translation>Redaktor</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="49"/>
@@ -4577,27 +4544,27 @@ odstavek</translation>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="181"/>
         <source>Undo last action</source>
-        <translation>Razveljavi zadnji korak</translation>
+        <translation>Razveljavi zadnje dejanje</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="184"/>
         <source>Redo previously undone action</source>
-        <translation>Uveljavi prejšnji razveljavljen korak</translation>
+        <translation>Ponovi prejšnje razveljavljeno dejanje</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="194"/>
         <source>Make text bold</source>
-        <translation>Napravi besedilo odebeljeno</translation>
+        <translation>Naredi besedilo krepko</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="198"/>
         <source>Make text italic</source>
-        <translation>Napravi besedilo ležeče</translation>
+        <translation>Naredi besedilo ležeče</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="202"/>
         <source>Make text underline</source>
-        <translation>Napravi besedilo podčrtano</translation>
+        <translation>Naredi besedilo podčrtano</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="205"/>
@@ -4620,7 +4587,7 @@ odstavek</translation>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="43"/>
         <source>Ignore</source>
-        <translation>Ignoriraj</translation>
+        <translation>Prezri</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="46"/>
@@ -4630,7 +4597,7 @@ odstavek</translation>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="152"/>
         <source>Suggestions not found</source>
-        <translation>Predlogi niso najdeni</translation>
+        <translation>Ni predlogov</translation>
     </message>
 </context>
 <context>
@@ -4666,7 +4633,7 @@ Zaganjamo množično financiranje</translation>
 New to KIT Scenarist?</source>
         <translation>
 
-Novi v KIT Scenaristu?</translation>
+Prvič uporabljate KIT Scenarist?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="177"/>
@@ -4679,15 +4646,15 @@ Novi v KIT Scenaristu?</translation>
 and explore KIT Scenarist through 
 our help articles and tutorials.
 </source>
-        <translation>Naučite se kako napisati svoje zgodbe
+        <translation>Naučite se pisati svoje zgodbe
 in raziščite KIT Scenarist z
-našimi članki in vodiči za pomoč.
+našimi članki in vodiči za uporabnike.
 </translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="207"/>
         <source>We have already collected %1K rubles of 1M aim! Join us and then you can use all power of the new version!</source>
-        <translation>Zbrali smo že %1 rubljev od 1M cilja! Pridružite se nam in takrat boste lahko uporabili vso moč nove različice!</translation>
+        <translation>Zbrali smo že %1 rubljev od načrtovanih 1M! Pridružite se nam in takrat boste lahko uporabili vso moč nove različice!</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="217"/>
@@ -4709,7 +4676,7 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="360"/>
         <source>Projects from local computer</source>
-        <translation>Projekti iz lokalnega računalnika</translation>
+        <translation>Projekti iz krajevnega računalnika</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="373"/>
@@ -4727,66 +4694,66 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="63"/>
         <source>Summary text statistics</source>
-        <translation>Statistika besedila povzetka</translation>
+        <translation>Statistike besedila povzetka</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="73"/>
         <source>Scenes statistics</source>
-        <translation>Statistika scen</translation>
+        <translation>Statistika prizorov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="83"/>
         <source>Locations statistics</source>
-        <translation>Statistika lokacij</translation>
+        <translation>Statistika prizorišč</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="93"/>
         <source>Characters statistics</source>
-        <translation>Statistika oseb</translation>
+        <translation>Statistika likov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="107"/>
         <source>Show characters</source>
-        <translation>Pokaži osebe</translation>
+        <translation>Pokaži like</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="117"/>
         <source>Sort scenes</source>
-        <translation>Razvrsti scene</translation>
+        <translation>Razvrsti prizore</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="128"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="186"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="244"/>
         <source>by script order</source>
-        <translation>po zapredju scenarija</translation>
+        <translation>po zapredju v scenariju</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="133"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="191"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="249"/>
         <source>by alphabetical order</source>
-        <translation>po abecednem zaporedju</translation>
+        <translation>po abecedi</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="138"/>
         <source>from longest to shortest scene</source>
-        <translation>od najdaljše do najkrajše scene</translation>
+        <translation>od najdaljšega do najkrajšega prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="143"/>
         <source>from shortest to longest scene</source>
-        <translation>od najkrajše do najdaljše scene</translation>
+        <translation>od najkrajšega do najdaljšega prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="148"/>
         <source>from massive to unmanned scene</source>
-        <translation>od najobsežnejše do najmanj obsežne scene</translation>
+        <translation>od najobsežnejšega do najmanj obsežnega prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="153"/>
         <source>from unmanned to massive scene</source>
-        <translation>od najmanj obsežne do najobsežnejše scene</translation>
+        <translation>od prizora z najmanj liki do tistega z največ liki</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="165"/>
@@ -4796,17 +4763,17 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="175"/>
         <source>Sort locations</source>
-        <translation>Razvrsti lokacije</translation>
+        <translation>Razvrsti prizorišča</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="196"/>
         <source>from most to least occurences</source>
-        <translation>od najbolj do najmanj pogoste</translation>
+        <translation>od najbolj do najmanj pogostega</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="201"/>
         <source>from least to most occurences</source>
-        <translation>od najmanj do najbolj pogoste</translation>
+        <translation>od najmanj do najbolj pogostega</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="206"/>
@@ -4821,52 +4788,52 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="223"/>
         <source>Show speaking and non-speaking scenes count</source>
-        <translation>Pokaži števec govorjenih in negovorjenih scen</translation>
+        <translation>Pokaži števec prizorov z dialogom in brez njega</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="233"/>
         <source>Sort characters</source>
-        <translation>Razvrsti osebe</translation>
+        <translation>Razvrsti like</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="254"/>
         <source>from most to least scenes</source>
-        <translation>od največ do najmanj scen</translation>
+        <translation>od lika z največ do lika z najmanj prizori</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="259"/>
         <source>from least to most scenes</source>
-        <translation>od najmanj do največ scen</translation>
+        <translation>od lika z najmanj dolika z največ prizori</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="264"/>
         <source>from most to least dialogues</source>
-        <translation>od največ do najmanj dialogov</translation>
+        <translation>od lika z največ do lika z najmanj dialogi</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="269"/>
         <source>from least to most dialogues</source>
-        <translation>od najmanj do največ dialogov</translation>
+        <translation>od lika z najmanj do lika z največ dialogi</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="316"/>
         <source>Scene Duration</source>
-        <translation>Dolžina scene</translation>
+        <translation>Trajanje prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="326"/>
         <source>Action Duration</source>
-        <translation>Dolžina akcije</translation>
+        <translation>Trajanje dogajanja</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="336"/>
         <source>Dialogues Duration</source>
-        <translation>Dolžina dialogov</translation>
+        <translation>Trajanje dialogov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="346"/>
         <source>Characters Count</source>
-        <translation>Število oseb</translation>
+        <translation>Število likov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="356"/>
@@ -4884,7 +4851,7 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="20"/>
         <source>Common</source>
-        <translation>Osnovno</translation>
+        <translation>Pogosto</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="38"/>
@@ -4906,7 +4873,7 @@ najboljši program za ustvarjanje zgodb!</translation>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="66"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="590"/>
         <source>Center</source>
-        <translation>Na sredini</translation>
+        <translation>Sredina</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="71"/>
@@ -4932,7 +4899,7 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="139"/>
         <source>Fields, mm:</source>
-        <translation>Rob, mm:</translation>
+        <translation>Polja, mm:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="146"/>
@@ -4961,12 +4928,12 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="241"/>
         <source>Numbering:</source>
-        <translation>Številčenje:</translation>
+        <translation>Oštevilčevanje:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="248"/>
         <source>Page format:</source>
-        <translation>Format strani:</translation>
+        <translation>Oblika strani:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="258"/>
@@ -4976,7 +4943,7 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="290"/>
         <source>Active</source>
-        <translation>Aktivno</translation>
+        <translation>Dejavno</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="338"/>
@@ -5001,7 +4968,7 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="477"/>
         <source>Uppercase</source>
-        <translation>Velike tiskane črke</translation>
+        <translation>Velike črke</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="484"/>
@@ -5011,7 +4978,7 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="493"/>
         <source>Line spacing:</source>
-        <translation>razmik med vrsticami:</translation>
+        <translation>Razmik med vrsticami:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="501"/>
@@ -5041,7 +5008,7 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="562"/>
         <source>Italic</source>
-        <translation>Poševno</translation>
+        <translation>Ležeče</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="571"/>
@@ -5051,7 +5018,7 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="600"/>
         <source>Justify</source>
-        <translation>Obojestranska</translation>
+        <translation>Obojestransko</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="625"/>
@@ -5061,17 +5028,17 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="645"/>
         <source>pt</source>
-        <translation>pt</translation>
+        <translation>tč</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="660"/>
         <source>Bold</source>
-        <translation>Odebeljeno</translation>
+        <translation>Krepko</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="670"/>
         <source>Framing brackets</source>
-        <translation>Oglati oklepaji</translation>
+        <translation>oglati oklepaji</translation>
     </message>
 </context>
 <context>
@@ -5166,12 +5133,12 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="169"/>
         <source>Midlight</source>
-        <translation>Srednja svetloba</translation>
+        <translation>Srednje svetlo</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="185"/>
         <source>Dark</source>
-        <translation>Tema</translation>
+        <translation>Temno</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="201"/>
@@ -5211,12 +5178,12 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="310"/>
         <source>AlternateBase</source>
-        <translation>Nadomestna baza</translation>
+        <translation>Nadomestna osnova</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="323"/>
         <source>Base</source>
-        <translation>Baza</translation>
+        <translation>Osnova</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="339"/>
@@ -5264,27 +5231,27 @@ najboljši program za ustvarjanje zgodb!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="26"/>
         <source>New version is available</source>
-        <translation>Nova različica je na voljo</translation>
+        <translation>Na voljo je nova različica</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="45"/>
         <source>KIT Scenarist doesn&apos;t support auto update on your OS now. &lt;br&gt;
 Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;link&lt;/a&gt;</source>
-        <translation>KIT Scenarist trenutno ne podpira avtomatskih posodobitev za vaš operacijski sistem. &lt;br&gt;
-Prosimo, prenesite novo različico s to &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;povezavo&lt;/a&gt;</translation>
+        <translation>KIT Scenarist trenutno ne podpira samodejnih posodobitev za vaš operacijski sistem. &lt;br&gt;
+Prosimo, prenesite novo različico s te &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;povezave&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="70"/>
         <source>I&apos;m sure. I want to download beta version</source>
-        <translation>Prepričan sem. Želim prenesti beta različico</translation>
+        <translation>Prepričan sem. Želim prenesti različico beta</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="83"/>
         <source>&lt;html&gt;&lt;body&gt;&lt;p&gt;Beta version is an early version of a program or application that contains most of the major features, but is not yet complete. These versions are released to the general public, for testing and feedback.
 &lt;br&gt;&lt;br&gt;If you use beta version and send feedback to developer you helps him to make application better.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;body&gt;&lt;p&gt;Beta različica je zgodnja različica programa, ki vsebuje večino glavnih možnosti, ni pa še dokončana. Takšne različice so objavljene javnosti za testiranje in povratne informacije.
-&lt;br&gt;&lt;br&gt;Če uporabljate beta različico in povratne informacije pošljete razvijalcu, pomagate izboljšati program.&lt;/p&gt;
+        <translation>&lt;html&gt;&lt;body&gt;&lt;p&gt;Različica beta je zgodnja različica programa, ki vsebuje večino glavnih funkcionalnosti, ni pa še dokončana. Takšne različice so javno objavljene za preizkušanje in povratne informacije.
+&lt;br&gt;&lt;br&gt;Če uporabljate različico beta in povratne informacije pošljete razvijalcu, pomagate izboljšati program.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -5379,43 +5346,43 @@ Prosimo, prenesite novo različico s to &lt;a href=&quot;https://kitscenarist.ru
 <context>
     <name>UserInterface::ExportDialog</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="258"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="259"/>
         <source>Choose file to export research</source>
         <translation>Izberite datoteko za izvoz raziskave</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="260"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="321"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="261"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="322"/>
         <source>%1 files (*%2)</source>
-        <translation>datiteke %1 (*%2)</translation>
+        <translation>%1 datoteke (*%2)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="319"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="320"/>
         <source>Choose file to export scenario</source>
         <translation>Izberite datoteko za izvoz scenarija</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="369"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="370"/>
         <source>Rewrite</source>
-        <translation>Prepiši</translation>
+        <translation>Ponovno piši</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="369"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="370"/>
         <source>Export</source>
         <translation>Izvozi</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="415"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="416"/>
         <source>Export research</source>
         <translation>Izvozi raziskavo</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="416"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="417"/>
         <source>Export outline</source>
         <translation>Izvozi oris</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="417"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="418"/>
         <source>Export script</source>
         <translation>Izvozi scenarij</translation>
     </message>
@@ -5489,7 +5456,7 @@ Prosimo, prenesite novo različico s to &lt;a href=&quot;https://kitscenarist.ru
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="194"/>
         <source>Account is inactive</source>
-        <translation>Račun je neaktiven</translation>
+        <translation>Račun ni aktiven</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="205"/>
@@ -5500,17 +5467,17 @@ Prosimo, prenesite novo različico s to &lt;a href=&quot;https://kitscenarist.ru
 <context>
     <name>UserInterface::OnboardingView</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="202"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="205"/>
         <source>Next</source>
         <translation>Naprej</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="236"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="239"/>
         <source>Finish</source>
-        <translation>Končaj</translation>
+        <translation>Dokončaj</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="254"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="257"/>
         <source>Will be used default settings.
 
 The application will start in few seconds.</source>
@@ -5547,7 +5514,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="88"/>
         <source>for %1 rubles</source>
-        <translation>za %1 rubijev</translation>
+        <translation>za %1 rubljev</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="122"/>
@@ -5585,7 +5552,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.cpp" line="36"/>
         <source>Insert into &quot;%1&quot;</source>
-        <translation>Vstavi v &quot;%1&quot;</translation>
+        <translation>Vstavi v »%1«</translation>
     </message>
 </context>
 <context>
@@ -5593,12 +5560,12 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="318"/>
         <source>Find All Characters from Script</source>
-        <translation>Poišči vse osebe iz scenarija</translation>
+        <translation>Poišči vse like v scenariju</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="348"/>
         <source>Find All Locations from Script</source>
-        <translation>Poišči vse lokacije iz scenarija</translation>
+        <translation>Poišči vsa prizorišča v scenariju</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="731"/>
@@ -5608,17 +5575,17 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="731"/>
         <source>PNG files (*.png)</source>
-        <translation>PNG datoteke (*.png)</translation>
+        <translation>Datoteke PNG (*.png)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="784"/>
         <source>Character name</source>
-        <translation>Ime osebe</translation>
+        <translation>Ime lika</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="786"/>
         <source>Location name</source>
-        <translation>Ime lokacije</translation>
+        <translation>Ime prizorišča</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="950"/>
@@ -5646,7 +5613,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="94"/>
         <source>PNG files (*.png)</source>
-        <translation>PNG datoteke (*.png)</translation>
+        <translation>Datoteke PNG (*.png)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="196"/>
@@ -5671,7 +5638,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="213"/>
         <source>Sort cards</source>
-        <translation>Razporedi kartice</translation>
+        <translation>Razvrsti kartice</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="227"/>
@@ -5686,7 +5653,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="234"/>
         <source>On/off Fullscreen Mode</source>
-        <translation>Vklop/Izklop celozaslonskega načina</translation>
+        <translation>Vklopi/izklopi celozaslonski način</translation>
     </message>
 </context>
 <context>
@@ -5718,7 +5685,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="32"/>
         <source>Add Scene</source>
-        <translation>Dodaj sceno</translation>
+        <translation>Dodaj prizor</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
@@ -5728,17 +5695,17 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
         <source>Add Act</source>
-        <translation>Dodaj igro</translation>
+        <translation>Dodaj dejanje</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="40"/>
         <source>Edit Scene</source>
-        <translation>Uredi sceno</translation>
+        <translation>Uredi prizor</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="41"/>
         <source>Edit Act</source>
-        <translation>Uredi igro</translation>
+        <translation>Uredi dejanje</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="42"/>
@@ -5748,7 +5715,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="145"/>
         <source>Scene</source>
-        <translation>Scena</translation>
+        <translation>Prizor</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="146"/>
@@ -5761,7 +5728,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="228"/>
         <source>Convert to scene</source>
-        <translation>Pretvori v sceno</translation>
+        <translation>Pretvori v prizor</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="230"/>
@@ -5806,12 +5773,12 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="373"/>
         <source>Scenes:</source>
-        <translation>Scene:</translation>
+        <translation>Prizori:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="375"/>
         <source>Scenes Count</source>
-        <translation>Števec scen</translation>
+        <translation>Števec prizorov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="379"/>
@@ -5826,7 +5793,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="387"/>
         <source>Show/hide additional panels</source>
-        <translation>Pokaži/Skrij dodatni panel</translation>
+        <translation>Pokaži/skrij dodatno podokno</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="395"/>
@@ -5836,17 +5803,17 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="397"/>
         <source>Show/hide draft</source>
-        <translation>Pokaži/Skrih osnutek</translation>
+        <translation>Pokaži/skrij osnutek</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="400"/>
         <source>Scene description</source>
-        <translation>Opis scene</translation>
+        <translation>Opis prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="401"/>
         <source>Show/hide scene note</source>
-        <translation>Pokaži/Skrij sporočilo scene</translation>
+        <translation>Pokaži/skrij opombo prizora</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="405"/>
@@ -5856,7 +5823,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="406"/>
         <source>Show/hide script bookmarks</source>
-        <translation>Pokaži/Skrij zanzamke scenarija</translation>
+        <translation>Pokaži/skrij zanzamke scenarija</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="410"/>
@@ -5866,7 +5833,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="411"/>
         <source>Show/hide script dictionaries</source>
-        <translation>Pokaži/Skrij slovarje scenarija</translation>
+        <translation>Pokaži/skrij slovarje scenarija</translation>
     </message>
 </context>
 <context>
@@ -5879,7 +5846,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="271"/>
         <source>Review</source>
-        <translation>Uredi</translation>
+        <translation>Pregled</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="276"/>
@@ -5894,7 +5861,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="284"/>
         <source>Highlight text</source>
-        <translation>Označi besedilo</translation>
+        <translation>Poudari besedilo</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="288"/>
@@ -5904,7 +5871,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="292"/>
         <source>Mark as done</source>
-        <translation>Označi kot končano</translation>
+        <translation>Označi kot dokončano</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="294"/>
@@ -5928,7 +5895,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="133"/>
         <source>Done</source>
-        <translation>Končano</translation>
+        <translation>Dokončano</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="136"/>
@@ -5946,7 +5913,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="109"/>
         <source>Copy scene description to the script</source>
-        <translation>Kopiraj opis scene v scenarij</translation>
+        <translation>Kopiraj opis prizora v scenarij</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="118"/>
@@ -5969,7 +5936,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="627"/>
         <source>Change scene number</source>
-        <translation>Zamenjaj številko scene</translation>
+        <translation>Spremeni številko prizora</translation>
     </message>
 </context>
 <context>
@@ -5987,12 +5954,12 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="540"/>
         <source>Redo</source>
-        <translation>Uveljavi</translation>
+        <translation>Ponovi</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="542"/>
         <source>Find and replace</source>
-        <translation>Poišči in zamenjaj</translation>
+        <translation>Najdi in zamenjaj</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="738"/>
@@ -6007,32 +5974,32 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="747"/>
         <source>Undo last action</source>
-        <translation>Razveljavi zadnji korak</translation>
+        <translation>Razveljavi zadnje dejanje</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="750"/>
         <source>Redo last action</source>
-        <translation>Uveljavi zadnji korak</translation>
+        <translation>Ponovi zadnje dejanje</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="754"/>
         <source>Search and Replace</source>
-        <translation>Poišči in zamenjaj</translation>
+        <translation>Najdi in zamenjaj</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="759"/>
         <source>Text Fast Format</source>
-        <translation>Hitra besedilna oblika</translation>
+        <translation>Hitro oblikovanje besedila</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="764"/>
         <source>Duration from Start to Cursor Position | Full Duration</source>
-        <translation>Trajanje od začetka do položaja kazalca | Celotno trajanje</translation>
+        <translation>Trajanje od začetka do položaja kazalke | Celotno trajanje</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="784"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="785"/>
         <source>Lock/unlock scene numbers</source>
-        <translation>Zakleni/Odkleni številke scen</translation>
+        <translation>Zakleni/odkleni številke prizorov</translation>
     </message>
 </context>
 <context>
@@ -6058,22 +6025,22 @@ Program se bo zagnal čez nekaj sekund.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="39"/>
         <source>Scene intros</source>
-        <translation>Uvodi v sceno</translation>
+        <translation>Uvodi v prizore</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="40"/>
         <source>Scene times</source>
-        <translation>Scenski časi</translation>
+        <translation>Časi prizorov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="41"/>
         <source>Scene days</source>
-        <translation>Scenski dnevi</translation>
+        <translation>Dnevi prizorov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="42"/>
         <source>Character states</source>
-        <translation>Stanje oseb</translation>
+        <translation>Stanja likov</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="43"/>
@@ -6116,13 +6083,13 @@ Program se bo zagnal čez nekaj sekund.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="136"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="785"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="790"/>
         <source>Russian</source>
         <translation>ruski</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="141"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="786"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="792"/>
         <source>Spanish</source>
         <translation>španski</translation>
     </message>
@@ -6133,25 +6100,25 @@ Program se bo zagnal čez nekaj sekund.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="151"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="775"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="780"/>
         <source>French</source>
         <translation>francoski</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="156"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="780"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="785"/>
         <source>Kazakh</source>
         <translation>kazaški</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="161"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="790"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="796"/>
         <source>Ukrainian</source>
         <translation>ukrajinski</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="166"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="776"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="781"/>
         <source>German</source>
         <translation>nemški</translation>
     </message>
@@ -6162,7 +6129,7 @@ Program se bo zagnal čez nekaj sekund.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="176"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="774"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="779"/>
         <source>Farsi</source>
         <translation>perzijski</translation>
     </message>
@@ -6173,43 +6140,43 @@ Program se bo zagnal čez nekaj sekund.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="186"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="777"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="782"/>
         <source>Hebrew</source>
         <translation>hebrejski</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="191"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="781"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="786"/>
         <source>Polish</source>
         <translation>poljski</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="196"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="789"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="795"/>
         <source>Turkish</source>
         <translation>turški</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="201"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="778"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="783"/>
         <source>Hungarian</source>
         <translation>madžarski</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="206"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="779"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="784"/>
         <source>Italian</source>
         <translation>italijanski</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="211"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="769"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="774"/>
         <source>Azerbaijani</source>
         <translation>azerbajdžanski</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="216"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="788"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="794"/>
         <source>Telugu</source>
         <translation>teluški</translation>
     </message>
@@ -6219,87 +6186,93 @@ Program se bo zagnal čez nekaj sekund.</translation>
         <translation>brazilsko portugalski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="601"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="226"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="791"/>
+        <source>Slovenian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="606"/>
         <source>Choose backups saving folder</source>
         <translation>Izberite mapo za shranjevanje varnostnih kopij</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="767"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="772"/>
         <source>Armenian (Eastern)</source>
-        <translation>armenijski (vzhodni)</translation>
+        <translation>armenski (vzhodni)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="768"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="773"/>
         <source>Armenian (Western)</source>
-        <translation>armenijski (zahodni)</translation>
+        <translation>armenski (zahodni)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="770"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="775"/>
         <source>Belorussian</source>
         <translation>beloruski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="771"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="776"/>
         <source>Catalan</source>
         <translation>katalonski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="772"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="777"/>
         <source>English (GB)</source>
         <translation>angleški (VB)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="773"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="778"/>
         <source>English (US)</source>
         <translation>angleški (ZDA)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="782"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="787"/>
         <source>Portuguese (Brazil)</source>
         <translation>portugalski (Brazilija)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="783"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="788"/>
         <source>Portuguese (Portugal)</source>
         <translation>portugalski (Portugalska)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="784"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="789"/>
         <source>Russian with Yo</source>
         <translation>ruski z Yo</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="787"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="793"/>
         <source>Swedish</source>
         <translation>švedski</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="807"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="814"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="813"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="820"/>
         <source>Common</source>
-        <translation>Osnovno</translation>
+        <translation>Skupno</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="808"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="814"/>
         <source>Modules</source>
         <translation>Moduli</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="815"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="821"/>
         <source>Editing</source>
         <translation>Urejanje</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="816"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="822"/>
         <source>Shortcuts</source>
-        <translation>Bližnjice</translation>
+        <translation>Bljižnice</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="850"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="856"/>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
 but if you work with no terminations it saves project every %1 minutes.</source>
-        <translation>Samodejno shranjevanje deluje zelo pogosto. Projekt se shrani vsake 3 sekunde, če ne uporabljate miške ali tipkovnice,
-če pa delate brez prekinitev, se shrani na %1 minute.</translation>
+        <translation>Samodejno shranjevanje deluje zelo pogosto. Projekt se shrani vsake tri sekunde, če ne uporabljate miške ali tipkovnice,
+če pa delate brez prekinitev, shranjuje vsakih %1 minut.</translation>
     </message>
 </context>
 <context>
@@ -6307,7 +6280,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.cpp" line="38"/>
         <source>Share</source>
-        <translation>Deli</translation>
+        <translation>Skupna raba</translation>
     </message>
 </context>
 <context>
@@ -6325,7 +6298,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="166"/>
         <source>Please wait. Preparing report to preview can take few minutes.</source>
-        <translation>Prosimo počakajte. Pripravljanje poročila za predogled lahko traja nekaj minut.</translation>
+        <translation>Prosimo, počakajte. Priprava poročila za predogled lahko traja nekaj minut.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="261"/>
@@ -6340,90 +6313,90 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="262"/>
         <source>PDF files (*.pdf)</source>
-        <translation>PDF datoteke (*.pdf)</translation>
+        <translation>Datoteke PDF (*.pdf)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="280"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="283"/>
         <source>Plot.png</source>
         <translation>Graf.png</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="281"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="284"/>
         <source>Save plot</source>
         <translation>Shrani graf</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="281"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="284"/>
         <source>PNG files (*.png)</source>
-        <translation>PNG datoteke (*.png)</translation>
+        <translation>Datoteke PNG (*.png)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="299"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="302"/>
         <source>Report settings</source>
         <translation>Nastavitve poročila</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="302"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="305"/>
         <source>Print preview</source>
         <translation>Predogled tiskanja</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="304"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="307"/>
         <source>Save report to file</source>
         <translation>Shrani poročilo v datoteko</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="306"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="309"/>
         <source>Update current report</source>
         <translation>Posodobi trenutno poročilo</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="313"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="316"/>
         <source>Reports</source>
         <translation>Poročila</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="315"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="318"/>
         <source>Summary statistics</source>
-        <translation>Statistika povzetka</translation>
+        <translation>Povzetek statistike</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="319"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="322"/>
         <source>Scene report</source>
-        <translation>Poročilo scen</translation>
+        <translation>Poročilo o prizorih</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="323"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="326"/>
         <source>Location report</source>
-        <translation>Poročilo lokacij</translation>
+        <translation>Poročilo o prizoriščih</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="327"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="330"/>
         <source>Cast report</source>
-        <translation>Poročilo zasedbe</translation>
+        <translation>Poročilo o zasedbi</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="331"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="334"/>
         <source>Characters dialogues</source>
-        <translation>Dialogi oseb</translation>
+        <translation>Dialogi likov</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="340"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="343"/>
         <source>Plots</source>
         <translation>Grafi</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="342"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="345"/>
         <source>Story structure analysis</source>
         <translation>Analiza strukture zgodbe</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="346"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="349"/>
         <source>Characters activity</source>
-        <translation>Aktivnost oseb</translation>
+        <translation>Dejavnost oseb</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="437"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="440"/>
         <source>Duration, minutes</source>
         <translation>Trajanje, minute</translation>
     </message>
@@ -6454,7 +6427,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="94"/>
         <source>Didn&apos;t find any backups for the current project</source>
-        <translation>Najdena ni nobena varnostna kopija za trenuten projekt</translation>
+        <translation>Za trenutni projekt ni mogoče najti nobene varnostne kopije</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="112"/>
@@ -6469,7 +6442,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="117"/>
         <source>Restore script</source>
-        <translation>Ponastavi scenarij</translation>
+        <translation>Obnovi scenarij</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="123"/>
@@ -6479,7 +6452,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="126"/>
         <source>Compare script versions</source>
-        <translation>Primerjaj verzije scenarija</translation>
+        <translation>Primerjaj različice scenarija</translation>
     </message>
 </context>
 <context>
@@ -6487,7 +6460,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="39"/>
         <source>New version %1 is available</source>
-        <translation>Nova verzija %1 je na voljo</translation>
+        <translation>Na voljo je nova različica %1</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="44"/>
@@ -6502,7 +6475,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="61"/>
         <source>&lt;p&gt;Error during download update.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Napaka med prenašanjem posodobitve.&lt;/p&gt;&lt;p&gt;Lahko poskusite ponovno naložiti posodobitev ali jo ročno prenesete z &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;uradne spletne strani&lt;/a&gt;.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Napaka pri prenosu posodobitve.&lt;/p&gt;&lt;p&gt;Lahko poskusite znova naložiti posodobitev ali jo ročno prenesete z &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;uradne spletne strani&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
