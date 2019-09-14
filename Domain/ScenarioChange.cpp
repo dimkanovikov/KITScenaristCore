@@ -4,164 +4,164 @@ using namespace Domain;
 
 
 ScenarioChange::ScenarioChange(const Identifier& _id, const QUuid& _uuid,
-	const QDateTime& _datetime, const QString& _user, const QString& _undoPatch,
-	const QString& _redoPatch, bool _isDraft) :
-	DomainObject(_id),
-	m_uuid(_uuid),
-	m_datetime(_datetime),
-	m_user(_user),
-	m_undoPatch(_undoPatch),
-	m_redoPatch(_redoPatch),
-	m_isDraft(_isDraft)
+    const QDateTime& _datetime, const QString& _user, const QString& _undoPatch,
+    const QString& _redoPatch, bool _isDraft) :
+    DomainObject(_id),
+    m_uuid(_uuid),
+    m_datetime(_datetime),
+    m_user(_user),
+    m_undoPatch(_undoPatch),
+    m_redoPatch(_redoPatch),
+    m_isDraft(_isDraft)
 {
 }
 
 QUuid ScenarioChange::uuid() const
 {
-	return m_uuid;
+    return m_uuid;
 }
 
 void ScenarioChange::setUuid(const QUuid& _uuid)
 {
-	if (m_uuid != _uuid) {
-		m_uuid = _uuid;
+    if (m_uuid != _uuid) {
+        m_uuid = _uuid;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
 
 QDateTime ScenarioChange::datetime() const
 {
-	return m_datetime;
+    return m_datetime;
 }
 
 void ScenarioChange::setDatetime(const QDateTime& _datetime)
 {
-	if (m_datetime != _datetime) {
-		m_datetime = _datetime;
+    if (m_datetime != _datetime) {
+        m_datetime = _datetime;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
 
 QString ScenarioChange::user() const
 {
-	return m_user;
+    return !m_user.isEmpty() ? m_user : "unknown_user";
 }
 
 void ScenarioChange::setUser(const QString& _user)
 {
-	if (m_user != _user) {
-		m_user = _user;
+    if (m_user != _user) {
+        m_user = _user;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
 
 QString ScenarioChange::undoPatch() const
 {
-	return m_undoPatch;
+    return m_undoPatch;
 }
 
 void ScenarioChange::setUndoPatch(const QString& _patch)
 {
-	if (m_undoPatch != _patch) {
-		m_undoPatch = _patch;
+    if (m_undoPatch != _patch) {
+        m_undoPatch = _patch;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
 
 QString ScenarioChange::redoPatch() const
 {
-	return m_redoPatch;
+    return m_redoPatch;
 }
 
 void ScenarioChange::setRedoPatch(const QString& _patch)
 {
-	if (m_redoPatch != _patch) {
-		m_redoPatch = _patch;
+    if (m_redoPatch != _patch) {
+        m_redoPatch = _patch;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
 
 bool ScenarioChange::isDraft() const
 {
-	return m_isDraft;
+    return m_isDraft;
 }
 
 void ScenarioChange::setIsDraft(bool _isDraft)
 {
-	if (m_isDraft != _isDraft) {
-		m_isDraft = _isDraft;
+    if (m_isDraft != _isDraft) {
+        m_isDraft = _isDraft;
 
-		changesNotStored();
-	}
+        changesNotStored();
+    }
 }
 
 // ****
 
 namespace {
-	const int kColumnCount = 1;
+    const int kColumnCount = 1;
 }
 
 ScenarioChangesTable::ScenarioChangesTable(QObject* _parent) :
-	DomainObjectsItemModel(_parent)
+    DomainObjectsItemModel(_parent)
 {
 }
 
 int ScenarioChangesTable::columnCount(const QModelIndex&) const
 {
-	return kColumnCount;
+    return kColumnCount;
 }
 
 QVariant ScenarioChangesTable::data(const QModelIndex& _index, int _role) const
 {
-	QVariant resultData;
+    QVariant resultData;
 
-	if (_role ==  Qt::DisplayRole
-		|| _role == Qt::EditRole) {
-		DomainObject *domainObject = domainObjects().value(_index.row());
-		ScenarioChange* scenarioChange = dynamic_cast<ScenarioChange*>(domainObject);
-		Column column = sectionToColumn(_index.column());
-		switch (column) {
-			case Uuid: {
-				resultData = scenarioChange->uuid().toString();
-				break;
-			}
+    if (_role ==  Qt::DisplayRole
+        || _role == Qt::EditRole) {
+        DomainObject *domainObject = domainObjects().value(_index.row());
+        ScenarioChange* scenarioChange = dynamic_cast<ScenarioChange*>(domainObject);
+        Column column = sectionToColumn(_index.column());
+        switch (column) {
+            case Uuid: {
+                resultData = scenarioChange->uuid().toString();
+                break;
+            }
 
-			default: {
-				break;
-			}
-		}
-	}
+            default: {
+                break;
+            }
+        }
+    }
 
-	return resultData;
+    return resultData;
 }
 
 ScenarioChange* ScenarioChangesTable::last() const
 {
-	ScenarioChange* lastChange = 0;
-	if (!domainObjects().isEmpty()) {
-		lastChange = dynamic_cast<ScenarioChange*>(domainObjects().last());
-	}
-	return lastChange;
+    ScenarioChange* lastChange = 0;
+    if (!domainObjects().isEmpty()) {
+        lastChange = dynamic_cast<ScenarioChange*>(domainObjects().last());
+    }
+    return lastChange;
 }
 
 ScenarioChangesTable::Column ScenarioChangesTable::sectionToColumn(int _section) const
 {
-	Column column = Undefined;
+    Column column = Undefined;
 
-	switch (_section) {
-		case 0: {
-			column = Uuid;
-			break;
-		}
-		default: {
-			break;
-		}
-	}
+    switch (_section) {
+        case 0: {
+            column = Uuid;
+            break;
+        }
+        default: {
+            break;
+        }
+    }
 
-	return column;
+    return column;
 }
