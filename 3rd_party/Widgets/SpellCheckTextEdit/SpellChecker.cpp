@@ -91,6 +91,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Slovenian:
             code = "sl_SL";
             break;
+        case Macedonian:
+            code = "mk_MK";
+            break;
         default:
             break;
     }

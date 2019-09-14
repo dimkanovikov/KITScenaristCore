@@ -45,7 +45,8 @@ public:
         Telugu,
         German,
         Catalan,
-        Slovenian
+        Slovenian,
+        Macedonian
     };
 
     /**
