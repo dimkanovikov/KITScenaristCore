@@ -77,7 +77,7 @@ ScenarioChange ScenarioChangeMapper::change(const QString& _uuid, const QString&
     loader.exec();
     loader.next();
     return
-            ScenarioChange(Identifier(), _uuid, loader.value("datetime").toDateTime(),
+            ScenarioChange(Identifier(), _uuid, QDateTime::fromString(loader.value("datetime").toString(), "yyyy-MM-dd hh:mm:ss:zzz"),
                 loader.value("username").toString(), loader.value("undo_patch").toString(),
                 loader.value("redo_patch").toString(), loader.value("is_draft").toInt());
 }
