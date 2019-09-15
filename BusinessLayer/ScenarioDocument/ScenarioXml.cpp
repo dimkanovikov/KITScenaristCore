@@ -1235,8 +1235,8 @@ int ScenarioXml::xmlToScenario(ScenarioModelItem* _insertParent, ScenarioModelIt
         //
         // Если необходимо удалить прошлое выделение
         //
+        bool needCorrectPosition = false;
         if (_removeLastMime) {
-            bool needCorrectPosition = false;
             if (m_lastMimeFrom < insertPosition) {
                 needCorrectPosition = true;
             }
@@ -1255,7 +1255,7 @@ int ScenarioXml::xmlToScenario(ScenarioModelItem* _insertParent, ScenarioModelIt
         //
         // ... скорректируем позицию курсора
         //
-        if (insertPosition != 0) {
+        if (needCorrectPosition || insertPosition != 0) {
             insertPosition = cursor.position();
         }
         //
@@ -1312,8 +1312,23 @@ int ScenarioXml::removeLastMime()
 
         QTextCursor cursor(m_scenario->document());
         cursor.setPosition(m_lastMimeFrom);
+        //
+        // ... при удалении текста, данные в текущем блоке затираются данными с последнего удалённого
+        //     поэтому сохраняем их вручную, чтобы потом возвратить на место
+        //
+        auto movedInfo = [&cursor] () -> SceneHeadingBlockInfo* {
+            if (cursor.position() == 0 && !cursor.block().text().isEmpty()) {
+                return nullptr;
+            }
+
+            auto info = dynamic_cast<SceneHeadingBlockInfo*> (cursor.block().userData());
+            return info != nullptr ? info->clone() : nullptr;
+        }();
         cursor.setPosition(m_lastMimeTo, QTextCursor::KeepAnchor);
         cursor.removeSelectedText();
+        if (movedInfo) {
+            cursor.block().setUserData(movedInfo);
+        }
 
         removedSymbols = m_lastMimeTo - m_lastMimeFrom;
     }

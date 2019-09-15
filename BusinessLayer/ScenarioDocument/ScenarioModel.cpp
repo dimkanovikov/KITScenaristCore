@@ -530,11 +530,14 @@ QMimeData* ScenarioModel::mimeData(const QModelIndexList& _indexes) const
             ScenarioModelItem* toItem = itemForIndex(toIndex);
 
             //
-            // Сформируем данные
+            // Сформируем данные, если пользователь пытается перенести сцену, содержащую контент
             //
-            mimeData->setData(
-                        MIME_TYPE,
-                        m_xmlHandler->scenarioToXml(fromItem, toItem).toUtf8());
+            if (fromItem != toItem
+                || fromItem->position() < fromItem->endPosition()) {
+                mimeData->setData(
+                            MIME_TYPE,
+                            m_xmlHandler->scenarioToXml(fromItem, toItem).toUtf8());
+            }
         }
     }
 
