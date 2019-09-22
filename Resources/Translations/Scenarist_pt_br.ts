@@ -205,6 +205,7 @@ Magyar: Gabor
 Polski: Rafał Puka, Bartłomiej Jaskulski
 Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
 Русский: Димка Новиков
+Slovenski: Andraž Pušnik, Martin Srebotnjak
 Türkçe: Recep Burak Yak
 Українська: Myroslav S 
 فارْسِى: Arash Aneessee
@@ -1857,11 +1858,11 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Possible save error</source>
-        <translation>Possível erro ao salvar</translation>
+        <translation type="vanished">Possível erro ao salvar</translation>
     </message>
     <message>
         <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
-        <translation>Você tem menos de 50 megabytes de espaço livre no disco. Isso pode gerar problemas ao salvar o projeto. Recomendamos que você libere mais espaço e verifique se o projeto foi salvo corretamente.</translation>
+        <translation type="vanished">Você tem menos de 50 megabytes de espaço livre no disco. Isso pode gerar problemas ao salvar o projeto. Recomendamos que você libere mais espaço e verifique se o projeto foi salvo corretamente.</translation>
     </message>
     <message>
         <source>File format not supported</source>
@@ -5274,6 +5275,10 @@ quando você estiver trabalhando ele salvará o projeto a cada %1 minutos.</tran
     </message>
     <message>
         <source>Slovenian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Macedonian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

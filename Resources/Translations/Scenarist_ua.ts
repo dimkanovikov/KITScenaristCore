@@ -222,6 +222,7 @@ Magyar: Gabor
 Polski: Rafał Puka, Bartłomiej Jaskulski
 Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
 Русский: Димка Новиков
+Slovenski: Andraž Pušnik, Martin Srebotnjak
 Türkçe: Recep Burak Yak
 Українська: Myroslav S 
 فارْسِى: Arash Aneessee
@@ -1872,11 +1873,11 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Possible save error</source>
-        <translation>Можлива помилка збереження</translation>
+        <translation type="vanished">Можлива помилка збереження</translation>
     </message>
     <message>
         <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
-        <translation>У вас менше 50 мегабайт вільного місця на диску. Це може призвести до проблем збереження проекту. Рекомендуємо звільнити більше місця та перевірити правильність збереження проекту.</translation>
+        <translation type="vanished">У вас менше 50 мегабайт вільного місця на диску. Це може призвести до проблем збереження проекту. Рекомендуємо звільнити більше місця та перевірити правильність збереження проекту.</translation>
     </message>
     <message>
         <source>File format not supported</source>
@@ -5311,6 +5312,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Slovenian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Macedonian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
