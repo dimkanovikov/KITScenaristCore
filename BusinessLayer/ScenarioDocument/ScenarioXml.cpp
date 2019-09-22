@@ -544,7 +544,8 @@ QString ScenarioXml::scenarioToXml()
                             // ... если в самом начале разрыва находится часть выделения
                             //     предыдущего блока, объединяем их
                             //
-                            if (range.start == 0) {
+                            if (range.start == 0
+                                && isReviewFormatEquals(ranges.last().format, range.format)) {
                                 ranges.last().length += range.length + 1;
                             }
                             //
@@ -552,7 +553,7 @@ QString ScenarioXml::scenarioToXml()
                             //     корректируя стартовую позицию
                             //
                             else {
-                                range.start += previousBlock.length() + 1;
+                                range.start += previousBlock.length();
                                 ranges.append(range);
                             }
                         }
@@ -567,7 +568,7 @@ QString ScenarioXml::scenarioToXml()
                         //
                         // Если следующий формат равен предыдущему и он является продолжает предыдущего
                         //
-                        if (::isReviewFormatEquals(lastFormatRange.format, range.format)
+                        if (isReviewFormatEquals(lastFormatRange.format, range.format)
                             && ((lastFormatRange.start + lastFormatRange.length) == range.start)) {
                             //
                             // Объединяем их в одну сущность
@@ -647,7 +648,8 @@ QString ScenarioXml::scenarioToXml()
                             // ... если в самом начале разрыва находится часть выделения
                             //     предыдущего блока, объединяем их
                             //
-                            if (range.start == 0) {
+                            if (range.start == 0
+                                && isFormattingEquals(ranges.last().format, range.format)) {
                                 ranges.last().length += range.length + 1;
                             }
                             //
@@ -655,7 +657,7 @@ QString ScenarioXml::scenarioToXml()
                             //     корректируя стартовую позицию
                             //
                             else {
-                                range.start += previousBlock.length() + 1;
+                                range.start += previousBlock.length();
                                 ranges.append(range);
                             }
                         }
@@ -670,7 +672,7 @@ QString ScenarioXml::scenarioToXml()
                         //
                         // Если следующий формат равен предыдущему и он является продолжает предыдущего
                         //
-                        if (::isFormattingEquals(lastFormatRange.format, range.format)
+                        if (isFormattingEquals(lastFormatRange.format, range.format)
                             && ((lastFormatRange.start + lastFormatRange.length) == range.start)) {
                             //
                             // Объединяем их в одну сущность
@@ -1039,7 +1041,8 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                             // ... если в самом начале разрыва находится часть выделения
                             //     предыдущего блока, объединяем их
                             //
-                            if (range.start == 0) {
+                            if (range.start == 0
+                                && isReviewFormatEquals(ranges.last().format, range.format)) {
                                 ranges.last().length += range.length + 1;
                             }
                             //
@@ -1047,7 +1050,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                             //     корректируя стартовую позицию
                             //
                             else {
-                                range.start += previousBlock.length() + 1;
+                                range.start += previousBlock.length();
                                 ranges.append(range);
                             }
                         }
@@ -1097,7 +1100,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                         //
                         // Если следующий формат равен предыдущему и он является продолжает предыдущего
                         //
-                        if (::isReviewFormatEquals(lastFormatRange.format, range.format)
+                        if (isReviewFormatEquals(lastFormatRange.format, range.format)
                             && ((lastFormatRange.start + lastFormatRange.length) == start)) {
                             //
                             // Объединяем их в одну сущность
@@ -1177,7 +1180,8 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                             // ... если в самом начале разрыва находится часть выделения
                             //     предыдущего блока, объединяем их
                             //
-                            if (range.start == 0) {
+                            if (range.start == 0
+                                && isFormattingEquals(ranges.last().format, range.format)) {
                                 ranges.last().length += range.length + 1;
                             }
                             //
@@ -1185,7 +1189,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                             //     корректируя стартовую позицию
                             //
                             else {
-                                range.start += previousBlock.length() + 1;
+                                range.start += previousBlock.length();
                                 ranges.append(range);
                             }
                         }
@@ -1235,7 +1239,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                         //
                         // Если следующий формат равен предыдущему и он является продолжает предыдущего
                         //
-                        if (::isFormattingEquals(lastFormatRange.format, range.format)
+                        if (isFormattingEquals(lastFormatRange.format, range.format)
                             && ((lastFormatRange.start + lastFormatRange.length) == start)) {
                             //
                             // Объединяем их в одну сущность
