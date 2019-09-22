@@ -400,7 +400,12 @@ QString ScenarioXml::scenarioToXml()
             //
             // Если разрыв, пробуем сшить
             //
+            QTextBlock previousBlock;
             if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)) {
+                //
+                // ... сохраняем начальный блок разрыва абзаца
+                //
+                previousBlock = currentBlock;
                 do {
                     currentBlock = currentBlock.next();
                 } while (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsCorrection));
@@ -417,11 +422,19 @@ QString ScenarioXml::scenarioToXml()
             //
             if (needWrite) {
                 //
+                // NOTE: все данные параграфа остаются в первом блоке, если есть разрыв, так что в
+                //       этом случае нужно смотреть по первому блоку
+                //
+                auto blockUserData = previousBlock.isValid()
+                                     ? previousBlock.userData()
+                                     : currentBlock.userData();
+
+                //
                 // Если возможно, сохраним uuid, цвета элемента, штамп и его заголовок
                 //
                 QString uuidColorsAndTitle;
                 if (canHaveColors) {
-                    SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(currentBlock.userData());
+                    SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(blockUserData);
                     if (info == nullptr) {
                         info = new SceneHeadingBlockInfo;
                         currentBlock.setUserData(info);
@@ -448,10 +461,12 @@ QString ScenarioXml::scenarioToXml()
 
                 //
                 // Запишем закладку, если установлена для блока
+                // NOTE: все данные параграфа остаются в первом блоке, если есть разрыв, так что в
+                //       этом случае нужно смотреть по первому блоку
                 //
                 QString bookmark;
                 {
-                    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(currentBlock.userData());
+                    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(blockUserData);
                     if (blockInfo != nullptr
                         && blockInfo->hasBookmark()) {
                         bookmark = QString(" %1=\"%2\"").arg(ATTRIBUTE_BOOKMARK).arg(TextEditHelper::toHtmlEscaped(blockInfo->bookmark()));
@@ -472,7 +487,7 @@ QString ScenarioXml::scenarioToXml()
                 //
                 // Пишем редакторские комментарии, если они есть в блоке
                 //
-                if (::hasReviewMarks(currentBlock)) {
+                if (hasReviewMarks(previousBlock) || hasReviewMarks(currentBlock)) {
                     auto writeReviewMark = [&currentBlockXml] (const QTextLayout::FormatRange& _range) {
                         currentBlockXml.append(QString("<%1").arg(kNodeReview));
                         //
@@ -516,8 +531,35 @@ QString ScenarioXml::scenarioToXml()
                     //
                     // Пишем тело
                     //
+                    // ... но сперва сформируем список форматов, скорректировав его, если был разрыв
+                    //
+                    auto ranges = [previousBlock, currentBlock] {
+                        if (!previousBlock.isValid()) {
+                            return currentBlock.textFormats();
+                        }
+
+                        auto ranges = previousBlock.textFormats();
+                        for (QTextLayout::FormatRange range : currentBlock.textFormats()) {
+                            //
+                            // ... если в самом начале разрыва находится часть выделения
+                            //     предыдущего блока, объединяем их
+                            //
+                            if (range.start == 0) {
+                                ranges.last().length += range.length + 1;
+                            }
+                            //
+                            // ... в противном случае просто сохраняем выделение,
+                            //     корректируя стартовую позицию
+                            //
+                            else {
+                                range.start += previousBlock.length() + 1;
+                                ranges.append(range);
+                            }
+                        }
+                        return ranges;
+                    } ();
                     QTextLayout::FormatRange lastFormatRange{0, 0, QTextCharFormat()};
-                    for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                    for (const QTextLayout::FormatRange& range : ranges) {
                         if (!range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
                             continue;
                         }
@@ -561,7 +603,7 @@ QString ScenarioXml::scenarioToXml()
                 //
                 // Пишем форматирование текста блока
                 //
-                if (::hasFormatting(currentBlock)) {
+                if (hasFormatting(previousBlock) || hasFormatting(currentBlock)) {
                     auto writeFormatting = [&currentBlockXml] (const QTextLayout::FormatRange& _range) {
                         currentBlockXml.append(QString("<%1").arg(kNodeFormat));
                         //
@@ -592,8 +634,35 @@ QString ScenarioXml::scenarioToXml()
                     //
                     // Пишем тело
                     //
+                    // ... но сперва сформируем список форматов, скорректировав его, если был разрыв
+                    //
+                    auto ranges = [previousBlock, currentBlock] {
+                        if (!previousBlock.isValid()) {
+                            return currentBlock.textFormats();
+                        }
+
+                        auto ranges = previousBlock.textFormats();
+                        for (QTextLayout::FormatRange range : currentBlock.textFormats()) {
+                            //
+                            // ... если в самом начале разрыва находится часть выделения
+                            //     предыдущего блока, объединяем их
+                            //
+                            if (range.start == 0) {
+                                ranges.last().length += range.length + 1;
+                            }
+                            //
+                            // ... в противном случае просто сохраняем выделение,
+                            //     корректируя стартовую позицию
+                            //
+                            else {
+                                range.start += previousBlock.length() + 1;
+                                ranges.append(range);
+                            }
+                        }
+                        return ranges;
+                    } ();
                     QTextLayout::FormatRange lastFormatRange{0, 0, QTextCharFormat()};
-                    for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                    for (const QTextLayout::FormatRange& range : ranges) {
                         if (!range.format.boolProperty(ScenarioBlockStyle::PropertyIsFormatting)) {
                             continue;
                         }
@@ -815,7 +884,12 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
             //
             // Если разрыв, пробуем сшить
             //
+            QTextBlock previousBlock;
             if (currentBlock.blockFormat().boolProperty(ScenarioBlockStyle::PropertyIsBreakCorrectionStart)) {
+                //
+                // ... сохраняем начальный блок разрыва абзаца
+                //
+                previousBlock = currentBlock;
                 QTextCursor breakCursor = cursor;
                 do {
                     breakCursor.movePosition(QTextCursor::NextBlock);
@@ -827,6 +901,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     textToSave += " " + breakCursor.block().text();
                     breakCursor.movePosition(QTextCursor::EndOfBlock);
                     cursor = breakCursor;
+                    currentBlock = cursor.block();
                 }
             }
 
@@ -851,13 +926,21 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 writer.writeStartElement(currentNode);
 
                 //
+                // NOTE: все данные параграфа остаются в первом блоке, если есть разрыв, так что в
+                //       этом случае нужно смотреть по первому блоку
+                //
+                auto blockUserData = previousBlock.isValid()
+                                     ? previousBlock.userData()
+                                     : currentBlock.userData();
+
+                //
                 // Если возможно, сохраним uuid, цвета элемента и его название
                 //
                 if (canHaveUuidColorsAndTitle) {
-                    SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(currentBlock.userData());
+                    SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(blockUserData);
                     if (info == nullptr) {
                         SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
-                        currentBlock.setUserData(info);
+                        previousBlock.setUserData(info);
                     }
                     //
                     if (!info->uuid().isEmpty()) {
@@ -882,8 +965,8 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 //
                 // Запишем закладку, если установлена для блока
                 //
-                if (currentBlock.userData() != nullptr) {
-                    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(currentBlock.userData());
+                if (blockUserData != nullptr) {
+                    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(blockUserData);
                     if (blockInfo->hasBookmark()) {
                         writer.writeAttribute(ATTRIBUTE_BOOKMARK, TextEditHelper::toHtmlEscaped(blockInfo->bookmark()));
                         writer.writeAttribute(ATTRIBUTE_BOOKMARK_COLOR, blockInfo->bookmarkColor().name());
@@ -902,7 +985,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 //
                 // Пишем редакторские комментарии, если они есть в блоке
                 //
-                if (::hasReviewMarks(currentBlock)) {
+                if (hasReviewMarks(previousBlock) || hasReviewMarks(currentBlock)) {
                     auto writeReviewMark = [&writer] (const QTextLayout::FormatRange& _range) {
                         writer.writeStartElement(kNodeReview);
                         //
@@ -943,8 +1026,35 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     //
                     // Пишем тело
                     //
+                    // ... но сперва сформируем список форматов, скорректировав его, если был разрыв
+                    //
+                    auto ranges = [previousBlock, currentBlock] {
+                        if (!previousBlock.isValid()) {
+                            return currentBlock.textFormats();
+                        }
+
+                        auto ranges = previousBlock.textFormats();
+                        for (QTextLayout::FormatRange range : currentBlock.textFormats()) {
+                            //
+                            // ... если в самом начале разрыва находится часть выделения
+                            //     предыдущего блока, объединяем их
+                            //
+                            if (range.start == 0) {
+                                ranges.last().length += range.length + 1;
+                            }
+                            //
+                            // ... в противном случае просто сохраняем выделение,
+                            //     корректируя стартовую позицию
+                            //
+                            else {
+                                range.start += previousBlock.length() + 1;
+                                ranges.append(range);
+                            }
+                        }
+                        return ranges;
+                    } ();
                     QTextLayout::FormatRange lastFormatRange{0, 0, QTextCharFormat()};
-                    for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                    for (const QTextLayout::FormatRange& range : ranges) {
                         if (!range.format.boolProperty(ScenarioBlockStyle::PropertyIsReviewMark)) {
                             continue;
                         }
@@ -1026,7 +1136,7 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                 //
                 // Пишем форматирование текста блока
                 //
-                if (::hasFormatting(currentBlock)) {
+                if (hasFormatting(previousBlock) || hasFormatting(currentBlock)) {
                     auto writeFormatting = [&writer] (const QTextLayout::FormatRange& _range) {
                         writer.writeStartElement(kNodeFormat);
                         //
@@ -1054,8 +1164,35 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     //
                     // Пишем тело
                     //
+                    // ... но сперва сформируем список форматов, скорректировав его, если был разрыв
+                    //
+                    auto ranges = [previousBlock, currentBlock] {
+                        if (!previousBlock.isValid()) {
+                            return currentBlock.textFormats();
+                        }
+
+                        auto ranges = previousBlock.textFormats();
+                        for (QTextLayout::FormatRange range : currentBlock.textFormats()) {
+                            //
+                            // ... если в самом начале разрыва находится часть выделения
+                            //     предыдущего блока, объединяем их
+                            //
+                            if (range.start == 0) {
+                                ranges.last().length += range.length + 1;
+                            }
+                            //
+                            // ... в противном случае просто сохраняем выделение,
+                            //     корректируя стартовую позицию
+                            //
+                            else {
+                                range.start += previousBlock.length() + 1;
+                                ranges.append(range);
+                            }
+                        }
+                        return ranges;
+                    } ();
                     QTextLayout::FormatRange lastFormatRange{0, 0, QTextCharFormat()};
-                    for (const QTextLayout::FormatRange& range : currentBlock.textFormats()) {
+                    for (const QTextLayout::FormatRange& range : ranges) {
                         if (!range.format.boolProperty(ScenarioBlockStyle::PropertyIsFormatting)) {
                             continue;
                         }
