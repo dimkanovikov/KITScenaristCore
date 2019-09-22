@@ -656,7 +656,7 @@ void ScenarioTextEdit::setTextBold(bool _bold)
     while (position < lastPosition) {
         cursor.setPosition(position);
         cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
-        if (cursor.position() < lastPosition) {
+        if (cursor.position() > lastPosition) {
             cursor.setPosition(lastPosition, QTextCursor::KeepAnchor);
         }
 
@@ -683,7 +683,7 @@ void ScenarioTextEdit::setTextItalic(bool _italic)
     while (position < lastPosition) {
         cursor.setPosition(position);
         cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
-        if (cursor.position() < lastPosition) {
+        if (cursor.position() > lastPosition) {
             cursor.setPosition(lastPosition, QTextCursor::KeepAnchor);
         }
 
@@ -710,7 +710,7 @@ void ScenarioTextEdit::setTextUnderline(bool _underline)
     while (position < lastPosition) {
         cursor.setPosition(position);
         cursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
-        if (cursor.position() < lastPosition) {
+        if (cursor.position() > lastPosition) {
             cursor.setPosition(lastPosition, QTextCursor::KeepAnchor);
         }
 
