@@ -437,7 +437,12 @@ QString ScenarioXml::scenarioToXml()
                     SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(blockUserData);
                     if (info == nullptr) {
                         info = new SceneHeadingBlockInfo;
-                        currentBlock.setUserData(info);
+                        if (previousBlock.isValid()) {
+                            previousBlock.setUserData(info);
+                        } else {
+                            currentBlock.setUserData(info);
+                        }
+                        blockUserData = info;
                     }
                     //
                     if (!info->uuid().isEmpty()) {
@@ -942,7 +947,12 @@ QString ScenarioXml::scenarioToXml(int _startPosition, int _endPosition, bool _c
                     SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(blockUserData);
                     if (info == nullptr) {
                         SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
-                        previousBlock.setUserData(info);
+                        if (previousBlock.isValid()) {
+                            previousBlock.setUserData(info);
+                        } else {
+                            currentBlock.setUserData(info);
+                        }
+                        blockUserData = info;
                     }
                     //
                     if (!info->uuid().isEmpty()) {
