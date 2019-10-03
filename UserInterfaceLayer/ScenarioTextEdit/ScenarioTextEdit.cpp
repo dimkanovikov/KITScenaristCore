@@ -196,6 +196,11 @@ void ScenarioTextEdit::changeScenarioBlockType(ScenarioBlockStyle::Type _blockTy
     cursor.beginEditBlock();
 
     //
+    // Первым делом очищаем пользовательские данные
+    //
+    cursor.block().setUserData(nullptr);
+
+    //
     // Если работаем в режиме поэпизодника и описание сцены меняется на заголовок сцены,
     // или папки, и после текущего блока не идёт блок с описанием сцены (т.е. мы внутри сцены с текстом),
     // то текущий блок нужно перенести в конец текущей сцены
@@ -2063,6 +2068,7 @@ void ScenarioTextEdit::cleanScenarioTypeFromBlock()
 
 void ScenarioTextEdit::applyScenarioTypeToBlock(ScenarioBlockStyle::Type _blockType)
 {
+
     ScriptTextCursor cursor = textCursor();
     cursor.beginEditBlock();
 
