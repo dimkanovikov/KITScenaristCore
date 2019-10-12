@@ -2300,6 +2300,10 @@ O projeto não foi sincronizado.</translation>
         <source>Language will be changed after application restart.</source>
         <translation>O idioma será alterado após o reinício da aplicação.</translation>
     </message>
+    <message>
+        <source>HIDPI scaling option will be applied after application restart.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::SettingsTemplatesManager</name>
@@ -3776,6 +3780,10 @@ Parágrafo</translation>
     <message>
         <source>Tools module</source>
         <translation>Módulo de Ferramentas</translation>
+    </message>
+    <message>
+        <source>Enable HIDPI scaling</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

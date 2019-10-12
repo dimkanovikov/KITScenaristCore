@@ -2305,6 +2305,10 @@ Project didn&apos;t synchronized.</source>
         <source>Language will be changed after application restart.</source>
         <translation>Мову буде змінено після перезапуску додатку.</translation>
     </message>
+    <message>
+        <source>HIDPI scaling option will be applied after application restart.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::SettingsTemplatesManager</name>
@@ -3804,6 +3808,10 @@ Paragraph</source>
     <message>
         <source>Tools module</source>
         <translation>Модуль інструментів</translation>
+    </message>
+    <message>
+        <source>Enable HIDPI scaling</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
