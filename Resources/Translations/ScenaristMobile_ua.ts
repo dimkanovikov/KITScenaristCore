@@ -1326,6 +1326,18 @@ Project didn&apos;t synchronized.</source>
         <source>Chron.</source>
         <translation>Тривалість.</translation>
     </message>
+    <message>
+        <source>Conflicted version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script changes conflict detected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::SettingsManager</name>
@@ -1685,6 +1697,10 @@ Let&apos;s create the first one!</source>
         <source>Use corkboard background</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Use keyboard preedit ability (experimental)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
@@ -1721,6 +1737,14 @@ Let&apos;s create the first one!</source>
     </message>
     <message>
         <source>Clear formatting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undo last action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redo previously undone action</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1791,11 +1815,11 @@ Your subscription is active until</source>
     <name>UserInterface::AccountView</name>
     <message>
         <source>Account is active until: </source>
-        <translation>Акаунт активний до:</translation>
+        <translation type="vanished">Акаунт активний до:</translation>
     </message>
     <message>
         <source>Account is inactive</source>
-        <translation>Акаунт не активний</translation>
+        <translation type="vanished">Акаунт не активний</translation>
     </message>
     <message>
         <source>Used %1 Gb from %2 Gb</source>
@@ -1808,6 +1832,14 @@ Your subscription is active until</source>
     <message>
         <source>Login</source>
         <translation>Увійти</translation>
+    </message>
+    <message>
+        <source>Cloud service subscription is active until: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cloud service subscription is inactive</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
