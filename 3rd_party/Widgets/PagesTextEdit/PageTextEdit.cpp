@@ -2477,6 +2477,16 @@ void PageTextEdit::dropEvent(QDropEvent *e)
  */
 void PageTextEdit::inputMethodEvent(QInputMethodEvent *e)
 {
+    //
+    // NOTE: Баг обнаруженный в последней версии iOS, из-за которого скачет курсор во время набора текста
+    //
+    for (auto attribute : e->attributes()) {
+        if (attribute.type == QInputMethodEvent::Selection
+            && attribute.start < 0 && attribute.length == 0) {
+            return;
+        }
+    }
+
     Q_D(PageTextEdit);
 #ifdef QT_KEYPAD_NAVIGATION
     if (d->control->textInteractionFlags() & Qt::TextEditable
