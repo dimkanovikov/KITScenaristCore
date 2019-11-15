@@ -207,7 +207,7 @@ void ScenarioTextDocument::insertFromMime(int _insertPosition, const QString& _m
     }
 }
 
-int ScenarioTextDocument::applyPatch(const QString& _patch)
+int ScenarioTextDocument::applyPatch(const QString& _patch, bool _checkXml)
 {
     updateScenarioXml();
     saveChanges();
@@ -218,7 +218,7 @@ int ScenarioTextDocument::applyPatch(const QString& _patch)
     // Определим xml для применения патча
     //
     const QString patchUncopressed = DatabaseHelper::uncompress(_patch);
-    auto xmlsForUpdate = DiffMatchPatchHelper::changedXml(m_scenarioXml, patchUncopressed);
+    auto xmlsForUpdate = DiffMatchPatchHelper::changedXml(m_scenarioXml, patchUncopressed, _checkXml);
     if (!xmlsForUpdate.first.isValid()
         || !xmlsForUpdate.second.isValid()) {
 

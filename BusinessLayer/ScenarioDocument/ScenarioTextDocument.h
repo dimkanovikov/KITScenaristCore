@@ -75,7 +75,7 @@ namespace BusinessLogic
         /**
          * @brief Применить патч
          */
-        int applyPatch(const QString& _patch);
+        int applyPatch(const QString& _patch, bool _checkXml = false);
 
         /**
          * @brief Применить множество патчей
