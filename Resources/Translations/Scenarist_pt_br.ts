@@ -193,26 +193,7 @@ Türkçe: Recep Burak Yak
 </translation>
     </message>
     <message>
-        <source>Our heroes, who help us to create international versions:
-Azərbaycan: Tarlan Rasulzadeh
-Deutsch: Michael Krämer
-English: Eric Wayne &amp; Soyung Key
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Italiano: Luca Giliberto
-Қазақ: Алпамыс Баткалов
-Magyar: Gabor
-Polski: Rafał Puka, Bartłomiej Jaskulski
-Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
-Русский: Димка Новиков
-Slovenski: Andraž Pušnik, Martin Srebotnjak
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-తెలుగు: Eshwar Mittapalli
-</source>
+        <source>Our heroes, who help us to create international versions:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
