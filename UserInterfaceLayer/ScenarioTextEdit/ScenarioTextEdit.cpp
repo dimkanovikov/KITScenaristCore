@@ -798,6 +798,10 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
     }
 #endif
 
+    if (isReadOnly()) {
+        return;
+    }
+
     //
     // Отмену и повтор последнего действия, делаем без последующей обработки
     //
@@ -1838,6 +1842,10 @@ QMimeData* ScenarioTextEdit::createMimeDataFromSelection() const
 
 void ScenarioTextEdit::insertFromMimeData(const QMimeData* _source)
 {
+    if (isReadOnly()) {
+        return;
+    }
+
     QTextCursor cursor = textCursor();
     cursor.beginEditBlock();
 
