@@ -5307,6 +5307,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <source>Macedonian</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Dutch</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ShareDialog</name>
