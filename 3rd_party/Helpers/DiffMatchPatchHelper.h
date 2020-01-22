@@ -605,6 +605,9 @@ private:
             addTag("undefined", s_tagsMap, s_charIndex);
             addTag("lyrics", s_tagsMap, s_charIndex);
 
+            addTag("review", s_tagsMap, s_charIndex);
+            addTag("reviews", s_tagsMap, s_charIndex);
+
             /*
                 ("<scene_heading>", "가")
                 ("</scene_heading>", "각")
@@ -650,6 +653,10 @@ private:
                 ("</undefined>", "갧")
                 ("<lirycs>", "갨")
                 ("</lirycs>", "갩")
+
+                ("<reviews>", "갬")
+                ("</reviews>", "갭")
+                ("</review>", "갫")
              */
         }
         return s_tagsMap;
