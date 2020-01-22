@@ -46,7 +46,8 @@ public:
         German,
         Catalan,
         Slovenian,
-        Macedonian
+        Macedonian,
+        Dutch
     };
 
     /**
