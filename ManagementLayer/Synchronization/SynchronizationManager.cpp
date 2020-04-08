@@ -2039,7 +2039,7 @@ void SynchronizationManager::checkNetworkState()
     // Если интернет активен, запрашиваем каждые 5 секунд
     // Неактивен - каждую секунду
     //
-    const int checkTimeout = m_internetConnectionStatus == Active ? 5000 : 1000;
+    const int checkTimeout = m_internetConnectionStatus == Active ? 30000 : 1000;
     QTimer::singleShot(checkTimeout, this, &SynchronizationManager::checkNetworkState);
 
     s_isInCheckNetworkState = false;
