@@ -47,7 +47,9 @@ public:
         Catalan,
         Slovenian,
         Macedonian,
-        Dutch
+        Dutch,
+        Greek,
+        GreekPolytonic
     };
 
     /**

@@ -97,6 +97,12 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Dutch:
             code = "nl_NL";
             break;
+        case Greek:
+            code = "el_GR";
+            break;
+        case GreekPolytonic:
+            code = "el_GR_polyton";
+            break;
         default:
             break;
     }
