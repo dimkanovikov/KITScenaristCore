@@ -118,7 +118,15 @@ QString FdxImporter::importScript(const ImportParameters& _importParameters) con
                     //
                     // ... читаем текст
                     //
-                    paragraphText.append(textNode.text());
+                    if (!textNode.text().isEmpty()) {
+                        paragraphText.append(textNode.text());
+                    } else {
+                        //
+                        // NOTE: Qt пропускает узлы содержащие только пробельные символы,
+                        //       поэтому прибегнем к небольшому воркэраунду
+                        //
+                        paragraphText.append(" ");
+                    }
 
                     textNode = textNode.nextSiblingElement("Text");
                 }
