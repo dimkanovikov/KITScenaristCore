@@ -122,7 +122,8 @@ namespace UserInterface
         /**
          * @brief Показывать ли автодополнения в пустых блоках
          */
-        void setShowSuggestionsInEmptyBlocks(bool _show);
+        void setShowCharactersSuggestions(bool _show);
+        bool showCharactersSuggestions() const;
 
         /**
          * @brief Установить необходимость проигрывания звуков клавиатуры
@@ -284,12 +285,6 @@ namespace UserInterface
         void insertFromMimeData(const QMimeData* _source) override;
         /** @} */
 
-        /**
-         * @brief Переопределяем, чтобы запрещать дополнять в пустых блоках при установке
-         *		  соответствующего флага
-         */
-        bool canComplete() const override;
-
     private:
         /**
          * @brief Скорректировать позиции курсоров соавторов
@@ -406,7 +401,7 @@ namespace UserInterface
         /**
          * @brief Показывать автодополения в пустых блоках
          */
-        bool m_showSuggestionsInEmptyBlocks;
+        bool m_showCharacterSuggestions;
 
         /**
          * @brief Включена ли опция проигрывания звуков клавиатруы

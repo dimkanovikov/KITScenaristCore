@@ -38,11 +38,15 @@ void CharacterHandler::prehandle()
     QTextBlock currentBlock = cursor.block();
     // ... текст блока
     QString currentBlockText = currentBlock.text().trimmed();
+    if (!currentBlockText.isEmpty()) {
+        return;
+    }
 
-    //
-    // Пробуем определить кто сейчас должен говорить
-    //
-    if (currentBlockText.isEmpty()) {
+    QAbstractItemModel* model = 0;
+    if (editor()->showCharactersSuggestions()) {
+        //
+        // Пробуем определить кто сейчас должен говорить
+        //
         QString previousCharacter, character;
 
         //
@@ -79,7 +83,6 @@ void CharacterHandler::prehandle()
         //
         // Показываем всплывающую подсказку
         //
-        QAbstractItemModel* model = 0;
         if (!character.isEmpty()) {
             m_sceneCharactersModel->setStringList(QStringList() << character);
             model = m_sceneCharactersModel;
@@ -89,8 +92,10 @@ void CharacterHandler::prehandle()
         } else {
             model = StorageFacade::researchStorage()->characters();
         }
-        editor()->complete(model, QString());
+    } else {
+        model = StorageFacade::researchStorage()->characters();
     }
+    editor()->complete(model, QString());
 }
 void CharacterHandler::handleEnter(QKeyEvent* _event)
 {
@@ -362,7 +367,8 @@ void CharacterHandler::complete(const QString& _currentBlockText, const QString&
             //
             // Когда введён один символ имени пробуем оптимизировать поиск персонажей из текущей сцены
             //
-            if (_cursorBackwardText.length() < 2) {
+            if (editor()->showCharactersSuggestions()
+                && _cursorBackwardText.length() < 2) {
                 cursor.movePosition(QTextCursor::PreviousBlock);
                 while (!cursor.atStart()
                        && ScenarioBlockStyle::forBlock(cursor.block()) != ScenarioBlockStyle::SceneHeading) {

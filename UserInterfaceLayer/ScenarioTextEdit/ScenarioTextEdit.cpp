@@ -73,7 +73,7 @@ ScenarioTextEdit::ScenarioTextEdit(QWidget* _parent) :
     m_correctDoubleCapitals(false),
     m_replaceThreeDots(false),
     m_smartQuotes(false),
-    m_showSuggestionsInEmptyBlocks(false),
+    m_showCharacterSuggestions(false),
     m_shortcutsManager(new ShortcutsManager(this))
 {
     setAttribute(Qt::WA_KeyCompression);
@@ -417,11 +417,16 @@ void ScenarioTextEdit::setAutoReplacing(bool _capitalizeFirstWord, bool _correct
     }
 }
 
-void ScenarioTextEdit::setShowSuggestionsInEmptyBlocks(bool _show)
+void ScenarioTextEdit::setShowCharactersSuggestions(bool _show)
 {
-    if (m_showSuggestionsInEmptyBlocks != _show) {
-        m_showSuggestionsInEmptyBlocks = _show;
+    if (m_showCharacterSuggestions != _show) {
+        m_showCharacterSuggestions = _show;
     }
+}
+
+bool ScenarioTextEdit::showCharactersSuggestions() const
+{
+    return m_showCharacterSuggestions;
 }
 
 void ScenarioTextEdit::setKeyboardSoundEnabled(bool _enabled)
@@ -1903,19 +1908,6 @@ void ScenarioTextEdit::insertFromMimeData(const QMimeData* _source)
 #endif
 
     cursor.endEditBlock();
-}
-
-bool ScenarioTextEdit::canComplete() const
-{
-    bool result = true;
-    //
-    // Если нельзя показывать в пустих блоках, проверяем не пуст ли блок
-    //
-    if (!m_showSuggestionsInEmptyBlocks) {
-        result = textCursor().block().text().isEmpty() == false;
-    }
-
-    return result;
 }
 
 void ScenarioTextEdit::aboutCorrectAdditionalCursors(int _position, int _charsRemoved, int _charsAdded)
