@@ -1454,7 +1454,9 @@ void ScenarioDocument::load(const QString& _scenario)
     //
     {
         aboutContentsChange(0, m_document->characterCount(), 0);
-        m_document->clear();
+        QTextCursor cursor(m_document);
+        cursor.select(QTextCursor::Document);
+        cursor.deleteChar();
     }
 
     //
