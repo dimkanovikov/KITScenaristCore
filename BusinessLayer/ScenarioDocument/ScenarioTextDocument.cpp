@@ -26,7 +26,7 @@
 //
 // Для отладки работы с патчами
 //
-//#define PATCH_DEBUG
+#define PATCH_DEBUG
 #ifdef PATCH_DEBUG
 #include <QDebug>
 #endif
@@ -55,18 +55,6 @@ namespace {
     static Domain::ScenarioChange* saveChange(const QString& _undoPatch, const QString& _redoPatch) {
         const QString username = DataStorageLayer::StorageFacade::userName();
         return DataStorageLayer::StorageFacade::scenarioChangeStorage()->append(username, _undoPatch, _redoPatch);
-    }
-
-    const QString kScriptTag = "scenario";
-
-    /**
-     * @brief Сконвертировать QDomNode в строку
-     */
-    static QString nodeToString(const QDomNode& _node) {
-            QString ret;
-            QTextStream textStream(&ret);
-            _node.save(textStream, 0);
-            return ret;
     }
 
     /**
@@ -139,8 +127,11 @@ namespace {
             }
         }
 
-        if (xmlParts.isEmpty()) {
-            xmlParts.append(_xml);
+        //
+        // Добавляем весь оставшийся разбитый xml
+        //
+        if (!startTag.isEmpty()) {
+            xmlParts.append(_xml.mid(partStart));
         }
 
         return xmlParts;
