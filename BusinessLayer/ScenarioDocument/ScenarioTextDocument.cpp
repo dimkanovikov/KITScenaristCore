@@ -68,11 +68,110 @@ namespace {
             _node.save(textStream, 0);
             return ret;
     }
+
+    /**
+     * @brief Разделить заданный xml-текст на блоки
+     */
+    QStringList splitXml(const QString& _xml)
+    {
+        QStringList xmlParts;
+        int partStart = 0;
+        bool isReadingStartTag = true;
+        QString startTag;
+        bool isReadingNextTag = false;
+        QString nextTag;
+        for (int currentPosition = 0; currentPosition < _xml.size(); ++currentPosition) {
+            const auto& character = _xml[currentPosition];
+            if (character == '<') {
+                if (isReadingStartTag) {
+                    partStart = currentPosition;
+                    //
+                    // Очищаем от символов переноса строк после предыдущей части
+                    //
+                    startTag.clear();
+                } else {
+                    isReadingNextTag = true;
+                    nextTag.clear();
+                }
+            } else if(character == '>') {
+                if (isReadingStartTag) {
+                    //
+                    // Одинарный тэг
+                    //
+                    if (_xml[currentPosition - 1] == '/') {
+                        xmlParts.append(_xml.mid(partStart, currentPosition - partStart + 1));
+                        startTag.clear();
+                    }
+                    //
+                    // Игнорируем пустые завершаю тэги
+                    //
+                    else if (_xml.mid(partStart, currentPosition - partStart + 1).contains('/')) {
+                        startTag.clear();
+                    }
+                    //
+                    // Преходим к считыванию контента
+                    //
+                    else {
+                        if (startTag.contains(' ')) {
+                            startTag = startTag.split(' ').first();
+                        }
+                        isReadingStartTag = false;
+                    }
+                } else {
+                    isReadingNextTag = false;
+
+                    if (startTag == nextTag) {
+                        xmlParts.append(_xml.mid(partStart, currentPosition - partStart + 1));
+                        isReadingStartTag = true;
+                        startTag.clear();
+                    }
+                }
+            } else if (character == '/') {
+                //
+                // Пропускаем символ завершения тэга, чтобы не считывать его
+                //
+            } else {
+                if (isReadingStartTag) {
+                    startTag += character;
+                } else if (isReadingNextTag) {
+                    nextTag += character;
+                }
+            }
+        }
+
+        if (xmlParts.isEmpty()) {
+            xmlParts.append(_xml);
+        }
+
+        return xmlParts;
+    }
+
+    /**
+     * @brief Получить обычный текст из xml-текста
+     */
+    QString plainText(const QString& _xml)
+    {
+        const QString cdata = QLatin1String("<![CDATA[");
+        const auto startPos = _xml.indexOf(cdata) + cdata.length();
+        if (startPos == -1) {
+            return {};
+        }
+        const auto endPos = _xml.indexOf("]]>", startPos);
+        if (endPos == -1) {
+            return {};
+        }
+        return _xml.mid(startPos, endPos - startPos);
+    }
 }
 
 
 void ScenarioTextDocument::updateBlockRevision(QTextBlock& _block)
 {
+    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(_block.userData());
+    if (blockInfo != nullptr) {
+        blockInfo->updateId();
+    }
+
     _block.setRevision(_block.revision() + 1);
 }
 
@@ -241,14 +340,13 @@ int ScenarioTextDocument::applyPatch(const QString& _patch, bool _checkXml)
         return -1;
     }
 
+    //
+    // Удалим одинаковые первые и последние xml-блоки
+    //
+    removeIdenticalParts(xmlsForUpdate);
+
     xmlsForUpdate.first.xml = ScenarioXml::makeMimeFromXml(xmlsForUpdate.first.xml);
     xmlsForUpdate.second.xml = ScenarioXml::makeMimeFromXml(xmlsForUpdate.second.xml);
-
-    //
-    // Удалим одинаковые первые и последние символы
-    //
-    removeIdenticalParts(xmlsForUpdate, false);
-    removeIdenticalParts(xmlsForUpdate, true);
 
     //
     // Выделяем текст сценария, соответствующий xml для обновления
@@ -258,9 +356,27 @@ int ScenarioTextDocument::applyPatch(const QString& _patch, bool _checkXml)
     //
     // Определим позицию курсора в соответствии с декорациями
     //
-    const int selectionStartPos = m_corrector->correctedPosition(xmlsForUpdate.first.plainPos);
-    const int selectionEndPos = m_corrector->correctedPosition(xmlsForUpdate.first.plainPos
-                                                               + xmlsForUpdate.first.plainLength);
+    int selectionStartPos = 0;
+    int selectionEndPos = 0;
+    //
+    // Если начало и конец выделения равны и длина нулевая, значит произошли изменения
+    // в редакторских заметках или форматировании предыдущего блока
+    //
+    if (xmlsForUpdate.first.plainPos == xmlsForUpdate.second.plainPos
+        && xmlsForUpdate.first.plainLength == 0
+        && xmlsForUpdate.second.plainLength == 0) {
+        const auto block = findBlock(m_corrector->correctedPosition(xmlsForUpdate.first.plainPos));
+        selectionStartPos = block.previous().position();
+        selectionEndPos = selectionStartPos;
+    }
+    //
+    // В противном случае имеем обычную ситуацию
+    //
+    else {
+        selectionStartPos = m_corrector->correctedPosition(xmlsForUpdate.first.plainPos);
+        selectionEndPos = m_corrector->correctedPosition(xmlsForUpdate.first.plainPos
+                                                         + xmlsForUpdate.first.plainLength);
+    }
     //
     // ... собственно выделение
     //
@@ -676,162 +792,74 @@ void ScenarioTextDocument::updateBlocksIds(int _position, int _charsRemoved, int
     }
 }
 
-void ScenarioTextDocument::removeIdenticalParts(QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml>& _xmls, bool _reversed)
+void ScenarioTextDocument::removeIdenticalParts(QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml>& _xmls)
 {
-    //
-    // Распарсим документы
-    //
-    QDomDocument sourceDocument;
-    sourceDocument.setContent(_xmls.first.xml);
+    auto firstSplitted = splitXml(_xmls.first.xml);
+    auto secondSplitted = splitXml(_xmls.second.xml);
+    int posDelta = 0;
+    int lengthDelta = 0;
 
-    QDomDocument targetDocument;
-    targetDocument.setContent(_xmls.second.xml);
-
-    //
-    // Получим список обрабатываемых тегов
-    //
-    QDomNodeList sourceNodes = sourceDocument.firstChildElement(kScriptTag).childNodes();
-    QDomNodeList targetNodes = targetDocument.firstChildElement(kScriptTag).childNodes();
-
-    //
-    // Позиции первых/последних (в зависимости от _reversed) тегов из childs, содержащих тег <v>
-    //
-    int sourceCurrentNodePosition = _reversed ? getPrevChild(sourceNodes, sourceNodes.size())
-                                              : getNextChild(sourceNodes, -1);
-    int targetCurrentNodePosition = _reversed ? getPrevChild(targetNodes, targetNodes.size())
-                                              : getNextChild(targetNodes, -1);
-
-    //
-    // Предыдущие значения i1 и i2. Необходимы, поскольку последний удаляемые тег удалять не нужно.
-    // Нужно заменить его текст пустой строкой
-    //
-    int sourcePreviousNodePosition = -1;
-    int targetPreviousNodePosition = -1;
-
-    //
-    // Разбираем текст
-    //
-    while (((!_reversed                                                        // пока не дошли до конца, для прохода вперёд
-             && sourceCurrentNodePosition < sourceNodes.size() - 1
-             && targetCurrentNodePosition < targetNodes.size() - 1)
-            || (_reversed                                                      // или пока не дошли до начала, для прохода назад
-                && sourceCurrentNodePosition > 0
-                && targetCurrentNodePosition > 0))
-           && (nodeToString(sourceNodes.at(sourceCurrentNodePosition))         // и текст элементов совпадает
-               == nodeToString(targetNodes.at(targetCurrentNodePosition)))) {
-
-        //
-        // Получим текущие обрабатываемые строки
-        //
-        const QString sourceCurrentNodeText =
-                TextEditHelper::fromHtmlEscaped(
-                    sourceNodes
-                    .at(sourceCurrentNodePosition)
-                    .firstChildElement("v")
-                    .childNodes()
-                    .at(0).toCDATASection().data());
-
-        //
-        // Если идёт проход вперёд, то
-        //
-        if (!_reversed) {
+    int maxStepsCount = std::min(firstSplitted.size(), secondSplitted.size());
+    for (int i = 0; i < maxStepsCount; ++i) {
+        if (firstSplitted.at(i) == secondSplitted.at(i)) {
+            const auto text = plainText(firstSplitted.at(i));
             //
-            // ... удаляем предыдущую пустую ячейку, если есть
+            // Если впереди был блок без текста, сразу удаляем го
             //
-            if (sourcePreviousNodePosition != -1
-                && targetPreviousNodePosition != -1) {
-                sourceDocument.firstChildElement(kScriptTag).removeChild(sourceNodes.at(sourcePreviousNodePosition));
-                --sourceCurrentNodePosition;
-                //
-                targetDocument.firstChildElement(kScriptTag).removeChild(targetNodes.at(targetPreviousNodePosition));
-                --targetCurrentNodePosition;
+            if (text.isNull()) {
+                firstSplitted[i] = QString();
+                secondSplitted[i] = QString();
+            }
+            //
+            // В противном случае оставляем, чтобы накладывать патчи после него
+            //
+            else {
+                firstSplitted[i].remove(text);
+                secondSplitted[i].remove(text);
 
-                //
-                // ... скорректируем позицию затрагиваемую патчем на символ переноса строки
-                //
-                _xmls.first.plainPos += 1;
-                _xmls.first.plainLength -= 1;
+                const auto textLength = TextEditHelper::fromHtmlEscaped(text).length();
+                posDelta += textLength;
+                lengthDelta += textLength;
+            }
+            //
+            // Если подряд идут несколько одинаковых блоков, то чистим предыдущий
+            //
+            if (i > 0) {
+                const auto previousIndex = i - 1;
+                if (!firstSplitted.at(previousIndex).isEmpty()) {
+                    //
+                    // + перенос строки
+                    //
+                    posDelta += 1;
+                    lengthDelta += 1;
+                }
+                firstSplitted[previousIndex] = QString();
+                secondSplitted[previousIndex] = QString();
+            }
+        } else {
+            break;
+        }
+    }
+    for (int i = 0; i < maxStepsCount; ++i) {
+        if (firstSplitted.at(firstSplitted.size() - i - 1)
+            == secondSplitted.at(secondSplitted.size() - i - 1)) {
+            const auto text = plainText(firstSplitted.at(firstSplitted.size() - i - 1));
+            if (text.isEmpty()) {
+                break;
             }
 
-            //
-            // ... затираем текст ячеек
-            //
-            sourceNodes.at(sourceCurrentNodePosition).firstChildElement("v").firstChild().toCDATASection().setData("");
-            QDomElement sourceNodeReviews = sourceNodes.at(sourceCurrentNodePosition).firstChildElement("reviews");
-            sourceNodes.at(sourceCurrentNodePosition).removeChild(sourceNodeReviews);
-            //
-            targetNodes.at(targetCurrentNodePosition).firstChildElement("v").firstChild().toCDATASection().setData("");
-            QDomElement targetNodeReviews = targetNodes.at(targetCurrentNodePosition).firstChildElement("reviews");
-            targetNodes.at(targetCurrentNodePosition).removeChild(targetNodeReviews);
-
-            //
-            // ... скорректируем позицию затрагиваемую патчем на длину стёртой строки
-            //
-            _xmls.first.plainPos += sourceCurrentNodeText.size();
-            _xmls.first.plainLength -= sourceCurrentNodeText.size();
-        }
-        //
-        // Если идёт проход назад, то
-        //
-        else {
-            //
-            // ... убираем блок полностью
-            //
-            sourceDocument.firstChildElement(kScriptTag).removeChild(sourceNodes.at(sourceCurrentNodePosition));
-            targetDocument.firstChildElement(kScriptTag).removeChild(targetNodes.at(targetCurrentNodePosition));
-
-            //
-            // ... скорректируем позицию затрагиваемую патчем на длину строки + символ переноса строки
-            //
-            _xmls.first.plainLength -= sourceCurrentNodeText.size() + 1;
-        }
-
-        //
-        // Запомним предыдущие значения
-        //
-        sourcePreviousNodePosition = sourceCurrentNodePosition;
-        targetPreviousNodePosition = targetCurrentNodePosition;
-
-        //
-        // Получим новые
-        //
-        sourceCurrentNodePosition = _reversed ? getPrevChild(sourceNodes, sourceCurrentNodePosition)
-                                              : getNextChild(sourceNodes, sourceCurrentNodePosition);
-        targetCurrentNodePosition = _reversed ? getPrevChild(targetNodes, targetCurrentNodePosition)
-                                              : getNextChild(targetNodes, targetCurrentNodePosition);
-    }
-
-    //
-    // Результаты
-    //
-    _xmls.first.xml = sourceDocument.toString();
-    _xmls.second.xml = targetDocument.toString();
-}
-
-void ScenarioTextDocument::processLenghtPos(DiffMatchPatchHelper::ChangeXml& _xmls, int _k, bool _reversed)
-{
-    _xmls.plainLength -= _k;
-    if (!_reversed) {
-        _xmls.plainPos += _k;
-    }
-}
-
-int ScenarioTextDocument::getNextChild(QDomNodeList& list, int prev) {
-    for(int i = prev + 1; i < list.size(); ++i) {
-        QDomElement elem = list.at(i).firstChildElement("v");
-        if (!elem.isNull()) {
-            return i;
+            lengthDelta += TextEditHelper::fromHtmlEscaped(text).length() + 1; // + перенос строки
+            firstSplitted[firstSplitted.size() - i - 1] = QString();
+            secondSplitted[secondSplitted.size() - i - 1] = QString();
+        } else {
+            break;
         }
     }
-    return list.size();
-}
 
-int ScenarioTextDocument::getPrevChild(QDomNodeList& list, int prev) {
-    for(int i = prev - 1; i >= 0; --i) {
-        QDomElement elem = list.at(i).firstChildElement("v");
-        if (!elem.isNull()) {
-            return i;
-        }
-    }
-    return -1;
+    _xmls.first.xml = firstSplitted.join(QString());
+    _xmls.first.plainPos += posDelta;
+    _xmls.first.plainLength = std::max(_xmls.first.plainLength - lengthDelta, 0);
+    _xmls.second.xml = secondSplitted.join(QString());
+    _xmls.second.plainPos += posDelta;
+    _xmls.second.plainLength = std::max(_xmls.second.plainLength - lengthDelta, 0);
 }

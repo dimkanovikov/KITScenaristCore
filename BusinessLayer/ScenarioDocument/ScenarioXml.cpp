@@ -1775,6 +1775,8 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rema
                     if (!m_scenario->document()->visibleBlocksTypes().contains(tokenType)) {
                         cursor.block().setVisible(false);
                     }
+
+                    ScenarioTextDocument::updateBlockRevision(cursor);
                 }
                 //
                 // Обработка остальных тэгов
@@ -1871,6 +1873,8 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rema
                         formattingCursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, length);
                         formattingCursor.mergeCharFormat(format);
                     }
+
+                    ScenarioTextDocument::updateBlockRevision(cursor);
                 }
 
                 break;
@@ -1884,6 +1888,8 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rema
                     // Пишем сам текст
                     //
                     cursor.insertText(textToInsert);
+
+                    ScenarioTextDocument::updateBlockRevision(cursor);
                 }
                 break;
             }
