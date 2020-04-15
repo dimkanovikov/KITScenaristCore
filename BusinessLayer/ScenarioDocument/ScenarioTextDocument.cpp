@@ -10,9 +10,9 @@
 
 #include <DataLayer/Database/DatabaseHelper.h>
 
-#include <DataLayer/DataStorageLayer/StorageFacade.h>
 #include <DataLayer/DataStorageLayer/ScenarioChangeStorage.h>
 #include <DataLayer/DataStorageLayer/SettingsStorage.h>
+#include <DataLayer/DataStorageLayer/StorageFacade.h>
 
 #include <3rd_party/Helpers/PasswordStorage.h>
 
@@ -35,130 +35,136 @@ using namespace BusinessLogic;
 using DatabaseLayer::DatabaseHelper;
 
 namespace {
-    /**
-     * @brief Доступный размер изменений в редакторе
-     */
-    const int MAX_UNDO_REDO_STACK_SIZE = 100;
+/**
+ * @brief Доступный размер изменений в редакторе
+ */
+const int MAX_UNDO_REDO_STACK_SIZE = 100;
 
-    /**
-     * @brief Получить хэш текста
-     */
-    static QByteArray textMd5Hash(const QString& _text) {
-        QCryptographicHash hash(QCryptographicHash::Md5);
-        hash.addData(_text.toUtf8());
-        return hash.result();
-    }
-
-    /**
-     * @brief Сохранить изменение
-     */
-    static Domain::ScenarioChange* saveChange(const QString& _undoPatch, const QString& _redoPatch) {
-        const QString username = DataStorageLayer::StorageFacade::userName();
-        return DataStorageLayer::StorageFacade::scenarioChangeStorage()->append(username, _undoPatch, _redoPatch);
-    }
-
-    /**
-     * @brief Разделить заданный xml-текст на блоки
-     */
-    QStringList splitXml(const QString& _xml)
-    {
-        QStringList xmlParts;
-        int partStart = 0;
-        bool isReadingStartTag = true;
-        QString startTag;
-        bool isReadingNextTag = false;
-        QString nextTag;
-        for (int currentPosition = 0; currentPosition < _xml.size(); ++currentPosition) {
-            const auto& character = _xml[currentPosition];
-            if (character == '<') {
-                if (isReadingStartTag) {
-                    partStart = currentPosition;
-                    //
-                    // Очищаем от символов переноса строк после предыдущей части
-                    //
-                    startTag.clear();
-                } else {
-                    isReadingNextTag = true;
-                    nextTag.clear();
-                }
-            } else if(character == '>') {
-                if (isReadingStartTag) {
-                    //
-                    // Одинарный тэг
-                    //
-                    if (_xml[currentPosition - 1] == '/') {
-                        xmlParts.append(_xml.mid(partStart, currentPosition - partStart + 1));
-                        startTag.clear();
-                    }
-                    //
-                    // Игнорируем пустые завершаю тэги
-                    //
-                    else if (_xml.mid(partStart, currentPosition - partStart + 1).contains('/')) {
-                        startTag.clear();
-                    }
-                    //
-                    // Преходим к считыванию контента
-                    //
-                    else {
-                        if (startTag.contains(' ')) {
-                            startTag = startTag.split(' ').first();
-                        }
-                        isReadingStartTag = false;
-                    }
-                } else {
-                    isReadingNextTag = false;
-
-                    if (startTag == nextTag) {
-                        xmlParts.append(_xml.mid(partStart, currentPosition - partStart + 1));
-                        isReadingStartTag = true;
-                        startTag.clear();
-                    }
-                }
-            } else if (character == '/') {
-                //
-                // Пропускаем символ завершения тэга, чтобы не считывать его
-                //
-            } else {
-                if (isReadingStartTag) {
-                    startTag += character;
-                } else if (isReadingNextTag) {
-                    nextTag += character;
-                }
-            }
-        }
-
-        //
-        // Добавляем весь оставшийся разбитый xml
-        //
-        if (!startTag.isEmpty()) {
-            xmlParts.append(_xml.mid(partStart));
-        }
-
-        return xmlParts;
-    }
-
-    /**
-     * @brief Получить обычный текст из xml-текста
-     */
-    QString plainText(const QString& _xml)
-    {
-        const QString cdata = QLatin1String("<![CDATA[");
-        const auto startPos = _xml.indexOf(cdata) + cdata.length();
-        if (startPos == -1) {
-            return {};
-        }
-        const auto endPos = _xml.indexOf("]]>", startPos);
-        if (endPos == -1) {
-            return {};
-        }
-        return _xml.mid(startPos, endPos - startPos);
-    }
+/**
+ * @brief Получить хэш текста
+ */
+static QByteArray textMd5Hash(const QString &_text)
+{
+    QCryptographicHash hash(QCryptographicHash::Md5);
+    hash.addData(_text.toUtf8());
+    return hash.result();
 }
 
-
-void ScenarioTextDocument::updateBlockRevision(QTextBlock& _block)
+/**
+ * @brief Сохранить изменение
+ */
+static Domain::ScenarioChange *saveChange(const QString &_undoPatch, const QString &_redoPatch)
 {
-    TextBlockInfo* blockInfo = dynamic_cast<TextBlockInfo*>(_block.userData());
+    const QString username = DataStorageLayer::StorageFacade::userName();
+    return DataStorageLayer::StorageFacade::scenarioChangeStorage()->append(username, _undoPatch,
+                                                                            _redoPatch);
+}
+
+/**
+ * @brief Разделить заданный xml-текст на блоки
+ */
+QStringList splitXml(const QString &_xml)
+{
+    QStringList xmlParts;
+    int partStart = 0;
+    bool isReadingStartTag = true;
+    QString startTag;
+    bool isReadingNextTag = false;
+    QString nextTag;
+    for (int currentPosition = 0; currentPosition < _xml.size(); ++currentPosition) {
+        const auto &character = _xml[currentPosition];
+        if (character == '<') {
+            if (isReadingStartTag) {
+                partStart = currentPosition;
+                //
+                // Очищаем от символов переноса строк после предыдущей части
+                //
+                startTag.clear();
+            } else {
+                isReadingNextTag = true;
+                nextTag.clear();
+            }
+        } else if (character == '>') {
+            if (isReadingStartTag) {
+                //
+                // Одинарный тэг
+                //
+                if (_xml[currentPosition - 1] == '/') {
+                    xmlParts.append(_xml.mid(partStart, currentPosition - partStart + 1));
+                    startTag.clear();
+                }
+                //
+                // Игнорируем пустые завершаю тэги
+                //
+                else if (_xml.mid(partStart, currentPosition - partStart + 1).contains('/')) {
+//                    if (xmlParts.size() == 1) {
+//                        xmlParts.first() = QString("<%1><v><![CDATA[]]></v>%2</%1>").arg(startTag, xmlParts.first());
+//                    }
+                    xmlParts.append(startTag);
+                    startTag.clear();
+                }
+                //
+                // Преходим к считыванию контента
+                //
+                else {
+                    if (startTag.contains(' ')) {
+                        startTag = startTag.split(' ').first();
+                    }
+                    isReadingStartTag = false;
+                }
+            } else {
+                isReadingNextTag = false;
+
+                if (startTag == nextTag) {
+                    xmlParts.append(_xml.mid(partStart, currentPosition - partStart + 1));
+                    isReadingStartTag = true;
+                    startTag.clear();
+                }
+            }
+        } else if (character == '/') {
+            //
+            // Пропускаем символ завершения тэга, чтобы не считывать его
+            //
+        } else {
+            if (isReadingStartTag) {
+                startTag += character;
+            } else if (isReadingNextTag) {
+                nextTag += character;
+            }
+        }
+    }
+
+    //
+    // Добавляем весь оставшийся разбитый xml
+    //
+    if (!startTag.isEmpty()) {
+        xmlParts.append(_xml.mid(partStart));
+    }
+
+    return xmlParts;
+}
+
+/**
+ * @brief Получить обычный текст из xml-текста
+ */
+QString plainText(const QString &_xml)
+{
+    const QString cdata = QLatin1String("<![CDATA[");
+    const auto startPos = _xml.indexOf(cdata) + cdata.length();
+    if (startPos == -1) {
+        return {};
+    }
+    const auto endPos = _xml.indexOf("]]>", startPos);
+    if (endPos == -1) {
+        return {};
+    }
+    return _xml.mid(startPos, endPos - startPos);
+}
+} // namespace
+
+void ScenarioTextDocument::updateBlockRevision(QTextBlock &_block)
+{
+    TextBlockInfo *blockInfo = dynamic_cast<TextBlockInfo *>(_block.userData());
     if (blockInfo != nullptr) {
         blockInfo->updateId();
     }
@@ -166,24 +172,27 @@ void ScenarioTextDocument::updateBlockRevision(QTextBlock& _block)
     _block.setRevision(_block.revision() + 1);
 }
 
-void ScenarioTextDocument::updateBlockRevision(QTextCursor& _cursor)
+void ScenarioTextDocument::updateBlockRevision(QTextCursor &_cursor)
 {
     QTextBlock block = _cursor.block();
     updateBlockRevision(block);
 }
 
-ScenarioTextDocument::ScenarioTextDocument(QObject *parent, ScenarioXml* _xmlHandler) :
-    QTextDocument(parent),
-    m_xmlHandler(_xmlHandler),
-    m_isPatchApplyProcessed(false),
-    m_reviewModel(new ScenarioReviewModel(this)),
-    m_bookmarksModel(new ScriptBookmarksModel(this)),
-    m_outlineMode(false),
-    m_corrector(new ScriptTextCorrector(this))
+ScenarioTextDocument::ScenarioTextDocument(QObject *parent, ScenarioXml *_xmlHandler)
+    : QTextDocument(parent)
+    , m_xmlHandler(_xmlHandler)
+    , m_isPatchApplyProcessed(false)
+    , m_reviewModel(new ScenarioReviewModel(this))
+    , m_bookmarksModel(new ScriptBookmarksModel(this))
+    , m_outlineMode(false)
+    , m_corrector(new ScriptTextCorrector(this))
 {
-    connect(this, &ScenarioTextDocument::contentsChange, this, &ScenarioTextDocument::updateBlocksIds);
-    connect(m_reviewModel, &ScenarioReviewModel::reviewChanged, this, &ScenarioTextDocument::reviewChanged);
-    connect(m_bookmarksModel, &ScriptBookmarksModel::modelChanged, this, &ScenarioTextDocument::bookmarksChanged);
+    connect(this, &ScenarioTextDocument::contentsChange, this,
+            &ScenarioTextDocument::updateBlocksIds);
+    connect(m_reviewModel, &ScenarioReviewModel::reviewChanged, this,
+            &ScenarioTextDocument::reviewChanged);
+    connect(m_bookmarksModel, &ScriptBookmarksModel::modelChanged, this,
+            &ScenarioTextDocument::bookmarksChanged);
 }
 
 bool ScenarioTextDocument::updateScenarioXml()
@@ -214,7 +223,7 @@ QByteArray ScenarioTextDocument::scenarioXmlHash() const
     return m_scenarioXmlHash;
 }
 
-void ScenarioTextDocument::load(const QString& _scenarioXml)
+void ScenarioTextDocument::load(const QString &_scenarioXml)
 {
     //
     // Сбрасываем корректор
@@ -231,7 +240,8 @@ void ScenarioTextDocument::load(const QString& _scenarioXml)
 
     //
     // Сохраняем текущий режим, для последующего восстановления
-    // FIXME: Так нужно делать, чтобы в режиме поэпизодника не скакал курсор, если этот режим активен
+    // FIXME: Так нужно делать, чтобы в режиме поэпизодника не скакал курсор, если этот режим
+    // активен
     //
     bool outlineMode = m_outlineMode;
     setOutlineMode(false);
@@ -257,14 +267,16 @@ void ScenarioTextDocument::load(const QString& _scenarioXml)
     emit redoAvailableChanged(false);
 
 #ifdef PATCH_DEBUG
-    foreach (DomainObject* obj, DataStorageLayer::StorageFacade::scenarioChangeStorage()->all()->toList()) {
-        ScenarioChange* ch = dynamic_cast<ScenarioChange*>(obj);
+    foreach (DomainObject *obj,
+             DataStorageLayer::StorageFacade::scenarioChangeStorage()->all()->toList()) {
+        ScenarioChange *ch = dynamic_cast<ScenarioChange *>(obj);
         if (!ch->isDraft()) {
             m_undoStack.append(ch);
         }
     }
-    foreach (DomainObject* obj, DataStorageLayer::StorageFacade::scenarioChangeStorage()->all()->toList()) {
-        ScenarioChange* ch = dynamic_cast<ScenarioChange*>(obj);
+    foreach (DomainObject *obj,
+             DataStorageLayer::StorageFacade::scenarioChangeStorage()->all()->toList()) {
+        ScenarioChange *ch = dynamic_cast<ScenarioChange *>(obj);
         if (!ch->isDraft()) {
             m_redoStack.prepend(ch);
         }
@@ -290,14 +302,14 @@ QString ScenarioTextDocument::mimeFromSelection(int _startPosition, int _endPosi
     return mime;
 }
 
-void ScenarioTextDocument::insertFromMime(int _insertPosition, const QString& _mimeData)
+void ScenarioTextDocument::insertFromMime(int _insertPosition, const QString &_mimeData)
 {
     if (m_xmlHandler != 0) {
         m_xmlHandler->xmlToScenario(_insertPosition, _mimeData);
     }
 }
 
-int ScenarioTextDocument::applyPatch(const QString& _patch, bool _checkXml)
+int ScenarioTextDocument::applyPatch(const QString &_patch, bool _checkXml)
 {
     updateScenarioXml();
     saveChanges();
@@ -308,19 +320,19 @@ int ScenarioTextDocument::applyPatch(const QString& _patch, bool _checkXml)
     // Определим xml для применения патча
     //
     const QString patchUncopressed = DatabaseHelper::uncompress(_patch);
-    auto xmlsForUpdate = DiffMatchPatchHelper::changedXml(m_scenarioXml, patchUncopressed, _checkXml);
-    if (!xmlsForUpdate.first.isValid()
-        || !xmlsForUpdate.second.isValid()) {
+    auto xmlsForUpdate
+        = DiffMatchPatchHelper::changedXml(m_scenarioXml, patchUncopressed, _checkXml);
+    if (!xmlsForUpdate.first.isValid() || !xmlsForUpdate.second.isValid()) {
 
 #ifdef PATCH_DEBUG
-    qDebug() << "===================================================================";
-    qDebug() << "uncompress failed";
-    qDebug() << "###################################################################";
-    qDebug() << qUtf8Printable(xmlsForUpdate.first.xml);
-    qDebug() << "###################################################################";
-    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
-    qDebug() << "###################################################################";
-    qDebug() << qUtf8Printable(xmlsForUpdate.second.xml);
+        qDebug() << "===================================================================";
+        qDebug() << "uncompress failed";
+        qDebug() << "###################################################################";
+        qDebug() << qUtf8Printable(xmlsForUpdate.first.xml);
+        qDebug() << "###################################################################";
+        qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
+        qDebug() << "###################################################################";
+        qDebug() << qUtf8Printable(xmlsForUpdate.second.xml);
 #endif
 
         //
@@ -354,8 +366,7 @@ int ScenarioTextDocument::applyPatch(const QString& _patch, bool _checkXml)
     // в редакторских заметках или форматировании предыдущего блока
     //
     if (xmlsForUpdate.first.plainPos == xmlsForUpdate.second.plainPos
-        && xmlsForUpdate.first.plainLength == 0
-        && xmlsForUpdate.second.plainLength == 0) {
+        && xmlsForUpdate.first.plainLength == 0 && xmlsForUpdate.second.plainLength == 0) {
         const auto block = findBlock(m_corrector->correctedPosition(xmlsForUpdate.first.plainPos));
         selectionStartPos = block.previous().position();
         selectionEndPos = selectionStartPos;
@@ -419,10 +430,9 @@ int ScenarioTextDocument::applyPatch(const QString& _patch, bool _checkXml)
     return selectionStartPos;
 }
 
-void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
+void ScenarioTextDocument::applyPatches(const QList<QString> &_patches)
 {
     m_isPatchApplyProcessed = true;
-
 
     //
     // Применяем патчи
@@ -435,7 +445,7 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
     bool needPrintXml = true;
 #endif
 
-    for (const QString& patch : _patches) {
+    for (const QString &patch : _patches) {
 
 #ifdef PATCH_DEBUG
         lastXml = newXml;
@@ -449,8 +459,7 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
         QString error;
         int line = 0, column = 0;
         bool ok = doc.setContent(ScenarioXml::makeMimeFromXml(newXml), &error, &line, &column);
-        if (!ok
-            || lastXml == newXml) {
+        if (!ok || lastXml == newXml) {
             qDebug() << "===================================================================";
             qDebug() << "***************" << currentIndex << "*****************";
             qDebug() << error << line << column;
@@ -516,9 +525,9 @@ void ScenarioTextDocument::applyPatches(const QList<QString>& _patches)
     cursor.endEditBlock();
 }
 
-Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
+Domain::ScenarioChange *ScenarioTextDocument::saveChanges()
 {
-    Domain::ScenarioChange* change = 0;
+    Domain::ScenarioChange *change = 0;
 
     if (!m_isPatchApplyProcessed) {
         //
@@ -528,9 +537,11 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
             //
             // Сформируем изменения
             //
-            const QString undoPatch = DiffMatchPatchHelper::makePatchXml(m_scenarioXml, m_lastSavedScenarioXml);
+            const QString undoPatch
+                = DiffMatchPatchHelper::makePatchXml(m_scenarioXml, m_lastSavedScenarioXml);
             const QString undoPatchCompressed = DatabaseHelper::compress(undoPatch);
-            const QString redoPatch = DiffMatchPatchHelper::makePatchXml(m_lastSavedScenarioXml, m_scenarioXml);
+            const QString redoPatch
+                = DiffMatchPatchHelper::makePatchXml(m_lastSavedScenarioXml, m_scenarioXml);
             const QString redoPatchCompressed = DatabaseHelper::compress(redoPatch);
 
             //
@@ -547,7 +558,7 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
             //
             // Корректируем стеки последних действий
             //
-            if (m_undoStack.size() == MAX_UNDO_REDO_STACK_SIZE)  {
+            if (m_undoStack.size() == MAX_UNDO_REDO_STACK_SIZE) {
                 m_undoStack.takeFirst();
             }
             m_undoStack.append(change);
@@ -556,10 +567,10 @@ Domain::ScenarioChange* ScenarioTextDocument::saveChanges()
             emit redoAvailableChanged(false);
 
 #ifdef PATCH_DEBUG
-    qDebug() << "-------------------------------------------------------------------";
-    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(undoPatch.toUtf8()));
-    qDebug() << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$";
-    qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(redoPatch.toUtf8()));
+            qDebug() << "-------------------------------------------------------------------";
+            qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(undoPatch.toUtf8()));
+            qDebug() << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$";
+            qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(redoPatch.toUtf8()));
 #endif
         }
     }
@@ -577,11 +588,12 @@ int ScenarioTextDocument::undoReimpl(bool _forced)
 
     int pos = -1;
     if (!m_undoStack.isEmpty()) {
-        Domain::ScenarioChange* change = m_undoStack.takeLast();
+        Domain::ScenarioChange *change = m_undoStack.takeLast();
 
 #ifdef PATCH_DEBUG
         qDebug() << "*******************************************************************";
-        qDebug() << change->uuid().toString() << change->user() << characterCount() << change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz");
+        qDebug() << change->uuid().toString() << change->user() << characterCount()
+                 << change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz");
 #endif
 
         //
@@ -598,14 +610,15 @@ int ScenarioTextDocument::undoReimpl(bool _forced)
         // Сохраним изменения
         //
         if (!_forced) {
-            Domain::ScenarioChange* newChange = ::saveChange(change->redoPatch(), change->undoPatch());
+            Domain::ScenarioChange *newChange
+                = ::saveChange(change->redoPatch(), change->undoPatch());
             newChange->setIsDraft(change->isDraft());
         }
     }
     return pos;
 }
 
-void ScenarioTextDocument::addUndoChange(ScenarioChange* change)
+void ScenarioTextDocument::addUndoChange(ScenarioChange *change)
 {
     m_undoStack.append(change);
 }
@@ -614,8 +627,9 @@ void ScenarioTextDocument::updateUndoStack()
 {
     m_undoStack.clear();
     m_redoStack.clear();
-    foreach (DomainObject* obj, DataStorageLayer::StorageFacade::scenarioChangeStorage()->all()->toList()) {
-        ScenarioChange* ch = dynamic_cast<ScenarioChange*>(obj);
+    foreach (DomainObject *obj,
+             DataStorageLayer::StorageFacade::scenarioChangeStorage()->all()->toList()) {
+        ScenarioChange *ch = dynamic_cast<ScenarioChange *>(obj);
         if (!ch->isDraft()) {
             m_undoStack.append(ch);
         }
@@ -630,11 +644,12 @@ int ScenarioTextDocument::redoReimpl()
 
     int pos = -1;
     if (!m_redoStack.isEmpty()) {
-        Domain::ScenarioChange* change = m_redoStack.takeLast();
+        Domain::ScenarioChange *change = m_redoStack.takeLast();
 
 #ifdef PATCH_DEBUG
         qDebug() << "*******************************************************************";
-        qDebug() << change->uuid().toString() << change->user() << characterCount() << change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz");
+        qDebug() << change->uuid().toString() << change->user() << characterCount()
+                 << change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz");
 #endif
 
         m_undoStack.append(change);
@@ -643,7 +658,7 @@ int ScenarioTextDocument::redoReimpl()
         //
         // Сохраним изменения
         //
-        Domain::ScenarioChange* newChange = ::saveChange(change->undoPatch(), change->redoPatch());
+        Domain::ScenarioChange *newChange = ::saveChange(change->undoPatch(), change->redoPatch());
         newChange->setIsDraft(change->isDraft());
 
         //
@@ -667,7 +682,8 @@ bool ScenarioTextDocument::isRedoAvailableReimpl() const
     return !m_redoStack.isEmpty();
 }
 
-void ScenarioTextDocument::setCursorPosition(QTextCursor& _cursor, int _position, QTextCursor::MoveMode _moveMode)
+void ScenarioTextDocument::setCursorPosition(QTextCursor &_cursor, int _position,
+                                             QTextCursor::MoveMode _moveMode)
 {
     //
     // Нормальное позиционирование
@@ -689,12 +705,12 @@ void ScenarioTextDocument::setCursorPosition(QTextCursor& _cursor, int _position
     }
 }
 
-ScenarioReviewModel* ScenarioTextDocument::reviewModel() const
+ScenarioReviewModel *ScenarioTextDocument::reviewModel() const
 {
     return m_reviewModel;
 }
 
-ScriptBookmarksModel* ScenarioTextDocument::bookmarksModel() const
+ScriptBookmarksModel *ScenarioTextDocument::bookmarksModel() const
 {
     return m_bookmarksModel;
 }
@@ -727,37 +743,27 @@ void ScenarioTextDocument::setOutlineMode(bool _outlineMode)
 
 QList<ScenarioBlockStyle::Type> ScenarioTextDocument::visibleBlocksTypes() const
 {
-    static QList<ScenarioBlockStyle::Type> s_outlineVisibleBlocksTypes =
-        QList<ScenarioBlockStyle::Type>()
-        << ScenarioBlockStyle::SceneHeading
-        << ScenarioBlockStyle::SceneHeadingShadow
-        << ScenarioBlockStyle::SceneCharacters
-        << ScenarioBlockStyle::FolderHeader
-        << ScenarioBlockStyle::FolderFooter
-        << ScenarioBlockStyle::SceneDescription;
+    static QList<ScenarioBlockStyle::Type> s_outlineVisibleBlocksTypes
+        = QList<ScenarioBlockStyle::Type>()
+        << ScenarioBlockStyle::SceneHeading << ScenarioBlockStyle::SceneHeadingShadow
+        << ScenarioBlockStyle::SceneCharacters << ScenarioBlockStyle::FolderHeader
+        << ScenarioBlockStyle::FolderFooter << ScenarioBlockStyle::SceneDescription;
 
-    static QList<ScenarioBlockStyle::Type> s_scenarioVisibleBlocksTypes =
-        QList<ScenarioBlockStyle::Type>()
-            << ScenarioBlockStyle::SceneHeading
-            << ScenarioBlockStyle::SceneHeadingShadow
-            << ScenarioBlockStyle::SceneCharacters
-            << ScenarioBlockStyle::Action
-            << ScenarioBlockStyle::Character
-            << ScenarioBlockStyle::Dialogue
-            << ScenarioBlockStyle::Parenthetical
-            << ScenarioBlockStyle::TitleHeader
-            << ScenarioBlockStyle::Title
-            << ScenarioBlockStyle::Note
-            << ScenarioBlockStyle::Transition
-            << ScenarioBlockStyle::NoprintableText
-            << ScenarioBlockStyle::FolderHeader
-            << ScenarioBlockStyle::FolderFooter
-            << ScenarioBlockStyle::Lyrics;
+    static QList<ScenarioBlockStyle::Type> s_scenarioVisibleBlocksTypes
+        = QList<ScenarioBlockStyle::Type>()
+        << ScenarioBlockStyle::SceneHeading << ScenarioBlockStyle::SceneHeadingShadow
+        << ScenarioBlockStyle::SceneCharacters << ScenarioBlockStyle::Action
+        << ScenarioBlockStyle::Character << ScenarioBlockStyle::Dialogue
+        << ScenarioBlockStyle::Parenthetical << ScenarioBlockStyle::TitleHeader
+        << ScenarioBlockStyle::Title << ScenarioBlockStyle::Note << ScenarioBlockStyle::Transition
+        << ScenarioBlockStyle::NoprintableText << ScenarioBlockStyle::FolderHeader
+        << ScenarioBlockStyle::FolderFooter << ScenarioBlockStyle::Lyrics;
 
     return m_outlineMode ? s_outlineVisibleBlocksTypes : s_scenarioVisibleBlocksTypes;
 }
 
-void ScenarioTextDocument::setCorrectionOptions(bool _needToCorrectCharactersNames, bool _needToCorrectPageBreaks)
+void ScenarioTextDocument::setCorrectionOptions(bool _needToCorrectCharactersNames,
+                                                bool _needToCorrectPageBreaks)
 {
     m_corrector->setNeedToCorrectCharactersNames(_needToCorrectCharactersNames);
     m_corrector->setNeedToCorrectPageBreaks(_needToCorrectPageBreaks);
@@ -773,9 +779,8 @@ void ScenarioTextDocument::updateBlocksIds(int _position, int _charsRemoved, int
     Q_UNUSED(_charsRemoved);
 
     auto block = findBlock(_position);
-    while (block.isValid()
-           && block.position() <= _position + _charsAdded) {
-        if (auto blockInfo = dynamic_cast<TextBlockInfo*>(block.userData())) {
+    while (block.isValid() && block.position() <= _position + _charsAdded) {
+        if (auto blockInfo = dynamic_cast<TextBlockInfo *>(block.userData())) {
             blockInfo->updateId();
         }
 
@@ -783,21 +788,25 @@ void ScenarioTextDocument::updateBlocksIds(int _position, int _charsRemoved, int
     }
 }
 
-void ScenarioTextDocument::removeIdenticalParts(QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml>& _xmls)
+void ScenarioTextDocument::removeIdenticalParts(
+    QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml> &_xmls)
 {
-    auto firstSplitted = splitXml(_xmls.first.xml);
-    auto secondSplitted = splitXml(_xmls.second.xml);
+    auto firstSplitted = splitXml(_xmls.first.xml.simplified());
+    auto secondSplitted = splitXml(_xmls.second.xml.simplified());
     int posDelta = 0;
     int lengthDelta = 0;
+    QString lastRemovedPreviousTag;
 
     int maxStepsCount = std::min(firstSplitted.size(), secondSplitted.size());
     for (int i = 0; i < maxStepsCount; ++i) {
         if (firstSplitted.at(i) == secondSplitted.at(i)) {
+            lastRemovedPreviousTag.clear();
             const auto text = plainText(firstSplitted.at(i));
             //
-            // Если впереди был блок без текста, сразу удаляем го
+            // Если впереди был блок без текста, сразу удаляем его
             //
             if (text.isNull()) {
+                lastRemovedPreviousTag = firstSplitted[i];
                 firstSplitted[i] = QString();
                 secondSplitted[i] = QString();
             }
@@ -839,18 +848,67 @@ void ScenarioTextDocument::removeIdenticalParts(QPair<DiffMatchPatchHelper::Chan
                 break;
             }
 
-            lengthDelta += TextEditHelper::fromHtmlEscaped(text).length() + 1; // + перенос строки
             firstSplitted[firstSplitted.size() - i - 1] = QString();
             secondSplitted[secondSplitted.size() - i - 1] = QString();
+            lengthDelta += TextEditHelper::fromHtmlEscaped(text).length();
+
+            //
+            // Если перед текстом есть ещё текст, то вычтем от длины перенос строки
+            //
+            if ((i + 1) < maxStepsCount) {
+                if (!firstSplitted.at(firstSplitted.size() - i - 1 - 1).isEmpty()) {
+                    ++lengthDelta; // + перенос строки
+                }
+            }
         } else {
             break;
         }
     }
 
+    //
+    // Очищаем всё, что не является xml'ем
+    //
+    auto clearInvalidXmlLines = [] (QStringList& strings) {
+        for (auto& string : strings) {
+            if (!string.startsWith("<") && !string.endsWith(">")) {
+                string = QString();
+            }
+        }
+    };
+    clearInvalidXmlLines(firstSplitted);
+    clearInvalidXmlLines(secondSplitted);
+
+    //
+    // Кейс добавления ответа в комментарий
+    //
+    if (_xmls.first.plainLength < lengthDelta
+        && _xmls.first.plainLength == _xmls.second.plainLength) {
+        --lengthDelta;
+    }
+
+    //
+    // Кейс с добавлением блока после блока с редакторскими правками
+    //
+    if (firstSplitted.join(QString()).isEmpty()
+        && !lastRemovedPreviousTag.isEmpty()) {
+        --posDelta;
+        secondSplitted.prepend(QString("<%1><v><![CDATA[]]></v></%1>").arg(lastRemovedPreviousTag));
+    }
+
+    //
+    // Кейс с удалением абзаца после редакторской правки
+    //
+    if (_xmls.second.plainLength < lengthDelta) {
+        --posDelta;
+        --lengthDelta;
+    }
+
     _xmls.first.xml = firstSplitted.join(QString());
     _xmls.first.plainPos += posDelta;
-    _xmls.first.plainLength = std::max(_xmls.first.plainLength - lengthDelta, 0);
+    Q_ASSERT(_xmls.first.plainLength >= lengthDelta);
+    _xmls.first.plainLength = _xmls.first.plainLength - lengthDelta;
     _xmls.second.xml = secondSplitted.join(QString());
     _xmls.second.plainPos += posDelta;
+    Q_ASSERT(_xmls.second.plainLength >= lengthDelta);
     _xmls.second.plainLength = std::max(_xmls.second.plainLength - lengthDelta, 0);
 }
