@@ -815,7 +815,11 @@ void ScenarioTextDocument::removeIdenticalParts(
             //
             else {
                 firstSplitted[i].remove(text);
+                firstSplitted[i].remove(QRegExp("<reviews>(.*)</reviews>"));
+                firstSplitted[i].remove(QRegExp("<formatting>(.*)</formatting>"));
                 secondSplitted[i].remove(text);
+                secondSplitted[i].remove(QRegExp("<reviews>(.*)</reviews>"));
+                secondSplitted[i].remove(QRegExp("<formatting>(.*)</formatting>"));
 
                 const auto textLength = TextEditHelper::fromHtmlEscaped(text).length();
                 posDelta += textLength;
