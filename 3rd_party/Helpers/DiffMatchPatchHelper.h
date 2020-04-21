@@ -233,10 +233,12 @@ public:
             QDomDocument document;
             QString error;
             int line, column;
-            const bool isXmlValid = document.setContent(newXml, &error, &line, &column);
+            const auto xmlForCheck = QString("<?xml version=\"1.0\"?><scenario>%1</scenario>").arg(newXml);
+            const bool isXmlValid = document.setContent(xmlForCheck, &error, &line, &column);
             if (!isXmlValid) {
                 qDebug() << Q_FUNC_INFO << error;
                 qDebug() << Q_FUNC_INFO << "line:" << line << "column:" << column;
+                qDebug() << qPrintable(xmlForCheck);
                 return QPair<ChangeXml, ChangeXml>();
             }
         }
