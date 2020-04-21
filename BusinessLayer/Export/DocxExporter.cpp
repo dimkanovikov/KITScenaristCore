@@ -711,10 +711,21 @@ void DocxExporter::writeStyles(QtZipWriter* _zip) const
     //
     // Сформируем xml стилей
     //
+    const QString languageCode = QLocale().uiLanguages().value(1, "en-US");
     QString styleXml =
             "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
             "<w:styles xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\">"
-            "<w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:asciiTheme=\"minorHAnsi\" w:eastAsiaTheme=\"minorEastAsia\" w:hAnsiTheme=\"minorHAnsi\" w:cstheme=\"minorBidi\"/><w:sz w:val=\"22\"/><w:szCs w:val=\"22\"/><w:lang w:val=\"ru-RU\" w:eastAsia=\"ru-RU\" w:bidi=\"ar-SA\"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after=\"200\" w:line=\"276\" w:lineRule=\"auto\"/></w:pPr></w:pPrDefault></w:docDefaults>";
+            "<w:docDefaults>"
+            "<w:rPrDefault>"
+            "<w:rPr>"
+            "<w:rFonts w:asciiTheme=\"minorHAnsi\" w:eastAsiaTheme=\"minorEastAsia\" w:hAnsiTheme=\"minorHAnsi\" w:cstheme=\"minorBidi\"/>"
+            "<w:sz w:val=\"22\"/>"
+            "<w:szCs w:val=\"22\"/>"
+            "<w:lang w:val=\"" + languageCode + "\" w:eastAsia=\"" + languageCode + "\" w:bidi=\"ar-SA\"/>"
+            "</w:rPr>"
+            "</w:rPrDefault>"
+            "<w:pPrDefault><w:pPr><w:spacing w:after=\"200\" w:line=\"276\" w:lineRule=\"auto\"/></w:pPr></w:pPrDefault>"
+            "</w:docDefaults>";
 
     //
     // Настройки в соответсвии со стилем
