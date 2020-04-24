@@ -777,14 +777,13 @@ bool CardsScene::load(const QString &_xml)
 void CardsScene::setFilter(const QString& _text, bool _caseSensitive, bool _filterByText, bool _filterByTags)
 {
     for (QGraphicsItem *item : m_items) {
-        QString itemText;
-        QString itemColors;
-        if (auto card = qgraphicsitem_cast<CardItem *>(item)) {
-            itemText = card->title() + " " + card->description();
-            itemColors = TextEditHelper::fromHtmlEscaped(card->colors());
-        } else {
+        auto card = qgraphicsitem_cast<CardItem *>(item);
+        if (card == nullptr) {
             continue;
         }
+
+        const QString itemText = card->title() + " " + card->description();
+        const QString itemColors = TextEditHelper::fromHtmlEscaped(card->colors());
 
         bool isFilterAccepted = false;
         const auto caseSensitive = _caseSensitive ? Qt::CaseSensitive : Qt::CaseInsensitive;
@@ -795,7 +794,7 @@ void CardsScene::setFilter(const QString& _text, bool _caseSensitive, bool _filt
             isFilterAccepted  = (_filterByText ? itemText.contains(_text, caseSensitive) : true)
                                 && (_filterByTags ? itemColors.contains(_text, caseSensitive) : true);
         }
-        item->setOpacity(isFilterAccepted ? 1.0 : 0.7);
+        card->setFiltered(isFilterAccepted);
     }
 }
 

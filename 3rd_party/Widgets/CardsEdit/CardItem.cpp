@@ -493,6 +493,12 @@ QString CardItem::cardForEmbedUuid() const
     return cardForEmbedUuid;
 }
 
+void CardItem::setFiltered(bool _filtered)
+{
+    setOpacity(_filtered ? 1.0 : 0.7);
+    m_shadowEffect->setColor(QColor(63, 63, 63, _filtered ? 180 : 78));
+}
+
 void CardItem::mouseMoveEvent(QGraphicsSceneMouseEvent* _event)
 {
     cardForEmbedUuid();

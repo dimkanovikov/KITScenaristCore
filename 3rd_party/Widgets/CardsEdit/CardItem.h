@@ -148,6 +148,11 @@ public:
      */
     QString cardForEmbedUuid() const;
 
+    /**
+     * @brief Настроить внешний вид карточки, когда она отфильтрована
+     */
+    void setFiltered(bool _filtered);
+
 protected:
     /**
      * @brief Переопределяем для проверки возможности вложить карточку в папку
