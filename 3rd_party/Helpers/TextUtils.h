@@ -2,6 +2,7 @@
 #define TEXTUTILS_H
 
 #include <QFontMetrics>
+#include <QPainter>
 #include <QTextLayout>
 #include <QTextOption>
 
@@ -152,6 +153,45 @@ public:
 //        return str + (str.length()==text.length()? "" : "..."); // и так сойдет
     }
 
+    static void drawTextInRegion(QPainter* _painter, const QString& _text, const QRegion& _region, const QTextOption& _option)
+    {
+        auto calcTextInRect = [_painter, _text, _option] (const QRect& _rect) {
+            QTextLayout textLayout(_text, _painter->font());
+            QFontMetricsF metrics(_painter->font());
+            int leading = metrics.leading();
+            qreal height = 0;
+            textLayout.setTextOption(_option);
+            textLayout.beginLayout();
+            int textEnd = -1;
+            int lastLineTop = 0;
+            while(true)
+            {
+                QTextLine line = textLayout.createLine();
+                if (!line.isValid()) {
+                    break;
+                }
+                if (lastLineTop + metrics.lineSpacing() > _rect.bottom()) {
+                    break;;
+                }
+
+                line.setLineWidth(_rect.width());
+                height += leading + line.height();
+                textEnd += line.textStart() + line.textLength();
+                lastLineTop += metrics.lineSpacing();
+            }
+            return textEnd;
+        };
+
+        int lastTextPos = 0;
+        for (auto rect : _region) {
+            const int startText = lastTextPos;
+            lastTextPos = calcTextInRect(rect);
+            if (lastTextPos == -1) {
+                break;
+            }
+            _painter->drawText(rect, _text.mid(startText, lastTextPos));
+        }
+    }
 };
 
 #endif // TEXTUTILS_H

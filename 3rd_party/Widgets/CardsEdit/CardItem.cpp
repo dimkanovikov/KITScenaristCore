@@ -6,6 +6,7 @@
 #include <3rd_party/Helpers/ColorHelper.h>
 #include <3rd_party/Helpers/ImageHelper.h>
 #include <3rd_party/Helpers/StyleSheetHelper.h>
+#include <3rd_party/Helpers/TextEditHelper.h>
 #include <3rd_party/Helpers/TextUtils.h>
 
 #include <QApplication>
@@ -233,7 +234,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         const QPalette palette = QApplication::palette();
         const QRectF cardRect = boundingRectCorrected();
         const QStringList colors = m_colors.split(";", QString::SkipEmptyParts);
-        const int additionalColorsHeight = (colors.size() > 1) ? StyleSheetHelper::dpToPx(10) : 0;
+        const int additionalColorsHeight = (colors.size() > 1) ? StyleSheetHelper::dpToPx(32) : 0;
 
         //
         // Рисуем фон
@@ -248,8 +249,9 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         // ... заданным цветом, если он задан
         //
         else if (!colors.isEmpty()) {
-            _painter->setBrush(QColor(colors.first()));
-            _painter->setPen(QColor(colors.first()));
+            const QColor mainColor(colors.first().left(7));
+            _painter->setBrush(mainColor);
+            _painter->setPen(mainColor);
         }
         //
         // ... или стандартным цветом
@@ -284,6 +286,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         //
         // Рисуем дополнительные цвета
         //
+        QRect additionalColorsRect;
         if (!m_isReadyForEmbed && !m_colors.isEmpty()) {
             QStringList colorsNamesList = m_colors.split(";", QString::SkipEmptyParts);
             colorsNamesList.removeFirst();
@@ -292,22 +295,37 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
             //
             if (!colorsNamesList.isEmpty()) {
                 //
-                // Выссчитываем ширину занимаемую одним цветом
+                // Рисуем справа налево
                 //
-                const qreal fullCardHeight = boundingRect().height();
-                const qreal colorRectWidth = cardRect.width() / colorsNamesList.size();
-                const int colorXPos = QLocale().textDirection() == Qt::LeftToRight
-                                      ? 0
-                                      : cardRect.width() - colorRectWidth;
-                QRectF colorRect(colorXPos, fullCardHeight - additionalColorsHeight, colorRectWidth, additionalColorsHeight);
-                for (const QString& colorName : colorsNamesList) {
-                    _painter->fillRect(colorRect, QColor(colorName));
-                    if (QLocale().textDirection() == Qt::LeftToRight) {
-                        colorRect.moveLeft(colorRect.right());
-                    } else {
-                        colorRect.moveRight(colorRect.left());
+                auto font = _painter->font();
+                font.setBold(true);
+                _painter->setFont(font);
+                const int colorsSpacing = StyleSheetHelper::dpToPx(8);
+                const int colorHeight = _painter->fontMetrics().lineSpacing() + colorsSpacing;
+                const int colorTop = boundingRect().height() - additionalColorsHeight;
+                const int colorRadius = StyleSheetHelper::dpToPx(2);
+                int lastRight = cardRect.width() - colorsSpacing;
+                for (int colorIndex = colorsNamesList.size() - 1; colorIndex >= 0; --colorIndex) {
+                    const QColor color(colorsNamesList.at(colorIndex).left(7));
+                    const QColor textColor = ColorHelper::textColor(color);
+                    const QString colorInfo = TextEditHelper::fromHtmlEscaped(colorsNamesList.at(colorIndex).mid(7));
+                    const int colorWidth = colorInfo.isEmpty() ? colorHeight
+                                                               : _painter->fontMetrics().horizontalAdvance(colorInfo) + colorsSpacing;
+
+                    QRect colorRect(lastRight - colorWidth, colorTop, colorWidth, colorHeight);
+                    additionalColorsRect = additionalColorsRect.united(colorRect);
+                    _painter->setBrush(color);
+                    _painter->setPen(color);
+                    _painter->drawRoundedRect(colorRect, colorRadius, colorRadius);
+                    if (!colorInfo.isEmpty()) {
+                        _painter->setPen(textColor);
+                        _painter->drawText(colorRect, Qt::AlignCenter, colorInfo);
                     }
+
+                    lastRight = colorRect.left() - colorsSpacing;
                 }
+
+                additionalColorsRect.adjust(-colorsSpacing, -colorsSpacing, 0, 0);
             }
         }
 
@@ -315,25 +333,23 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         // Рисуем заголовок
         //
         QTextOption textoption;
-        textoption.setAlignment(::textDrawAlign() | Qt::AlignTop);
-        textoption.setWrapMode(QTextOption::NoWrap);
+        textoption.setAlignment(textDrawAlign() | Qt::AlignTop);
+        textoption.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
         QFont font = _painter->font();
         font.setBold(true);
         _painter->setFont(font);
         if (!colors.isEmpty()) {
-            _painter->setPen(ColorHelper::textColor(QColor(colors.first())));
+            _painter->setPen(ColorHelper::textColor(QColor(colors.first().left(7))));
         } else {
             _painter->setPen(palette.text().color());
         }
-        const int titleHeight = _painter->fontMetrics().height();
         const int titleTopMargin = StyleSheetHelper::dpToPx(7);
-        const QRectF titleRect(titleTopMargin, StyleSheetHelper::dpToPx(18),
-                               cardRect.size().width() - titleTopMargin*2, titleHeight);
         QString titleText = title();
         if (!isFolder()) {
             titleText.prepend(QString("%1. ").arg(number()));
         }
-        titleText = TextUtils::elidedText(titleText, _painter->font(), titleRect.size(), textoption);
+        const QRectF titleRect(QPointF(titleTopMargin, StyleSheetHelper::dpToPx(18)),
+                               TextUtils::textRect(titleText, _painter->font(), cardRect.size().width() - titleTopMargin*2, textoption));
         _painter->drawText(titleRect, titleText, textoption);
 
         //
@@ -375,11 +391,12 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
             font.setBold(false);
             _painter->setFont(font);
             const int spacing = titleRect.height() / 2;
+            const qreal descriptionTop = titleRect.bottom() + spacing;
             const QRectF descriptionRect(StyleSheetHelper::dpToPx(9), titleRect.bottom() + spacing,
                                          cardRect.size().width() - StyleSheetHelper::dpToPx(18),
-                                         cardRect.size().height() - titleRect.bottom() - spacing - StyleSheetHelper::dpToPx(9));
+                                         cardRect.size().height() - descriptionTop - additionalColorsRect.height());
             QString descriptionText = TextUtils::elidedText(m_description, _painter->font(), descriptionRect.size(), textoption);
-            descriptionText.replace("\n", "\n\n");
+            descriptionText.replace('\n', "\n\n");
             _painter->drawText(descriptionRect, descriptionText, textoption);
         }
 

@@ -1485,7 +1485,7 @@ void ScenarioTextEdit::paintEvent(QPaintEvent* _event)
                         lastSceneColor = QColor();
                         if (SceneHeadingBlockInfo* info = dynamic_cast<SceneHeadingBlockInfo*>(block.userData())) {
                             if (!info->colors().isEmpty()) {
-                                lastSceneColor = QColor(info->colors().split(";").first());
+                                lastSceneColor = QColor(info->colors().split(";").first().left(7));
                             }
                         }
                     }

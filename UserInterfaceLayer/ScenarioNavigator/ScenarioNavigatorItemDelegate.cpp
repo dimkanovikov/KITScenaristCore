@@ -173,7 +173,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
         // Если цвет один, то просто рисуем его
         //
         if (colorsCount == 1) {
-            const QColor color(colorsNamesList.first());
+            const QColor color(colorsNamesList.first().left(7));
             const QRectF colorRect(colorRectX, 0, COLOR_RECT_WIDTH, opt.rect.height());
             _painter->fillRect(colorRect, color);
         }
@@ -186,7 +186,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
             //
             {
                 colorRectX += (QLocale().textDirection() == Qt::LeftToRight ? -1 : 1) * COLOR_RECT_WIDTH;
-                const QColor color(colorsNamesList.takeFirst());
+                const QColor color(colorsNamesList.takeFirst().left(7));
                 const QRectF colorRect(colorRectX, 0, COLOR_RECT_WIDTH, opt.rect.height());
                 _painter->fillRect(colorRect, color);
             }
@@ -197,7 +197,7 @@ void ScenarioNavigatorItemDelegate::paint(QPainter* _painter, const QStyleOption
             colorsCount = colorsNamesList.size();
             for (int colorIndex = 0; colorIndex < colorsCount; ++colorIndex) {
                 const QString colorName = colorsNamesList.takeFirst();
-                const QColor color(colorName);
+                const QColor color(colorName.left(7));
                 const QRectF colorRect(
                             colorRectX,
                             opt.rect.height() / qreal(colorsCount) * colorIndex,
