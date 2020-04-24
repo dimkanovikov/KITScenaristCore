@@ -142,6 +142,11 @@ public:
      */
     bool load(const QString& _xml);
 
+    /**
+     * @brief Задать фильтр для отображения карточек
+     */
+    void setFilter(const QString& _text, bool _caseSensitive, bool _filterByText, bool _filterByTags);
+
 signals:
     /**
      * @brief Пользователь хочет перейти к тексту выбранного элемента

@@ -215,6 +215,11 @@ void CardsView::saveChanges(bool _hasChangesInText)
     }
 }
 
+void CardsView::setFilter(const QString& _text, bool _caseSensitive, bool _filterByText, bool _filterByTags)
+{
+    m_scene->setFilter(_text, _caseSensitive, _filterByText, _filterByTags);
+}
+
 bool CardsView::event(QEvent* _event)
 {
     //

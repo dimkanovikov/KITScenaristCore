@@ -774,6 +774,31 @@ bool CardsScene::load(const QString &_xml)
     return true;
 }
 
+void CardsScene::setFilter(const QString& _text, bool _caseSensitive, bool _filterByText, bool _filterByTags)
+{
+    for (QGraphicsItem *item : m_items) {
+        QString itemText;
+        QString itemColors;
+        if (auto card = qgraphicsitem_cast<CardItem *>(item)) {
+            itemText = card->title() + " " + card->description();
+            itemColors = TextEditHelper::fromHtmlEscaped(card->colors());
+        } else {
+            continue;
+        }
+
+        bool isFilterAccepted = false;
+        const auto caseSensitive = _caseSensitive ? Qt::CaseSensitive : Qt::CaseInsensitive;
+        if (_filterByText && _filterByTags) {
+            isFilterAccepted  = itemText.contains(_text, caseSensitive)
+                                || itemColors.contains(_text, caseSensitive);
+        } else {
+            isFilterAccepted  = (_filterByText ? itemText.contains(_text, caseSensitive) : true)
+                                && (_filterByTags ? itemColors.contains(_text, caseSensitive) : true);
+        }
+        item->setOpacity(isFilterAccepted ? 1.0 : 0.7);
+    }
+}
+
 void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *_event)
 {
     //
