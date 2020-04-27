@@ -49,7 +49,9 @@ public:
         Macedonian,
         Dutch,
         Greek,
-        GreekPolytonic
+        GreekPolytonic,
+        Serbian,
+        SerbianLatin
     };
 
     /**

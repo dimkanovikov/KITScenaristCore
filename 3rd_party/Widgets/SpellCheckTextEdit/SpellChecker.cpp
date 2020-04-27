@@ -103,6 +103,12 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case GreekPolytonic:
             code = "el_GR_polyton";
             break;
+        case Serbian:
+            code = "sr_SR";
+            break;
+        case SerbianLatin:
+            code = "sr_SR_latin";
+            break;
         default:
             break;
     }
