@@ -1021,6 +1021,33 @@ Türkçe: Recep Burak Yak
         <source>Clear</source>
         <translation>Очистити</translation>
     </message>
+    <message>
+        <source>Tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CardsSearchWidget</name>
+    <message>
+        <source>Find...</source>
+        <translation type="unfinished">Знайти...</translation>
+    </message>
+    <message>
+        <source>Case Sensitive</source>
+        <translation type="unfinished">Враховувати регістр</translation>
+    </message>
+    <message>
+        <source>Everywhere</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In tags</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChangePasswordDialog</name>
@@ -2190,7 +2217,7 @@ Project didn&apos;t synchronized.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud.</source>
+        <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud. You can find conflicted version in the Research - Script - Versions.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2868,6 +2895,13 @@ And the text editor of the script. The editor has many auxiliary functions that 
         <source>END OF</source>
         <comment>ScenarioTextEditHelpers</comment>
         <translation></translation>
+    </message>
+</context>
+<context>
+    <name>QWidgetTextControl</name>
+    <message>
+        <source>&amp;Copy</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4791,6 +4825,10 @@ The application will start in few seconds.</source>
         <source>On/off Fullscreen Mode</source>
         <translation>Вкл/викл Повноекранний режим</translation>
     </message>
+    <message>
+        <source>Search cards</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioFastFormatWidget</name>
@@ -5309,6 +5347,14 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Dutch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Greek</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Greek (Polythonic)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1008,6 +1008,33 @@ Türkçe: Recep Burak Yak
         <source>Clear</source>
         <translation>Limpar</translation>
     </message>
+    <message>
+        <source>Tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CardsSearchWidget</name>
+    <message>
+        <source>Find...</source>
+        <translation type="unfinished">Procurar...</translation>
+    </message>
+    <message>
+        <source>Case Sensitive</source>
+        <translation type="unfinished">Maiúsculas e minúsculas</translation>
+    </message>
+    <message>
+        <source>Everywhere</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In tags</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChangePasswordDialog</name>
@@ -2185,7 +2212,7 @@ O projeto não foi sincronizado.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud.</source>
+        <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud. You can find conflicted version in the Research - Script - Versions.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2853,6 +2880,13 @@ Temos também o editor de texto do roteiro. Este editor tem várias funções au
         <source>END OF</source>
         <comment>ScenarioTextEditHelpers</comment>
         <translation>FIM DE</translation>
+    </message>
+</context>
+<context>
+    <name>QWidgetTextControl</name>
+    <message>
+        <source>&amp;Copy</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4758,6 +4792,10 @@ O aplicativo vai iniciar em poucos segundos.</translation>
         <source>On/off Fullscreen Mode</source>
         <translation>Ligar/Desligar modo de tela cheia</translation>
     </message>
+    <message>
+        <source>Search cards</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ScenarioFastFormatWidget</name>
@@ -5272,6 +5310,14 @@ quando você estiver trabalhando ele salvará o projeto a cada %1 minutos.</tran
     </message>
     <message>
         <source>Dutch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Greek</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Greek (Polythonic)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
