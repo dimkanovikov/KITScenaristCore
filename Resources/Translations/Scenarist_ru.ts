@@ -11,7 +11,7 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="40"/>
         <source>Our heroes, who help us to create international versions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Наши герои, кто помог создать международные версии:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="105"/>
@@ -1291,7 +1291,7 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="892"/>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="930"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Тэг</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="956"/>
@@ -1319,27 +1319,27 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="34"/>
         <source>Find...</source>
-        <translation type="unfinished">Найти...</translation>
+        <translation>Найти...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="42"/>
         <source>Case Sensitive</source>
-        <translation type="unfinished">Учитывать регистр</translation>
+        <translation>Учитывать регистр</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="49"/>
         <source>Everywhere</source>
-        <translation type="unfinished"></translation>
+        <translation>Везде</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="52"/>
         <source>In text</source>
-        <translation type="unfinished"></translation>
+        <translation>В тексте</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="54"/>
         <source>In tags</source>
-        <translation type="unfinished"></translation>
+        <translation>В тэгах</translation>
     </message>
 </context>
 <context>
@@ -2783,7 +2783,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="780"/>
         <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud. You can find conflicted version in the Research - Script - Versions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошёл конфликт изменений между локальной и облачной версиями сценария. Конфликтующая версия была сохранена отдельно в списке версий, текущее состояние сценария восстановлено из облака. Вы можете найти конфликтную версию в разделе Разработка - Сценарий - Версии.</translation>
     </message>
     <message>
         <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud.</source>
@@ -5989,7 +5989,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="249"/>
         <source>Search cards</source>
-        <translation type="unfinished"></translation>
+        <translation>Искать карточки</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="253"/>
@@ -6560,7 +6560,7 @@ The application will start in few seconds.</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="236"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="792"/>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>нидерландский</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="787"/>
@@ -6602,12 +6602,12 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="798"/>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>греческий</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="799"/>
         <source>Greek (Polythonic)</source>
-        <translation type="unfinished"></translation>
+        <translation>греческий (политон)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="806"/>
