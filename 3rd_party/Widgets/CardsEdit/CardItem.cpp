@@ -295,14 +295,14 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
             //
             if (!colorsNamesList.isEmpty()) {
                 //
-                // Рисуем справа налево
+                // Рисуем справа налево, снизу вверх
                 //
                 auto font = _painter->font();
                 font.setBold(true);
                 _painter->setFont(font);
                 const int colorsSpacing = StyleSheetHelper::dpToPx(8);
                 const int colorHeight = _painter->fontMetrics().lineSpacing() + colorsSpacing;
-                const int colorTop = boundingRect().height() - additionalColorsHeight;
+                int colorTop = boundingRect().height() - additionalColorsHeight;
                 const int colorRadius = StyleSheetHelper::dpToPx(2);
                 int lastRight = cardRect.width() - colorsSpacing;
                 for (int colorIndex = colorsNamesList.size() - 1; colorIndex >= 0; --colorIndex) {
@@ -313,6 +313,14 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
                                                                : _painter->fontMetrics().horizontalAdvance(colorInfo) + colorsSpacing;
 
                     QRect colorRect(lastRight - colorWidth, colorTop, colorWidth, colorHeight);
+                    //
+                    // Если не влезает слева, переносим на предыдущую строку
+                    //
+                    if (colorRect.left() < cardRect.left()) {
+                        colorTop -= colorHeight + colorsSpacing;
+                        lastRight = cardRect.width() - colorsSpacing;
+                        colorRect.moveTo(lastRight - colorWidth, colorTop);
+                    }
                     additionalColorsRect = additionalColorsRect.united(colorRect);
                     _painter->setBrush(color);
                     _painter->setPen(color);
