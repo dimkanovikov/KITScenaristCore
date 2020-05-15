@@ -55,6 +55,7 @@ ScenarioChange* ScenarioChangeStorage::append(const QString& _id, const QString&
 {
     if (m_uuids.contains({ _id, _datetime })) {
         Q_ASSERT(0);
+        return nullptr;
     }
 
     //
@@ -185,6 +186,16 @@ bool ScenarioChangeStorage::contains(const QString& _uuid, const QString& _datet
 QList<QPair<QString, QString>> ScenarioChangeStorage::uuids() const
 {
     return MapperFacade::scenarioChangeMapper()->uuids();
+}
+
+QList<QPair<QString, QString>> ScenarioChangeStorage::newUuids()
+{
+    QList<QPair<QString, QString>> allNew;
+    for (DomainObject* domainObject : all()->toList()) {
+        ScenarioChange* change = dynamic_cast<ScenarioChange*>(domainObject);
+        allNew.append({change->uuid().toString(), change->datetime().toString("yyyy-MM-dd hh:mm:ss:zzz")});
+    }
+    return allNew;
 }
 
 QList<QPair<QString, QString>> ScenarioChangeStorage::newUuids(const QString& _fromDatetime)

@@ -67,12 +67,17 @@ namespace DataStorageLayer
         /**
          * @brief Получить список uuid'ов всех локальных изменений
          */
-        QList<QPair<QString, QString> > uuids() const;
+        QList<QPair<QString, QString>> uuids() const;
 
         /**
-         * @brief Изменения сценария с заданной даты
+         * @brief Изменения сценария не сохранённые в БД
          */
-        QList<QPair<QString, QString> > newUuids(const QString& _fromDatetime);
+        QList<QPair<QString, QString>> newUuids();
+
+        /**
+         * @brief Изменения сценария с заданной даты для текущего пользователя
+         */
+        QList<QPair<QString, QString>> newUuids(const QString& _fromDatetime);
 
         /**
          * @brief Получить изменение по uuid'у не загружая в кучу

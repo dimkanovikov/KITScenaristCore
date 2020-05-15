@@ -1000,8 +1000,10 @@ void SynchronizationManager::aboutFullSyncScenario()
         //
         // ... обрабатываем крайний случай, если пользователь сделал изменения, они не успели синхронизироваться
         //     и пропал интернет, таким образом они не смогут быть извлечены из БД, но могут из списка текущих правок
+        //     + сюда же относится кейс, когда не включено автосохранение, и есть накопленные, но не сохранённые
+        //       изменения от других пользователей, чтобы они повторно не применились
         //
-        for (const auto& uuid : StorageFacade::scenarioChangeStorage()->newUuids(QString())) {
+        for (const auto& uuid : StorageFacade::scenarioChangeStorage()->newUuids()) {
             if (!localChanges.contains(uuid)) {
                 localChanges.append(uuid);
             }
