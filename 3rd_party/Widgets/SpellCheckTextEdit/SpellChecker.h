@@ -51,7 +51,8 @@ public:
         Greek,
         GreekPolytonic,
         Serbian,
-        SerbianLatin
+        SerbianLatin,
+        Arabic
     };
 
     /**

@@ -5320,6 +5320,18 @@ quando você estiver trabalhando ele salvará o projeto a cada %1 minutos.</tran
         <source>Greek (Polythonic)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Serbian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serbian (Latin script)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arabic</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ShareDialog</name>

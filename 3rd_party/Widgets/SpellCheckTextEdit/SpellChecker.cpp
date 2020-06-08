@@ -109,6 +109,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case SerbianLatin:
             code = "sr_SR_latin";
             break;
+        case Arabic:
+            code = "ar_AR";
+            break;
         default:
             break;
     }
