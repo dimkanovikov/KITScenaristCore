@@ -74,6 +74,7 @@ namespace {
          *		  левого верхнего угла области для отображения
          */
         void completeReimpl(const QRect& _rect) {
+#ifdef USE_COMPLETER
             Q_UNUSED(_rect);
 
             m_popup->setWindowFlags(Qt::Widget);
@@ -86,16 +87,19 @@ namespace {
             m_popup->setFixedWidth(m_popup->parentWidget()->width());
             m_popup->raise();
             WAF::Animation::sideSlideIn(m_popup, WAF::TopSide, false);
+#endif
         }
 
         /**
          * @brief Закрыть список автодополнения
          */
         void closeCompleter() {
+#ifdef USE_COMPLETER
             if (m_popup != nullptr
                 && m_popup->parentWidget() != nullptr) {
                 WAF::Animation::sideSlideOut(m_popup, WAF::TopSide, false);
             }
+#endif
         }
 
     protected:
