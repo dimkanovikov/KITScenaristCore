@@ -26,7 +26,7 @@
 //
 // Для отладки работы с патчами
 //
-//#define PATCH_DEBUG
+#define PATCH_DEBUG
 #ifdef PATCH_DEBUG
 #include <QDebug>
 #endif
@@ -97,9 +97,11 @@ QStringList splitXml(const QString &_xml)
                 // Игнорируем пустые завершаю тэги
                 //
                 else if (_xml.mid(partStart, currentPosition - partStart + 1).contains('/')) {
-//                    if (xmlParts.size() == 1) {
-//                        xmlParts.first() = QString("<%1><v><![CDATA[]]></v>%2</%1>").arg(startTag, xmlParts.first());
-//                    }
+                    //                    if (xmlParts.size() == 1) {
+                    //                        xmlParts.first() =
+                    //                        QString("<%1><v><![CDATA[]]></v>%2</%1>").arg(startTag,
+                    //                        xmlParts.first());
+                    //                    }
                     xmlParts.append(startTag);
                     startTag.clear();
                 }
@@ -872,8 +874,8 @@ void ScenarioTextDocument::removeIdenticalParts(
     //
     // Очищаем всё, что не является xml'ем
     //
-    auto clearInvalidXmlLines = [] (QStringList& strings) {
-        for (auto& string : strings) {
+    auto clearInvalidXmlLines = [](QStringList &strings) {
+        for (auto &string : strings) {
             if (!string.startsWith("<") && !string.endsWith(">")) {
                 string = QString();
             }
@@ -893,8 +895,7 @@ void ScenarioTextDocument::removeIdenticalParts(
     //
     // Кейс с добавлением блока после блока с редакторскими правками
     //
-    if (firstSplitted.join(QString()).isEmpty()
-        && !lastRemovedPreviousTag.isEmpty()) {
+    if (firstSplitted.join(QString()).isEmpty() && !lastRemovedPreviousTag.isEmpty()) {
         --posDelta;
         secondSplitted.prepend(QString("<%1><v><![CDATA[]]></v></%1>").arg(lastRemovedPreviousTag));
     }

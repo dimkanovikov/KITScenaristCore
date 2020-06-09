@@ -29,6 +29,14 @@ public:
      */
     static qreal pxToMm(qreal _px, bool _x = true);
 
+    /**
+     * @brief Перевести пункты в пикселы и обратно
+     * @param _x указывает направление (горизонтальное - true или вертикальное - false), в котором
+     * необходимо произвести рассчёт
+     */
+    static qreal ptToPx(qreal _pt, bool _x = true);
+    static qreal pxToPt(qreal _px, bool _x = true);
+
 	/**
 	 * @brief Получить размер страницы из строки
 	 */

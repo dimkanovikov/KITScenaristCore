@@ -355,6 +355,7 @@ namespace {
                 QString("<w:p><w:pPr><w:pStyle w:val=\"%1\"/>")
                 .arg(ScenarioBlockStyle::typeName(currentBlockType).toUpper().replace("_", ""));
 
+            QString blockPrefixText;
             if (currentBlockType == ScenarioBlockStyle::SceneHeading
                 && _exportParameters.printScenesNumbers) {
                 if (SceneHeadingBlockInfo* sceneInfo = dynamic_cast<SceneHeadingBlockInfo*>(_cursor.block().userData())) {
@@ -362,9 +363,11 @@ namespace {
                                                                  .arg(sceneInfo->sceneNumber());
                     const QFontMetrics fontMetrics(exportStyle().blockStyle(currentBlockType).font());
                     documentXml.append(
-                                QString("<w:ind w:left=\"-%1\" w:right=\"0\" w:hanging=\"0\" />")
+                                QString("<w:ind w:left=\"0\" w:right=\"0\" w:hanging=\"%1\" />")
                                 .arg(mmToTwips(PageMetrics::pxToMm(fontMetrics.width(sceneNumber))))
                                 );
+
+                    blockPrefixText = sceneNumber;
                 }
             }
 
@@ -372,7 +375,7 @@ namespace {
             //  ... текст абзаца
             //
             const QTextBlock block = _cursor.block();
-            const QString blockText = block.text();
+            const QString blockText = blockPrefixText + block.text();
             documentXml.append("<w:rPr/></w:pPr>");
             foreach (const QTextLayout::FormatRange& range, block.textFormats()) {
                 //
@@ -893,7 +896,9 @@ void DocxExporter::writeDocument(QtZipWriter* _zip, ScenarioDocument* _scenario,
     //
     // Сформируем документ
     //
-    QTextDocument* preparedDocument = prepareDocument(_scenario, _exportParameters);
+    ExportParameters fakeParameters = _exportParameters;
+    fakeParameters.printScenesNumbers = false;
+    QTextDocument* preparedDocument = prepareDocument(_scenario, fakeParameters);
 
     //
     // Данные считываются из исходного документа, определяется тип блока

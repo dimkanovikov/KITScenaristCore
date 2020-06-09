@@ -8,7 +8,7 @@
 #include <QString>
 #include <QTextCursor>
 #include <QTextDocument>
-
+#include <QtMath>
 
 namespace TextEditHelper
 {
@@ -114,7 +114,14 @@ namespace TextEditHelper
      * @brief Рассчитать высоту строки заданного шрифта
      */
     inline static qreal fontLineHeight(const QFont& _font) {
-        return QFontMetricsF(_font).lineSpacing();
+        const QFontMetricsF fontMetrics(_font);
+        return fontMetrics.lineSpacing();
+        const qreal fontHeight = qCeil(fontMetrics.height());
+        const qreal leading = qMax(0.0, fontMetrics.leading());
+//        const qreal maximumHeight = maxLineCount > 0
+//            ? fontHeight * maxLineCount + leading * (maxLineCount - 1)
+//            : availableHeight;
+        return fontHeight;
     }
 
     /**
