@@ -439,6 +439,7 @@ namespace BusinessLogic
         static QString russianTemplateWithCourierPrimeTemplateName();
         static QString chineseTemplateName();
         static QString hebrewTemplateName();
+        static QString arabicTemplateName();
         /** @} */
 
         /**
@@ -451,6 +452,7 @@ namespace BusinessLogic
         static QString russianTemplateWithCourierPrimeTemplateDescription();
         static QString chineseTemplateDescription();
         static QString hebrewTemplateDescription();
+        static QString arabicTemplateDescription();
         /** @} */
 
         /**

@@ -156,6 +156,7 @@
         <file>Templates/final_draft_a4.kitss</file>
         <file>Templates/chinese.kitss</file>
         <file>Templates/hebrew.kitss</file>
+        <file>Templates/arabic.kitss</file>
     </qresource>
     <qresource prefix="/Audio">
         <file>Sound/key-01.wav</file>

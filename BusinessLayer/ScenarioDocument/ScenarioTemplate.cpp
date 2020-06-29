@@ -659,6 +659,11 @@ QString ScenarioTemplate::hebrewTemplateName()
     return QApplication::translate("BusinessLogic::ScenarioTemplate", "Hebrew screenplay");
 }
 
+QString ScenarioTemplate::arabicTemplateName()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Arabic screenplay");
+}
+
 QString ScenarioTemplate::finalDraftA4TemplateDescription()
 {
     return QApplication::translate("BusinessLogic::ScenarioTemplate", "International screenplay standard template for A4 page size.");
@@ -687,6 +692,11 @@ QString ScenarioTemplate::chineseTemplateDescription()
 QString ScenarioTemplate::hebrewTemplateDescription()
 {
     return QApplication::translate("BusinessLogic::ScenarioTemplate", "Hebrew screenplay standard template.");
+}
+
+QString ScenarioTemplate::arabicTemplateDescription()
+{
+    return QApplication::translate("BusinessLogic::ScenarioTemplate", "Arabic screenplay standard template.");
 }
 
 QString ScenarioTemplate::oldFinalDraftA4TemplateName()
@@ -1013,6 +1023,9 @@ void ScenarioTemplate::load(const QString& _fromFile)
                 } else if (m_name == "Hebrew screenplay") {
                     m_name = hebrewTemplateName();
                     m_description = hebrewTemplateDescription();
+                } else if (m_name == "Arabic screenplay") {
+                    m_name = arabicTemplateName();
+                    m_description = arabicTemplateDescription();
                 }
             }
             //
@@ -1262,6 +1275,7 @@ ScenarioTemplateFacade::ScenarioTemplateFacade()
     updateDefaultTemplate("final_draft_letter.");
     updateDefaultTemplate("chinese.");
     updateDefaultTemplate("hebrew.");
+    updateDefaultTemplate("arabic.");
 #else
     defaultTemplatePath = updateDefaultTemplate("mobile.");
     updateDefaultTemplate("russian.");
@@ -1270,6 +1284,7 @@ ScenarioTemplateFacade::ScenarioTemplateFacade()
     updateDefaultTemplate("final_draft_a4.");
     updateDefaultTemplate("chinese.");
     updateDefaultTemplate("hebrew.");
+    updateDefaultTemplate("arabic.");
 #endif
 
     //
