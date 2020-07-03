@@ -435,6 +435,14 @@
         <source>Copy of </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Arabic screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arabic screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLogic::ScriptTextCorrector</name>
@@ -488,6 +496,10 @@
     </message>
     <message>
         <source>Stamp:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tag</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1564,6 +1576,13 @@ Let&apos;s create the first one!</source>
     </message>
     <message>
         <source>The graph is acyclic, edge added as secondary edge.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QWidgetTextControl</name>
+    <message>
+        <source>&amp;Copy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

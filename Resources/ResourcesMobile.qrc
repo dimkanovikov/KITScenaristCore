@@ -121,6 +121,9 @@
         <file>Translations/ScenaristMobile_pt.qm</file>
         <file>Translations/ScenaristMobile_ua.qm</file>
         <file>Translations/ScenaristMobile_zn.qm</file>
+        <file>Translations/qtbase_tr.qm</file>
+        <file>Translations/qt_tr.qm</file>
+        <file>Translations/ScenaristMobile_tr.qm</file>
     </qresource>
     <qresource prefix="/Interface">
         <file>UI/style-android.qss</file>

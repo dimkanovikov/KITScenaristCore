@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fa_IR">
+<TS version="2.1" language="tr_TR">
 <context>
     <name>AccountView</name>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.ui" line="67"/>
         <source>Account</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesap</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.ui" line="188"/>
         <source>RENEW SUBSCRIPTION</source>
-        <translation type="unfinished"></translation>
+        <translation>ABONELİĞİ YENİLE</translation>
     </message>
 </context>
 <context>
@@ -19,12 +19,12 @@
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.ui" line="56"/>
         <source>Create project</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje Oluştur</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.ui" line="96"/>
         <source>CREATE PROJECT</source>
-        <translation type="unfinished"></translation>
+        <translation>PROJE OLUŞTUR</translation>
     </message>
 </context>
 <context>
@@ -32,42 +32,42 @@
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="56"/>
         <source>Create research item</source>
-        <translation type="unfinished"></translation>
+        <translation>Araştırma Ögesi Oluştur</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="113"/>
         <source>Item type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Öge Türü:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="120"/>
         <source>Character</source>
-        <translation type="unfinished">شخص</translation>
+        <translation>Karakter</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="130"/>
         <source>Location</source>
-        <translation type="unfinished"></translation>
+        <translation>Mekan</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="137"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Klasör</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="147"/>
         <source>Text document</source>
-        <translation type="unfinished"></translation>
+        <translation>Metin Belgesi</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="160"/>
         <source>Insert into</source>
-        <translation type="unfinished"></translation>
+        <translation>İçeri Yükle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.ui" line="180"/>
         <source>ADD ITEM</source>
-        <translation type="unfinished"></translation>
+        <translation>ÖGE EKLE</translation>
     </message>
 </context>
 <context>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../../BusinessLayer/Export/AbstractExporter.cpp" line="379"/>
         <source>Real name: </source>
-        <translation type="unfinished"></translation>
+        <translation>Gerçek Ad: </translation>
     </message>
 </context>
 <context>
@@ -83,27 +83,27 @@
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="15"/>
         <source>INT</source>
-        <translation>داخلی</translation>
+        <translation>İÇ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="16"/>
         <source>EXT</source>
-        <translation>توضیح</translation>
+        <translation>DIŞ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="17"/>
         <source>EST</source>
-        <translation>نمای معرف</translation>
+        <translation>EST</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="18"/>
         <source>INT./EXT</source>
-        <translation>داخلی./خارجی</translation>
+        <translation>İÇ./DIŞ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="19"/>
         <source>INT/EXT</source>
-        <translation>داخلی/خارجی</translation>
+        <translation>İÇ/DIŞ</translation>
     </message>
 </context>
 <context>
@@ -111,32 +111,32 @@
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="36"/>
         <source>INT</source>
-        <translation>داخلی</translation>
+        <translation>İÇ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="37"/>
         <source>EXT</source>
-        <translation>توضیح</translation>
+        <translation>DIŞ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="38"/>
         <source>EST</source>
-        <translation>نمای معرف</translation>
+        <translation>EST</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="39"/>
         <source>INT./EXT</source>
-        <translation>داخلی./خارجی</translation>
+        <translation>İÇ./DIŞ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="40"/>
         <source>INT/EXT</source>
-        <translation>داخلی/خارجی</translation>
+        <translation>İÇ/DIŞ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="41"/>
         <source>I/E</source>
-        <translation>I/E</translation>
+        <translation>İ/D</translation>
     </message>
 </context>
 <context>
@@ -144,47 +144,47 @@
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="158"/>
         <source>All supported files</source>
-        <translation type="unfinished"></translation>
+        <translation>Desteklenen Dosyalar</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="160"/>
         <source>KIT Scenarist project</source>
-        <translation type="unfinished"></translation>
+        <translation>KIT Scenarist Projesi</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="162"/>
         <source>Final Draft screenplay</source>
-        <translation>پیش نویس نهایی فیلمنامه</translation>
+        <translation>Final Draft Senaryosu</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="164"/>
         <source>Final Draft template</source>
-        <translation>قالب پیشنویس نهایی</translation>
+        <translation>Final Draft Şablonu</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="166"/>
         <source>Trelby screenplay</source>
-        <translation>فیلمنامه Trelby</translation>
+        <translation>Trelby Senaryosu</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="168"/>
         <source>Office Open XML</source>
-        <translation>Office Open XML</translation>
+        <translation>Office Açık XML</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="170"/>
         <source>OpenDocument text</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenDocument Metni</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="172"/>
         <source>Fountain text</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaynak Metni</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="174"/>
         <source>Celtx project</source>
-        <translation type="unfinished"></translation>
+        <translation>Celtx Projesi</translation>
     </message>
 </context>
 <context>
@@ -192,67 +192,63 @@
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="175"/>
         <source>Pages</source>
-        <translation>صفحات</translation>
+        <translation>Sayfalar</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="182"/>
         <source>Words</source>
-        <translation>کلمات</translation>
+        <translation>Kelimeler</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="189"/>
         <source>Symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>Semboller</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ResearchModel</name>
     <message>
-        <source>Scenario</source>
-        <translation type="vanished">Scenario</translation>
-    </message>
-    <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="107"/>
         <source>Script</source>
-        <translation type="unfinished">فیلمنامه</translation>
+        <translation>Senaryo</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="115"/>
         <source>Title Page</source>
-        <translation>صفحه عنوان</translation>
+        <translation>Sayfa Başlığı</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="123"/>
         <source>Logline</source>
-        <translation type="unfinished"></translation>
+        <translation>Logline (Önerme)</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="131"/>
         <source>Synopsis</source>
-        <translation>سیناپس</translation>
+        <translation>Sinopsis</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="139"/>
         <source>Versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürümler</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="148"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="251"/>
         <source>Characters</source>
-        <translation>شخصیتها</translation>
+        <translation>Karakterler</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="157"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="256"/>
         <source>Locations</source>
-        <translation>لوکیشنها</translation>
+        <translation>Mekanlar</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="166"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="261"/>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Belgeler</translation>
     </message>
 </context>
 <context>
@@ -261,108 +257,106 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="66"/>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="92"/>
         <source>Undefined</source>
-        <translation>تعریف نشده</translation>
+        <translation>Tanımsız</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="67"/>
         <source>Scene Heading</source>
-        <translation>عنوان صحنه</translation>
+        <translation>Sahne Başlığı</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="68"/>
         <source>Scene Characters</source>
-        <translation>Scene Characters</translation>
+        <translation>Sahne Karakterleri</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="69"/>
         <source>Action</source>
-        <translatorcomment>Action</translatorcomment>
-        <translation>توصیف</translation>
+        <translation>Eylem</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="70"/>
         <source>Character</source>
-        <translatorcomment>شخصیت</translatorcomment>
-        <translation>شخص</translation>
+        <translation>Karakter</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="71"/>
         <source>Parenthetical</source>
-        <translation>حالت شخص</translation>
+        <translation>Parantez</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="72"/>
         <source>Dialog</source>
-        <translation>دیالوگ</translation>
+        <translation>Diyalog</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="73"/>
         <source>Transition</source>
-        <translation>انتقال</translation>
+        <translation>Geçişler</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="74"/>
         <source>Shot</source>
-        <translation>نما</translation>
+        <translation>Çekim</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="75"/>
         <source>Title Header</source>
-        <translation>عنوان سربرگ</translation>
+        <translation>Sayfa Başlığı</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="76"/>
         <source>Title</source>
-        <translation>عنوان</translation>
+        <translation>Başlık</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="77"/>
         <source>Noprintable Text</source>
-        <translation>Noprintable Text</translation>
+        <translation>Yazdırılamaz Metin</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="78"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Klasör</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="79"/>
         <source>Folder Footer</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt Klasör</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="80"/>
         <source>Scene Description</source>
-        <translation>با شرکت</translation>
+        <translation>Sahne Açıklaması</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="81"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Lirikler</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="94"/>
         <source>SH</source>
         <extracomment>Reduction of Scene Heading</extracomment>
-        <translation>عنوان صحنه</translation>
+        <translation>SB</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="96"/>
         <source>SC</source>
         <extracomment>Reduction of Scene Characters</extracomment>
-        <translation>SC</translation>
+        <translation>SK</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="98"/>
         <source>A</source>
         <extracomment>Reduction of Action</extracomment>
-        <translation>A</translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="100"/>
         <source>C</source>
         <extracomment>Reduction of Character</extracomment>
-        <translation>C</translation>
+        <translation>K</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="102"/>
@@ -380,55 +374,55 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="106"/>
         <source>Tr</source>
         <extracomment>Reduction of Transition</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="108"/>
         <source>S</source>
         <extracomment>Reduction of Shot</extracomment>
-        <translation>پرانتز</translation>
+        <translation>Ç</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="110"/>
         <source>TH</source>
         <extracomment>Reduction of Title Header</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Sayfa Başlığı</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="112"/>
         <source>Ti</source>
         <extracomment>Reduction of Title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Başlık</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="114"/>
         <source>NT</source>
         <extracomment>Reduction of Noprintable Text</extracomment>
-        <translation>NT</translation>
+        <translation>YM</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="116"/>
         <source>F</source>
         <extracomment>Reduction of Folder</extracomment>
-        <translation>F</translation>
+        <translation>KL</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="118"/>
         <source>FF</source>
         <extracomment>Reduction of Folder Footer</extracomment>
-        <translation>FF</translation>
+        <translation>AK</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="120"/>
         <source>SD</source>
         <extracomment>Reduction of Scene Description</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>SA</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="122"/>
         <source>L</source>
         <extracomment>Reduction of Lyrics</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>L</translation>
     </message>
 </context>
 <context>
@@ -436,7 +430,7 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="405"/>
         <source>FADE IN:</source>
-        <translation>محو شدن در:</translation>
+        <translation>KARARMA:</translation>
     </message>
 </context>
 <context>
@@ -444,32 +438,32 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="634"/>
         <source>Final Draft screenplay (A4)</source>
-        <translation type="unfinished"></translation>
+        <translation>Final Draft Senaryosu (A4)</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="639"/>
         <source>Final Draft screenplay (Letter)</source>
-        <translation type="unfinished"></translation>
+        <translation>Final Draft Senaryosu (Letter)</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="644"/>
         <source>Russian screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation>Rusça Senaryo</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="649"/>
         <source>Russian screenplay with Courier Prime</source>
-        <translation type="unfinished"></translation>
+        <translation>Rusça senaryo, Courier Prime fontuyla</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="654"/>
         <source>Chinese screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation>Çin Senaryosu</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="659"/>
         <source>Hebrew screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation>İbranice Senaryo</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="664"/>
@@ -479,32 +473,32 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="669"/>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation type="unfinished"></translation>
+        <translation>A4 sayfa boyutunda uluslararası standart senaryo şablonu.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="674"/>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Letter sayfa boyutunda uluslararası standart senaryo şablonu.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="679"/>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rusça ve CIS standart senaryo şablonu.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="684"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rusça ve CIS standart senaryo şablonu, Courier New yerine Courier Prime fontuyla.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="689"/>
         <source>Chinese screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Standart Çin Senaryosu.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="694"/>
         <source>Hebrew screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Standart İbranice Senaryo.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="699"/>
@@ -514,17 +508,17 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="714"/>
         <source>Default</source>
-        <translation>پیش فرض</translation>
+        <translation>Varsayılan</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="719"/>
         <source>Default with Courier Prime</source>
-        <translation>پیش فرض با Courier Prime</translation>
+        <translation>Courier Prime ile Varsayılan</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="735"/>
         <source>Copy of </source>
-        <translation type="unfinished"></translation>
+        <translation>Kopyası </translation>
     </message>
 </context>
 <context>
@@ -533,12 +527,12 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="34"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation type="unfinished">ادامه</translation>
+        <translation>DEVAMI</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="39"/>
         <source>MORE</source>
-        <translation type="unfinished"></translation>
+        <translation>DAHA</translation>
     </message>
 </context>
 <context>
@@ -546,58 +540,58 @@
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="828"/>
         <source>Go to text</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazıya Git</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="833"/>
         <source>Convert to scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahneye Dönüştür</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="834"/>
         <source>Convert to folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Klasöre Dönüştür</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="840"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenle</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="877"/>
         <source>Color %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Renk</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="882"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Temizle</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="892"/>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="930"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="919"/>
         <source>Add color</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Ekle</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="955"/>
         <source>Create card</source>
-        <translation type="unfinished"></translation>
+        <translation>Kart Oluştur</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="956"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Sil</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="998"/>
         <source>Stamp:</source>
-        <translation type="unfinished"></translation>
+        <translation>Damga:</translation>
     </message>
 </context>
 <context>
@@ -605,7 +599,7 @@
     <message>
         <location filename="../../DataLayer/DataStorageLayer/ScriptVersionStorage.cpp" line="27"/>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>İlk Taslak</translation>
     </message>
 </context>
 <context>
@@ -613,171 +607,171 @@
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="70"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
-        <translation>پروژه توسط نسخه های جدیدتر ویرایش شده است. جهت باز شدن نیاز به به روز رسانی نرم افزار دارید.</translation>
+        <translation>Proje daha yüksek sürümde tasarlandı. Uygulamayı son sürüme güncelleyip tekrar deneyin.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="430"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1536"/>
         <source>First draft</source>
-        <translation type="unfinished"></translation>
+        <translation>İLK TASLAK</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="438"/>
         <source>INT</source>
-        <translation>داخلی</translation>
+        <translation>İÇ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="442"/>
         <source>EXT</source>
-        <translation>خارجی</translation>
+        <translation>DIŞ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="446"/>
         <source>INT./EXT</source>
-        <translation type="unfinished">داخلی./خارجی</translation>
+        <translation>İÇ./DIŞ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="454"/>
         <source>DAY</source>
-        <translation>روز</translation>
+        <translation>GÜN</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="458"/>
         <source>NIGHT</source>
-        <translation>شب</translation>
+        <translation>GECE</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="462"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="727"/>
         <source>MORNING</source>
-        <translation>صبح</translation>
+        <translation>SABAH</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="466"/>
         <source>AFTERNOON</source>
-        <translation type="unfinished"></translation>
+        <translation>Öğleden Sonra</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="470"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="731"/>
         <source>EVENING</source>
-        <translation>عصر</translation>
+        <translation>AKŞAM</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="474"/>
         <source>LATER</source>
-        <translation type="unfinished"></translation>
+        <translation>SONRA</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="478"/>
         <source>MOMENTS LATER</source>
-        <translation type="unfinished"></translation>
+        <translation>BİRAZ SONRA</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="482"/>
         <source>CONTINUOUS</source>
-        <translation type="unfinished"></translation>
+        <translation>DEVAMLI</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="486"/>
         <source>THE NEXT DAY</source>
-        <translation type="unfinished"></translation>
+        <translation>SONRAKİ GÜN</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="495"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
-        <translation>V.O.</translation>
+        <translation>D.S.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="500"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
-        <translation>O.S.</translation>
+        <translation>E.D.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="505"/>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>K.D.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="510"/>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ALTYAZI</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="515"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation>ادامه</translation>
+        <translation>DEVAMI</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="523"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1474"/>
         <source>CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>KES:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="527"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1478"/>
         <source>FADE IN:</source>
-        <translation type="unfinished">محو شدن در:</translation>
+        <translation>AÇILMA:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="531"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1482"/>
         <source>FADE OUT</source>
-        <translation type="unfinished"></translation>
+        <translation>KARARMA</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="535"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1486"/>
         <source>FADE TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>KARARIP AÇILARAK GEÇİŞ:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="539"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1490"/>
         <source>DISSOLVE TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>SOLARAK GEÇİŞ:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="543"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1494"/>
         <source>BACK TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>DÖÜŞ:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="547"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1498"/>
         <source>MATCH CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>EŞLEŞTİRMELİ KESME:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="551"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1502"/>
         <source>JUMP CUT TO:</source>
-        <translation type="unfinished"></translation>
+        <translation>ATLAYARAK KESME:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="555"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1506"/>
         <source>FADE TO BLACK</source>
-        <translation type="unfinished"></translation>
+        <translation>SİYAHA KARARMA</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
         <source>Photos</source>
-        <translation>عکس ها</translation>
+        <translation>FOTOĞRAFLAR</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="1363"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1434"/>
         <source>Unnamed image</source>
-        <translation>تصویر نامگذاری نشده</translation>
+        <translation>İsimsiz Görüntü</translation>
     </message>
 </context>
 <context>
@@ -785,7 +779,7 @@
     <message>
         <location filename="../../../../libs/fileformats/docx_reader.cpp" line="145"/>
         <source>Unable to open archive.</source>
-        <translation>مشکل باز گردن آرشیو</translation>
+        <translation>Arşiv Açılamıyor.</translation>
     </message>
 </context>
 <context>
@@ -793,51 +787,51 @@
     <message>
         <location filename="../../Domain/ScriptVersion.cpp" line="151"/>
         <source>current version</source>
-        <translation type="unfinished"></translation>
+        <translation>Şimdiki sürüm</translation>
     </message>
 </context>
 <context>
     <name>ExportView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="248"/>
-        <source>Check page breaks</source>
-        <translation>بررسی تداوم صفحات</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="255"/>
-        <source>Page numbers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="241"/>
-        <source>Scenes numbers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="56"/>
         <source>Export</source>
-        <translation type="unfinished">خروجی</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="234"/>
-        <source>Save review marks</source>
-        <translation>ذخیره نشانگر های نقد و بررسی</translation>
+        <translation>Dışa Aktar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="148"/>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="277"/>
         <source>EXPORT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="286"/>
-        <source>Print title page</source>
-        <translation type="unfinished"></translation>
+        <translation>DIŞA AKTAR</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="227"/>
         <source>Dialogues numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Diyalog Numaralarını Yazdır</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="234"/>
+        <source>Save review marks</source>
+        <translation>İnceleme İşaretlerini Kaydet</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="241"/>
+        <source>Scenes numbers</source>
+        <translation>Sahne Numaralarını Yazdır</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="248"/>
+        <source>Check page breaks</source>
+        <translation>Sayfa Sonlarını Denetle</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="255"/>
+        <source>Page numbers</source>
+        <translation>Sayfa Numaralarını Yazdır</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.ui" line="286"/>
+        <source>Print title page</source>
+        <translation>Başlık Sayfasını Yazdır</translation>
     </message>
 </context>
 <context>
@@ -845,27 +839,27 @@
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="71"/>
         <source>OpenDocument Text</source>
-        <translation>Office Open XML</translation>
+        <translation>OpenDocument Metni</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="73"/>
         <source>Office Open XML</source>
-        <translation>Office Open XML</translation>
+        <translation>Office Açık XML</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="75"/>
         <source>Rich Text Format</source>
-        <translation>Rich Text Format</translation>
+        <translation>Zengin Yazı Formatı</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="77"/>
         <source>Plain Text</source>
-        <translation>Plain Text</translation>
+        <translation>Sade Metin</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="107"/>
         <source>All Supported Files</source>
-        <translation>همه فایل های پشتیبانی شده</translation>
+        <translation>Desteklenen Dosyalar</translation>
     </message>
 </context>
 <context>
@@ -874,7 +868,7 @@
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="255"/>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="398"/>
         <source>END OF </source>
-        <translation type="unfinished"></translation>
+        <translation>SONU </translation>
     </message>
 </context>
 <context>
@@ -882,27 +876,27 @@
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="121"/>
         <source>Couldn&apos;t parse XML file.</source>
-        <translation type="unfinished"></translation>
+        <translation>XML dosyası ayrıştırılamadı.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="299"/>
         <source>Couldn&apos;t read file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya okunamadı.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="368"/>
         <source>Couldn&apos;t open file to write.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazmak için dosya açılamadı.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="376"/>
         <source>Saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydedildi.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="398"/>
         <source>MindMap exported as </source>
-        <translation type="unfinished"></translation>
+        <translation>Zihin Haritası olarak dışa aktarıldı </translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="439"/>
@@ -918,73 +912,73 @@
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="749"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="858"/>
         <source>No active node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etkin düğüm yok.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="503"/>
         <source>No active node</source>
-        <translation type="unfinished"></translation>
+        <translation>Etkin düğüm yok</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="517"/>
         <source>Node hasn&apos;t parent for add sibling node</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğüm, kardeş düğüm eklemek için üst öğeye sahip değil</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="541"/>
         <source>Base node cannot be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Temel düğüm çözülemez.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="579"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="608"/>
         <source>Too much scaling.</source>
-        <translation type="unfinished"></translation>
+        <translation>Çok fazla ölçeklendirme.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="639"/>
         <source>Select node color</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğüm rengi seç</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="692"/>
         <source>Select text color</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazı rengi seç</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="735"/>
         <source>Add edge: select destination node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesit ekle: Hedef düğümü seç.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="741"/>
         <source>Delete edge: select other end-node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesit sil: diğer uç düğümü seçmenizi sağlar.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="810"/>
         <source>Edge adding cancelled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesit ekleme işlemi iptal edildi.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="817"/>
         <source>Edge deleting cancelled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesit silme işlemi iptal edildi.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="919"/>
         <source>Can&apos;t add edge between single node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tek düğümün arasına kesit ekleme.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="925"/>
         <source>There is already an edge between these two nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu iki düğüm arasında zaten bir kesit var.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="956"/>
         <source>There is no edge between these two nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu iki düğüm arasında bir kenar yok.</translation>
     </message>
 </context>
 <context>
@@ -992,73 +986,93 @@
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Şekil</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="67"/>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="151"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Yardım</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="121"/>
         <source>Contents</source>
-        <translation type="unfinished"></translation>
+        <translation>İçindekiler</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="126"/>
         <source>At first glance</source>
-        <translation type="unfinished"></translation>
+        <translation>İlk Bakış</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="131"/>
         <source>Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Menü</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="136"/>
         <source>Authorization in cloud service</source>
-        <translation type="unfinished"></translation>
+        <translation>Bulut hizmetinde yetkilendirme</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="141"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeler</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="146"/>
         <source>Settings</source>
-        <translation type="unfinished">تنظیمات</translation>
+        <translation>Ayarlar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="156"/>
         <source>Leave review</source>
-        <translation type="unfinished"></translation>
+        <translation>Görüş Bildirin</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="161"/>
         <source>Create a new project</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni Proje Oluştur</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="166"/>
         <source>Research</source>
-        <translation type="unfinished"></translation>
+        <translation>Araştırma</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="171"/>
         <source>Cards</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartlar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="176"/>
         <source>Script editing</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryoyu Düzenle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="181"/>
         <source>Script navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryo Navigasyonu</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="186"/>
+        <source>Saving the script</source>
+        <translation>Senaryoyu kaydet</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="191"/>
+        <source>Script import</source>
+        <translation>Senaryoyu İçe Aktar</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="196"/>
+        <source>Script export</source>
+        <translation>Senaryoyu Dışa Aktar</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="201"/>
+        <source>Secret features</source>
+        <translation>Gizli özellikler</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="237"/>
@@ -1136,27 +1150,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:14px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;15&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;S&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:24pt; font-weight:496;&quot;&gt;ecret features&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:16pt; font-weight:496;&quot;&gt;How convenient to switch between pages?&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Roboto&apos;; font-size:14pt;&quot;&gt;To conveniently switch between pages, you can use the swipe gesture from right to left and in the opposite direction. Thus, you can navigate between virtually all screens of the application.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="186"/>
-        <source>Saving the script</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="191"/>
-        <source>Script import</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="196"/>
-        <source>Script export</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/HelpView.ui" line="201"/>
-        <source>Secret features</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1164,57 +1158,57 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ImportView.ui" line="56"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ImportView.ui" line="67"/>
         <source>Import script</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryoyu İçe Aktar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ImportView.ui" line="123"/>
         <source>Save review marks</source>
-        <translation>ذخیره نشانگر های نقد و بررسی</translation>
+        <translation>İnceleme İşaretlerini Kaydet</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ImportView.ui" line="130"/>
         <source>Remove scene numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahne Numaralarını Sil</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ImportView.ui" line="137"/>
         <source>EXISTED PROJECT</source>
-        <translation type="unfinished"></translation>
+        <translation>VAR OLAN PROJE</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ImportView.ui" line="144"/>
         <source>NEW PROJECT</source>
-        <translation type="unfinished"></translation>
+        <translation>YENİ PROJE</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ImportView.ui" line="151"/>
         <source>Replace script</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryoyu Yeniden Yerleştir</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ImportView.ui" line="161"/>
         <source>End of script</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryo Sonu</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ImportView.ui" line="181"/>
         <source>Insert to</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ImportView.ui" line="188"/>
         <source>Find characters and locations</source>
-        <translation>پیدا کردن شخصیت و لوکیشن</translation>
+        <translation>Karakterleri ve Mekanları Bul</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ImportView.ui" line="228"/>
         <source>To import files of FDX, DOCX, Fountain or KITSP file-types, open them on your device (e.g. in file browser), tap Open in... or the share button and choose KIT Scenarist.</source>
-        <translation type="unfinished"></translation>
+        <translation>FDX, DOCX, Fountain veya KITSP dosya türündeki dosyaları içe aktarmak için, bunları cihazınızda açın (örneğin, dosya tarayıcısında), Aç ... düğmesine veya paylaş düğmesine dokunun ve KIT Scenarist&apos;i seçin.</translation>
     </message>
 </context>
 <context>
@@ -1222,301 +1216,300 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.ui" line="67"/>
         <source>Authorization</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.ui" line="163"/>
-        <source>LOGIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Yetki</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.ui" line="150"/>
         <source>RESTORE PASSWORD</source>
-        <translation type="unfinished"></translation>
+        <translation>ŞİFREYİ YENİLE</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.ui" line="163"/>
+        <source>LOGIN</source>
+        <translation>GİRİŞ YAP</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.ui" line="244"/>
         <source>SIGN UP</source>
-        <translation type="unfinished"></translation>
+        <translation>KAYDOL</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ApplicationManager</name>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="595"/>
-        <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
-        <translation>شما سعی دارید پروژه خود را در پوشه ای که وجود ندارد ایجاد کنید.&lt;b&gt;%1&lt;/b&gt;.لطفا مکان دیگری را برای پروژه جدید انتخاب کنید.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="599"/>
-        <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
-        <translation>فایل قابل تغییر نیست. شاید در برنامه دیگری باز است. لظفا آن را ببندید و دوباره باز کنید.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="602"/>
-        <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>فایل قابل تغییر نیست. محدودیت نوشتن پوشه انتخاب شده را چک کنید. لظفا پوشه دیگری انتخاب کنید.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="604"/>
-        <source>Create project error</source>
-        <translation>خطای ایجاد پروژه</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="637"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="816"/>
-        <source>Can&apos;t open project file</source>
-        <translation>پروژه باز نمی شود.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1139"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1162"/>
-        <source>Saving error</source>
-        <translation>خطای ذخیره</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1140"/>
-        <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
-        <translation>شما نمی توانید تغییرات را اعمال کنید. خطای داخلی پایگاه داده ها:%1 لطفا وجود و محدودیت دسترسی خود را چک و دوباره سعی کنید.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1163"/>
-        <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
-        <translation>پروژه شما در محل قبل قرار ندارد. &lt;b&gt;%1&lt;/b&gt; لطفا فایل را به محل قبل برگردانید و سپس برای دخیره اقدام کنید.</translation>
-    </message>
-    <message>
-        <source>Ignore and try to open project?</source>
-        <translation type="vanished">بدون توجه به شرایط پروژه را باز کنید.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="906"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="998"/>
-        <source>Change project name</source>
-        <translation>تغییر نام پروژه</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="907"/>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="999"/>
-        <source>Enter new name for project</source>
-        <translation>خطای نام جدید پروژه</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1038"/>
-        <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>آیا از حذف پروژه اطمینان دارید &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1055"/>
-        <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>آیا از حذف اشتراک پروژه &lt;b&gt;%1&lt;/b&gt; اطمینان دارید؟</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1088"/>
-        <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
-        <translation>آیا از حذف اشتراک پروژه &lt;b&gt;%2&lt;/b&gt; برای کاربر &lt;b&gt;%1&lt;/b&gt; اطمینان دارید؟ </translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="267"/>
-        <source>Connection active</source>
-        <translation>اتصال فعال</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="114"/>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="131"/>
         <source>Import error</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe Aktarma Hatsı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="115"/>
         <source>Can&apos;t get file path to import. Try to download it and open in file browser.</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarılacak dosya yolu alınamıyor. İndirmeyi deneyin ve dosya tarayıcısında açın.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="131"/>
         <source>Can&apos;t create temporatry file for import.</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarma için geçici dosya oluşturulamıyor.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="267"/>
+        <source>Connection active</source>
+        <translation>Bağlantı aktif</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="273"/>
         <source>Project synchronized</source>
-        <translation>همسان سازی پروژه</translation>
+        <translation>Proje senkronize oldu</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="286"/>
         <source>Connection inactive</source>
-        <translation>اتصال غیر فعال</translation>
+        <translation>Bağlantı etkisiz</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="287"/>
         <source>Project didn&apos;t synchronized</source>
-        <translation>پروژه همسان سازی نشد.</translation>
+        <translation>Proje senkronize olmadı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="315"/>
         <source>Network error</source>
-        <translation>خطای شبکه</translation>
+        <translation>Ağ hatası</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="317"/>
         <source>Project didn&apos;t synchronized.</source>
-        <translation>پروژه همسان سازی نشد.</translation>
+        <translation>Proje senkronize olmadı.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="333"/>
         <source>Incorrect username or password.</source>
-        <translation>نام کاربری یا کلمه عبور نادرست است.</translation>
+        <translation>Kullanıcı adı veya şifre yanlış.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="343"/>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydedilen şifre yanlış. Şifreyi değiştirmişsin görünüyor. Lütfen,i yeni şifreni gir.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="353"/>
         <source>Subscription ended</source>
-        <translation>پایان اشتراک گذاری</translation>
+        <translation>Abonelik sonlandı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="354"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
-        <translation>دوره اشتراک خریداری شده پایان یافت.
-پروژه یکسان سازی نشد.</translation>
+        <translation>Satın alınan abonelik süresi sona erdi.
+
+Proje senkronize edilmedi.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="366"/>
         <source>Network Error</source>
-        <translation>خطای شبکه</translation>
+        <translation>Ağ hatası</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="367"/>
         <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation>لطفا ارتباط شبکه خود را چک کنید و همسانسازی را دوباره انجام دهید.
-پروژه همسان سازی نشد.</translation>
+        <translation>Tüm veriler hizmetten yüklenemiyor. Lütfen internet bağlantınızın kalitesini kontrol edin ve senkronizasyonu yenileyin.
+
+Proje senkronize edilmedi.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="391"/>
         <source>Share error</source>
-        <translation>خطای اشتراک</translation>
+        <translation>Paylaşma hatası</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="392"/>
         <source>You can&apos;t share project with yourself.</source>
-        <translation>شما شخصا توانایی اشتراک پروژه را ندارید.</translation>
+        <translation>Projeyi kendin ile paylaşamazsın.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="401"/>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="412"/>
         <source>Project not available</source>
-        <translation>پروژه در دسترس نیست.</translation>
+        <translation>Proje mevcut değil</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="402"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
-        <translation>پروژه فعلی برای همسان سازی موجود نیست، چرا که اشتراک صاحب پروژه به پایان رسیده است.
-پروژه همسان سازی نشد.</translation>
+        <translation>Mevcut proje, senkronizasyon için kullanılamıyor çünkü projenin sahip aboneliği sona erdi.
+Proje senkronize edilmedi.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="413"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
-        <translation>دسترسی شما به این پروژه بسته شده است.
-پروژه همسان سازی نشد.</translation>
+        <translation>Mevcut proje şu anda senkronizasyon için kullanılamıyor, çünkü proje sahibi sizin için projeye erişimi kapatıyor.
+Proje senkronize edilmedi.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="423"/>
         <source>Sync not available</source>
-        <translation>هماهنگ سازی در دسترس نیست.</translation>
+        <translation>Senkronizasyon mevcut değil</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="424"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
-        <translation>استفاده شما از فضای سرور طولانی شده است.
-پروژه همسان سازی نشده است.</translation>
+        <translation>Bir sunucuda alan kullanımı için mevcut olanların tümünü tükettiniz.
+
+Proje senkronize edilmedi.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="434"/>
         <source>Email already exist</source>
-        <translation>ایمیل وجود دارد.</translation>
+        <translation>Email zaten alınmış</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="443"/>
         <source>Password too weak</source>
-        <translation>کلمه عبور نا مطمئن است.</translation>
+        <translation>Şifre çok zayıf</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="470"/>
         <source>Wrong email</source>
-        <translation>ایمیل اشتباه است.</translation>
+        <translation>Yanlış email</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="479"/>
         <source>Unknown Error</source>
-        <translation>خطای ناشناخته</translation>
+        <translation>Bilinmeyen hata</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="595"/>
+        <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
+        <translation>Varolmayan &lt;b&gt;%1&lt;/b&gt; klasöründe proje oluşturmaya çalışın. Lütfen yeni proje için başka bir yer seçin.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="599"/>
+        <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
+        <translation>dosyaya yazma. Belki başka bir uygulamada açıldı. Lütfen kapatın ve tekrar deneyin.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="602"/>
+        <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
+        <translation>Dosyaya yazılamıyor. Seçilen klasöre yazma izinlerini kontrol edin. Lütfen başka bir klasör seçin.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="604"/>
+        <source>Create project error</source>
+        <translation>Proje oluşturma hatası</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="637"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="816"/>
+        <source>Can&apos;t open project file</source>
+        <translation>Proje dosyası açılamıyor</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="655"/>
         <source>Loading Scenario</source>
-        <translation>سناریو در حال بارگذاری است.</translation>
+        <translation>Senaryo yükleniyor</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="655"/>
         <source>Please wait. Loading can take few minutes.</source>
-        <translation>لطفا منتظر بمانید. بارگذاری زمان می برد.</translation>
+        <translation>Lütfen Bekleyin. Yükleme birkaç dakika alacak.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="687"/>
         <source>Sync scenario with cloud service.</source>
-        <translation>Sync scenario with cloud service.</translation>
+        <translation>Senaryo bulut servisi ile senkronize oldu.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="738"/>
         <source>Importing script</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryo içe aktarılıyor</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="738"/>
         <source>Please wait. Importing can take few minutes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen bekleyin. İçe aktarma birkaç dakika alacak.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="906"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="998"/>
+        <source>Change project name</source>
+        <translation>Proje adını değiştir</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="907"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="999"/>
+        <source>Enter new name for project</source>
+        <translation>Projeye yeni isim girin</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="941"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; projesini son zamanlardan kaldırmak istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="965"/>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="971"/>
         <source>Moving project to the cloud failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje buluta akarılırken hata oluştu</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="966"/>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeleri buluta taşımak için KIT Scenarist bulut hizmetine giriş yapmalısınız.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="972"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeleri buluta taşımak için KIT Scenarist bulut hizmetindeki aboneliğiniz aktif olmalıdır.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1213"/>
-        <source>in cloud</source>
-        <translation>in cloud</translation>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1038"/>
+        <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation>&lt;b&gt;%1&lt;/b&gt; projesini kaldırmak istediğinizden emin misiniz?</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1055"/>
+        <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation>&lt;b&gt;%1&lt;/b&gt; projesine aboneliğinizi kaldıracağınızdan emin misiniz?</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1088"/>
+        <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
+        <translation>&lt;b&gt;%2&lt;/b&gt; projesine &lt;b&gt;%1&lt;/b&gt; kullanıcısının aboneliğini kaldırmak istediğinizden emin misiniz?</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1139"/>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1162"/>
+        <source>Saving error</source>
+        <translation>Kaydetme hatası</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1140"/>
+        <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
+        <translation>Projede değişiklikler yazamıyorum. Bazı dahili veritabanı hatası var:%1 Lütfen dosyanın var olduğunu ve içine yazma izniniz olduğunu kontrol edin. Kaydetmeyi tekrar denemek ister misiniz?</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1163"/>
+        <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
+        <translation>Size &lt;b&gt;%1&lt;/b&gt; adresinde bulunan projede değişiklik yazamıyorsunuz. Lütfen dosyayı geri taşıyın ve kaydetmeyi tekrar deneyin. Kaydetmeyi tekrar denemek ister misiniz?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1213"/>
         <source>on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Cihazda</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/ManagementLayer/ApplicationManager.cpp" line="1213"/>
+        <source>in cloud</source>
+        <translation>Bulutta</translation>
     </message>
 </context>
 <context>
@@ -1524,37 +1517,37 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="61"/>
         <source>Export</source>
-        <translation>خروجی</translation>
+        <translation>Dışa Aktar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="61"/>
         <source>Please wait. Export can take few minutes.</source>
-        <translation>لطفا صبر کنید خروجی زمان می برد.</translation>
+        <translation>Lütfen bekleyin. Dışa aktarma birkaç dakika alabilir.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="160"/>
         <source>Send script to</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryo gönder</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="178"/>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
-        <translation>پوشه موجود نیست.&lt;b&gt;%1&lt;/b&gt;. برای خروجی محل دیگری انتخاب کنید.</translation>
+        <translation>Var olmayan &lt;b&gt;%1&lt;/b&gt; klasörüne aktarmayı deneyin. Lütfen dışa aktarılan dosya için başka bir konum seçin.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="182"/>
         <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry export.</source>
-        <translation>فایل قابل تغییر نیست. شاید در برنامه دیگری باز است. لظفا آن را ببندید و دوباره خروجی بگیرید.</translation>
+        <translation>Dosyaya yazılamıyor. Belki başka bir uygulamada açıldı. Lütfen kapatın ve dışa aktarmayı tekrar deneyin.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="185"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>فایل قابل تغییر نیست. محدودیت نوشتن پوشه انتخاب شده را چک کنید. لظفا پوشه دیگری انتخاب کنید.</translation>
+        <translation>Dosyaya yazılamıyor. Seçilen klasöre yazma izinlerini kontrol edin. Lütfen başka bir klasör seçin.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ExportManager.cpp" line="187"/>
         <source>Export error</source>
-        <translation>خطای خروجی</translation>
+        <translation>Dışa Aktarma Hatası</translation>
     </message>
 </context>
 <context>
@@ -1562,17 +1555,17 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ImportManager.cpp" line="386"/>
         <source>Characters import</source>
-        <translation type="unfinished"></translation>
+        <translation>Karakterleri İçe Aktar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ImportManager.cpp" line="397"/>
         <source>Locations import</source>
-        <translation type="unfinished"></translation>
+        <translation>Mekanları İçe Aktar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ImportManager.cpp" line="408"/>
         <source>Documents import</source>
-        <translation type="unfinished"></translation>
+        <translation>Belgeleri İçe Aktar</translation>
     </message>
 </context>
 <context>
@@ -1580,17 +1573,17 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="27"/>
         <source>Owner</source>
-        <translation>مالک</translation>
+        <translation>Sahip</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="28"/>
         <source>Redactor</source>
-        <translation>Redactor</translation>
+        <translation>Düzenleyen</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="29"/>
         <source>Commentator</source>
-        <translation>Commentator</translation>
+        <translation>Yorumcu</translation>
     </message>
 </context>
 <context>
@@ -1598,12 +1591,12 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ProjectsPageManager.cpp" line="75"/>
         <source>Project name can&apos;t contains &quot;/&quot; character. Please use name without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje adı &quot;/&quot; karakterini içeremez. Lütfen adı onu kullanmadan kullanın.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ProjectsPageManager.cpp" line="78"/>
         <source>Project exists. It will be replaced after creating.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje var. Oluşturulduktan sonra değiştirilecek.</translation>
     </message>
 </context>
 <context>
@@ -1611,7 +1604,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ResearchManager.cpp" line="495"/>
         <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Araştırmayı kaldırmak istediğinizden emin misiniz: &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
 </context>
 <context>
@@ -1619,27 +1612,27 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="489"/>
         <source>Conflicted version</source>
-        <translation type="unfinished"></translation>
+        <translation>Çatışmalı sürüm</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="491"/>
         <source>Script changes conflict detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryo değişiklikleri çakışması algılandı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="492"/>
         <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bulut hizmetindeki komut dosyası durumu ile çevrimdışı değişiklikleriniz arasında bir çakışma algılandı. Çakışan sürüm ayrı bir sürüm olarak kaydedildi ve komut dosyasının metni buluttan geri yüklendi.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="842"/>
         <source>Scenes</source>
-        <translation>صحنه ها</translation>
+        <translation>Sahneler</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/ScriptManager.cpp" line="843"/>
         <source>Chron.</source>
-        <translation>.تاریخ</translation>
+        <translation>Kronik.</translation>
     </message>
 </context>
 <context>
@@ -1647,7 +1640,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-mobile/ManagementLayer/SettingsManager.cpp" line="29"/>
         <source>Language will be change after application restart.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dil, uygulama yeniden başlatılınca değişecek.</translation>
     </message>
 </context>
 <context>
@@ -1655,22 +1648,22 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="105"/>
         <source>Can&apos;t estabilish network connection.</source>
-        <translation>ارتباط به شبکه قابل شناسایی نیست.</translation>
+        <translation>Ağ bağlantısı sağlanamadı.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="109"/>
         <source>Session key not found.</source>
-        <translation>Session key not found.</translation>
+        <translation>Oturum anahtarı bulunamadı.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
         <source>Wrong validation code.</source>
-        <translation>کد اعتبار سنجی اشتباه است.</translation>
+        <translation>Yanlış onay kodu.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="117"/>
         <source>Got wrong response from server.</source>
-        <translation>دریافت واکنش اشتباه از سرور</translation>
+        <translation>Sunucudan yanlış yanıt alındı.</translation>
     </message>
 </context>
 <context>
@@ -1678,62 +1671,62 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="88"/>
         <source>Login</source>
-        <translation>ورود</translation>
+        <translation>Giriş Yap</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="129"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeler</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="162"/>
         <source>Research</source>
-        <translation type="unfinished"></translation>
+        <translation>Araştırma</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="176"/>
         <source>Cards</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartlar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="190"/>
         <source>Script</source>
-        <translation>فیلمنامه</translation>
+        <translation>Senaryo</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="204"/>
         <source>Save</source>
-        <translation>ذخیره کن</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="215"/>
         <source>Share</source>
-        <translation type="unfinished">به اشتراک گذاری</translation>
+        <translation>Paylaş</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="229"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe Aktar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="243"/>
         <source>Export</source>
-        <translation>خروجی</translation>
+        <translation>Dışa Aktar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="257"/>
         <source>Settings</source>
-        <translation>تنظیمات</translation>
+        <translation>Ayarlar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="268"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Yardım</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.ui" line="279"/>
         <source>Leave review</source>
-        <translation type="unfinished"></translation>
+        <translation>Görüş Bildirin</translation>
     </message>
 </context>
 <context>
@@ -1741,7 +1734,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/NavigatorView.ui" line="137"/>
         <source>Summary</source>
-        <translation type="unfinished"></translation>
+        <translation>Özet</translation>
     </message>
 </context>
 <context>
@@ -1749,7 +1742,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../../libs/fileformats/odt_reader.cpp" line="77"/>
         <source>Unable to open archive.</source>
-        <translation>مشکل باز کردن آرشیو</translation>
+        <translation>Ariv açılmıyor.</translation>
     </message>
 </context>
 <context>
@@ -1757,22 +1750,22 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/PasswordView.ui" line="52"/>
         <source>Change password</source>
-        <translation>تغییر رمز عبور</translation>
+        <translation>Şifre değiştir</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/PasswordView.ui" line="74"/>
         <source>Change</source>
-        <translation>تغییر</translation>
+        <translation>Değiştir</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/PasswordView.ui" line="117"/>
         <source>New password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni Şifre:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/PasswordView.ui" line="124"/>
         <source>Old password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eski Şifre:</translation>
     </message>
 </context>
 <context>
@@ -1780,33 +1773,33 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="129"/>
         <source>Change project name</source>
-        <translation>تغییر نام پروژه</translation>
+        <translation>Proje Adını Değiştir</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="152"/>
         <source>Remove project</source>
-        <translation>حذف پروژه</translation>
+        <translation>Projeyi sil</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="175"/>
         <source>Hide project from recent</source>
-        <translation>پنهان کردن فرم پروژه اخیر</translation>
+        <translation>Projeyi Son Açılanlardan Sakla</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="198"/>
         <source>Move project to the cloud</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeyi Buluta Taşı</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="221"/>
         <source>Add cowriter</source>
-        <translation>افزودن همکار نویسنده</translation>
+        <translation>Yardımcı Yazar Ekle</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="244"/>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="273"/>
         <source>Show cowriters</source>
-        <translation>نمایش همکاران نویسنده</translation>
+        <translation>Yardımcı Yazarları Göster</translation>
     </message>
 </context>
 <context>
@@ -1814,49 +1807,27 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.ui" line="67"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeler</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.ui" line="183"/>
         <source>There will be a list of your projects.
 Let&apos;s create the first one!</source>
-        <translation type="unfinished"></translation>
+        <translation>Projelerinizin bir listesi olacak.
+İlkini oluşturalım!</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.ui" line="197"/>
         <source>CREATE</source>
-        <translation type="unfinished"></translation>
+        <translation>OLUŞTUR</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="27"/>
-        <source>Scenario</source>
-        <translation>Scenario</translation>
-    </message>
-    <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="495"/>
-        <source>Title:</source>
-        <comment>ScenarioBlockStyle</comment>
-        <translation>عنوان:</translation>
-    </message>
-    <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1315"/>
-        <source>END OF FOLDER</source>
-        <comment>ScenarioXml</comment>
-        <translation>پایان پوشه</translation>
-    </message>
-    <message>
-        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEditHelpers.cpp" line="23"/>
-        <source>END OF</source>
-        <comment>ScenarioTextEditHelpers</comment>
-        <translation>پایان</translation>
-    </message>
-    <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="33"/>
         <source>Node added to &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğme Eklendi</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="35"/>
@@ -1871,17 +1842,17 @@ Let&apos;s create the first one!</source>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="426"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="467"/>
         <source>Base node</source>
-        <translation type="unfinished"></translation>
+        <translation>Temel Düğüm</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="103"/>
         <source>Node added to scene</source>
-        <translation type="unfinished"></translation>
+        <translation>Shneye Düğme Eklendi</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="150"/>
         <source>Node deleted &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğme Silindi</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="153"/>
@@ -1892,23 +1863,23 @@ Let&apos;s create the first one!</source>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="429"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="470"/>
         <source> with subtree</source>
-        <translation type="unfinished"></translation>
+        <translation> altağaç ile</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="205"/>
         <source>Edge added between &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Arasına Kesit Ekle</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="209"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="261"/>
         <source>&quot; and &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot; ve &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="257"/>
         <source>Edge deleted between &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Arasındaki Kesiti Kaldır</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="293"/>
@@ -1916,22 +1887,45 @@ Let&apos;s create the first one!</source>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="424"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="465"/>
         <source>Node &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğme</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="353"/>
         <source>Changing color of node: &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğme Rengini Değiştir</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="393"/>
         <source>Changing textcolor of node: &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğme Yazı Rengini Değiştir</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="934"/>
         <source>The graph is acyclic, edge added as secondary edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafik asikliktir, kesit ikincil kesit olarak ekleni.</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="27"/>
+        <source>Scenario</source>
+        <translation>Senaryo</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="495"/>
+        <source>Title:</source>
+        <comment>ScenarioBlockStyle</comment>
+        <translation>Başlık:</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1315"/>
+        <source>END OF FOLDER</source>
+        <comment>ScenarioXml</comment>
+        <translation>KLASÖRÜN SONU</translation>
+    </message>
+    <message>
+        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEditHelpers.cpp" line="23"/>
+        <source>END OF</source>
+        <comment>ScenarioTextEditHelpers</comment>
+        <translation>SONU</translation>
     </message>
 </context>
 <context>
@@ -1939,7 +1933,7 @@ Let&apos;s create the first one!</source>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="541"/>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kopya</translation>
     </message>
 </context>
 <context>
@@ -1947,27 +1941,27 @@ Let&apos;s create the first one!</source>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/node.cpp" line="36"/>
         <source>&lt;b&gt;Root node&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Kök düğüm&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
     <name>ResearchItemView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="257"/>
-        <source>0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="250"/>
         <source>Logline:</source>
-        <translation type="unfinished"></translation>
+        <translation>Logline:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="257"/>
+        <source>0</source>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="330"/>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="374"/>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.ui" line="418"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Açıklama</translation>
     </message>
 </context>
 <context>
@@ -1975,7 +1969,7 @@ Let&apos;s create the first one!</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ReviewView.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
 </context>
 <context>
@@ -1984,7 +1978,7 @@ Let&apos;s create the first one!</source>
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="341"/>
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="345"/>
         <source>Not a supported RTF file.</source>
-        <translation>از فایل RTF پشتیبانی نمی شود.</translation>
+        <translation>RTF dosyası desteklenmiyor.</translation>
     </message>
 </context>
 <context>
@@ -1992,7 +1986,7 @@ Let&apos;s create the first one!</source>
     <message>
         <location filename="../../../../libs/fileformats/rtf_tokenizer.cpp" line="151"/>
         <source>Unexpectedly reached end of file.</source>
-        <translation>بطور غیر منتظره به انتهای فایل رسیده است.</translation>
+        <translation>Beklenmedik bir şekilde dosya sonuna ulaşıldı.</translation>
     </message>
 </context>
 <context>
@@ -2000,22 +1994,22 @@ Let&apos;s create the first one!</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.ui" line="56"/>
         <source>Add card</source>
-        <translation type="unfinished"></translation>
+        <translation>Kart Ekle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.ui" line="141"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Açıklama</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.ui" line="162"/>
         <source>ADD</source>
-        <translation type="unfinished"></translation>
+        <translation>EKLE</translation>
     </message>
 </context>
 <context>
@@ -2023,7 +2017,7 @@ Let&apos;s create the first one!</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardsView.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
 </context>
 <context>
@@ -2031,81 +2025,81 @@ Let&apos;s create the first one!</source>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="17"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="78"/>
         <source>Title</source>
-        <translation type="unfinished">عنوان</translation>
+        <translation>Başlık</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="91"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Açıklama</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="113"/>
         <source>Remove version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versiyonu sil</translation>
     </message>
 </context>
 <context>
     <name>SettingsView</name>
     <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="67"/>
+        <source>Settings</source>
+        <translation>Ayarlar</translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="140"/>
         <source>Application</source>
-        <translation type="unfinished"></translation>
+        <translation>Uygulama</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="153"/>
         <source>Use dark theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Karanlık temayı kullan</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="160"/>
         <source>Use keyboard preedit ability (experimental)</source>
-        <translation type="unfinished"></translation>
+        <translation>Öndüzenli klavye özelliğini kullan (deneysel)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="167"/>
         <source>Cards</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartlar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="183"/>
         <source>Use corkboard background</source>
-        <translation type="unfinished"></translation>
+        <translation>Mantarpano arkaplanını kullan</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="190"/>
         <source>Script editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryo editörü</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="197"/>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="218"/>
         <source>Show scene numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahne numaralarını göster</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="204"/>
         <source>Show dialogues numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Diyalog sayısını göster</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="211"/>
         <source>Navigator</source>
-        <translation>نشانگر</translation>
+        <translation>Navigatör</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="225"/>
         <source>Show scene description, lines</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.ui" line="67"/>
-        <source>Settings</source>
-        <translation>تنظیمات</translation>
+        <translation>Sahne açıklamalarını ve hatları göster</translation>
     </message>
 </context>
 <context>
@@ -2113,12 +2107,12 @@ Let&apos;s create the first one!</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.ui" line="30"/>
         <source>Redactor</source>
-        <translation>Redactor</translation>
+        <translation>Düzenleyen</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.ui" line="40"/>
         <source>Commentator</source>
-        <translation>مفسر</translation>
+        <translation>Yorumcu</translation>
     </message>
 </context>
 <context>
@@ -2126,42 +2120,42 @@ Let&apos;s create the first one!</source>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="181"/>
         <source>Undo last action</source>
-        <translation type="unfinished"></translation>
+        <translation>Son işlemi geri al</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="184"/>
         <source>Redo previously undone action</source>
-        <translation type="unfinished"></translation>
+        <translation>Daha önce geri alınan işlemi yeniden yap</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="194"/>
         <source>Make text bold</source>
-        <translation>درشت کردن حروف متن</translation>
+        <translation>Metni kalın yap</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="198"/>
         <source>Make text italic</source>
-        <translation>ایتالیک کردن حروف متن</translation>
+        <translation>Metni italik yap</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="202"/>
         <source>Make text underline</source>
-        <translation>کشیدن خط زیر متن</translation>
+        <translation>Metni altıçizili yap</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="205"/>
         <source>Change text color</source>
-        <translation>تغییر رنگ متن</translation>
+        <translation>Yazı rengini değiştir</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="208"/>
         <source>Change text background color</source>
-        <translation>تغییر رنگ پس زمینه متن</translation>
+        <translation>Yazı arkaplan rengini değiştir</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="210"/>
         <source>Clear formatting</source>
-        <translation type="unfinished"></translation>
+        <translation>Net biçimlendirme</translation>
     </message>
 </context>
 <context>
@@ -2169,17 +2163,17 @@ Let&apos;s create the first one!</source>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="43"/>
         <source>Ignore</source>
-        <translation>چشم پوشی</translation>
+        <translation>Görmezden Gel</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="46"/>
         <source>Add to dictionary</source>
-        <translation>افزودن به دیکشنری</translation>
+        <translation>Sözlük ekle</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="152"/>
         <source>Suggestions not found</source>
-        <translation>پیشنهاد ها یافت نشد</translation>
+        <translation>Öneri bulunamadı</translation>
     </message>
 </context>
 <context>
@@ -2187,43 +2181,44 @@ Let&apos;s create the first one!</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="67"/>
         <source>Renew subscription</source>
-        <translation>تمدید اشتراک</translation>
+        <translation>Aboneliği yenile</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="141"/>
         <source>Subscription period:</source>
-        <translation type="unfinished"></translation>
+        <translation>Abonelik Süresi:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="186"/>
         <source>Payment type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ödeme yöntemi:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="193"/>
         <source>PayPal</source>
-        <translation type="unfinished"></translation>
+        <translation>PayPal</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="200"/>
         <source>Bank card</source>
-        <translation>کارت بانک</translation>
+        <translation>Banka kartı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="210"/>
         <source>Yandex.Money</source>
-        <translation></translation>
+        <translation>Yandex.Money</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="238"/>
         <source>RENEW</source>
-        <translation type="unfinished"></translation>
+        <translation>YENİLE</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.ui" line="277"/>
         <source>Thanks!
 Your subscription is active until</source>
-        <translation type="unfinished"></translation>
+        <translation>Teşekkürler!
+.Aboneliğin aktif boyunca</translation>
     </message>
 </context>
 <context>
@@ -2231,44 +2226,40 @@ Your subscription is active until</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/TitlePageView.ui" line="67"/>
         <source>Title page</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık Sayfası</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::AccountView</name>
     <message>
-        <source>Account is inactive</source>
-        <translation type="vanished">حساب شما فعال نیست.</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="39"/>
         <source>Cloud service subscription is active until: </source>
-        <translation type="unfinished"></translation>
+        <translation>Bulut servis aboneliği aktiflik süresi: </translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="41"/>
         <source>Cloud service subscription is inactive</source>
-        <translation type="unfinished"></translation>
+        <translation>Bulut servis aboneliği aktif değil</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="45"/>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation type="unfinished"></translation>
+        <translation>%2 Gb&apos;den %1 kullanıldı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="63"/>
         <source>Email</source>
-        <translation>ایمیل</translation>
+        <translation>Email</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AccountView.cpp" line="64"/>
         <source>Login</source>
-        <translation>ورود</translation>
+        <translation>Giriş Yap</translation>
     </message>
 </context>
 <context>
@@ -2276,17 +2267,17 @@ Your subscription is active until</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="81"/>
         <source>LOCAL</source>
-        <translation type="unfinished"></translation>
+        <translation>YEREL</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="82"/>
         <source>IN CLOUD</source>
-        <translation type="unfinished"></translation>
+        <translation>BULUTTA</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddProjectView.cpp" line="85"/>
         <source>Project name</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje Adı</translation>
     </message>
 </context>
 <context>
@@ -2294,12 +2285,12 @@ Your subscription is active until</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.cpp" line="37"/>
         <source>Insert into &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; takın</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/AddResearchItemView.cpp" line="187"/>
         <source>Item name</source>
-        <translation type="unfinished"></translation>
+        <translation>Öge Adı</translation>
     </message>
 </context>
 <context>
@@ -2307,27 +2298,27 @@ Your subscription is active until</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="128"/>
         <source>RESEARCH</source>
-        <translation type="unfinished"></translation>
+        <translation>ARAŞTIRMA</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="129"/>
         <source>SCRIPT</source>
-        <translation type="unfinished"></translation>
+        <translation>SENARYO</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="140"/>
         <source>File format</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya Formatı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="142"/>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Taslak</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ExportView.cpp" line="143"/>
         <source>Print watermark</source>
-        <translation type="unfinished"></translation>
+        <translation>Baskı Filigranı</translation>
     </message>
 </context>
 <context>
@@ -2335,56 +2326,56 @@ Your subscription is active until</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="73"/>
         <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a password.</source>
-        <translation>کلمه عبور به ایمیل &lt;b&gt;%1&lt;/b&gt; فرستاده شد.</translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; e-postanıza şifrenizin olduğu bir mektup gönderildi.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="80"/>
         <source>Authorization</source>
-        <translation type="unfinished"></translation>
+        <translation>Yetki</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="81"/>
         <source>Please wait, authorzation can take few minutes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen beleyin, yetkilendirme birkaç dakika alabilir.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="83"/>
         <source>Registration</source>
-        <translation type="unfinished"></translation>
+        <translation>Kayıt</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="84"/>
         <source>Please wait, registration can take few minutes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen bekleyin, kayıt işlemi birkaç dakika alabilir.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="121"/>
         <source>LOGIN</source>
-        <translation type="unfinished"></translation>
+        <translation>GİRİŞ YAP</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="122"/>
         <source>SIGN UP</source>
-        <translation type="unfinished"></translation>
+        <translation>KAYIT OL</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="127"/>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="131"/>
         <source>Email</source>
-        <translation>ایمیل</translation>
+        <translation>Email</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="129"/>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="133"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifre</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="176"/>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="183"/>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/LoginView.cpp" line="190"/>
         <source>Email is invalid</source>
-        <translation>ایمیل نا معتبر است.</translation>
+        <translation>Email geçersiz</translation>
     </message>
 </context>
 <context>
@@ -2392,12 +2383,12 @@ Your subscription is active until</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="118"/>
         <source>Save</source>
-        <translation>ذخیره کن</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/MenuView.cpp" line="118"/>
         <source>Changes saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Değişiklikleri Kaydet</translation>
     </message>
 </context>
 <context>
@@ -2405,7 +2396,7 @@ Your subscription is active until</source>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectsList.cpp" line="51"/>
         <source>no changes</source>
-        <translation type="unfinished"></translation>
+        <translation>değişiklik yok</translation>
     </message>
 </context>
 <context>
@@ -2413,12 +2404,12 @@ Your subscription is active until</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.cpp" line="126"/>
         <source>LOCAL</source>
-        <translation type="unfinished"></translation>
+        <translation>YEREL</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ProjectsView.cpp" line="127"/>
         <source>IN CLOUD</source>
-        <translation type="unfinished"></translation>
+        <translation>BULUTTA</translation>
     </message>
 </context>
 <context>
@@ -2427,67 +2418,67 @@ Your subscription is active until</source>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="180"/>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="185"/>
         <source>Script name</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaryo adı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="181"/>
         <source>Scenes numbers prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahne numarası öneki</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="182"/>
         <source>Start scenes numbering from</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahne numaralandırmaya şuradan başla</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="186"/>
         <source>Additional</source>
-        <translation type="unfinished"></translation>
+        <translation>Ek</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="187"/>
         <source>Genre</source>
-        <translation type="unfinished"></translation>
+        <translation>Tip</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="188"/>
         <source>Author</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazar</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="189"/>
         <source>Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>İletişim</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="190"/>
         <source>Year</source>
-        <translation type="unfinished"></translation>
+        <translation>Yıl</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="196"/>
         <source>Character name</source>
-        <translation type="unfinished"></translation>
+        <translation>Karakter adı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="197"/>
         <source>Real name</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerçek ad</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="200"/>
         <source>Location name</source>
-        <translation type="unfinished"></translation>
+        <translation>Mekan adı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="203"/>
         <source>Document name</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya adı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ResearchItemView.cpp" line="243"/>
         <source>words</source>
-        <translation type="unfinished"></translation>
+        <translation>Kelimeler</translation>
     </message>
 </context>
 <context>
@@ -2495,65 +2486,65 @@ Your subscription is active until</source>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="569"/>
         <source>Remove bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Yer imini kaldır</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="574"/>
         <source>Add bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Yer imi ekle</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="649"/>
         <source>Change scene number</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahne numarası değiştir</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ScriptCardView</name>
     <message>
-        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="53"/>
-        <source>ADD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="50"/>
         <source>Add card</source>
-        <translation type="unfinished"></translation>
+        <translation>Kart ekle</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="53"/>
+        <source>ADD</source>
+        <translation>EKLE</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="60"/>
         <source>Edit card</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartı düzenle</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="61"/>
         <source>SAVE</source>
-        <translation type="unfinished"></translation>
+        <translation>KAYDET</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="149"/>
         <source>ACT</source>
-        <translation type="unfinished"></translation>
+        <translation>EYLEM</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="150"/>
         <source>SCENE</source>
-        <translation type="unfinished"></translation>
+        <translation>SAHNE</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="152"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="159"/>
         <source>Header</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptCardView.cpp" line="165"/>
         <source>Stamp</source>
-        <translation type="unfinished"></translation>
+        <translation>Damga</translation>
     </message>
 </context>
 <context>
@@ -2561,7 +2552,7 @@ Your subscription is active until</source>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionsList.cpp" line="65"/>
         <source>started by</source>
-        <translation type="unfinished"></translation>
+        <translation>tarafından başlatıldı</translation>
     </message>
 </context>
 <context>
@@ -2569,12 +2560,12 @@ Your subscription is active until</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="226"/>
         <source>DRAFT</source>
-        <translation type="unfinished">پیش نویس</translation>
+        <translation>TASLAK</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/ScriptView.cpp" line="993"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Yorum</translation>
     </message>
 </context>
 <context>
@@ -2583,57 +2574,57 @@ Your subscription is active until</source>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="37"/>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="200"/>
         <source>System</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistem</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="55"/>
         <source>Little</source>
-        <translation type="unfinished"></translation>
+        <translation>Küçük</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="56"/>
         <source>Middle</source>
-        <translation type="unfinished"></translation>
+        <translation>Orta</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="57"/>
         <source>Big</source>
-        <translation type="unfinished"></translation>
+        <translation>Büyük</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="58"/>
         <source>Very big</source>
-        <translation type="unfinished"></translation>
+        <translation>Çok büyük</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="59"/>
         <source>Large</source>
-        <translation type="unfinished"></translation>
+        <translation>Genişlik</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="199"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Dil</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="208"/>
         <source>Cards size</source>
-        <translation type="unfinished"></translation>
+        <translation>Kart boyutu</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="211"/>
         <source>Cards ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Kart oranı</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="214"/>
         <source>Distance between cards</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartlar arası mesafe</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SettingsView.cpp" line="217"/>
         <source>Research and script editors font size</source>
-        <translation type="unfinished"></translation>
+        <translation>Araştırma ve senaryo editörleri font boyutu</translation>
     </message>
 </context>
 <context>
@@ -2641,22 +2632,22 @@ Your subscription is active until</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="43"/>
         <source>Share project</source>
-        <translation>به اشتراک گذاشتن پروژه</translation>
+        <translation>Proje Paylaş</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="47"/>
         <source>Email</source>
-        <translation>ایمیل</translation>
+        <translation>Email</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="49"/>
         <source>Share</source>
-        <translation>به اشتراک گذاری</translation>
+        <translation>Paylaş</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/Dialogs/ShareDialog.cpp" line="71"/>
         <source>Email is invalid</source>
-        <translation>ایمیل نا معتبر است.</translation>
+        <translation>Email geçersiz</translation>
     </message>
 </context>
 <context>
@@ -2664,52 +2655,52 @@ Your subscription is active until</source>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="56"/>
         <source>1 month - %1 rubles</source>
-        <translation type="unfinished"></translation>
+        <translation>1 ay - %1 ruble</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="57"/>
         <source>2 month - %1 rubles</source>
-        <translation type="unfinished"></translation>
+        <translation>2 ay - %1 ruble</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="58"/>
         <source>3 month - %1 rubles</source>
-        <translation type="unfinished"></translation>
+        <translation>3 ay - %1 ruble</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="59"/>
         <source>6 month (6% off) - %1 rubles</source>
-        <translation type="unfinished"></translation>
+        <translation>6 ay (6% indirim) - %1 ruble</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="60"/>
         <source>12 month (12% off) - %1 rubles</source>
-        <translation type="unfinished"></translation>
+        <translation>12 ay (12% indirim) - %1 ruble</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="67"/>
         <source>1 month - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>1 ay - %1</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="72"/>
         <source>2 month - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>2 ay - %1</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="77"/>
         <source>3 month - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>3 ay - %1</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="82"/>
         <source>6 month (6% off) - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>6 ay (6% indirim) - %1</translation>
     </message>
     <message>
         <location filename="../../../scenarist-mobile/UserInterfaceLayer/SubscriptionView.cpp" line="87"/>
         <source>12 month (12% off) - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>12 ay (12% indirim) - %1</translation>
     </message>
 </context>
 <context>
@@ -2717,7 +2708,7 @@ Your subscription is active until</source>
     <message>
         <location filename="../../../../libs/webloader/src/WebLoader.cpp" line="311"/>
         <source>Sorry, we have some error while loading. Error is: %1</source>
-        <translation>با عرض پوزش، تعدای خطا در حال بارگذاری رخ داده است.</translation>
+        <translation>Maalesef yüklerken bazı hatalar oluştu. Hata:%1</translation>
     </message>
 </context>
 </TS>
