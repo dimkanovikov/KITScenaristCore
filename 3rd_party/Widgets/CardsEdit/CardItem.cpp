@@ -284,6 +284,29 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         }
 
         //
+        // Рисуем заголовок
+        //
+        QTextOption textoption;
+        textoption.setAlignment(textDrawAlign() | Qt::AlignTop);
+        textoption.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
+        QFont font = _painter->font();
+        font.setBold(true);
+        _painter->setFont(font);
+        if (!colors.isEmpty()) {
+            _painter->setPen(ColorHelper::textColor(QColor(colors.first().left(7))));
+        } else {
+            _painter->setPen(palette.text().color());
+        }
+        const int titleTopMargin = StyleSheetHelper::dpToPx(7);
+        QString titleText = title();
+        if (!isFolder()) {
+            titleText.prepend(QString("%1. ").arg(number()));
+        }
+        const QRectF titleRect(QPointF(titleTopMargin, StyleSheetHelper::dpToPx(18)),
+                               TextUtils::textRect(titleText, _painter->font(), cardRect.size().width() - titleTopMargin*2, textoption));
+        _painter->drawText(titleRect.intersected(cardRect), titleText, textoption);
+
+        //
         // Рисуем дополнительные цвета
         //
         QRect additionalColorsRect;
@@ -336,29 +359,6 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
                 additionalColorsRect.adjust(-colorsSpacing, -colorsSpacing, 0, 0);
             }
         }
-
-        //
-        // Рисуем заголовок
-        //
-        QTextOption textoption;
-        textoption.setAlignment(textDrawAlign() | Qt::AlignTop);
-        textoption.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
-        QFont font = _painter->font();
-        font.setBold(true);
-        _painter->setFont(font);
-        if (!colors.isEmpty()) {
-            _painter->setPen(ColorHelper::textColor(QColor(colors.first().left(7))));
-        } else {
-            _painter->setPen(palette.text().color());
-        }
-        const int titleTopMargin = StyleSheetHelper::dpToPx(7);
-        QString titleText = title();
-        if (!isFolder()) {
-            titleText.prepend(QString("%1. ").arg(number()));
-        }
-        const QRectF titleRect(QPointF(titleTopMargin, StyleSheetHelper::dpToPx(18)),
-                               TextUtils::textRect(titleText, _painter->font(), cardRect.size().width() - titleTopMargin*2, textoption));
-        _painter->drawText(titleRect, titleText, textoption);
 
         //
         // Рисуем штамп
