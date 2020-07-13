@@ -8,6 +8,7 @@
 
 #include <QApplication>
 #include <QDateTime>
+#include <QFileInfo>
 #include <QRegularExpression>
 #include <QStringList>
 #include <QSqlQuery>
@@ -20,6 +21,8 @@
 using namespace DatabaseLayer;
 
 namespace {
+    const QString kProjectFleExtension = "kitsp"; // kit scenarist project
+
     /**
      * @brief Получить ключ хранения номера версии приложения
      */
@@ -53,26 +56,41 @@ bool Database::canOpenFile(const QString& _databaseFileName, bool _isLocal)
     // Проверки специфичные для локальных файлов
     //
     if (_isLocal) {
-        QSqlDatabase database = QSqlDatabase::addDatabase(SQL_DRIVER, "tmp_database");
-        database.setDatabaseName(_databaseFileName);
-        database.open();
+        const QFileInfo databaseFileInfo(_databaseFileName);
+        if (databaseFileInfo.completeSuffix() == kProjectFleExtension) {
+            QSqlDatabase database = QSqlDatabase::addDatabase(SQL_DRIVER, "tmp_database");
+            database.setDatabaseName(_databaseFileName);
+            if (database.open()) {
+                QSqlQuery q_checker(database);
 
-        QSqlQuery q_checker(database);
-
-        //
-        // 1. Если файл был создан в более поздней версии приложения, его нельзя открывать
-        //
-        if (q_checker.exec("SELECT value FROM system_variables WHERE variable = 'application-version' ")
-                 && q_checker.next()
-                 && q_checker.value("value").toString().split(" ").first() > QApplication::applicationVersion()) {
+                //
+                // 1. Если файл был создан в более поздней версии приложения, его нельзя открывать
+                //
+                if (q_checker.exec("SELECT value FROM system_variables WHERE variable = 'application-version' ")
+                        && q_checker.next()
+                        && q_checker.value("value").toString().split(" ").first() > QApplication::applicationVersion()) {
+                    canOpen = false;
+                    s_openFileError =
+                            QApplication::translate("DatabaseLayer::Database",
+                                                    "Project was modified in higher version. You need update application to latest version for open it.");
+                }
+            } else {
+                s_openFileError = QApplication::translate(
+                                      "DatabaseLayer::Database",
+                                      "File \"%1\" can't be opened, please check out that you tries to open file which was created in the KIT Scenarist."
+                                      ).arg(databaseFileInfo.fileName());
+                canOpen = false;
+            }
+        } else {
+            s_openFileError = QApplication::translate(
+                                  "DatabaseLayer::Database",
+                                  "File \"%1\" can't be opened, please check out that you tries to open KIT Scenarist file (*.kitsp)."
+                                  ).arg(databaseFileInfo.fileName());
             canOpen = false;
-            s_openFileError =
-                QApplication::translate("DatabaseLayer::Database",
-                    "Project was modified in higher version. You need update application to latest version for open it.");
         }
-    }
 
-    QSqlDatabase::removeDatabase("tmp_database");
+        QSqlDatabase::removeDatabase("tmp_database");
+    }
 
     return canOpen;
 }
