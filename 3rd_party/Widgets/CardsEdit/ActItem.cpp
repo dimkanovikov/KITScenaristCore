@@ -145,14 +145,14 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
             }
         }
         const QPalette palette = QApplication::palette();
-        const QStringList colors = m_colors.split(";", QString::SkipEmptyParts);
+        const QStringList colors = m_colors.split(";");
 
         //
         // Рисуем фон
         //
         // ... заданным цветом, если он задан
         //
-        if (!colors.isEmpty()) {
+        if (!colors.first().isEmpty()) {
             _painter->setBrush(QColor(colors.first()));
             _painter->setPen(QColor(colors.first()));
         }
@@ -169,7 +169,7 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
         // Рисуем дополнительные цвета
         //
         if (!m_colors.isEmpty()) {
-            QStringList colorsNamesList = m_colors.split(";", QString::SkipEmptyParts);
+            QStringList colorsNamesList = m_colors.split(";");
             colorsNamesList.removeFirst();
             //
             // ... если они есть
@@ -202,7 +202,7 @@ void ActItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option,
         QFont font = _painter->font();
         font.setBold(true);
         _painter->setFont(font);
-        if (!colors.isEmpty()) {
+        if (!colors.first().isEmpty()) {
             _painter->setPen(ColorHelper::textColor(QColor(colors.first())));
         } else {
             _painter->setPen(palette.text().color());
