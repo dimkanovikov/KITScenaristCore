@@ -233,7 +233,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
     {
         const QPalette palette = QApplication::palette();
         const QRectF cardRect = boundingRectCorrected();
-        const QStringList colors = m_colors.split(";", QString::SkipEmptyParts);
+        const QStringList colors = m_colors.split(";");
         const int additionalColorsHeight = (colors.size() > 1) ? StyleSheetHelper::dpToPx(32) : 0;
 
         //
@@ -248,7 +248,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         //
         // ... заданным цветом, если он задан
         //
-        else if (!colors.isEmpty()) {
+        else if (!colors.first().isEmpty()) {
             const QColor mainColor(colors.first().left(7));
             _painter->setBrush(mainColor);
             _painter->setPen(mainColor);
@@ -292,7 +292,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         QFont font = _painter->font();
         font.setBold(true);
         _painter->setFont(font);
-        if (!colors.isEmpty()) {
+        if (!colors.first().isEmpty()) {
             _painter->setPen(ColorHelper::textColor(QColor(colors.first().left(7))));
         } else {
             _painter->setPen(palette.text().color());
@@ -311,7 +311,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
         //
         QRect additionalColorsRect;
         if (!m_isReadyForEmbed && !m_colors.isEmpty()) {
-            QStringList colorsNamesList = m_colors.split(";", QString::SkipEmptyParts);
+            QStringList colorsNamesList = m_colors.split(";");
             colorsNamesList.removeFirst();
             //
             // ... если они есть

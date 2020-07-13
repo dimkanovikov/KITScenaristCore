@@ -857,7 +857,7 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *_event)
             auto colorsPane = colorsPanesList.at(colorIndex);
             auto colorsTag = colorPagesTags.value(colorIndex - 1, nullptr); // т.к. для первого цвета нет возможности задат тэг
             if (colorsPane->currentColor().isValid()) {
-                if (!newColorsNames.isEmpty()) {
+                if (!newColorsNames.isEmpty() || colorIndex == 1) {
                     newColorsNames.append(";");
                 }
                 newColorsNames.append(colorsPane->currentColor().name());
@@ -873,8 +873,9 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *_event)
     //
     // ... добавляем каждый цвет
     //
-    for (const QString &colorInfo : colorsInfos.split(";", QString::SkipEmptyParts)) {
-        QAction *color = menu->addAction(tr("Color %1").arg(colorIndex));
+    for (const QString &colorInfo : colorsInfos.split(";")) {
+        QAction *color = menu->addAction(colorIndex == 1 ? tr("Main color")
+                                                         : tr("Additional color %1").arg(colorIndex - 1));
         QMenu *colorMenu = new QMenu(views().value(0, nullptr));
         //
         // ... действие удаления цвета
@@ -1072,9 +1073,9 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *_event)
             const int removeColorIndex = triggered->data().toString().split(":").last().toInt();
             QString newColorsNames;
             int colorIndex = 1;
-            for (const QString &colorName : colorsInfos.split(";", QString::SkipEmptyParts)) {
+            for (const QString &colorName : colorsInfos.split(";")) {
                 if (colorIndex != removeColorIndex) {
-                    if (!newColorsNames.isEmpty()) {
+                    if (!newColorsNames.isEmpty() || colorIndex == 2) {
                         newColorsNames.append(";");
                     }
                     newColorsNames.append(colorName);
