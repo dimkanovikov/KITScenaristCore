@@ -310,7 +310,7 @@ void CardItem::paint(QPainter* _painter, const QStyleOptionGraphicsItem* _option
                     const QColor textColor = ColorHelper::textColor(color);
                     const QString colorInfo = TextEditHelper::fromHtmlEscaped(colorsNamesList.at(colorIndex).mid(7));
                     const int colorWidth = colorInfo.isEmpty() ? colorHeight
-                                                               : _painter->fontMetrics().horizontalAdvance(colorInfo) + colorsSpacing;
+                                                               : _painter->fontMetrics().width(colorInfo) + colorsSpacing;
 
                     QRect colorRect(lastRight - colorWidth, colorTop, colorWidth, colorHeight);
                     //
