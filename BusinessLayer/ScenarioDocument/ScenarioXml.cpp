@@ -1651,7 +1651,15 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rema
     //
     // Собственно считываем данные
     //
-    QXmlStreamReader reader(_xml);
+    auto xmlToRead = _xml;
+#ifdef Q_OS_MAC
+        //
+        // Это две разные буквы!
+        // Первую даёт нам мак, когда открываешь файл через двойной щелчок на нём
+        //
+        xmlToRead.replace("й", "й");
+#endif
+    QXmlStreamReader reader(xmlToRead);
     while (!reader.atEnd()) {
         //
         // Даём возможность выполниться графическим операциям
