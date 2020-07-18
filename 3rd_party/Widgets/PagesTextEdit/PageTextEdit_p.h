@@ -97,10 +97,6 @@ public:
 
     void updateDefaultTextOption();
 
-    // re-implemented by QTextBrowser, called by QTextDocument::loadResource
-    virtual QUrl resolveUrl(const QUrl &url) const
-    { return url; }
-
     QWidgetTextControl *control;
 
     PageTextEdit::AutoFormatting autoFormatting;
