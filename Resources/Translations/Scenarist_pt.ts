@@ -772,6 +772,14 @@ Türkçe: Recep Burak Yak
         <source>Copy of </source>
         <translation>Cópia de </translation>
     </message>
+    <message>
+        <source>Arabic screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arabic screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLogic::SceneReport</name>
@@ -982,7 +990,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Color %1</source>
-        <translation>Cor %1</translation>
+        <translation type="vanished">Cor %1</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -1010,6 +1018,14 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Additional color %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1206,6 +1222,14 @@ Türkçe: Recep Burak Yak
     <message>
         <source>First draft</source>
         <translation>Primeiro tratamento</translation>
+    </message>
+    <message>
+        <source>File &quot;%1&quot; can&apos;t be opened, please check out that you tries to open file which was created in the KIT Scenarist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File &quot;%1&quot; can&apos;t be opened, please check out that you tries to open KIT Scenarist file (*.kitsp).</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2696,6 +2720,14 @@ And the text editor of the script. The editor has many auxiliary functions that 
 O módulo inclui o navegador de roteiro, uma lista de cenas onde é possível interagir com os elementos. Ao clicar em algum elemento da lista você será trasnportado para o local do texto na janela do editor de texto do roteiro
 
 Temos também o editor de texto do roteiro. Este editor tem várias funções auxiliares que simplificam a inserção do texto de acordo com os padrões da escrita de roteiros. Ele também tem a função de busca de palavras no corpo do roteiro e a possibilidade de fazer anotações.</translation>
+    </message>
+    <message>
+        <source>Arabic screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arabic screenplay</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4863,7 +4895,7 @@ A aplicação vai iniciar em poucos segundos.</translation>
     <name>UserInterface::ScenarioNavigator</name>
     <message>
         <source>Color %1</source>
-        <translation>Cor %1</translation>
+        <translation type="vanished">Cor %1</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -4948,6 +4980,14 @@ A aplicação vai iniciar em poucos segundos.</translation>
     <message>
         <source>Clear all colors</source>
         <translation>Remover todas as cores</translation>
+    </message>
+    <message>
+        <source>Main color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Additional color %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

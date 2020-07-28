@@ -952,46 +952,56 @@ Hebräisch: Ronkin Maxim
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="664"/>
+        <source>Arabic screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="669"/>
         <source>International screenplay standard template for A4 page size.</source>
         <translation>Drehbuch nach internationaler Norm - Standardvorlage (A4).</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="669"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="674"/>
         <source>International screenplay standard template for Letter page size.</source>
         <translation>Drehbuch nach internationaler Norm - Standardvorlage (Brief).</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="674"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="679"/>
         <source>Russian and CIS screenplay standard template.</source>
         <translation>Russisches und CIS Drehbuch - Standardvorlage.</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="679"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="684"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
         <translation>Russisches und CIS Drehbuch - Standardvorlage mit Courier Prime, anstatt von Courier New.</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="684"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="689"/>
         <source>Chinese screenplay standard template.</source>
         <translation>Chinesische Standardvorlage.</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="689"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="694"/>
         <source>Hebrew screenplay standard template.</source>
         <translation>Hebräische Standardvorlage.</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="704"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="699"/>
+        <source>Arabic screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="714"/>
         <source>Default</source>
         <translation>Voreinstellung</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="709"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="719"/>
         <source>Default with Courier Prime</source>
         <translation>Courier Prime als Voreinstellung</translation>
     </message>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="725"/>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="735"/>
         <source>Copy of </source>
         <translation>Kopie von </translation>
     </message>
@@ -1279,38 +1289,47 @@ Hebräisch: Ronkin Maxim
         <translation>Bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="877"/>
         <source>Color %1</source>
-        <translation>Farbe %1</translation>
+        <translation type="vanished">Farbe %1</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="882"/>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="877"/>
+        <source>Main color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="878"/>
+        <source>Additional color %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="883"/>
         <source>Clear</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="892"/>
-        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="930"/>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="893"/>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="931"/>
         <source>Tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="919"/>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="920"/>
         <source>Add color</source>
         <translation>Farbe hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="955"/>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="956"/>
         <source>Create card</source>
         <translation>Erstelle eine Karte</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="956"/>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="957"/>
         <source>Remove</source>
         <translation>Entfernen</translation>
     </message>
     <message>
-        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="998"/>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="999"/>
         <source>Stamp:</source>
         <translation>Stempel:</translation>
     </message>
@@ -1422,173 +1441,183 @@ Hebräisch: Ronkin Maxim
 <context>
     <name>DatabaseLayer::Database</name>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="70"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="74"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
         <translation>Das Programm wurde in einer neueren Version editiert. Bitte aktualisieren Sie das Programm,um das Dokument zu bearbeiten.</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="430"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1536"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="78"/>
+        <source>File &quot;%1&quot; can&apos;t be opened, please check out that you tries to open file which was created in the KIT Scenarist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="85"/>
+        <source>File &quot;%1&quot; can&apos;t be opened, please check out that you tries to open KIT Scenarist file (*.kitsp).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../DataLayer/Database/Database.cpp" line="448"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1554"/>
         <source>First draft</source>
         <translation>Erster Entwurf</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="438"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="456"/>
         <source>INT</source>
         <translation>INN</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="442"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="460"/>
         <source>EXT</source>
         <translation>AUSS</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="446"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="464"/>
         <source>INT./EXT</source>
         <translation>INN./AUSS</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="454"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="472"/>
         <source>DAY</source>
         <translation>TAG</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="458"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="476"/>
         <source>NIGHT</source>
         <translation>NACHT</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="462"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="727"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="480"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="745"/>
         <source>MORNING</source>
         <translation>MORGEN</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="466"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="484"/>
         <source>AFTERNOON</source>
         <translation>NACHMITTAG</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="470"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="731"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="488"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="749"/>
         <source>EVENING</source>
         <translation>ABEND</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="474"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="492"/>
         <source>LATER</source>
         <translation>SPÄTER</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="478"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="496"/>
         <source>MOMENTS LATER</source>
         <translation>ETWAS SPÄTER</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="482"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="500"/>
         <source>CONTINUOUS</source>
         <translation>FORTGESETZT</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="486"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="504"/>
         <source>THE NEXT DAY</source>
         <translation>NÄCHSTER TAG</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="495"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="513"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
         <translatorcomment>Voice over</translatorcomment>
         <translation>VOICE</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="500"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="518"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
         <translatorcomment>off screen</translatorcomment>
         <translation>OFF</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="505"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="523"/>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
         <translation>IM OFF</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="510"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="528"/>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
         <translation>UNTERTITEL</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="515"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="533"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
         <translation>CONT&apos;D</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="523"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1474"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="541"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1492"/>
         <source>CUT TO:</source>
         <translation>SCHNITT ZU:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="527"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1478"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="545"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1496"/>
         <source>FADE IN:</source>
         <translation>FADE IN:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="531"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1482"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="549"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1500"/>
         <source>FADE OUT</source>
         <translation>FADE-OUT:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="535"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1486"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="553"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1504"/>
         <source>FADE TO:</source>
         <translation>FADE ZU:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="539"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1490"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="557"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1508"/>
         <source>DISSOLVE TO:</source>
         <translation>ÜBERBLENDEN ZU:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="543"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1494"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="561"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1512"/>
         <source>BACK TO:</source>
         <translation>ZURÜCK NACH:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="547"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1498"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="565"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1516"/>
         <source>MATCH CUT TO:</source>
         <translation>MATCH-CUT ZU:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="551"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1502"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="569"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1520"/>
         <source>JUMP CUT TO:</source>
         <translation>JUMP-CUT ZU:</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="555"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1506"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="573"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1524"/>
         <source>FADE TO BLACK</source>
         <translation>SCHWARZ AUSBLENDEN</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1352"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1423"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1370"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1441"/>
         <source>Photos</source>
         <translation>Fotos</translation>
     </message>
     <message>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1363"/>
-        <location filename="../../DataLayer/Database/Database.cpp" line="1434"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1381"/>
+        <location filename="../../DataLayer/Database/Database.cpp" line="1452"/>
         <source>Unnamed image</source>
         <translation>Unbenanntes Bild</translation>
     </message>
@@ -1997,7 +2026,7 @@ Hebräisch: Ronkin Maxim
         <translation type="vanished">English</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="203"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="166"/>
         <source>Detect language from system locale</source>
         <translation>Sprache automatisch feststellen</translation>
     </message>
@@ -2022,7 +2051,7 @@ Hebräisch: Ronkin Maxim
         <translation type="vanished">Azərbaycan</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="193"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="186"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Gesuchte Sprache nicht gefunden? Hier klicken, um deine Sprache selbst hinzuzufügen.&lt;/a&gt;</translation>
     </message>
@@ -3472,32 +3501,32 @@ Versuchen Sie den Download zu wiederholen.</translation>
         <translation>KIT Scenarist. Setup für Basis-Features.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="20"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="72"/>
         <source>Skip</source>
         <translation>Überspringen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="40"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="33"/>
         <source>Back</source>
         <translation>Vorheriges</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="63"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="79"/>
         <source>Next</source>
         <translation>Nächstes</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="158"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="171"/>
         <source>Choose language</source>
         <translation>Sprache wählen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="223"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="316"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Gesuchte Sprache nicht gefunden? Hier klicken, um deine Sprache selbst hinzuzufügen.&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="80"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="136"/>
         <source>Detect language from system locale</source>
         <translation>Sprache automatisch feststellen</translation>
     </message>
@@ -3514,37 +3543,37 @@ Versuchen Sie den Download zu wiederholen.</translation>
         <translation type="vanished">Azərbaycan</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="350"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="386"/>
         <source>Choose application theme</source>
         <translation>Anwendungsthema wählen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="363"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="399"/>
         <source>Dark theme</source>
         <translation>Dunkles Thema</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="392"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="428"/>
         <source>Theme is convenient for work with sufficient light.</source>
         <translation>Dieses Thema ist für gut beleuchtete Räume zweckmäßig.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="427"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="463"/>
         <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
         <translation>Das Thema ist für Abend oder Dunkle Räume geeignet.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="462"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="498"/>
         <source>Light theme</source>
         <translation>Helles Thema</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="495"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="531"/>
         <source>Use research module</source>
         <translation>Benutzen Sie das Sammlungsmodul</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="505"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="541"/>
         <source>You can collect all the necessary materials for the project in one place. In it, you can save basic information about the script, such as its name, logline, synopsis, and also fill in the title page of the script.
 
 Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
@@ -3557,17 +3586,17 @@ Hier können Sie die Figuren- und Location-Listen verwalten. Erstellen Sie neue 
 Weiterhin finden Sie im Sammlungsmodul die Möglichkeit, Dokumente, Fotos, Links zu Webseiten und Mindmaps zu speichern.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="526"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="562"/>
         <source>Research</source>
         <translation>Recherche</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="570"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="606"/>
         <source>Cards</source>
         <translation>Karten</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="577"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="613"/>
         <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
 
 You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
@@ -3576,17 +3605,17 @@ You can add colors and stamp to cards, move, and group them, and all changes mad
 Sie können Farben und Stempel hinzufügen, sie bewegen und gruppieren. Alle Änderungen im Kartenmodul werden auf das Skript angewendet.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="611"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="647"/>
         <source>Use cards module</source>
         <translation>Kartenmodul benutzen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="645"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="681"/>
         <source>Script</source>
         <translation>Drehbuch</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="652"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="688"/>
         <source>Script module allows you to work with screenplay.
 
 Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
@@ -3599,92 +3628,102 @@ Im Modul finden Sie den Skriptnavigator - eine Szenenliste. Klicken Sie auf eine
 Weiterhin empfiehlt sich der Texteditor. Der Editor besitzt viele Hilfsfunktionen, die das Editieren -  in Übereinstimmung mit aktuellen Drehbuchnormen - simplifizieren. Außerdem können Sie den Text durchsuchen und kommentieren.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="688"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="724"/>
         <source>Use script module</source>
         <translation>Drehbuchmodul benutzen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="722"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1166"/>
+        <source>Arabic screenplay standard template.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1185"/>
+        <source>Arabic screenplay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1200"/>
         <source>Choose script template</source>
         <translation>Drehbuchvorlage wählen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="756"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1060"/>
         <source>Russian screenplay with Courier Prime</source>
         <translation>Russisches Drehbuch mit Courier Prime</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="769"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1102"/>
         <source>Russian screenplay</source>
         <translation>Russisches Drehbuch</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="782"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="993"/>
         <source>International screenplay standard template for A4 page size.</source>
         <translation>Drehbuch nach internationaler Norm (A4).</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="801"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1073"/>
         <source>Final Draft screenplay (A4)</source>
         <translation>Final Draft Drehbuch (A4)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="833"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="923"/>
         <source>International screenplay standard template for Letter page size.</source>
         <translation>Drehbuch nach internationaler Norm (Brief).</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="865"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="910"/>
         <source>Chinese screenplay</source>
         <translation>Chinesisches Drehbuch</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="878"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1147"/>
         <source>Chinese screenplay standard template.</source>
         <translation>Chinesisches Drehbuch -Standardvorlage.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="897"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="794"/>
         <source>Hebrew screenplay</source>
         <translation>Hebräisches Drehbuch</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="910"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="891"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
         <translation>Russisches und CIS Drehbuch mit Courier Prime anstatt Courier New.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="929"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1025"/>
         <source>Hebrew screenplay standard template.</source>
         <translation>Hebräisches Drehbuch - Standardvorlage.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1028"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1012"/>
         <source>Final Draft screenplay (Letter)</source>
         <translation>Final Draft Drehbuch (Brief)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1041"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="958"/>
         <source>Russian and CIS screenplay standard template.</source>
         <translation>Russisches und CIS Drehbuch</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1159"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1256"/>
         <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
         <translation>Das Statistikmodul erlaubt es Ihnen, detaillierte Berichte zum Skript erstellen zu lassen. Hier können Sie neben der Figurenaktivität auch die Dynamik der Szenen analysieren.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1176"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1273"/>
         <source>Statistics</source>
         <translation>Berichte</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1189"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1286"/>
         <source>Use statistics module</source>
         <translation>Statistikmodul benutzen.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1219"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1316"/>
         <source>Thank you. The most common application settings were configured.
 
 The application will start in few seconds.</source>
@@ -3693,7 +3732,7 @@ The application will start in few seconds.</source>
 Die Anwendung wird in wenigen Sekunden gestartet.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1238"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1335"/>
         <source>Starting application</source>
         <translation>Anwendung wird gestartet</translation>
     </message>
@@ -6211,27 +6250,27 @@ Bitte laden Sie die neue Version manuell unter diesem &lt;a href=&quot;https://k
 <context>
     <name>UserInterface::MenuView</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="143"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="144"/>
         <source>Connect</source>
         <translation>Verbinden</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="153"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="154"/>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Einloggen&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="191"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="192"/>
         <source>Account is active until:</source>
         <translation>Der Account ist aktiv bis:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="194"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="195"/>
         <source>Account is inactive</source>
         <translation>Der Account ist inaktiv</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="205"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="206"/>
         <source>Used %1 Gb from %2 Gb</source>
         <translation>%1 Gb von %2 Gb benutzt</translation>
     </message>
@@ -6239,17 +6278,17 @@ Bitte laden Sie die neue Version manuell unter diesem &lt;a href=&quot;https://k
 <context>
     <name>UserInterface::OnboardingView</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="218"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="222"/>
         <source>Next</source>
         <translation>Nächstes</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="252"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="256"/>
         <source>Finish</source>
         <translation>Abschließen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="270"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="274"/>
         <source>Will be used default settings.
 
 The application will start in few seconds.</source>
@@ -6551,17 +6590,16 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
         <translation type="vanished">Ordner</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="270"/>
         <source>Color %1</source>
-        <translation>Farbe %1</translation>
+        <translation type="vanished">Farbe %1</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="311"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="314"/>
         <source>Remove</source>
         <translation>löschen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="292"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="295"/>
         <source>Add color</source>
         <translation>Farbe hinzufügen</translation>
     </message>
@@ -6581,82 +6619,92 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
         <translation>Alle Farben zurücksetzen</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="271"/>
+        <source>Main color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="272"/>
+        <source>Additional color %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="274"/>
         <source>Clear</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="310"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="313"/>
         <source>Create After</source>
         <translation>Erstelle danach</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="371"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="377"/>
         <source>Draft:</source>
         <translation>Entwurf:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="373"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="379"/>
         <source>Scenes:</source>
         <translation>Szenen:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="375"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="381"/>
         <source>Scenes Count</source>
         <translation>Anzahl der Szenen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="379"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="385"/>
         <source>Add Scenario Item After Selected</source>
         <translation>Füge nach dem ausgewählten Element ein Drehbuchelement hinzu</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="382"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="388"/>
         <source>Remove Selected Scenario Item</source>
         <translation>Ausgewähltes Drehbuchelement löschen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="387"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="393"/>
         <source>Show/hide additional panels</source>
         <translation>Zeige/Verberge zusätzliche Menüleisten</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="395"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="401"/>
         <source>Draft</source>
         <translation>Entwurf</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="397"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="403"/>
         <source>Show/hide draft</source>
         <translation>Entwurf anzeigen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="400"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="406"/>
         <source>Scene description</source>
         <translation>Szenenbeschreibung</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="401"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="407"/>
         <source>Show/hide scene note</source>
         <translation>Notizen zur Szene anzeigen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="405"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="411"/>
         <source>Script bookmarks</source>
         <translation>Drehbuchlesezeichen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="406"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="412"/>
         <source>Show/hide script bookmarks</source>
         <translation>Zeige/Verberge die Drehbuchlesezeichen</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="410"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="416"/>
         <source>Script dictionaries</source>
         <translation>Skriptwörterbuch</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="411"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="417"/>
         <source>Show/hide script dictionaries</source>
         <translation>Zeige/Verberge Skriptwörterbücher</translation>
     </message>
@@ -6923,13 +6971,13 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="136"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="820"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="825"/>
         <source>Russian</source>
         <translation>Russisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="141"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="824"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="829"/>
         <source>Spanish</source>
         <translation>Spanisch</translation>
     </message>
@@ -6940,19 +6988,19 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="151"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="807"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="812"/>
         <source>French</source>
         <translation>Französisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="156"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="814"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="819"/>
         <source>Kazakh</source>
         <translation>Kassachisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="166"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="808"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="813"/>
         <source>German</source>
         <translation>Deutsch</translation>
     </message>
@@ -6963,7 +7011,7 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="176"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="806"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="811"/>
         <source>Farsi</source>
         <translation>Farsi</translation>
     </message>
@@ -6974,43 +7022,43 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="186"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="811"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="816"/>
         <source>Hebrew</source>
         <translation>Hebräisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="191"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="816"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="821"/>
         <source>Polish</source>
         <translation>Polnisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="196"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="827"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="832"/>
         <source>Turkish</source>
         <translation>Türkisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="201"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="812"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="817"/>
         <source>Hungarian</source>
         <translation>Ungarisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="206"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="813"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="818"/>
         <source>Italian</source>
         <translation>Italienisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="211"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="800"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="805"/>
         <source>Azerbaijani</source>
         <translation>Aserbaidschanisch</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="216"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="826"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="831"/>
         <source>Telugu</source>
         <translation></translation>
     </message>
@@ -7021,134 +7069,135 @@ Die Anwendung wird in wenigen Sekunden gestartet.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="236"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="803"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="808"/>
         <source>Dutch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="241"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="821"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="826"/>
         <source>Serbian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="246"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="797"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="802"/>
         <source>Arabic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="631"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="636"/>
         <source>Choose backups saving folder</source>
         <translation>Wählen Sie den Ordner, um Backups zu speichern</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="802"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="807"/>
         <source>Catalan</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="809"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="251"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="814"/>
         <source>Greek</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="810"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="815"/>
         <source>Greek (Polythonic)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="815"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="820"/>
         <source>Macedonian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="819"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="824"/>
         <source>Russian with Yo</source>
         <translation>Russisch mit Yo</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="798"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="803"/>
         <source>Armenian (Eastern)</source>
         <translation>Armenisch (Östlich)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="799"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="804"/>
         <source>Armenian (Western)</source>
         <translation>Armenisch (Westlich)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="888"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="893"/>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
 but if you work with no terminations it saves project every %1 minutes.</source>
         <translation>Das automatische Speichern arbeitet sehr präzise. Wenn Sie Ihre Maus oder die Tastatur nicht betätigen, wird das Projekt alle 3 Sekunden gespeichert. Sollten Sie sich vom Arbeitsplatz entfernen und das Projekt nicht beenden, wird es alle %1 Minuten automatisch gespeichert.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="161"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="828"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="833"/>
         <source>Ukrainian</source>
         <translation>Ukrainisch</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="801"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="806"/>
         <source>Belorussian</source>
         <translation>Weißrussisch</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="804"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="809"/>
         <source>English (GB)</source>
         <translation>Englisch (GB)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="805"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="810"/>
         <source>English (US)</source>
         <translation>Englisch (US)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="817"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="822"/>
         <source>Portuguese (Brazil)</source>
         <translation>Portugiesisch (Brasilien)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="818"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="823"/>
         <source>Portuguese (Portugal)</source>
         <translation>Portugiesisch (Portugal)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="226"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="823"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="828"/>
         <source>Slovenian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="231"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="825"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="830"/>
         <source>Swedish</source>
         <translation>Schwedisch</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="822"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="827"/>
         <source>Serbian (Latin script)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="845"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="852"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="850"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="857"/>
         <source>Common</source>
         <translation>Allgemein</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="846"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="851"/>
         <source>Modules</source>
         <translation>Module</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="853"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="858"/>
         <source>Editing</source>
         <translation>In Bearbeitung</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="854"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="859"/>
         <source>Shortcuts</source>
         <translation>Abkürzungen</translation>
     </message>

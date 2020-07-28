@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<TS version="2.1" language="el_GR">
 <context>
     <name>AboutDialog</name>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="20"/>
         <source>About the app</source>
-        <translation>À propos cette application</translation>
+        <translation>Σχετικά με την εφαρμογή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="40"/>
         <source>Our heroes, who help us to create international versions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι ήρωές μας, που μας βοηθούν να δημιουργήσουμε τις διεθνείς εκδόσεις:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="105"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The cat Alexander illustrations created by &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Illustrations du chat Alexander créées par &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Τα σχέδια της γάτας &quot;Αλέξανδρος&quot; δημιουργήθηκαν από τους &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="33"/>
         <source>KIT Scenarist</source>
-        <translation></translation>
+        <translation>KIT Scenarist</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="50"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Το λογισμικό διατίθεται υπό την&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; άδεια, ο πηγαίος κώδικας είναι διαθέσιμος στο &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Our heroes, who help us to create international versions:
@@ -33,9 +38,10 @@ Français: Felipe Vece, Antonio, Armand Robin
 Italiano: Luca Giliberto
 Қазақ: Алпамыс Баткалов
 Magyar: Gabor
-Polski: Rafał Puka
+Polski: Rafał Puka, Bartłomiej Jaskulski
 Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
 Русский: Димка Новиков
+Slovenski: Andraž Pušnik, Martin Srebotnjak
 Türkçe: Recep Burak Yak
 Українська: Myroslav S 
 فارْسِى: Arash Aneessee
@@ -43,8 +49,7 @@ Türkçe: Recep Burak Yak
 עִבְרִית: Maxim Ronkin
 తెలుగు: Eshwar Mittapalli
 </source>
-        <translation type="vanished">Nos héros, ceux qui nous aident à créer des versions internationales:
-Our heroes, who help us to create international versions:
+        <translation type="vanished">Οι ήρωές μας, που μας βοήθησαν να φτιάξουμε τις διεθνείς εκδόσεις:
 Azərbaycan: Tarlan Rasulzadeh
 Deutsch: Michael Krämer
 English: Eric Wayne &amp; Soyung Key
@@ -53,206 +58,27 @@ Français: Felipe Vece, Antonio, Armand Robin
 Italiano: Luca Giliberto
 Қазақ: Алпамыс Баткалов
 Magyar: Gabor
-Polski: Rafał Puka
+Polski: Rafał Puka, Bartłomiej Jaskulski
 Português: Ricardo Graça, Ronaldo German, Lucas Sanchez dos Anjos 
 Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-తెలుగు: Eshwar Mittapalli</translation>
-    </message>
-    <message>
-        <source>Our heroes, who help us to create international versions:
-Azərbaycan: Tarlan Rasulzadeh
-Deutsch: Michael Krämer
-English: Eric Wayne &amp; Soyung Key
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Italiano: Luca Giliberto
-Қазақ: Алпамыс Баткалов
-Magyar: Gabor
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
+Slovenski: Andraž Pušnik, Martin Srebotnjak
 Türkçe: Recep Burak Yak
 Українська: Myroslav S 
 فارْسِى: Arash Aneessee
 汉语: Stepan Chernetskiy, Barron Kang
 עִבְרִית: Maxim Ronkin
 తెలుగు: Eshwar Mittapalli
-</source>
-        <translation type="vanished">Nos héros, ceux qui nous aident à créer des versions internationales:
-Azərbaycan: Tarlan Rasulzadeh
-Deutsch: Michael Krämer
-English: Eric Wayne &amp; Soyung Key
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Italiano: Luca Giliberto
-Қазақ: Алпамыс Баткалов
-Magyar: Gabor
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-తెలుగు: Eshwar Mittapalli
-</translation>
-    </message>
-    <message>
-        <source>Our heroes, who help us to create international versions:
-Azərbaycan: Tarlan Rasulzadeh
-Deutsch: Michael Krämer
-English: Eric Wayne &amp; Soyung Key
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Italiano: Luca Giliberto
-Қазақ: Алпамыс Баткалов
-Magyar: Gabor
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</source>
-        <translation type="vanished">Nos héros, ceux qui nous aident à créer des versions internationales:
-Azərbaycan: Tarlan Rasulzadeh
-Deutsch: Michael Krämer
-English: Eric Wayne &amp; Soyung Key
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Italiano: Luca Giliberto
-Қазақ: Алпамыс Баткалов
-Magyar: Gabor
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</translation>
-    </message>
-    <message>
-        <source>Our heroes, who help us to create international versions:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Magyar: Gabor
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</source>
-        <translation type="vanished">Nos héros, ceux qui nous aident à créer des versions internationales:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Magyar: Tömör Gábor
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
 </translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; featuring &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Éditeur de scénario simple et puissant développé par &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; avec &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Απλή και ισχυρή εφαρμογή επεξεργασίας σεναρίου που αναπτύχθηκε από &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; με τον &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="73"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The application logo designed by &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Logo de l&apos;application conçu par &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Éditeur de scénario simple et puissant développé par &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="50"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ce programme est distribué sous licence &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt;, le code source est disponible sur &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Our heroes, who help us to create international versions:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</source>
-        <translation type="vanished">Nos héros, ceux qui nous aident à créer des versions internationales:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Türkçe: Recep Burak Yak
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin</translation>
-    </message>
-    <message>
-        <source>Our heroes, who help us to create international versions:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin
-</source>
-        <translation type="vanished">Nos héros, ceux qui nous aident à créer des versions internationales:
-Deutsch: Michael Krämer
-English: Dimka Novikov
-Español: Felipe Vece, Pedro Terrero
-Français: Felipe Vece, Antonio, Armand Robin
-Қазақ: Алпамыс Баткалов
-Polski: Rafał Puka
-Português: Ricardo Graça, Ronaldo German 
-Русский: Димка Новиков
-Українська: Myroslav S 
-فارْسِى: Arash Aneessee
-汉语: Stepan Chernetskiy, Barron Kang
-עִבְרִית: Maxim Ronkin</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Το λογότυπο της εφαρμογής σχεδιάστηκε από τους &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -260,12 +86,12 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../3rd_party/Widgets/AcceptebleLineEdit/AcceptebleLineEdit.cpp" line="32"/>
         <source>Text</source>
-        <translation>Texte</translation>
+        <translation>Κείμενο</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/AcceptebleLineEdit/AcceptebleLineEdit.cpp" line="98"/>
         <source>was changed from &lt;b&gt;%1&lt;/b&gt; to &lt;b&gt;%2&lt;/b&gt;. Apply changes?</source>
-        <translation>a été modifié à partir de&lt;b&gt;%1&lt;/b&gt;pour &lt;b&gt;%2&lt;/b&gt;, Appliquer les modifications?</translation>
+        <translation>άλλαξε από &lt;b&gt;%1&lt;/b&gt; σε &lt;b&gt;%2&lt;/b&gt;. Εφαρμογή αλλαγών;</translation>
     </message>
 </context>
 <context>
@@ -273,12 +99,12 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../3rd_party/Widgets/ImagesPane/AddImageButton.cpp" line="28"/>
         <source>Choose image</source>
-        <translation>Choisir l&apos;image</translation>
+        <translation>Επιλέξτε εικόνα</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/ImagesPane/AddImageButton.cpp" line="30"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
-        <translation>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
+        <translation>Εικόνες (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
     </message>
 </context>
 <context>
@@ -286,28 +112,28 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="20"/>
         <source>Add New Project</source>
-        <translation>Ajouter un nouveau projet</translation>
+        <translation>Προσθήκη Νέου Έργου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="199"/>
-        <source>Local</source>
-        <translation>Local</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="215"/>
-        <source>Remote</source>
-        <translation>A distance</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="44"/>
+        <source>Enter Name of New Project:</source>
+        <translation>Εισάγετε Όνομα για το Νέο Έργο:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="57"/>
         <source>File exists. It will be replaced after creating.</source>
-        <translation>Le fichier existe. Il sera remplacé après la création.</translation>
+        <translation>Το αρχείο υπάρχει ήδη. Θα αντικατασταθεί μετά τη δημιουργία.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="104"/>
+        <source>Choose Location for New Project File:</source>
+        <translation>Επιλέξτε Θέση για το Αρχείο του Νέου Έργου:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="127"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="173"/>
         <source>Browse...</source>
-        <translation>Parcourir...</translation>
+        <translation>Περιήγηση...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="130"/>
@@ -316,29 +142,29 @@ Português: Ricardo Graça, Ronaldo German
         <translation>...</translation>
     </message>
     <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="150"/>
+        <source>Choose File with Project to Import:</source>
+        <translation>Επιλέξτε Αρχείο με Έργο για Εισαγωγή:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="199"/>
+        <source>Local</source>
+        <translation>Τοπικό</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="215"/>
+        <source>Remote</source>
+        <translation>Απομακρυσμένο</translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="242"/>
         <source>Advanced</source>
-        <translation>Avancé</translation>
+        <translation>Για προχωρημένους</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="249"/>
         <source>Sorry, but you need to have active internet connection for creating new projects in cloud.</source>
-        <translation>Désolé, mais vous devez être connecté à internet pour pouvoir créer de nouveaux projets dans le cloud.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="104"/>
-        <source>Choose Location for New Project File:</source>
-        <translation>Choisir un emplacement pour le fichier du nouveau projet:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="44"/>
-        <source>Enter Name of New Project:</source>
-        <translation>Entrer un nom pour le nouveau projet:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="150"/>
-        <source>Choose File with Project to Import:</source>
-        <translation>Choisir un fichier contenant un projet à importer:</translation>
+        <translation>Συγνώμη, αλλά χρειάζεται να έχετε ενεργή σύνδεση στο διαδίκτυο για να δημιουργήσετε έργα στο νέφος.</translation>
     </message>
 </context>
 <context>
@@ -346,7 +172,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.ui" line="32"/>
         <source>Bookmark text</source>
-        <translation>Signet</translation>
+        <translation>Κείμενο Σελιδοδείκτη</translation>
     </message>
 </context>
 <context>
@@ -354,7 +180,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Export/AbstractExporter.cpp" line="379"/>
         <source>Real name: </source>
-        <translation>Votre nom: </translation>
+        <translation>Πραγματικό όνομα: </translation>
     </message>
 </context>
 <context>
@@ -362,27 +188,27 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="15"/>
         <source>INT</source>
-        <translation>INT</translation>
+        <translation>ΕΣΩΤ.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="16"/>
         <source>EXT</source>
-        <translation>EXT</translation>
+        <translation>ΕΞΩΤ.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="17"/>
         <source>EST</source>
-        <translation>EST</translation>
+        <translation>ΑΠΟΔ.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="18"/>
         <source>INT./EXT</source>
-        <translation>INT./EXT</translation>
+        <translation>ΕΣΩΤ./ΕΞΩΤ.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="19"/>
         <source>INT/EXT</source>
-        <translation>INT/EXT</translation>
+        <translation>ΕΣΩΤ./ΕΞΩΤ.</translation>
     </message>
 </context>
 <context>
@@ -390,68 +216,60 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="36"/>
         <source>INT</source>
-        <translation>INT</translation>
+        <translation>ΕΣΩΤ.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="37"/>
         <source>EXT</source>
-        <translation>EXT</translation>
+        <translation>ΕΞΩΤ.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="38"/>
         <source>EST</source>
-        <translation>EST</translation>
+        <translation>ΑΠΟΔ.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="39"/>
         <source>INT./EXT</source>
-        <translation>INT./EXT</translation>
+        <translation>ΕΣΩΤ./ΕΞΩΤ.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="40"/>
         <source>INT/EXT</source>
-        <translation>INT/EXT</translation>
+        <translation>ΕΣΩΤ./ΕΞΩΤ.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="41"/>
         <source>I/E</source>
-        <translation>I/E</translation>
+        <translation>Ε/Ε</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::AbstractImporter</name>
     <message>
-        <source>All Supported Files</source>
-        <translation type="vanished">Tous les fichiers pris en charge</translation>
-    </message>
-    <message>
-        <source>KIT Scenarist Project</source>
-        <translation type="vanished">Projet KIT Scenarist</translation>
-    </message>
-    <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="158"/>
         <source>All supported files</source>
-        <translation>Tous les fichiers pris en charge</translation>
+        <translation>Όλα τα υποστηριζόμενα αρχεία</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="160"/>
         <source>KIT Scenarist project</source>
-        <translation>Projet KIT Scenarist</translation>
+        <translation>Έργο KIT Scenarist</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="162"/>
         <source>Final Draft screenplay</source>
-        <translation>Final Draft</translation>
+        <translation>Σενάριο Final Draft</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="164"/>
         <source>Final Draft template</source>
-        <translation>Modèle Final Draft</translation>
+        <translation>Πρότυπο Final Draft</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="166"/>
         <source>Trelby screenplay</source>
-        <translation>Trelby</translation>
+        <translation>Σενάριο Trelby</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="168"/>
@@ -461,25 +279,17 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="170"/>
         <source>OpenDocument text</source>
-        <translation>OpenDocument Text</translation>
+        <translation>κείμενο OpenDocument</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="172"/>
         <source>Fountain text</source>
-        <translation>Texte au format Fountain</translation>
+        <translation>κείμενο Fountain</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="174"/>
         <source>Celtx project</source>
-        <translation>Projet Celtx</translation>
-    </message>
-    <message>
-        <source>OpenDocument Text</source>
-        <translation type="vanished">OpenDocument Text</translation>
-    </message>
-    <message>
-        <source>Fountain Text</source>
-        <translation type="vanished">Texte au format Fountain</translation>
+        <translation>Έργο Celtx</translation>
     </message>
 </context>
 <context>
@@ -487,32 +297,32 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="23"/>
         <source>Cast Report</source>
-        <translation>Rapport personnages</translation>
+        <translation>Αναφορά Ρόλων</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="232"/>
         <source>Character</source>
-        <translation>Personnage</translation>
+        <translation>Χαρακτήρας</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="234"/>
         <source>Total Dialogues</source>
-        <translation>Total des dialogues</translation>
+        <translation>Συνολικός αριθμός Διαλόγων</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="237"/>
         <source>Speaking Scenes</source>
-        <translation>Scènes avec dialogue</translation>
+        <translation>Σκηνές Ομιλίας</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="239"/>
         <source>Non-Sp. Scenes</source>
-        <translation>Scènes sans dialogue</translation>
+        <translation>Σκηνές χωρίς Ομιλία</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="242"/>
         <source>Total Scenes</source>
-        <translation>Nombre total de scènes</translation>
+        <translation>Συνολικός αριθμός Σκηνών</translation>
     </message>
 </context>
 <context>
@@ -520,27 +330,27 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="29"/>
         <source>Characters Dialogues</source>
-        <translation>Dialogues des personnages</translation>
+        <translation>Διάλογοι Χαρακτήρων</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="112"/>
         <source>Scene/Dialogue</source>
-        <translation>Scène/Dialogue</translation>
+        <translation>Σκηνή/Διάλογος</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="114"/>
         <source>Number</source>
-        <translation>Nombre</translation>
+        <translation>Αριθμός</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="116"/>
         <source>Page</source>
-        <translation>Page</translation>
+        <translation>Σελίδα</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="142"/>
         <source>[UNDEFINED]</source>
-        <translation>[INDÉFINI]</translation>
+        <translation>[ΑΠΡΟΣΔΙΟΡΙΣΤΟ]</translation>
     </message>
 </context>
 <context>
@@ -548,17 +358,17 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="51"/>
         <source>Characters Activity Plot</source>
-        <translation>Activité des personnages</translation>
+        <translation>Γράφημα Δραστηριότητας Χαρακτήρων</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="212"/>
         <source>Scene</source>
-        <translation>Scène</translation>
+        <translation>Σκηνή</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="217"/>
         <source>Dialogues count:</source>
-        <translation>Décompte des dialogues :</translation>
+        <translation>Αριθμός Διαλόγων:</translation>
     </message>
 </context>
 <context>
@@ -566,21 +376,17 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="175"/>
         <source>Pages</source>
-        <translation>Pages</translation>
+        <translation>Σελίδες</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="182"/>
         <source>Words</source>
-        <translation>Mots</translation>
+        <translation>Λέξεις</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="189"/>
         <source>Symbols</source>
-        <translation>Symboles</translation>
-    </message>
-    <message>
-        <source>Simbols</source>
-        <translation type="vanished">Symboles</translation>
+        <translation>Σύμβολα</translation>
     </message>
 </context>
 <context>
@@ -588,38 +394,38 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="29"/>
         <source>Location Report</source>
-        <translation>Rapport décors</translation>
+        <translation>Αναφορά Τοποθεσίας</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="147"/>
         <source>Location/Scene</source>
-        <translation>Décor/Scène</translation>
+        <translation>Τοποθεσία/Σκηνή</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="149"/>
         <source>Number</source>
-        <translation>Nombre</translation>
+        <translation>Αριθμός</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="151"/>
         <source>Page</source>
-        <translation>Pages</translation>
+        <translation>Σελίδα</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="153"/>
         <source>Scenes</source>
-        <translation>Scène</translation>
+        <translation>Σκηνές</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="155"/>
         <source>Chron</source>
-        <translation>Chronomètre</translation>
+        <translation>Χρόνος</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="164"/>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="208"/>
         <source>[UNDEFINED]</source>
-        <translation>[INDÉFINI]</translation>
+        <translation>[ΑΠΡΟΣΔΙΟΡΙΣΤΟ]</translation>
     </message>
 </context>
 <context>
@@ -627,57 +433,53 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Statistics/StatisticsFacade.cpp" line="75"/>
         <source>generated</source>
-        <translation>Générée</translation>
+        <translation>δημιουργημένο</translation>
     </message>
 </context>
 <context>
     <name>BusinessLogic::ResearchModel</name>
     <message>
-        <source>Scenario</source>
-        <translation type="vanished">Scénario</translation>
-    </message>
-    <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="107"/>
         <source>Script</source>
-        <translation>Scénario</translation>
+        <translation>Σενάριο</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="115"/>
         <source>Title Page</source>
-        <translation>Page de titre</translation>
+        <translation>Σελίδα Τίτλου</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="123"/>
         <source>Logline</source>
-        <translation>Logline</translation>
+        <translation>Γραμμή καταγραφής</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="131"/>
         <source>Synopsis</source>
-        <translation>Synopsis</translation>
+        <translation>Σύνοψη</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="139"/>
         <source>Versions</source>
-        <translation>Versions</translation>
+        <translation>Εκδόσεις</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="148"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="251"/>
         <source>Characters</source>
-        <translation>Personnages</translation>
+        <translation>Χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="157"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="256"/>
         <source>Locations</source>
-        <translation>Décors</translation>
+        <translation>Τοποθεσίες</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="166"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="261"/>
         <source>Documents</source>
-        <translation>Documents</translation>
+        <translation>Έγγραφα</translation>
     </message>
 </context>
 <context>
@@ -686,172 +488,172 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="66"/>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="92"/>
         <source>Undefined</source>
-        <translation>Indéfini</translation>
+        <translation>Απροσδιόριστο</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="67"/>
         <source>Scene Heading</source>
-        <translation>En-tête</translation>
+        <translation>Κεφαλίδα Σκηνής</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="68"/>
         <source>Scene Characters</source>
-        <translation>Liste des personnages</translation>
+        <translation>Χαρακτήρες Σκηνής</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="69"/>
         <source>Action</source>
-        <translation>Action</translation>
+        <translation>Δράση</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="70"/>
         <source>Character</source>
-        <translation>Personnage</translation>
+        <translation>Χαρακτήρας</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="71"/>
         <source>Parenthetical</source>
-        <translation>Didascalies</translation>
+        <translation>Παρενθετικό</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="72"/>
         <source>Dialog</source>
-        <translation>Dialogue</translation>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="73"/>
         <source>Transition</source>
-        <translation>Transition</translation>
+        <translation>Μετάβαση</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="74"/>
         <source>Shot</source>
-        <translation></translation>
+        <translation>Λήψη</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="75"/>
+        <source>Title Header</source>
+        <translation>Κεφαλίδα Τίτλου</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="76"/>
+        <source>Title</source>
+        <translation>Τίτλος</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="77"/>
+        <source>Noprintable Text</source>
+        <translation>Μη-εκτυπώσιμο κείμενο</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="78"/>
+        <source>Folder</source>
+        <translation>Φάκελος</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="79"/>
+        <source>Folder Footer</source>
+        <translation>Υποσέλιδο Φακέλου</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="80"/>
+        <source>Scene Description</source>
+        <translation>Περιγραφή Σκηνής</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="81"/>
         <source>Lyrics</source>
-        <translation>Paroles</translation>
+        <translation>Στίχοι</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="94"/>
         <source>SH</source>
         <extracomment>Reduction of Scene Heading</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ΚΣ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="96"/>
         <source>SC</source>
         <extracomment>Reduction of Scene Characters</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ΧΣ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="98"/>
         <source>A</source>
         <extracomment>Reduction of Action</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Δρ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="100"/>
         <source>C</source>
         <extracomment>Reduction of Character</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Χ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="102"/>
         <source>P</source>
         <extracomment>Reduction of Parenthetical</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Π</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="104"/>
         <source>D</source>
         <extracomment>Reduction of Dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Διαλ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="106"/>
         <source>Tr</source>
         <extracomment>Reduction of Transition</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Μ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="108"/>
         <source>S</source>
         <extracomment>Reduction of Shot</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Λ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="110"/>
         <source>TH</source>
         <extracomment>Reduction of Title Header</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ΚΤ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="112"/>
         <source>Ti</source>
         <extracomment>Reduction of Title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Τ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="114"/>
         <source>NT</source>
         <extracomment>Reduction of Noprintable Text</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ΜΚ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="116"/>
         <source>F</source>
         <extracomment>Reduction of Folder</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Φ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="118"/>
         <source>FF</source>
         <extracomment>Reduction of Folder Footer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ΚΦ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="120"/>
         <source>SD</source>
         <extracomment>Reduction of Scene Description</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ΠΣ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="122"/>
         <source>L</source>
         <extracomment>Reduction of Lyrics</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="75"/>
-        <source>Title Header</source>
-        <translation>En-tête de titre</translation>
-    </message>
-    <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="76"/>
-        <source>Title</source>
-        <translation>Titre</translation>
-    </message>
-    <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="77"/>
-        <source>Noprintable Text</source>
-        <translation>Texte non-imprimable</translation>
-    </message>
-    <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="78"/>
-        <source>Folder</source>
-        <translation>Dossier</translation>
-    </message>
-    <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="79"/>
-        <source>Folder Footer</source>
-        <translation>Pied du dossier</translation>
-    </message>
-    <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="80"/>
-        <source>Scene Description</source>
-        <translation>Description de la scène</translation>
+        <translation>Σ</translation>
     </message>
 </context>
 <context>
@@ -867,87 +669,87 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="634"/>
         <source>Final Draft screenplay (A4)</source>
-        <translation>Scénario Final Draft (A4)</translation>
+        <translation>Σενάριο Final Draft (A4)</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="639"/>
         <source>Final Draft screenplay (Letter)</source>
-        <translation>Scénario Final Draft (Lettre)</translation>
+        <translation>Σενάριο Final Draft (Letter)</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="644"/>
         <source>Russian screenplay</source>
-        <translation>Scénario russe</translation>
+        <translation>Ρωσικό σενάριο</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="649"/>
         <source>Russian screenplay with Courier Prime</source>
-        <translation>Scénario russe en Courier Prime</translation>
+        <translation>Ρωσικό σενάριο με Courier Prime</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="654"/>
         <source>Chinese screenplay</source>
-        <translation>Scénario chinois</translation>
+        <translation>Κινέζικο σενάριο</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="659"/>
         <source>Hebrew screenplay</source>
-        <translation>Scénario hébreu</translation>
+        <translation>Εβραϊκό σενάριο</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="664"/>
         <source>Arabic screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation>Αραβικό σενάριο</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="669"/>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation>Modèle standard de scénario international au format A4.</translation>
+        <translation>Διεθνές πρότυπο σεναρίου για σελίδα A4.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="674"/>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation>Modèle standard de scénario international au format lettre.</translation>
+        <translation>Διεθνές πρότυπο σεναρίου για σελίδα τύπου Letter.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="679"/>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation>Modèle standard de scénario russe et CIS.</translation>
+        <translation>Ρωσικό και CIS πρότυπο σεναρίου</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="684"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation>Modèle standard de scénario russe et CIS en Courier Prime (au lieu de Courier New).</translation>
+        <translation>Ρωσικό και CIS πρότυπο σεναρίου με Courier Prime αντί της Courier New.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="689"/>
         <source>Chinese screenplay standard template.</source>
-        <translation>Modèle standard de scénario chinois.</translation>
+        <translation>Κινέζικο πρότυπο σεναρίου</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="694"/>
         <source>Hebrew screenplay standard template.</source>
-        <translation>Modèle standard de scénario </translation>
+        <translation>Εβραϊκό πρότυπο σεναρίου</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="699"/>
         <source>Arabic screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αραβικό πρότυπο σεναρίου</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="714"/>
         <source>Default</source>
-        <translation>Défaut</translation>
+        <translation>Προκαθορισμένο</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="719"/>
         <source>Default with Courier Prime</source>
-        <translation>Défaut avec Courier Prime</translation>
+        <translation>Προκαθορισμένο με Courier Prime</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="735"/>
         <source>Copy of </source>
-        <translation>Copie de</translation>
+        <translation>Αντίγραφη του </translation>
     </message>
 </context>
 <context>
@@ -955,37 +757,37 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="36"/>
         <source>Scene Report</source>
-        <translation>Rapport scène</translation>
+        <translation>Αναφορά Σκηνής</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="237"/>
         <source>Scene/Characters</source>
-        <translation>Scène/Personnages</translation>
+        <translation>Σκηνή/Χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="239"/>
         <source>Number</source>
-        <translation>Nombre</translation>
+        <translation>Αριθμός</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="241"/>
         <source>Page</source>
-        <translation>Page</translation>
+        <translation>Σελίδα</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="243"/>
         <source>Characters</source>
-        <translation>Personnages</translation>
+        <translation>Χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="245"/>
         <source>Chron</source>
-        <translation>Chronomètre</translation>
+        <translation>Χρόνος</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="259"/>
         <source>[UNDEFINED]</source>
-        <translation>Indefini</translation>
+        <translation>[ΑΠΡΟΣΔΙΟΡΙΣΤΟ]</translation>
     </message>
 </context>
 <context>
@@ -994,12 +796,12 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="34"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation>SUITE</translation>
+        <translation>συν</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="39"/>
         <source>MORE</source>
-        <translation>A SUIVRE</translation>
+        <translation>περισσότερα</translation>
     </message>
 </context>
 <context>
@@ -1008,41 +810,41 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="37"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="261"/>
         <source>Scene Duration</source>
-        <translation>Durée de la scène</translation>
+        <translation>Διάρκεια Σκηνής</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="40"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="272"/>
         <source>Action Duration</source>
-        <translation>Durée de l&apos;action</translation>
+        <translation>Διάρκεια Δράσης</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="43"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="283"/>
         <source>Dialogues Duration</source>
-        <translation>Durée des dialogues</translation>
+        <translation>Διάρκεια Διαλόγων</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="46"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="294"/>
         <source>Characters Count</source>
-        <translation>Décompte des personnages</translation>
+        <translation>Αριθμός Χαρακτήρων</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="49"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="305"/>
         <source>Dialogs Count</source>
-        <translation>Décomptes des dialogues</translation>
+        <translation>Αριθμός Διαλόγων</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="58"/>
         <source>Story Structure Analisys Plot</source>
-        <translation>Structure de l&apos;histoire et analyse de synopsis</translation>
+        <translation>Γράφημα Ανάλυσης Δομής Ιστορίας</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="198"/>
         <source>Scene</source>
-        <translation>Scène</translation>
+        <translation>Σκηνή</translation>
     </message>
 </context>
 <context>
@@ -1050,38 +852,38 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="70"/>
         <source>Summary report</source>
-        <translation>Résumé du rapport</translation>
+        <translation>Αναφορά περίληψης</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="160"/>
         <source>Chronometry</source>
-        <translation>Durée</translation>
+        <translation>Χρονομετρία</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="162"/>
         <source>Pages</source>
-        <translation>Page</translation>
+        <translation>Σελίδες</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="164"/>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="185"/>
         <source>Words</source>
-        <translation>Mots</translation>
+        <translation>Λέξεις</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="166"/>
         <source>Characters with/without spaces</source>
-        <translation>Caratères avec/sans espaces</translation>
+        <translation>Χαρακτήρες με/χωρίς κενά</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="177"/>
         <source>Text</source>
-        <translation>Texte</translation>
+        <translation>Κείμενο</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="181"/>
         <source>Paragraph</source>
-        <translation>Paragraphe</translation>
+        <translation>Παράγραφος</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="183"/>
@@ -1089,7 +891,7 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="300"/>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="364"/>
         <source>Size</source>
-        <translation>Taille</translation>
+        <translation>Μέγεθος</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="187"/>
@@ -1097,57 +899,57 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="302"/>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="366"/>
         <source>Percents</source>
-        <translation>Pourcentage</translation>
+        <translation>Ποσοστά</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="214"/>
         <source>Scenes</source>
-        <translation>Scènes</translation>
+        <translation>Σκηνές</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="238"/>
         <source>Time</source>
-        <translation>Temp</translation>
+        <translation>Χρόνος</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="255"/>
         <source>[UNDEFINED]</source>
-        <translation>[INDÈFINI]</translation>
+        <translation>[ΑΠΡΟΣΔΙΟΡΙΣΤΟ]</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="274"/>
         <source>Locations</source>
-        <translation>Décors</translation>
+        <translation>Τοποθεσίες</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="298"/>
         <source>Place</source>
-        <translation>Lieux</translation>
+        <translation>Μέρος</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="331"/>
         <source>Characters</source>
-        <translation>Personnages</translation>
+        <translation>Χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="362"/>
         <source>Dialogues count</source>
-        <translation>Décompte des dialogues</translation>
+        <translation>Αριθμός Διαλόγων</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="376"/>
         <source>More 10 dialogues</source>
-        <translation>Plus de 10 dialogues</translation>
+        <translation>Περισσότερο από 10 διάλογοι</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="383"/>
         <source>About 10 dialogues</source>
-        <translation>Environ 10 dialogue</translation>
+        <translation>Περίπου 10 διάλογοι</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="390"/>
         <source>Nonspeaking</source>
-        <translation>Sans dialogue</translation>
+        <translation>Βουβός</translation>
     </message>
 </context>
 <context>
@@ -1155,47 +957,47 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="14"/>
         <source>Form</source>
-        <translation>Formulaire</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="78"/>
-        <source>Layout by</source>
-        <translation>Disposition en</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="87"/>
-        <source>rows</source>
-        <translation>lignes</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="97"/>
-        <source>columns</source>
-        <translation>colonnes</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="135"/>
-        <source>Distance:</source>
-        <translation>Espacement :</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="157"/>
-        <source>Arrange</source>
-        <translation>Ranger</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="180"/>
-        <source>cards in Row</source>
-        <translation>Carte par ligne</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="35"/>
         <source>Card size:</source>
-        <translation>Taille des cartes :</translation>
+        <translation>Μέγεθος κάρτας:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="42"/>
         <source>Card ratio:</source>
-        <translation>Ratio des cartes:</translation>
+        <translation>Αναλογία κάρτας:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="78"/>
+        <source>Layout by</source>
+        <translation>Διάταξη κατά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="87"/>
+        <source>rows</source>
+        <translation>γραμμές</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="97"/>
+        <source>columns</source>
+        <translation>στήλες</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="135"/>
+        <source>Distance:</source>
+        <translation>Απόσταση:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="157"/>
+        <source>Arrange</source>
+        <translation>Διευθέτηση</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="180"/>
+        <source>cards in Row</source>
+        <translation>κάρτες στη Σειρά</translation>
     </message>
 </context>
 <context>
@@ -1203,67 +1005,67 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="828"/>
         <source>Go to text</source>
-        <translation>Aller à…</translation>
+        <translation>Προς κείμενο</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="833"/>
         <source>Convert to scene</source>
-        <translation>Convertir en scène</translation>
+        <translation>Μετατροπή σε σκηνή</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="834"/>
         <source>Convert to folder</source>
-        <translation>Convertir en dossier</translation>
+        <translation>Μετατροπή σε φάκελο</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="840"/>
         <source>Edit</source>
-        <translation>Modifier</translation>
+        <translation>Επεξεργασία</translation>
     </message>
     <message>
         <source>Color %1</source>
-        <translation type="vanished">Couleur %1</translation>
+        <translation type="vanished">Χρώμα %1</translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="877"/>
+        <source>Main color</source>
+        <translation>Κυρίως χρώμα</translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="878"/>
+        <source>Additional color %1</source>
+        <translation>Πρόσθετο χρώμα %1</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="883"/>
         <source>Clear</source>
-        <translation>Effacer</translation>
+        <translation>Εκκαθάριση</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="893"/>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="931"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="957"/>
-        <source>Remove</source>
-        <translation>Supprimer</translation>
+        <translation>Ετικέτα</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="920"/>
         <source>Add color</source>
-        <translation>Ajouter couleur</translation>
-    </message>
-    <message>
-        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="877"/>
-        <source>Main color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="878"/>
-        <source>Additional color %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρόσθηκη χρώματος</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="956"/>
         <source>Create card</source>
-        <translation>Créer carte</translation>
+        <translation>Δημιουργία κάρτας</translation>
+    </message>
+    <message>
+        <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="957"/>
+        <source>Remove</source>
+        <translation>Αφαίρεση</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="999"/>
         <source>Stamp:</source>
-        <translation>Bandeau:</translation>
+        <translation>Σφραγίδα:</translation>
     </message>
 </context>
 <context>
@@ -1271,27 +1073,27 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="34"/>
         <source>Find...</source>
-        <translation type="unfinished">Trouver ...</translation>
+        <translation>Εύρεση...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="42"/>
         <source>Case Sensitive</source>
-        <translation type="unfinished">Sensibilité à la casse</translation>
+        <translation>Διάκριση πεζών-κεφαλαίων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="49"/>
         <source>Everywhere</source>
-        <translation type="unfinished"></translation>
+        <translation>Παντού</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="52"/>
         <source>In text</source>
-        <translation type="unfinished"></translation>
+        <translation>Στο κείμενο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="54"/>
         <source>In tags</source>
-        <translation type="unfinished"></translation>
+        <translation>Στις ετικέτες</translation>
     </message>
 </context>
 <context>
@@ -1299,17 +1101,17 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.ui" line="26"/>
         <source>Change password</source>
-        <translation>Changer mot de passe</translation>
+        <translation>Αλλαγή συνθηματικού</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.ui" line="32"/>
         <source>Old Password</source>
-        <translation>Ancien mot de passe</translation>
+        <translation>Παλιό  συνθηματικό</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.ui" line="55"/>
         <source>New Password</source>
-        <translation>Nouveau mot de passe</translation>
+        <translation>Νέο Συνθηματικό</translation>
     </message>
 </context>
 <context>
@@ -1317,22 +1119,22 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="14"/>
         <source>Application error was detected</source>
-        <translation>Une erreur dans l&apos;application a été détéctée</translation>
+        <translation>Εντοπίστηκε σφάλμα της εφαρμογής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="20"/>
         <source>Please, send error report to developer. This will help to make application better.</source>
-        <translation>S&apos;il vous plaît, rapporter l&apos;erreur au developpeur. Cela aidera à améliorer l&apos;application.</translation>
+        <translation>Παρακαλώ, στείλετε την αναφορά σφάλματος στον αναπτύσσοντα την εφαρμογή. Θα βοηθήσει να γίνει η εφαρμογή καλύτερη.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="43"/>
         <source>Your email:</source>
-        <translation>Votre email :</translation>
+        <translation>Το ηλ-ταχ. σας:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="53"/>
         <source>Message to developer:</source>
-        <translation>Message pour le developpeur :</translation>
+        <translation>Μήνυμα στον αναπτύσσοντα:</translation>
     </message>
 </context>
 <context>
@@ -1340,7 +1142,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../DataLayer/DataStorageLayer/ScriptVersionStorage.cpp" line="27"/>
         <source>First draft</source>
-        <translation>Premier brouillon</translation>
+        <translation>Πρώτο πρόχειρο</translation>
     </message>
 </context>
 <context>
@@ -1348,181 +1150,181 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="74"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
-        <translation>Le projet a été modifié dans une version plus récente. Vous devez mettre à jour l&apos;application pour l&apos;ouvrir.</translation>
+        <translation>Το έργο άλλαξε σε ανώτερη έκδοση. Πρέπει να ενημερώσετε την εφαρμογή στην τελευταία έκδοση για να το ανοίξετε.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="78"/>
         <source>File &quot;%1&quot; can&apos;t be opened, please check out that you tries to open file which was created in the KIT Scenarist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το αρχείο &quot;%1&quot; δεν μπορεί να ανοιχθεί, παρακαλώ ελέγξτε ότι προσπαθήσατε να ανοίξετε αρχείο που δημιουργήθηκε στο KIT Scenarist.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="85"/>
         <source>File &quot;%1&quot; can&apos;t be opened, please check out that you tries to open KIT Scenarist file (*.kitsp).</source>
-        <translation type="unfinished"></translation>
+        <translation>Το αρχείο &quot;%1&quot; δεν μπορεί να ανοιχθεί, παρακαλώ ελέγξτε ότι προσπαθήσατε να ανοίξετε αρχείο KIT Scenarist (*.kitsp).</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="448"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1554"/>
         <source>First draft</source>
-        <translation>Premier brouillon</translation>
+        <translation>Πρώτο πρόχειρο</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="456"/>
         <source>INT</source>
-        <translation>INT</translation>
+        <translation>ΕΣΩΤ.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="460"/>
         <source>EXT</source>
-        <translation>EXT</translation>
+        <translation>ΕΞΩΤ.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="464"/>
         <source>INT./EXT</source>
-        <translation>INT./EXT</translation>
+        <translation>ΕΣΩΤ./ΕΞΩΤ.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="472"/>
         <source>DAY</source>
-        <translation>JOUR</translation>
+        <translation>ΜΕΡΑ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="476"/>
         <source>NIGHT</source>
-        <translation>NUIT</translation>
+        <translation>ΝΥΧΤΑ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="480"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="745"/>
         <source>MORNING</source>
-        <translation>MATIN</translation>
+        <translation>ΠΡΩΙ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="484"/>
         <source>AFTERNOON</source>
-        <translation>APRÈS-MIDI</translation>
+        <translation>ΑΠΟΓΕΥΜΑ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="488"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="749"/>
         <source>EVENING</source>
-        <translation>SOIR</translation>
+        <translation>ΒΡΑΔΥ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="492"/>
         <source>LATER</source>
-        <translation>PLUS TARD</translation>
+        <translation>ΑΡΓΟΤΕΡΑ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="496"/>
         <source>MOMENTS LATER</source>
-        <translation>QUELQUES INSTANTS PLUS TARD</translation>
+        <translation>ΣΤΙΓΜΕΣ ΑΡΓΟΤΕΡΑ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="500"/>
         <source>CONTINUOUS</source>
-        <translation>CONTINUOUS</translation>
+        <translation>ΣΥΝΕΧΟΜΕΝΟ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="504"/>
         <source>THE NEXT DAY</source>
-        <translation>LE LENDEMAIN</translation>
+        <translation>ΤΗΝ ΕΠΟΜΕΝΗ ΜΕΡΑ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="513"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
-        <translation>V.O.</translation>
+        <translation>Σπικάζ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="518"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
-        <translation>O.S.</translation>
+        <translation>Ε.Ο.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="523"/>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
-        <translation>O.C.</translation>
+        <translation>Ε.Π.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="528"/>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
-        <translation>SOUS-TITRE</translation>
+        <translation>ΥΠΟΤΙΤΛΟΣ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="533"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation>Ci-dessous</translation>
+        <translation>συν</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="541"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1492"/>
         <source>CUT TO:</source>
-        <translation>CUT:</translation>
+        <translation>CUT TO:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="545"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1496"/>
         <source>FADE IN:</source>
-        <translation>FONDU:</translation>
+        <translation>FADE IN:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="549"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1500"/>
         <source>FADE OUT</source>
-        <translation>DISPARAÎTRE</translation>
+        <translation>FADE OUT</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="553"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1504"/>
         <source>FADE TO:</source>
-        <translation>FONDU VERS:</translation>
+        <translation>FADE TO:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="557"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1508"/>
         <source>DISSOLVE TO:</source>
-        <translation>FONDU ENCHAÎNÉ:</translation>
+        <translation>DISSOLVE TO:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="561"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1512"/>
         <source>BACK TO:</source>
-        <translation>RETOUR À:</translation>
+        <translation>BACK TO:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="565"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1516"/>
         <source>MATCH CUT TO:</source>
-        <translation>MATCH CUT:</translation>
+        <translation>MATCH CUT TO:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="569"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1520"/>
         <source>JUMP CUT TO:</source>
-        <translation>JUMP CUT:</translation>
+        <translation>JUMP CUT TO:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="573"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1524"/>
         <source>FADE TO BLACK</source>
-        <translation>FONDU AU NOIR</translation>
+        <translation>FADE TO BLACK</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="1370"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1441"/>
         <source>Photos</source>
-        <translation>Photos</translation>
+        <translation>Φωτογραφίες</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="1381"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1452"/>
         <source>Unnamed image</source>
-        <translation>Image sans nom</translation>
+        <translation>Ανώνυμη εικόνα</translation>
     </message>
 </context>
 <context>
@@ -1530,7 +1332,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../../libs/fileformats/docx_reader.cpp" line="145"/>
         <source>Unable to open archive.</source>
-        <translation>Impossible d&apos;ouvrir l&apos;archive.</translation>
+        <translation>Δεν μπόρεσε να ανοίξει η αρχειοθήκη.</translation>
     </message>
 </context>
 <context>
@@ -1538,7 +1340,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../Domain/ScriptVersion.cpp" line="151"/>
         <source>current version</source>
-        <translation>version actuelle</translation>
+        <translation>τρέχουσα έκδοση</translation>
     </message>
 </context>
 <context>
@@ -1546,85 +1348,36 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="32"/>
         <source>Export Scenario</source>
-        <translation>Exporter le scénario</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="588"/>
-        <source>Cancel</source>
-        <translation>Annuler</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="581"/>
-        <source>Print Preview</source>
-        <translation>Aperçu avant impression</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="571"/>
-        <source>Export</source>
-        <translation>Export</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="355"/>
-        <source>Format:</source>
-        <translation>Format:</translation>
+        <translation>Εξαγωγή Σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="132"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="254"/>
         <source>Choose file to export:</source>
-        <translation>Choisissez le fichier à exporter</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="385"/>
-        <source>FDX</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="499"/>
-        <source>Print Title Page</source>
-        <translation>Imprimer la page de titre</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="489"/>
-        <source>Print pages numbers</source>
-        <translation>Imprimer les numéros de page</translation>
-    </message>
-    <message>
-        <source>Print scenes numbers with prefix</source>
-        <translation type="vanished">Imprimer les numéros de page avec le préfixe</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="509"/>
-        <source>Print dialogues numbers</source>
-        <translation>Imprimer les numéros de dialogue</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="526"/>
-        <source>Check Page Breaks</source>
-        <translation>Vérifiez les sauts de page</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="392"/>
-        <source>Fountain</source>
-        <translation></translation>
+        <translation>Επιλογή αρχείου για εξαγωγή:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="168"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="267"/>
         <source>File exists. It will be replaced after exporting.</source>
-        <translation>Le fichier existe. Il sera remplacé après l&apos;export.</translation>
+        <translation>Το αρχείο υπάρχει ήδη. Θα αντικατασταθεί μετά την εξαγωγή.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="208"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="322"/>
         <source>Browse...</source>
-        <translation>Parcourir...</translation>
+        <translation>Περιήγηση...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="211"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="325"/>
         <source>...</source>
         <translation>...</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="355"/>
+        <source>Format:</source>
+        <translation>Μορφή:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="365"/>
@@ -1637,29 +1390,74 @@ Português: Ricardo Graça, Ronaldo German
         <translation>PDF</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="449"/>
-        <source>Print watermark:</source>
-        <translation>Watermark sur impression:</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="385"/>
+        <source>FDX</source>
+        <translation>FDX</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="462"/>
-        <source>Template:</source>
-        <translation>Template:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="479"/>
-        <source>Print scenes numbers</source>
-        <translation>Imprimer les numéros de scène</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="516"/>
-        <source>Save Review Marks</source>
-        <translation>Sauvegarder les marques de correction</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="392"/>
+        <source>Fountain</source>
+        <translation>Fountain</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="420"/>
         <source>Additional (Numbering, Title Page etc.)</source>
-        <translation>Supplémentaire (Numération, Titre page.etc)</translation>
+        <translation>Πρόσθετα (Αρίθμηση, Σελίδα Τίτλου κ.λπ.)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="449"/>
+        <source>Print watermark:</source>
+        <translation>Εκτύπωση υδατογραφήματος:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="462"/>
+        <source>Template:</source>
+        <translation>Πρότυπο:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="479"/>
+        <source>Print scenes numbers</source>
+        <translation>Εκτύπωση αρίθμησης σκηνών</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="489"/>
+        <source>Print pages numbers</source>
+        <translation>Εκτύπωση αρίθμησης σελίδων</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="499"/>
+        <source>Print Title Page</source>
+        <translation>Εκτύπωση Σελίδας Τίτλου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="509"/>
+        <source>Print dialogues numbers</source>
+        <translation>Εκτύπωση αρίθμησης διαλόγων</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="516"/>
+        <source>Save Review Marks</source>
+        <translation>Αποθήκευση Επισημάνσεων Ανασκόπησης</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="526"/>
+        <source>Check Page Breaks</source>
+        <translation>Έλεγχος Αλλαγών Σελίδας</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="571"/>
+        <source>Export</source>
+        <translation>Εξαγωγή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="581"/>
+        <source>Print Preview</source>
+        <translation>Προεπισκόπηση Εκτύπωσης</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="588"/>
+        <source>Cancel</source>
+        <translation>Ακύρωση</translation>
     </message>
 </context>
 <context>
@@ -1667,7 +1465,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="71"/>
         <source>OpenDocument Text</source>
-        <translation>OpenDocument Text</translation>
+        <translation>κείμενο OpenDocument</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="73"/>
@@ -1677,17 +1475,17 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="75"/>
         <source>Rich Text Format</source>
-        <translation>Rich Text Format</translation>
+        <translation>Μορφή Εμπλουτισμένου Κειμένου</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="77"/>
         <source>Plain Text</source>
-        <translation>Texte brut</translation>
+        <translation>Απλό Κείμενο</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="107"/>
         <source>All Supported Files</source>
-        <translation>Tous les fichiers pris en charge</translation>
+        <translation>Όλα τα υποστηριζόμενα αρχεία</translation>
     </message>
 </context>
 <context>
@@ -1696,7 +1494,7 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="255"/>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="398"/>
         <source>END OF </source>
-        <translation>FIN DE </translation>
+        <translation>ΤΕΛΟΣ </translation>
     </message>
 </context>
 <context>
@@ -1704,27 +1502,27 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="121"/>
         <source>Couldn&apos;t parse XML file.</source>
-        <translation>Ne peut pas decrypter le fichier XML.</translation>
+        <translation>Δεν μπόρεσε να αναγνωσθεί το αρχείο XML.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="299"/>
         <source>Couldn&apos;t read file.</source>
-        <translation>Ne peut pas lire le fichier.</translation>
+        <translation>Δεν μπόρεσε να αναγνωσθεί το αρχείο.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="368"/>
         <source>Couldn&apos;t open file to write.</source>
-        <translation>Ne peut pas ouvrir le fichier à écrire.</translation>
+        <translation>Δεν μπόρεσε να ανοιχθεί το αρχείο για εγγραφή.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="376"/>
         <source>Saved.</source>
-        <translation>Sauvegardé.</translation>
+        <translation>Αποθηκεύτηκε.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="398"/>
         <source>MindMap exported as </source>
-        <translation>MindMap exportée</translation>
+        <translation>Ο χάρτης μυαλού εξήχθηκε ως </translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="439"/>
@@ -1740,73 +1538,73 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="749"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="858"/>
         <source>No active node.</source>
-        <translation>Pas de noeud actif.</translation>
+        <translation>Κανένας ενεργός κόμβος.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="503"/>
         <source>No active node</source>
-        <translation>Pas de noeud actif</translation>
+        <translation>Κανένας ενεργός κόμβος</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="517"/>
         <source>Node hasn&apos;t parent for add sibling node</source>
-        <translation>Le nœud n’a pas de parent pour ajouter un nœud frère</translation>
+        <translation>Ο κόμβος δεν έχει γονέα για να προστεθεί αδελφός κόμβος</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="541"/>
         <source>Base node cannot be deleted.</source>
-        <translation>Le noeud de base ne peut pas être supprimé.</translation>
+        <translation>Ο βασικός κόμβος δεν μπορεί να διαγραφεί.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="579"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="608"/>
         <source>Too much scaling.</source>
-        <translation></translation>
+        <translation>Υπερβολική κλιμάκωση.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="639"/>
         <source>Select node color</source>
-        <translation>Choisissez la couleur du noeud</translation>
+        <translation>Επιλογή χρώματος κόμβου</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="692"/>
         <source>Select text color</source>
-        <translation>Choisissez la couleur du texte</translation>
+        <translation>Επιλογή χρώματος κειμένου</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="735"/>
         <source>Add edge: select destination node.</source>
-        <translation>Ajouter une flèche : choisissez le nœud de destination.</translation>
+        <translation>Προσθήκη ακμής: επιλέξτε κόμβο προορισμού.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="741"/>
         <source>Delete edge: select other end-node.</source>
-        <translation>Supprimer la flèche: choisissez un autre noeud de fin.</translation>
+        <translation>Διαγραφή ακμής: επιλέξτε τον άλλο κόμβο-άκρο.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="810"/>
         <source>Edge adding cancelled.</source>
-        <translation>Ajout de la flèche annulé.</translation>
+        <translation>Ακυρώθηκε η προσθήκη ακμής.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="817"/>
         <source>Edge deleting cancelled.</source>
-        <translation>Suppression de la flèche annulé.</translation>
+        <translation>Ακυρώθηκε η διαγραφή ακμής.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="919"/>
         <source>Can&apos;t add edge between single node.</source>
-        <translation></translation>
+        <translation>Δεν μπορεί να προστεθεί ακμή απο και προς τον ίδιο κόμβο.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="925"/>
         <source>There is already an edge between these two nodes.</source>
-        <translation>Il y a déjà une flèche entre ces deux noeuds.</translation>
+        <translation>Υπάρχει ήδη ακμή μεταξύ αυτών των δύο κόμβων.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="956"/>
         <source>There is no edge between these two nodes.</source>
-        <translation>Il n&apos;y a pas de flèche entre ces deux noeuds.</translation>
+        <translation>Δεν υπάρχει ακμή μεταξύ αυτών των δύο κόμβων.</translation>
     </message>
 </context>
 <context>
@@ -1814,22 +1612,22 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="20"/>
         <source>Import Scenario</source>
-        <translation>Importer scénario</translation>
+        <translation>Εισαγωγή Σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="35"/>
         <source>Scenario</source>
-        <translation>Scénario</translation>
+        <translation>Σενάριο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="45"/>
         <source>Outline</source>
-        <translation>Outline</translation>
+        <translation>Σύνοψη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="80"/>
         <source>Browse...</source>
-        <translation>Parcourir...</translation>
+        <translation>Περιήγηση...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="83"/>
@@ -1839,42 +1637,42 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="103"/>
         <source>Choose File with Project to Import:</source>
-        <translation>Choisir un fichier contenant un projet à importer :</translation>
+        <translation>Επιλέξτε Αρχείο με Έργο για Εισαγωγή:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="113"/>
         <source>Remove scenes numbers</source>
-        <translation>Supprimer les numéros de scènes</translation>
+        <translation>Αφαίρεση αρίθμησης σκηνών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="123"/>
         <source>Insert To</source>
-        <translation>Insérer vers</translation>
+        <translation>Εισαγωγή Στο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="129"/>
         <source>Replace scenario</source>
-        <translation>Remplacer scénario</translation>
+        <translation>Αντικατάσταση σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="139"/>
         <source>Current cursor position</source>
-        <translation>Position actuelle du curseur</translation>
+        <translation>Τρέχουσα θέση κέρσορα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="146"/>
         <source>End of scenario</source>
-        <translation>Fin de scénario</translation>
+        <translation>Τέλος σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="156"/>
         <source>Find characters and locations</source>
-        <translation>Trouver personnages et décors</translation>
+        <translation>Εύρεση χαρακτήρων και τοποθεσιών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="166"/>
         <source>Save review marks</source>
-        <translation>Sauvegarder les marques de correction</translation>
+        <translation>Αποθήκευση επισημάνσεων ανασκόπησης</translation>
     </message>
 </context>
 <context>
@@ -1882,17 +1680,17 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="20"/>
         <source>Choose application language</source>
-        <translation>Choisir la langue de l&apos;application</translation>
+        <translation>Επιλογή γλώσσης εφαρμογής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="166"/>
         <source>Detect language from system locale</source>
-        <translation>Détecter la langue de paramètres régionaux du système</translation>
+        <translation>Ανίχνευση γλώσσας από την τοπική ρύθμιση του συστήματος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="186"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Vous ne trouvez pas votre langue ? Pour savoir comment l’ajouter vous-même, plus d’infos ici.&lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Δεν βρήκατε την αγαπημένη σας γλώσσα. Διαβάστε πώς μπορείτε να την προσθέσετε μόνοι σας.&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -1901,49 +1699,49 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="66"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="247"/>
         <source>&amp;Email</source>
-        <translation></translation>
+        <translation>&amp;Email</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="86"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="260"/>
         <source>&amp;Password</source>
-        <translation></translation>
+        <translation>&amp;Password</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="135"/>
         <source>ErrorLabel</source>
-        <translation></translation>
+        <translation>ErrorLabel</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="202"/>
         <source>Restore Password</source>
-        <translation>Restaurer mot de passe</translation>
+        <translation>Ανάκτηση συνθηματικού</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="309"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="457"/>
         <source>Error Icon</source>
-        <translation></translation>
+        <translation>Εικονίδιο Σφάλματος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="325"/>
         <source>Error &amp;message</source>
-        <translation></translation>
+        <translation>Error &amp;message</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="408"/>
         <source>&amp;Verification code</source>
-        <translation></translation>
+        <translation>&amp;Verification code</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="473"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &lt;/p&gt;&lt;p&gt;&amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &lt;/p&gt;&lt;p&gt;&amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1951,57 +1749,37 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="115"/>
         <source> - changed</source>
-        <translation> - changé</translation>
+        <translation> - άλλαξε</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="549"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="813"/>
-        <source>Scenarist project files (*%1)</source>
-        <translation>Fichiers de projet Kit Scenarist (*%1)</translation>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="351"/>
+        <source>File format not supported</source>
+        <translation>Η μορφή αρχείου δεν υποστηρίζεται</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="352"/>
+        <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
+        <translation>Αρχεία DOC της Microsoft δεν υποστηρίζονται. Πρέπει να το αποθηκεύσετε ως DOCX και να το επανεισάγετε.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="454"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
-        <translation>Vous essayez de créer un projet dans un dossier n&apos;existant pas. &lt;b&gt;%1&lt;/b&gt;. S&apos;il vous plait choisissez un autre emplacement pour le nouveau projet.</translation>
+        <translation>Προσπαθήσατε να δημιουργήσετε έργο στον μη υπάρχοντα φάκελο &lt;b&gt;%1&lt;/b&gt;. Παρακαλώ, διαλέξτε άλλη τοποθεσία για το νέο έργο.</translation>
     </message>
     <message>
-        <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry.</source>
-        <translation type="vanished">Impossible d&apos;écrire le fichier. Peut être qu&apos;il s&apos;ouvre avec une autre application. S&apos;il vous plaît, fermez et ressayez.</translation>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="458"/>
+        <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry.</source>
+        <translation>Δεν μπορεί να γίνει εγγραφή στο αρχείο. Ίσως είναι ανοιχτό σε άλλη εφαρμογή. Παρακαλώ κλείστε την και ξαναδοκιμάστε.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="461"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>Impossible d&apos;écrire le fichier. Vérifiez les autorisations pour écrire dans le dossier choisi. S&apos;il vous plaît, choisissez un autre dossier.</translation>
+        <translation>Δεν μπορεί να γίνει εγγραφή στο αρχείο. Ελέξτε τις άδειες εγγραφής στον επιλεγμένο φάκελο. Παρακαλώ επιλέξτε άλλο φάκελο.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="463"/>
         <source>Create project error</source>
-        <translation>Erreur de création de projet</translation>
-    </message>
-    <message>
-        <source>Choose file for save project</source>
-        <translation type="vanished">Choisir le fichier pour sauvegarder le projet</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="608"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="703"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="724"/>
-        <source>Saving error</source>
-        <translation>Erreur de sauvegarde</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="609"/>
-        <source>Can&apos;t save project as &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Please check permissions and retry.</source>
-        <translation>Impossible de sauvegarder le projet en &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; S&apos;il vous plaît vérifiez les permissions et réessayez.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t write you changes to project located at &lt;b&gt;%1&lt;/b&gt; becourse file isn&apos;t exist. Please move file back and retry to save. Retry to save?</source>
-        <translation type="vanished">Impossible d&apos;écrire vos changements dans le projet à l&apos;emplacement&lt;b&gt;%1&lt;/b&gt;  car le fichier n&apos;existe pas. S&apos;il vous plaît déplacer la sauvegarde et essayez de sauvegarder. Essayer de sauvegarder?</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="811"/>
-        <source>Choose project file to open</source>
-        <translation>Choisir le fichier de projet à ouvrir</translation>
+        <translation>Σφάλμα κατά τη δημιουργία έργου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="507"/>
@@ -2009,485 +1787,451 @@ Português: Ricardo Graça, Ronaldo German
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="935"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1036"/>
         <source>Can&apos;t open project file</source>
-        <translation>Imossible d&apos;ouvrir le fichier du projet</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="458"/>
-        <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry.</source>
-        <translation>Impossible d&apos;écrire le fichier. Peut être qu&apos;il s&apos;ouvre avec une autre application. S&apos;il vous plaît, fermez et ressayez.</translation>
+        <translation>Δεν μπορεί να ανοίξει το αρχείο του έργου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="547"/>
         <source>Choose file to save project</source>
-        <translation>Choisir le fichier pour sauvegarder le projet</translation>
+        <translation>Επιλογή αρχείου για αποθήκευση έργου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="549"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="813"/>
+        <source>Scenarist project files (*%1)</source>
+        <translation>Αρχεία έργου Scenarist (*%1)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="608"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="703"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="724"/>
+        <source>Saving error</source>
+        <translation>Σφάλμα κατά την αποθήκευση</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="609"/>
+        <source>Can&apos;t save project as &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Please check permissions and retry.</source>
+        <translation>Το έργο δεν μπορεί να αποθηκευθεί ως &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Παρακαλώ ελέγξτε τις άδειες και ξαναπροσπαθήστε.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="704"/>
         <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
-        <translation>Impossible d&apos;écrire vos changement sur le projet. Il y a une erreur dans la base de données: %1 Veuillez vérifier que le fichier existe et que vous avez les permissions en écriture. Réessayer de sauvegarder? </translation>
+        <translation>Δεν μπορούν να εγγραφούν οι αλλαγές σας στο έργο. Υπάρχει σφάλμα στην εσωτερική βάση δεδομένων. %1 Παρακαλώ ελέγξτε, αν το αρχείο υπάρχει και αν έχετε άδεια εγγραφής. Θέλετε να ξαναπροσπαθήσετε;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="725"/>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
-        <translation>Impossible d&apos;écrire vos changements dans le projet à l&apos;emplacement&lt;b&gt;%1&lt;/b&gt;  car le fichier n&apos;existe pas. S&apos;il vous plaît déplacer la sauvegarde et essayez de sauvegarder. Essayer de sauvegarder?</translation>
+        <translation>Δεν μπορούν να εγγραφούν οι αλλαγές σας στο έργο που βρίσκεται στο &lt;b&gt;%1&lt;/b&gt;, γιατί το αρχείο δεν υπάρχει. Παρακαλώ επαναφέρετε το αρχείο στη θέση του και ξαναπροσπαθήστε. Θέλετε να ξαναπροσπαθήσετε;</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="811"/>
+        <source>Choose project file to open</source>
+        <translation>Επιλογή αρχείου έργου για άνοιγμα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="836"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="936"/>
         <source>Ignore and try to open project?</source>
-        <translation>Ignorer et essayer d&apos;ouvrir le projet?</translation>
+        <translation>Αγνόηση και προσπάθεια για άνοιγμα ξανά;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="950"/>
         <source>A file will be opened in read-only mode</source>
-        <translation>Un fichier sera ouvert en lecture seule</translation>
+        <translation>Το αρχείο θα ανοίξει σε λειτουργία μόνο για ανάγνωση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="951"/>
         <source>If you want to edit a file, please check it&apos;s permissions for your account.</source>
-        <translation>Si vous souhaitez éditer un fichier, vérifiez ses permissions pour votre compte</translation>
+        <translation>Αν θέλετε να επεξεργαστείτε ένα αρχείο, παρακαλώ ελέγξτε τις άδειες του λογαριασμού σας.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="964"/>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation>Êtes-vous certain de vouloir retirer ce projet &lt;b&gt;%1&lt;/b&gt; de la liste des projets récents?</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="984"/>
-        <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
-        <translation>Pour déplacer les projets vers le cloud, vous devez être connecté au service cloud de KIT Scenarist.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1047"/>
-        <source>Change project name</source>
-        <translation>Changer le nom du projet</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1048"/>
-        <source>Enter new name for project</source>
-        <translation>Entrer le nouveau nom du projet</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1080"/>
-        <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Ëtes-vous sur de vouloir supprimer le projet &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1095"/>
-        <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Etes vous sur de vouloir supprimer votre abonnement au projet &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1122"/>
-        <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
-        <translation>Etes vous sur de vouloir supprimer l&apos;abonnement de l&apos;utilisateur &lt;b&gt;%1&lt;/b&gt; pour le projet &lt;b&gt;%2&lt;/b&gt;?</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1144"/>
-        <source>Connection active</source>
-        <translation>Connexion active</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1207"/>
-        <source>Modified</source>
-        <translation>Modifié</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1235"/>
-        <source>Network error</source>
-        <translation>Erreur réseau</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1257"/>
-        <source>Incorrect username or password.</source>
-        <translation>Identifiant ou mot de passe incorrect.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1268"/>
-        <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
-        <translation>Le mot de passe sauvegardé est erronné. Il semble que vois ayez modifié le mot de passe. Veuillez saisir le nouveau mot de passe.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1278"/>
-        <source>Subscription ended</source>
-        <translation>Abonnement terminé</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1292"/>
-        <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
-
-Project didn&apos;t synchronized.</source>
-        <translation>Impossible de charger les données depuis le service. Veuillez vérifier votre connection internet et relancer la synchronisation.
-
-Le projet n&apos;a pas été synchronisé.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1305"/>
-        <source>Session closed</source>
-        <translation>Session fermée</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1326"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1337"/>
-        <source>Project not available</source>
-        <translation>Projet indisponible</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2136"/>
-        <source>Print preview script</source>
-        <translation>Aperçu script avant impression</translation>
-    </message>
-    <message>
-        <source>Can&apos;t write you changes to project. There is some internal database error: %1 Please check that file is exists and you have permissions to write in it. Retry to save?</source>
-        <translation type="vanished">Impossible d&apos;écrire vos changement sur le projet. Il y a une erreur dans la base de données: %1 Veuillez vérifier que le fichier existe et que vous avez les permissions en écriture. Réessayer de sauvegarder? </translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1291"/>
-        <source>Network Error</source>
-        <translation>Erreur réseau</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1150"/>
-        <source>Project synchronized</source>
-        <translation>Projet synchronisé</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="351"/>
-        <source>File format not supported</source>
-        <translation>Format de fichier non pris en charge</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="352"/>
-        <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation>Les fichiers Microsoft &lt;b&gt;DOC&lt;/b&gt; ne sont pas supportés. Vous devez enregistrez- &lt;b&gt;DOCX&lt;/b&gt; et réimporter.</translation>
-    </message>
-    <message>
-        <source>Possible save error</source>
-        <translation type="vanished">Erreur de sauvegarde</translation>
-    </message>
-    <message>
-        <source>You have less than 50 megabytes of free disk space. This can lead to problems with saving the project. We recommend that you free up more space and check whether the project is saved correctly.</source>
-        <translation type="vanished">Il vous reste moins de 50 Mo d’espace disque disponible. Cela peut causer des problèmes de sauvegarde du projet. Nous vous recommandons de libérer de l’espace disque et de vérifier si le projet est sauvegardé correctement.</translation>
+        <translation>Θέλετε σίγουρα να κρύψετε το έργο &lt;b&gt;%1&lt;/b&gt; από τα πρόσφατα;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="983"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="989"/>
         <source>Moving project to the cloud failed</source>
-        <translation>Le déplacement du projet vers le cloud a échoué</translation>
+        <translation>Απέτυχε η μετακίνηση του αρχείου στο νέφος</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="984"/>
+        <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
+        <translation>Για τη μετακίνηση έργων στο νέφος πρέπει να είστε συνδεδεμένοι στην υπηρεσία νέφους του KIT Scenarist.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="990"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
-        <translation>Pour déplacer les projets vers le cloud, vous devez être connecté au service cloud de KIT Scenarist</translation>
+        <translation>Για τη μετακίνηση έργων στο νέφος πρέπει η συνδρομή σας στην υπηρεσία νέφους του KIT Scenarist να είναι ενεργή.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1047"/>
+        <source>Change project name</source>
+        <translation>Αλλαγή ονόματος έργου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1048"/>
+        <source>Enter new name for project</source>
+        <translation>Εισαγωγή νέου ονόματος για το έργο</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1080"/>
+        <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation>Θέλετε σίγουρα να αφαιρέσετε το έργο &lt;b&gt;%1&lt;/b&gt;;</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1095"/>
+        <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
+        <translation>Θέλετε σίγουρα να αφαιρέσετε τη συνδρομή σας στο έργο &lt;b&gt;%1&lt;/b&gt;;</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1122"/>
+        <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
+        <translation>Θέλετε σίγουρα να αφαιρέσετε τη συνδρομή του χρήστη &lt;b&gt;%1&lt;/b&gt; στο έργο &lt;b&gt;%2&lt;/b&gt;;</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1144"/>
+        <source>Connection active</source>
+        <translation>Σύνδεση ενεργή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1150"/>
+        <source>Project synchronized</source>
+        <translation>Το έργο συγχρονίστηκε</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1163"/>
         <source>Connection inactive</source>
-        <translation>Connexion inactive</translation>
+        <translation>Σύνδεση ανενεργή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1164"/>
         <source>Project didn&apos;t synchronized</source>
-        <translation>Le projet n&apos;a pas été synchronisé</translation>
+        <translation>Το έργο δε συγχρονίστηκε</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1207"/>
+        <source>Modified</source>
+        <translation>Τροποποιήθηκε</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1235"/>
+        <source>Network error</source>
+        <translation>Σφάλμα δικτύου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1237"/>
         <source>Project didn&apos;t synchronized.</source>
-        <translation>Le projet n&apos;a pas été synchronisé.</translation>
+        <translation>Το έργο δε συγχρονίστηκε.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1257"/>
+        <source>Incorrect username or password.</source>
+        <translation>Λάθος όνομα χρήστη ή συνθηματικό</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1268"/>
+        <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
+        <translation>Το αποθηκευμένο συνθηματικό είναι λανθασμένο. Φαίνεται πως έχετε αλλάξει συνθηματικό. Παρακαλώ, εισάγετε το νέο συνθηματικό.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1278"/>
+        <source>Subscription ended</source>
+        <translation>Η συνδρομή σας έληξε</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1279"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
-        <translation>La periode d&apos;abonnement payante est terminée
-
-Le projet n&apos;a pas été synchronisé.</translation>
+        <translation>Η περίοδος της επί πληρωμή συνδρομής έληξε. Το έργο δεν συγχρονίστηκε.</translation>
     </message>
     <message>
-        <source>Can&apos;t correct load all data from service. Please check your internet connection quality and refresh synchronization.
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1291"/>
+        <source>Network Error</source>
+        <translation>Σφάλμα δικτύου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1292"/>
+        <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation type="vanished">Impossible de charger les données depuis le service. Veuillez vérifier votre connection internet et relancer la synchronisation.
+        <translation>Δεν μπορεί να γίνει φόρτωση όλων των δεδομένων από την υπηρεσία σωστά. Παρακαλώ ελέγξτε τη σύνδεσή σας στο διαδίκτυο και ανανεώστε το συγχρονισμό.
 
-Le projet n&apos;a pas été synchronisé.</translation>
+Το έργο δεν συγχρονίστηκε.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1305"/>
+        <source>Session closed</source>
+        <translation>Η συνεδρία έκλεισε</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1306"/>
         <source>New session for you account started at other device.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Une nouvelle session de votre compte a été commencé sur un autre dispositif.
+        <translation>Ξεκίνησε νέα συνδερία για το λογαριασμό σας σε άλλη συσκευή.
 
-Le projet n&apos;a pas été synchronisé.</translation>
+Το έργο δε συγχρονίστηκε.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1316"/>
         <source>Share error</source>
-        <translation>Erreur de partage</translation>
+        <translation>Σφάλμα κοινοποίησης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1317"/>
         <source>You can&apos;t share project with yourself.</source>
-        <translation>Vous ne pouvez pas partager le projet avec vous-même.</translation>
+        <translation>Δεν μπορείτε να μοιραστείτε το έργο με τον εαυτό σας.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1326"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1337"/>
+        <source>Project not available</source>
+        <translation>Το έργο δεν είναι διαθέσιμο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1327"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Le projet en cours n&apos;est pas disponible pour la synchronisation maintenant car l&apos;abonnement du propriétaire du projet est terminé.
+        <translation>Το τρέχον έργο δεν είναι διαθέσιμο για συγχρονισμό τώρα, επειδή η συνδρομή του κατόχου του τελείωσε.
 
-Le projet n&apos;a pas été synchronisé. </translation>
+Το έργο δε συγχρονίστηκε.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1338"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Le projet en cours n&apos;est pas disponible pour la synchronisation maintenant car le propriétaire du projet a fermé votre accés.
+        <translation>Το τρέχον έργο δεν είναι διαθέσιμο για συγχρονισμό τώρα, επειδή ο κάτοχοε έκλεισε την πρόσβαση στο έργο για εσάς.
 
-Le projet n&apos;a pas été synchronisé.</translation>
+Το έργο δε συγχρονίστηκε.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1348"/>
         <source>Sync not available</source>
-        <translation>Synchronisation indisponible</translation>
+        <translation>Ο συγχρονισμός δεν είναι διαθέσιμος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1349"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Vous avez utilisé tout l&apos;espace disponible sur le server. 
+        <translation>Έχετε εξαντλήσει όλο το διαθέσιμο προς χρήση χώρο στον εξυπηρετητή.
 
-Le projet n&apos;a pas été synchronisé.</translation>
+Το έργο δε συγχρονίστηκε.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1359"/>
         <source>Project sync not available</source>
-        <translation>Synchronisation indisponible</translation>
+        <translation>Ο συγχρονισμός έργου δεν είναι διαθέσιμος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1360"/>
         <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Votre version de l&apos;application est obsolète. Veuillez mettre à jour pour avoir accès au projet.
+        <translation>Έχετε απηρχαιωμένη έκδοση της εφαρμογής. Παρακαλώ εγκαταστάστε την τελυταία έκδοση για την επαναφορά της πρόσβασης στο έργο.
 
-Le projet n&apos;a pas été synchronisé.</translation>
+Το έργο δε συγχρονίστηκε.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1370"/>
         <source>Email already exist</source>
-        <translation>Cet email existe déjà</translation>
+        <translation>Το ηλ-ταχ. υπάρχει ήδη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1379"/>
         <source>Password too weak</source>
-        <translation>Le mot de passe est trop faible</translation>
+        <translation>Πολύ αδύναμο συνθηματικό</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1388"/>
         <source>Invalid old password</source>
-        <translation>Ancien mot de passe invalide</translation>
+        <translation>Λανθασμένο παλιό συνθηματικό</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1397"/>
         <source>Wrong validation code</source>
-        <translation>Mauvais code de validation</translation>
+        <translation>Λάθος κωδικός επαλήθευσης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1406"/>
         <source>Wrong email</source>
-        <translation>Mauvais email</translation>
+        <translation>Λάθος ηλ-ταχ.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1415"/>
         <source>Unknown Error</source>
-        <translation>Erreur inconnue</translation>
+        <translation>Άγνωστο σφάλμα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1483"/>
         <source>Exit from Application</source>
-        <translation>Sortie de l&apos;application</translation>
+        <translation>Έξοδος από την εφαρμογή</translation>
     </message>
     <message>
-        <source>Closing Databse Connections and Remove Temporatry Files.</source>
-        <translation type="vanished">Fermeture des connexions à la base de données et suppression des fichiers temporaires.</translation>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1483"/>
+        <source>Closing Database Connections and remove temporary files.</source>
+        <translation>Κλείσιμο των Συνδέσεων στη Βάση Δεδομένων και αφαίρεση των προσωρινών αρχείων.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1757"/>
         <source>Save project changes?</source>
-        <translation>Enregistrer les modifications du projet?</translation>
+        <translation>Αποθήκευση αλλαγών στο έργο;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1758"/>
         <source>Project was modified. Save changes?</source>
-        <translation>Le projet a été modifié. Sauvegarder les changements?</translation>
+        <translation>Το έργο τροποποιήθηκε. Αποθήκευση αλλαγών;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1786"/>
         <source>Loading Scenario</source>
-        <translation>Chargement du scénario</translation>
+        <translation>Φόρτωση Σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1786"/>
         <source>Please wait. Loading can take few minutes.</source>
-        <translation>S&apos;il vous plaît, attendez. le chargement peut prendre quelques minutes.</translation>
+        <translation>Παρακαλώ περιμένετε. Η φόρτωση μπορεί να πάρει λίγα λεπτά.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1846"/>
         <source>Sync scenario with cloud service.</source>
-        <translation>Synchroniser le scénario avec le cloud.</translation>
+        <translation>Συγχρονισμός σεναρίου με την υπηρεσία νέφους.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1868"/>
         <source>Import</source>
-        <translation>Importer</translation>
+        <translation>Εισαγωγή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1868"/>
         <source>Please wait. Import can take few minutes.</source>
-        <translation>S&apos;il vous plaît, attendez. L&apos;Importation peut prendre quelques minutes.</translation>
+        <translation>Παρακαλώ περιμένετε. Η εισαγωγή μπορεί να πάρει λίγα λεπτά.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1996"/>
         <source>Menu</source>
-        <translation>Fichier</translation>
+        <translation>Μενού</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2005"/>
         <source>New window</source>
-        <translation>Nouvelle fenêtre</translation>
+        <translation>Νέο παράθυρο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2020"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2031"/>
         <source>Start</source>
-        <translation>Démarrer</translation>
+        <translation>Έναρξη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2021"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2032"/>
         <source>Research</source>
-        <translation>Recherche</translation>
+        <translation>Έρευνα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2022"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2033"/>
         <source>Cards</source>
-        <translation>Cartes</translation>
+        <translation>Κάρτες</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2023"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2034"/>
         <source>Scenario</source>
-        <translation>Scénario</translation>
+        <translation>Σενάριο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2024"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2035"/>
         <source>Statistics</source>
-        <translation>Statistiques</translation>
+        <translation>Στατιστική</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2025"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2036"/>
         <source>Tools</source>
-        <translation>Outils</translation>
+        <translation>Εργαλεία</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2026"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2037"/>
         <source>Settings</source>
-        <translation>Paramètres</translation>
+        <translation>Ρυθμίσεις</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2115"/>
         <source>File</source>
-        <translation>Fichier</translation>
+        <translation>Αρχείο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2116"/>
         <source>Edit</source>
-        <translation>Modifier</translation>
+        <translation>Επεξεργασία</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2121"/>
         <source>New</source>
-        <translation>Nouveau</translation>
+        <translation>Νέο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2122"/>
         <source>Open</source>
-        <translation>Ouvrir</translation>
+        <translation>Άνοιγμα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2123"/>
         <source>Save</source>
-        <translation>Enregistrer</translation>
-    </message>
-    <message>
-        <source>Save As...</source>
-        <translation type="vanished">Enregistrer sous...</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2132"/>
-        <source>Import...</source>
-        <translation>Importer...</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2134"/>
-        <source>Export to...</source>
-        <translation>Exporter vers ...</translation>
-    </message>
-    <message>
-        <source>Print Preview</source>
-        <translation type="vanished">Aperçu avant impression</translation>
-    </message>
-    <message>
-        <source>Two Panel Mode</source>
-        <translation type="vanished">Mode deux panneaux</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2568"/>
-        <source>in cloud</source>
-        <translation>dans le cloud</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2567"/>
-        <source>on local computer</source>
-        <translation>sur l’ordinateur local</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1483"/>
-        <source>Closing Database Connections and remove temporary files.</source>
-        <translation>Fermeture des connexions à la base de données et suppression des fichiers temporaires.</translation>
+        <translation>Αποθήκευση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2126"/>
         <source>Save as...</source>
-        <translation>Enregistrer sous...</translation>
+        <translation>Αποθήκευση ως...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2130"/>
         <source>New script version...</source>
-        <translation>Nouvelle version du script ...</translation>
+        <translation>Νέα έκδοση σεναρίου...</translation>
     </message>
     <message>
-        <source>Print preview</source>
-        <translation type="obsolete">Aperçu avant impression</translation>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2132"/>
+        <source>Import...</source>
+        <translation>Εισαγωγή...</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2134"/>
+        <source>Export to...</source>
+        <translation>Εξαγωγή σε...</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2136"/>
+        <source>Print preview script</source>
+        <translation>Εκτύπωση προεπισκόπησης σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2141"/>
         <source>Two panel mode</source>
-        <translation>Mode deux panneaux</translation>
+        <translation>Λειτουργία δύο παραθύρων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2551"/>
         <source>KIT Scenarist</source>
         <translation>KIT Scenarist</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2567"/>
+        <source>on local computer</source>
+        <translation>στον τοπικό υπολογιστή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2568"/>
+        <source>in cloud</source>
+        <translation>στο νέφος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2573"/>
@@ -2500,104 +2244,100 @@ Le projet n&apos;a pas été synchronisé.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="76"/>
         <source>Export</source>
-        <translation>Exporter</translation>
+        <translation>Εξαγωγή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="76"/>
         <source>Please wait. Export can take few minutes.</source>
-        <translation>S&apos;il vous plaît, attendez. L&apos;exportation peut prendre quelques minutes.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t write to file. Maybe it opened in other application. Please, close it and retry export.</source>
-        <translation type="vanished">Impossible d&apos;écire dans le fichier. Il est peut-être ouvert dans une autre application. S&apos;il vous plaît, fermez et relancez l&apos;exportation.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="149"/>
-        <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>Impossible d&apos;écire dans le fichier. Vérifiez les autorisations en écriture dans le dossier choisi. S&apos;il vous plaît, choisissez un autre dossier.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="151"/>
-        <source>Export error</source>
-        <translation>Erreur d&apos;exportation</translation>
+        <translation>Παρακαλώ περιμένετε. Η εξαγωγή μπορεί να πάρει λίγα λεπτά.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="142"/>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
-        <translation>Vous essayez d&apos;exportation vers un dossier inexistant &lt;b&gt;%1&lt;/b&gt; S&apos;il vous plaît, choisissez un autre emplacement pour le fichier exporté.</translation>
+        <translation>Προσπαθήσατε να εξάγετε στον μη υπάρχοντα φάκελο &lt;b&gt;%1&lt;/b&gt;. Παρακαλώ, διαλέξτε άλλη τοποθεσία για το εξαγόμενο αρχείο.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="146"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry export.</source>
-        <translation>Impossible d&apos;écire dans le fichier. Il est peut-être ouvert dans une autre application. S&apos;il vous plaît, fermez et relancez l&apos;exportation.</translation>
+        <translation>Δεν μπορεί να γίνει εγγραφή στο αρχείο. Ίσως είναι ανοιχτό σε άλλη εφαρμογή. Παρακαλώ κλείστε την και επανεξάγετε.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="149"/>
+        <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
+        <translation>Δεν μπορεί να γίνει εγγραφή στο αρχείο. Ελέξτε τις άδειες εγγραφής στον επιλεγμένο φάκελο. Παρακαλώ επιλέξτε άλλο φάκελο.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="151"/>
+        <source>Export error</source>
+        <translation>Σφάλμα εξαγωγής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="178"/>
         <source>Print Preview</source>
-        <translation>Aperçu avant impression</translation>
+        <translation>Προεπισκόπηση Εκτύπωσης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="178"/>
         <source>Please wait. Preparing document to preview can take few minutes.</source>
-        <translation>S&apos;il vous plaît, attendez. La préparation du document pour un aperçu peut prendre quelques minutes.</translation>
+        <translation>Παρακαλώ περιμένετε. Η προετοιμασια του εγγράφου για προεπισκόπηση μπορεί να πάρει λίγα λεπτά.</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ImportManager</name>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="399"/>
-        <source>Import</source>
-        <translation>Importer</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="399"/>
-        <source>Please wait. Import can take few minutes.</source>
-        <translation>S&apos;il vous plaît, attendez. L&apos;Importation peut prendre quelques minutes.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="410"/>
-        <source>Import aborted</source>
-        <translation>Import annulé</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="411"/>
-        <source>File to import is empty. Please check that you select correct file and retry import.</source>
-        <translation>Le fichier à importer est vide. Vérifiez que vous avez sélectionné le bon fichier et tentez l’import à nouveau.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="381"/>
-        <source>File format not supported</source>
-        <translation>Format de fichier non pris en charge</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="331"/>
         <source>Characters import</source>
-        <translation>Import de personnages</translation>
+        <translation>Εισαγωγή Χαρακτήρων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="342"/>
         <source>Locations import</source>
-        <translation>Import de décors</translation>
+        <translation>Εισαγωγή Τοποθεσιών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="353"/>
         <source>Documents import</source>
-        <translation>Import de documents</translation>
+        <translation>Εισαγωγή Εγγράφων</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="381"/>
+        <source>File format not supported</source>
+        <translation>Η μορφή αρχείου δεν υποστηρίζεται</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="382"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation>Les fichiers Microsoft &lt;b&gt;DOC&lt;/b&gt; ne sont pas supportés. Vous devez enregistrez- &lt;b&gt;DOCX&lt;/b&gt; et réimporter.</translation>
+        <translation>Αρχεία DOC της Microsoft δεν υποστηρίζονται. Πρέπει να το αποθηκεύσετε ως DOCX και να το επανεισάγετε.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="390"/>
         <source>File doesn&apos;t exists</source>
-        <translation>Fichier absent</translation>
+        <translation>Το αρχείο δεν υπάρχει</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="391"/>
         <source>Please choose existing file and retry import.</source>
-        <translation>Choisissez un fichier et tentez l’import à nouveau.</translation>
+        <translation>Παρακαλώ επιλέξτε υπάρχον αρχείο και επανεισάγετε.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="399"/>
+        <source>Import</source>
+        <translation>Εισαγωγή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="399"/>
+        <source>Please wait. Import can take few minutes.</source>
+        <translation>Παρακαλώ περιμένετε. Η εισαγωγή μπορεί να πάρει λίγα λεπτά.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="410"/>
+        <source>Import aborted</source>
+        <translation>Η εισαγωγή ακυρώθηκε</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="411"/>
+        <source>File to import is empty. Please check that you select correct file and retry import.</source>
+        <translation>Το εισαγόμενο αρχείο είναι άδειο. Παρακαλώ ελέξτε ότι έχετε επιλέξει το σωστό αρχείο και επανεισάγετε.</translation>
     </message>
 </context>
 <context>
@@ -2605,13 +2345,13 @@ Le projet n&apos;a pas été synchronisé.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="194"/>
         <source>Password successfully changed</source>
-        <translation>Mot de passe changé avec succés</translation>
+        <translation>Επιτυχής αλλαγή συνθηματικού</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="209"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="245"/>
         <source>Can not change password</source>
-        <translation>Impossible de changer le mot de passe</translation>
+        <translation>Δεν μπορεί να γίνει αλλαγή συνθηματικού</translation>
     </message>
 </context>
 <context>
@@ -2619,80 +2359,65 @@ Le projet n&apos;a pas été synchronisé.</translation>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="27"/>
         <source>Owner</source>
-        <translation>Propriétaire</translation>
+        <translation>Ιδιοκτήτης</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="28"/>
         <source>Redactor</source>
-        <translation>Rédacteur</translation>
+        <translation>Συντάκτης</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="29"/>
         <source>Commentator</source>
-        <translation>Commentateur</translation>
+        <translation>Σχολιαστής</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::ResearchManager</name>
     <message>
-        <source>Are you shure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation type="vanished">Êtes-vous sûr de vouloir enlever la recherche: &lt;b&gt;%1&lt;/b&gt;?</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="558"/>
         <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Êtes-vous sûr de vouloir enlever la recherche: &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation>Θέλετε σίγουρα να αφαιρέσετε την έρευνα: &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="656"/>
         <source>Color</source>
-        <translation>Couleur</translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="662"/>
         <source>Clear</source>
-        <translation>Effacer</translation>
+        <translation>Εκκαθάριση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="676"/>
         <source>Add New</source>
-        <translation>Ajouter un nouveau</translation>
+        <translation>Προσθήκη νέου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="681"/>
         <source>Remove</source>
-        <translation>Supprimer</translation>
+        <translation>Αφαίρεση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="688"/>
         <source>Find All Characters from Script</source>
-        <translation>Trouver tous les personnages du scénario</translation>
+        <translation>Εύρεση Όλων των Χαρακτήρων από το Σενάριο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="689"/>
         <source>Find All Locations from Script</source>
-        <translation>Trouver tous les décors du scénario</translation>
+        <translation>Εύρεση Όλων των Τοποθεσιών από το Σενάριο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="812"/>
         <source>Do you really want to delete script version named &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>Voulez-vous vraiment supprimer la version de script nommée &lt;b&gt;%1&lt;/b&gt;?</translation>
+        <translation>Θέλετε σίγουρα να διαγράψετε την έκδοση του σεναρίου ονόματι: &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="970"/>
         <source>Unnamed image</source>
-        <translation>Image sans nom</translation>
-    </message>
-</context>
-<context>
-    <name>ManagementLayer::ScenarioCardsManager</name>
-    <message>
-        <source>Add card</source>
-        <translation type="vanished">Ajouter une carte</translation>
-    </message>
-    <message>
-        <source>Edit card</source>
-        <translation type="vanished">Modifier une carte</translation>
+        <translation>Ανώνυμη εικόνα</translation>
     </message>
 </context>
 <context>
@@ -2700,73 +2425,77 @@ Le projet n&apos;a pas été synchronisé.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="577"/>
         <source>Characters to delete</source>
-        <translation>Supprimer personnage</translation>
+        <translation>Χαρακτήρες προς διαγραφή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="583"/>
         <source>Characters to save</source>
-        <translation>Enregistrer personnage</translation>
+        <translation>Χαρακτήρες προς αποθήκευση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="585"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="653"/>
         <source>Apply refreshing</source>
-        <translation>Actualiser</translation>
+        <translation>Εφαρμογή ανανέωσης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="644"/>
         <source>Locations to delete</source>
-        <translation>Supprimer décor</translation>
+        <translation>Τοποθεσίες προς διαγραφή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="650"/>
         <source>Locations to save</source>
-        <translation>Enregistrer décor</translation>
+        <translation>Τοποθεσίες προς αποθήκευση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="777"/>
         <source>Conflicted version</source>
-        <translation type="unfinished"></translation>
+        <translation>Έκδοση με συγκρούσεις</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="779"/>
         <source>Script changes conflict detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Εντοπίστηκε σύγκρουση με τις αλλαγές στο σενάριο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="780"/>
         <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud. You can find conflicted version in the Research - Script - Versions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Εντοπίστηκε σύκγρουση μεταξύ την κατάσταση του σεναρίου στην υπηρεσία νέφους και τις τοπικές σας αλλαγές. Η έκδοση με τις συγκρούσεις αποθηκεύτηκε ξεχωριστά και το κείμενο του σεναρίου επανήλθε από το νέφος. Μπορείτε να βρείτε την έκδοση με τις συγκρούσεις στη διαδρομή Έρευνα - Σενάριο - Εκδόσεις.</translation>
+    </message>
+    <message>
+        <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud.</source>
+        <translation type="vanished">Εντοπίστηκε σύκγρουση μεταξύ την κατάσταση του σεναρίου στην υπηρεσία νέφους και τις τοπικές σας αλλαγές. Η έκδοση με τις συγκρούσεις αποθηκεύτηκε ξεχωριστά και το κείμενο του σεναρίου επανήλθε από το νέφος.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="909"/>
         <source>Chron.</source>
-        <translation>Chronomètre.</translation>
+        <translation>Χρόνος.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1179"/>
         <source>On/off Fullscreen Mode</source>
-        <translation>Actif/ Désactiver le mode plein écran</translation>
+        <translation>Άνοιγμα/κλείσιμο Λειτουργίας Πλήρους Οθόνης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1385"/>
         <source>Changing scenes numbers locking</source>
-        <translation>Changer le nombre de scènes verrouillables</translation>
+        <translation>Αλλαγή κλειδώματος αρίθμησης σκηνών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1386"/>
         <source>Do you want to unlock scenes numbers or lock again?</source>
-        <translation>Voulez-vous déverrouiller les numéros de scènes ou verrouiller à nouveau?</translation>
+        <translation>Θέλετε να ξεκλειδώσετε την αρίθμηση σκηνών ή να κλειδώσετε ξανά;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1389"/>
         <source>Unlock</source>
-        <translation>Ouvrir</translation>
+        <translation>Ξεκλείδωμα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1390"/>
         <source>Lock</source>
-        <translation>Fermer à clé</translation>
+        <translation>Κλείδωμα</translation>
     </message>
 </context>
 <context>
@@ -2774,12 +2503,12 @@ Le projet n&apos;a pas été synchronisé.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="290"/>
         <source>Enter new scene number</source>
-        <translation>Entrez le nouveau numéro de scène</translation>
+        <translation>Εισάγετε νέο αριθμό σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="290"/>
         <source>New scene number</source>
-        <translation>Nouveau numéro de scène</translation>
+        <translation>Νέος αριθμός σκηνής</translation>
     </message>
 </context>
 <context>
@@ -2787,12 +2516,12 @@ Le projet n&apos;a pas été synchronisé.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScriptDictionariesManager.cpp" line="91"/>
         <source>Enter new item name</source>
-        <translation>Entrez un nouveau nom</translation>
+        <translation>Εισαγωγή ονόματος νέου στοιχείου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScriptDictionariesManager.cpp" line="136"/>
         <source>Are you sure to remove &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>Êtes-vous certain de vouloir supprimer &lt;b&gt;%1&lt;/b&gt;</translation>
+        <translation>Θέλετε σίγουρα να αφαιρέσετε το &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -2800,94 +2529,90 @@ Le projet n&apos;a pas été synchronisé.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="141"/>
         <source>Restoring</source>
-        <translation>Restauration</translation>
+        <translation>Επαναφορά</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="142"/>
         <source>Please wait. Restoring settings to default values can take few minutes.</source>
-        <translation>S&apos;il vous plaît attendez. La restauration des paramètres aux valeurs par défaut peut prendre quelques minutes.</translation>
-    </message>
-    <message>
-        <source>Language will be change after application restart.</source>
-        <translation type="vanished">La langue sera changée après le redémarrage de l&apos;application.</translation>
+        <translation>Παρακαλώ περιμένετε.Η επαναφορά των ρυθμίσεων στις προκαθορισμένες τιμές μπορεί να πάρει λίγα λεπτά.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="165"/>
         <source>Language will be changed after application restart.</source>
-        <translation>La langue sera changée après le redémarrage de l&apos;application.</translation>
+        <translation>Η γλώσσα θα αλλάξει μετά την επανεκκίνηση της εφαρμογής.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="210"/>
         <source>HIDPI scaling option will be applied after application restart.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η επιλογή κλιμάκωσης για οθόνες υψηλής ευκρίνειας θα εφαρμοστεί μετά την επανεκκίνηση της εφαρμογής.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="369"/>
         <source>Dictionary loading</source>
-        <translation>Chargement du dictionnaire</translation>
+        <translation>Φόρτωση λεξικού</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="369"/>
         <source>Please wait, loading of spell checking dictionary can take a few minutes.</source>
-        <translation>S&apos;il vous plaît, le chargement du correcteur orthographique peut prendre quelques minutes.</translation>
+        <translation>Παρακαλώ περιμένετε, η φόρτωση του λεξικού για τον έλεγχο ορθογραφίας μπορεί να πάρει λίγα λεπτά.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="415"/>
         <source>Can&apos;t enable spell checking</source>
-        <translation>Impossible d&apos;activer le correcteur orthographique</translation>
+        <translation>Δεν μπορεί να ενεργοποιηθεί ο έλεγχος ορθογραφίας.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="416"/>
         <source>Can&apos;t download spelling dictionary. Please check internet connection and retry to activate spell checking</source>
-        <translation>Impossible de télécharger le dictionnaire d&apos;orthographe. Veuillez vérifier la connexion internet et rééssayer d&apos;activer le correcteur orthographique</translation>
+        <translation>Δεν μπορεί να γίνει λήψη του λεξικού. Παρακαλώ ελέγξτε την σύνδεσή σας στο διαδίκτυο και ξαναπροσπαθήστε να ενεργοποιήσετε τον έλεγχο ορθογραφίας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="684"/>
         <source>Choose file to load</source>
-        <translation>Choisir le fichier à charger</translation>
+        <translation>Επιλογή αρχείου για φόρτωση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="685"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="709"/>
         <source>Scenario Template Files (*.%1)</source>
-        <translation>Fichier modèle de scénario (*.%1)</translation>
+        <translation>Αρχεία Προτύπου Σεναρίου (*.%1)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="708"/>
         <source>Choose file to save</source>
-        <translation>Choisissez le fichier à enregistrer</translation>
+        <translation>Επιλογή αρχείου για αποθήκευση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1092"/>
         <source>Press in paragraph&apos;s end</source>
-        <translation>Effet en fin de paragraphe</translation>
+        <translation>Πατήστε στο τέλος της παραγράφου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1094"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1099"/>
         <source>Tab</source>
-        <translation>Tabulation</translation>
+        <translation>Tab</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1095"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1100"/>
         <source>Enter</source>
-        <translation>Entrer</translation>
+        <translation>Enter</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1097"/>
         <source>Press in empty paragraph</source>
-        <translation>Effet en début de paragraphe</translation>
+        <translation>Πατήστε σε κενή παράγραφο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1103"/>
         <source>Block Name</source>
-        <translation>Formatage du paragraphe</translation>
+        <translation>Όνομα Κομματιού</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1104"/>
         <source>Shortcut</source>
-        <translation>Raccourci</translation>
+        <translation>Συντόμευση</translation>
     </message>
 </context>
 <context>
@@ -2895,45 +2620,25 @@ Le projet n&apos;a pas été synchronisé.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsTemplatesManager.cpp" line="31"/>
         <source>Choose base template</source>
-        <translation>Choisissez un modèle de base</translation>
+        <translation>Επιλογή βασικού προτύπου</translation>
     </message>
 </context>
 <context>
     <name>ManagementLayer::StartUpManager</name>
     <message>
-        <source>Password successfully changed</source>
-        <translation type="vanished">Mot de passe changé avec succés</translation>
-    </message>
-    <message>
-        <source>Can not change password</source>
-        <translation type="vanished">Impossible de changer le mot de passe</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="306"/>
         <source>Undo</source>
-        <translation>Annuler</translation>
+        <translation>Αναίρεση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="309"/>
         <source>Redo</source>
-        <translation>Rétablir</translation>
+        <translation>Επανάληψη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="376"/>
         <source>&lt;p&gt;Can&apos;t install update. There are some problems with downloaded file.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Impossible d&apos;installer la mise à jour. Problèmes avec le fichier téléchargé.&lt;/p&gt;&lt;p&gt;Vous pouvez essayer de relancer la mise à jour, ou télécharger le fichier manuellement depuis le &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;site web&lt;/a&gt;.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Can&apos;t install update. There are some problems with downloaded file.
-
-You can try to reload update.</source>
-        <translation type="vanished">Impossible d&apos;installer la mise à jour. Il y a des problèmes avec le fichier téléchargé.
-
-Vous pouvez essayer de recharger la mise à jour.</translation>
-    </message>
-    <message>
-        <source>Released version %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Install&lt;/a&gt;</source>
-        <translation type="vanished">Version  %1. &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Installation&lt;/a&gt; </translation>
+        <translation>&lt;p&gt;Δεν μπορεί να εγκατασταθεί η ενημέρωση. Υπάρχει πρόβλημα με το ληφθέν αρχείο.&lt;/p&gt;&lt;p&gt;Μπορείτε να επαναφορτώσετε την ενημέρωση ή να το φορτώσετε χειροκίνητα από &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt; την επίσημη ιστοσελίδα&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2941,22 +2646,22 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="105"/>
         <source>Can&apos;t estabilish network connection.</source>
-        <translation>Impossible d&apos;établir une connexion réseau.</translation>
+        <translation>Δεν καθίσταται δυνατή η σύνδεση στο δίκτυο.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="109"/>
         <source>Session key not found.</source>
-        <translation>Session non trouvée.</translation>
+        <translation>Δεν βρέθηκε το κλειδί συνεδρίας.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
         <source>Wrong validation code.</source>
-        <translation>Mauvais code de validation.</translation>
+        <translation>Λάθος κωδικός επαλήθευσης.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="117"/>
         <source>Got wrong response from server.</source>
-        <translation>Mauvaise réponse reçue depuis le serveur.</translation>
+        <translation>Λήφθηκε λανθασμένη απάντηση από τον εξυπηρετητή.</translation>
     </message>
 </context>
 <context>
@@ -2964,22 +2669,22 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="120"/>
         <source>Choose backup from list</source>
-        <translation>Choisir une sauvegarde dans la liste</translation>
+        <translation>Επιλογή αντιγράφου ασφαλείας από τη λίστα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="136"/>
         <source>Bytes</source>
-        <translation>Octets</translation>
+        <translation>Bytes</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="153"/>
         <source>Choose versions to compare</source>
-        <translation>Choisissez les versions à comparer</translation>
+        <translation>Επιλογή εκδόσεων προς σύγκριση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="223"/>
         <source>Script was restored.</source>
-        <translation>Le script a été restauré.</translation>
+        <translation>Το σενάριο επανήλθε.</translation>
     </message>
 </context>
 <context>
@@ -2987,135 +2692,127 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="14"/>
         <source>Form</source>
-        <translation>Formulaire</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="121"/>
-        <source>Login</source>
-        <translation>S&apos;identifier</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="77"/>
         <source>Log in to get access to the cloud service</source>
-        <translation>Connection au service cloud de KIT Scenarist</translation>
+        <translation>Συνδεθείτε για να έχετε πρόσβαση στην υπηρεσία νέφους</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="121"/>
+        <source>Login</source>
+        <translation>Είσοδος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="212"/>
         <source>Create new project</source>
-        <translation>Créer un projet</translation>
+        <translation>Δημιουργία νέου έργου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="229"/>
         <source>Open project</source>
-        <translation>Ouvrir un projet</translation>
+        <translation>Άνοιγμα Έργου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="246"/>
         <source>Save current project</source>
-        <translation>Sauvegarder le projet</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="331"/>
-        <source>Print preview script</source>
-        <translation>Aperçu script avant impression</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="348"/>
-        <source>How to use the application</source>
-        <translation>Comment utiliser l&apos;application</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="519"/>
-        <source>DOWNLOAD UPDATE</source>
-        <translation>TÉLÉCHARGER LA MISE À JOUR</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="585"/>
-        <source>...</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="605"/>
-        <source>User name:</source>
-        <translation>Nom d&apos;utilisateur:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="615"/>
-        <source>Account is active until:</source>
-        <translation>Le compte est actif depuis:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="625"/>
-        <source>22.02.2017</source>
-        <translation>22.02.2017</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="658"/>
-        <source>UserName</source>
-        <translation>Utilisateur</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="665"/>
-        <source>Used 0 Gb from 0 Gb</source>
-        <translation>0 Gb Utilisés sur 0 Gb libres</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="677"/>
-        <source>Renew subscription</source>
-        <translation>Renouveller abonnement</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="694"/>
-        <source>Change Password</source>
-        <translation>Changer le mot de passe</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="711"/>
-        <source>Quit from cabinet</source>
-        <translation>Quitter bureau</translation>
+        <translation>Αποθήκευση τρέχοντος έργου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="263"/>
         <source>Save current project as...</source>
-        <translation>Sauvegarder le projet sous...</translation>
+        <translation>Αποθήκευση τρέχοντος έργου ως...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="280"/>
         <source>Start new version...</source>
-        <translation>Commencer une nouvelle version ...</translation>
+        <translation>Έναρξη νέας έκδοσης...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="297"/>
         <source>Import...</source>
-        <translation>Importer...</translation>
+        <translation>Εισαγωγή...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="314"/>
         <source>Export...</source>
-        <translation>Exporter...</translation>
+        <translation>Εξαγωγή...</translation>
     </message>
     <message>
-        <source>Print preview</source>
-        <translation type="vanished">Aperçu avant impression</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="331"/>
+        <source>Print preview script</source>
+        <translation>Εκτύπωση προεπισκόπησης σεναρίου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="501"/>
-        <source>version</source>
-        <translation>version</translation>
-    </message>
-    <message>
-        <source>0.0.0</source>
-        <translation type="obsolete">0.0.0</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="485"/>
-        <source>About the app</source>
-        <translation>À propos cette application</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="348"/>
+        <source>How to use the application</source>
+        <translation>Πώς να χρησιμοποιήσετε την εφαρμογή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="424"/>
         <source>KIT Scenarist</source>
-        <translation></translation>
+        <translation>KIT Scenarist</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="485"/>
+        <source>About the app</source>
+        <translation>Σχετικά με την εφαρμογή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="501"/>
+        <source>version</source>
+        <translation>έκδοση</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="519"/>
+        <source>DOWNLOAD UPDATE</source>
+        <translation>ΛΗΨΗ ΕΝΗΜΕΡΩΣΗΣ</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="585"/>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="605"/>
+        <source>User name:</source>
+        <translation>Όνομα χρήστη:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="615"/>
+        <source>Account is active until:</source>
+        <translation>Ο λογαριασμός είναι ενεργός μέχρι:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="625"/>
+        <source>22.02.2017</source>
+        <translation>22/02/2017</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="658"/>
+        <source>UserName</source>
+        <translation>UserName</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="665"/>
+        <source>Used 0 Gb from 0 Gb</source>
+        <translation>0 GB από 0 GB σε χρήση</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="677"/>
+        <source>Renew subscription</source>
+        <translation>Ανανέωση συνδρομής</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="694"/>
+        <source>Change Password</source>
+        <translation>Αλλαγή συνθηματικού</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="711"/>
+        <source>Quit from cabinet</source>
+        <translation>Έξοδος από την καμπίνα</translation>
     </message>
 </context>
 <context>
@@ -3123,75 +2820,75 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
     <message>
         <location filename="../../../../libs/fileformats/odt_reader.cpp" line="77"/>
         <source>Unable to open archive.</source>
-        <translation>Impossible d&apos;ouvrir le fichier.</translation>
+        <translation>Δεν μπόρεσε να ανοίξει η αρχειοθήκη.</translation>
     </message>
 </context>
 <context>
     <name>OnboardingView</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="79"/>
-        <source>Next</source>
-        <translation>Suivant</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="14"/>
+        <source>KIT Scenarist. Setup of basic features.</source>
+        <translation>KIT Scenarist. Ρύθμιση των βασικών λειτουργιών.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="72"/>
         <source>Skip</source>
-        <translation>Passer</translation>
+        <translation>Παράβλεψη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="33"/>
         <source>Back</source>
-        <translation>Retour</translation>
+        <translation>Πίσω</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="316"/>
-        <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Vous ne trouvez pas votre langue ? Pour savoir comment l’ajouter vous-même, plus d’infos ici.&lt;/a&gt;</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="79"/>
+        <source>Next</source>
+        <translation>Επόμενο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="136"/>
         <source>Detect language from system locale</source>
-        <translation>Détecter la langue de paramètres régionaux du système</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="14"/>
-        <source>KIT Scenarist. Setup of basic features.</source>
-        <translation>KIT Scenarist. Réglages des fonctions basiques.</translation>
+        <translation>Ανίχνευση γλώσσας από την τοπική ρύθμιση του συστήματος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="171"/>
         <source>Choose language</source>
-        <translation>Choisissez une langue</translation>
+        <translation>Επιλογή γλώσσας</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="316"/>
+        <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Δεν βρήκατε την αγαπημένη σας γλώσσα. Διαβάστε πώς μπορείτε να την προσθέσετε μόνοι σας.&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="386"/>
         <source>Choose application theme</source>
-        <translation>Choisissez un thème pour l’application</translation>
+        <translation>Επιλογή θέματος εφαρμογής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="399"/>
         <source>Dark theme</source>
-        <translation>Thème noir</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="498"/>
-        <source>Light theme</source>
-        <translation>Thème lumière</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="463"/>
-        <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
-        <translation>Ce thème convient au travail dans des conditions de faible luminosité.</translation>
+        <translation>Σκούρο Θέμα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="428"/>
         <source>Theme is convenient for work with sufficient light.</source>
-        <translation>Ce thème convient au travail dans une pièce bien éclairée.</translation>
+        <translation>Το θέμα αυτό βολεύει στη δουλειά υπό επαρκή φωτισμό.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="463"/>
+        <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
+        <translation>Το θέμα αυτό βολεύει στη δουλειά υπό χαμηλό φωτισμό, καθώς επίσης το απόγευμα ή το βράδυ.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="498"/>
+        <source>Light theme</source>
+        <translation>Φωτεινό Θέμα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="531"/>
         <source>Use research module</source>
-        <translation>Utiliser le module de recherche</translation>
+        <translation>Χρήση εξαρτήματος έρευνας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="541"/>
@@ -3200,144 +2897,40 @@ Vous pouvez essayer de recharger la mise à jour.</translation>
 Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
 
 Also, in research tab you can store a variety of materials (text documents, images, links to web pages and mindmaps) associated with your project, organizing them in a convenient manner.</source>
-        <translation>Regroupez  au même endroit tous les éléments nécessaires au projet. Vous pouvez stocker des informations de base (nom, logline, synopsis) et compléter la page de garde du scénario.
+        <translation>Μπορείτε να συλλέξετε όλο το απαραίτητο υλικό για το έργο σε ένα σημείο. Σε αυτό, μπορείτε να αποθηκεύσετε βασικές πληροφορίες σχετικά με το σενάριο, όπως το όνομά του, τη γραμμή καταγραφής, τη σύνοψη, και επίσης να συμπληρώσετε τη σελίδα τίτλου του σεναρίου.
 
-Ici, vous pouvez gérer les listes des personnages et des décors.
+Εδω μπορείτε να διαχειριστείτε λίστες χαρακτήρων και τοποθεσιών. Δημιουργήστε καινούριες, προσθέστε περιγραφές, φωτογραφίες, μετονομάστε και οργανώστε τες.
 
-Dans le module de recherche vous pouvez stocker des éléments divers associés au projet (textes, images, liens vers des pages web, des mindmaps) et les organiser à votre convenance.</translation>
+Επίσης, στην καρτέλα έρευνας μπορείτε να αποθηκεύσετε ποικιλία υλικού (έγγραφα κειμένου, εικόνες, συνδέσμους σε ιστοσελίδες και χάρτες μυαλού) που σχετίζεται με το έργο σας, οργανώνοντάς τα με βολικό τρόπο.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="562"/>
         <source>Research</source>
-        <translation>Recherche</translation>
+        <translation>Έρευνα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="606"/>
         <source>Cards</source>
-        <translation>Cartes</translation>
+        <translation>Κάρτες</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="613"/>
         <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
 
 You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
-        <translation>Le module « Cartes » affiche votre scénario sous forme de cartes sur un tableau, por vous permettre de voir et travailler la structure.
+        <translation>Το εξάρτημα καρτών σας επιτρέπει να δείτε το σενάριο σε μορφή καρτών πάνω σε πίνακα φελλού, παρέχοντας έτσι έναν οπτικό τρόπο να δουλέψετε με τη δομή.
 
-Vous pouvez colorer ou étiqueter  les cartes, les déplacer et les regrouper. Toutes les modifications apportées aux cartes seront reportées dans le texte du scénario.</translation>
+Μπορείτε να προσθέσετε χρώματα και στάμπες στις κάρτες, να τις μετακινήσετε, να τις ομαδοποιήσετε, και όλες οι αλλαγές που γίνονται με τις κάρτες φαίνονται στο κείμενο του σεναρίου.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="647"/>
         <source>Use cards module</source>
-        <translation>Utiliser le module cartes</translation>
+        <translation>Χρήση εξαρτήματος καρτών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="681"/>
         <source>Script</source>
-        <translation>Scénario</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="724"/>
-        <source>Use script module</source>
-        <translation>Utiliser le module scénario</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1166"/>
-        <source>Arabic screenplay standard template.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1185"/>
-        <source>Arabic screenplay</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1200"/>
-        <source>Choose script template</source>
-        <translation>Choisissez un modèle de scénario</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1012"/>
-        <source>Final Draft screenplay (Letter)</source>
-        <translation>Scénario Final Draft (Lettre)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1102"/>
-        <source>Russian screenplay</source>
-        <translation>Scénario russe</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="993"/>
-        <source>International screenplay standard template for A4 page size.</source>
-        <translation>Modèle standard de scénario international au format A4.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1073"/>
-        <source>Final Draft screenplay (A4)</source>
-        <translation>Scénario Final Draft (A4)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="923"/>
-        <source>International screenplay standard template for Letter page size.</source>
-        <translation>Modèle standard de scénario international au format lettre.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1060"/>
-        <source>Russian screenplay with Courier Prime</source>
-        <translation>Scénario russe en Courier Prime</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="958"/>
-        <source>Russian and CIS screenplay standard template.</source>
-        <translation>Modèle standard de scénario russe et CIS.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="910"/>
-        <source>Chinese screenplay</source>
-        <translation>Scénario chinois</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1147"/>
-        <source>Chinese screenplay standard template.</source>
-        <translation>Modèle standard de scénario chinois.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="794"/>
-        <source>Hebrew screenplay</source>
-        <translation>Scénario hébreu</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="891"/>
-        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation>Modèle standard de scénario russe et CIS en Courier Prime (au lieu de Courier New).</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1025"/>
-        <source>Hebrew screenplay standard template.</source>
-        <translation>Modèle standard de scénario </translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1273"/>
-        <source>Statistics</source>
-        <translation>Statistiques</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1316"/>
-        <source>Thank you. The most common application settings were configured.
-
-The application will start in few seconds.</source>
-        <translation>Merci. Les paramètres de base sont maintenant configurés.
-
-L’application va démarrer dans quelques secondes.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1335"/>
-        <source>Starting application</source>
-        <translation>Démarrage de l’application</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1256"/>
-        <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
-        <translation>Le module statistiques vous permet d’obtenir des rapports de production détaillés sur le scénario : graphique d’activité des personnages, dynamique des scènes.</translation>
+        <translation>Σενάριο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="688"/>
@@ -3346,16 +2939,118 @@ L’application va démarrer dans quelques secondes.</translation>
 Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
 
 And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
-        <translation>Le module &quot;scénario&quot; vous permet de travailler sur votre script.
+        <translation>Το εξάρτημα σεναρίου σας επιτρέπει να δουλέψετε με το κείμενό σας.
 
-Ce module inclut le navigateur de scènes. Cliquez sur un intitulé de scène pour afficher le texte de la scène.
+Το εξάρτημα περιλαμβάνει τον περιηγητή σεναρίου. Είναι μια λίστα σκηνών. Κάνοντας κλικ στο ποντίκι σε κάποια από αυτές θα προβάλει το κείμενο της επιλεγμένης σκηνής στην οθόνη.
 
-Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui simplifient le formatage du texte au cours de la saisie. Il vous permet aussi de rechercher dans le texte du scénario, et de l&apos;annoter.</translation>
+Επίσης περιλαμβάνεται και ο επεξεργαστής κειμένου. Ο επεξεργαστής έχει πολλές βοηθητικές λειτουργίες που απλοποιούν την εισαγωγή κειμένου σε σύμπνοια με τα πρότυπα της σεναριογραφίας και επίσης σας επιτρέπει να αναζητήσετε στο κείμενο του σεναρίου και να αφήσετε σημειώσεις στο κείμενο.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="724"/>
+        <source>Use script module</source>
+        <translation>Χρήση εξαρτήματος σεναρίου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1166"/>
+        <source>Arabic screenplay standard template.</source>
+        <translation>Αραβικό πρότυπο σεναρίου.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1185"/>
+        <source>Arabic screenplay</source>
+        <translation>Αραβικό σενάριο</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1200"/>
+        <source>Choose script template</source>
+        <translation>Επιλογή προτύπου σεναρίου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1060"/>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation>Ρωσικό σενάριο με Courier Prime</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1102"/>
+        <source>Russian screenplay</source>
+        <translation>Ρωσικό σενάριο</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="993"/>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation>Διεθνές πρότυπο σεναρίου για σελίδα A4.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1073"/>
+        <source>Final Draft screenplay (A4)</source>
+        <translation>Σενάριο Final Draft (A4)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="923"/>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation>Διεθνές πρότυπο σεναρίου για σελίδα τύπου Letter.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="910"/>
+        <source>Chinese screenplay</source>
+        <translation>Κινέζικο σενάριο</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1147"/>
+        <source>Chinese screenplay standard template.</source>
+        <translation>Κινέζικο πρότυπο σεναρίου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="794"/>
+        <source>Hebrew screenplay</source>
+        <translation>Εβραϊκό σενάριο</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="891"/>
+        <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
+        <translation>Ρωσικό και CIS πρότυπο σεναρίου με Courier Prime αντί της Courier New.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1025"/>
+        <source>Hebrew screenplay standard template.</source>
+        <translation>Εβραϊκό πρότυπο σεναρίου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1012"/>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation>Σενάριο Final Draft (Letter)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="958"/>
+        <source>Russian and CIS screenplay standard template.</source>
+        <translation>Ρωσικό και CIS πρότυπο σεναρίου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1256"/>
+        <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
+        <translation>Το εξάρτημα στατιστικής σας επιτρέπει να λάβετε αναλυτικές αναφορές παραγωγής στο σενάριό σας, όπως επίσης και να κοιτάξετε τα γραφήματα της δράσης των χαρακτήρων στη διάρκεια του σεναρίου και τις δυναμικές των σκηνών.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1273"/>
+        <source>Statistics</source>
+        <translation>Στατιστικά</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1286"/>
         <source>Use statistics module</source>
-        <translation>Utiliser le module statistiques</translation>
+        <translation>Χρήση εξαρτήματος στατιστικής</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1316"/>
+        <source>Thank you. The most common application settings were configured.
+
+The application will start in few seconds.</source>
+        <translation>Ευχαριστούμε. Οι πιο κοινές ρυθμίσεις της εφαρμογής τέθηκαν.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1335"/>
+        <source>Starting application</source>
+        <translation>Εκκίνηση εφαρμογής</translation>
     </message>
 </context>
 <context>
@@ -3363,12 +3058,12 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
     <message>
         <location filename="../../3rd_party/Widgets/PhotosChooser/PhotoLabel.cpp" line="80"/>
         <source>Choose image</source>
-        <translation>Choisir l&apos;image</translation>
+        <translation>Επιλογή εικόνας</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/PhotosChooser/PhotoLabel.cpp" line="81"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
-        <translation>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
+        <translation>Εικόνες (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
     </message>
 </context>
 <context>
@@ -3376,12 +3071,12 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="14"/>
         <source>Print cards</source>
-        <translation>Imrpimer les cartes</translation>
+        <translation>Εκτύπωση καρτών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="22"/>
         <source>Cards on page:</source>
-        <translation>Carte sur la page:</translation>
+        <translation>Κάρτες στη σελίδα:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="29"/>
@@ -3411,27 +3106,27 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="382"/>
         <source>Page orientation:</source>
-        <translation>Orientation de la page:</translation>
+        <translation>Προσανατολισμός σελίδας:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="389"/>
         <source>Portrait</source>
-        <translation>Portrait</translation>
+        <translation>Κάθετα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="399"/>
         <source>Landscape</source>
-        <translation>Paysage</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="457"/>
-        <source>Cancel</source>
-        <translation>Annuler</translation>
+        <translation>Οριζόντια</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="450"/>
         <source>Print Preview</source>
-        <translation>Aperçu d&apos;impression</translation>
+        <translation>Προεπισκόπηση Εκτύπωσης</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="457"/>
+        <source>Cancel</source>
+        <translation>Ακύρωση</translation>
     </message>
 </context>
 <context>
@@ -3439,96 +3134,69 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="129"/>
         <source>Change project name</source>
-        <translation>Changer le nom du projet</translation>
+        <translation>Αλλαγή ονόματος έργου</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="152"/>
         <source>Remove project</source>
-        <translation>Supprimer le projet</translation>
+        <translation>Αφαίρεση έργου</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="175"/>
         <source>Hide project from recent</source>
-        <translation>Retirer le projet de la liste des projets récents</translation>
+        <translation>Απόκρυψη έργου από τα πρόσφατα</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="198"/>
         <source>Move project to the cloud</source>
-        <translation>Déplacer le projet vers le cloud</translation>
+        <translation>Μετακίνηση έργου στο νέφος</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="221"/>
         <source>Add cowriter</source>
-        <translation>Ajouter un co-scénariste</translation>
+        <translation>Προσθήκη βοηθού συγγραφέα</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="244"/>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="273"/>
         <source>Show cowriters</source>
-        <translation>Afficher les co-scénaristes</translation>
+        <translation>Προβολή βοηθών συγγραφέων</translation>
     </message>
 </context>
 <context>
     <name>ProjectVersionDialog</name>
     <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulaire</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="102"/>
-        <source>Name</source>
-        <translation>Nom</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="42"/>
-        <source>dd.MM.yyyy hh:mm</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="20"/>
         <source>Start a new version of the script</source>
-        <translation>Démarrer une nouvelle version du script</translation>
+        <translation>Έναρξη νέας έκδοσης του σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="26"/>
         <source>Version date and time</source>
-        <translation>Date et heure de la version</translation>
+        <translation>Ημερομηνία και ώρα έκδοσης</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="42"/>
+        <source>dd.MM.yyyy hh:mm</source>
+        <translation>μμ/ΜΜ/ΕΕΕΕ ωω:λλ</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="102"/>
+        <source>Name</source>
+        <translation>Όνομα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="112"/>
         <source>Description</source>
-        <translation>Description</translation>
+        <translation>Περιγραφή</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="27"/>
-        <source>Scenario</source>
-        <translation>Scénario</translation>
-    </message>
-    <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="495"/>
-        <source>Title:</source>
-        <comment>ScenarioBlockStyle</comment>
-        <translation>Titre:</translation>
-    </message>
-    <message>
-        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1315"/>
-        <source>END OF FOLDER</source>
-        <comment>ScenarioXml</comment>
-        <translation>FIN DU DOSSIER</translation>
-    </message>
-    <message>
-        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEditHelpers.cpp" line="23"/>
-        <source>END OF</source>
-        <comment>ScenarioTextEditHelpers</comment>
-        <translation>FIN DE</translation>
-    </message>
-    <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="33"/>
         <source>Node added to &quot;</source>
-        <translation>Noeud ajouter à &quot;</translation>
+        <translation>Προστέθηκε κόμβος στο &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="35"/>
@@ -3543,17 +3211,17 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="426"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="467"/>
         <source>Base node</source>
-        <translation>Noeud de base</translation>
+        <translation>Κόμβος βάσης</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="103"/>
         <source>Node added to scene</source>
-        <translation>Noeud ajouté à la scène</translation>
+        <translation>Προστέθηκε κόμβος στη σκηνή</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="150"/>
         <source>Node deleted &quot;</source>
-        <translation>Noeud supprimé &quot;</translation>
+        <translation>Διαγράφηκε κόμβος &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="153"/>
@@ -3564,23 +3232,23 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="429"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="470"/>
         <source> with subtree</source>
-        <translation>avec sous-arbre</translation>
+        <translation> με υποδένδρο</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="205"/>
         <source>Edge added between &quot;</source>
-        <translation>Flèche ajoutée entre &quot;</translation>
+        <translation>Προστέθηκε ακμή μεταξύ &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="209"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="261"/>
         <source>&quot; and &quot;</source>
-        <translation>&quot; et &quot;</translation>
+        <translation>&quot; και &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="257"/>
         <source>Edge deleted between &quot;</source>
-        <translation>Flèche supprimée entre &quot;</translation>
+        <translation>Διαγράφηκε ακμή μεταξύ &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="293"/>
@@ -3588,22 +3256,45 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="424"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="465"/>
         <source>Node &quot;</source>
-        <translation>Noeud &quot;</translation>
+        <translation>Κόμβος &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="353"/>
         <source>Changing color of node: &quot;</source>
-        <translation>Changement de la couleur du noeud: &quot;</translation>
+        <translation>Αλλαγή χρώματος του κόμβου: &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="393"/>
         <source>Changing textcolor of node: &quot;</source>
-        <translation>Changement de la couleur du texte du noeud : &quot;</translation>
+        <translation>Αλλαγή χρώματος κειμένου του κόμβου: &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="934"/>
         <source>The graph is acyclic, edge added as secondary edge.</source>
-        <translation></translation>
+        <translation>Ο γράφος είναι άκυκλος, η ακμή προστέθηκε ως δευτερεύουσα.</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="27"/>
+        <source>Scenario</source>
+        <translation>Σενάριο</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="495"/>
+        <source>Title:</source>
+        <comment>ScenarioBlockStyle</comment>
+        <translation>Τίτλος:</translation>
+    </message>
+    <message>
+        <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1315"/>
+        <source>END OF FOLDER</source>
+        <comment>ScenarioXml</comment>
+        <translation>ΤΕΛΟΣ ΦΑΚΕΛΟΥ</translation>
+    </message>
+    <message>
+        <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEditHelpers.cpp" line="23"/>
+        <source>END OF</source>
+        <comment>ScenarioTextEditHelpers</comment>
+        <translation>ΤΕΛΟΣ</translation>
     </message>
 </context>
 <context>
@@ -3611,7 +3302,7 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="541"/>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Copy</translation>
     </message>
 </context>
 <context>
@@ -3619,7 +3310,7 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/node.cpp" line="36"/>
         <source>&lt;b&gt;Root node&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Le noeud de base&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Κόμβος βάσης&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -3628,47 +3319,47 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="20"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="45"/>
         <source>Renew subscription</source>
-        <translation>Renouveller abonnement</translation>
+        <translation>Ανανέωση συνδρομής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="60"/>
         <source>for</source>
-        <translation>pour</translation>
+        <translation>για</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="70"/>
         <source>for 300 rubles</source>
-        <translation></translation>
+        <translation>για 300 ρούβλια</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="87"/>
         <source>with a</source>
-        <translation>avec </translation>
+        <translation>με</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="95"/>
         <source>PayPal</source>
-        <translation></translation>
+        <translation>PayPal</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="100"/>
         <source>Bank card</source>
-        <translation>Carte de crédit</translation>
+        <translation>Τραπεζική κάρτα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="105"/>
         <source>Yandex money</source>
-        <translation></translation>
+        <translation>Μετρητά Yandex</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="119"/>
         <source>Thanks! Your subscription is active until </source>
-        <translation>Merci votre abonnement est actif jusque</translation>
+        <translation>Ευχαριστούμε! Η συνδρομή σας είναι ενεργή εως </translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="129"/>
         <source>22.17.2010</source>
-        <translation>22.17.2010</translation>
+        <translation>22/17/2010</translation>
     </message>
 </context>
 <context>
@@ -3676,52 +3367,52 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="20"/>
         <source>Add Research Item</source>
-        <translation>Ajouter un élément de recherche</translation>
+        <translation>Προσθήκη στοιχείου έρευνας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="31"/>
         <source>Character</source>
-        <translation>Personnage</translation>
+        <translation>Χαρακτήρας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="47"/>
         <source>Location</source>
-        <translation>Décor</translation>
+        <translation>Τοποθεσία</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="63"/>
         <source>Folder</source>
-        <translation>Dossier</translation>
+        <translation>Φάκελος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="79"/>
         <source>Text</source>
-        <translation>Texte</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="119"/>
-        <source>Url</source>
-        <translation>Url</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="114"/>
-        <source>Images Gallery</source>
-        <translation>Galerie d&apos;images</translation>
+        <translation>Κείμενο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="109"/>
         <source>Mind Map</source>
-        <translation>Mind Map</translation>
+        <translation>Χάρτης Μυαλού</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="114"/>
+        <source>Images Gallery</source>
+        <translation>Συλλογή Εικόνων</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="119"/>
+        <source>Url</source>
+        <translation>URL</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="142"/>
         <source>Name</source>
-        <translation>Nom</translation>
+        <translation>Όνομα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="156"/>
         <source>Insert into &quot;Folder name&quot;</source>
-        <translation>Insérer dans &quot;Nom du dossier&quot;</translation>
+        <translation>Εισαγωγή στο &quot;Folder name&quot;</translation>
     </message>
 </context>
 <context>
@@ -3729,119 +3420,90 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="14"/>
         <source>Form</source>
-        <translation>Formulaire</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="57"/>
         <source>Research</source>
-        <translation>Recherche</translation>
+        <translation>Έρευνα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="64"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="89"/>
         <source>Delete research item (Del)</source>
-        <translation>Supprimer item recherche (Del)</translation>
+        <translation>Διαγραφή στοιχείου έρευνας (Del)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="75"/>
         <source>Add reseach item</source>
-        <translation>Ajouter item recherche</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1442"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1456"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1470"/>
-        <source>Search</source>
-        <translation>Chercher</translation>
+        <translation>Προσθήκη στοιχείου έρευνας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="147"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="216"/>
         <source>Scenario Name:</source>
-        <translation>Nom du scénario:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="371"/>
-        <source>Logline:</source>
-        <translation>Logline:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1449"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1463"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1477"/>
-        <source>Ctrl+Tab</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="397"/>
-        <source>0</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="378"/>
-        <source>words:</source>
-        <translation>mots:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="177"/>
-        <source>Scene numbers prefix:</source>
-        <translation>Préfixe des numéros de scène:</translation>
+        <translation>Όνομα Σεναρίου:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="167"/>
         <source>Start scenes numbering from:</source>
-        <translation>Commencez la numérotation des scènes à partir de:</translation>
+        <translation>Έναρξη αρίθμησης σκηνών από:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="177"/>
+        <source>Scene numbers prefix:</source>
+        <translation>Πρόθεμα αριθμών σκηνής:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="198"/>
         <source>Footer:</source>
-        <translation>Bas de page:</translation>
+        <translation>Υποσέλιδο:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="205"/>
         <source>Header:</source>
-        <translation>Entête:</translation>
+        <translation>Κεφαλίδα:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="226"/>
         <source>Scenario name.</source>
-        <translation>Nom du scénario.</translation>
+        <translation>Όνομα Σεναρίου.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="236"/>
         <source>Genre:</source>
-        <translation>Genre:</translation>
+        <translation>Είδος:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="246"/>
         <source>Scenario genre.</source>
-        <translation>Genre du scénario.</translation>
+        <translation>Είδος σεναρίου.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="256"/>
         <source>Author:</source>
-        <translation>Auteur:</translation>
+        <translation>Συγγραφέας:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="266"/>
         <source>Scenario author.</source>
-        <translation>Auteur du scénario.</translation>
+        <translation>Συγγραφέας σεναρίου:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="276"/>
         <source>Additional:</source>
-        <translation>Supplémentaire:</translation>
+        <translation>Πρόσθετα:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="286"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="290"/>
         <source>Original scenario</source>
-        <translation>Scénario original</translation>
+        <translation>Πρώτοτυπο σενάριο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="298"/>
         <source>Contacts:</source>
-        <translation>Contacts:</translation>
+        <translation>Επαφές:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="317"/>
@@ -3850,127 +3512,177 @@ Et l&apos;éditeur de scénario. L&apos;éditeur regorge de fonctionnalités qui
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="328"/>
         <source>Year:</source>
-        <translation>Année:</translation>
+        <translation>Χρόνος:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="338"/>
         <source>Scenario wirting year.</source>
-        <translation>Année de l&apos;écriture du scénario.</translation>
+        <translation>Χρόνος συγγραφής σεναρίου.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="371"/>
+        <source>Logline:</source>
+        <translation>Γραμμή καταγραφής:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="378"/>
+        <source>words:</source>
+        <translation>λέξεις:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="397"/>
+        <source>0</source>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="421"/>
         <source>Synopsis</source>
-        <translation>Synopsis</translation>
+        <translation>Σύνοψη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="494"/>
         <source>Add characters to project.</source>
-        <translation>Ajouter personnage au projet.</translation>
+        <translation>Προσθήκη χαρακτήρων στο έργο.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="517"/>
         <source>Character Name:</source>
-        <translation>Nom du personnage:</translation>
+        <translation>Όνομα χαρακτήρα:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="537"/>
         <source>Real Name:</source>
-        <translation>Vrai nom:</translation>
+        <translation>Πραγματικό όνομα:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="557"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="621"/>
         <source>Description</source>
-        <translation>Description</translation>
+        <translation>Περιγραφή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="578"/>
         <source>Add locations to project.</source>
-        <translation>Ajouter décors au projet.</translation>
+        <translation>Προσθήκη τοποθεσιών στο έργο.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="601"/>
         <source>Location Name:</source>
-        <translation>Nom du décor:</translation>
+        <translation>Όνομα τοποθεσίας:</translation>
     </message>
     <message>
-        <source>Add research materials such as text, web pages and images in tree. Use toolbar buttons and context menu for add or remove research materials in tree.</source>
-        <translation type="vanished">Ajouter des documents de recherche tels que du texte, des pages Web et des images dans l&apos;arbre. Utiliser les boutons de la barre d&apos;outils et le menu contextuel pour ajouter ou supprimer des documents de recherche dans l&apos;arbre.</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="645"/>
+        <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
+        <translation>Προσθήκη στοιχείων έρευνας όπως κείμενο, ιστοσελίδες και εικόνες στο δέντρο. Χρησιμοποιήστε τα κουμπιά της γραμμής εργαλείων και το αναδυόμενο μενού για προσθήκη ή αφαίρεση στοιχείων έρευνας στο δέντρο.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="669"/>
         <source>&lt;h2&gt;Folder&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Dossier&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;Φάκελος&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="682"/>
         <source>Folders let you group research data in hierarchy.</source>
-        <translation>Les dossiers vous permettent de regrouper des données de recherche hiérarchiquement.</translation>
+        <translation>Οι φάκελοι σας επιτρέπουν να οργανώσετε τα ερευνητικά σας δεδομένα σε μια ιεραρχία.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="695"/>
         <source>Add Folder</source>
-        <translation>Ajouter dossier</translation>
+        <translation>Προσθήκη Φακέλου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="732"/>
         <source>&lt;h2&gt;Text Document&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Document texte&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;Text Document&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="745"/>
         <source>Text let you store formatted text documents.</source>
-        <translation>Texte vous permet de stocker des documents de texte mis en forme.</translation>
+        <translation>Σας επιτρέπει να αποθηκεύσετε μορφοποιημένα έγγραφα κειμένου.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="758"/>
         <source>Add Text</source>
-        <translation>Ajouter texte</translation>
+        <translation>Προσθήκη κειμένου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="795"/>
+        <source>&lt;h2&gt;Mind Map&lt;/h2&gt;</source>
+        <translation>&lt;h2&gt;Χάρτης Μυαλού&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="808"/>
         <source>Mind map let you create schemes with your thoughts.</source>
-        <translation>Mind map vous permet de créer des schémas avec vos pensées.</translation>
+        <translation>Ο χάρτης μυαλού σας επιτρέπει να δημιουργήσετε σχεδιαγράμματα με τις σκέψεις σας.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="821"/>
         <source>Add Mind Map</source>
-        <translation>Ajouter Mind Map</translation>
+        <translation>Προσθήκη χάρτη μυαλού</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="858"/>
         <source>&lt;h2&gt;Images Gallery&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Gallerie d&apos;images&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;Συλλογή Εικόνων&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="871"/>
         <source>Images gallery let you store group of images.</source>
-        <translation>Galerie d’images vous permet de stocker des groupes d’images.</translation>
+        <translation>Η συλλογή εικόνων σας επιτρέπει να αποθηκεύσετε μια ομάδα εικόνων.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="884"/>
         <source>Add Images Gallery</source>
-        <translation>Ajouter une gallerie d&apos;images</translation>
+        <translation>Προσθήκη Συλλογής Εικόνων</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="921"/>
+        <source>&lt;h2&gt;Url&lt;/h2&gt;</source>
+        <translation>&lt;h2&gt;URL&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="934"/>
         <source>Url let you have a link to useful web-based documents.</source>
-        <translation>URL vous permet d’avoir un lien vers des documents utiles sur le web.</translation>
+        <translation>Τα URL σας επιτρέπει να έχετε συνδέσμους σε χρήσιμα έγγραφα του ιστού.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="947"/>
         <source>Add Url</source>
-        <translation>Ajouter Url</translation>
+        <translation>Προσθήκη URL</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1060"/>
+        <source>Url:</source>
+        <translation>URL:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1067"/>
+        <source>Load</source>
+        <translation>Φόρτωση</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1105"/>
+        <source>Change</source>
+        <translation>Αλλαγή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1135"/>
+        <source>Image:</source>
+        <translation>Εικόνα:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1201"/>
         <source>Undo last action</source>
-        <translation>Annuler la dernière action</translation>
+        <translation>Αναίρεση προηγούμενης ενέργειας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1204"/>
@@ -3978,115 +3690,94 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1252"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1255"/>
         <source>Add child node</source>
-        <translation>Ajouter noeud enfant</translation>
+        <translation>Προσθήκη κόμβου απογόνου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1215"/>
         <source>Redo previously undone action</source>
-        <translation>Refaire une action précédemment annulée</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1266"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1269"/>
-        <source>Add sibling node</source>
-        <translation>Ajouter noeud frère</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1280"/>
-        <source>Delete node (Del)</source>
-        <translation>Supprimer noeud (Del)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1283"/>
-        <source>Delete node</source>
-        <translation>Supprimer noeud</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1294"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1297"/>
-        <source>Scale up node</source>
-        <translation>Grossir le noeud</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1308"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1311"/>
-        <source>Scale down node</source>
-        <translation>Réduire le noeud</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1396"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1399"/>
-        <source>Save mind map as image file</source>
-        <translation>Sauvegarder le mind map en tant qu’image</translation>
+        <translation>Επανάληψη προηγουμένως αναιρεθείσας ενέργειας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1229"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1322"/>
         <source>Node text color</source>
-        <translation>Couleur de texte du noeud</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="795"/>
-        <source>&lt;h2&gt;Mind Map&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Mind Map&lt;/h2&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="921"/>
-        <source>&lt;h2&gt;Url&lt;/h2&gt;</source>
-        <translation></translation>
+        <translation>Χρώμα κειμένου κόμβου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1232"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1325"/>
         <source>Text color</source>
-        <translation>Couleur du texte</translation>
+        <translation>Χρώμα κειμένου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1266"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1269"/>
+        <source>Add sibling node</source>
+        <translation>Προσθήκη αδελφικού κόμβου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1280"/>
+        <source>Delete node (Del)</source>
+        <translation>Διαγραφή κόμβου (Del)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1283"/>
+        <source>Delete node</source>
+        <translation>Διαγραφή κόμβου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1294"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1297"/>
+        <source>Scale up node</source>
+        <translation>Κλιμάκωση κόμβου προς τα πάνω</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1308"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1311"/>
+        <source>Scale down node</source>
+        <translation>Κλιμάκωση κόμβου προς τα κάτω</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1345"/>
         <source>Node background color</source>
-        <translation>Couleur de fond du noeud</translation>
+        <translation>Χρώμα παρασκηνίου κόμβου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1348"/>
         <source>Background color</source>
-        <translation>Couleur de fond</translation>
+        <translation>Χρώμα παρασκηνίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1368"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1371"/>
         <source>Add edge</source>
-        <translation>Ajouter flèche</translation>
+        <translation>Προσθήκη ακμής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1382"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1385"/>
         <source>Delete edge</source>
-        <translation>Supprimer flèche</translation>
+        <translation>Διαγραφή κόμβου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1060"/>
-        <source>Url:</source>
-        <translation>Url:</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1396"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1399"/>
+        <source>Save mind map as image file</source>
+        <translation>Αποθήκευση χάρτη μυαλού ως αρχείο εικόνας</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="645"/>
-        <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
-        <translation>Ajouter des documents de recherche tels que du texte, des pages Web et des images dans l&apos;arbre. Utiliser les boutons de la barre d&apos;outils et le menu contextuel pour ajouter ou supprimer des documents de recherche dans l&apos;arbre.</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1442"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1456"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1470"/>
+        <source>Search</source>
+        <translation>Αναζήτηση</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1067"/>
-        <source>Load</source>
-        <translation>Charger</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1135"/>
-        <source>Image:</source>
-        <translation>Image:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1105"/>
-        <source>Change</source>
-        <translation>Changer</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1449"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1463"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1477"/>
+        <source>Ctrl+Tab</source>
+        <translation>Ctrl+Tab</translation>
     </message>
 </context>
 <context>
@@ -4095,7 +3786,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="341"/>
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="345"/>
         <source>Not a supported RTF file.</source>
-        <translation>Fichier RTF non supporté.</translation>
+        <translation>Μη υποστηριζόμενο αρχείο RTF.</translation>
     </message>
 </context>
 <context>
@@ -4103,7 +3794,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../../libs/fileformats/rtf_tokenizer.cpp" line="151"/>
         <source>Unexpectedly reached end of file.</source>
-        <translation>Fin du fichier atteinte de façon inattendue</translation>
+        <translation>Έφτασε απρόσμενα το τέλος του αρχείου.</translation>
     </message>
 </context>
 <context>
@@ -4111,41 +3802,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="26"/>
         <source>Add scheme item</source>
-        <translation>Ajouter item schéma</translation>
+        <translation>Προσθήκη στοιχείου στο σχέδιο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="56"/>
         <source>Description:</source>
-        <translation>Description:</translation>
+        <translation>Περιγραφή:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="80"/>
         <source>Header:</source>
-        <translation>Entête:</translation>
+        <translation>Κεφαλίδα:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="87"/>
         <source>Name:</source>
-        <translation>Nom:</translation>
-    </message>
-</context>
-<context>
-    <name>ScenarioSchemeItemDialog</name>
-    <message>
-        <source>Add scheme item</source>
-        <translation type="vanished">Ajouter item schéma</translation>
-    </message>
-    <message>
-        <source>Act</source>
-        <translation type="vanished">Acte</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation type="vanished">Description</translation>
-    </message>
-    <message>
-        <source>Scene</source>
-        <translation type="vanished">Scène</translation>
+        <translation>Όνομα:</translation>
     </message>
 </context>
 <context>
@@ -4153,22 +3825,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="17"/>
         <source>Form</source>
-        <translation>Formulaire</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="78"/>
         <source>Title</source>
-        <translation>Titre</translation>
+        <translation>Τίτλος</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="91"/>
         <source>Description</source>
-        <translation>Description</translation>
+        <translation>Περιγραφή</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="113"/>
         <source>Remove version</source>
-        <translation>Supprimer la version</translation>
+        <translation>Αφαίρεση έκδοσης</translation>
     </message>
 </context>
 <context>
@@ -4176,72 +3848,72 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="119"/>
         <source>Find...</source>
-        <translation>Trouver ...</translation>
+        <translation>Εύρεση...</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="127"/>
         <source>Case Sensitive</source>
-        <translation>Sensibilité à la casse</translation>
+        <translation>Διάκριση πεζών-κεφαλαίων</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="138"/>
         <source>Find Prev</source>
-        <translation>Trouver le précédent</translation>
+        <translation>Εύρεση προηγούμενου</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="148"/>
         <source>Find Next</source>
-        <translation>Trouver le suivant</translation>
+        <translation>Εύρεση επόμενου</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="149"/>
         <source>In whoole document</source>
-        <translation>Dans tout le document</translation>
+        <translation>Σε όλο το έγγραφο</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="150"/>
         <source>In scene heading</source>
-        <translation>Dans l&apos;entête</translation>
+        <translation>Στην κεφαλίδα σκηνής</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="151"/>
         <source>In action</source>
-        <translation>Dans l&apos;action</translation>
+        <translation>Στη δράση</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="152"/>
         <source>In character</source>
-        <translation>Dans les personnages</translation>
+        <translation>Στο χαρακτήρα</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="153"/>
         <source>In dialogue</source>
-        <translation>Dans le dialogue</translation>
+        <translation>Στο διάλογο</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="154"/>
         <source>In parenthetical</source>
-        <translation>Dans les didascalies</translation>
+        <translation>Στο παρενθετικό</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="155"/>
         <source>In lyrics</source>
-        <translation>Dans les paroles</translation>
+        <translation>Στους στίχους</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="159"/>
         <source>Replace with...</source>
-        <translation>Remplacer par...</translation>
+        <translation>Αντικατάσταση με...</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="162"/>
         <source>Replace</source>
-        <translation>Remplacer</translation>
+        <translation>Αντικατάσταση</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="164"/>
         <source>All</source>
-        <translation>Tous</translation>
+        <translation>Όλα</translation>
     </message>
 </context>
 <context>
@@ -4250,62 +3922,102 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="14"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2242"/>
         <source>Dialog</source>
-        <translation>Dialogue</translation>
+        <translation>Διάλογος</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="51"/>
+        <source>Settings</source>
+        <translation>Ρυθμίσεις</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="80"/>
+        <source>1</source>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="85"/>
         <source>Application</source>
-        <translation>Application</translation>
+        <translation>Εφαρμογή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="94"/>
+        <source>Research</source>
+        <translation>Έρευνα</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="103"/>
+        <source>Cards</source>
+        <translation>Κάρτες</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="112"/>
         <source>Scenario Editor</source>
-        <translation>Editeur de scénario</translation>
+        <translation>Επεξεργαστής Σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="121"/>
         <source>Navigator</source>
-        <translation>Navigateur</translation>
+        <translation>Πλοηγητής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="130"/>
         <source>Chronometry/Counters</source>
-        <translation>Chronométrie/Compteurs</translation>
+        <translation>Χρονομετρία/Μετρητές</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="139"/>
         <source>Templates Library</source>
-        <translation>Bibliothèque de modèles</translation>
+        <translation>Βιβλιοθήκη Προτύπων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="151"/>
         <source>Reset Settings</source>
-        <translation>Réinitialiser paramètres</translation>
+        <translation>Επαναφορά Ρυθμίσεων</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="457"/>
-        <source>Use Dark Theme</source>
-        <translation>Utiliser Dark Theme</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="227"/>
+        <source>Spell Checking</source>
+        <translation>Έλεγχος Ορθογραφίας</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="254"/>
+        <source>Language:</source>
+        <translation>Γλώσσα:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="261"/>
+        <source>Russian</source>
+        <translation>Ρώσικα</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="268"/>
+        <source>Change</source>
+        <translation>Αλλαγή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="292"/>
         <source>Automatically Save Every</source>
-        <translation>Enregistrer automatiquement tous les</translation>
+        <translation>Αυτόματη Αποθήκευση Κάθε</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="315"/>
         <source>Minutes</source>
-        <translation>Minutes</translation>
+        <translation>Λεπτά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="331"/>
+        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
+        <translation>Η αυτόματη αποθήκευση λειτουργεί με μεγάλη ακρίβεια. Αποθηκέυει το έργο καθε 3 δευτερόλεπτα αν δεν χρησιμοποιείτε ποντίκι ή πληκτρολόγιο, αλλά αν δουλεύετε ασταμάτητα αποθηκεύει το έργο κάθε 5 λεπτά.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="380"/>
         <source>Save Backups</source>
-        <translation>Enregistrer les sauvegardes</translation>
+        <translation>Αποθήκευση Αντιγράφων Ασφαλείας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="425"/>
         <source>Browse...</source>
-        <translation>Parcourir...</translation>
+        <translation>Περιήγηση...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="428"/>
@@ -4315,306 +4027,252 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="450"/>
         <source>Two Panel Mode (F2)</source>
-        <translation>Mode deux panneaux (F2)</translation>
+        <translation>Λειτουργία Δύο Παραθύρων (F2)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="254"/>
-        <source>Language:</source>
-        <translation>Langue:</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="457"/>
+        <source>Use Dark Theme</source>
+        <translation>Χρήση σκούρου θέματος</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="261"/>
-        <source>Russian</source>
-        <translation>Russe</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="467"/>
+        <source>Compact Mode</source>
+        <translation>Συμπαγής Λειτουργία</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="268"/>
-        <source>Change</source>
-        <translation>Changer</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="477"/>
+        <source>Enable HIDPI scaling</source>
+        <translation>Ενεργοποίηση κλιμάκωσης για οθόνες υψηλής ευκρίνειας</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="941"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1829"/>
-        <source>Show Scenes Numbers</source>
-        <translation>Montrer les numéros de scène</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="488"/>
+        <source>Research module</source>
+        <translation>Εξάρτημα έρευνας</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="948"/>
-        <source>Highlight Current Line</source>
-        <translation>Mettre en surbrillance la ligne en cours</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="495"/>
+        <source>Cards module</source>
+        <translation>Εξάρτημα καρτών</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="769"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="964"/>
-        <source>Light Theme</source>
-        <translation>Thème lumière</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="502"/>
+        <source>Scenario module</source>
+        <translation>Εξάρτημα σεναρίου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="762"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="971"/>
-        <source>Dark Theme</source>
-        <translation>Thème noir</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="509"/>
+        <source>Statistics module</source>
+        <translation>Εξάρτημα στατιστικών</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="978"/>
-        <source>Text:</source>
-        <translation>Texte:</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="516"/>
+        <source>Tools module</source>
+        <translation>Εξάρτημα εργαλείων</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1192"/>
-        <source>Folder text:</source>
-        <translation>Dossier texte:</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="579"/>
+        <source>Default font for text documents:</source>
+        <translation>Προκαθορισμένη γραμματοσείρα για έγγραφα κειμένου:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1406"/>
-        <source>Noneprintable text:</source>
-        <translation>Texte non imprimé:</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="593"/>
+        <source>pt</source>
+        <translation>στ</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="755"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1085"/>
-        <source>Background:</source>
-        <translation>Fond:</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="676"/>
+        <source>Use corkboad background</source>
+        <translation>Χρήση παρασκηνίου από φελλό</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="686"/>
+        <source>Use color background</source>
+        <translation>Χρήση παρασκηνίου με χρώμα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="696"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="955"/>
         <source>Themes colors</source>
-        <translation>Couleurs du thème</translation>
+        <translation>Χρώματα θεμάτων</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1299"/>
-        <source>Folder background:</source>
-        <translation>Dossier de fond:</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="755"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1085"/>
+        <source>Background:</source>
+        <translation>Παρασκήνιο:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1662"/>
-        <source>Editor Text Template:</source>
-        <translation>Éditeur de modèles de texte:</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="762"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="971"/>
+        <source>Dark Theme</source>
+        <translation>Σκούρο Θέμα</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="227"/>
-        <source>Spell Checking</source>
-        <translation>Vérification orthographique</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="51"/>
-        <source>Settings</source>
-        <translation>Paramètres</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="769"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="964"/>
+        <source>Light Theme</source>
+        <translation>Φωτεινό Θέμα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="934"/>
         <source>Page View</source>
-        <translation>Voir la page</translation>
+        <translation>Προβολή Σελίδας</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1842"/>
-        <source>Show scene description</source>
-        <translation>Montrer la description de la scène</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="941"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1829"/>
+        <source>Show Scenes Numbers</source>
+        <translation>Προβολή Αρίθμησης Σκηνών</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1853"/>
-        <source>Scene text</source>
-        <translation>Texte de la scène</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="948"/>
+        <source>Highlight Current Line</source>
+        <translation>Επισήμανση Τρέχουσας Γραμμής</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1863"/>
-        <source>Scene synopsis</source>
-        <translation>Scène synopsis</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="978"/>
+        <source>Text:</source>
+        <translation>Κείμενο:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1887"/>
-        <source>Description height, lines:</source>
-        <translation>Description de la hauteur, des lignes:</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1192"/>
+        <source>Folder text:</source>
+        <translation>Κείμενο φακέλου:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2419"/>
-        <source>Counters</source>
-        <translation>Compteurs</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1299"/>
+        <source>Folder background:</source>
+        <translation>Παρασκήνιο φακέλου:</translation>
     </message>
     <message>
-        <source>Simbols without spaces | Simbols with spaces</source>
-        <translation type="vanished">Symboles sans espaces | Symboles avec des espaces</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2446"/>
-        <source>Pages Mode only</source>
-        <translation>Mode page seulement</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2005"/>
-        <source>Chronometry</source>
-        <translation>Chronométrie</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="488"/>
-        <source>Research module</source>
-        <translation>Module de recherche</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="502"/>
-        <source>Scenario module</source>
-        <translation>Module de scénario</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="509"/>
-        <source>Statistics module</source>
-        <translation>Module de statistiques</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1705"/>
-        <source>Capitalize first word</source>
-        <translation>Mettre premier mot en capitale</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1712"/>
-        <source>Correct DOuble CApitals</source>
-        <translation>Corriger double capitales</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1719"/>
-        <source>Replace three single dots to threedots character.</source>
-        <translation>Remplacer trois points seuls par caractère trois points.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1726"/>
-        <source>Smart quotes</source>
-        <translation>Guillemets</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1575"/>
-        <source>Automatically jump to next paragraph</source>
-        <translation>Sauter directement au prochain paragraphe</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1591"/>
-        <source>For scene heading and character paragraphs.</source>
-        <translation>Pour l&apos;entête et les paragraphes personnage.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1629"/>
-        <source>Autocomplete next character for dialogue</source>
-        <translation>Autocompleter le prochain personnage du dialogue</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1622"/>
-        <source>Use MS Word like review highlighting colors</source>
-        <translation>Utilisez couleurs de surbrillance comme MS Word</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="80"/>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="94"/>
-        <source>Research</source>
-        <translation>Recherche</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="103"/>
-        <source>Cards</source>
-        <translation>Cartes</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="331"/>
-        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
-        <translation>La sauvegarde automatique est très fiable : le projet est sauvegardé automatiquement au bout de 3 secondes d’inactivité. En cas d’activité continue sans pause, le projet est sauvegardé automatiquement toutes les 5 minutes.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="467"/>
-        <source>Compact Mode</source>
-        <translation>Mode compact </translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="495"/>
-        <source>Cards module</source>
-        <translation>Module carte</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="516"/>
-        <source>Tools module</source>
-        <translation>Module d&apos;outils</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="579"/>
-        <source>Default font for text documents:</source>
-        <translation>Police par défaut dans les documents texte:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="593"/>
-        <source>pt</source>
-        <translation>pt</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="676"/>
-        <source>Use corkboad background</source>
-        <translation>Utiliser fond tableau en liège</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="686"/>
-        <source>Use color background</source>
-        <translation>Utiliser une couleur de fond</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1406"/>
+        <source>Noneprintable text:</source>
+        <translation>Μη-εκτυπώσιμο κείμενο:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1542"/>
         <source>Hide all panels in fullscreen mode</source>
-        <translation>Masquer toutes les fenêtres en mode plein écran</translation>
+        <translation>Απόκρυψη όλων των παραθύρων στη λειτουργία πλήρους οθόνης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1552"/>
         <source>Show dialogues numbers</source>
-        <translation>Afficher les numéros de dialogue</translation>
+        <translation>Εμφάνιση αρίθμησης διαλόγων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1559"/>
         <source>Highlight blocks</source>
-        <translation>Surligner les blocs</translation>
+        <translation>Επισήμανση κομματιών</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1685"/>
-        <source>Text corrections</source>
-        <translation>Corrections de texte</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1575"/>
+        <source>Automatically jump to next paragraph</source>
+        <translation>Αυτόματη μεταπήδηση στην επόμενη παράγραφο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1691"/>
-        <source>Automatically continue dialogue</source>
-        <translation>Poursuivre les dialogues automatiquement</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1591"/>
+        <source>For scene heading and character paragraphs.</source>
+        <translation>Για τις κεφαλίδες σκηνής και τις παραγράφους των χαρακτήρων.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1698"/>
-        <source>Automatically corrections on page breaks</source>
-        <translation>Corriger automatiquement les sauts de page</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1622"/>
+        <source>Use MS Word like review highlighting colors</source>
+        <translation>Χρήση χρωμάτων επισήμανσης για ανασκόπηση όπως το MS Word</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1629"/>
+        <source>Autocomplete next character for dialogue</source>
+        <translation>Αυτόματη συμπλήρωση επόμενου χαρακτήρα σε διάλογο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1652"/>
         <source>Use open bracket in dialogue for jump to parenthetical</source>
-        <translation>Dans une réplique, utiliser les crochets ouverts pour passer aux didascalies</translation>
+        <translation>Χρήση ανοιχτής αγκύλης στο διάλογο για μεταπήδηση σε παρενθετικό</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="477"/>
-        <source>Enable HIDPI scaling</source>
-        <translation type="unfinished"></translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1662"/>
+        <source>Editor Text Template:</source>
+        <translation>Πρότυπο Επεξεργαστή Κειμένου:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1685"/>
+        <source>Text corrections</source>
+        <translation>Διορθώσεις κειμένου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1691"/>
+        <source>Automatically continue dialogue</source>
+        <translation>Αυτόματη συνέχεια διαλόγου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1698"/>
+        <source>Automatically corrections on page breaks</source>
+        <translation>Αυτόματη διόρθωση σε αλλαγή σελίδας</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1705"/>
+        <source>Capitalize first word</source>
+        <translation>Αυτόματη κεφαλαιοποίηση πρώτης λέξης</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1712"/>
+        <source>Correct DOuble CApitals</source>
+        <translation>Δίορθωση ΔΙπλών ΚΕφαλαίων</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1719"/>
+        <source>Replace three single dots to threedots character.</source>
+        <translation>Αντικατάσταση τριών απλών τελείων με τον ειδικό χαρακτήρα για τρείς τελείες.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1726"/>
+        <source>Smart quotes</source>
+        <translation>Έξυπνα εισαγωγικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1842"/>
+        <source>Show scene description</source>
+        <translation>Προβολή περιγραφής σκηνής</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1853"/>
+        <source>Scene text</source>
+        <translation>Κείμενο σκηνής</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1863"/>
+        <source>Scene synopsis</source>
+        <translation>Σύνοψη σκηνής</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1887"/>
+        <source>Description height, lines:</source>
+        <translation>Ύψος περιγραφής, γραμμές:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1948"/>
         <source>Show Scene Title instead of Scene Heading</source>
-        <translation>Montrer le titre de la scène plutot que l&apos;en-tête de la scène</translation>
+        <translation>Προβολή Τίτλου Σκηνής αντί για Κεφαλίδα Σκηνής</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2005"/>
+        <source>Chronometry</source>
+        <translation>Χρονομετρία</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2016"/>
         <source>Pages Chronometry</source>
-        <translation>Chronométrie des pages</translation>
+        <translation>Χρονομετρία Σελίδων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2032"/>
         <source>For standard template and compatible</source>
-        <translation>Pour le modèle standard et compatible</translation>
+        <translation>Για σύνηθες πρότυπο και συμβατό</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2072"/>
         <source>Page</source>
-        <translation>Page</translation>
+        <translation>Σελίδα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2079"/>
@@ -4626,32 +4284,32 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2093"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2156"/>
         <source>Seconds</source>
-        <translation>Secondes</translation>
+        <translation>Δευτερόλεπτα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2119"/>
         <source>Characters Chronometry</source>
-        <translation>Chronométrie des personnages</translation>
+        <translation>Χρονομετρία Χαρακτήρων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2163"/>
         <source>Characters</source>
-        <translation>Caractères</translation>
+        <translation>Χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2170"/>
         <source>Consider Spaces</source>
-        <translation>Considérer espaces</translation>
+        <translation>Υπολογισμός Κενών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2196"/>
         <source>Configurable Chronometry</source>
-        <translation>Chronométrie configurable</translation>
+        <translation>Ρυθμιζόμενη Χρονομετρία</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2212"/>
         <source>Scene Heading</source>
-        <translation>En-tête</translation>
+        <translation>Κεφαλίδα Σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2249"/>
@@ -4664,104 +4322,110 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2259"/>
         <source>Seconds per
 50 characters</source>
-        <translation>Secondes par
-50 caractères</translation>
+        <translation>Δευτερόλεπτα ανα
+50 χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2286"/>
         <source>Action</source>
-        <translation>Action</translation>
+        <translation>Δράση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2373"/>
         <source>Seconds for
 Paragraph</source>
-        <translation>Secondes pour
-paragraphe</translation>
+        <translation>Δευτερόλεπτα για
+Παράγραφο</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2419"/>
+        <source>Counters</source>
+        <translation>Μετρητές</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2433"/>
         <source>Pages</source>
-        <translation>Pages</translation>
+        <translation>Σελίδες</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2446"/>
+        <source>Pages Mode only</source>
+        <translation>Μόνο Λειτουργία Σελίδων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2464"/>
         <source>Words</source>
-        <translation>Mots</translation>
+        <translation>Λέξεις</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2476"/>
         <source>Symbols</source>
-        <translation>Symboles</translation>
+        <translation>Σύμβολα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2489"/>
         <source>Symbols without spaces | Symbols with spaces</source>
-        <translation>Symboles sans espaces | Symboles avec des espaces</translation>
-    </message>
-    <message>
-        <source>Simbols</source>
-        <translation type="vanished">Symboles</translation>
+        <translation>Σύμβολα χωρίς κενά | Σύμβολα με κενά</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2623"/>
         <source>Apply Selected Template</source>
-        <translation>Appliquer le modèle sélectionné</translation>
+        <translation>Εφαρμογή Επιλεγμένου Προτύπου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2626"/>
         <source>Apply</source>
-        <translation>Appliquer</translation>
+        <translation>Εφαρμογή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2637"/>
         <source>Add Template</source>
-        <translation>Ajouter un modèle</translation>
+        <translation>Προσθήκη Προτύπου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2640"/>
         <source>New</source>
-        <translation>Nouveau</translation>
+        <translation>Νέο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2651"/>
         <source>Edit Selected Template</source>
-        <translation>Modifier le modèle sélectionné</translation>
+        <translation>Επεξεργασία Επιλεγμένου Προτύπου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2654"/>
         <source>Edit</source>
-        <translation>Modifier</translation>
+        <translation>Επεξεργασία</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2665"/>
         <source>Delete Selected Template</source>
-        <translation>Supprimer le modèle sélectionné</translation>
+        <translation>Διαγραφή Επιλεγμένου Προτύπου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2668"/>
         <source>Remove</source>
-        <translation>Supprimer</translation>
+        <translation>Αφαίρεση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2679"/>
         <source>Load Template From File</source>
-        <translation>Charger le modèle à partir du fichier</translation>
+        <translation>Φόρτωση Προτύπου από Αρχείο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2682"/>
         <source>Load</source>
-        <translation>Charger</translation>
+        <translation>Φόρτωση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2693"/>
         <source>Save Template To File</source>
-        <translation>Enregistrer le modèle dans un fichier</translation>
+        <translation>Αποθήκευση Προτύπου σε Αρχείο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2696"/>
         <source>Save As...</source>
-        <translation>Enregistrer sous...</translation>
+        <translation>Αποθήκευση ως...</translation>
     </message>
 </context>
 <context>
@@ -4769,27 +4433,27 @@ paragraphe</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="20"/>
         <source>Share project</source>
-        <translation>Partager le projet</translation>
+        <translation>Κοινοποίηση έργου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="26"/>
         <source>Email</source>
-        <translation>Email</translation>
+        <translation>Ηλ-ταχ.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="36"/>
         <source>User role</source>
-        <translation>Role utilisateur</translation>
+        <translation>Ρόλος Χρήστη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="44"/>
         <source>Redactor</source>
-        <translation>Rédacteur</translation>
+        <translation>Συντάκτης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="49"/>
         <source>Commentator</source>
-        <translation>Commentateur</translation>
+        <translation>Σχολιαστής</translation>
     </message>
 </context>
 <context>
@@ -4797,42 +4461,42 @@ paragraphe</translation>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="181"/>
         <source>Undo last action</source>
-        <translation>Annuler la dernière action</translation>
+        <translation>Αναίρεση προηγούμενης ενέργειας</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="184"/>
         <source>Redo previously undone action</source>
-        <translation>Refaire une action précédemment annulée</translation>
+        <translation>Επανάληψη προηγουμένως αναιρεθείσας ενέργειας</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="194"/>
         <source>Make text bold</source>
-        <translation>Mettre le texte en gras</translation>
+        <translation>Κάνε τα γράμματα έντονα</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="198"/>
         <source>Make text italic</source>
-        <translation>Mettre le texte en italique</translation>
+        <translation>Κάνε τα γράμματα πλάγια</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="202"/>
         <source>Make text underline</source>
-        <translation>Souligner le texte</translation>
+        <translation>Κάνε το κείμενο με υπογράμμιση</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="205"/>
         <source>Change text color</source>
-        <translation>Changer la couleur du texte</translation>
+        <translation>Αλλαγή χρώματος κειμένου</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="208"/>
         <source>Change text background color</source>
-        <translation>Changer la couleur de fond du texte</translation>
+        <translation>Αλλαγή παρασκηνίου κειμένου</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="210"/>
         <source>Clear formatting</source>
-        <translation>Effacer le formatage</translation>
+        <translation>Εκκαθάριση μορφοποίησης</translation>
     </message>
 </context>
 <context>
@@ -4840,17 +4504,17 @@ paragraphe</translation>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="43"/>
         <source>Ignore</source>
-        <translation>Ignorer</translation>
+        <translation>Αγνόηση</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="46"/>
         <source>Add to dictionary</source>
-        <translation>Ajouter au dictionnaire</translation>
+        <translation>Προσθήκη στο λεξικό</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="152"/>
         <source>Suggestions not found</source>
-        <translation>Suggestion non trouvée</translation>
+        <translation>Δεν βρέθηκαν υποδείξεις</translation>
     </message>
 </context>
 <context>
@@ -4858,57 +4522,7 @@ paragraphe</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="14"/>
         <source>Form</source>
-        <translation>Formulaire</translation>
-    </message>
-    <message>
-        <source>version</source>
-        <translation type="vanished">version</translation>
-    </message>
-    <message>
-        <source>0.0.0</source>
-        <translation type="vanished">0.0.0</translation>
-    </message>
-    <message>
-        <source>22.02.2017</source>
-        <translation type="vanished">22.02.2017</translation>
-    </message>
-    <message>
-        <source>Account is active until:</source>
-        <translation type="vanished">Compte actif depuis:</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="vanished">...</translation>
-    </message>
-    <message>
-        <source>UserName</source>
-        <translation type="vanished">Utilisateur</translation>
-    </message>
-    <message>
-        <source>Used 0 Gb from 0 Gb</source>
-        <translation type="vanished">0 Gb Utilisés sur 0 Gb libres</translation>
-    </message>
-    <message>
-        <source>Renew subscription</source>
-        <translation type="vanished">Renouveller abonnement</translation>
-    </message>
-    <message>
-        <source>Change Password</source>
-        <translation type="vanished">Changer le mot de passe</translation>
-    </message>
-    <message>
-        <source>Quit from cabinet</source>
-        <translation type="vanished">Quitter bureau</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="177"/>
-        <source>Create Project</source>
-        <translation>Créer un projet</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="141"/>
-        <source>Open Project</source>
-        <translation>Ouvrir un projet</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="96"/>
@@ -4917,12 +4531,17 @@ paragraphe</translation>
 We launch crowdfunding</source>
         <translation>
 
-Nous lançons un financement participatif</translation>
+Ξεκινούμε συμμετοχική χρηματοδότηση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="108"/>
         <source>Help</source>
-        <translation>Aide</translation>
+        <translation>Βοήθεια</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="141"/>
+        <source>Open Project</source>
+        <translation>Άνοιγμα Έργου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="165"/>
@@ -4931,7 +4550,12 @@ Nous lançons un financement participatif</translation>
 New to KIT Scenarist?</source>
         <translation>
 
-Nouveau sur KIT Scenarist?</translation>
+Πρωτάρης στο KIT Scenarist;</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="177"/>
+        <source>Create Project</source>
+        <translation>Δημιουργία Έργου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="194"/>
@@ -4939,216 +4563,198 @@ Nouveau sur KIT Scenarist?</translation>
 and explore KIT Scenarist through 
 our help articles and tutorials.
 </source>
-        <translation>Apprenez à écrire vos propres histoires
-et explorez KIT Scenarist à travers 
-nos articles d’aide et nos tutoriels.
+        <translation>Μάθε πώς να γράψεις τις δικές σου ιστορίες
+και περιηγήσου στο KIT Scenarist μέσα από 
+τα βοηθητικά μας άρθρα και μαθήματα.
 </translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="207"/>
         <source>We have already collected %1K rubles of 1M aim! Join us and then you can use all power of the new version!</source>
-        <translation>Nous avons déjà collecté %1K Roubles sur un objectif de 1M. Rejoignez nous et vous pourrez utiliser toute la puissance de la nouvelle version!</translation>
+        <translation>Έχουμε ήδη συγκεντρώσει %1 χιλιάδες ρούβλια από το στόχο του ενός εκατομμυρίου! Ελάτε μαζί μας και θα μπορέσετε να χρησιμοποιήσετε την πλήρη δύναμη της νέας έκδοσης!</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="217"/>
         <source>Together we will make KIT Scenarist
 the best program for creating stories!</source>
-        <translation>Ensemble nous ferons de KIT Scenarist 
-le meilleur programme de création d&apos;histoires !</translation>
+        <translation>Μαζί θα κάνουμε το KIT Scenarist το καλύτερο πρόγραμμα για τη δημιουργία ιστοριών!</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="231"/>
         <source>Join campaign</source>
-        <translation>Rejoignez la campagne</translation>
-    </message>
-    <message>
-        <source>Released version 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;download&lt;/a&gt; or &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;read more&lt;/a&gt;.</source>
-        <translation type="vanished">Version 0.0.0 &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;télécharger&lt;/a&gt; or &lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;En savoir plus&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;
-S&apos;identifier&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="360"/>
-        <source>Projects from local computer</source>
-        <translation>Projets sur l&apos;ordinateur</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="373"/>
-        <source>Projects from kitscenarist.ru</source>
-        <translation>Projets sur kitscenarist.ru</translation>
+        <translation>Μπείτε στην καμπάνια</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="267"/>
         <source>Update recent projects list</source>
-        <translation>Mettre à jour la liste des projets récents</translation>
+        <translation>Ενημέρωση λίστας πρόσφατων έργων</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="360"/>
+        <source>Projects from local computer</source>
+        <translation>Έργα από τον τοπικό υπολογιστή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="373"/>
+        <source>Projects from kitscenarist.ru</source>
+        <translation>Έργα από το kitscenarist.ru</translation>
     </message>
 </context>
 <context>
     <name>StatisticsSettings</name>
     <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="35"/>
+        <source>Back to tools list</source>
+        <translation>Πίσω στη λίστα εργαλείων</translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="63"/>
         <source>Summary text statistics</source>
-        <translation>Résumé des statistiques du texte</translation>
+        <translation>Περίληψη κειμένου στατιστικών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="73"/>
         <source>Scenes statistics</source>
-        <translation>Scènes statistiques</translation>
+        <translation>Στατιστικά Σκηνών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="83"/>
         <source>Locations statistics</source>
-        <translation>Décors statistiques</translation>
+        <translation>Στατιστικά Τοποθεσιών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="93"/>
         <source>Characters statistics</source>
-        <translation>Personnages statistiques</translation>
+        <translation>Στατιστικά Χαρακτήρων</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="107"/>
+        <source>Show characters</source>
+        <translation>Προβολή χαρακτήρων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="117"/>
         <source>Sort scenes</source>
-        <translation>Classer les scènes</translation>
+        <translation>Ταξινόμηση σκηνών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="128"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="186"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="244"/>
         <source>by script order</source>
-        <translation>par ordre de script</translation>
+        <translation>κατά σειρά σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="133"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="191"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="249"/>
         <source>by alphabetical order</source>
-        <translation>par ordre alphabétique</translation>
+        <translation>κατά αλφαβητική σειρά</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="138"/>
         <source>from longest to shortest scene</source>
-        <translation>scène de la plus longue à la plus courte</translation>
+        <translation>κατά φθίνουσα διάρκεια σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="143"/>
         <source>from shortest to longest scene</source>
-        <translation>scène de la plus courte à la plus longue</translation>
+        <translation>κατά αύξουσα διάρκεια σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="148"/>
         <source>from massive to unmanned scene</source>
-        <translation>de la plus grosse à la plus petite</translation>
+        <translation>κατά φθίνοντα πληθυσμό σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="153"/>
         <source>from unmanned to massive scene</source>
-        <translation>de la plus petite à la plus grosse</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="107"/>
-        <source>Show characters</source>
-        <translation>Afficher les perssonages</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="35"/>
-        <source>Back to tools list</source>
-        <translation>Retour à la liste des outils</translation>
+        <translation>κατά αύξοντα πληθυσμό σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="165"/>
         <source>Extended view</source>
-        <translation>Affichage étendu</translation>
+        <translation>Εκτεταμένη προβολή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="175"/>
         <source>Sort locations</source>
-        <translation>Trier les décors</translation>
+        <translation>Ταξινόμηση τοποθεσιών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="196"/>
         <source>from most to least occurences</source>
-        <translation>du plus au moins d&apos;occurrences</translation>
+        <translation>κατα φθίνοντα αριθμό εμφάνισης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="201"/>
         <source>from least to most occurences</source>
-        <translation>du moins au plus d&apos;occurrences</translation>
+        <translation>κατά αύξοντα αριθμό εμφάνισης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="206"/>
         <source>from longest to shortest chron</source>
-        <translation>de plus long au plus court</translation>
+        <translation>κατά φθίνοντα χρόνο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="211"/>
         <source>from shortest to longest chron</source>
-        <translation>du plus court au plus long</translation>
+        <translation>κατά αύξοντα χρόνο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="223"/>
         <source>Show speaking and non-speaking scenes count</source>
-        <translation>Montrer compteur des scènes parlantes et non-parlantes</translation>
+        <translation>Προβολή αρίθμισης για βουβές σκηνές και σκηνές με ομιλία</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="233"/>
         <source>Sort characters</source>
-        <translation>Trier les personnages</translation>
+        <translation>Ταξινόμηση χαρακτήρων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="254"/>
         <source>from most to least scenes</source>
-        <translation>du plus au moins scènes</translation>
+        <translation>κατά φθίνοντα αριθμό εμφάνισης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="259"/>
         <source>from least to most scenes</source>
-        <translation>du moins au plus scènes</translation>
+        <translation>κατά αύξοντα αριθμό εμφάνισης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="264"/>
         <source>from most to least dialogues</source>
-        <translation>du plus au moins dialogues</translation>
+        <translation>κατά φθίνοντα αριθμό διαλόγων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="269"/>
         <source>from least to most dialogues</source>
-        <translation>du moins au plus dialogues</translation>
-    </message>
-    <message>
-        <source>Choose character:</source>
-        <translation type="vanished">Choisissez personnages:</translation>
+        <translation>κατά αύξοντα αριθμό διαλόγων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="316"/>
         <source>Scene Duration</source>
-        <translation>Durée de la scène</translation>
+        <translation>Διάρκεια Σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="326"/>
         <source>Action Duration</source>
-        <translation>Durée de l&apos;action</translation>
+        <translation>Διάρκεια Δράσης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="336"/>
         <source>Dialogues Duration</source>
-        <translation>Durée des dialogues</translation>
+        <translation>Διάρκεια Διαλόγων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="346"/>
         <source>Characters Count</source>
-        <translation>Compteur des personnages</translation>
+        <translation>Αριθμός Χαρακτήρων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="356"/>
         <source>Dialogues Count</source>
-        <translation>Compteur des dialogues</translation>
-    </message>
-    <message>
-        <source>Choose characters:</source>
-        <translation type="vanished">Choisir personnages:</translation>
+        <translation>Αριθμός Διαλόγων</translation>
     </message>
 </context>
 <context>
@@ -5156,154 +4762,114 @@ S&apos;identifier&lt;/a&gt;</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="14"/>
         <source>Edit Scenario Template</source>
-        <translation>Modifier le modèle de scénario</translation>
+        <translation>Επεξεργασία Προτύπου Σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="20"/>
         <source>Common</source>
-        <translation>Commun</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="258"/>
-        <source>Name:</source>
-        <translation>Nom:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="97"/>
-        <source>Description:</source>
-        <translation>Description:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="106"/>
-        <source>A4</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="116"/>
-        <source>Letter</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="139"/>
-        <source>Fields, mm:</source>
-        <translation>Des champs, mm:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="146"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="440"/>
-        <source>Left:</source>
-        <translation>Gauche:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="166"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="358"/>
-        <source>Top:</source>
-        <translation>Haut:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="186"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="457"/>
-        <source>Right:</source>
-        <translation>Droit:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="206"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="389"/>
-        <source>Bottom:</source>
-        <translation>Bas:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="241"/>
-        <source>Numbering:</source>
-        <translation>Numérotage:</translation>
+        <translation>Κοινό</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="38"/>
         <source>Top</source>
-        <translation>Haut</translation>
+        <translation>Πάνω</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="43"/>
         <source>Bottom</source>
-        <translation>Bas</translation>
+        <translation>Κάτω</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="61"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="585"/>
         <source>Left</source>
-        <translation>Gauche</translation>
+        <translation>Αριστερά</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="66"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="590"/>
         <source>Center</source>
-        <translation>Centre</translation>
+        <translation>Κέντρο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="71"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="595"/>
         <source>Right</source>
-        <translation>Droit</translation>
+        <translation>Δεξιά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="97"/>
+        <source>Description:</source>
+        <translation>Περιγραφή:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="106"/>
+        <source>A4</source>
+        <translation>Α4</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="116"/>
+        <source>Letter</source>
+        <translation>Letter</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="139"/>
+        <source>Fields, mm:</source>
+        <translation>πεδία, χιλιοστά:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="146"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="440"/>
+        <source>Left:</source>
+        <translation>Αριστερά:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="166"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="358"/>
+        <source>Top:</source>
+        <translation>Πάνω:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="186"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="457"/>
+        <source>Right:</source>
+        <translation>Δεξιά:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="206"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="389"/>
+        <source>Bottom:</source>
+        <translation>Κάτω:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="241"/>
+        <source>Numbering:</source>
+        <translation>Αρίθμηση:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="248"/>
         <source>Page format:</source>
-        <translation>Formatage page:</translation>
+        <translation>Μορφή σελίδας:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="258"/>
+        <source>Name:</source>
+        <translation>Όνομα:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="290"/>
         <source>Active</source>
-        <translation>Actif</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="660"/>
-        <source>Bold</source>
-        <translation>Gras</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="493"/>
-        <source>Line spacing:</source>
-        <translation>Interligne:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="501"/>
-        <source>Single</source>
-        <translation>Unique</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="506"/>
-        <source>One and Half</source>
-        <translation>Un et demi</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="511"/>
-        <source>Double</source>
-        <translation>Double</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="516"/>
-        <source>Fixed</source>
-        <translation>Fixé</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="527"/>
-        <source>value, mm</source>
-        <translation>valeur, mm</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="484"/>
-        <source>Underline</source>
-        <translation>Souligner</translation>
+        <translation>Ενεργό</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="338"/>
         <source>Spacing</source>
-        <translation>Espacement</translation>
+        <translation>Περιθώρια</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="345"/>
         <source>Lines</source>
-        <translation>Lignes</translation>
+        <translation>Γραμμές</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="350"/>
@@ -5316,69 +4882,97 @@ S&apos;identifier&lt;/a&gt;</translation>
         <translation>mm:</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="625"/>
-        <source>Font:</source>
-        <translation>Police:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="645"/>
-        <source>pt</source>
-        <translation>pt</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="571"/>
-        <source>Alignment:</source>
-        <translation>Alignement:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="600"/>
-        <source>Justify</source>
-        <translation>Justifier</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="477"/>
         <source>Uppercase</source>
-        <translation>Majuscule</translation>
+        <translation>Κεφαλαία</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="484"/>
+        <source>Underline</source>
+        <translation>Υπογράμμιση</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="493"/>
+        <source>Line spacing:</source>
+        <translation>Διάκενο:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="501"/>
+        <source>Single</source>
+        <translation>Μονό</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="506"/>
+        <source>One and Half</source>
+        <translation>Ενάμιση</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="511"/>
+        <source>Double</source>
+        <translation>Δύο</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="516"/>
+        <source>Fixed</source>
+        <translation>Ορισμένο</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="527"/>
+        <source>value, mm</source>
+        <translation>τιμή, χιλιοστά</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="562"/>
         <source>Italic</source>
-        <translation>Italique</translation>
+        <translation>Πλάγια</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="571"/>
+        <source>Alignment:</source>
+        <translation>Στοίχιση:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="600"/>
+        <source>Justify</source>
+        <translation>Πλήρη στοίχιση</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="625"/>
+        <source>Font:</source>
+        <translation>Γραμματοσειρά:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="645"/>
+        <source>pt</source>
+        <translation>στ</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="660"/>
+        <source>Bold</source>
+        <translation>Έντονα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="670"/>
         <source>Framing brackets</source>
-        <translation>Parenthese crochet</translation>
+        <translation>Αγκύλες διαμόρφωσης</translation>
     </message>
 </context>
 <context>
     <name>ToolsSettings</name>
     <message>
-        <source>Form</source>
-        <translation type="obsolete">Formulaire</translation>
-    </message>
-    <message>
-        <source>Apply Selected Template</source>
-        <translation type="obsolete">Appliquer le modèle sélectionné</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="35"/>
         <source>Back to tools list</source>
-        <translation>Retour à la liste des outils</translation>
+        <translation>Πίσω στη λίστα εργαλείων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="95"/>
         <source>Compare</source>
-        <translation>Comparer</translation>
+        <translation>Σύγκριση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="105"/>
         <source>with</source>
-        <translation>avec</translation>
-    </message>
-    <message>
-        <source>Apply</source>
-        <translation type="obsolete">Appliquer</translation>
+        <translation>με</translation>
     </message>
 </context>
 <context>
@@ -5386,166 +4980,166 @@ S&apos;identifier&lt;/a&gt;</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="14"/>
         <source>Form</source>
-        <translation>Formulaire</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="24"/>
         <source>Palette colors</source>
-        <translation>Couleurs de la palette</translation>
+        <translation>Χρώματα παλέτας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="30"/>
         <source>Inactive</source>
-        <translation>Inactif</translation>
+        <translation>Ανενεργό</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="37"/>
         <source>WindowText</source>
-        <translation></translation>
+        <translation>WindowText</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="53"/>
         <source>Active</source>
-        <translation>Actif</translation>
+        <translation>Ενεργό</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="66"/>
         <source>Light</source>
-        <translation>Light</translation>
+        <translation>Φωτεινό</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="94"/>
         <source>Button</source>
-        <translation>Bouton</translation>
+        <translation>Κουμπί</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="109"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/qpalette.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Info&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/qpalette.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Πληροφορίες&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="119"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="381"/>
         <source>Reset to defaults</source>
-        <translation>Réinitialiser par défaut</translation>
+        <translation>Επαναφορά στις προεπιλογές</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="139"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="401"/>
         <source>Save</source>
-        <translation>Enregistrer</translation>
+        <translation>Αποθήκευση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="146"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="408"/>
         <source>Load</source>
-        <translation>Charge</translation>
+        <translation>Φόρτωση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="153"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="415"/>
         <source>Apply</source>
-        <translation>Appliquer</translation>
+        <translation>Εφαρμογή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="162"/>
         <source>BrightText</source>
-        <translation></translation>
+        <translation>BrightText</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="169"/>
         <source>Midlight</source>
-        <translation></translation>
+        <translation>Ημίφως</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="185"/>
         <source>Dark</source>
-        <translation></translation>
+        <translation>Σκοτεινό</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="201"/>
         <source>Mid</source>
-        <translation></translation>
+        <translation>Μεσαίο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="208"/>
         <source>Disabled</source>
-        <translation></translation>
+        <translation>Απενεργοποιημένο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="224"/>
         <source>Text</source>
-        <translation>Texte</translation>
+        <translation>Κείμενο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="243"/>
         <source>ButtonText</source>
-        <translation></translation>
+        <translation>ButtonText</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="262"/>
         <source>Shadow</source>
-        <translation></translation>
+        <translation>Σκιά</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="278"/>
         <source>Highlight</source>
-        <translation></translation>
+        <translation>Επισήμανση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="294"/>
         <source>HighlightedText</source>
-        <translation></translation>
+        <translation>HighlightedText</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="310"/>
         <source>AlternateBase</source>
-        <translation></translation>
+        <translation>AlternateBase</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="323"/>
         <source>Base</source>
-        <translation></translation>
+        <translation>Βάση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="339"/>
         <source>Window</source>
-        <translation></translation>
+        <translation>Παράθυρο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="360"/>
         <source>Style sheet</source>
-        <translation></translation>
+        <translation>Φύλλο διαμόρφωσης στιλ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="371"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/stylesheet-reference.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Info&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/stylesheet-reference.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Πληροφορίες&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="246"/>
         <source>Save palette to file</source>
-        <translation>Enregistrer la palette</translation>
+        <translation>Αποθήκευση παλέτας σε αρχείο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="306"/>
         <source>Open file with palette</source>
-        <translation>Ouvrir un fichier contenant une palette</translation>
+        <translation>Άνοιγμα αρχείου με παλέτα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="373"/>
         <source>Save style sheet to file</source>
-        <translation>Enregistrer la feuille de style</translation>
+        <translation>Αποθήκευση φύλλου διαμόρφωσης στιλ σε αρχείο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="384"/>
         <source>Open file with style sheet</source>
-        <translation>Ouvrir une feuille de style</translation>
+        <translation>Άνοιγμα αρχείου με φύλλο διαμόρφωσης στιλ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="472"/>
         <source>Choose color</source>
-        <translation>Choisir couleur</translation>
+        <translation>Επιλογή χρώματος</translation>
     </message>
 </context>
 <context>
@@ -5553,47 +5147,43 @@ S&apos;identifier&lt;/a&gt;</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="26"/>
         <source>New version is available</source>
-        <translation>Une nouvelle version est disponible</translation>
+        <translation>Νέα έκδοση είναι διαθέσιμη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="45"/>
         <source>KIT Scenarist doesn&apos;t support auto update on your OS now. &lt;br&gt;
 Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;link&lt;/a&gt;</source>
-        <translation>KIT Scenarist ne supporte pas les mise à vour automatique sur votre OS pour l&apos;instant.&lt;br&gt;
-Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;ce lien&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>I&apos;m sure want to download beta version</source>
-        <translation type="vanished">Je suis sûr de vouloir télécharger la version beta</translation>
+        <translation>Το KIT Scenarist δεν υποστηρίζει αυτόματη ενημέρωση στο λειτουργικό σας σύστημα προς το παρόν. &lt;br&gt;
+Παρακαλώ, κατεβάστε τη νεότερση έκδοση μέσω αυτού του &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;συνδέσμου&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="70"/>
         <source>I&apos;m sure. I want to download beta version</source>
-        <translation>Je suis sûr de vouloir télécharger la version beta</translation>
+        <translation>Είμαι σίγουρος/η. Θέλω να κατεβάσω τη δοκιμαστική έκδοση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="83"/>
         <source>&lt;html&gt;&lt;body&gt;&lt;p&gt;Beta version is an early version of a program or application that contains most of the major features, but is not yet complete. These versions are released to the general public, for testing and feedback.
 &lt;br&gt;&lt;br&gt;If you use beta version and send feedback to developer you helps him to make application better.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;body&gt;&lt;p&gt;La version beta est une nouvelle version du programme ou de l&apos;application qui contient la plupart des foctionnalités principales, mais n&apos;est pas encore complète. Cette version est destiné à un public pour les tests et les feedbacks.
-&lt;br&gt;&lt;br&gt;Si vous utilisez la version beta et que vous envoyez un feedback aux developpeurs cela les aidera à faire une meilleur application.&lt;/p&gt;
+        <translation>&lt;html&gt;&lt;body&gt;&lt;p&gt;Η δοκιμαστική έκδοση είναι μια πρώιμη έκδοση ενός προγράμματος ή μιας εφαρμογής που περιέχει τις περισσότερες σημαντικές λειτουργίες, αλλά δεν είναι ακόμα έτοιμη. Αυτές οι εκδόσεις εκδίδονται στο ευρύ κοινό για δοκιμή και ανατροφοδότηση.
+&lt;br&gt;&lt;br&gt;Αν χρησιμοποιείτε την δοκιμαστική έκδοση και στέλνετε μηνύματα ανατροφοδότησης στον αναπτύσσοντα την εφαρμογή, τον βοηθάτε να την κάνει καλύτερη.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="120"/>
         <source>Download</source>
-        <translation>Télécharger</translation>
+        <translation>Λήψη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="127"/>
         <source>Skip</source>
-        <translation>Passer</translation>
+        <translation>Παράβλεψη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="134"/>
         <source>Cancel</source>
-        <translation>Annuler</translation>
+        <translation>Ακύρωση</translation>
     </message>
 </context>
 <context>
@@ -5601,7 +5191,7 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.cpp" line="21"/>
         <source>version</source>
-        <translation>version</translation>
+        <translation>έκδοση</translation>
     </message>
 </context>
 <context>
@@ -5609,22 +5199,22 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="182"/>
         <source>Create</source>
-        <translation>Créer</translation>
+        <translation>Δημιουργία</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="187"/>
         <source>New Project</source>
-        <translation>Nouveau projet</translation>
+        <translation>Νέο Έργο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="228"/>
         <source>Choose file for new project</source>
-        <translation>Choisir le fichier de nouveau projet</translation>
+        <translation>Επιλογή αρχείου για νέο έργο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="242"/>
         <source>Choose file to import</source>
-        <translation>Choisir le fichier à importer</translation>
+        <translation>Επιλογή αρχείου για εισαγωγή</translation>
     </message>
 </context>
 <context>
@@ -5640,12 +5230,12 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.cpp" line="12"/>
         <source>Add new bookmark</source>
-        <translation>Ajouter un nouveau signet</translation>
+        <translation>Προσθήκη Σελιδοδείκτη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.cpp" line="12"/>
         <source>Update bookmark</source>
-        <translation>Mettre à jour le signet</translation>
+        <translation>Ενημέρωση Σελιδοδείκτη</translation>
     </message>
 </context>
 <context>
@@ -5653,7 +5243,7 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.cpp" line="27"/>
         <source>Change</source>
-        <translation>Changer</translation>
+        <translation>Αλλαγή</translation>
     </message>
 </context>
 <context>
@@ -5661,12 +5251,12 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.cpp" line="41"/>
         <source>Send report</source>
-        <translation>Envoyer rapport</translation>
+        <translation>Αποστολή αναφοράς</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.cpp" line="42"/>
         <source>Don&apos;t send</source>
-        <translation>Ne pas envoyer</translation>
+        <translation>Όχι αποστολή</translation>
     </message>
 </context>
 <context>
@@ -5674,92 +5264,92 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="259"/>
         <source>Choose file to export research</source>
-        <translation>Choisir le fichier où exporter le recherche</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="320"/>
-        <source>Choose file to export scenario</source>
-        <translation>Choisir le fichier où exporter le scénario</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="370"/>
-        <source>Rewrite</source>
-        <translation>Récrire</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="370"/>
-        <source>Export</source>
-        <translation>Exporter</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="416"/>
-        <source>Export research</source>
-        <translation>Exporter la recherche</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="417"/>
-        <source>Export outline</source>
-        <translation>Exporter le plan</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="418"/>
-        <source>Export script</source>
-        <translation>Exporter le scénario</translation>
+        <translation>Επιλογή αρχείου για εξαγωγή έρευνας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="261"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="322"/>
         <source>%1 files (*%2)</source>
-        <translation>%1ficher(*%2)</translation>
+        <translation>%1 αρχεία (*%2)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="320"/>
+        <source>Choose file to export scenario</source>
+        <translation>Επιλογή αρχείου για εξαγωγή σεναρίου</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="370"/>
+        <source>Rewrite</source>
+        <translation>Επανεγγραφή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="370"/>
+        <source>Export</source>
+        <translation>Εξαγωγή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="416"/>
+        <source>Export research</source>
+        <translation>Εξαγωγή έρευνας</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="417"/>
+        <source>Export outline</source>
+        <translation>Εξαγωγή περιγράμματος</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="418"/>
+        <source>Export script</source>
+        <translation>Εξαγωγή σεναρίου</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ImportDialog</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="82"/>
-        <source>Choose file to import</source>
-        <translation>Choisir le fichier à importer</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="51"/>
         <source>Import</source>
-        <translation>Importer</translation>
+        <translation>Εισαγωγή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="82"/>
+        <source>Choose file to import</source>
+        <translation>Επιλογή αρχείου για εξαγωγή</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::LoginDialog</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="114"/>
-        <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a confirmation code.</source>
-        <translation>Un e-mail &lt;b&gt;%1&lt;/b&gt; avec un code de confirmation vient de vous être envoyé.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="125"/>
-        <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a password.</source>
-        <translation>Un e-mail &lt;b&gt;%1&lt;/b&gt; avec un mot de passe vient de vous être envoyé.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="178"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="190"/>
-        <source>Email is invalid</source>
-        <translation>L&apos;email est invalide</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="41"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="249"/>
         <source>Login</source>
-        <translation>S&apos;identifier</translation>
+        <translation>Είσοδος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="42"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="250"/>
         <source>Sign Up</source>
-        <translation>S&apos;enregistrer</translation>
+        <translation>Εγγραφή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="114"/>
+        <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a confirmation code.</source>
+        <translation>Στο ηλ-ταχ. σας &lt;b&gt;%1&lt;/b&gt; απεστάλη γράμμα με κωδικό επιβεβαίωσης.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="125"/>
+        <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a password.</source>
+        <translation>Στο ηλ-ταχ. σας &lt;b&gt;%1&lt;/b&gt; απεστάλη γράμμα με συνθηματικό.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="178"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="190"/>
+        <source>Email is invalid</source>
+        <translation>Το ηλ-ταχ. είναι άκυρο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="280"/>
         <source>Email is empty</source>
-        <translation>L&apos;email est vide</translation>
+        <translation>Το ηλ-ταχ. είναι άδειο</translation>
     </message>
 </context>
 <context>
@@ -5767,27 +5357,27 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="144"/>
         <source>Connect</source>
-        <translation>Connecter</translation>
+        <translation>Σύνδεση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="154"/>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;S&apos;identifier&lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Είσοδος&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="192"/>
         <source>Account is active until:</source>
-        <translation>Le compte est actif depuis:</translation>
+        <translation>Ο λογαριασμός είναι ενεργός μέχρι:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="195"/>
         <source>Account is inactive</source>
-        <translation>Le compte est inactif</translation>
+        <translation>Ο λογαριασμός είναι ανενεργός</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="206"/>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation>%1 Gb Utilisés sur %2 Gb libres</translation>
+        <translation>%1 GΒ από %2 GB σε χρήση</translation>
     </message>
 </context>
 <context>
@@ -5795,21 +5385,21 @@ Merci de télécharger la nouvelle version en suivant &lt;a href=&quot;https://k
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="222"/>
         <source>Next</source>
-        <translation>Suivant</translation>
+        <translation>Επόμενο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="256"/>
         <source>Finish</source>
-        <translation>Terminer</translation>
+        <translation>Τέλος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="274"/>
         <source>Will be used default settings.
 
 The application will start in few seconds.</source>
-        <translation>Les paramètres par défauts seront utilisés.
+        <translation>Θα χρησιμοποιηθούν οι προκαθορισμένες ρυθμίσεις.
 
-L’application va démarrer dans quelques secondes.</translation>
+Η εφαρμογή θα αρχίσει σε λίγα δευτερόλεπτα.</translation>
     </message>
 </context>
 <context>
@@ -5817,55 +5407,55 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectsList.cpp" line="51"/>
         <source>no changes</source>
-        <translation>aucune modification</translation>
+        <translation>καμία αλλαγή</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::RenewSubscriptionDialog</name>
     <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="35"/>
+        <source>Renew</source>
+        <translation>Ανανέωση</translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="64"/>
         <source>Cancel</source>
-        <translation>Annuler</translation>
+        <translation>Ακύρωση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="78"/>
         <source>Close</source>
-        <translation>Fermer</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="88"/>
         <source>for %1 rubles</source>
-        <translation>pour %1 roubles</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="35"/>
-        <source>Renew</source>
-        <translation>Renouveller</translation>
+        <translation>για %1 ρούβλια</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="122"/>
         <source>1 month</source>
-        <translation>1 mois</translation>
+        <translation>1 μήνας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="123"/>
         <source>2 month</source>
-        <translation>2 mois</translation>
+        <translation>2 μήνες</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="124"/>
         <source>3 month</source>
-        <translation>3 mois</translation>
+        <translation>3 μήνες</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="125"/>
         <source>6 month (6% discount)</source>
-        <translation>6 mois (6% de réduction)</translation>
+        <translation>6 μήνες (6% έκπτωση)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="126"/>
         <source>12 month (12% discount)</source>
-        <translation>12 mois (12% discount)</translation>
+        <translation>12 μήνες (12% έκπτωση)</translation>
     </message>
 </context>
 <context>
@@ -5873,12 +5463,12 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.cpp" line="18"/>
         <source>Add</source>
-        <translation>Ajouter</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.cpp" line="36"/>
         <source>Insert into &quot;%1&quot;</source>
-        <translation>Insérer dans &quot;%1&quot;</translation>
+        <translation>Εισαγωγή στο &quot;%1&quot;</translation>
     </message>
 </context>
 <context>
@@ -5886,105 +5476,105 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="320"/>
         <source>Find All Characters from Script</source>
-        <translation>Trouver tous les personnages dans le scénario</translation>
+        <translation>Εύρεση Όλων των Χαρακτήρων από το Σενάριο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="350"/>
         <source>Find All Locations from Script</source>
-        <translation>Trouver tous les décors dans le scénario</translation>
+        <translation>Εύρεση Όλων των Τοποθεσιών από το Σενάριο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="733"/>
         <source>Save mind map</source>
-        <translation>Sauver le mind map</translation>
+        <translation>Αποθήκευση χάρτη μυαλού</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="733"/>
         <source>PNG files (*.png)</source>
-        <translation>Fichers PNG(*.png)</translation>
+        <translation>PNG αρχεία (*.png)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="786"/>
         <source>Character name</source>
-        <translation>Nom du personnage</translation>
+        <translation>Όνομα χαρακτήρα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="788"/>
         <source>Location name</source>
-        <translation>Nom du décor</translation>
+        <translation>Όνομα τοποθεσίας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="949"/>
         <source>Choose image</source>
-        <translation>Choisir une image</translation>
+        <translation>Επιλογή εικόνας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="950"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
-        <translation>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
+        <translation>Εικόνες (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ScenarioCardsView</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="229"/>
-        <source>Add new card</source>
-        <translation>Ajouter une nouvelle carte</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="218"/>
-        <source>Draft</source>
-        <translation>Brouillon</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="99"/>
         <source>Cards.png</source>
-        <translation>Cartes.png</translation>
+        <translation>Κάρτες.png</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="100"/>
         <source>Save cards</source>
-        <translation>Sauvegarder les cartes</translation>
+        <translation>Αποθήκευση καρτών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="100"/>
         <source>PNG files (*.png)</source>
-        <translation>Fichers PNG(*.png)</translation>
+        <translation>αρχεία PNG (*.png)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="218"/>
+        <source>Draft</source>
+        <translation>Πρόχειρο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="223"/>
         <source>Script</source>
-        <translation>Scénario</translation>
+        <translation>Σενάριο</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="229"/>
+        <source>Add new card</source>
+        <translation>Προσθήκη νέας κάρτας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="232"/>
         <source>Remove selected card</source>
-        <translation>Supprimer les cartes selectionnées</translation>
+        <translation>Αφαίρεση επιλεγμένης κάρτας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="235"/>
         <source>Sort cards</source>
-        <translation>Trier cartes</translation>
+        <translation>Ταξινόμηση καρτών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="249"/>
         <source>Search cards</source>
-        <translation type="unfinished"></translation>
+        <translation>Αναζήτηση καρτών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="253"/>
         <source>Save cards to file</source>
-        <translation>Sauvegarder les cartes sous</translation>
+        <translation>Αποθήκευση καρτών σε αρχείο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="256"/>
         <source>Print cards</source>
-        <translation>Imprimer les cartes</translation>
+        <translation>Εκτύπωση καρτών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="260"/>
         <source>On/off Fullscreen Mode</source>
-        <translation>Actif/ Désactiver le mode plein écran</translation>
+        <translation>Άνοιγμα/κλείσιμο Λειτουργίας Πλήρους Οθόνης</translation>
     </message>
 </context>
 <context>
@@ -5992,12 +5582,12 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioFastFormatWidget.cpp" line="58"/>
         <source>↑ Prev</source>
-        <translation>↑ Précédent</translation>
+        <translation>↑ Προηγούμενο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioFastFormatWidget.cpp" line="79"/>
         <source>↓ Next</source>
-        <translation>↓ Suivant</translation>
+        <translation>↓ Επόμενο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioFastFormatWidget.cpp" line="136"/>
@@ -6008,180 +5598,172 @@ L’application va démarrer dans quelques secondes.</translation>
 <context>
     <name>UserInterface::ScenarioItemDialog</name>
     <message>
-        <source>Add scenario item</source>
-        <translation type="vanished">Ajouter scénario article</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="146"/>
-        <source>Folder</source>
-        <translation>Dossier</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="145"/>
-        <source>Scene</source>
-        <translation>Scène</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="19"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="34"/>
         <source>Add</source>
-        <translation>Ajouter</translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="32"/>
         <source>Add Scene</source>
-        <translation>Ajouter une scène</translation>
+        <translation>Προσθήκη σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
         <source>Add Folder</source>
-        <translation>Ajouter dossier</translation>
+        <translation>Προσθήκη Φακέλου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
         <source>Add Act</source>
-        <translation>Ajouter une action</translation>
+        <translation>Προσθήκη Πράξης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="40"/>
         <source>Edit Scene</source>
-        <translation>Modifier la scène</translation>
+        <translation>Επεξεργασία Σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="41"/>
         <source>Edit Act</source>
-        <translation>Modifier l&apos;action</translation>
+        <translation>Επεξεργασία Πράξης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="42"/>
         <source>Save</source>
-        <translation>Enregistrer</translation>
+        <translation>Αποθήκευση</translation>
     </message>
     <message>
-        <source>Scene Description</source>
-        <translation type="vanished">Scène description</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="145"/>
+        <source>Scene</source>
+        <translation>Σκηνή</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="146"/>
+        <source>Folder</source>
+        <translation>Φάκελος</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ScenarioNavigator</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="313"/>
-        <source>Create After</source>
-        <translation>Créer après</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="314"/>
-        <source>Remove</source>
-        <translation>Supprimer</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="228"/>
         <source>Convert to scene</source>
-        <translation>Convertir en scène</translation>
+        <translation>Μετατροπή σε σκηνή</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="230"/>
         <source>Convert to folder</source>
-        <translation>Convertir en dossier</translation>
+        <translation>Μετατροπή σε φάκελο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="254"/>
         <source>Clear all colors</source>
-        <translation>Effacer toutes les couleurs</translation>
+        <translation>Εκκαθάριση όλων των χρωμάτων</translation>
     </message>
     <message>
         <source>Color %1</source>
-        <translation type="vanished">Couleur %1</translation>
+        <translation type="vanished">Χρώμα %1</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="271"/>
         <source>Main color</source>
-        <translation type="unfinished"></translation>
+        <translation>Κύριο χρώμα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="272"/>
         <source>Additional color %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρόσθετο χρώμα %1</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="274"/>
         <source>Clear</source>
-        <translation>Effacer</translation>
+        <translation>Εκκαθάριση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="295"/>
         <source>Add color</source>
-        <translation>Ajoutez couleur</translation>
+        <translation>Προσθήκη Χρώματος</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="313"/>
+        <source>Create After</source>
+        <translation>Δημιουργία Μετά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="314"/>
+        <source>Remove</source>
+        <translation>Αφαίρεση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="377"/>
         <source>Draft:</source>
-        <translation>Brouillon:</translation>
+        <translation>Πρόχειρο:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="379"/>
         <source>Scenes:</source>
-        <translation>Scènes:</translation>
+        <translation>Σκηνές:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="381"/>
         <source>Scenes Count</source>
-        <translation>Scènes compteur</translation>
+        <translation>Αριθμός Σκηνών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="385"/>
         <source>Add Scenario Item After Selected</source>
-        <translation>Ajouter item scénario après sélectionné</translation>
+        <translation>Προσθήκη Στοιχείου Σεναρίου Μετα το Επιλεγμένο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="388"/>
         <source>Remove Selected Scenario Item</source>
-        <translation>Supprimer item scénario séléctionné</translation>
+        <translation>Αφαίρεση Επιλεγμένου Στοιχείου Σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="393"/>
         <source>Show/hide additional panels</source>
-        <translation>Afficher/masquer les fenêtres supplémentaires</translation>
+        <translation>Προβολή/Απόκρυψη πρόσθετων παραθύρων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="401"/>
         <source>Draft</source>
-        <translation>Brouillon</translation>
+        <translation>Πρόχειρο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="403"/>
         <source>Show/hide draft</source>
-        <translation>Afficher/masquer brouillon</translation>
+        <translation>Προβολή/Απόκρυψη πρόχειρου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="406"/>
         <source>Scene description</source>
-        <translation>Description de la scène</translation>
+        <translation>Περιγραφή Σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="407"/>
         <source>Show/hide scene note</source>
-        <translation>Afficher/masquer scène note </translation>
+        <translation>Προβολή/Απόκρυψη σημείωσης σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="411"/>
         <source>Script bookmarks</source>
-        <translation>Signets de script</translation>
+        <translation>Σελιδοδείκτες σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="412"/>
         <source>Show/hide script bookmarks</source>
-        <translation>Afficher/cacher les signets de script</translation>
+        <translation>Προβολή/Απόκρυψη σελιδοδεικτών σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="416"/>
         <source>Script dictionaries</source>
-        <translation>Dictionnaires de scénario</translation>
+        <translation>Λεξικά σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="417"/>
         <source>Show/hide script dictionaries</source>
-        <translation>Afficher/masquer les dictionnaires de scénario</translation>
+        <translation>Προβολή/Απόκρυψη λεξικών σεναρίου</translation>
     </message>
 </context>
 <context>
@@ -6189,42 +5771,42 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="205"/>
         <source>Comment</source>
-        <translation>Commentaire</translation>
+        <translation>Σχόλιο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="271"/>
         <source>Review</source>
-        <translation>Révision</translation>
+        <translation>Κριτική</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="276"/>
         <source>Change text color</source>
-        <translation>Changer la couleur du texte</translation>
+        <translation>Αλλαγή χρώματος κειμένου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="280"/>
         <source>Change text background</source>
-        <translation>Modifier le fond du texte</translation>
+        <translation>Αλλαγή παρασκηνίου κειμένου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="284"/>
         <source>Highlight text</source>
-        <translation>Texte surligné</translation>
+        <translation>Επισήμανση κειμένου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="288"/>
         <source>Add comment</source>
-        <translation>Ajouter un commentaire</translation>
+        <translation>Προσθήκη σχολίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="292"/>
         <source>Mark as done</source>
-        <translation>Marquer comme terminé</translation>
+        <translation>Σήμανση ως ολοκληρωμένο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="294"/>
         <source>Clear</source>
-        <translation>Effacer</translation>
+        <translation>Εκκαθάριση</translation>
     </message>
 </context>
 <context>
@@ -6232,28 +5814,28 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="131"/>
         <source>Edit</source>
-        <translation>Modifier</translation>
+        <translation>Επεξεργασία</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="132"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="217"/>
         <source>Reply</source>
-        <translation>Répondre</translation>
+        <translation>Απάντηση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="133"/>
         <source>Done</source>
-        <translation>Terminé</translation>
+        <translation>Τέλος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="136"/>
         <source>Remove</source>
-        <translation>Supprimer</translation>
+        <translation>Αφαίρεση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="198"/>
         <source>Comment</source>
-        <translation>Commentaire</translation>
+        <translation>Σχόλιο</translation>
     </message>
 </context>
 <context>
@@ -6261,23 +5843,12 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="109"/>
         <source>Copy scene description to the script</source>
-        <translation>Copier la description de scène dans le scénario</translation>
+        <translation>Αντιγραφή περιγραφής σκηνής στο σενάριο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="118"/>
         <source>Description of:</source>
-        <translation>Description du:</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::ScenarioSchemeItemDialog</name>
-    <message>
-        <source>Add</source>
-        <translation type="vanished">Ajouter</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">Enregistrer</translation>
+        <translation>Περιγραφή του:</translation>
     </message>
 </context>
 <context>
@@ -6285,17 +5856,17 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="569"/>
         <source>Remove bookmark</source>
-        <translation>Supprimer le signet</translation>
+        <translation>Αφαίρεση σελιδοδείκτη</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="574"/>
         <source>Add bookmark</source>
-        <translation>Ajouter un signet</translation>
+        <translation>Προσθήκη σελιδοδείκτη</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="649"/>
         <source>Change scene number</source>
-        <translation>Changer le numéro de la scène</translation>
+        <translation>Αλλαγή αριθμού σκηνής</translation>
     </message>
 </context>
 <context>
@@ -6303,62 +5874,62 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="121"/>
         <source>DRAFT</source>
-        <translation>RÉDIGER</translation>
+        <translation>ΠΡΟΧΕΙΡΟ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="539"/>
         <source>Undo</source>
-        <translation>Annuler</translation>
+        <translation>Αναίρεση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="540"/>
         <source>Redo</source>
-        <translation>Rétablir</translation>
+        <translation>Επανάληψη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="542"/>
         <source>Find and replace</source>
-        <translation>Rechercher et remplacer</translation>
+        <translation>Εύρεση και αντικατάσταση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="742"/>
         <source>Outline mode</source>
-        <translation>Mode outline</translation>
+        <translation>Λειτουργία Σύνοψης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="745"/>
         <source>Current Text Block Style</source>
-        <translation>Formatage du paragraphe</translation>
+        <translation>Στίλ Τρέχοντος Κομματιού Κειμένου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="751"/>
         <source>Undo last action</source>
-        <translation>Annuler la dernière action</translation>
+        <translation>Αναίρεση τελευταίας ενέργειας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="754"/>
         <source>Redo last action</source>
-        <translation>Rétablir la dernière action</translation>
+        <translation>Επανάληψη τελευταίας ενέργειας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="758"/>
         <source>Search and Replace</source>
-        <translation>Rechercher et remplacer</translation>
+        <translation>Αναζήτηση και Αντικατάσταση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="763"/>
         <source>Text Fast Format</source>
-        <translation>Formatage de texte rapide</translation>
+        <translation>Γρήγορη Μορφοποίηση Κειμένου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="768"/>
         <source>Duration from Start to Cursor Position | Full Duration</source>
-        <translation>Durée du début à la position du curseur | Plein Durée</translation>
+        <translation>Διάρκεια από την Αρχή μέχρι τη Θέση του Κέρσορα | Πλήρης Διάρκεια</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="789"/>
         <source>Lock/unlock scene numbers</source>
-        <translation>Verrouiller/déverrouiller les numéros de scène</translation>
+        <translation>Κλείδωμα/Ξεκλείδωμα αριθμών σκηνής</translation>
     </message>
 </context>
 <context>
@@ -6366,17 +5937,17 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="50"/>
         <source>Bookmarks</source>
-        <translation>Signets</translation>
+        <translation>Σελιδοδείκτες</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="53"/>
         <source>Edit selected bookmark</source>
-        <translation>Modifier le signet sélectionné</translation>
+        <translation>Επεξεργασία επιλεγμένου σελιδοδείκτη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="56"/>
         <source>Remove selected bookmark</source>
-        <translation>Supprimer le signet sélectionné </translation>
+        <translation>Αφαίρεση επιλεγμένου σελιδοδείκτη</translation>
     </message>
 </context>
 <context>
@@ -6384,37 +5955,37 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="39"/>
         <source>Scene intros</source>
-        <translation>Intros de scène</translation>
+        <translation>Εισαγωγές Σκηνών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="40"/>
         <source>Scene times</source>
-        <translation>Durée de la scène</translation>
+        <translation>Ώρες σκηνών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="41"/>
         <source>Scene days</source>
-        <translation>Date de la scène</translation>
+        <translation>Μέρες Σκηνών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="42"/>
         <source>Character states</source>
-        <translation>États émotionnels du personnage</translation>
+        <translation>Καταστάσεις Χαρακτήρων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="43"/>
         <source>Transitions</source>
-        <translation>Transistions</translation>
+        <translation>Μεταβάσεις</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="46"/>
         <source>Add dictionary item</source>
-        <translation>Ajouter un élément de dictionnaire</translation>
+        <translation>Προσθήκη στοιχείου λεξικού</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="49"/>
         <source>Remove selected item</source>
-        <translation>Suprimer l’élément sélectionné</translation>
+        <translation>Αφαίρεση επιλεγμένου στοιχείου</translation>
     </message>
 </context>
 <context>
@@ -6422,7 +5993,7 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionsList.cpp" line="65"/>
         <source>started by</source>
-        <translation>commencé par</translation>
+        <translation>ξεκίνησε από</translation>
     </message>
 </context>
 <context>
@@ -6430,247 +6001,248 @@ L’application va démarrer dans quelques secondes.</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScriptZenModeControls.cpp" line="83"/>
         <source>Typewriter sound</source>
-        <translation>Bruitage de machine à écrire</translation>
+        <translation>Ήχος γραφομηχανής</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::SettingsView</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="636"/>
-        <source>Choose backups saving folder</source>
-        <translation>Choisissez un dossier pour la copie de sauvegarde</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="824"/>
-        <source>Russian with Yo</source>
-        <translation>Russe avec ё</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="131"/>
+        <source>System</source>
+        <translation>Σύστημα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="136"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="825"/>
         <source>Russian</source>
-        <translation>Russe</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="161"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="833"/>
-        <source>Ukrainian</source>
-        <translation>Ukrainien</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="806"/>
-        <source>Belorussian</source>
-        <translation>Biélorusse</translation>
+        <translation>Ρώσικα</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="141"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="829"/>
         <source>Spanish</source>
-        <translation>l&apos;Espagnol</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="131"/>
-        <source>System</source>
-        <translation>Système</translation>
+        <translation>Ισπανικά</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="146"/>
         <source>English</source>
-        <translation>Anglais</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="156"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="819"/>
-        <source>Kazakh</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="166"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="813"/>
-        <source>German</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="171"/>
-        <source>Portuguese</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="181"/>
-        <source>Chinese</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="186"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="816"/>
-        <source>Hebrew</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="196"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="832"/>
-        <source>Turkish</source>
-        <translation>Turc</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="201"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="817"/>
-        <source>Hungarian</source>
-        <translation>Hongrois</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="206"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="818"/>
-        <source>Italian</source>
-        <translation>italien</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="211"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="805"/>
-        <source>Azerbaijani</source>
-        <translation>Azerbaïdjanais</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="216"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="831"/>
-        <source>Telugu</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="221"/>
-        <source>Brazilian Portuguese</source>
-        <translation>Brésilien Portugais</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="236"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="808"/>
-        <source>Dutch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="241"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="826"/>
-        <source>Serbian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="246"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="802"/>
-        <source>Arabic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="803"/>
-        <source>Armenian (Eastern)</source>
-        <translation>Arménien (Oriental)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="804"/>
-        <source>Armenian (Western)</source>
-        <translation>Arménien (Occidental)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="807"/>
-        <source>Catalan</source>
-        <translation>Catalan</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="809"/>
-        <source>English (GB)</source>
-        <translation>Anglais (GB)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="810"/>
-        <source>English (US)</source>
-        <translation>Anglais (US)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="176"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="811"/>
-        <source>Farsi</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="191"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="821"/>
-        <source>Polish</source>
-        <translation>Polonais</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="251"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="814"/>
-        <source>Greek</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="815"/>
-        <source>Greek (Polythonic)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="822"/>
-        <source>Portuguese (Brazil)</source>
-        <translation>Portugais (Brésil)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="823"/>
-        <source>Portuguese (Portugal)</source>
-        <translation>Portugais (Portugal)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="226"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="828"/>
-        <source>Slovenian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="820"/>
-        <source>Macedonian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="231"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="830"/>
-        <source>Swedish</source>
-        <translation>Suédois</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="827"/>
-        <source>Serbian (Latin script)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="858"/>
-        <source>Editing</source>
-        <translation>Modification</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="859"/>
-        <source>Shortcuts</source>
-        <translation>Raccourcis</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="893"/>
-        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
-but if you work with no terminations it saves project every %1 minutes.</source>
-        <translation>La sauvegarde automatique est très fiable : le projet est sauvegardé automatiquement au bout de 3 secondes d’inactivité. En cas d’activité continue sans pause, le projet est sauvegardé automatiquement toutes les %1 minutes.</translation>
+        <translation>Αγγλικά</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="151"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="812"/>
         <source>French</source>
-        <translation>Français</translation>
+        <translation>Γαλλικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="156"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="819"/>
+        <source>Kazakh</source>
+        <translation>Καζακ</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="161"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="833"/>
+        <source>Ukrainian</source>
+        <translation>Ουκρανικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="166"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="813"/>
+        <source>German</source>
+        <translation>Γερμανικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="171"/>
+        <source>Portuguese</source>
+        <translation>Πορτογαλικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="176"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="811"/>
+        <source>Farsi</source>
+        <translation>Φαρσί</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="181"/>
+        <source>Chinese</source>
+        <translation>Κινέζικα</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="186"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="816"/>
+        <source>Hebrew</source>
+        <translation>Εβραϊκά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="191"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="821"/>
+        <source>Polish</source>
+        <translation>Πολωνικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="196"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="832"/>
+        <source>Turkish</source>
+        <translation>Τούρκικα</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="201"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="817"/>
+        <source>Hungarian</source>
+        <translation>Ούγγρικα</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="206"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="818"/>
+        <source>Italian</source>
+        <translation>Ιταλικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="211"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="805"/>
+        <source>Azerbaijani</source>
+        <translation>Αζερμπαϊντζανικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="216"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="831"/>
+        <source>Telugu</source>
+        <translation>Τελεγκικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="221"/>
+        <source>Brazilian Portuguese</source>
+        <translation>Βραζιλιανά Πορτογαλικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="226"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="828"/>
+        <source>Slovenian</source>
+        <translation>Σλοβένικα</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="236"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="808"/>
+        <source>Dutch</source>
+        <translation>Ολλανδικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="241"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="826"/>
+        <source>Serbian</source>
+        <translation>Σερβικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="246"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="802"/>
+        <source>Arabic</source>
+        <translation>Αραβικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="251"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="814"/>
+        <source>Greek</source>
+        <translation>Ελληνικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="636"/>
+        <source>Choose backups saving folder</source>
+        <translation>Επιλογή φακέλου αποθήκευσης αντιγράφων ασφαλείας</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="803"/>
+        <source>Armenian (Eastern)</source>
+        <translation>Αρμένικα (Ανατολικά)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="804"/>
+        <source>Armenian (Western)</source>
+        <translation>Αρμένικα (Δυτικά)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="806"/>
+        <source>Belorussian</source>
+        <translation>Λευκορωσικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="807"/>
+        <source>Catalan</source>
+        <translation>Καταλανικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="809"/>
+        <source>English (GB)</source>
+        <translation>Αγγλικά (ΗΒ)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="810"/>
+        <source>English (US)</source>
+        <translation>Αγγλικά (ΗΠ)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="815"/>
+        <source>Greek (Polythonic)</source>
+        <translation>Ελληνικά (Πολυτονικό)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="820"/>
+        <source>Macedonian</source>
+        <translation>Βόρεια Μακεδονικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="822"/>
+        <source>Portuguese (Brazil)</source>
+        <translation>Πορτογαλικά (Βραζιλία)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="823"/>
+        <source>Portuguese (Portugal)</source>
+        <translation>Πορτογαλικά (Πορτογαλία)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="824"/>
+        <source>Russian with Yo</source>
+        <translation>Ρώσικα με Yo</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="231"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="830"/>
+        <source>Swedish</source>
+        <translation>Σουηδικά</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="827"/>
+        <source>Serbian (Latin script)</source>
+        <translation>Σερβικά (Λατινικό σενάριο)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="850"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="857"/>
         <source>Common</source>
-        <translation>Commun</translation>
+        <translation>Κοινό</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="851"/>
         <source>Modules</source>
-        <translation>Modules</translation>
+        <translation>Εξαρτήματα</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="858"/>
+        <source>Editing</source>
+        <translation>Επεξεργασία</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="859"/>
+        <source>Shortcuts</source>
+        <translation>Συντομεύσης</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="893"/>
+        <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
+but if you work with no terminations it saves project every %1 minutes.</source>
+        <translation>Η αυτόματη αποθήκευση λειτουργεί με μεγάλη ακρίβεια. Αποθηκέυει το έργο καθε 3 δευτερόλεπτα αν δεν χρησιμοποιείτε ποντίκι ή πληκτρολόγιο, 
+αλλά αν δουλεύετε ασταμάτητα αποθηκεύει το έργο κάθε %1 λεπτά.</translation>
     </message>
 </context>
 <context>
@@ -6678,148 +6250,125 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.cpp" line="38"/>
         <source>Share</source>
-        <translation>Partager</translation>
-    </message>
-</context>
-<context>
-    <name>UserInterface::StartUpView</name>
-    <message>
-        <source>Account is active until:</source>
-        <translation type="vanished">Le compte est actif depuis:</translation>
-    </message>
-    <message>
-        <source>Account is inactive</source>
-        <translation type="vanished">Le compte est inactif</translation>
-    </message>
-    <message>
-        <source>Used %1 Gb from %2 Gb</source>
-        <translation type="vanished">%1 Gb Utilisés sur %2 Gb libres</translation>
-    </message>
-    <message>
-        <source>Connect</source>
-        <translation type="vanished">Connecter</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;S&apos;identifier&lt;/a&gt;</translation>
+        <translation>Κοινή χρήση</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::StatisticsView</name>
     <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="78"/>
+        <source>Statistics</source>
+        <translation>Στατιστικά</translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="166"/>
         <source>Preparing report</source>
-        <translation>Préparation du rapport</translation>
+        <translation>Προετοιμασία αναφοράς</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="166"/>
         <source>Please wait. Preparing report to preview can take few minutes.</source>
-        <translation>S&apos;il vous plaît, attendez. La préparation de l&apos;aperçu du rapport peut prendre quelques minutes.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="262"/>
-        <source>Save report</source>
-        <translation>Enregistrer le rapport</translation>
+        <translation>Παρακαλώ περιμένετε. Η προετοιμασια αναφοράς για προεπισκόπηση μπορεί να πάρει λίγα λεπτά.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="261"/>
         <source>Report.pdf</source>
-        <translation>Rapport.pdf</translation>
+        <translation>Αναφορά.pdf</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="78"/>
-        <source>Statistics</source>
-        <translation>Statistiques</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="262"/>
+        <source>Save report</source>
+        <translation>Αποθήκευση αναφοράς</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="262"/>
         <source>PDF files (*.pdf)</source>
-        <translation>Ficher PDF(*.pdf)</translation>
+        <translation>Αρχεία PDF (*.pdf)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="283"/>
         <source>Plot.png</source>
-        <translation>Plot.png</translation>
+        <translation>Γράφημα.png</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="284"/>
         <source>Save plot</source>
-        <translation>Enregistrer le plot</translation>
+        <translation>Αποθήκευση γραφήματος</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="284"/>
         <source>PNG files (*.png)</source>
-        <translation>Fichers PNG(*.png)</translation>
+        <translation>αρχεία PNG (*.png)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="302"/>
         <source>Report settings</source>
-        <translation>Paramètres du rapport</translation>
+        <translation>Ρυθμίσεις αναφοράς</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="305"/>
         <source>Print preview</source>
-        <translation>Aperçu avant impression</translation>
+        <translation>Εκτύπωση προεπισκόπησης</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="307"/>
         <source>Save report to file</source>
-        <translation>Enregistrer le rapport sous</translation>
+        <translation>Αποθήκευση αναφοράς σε αρχείο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="309"/>
         <source>Update current report</source>
-        <translation>Actualiser le rapport courant</translation>
+        <translation>Ενημέρωση τρέχουσας αναφοράς</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="316"/>
         <source>Reports</source>
-        <translation>Rapports</translation>
+        <translation>Αναφορές</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="318"/>
         <source>Summary statistics</source>
-        <translation>Sommaire des statistiques</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="334"/>
-        <source>Characters dialogues</source>
-        <translation>Dialogues des personnages</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="343"/>
-        <source>Plots</source>
-        <translation>Plots</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="345"/>
-        <source>Story structure analysis</source>
-        <translation>Analyse de la structure de l&apos;histoire</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="349"/>
-        <source>Characters activity</source>
-        <translation>Activité des personnages</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="440"/>
-        <source>Duration, minutes</source>
-        <translation>Durée, minutes</translation>
+        <translation>Περίληψη στατιστικών</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="322"/>
         <source>Scene report</source>
-        <translation>Rapport de scène</translation>
+        <translation>Αναφορά Σκηνής</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="326"/>
         <source>Location report</source>
-        <translation>Rapport des décors</translation>
+        <translation>Αναφορά Τοποθεσίας</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="330"/>
         <source>Cast report</source>
-        <translation>Rapport des personnages</translation>
+        <translation>Αναφορά Ρόλων</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="334"/>
+        <source>Characters dialogues</source>
+        <translation>Διάλογοι Χαρακτήρων</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="343"/>
+        <source>Plots</source>
+        <translation>Γραφήματα</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="345"/>
+        <source>Story structure analysis</source>
+        <translation>Ανάλυση δομής ιστορίας</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="349"/>
+        <source>Characters activity</source>
+        <translation>Δράση Χαρακτήρων</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="440"/>
+        <source>Duration, minutes</source>
+        <translation>Διάρκεια, λεπτά</translation>
     </message>
 </context>
 <context>
@@ -6827,7 +6376,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.cpp" line="98"/>
         <source>Unnamed Template</source>
-        <translation>Modèle sans nom</translation>
+        <translation>Ανώνυμο Πρότυπο</translation>
     </message>
 </context>
 <context>
@@ -6835,45 +6384,45 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.cpp" line="71"/>
         <source>Back to the tools list</source>
-        <translation>Retour à la liste des outils</translation>
+        <translation>Πίσω στη λίστα εργαλείων</translation>
     </message>
 </context>
 <context>
     <name>UserInterface::ToolsView</name>
     <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="51"/>
+        <source>Choose tool from list</source>
+        <translation>Επιλογή εργαλείου από λίστα</translation>
+    </message>
+    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="94"/>
         <source>Didn&apos;t find any backups for the current project</source>
-        <translation>Aucune sauvegarde trouvée pour le projet en cours</translation>
+        <translation>Δεν βρέθηκαν αντίγραφα ασφαλείας για το τρέχον έργο</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="112"/>
         <source>Tools</source>
-        <translation>Outils</translation>
+        <translation>Εργαλεία</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="115"/>
         <source>Tool settings</source>
-        <translation>Paramètres de l&apos;outil</translation>
+        <translation>Ρυθμίσεις εργαλείων</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="117"/>
         <source>Restore script</source>
-        <translation>Restaurer le script</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="126"/>
-        <source>Compare script versions</source>
-        <translation>Comparer les versions de script</translation>
+        <translation>Επαναφορά σεναρίου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="123"/>
         <source>Restore script from backup</source>
-        <translation>Restaurer le script à partir d&apos;une sauvegarde</translation>
+        <translation>Επαναφορά σεναρίου από αντίγραφο ασφαλείας</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="51"/>
-        <source>Choose tool from list</source>
-        <translation>Choisir un outil dans la liste</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="126"/>
+        <source>Compare script versions</source>
+        <translation>Σύγκριση εκδόσεων σεναρίου</translation>
     </message>
 </context>
 <context>
@@ -6881,29 +6430,22 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="39"/>
         <source>New version %1 is available</source>
-        <translation>Une nouvelle version %1 est disponible</translation>
+        <translation>Νέα έκδοση %1 είναι διαθέσιμη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="44"/>
         <source>Download</source>
-        <translation>Télécharger</translation>
+        <translation>Λήψη</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="56"/>
         <source>Install</source>
-        <translation>Installer</translation>
+        <translation>Εγκατάσταση</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="61"/>
         <source>&lt;p&gt;Error during download update.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Erreur pendant le téléchargement de la mise à jour.&lt;/p&gt;&lt;p&gt;Vous pouvez essayer de relancer la mise à jour, ou télécharger le fichier manuellement depuis le &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;site web&lt;/a&gt;.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Error during download update.
-
-You can try to reload update.</source>
-        <translation type="vanished">Erreur pendant le téléchargement de la mise à jour. 
-Essayer de recharger la mise à jour.</translation>
+        <translation>&lt;p&gt;Σφάλμα κατά τη λήψη της ενημέρωσης.&lt;/p&gt;&lt;p&gt;Μπορείτε να επαναφορτώσετε την ενημέρωση ή να το φορτώσετε χειροκίνητα από &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt; την επίσημη ιστοσελίδα&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -6911,7 +6453,7 @@ Essayer de recharger la mise à jour.</translation>
     <message>
         <location filename="../../../../libs/webloader/src/WebLoader.cpp" line="311"/>
         <source>Sorry, we have some error while loading. Error is: %1</source>
-        <translation>Désolé, il y a eu une erreur pendant le chargment. L&apos;erreur est: %1</translation>
+        <translation>Ζητούμε συγνώμη, είχαμε ένα πρόβλημα κατά τη φόρτωση. Σφάλμα: %1</translation>
     </message>
 </context>
 </TS>
