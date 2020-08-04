@@ -201,7 +201,8 @@ bool SpellChecker::spellCheckWord(const QString& _word) const
         //
         // Для слов заканчивающихся на s с апострофом убираем апостроф в конце, т.к. ханспел его не умеет
         //
-        if (correctedWord.endsWith("s'", Qt::CaseInsensitive)) {
+        if (correctedWord.endsWith("s'", Qt::CaseInsensitive)
+            || correctedWord.endsWith("s’", Qt::CaseInsensitive)) {
             correctedWord.chop(1);
         }
 

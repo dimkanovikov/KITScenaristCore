@@ -59,7 +59,7 @@ void SpellCheckHighlighter::highlightBlock(const QString& _text)
 		// Убираем пустоты из проверяемого текста
 		//
         if (!_text.isEmpty()) {
-            QRegExp notWord("[^\\w'-]+");
+            QRegExp notWord("[^\\w'’-]+");
             notWord.indexIn(_text);
 			//
 			// Проверяем каждое слово
