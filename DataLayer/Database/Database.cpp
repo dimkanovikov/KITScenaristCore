@@ -57,7 +57,7 @@ bool Database::canOpenFile(const QString& _databaseFileName, bool _isLocal)
     //
     if (_isLocal) {
         const QFileInfo databaseFileInfo(_databaseFileName);
-        if (databaseFileInfo.completeSuffix() == kProjectFleExtension) {
+        if (databaseFileInfo.suffix() == kProjectFleExtension) {
             QSqlDatabase database = QSqlDatabase::addDatabase(SQL_DRIVER, "tmp_database");
             database.setDatabaseName(_databaseFileName);
             if (database.open()) {
