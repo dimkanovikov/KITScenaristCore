@@ -743,6 +743,7 @@ void StandardKeyHandler::removeGroupsPairs(int _cursorPosition, const QList<int>
                 // ... встретилась новая группа, которую не нужно удалять
                 ++openedGroups;
             }
+            cursor.movePosition(QTextCursor::StartOfBlock);
         } while (groupsToDeleteCount > 0
                  && !cursor.atStart());
     }
