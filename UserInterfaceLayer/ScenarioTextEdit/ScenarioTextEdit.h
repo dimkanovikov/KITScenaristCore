@@ -122,6 +122,12 @@ namespace UserInterface
         /**
          * @brief Показывать ли автодополнения в пустых блоках
          */
+        void setShowSuggestionsInEmptyBlocks(bool _show);
+        bool showSuggestionsInEmptyBlocks() const;
+
+        /**
+         * @brief Подбирать ли автодополнения для персонажей по контексту
+         */
         void setShowCharactersSuggestions(bool _show);
         bool showCharactersSuggestions() const;
 
@@ -400,6 +406,11 @@ namespace UserInterface
 
         /**
          * @brief Показывать автодополения в пустых блоках
+         */
+        bool m_showSuggestionsInEmptyBlocks;
+
+        /**
+         * @brief Подбирать ли автодополенния персонажей по контексту
          */
         bool m_showCharacterSuggestions;
 

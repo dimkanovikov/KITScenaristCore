@@ -652,6 +652,7 @@ SettingsStorage::SettingsStorage()
     m_defaultValues.insert("scenario-editor/replace-three-dots", "0");
     m_defaultValues.insert("scenario-editor/smart-quotes", "0");
     m_defaultValues.insert("scenario-editor/auto-styles-jumping", "1");
+    m_defaultValues.insert("scenario-editor/show-suggestions-in-empty-blocks-2", "1");
     m_defaultValues.insert("scenario-editor/show-suggestions-in-empty-blocks", "1");
     m_defaultValues.insert("scenario-editor/spell-checking", "0");
     m_defaultValues.insert("scenario-editor/spell-checking-language", "2");

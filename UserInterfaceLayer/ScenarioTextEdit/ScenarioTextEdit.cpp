@@ -417,11 +417,19 @@ void ScenarioTextEdit::setAutoReplacing(bool _capitalizeFirstWord, bool _correct
     }
 }
 
+void ScenarioTextEdit::setShowSuggestionsInEmptyBlocks(bool _show)
+{
+    m_showSuggestionsInEmptyBlocks = _show;
+}
+
+bool ScenarioTextEdit::showSuggestionsInEmptyBlocks() const
+{
+    return m_showSuggestionsInEmptyBlocks;
+}
+
 void ScenarioTextEdit::setShowCharactersSuggestions(bool _show)
 {
-    if (m_showCharacterSuggestions != _show) {
-        m_showCharacterSuggestions = _show;
-    }
+    m_showCharacterSuggestions = _show;
 }
 
 bool ScenarioTextEdit::showCharactersSuggestions() const

@@ -42,6 +42,10 @@ void CharacterHandler::prehandle()
         return;
     }
 
+    if (!editor()->showSuggestionsInEmptyBlocks()) {
+        return;
+    }
+
     QAbstractItemModel* model = 0;
     if (editor()->showCharactersSuggestions()) {
         //
@@ -346,6 +350,14 @@ void CharacterHandler::handleInput(QInputMethodEvent* _event)
 
 void CharacterHandler::complete(const QString& _currentBlockText, const QString& _cursorBackwardText)
 {
+    //
+    // Не показываем дополнения в пустом блоке, если такая опция не установлена
+    //
+    if (_currentBlockText.isEmpty()
+        && !editor()->showSuggestionsInEmptyBlocks()) {
+        return;
+    }
+
     //
     // Текущая секция
     //
