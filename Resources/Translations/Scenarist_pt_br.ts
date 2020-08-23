@@ -3832,6 +3832,10 @@ Parágrafo</translation>
         <source>Enable HIDPI scaling</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show character suggestions in empty paragraph</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShareDialog</name>
