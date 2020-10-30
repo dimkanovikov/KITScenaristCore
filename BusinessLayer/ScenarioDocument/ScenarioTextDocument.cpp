@@ -97,9 +97,11 @@ QStringList splitXml(const QString &_xml)
                 // Игнорируем пустые завершаю тэги
                 //
                 else if (_xml.mid(partStart, currentPosition - partStart + 1).contains('/')) {
-//                    if (xmlParts.size() == 1) {
-//                        xmlParts.first() = QString("<%1><v><![CDATA[]]></v>%2</%1>").arg(startTag, xmlParts.first());
-//                    }
+                    //                    if (xmlParts.size() == 1) {
+                    //                        xmlParts.first() =
+                    //                        QString("<%1><v><![CDATA[]]></v>%2</%1>").arg(startTag,
+                    //                        xmlParts.first());
+                    //                    }
                     xmlParts.append(startTag);
                     startTag.clear();
                 }
@@ -791,8 +793,8 @@ void ScenarioTextDocument::updateBlocksIds(int _position, int _charsRemoved, int
 void ScenarioTextDocument::removeIdenticalParts(
     QPair<DiffMatchPatchHelper::ChangeXml, DiffMatchPatchHelper::ChangeXml> &_xmls)
 {
-    auto firstSplitted = splitXml(_xmls.first.xml.simplified());
-    auto secondSplitted = splitXml(_xmls.second.xml.simplified());
+    auto firstSplitted = splitXml(_xmls.first.xml);
+    auto secondSplitted = splitXml(_xmls.second.xml);
     int posDelta = 0;
     int lengthDelta = 0;
     QString lastRemovedPreviousTag;
@@ -872,7 +874,7 @@ void ScenarioTextDocument::removeIdenticalParts(
     //
     // Очищаем всё, что не является xml'ем
     //
-    auto clearInvalidXmlLines = [] (QStringList& strings) {
+    auto clearInvalidXmlLines = [](QStringList& strings) {
         for (auto& string : strings) {
             if (!string.startsWith("<") && !string.endsWith(">")) {
                 string = QString();
