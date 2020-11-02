@@ -527,13 +527,41 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
             && (atPageEnd || atPageBreak)) {
             switch (ScenarioBlockStyle::forBlock(block)) {
                 //
-                // Если это время и место
+                // Если это время и место или начало папки
                 //
-                case ScenarioBlockStyle::SceneHeading: {
+                case ScenarioBlockStyle::SceneHeading:
+                case ScenarioBlockStyle::FolderHeader: {
                     //
                     // Переносим на следующую страницу
                     //
                     moveCurrentBlockToNextPage(blockFormat, blockHeight, pageHeight, pageWidth, cursor, block, lastBlockHeight);
+
+                    break;
+                }
+
+                //
+                // Конец папки распологаем либо только в конце страницы, либо целиком переносим на следующую страницу
+                //
+                case ScenarioBlockStyle::FolderFooter: {
+                    //
+                    // Если в конце страницы, оставляем как есть
+                    //
+                    if (atPageEnd) {
+                        //
+                        // Запоминаем параметры текущего блока
+                        //
+                        m_blockItems[m_currentBlockNumber++] = BlockInfo{blockHeight, lastBlockHeight};
+                        //
+                        // и идём дальше
+                        //
+                        lastBlockHeight = 0;
+                    }
+                    //
+                    // В противном случае, просто переносим блок на следующую страницу
+                    //
+                    else {
+                        moveCurrentBlockToNextPage(blockFormat, blockHeight, pageHeight, pageWidth, cursor, block, lastBlockHeight);
+                    }
 
                     break;
                 }
@@ -903,9 +931,8 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
                     break;
                 }
 
-
                 //
-                // Если это описание действия или любой другой блок, для которого нет собственных правил
+                // Если это описание действия или любой другой блок, для которого нет собственных правил, но его нужно перенести
                 //
                 default: {
                     //
@@ -1335,6 +1362,11 @@ void ScriptTextCorrector::moveBlockToNextPage(const QTextBlock& _block, qreal _s
     QTextBlockFormat decorationFormat = format;
     if (ScenarioBlockStyle::forBlock(_block) == ScenarioBlockStyle::SceneHeading) {
         decorationFormat.setProperty(ScenarioBlockStyle::PropertyType, ScenarioBlockStyle::SceneHeadingShadow);
+    }
+    if (ScenarioBlockStyle::forBlock(_block) == ScenarioBlockStyle::FolderHeader
+        || ScenarioBlockStyle::forBlock(_block) == ScenarioBlockStyle::FolderHeader) {
+        decorationFormat.setProperty(ScenarioBlockStyle::PropertyType, ScenarioBlockStyle::Action);
+        decorationFormat.setBackground(Qt::NoBrush);
     }
     decorationFormat.setProperty(ScenarioBlockStyle::PropertyIsCorrection, true);
     decorationFormat.setProperty(PageTextEdit::PropertyDontShowCursor, true);
