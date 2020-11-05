@@ -3346,11 +3346,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Header:</source>
-        <translation>Заголовок:</translation>
+        <translation type="vanished">Заголовок:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Назва:</translation>
+        <translation type="vanished">Назва:</translation>
+    </message>
+    <message>
+        <source>Heading (used in text and in cards if the name empty):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name (human-readable name of the scene, used in cards):</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5411,6 +5419,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Arabic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Galician</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

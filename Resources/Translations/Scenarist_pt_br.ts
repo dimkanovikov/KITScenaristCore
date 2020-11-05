@@ -3316,11 +3316,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Header:</source>
-        <translation>Cabeçalho:</translation>
+        <translation type="vanished">Cabeçalho:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nome:</translation>
+        <translation type="vanished">Nome:</translation>
+    </message>
+    <message>
+        <source>Heading (used in text and in cards if the name empty):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name (human-readable name of the scene, used in cards):</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5374,6 +5382,10 @@ quando você estiver trabalhando ele salvará o projeto a cada %1 minutos.</tran
     </message>
     <message>
         <source>Arabic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Galician</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

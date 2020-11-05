@@ -112,6 +112,9 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Arabic:
             code = "ar_AR";
             break;
+        case Galician:
+            code = "gl_GL";
+            break;
         default:
             break;
     }
