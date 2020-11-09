@@ -211,7 +211,7 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Our heroes, who help us to create international versions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Наші герої, які допомагають нам створювати міжнародні версії:</translation>
     </message>
 </context>
 <context>
@@ -784,15 +784,15 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Copy of </source>
-        <translation>Копія</translation>
+        <translation>Копія </translation>
     </message>
     <message>
         <source>Arabic screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Arabic screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1031,38 +1031,38 @@ Türkçe: Recep Burak Yak
     </message>
     <message>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Тег</translation>
     </message>
     <message>
         <source>Main color</source>
-        <translation type="unfinished"></translation>
+        <translation>Основний колір</translation>
     </message>
     <message>
         <source>Additional color %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Додатковий колір %1</translation>
     </message>
 </context>
 <context>
     <name>CardsSearchWidget</name>
     <message>
         <source>Find...</source>
-        <translation type="unfinished">Знайти...</translation>
+        <translation>Знайти...</translation>
     </message>
     <message>
         <source>Case Sensitive</source>
-        <translation type="unfinished">Враховувати регістр</translation>
+        <translation>Враховувати регістр</translation>
     </message>
     <message>
         <source>Everywhere</source>
-        <translation type="unfinished"></translation>
+        <translation>Всюди</translation>
     </message>
     <message>
         <source>In text</source>
-        <translation type="unfinished"></translation>
+        <translation>у тексті</translation>
     </message>
     <message>
         <source>In tags</source>
-        <translation type="unfinished"></translation>
+        <translation>в тегах</translation>
     </message>
 </context>
 <context>
@@ -2234,15 +2234,15 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>Conflicted version</source>
-        <translation type="unfinished"></translation>
+        <translation>Конфліктує версія</translation>
     </message>
     <message>
         <source>Script changes conflict detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Виявлено конфлікт змін сценарію</translation>
     </message>
     <message>
         <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud. You can find conflicted version in the Research - Script - Versions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виявлено конфлікт між станом сценарію в хмарній службі та вашими офлайн-змінами. Конфліктну версію було збережено як окрему, а текст сценарію відновлено з хмари. Ви можете знайти суперечливу версію в Дослідження - Сценарій - Версії.</translation>
     </message>
 </context>
 <context>
@@ -2339,7 +2339,7 @@ Project didn&apos;t synchronized.</source>
     </message>
     <message>
         <source>HIDPI scaling option will be applied after application restart.</source>
-        <translation type="unfinished"></translation>
+        <translation>Параметр масштабування HIDPI буде застосовано після перезапуску програми.</translation>
     </message>
 </context>
 <context>
@@ -2736,11 +2736,11 @@ And the text editor of the script. The editor has many auxiliary functions that 
     </message>
     <message>
         <source>Arabic screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Arabic screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2933,7 +2933,7 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <name>QWidgetTextControl</name>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Копіювати</translation>
     </message>
 </context>
 <context>
@@ -3354,11 +3354,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Heading (used in text and in cards if the name empty):</source>
-        <translation type="unfinished"></translation>
+        <translation>Заголовок (використовується в тексті та на картках, якщо назва порожня):</translation>
     </message>
     <message>
         <source>Name (human-readable name of the scene, used in cards):</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім&apos;я (зрозуміла для людини назва сцени, що використовується в картках):</translation>
     </message>
 </context>
 <context>
@@ -3866,11 +3866,11 @@ Paragraph</source>
     </message>
     <message>
         <source>Enable HIDPI scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>Увімкнути масштабування HIDPI</translation>
     </message>
     <message>
         <source>Show character suggestions in empty paragraph</source>
-        <translation type="unfinished"></translation>
+        <translation>Пропонувати персонажів в порожньому рядку</translation>
     </message>
 </context>
 <context>
@@ -4871,7 +4871,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Search cards</source>
-        <translation type="unfinished"></translation>
+        <translation>Картки пошуку</translation>
     </message>
 </context>
 <context>
@@ -5028,11 +5028,11 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Main color</source>
-        <translation type="unfinished"></translation>
+        <translation>Основний колір</translation>
     </message>
     <message>
         <source>Additional color %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Додатковий колір %1</translation>
     </message>
 </context>
 <context>
@@ -5391,39 +5391,39 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Slovenian</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Macedonian</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Greek (Polythonic)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Serbian</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Serbian (Latin script)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Arabic</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
