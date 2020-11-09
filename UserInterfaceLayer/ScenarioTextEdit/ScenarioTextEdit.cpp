@@ -1142,12 +1142,20 @@ bool ScenarioTextEdit::keyPressEventReimpl(QKeyEvent* _event)
     }
     //
     // Делаем собственную обработку операции вставить, т.к. стандартная всегда
-    // уводит полосу прокрутки в начало
+    // уводит полосу прокрутки в начало и сохраняем изменения
     //
     else if (_event == QKeySequence::Paste) {
         const int lastVBarValue = verticalScrollBar()->value();
         paste();
         verticalScrollBar()->setValue(lastVBarValue);
+        m_document->saveChanges();
+    }
+    //
+    // Для вырезания делаем принудительное сохранение изменений, после операции
+    //
+    else if (_event == QKeySequence::Cut) {
+        cut();
+        m_document->saveChanges();
     }
     //
     // Сделать текст полужирным
