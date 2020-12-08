@@ -15,6 +15,7 @@
 #include <DataLayer/DataStorageLayer/StorageFacade.h>
 
 #include <3rd_party/Helpers/PasswordStorage.h>
+#include <3rd_party/Helpers/XmlHelper.h>
 
 #include <3rd_party/Widgets/QLightBoxWidget/qlightboxprogress.h>
 
@@ -139,7 +140,7 @@ QStringList splitXml(const QString &_xml)
     //
     // Добавляем весь оставшийся разбитый xml
     //
-    if (!startTag.isEmpty()) {
+    if (!XmlHelper::isTag(startTag)) {
         xmlParts.append(_xml.mid(partStart));
     }
 

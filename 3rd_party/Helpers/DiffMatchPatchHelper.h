@@ -3,6 +3,7 @@
 
 #include "DiffMatchPatch.h"
 #include "TextEditHelper.h"
+#include "XmlHelper.h"
 
 #include <QDomDocument>
 #include <QDebug>
@@ -13,24 +14,17 @@
 
 namespace {
     /**
-     * @brief Является ли строка тэгом
-     */
-    static bool isTag(const QString& _tag) {
-        return !_tag.isEmpty() && _tag.startsWith("<") && _tag.endsWith(">");
-    }
-
-    /**
      * @brief Является ли тэг открывающим
      */
     static bool isOpenTag(const QString& _tag) {
-        return isTag(_tag) && !_tag.contains("/");
+        return XmlHelper::isTag(_tag) && !_tag.contains("/");
     }
 
     /**
      * @brief Является ли тэг закрывающим
      */
     static bool isCloseTag(const QString& _tag) {
-        return isTag(_tag) && _tag.contains("/");
+        return XmlHelper::isTag(_tag) && _tag.contains("/");
     }
 
     /**
@@ -77,7 +71,7 @@ namespace {
             // Для CDATA не убираем перенос строки,
             // т.к. он должен учитываться за отдельный символ
             //
-            const QString suffix = isTag(tag) ? "\n" : "";
+            const QString suffix = XmlHelper::isTag(tag) ? "\n" : "";
             result = result.remove(tag + suffix);
         }
 
