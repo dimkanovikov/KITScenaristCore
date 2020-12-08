@@ -873,6 +873,7 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *_event)
     //
     // ... добавляем каждый цвет
     //
+    QVector<QAction*> colors;
     for (const QString &colorInfo : colorsInfos.split(";")) {
         QAction *color = menu->addAction(colorIndex == 1 ? tr("Main color")
                                                          : tr("Additional color %1").arg(colorIndex - 1));
@@ -911,6 +912,8 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *_event)
         color->setMenu(colorMenu);
         connect(colorsPane, &GoogleColorsPane::selected, menu, &QMenu::close);
         colorsPanesList.append(colorsPane);
+
+        colors.append(color);
 
         ++colorIndex;
     }
@@ -964,6 +967,9 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *_event)
         convertToSceneAction->setVisible(false);
         convertToFolderAction->setVisible(false);
         color->setVisible(false);
+        for (auto color : colors) {
+            color->setVisible(false);
+        }
         propertiesSeparator->setVisible(false);
         endSeparator->setVisible(false);
         editAction->setVisible(false);
