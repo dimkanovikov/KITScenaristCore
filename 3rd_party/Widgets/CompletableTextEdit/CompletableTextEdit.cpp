@@ -129,7 +129,11 @@ namespace {
     class Completer : public QCompleter
     {
     public:
-        explicit Completer(QObject* _p = 0) : QCompleter(_p) {}
+        explicit Completer(QObject* _p = 0)
+            : QCompleter(_p)
+        {
+            setMaxVisibleItems(14);
+        }
 
         /**
          * @brief Переопределяется для отображения подсказки по глобальной координате
