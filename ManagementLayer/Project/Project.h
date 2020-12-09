@@ -125,6 +125,7 @@ namespace ManagementLayer
          * @brief Файл проекта доступен только для чтения
          */
         bool isWritable() const;
+        void updateIsWritable();
 
         /**
          * @brief Список пользователей
@@ -150,7 +151,6 @@ namespace ManagementLayer
         QString versionsBackupFileName(const QString& _backupDirPath) const;
 
     private:
-
         /**
          * @brief Получить путь к файлу резервной копии заданного типа
          */

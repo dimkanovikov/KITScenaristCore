@@ -101,7 +101,7 @@ Project::Project(Type _type, const QString& _name, const QString& _path,
     // Определить возможность записи в файл для локальных проектов
     //
     else {
-        m_isWritable = QFileInfo(m_path).isWritable();
+        updateIsWritable();
     }
 }
 
@@ -161,7 +161,7 @@ void Project::setPath(const QString& _path)
 {
     if (m_path != _path) {
         m_path = _path;
-        m_isWritable = QFileInfo(m_path).isWritable();
+        updateIsWritable();
     }
 }
 
@@ -195,6 +195,22 @@ bool Project::isCommentOnly() const
 bool Project::isWritable() const
 {
     return m_isWritable;
+}
+
+void Project::updateIsWritable()
+{
+    if (m_type != Local) {
+        return;
+    }
+
+    m_isWritable = QFileInfo(m_path).isWritable();
+    if (m_isWritable) {
+        const auto backupsDir = StorageFacade::settingsStorage()->value("application/save-backups-folder",
+                                                                        SettingsStorage::ApplicationSettings);
+        if (m_path.startsWith(backupsDir)) {
+            m_isWritable = false;
+        }
+    }
 }
 
 QStringList Project::users() const

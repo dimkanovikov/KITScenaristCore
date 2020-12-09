@@ -37,7 +37,7 @@ QString StorageFacade::userName()
 
 QString StorageFacade::userEmail()
 {
-    return settingsStorage()->value("application/email", SettingsStorage::ApplicationSettings);;
+    return settingsStorage()->value("application/email", SettingsStorage::ApplicationSettings);
 }
 
 void StorageFacade::clearStorages()
