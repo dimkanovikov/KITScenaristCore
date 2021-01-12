@@ -899,6 +899,12 @@ void ScenarioTextDocument::removeIdenticalParts(
         && !lastRemovedPreviousTag.isEmpty()) {
         --posDelta;
         secondSplitted.prepend(QString("<%1><v><![CDATA[]]></v></%1>").arg(lastRemovedPreviousTag));
+        //
+        // Делаем длину отличной от нуля, чтобы отработала вставка нового блока далее по алгоритму
+        //
+        if (_xmls.second.plainLength == 0) {
+            _xmls.second.plainLength = 1;
+        }
     }
 
     //
