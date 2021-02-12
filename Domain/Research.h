@@ -255,6 +255,9 @@ namespace Domain
         int columnCount(const QModelIndex&) const;
         QVariant data(const QModelIndex& _index, int _role) const;
 
+    signals:
+        void modelRefreshed();
+
     private:
         Column sectionToColumn(int _section) const;
     };

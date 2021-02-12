@@ -187,6 +187,7 @@ void ResearchModel::load(Domain::ResearchTable* _data)
             connect(m_researchData, &Domain::ResearchTable::rowsInserted, this, &ResearchModel::researchRowsInserted);
             connect(m_researchData, &Domain::ResearchTable::rowsAboutToBeRemoved, this, &ResearchModel::researchRowsRemoved);
             connect(m_researchData, &Domain::ResearchTable::dataChanged, this, &ResearchModel::researchDataChanged);
+            connect(m_researchData, &Domain::ResearchTable::modelRefreshed, this, &ResearchModel::itemsRefreshed);
         }
     }
 

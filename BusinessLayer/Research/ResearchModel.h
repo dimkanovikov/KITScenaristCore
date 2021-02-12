@@ -107,6 +107,11 @@ namespace BusinessLogic
          */
         void itemMoved(const QModelIndex& _index);
 
+        /**
+         * @brief Элементы модели были обновлены
+         */
+        void itemsRefreshed();
+
     private:
         /**
          * @brief Перезагрузить данные разработки

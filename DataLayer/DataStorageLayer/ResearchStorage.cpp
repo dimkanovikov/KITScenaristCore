@@ -149,6 +149,8 @@ void ResearchStorage::refresh()
     MapperFacade::researchMapper()->refresh(all());
     MapperFacade::researchMapper()->refreshCharacters(characters());
     MapperFacade::researchMapper()->refreshLocations(locations());
+
+    emit all()->modelRefreshed();
 }
 
 ResearchTable* ResearchStorage::characters()

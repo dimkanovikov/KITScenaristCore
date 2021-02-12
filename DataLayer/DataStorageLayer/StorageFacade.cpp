@@ -56,13 +56,18 @@ void StorageFacade::clearStorages()
 
 void StorageFacade::refreshStorages()
 {
+    //
+    // Хранилище данных сценария обновляется перед хранилищем разработки, т.к. в менеджере разработки
+    // событие обновления данных таблицы разработки используется для обновления данных сценария
+    //
+    scenarioDataStorage()->refresh();
     researchStorage()->refresh();
+
     placeStorage()->refresh();
     scenarioDayStorage()->refresh();
     transitionStorage()->refresh();
     timeStorage()->refresh();
     characterStateStorage()->refresh();
-    scenarioDataStorage()->refresh();
     scriptVersionStorage()->refresh();
 
     //
