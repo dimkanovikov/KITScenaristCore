@@ -313,6 +313,11 @@ void ScenarioTextDocument::insertFromMime(int _insertPosition, const QString &_m
 
 int ScenarioTextDocument::applyPatch(const QString &_patch, bool _checkXml)
 {
+    auto makeCrash = [] {
+        QVector<int> numbers;
+        numbers[2] += numbers[0];
+    };
+
     updateScenarioXml();
     saveChanges();
 
@@ -344,6 +349,9 @@ int ScenarioTextDocument::applyPatch(const QString &_patch, bool _checkXml)
 
         return -1;
     }
+    const auto resultedXml = m_xmlHandler->makeMimeFromXml(
+                                 DiffMatchPatchHelper::applyPatchXml(m_scenarioXml,
+                                                                     patchUncopressed));
 
     //
     // Удалим одинаковые первые и последние xml-блоки
@@ -412,6 +420,22 @@ int ScenarioTextDocument::applyPatch(const QString &_patch, bool _checkXml)
     // Запомним новый текст
     //
     m_scenarioXml = m_xmlHandler->scenarioToXml();
+    if (m_scenarioXml != resultedXml) {
+#ifdef PATCH_DEBUG
+        qDebug() << "===================================================================";
+        qDebug() << "patch applying result differs with dmp canonical result";
+        qDebug() << "###################################################################";
+        qDebug() << qUtf8Printable(xmlsForUpdate.first.xml);
+        qDebug() << "###################################################################";
+        qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
+        qDebug() << "###################################################################";
+        qDebug() << qUtf8Printable(xmlsForUpdate.second.xml);
+#endif
+        //
+        // Приудительно падаем, чтобы не ломать xml сценария и дальнейшую синхронизацию
+        //
+        makeCrash();
+    }
     m_scenarioXmlHash = ::textMd5Hash(m_scenarioXml);
     m_lastSavedScenarioXml = m_scenarioXml;
     m_lastSavedScenarioXmlHash = m_scenarioXmlHash;
