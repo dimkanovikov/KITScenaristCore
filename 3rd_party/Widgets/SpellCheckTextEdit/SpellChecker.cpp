@@ -115,6 +115,12 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Galician:
             code = "gl_GL";
             break;
+        case Indonesian:
+            code = "id_ID";
+            break;
+        case Lithuanian:
+            code = "lt_LT";
+            break;
         default:
             break;
     }

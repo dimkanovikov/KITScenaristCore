@@ -53,7 +53,9 @@ public:
         Serbian,
         SerbianLatin,
         Arabic,
-        Galician
+        Galician,
+        Indonesian,
+        Lithuanian
     };
 
     /**
