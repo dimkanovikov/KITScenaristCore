@@ -470,9 +470,16 @@ void ScriptTextCorrector::correctPageBreaks(int _position)
         //
         if (blockFormat.boolProperty(ScenarioBlockStyle::PropertyIsCorrection)) {
             cursor.setPosition(block.position());
-            cursor.movePosition(ScriptTextCursor::EndOfBlock, ScriptTextCursor::KeepAnchor);
-            cursor.movePosition(ScriptTextCursor::NextCharacter, ScriptTextCursor::KeepAnchor);
-            cursor.deleteChar();
+            if (cursor.block().next() != cursor.document()->end()) {
+                cursor.movePosition(ScriptTextCursor::EndOfBlock, ScriptTextCursor::KeepAnchor);
+                cursor.movePosition(ScriptTextCursor::NextCharacter, ScriptTextCursor::KeepAnchor);
+                cursor.deleteChar();
+            } else {
+                cursor.movePosition(ScriptTextCursor::PreviousCharacter);
+                cursor.movePosition(ScriptTextCursor::NextBlock, ScriptTextCursor::KeepAnchor);
+                cursor.movePosition(ScriptTextCursor::EndOfBlock, ScriptTextCursor::KeepAnchor);
+                cursor.deleteChar();
+            }
             //
             // ... и продолжим со следующего блока
             //
