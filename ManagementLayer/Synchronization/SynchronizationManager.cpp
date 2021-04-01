@@ -1096,13 +1096,15 @@ void SynchronizationManager::aboutFullSyncScenario()
         //
         // Отправить на сайт все изменения, которых там нет
         //
-        uploadScenarioChanges(changesForUpload);
+        const bool changesUploaded = uploadScenarioChanges(changesForUpload);
 
         //
-        // Синхронизация удалась, запомним её время
+        // Обновляем время последней синхронизации, если изменения были отправлены
         //
-        m_lastChangesSyncDatetime = lastChangesSyncDatetime;
-        m_lastChangesLoadDatetime = lastChangesLoadDatetime;
+        if (changesUploaded) {
+            m_lastChangesSyncDatetime = lastChangesSyncDatetime;
+            m_lastChangesLoadDatetime = lastChangesLoadDatetime;
+        }
     }
 }
 
