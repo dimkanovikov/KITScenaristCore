@@ -1719,59 +1719,61 @@ bool SynchronizationManager::isCanSync() const
 
 bool SynchronizationManager::uploadScenarioChanges(const QList<QPair<QString, QString>>& _changesUuids)
 {
-    bool changesUploaded = false;
-
-    if (isCanSync()
-        && !_changesUuids.isEmpty()) {
-        //
-        // Сформировать xml для отправки
-        //
-        QString changesXml;
-        QXmlStreamWriter xmlWriter(&changesXml);
-        xmlWriter.writeStartDocument();
-        xmlWriter.writeStartElement("changes");
-        for (const auto& changeUuid : _changesUuids) {
-            const ScenarioChange change = StorageFacade::scenarioChangeStorage()->change(changeUuid.first, changeUuid.second);
-
-            xmlWriter.writeStartElement("change");
-
-            xmlWriter.writeTextElement(SCENARIO_CHANGE_UUID, change.uuid().toString());
-
-            xmlWriter.writeTextElement(SCENARIO_CHANGE_DATETIME, change.datetime().toString("yyyy-MM-dd hh:mm:ss:zzz"));
-
-            xmlWriter.writeStartElement(SCENARIO_CHANGE_UNDO_PATCH);
-            xmlWriter.writeCDATA(change.undoPatch());
-            xmlWriter.writeEndElement();
-
-            xmlWriter.writeStartElement(SCENARIO_CHANGE_REDO_PATCH);
-            xmlWriter.writeCDATA(change.redoPatch());
-            xmlWriter.writeEndElement();
-
-            xmlWriter.writeTextElement(SCENARIO_CHANGE_IS_DRAFT, change.isDraft() ? "1" : "0");
-
-            xmlWriter.writeEndElement(); // change
-        }
-        xmlWriter.writeEndElement(); // changes
-        xmlWriter.writeEndDocument();
-
-        //
-        // Отправить данные
-        //
-        NetworkRequest loader;
-        loader.setRequestMethod(NetworkRequestMethod::Post);
-        loader.clearRequestAttributes();
-        loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
-        loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
-        loader.addRequestAttribute(KEY_CHANGES, changesXml);
-        const QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_SAVE);
-
-        //
-        // Изменения отправлены, если сервер это подтвердил
-        //
-        QXmlStreamReader responseReader(response);
-        changesUploaded = isOperationSucceed(responseReader);
+    if (!isCanSync()) {
+        return false;
     }
 
+    if (_changesUuids.isEmpty()) {
+        return true;
+    }
+
+    //
+    // Сформировать xml для отправки
+    //
+    QString changesXml;
+    QXmlStreamWriter xmlWriter(&changesXml);
+    xmlWriter.writeStartDocument();
+    xmlWriter.writeStartElement("changes");
+    for (const auto& changeUuid : _changesUuids) {
+        const ScenarioChange change = StorageFacade::scenarioChangeStorage()->change(changeUuid.first, changeUuid.second);
+
+        xmlWriter.writeStartElement("change");
+
+        xmlWriter.writeTextElement(SCENARIO_CHANGE_UUID, change.uuid().toString());
+
+        xmlWriter.writeTextElement(SCENARIO_CHANGE_DATETIME, change.datetime().toString("yyyy-MM-dd hh:mm:ss:zzz"));
+
+        xmlWriter.writeStartElement(SCENARIO_CHANGE_UNDO_PATCH);
+        xmlWriter.writeCDATA(change.undoPatch());
+        xmlWriter.writeEndElement();
+
+        xmlWriter.writeStartElement(SCENARIO_CHANGE_REDO_PATCH);
+        xmlWriter.writeCDATA(change.redoPatch());
+        xmlWriter.writeEndElement();
+
+        xmlWriter.writeTextElement(SCENARIO_CHANGE_IS_DRAFT, change.isDraft() ? "1" : "0");
+
+        xmlWriter.writeEndElement(); // change
+    }
+    xmlWriter.writeEndElement(); // changes
+    xmlWriter.writeEndDocument();
+
+    //
+    // Отправить данные
+    //
+    NetworkRequest loader;
+    loader.setRequestMethod(NetworkRequestMethod::Post);
+    loader.clearRequestAttributes();
+    loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
+    loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
+    loader.addRequestAttribute(KEY_CHANGES, changesXml);
+    const QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_SAVE);
+
+    //
+    // Изменения отправлены, если сервер это подтвердил
+    //
+    QXmlStreamReader responseReader(response);
+    const bool changesUploaded = isOperationSucceed(responseReader);
     return changesUploaded;
 }
 

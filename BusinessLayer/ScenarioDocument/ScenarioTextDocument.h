@@ -154,8 +154,8 @@ namespace BusinessLogic
          * @brief Сигналы уведомляющие об этапах применения патчей
          */
         /** @{ */
-        void beforePatchApply();
-        void afterPatchApply();
+        void beforePatchesApply();
+        void afterPatchesApply();
         /** @} */
 
         /**

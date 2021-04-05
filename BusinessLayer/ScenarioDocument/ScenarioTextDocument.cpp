@@ -313,11 +313,6 @@ void ScenarioTextDocument::insertFromMime(int _insertPosition, const QString &_m
 
 int ScenarioTextDocument::applyPatch(const QString &_patch, bool _checkXml)
 {
-    auto makeCrash = [] {
-        QVector<int> numbers;
-        numbers[2] += numbers[0];
-    };
-
     updateScenarioXml();
     saveChanges();
 
@@ -419,8 +414,8 @@ int ScenarioTextDocument::applyPatch(const QString &_patch, bool _checkXml)
     //
     // Запомним новый текст
     //
-    m_scenarioXml = m_xmlHandler->scenarioToXml();
-    if (m_scenarioXml != resultedXml) {
+    const QString newScenarioXml = m_xmlHandler->scenarioToXml();
+    if (newScenarioXml != resultedXml) {
 #ifdef PATCH_DEBUG
         qDebug() << "===================================================================";
         qDebug() << "patch applying result differs with dmp canonical result";
@@ -430,12 +425,19 @@ int ScenarioTextDocument::applyPatch(const QString &_patch, bool _checkXml)
         qDebug() << qUtf8Printable(QByteArray::fromPercentEncoding(patchUncopressed.toUtf8()));
         qDebug() << "###################################################################";
         qDebug() << qUtf8Printable(xmlsForUpdate.second.xml);
+        qDebug() << "###################################################################";
+        qDebug() << qUtf8Printable(m_scenarioXml);
+        qDebug() << "###################################################################";
+        qDebug() << qUtf8Printable(resultedXml);
 #endif
         //
-        // Приудительно падаем, чтобы не ломать xml сценария и дальнейшую синхронизацию
+        // Патч не был применён
         //
-        makeCrash();
+        cursor.endEditBlock();
+        m_isPatchApplyProcessed = false;
+        return -1;
     }
+    m_scenarioXml = newScenarioXml;
     m_scenarioXmlHash = ::textMd5Hash(m_scenarioXml);
     m_lastSavedScenarioXml = m_scenarioXml;
     m_lastSavedScenarioXmlHash = m_scenarioXmlHash;
@@ -515,6 +517,7 @@ void ScenarioTextDocument::applyPatches(const QList<QString> &_patches)
     //
     // Начинаем изменение текста
     //
+    emit beforePatchesApply();
     QTextCursor cursor(this);
     cursor.beginEditBlock();
 
@@ -549,6 +552,8 @@ void ScenarioTextDocument::applyPatches(const QList<QString> &_patches)
     // отсутствию одного патча в истории изменений
     //
     cursor.endEditBlock();
+
+    emit afterPatchesApply();
 }
 
 Domain::ScenarioChange *ScenarioTextDocument::saveChanges()
@@ -631,6 +636,9 @@ int ScenarioTextDocument::undoReimpl(bool _forced)
         }
 
         pos = applyPatch(change->undoPatch());
+        if (pos == -1) {
+            applyPatches({ change->undoPatch() });
+        }
 
         //
         // Сохраним изменения
@@ -680,6 +688,9 @@ int ScenarioTextDocument::redoReimpl()
 
         m_undoStack.append(change);
         pos = applyPatch(change->redoPatch());
+        if (pos == -1) {
+            applyPatches({ change->redoPatch() });
+        }
 
         //
         // Сохраним изменения

@@ -52,11 +52,9 @@ using UserInterface::ShortcutsManager;
 using namespace BusinessLogic;
 
 namespace {
-    /**
-     * @brief Флаг положения курсора
-     * @note Используется для корректировки скрола при совместном редактировании
-     */
-    const char* CURSOR_RECT = "cursorRect";
+    const char* kViewportRect = "cursorRect";
+    const char* kCursorPos = "cursorPos";
+    const char* kCursorPosInBlock = "cursorPosInBlock";
 }
 
 
@@ -1952,42 +1950,24 @@ void ScenarioTextEdit::aboutSelectionChanged()
 
 void ScenarioTextEdit::aboutSaveEditorState()
 {
-    setProperty(CURSOR_RECT, cursorRect());
+    setProperty(kViewportRect, viewport()->rect());
+    setProperty(kCursorPos, textCursor().position());
+    setProperty(kCursorPosInBlock, textCursor().positionInBlock());
 }
 
 void ScenarioTextEdit::aboutLoadEditorState()
 {
-    //
-    // FIXME: задумано это для того, чтобы твой курсор не смещался вниз, если вверху текст редактирует соавтор,
-    //		  но при отмене собственных изменений работает ужасно, поэтому пока отключим данный код.
-    //		  Возможно это из-за того, что при отмене собственных изменений курсор не отправляется к
-    //		  месту, где заканчивается изменение, а остаётся в своей позиции. Но тогда нужно как-то
-    //		  разводить собственные патчи и патчи соавторов
-    //
-//	QApplication::processEvents();
-//	const QRect prevCursorRect = property(CURSOR_RECT).toRect();
-//	QRect currentCursorRect = cursorRect();
+    QApplication::processEvents();
+    const QRect prevCursorRect = property(kViewportRect).toRect();
+    scrollContentsBy(prevCursorRect.x(), prevCursorRect.y());
 
-//	//
-//	// Корректируем позицию курсора, пока
-//	// - не восстановим предыдущее значение
-//	// - не сдвинем прокрутку в самый верх
-//	// - не сдвинем прокрутку в самый низ
-//	//
-//	while (prevCursorRect.y() != currentCursorRect.y()
-//		   && verticalScrollBar()->value() != verticalScrollBar()->minimum()
-//		   && verticalScrollBar()->value() != verticalScrollBar()->maximum()) {
-//		int verticalDelta = 0;
-//		if (prevCursorRect.y() < currentCursorRect.y()) {
-//			verticalDelta = 1;
-//		} else {
-//			verticalDelta = -1;
-//		}
-//		verticalScrollBar()->setValue(verticalScrollBar()->value() + verticalDelta);
-//		currentCursorRect = cursorRect();
-//		qDebug() << cursorRect() << prevCursorRect;
-//	}
-
+    QTextCursor cursor = textCursor();
+    cursor.setPosition(property(kCursorPos).toInt());
+    if (cursor.positionInBlock() != property(kCursorPosInBlock).toInt()) {
+        cursor.movePosition(QTextCursor::StartOfBlock);
+        cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::MoveAnchor, property(kCursorPosInBlock).toInt());
+    }
+    setTextCursor(cursor);
 }
 
 void ScenarioTextEdit::cleanScenarioTypeFromBlock()
@@ -2436,8 +2416,8 @@ void ScenarioTextEdit::initEditorConnections()
 {
     if (m_document != 0) {
         connect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioTextEdit::aboutCorrectAdditionalCursors);
-        connect(m_document, &ScenarioTextDocument::beforePatchApply, this, &ScenarioTextEdit::aboutSaveEditorState);
-        connect(m_document, &ScenarioTextDocument::afterPatchApply, this, &ScenarioTextEdit::aboutLoadEditorState);
+        connect(m_document, &ScenarioTextDocument::beforePatchesApply, this, &ScenarioTextEdit::aboutSaveEditorState);
+        connect(m_document, &ScenarioTextDocument::afterPatchesApply, this, &ScenarioTextEdit::aboutLoadEditorState);
         connect(m_document, &ScenarioTextDocument::reviewChanged, this, &ScenarioTextEdit::reviewChanged);
         connect(m_document, &ScenarioTextDocument::redoAvailableChanged, this, &ScenarioTextEdit::redoAvailableChanged);
     }
@@ -2447,8 +2427,8 @@ void ScenarioTextEdit::removeEditorConnections()
 {
     if (m_document != 0) {
         disconnect(m_document, &ScenarioTextDocument::contentsChange, this, &ScenarioTextEdit::aboutCorrectAdditionalCursors);
-        disconnect(m_document, &ScenarioTextDocument::beforePatchApply, this, &ScenarioTextEdit::aboutSaveEditorState);
-        disconnect(m_document, &ScenarioTextDocument::afterPatchApply, this, &ScenarioTextEdit::aboutLoadEditorState);
+        disconnect(m_document, &ScenarioTextDocument::beforePatchesApply, this, &ScenarioTextEdit::aboutSaveEditorState);
+        disconnect(m_document, &ScenarioTextDocument::afterPatchesApply, this, &ScenarioTextEdit::aboutLoadEditorState);
         disconnect(m_document, &ScenarioTextDocument::reviewChanged, this, &ScenarioTextEdit::reviewChanged);
         disconnect(m_document, &ScenarioTextDocument::redoAvailableChanged, this, &ScenarioTextEdit::redoAvailableChanged);
     }
