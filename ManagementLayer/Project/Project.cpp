@@ -207,7 +207,7 @@ void Project::updateIsWritable()
     if (m_isWritable) {
         const auto backupsDir = StorageFacade::settingsStorage()->value("application/save-backups-folder",
                                                                         SettingsStorage::ApplicationSettings);
-        if (m_path.startsWith(backupsDir)) {
+        if (m_path.startsWith(QDir::toNativeSeparators(backupsDir))) {
             m_isWritable = false;
         }
     }
