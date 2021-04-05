@@ -243,6 +243,8 @@ void CardsScene::insertAct(const QString &_uuid, const QString &_title, const QS
 
     if (m_itemsMap.contains(_uuid)) {
         Q_ASSERT_X(false, Q_FUNC_INFO, "Try to add contained item to scene");
+        updateItem(_uuid, true, {}, _title, _description, {}, _colors, false, true);
+        return;
     }
 
     ActItem *act = nullptr;
@@ -342,6 +344,7 @@ void CardsScene::insertCard(const QString &_uuid, bool _isFolder, const QString 
 
     if (m_itemsMap.contains(_uuid)) {
         Q_ASSERT_X(false, Q_FUNC_INFO, "Try to add contained item to scene");
+        updateItem(_uuid, _isFolder, _number, _title, _description, _stamp, _colors, _isEmbedded, false);
         return;
     }
 
@@ -893,9 +896,9 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *_event)
             QLineEdit *tagEditor = new QLineEdit(tagWidget);
             tagEditor->setPlaceholderText(tr("Tag"));
             tagEditor->setText(TextEditHelper::fromHtmlEscaped(colorInfo.mid(7)));
-            QHBoxLayout *stampLayout = new QHBoxLayout(tagWidget);
-            stampLayout->setContentsMargins(QMargins(16, 16, 16, 0));
-            stampLayout->addWidget(tagEditor);
+            QHBoxLayout *tagLayout = new QHBoxLayout(tagWidget);
+            tagLayout->setContentsMargins(QMargins(16, 16, 16, 0));
+            tagLayout->addWidget(tagEditor);
             stateAction->setDefaultWidget(tagWidget);
             connect(tagEditor, &QLineEdit::textChanged, this, [updateColors] { updateColors(); });
             colorMenu->addAction(stateAction);
@@ -930,11 +933,10 @@ void CardsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *_event)
             QWidgetAction *stateAction = new QWidgetAction(menu);
             QWidget *tagWidget = new QWidget;
             QLineEdit *tagEditor = new QLineEdit(tagWidget);
-            tagEditor->setText(card->stamp());
             tagEditor->setPlaceholderText(tr("Tag"));
-            QHBoxLayout *stampLayout = new QHBoxLayout(tagWidget);
-            stampLayout->setContentsMargins(QMargins(16, 16, 16, 0));
-            stampLayout->addWidget(tagEditor);
+            QHBoxLayout *tagLayout = new QHBoxLayout(tagWidget);
+            tagLayout->setContentsMargins(QMargins(16, 16, 16, 0));
+            tagLayout->addWidget(tagEditor);
             stateAction->setDefaultWidget(tagWidget);
             connect(tagEditor, &QLineEdit::textChanged, this, [updateColors] { updateColors(); });
             colorMenu->addAction(stateAction);
