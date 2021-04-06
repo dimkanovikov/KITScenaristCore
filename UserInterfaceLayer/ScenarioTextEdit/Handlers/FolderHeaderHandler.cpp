@@ -70,7 +70,7 @@ void FolderHeaderHandler::handleEnter(QKeyEvent*)
 
 					//
 					// Вставить блок время и место перед папкой
-					//
+                    //
 					cursor.insertBlock();
 					cursor.movePosition(QTextCursor::PreviousCharacter);
 					cursor.setBlockFormat(QTextBlockFormat());
@@ -96,6 +96,7 @@ void FolderHeaderHandler::handleEnter(QKeyEvent*)
 					// Вставить блок время и место
 					//
 					editor()->addScenarioBlock(jumpForEnter(ScenarioBlockStyle::FolderHeader));
+                    editor()->textCursor().block().setUserData(nullptr);
 				} else {
 					//! Внутри блока
 
@@ -103,6 +104,7 @@ void FolderHeaderHandler::handleEnter(QKeyEvent*)
 					// Вставить блок время и место
 					//
 					editor()->addScenarioBlock(ScenarioBlockStyle::SceneHeading);
+                    editor()->textCursor().block().setUserData(nullptr);
 				}
 			}
 		}
