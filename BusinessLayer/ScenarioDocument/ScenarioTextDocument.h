@@ -73,6 +73,11 @@ namespace BusinessLogic
         void insertFromMime(int _insertPosition, const QString& _mimeData);
 
         /**
+         * @brief Можно ли применить патч так, чтобы он не скломал документ
+         */
+        bool canApplyPatch(const QString& _patch) const;
+
+        /**
          * @brief Применить патч
          */
         int applyPatch(const QString& _patch, bool _checkXml = false);

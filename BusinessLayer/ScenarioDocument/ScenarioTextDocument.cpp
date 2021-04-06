@@ -311,6 +311,13 @@ void ScenarioTextDocument::insertFromMime(int _insertPosition, const QString &_m
     }
 }
 
+bool ScenarioTextDocument::canApplyPatch(const QString& _patch) const
+{
+    const QString patchUncopressed = DatabaseHelper::uncompress(_patch);
+    auto xmlsForUpdate = DiffMatchPatchHelper::changedXml(m_scenarioXml, patchUncopressed, true);
+    return xmlsForUpdate.first.isValid() && xmlsForUpdate.second.isValid();
+}
+
 int ScenarioTextDocument::applyPatch(const QString &_patch, bool _checkXml)
 {
     updateScenarioXml();
