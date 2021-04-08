@@ -55,7 +55,8 @@ public:
         Arabic,
         Galician,
         Indonesian,
-        Lithuanian
+        Lithuanian,
+        Dannish
     };
 
     /**
