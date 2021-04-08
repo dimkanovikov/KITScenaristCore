@@ -2012,6 +2012,18 @@ O projeto não foi sincronizado.</translation>
         <source>If you want to edit a file, please check it&apos;s permissions for your account.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Read only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file you open located in the backups folder.
+
+You can no longer edit files from the backups folder.Files in this folder used only for content recovery. Please use another folder to save and store the files you are working on.
+
+Now, you should copy your file from the backups folder outside via file browser, or via the &quot;Menu -&gt; Save current project as...&quot; option.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ExportManager</name>
@@ -2213,19 +2225,19 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Changing scenes numbers locking</source>
-        <translation>Bloqueio de númeração das cenas</translation>
+        <translation type="vanished">Bloqueio de númeração das cenas</translation>
     </message>
     <message>
         <source>Do you want to unlock scenes numbers or lock again?</source>
-        <translation>Você deseja desbloquear a numeração das cenas ou mantê-la bloqueada?</translation>
+        <translation type="vanished">Você deseja desbloquear a numeração das cenas ou mantê-la bloqueada?</translation>
     </message>
     <message>
         <source>Unlock</source>
-        <translation>Desbloquear</translation>
+        <translation type="vanished">Desbloquear</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation>Bloquear</translation>
+        <translation type="vanished">Bloquear</translation>
     </message>
     <message>
         <source>Conflicted version</source>
@@ -3274,19 +3286,35 @@ Temos também o editor de texto do roteiro. Este editor tem várias funções au
         <translation type="unfinished">Cabeçalho:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Undo last action</source>
         <translation type="unfinished">Desfazer última ação</translation>
     </message>
     <message>
         <source>Redo previously undone action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scenes numbering locking:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lock scenes numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lock new scenes numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlock scenes numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5145,7 +5173,7 @@ O aplicativo vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Lock/unlock scene numbers</source>
-        <translation>Bloquear/desbloquear a numeração das cenas</translation>
+        <translation type="vanished">Bloquear/desbloquear a numeração das cenas</translation>
     </message>
 </context>
 <context>
@@ -5386,6 +5414,18 @@ quando você estiver trabalhando ele salvará o projeto a cada %1 minutos.</tran
     </message>
     <message>
         <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Indonesian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lithuanian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dannish</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
