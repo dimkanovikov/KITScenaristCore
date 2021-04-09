@@ -1891,7 +1891,7 @@ void ScenarioTextEdit::insertFromMimeData(const QMimeData* _source)
         helper.setPosition(cursor.selectionStart());
         ScenarioBlockStyle::Type type = ScenarioBlockStyle::forBlock(helper.block());
         cursor.deleteChar();
-        changeScenarioBlockType(type);
+        applyScenarioTypeToBlock(type);
     }
 
 #ifndef MOBILE_OS

@@ -1711,8 +1711,9 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rema
                     //
                     // Если необходимо, загрузить информацию о сцене
                     //
-                    if (tokenType == ScenarioBlockStyle::SceneHeading
-                        || tokenType == ScenarioBlockStyle::FolderHeader) {
+                    if ((tokenType == ScenarioBlockStyle::SceneHeading
+                        || tokenType == ScenarioBlockStyle::FolderHeader)
+                        && dynamic_cast<SceneHeadingBlockInfo*>(cursor.block().userData()) == nullptr) {
                         SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
                         if (reader.attributes().hasAttribute(ATTRIBUTE_UUID)) {
                             const QString uuid = reader.attributes().value(ATTRIBUTE_UUID).toString();
