@@ -2026,7 +2026,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <source>The file you open located in the backups folder.
 
-You can no longer edit files from the backups folder.Files in this folder used only for content recovery. Please use another folder to save and store the files you are working on.
+You can no longer edit files from the backups folder. Files in this folder used only for content recovery. Please use another folder to save and store the files you are working on.
 
 Now, you should copy your file from the backups folder outside via file browser, or via the &quot;Menu -&gt; Save current project as...&quot; option.</source>
         <translation type="unfinished"></translation>
@@ -2815,6 +2815,10 @@ And the text editor of the script. The editor has many auxiliary functions that 
     <message>
         <source>Print Preview</source>
         <translation>Попередній перегляд</translation>
+    </message>
+    <message>
+        <source>Print color cards</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
