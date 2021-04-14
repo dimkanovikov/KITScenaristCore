@@ -1711,36 +1711,38 @@ void ScenarioXml::xmlToScenarioV1(int _position, const QString& _xml, bool _rema
                     //
                     // Если необходимо, загрузить информацию о сцене
                     //
-                    if ((tokenType == ScenarioBlockStyle::SceneHeading
-                        || tokenType == ScenarioBlockStyle::FolderHeader)
-                        && dynamic_cast<SceneHeadingBlockInfo*>(cursor.block().userData()) == nullptr) {
-                        SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
-                        if (reader.attributes().hasAttribute(ATTRIBUTE_UUID)) {
-                            const QString uuid = reader.attributes().value(ATTRIBUTE_UUID).toString();
-                            if (_remainLinkedData || !isScenarioHaveUuid(uuid)) {
-                                info->setUuid(uuid);
+                    if (tokenType == ScenarioBlockStyle::SceneHeading
+                        || tokenType == ScenarioBlockStyle::FolderHeader) {
+                        if (cursor.block().text().isEmpty()
+                            || dynamic_cast<SceneHeadingBlockInfo*>(cursor.block().userData()) == nullptr) {
+                            SceneHeadingBlockInfo* info = new SceneHeadingBlockInfo;
+                            if (reader.attributes().hasAttribute(ATTRIBUTE_UUID)) {
+                                const QString uuid = reader.attributes().value(ATTRIBUTE_UUID).toString();
+                                if (_remainLinkedData || !isScenarioHaveUuid(uuid)) {
+                                    info->setUuid(uuid);
+                                }
                             }
+                            if (reader.attributes().hasAttribute(ATTRIBUTE_COLOR)) {
+                                info->setColors(reader.attributes().value(ATTRIBUTE_COLOR).toString());
+                            }
+                            if (reader.attributes().hasAttribute(ATTRIBUTE_STAMP)) {
+                                info->setStamp(reader.attributes().value(ATTRIBUTE_STAMP).toString());
+                            }
+                            if (reader.attributes().hasAttribute(ATTRIBUTE_TITLE)) {
+                                info->setName(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));
+                            }
+                            if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER) && _remainLinkedData) {
+                                info->setSceneNumber(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER).toString());
+                                info->setSceneNumberFixed(true);
+                            }
+                            if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING)) {
+                                info->setSceneNumberFixNesting(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING).toInt());
+                            }
+                            if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER_SUFFIX)) {
+                                info->setSceneNumberSuffix(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_SUFFIX).toInt());
+                            }
+                            cursor.block().setUserData(info);
                         }
-                        if (reader.attributes().hasAttribute(ATTRIBUTE_COLOR)) {
-                            info->setColors(reader.attributes().value(ATTRIBUTE_COLOR).toString());
-                        }
-                        if (reader.attributes().hasAttribute(ATTRIBUTE_STAMP)) {
-                            info->setStamp(reader.attributes().value(ATTRIBUTE_STAMP).toString());
-                        }
-                        if (reader.attributes().hasAttribute(ATTRIBUTE_TITLE)) {
-                            info->setName(TextEditHelper::fromHtmlEscaped(reader.attributes().value(ATTRIBUTE_TITLE).toString()));
-                        }
-                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER) && _remainLinkedData) {
-                            info->setSceneNumber(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER).toString());
-                            info->setSceneNumberFixed(true);
-                        }
-                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING)) {
-                            info->setSceneNumberFixNesting(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_FIX_NESTING).toInt());
-                        }
-                        if (reader.attributes().hasAttribute(ATTRIBUTE_SCENE_NUMBER_SUFFIX)) {
-                            info->setSceneNumberSuffix(reader.attributes().value(ATTRIBUTE_SCENE_NUMBER_SUFFIX).toInt());
-                        }
-                        cursor.block().setUserData(info);
                     }
                     //
                     // Для всех остальных блоков создаём структурку с данными о блоке
