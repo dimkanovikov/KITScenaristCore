@@ -56,7 +56,7 @@ public:
         Galician,
         Indonesian,
         Lithuanian,
-        Dannish
+        Danish
     };
 
     /**

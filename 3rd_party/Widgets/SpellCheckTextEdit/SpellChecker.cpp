@@ -121,7 +121,7 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Lithuanian:
             code = "lt_LT";
             break;
-        case Dannish:
+        case Danish:
             code = "da_DA";
             break;
         default:
