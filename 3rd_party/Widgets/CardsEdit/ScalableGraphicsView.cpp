@@ -242,7 +242,14 @@ void ScalableGraphicsView::mouseMoveEvent(QMouseEvent* _event)
 void ScalableGraphicsView::mouseReleaseEvent(QMouseEvent* _event)
 {
 #ifdef MOBILE_OS
-    m_dragWaitingTimer.stop();
+    if (m_dragWaitingTimer.isActive()) {
+        m_dragWaitingTimer.stop();
+
+        //
+        // Т.к. мы съели событие нажатия мыши, то если таймер ещё активен, восстановим его
+        //
+        QGraphicsView::mousePressEvent(_event);
+    }
     m_canDragCard = true;
 #endif
 
