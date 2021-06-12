@@ -59,6 +59,16 @@ void ImageLabel::setReadOnly(bool _readOnly)
     }
 }
 
+void ImageLabel::setImageScalable(bool _scalable)
+{
+    if (m_isScalable == _scalable) {
+        return;
+    }
+
+    m_isScalable = _scalable;
+    update();
+}
+
 void ImageLabel::enterEvent(QEvent* _event)
 {
     //
@@ -98,7 +108,10 @@ void ImageLabel::paintEvent(QPaintEvent* _event)
     if (!m_image.isNull()) {
         QPainter painter;
         painter.begin(this);
-        const QPixmap scaledPhoto = m_image.scaled(size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+        const QPixmap scaledPhoto = m_image.scaled(size(),
+                                                   m_isScalable ? Qt::KeepAspectRatioByExpanding
+                                                                : Qt::KeepAspectRatio,
+                                                   Qt::SmoothTransformation);
         painter.drawPixmap((width() - scaledPhoto.width()) / 2,
                            (height() - scaledPhoto.height()) / 2,
                            scaledPhoto);

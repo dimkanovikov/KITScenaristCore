@@ -41,6 +41,11 @@ public:
      */
     void setReadOnly(bool _readOnly);
 
+    /**
+     * @brief Необходимо ли масштабировать изображение
+     */
+    void setImageScalable(bool _scalable);
+
 signals:
     /**
      * @brief Сигнал щелчка по изображению
@@ -93,6 +98,11 @@ private:
      * @brief Режим "только для чтения"
      */
     bool m_isReadOnly;
+
+    /**
+     * @brief Необходимо ли масштабировать изображение
+     */
+    bool m_isScalable = false;
 };
 
 #endif // PHOTOLABEL_H

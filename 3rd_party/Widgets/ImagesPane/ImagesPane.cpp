@@ -69,6 +69,7 @@ void ImagesPane::addImage(const QPixmap& _image)
                               ? (screenSize.width() - m_layout->horizontalSpacing() * 2) / 3
                               : (screenSize.width() - m_layout->horizontalSpacing() * 4) / 5;
         imageLabel->setFixedSize(photoSize, photoSize);
+        imageLabel->setImageScalable(true);
 #endif
         imageLabel->setImage(_image);
         imageLabel->setSortOrder(imageSortOrder);
