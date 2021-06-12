@@ -486,8 +486,6 @@ Qt::ItemFlags ResearchModel::flags(const QModelIndex& _index) const
         //
 #ifdef MOBILE_OS
         switch (item->research()->type()) {
-            case Research::ImagesGallery:
-            case Research::Image:
             case Research::MindMap:
             case Research::Url: {
                 flags ^= Qt::ItemIsEnabled;
