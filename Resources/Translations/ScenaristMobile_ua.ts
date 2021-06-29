@@ -72,6 +72,10 @@
         <source>Text document</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Images gallery</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BusinessLayer::AbstractExporter</name>
