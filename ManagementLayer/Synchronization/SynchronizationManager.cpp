@@ -2005,8 +2005,8 @@ void SynchronizationManager::checkNetworkState()
     //
     // Защитимся от множественных вызовов
     //
-    static bool s_isInCheckNetworkState = false;
-    if (s_isInCheckNetworkState) {
+    const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
+    if (!canRun) {
         return;
     }
 
@@ -2015,8 +2015,6 @@ void SynchronizationManager::checkNetworkState()
         return;
     }
 #endif
-
-    s_isInCheckNetworkState = true;
 
     //
     // Делаем три попытки запроса тестовую страницу
@@ -2047,8 +2045,6 @@ void SynchronizationManager::checkNetworkState()
     //
     const int checkTimeout = m_internetConnectionStatus == Active ? 30000 : 1000;
     QTimer::singleShot(checkTimeout, this, &SynchronizationManager::checkNetworkState);
-
-    s_isInCheckNetworkState = false;
 }
 
 void SynchronizationManager::setInternetConnectionStatus(SynchronizationManager::InternetStatus _newStatus)
