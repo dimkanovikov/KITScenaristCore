@@ -17,6 +17,11 @@ public:
 	 */
 	void setIsActive(bool _isActive);
 
+    /**
+     * @brief Настроить класс на сохранение тех или иных бекапов. По-умолчанию сохраняются все типы
+     */
+    void configure(bool _fullBackup, bool _versions);
+
 	/**
 	 * @brief Установить папку для сохранения резервных копий
 	 */
@@ -33,10 +38,11 @@ private:
 	 */
 	bool m_isActive = true;
 
-	/**
-	 * @brief Находится ли в процессе выполениня
-	 */
-	bool m_isInProgress = false;
+    /**
+     * @brief Опции сохранения разных видов бэкапов
+     */
+    bool m_isSaveFullBackup = true;
+    bool m_isSaveVersions = true;
 
 	/**
 	 * @brief Папка, в которую сохранять резервные копии

@@ -61,7 +61,16 @@ void ImagesPane::addImage(const QPixmap& _image)
         m_images.append(_image);
 
         ImageLabel* imageLabel = new ImageLabel(this);
+#ifndef MOBILE_OS
         imageLabel->setFixedSize(200, 150);
+#else
+        const auto screenSize = topLevelWidget()->geometry().size();
+        const int photoSize = screenSize.width() < screenSize.height()
+                              ? (screenSize.width() - m_layout->horizontalSpacing() * 2) / 3
+                              : (screenSize.width() - m_layout->horizontalSpacing() * 4) / 5;
+        imageLabel->setFixedSize(photoSize, photoSize);
+        imageLabel->setImageScalable(true);
+#endif
         imageLabel->setImage(_image);
         imageLabel->setSortOrder(imageSortOrder);
         imageLabel->setReadOnly(m_isReadOnly);
@@ -241,7 +250,7 @@ void ImagesPane::initView()
     QWidget* contents = new QWidget(this);
     contents->installEventFilter(this);
     contents->setAcceptDrops(true);
-    m_layout = new FlowLayout(contents);
+    m_layout = new FlowLayout(contents, 0, 1, 1);
     m_layout->addWidget(m_addImageButton);
     setWidget(contents);
 }

@@ -15,6 +15,7 @@ ImageLabel::ImageLabel(QWidget* _parent) :
     m_isReadOnly(false)
 {
     setCursor(Qt::PointingHandCursor);
+    setFocusPolicy(Qt::StrongFocus);
 
     m_clearButton->setIcon(QIcon(":/Graphics/Icons/Editing/red_cross.png"));
     m_clearButton->setStyleSheet("border: none;");
@@ -58,6 +59,16 @@ void ImageLabel::setReadOnly(bool _readOnly)
     }
 }
 
+void ImageLabel::setImageScalable(bool _scalable)
+{
+    if (m_isScalable == _scalable) {
+        return;
+    }
+
+    m_isScalable = _scalable;
+    update();
+}
+
 void ImageLabel::enterEvent(QEvent* _event)
 {
     //
@@ -83,6 +94,8 @@ void ImageLabel::leaveEvent(QEvent* _event)
 
 void ImageLabel::mousePressEvent(QMouseEvent* _event)
 {
+    setFocus();
+
     emit clicked();
 
     QWidget::mousePressEvent(_event);
@@ -95,7 +108,10 @@ void ImageLabel::paintEvent(QPaintEvent* _event)
     if (!m_image.isNull()) {
         QPainter painter;
         painter.begin(this);
-        const QPixmap scaledPhoto = m_image.scaled(size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        const QPixmap scaledPhoto = m_image.scaled(size(),
+                                                   m_isScalable ? Qt::KeepAspectRatioByExpanding
+                                                                : Qt::KeepAspectRatio,
+                                                   Qt::SmoothTransformation);
         painter.drawPixmap((width() - scaledPhoto.width()) / 2,
                            (height() - scaledPhoto.height()) / 2,
                            scaledPhoto);

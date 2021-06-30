@@ -1194,6 +1194,7 @@ void CardsScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *_event)
 
 void CardsScene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *_event)
 {
+#ifndef MOBILE_OS
     //
     // Если ни одного элемента не выделено, добавляем новый в позиции курсора
     //
@@ -1212,6 +1213,9 @@ void CardsScene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *_event)
     }
 
     QGraphicsScene::mouseDoubleClickEvent(_event);
+#else
+    Q_UNUSED(_event)
+#endif
 }
 
 void CardsScene::keyPressEvent(QKeyEvent *_event)

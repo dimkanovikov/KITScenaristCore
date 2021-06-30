@@ -13,6 +13,17 @@
     </message>
 </context>
 <context>
+    <name>AddImageButton</name>
+    <message>
+        <source>Choose image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddProjectView</name>
     <message>
         <source>Create project</source>
@@ -55,6 +66,10 @@
     </message>
     <message>
         <source>Text document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images gallery</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -474,10 +489,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Color %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
@@ -499,6 +510,14 @@
     </message>
     <message>
         <source>Tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Additional color %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -637,6 +656,14 @@
     </message>
     <message>
         <source>First draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File &quot;%1&quot; can&apos;t be opened, please check out that you tries to open file which was created in the KIT Scenarist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File &quot;%1&quot; can&apos;t be opened, please check out that you tries to open KIT Scenarist file (*.kitsp).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1322,6 +1349,25 @@ O projeto não foi sincronizado.</translation>
         <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Unnamed image</source>
+        <translation type="unfinished">Imagem sem nome</translation>
+    </message>
+</context>
+<context>
+    <name>ManagementLayer::RestoreManager</name>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script was restored.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ManagementLayer::ScriptManager</name>
@@ -1420,6 +1466,10 @@ O projeto não foi sincronizado.</translation>
     </message>
     <message>
         <source>Cards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore script</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1704,10 +1754,6 @@ Let&apos;s create the first one!</source>
     </message>
     <message>
         <source>Use corkboard background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use keyboard preedit ability (experimental)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2019,6 +2065,14 @@ Your subscription is active until</source>
     </message>
     <message>
         <source>Start scenes numbering from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gallery name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

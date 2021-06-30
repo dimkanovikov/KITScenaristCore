@@ -131,6 +131,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
             ResearchBuilder::create(Domain::Identifier(), nullptr, Research::Synopsis, 2, tr("Synopsis"))
         );
     scenarioItem->appendItem(synopsisItem);
+#ifndef MOBILE_OS
     //
     // Версии сценария
     //
@@ -139,6 +140,7 @@ ResearchModel::ResearchModel(QObject* _parent) :
             ResearchBuilder::create(Domain::Identifier(), nullptr, Research::Versions, 3, tr("Versions"))
         );
     scenarioItem->appendItem(scriptVersionsItem);
+#endif
 
     //
     // Персонажи
@@ -484,8 +486,6 @@ Qt::ItemFlags ResearchModel::flags(const QModelIndex& _index) const
         //
 #ifdef MOBILE_OS
         switch (item->research()->type()) {
-            case Research::ImagesGallery:
-            case Research::Image:
             case Research::MindMap:
             case Research::Url: {
                 flags ^= Qt::ItemIsEnabled;
