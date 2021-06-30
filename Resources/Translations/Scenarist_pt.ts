@@ -5429,7 +5429,7 @@ quando você estiver trabalhando ele salvará o projeto a cada %1 minutos.</tran
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Dannish</source>
+        <source>Danish</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

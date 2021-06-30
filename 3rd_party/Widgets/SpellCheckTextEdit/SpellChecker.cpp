@@ -31,7 +31,7 @@ QString SpellChecker::languageCode(SpellChecker::Language _language)
         case Azerbaijani:
             code = "az_AZ";
             break;
-        case Belorussian:
+        case Belarusian:
             code = "be_BY";
             break;
         case Catalan:

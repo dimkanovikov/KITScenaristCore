@@ -5474,7 +5474,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Dannish</source>
+        <source>Danish</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

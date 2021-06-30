@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ar_EG">
+<TS version="2.1" language="be_BY">
 <context>
     <name>AboutDialog</name>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="20"/>
         <source>About the app</source>
-        <translation>عن التطبيق</translation>
+        <translation>Аб праграме</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="33"/>
         <source>KIT Scenarist</source>
-        <translation>سيناريست كيت</translation>
+        <translation>КІТ Сцэнарыст</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="40"/>
         <source>Our heroes, who help us to create international versions:</source>
-        <translation>أبطالنا الذين يساعدوننا في إنشاء إصدارات دولية:</translation>
+        <translation>Нашы героі, што дапамаглі нам стварыць міжнародныя версіі:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="50"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; يتم توزيع هذا البرنامج تحت &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt; &lt;span style = &quot;text-decoration : underline؛ color: # 2b78da؛ &quot;&gt; ترخيص GNU GPL3 &lt;/span&gt; &lt;/a&gt; ، كود المصدر متاح على &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt; &lt;span style =&quot; زخرفة النص: تسطير ؛ اللون: # 2b78da ؛ &quot;&gt; GitHub &lt;/span&gt; &lt;/a&gt;. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Праграма распаўсюджваецца пад ліцэнзіяй &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt;, зыходны код даступны на &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="73"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The application logo designed by &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; شعار التطبيق الذي صممه &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt; &lt;span style = &quot;text-decoration: underline؛ color: # 2b78da؛ &quot;&gt; سيكيبو جيراز &lt;/ span&gt; &lt;/a&gt;. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Лагатып праграмы распрацаваў &lt;a href=&quot;https://plus.google.com/+SikeboGiraz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Sikebo Giraz&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="105"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The cat Alexander illustrations created by &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; الرسوم التوضيحية القط الإسكندر التي أنشأتها &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt; &lt;span style = &quot;text-decoration: underline؛ color : # 2b78da؛ &quot;&gt; Walmazan Studio Inc. &lt;/span&gt; &lt;/a&gt; &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ілюстрацыі ката Аляксандра створаны ў &lt;a href=&quot;https://www.facebook.com/walmazanstudio/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Walmazan Studio Inc.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Simple and powerful screenplay editor developed by &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;DimkaNovikov labs&lt;/span&gt;&lt;/a&gt; featuring &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Alexey Polishkin&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; محرر سيناريو بسيط وقوي تم تطويره بواسطة &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt; &lt;span style = &quot;text-decoration: underline؛ color: # 2b78da ؛ &quot;&gt; مختبرات DimkaNovikov &lt;/span&gt; &lt;/a&gt; تضم &lt;a href=&quot;https://github.com/Armijo38&quot;&gt; &lt;span style =&quot; text-decoration: underline؛ color: # 2b78da؛ &quot;&gt; أليكسي بولشكين &lt;/span&gt; &lt;/a&gt;. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Просты і магутны рэдактар сцэнарыя распрацаваны ў &lt;a href=&quot;http://dimkanovikov.pro/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Майстэрні Дзмітрыя Новікава&lt;/span&gt;&lt;/a&gt; з удзелам &lt;a href=&quot;https://github.com/Armijo38&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;Аляксея Палушкіна&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -44,12 +44,12 @@
     <message>
         <location filename="../../3rd_party/Widgets/AcceptebleLineEdit/AcceptebleLineEdit.cpp" line="32"/>
         <source>Text</source>
-        <translation>كتابة</translation>
+        <translation>Тэкст</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/AcceptebleLineEdit/AcceptebleLineEdit.cpp" line="98"/>
         <source>was changed from &lt;b&gt;%1&lt;/b&gt; to &lt;b&gt;%2&lt;/b&gt;. Apply changes?</source>
-        <translation>تم التغيير من &lt;b&gt;%1 &lt;/b&gt; إلى &lt;b&gt;%2 &lt;/b&gt;. تطبيق التغييرات؟</translation>
+        <translation>быў зменены з &lt;b&gt;%1&lt;/b&gt; на &lt;b&gt;%2&lt;/b&gt;. Прыняць змены?</translation>
     </message>
 </context>
 <context>
@@ -57,12 +57,12 @@
     <message>
         <location filename="../../3rd_party/Widgets/ImagesPane/AddImageButton.cpp" line="28"/>
         <source>Choose image</source>
-        <translation>اختر صورة</translation>
+        <translation>Выберыце выяву</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/ImagesPane/AddImageButton.cpp" line="30"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
-        <translation>الصور (* .png * .jpeg * .jpg * .bmp * .tiff * .tif * .gif)</translation>
+        <translation>Выявы (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
     </message>
 </context>
 <context>
@@ -70,28 +70,28 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="20"/>
         <source>Add New Project</source>
-        <translation>إضافة مشروع جديد</translation>
+        <translation>Дадаць новы праект</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="44"/>
         <source>Enter Name of New Project:</source>
-        <translation>أدخل اسم المشروع الجديد:</translation>
+        <translation>Увядзіце назву новага праекта:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="57"/>
         <source>File exists. It will be replaced after creating.</source>
-        <translation>الملف موجود. سيتم استبداله بعد إنشاء.</translation>
+        <translation>Файл з гэтай назвай ужо існуе. Ён будзе заменены пасля стварэння.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="104"/>
         <source>Choose Location for New Project File:</source>
-        <translation>اختر موقعًا لملف مشروع جديد:</translation>
+        <translation>Выберыце папку для захавання новага праекта:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="127"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="173"/>
         <source>Browse...</source>
-        <translation>تصفح...</translation>
+        <translation>Агляд...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="130"/>
@@ -102,27 +102,27 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="150"/>
         <source>Choose File with Project to Import:</source>
-        <translation>اختر ملف بمشروع لاستيراده:</translation>
+        <translation>Выберыце файл з праектам для імпарту:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="199"/>
         <source>Local</source>
-        <translation>محلي</translation>
+        <translation>На лакальным камп&apos;ютары</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="215"/>
         <source>Remote</source>
-        <translation>التحكم عن بعد</translation>
+        <translation>У воблаку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="242"/>
         <source>Advanced</source>
-        <translation>المتقدمة</translation>
+        <translation>Дадатковыя налады</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.ui" line="249"/>
         <source>Sorry, but you need to have active internet connection for creating new projects in cloud.</source>
-        <translation>عذرًا ، ولكن يجب أن يكون لديك اتصال إنترنت نشط لإنشاء مشاريع جديدة في السحابة.</translation>
+        <translation>Прабачце, але для стварэння новых праектаў у воблаку неабходна падлучыцца да Інтэрнэту.</translation>
     </message>
 </context>
 <context>
@@ -130,7 +130,7 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.ui" line="32"/>
         <source>Bookmark text</source>
-        <translation>نص إشارة مرجعية</translation>
+        <translation>Тэкст закладкі</translation>
     </message>
 </context>
 <context>
@@ -138,7 +138,7 @@
     <message>
         <location filename="../../BusinessLayer/Export/AbstractExporter.cpp" line="379"/>
         <source>Real name: </source>
-        <translation>الاسم الحقيقي:</translation>
+        <translation>Сапраўднае імя: </translation>
     </message>
 </context>
 <context>
@@ -146,29 +146,27 @@
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="15"/>
         <source>INT</source>
-        <translation>داخلي</translation>
+        <translation>ІНТ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="16"/>
         <source>EXT</source>
-        <translation>خارجي</translation>
+        <translation>НАТ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="17"/>
         <source>EST</source>
-        <translatorcomment>Nobody uses this one anymore </translatorcomment>
-        <translation></translation>
+        <translation>ЭКСТ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="18"/>
         <source>INT./EXT</source>
-        <translatorcomment>I have changed all the int./ext to the arabic translation of ext/int which we use depending on where the scene starts so for the arabic version there should be int ext int/ext and ext/int</translatorcomment>
-        <translation>خارجي/داخلي</translation>
+        <translation>ІНТ./НАТ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="19"/>
         <source>INT/EXT</source>
-        <translation>داخلي/خارجي</translation>
+        <translation>ІНТ/НАТ</translation>
     </message>
 </context>
 <context>
@@ -176,34 +174,32 @@
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="36"/>
         <source>INT</source>
-        <translation>داخلي</translation>
+        <translation>ІНТ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="37"/>
         <source>EXT</source>
-        <translation>خارجي</translation>
+        <translation>НАТ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="38"/>
         <source>EST</source>
-        <translatorcomment>Nobody uses this one anymore</translatorcomment>
-        <translation></translation>
+        <translation>ЭКСТ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="39"/>
         <source>INT./EXT</source>
-        <translatorcomment>ّ</translatorcomment>
-        <translation>خارجي/داخلي</translation>
+        <translation>ІНТ./НАТ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="40"/>
         <source>INT/EXT</source>
-        <translation>داخلي/خارجي</translation>
+        <translation>ІНТ/НАТ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="41"/>
         <source>I/E</source>
-        <translation>داخلي/خارجي</translation>
+        <translation>І/Н</translation>
     </message>
 </context>
 <context>
@@ -211,47 +207,47 @@
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="158"/>
         <source>All supported files</source>
-        <translation>جميع الملفات المدعومة</translation>
+        <translation>Усе файлы, што падтрымліваюцца</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="160"/>
         <source>KIT Scenarist project</source>
-        <translation>مشروع سيناريست كيت</translation>
+        <translation>Файл праекта КІТ Сцэнарыст</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="162"/>
         <source>Final Draft screenplay</source>
-        <translation>سيناريو فاينال درافت</translation>
+        <translation>Сцэнарый у фармаце Final Draft</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="164"/>
         <source>Final Draft template</source>
-        <translation>نموذج فاينال درافت</translation>
+        <translation>Шаблон сцэнарыя ў фармаце Final Draft</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="166"/>
         <source>Trelby screenplay</source>
-        <translation>سيناريو تريلبي</translation>
+        <translation>Сцэнарый у фармаце Trelby</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="168"/>
         <source>Office Open XML</source>
-        <translation>اوفيس اوبين XML</translation>
+        <translation>Office Open XML</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="170"/>
         <source>OpenDocument text</source>
-        <translation>نص اوبن دوكيومنت</translation>
+        <translation>OpenDocument тэкст</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="172"/>
         <source>Fountain text</source>
-        <translation>نص فاونتن</translation>
+        <translation>Тэкст у фармаце Fountain</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/AbstractImporter.h" line="174"/>
         <source>Celtx project</source>
-        <translation>مشروع سيلتكس</translation>
+        <translation>Сцэнарый у фармаце Celtx</translation>
     </message>
 </context>
 <context>
@@ -259,32 +255,32 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="23"/>
         <source>Cast Report</source>
-        <translation>تقرير الممثلين</translation>
+        <translation>Спіс персанажаў</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="232"/>
         <source>Character</source>
-        <translation>الشخصية</translation>
+        <translation>Персанаж</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="234"/>
         <source>Total Dialogues</source>
-        <translation>مجموع الحوارات</translation>
+        <translation>Усяго рэплік</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="237"/>
         <source>Speaking Scenes</source>
-        <translation>المشاهد الحوارية</translation>
+        <translation>Сцэн з рэплікамі</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="239"/>
         <source>Non-Sp. Scenes</source>
-        <translation>المشاهد الغير حوارية</translation>
+        <translation>Сцэн без рэплік</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CastReport.cpp" line="242"/>
         <source>Total Scenes</source>
-        <translation>مجموع المشاهد</translation>
+        <translation>Усяго сцэн</translation>
     </message>
 </context>
 <context>
@@ -292,27 +288,27 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="29"/>
         <source>Characters Dialogues</source>
-        <translation>حوارات الشخصيات</translation>
+        <translation>Рэплікі персанажаў</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="112"/>
         <source>Scene/Dialogue</source>
-        <translation>المشهد / الحوار</translation>
+        <translation>Сцэна/Рэпліка</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="114"/>
         <source>Number</source>
-        <translation>الرقم</translation>
+        <translation>Нумар</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="116"/>
         <source>Page</source>
-        <translation>الصفحة</translation>
+        <translation>Старонка</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/CharacterReport.cpp" line="142"/>
         <source>[UNDEFINED]</source>
-        <translation>[غير معرف]</translation>
+        <translation>[НЕ ВЫЗНАЧАНА]</translation>
     </message>
 </context>
 <context>
@@ -320,17 +316,17 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="51"/>
         <source>Characters Activity Plot</source>
-        <translation>حبكة أنشطة الشخصيات</translation>
+        <translation>Графік актыўнасці персанажаў</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="212"/>
         <source>Scene</source>
-        <translation>المشهد</translation>
+        <translation>Сцэна</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/CharactersActivityPlot.cpp" line="217"/>
         <source>Dialogues count:</source>
-        <translation>عدد الحوارات:</translation>
+        <translation>Колькасць рэплік:</translation>
     </message>
 </context>
 <context>
@@ -338,17 +334,17 @@
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="175"/>
         <source>Pages</source>
-        <translation>الصفحات</translation>
+        <translation>Старонак</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="182"/>
         <source>Words</source>
-        <translation>الكلمات</translation>
+        <translation>Словаў</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="189"/>
         <source>Symbols</source>
-        <translation>الرموز</translation>
+        <translation>Сімвалаў</translation>
     </message>
 </context>
 <context>
@@ -356,39 +352,38 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="29"/>
         <source>Location Report</source>
-        <translation>تقرير المواقع</translation>
+        <translation>Спіс лакацый</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="147"/>
         <source>Location/Scene</source>
-        <translation>الموقع / المشهد</translation>
+        <translation>Лакацыя/Сцэна</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="149"/>
         <source>Number</source>
-        <translation>الرقم</translation>
+        <translation>Нумар</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="151"/>
         <source>Page</source>
-        <translation>الصفحة</translation>
+        <translation>Старонка</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="153"/>
         <source>Scenes</source>
-        <translation>المشاهد</translation>
+        <translation>Сцэн</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="155"/>
         <source>Chron</source>
-        <translatorcomment>I am assuming Chron is short for chronometry</translatorcomment>
-        <translation>الترتيب الزمني</translation>
+        <translation>Хран</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="164"/>
         <location filename="../../BusinessLayer/Statistics/Reports/LocationReport.cpp" line="208"/>
         <source>[UNDEFINED]</source>
-        <translation>[غير معرف]</translation>
+        <translation>[НЕ ВЫЗНАЧАНА]</translation>
     </message>
 </context>
 <context>
@@ -396,7 +391,7 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/StatisticsFacade.cpp" line="75"/>
         <source>generated</source>
-        <translation>تم الإنشاء</translation>
+        <translation>сфарміравана</translation>
     </message>
 </context>
 <context>
@@ -404,45 +399,45 @@
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="107"/>
         <source>Script</source>
-        <translation>النص</translation>
+        <translation>Сцэнарый</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="115"/>
         <source>Title Page</source>
-        <translation>صفحة العنوان</translation>
+        <translation>Тытульная старонка</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="123"/>
         <source>Logline</source>
-        <translation>النبذة</translation>
+        <translation>Логлайн</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="131"/>
         <source>Synopsis</source>
-        <translation>الملخص</translation>
+        <translation>Сінопсіс</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="139"/>
         <source>Versions</source>
-        <translation>الإصدارات</translation>
+        <translation>Версіі</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="148"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="252"/>
         <source>Characters</source>
-        <translation>الشخصيات</translation>
+        <translation>Персанажы</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="157"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="257"/>
         <source>Locations</source>
-        <translation>المواقع</translation>
+        <translation>Лакацыі</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="166"/>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="262"/>
         <source>Documents</source>
-        <translation>الملفات</translation>
+        <translation>Дакументы</translation>
     </message>
 </context>
 <context>
@@ -451,187 +446,172 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="66"/>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="92"/>
         <source>Undefined</source>
-        <translation>غير معرف</translation>
+        <translation>Нявызначаны</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="67"/>
         <source>Scene Heading</source>
-        <translation>عنوان المشهد</translation>
+        <translation>Месца і час</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="68"/>
         <source>Scene Characters</source>
-        <translation>شخصيات المشهد</translation>
+        <translation>Удзельнікі сцэны</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="69"/>
         <source>Action</source>
-        <translation>الحدث</translation>
+        <translation>Апісанне дзеяння</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="70"/>
         <source>Character</source>
-        <translation>الشخصية</translation>
+        <translation>Герой</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="71"/>
         <source>Parenthetical</source>
-        <translation>شرح الحوار</translation>
+        <translation>Рэмарка</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="72"/>
         <source>Dialog</source>
-        <translation>الحوار</translation>
+        <translation>Дыялог</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="73"/>
         <source>Transition</source>
-        <translation>الإنتقال</translation>
+        <translation>Пераход</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="74"/>
         <source>Shot</source>
-        <translation>اللقطة</translation>
+        <translation>Заўвага</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="75"/>
         <source>Title Header</source>
-        <translation>عنوان رأس الصفحة</translation>
+        <translation>Загаловак цітра</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="76"/>
         <source>Title</source>
-        <translation>العنوان</translation>
+        <translation>Цітр</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="77"/>
         <source>Noprintable Text</source>
-        <translation>نص غير قابل للطباعة</translation>
+        <translation>Нататка па тэксце</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="78"/>
         <source>Folder</source>
-        <translation>المجلد</translation>
+        <translation>Папка</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="79"/>
         <source>Folder Footer</source>
-        <translation>تذييل المجلد</translation>
+        <translation>Карэнная папка</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="80"/>
         <source>Scene Description</source>
-        <translation>وصف المشهد</translation>
+        <translation>Апісанне сцэны</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="81"/>
         <source>Lyrics</source>
-        <translation>كلمات الاغاني</translation>
+        <translation>Лірыка</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="94"/>
         <source>SH</source>
         <extracomment>Reduction of Scene Heading</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>عنوان المشهد</translation>
+        <translation>МЧ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="96"/>
         <source>SC</source>
         <extracomment>Reduction of Scene Characters</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>شخصيات المشهد</translation>
+        <translation>УС</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="98"/>
         <source>A</source>
         <extracomment>Reduction of Action</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>الحدث</translation>
+        <translation>АДз</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="100"/>
         <source>C</source>
         <extracomment>Reduction of Character</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>الشخصية</translation>
+        <translation>Г</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="102"/>
         <source>P</source>
         <extracomment>Reduction of Parenthetical</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>شرح الحوار</translation>
+        <translation>Р</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="104"/>
         <source>D</source>
         <extracomment>Reduction of Dialog</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>الحوار</translation>
+        <translation>Д</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="106"/>
         <source>Tr</source>
         <extracomment>Reduction of Transition</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>الإنتقال</translation>
+        <translation>Пе</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="108"/>
         <source>S</source>
         <extracomment>Reduction of Shot</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>اللقطة</translation>
+        <translation>З</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="110"/>
         <source>TH</source>
         <extracomment>Reduction of Title Header</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>عنوان رأس الصفحة</translation>
+        <translation>ЗЦі</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="112"/>
         <source>Ti</source>
         <extracomment>Reduction of Title</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>العنوان</translation>
+        <translation>Ці</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="114"/>
         <source>NT</source>
         <extracomment>Reduction of Noprintable Text</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>نص غير قابل للطباعة</translation>
+        <translation>НПТ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="116"/>
         <source>F</source>
         <extracomment>Reduction of Folder</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>المجلد</translation>
+        <translation>Па</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="118"/>
         <source>FF</source>
         <extracomment>Reduction of Folder Footer</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>تذييل المجلد</translation>
+        <translation>КПа</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="120"/>
         <source>SD</source>
         <extracomment>Reduction of Scene Description</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>وصف المشهد</translation>
+        <translation>АС</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="122"/>
         <source>L</source>
         <extracomment>Reduction of Lyrics</extracomment>
-        <translatorcomment>ُThere is no used abbreviation for this and the rest of the abbreviations of this segment</translatorcomment>
-        <translation>كلمات الاغاني</translation>
+        <translation>Л</translation>
     </message>
 </context>
 <context>
@@ -639,7 +619,7 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="405"/>
         <source>FADE IN:</source>
-        <translation>فايد إن</translation>
+        <translation>З ЗЦМ:</translation>
     </message>
 </context>
 <context>
@@ -647,87 +627,87 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="634"/>
         <source>Final Draft screenplay (A4)</source>
-        <translation>سيناريو فاينال درافت (A4)</translation>
+        <translation>Шаблон сцэнарыя Final Draft (A4)</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="639"/>
         <source>Final Draft screenplay (Letter)</source>
-        <translation>سيناريو فاينال درافت (رسالة)</translation>
+        <translation>Шаблон сцэнарыя Final Draft (Letter)</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="644"/>
         <source>Russian screenplay</source>
-        <translation>سيناريو روسي</translation>
+        <translation>Шаблон сцэнарыя Расія і СНД</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="649"/>
         <source>Russian screenplay with Courier Prime</source>
-        <translation>سيناريو روسي مع Courier Prime</translation>
+        <translation>Шаблон сцэнарыя Расія і СНД з Courier Prime</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="654"/>
         <source>Chinese screenplay</source>
-        <translation>سيناريو صيني</translation>
+        <translation>Шаблон сцэнарыя Кітай</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="659"/>
         <source>Hebrew screenplay</source>
-        <translation>سيناريو عبري</translation>
+        <translation>Шаблон сцэнарыя Ізраіль</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="664"/>
         <source>Arabic screenplay</source>
-        <translation type="unfinished"></translation>
+        <translation>Шаблон сцэнарыя Арабскі</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="669"/>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation>نموذج قياسي لسيناريو دولي (A4)</translation>
+        <translation>Міжнародны стандартны шаблон афармлення сцэнарыя для старонак фармату A4.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="674"/>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation>نموذج قياسي لسيناريو دولي (رسالة)</translation>
+        <translation>Міжнародны стандартны шаблон афармлення сцэнарыя для старонак фармату Letter.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="679"/>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation>نموذج قياسي للسيناريو الروسي و لسيناريو رابطة الدول المستقلة.</translation>
+        <translation>Стандартны шаблон афармлення сцэнарыя для Расіі і краін СНД.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="684"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation>نموذج قياسي للسيناريو الروسي و لسيناريو رابطة الدول المستقلة.مع Courier Prime</translation>
+        <translation>Стандартны шаблон афармлення сцэнарыя для Расіі і краін СНД з шрыфтам Courier Prime замест Courier New.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="689"/>
         <source>Chinese screenplay standard template.</source>
-        <translation>نموذج قياسي للسيناريو الصيني.</translation>
+        <translation>Стандартны шаблон афармлення сцэнарыя для Кітая.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="694"/>
         <source>Hebrew screenplay standard template.</source>
-        <translation>نموذج قياسي للسيناريو العبري.</translation>
+        <translation>Стандартны шаблон афармлення сцэнарыя для Ізраіля (іўрыт).</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="699"/>
         <source>Arabic screenplay standard template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Стандартны шаблон афармлення сцэнарыя для арабскай пісьмовасці.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="714"/>
         <source>Default</source>
-        <translation>إفتراضي</translation>
+        <translation>Стандартны</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="719"/>
         <source>Default with Courier Prime</source>
-        <translation>إفتراضي مع Courier Prime</translation>
+        <translation>Стандартны з Courier Prime</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="735"/>
         <source>Copy of </source>
-        <translation>نسخة من</translation>
+        <translation>Копія </translation>
     </message>
 </context>
 <context>
@@ -735,38 +715,37 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="36"/>
         <source>Scene Report</source>
-        <translation>تقرير المشاهد</translation>
+        <translation>Спіс сцэн</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="237"/>
         <source>Scene/Characters</source>
-        <translation>المشهد/الشخصيات</translation>
+        <translation>Сцэна/Персанажы</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="239"/>
         <source>Number</source>
-        <translation>الرقم</translation>
+        <translation>Нумар</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="241"/>
         <source>Page</source>
-        <translation>الصفحة</translation>
+        <translation>Старонка</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="243"/>
         <source>Characters</source>
-        <translation>الشخصيات</translation>
+        <translation>Персанажаў</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="245"/>
         <source>Chron</source>
-        <translatorcomment>I am assuming Chron is short for chronometry</translatorcomment>
-        <translation>الترتيب الزمني</translation>
+        <translation>Хран</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SceneReport.cpp" line="259"/>
         <source>[UNDEFINED]</source>
-        <translation>[غير معرف]</translation>
+        <translation>[НЕ ВЫЗНАЧАНА]</translation>
     </message>
 </context>
 <context>
@@ -775,12 +754,12 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="34"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation>متواصل</translation>
+        <translation>ПРАЦ.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="39"/>
         <source>MORE</source>
-        <translation>أكثر</translation>
+        <translation>ДАЛЕЙ</translation>
     </message>
 </context>
 <context>
@@ -789,41 +768,41 @@
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="37"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="261"/>
         <source>Scene Duration</source>
-        <translation>مدة المشهد</translation>
+        <translation>Хранаметраж сцэны</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="40"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="272"/>
         <source>Action Duration</source>
-        <translation>مدة الحدث</translation>
+        <translation>Хранаметраж дзеяння</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="43"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="283"/>
         <source>Dialogues Duration</source>
-        <translation>مدة الحوار</translation>
+        <translation>Хранаметраж рэплік</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="46"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="294"/>
         <source>Characters Count</source>
-        <translation>عدد الشخصيات</translation>
+        <translation>Колькасць персанажаў</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="49"/>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="305"/>
         <source>Dialogs Count</source>
-        <translation>عدد الحوارات</translation>
+        <translation>Колькасць рэплік</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="58"/>
         <source>Story Structure Analisys Plot</source>
-        <translation>حبكة تحليل هيكل القصة</translation>
+        <translation>Графік структурнага аналізу гісторыі</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Plots/StoryStructureAnalisysPlot.cpp" line="198"/>
         <source>Scene</source>
-        <translation>المشهد</translation>
+        <translation>Сцэна</translation>
     </message>
 </context>
 <context>
@@ -831,38 +810,38 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="70"/>
         <source>Summary report</source>
-        <translation>تقرير الملخص</translation>
+        <translation>Сумарная справаздача</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="160"/>
         <source>Chronometry</source>
-        <translation>الترتيب الزمني</translation>
+        <translation>Хранаметраж</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="162"/>
         <source>Pages</source>
-        <translation>الصفحات</translation>
+        <translation>Старонак</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="164"/>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="185"/>
         <source>Words</source>
-        <translation>الكلمات</translation>
+        <translation>Словаў</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="166"/>
         <source>Characters with/without spaces</source>
-        <translation>أحرف مع / بدون مسافات</translation>
+        <translation>Сімвалаў з/без прабелаў</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="177"/>
         <source>Text</source>
-        <translation>الكتابة</translation>
+        <translation>Тэкст</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="181"/>
         <source>Paragraph</source>
-        <translation>الفقرة</translation>
+        <translation>Параграф</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="183"/>
@@ -870,7 +849,7 @@
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="300"/>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="364"/>
         <source>Size</source>
-        <translation>الحجم</translation>
+        <translation>Колькасць</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="187"/>
@@ -878,58 +857,57 @@
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="302"/>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="366"/>
         <source>Percents</source>
-        <translation>النسب المئوية</translation>
+        <translation>Працэнтаў</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="214"/>
         <source>Scenes</source>
-        <translation>المشاهد</translation>
+        <translation>Сцэны</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="238"/>
         <source>Time</source>
-        <translation>الزمن</translation>
+        <translation>Час дзеяння</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="255"/>
         <source>[UNDEFINED]</source>
-        <translation>[غير معرف]</translation>
+        <translation>[НЕ ВЫЗНАЧАНА]</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="274"/>
         <source>Locations</source>
-        <translation>المواقع</translation>
+        <translation>Лакацыі</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="298"/>
         <source>Place</source>
-        <translation>المكان</translation>
+        <translation>Тып лакацыі</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="331"/>
         <source>Characters</source>
-        <translation>الشخصيات</translation>
+        <translation>Персанажы</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="362"/>
         <source>Dialogues count</source>
-        <translation>عدد الحوارات</translation>
+        <translation>Колькасць рэплік</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="376"/>
         <source>More 10 dialogues</source>
-        <translation>أكثر من ١٠ حوارات</translation>
+        <translation>Больш за 10 рэплік</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="383"/>
         <source>About 10 dialogues</source>
-        <translatorcomment>the word about can differ depending on the context</translatorcomment>
-        <translation>قرابة ال ١٠ حوارات</translation>
+        <translation>Менш за 10 рэплік</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="390"/>
         <source>Nonspeaking</source>
-        <translation>غير متحدث</translation>
+        <translation>Маўклівыя</translation>
     </message>
 </context>
 <context>
@@ -937,47 +915,47 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="14"/>
         <source>Form</source>
-        <translation>استمارة</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="35"/>
         <source>Card size:</source>
-        <translation>حجم البطاقة:</translation>
+        <translation>Памер:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="42"/>
         <source>Card ratio:</source>
-        <translation>نسبة البطاقة:</translation>
+        <translation>Прапорцыя:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="78"/>
         <source>Layout by</source>
-        <translation>التصميم بواسطة</translation>
+        <translation>Кампанаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="87"/>
         <source>rows</source>
-        <translation>الصفوف</translation>
+        <translation>радкамі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="97"/>
         <source>columns</source>
-        <translation>الأعمدة</translation>
+        <translation>слупкамі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="135"/>
         <source>Distance:</source>
-        <translation>المسافة:</translation>
+        <translation>Адлегласць:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="157"/>
         <source>Arrange</source>
-        <translation>ترتيب</translation>
+        <translation>Упарадкаваць па</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsResizer.ui" line="180"/>
         <source>cards in Row</source>
-        <translation>البطاقات في الصف</translation>
+        <translation>картак у радку</translation>
     </message>
 </context>
 <context>
@@ -985,67 +963,63 @@
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="831"/>
         <source>Go to text</source>
-        <translation>انتقل إلى الكتابة</translation>
+        <translation>Перайсці да тэксту</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="836"/>
         <source>Convert to scene</source>
-        <translation>التحويل إلى مشهد</translation>
+        <translation>Пераўтварыць у сцэну</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="837"/>
         <source>Convert to folder</source>
-        <translation>التحويل إلى مجلد</translation>
+        <translation>Пераўтварыць у папку</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="843"/>
         <source>Edit</source>
-        <translation>تعديل</translation>
-    </message>
-    <message>
-        <source>Color %1</source>
-        <translation type="vanished">اللون %1</translation>
+        <translation>Рэдагаваць</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="881"/>
         <source>Main color</source>
-        <translation type="unfinished"></translation>
+        <translation>Асноўны колер</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="882"/>
         <source>Additional color %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Дадатковы колер %1</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="887"/>
         <source>Clear</source>
-        <translation>إمسح</translation>
+        <translation>Ачысціць</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="897"/>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="936"/>
         <source>Tag</source>
-        <translation>علامات</translation>
+        <translation>Тэг</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="926"/>
         <source>Add color</source>
-        <translation>أضف لون</translation>
+        <translation>Дадаць колер</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="961"/>
         <source>Create card</source>
-        <translation>إنشاء بطاقة</translation>
+        <translation>Стварыць картку</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="962"/>
         <source>Remove</source>
-        <translation>حذف</translation>
+        <translation>Выдаліць</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="1007"/>
         <source>Stamp:</source>
-        <translation>ختم:</translation>
+        <translation>Штамп:</translation>
     </message>
 </context>
 <context>
@@ -1053,28 +1027,27 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="34"/>
         <source>Find...</source>
-        <translation>إبحث...</translation>
+        <translation>Знайсці...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="42"/>
         <source>Case Sensitive</source>
-        <translatorcomment>There is no upper/lower casing in Arabic</translatorcomment>
-        <translation>يجب مراعاة حجم الأحرف</translation>
+        <translation>З улікам рэгістра</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="49"/>
         <source>Everywhere</source>
-        <translation>في كل مكان</translation>
+        <translation>Паўсюль</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="52"/>
         <source>In text</source>
-        <translation>في النص المكتوب</translation>
+        <translation>У тэксце</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/CardsSearchWidget.cpp" line="54"/>
         <source>In tags</source>
-        <translation>في العلامات</translation>
+        <translation>У тэгах</translation>
     </message>
 </context>
 <context>
@@ -1082,17 +1055,17 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.ui" line="26"/>
         <source>Change password</source>
-        <translation>تغيير كلمة المرور</translation>
+        <translation>Змена пароля</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.ui" line="32"/>
         <source>Old Password</source>
-        <translation>كلمة السر القديمة</translation>
+        <translation>Стары пароль</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.ui" line="55"/>
         <source>New Password</source>
-        <translation>كلمة السر الجديدة</translation>
+        <translation>Новы пароль</translation>
     </message>
 </context>
 <context>
@@ -1100,22 +1073,22 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="14"/>
         <source>Application error was detected</source>
-        <translation>تم الكشف عن خطأ في التطبيق</translation>
+        <translation>Выяўлена памылка ў працы праграмы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="20"/>
         <source>Please, send error report to developer. This will help to make application better.</source>
-        <translation>من فضلك ، أرسل تقرير الخطأ إلى المطور. هذا سوف يساعد على تحسين التطبيق.</translation>
+        <translation>Калі ласка, адпраўце справаздачу распрацоўшчыку. Гэта дапаможа палепшыць праграму.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="43"/>
         <source>Your email:</source>
-        <translation>بريدك الالكتروني:</translation>
+        <translation>Ваш email:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.ui" line="53"/>
         <source>Message to developer:</source>
-        <translation>رسالة إلى المطور:</translation>
+        <translation>Паведамленне распрацоўшчыку:</translation>
     </message>
 </context>
 <context>
@@ -1123,7 +1096,7 @@
     <message>
         <location filename="../../DataLayer/DataStorageLayer/ScriptVersionStorage.cpp" line="27"/>
         <source>First draft</source>
-        <translation>المسودة الأولى</translation>
+        <translation>Першая версія</translation>
     </message>
 </context>
 <context>
@@ -1131,183 +1104,183 @@
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="74"/>
         <source>Project was modified in higher version. You need update application to latest version for open it.</source>
-        <translation>تم تعديل المشروع في إصدار أعلى. تحتاج إلى تطبيق تحديث لأحدث إصدار لفتحه.</translation>
+        <translation>Праект быў зменены ў больш позняй версіі праграмы. Вам неабходна абнавіць праграму, каб адкрыць гэты файл.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="78"/>
         <source>File &quot;%1&quot; can&apos;t be opened, please check out that you tries to open file which was created in the KIT Scenarist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл &quot;%1&quot; не можа быць адкрыты. Калі ласка пераканайцеся, што вы спрабуеце адкрыць файл створаны ў КІТ Сцэнарыст.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="85"/>
         <source>File &quot;%1&quot; can&apos;t be opened, please check out that you tries to open KIT Scenarist file (*.kitsp).</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл &quot;%1&quot; не можа быць адкрыты. Калі ласка пераканайцеся, што вы спрабуеце адкрыць файл КІТ Сцэнарыст (*.kitsp).</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="448"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1554"/>
         <source>First draft</source>
-        <translation>المسودة الأولى</translation>
+        <translation>Першая версія</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="456"/>
         <source>INT</source>
-        <translation>داخلي</translation>
+        <translation>ІНТ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="460"/>
         <source>EXT</source>
-        <translation>خارجي</translation>
+        <translation>НАТ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="464"/>
         <source>INT./EXT</source>
-        <translatorcomment>ext/int needs to be added as well خارجي/داخلي</translatorcomment>
-        <translation>داخلي/خارجي</translation>
+        <translation>ІНТ./НАТ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="472"/>
         <source>DAY</source>
-        <translation>نهار</translation>
+        <translation>ДЗЕНЬ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="476"/>
         <source>NIGHT</source>
-        <translation>ليل</translation>
+        <translation>НОЧ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="480"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="745"/>
         <source>MORNING</source>
-        <translation>صباح</translation>
+        <translation>РАНІЦА</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="484"/>
         <source>AFTERNOON</source>
-        <translation>بعد الظهر</translation>
+        <translation>ПАСЛЯ ПАЎДНЯ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="488"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="749"/>
         <source>EVENING</source>
-        <translation>مساء</translation>
+        <translation>ВЕЧАР</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="492"/>
         <source>LATER</source>
-        <translation>في وقت لاحق</translation>
+        <translation>ПАЗНЕЙ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="496"/>
         <source>MOMENTS LATER</source>
-        <translation>بعد لحظات</translation>
+        <translation>КРЫХУ ПАЗНЕЙ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="500"/>
         <source>CONTINUOUS</source>
-        <translation>متواصل</translation>
+        <translation>ПРАЦЯГ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="504"/>
         <source>THE NEXT DAY</source>
-        <translatorcomment>is it possible to ad FLASHBACK which translates to فلاشباك</translatorcomment>
-        <translation>في اليوم التالي</translation>
+        <translation>НА НАСТУПНЫ ДЗЕНЬ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="513"/>
         <source>V.O.</source>
         <extracomment>Voice over</extracomment>
-        <translation>صوت فقط</translation>
+        <translatorcomment>За кадрам</translatorcomment>
+        <translation>ЗК</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="518"/>
         <source>O.S.</source>
         <extracomment>Off-screen</extracomment>
-        <translation>خارج الشاشة</translation>
+        <translatorcomment>За полем гледжання</translatorcomment>
+        <translation>ЗПГ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="523"/>
         <source>O.C.</source>
         <extracomment>Off-camera</extracomment>
-        <translation>خارج الكاميرا</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="528"/>
         <source>SUBTITLE</source>
         <extracomment>Subtitle</extracomment>
-        <translation>ترجمة</translation>
+        <translation>СУБТЫТР</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="533"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation>مستمر</translation>
+        <translation>ПРАЦ.</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="541"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1492"/>
         <source>CUT TO:</source>
-        <translation>كت تو</translation>
+        <translation>ПЕРАХОД ДА:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="545"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1496"/>
         <source>FADE IN:</source>
-        <translation>فايد ان</translation>
+        <translation>З ЗЦМ:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="549"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1500"/>
         <source>FADE OUT</source>
-        <translation>فايد اوت</translation>
+        <translation>У ЗЦМ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="553"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1504"/>
         <source>FADE TO:</source>
-        <translation>فايد تو</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="557"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1508"/>
         <source>DISSOLVE TO:</source>
-        <translation>ديسولف تو</translation>
+        <translation>НАПЛЫВАМ ДА:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="561"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1512"/>
         <source>BACK TO:</source>
-        <translation>باك تو</translation>
+        <translation>ВЯРТАННЕ ДА:</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="565"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1516"/>
         <source>MATCH CUT TO:</source>
-        <translation>ماتش كت تو</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="569"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1520"/>
         <source>JUMP CUT TO:</source>
-        <translation>جمب كت تو</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="573"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1524"/>
         <source>FADE TO BLACK</source>
-        <translation>فايد تو بلاك</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="1370"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1441"/>
         <source>Photos</source>
-        <translation>صور</translation>
+        <translation>Фотаздымкі</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="1381"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="1452"/>
         <source>Unnamed image</source>
-        <translation>صورة بدون اسم</translation>
+        <translation>Без назвы</translation>
     </message>
 </context>
 <context>
@@ -1315,7 +1288,7 @@
     <message>
         <location filename="../../../../libs/fileformats/docx_reader.cpp" line="145"/>
         <source>Unable to open archive.</source>
-        <translation>غير قادر على فتح الأرشيف.</translation>
+        <translation>Немагчыма адкрыць архіў.</translation>
     </message>
 </context>
 <context>
@@ -1323,7 +1296,7 @@
     <message>
         <location filename="../../Domain/ScriptVersion.cpp" line="151"/>
         <source>current version</source>
-        <translation>الإصدار الحالي</translation>
+        <translation>бягучая версія</translation>
     </message>
 </context>
 <context>
@@ -1331,36 +1304,36 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="32"/>
         <source>Export Scenario</source>
-        <translation>تصدير سيناريو</translation>
+        <translation>Экспарт сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="132"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="254"/>
         <source>Choose file to export:</source>
-        <translation>اختر ملفًا للتصدير</translation>
+        <translation>Выберыце файл для экспарту:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="168"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="267"/>
         <source>File exists. It will be replaced after exporting.</source>
-        <translation>الملف موجود. سيتم استبداله بعد التصدير.</translation>
+        <translation>Файл з гэтай назвай ужо існуе. Ён будзе заменены пасля экспарту.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="208"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="322"/>
         <source>Browse...</source>
-        <translation>تصفح...</translation>
+        <translation>Агляд...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="211"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="325"/>
         <source>...</source>
-        <translation>٠٠٠</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="355"/>
         <source>Format:</source>
-        <translation>نوع الملف:</translation>
+        <translation>Фармат:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="365"/>
@@ -1385,62 +1358,62 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="420"/>
         <source>Additional (Numbering, Title Page etc.)</source>
-        <translation>إضافة (الترقيم ، صفحة العنوان ، إلخ.)</translation>
+        <translation>Пашыраныя налады (нумарацыя, тытульная старонка і г.д.)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="449"/>
         <source>Print watermark:</source>
-        <translation>طباعة العلامة المائية:</translation>
+        <translation>Надрукаваць вадзяны знак:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="462"/>
         <source>Template:</source>
-        <translation>نموذج:</translation>
+        <translation>Шаблон:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="479"/>
         <source>Print scenes numbers</source>
-        <translation>طباعة أرقام المشاهد</translation>
+        <translation>Друкаваць нумары сцэн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="489"/>
         <source>Print pages numbers</source>
-        <translation>اطبع أرقام الصفحات</translation>
+        <translation>Друкаваць нумары старонак</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="499"/>
         <source>Print Title Page</source>
-        <translation>طباعة صفحة العنوان</translation>
+        <translation>Друкаваць тытульную старонку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="509"/>
         <source>Print dialogues numbers</source>
-        <translation>طباعة أرقام الحوارات</translation>
+        <translation>Друкаваць нумары рэплік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="516"/>
         <source>Save Review Marks</source>
-        <translation>حفظ علامات المراجعة</translation>
+        <translation>Захоўваць пазнакі рэдактара</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="526"/>
         <source>Check Page Breaks</source>
-        <translation>تحقق من فواصل الصفحات</translation>
+        <translation>Карэктаваць тэкст на разрывах старонак</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="571"/>
         <source>Export</source>
-        <translation>تصدير</translation>
+        <translation>Экспартаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="581"/>
         <source>Print Preview</source>
-        <translation>معاينة قبل الطباعة</translation>
+        <translation>Перадпрагляд</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="588"/>
         <source>Cancel</source>
-        <translation>إلغاء</translation>
+        <translation>Скасаваць</translation>
     </message>
 </context>
 <context>
@@ -1448,27 +1421,27 @@
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="71"/>
         <source>OpenDocument Text</source>
-        <translation>نص اوبن دوكيومنت</translation>
+        <translation>OpenDocument тэкст</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="73"/>
         <source>Office Open XML</source>
-        <translation>اوفيس اوبين XML</translation>
+        <translation>Office Open XML</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="75"/>
         <source>Rich Text Format</source>
-        <translation>ملف ريتش تكست</translation>
+        <translation>Фармат Rich Text</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="77"/>
         <source>Plain Text</source>
-        <translation>ملف تكست</translation>
+        <translation>Просты тэкст</translation>
     </message>
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="107"/>
         <source>All Supported Files</source>
-        <translation>جميع الملفات المدعومة</translation>
+        <translation>Усе файлы, што падтрымліваюцца</translation>
     </message>
 </context>
 <context>
@@ -1477,7 +1450,7 @@
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="255"/>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="398"/>
         <source>END OF </source>
-        <translation>نهاية</translation>
+        <translation>КАНЕЦ</translation>
     </message>
 </context>
 <context>
@@ -1485,27 +1458,27 @@
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="121"/>
         <source>Couldn&apos;t parse XML file.</source>
-        <translation>تعذر تحليل ملف XML.</translation>
+        <translation>Не атрымалася разабраць файл XML.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="299"/>
         <source>Couldn&apos;t read file.</source>
-        <translation>تعذرت قراءة الملف.</translation>
+        <translation>Не атрымалася прачытаць файл.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="368"/>
         <source>Couldn&apos;t open file to write.</source>
-        <translation>تعذر فتح ملف للكتابة.</translation>
+        <translation>Не атрымалася адкрыць файл для запісу.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="376"/>
         <source>Saved.</source>
-        <translation>تم الحفظ.</translation>
+        <translation>Захавана.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="398"/>
         <source>MindMap exported as </source>
-        <translation>تم تصدير مايند ماب كـ</translation>
+        <translation>Інтэлект-карта экспартавана як </translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="439"/>
@@ -1521,73 +1494,73 @@
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="749"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="858"/>
         <source>No active node.</source>
-        <translation>لا توجد عقدة نشطة.</translation>
+        <translation>Няма актыўнага вузла.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="503"/>
         <source>No active node</source>
-        <translation>لا توجد عقدة نشطة.</translation>
+        <translation>Няма актыўнага вузла</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="517"/>
         <source>Node hasn&apos;t parent for add sibling node</source>
-        <translation>ليس لدى العقدة أصل لإضافة عقدة شقيقة</translation>
+        <translation>Вузел не мае бацькоўскага вузла каб дадаць братэрскі</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="541"/>
         <source>Base node cannot be deleted.</source>
-        <translation>لا يمكن مسح العقدة الأساسية.</translation>
+        <translation>Базавы вузел нельга выдаліць.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="579"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="608"/>
         <source>Too much scaling.</source>
-        <translation>الكثير من التحجيم.</translation>
+        <translation>Надта шмат маштабавання.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="639"/>
         <source>Select node color</source>
-        <translation>حدد لون العقدة</translation>
+        <translation>Выберыце колер вузла</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="692"/>
         <source>Select text color</source>
-        <translation>حدد لون النص المكتوب</translation>
+        <translation>Выберыце колер тэксту</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="735"/>
         <source>Add edge: select destination node.</source>
-        <translation>إضافة حافة: حدد عقدة الوجهة.</translation>
+        <translation>Дадаць лінію: выбраць вузел прызначэння.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="741"/>
         <source>Delete edge: select other end-node.</source>
-        <translation>مسح حافة: حدد عقدة نهاية أخرى.</translation>
+        <translation>Выдаліць лінію: выбраць іншы канчатковы вузел.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="810"/>
         <source>Edge adding cancelled.</source>
-        <translation>تم إلغاء إضافة حافة.</translation>
+        <translation>Даданне лініі скасавана.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="817"/>
         <source>Edge deleting cancelled.</source>
-        <translation>تم إلغاء مسح حافة.</translation>
+        <translation>Выдаленне лініі скасавана.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="919"/>
         <source>Can&apos;t add edge between single node.</source>
-        <translation>لا يمكن إضافة حافة بين عقدة واحدة.</translation>
+        <translation>Немагчыма дадаць лінію між адным і тым жа вузлом.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="925"/>
         <source>There is already an edge between these two nodes.</source>
-        <translation>هناك بالفعل حافة بين هاتين العقدتين.</translation>
+        <translation>Паміж гэтымі двума вузламі ўжо ёсць лінія.</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="956"/>
         <source>There is no edge between these two nodes.</source>
-        <translation>لا توجد حافة بين هاتين العقدتين.</translation>
+        <translation>Паміж гэтымі двума вузламі няма лініі.</translation>
     </message>
 </context>
 <context>
@@ -1595,22 +1568,22 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="20"/>
         <source>Import Scenario</source>
-        <translation>استيراد سيناريو</translation>
+        <translation>Імпарт сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="35"/>
         <source>Scenario</source>
-        <translation>السيناريو</translation>
+        <translation>Сцэнарый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="45"/>
         <source>Outline</source>
-        <translation>الموجز</translation>
+        <translation>Аўтлайн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="80"/>
         <source>Browse...</source>
-        <translation>تصفح...</translation>
+        <translation>Агляд...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="83"/>
@@ -1620,42 +1593,42 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="103"/>
         <source>Choose File with Project to Import:</source>
-        <translation>اختر ملف بمشروع لاستيراده:</translation>
+        <translation>Выберыце файл з праектам для імпарту:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="113"/>
         <source>Remove scenes numbers</source>
-        <translation>حذف أرقام المشاهد</translation>
+        <translation>Прыбраць нумары сцэн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="123"/>
         <source>Insert To</source>
-        <translation>إدراج إلى</translation>
+        <translation>Уставіць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="129"/>
         <source>Replace scenario</source>
-        <translation>استبدال السيناريو</translation>
+        <translation>замяніўшы зыходны сцэнарый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="139"/>
         <source>Current cursor position</source>
-        <translation>موضع المؤشر الحالي</translation>
+        <translation>у бягучую пазіцыю курсора</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="146"/>
         <source>End of scenario</source>
-        <translation>نهاية السيناريو</translation>
+        <translation>у канец сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="156"/>
         <source>Find characters and locations</source>
-        <translation>ابحث عن الشخصيات والمواقع</translation>
+        <translation>Вызначыць персанажаў і лакацыі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.ui" line="166"/>
         <source>Save review marks</source>
-        <translation>حفظ علامات المراجعة</translation>
+        <translation>Захоўваць пазнакі рэдактара</translation>
     </message>
 </context>
 <context>
@@ -1663,17 +1636,17 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="20"/>
         <source>Choose application language</source>
-        <translation>اختر لغة التطبيق</translation>
+        <translation>Выберыце мову праграмы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="70"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation>&lt;a href = &quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt; لم تجد اللغة المفضلة؟ اقرأ كيف يمكنك إضافته بنفسك. &lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Не знайшлі пераважнай для вас мовы? Паглядзіце, як вы можаце дадаць яе самастойна.&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="104"/>
         <source>Detect language from system locale</source>
-        <translation>كشف اللغة من لغة النظام</translation>
+        <translation>Выкарыстоўваць сістэмныя налады лакалізацыі</translation>
     </message>
 </context>
 <context>
@@ -1682,49 +1655,49 @@
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="66"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="247"/>
         <source>&amp;Email</source>
-        <translation>&amp;البريد الإلكتروني</translation>
+        <translation>Электронная пошта</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="86"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="260"/>
         <source>&amp;Password</source>
-        <translation>&amp;كلمه السر</translation>
+        <translation>Пароль</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="135"/>
         <source>ErrorLabel</source>
-        <translation>ملصق،الخطأ</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="202"/>
         <source>Restore Password</source>
-        <translation>استعادة كلمة المرور</translation>
+        <translation>Аднавіць пароль</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="309"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="457"/>
         <source>Error Icon</source>
-        <translation>أيقونة الخطأ</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="325"/>
         <source>Error &amp;message</source>
-        <translation>رسالة خطأ</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="408"/>
         <source>&amp;Verification code</source>
-        <translation>رمز التحقق</translation>
+        <translation>Код пацверджання</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.ui" line="473"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &lt;/p&gt;&lt;p&gt;&amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Error &lt;/p&gt;&lt;p&gt;&amp;amp;message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1732,37 +1705,37 @@
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="115"/>
         <source> - changed</source>
-        <translation>- تغير</translation>
+        <translation> - зменены</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="351"/>
         <source>File format not supported</source>
-        <translation>تنسيق الملف غير مدعوم</translation>
+        <translation>Фармат файла не падтрымліваецца</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="352"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation>ملفات Microsoft &lt;b&gt; DOC &lt;/b&gt; غير مدعومة. تحتاج إلى حفظه في ملف &lt;b&gt; DOCX &lt;/b&gt; وإعادة الاستيراد.</translation>
+        <translation>Файлы Microsoft &lt;b&gt;DOC&lt;/b&gt; не падтрымліваюцца. Захавайце файл у фармаце &lt;b&gt;DOCX&lt;/b&gt; і паўторна імпартуйце.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="454"/>
         <source>You try to create project in nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for new project.</source>
-        <translation>حاولت إنشاء مشروع في مجلد غير موجود &lt;b&gt;%1 &lt;/b&gt;. من فضلك ، اختر موقعًا آخر لمشروع جديد.</translation>
+        <translation>Нельга стварыць праект у папцы &lt;b&gt;%1&lt;/b&gt;, бо яе не існуе. Калі ласка, абярыце іншую папку.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="458"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry.</source>
-        <translation>لا يمكن الكتابة إلى الملف. ربما يتم فتحه بواسطة تطبيق آخر. يرجى إغلاقه وإعادة المحاولة.</translation>
+        <translation>Не ўдаецца запісаць файл. Магчыма, ён адкрыты ў іншай праграме. Калі ласка, закрыйце яе і паўтарыце спробу.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="461"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>لا يمكن الكتابة إلى الملف. تحقق من أذونات الكتابة في المجلد المختار. من فضلك ، اختر مجلد آخر.</translation>
+        <translation>Не ўдаецца запісаць файл. Праверце дазвол на запіс у выбраную папку і паўтарыце спробу, альбо выберыце іншую папку.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="463"/>
         <source>Create project error</source>
-        <translation>خطأ في إنشاء المشروع</translation>
+        <translation>Памылка стварэння праекта</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="507"/>
@@ -1770,51 +1743,56 @@
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="935"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1048"/>
         <source>Can&apos;t open project file</source>
-        <translation>لا يمكن فتح ملف المشروع</translation>
+        <translation>Не ўдаецца адкрыць праект</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="547"/>
         <source>Choose file to save project</source>
-        <translation>اختر ملفًا لحفظ المشروع</translation>
+        <translation>Выберыце файл для захавання праекта</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="549"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="813"/>
         <source>Scenarist project files (*%1)</source>
-        <translation>ملفات مشروع سيناريست (*%1)</translation>
+        <translation>Файл праекта сцэнарыя (*%1)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="608"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="703"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="724"/>
         <source>Saving error</source>
-        <translation>خطأ في الحفظ</translation>
+        <translation>Памылка захавання</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="609"/>
         <source>Can&apos;t save project as &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Please check permissions and retry.</source>
-        <translation>لا يمكن حفظ المشروع باسم &lt;b&gt;%1&lt;/b&gt;. &lt;br/&gt; يرجى التحقق من الأذونات وإعادة المحاولة.</translation>
+        <translation>Немагчыма захаваць праект як &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Праверце дазвол на запіс у выбраную папку і паўтарыце спробу, альбо выберыце іншую папку.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="704"/>
         <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
-        <translation>لا يمكن كتابة تغييراتك على المشروع. يوجد خطأ داخلي في قاعدة البيانات:%1 الرجاء التحقق ، إذا كان هذا الملف موجودًا وإذا كانت لديك أذونات للكتابة. إعادة المحاولة (للحفظ)؟</translation>
+        <translation>Не ўдаецца запісаць змены. Адбылася ўнутраная памылка базы дадзеных: %1. Калі ласка праверце, ці існуе файл і ці маеце вы дазвол на захаванне ў яго. Паспрабаваць захаваць яшчэ раз?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="725"/>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
-        <translation>لا يمكن كتابة تغييراتك على المشروع الموجود في &lt;b&gt;%1&lt;/b&gt; ، لأن الملف غير موجود. يرجى نقل الملف مرة أخرى وإعادة محاولة الحفظ. أعد محاولة الحفظ</translation>
+        <translation>Не ўдаецца запісаць змены ў файл &lt;b&gt;%1&lt;/b&gt;, таму што файла не існуе. Калі ласка, вярніце файл назад і паспрабуйце зноў захаваць праект. Паспрабаваць захаваць яшчэ раз?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="811"/>
         <source>Choose project file to open</source>
-        <translation>اختر ملف المشروع لفتحه</translation>
+        <translation>Выберыце файл праекта для адкрыцця</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="836"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="936"/>
         <source>Ignore and try to open project?</source>
-        <translation>تجاهل وحاول فتح المشروع؟</translation>
+        <translation>Ігнараваць і паспрабаваць адкрыць праект?</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="950"/>
+        <source>If you want to edit a file, please check it&apos;s permissions for your account.</source>
+        <translation>Калі вы хочаце рэдагаваць файл, калі ласка праверце дазвол на запіс.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="956"/>
@@ -1823,416 +1801,418 @@
 You can no longer edit files from the backups folder. Files in this folder used only for content recovery. Please use another folder to save and store the files you are working on.
 
 Now, you should copy your file from the backups folder outside via file browser, or via the &quot;Menu -&gt; Save current project as...&quot; option.</source>
-        <translation type="unfinished"></translation>
+        <translation>Адкрыты файл знаходзіцца ў папцы рэзервовых копій.
+
+Вы больш не можаце рэдагаваць файлы ў папцы рэзервовых копій. Файлы ў гэтай папцы выкарыстоўваюцца толькі для аднаўлення змесціва. Калі ласка, выкарыстоўвайце іншую папку для захавання файлаў, над якімі вы працуеце.
+
+Каб працягнуць працу з бягучым файлам, скапіруйце яго ў іншую папку, выкарыстоўваючы менеджэр файлаў, або пры дапамозе пункта меню &quot;Захаваць як...&quot;.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="963"/>
         <source>A file will be opened in read-only mode</source>
-        <translation>سيتم فتح ملف في وضعية القراءة فقط</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="950"/>
-        <source>If you want to edit a file, please check it&apos;s permissions for your account.</source>
-        <translation>إذا كنت تريد تعديل ملف ، فيرجى التحقق من الأذونات الخاصه بحسابك.</translation>
+        <translation>Файл будзе адкрыты ў рэжыме &quot;толькі для чытання&quot;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="976"/>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
-        <translation>هل أنت متأكد من إخفاء المشروع &lt;b&gt;%1&lt;/b&gt; من قائمة الأحدث؟</translation>
+        <translation>Вы ўпэўнены, што хочаце схаваць праект &lt;b&gt;%1&lt;/b&gt; са спісу нядаўніх файлаў?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="995"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1001"/>
         <source>Moving project to the cloud failed</source>
-        <translation>فشل نقل المشروع إلى السحابة</translation>
+        <translation>Не ўдалося перамясціць праект у воблака</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="996"/>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
-        <translation>لنقل المشاريع إلى السحابة ، يجب تسجيل الدخول في خدمة سيناريست كيت السحابية.</translation>
+        <translation>Для перамяшчэння праектаў у воблака вам неабходна быць аўтарызаваным у воблачным сэрвісе КІТ Сцэнарыст.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1002"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
-        <translation>لنقل المشاريع إلى السحابة ، يجب أن يكون اشتراكك في خدمة سيناريست كيت السحابية نشطًا.</translation>
+        <translation>Для перамяшчэння праектаў у воблака ў вас павінна быць актыўная падпіска ў воблачным сэрвісе КІТ Сцэнарыст.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1059"/>
         <source>Change project name</source>
-        <translation>تغيير اسم المشروع</translation>
+        <translation>Змяніць назву праекта</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1060"/>
         <source>Enter new name for project</source>
-        <translation>أدخل اسماً جديداً للمشروع</translation>
+        <translation>Увядзіце новую назву праекта</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1092"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>هل أنت متأكد من حذف المشروع &lt;b&gt;%1&lt;/b&gt;؟</translation>
+        <translation>Вы ўпэўнены, што хочаце выдаліць праект &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1107"/>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>هل أنت متأكد من حذف اشتراكك في المشروع &lt;b&gt;%1&lt;/b&gt;؟</translation>
+        <translation>Вы ўпэўнены, што хочаце адпісацца ад праекта &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1134"/>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
-        <translation>هل أنت متأكد من حذف اشتراك المستخدم &lt;b&gt;%1&lt;/b&gt; في المشروع &lt;b&gt;%2&lt;/b&gt;؟</translation>
+        <translation>Вы ўпэўнены, што хочаце адпісаць карыстальніка &lt;b&gt;%1&lt;/b&gt; ад праекта &lt;b&gt;%2&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1156"/>
         <source>Connection active</source>
-        <translation>الاتصال نشط</translation>
+        <translation>Злучэнне ўсталявана</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1162"/>
         <source>Project synchronized</source>
-        <translation>تمت مزامنة المشروع</translation>
+        <translation>Праект сінхранізаваны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1175"/>
         <source>Connection inactive</source>
-        <translation>الاتصال غير نشط</translation>
+        <translation>Злучэнне адсутнічае</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1176"/>
         <source>Project didn&apos;t synchronized</source>
-        <translation>لم تتم مزامنة المشروع</translation>
+        <translation>Праект не сінхранізаваны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1219"/>
         <source>Modified</source>
-        <translation>تم التعديل</translation>
+        <translation>Зменены</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1247"/>
         <source>Network error</source>
-        <translation>خطأ في الشبكة</translation>
+        <translation>Памылка сеткі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1249"/>
         <source>Project didn&apos;t synchronized.</source>
-        <translation>لم تتم مزامنة المشروع</translation>
+        <translation>Праект не сінхранізаваны.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1269"/>
         <source>Incorrect username or password.</source>
-        <translation>اسم المستخدم أو كلمة المرور غير صحيحة.</translation>
+        <translation>Няправільнае імя карыстальніка або пароль.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1280"/>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
-        <translation>كلمة المرور المحفوظة غير صحيحة. يبدو أنك قمت بتغيير كلمة المرور. يرجى إدخال كلمة المرور الجديدة.</translation>
+        <translation>Захаваны пароль няправільны. Падобна на тое, што вы яго змянілі. Калі ласка, увядзіце новы пароль.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1290"/>
         <source>Subscription ended</source>
-        <translation>انتهى الاشتراك</translation>
+        <translation>Падпіска скончылася</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1291"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
-        <translation>انتهت فترة الاشتراك التي تم شراؤها.
+        <translation>Закуплены перыяд падпіскі скончаны.
 
-لم تتم مزامنة المشروع.</translation>
+Праект не сінхранізаваны.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1303"/>
         <source>Network Error</source>
-        <translation>خطأ في الشبكة</translation>
+        <translation>Памылка сеткі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1304"/>
         <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
-        <translation>لا يمكن تحميل جميع البيانات من الخدمة بشكل صحيح. يرجى التحقق من اتصالك بالإنترنت وتحديث المزامنة.
+        <translation>Немагчыма карэктна загрузіць усе дадзеныя з сервера. Калі ласка, праверце падключэнне да Інтэрнэту і абнавіце сінхранізацыю.
 
-لم تتم مزامنة المشروع.</translation>
+Праект не сінхранізаваны.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1317"/>
         <source>Session closed</source>
-        <translation>تم إغلاق الجلسة</translation>
+        <translation>Сесія закрыта</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1318"/>
         <source>New session for you account started at other device.
 
 Project didn&apos;t synchronized.</source>
-        <translation>بدأت جلسة جديدة لحسابك على جهاز آخر.
+        <translation>Карыстальнік з вашымі ўліковымі дадзенымі аўтарызаваўся на іншай прыладзе.
 
-لم تتم مزامنة المشروع.</translation>
+Праект не сінхранізаваны.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1328"/>
         <source>Share error</source>
-        <translation>خطأ في المشاركة</translation>
+        <translation>Памылка доступу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1329"/>
         <source>You can&apos;t share project with yourself.</source>
-        <translation>لا يمكنك مشاركة المشروع مع نفسك.</translation>
+        <translation>Вы не можаце адкрыць доступ да праекта самому сабе.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1338"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1349"/>
         <source>Project not available</source>
-        <translation>المشروع غير متوفر</translation>
+        <translation>Праект недаступны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1339"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
-        <translation>المشروع الحالي غير متاح للمزامنة الآن ، لأنه تم إنهاء اشتراك مالك المشروع.
-لم تتم مزامنة المشروع.</translation>
+        <translation>Бягучы праект зараз недаступны для сінхранізацыі, таму што падпіска ўладальніка праекта скончылася.
+
+Праект не сінхранізаваны.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1350"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
-        <translation>المشروع الحالي غير متاح للمزامنة الآن ، لقد تم تعليق إمكانيتك للوصول من قبل مالك المشروع.
- لم تتم مزامنة المشروع</translation>
+        <translation>Праект недаступны для сінхранізацыі, бо уладальнік праекта зачыніў вам доступ да яго.
+
+Праект не сінхранізаваны.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1360"/>
         <source>Sync not available</source>
-        <translation>المزامنة غير متاحة</translation>
+        <translation>Сінхранізацыя недаступная</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1361"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
-        <translation>لقد استنفدت كل المساحة المتاحة على السيرفر
-.لم تتم مزامنة المشروع.</translation>
+        <translation>Вы вычарпалі ўсю даступную для выкарыстання прастору на серверы.
+
+Праект не сінхранізаваны.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1371"/>
         <source>Project sync not available</source>
-        <translation>مزامنة المشروع غير متاحة</translation>
+        <translation>Сінхранізацыя праекта недаступная</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1372"/>
         <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
 
 Project didn&apos;t synchronized.</source>
-        <translation>لديك إصدار قديم من التطبيق. يرجى تثبيت أحدث إصدار من التطبيق لاستعادة الوصول إلى المشروع.
+        <translation>У вас састарэлая версія праграмы. Усталюйце апошнюю версію праграмы для аднаўлення доступу да праекта.
 
-لم تتم مزامنة المشروع.</translation>
+Праект не сінхранізаваны.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1382"/>
         <source>Email already exist</source>
-        <translation>البريد الالكتروني موجود مسبقا</translation>
+        <translation>Дадзеная электронная пошта ўжо зарэгістравана</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1391"/>
         <source>Password too weak</source>
-        <translation>كلمة مرور ضعيفة جدا</translation>
+        <translation>Занадта слабы пароль</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1400"/>
         <source>Invalid old password</source>
-        <translation>كلمة مرور قديمة غير صالحة</translation>
+        <translation>Няправільна ўведзены стары пароль</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1409"/>
         <source>Wrong validation code</source>
-        <translation>رمز التحقق غير صحيح</translation>
+        <translation>Няправільны код пацверджання</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1418"/>
         <source>Wrong email</source>
-        <translation>بريد إلكتروني غير صحيح</translation>
+        <translation>Няправільны адрас электроннай пошты</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1427"/>
         <source>Unknown Error</source>
-        <translation>خطأ غير معروف</translation>
+        <translation>Невядомая памылка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1495"/>
         <source>Exit from Application</source>
-        <translation>الخروج من التطبيق</translation>
+        <translation>Выхад з праграмы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1495"/>
         <source>Closing Database Connections and remove temporary files.</source>
-        <translation>إغلاق اتصالات قاعدة البيانات وحذف الملفات المؤقتة.</translation>
+        <translation>Закрыццё злучэння з базай дадзеных і выдаленне часовых файлаў.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1769"/>
         <source>Save project changes?</source>
-        <translation>حفظ تغييرات المشروع؟</translation>
+        <translation>Захаваць змены праекта?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1770"/>
         <source>Project was modified. Save changes?</source>
-        <translation>تم تعديل المشروع. حفظ التغييرات؟</translation>
+        <translation>Праект быў зменены. Захаваць змены?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1798"/>
         <source>Loading Scenario</source>
-        <translation>تحميل السيناريو</translation>
+        <translation>Загрузка сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1798"/>
         <source>Please wait. Loading can take few minutes.</source>
-        <translation>برجاء الإنتظار. يمكن أن يستغرق التحميل بضع دقائق.</translation>
+        <translation>Трошкі пачакайце. Загрузка можа заняць некалькі хвілін.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1858"/>
         <source>Sync scenario with cloud service.</source>
-        <translation>مزامنة السيناريو مع الخدمة السحابية.</translation>
+        <translation>Трошкі пачакайце. Сцэнарый сінхранізуецца з воблакам.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1880"/>
         <source>Import</source>
-        <translation></translation>
+        <translation>Імпарт</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1880"/>
         <source>Please wait. Import can take few minutes.</source>
-        <translation>برجاء الإنتظار. يمكن أن يستغرق الاستيراد بضع دقائق.</translation>
+        <translation>Трошкі пачакайце. Імпарт можа заняць некалькі хвілін.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2008"/>
         <source>Menu</source>
-        <translation>القائمة</translation>
+        <translation>Меню</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2017"/>
         <source>New window</source>
-        <translation>نافذة جديدة</translation>
+        <translation>Новае акно</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2032"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2043"/>
         <source>Start</source>
-        <translation>إبدء</translation>
+        <translation>Пачатак</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2033"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2044"/>
         <source>Research</source>
-        <translation>بحث</translation>
+        <translation>Распрацоўка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2034"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2045"/>
         <source>Cards</source>
-        <translation>البطاقات</translation>
+        <translation>Карткі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2035"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2046"/>
         <source>Scenario</source>
-        <translation>السيناريو</translation>
+        <translation>Сцэнарый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2036"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2047"/>
         <source>Statistics</source>
-        <translation>الإحصائيات</translation>
+        <translation>Статыстыка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2037"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2048"/>
         <source>Tools</source>
-        <translation>الأدوات</translation>
+        <translation>Інструменты</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2038"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2049"/>
         <source>Settings</source>
-        <translation>الإعدادات</translation>
+        <translation>Налады</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2127"/>
         <source>File</source>
-        <translation>الملف</translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2128"/>
         <source>Edit</source>
-        <translation>تعديل</translation>
+        <translation>Рэдагаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2133"/>
         <source>New</source>
-        <translation>جديد</translation>
+        <translation>Новы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2134"/>
         <source>Open</source>
-        <translation>إفتح</translation>
+        <translation>Адкрыць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2135"/>
         <source>Save</source>
-        <translation>حفظ</translation>
+        <translation>Захаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2138"/>
         <source>Save as...</source>
-        <translation>حفظ باسم ...</translation>
+        <translation>Захаваць як...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2142"/>
         <source>New script version...</source>
-        <translation>إصدار جديد للنص ...</translation>
+        <translation>Новая версія сцэнарыя...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2144"/>
         <source>Import...</source>
-        <translation>استيراد...</translation>
+        <translation>Імпарт...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2146"/>
         <source>Export to...</source>
-        <translation>تصدير الي...</translation>
+        <translation>Экспарт...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2148"/>
         <source>Print preview script</source>
-        <translation>معاينة النص قبل الطباعة</translation>
+        <translation>Перадпрагляд сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2153"/>
         <source>Two panel mode</source>
-        <translation>وضعية اللوحة الثنائية</translation>
+        <translation>Рэжым з дзвюма панэлямі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2564"/>
         <source>KIT Scenarist</source>
-        <translation>سيناريست كيت</translation>
+        <translation>КІТ Сцэнарыст</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2580"/>
         <source>on local computer</source>
-        <translation>على الكمبيوتر المحلي</translation>
+        <translation>на камп&apos;ютары</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2581"/>
         <source>in cloud</source>
-        <translation>في السحابة</translation>
+        <translation>у воблаку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2587"/>
         <source>%1[*] - KIT Scenarist</source>
-        <translation>%1[*] - سيناريو كيت</translation>
+        <translation>%1[*] - КІТ Сцэнарыст</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2590"/>
         <source>Read only</source>
-        <translation type="unfinished"></translation>
+        <translation>Толькі для чытання</translation>
     </message>
 </context>
 <context>
@@ -2240,42 +2220,42 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="76"/>
         <source>Export</source>
-        <translation>تصدير</translation>
+        <translation>Экспарт</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="76"/>
         <source>Please wait. Export can take few minutes.</source>
-        <translation>برجاء الإنتظار. يمكن أن يستغرق التصدير بضع دقائق.</translation>
+        <translation>Трошкі пачакайце. Экспарт можа заняць некалькі хвілін.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="142"/>
         <source>You try export to nonexistent folder &lt;b&gt;%1&lt;/b&gt;. Please, choose other location for exported file.</source>
-        <translation>حاولت التصدير إلى مجلد غير موجود &lt;b&gt;%1&lt;/b&gt;. من فضلك ، اختر موقعًا آخر لتصدير الملف.</translation>
+        <translation>Вы спрабуеце экспартаваць у неіснуючую папку &lt;b&gt;%1&lt;/b&gt;. Калі ласка, абярыце іншую папку.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="146"/>
         <source>Can&apos;t write to file. Maybe it is opened by another application. Please close it and retry export.</source>
-        <translation>لا يمكن الكتابة إلى الملف. ربما يتم فتحه بواسطة تطبيق آخر. يرجى إغلاقه وإعادة محاولة التصدير.</translation>
+        <translation>Не ўдаецца запісаць файл. Магчыма, ён адкрыты ў іншай праграме. Калі ласка, закрыйце яе і паўтарыце спробу экспарту.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="149"/>
         <source>Can&apos;t write to file. Check permissions to write in choosed folder. Please, choose other folder.</source>
-        <translation>لا يمكن الكتابة إلى الملف. تحقق من أذونات الكتابة في المجلد المختار. من فضلك ، اختر مجلد آخر.</translation>
+        <translation>Не ўдаецца запісаць файл. Праверце дазвол на запіс у выбраную папку і паўтарыце спробу, альбо выберыце іншую папку.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="151"/>
         <source>Export error</source>
-        <translation>خطأ في التصدير</translation>
+        <translation>Памылка экспарту</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="178"/>
         <source>Print Preview</source>
-        <translation>معاينة قبل الطباعة</translation>
+        <translation>Перадпрагляд</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Export/ExportManager.cpp" line="178"/>
         <source>Please wait. Preparing document to preview can take few minutes.</source>
-        <translation>برجاء الإنتظار. يمكن أن يستغرق إعداد الملف للمعاينة بضع دقائق.</translation>
+        <translation>Трошкі пачакайце. Падрыхтоўка сцэнарыя да перадпрагляду можа доўжыцца некалькі хвілін.</translation>
     </message>
 </context>
 <context>
@@ -2283,57 +2263,57 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="331"/>
         <source>Characters import</source>
-        <translation>إستيراد شخصيات</translation>
+        <translation>Імпарт персанажаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="342"/>
         <source>Locations import</source>
-        <translation>إستيراد مواقع</translation>
+        <translation>Імпарт лакацый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="353"/>
         <source>Documents import</source>
-        <translation>إستيراد ملفات</translation>
+        <translation>Імпарт дакументаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="381"/>
         <source>File format not supported</source>
-        <translation>تنسيق الملف غير مدعوم</translation>
+        <translation>Фармат файла не падтрымліваецца</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="382"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
-        <translation>ملفات Microsoft &lt;b&gt; DOC &lt;/b&gt; غير مدعومة. تحتاج إلى حفظه في ملف &lt;b&gt; DOCX &lt;/b&gt; وإعادة الاستيراد.</translation>
+        <translation>Файлы Microsoft &lt;b&gt;DOC&lt;/b&gt; не падтрымліваюцца. Захавайце файл у фармаце &lt;b&gt;DOCX&lt;/b&gt; і паўторна імпартуйце.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="390"/>
         <source>File doesn&apos;t exists</source>
-        <translation>الملف غير موجود</translation>
+        <translation>Файла не існуе</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="391"/>
         <source>Please choose existing file and retry import.</source>
-        <translation>يرجى اختيار ملف موجود وإعادة محاولة الاستيراد.</translation>
+        <translation>Калі ласка абярыце існуючы файл і паўтарыце імпарт.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="399"/>
         <source>Import</source>
-        <translation>استيراد</translation>
+        <translation>Імпарт сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="399"/>
         <source>Please wait. Import can take few minutes.</source>
-        <translation>برجاء الإنتظار. يمكن أن يستغرق الاستيراد بضع دقائق.</translation>
+        <translation>Трошкі пачакайце. Імпарт можа заняць некалькі хвілін.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="410"/>
         <source>Import aborted</source>
-        <translation>تم إلغاء الاستيراد</translation>
+        <translation>Імпарт перарваны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="411"/>
         <source>File to import is empty. Please check that you select correct file and retry import.</source>
-        <translation>ملف الاستيراد فارغ. يرجى التحقق من تحديد الملف الصحيح وإعادة محاولة الاستيراد.</translation>
+        <translation>Файл для імпарту пусты. Калі ласка, пераканайцеся, што вы выбралі правільны файл, і паўтарыце спробу імпарту.</translation>
     </message>
 </context>
 <context>
@@ -2341,13 +2321,13 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="194"/>
         <source>Password successfully changed</source>
-        <translation>تم تغيير كلمة المرور بنجاح</translation>
+        <translation>Пароль паспяхова зменены</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="209"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/MenuManager.cpp" line="245"/>
         <source>Can not change password</source>
-        <translation>لا يمكن تغيير كلمة المرور</translation>
+        <translation>Не ўдалося змяніць пароль</translation>
     </message>
 </context>
 <context>
@@ -2355,17 +2335,17 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="27"/>
         <source>Owner</source>
-        <translation>المالك</translation>
+        <translation>уладальнік</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="28"/>
         <source>Redactor</source>
-        <translation>المحرر</translation>
+        <translation>рэдактар</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="29"/>
         <source>Commentator</source>
-        <translation>المعلق</translation>
+        <translation>каментатар</translation>
     </message>
 </context>
 <context>
@@ -2373,47 +2353,47 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="558"/>
         <source>Are you sure to remove research: &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>هل أنت متأكد من حذف البحث: &lt;b&gt;%1&lt;/b&gt;؟</translation>
+        <translation>Выдаліць элемент распрацоўкі: &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="656"/>
         <source>Color</source>
-        <translation>اللون</translation>
+        <translation>Колер</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="662"/>
         <source>Clear</source>
-        <translation>إمسح</translation>
+        <translation>Ачысціць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="676"/>
         <source>Add New</source>
-        <translation>أضف جديد</translation>
+        <translation>Дадаць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="681"/>
         <source>Remove</source>
-        <translation>حذف</translation>
+        <translation>Выдаліць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="688"/>
         <source>Find All Characters from Script</source>
-        <translation>البحث عن جميع الشخصيت في النص</translation>
+        <translation>Знайсці ўсіх персанажаў сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="689"/>
         <source>Find All Locations from Script</source>
-        <translation>البحث عن جميع المواقع في النص</translation>
+        <translation>Знайсці ўсе лакацыі ў сцэнарыі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="817"/>
         <source>Do you really want to delete script version named &lt;b&gt;%1&lt;/b&gt;?</source>
-        <translation>هل تريد حقًا مسح نسخة البرنامج النصي المسماة &lt;b&gt;%1&lt;/b&gt;؟</translation>
+        <translation>Вы сапраўды хочаце выдаліць версію сцэнарыя пад назвай &lt;b&gt;%1&lt;/b&gt;?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="975"/>
         <source>Unnamed image</source>
-        <translation></translation>
+        <translation>Без назвы</translation>
     </message>
 </context>
 <context>
@@ -2421,70 +2401,53 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="582"/>
         <source>Characters to delete</source>
-        <translation>الشخصيات المطلوب حذفها</translation>
+        <translation>Персанажы на выдаленне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="588"/>
         <source>Characters to save</source>
-        <translation>شخصيات للحفظ</translation>
+        <translation>Будуць захаваныя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="590"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="658"/>
         <source>Apply refreshing</source>
-        <translation>تطبيق التحديث</translation>
+        <translation>Прыняць вынікі пошуку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="649"/>
         <source>Locations to delete</source>
-        <translation>المواقع المطلوب حذفها</translation>
+        <translation>Лакацыі на выдаленне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="655"/>
         <source>Locations to save</source>
-        <translation>مواقع للحفظ</translation>
+        <translation>Будуць захаваныя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="802"/>
         <source>Conflicted version</source>
-        <translation>نسخة متعارضة</translation>
+        <translation>Канфліктная версія</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="804"/>
         <source>Script changes conflict detected</source>
-        <translation>تم الكشف عن تعارض في تغييرات النص</translation>
+        <translation>Выяўлены канфлікт змяненняў сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="805"/>
         <source>There are a conflict detected between script state on the cloud service and your offline changes. Conflicted version was saved as a separate one and text of the script restored from the cloud. You can find conflicted version in the Research - Script - Versions.</source>
-        <translation>تم الكشف عن وجود تعارض بين حالة النص في الخدمة السحابية وتغييراتك دون اتصال. تم حفظ النسخة المتضاربة كنسخة منفصلة وتمت استعادة النص من السحابة. يمكنك العثور على النسخة متضاربة في إصدارات البحث - النص - الإصدارات.</translation>
+        <translation>Выяўлены канфлікт паміж воблачнай і лакальнай версіямі сцэнарыя. Канфліктная версія была захавана асобна ў спіс версій, а тэкст сцэнарыя адноўлены з воблака. Вы можаце знайсці канфліктную версію ў раздзеле Распрацоўка - Сцэнарый - Версіі.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="934"/>
         <source>Chron.</source>
-        <translatorcomment>I am assuming Chron is short for chronometry</translatorcomment>
-        <translation>الترتيب الزمني</translation>
+        <translation>Хран.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="1204"/>
         <source>On/off Fullscreen Mode</source>
-        <translation>تشغيل / إيقاف وضعية الشاشة الكاملة</translation>
-    </message>
-    <message>
-        <source>Changing scenes numbers locking</source>
-        <translation type="vanished">تغيير إقفال أرقام المشاهد</translation>
-    </message>
-    <message>
-        <source>Do you want to unlock scenes numbers or lock again?</source>
-        <translation type="vanished">هل تريد إلغاء إقفال أرقام المشاهد أم إقفالها مرة أخرى؟</translation>
-    </message>
-    <message>
-        <source>Unlock</source>
-        <translation type="vanished">الغاء الإقفال</translation>
-    </message>
-    <message>
-        <source>Lock</source>
-        <translation type="vanished">إقفال</translation>
+        <translation>Уключыць/выключыць поўнаэкранны рэжым</translation>
     </message>
 </context>
 <context>
@@ -2492,12 +2455,12 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="291"/>
         <source>Enter new scene number</source>
-        <translation>أدخل رقم المشهد الجديد</translation>
+        <translation>Увядзіце новы нумар сцэны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioTextEditManager.cpp" line="291"/>
         <source>New scene number</source>
-        <translation>رقم المشهد الجديد</translation>
+        <translation>Новы нумар сцэны</translation>
     </message>
 </context>
 <context>
@@ -2505,12 +2468,12 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScriptDictionariesManager.cpp" line="91"/>
         <source>Enter new item name</source>
-        <translation>أدخل اسم العنصر الجديد</translation>
+        <translation>Увядзіце назву новага элемента</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScriptDictionariesManager.cpp" line="136"/>
         <source>Are you sure to remove &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation>هل أنت متأكد من حذف &lt;b&gt;%1&lt;/b&gt;</translation>
+        <translation>Вы ўпэўнены, што хочаце выдаліць &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -2518,90 +2481,90 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="141"/>
         <source>Restoring</source>
-        <translation>استعادة</translation>
+        <translation>Аднаўленне налад</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="142"/>
         <source>Please wait. Restoring settings to default values can take few minutes.</source>
-        <translation>برجاء الإنتظار. يمكن أن تستغرق استعادة الإعدادات إلى القيم الافتراضية بضع دقائق.</translation>
+        <translation>Трошкі пачакайце. Аднаўленне налад па змаўчанні можа заняць некалькі хвілін.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="165"/>
         <source>Language will be changed after application restart.</source>
-        <translation>سيتم تغيير اللغة بعد إعادة تشغيل التطبيق.</translation>
+        <translation>Мова будзе зменена пасля перазапуску праграмы.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="210"/>
         <source>HIDPI scaling option will be applied after application restart.</source>
-        <translation>سيتم تطبيق خيار HIDPI لتغيير الحجم بعد إعادة تشغيل التطبيق.</translation>
+        <translation>Рэжым маштабавання высокага разрознення будзе уключаны пасля перазапуску праграмы.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="369"/>
         <source>Dictionary loading</source>
-        <translation>تحميل القاموس</translation>
+        <translation>Загрузка слоўніка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="369"/>
         <source>Please wait, loading of spell checking dictionary can take a few minutes.</source>
-        <translation>برجاء الإنتظار ، قد يستغرق تحميل قاموس التدقيق الإملائي بضع دقائق.</translation>
+        <translation>Трошкі пачакайце. Загрузка арфаграфічнага слоўніка можа заняць некалькі хвілін.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="415"/>
         <source>Can&apos;t enable spell checking</source>
-        <translation>لا يمكن تمكين التدقيق الإملائي</translation>
+        <translation>Не ўдаецца ўключыць праверку правапісу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="416"/>
         <source>Can&apos;t download spelling dictionary. Please check internet connection and retry to activate spell checking</source>
-        <translation>لا يمكن تنزيل قاموس التدقيق الإملائي. برجاء التحقق من اتصال الإنترنت وإعادة المحاولة لتنشيط التدقيق الإملائي</translation>
+        <translation>Не ўдалося загрузіць арфаграфічны слоўнік. Праверце падключэнне да Інтэрнэту і паўтарыце спробу, каб актываваць праверку правапісу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="689"/>
         <source>Choose file to load</source>
-        <translation>اختر ملفًا للتحميل</translation>
+        <translation>Выберыце файл для загрузкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="690"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="714"/>
         <source>Scenario Template Files (*.%1)</source>
-        <translation>ملفات نماذج السيناريو (*.%1)</translation>
+        <translation>Файлы шаблону сцэнарыя (*.%1)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="713"/>
         <source>Choose file to save</source>
-        <translation>اختر ملفًا للحفظ</translation>
+        <translation>Выберыце файл для захавання</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1104"/>
         <source>Press in paragraph&apos;s end</source>
-        <translation>اضغط في نهاية الفقرة</translation>
+        <translation>Курсор у канцы радка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1106"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1111"/>
         <source>Tab</source>
-        <translation>التبويب</translation>
+        <translation>Tab</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1107"/>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1112"/>
         <source>Enter</source>
-        <translation>أدخل</translation>
+        <translation>Enter</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1109"/>
         <source>Press in empty paragraph</source>
-        <translation>اضغط في فقرة فارغة</translation>
+        <translation>Курсор у пустым радку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1115"/>
         <source>Block Name</source>
-        <translation>اسم الكتلة</translation>
+        <translation>Назва блока</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1116"/>
         <source>Shortcut</source>
-        <translation>اختصار</translation>
+        <translation>Спалучэнне клавіш</translation>
     </message>
 </context>
 <context>
@@ -2609,7 +2572,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsTemplatesManager.cpp" line="31"/>
         <source>Choose base template</source>
-        <translation>اختر النموذج الأساسي</translation>
+        <translation>Выберыце базавы шаблон</translation>
     </message>
 </context>
 <context>
@@ -2617,17 +2580,17 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="302"/>
         <source>Undo</source>
-        <translation>الغاء</translation>
+        <translation>Адмяніць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="305"/>
         <source>Redo</source>
-        <translation>إعادة</translation>
+        <translation>Паўтарыць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="362"/>
         <source>&lt;p&gt;Can&apos;t install update. There are some problems with downloaded file.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt; لا يمكن تثبيت التحديث. توجد بعض المشكلات في الملف الذي تم تنزيله. &lt;/ p&gt; &lt;p&gt; يمكنك محاولة إعادة تحميل التحديث أو تحميله يدويًا من &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da؛&quot;&gt; موقع الويب الرسمي &lt;/a&gt; . &lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Немагчыма ўсталяваць абнаўленне. З загружаным файлам узніклі праблемы.&lt;/p&gt;&lt;p&gt;Вы можаце паспрабаваць перазагрузіць абнаўленне альбо спампаваць яго ўручную з &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;афіцыйнага сайта&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2635,22 +2598,22 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="105"/>
         <source>Can&apos;t estabilish network connection.</source>
-        <translation>لا يمكن إنشاء اتصال بالشبكة.</translation>
+        <translation>Немагчыма ўсталяваць падключэнне да сеткі.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="109"/>
         <source>Session key not found.</source>
-        <translation>لم يتم العثور على مفتاح الجلسة.</translation>
+        <translation>Не знойдзены ключ сесіі.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="113"/>
         <source>Wrong validation code.</source>
-        <translation>رمز التحقق غير صحيح.</translation>
+        <translation>Няправільны код пацверджання.</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Synchronization/Sync.h" line="117"/>
         <source>Got wrong response from server.</source>
-        <translation>حصلت على استجابة خاطئة من السيرفر.</translation>
+        <translation>Атрыманы памылковы адказ сервера.</translation>
     </message>
 </context>
 <context>
@@ -2658,22 +2621,22 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="120"/>
         <source>Choose backup from list</source>
-        <translation>اختر نسخة احتياطية من القائمة</translation>
+        <translation>Абярыце рэзервовую копію са спісу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="136"/>
         <source>Bytes</source>
-        <translation>بايت</translation>
+        <translation>Байт</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="153"/>
         <source>Choose versions to compare</source>
-        <translation>اختر إصدارات للمقارنة</translation>
+        <translation>Выберыце версіі для параўнання</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Tools/ToolsManager.cpp" line="223"/>
         <source>Script was restored.</source>
-        <translation>تمت استعادة النص.</translation>
+        <translation>Сцэнарый адноўлены.</translation>
     </message>
 </context>
 <context>
@@ -2681,82 +2644,82 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="14"/>
         <source>Form</source>
-        <translation>استمارة</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="77"/>
         <source>Log in to get access to the cloud service</source>
-        <translation>قم بتسجيل الدخول للوصول إلى الخدمة السحابية</translation>
+        <translation>Увайдзіце, каб атрымаць доступ да воблачнага сэрвісу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="121"/>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>Увайсці</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="212"/>
         <source>Create new project</source>
-        <translation>إنشاء مشروع جديد</translation>
+        <translation>Стварыць новы праект</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="229"/>
         <source>Open project</source>
-        <translation>افتح مشروع</translation>
+        <translation>Адкрыць праект</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="246"/>
         <source>Save current project</source>
-        <translation>حفظ المشروع الحالي</translation>
+        <translation>Захаваць бягучы праект</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="263"/>
         <source>Save current project as...</source>
-        <translation>حفظ المشروع الحالي باسم ...</translation>
+        <translation>Захаваць бягучы праект як...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="280"/>
         <source>Start new version...</source>
-        <translation>بدء إصدار جديد ...</translation>
+        <translation>Пачаць новую версію...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="297"/>
         <source>Import...</source>
-        <translation>استيراد...</translation>
+        <translation>Імпарт...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="314"/>
         <source>Export...</source>
-        <translation>تصدير...</translation>
+        <translation>Экспарт...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="331"/>
         <source>Print preview script</source>
-        <translation>معاينة النص قبل الطباعة</translation>
+        <translation>Перадпрагляд сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="348"/>
         <source>How to use the application</source>
-        <translation>كيفية استخدام التطبيق</translation>
+        <translation>Як карыстацца праграмай</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="424"/>
         <source>KIT Scenarist</source>
-        <translation>سيناريست كيت</translation>
+        <translation>КІТ Сцэнарыст</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="485"/>
         <source>About the app</source>
-        <translation>عن التطبيق</translation>
+        <translation>Аб праграме</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="501"/>
         <source>version</source>
-        <translation>الإصدار</translation>
+        <translation>версія</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="519"/>
         <source>DOWNLOAD UPDATE</source>
-        <translation>حمل التحديث</translation>
+        <translation>СПАМПАВАЦЬ АБНАЎЛЕННЕ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="585"/>
@@ -2766,43 +2729,42 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="605"/>
         <source>User name:</source>
-        <translation>اسم المستخدم:</translation>
+        <translation>Імя карыстальніка:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="615"/>
         <source>Account is active until:</source>
-        <translation>الحساب نشط حتى:</translation>
+        <translation>Падпіска актыўная да:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="625"/>
         <source>22.02.2017</source>
-        <translatorcomment>The alginment should be right to left but I dont know how to change it here</translatorcomment>
-        <translation>٢٢ ٠٢ ٢٠١٧</translation>
+        <translation>22.02.2017</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="658"/>
         <source>UserName</source>
-        <translation>اسم المستخدم</translation>
+        <translation>UserName</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="665"/>
         <source>Used 0 Gb from 0 Gb</source>
-        <translation>مستخدم 0 جيجا بايت من 0 جيجا بايت</translation>
+        <translation>Выкарыстана 0 Гб з 0 Гб</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="677"/>
         <source>Renew subscription</source>
-        <translation>تجديد الاشتراك</translation>
+        <translation>Падоўжыць падпіску</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="694"/>
         <source>Change Password</source>
-        <translation>تغيير كلمة المرور</translation>
+        <translation>Змяніць пароль</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="711"/>
         <source>Quit from cabinet</source>
-        <translation>انسحب من المجلس</translation>
+        <translation>Выйсці з кабінета</translation>
     </message>
 </context>
 <context>
@@ -2810,7 +2772,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../../libs/fileformats/odt_reader.cpp" line="77"/>
         <source>Unable to open archive.</source>
-        <translation>غير قادر على فتح الأرشيف.</translation>
+        <translation>Немагчыма адкрыць архіў.</translation>
     </message>
 </context>
 <context>
@@ -2818,67 +2780,67 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="14"/>
         <source>KIT Scenarist. Setup of basic features.</source>
-        <translation>سيناريست كيت. إعداد الميزات الأساسية.</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="72"/>
-        <source>Skip</source>
-        <translation>تخطى</translation>
+        <translation>КІТ Сцэнарыст. Налада асноўных функцый.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="33"/>
         <source>Back</source>
-        <translation>عودة</translation>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="72"/>
+        <source>Skip</source>
+        <translation>Прапусціць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="79"/>
         <source>Next</source>
-        <translation>التالى</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="232"/>
-        <source>Detect language from system locale</source>
-        <translation>ضبط اللغة من لغة النظام</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="187"/>
-        <source>Choose language</source>
-        <translation>اختر اللغة</translation>
+        <translation>Далей</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="116"/>
         <source>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Didn&apos;t find preferred language? Read how you can add it yourself.&lt;/a&gt;</source>
-        <translation>&lt;a href = &quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt; لم تجد اللغة المفضلة؟ اقرأ كيف يمكنك إضافته بنفسك. &lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Не знайшлі пераважнай для вас мовы? Паглядзіце, як вы можаце дадаць яе самастойна.&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="187"/>
+        <source>Choose language</source>
+        <translation>Выберыце мову</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="232"/>
+        <source>Detect language from system locale</source>
+        <translation>Выкарыстоўваць сістэмныя налады лакалізацыі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="400"/>
         <source>Choose application theme</source>
-        <translation>اختر موضوع التطبيق</translation>
+        <translation>Выберыце тэму праграмы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="413"/>
         <source>Dark theme</source>
-        <translation>سمة ذات لون داكن</translation>
+        <translation>Цёмная тэма</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="442"/>
         <source>Theme is convenient for work with sufficient light.</source>
-        <translation>السمة مناسبة للعمل مع إضاءة كافية.</translation>
+        <translation>Тэма зручная для працы пры дастатковай колькасці святла.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="477"/>
         <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
-        <translation>السمة أكثر ملاءمة للعمل في غرف ذات إضاءة خافتة ، وكذلك في المساء أو في الليل.</translation>
+        <translation>Тэма падыдзе для працы ў слабаасветленых памяшканнях, а таксама ўвечары і ўначы.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="512"/>
         <source>Light theme</source>
-        <translation>سمة ذات لون فاتح</translation>
+        <translation>Светлая тэма</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="545"/>
         <source>Use research module</source>
-        <translation>استخدم وحدة البحث</translation>
+        <translation>Выкарыстоўваць модуль распрацоўкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="555"/>
@@ -2887,40 +2849,40 @@ Project didn&apos;t synchronized.</source>
 Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
 
 Also, in research tab you can store a variety of materials (text documents, images, links to web pages and mindmaps) associated with your project, organizing them in a convenient manner.</source>
-        <translation>يمكنك جمع جميع المواد اللازمة للمشروع في مكان واحد. حيث يمكنك حفظ المعلومات الأساسية حول النص ، مثل اسمه ، النبذة ، الملخص ، وكذلك ملء صفحة عنوان النص. 
+        <translation>Дадзены раздзел праграмы патрэбны, каб вы маглі збіраць усе неабходныя матэрыялы па праекце ў адным месцы. У ім вы можаце захоўваць асноўную інфармацыю пра сцэнарый, такую ​​як яго назву, логлайн, сінопсіс, а таксама запоўніць тытульную старонку сцэнарыя.
 
-هنا يمكنك اإدارة قوائم الشخصيات والمواقع. قم بإنشاء شخصيات و مواقع جديدة ، إضافة الأوصاف والصور ، إعادة تسميتها  ، وتنظيمها.
+Тут жа вы можаце кіраваць спісамі персанажаў і лакацый. Ствараць новых, дадаваць ім апісанні, фотаздымкі, пераназываць і ўпарадкоўваць іх.
 
- في الجزء الخاص بتبويب البحث ، يمكنك من تخزين مجموعة متنوعة من المواد (المستندات النصية والصور والروابط إلى صفحات الويب ومايند مابس) المرتبطة بمشروعك ، وتنظيمها بطريقة ملائمة.</translation>
+А яшчэ, у гэтым жа раздзеле, вы можаце захоўваць разнастайныя матэрыялы (тэкставыя дакументы, малюнкі, спасылкі на вэб-старонкі і інтэлект-карты) звязаныя з вашым праектам, арганізуючы іх зручным для сябе чынам.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="576"/>
         <source>Research</source>
-        <translation>البحث</translation>
+        <translation>Распрацоўка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="620"/>
         <source>Cards</source>
-        <translation>البطاقات</translation>
+        <translation>Карткі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="627"/>
         <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
 
 You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
-        <translation>تتيح لك وحدة البطاقات رؤية النص في شكل بطاقات موضوعة على لوح الفلين ، وبالتالي توفير طريقة مرئية للعمل مع هيكل العمل. 
+        <translation>Модуль картак дазваляе ўбачыць сцэнарый у выглядзе зручных картак, размешчаных на дошцы, што забяспечвае візуальны спосаб працы са структурай.
 
-يمكنك إضافة ألوان وختم للبطاقات ونقلها وتجميعها ، ويتم عرض جميع التغييرات التي تم إجراؤها باستخدام البطاقات في النص</translation>
+Карткі можна фарбаваць, ставіць на іх штампы, перамяшчаць і групаваць іх, а ўсе змены, унесеныя з дапамогай картак, адбіваюцца на самім тэксце сцэнарыя.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="661"/>
         <source>Use cards module</source>
-        <translation>استخدام وحدة البطاقات</translation>
+        <translation>Выкарыстоўваць модуль картак</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="695"/>
         <source>Script</source>
-        <translation>النص</translation>
+        <translation>Сцэнарый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="702"/>
@@ -2929,121 +2891,120 @@ You can add colors and stamp to cards, move, and group them, and all changes mad
 Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
 
 And the text editor of the script. The editor has many auxiliary functions that simplify text input in accordance with the standard of scriptwriting and also allows you to search the text of the script and leave notes to the text.</source>
-        <translation>تسمح لك وحدة النص بالعمل مع السيناريو.
+        <translation>Сцэнарны модуль дазваляе працаваць непасрэдна з тэкстам сцэнарыя.
 
-تتضمن الوحدة برنامج التنقل النصي. إنها قائمة المشاهد. سيؤدي النقر بالماوس على المشهد من القائمة إلى عرض نص المشهد المحدد على الشاشة.
+Модуль уключае навігатар па сцэнарыі. Ён уяўляе з сябе спіс сцэн. Націск кнопкай мышы на тую ці іншую сцэну вядзе да адлюстравання тэксту абранай сцэны на экране.
 
-ومحرر النص. يحتوي المحرر على العديد من الوظائف المساعدة التي تبسط إدخال النص وفقًا لمعيار كتابة البرنامج النصي وتسمح لك أيضًا بالبحث في نص البرنامج النصي وترك الملاحظات على النص
-.</translation>
+А таксама тэкставы рэдактар сцэнарыя. Рэдактар мае мноства дапаможных функцый, якія спрашчаюць увод тэксту ў адпаведнасці са стандартамі напісання сцэнарыяў, а таксама дазваляюць праводзіць пошук па тэксце і пакідаць нататкі.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="738"/>
         <source>Use script module</source>
-        <translation>استخدم وحدة النص</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1180"/>
-        <source>Arabic screenplay standard template.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1199"/>
-        <source>Arabic screenplay</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1214"/>
-        <source>Choose script template</source>
-        <translation>اختر نموذج النص</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1074"/>
-        <source>Russian screenplay with Courier Prime</source>
-        <translation>سيناريو روسي مع Courier Prime</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1116"/>
-        <source>Russian screenplay</source>
-        <translation>سيناريو روسي</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1007"/>
-        <source>International screenplay standard template for A4 page size.</source>
-        <translation>نموذج قياسي لسيناريو دولي (A4)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1087"/>
-        <source>Final Draft screenplay (A4)</source>
-        <translation>سيناريو فاينال درافت (A4)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="937"/>
-        <source>International screenplay standard template for Letter page size.</source>
-        <translation>نموذج قياسي لسيناريو دولي (رسالة)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="924"/>
-        <source>Chinese screenplay</source>
-        <translation>سيناريو صيني</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1161"/>
-        <source>Chinese screenplay standard template.</source>
-        <translation>نموذج قياسي للسيناريو الصيني.</translation>
+        <translation>Выкарыстоўваць модуль сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="808"/>
         <source>Hebrew screenplay</source>
-        <translation>سيناريو عبري</translation>
+        <translation>Шаблон сцэнарыя Ізраіль</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="905"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
-        <translation>نموذج قياسي للسيناريو الروسي و لسيناريو رابطة الدول المستقلة.مع Courier Prime</translation>
+        <translation>Стандартны шаблон афармлення сцэнарыя для Расіі і краін СНД з шрыфтам Courier Prime замест Courier New.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1039"/>
-        <source>Hebrew screenplay standard template.</source>
-        <translation>نموذج قياسي للسيناريو العبري.</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="924"/>
+        <source>Chinese screenplay</source>
+        <translation>Шаблон сцэнарыя Кітай</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1026"/>
-        <source>Final Draft screenplay (Letter)</source>
-        <translation>سيناريو فاينال درافت (رسالة)</translation>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="937"/>
+        <source>International screenplay standard template for Letter page size.</source>
+        <translation>Міжнародны стандартны шаблон афармлення сцэнарыя для старонак фармату Letter.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="972"/>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation>نمودج قياسي للسيناريو الروسي و لسيناريو رابطة الدول المستقلة.</translation>
+        <translation>Стандартны шаблон афармлення сцэнарыя для Расіі і краін СНД.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1007"/>
+        <source>International screenplay standard template for A4 page size.</source>
+        <translation>Міжнародны стандартны шаблон афармлення сцэнарыя для старонак фармату A4.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1026"/>
+        <source>Final Draft screenplay (Letter)</source>
+        <translation>Шаблон сцэнарыя Final Draft (Letter)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1039"/>
+        <source>Hebrew screenplay standard template.</source>
+        <translation>Стандартны шаблон афармлення сцэнарыя для Ізраіля (іўрыт).</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1074"/>
+        <source>Russian screenplay with Courier Prime</source>
+        <translation>Шаблон сцэнарыя Расія і СНД з Courier Prime</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1087"/>
+        <source>Final Draft screenplay (A4)</source>
+        <translation>Шаблон сцэнарыя Final Draft (A4)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1116"/>
+        <source>Russian screenplay</source>
+        <translation>Шаблон сцэнарыя Расія і СНД</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1161"/>
+        <source>Chinese screenplay standard template.</source>
+        <translation>Стандартны шаблон афармлення сцэнарыя для Кітая.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1180"/>
+        <source>Arabic screenplay standard template.</source>
+        <translation>Стандартны шаблон афармлення сцэнарыя для арабскай пісьмовасці.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1199"/>
+        <source>Arabic screenplay</source>
+        <translation>Шаблон сцэнарыя Арабскі</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1214"/>
+        <source>Choose script template</source>
+        <translation>Выберыце шаблон сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1270"/>
         <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
-        <translation>تتيح لك وحدة الإحصائيات الحصول على تقارير إنتاج تفصيلية حول النص ، بالإضافة إلى إلقاء نظرة على الرسوم البيانية لنشاط الشخصيات عبر النص وديناميكيات المشاهد.</translation>
+        <translation>Модуль статыстыкі дазваляе атрымліваць падрабязныя справаздачы пра сцэнарый, а таксама праглядаць графікі актыўнасці персанажаў на працягу сцэнарыя і дынаміку сцэн.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1287"/>
         <source>Statistics</source>
-        <translation>الإحصائيات</translation>
+        <translation>Статыстыка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1300"/>
         <source>Use statistics module</source>
-        <translation>استخدام وحدة الإحصائيات</translation>
+        <translation>Выкарыстоўваць модуль статыстыкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1330"/>
         <source>Thank you. The most common application settings were configured.
 
 The application will start in few seconds.</source>
-        <translation>شكرا لك. تم تكوين إعدادات التطبيق الأكثر شيوعًا.
+        <translation>Дзякуй. Налады базавых параметраў праграмы завершаны.
 
-سيبدأ التطبيق في بضع ثوان.</translation>
+Праграма запусціцца праз некалькі секунд.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1349"/>
         <source>Starting application</source>
-        <translation>جارٍ بدء التطبيق</translation>
+        <translation>Запуск праграмы</translation>
     </message>
 </context>
 <context>
@@ -3051,12 +3012,12 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../3rd_party/Widgets/PhotosChooser/PhotoLabel.cpp" line="80"/>
         <source>Choose image</source>
-        <translation>اختر صورة</translation>
+        <translation>Выберыце выяву</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/PhotosChooser/PhotoLabel.cpp" line="81"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
-        <translation>الصور (* .png * .jpeg * .jpg * .bmp * .tiff * .tif * .gif)</translation>
+        <translation>Выявы (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
     </message>
 </context>
 <context>
@@ -3064,67 +3025,67 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="14"/>
         <source>Print cards</source>
-        <translation>طباعة البطاقات</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="77"/>
-        <source>Cards on page:</source>
-        <translation>البطاقات على الصفحة:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="84"/>
-        <source>1</source>
-        <translation>١</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="94"/>
-        <source>2</source>
-        <translation>٢</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="101"/>
-        <source>4</source>
-        <translation>٤</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="108"/>
-        <source>6</source>
-        <translation>٦</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="115"/>
-        <source>8</source>
-        <translation>٨</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="466"/>
-        <source>Print color cards</source>
-        <translation type="unfinished"></translation>
+        <translation>Раздрукаваць карткі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="35"/>
         <source>Page orientation:</source>
-        <translation>اتجاه الصفحة:</translation>
+        <translation>Арыентацыя старонкі:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="42"/>
         <source>Portrait</source>
-        <translation>عمودي</translation>
+        <translation>партрэтная</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="52"/>
         <source>Landscape</source>
-        <translation>أفقي</translation>
+        <translation>альбомная</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="77"/>
+        <source>Cards on page:</source>
+        <translation>Картак на старонцы:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="84"/>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="94"/>
+        <source>2</source>
+        <translation>2</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="101"/>
+        <source>4</source>
+        <translation>4</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="108"/>
+        <source>6</source>
+        <translation>6</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="115"/>
+        <source>8</source>
+        <translation>8</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="152"/>
         <source>Print Preview</source>
-        <translation>معاينة قبل الطباعة</translation>
+        <translation>Перадпрагляд</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="159"/>
         <source>Cancel</source>
-        <translation>إلغاء</translation>
+        <translation>Скасаваць</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/PrintCardsDialog.ui" line="466"/>
+        <source>Print color cards</source>
+        <translation>Друкаваць каляровыя карткі</translation>
     </message>
 </context>
 <context>
@@ -3132,33 +3093,33 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="129"/>
         <source>Change project name</source>
-        <translation>تغيير اسم المشروع</translation>
+        <translation>Змяніць назву праекта</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="152"/>
         <source>Remove project</source>
-        <translation>حذف مشروع</translation>
+        <translation>Выдаліць праект</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="175"/>
         <source>Hide project from recent</source>
-        <translation>إخفاء المشروع من الأحدث</translation>
+        <translation>Схаваць праект са спісу нядаўніх</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="198"/>
         <source>Move project to the cloud</source>
-        <translation>انقل المشروع إلى السحابة</translation>
+        <translation>Перанесці праект у воблака</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="221"/>
         <source>Add cowriter</source>
-        <translation>إضافة كاتب مشارك</translation>
+        <translation>Дадаць суаўтара</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="244"/>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="273"/>
         <source>Show cowriters</source>
-        <translation>اعرض الكتاب المشتركين</translation>
+        <translation>Паказаць спіс суаўтараў</translation>
     </message>
 </context>
 <context>
@@ -3166,27 +3127,27 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="20"/>
         <source>Start a new version of the script</source>
-        <translation>ابدأ إصدارًا جديدًا من النص</translation>
+        <translation>Пачаць новую версію сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="26"/>
         <source>Version date and time</source>
-        <translation>تاريخ ووقت الإصدار</translation>
+        <translation>Дата і час версіі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="42"/>
         <source>dd.MM.yyyy hh:mm</source>
-        <translation>يوم يوم: شهر شهر:سنة سنة سنة سنة ساعة ساعة:دقيقة دقيقة</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="102"/>
         <source>Name</source>
-        <translation>الأسم</translation>
+        <translation>Назва</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ProjectVersionDialog.ui" line="112"/>
         <source>Description</source>
-        <translation>الوصف</translation>
+        <translation>Апісанне</translation>
     </message>
 </context>
 <context>
@@ -3194,7 +3155,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="33"/>
         <source>Node added to &quot;</source>
-        <translation>تمت إضافة العقدة إلى &quot;</translation>
+        <translation>Вузел дададзены да &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="35"/>
@@ -3209,17 +3170,17 @@ The application will start in few seconds.</source>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="426"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="467"/>
         <source>Base node</source>
-        <translation>العقدة الأساسية</translation>
+        <translation>Базавы вузел</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="103"/>
         <source>Node added to scene</source>
-        <translation>تمت إضافة العقدة إلى المشهد</translation>
+        <translation>Вузел дададзены да сцэны</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="150"/>
         <source>Node deleted &quot;</source>
-        <translation>تم مسح العقدة &quot;</translation>
+        <translation>Вузел выдалены &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="153"/>
@@ -3230,23 +3191,23 @@ The application will start in few seconds.</source>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="429"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="470"/>
         <source> with subtree</source>
-        <translation>مع الشجرة الفرعية</translation>
+        <translation> з паддрэвам</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="205"/>
         <source>Edge added between &quot;</source>
-        <translation>تمت إضافة الحافة بين &quot;</translation>
+        <translation>Лінія дададзена паміж &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="209"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="261"/>
         <source>&quot; and &quot;</source>
-        <translation>&quot;و&quot;</translation>
+        <translation>&quot; і &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="257"/>
         <source>Edge deleted between &quot;</source>
-        <translation>تم مسح الحافة بين &quot;</translation>
+        <translation>Лінія выдалена паміж &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="293"/>
@@ -3254,45 +3215,45 @@ The application will start in few seconds.</source>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="424"/>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="465"/>
         <source>Node &quot;</source>
-        <translation>العقدة &quot;</translation>
+        <translation>Вузел &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="353"/>
         <source>Changing color of node: &quot;</source>
-        <translation>تغيير لون العقدة: &quot;</translation>
+        <translation>Змена колеру вузла: &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/commands.cpp" line="393"/>
         <source>Changing textcolor of node: &quot;</source>
-        <translation>تغيير لون نص العقدة: &quot;</translation>
+        <translation>Змена колеру тэксту вузла: &quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/graphlogic.cpp" line="934"/>
         <source>The graph is acyclic, edge added as secondary edge.</source>
-        <translation>الرسم البياني غير دوري ، تمت إضافة الحافة كحافة ثانوية.</translation>
+        <translation>Графік ацыклічны, лінія дададзена ў якасці другаснай лініі.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioModel.cpp" line="27"/>
         <source>Scenario</source>
-        <translation>السيناريو</translation>
+        <translation>Сцэнарый</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="495"/>
         <source>Title:</source>
         <comment>ScenarioBlockStyle</comment>
-        <translation>العنوان:</translation>
+        <translation>Цітр:</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioXml.cpp" line="1315"/>
         <source>END OF FOLDER</source>
         <comment>ScenarioXml</comment>
-        <translation>نهاية المجلد</translation>
+        <translation>КАНЕЦ ПАПКІ</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEditHelpers.cpp" line="23"/>
         <source>END OF</source>
         <comment>ScenarioTextEditHelpers</comment>
-        <translation>نهاية</translation>
+        <translation>КАНЕЦ</translation>
     </message>
 </context>
 <context>
@@ -3300,8 +3261,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="547"/>
         <source>&amp;Copy</source>
-        <translatorcomment>I am assuming &amp; means somthing in the coding languagge used if that is not the case do let me know</translatorcomment>
-        <translation>&amp;نسخ</translation>
+        <translation>Капіраваць</translation>
     </message>
 </context>
 <context>
@@ -3309,7 +3269,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../3rd_party/Widgets/QtMindMap/src/node.cpp" line="36"/>
         <source>&lt;b&gt;Root node&lt;/b&gt;</source>
-        <translation>&lt;b&gt; العقدة الجذرية &lt;/ b&gt;</translation>
+        <translation>&lt;b&gt;Каранёвы вузел&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -3318,42 +3278,42 @@ The application will start in few seconds.</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="20"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="45"/>
         <source>Renew subscription</source>
-        <translation>تجديد الاشتراك</translation>
+        <translation>Падоўжыць падпіску</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="60"/>
         <source>for</source>
-        <translation>إلى</translation>
+        <translation>на</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="70"/>
         <source>for 300 rubles</source>
-        <translation>ل ٣٠٠ روبل</translation>
+        <translation>за 300 рублёў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="87"/>
         <source>with a</source>
-        <translation>مع</translation>
+        <translation>аплаціць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="95"/>
         <source>PayPal</source>
-        <translation>باي بال</translation>
+        <translation>PayPal</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="100"/>
         <source>Bank card</source>
-        <translation>بطاقة مصرفية</translation>
+        <translation>Банкаўскай картай</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="105"/>
         <source>Yandex money</source>
-        <translation>ياندكس المال</translation>
+        <translation>Яндекс.Деньги</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="119"/>
         <source>Thanks! Your subscription is active until </source>
-        <translation>شكر! اشتراكك نشط حتى</translation>
+        <translation>Дзякуй! Ваша падпіска актыўная да </translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.ui" line="129"/>
@@ -3366,52 +3326,52 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="20"/>
         <source>Add Research Item</source>
-        <translation>إضافة عنصر بحث</translation>
+        <translation>Дадаць элемент распрацоўкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="31"/>
         <source>Character</source>
-        <translation>الشخصية</translation>
+        <translation>Персанаж</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="47"/>
         <source>Location</source>
-        <translation>الموقع</translation>
+        <translation>Лакацыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="63"/>
         <source>Folder</source>
-        <translation>المجلد</translation>
+        <translation>Папка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="79"/>
         <source>Text</source>
-        <translation>الكتابة</translation>
+        <translation>Тэкст</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="109"/>
         <source>Mind Map</source>
-        <translation>مايند ماب</translation>
+        <translation>Інтэлект-карта</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="114"/>
         <source>Images Gallery</source>
-        <translation>معرض الصور</translation>
+        <translation>Галерэя выяваў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="119"/>
         <source>Url</source>
-        <translation>رابط Url</translation>
+        <translation>Спасылка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="142"/>
         <source>Name</source>
-        <translation>الأسم</translation>
+        <translation>Назва</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.ui" line="156"/>
         <source>Insert into &quot;Folder name&quot;</source>
-        <translation>إدراج في &quot;اسم المجلد&quot;</translation>
+        <translation>Уставіць у &quot;Назва папкі&quot;</translation>
     </message>
 </context>
 <context>
@@ -3419,122 +3379,110 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="14"/>
         <source>Form</source>
-        <translation>استمارة</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="57"/>
         <source>Research</source>
-        <translation>بحث</translation>
+        <translation>Распрацоўка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="64"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="89"/>
         <source>Delete research item (Del)</source>
-        <translation>مسح عنصر بحث</translation>
+        <translation>Выдаліць элемент распрацоўкі (Del)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="75"/>
         <source>Add reseach item</source>
-        <translation>إضافة عنصر بحث</translation>
+        <translation>Дадаць элемент распрацоўкі</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="147"/>
+        <source>Footer:</source>
+        <translation>Ніжні калонтытул:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="154"/>
+        <source>Scene numbers prefix:</source>
+        <translation>Прэфікс нумароў сцэн:</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="174"/>
+        <source>Start scenes numbering from:</source>
+        <translation>Пачаць нумарацыю сцэн з:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="191"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="279"/>
         <source>Scenario Name:</source>
-        <translation>اسم السيناريو</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="174"/>
-        <source>Start scenes numbering from:</source>
-        <translation>بدء ترقيم المشاهد من:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="154"/>
-        <source>Scene numbers prefix:</source>
-        <translation>بادئة أرقام المشهد:</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="147"/>
-        <source>Footer:</source>
-        <translation>ذيل الصفحة:</translation>
+        <translation>Назва сцэнарыя:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="205"/>
         <source>Scenes numbering locking:</source>
-        <translation type="unfinished"></translation>
+        <translation>Блакіроўка нумароў сцэн:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="212"/>
         <source>Header:</source>
-        <translation>رأس الصفحة:</translation>
+        <translation>Верхні калонтытул:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="221"/>
         <source>Lock scenes numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Заблакаваць нумары сцэн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="235"/>
         <source>Lock new scenes numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Заблакаваць нумары новых сцэн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="249"/>
         <source>Unlock scenes numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Разблакаваць нумары сцэн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="289"/>
         <source>Scenario name.</source>
-        <translation>اسم السيناريو.</translation>
+        <translation>Назва сцэнарыя.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="299"/>
         <source>Genre:</source>
-        <translation>النوع:</translation>
+        <translation>Жанр:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="309"/>
         <source>Scenario genre.</source>
-        <translation>نوع السيناريو.</translation>
+        <translation>Жанр сцэнарыя.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="319"/>
         <source>Author:</source>
-        <translation>المؤلف:</translation>
+        <translation>Аўтар:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="329"/>
         <source>Scenario author.</source>
-        <translation>مؤلف السيناريو.</translation>
+        <translation>Аўтар сцэнарыя.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="339"/>
         <source>Additional:</source>
-        <translation>إضافي:</translation>
+        <translation>Дадаткова:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="349"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="353"/>
         <source>Original scenario</source>
-        <translation>سيناريو أصلي</translation>
+        <translation>Арыгінальны сцэнарый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="361"/>
         <source>Contacts:</source>
-        <translation>جهات الاتصال:</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Cantarell&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt;
-p، li {white-space: pre-wrap؛ }}
-&lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;Cantarell&apos;؛ font-size: 11pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt;
-&lt;p style = &quot;- qt-para-type: blank؛ margin-top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent : 0px؛ &quot;&gt; &lt;br /&gt; &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>Кантакты:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="380"/>
@@ -3543,27 +3491,27 @@ p، li {white-space: pre-wrap؛ }}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="391"/>
         <source>Year:</source>
-        <translation>عام:</translation>
+        <translation>Год:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="401"/>
         <source>Scenario wirting year.</source>
-        <translation>عام كتابة السيناريو.</translation>
+        <translation>Год напісання сцэнарыя.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="434"/>
         <source>Logline:</source>
-        <translation>النبذة</translation>
+        <translation>Логлайн:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="441"/>
         <source>words:</source>
-        <translation>الكلمات:</translation>
+        <translation>словаў:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="460"/>
@@ -3573,143 +3521,143 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="484"/>
         <source>Synopsis</source>
-        <translation>الملخص</translation>
+        <translation>Сінопсіс</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="557"/>
         <source>Add characters to project.</source>
-        <translation>أضف شخصيات إلى المشروع.</translation>
+        <translation>Дадавайце персанажаў у праект.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="580"/>
         <source>Character Name:</source>
-        <translation>أسم الشخصية</translation>
+        <translation>Імя персанажа:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="600"/>
         <source>Real Name:</source>
-        <translation>الاسم الحقيقي:</translation>
+        <translation>Сапраўднае імя:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="620"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="684"/>
         <source>Description</source>
-        <translation>الوصف:</translation>
+        <translation>Апісанне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="641"/>
         <source>Add locations to project.</source>
-        <translation>أضف مواقع للمشروع.</translation>
+        <translation>Дадавайце лакацыі ў праект.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="664"/>
         <source>Location Name:</source>
-        <translation>اسم الموقع</translation>
+        <translation>Назва лакацыі:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="708"/>
         <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
-        <translation>أضف مواد بحثية مثل النص وصفحات الويب والصور إلى الشجرة. استخدم أزرار شريط الأدوات وقائمة السياق لإضافة أو إزالة مواد البحث في الشجرة.</translation>
+        <translation>Дадавайце матэрыялы па вашым сцэнарыі ў дрэва распрацоўкі, такія як тэксты, вэб-старонкі і галерэі выяваў. Выкарыстоўвайце кнопкі на панэлі інструментаў і кантэкстнае меню для дадання альбо выдалення матэрыялаў распрацоўкі ў дрэве.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="732"/>
         <source>&lt;h2&gt;Folder&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt; المجلد &lt;/ h2&gt;</translation>
+        <translation>&lt;h2&gt;Папка&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="745"/>
         <source>Folders let you group research data in hierarchy.</source>
-        <translation>تتيح لك المجلدات تجميع بيانات البحث في التسلسل الهرمي.</translation>
+        <translation>Папкі дазваляюць выбудоўваць у іерархію ўсе дадзеныя распрацоўкі.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="758"/>
         <source>Add Folder</source>
-        <translation>أضف مجلد</translation>
+        <translation>Дадаць папку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="795"/>
         <source>&lt;h2&gt;Text Document&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt; مستند نصي &lt;/ h2&gt;</translation>
+        <translation>&lt;h2&gt;Тэкставы дакумент&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="808"/>
         <source>Text let you store formatted text documents.</source>
-        <translation>يتيح لك النص المكتوب تخزين المستندات النصية المنسقة.</translation>
+        <translation>Вы можаце захоўваць фарматаваныя тэкставыя дакументы.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="821"/>
         <source>Add Text</source>
-        <translation>أضف نص مكتوب</translation>
+        <translation>Дадаць тэкст</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="858"/>
         <source>&lt;h2&gt;Mind Map&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt; مايند ماب &lt;/ h2&gt;</translation>
+        <translation>&lt;h2&gt;Інтэлект-карта&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="871"/>
         <source>Mind map let you create schemes with your thoughts.</source>
-        <translation>يتيح لك مايند ماب إنشاء مخططات بأفكارك.</translation>
+        <translation>Інтэлект-карты дапамагаюць ператвараць думкі ў простыя схемы.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="884"/>
         <source>Add Mind Map</source>
-        <translation>أضف مايند ماب</translation>
+        <translation>Дадаць інтэлект-карту</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="921"/>
         <source>&lt;h2&gt;Images Gallery&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt; معرض الصور &lt;/ h2&gt;</translation>
+        <translation>&lt;h2&gt;Галерэя выяваў&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="934"/>
         <source>Images gallery let you store group of images.</source>
-        <translation>يتيح لك معرض الصور تخزين مجموعة من الصور.</translation>
+        <translation>Галерэя выяваў дазваляе захоўваць усе неабходныя малюнкі і фотаздымкі.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="947"/>
         <source>Add Images Gallery</source>
-        <translation>إضافة معرض صور</translation>
+        <translation>Дадаць галерэю выяваў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="984"/>
         <source>&lt;h2&gt;Url&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt; رابط Url &lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;Спасылка&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="997"/>
         <source>Url let you have a link to useful web-based documents.</source>
-        <translation>يتيح لك Url رابطًا للوصول إلى مستندات مفيدة على الويب.</translation>
+        <translation>Захоўвайце спасылкі на карысныя дакументы ў Інтэрнэце ў адным месцы.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1010"/>
         <source>Add Url</source>
-        <translation>إضافة رابط Url</translation>
+        <translation>Дадаць спасылку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1123"/>
         <source>Url:</source>
-        <translation>رابط Url:</translation>
+        <translation>Спасылка:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1130"/>
         <source>Load</source>
-        <translation>تحميل</translation>
+        <translation>Загрузіць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1168"/>
         <source>Change</source>
-        <translation>تغيير</translation>
+        <translation>Змяніць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1198"/>
         <source>Image:</source>
-        <translation>صورة:</translation>
+        <translation>Выява:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1264"/>
         <source>Undo last action</source>
-        <translation>الغاء الإجراء الأخير</translation>
+        <translation>Скасаваць апошняе дзеянне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1267"/>
@@ -3717,87 +3665,87 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1315"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1318"/>
         <source>Add child node</source>
-        <translation>أضف عقدة فرعية</translation>
+        <translation>Дадаць даччыны вузел</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1278"/>
         <source>Redo previously undone action</source>
-        <translation>إعادة الإجراء الذي تم التراجع عنه مسبقًا</translation>
+        <translation>Паўтарыць раней скасаванае дзеянне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1292"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1385"/>
         <source>Node text color</source>
-        <translation>لون كتابة العقدة</translation>
+        <translation>Колер тэксту вузла</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1295"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1388"/>
         <source>Text color</source>
-        <translation>لون الكتابة</translation>
+        <translation>Колер тэксту</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1329"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1332"/>
         <source>Add sibling node</source>
-        <translation>أضف عقدة شقيقة</translation>
+        <translation>Дадаць братэрскі вузел</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1343"/>
         <source>Delete node (Del)</source>
-        <translation>مسح عقدة</translation>
+        <translation>Выдаліць вузел (Del)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1346"/>
         <source>Delete node</source>
-        <translation>مسح عقدة</translation>
+        <translation>Выдаліць вузел</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1357"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1360"/>
         <source>Scale up node</source>
-        <translation>توسيع عقدة</translation>
+        <translation>Павялічыць вузел</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1371"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1374"/>
         <source>Scale down node</source>
-        <translation>تصغير عقدة</translation>
+        <translation>Паменшыць вузел</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1408"/>
         <source>Node background color</source>
-        <translation>لون خلفية العقدة</translation>
+        <translation>Колер фону вузла</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1411"/>
         <source>Background color</source>
-        <translation>لون الخلفية</translation>
+        <translation>Колер фону</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1431"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1434"/>
         <source>Add edge</source>
-        <translation>أضف حافة</translation>
+        <translation>Дадаць лінію сувязі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1445"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1448"/>
         <source>Delete edge</source>
-        <translation>مسح حافة</translation>
+        <translation>Выдаліць лінію сувязі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1459"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1462"/>
         <source>Save mind map as image file</source>
-        <translation>حفظ مايند ماب كملف صورة</translation>
+        <translation>Захаваць інтэлект-карту як файл выявы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1505"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1519"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1533"/>
         <source>Search</source>
-        <translation>بحث</translation>
+        <translation>Пошук</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1512"/>
@@ -3813,7 +3761,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="341"/>
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="345"/>
         <source>Not a supported RTF file.</source>
-        <translation>ليس ملف RTF مدعومًا.</translation>
+        <translation>Дадзены RTF-файл не падтрымліваецца.</translation>
     </message>
 </context>
 <context>
@@ -3821,7 +3769,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../../libs/fileformats/rtf_tokenizer.cpp" line="151"/>
         <source>Unexpectedly reached end of file.</source>
-        <translation>تم الوصول إلى نهاية الملف بشكل غير متوقع.</translation>
+        <translation>Памылка прачытання файла.</translation>
     </message>
 </context>
 <context>
@@ -3829,30 +3777,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="26"/>
         <source>Add scheme item</source>
-        <translation>إضافة عنصر تخطيطي</translation>
+        <translation>Дадаць элемент</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="56"/>
         <source>Description:</source>
-        <translation>الوصف:</translation>
+        <translation>Апісанне:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="80"/>
         <source>Heading (used in text and in cards if the name empty):</source>
-        <translation type="unfinished"></translation>
+        <translation>Загаловак (выкарыстоўваецца ў тэксце і ў картках, калі назва не зададзена):</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="87"/>
         <source>Name (human-readable name of the scene, used in cards):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Header:</source>
-        <translation type="vanished">رأس الصفحة:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">الأسم:</translation>
+        <translation>Назва (зручная для вас назва сцэны, выкарыстоўваецца ў картках):</translation>
     </message>
 </context>
 <context>
@@ -3860,22 +3800,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="17"/>
         <source>Form</source>
-        <translation>استمارة:</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="78"/>
         <source>Title</source>
-        <translation>العنوان:</translation>
+        <translation>Цітр</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="91"/>
         <source>Description</source>
-        <translation>الوصف:</translation>
+        <translation>Апісанне</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="113"/>
         <source>Remove version</source>
-        <translation>حذف الإصدار</translation>
+        <translation>Выдаліць версію</translation>
     </message>
 </context>
 <context>
@@ -3883,72 +3823,72 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="119"/>
         <source>Find...</source>
-        <translation>إبحث...</translation>
+        <translation>Знайсці...</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="127"/>
         <source>Case Sensitive</source>
-        <translation>يجب مراعاة حجم الأحرف</translation>
+        <translation>З улікам рэгістра</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="138"/>
         <source>Find Prev</source>
-        <translation>إبحث عن السابق</translation>
+        <translation>Знайсці папярэдняе</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="148"/>
         <source>Find Next</source>
-        <translation>إبحث عن التالي</translation>
+        <translation>Знайсці наступнае</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="149"/>
         <source>In whoole document</source>
-        <translation>في الملف بأكمله</translation>
+        <translation>Па ўсім дакуменце</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="150"/>
         <source>In scene heading</source>
-        <translation>في عنوان المشهد</translation>
+        <translation>У блоках &quot;Час і месца&quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="151"/>
         <source>In action</source>
-        <translation>في الحدث</translation>
+        <translation>У блоках &quot;Апісанне дзеяння&quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="152"/>
         <source>In character</source>
-        <translation>في الشخصيات</translation>
+        <translation>У блоках &quot;Герой&quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="153"/>
         <source>In dialogue</source>
-        <translation>في الحوارات</translation>
+        <translation>У блоках &quot;Дыялог&quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="154"/>
         <source>In parenthetical</source>
-        <translation>في شرح الحوار</translation>
+        <translation>У блоках &quot;Рэмарка&quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="155"/>
         <source>In lyrics</source>
-        <translation>في كلمات الاغاني</translation>
+        <translation>У блоках &quot;Лірыка&quot;</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="159"/>
         <source>Replace with...</source>
-        <translation>استبدل ب...</translation>
+        <translation>Замяніць на...</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="162"/>
         <source>Replace</source>
-        <translation>استبدل</translation>
+        <translation>Замяніць</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="164"/>
         <source>All</source>
-        <translation>الجميع</translation>
+        <translation>Усё</translation>
     </message>
 </context>
 <context>
@@ -3957,102 +3897,97 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="14"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2252"/>
         <source>Dialog</source>
-        <translation>الحوار</translation>
+        <translation>Дыялог</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="51"/>
         <source>Settings</source>
-        <translation>الإعدادات</translation>
+        <translation>Налады</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="80"/>
         <source>1</source>
-        <translation>١</translation>
+        <translation>1</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="85"/>
         <source>Application</source>
-        <translation>تطبيق</translation>
+        <translation>Праграма</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="94"/>
         <source>Research</source>
-        <translation>بحث</translation>
+        <translation>Распрацоўка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="103"/>
         <source>Cards</source>
-        <translation>البطاقات</translation>
+        <translation>Карткі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="112"/>
         <source>Scenario Editor</source>
-        <translation>محرر السيناريو</translation>
+        <translation>Рэдактар сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="121"/>
         <source>Navigator</source>
-        <translation>المحرر</translation>
+        <translation>Навігатар</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="130"/>
         <source>Chronometry/Counters</source>
-        <translation>الترتيب الزمني/العدادات</translation>
+        <translation>Хранаметраж/Лічыльнікі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="139"/>
         <source>Templates Library</source>
-        <translation>مكتبة النماذج</translation>
+        <translation>Бібліятэка шаблонаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="151"/>
         <source>Reset Settings</source>
-        <translation>اعادة الضبط</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="459"/>
-        <source>Spell Checking</source>
-        <translation>التدقيق الإملائي</translation>
+        <translation>Скінуць налады</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="227"/>
         <source>Language:</source>
-        <translation>اللغة:</translation>
+        <translation>Мова:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="234"/>
         <source>Russian</source>
-        <translation>الروسية</translation>
+        <translation>руская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="241"/>
         <source>Change</source>
-        <translation>تغيير</translation>
+        <translation>Змяніць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="265"/>
         <source>Automatically Save Every</source>
-        <translation>يتم الحفظ تلقائياً كل</translation>
+        <translation>Аўтаматычна захоўваць кожныя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="288"/>
         <source>Minutes</source>
-        <translation>دقائق</translation>
+        <translation>хвілін</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="304"/>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, but if you work with no terminations it saves project every 5 minutes.</source>
-        <translation>يعمل الحفظ التلقائي بدقة عالية. يحفظ المشروع كل ٣ ثوانٍ إذا لم تستخدم الماوس أو لوحة المفاتيح ، ولكن إذا كنت تعمل بدون توقف ، فإنه يحفظ المشروع كل ٥ دقائق.</translation>
+        <translation>Аўтазахаванне працуе вельмі дакладна. Яно захоўвае праект кожныя 3 секунды, калі вы не выкарыстоўваеце мыш або клавіятуру, але калі вы працуеце бесперапынна, яно захоўвае праект кожныя 5 хвілін.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="353"/>
         <source>Save Backups</source>
-        <translation>حفظ النسخ الاحتياطية</translation>
+        <translation>Ствараць рэзервовыя копіі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="398"/>
         <source>Browse...</source>
-        <translation>تصفح...</translation>
+        <translation>Агляд...</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="401"/>
@@ -4060,261 +3995,264 @@ p, li { white-space: pre-wrap; }
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="440"/>
-        <source>Two Panel Mode (F2)</source>
-        <translation>وضعية اللوحة الثنائية (F2)</translation>
-    </message>
-    <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="423"/>
         <source>Use Dark Theme</source>
-        <translation>إستخدام السمة ذات اللون الداكن</translation>
+        <translation>Выкарыстоўваць цёмную тэму</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="433"/>
         <source>Compact Mode</source>
-        <translation>الوضعية المدمجة</translation>
+        <translation>Кампактны рэжым</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="440"/>
+        <source>Two Panel Mode (F2)</source>
+        <translation>Рэжым з дзвюма панэлямі (F2)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="450"/>
         <source>Enable HIDPI scaling</source>
-        <translation>تمكين تحجيم HIDPI</translation>
+        <translation>Уключыць рэжым маштабавання высокага разрознення</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="459"/>
+        <source>Spell Checking</source>
+        <translation>Правяраць правапіс</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="488"/>
         <source>Research module</source>
-        <translation>وحدة البحث</translation>
+        <translation>Модуль распрацоўкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="495"/>
         <source>Cards module</source>
-        <translation>وحدة البطاقات</translation>
+        <translation>Модуль картак</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="502"/>
         <source>Scenario module</source>
-        <translation>وحدة السيناريو</translation>
+        <translation>Модуль сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="509"/>
         <source>Statistics module</source>
-        <translation>وحدة الإحصائيات</translation>
+        <translation>Модуль статыстыкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="516"/>
         <source>Tools module</source>
-        <translation>وحدة الأدوات</translation>
+        <translation>Модуль інструментаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="579"/>
         <source>Default font for text documents:</source>
-        <translation>الخط الافتراضي للمستندات النصية:</translation>
+        <translation>Шрыфт па змаўчанні для тэкставых дакументаў:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="593"/>
         <source>pt</source>
-        <translation>نقطة</translation>
+        <translation>пт</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="676"/>
         <source>Use corkboad background</source>
-        <translation>استخدام خلفية لوحة الفلين</translation>
+        <translation>Выкарыстоўваць фон у выглядзе коркавай дошкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="686"/>
         <source>Use color background</source>
-        <translation>استخدم خلفية ملونة</translation>
+        <translation>Выкарыстоўваць каляровы фон</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="696"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="955"/>
         <source>Themes colors</source>
-        <translation>ألوان السمات</translation>
+        <translation>Колеры тэмы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="755"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1085"/>
         <source>Background:</source>
-        <translation>خلفية:</translation>
+        <translation>Фон:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="762"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="971"/>
         <source>Dark Theme</source>
-        <translation>سمة ذات لون داكن</translation>
+        <translation>цёмнай тэмы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="769"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="964"/>
         <source>Light Theme</source>
-        <translation>سمة ذات لون فاتح</translation>
+        <translation>светлай тэмы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="934"/>
         <source>Page View</source>
-        <translation>معاينة الصفحة</translation>
+        <translation>Пастаронкавы паказ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="941"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1839"/>
         <source>Show Scenes Numbers</source>
-        <translation>إظهار أرقام المشاهد</translation>
+        <translation>Паказваць нумары сцэн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="948"/>
         <source>Highlight Current Line</source>
-        <translation>قم بتمييز الخط الحالي</translation>
+        <translation>Падсвечваць бягучы радок</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="978"/>
         <source>Text:</source>
-        <translation>كتابة:</translation>
+        <translation>Тэкст:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1192"/>
         <source>Folder text:</source>
-        <translation>كتابة المجلد:</translation>
+        <translation>Тэкст папкі:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1299"/>
         <source>Folder background:</source>
-        <translation>خلفية المجلد:</translation>
+        <translation>Фон папкі:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1406"/>
         <source>Noneprintable text:</source>
-        <translation>كتابة غير قابل للطباعة:</translation>
+        <translation>Нататка па тэксце:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1542"/>
         <source>Hide all panels in fullscreen mode</source>
-        <translation>إخفاء جميع اللوحات في وضعية الشاشة الكاملة</translation>
+        <translation>Хаваць усе панэлі ў поўнаэкранным рэжыме</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1552"/>
         <source>Show dialogues numbers</source>
-        <translation>إظهار أرقام الحوارات</translation>
+        <translation>Паказваць нумары рэплік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1559"/>
         <source>Highlight blocks</source>
-        <translation>تسليط الضوء على الكتل</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1692"/>
-        <source>Automatically jump to next paragraph</source>
-        <translation>الانتقال إلى الفقرة التالية تلقائيًا</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1708"/>
-        <source>For scene heading and character paragraphs.</source>
-        <translation>لعنوان المشهد وفقرات الشخصيات.</translation>
+        <translation>Падсвечваць блокі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1573"/>
         <source>Use MS Word like review highlighting colors</source>
-        <translation>استخدم MS Word مثل مراجعة تمييز الألوان</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1739"/>
-        <source>Autocomplete next character for dialogue</source>
-        <translation>الإكمال التلقائي للحرف التالي للحوار</translation>
+        <translation>Выкарыстоўваць вылучэнне маркерам, як у MS Word</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1593"/>
         <source>Use open bracket in dialogue for jump to parenthetical</source>
-        <translation>استخدم قوسًا مفتوحًا في الحوار للانتقال إلى شرح الحوار</translation>
+        <translation>Выкарыстоўваць адкрытую пад час дыялогу дужку, як пераход да рэмаркі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1616"/>
         <source>Editor Text Template:</source>
-        <translation>محرر نموذج الكتابة:</translation>
+        <translation>Шаблон афармлення тэксту:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1639"/>
         <source>Text corrections</source>
-        <translation>تصحيحات الكتابة</translation>
+        <translation>Выпраўленні тэксту</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1645"/>
         <source>Automatically continue dialogue</source>
-        <translation>متابعة الحوار تلقائيًا</translation>
+        <translation>Аўтаматычна працягваць рэплікі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1652"/>
         <source>Automatically corrections on page breaks</source>
-        <translation>تصحيحات تلقائيه على فواصل الصفحات</translation>
+        <translation>Аўтаматычна карэктаваць тэкст на разрывах старонак</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1659"/>
         <source>Capitalize first word</source>
-        <translatorcomment>There is no capital letters in Arabic the translation i would recomend taking this one out</translatorcomment>
-        <translation></translation>
+        <translation>Першае слова з вялікай літары</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1666"/>
         <source>Correct DOuble CApitals</source>
-        <translatorcomment>There is no capital letters in Arabic the translation i would recomend taking this one out</translatorcomment>
-        <translation></translation>
+        <translation>Выпраўляць ПАдвойныя ВЯлікія</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1673"/>
         <source>Replace three single dots to threedots character.</source>
-        <translation>استبدل ثلاث نقاط مفردة بثلاث نقاط كحرف.</translation>
+        <translation>Замяняць тры кропкі сімвалам шматкроп&apos;я.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1680"/>
         <source>Smart quotes</source>
-        <translation>اقتباسات ذكية</translation>
+        <translation>Выкарыстоўваць тыпаграфскія двукоссі</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1692"/>
+        <source>Automatically jump to next paragraph</source>
+        <translation>Пераходзіць да наступнага абзаца пры ўстаўцы аўтадапаўнення</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1708"/>
+        <source>For scene heading and character paragraphs.</source>
+        <translation>Для блокаў &quot;Месца і час&quot; і &quot;Герой&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1739"/>
+        <source>Autocomplete next character for dialogue</source>
+        <translation>Прапаноўваць варыянты персанажаў для рэплік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1749"/>
         <source>Show character suggestions in empty paragraph</source>
-        <translation type="unfinished"></translation>
+        <translation>Паказваць варыянты персанажаў у пустых абзацах</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1852"/>
         <source>Show scene description</source>
-        <translation>إظهار وصف المشهد</translation>
+        <translation>Паказваць апісанне сцэны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1863"/>
         <source>Scene text</source>
-        <translation>النص المكتوب للمشهد</translation>
+        <translation>Тэкст сцэны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1873"/>
         <source>Scene synopsis</source>
-        <translation>ملخص المشهد</translation>
+        <translation>Апісанне сцэны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1897"/>
         <source>Description height, lines:</source>
-        <translation>إرتفاع الوصف، الأسطر:</translation>
+        <translation>Вышыня апісання, радкоў:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1958"/>
         <source>Show Scene Title instead of Scene Heading</source>
-        <translation>إظهار عنوان المشهد بدلاً من عنونة المشهد</translation>
+        <translation>Паказваць загаловак сцэны замест часу і месца</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2015"/>
         <source>Chronometry</source>
-        <translation>الترتيب الزمني</translation>
+        <translation>Хранаметраж</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2026"/>
         <source>Pages Chronometry</source>
-        <translation>الترتيب الزمني بالصغحات</translation>
+        <translation>Пастаронкавы падлік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2042"/>
         <source>For standard template and compatible</source>
-        <translation>لنموذج قياسي ومتوافق</translation>
+        <translation>Для стандартнага шаблону і сумяшчальных</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2082"/>
         <source>Page</source>
-        <translation>الصفحة</translation>
+        <translation>Старонка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2089"/>
@@ -4326,33 +4264,32 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2103"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2166"/>
         <source>Seconds</source>
-        <translation>الثواني</translation>
+        <translation>секунд</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2129"/>
         <source>Characters Chronometry</source>
-        <translatorcomment>Characters in Arabic could mean acting roles or letters, numbers...etc occuping a certain space. it depends on the context I am not sure of the context here</translatorcomment>
-        <translation>الترتيب الزمني بالأحرف</translation>
+        <translation>Пасімвальны падлік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2173"/>
         <source>Characters</source>
-        <translation>الأحرف</translation>
+        <translation>сімвалаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2180"/>
         <source>Consider Spaces</source>
-        <translation>ضع المساحات في الإعتبار</translation>
+        <translation>Улічваць прабелы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2206"/>
         <source>Configurable Chronometry</source>
-        <translation>ترتيب زمني قابل للتشكيل</translation>
+        <translation>Наладжвальны падлік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2222"/>
         <source>Scene Heading</source>
-        <translation>عنوان المشهد</translation>
+        <translation>Месца і час</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2259"/>
@@ -4365,110 +4302,110 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2269"/>
         <source>Seconds per
 50 characters</source>
-        <translation>الثواني لكل
-٥٠ حرفاً</translation>
+        <translation>Секунд за
+50 сімвалаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2296"/>
         <source>Action</source>
-        <translation>الحدث</translation>
+        <translation>Апісанне дзеяння</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2383"/>
         <source>Seconds for
 Paragraph</source>
-        <translation>ثواني ل
-فقرة</translation>
+        <translation>Секунд
+за абзац</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2429"/>
         <source>Counters</source>
-        <translation>العدادات</translation>
+        <translation>Лічыльнікі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2443"/>
         <source>Pages</source>
-        <translation>الصفحات</translation>
+        <translation>Старонак</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2456"/>
         <source>Pages Mode only</source>
-        <translation>وضعية صفحات فقط</translation>
+        <translation>Толькі для пастаронкавага рэжыму</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2474"/>
         <source>Words</source>
-        <translation>الكلمات</translation>
+        <translation>Словаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2486"/>
         <source>Symbols</source>
-        <translation>الرموز</translation>
+        <translation>Сімвалаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2499"/>
         <source>Symbols without spaces | Symbols with spaces</source>
-        <translation>الرموز بدون مسافات | الرموز مع مسافات</translation>
+        <translation>Сімвалаў без прабелаў | Сімвалаў з прабеламі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2633"/>
         <source>Apply Selected Template</source>
-        <translation>تطبيق النموذج المحدد</translation>
+        <translation>Прыняць абраны шаблон</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2636"/>
         <source>Apply</source>
-        <translation>تطبيق</translation>
+        <translation>Прыняць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2647"/>
         <source>Add Template</source>
-        <translation>أضف نموذج</translation>
+        <translation>Дадаць шаблон</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2650"/>
         <source>New</source>
-        <translation>جديد</translation>
+        <translation>Новы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2661"/>
         <source>Edit Selected Template</source>
-        <translation>تحرير النموذج المحدد</translation>
+        <translation>Рэдагаваць абраны шаблон</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2664"/>
         <source>Edit</source>
-        <translation>تحرير</translation>
+        <translation>Рэдагаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2675"/>
         <source>Delete Selected Template</source>
-        <translation>مسح النموذج المحدد</translation>
+        <translation>Выдаліць абраны шаблон</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2678"/>
         <source>Remove</source>
-        <translation>حذف</translation>
+        <translation>Выдаліць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2689"/>
         <source>Load Template From File</source>
-        <translation>تحميل نموذج من ملف</translation>
+        <translation>Загрузіць шаблон з файла</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2692"/>
         <source>Load</source>
-        <translation>تحميل</translation>
+        <translation>Загрузіць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2703"/>
         <source>Save Template To File</source>
-        <translation>حفظ النموذج كملف</translation>
+        <translation>Захаваць шаблон у файл</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2706"/>
         <source>Save As...</source>
-        <translation>حفظ باسم ...</translation>
+        <translation>Захаваць як...</translation>
     </message>
 </context>
 <context>
@@ -4476,27 +4413,27 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="20"/>
         <source>Share project</source>
-        <translation>شارك المشروع</translation>
+        <translation>Адкрыць доступ да праекту</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="26"/>
         <source>Email</source>
-        <translation>بريد الكتروني</translation>
+        <translation>Электронная пошта</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="36"/>
         <source>User role</source>
-        <translation>دور المستخدم</translation>
+        <translation>Роля</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="44"/>
         <source>Redactor</source>
-        <translation>المحرر</translation>
+        <translation>рэдактар</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="49"/>
         <source>Commentator</source>
-        <translation>المعلق</translation>
+        <translation>каментатар</translation>
     </message>
 </context>
 <context>
@@ -4504,42 +4441,42 @@ Paragraph</source>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="181"/>
         <source>Undo last action</source>
-        <translation>الغاء الإجراء الأخير</translation>
+        <translation>Скасаваць апошняе дзеянне</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="184"/>
         <source>Redo previously undone action</source>
-        <translation>إعادة الإجراء الذي تم التراجع عنه مسبقًا</translation>
+        <translation>Паўтарыць раней скасаванае дзеянне</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="194"/>
         <source>Make text bold</source>
-        <translation>استخدم الخط العريض</translation>
+        <translation>Зрабіць тэкст тоўстым</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="198"/>
         <source>Make text italic</source>
-        <translation>استخدم الحروف المائله</translation>
+        <translation>Зрабіць тэкст курсівам</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="202"/>
         <source>Make text underline</source>
-        <translation>ضع خط تحت الكتابة</translation>
+        <translation>Зрабіць тэкст падкрэсленым</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="205"/>
         <source>Change text color</source>
-        <translation>تغيير لون الكتابة</translation>
+        <translation>Змяніць колер тэксту</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="208"/>
         <source>Change text background color</source>
-        <translation>تغيير خلفية الكتابة</translation>
+        <translation>Змяніць колер фону тэксту</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="210"/>
         <source>Clear formatting</source>
-        <translation>إمسح التنسيق</translation>
+        <translation>Ачысціць фарматаванне</translation>
     </message>
 </context>
 <context>
@@ -4547,17 +4484,17 @@ Paragraph</source>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="43"/>
         <source>Ignore</source>
-        <translation>تجاهل</translation>
+        <translation>Ігнараваць</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="46"/>
         <source>Add to dictionary</source>
-        <translation>إضافة الي القاموس</translation>
+        <translation>Дадаць у слоўнік</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="152"/>
         <source>Suggestions not found</source>
-        <translation>لم يتم العثور على اقتراحات</translation>
+        <translation>Прапановы не знойдзены</translation>
     </message>
 </context>
 <context>
@@ -4565,36 +4502,40 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="14"/>
         <source>Form</source>
-        <translation>استمارة</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="96"/>
         <source>
 
 We launch crowdfunding</source>
-        <translation>أطلقنا التمويل الجماعي</translation>
+        <translation>
+
+Мы запусцілі краўдфандынг</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="108"/>
         <source>Help</source>
-        <translation>مساعدة</translation>
+        <translation>Дапамога</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="141"/>
         <source>Open Project</source>
-        <translation>افتح مشروع</translation>
+        <translation>Адкрыць праект</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="165"/>
         <source>
 
 New to KIT Scenarist?</source>
-        <translation>هل أنت جديد على سيناريست كيت؟</translation>
+        <translation>
+
+Упершыню з КІТ Сцэнарыст?</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="177"/>
         <source>Create Project</source>
-        <translation>إنشاء مشروع</translation>
+        <translation>Стварыць новы праект</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="194"/>
@@ -4602,41 +4543,42 @@ New to KIT Scenarist?</source>
 and explore KIT Scenarist through 
 our help articles and tutorials.
 </source>
-        <translation>تعرف على كيفية كتابة قصصك الخاصة
-واستكشف سيناريست كيت من خلال
-مقالات المساعدة والبرامج التعليمية الخاصة بنا.</translation>
+        <translation>Даведайцеся, як пісаць уласныя гісторыі,
+і даследуйце КІТ Сцэнарыст пры дапамозе
+нашых даведачных артыкулаў і дапаможнікаў.
+</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="207"/>
         <source>We have already collected %1K rubles of 1M aim! Join us and then you can use all power of the new version!</source>
-        <translation>لقد جمعنا بالفعل٪ 1K روبل من هدف 1M! انضم إلينا وبعد ذلك يمكنك استخدام كل قوة الإصدار الجديد!</translation>
+        <translation>Мы ўжо сабралі %1 тыс. рублёў ад мэтавага 1 мільёна! Далучайцеся да нас, і тады вы зможаце выкарыстоўваць усю моц новай версіі праграмы!</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="217"/>
         <source>Together we will make KIT Scenarist
 the best program for creating stories!</source>
-        <translation>معا سنقوم بعمل سيناريست كيت
-أفضل برنامج لإنشاء قصص!</translation>
+        <translation>Разам мы зробім КІТ Сцэнарыст найлепшай
+праграмай для стварэння гісторый!</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="231"/>
         <source>Join campaign</source>
-        <translation>انضم إلى الحملة</translation>
+        <translation>Удзельнічаць у кампаніі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="267"/>
         <source>Update recent projects list</source>
-        <translation>تحديث قائمة المشاريع الأخيرة</translation>
+        <translation>Абнавіць спіс апошніх праектаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="360"/>
         <source>Projects from local computer</source>
-        <translation>مشاريع من الكمبيوتر المحلي</translation>
+        <translation>Праекты на камп&apos;ютары</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="373"/>
         <source>Projects from kitscenarist.ru</source>
-        <translation>مشاريع من kitscenarist.ru</translation>
+        <translation>Праекты на kitscenarist.ru</translation>
     </message>
 </context>
 <context>
@@ -4644,156 +4586,156 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="35"/>
         <source>Back to tools list</source>
-        <translation>العودة إلى قائمة الأدوات</translation>
+        <translation>Вярнуцца да спісу інструментаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="63"/>
         <source>Summary text statistics</source>
-        <translation>إحصائيات موجزة عن النص المكتوب</translation>
+        <translation>Сумарная тэкставая статыстыка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="73"/>
         <source>Scenes statistics</source>
-        <translation>إحصائيات المشاهد</translation>
+        <translation>Статыстыка сцэн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="83"/>
         <source>Locations statistics</source>
-        <translation>إحصائيات المواقع</translation>
+        <translation>Статыстыка лакацый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="93"/>
         <source>Characters statistics</source>
-        <translation>إحصائيات الشخصيات</translation>
+        <translation>Статыстыка персанажаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="107"/>
         <source>Show characters</source>
-        <translation>إظهار الشخصيات</translation>
+        <translation>Паказваць персанажаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="117"/>
         <source>Sort scenes</source>
-        <translation>فرز المشاهد</translation>
+        <translation>Сартаваць сцэны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="128"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="186"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="244"/>
         <source>by script order</source>
-        <translation>وفقاً لترتيب النص</translation>
+        <translation>па з&apos;яўленні ў сцэнарыі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="133"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="191"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="249"/>
         <source>by alphabetical order</source>
-        <translation>وفقاً للترتيب الأبجدي</translation>
+        <translation>у алфавітным парадку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="138"/>
         <source>from longest to shortest scene</source>
-        <translation>من أطول إلى أقصر مشهد</translation>
+        <translation>ад доўгіх да кароткіх</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="143"/>
         <source>from shortest to longest scene</source>
-        <translation>من أقصر إلى أطول مشهد</translation>
+        <translation>ад кароткіх да доўгіх</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="148"/>
         <source>from massive to unmanned scene</source>
-        <translation>من مشهد ضخم إلى مشهد بدون ممثلين </translation>
+        <translation>ад масавых да бязлюдных</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="153"/>
         <source>from unmanned to massive scene</source>
-        <translation>من  مشهد بدون ممثلين الي مشهد ضخم</translation>
+        <translation>ад бязлюдных да масавых</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="165"/>
         <source>Extended view</source>
-        <translation>عرض متسع</translation>
+        <translation>Пашыраны выгляд</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="175"/>
         <source>Sort locations</source>
-        <translation>فرز المواقع</translation>
+        <translation>Сартаваць лакацыі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="196"/>
         <source>from most to least occurences</source>
-        <translation>من الأكثر إلى الأقل</translation>
+        <translation>ад максімальнай да мінімальнай колькасці ўзнікненняў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="201"/>
         <source>from least to most occurences</source>
-        <translation>من الأقل إلى الأكثر</translation>
+        <translation>ад мінімальнай да максімальнай колькасці ўзнікненняў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="206"/>
         <source>from longest to shortest chron</source>
-        <translation>من الأطول إلى الأقصر زمنياً</translation>
+        <translation>ад доўгага да кароткага хранаметражу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="211"/>
         <source>from shortest to longest chron</source>
-        <translation>من الأقصر إلى الأطول زمنياً</translation>
+        <translation>ад кароткага да доўгага хранаметражу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="223"/>
         <source>Show speaking and non-speaking scenes count</source>
-        <translation>إظهار عدد المشاهد الحوارية والغير حوارية</translation>
+        <translation>Паказваць колькасць сцэн з рэплікамі і без</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="233"/>
         <source>Sort characters</source>
-        <translation>فرز الشخصيات</translation>
+        <translation>Сартаваць персанажаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="254"/>
         <source>from most to least scenes</source>
-        <translation>من معظم المشاهد إلى الأقل</translation>
+        <translation>ад максімальнай да мінімальнай колькасці сцэн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="259"/>
         <source>from least to most scenes</source>
-        <translation>من الأقل إلى معظم المشاهد</translation>
+        <translation>ад мінімальнай да максімальнай колькасці сцэн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="264"/>
         <source>from most to least dialogues</source>
-        <translation>من الحوارات الأكثر إلى الأقل</translation>
+        <translation>ад максімальнай да мінімальнай колькасці рэплік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="269"/>
         <source>from least to most dialogues</source>
-        <translation>من الأقل إلى معظم الحوارات</translation>
+        <translation>ад мінімальнай да максімальнай колькасці рэплік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="316"/>
         <source>Scene Duration</source>
-        <translation>مدة المشهد</translation>
+        <translation>Хранаметраж сцэны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="326"/>
         <source>Action Duration</source>
-        <translation>مدة الحدث</translation>
+        <translation>Хранаметраж дзеяння</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="336"/>
         <source>Dialogues Duration</source>
-        <translation>مدة الحوارات</translation>
+        <translation>Хранаметраж рэплік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="346"/>
         <source>Characters Count</source>
-        <translation>عدد الشخصيات</translation>
+        <translation>Колькасць персанажаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="356"/>
         <source>Dialogues Count</source>
-        <translation>عدد الحوارات</translation>
+        <translation>Колькасць рэплік</translation>
     </message>
 </context>
 <context>
@@ -4801,199 +4743,199 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="14"/>
         <source>Edit Scenario Template</source>
-        <translation>تحرير نموذج السيناريو</translation>
+        <translation>Змяніць шаблон сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="20"/>
         <source>Common</source>
-        <translation>مشترك</translation>
+        <translation>Агульнае</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="38"/>
         <source>Top</source>
-        <translation>أعلى</translation>
+        <translation>уверсе</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="43"/>
         <source>Bottom</source>
-        <translation>أسفل</translation>
+        <translation>унізе</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="61"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="585"/>
         <source>Left</source>
-        <translation>يسار</translation>
+        <translation>па левым краі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="66"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="590"/>
         <source>Center</source>
-        <translation>وسط</translation>
+        <translation>пасярэдзіне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="71"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="595"/>
         <source>Right</source>
-        <translation>يمين</translation>
+        <translation>па правым краі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="97"/>
         <source>Description:</source>
-        <translation>الوصف:</translation>
+        <translation>Апісанне:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="106"/>
         <source>A4</source>
-        <translation>A4</translation>
+        <translation>А4</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="116"/>
         <source>Letter</source>
-        <translation>رسالة</translation>
+        <translation>Letter</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="139"/>
         <source>Fields, mm:</source>
-        <translation>الساحة ، مم:</translation>
+        <translation>Палі, мм:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="146"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="440"/>
         <source>Left:</source>
-        <translation>يسار:</translation>
+        <translation>Злева:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="166"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="358"/>
         <source>Top:</source>
-        <translation>أعلى:</translation>
+        <translation>Зверху:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="186"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="457"/>
         <source>Right:</source>
-        <translation>يمين:</translation>
+        <translation>Справа:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="206"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="389"/>
         <source>Bottom:</source>
-        <translation>أسفل:</translation>
+        <translation>Знізу:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="241"/>
         <source>Numbering:</source>
-        <translation>الترقيم:</translation>
+        <translation>Нумарацыя:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="248"/>
         <source>Page format:</source>
-        <translation>تنسيق الصفحة:</translation>
+        <translation>Фармат старонкі:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="258"/>
         <source>Name:</source>
-        <translation>الأسم:</translation>
+        <translation>Назва:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="290"/>
         <source>Active</source>
-        <translation>نشط</translation>
+        <translation>Уключаны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="338"/>
         <source>Spacing</source>
-        <translation>التباعد</translation>
+        <translation>Водступы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="345"/>
         <source>Lines</source>
-        <translation>الخطوط</translation>
+        <translation>Лініі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="350"/>
         <source>mm</source>
-        <translation>مم</translation>
+        <translation>мм</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="433"/>
         <source>mm:</source>
-        <translation>مم:</translation>
+        <translation>мм:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="477"/>
         <source>Uppercase</source>
-        <translation>الأحرف الكبيرة</translation>
+        <translation>Верхні рэгістр</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="484"/>
         <source>Underline</source>
-        <translation>تسطير</translation>
+        <translation>Падкрэслены</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="493"/>
         <source>Line spacing:</source>
-        <translation>تباعد الأسطر:</translation>
+        <translation>Міжрадковы інтэрвал:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="501"/>
         <source>Single</source>
-        <translation>مفرد</translation>
+        <translation>адзінарны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="506"/>
         <source>One and Half</source>
-        <translation>واحد و نصف</translation>
+        <translation>паўтары</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="511"/>
         <source>Double</source>
-        <translation>مزدوج</translation>
+        <translation>двайны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="516"/>
         <source>Fixed</source>
-        <translation>ثابت</translation>
+        <translation>фіксаваны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="527"/>
         <source>value, mm</source>
-        <translation>القيمة ، مم</translation>
+        <translation>значэнне, мм</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="562"/>
         <source>Italic</source>
-        <translation>مائل</translation>
+        <translation>Курсіў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="571"/>
         <source>Alignment:</source>
-        <translation>المحاذاة:</translation>
+        <translation>Выраўноўванне:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="600"/>
         <source>Justify</source>
-        <translation>ملأ السطر</translation>
+        <translation>па шырыні</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="625"/>
         <source>Font:</source>
-        <translation>الخط:</translation>
+        <translation>Шрыфт:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="645"/>
         <source>pt</source>
-        <translation>نقطة</translation>
+        <translation>пт</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="660"/>
         <source>Bold</source>
-        <translation>خط عريض</translation>
+        <translation>Тоўсты</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="670"/>
         <source>Framing brackets</source>
-        <translation>صياغة الأقواس</translation>
+        <translation>Абрамляць дужкамі</translation>
     </message>
 </context>
 <context>
@@ -5001,17 +4943,17 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="35"/>
         <source>Back to tools list</source>
-        <translation>العودة إلى قائمة الأدوات</translation>
+        <translation>Вярнуцца да спісу інструментаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="95"/>
         <source>Compare</source>
-        <translation>قارن</translation>
+        <translation>Параўнаць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.ui" line="105"/>
         <source>with</source>
-        <translation>مع</translation>
+        <translation>з</translation>
     </message>
 </context>
 <context>
@@ -5019,166 +4961,166 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="14"/>
         <source>Form</source>
-        <translation>استمارة</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="24"/>
         <source>Palette colors</source>
-        <translation>ألوان اللوحة</translation>
+        <translation>Колеры палітры</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="30"/>
         <source>Inactive</source>
-        <translation>غير نشط</translation>
+        <translation>Выключаны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="37"/>
         <source>WindowText</source>
-        <translation>نافذة الكتابة</translation>
+        <translation>ТэкстАкна</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="53"/>
         <source>Active</source>
-        <translation>نشط</translation>
+        <translation>Уключаны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="66"/>
         <source>Light</source>
-        <translation>فاتح</translation>
+        <translation>Светлы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="94"/>
         <source>Button</source>
-        <translation>زر</translation>
+        <translation>Кнопка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="109"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/qpalette.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Info&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://doc.qt.io/qt-5/qpalette.html&quot;&gt; &lt;span style = &quot;text-decoration: underline؛ color: # 0000ff؛ &quot;&gt; معلومات &lt;/ span&gt; &lt;/a&gt; &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/qpalette.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Інфармацыя&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="119"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="381"/>
         <source>Reset to defaults</source>
-        <translation>إعادة التعيين على الإعدادات الافتراضية</translation>
+        <translation>Скінуць да значэнняў па змаўчанні</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="139"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="401"/>
         <source>Save</source>
-        <translation>حفظ</translation>
+        <translation>Захаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="146"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="408"/>
         <source>Load</source>
-        <translation>تحميل</translation>
+        <translation>Загрузіць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="153"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="415"/>
         <source>Apply</source>
-        <translation>تطبيق</translation>
+        <translation>Прыняць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="162"/>
         <source>BrightText</source>
-        <translation>كتابة بخط فاتح اللون</translation>
+        <translation>ЯркіТэкст</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="169"/>
         <source>Midlight</source>
-        <translation>منتصف</translation>
+        <translation>Сярэдняе святло</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="185"/>
         <source>Dark</source>
-        <translation>داكن</translation>
+        <translation>Цёмны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="201"/>
         <source>Mid</source>
-        <translation>منتصف</translation>
+        <translation>Сярэдні</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="208"/>
         <source>Disabled</source>
-        <translation>غير متاح</translation>
+        <translation>Адключана</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="224"/>
         <source>Text</source>
-        <translation>كتابة</translation>
+        <translation>Тэкст</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="243"/>
         <source>ButtonText</source>
-        <translation>زر الكتابة</translation>
+        <translation>ТэкстКнопкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="262"/>
         <source>Shadow</source>
-        <translation>ظل</translation>
+        <translation>Цень</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="278"/>
         <source>Highlight</source>
-        <translation>تسليط الضوء</translation>
+        <translation>Вылучэнне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="294"/>
         <source>HighlightedText</source>
-        <translation>نص مميز</translation>
+        <translation>ВылучаныТэкст</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="310"/>
         <source>AlternateBase</source>
-        <translation>قاعدة بديلة</translation>
+        <translation>АльтэрнатыўнаяАснова</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="323"/>
         <source>Base</source>
-        <translation>قاعدة</translation>
+        <translation>Аснова</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="339"/>
         <source>Window</source>
-        <translation>نافذة</translation>
+        <translation>Акно</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="360"/>
         <source>Style sheet</source>
-        <translation>ورقة الأنماط</translation>
+        <translation>Табліца стыляў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="371"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/stylesheet-reference.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Info&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt; &lt;p&gt; &lt;a href=&quot;http://doc.qt.io/qt-5/stylesheet-reference.html&quot;&gt; &lt;span style = &quot;text-decoration: underline؛ اللون: # 0000ff؛ &quot;&gt; معلومات &lt;/ span&gt; &lt;/a&gt; &lt;/p&gt;&lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;http://doc.qt.io/qt-5/stylesheet-reference.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Інфармацыя&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="246"/>
         <source>Save palette to file</source>
-        <translation>حفظ اللوحة للملف</translation>
+        <translation>Захаваць палітру ў файл</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="306"/>
         <source>Open file with palette</source>
-        <translation>فتح ملف مع لوحة</translation>
+        <translation>Адкрыць файл з палітрай</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="373"/>
         <source>Save style sheet to file</source>
-        <translation>حفظ ورقة الأنماط للملف</translation>
+        <translation>Захаваць табліцу стыляў у файл</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="384"/>
         <source>Open file with style sheet</source>
-        <translation>فتح ملف بورقة أنماط</translation>
+        <translation>Адкрыць файл з табліцай стыляў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="472"/>
         <source>Choose color</source>
-        <translation>اختر اللون</translation>
+        <translation>Выбраць колер</translation>
     </message>
 </context>
 <context>
@@ -5186,42 +5128,43 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="26"/>
         <source>New version is available</source>
-        <translation>يتوفر إصدار جديد</translation>
+        <translation>Даступная новая версія</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="45"/>
         <source>KIT Scenarist doesn&apos;t support auto update on your OS now. &lt;br&gt;
 Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;link&lt;/a&gt;</source>
-        <translation>لا يدعم سيناريست كيت التحديث التلقائي على نظام التشغيل لديك الآن. &lt;br&gt;من فضلك ، قم بتنزيل الإصدار الجديد من هذا &lt;a href = &quot;https://kitscenarist.ru/en/download.html&quot; style = &quot;color: # 2b78da؛&quot; &gt; رابط &lt;/a&gt;</translation>
+        <translation>КІТ Сцэнарыст не падтрымлівае аўтаматычнае абнаўленне для вашай АС. &lt;br&gt;
+Вы можаце ўручную загрузіць абнаўленне па &lt;a href=&quot;https://kitscenarist.ru/en/download.html&quot; style=&quot;color:#2b78da;&quot; &gt;спасылцы&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="70"/>
         <source>I&apos;m sure. I want to download beta version</source>
-        <translation>انا متاكد. أريد تنزيل إصدار بيتا</translation>
+        <translation>Я хачу ўсталяваць бэта-версію</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="83"/>
         <source>&lt;html&gt;&lt;body&gt;&lt;p&gt;Beta version is an early version of a program or application that contains most of the major features, but is not yet complete. These versions are released to the general public, for testing and feedback.
 &lt;br&gt;&lt;br&gt;If you use beta version and send feedback to developer you helps him to make application better.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;body&gt; &lt;p&gt; الإصدار التجريبي هو إصدار مبكر من برنامج أو تطبيق يحتوي على معظم الميزات الرئيسية ، ولكنه لم يكتمل بعد. يتم إصدار هذه الإصدارات للجمهور العام للاختبار والتعليق.
-&lt;br&gt; &lt;br&gt; إذا كنت تستخدم الإصدار التجريبي وأرسلت تعليقات إلى المطور ، فأنت تساعده على تحسين التطبيق. &lt;/ p&gt;
-&lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;body&gt;&lt;p&gt;Бэта версія праграмы - гэта версія, якая можа валодаць памылкамі пры працы з ёй. Яна публікуецца з мэтай выяўлення максімальнай колькасці памылак у працы праграмы, для іх далейшай ліквідацыі, перад канчатковым выхадам прадукту да масавага спажыўца.
+&lt;br&gt;&lt;br&gt;Калі вы выкарыстоўваеце бэта-версію і паведамляеце аб выяўленых памылках, вы дапамагаеце распрацоўшчыку палепшыць праграму.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="120"/>
         <source>Download</source>
-        <translation>تحميل</translation>
+        <translation>Спампаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="127"/>
         <source>Skip</source>
-        <translation>تخطى</translation>
+        <translation>Прапусціць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.ui" line="134"/>
         <source>Cancel</source>
-        <translation>إلغاء</translation>
+        <translation>Скасаваць</translation>
     </message>
 </context>
 <context>
@@ -5229,7 +5172,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.cpp" line="21"/>
         <source>version</source>
-        <translation>الإصدار</translation>
+        <translation>версія</translation>
     </message>
 </context>
 <context>
@@ -5237,22 +5180,22 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="182"/>
         <source>Create</source>
-        <translation>خلق</translation>
+        <translation>Стварыць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="187"/>
         <source>New Project</source>
-        <translation>مشروع جديد</translation>
+        <translation>Новы праект</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="228"/>
         <source>Choose file for new project</source>
-        <translation>اختر ملف لمشروع جديد</translation>
+        <translation>Выберыце файл для новага праекта</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/AddProjectDialog.cpp" line="242"/>
         <source>Choose file to import</source>
-        <translation>اختر ملفًا للاستيراد</translation>
+        <translation>Выберыце файл для імпарту</translation>
     </message>
 </context>
 <context>
@@ -5260,7 +5203,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/ApplicationView.cpp" line="21"/>
         <source>KIT Scenarist</source>
-        <translation>سيناريست كيت</translation>
+        <translation>КІТ Сцэнарыст</translation>
     </message>
 </context>
 <context>
@@ -5268,12 +5211,12 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.cpp" line="12"/>
         <source>Add new bookmark</source>
-        <translation>أضف إشارة مرجعية جديدة</translation>
+        <translation>Дадаць новую закладку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/BookmarkDialog.cpp" line="12"/>
         <source>Update bookmark</source>
-        <translation>تحديث إشارة مرجعية</translation>
+        <translation>Абнавіць закладку</translation>
     </message>
 </context>
 <context>
@@ -5281,7 +5224,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/ChangePasswordDialog.cpp" line="27"/>
         <source>Change</source>
-        <translation>تغيير</translation>
+        <translation>Змяніць</translation>
     </message>
 </context>
 <context>
@@ -5289,12 +5232,12 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.cpp" line="41"/>
         <source>Send report</source>
-        <translation>إرسال تقرير</translation>
+        <translation>Даслаць справаздачу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/CrashReportDialog.cpp" line="42"/>
         <source>Don&apos;t send</source>
-        <translation>لا ترسل</translation>
+        <translation>Не дасылаць</translation>
     </message>
 </context>
 <context>
@@ -5302,43 +5245,43 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="259"/>
         <source>Choose file to export research</source>
-        <translation>اختر ملفًا لتصدير البحث</translation>
+        <translation>Выберыце файл для экспарту распрацоўкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="261"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="322"/>
         <source>%1 files (*%2)</source>
-        <translation>%1 ملفات (*%2)</translation>
+        <translation>%1 файлы (*%2)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="320"/>
         <source>Choose file to export scenario</source>
-        <translation>اختر ملف لتصدير السيناريو</translation>
+        <translation>Выберыце файл для экспарту сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="370"/>
         <source>Rewrite</source>
-        <translation>اعادة كتابة</translation>
+        <translation>Перазапісаць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="370"/>
         <source>Export</source>
-        <translation>تصدير</translation>
+        <translation>Экспартаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="416"/>
         <source>Export research</source>
-        <translation>تصدير البحث</translation>
+        <translation>Экспарт распрацоўкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="417"/>
         <source>Export outline</source>
-        <translation>تصدير الموجز</translation>
+        <translation>Экспарт аўтлайна</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="418"/>
         <source>Export script</source>
-        <translation>تصدير النص</translation>
+        <translation>Экспарт сцэнарыя</translation>
     </message>
 </context>
 <context>
@@ -5346,12 +5289,12 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="51"/>
         <source>Import</source>
-        <translation>استيراد</translation>
+        <translation>Імпарт</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Import/ImportDialog.cpp" line="82"/>
         <source>Choose file to import</source>
-        <translation>اختر ملفًا للاستيراد</translation>
+        <translation>Выберыце файл для імпарту</translation>
     </message>
 </context>
 <context>
@@ -5360,34 +5303,34 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="41"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="249"/>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>Увайсці</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="42"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="250"/>
         <source>Sign Up</source>
-        <translation>سجل</translation>
+        <translation>Зарэгістравацца</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="114"/>
         <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a confirmation code.</source>
-        <translation>تم إرسال بريد إلكتروني الخاص بك &lt;b&gt;%1&lt;/b&gt; رسالة مع رمز التأكيد.</translation>
+        <translation>На ваш адрас электроннай пошты &lt;b&gt;%1&lt;/b&gt; быў адпраўлены ліст з кодам пацверджання.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="125"/>
         <source>Your e-mail &lt;b&gt;%1&lt;/b&gt; was sent a letter with a password.</source>
-        <translation>تم إرسال بريد إلكتروني الخاص بك &lt;b&gt;%1&lt;/b&gt; بريد إلكتروني مع كلمة مرور.</translation>
+        <translation>На ваш адрас электроннай пошты &lt;b&gt;%1&lt;/b&gt; быў адпраўлены ліст з паролем.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="178"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="190"/>
         <source>Email is invalid</source>
-        <translation>البريد الإلكتروني غير صالح</translation>
+        <translation>Няправільны адрас электроннай пошты</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/LoginDialog.cpp" line="280"/>
         <source>Email is empty</source>
-        <translation>البريد الإلكتروني فارغ</translation>
+        <translation>Увядзіце адрас электроннай пошты</translation>
     </message>
 </context>
 <context>
@@ -5395,27 +5338,27 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="144"/>
         <source>Connect</source>
-        <translation>الاتصال</translation>
+        <translation>Падключэнне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="154"/>
         <source>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Login&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da؛&quot;&gt; تسجيل الدخول &lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;#&quot; style=&quot;color:#2b78da;&quot;&gt;Увайсці&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="192"/>
         <source>Account is active until:</source>
-        <translation>الحساب نشط حتى:</translation>
+        <translation>Падпіска актыўная да:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="195"/>
         <source>Account is inactive</source>
-        <translation>الحساب غير نشط</translation>
+        <translation>Падпіска неактыўная</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.cpp" line="206"/>
         <source>Used %1 Gb from %2 Gb</source>
-        <translation>تم استخدام%1 جيجا بايت من%2 جيجا بايت</translation>
+        <translation>Выкарыстана %1 Гб з %2 Гб</translation>
     </message>
 </context>
 <context>
@@ -5423,21 +5366,21 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="228"/>
         <source>Next</source>
-        <translation>التالى</translation>
+        <translation>Далей</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="262"/>
         <source>Finish</source>
-        <translation>إنهاء</translation>
+        <translation>Скончыць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="280"/>
         <source>Will be used default settings.
 
 The application will start in few seconds.</source>
-        <translation>سيتم استخدام الإعدادات الافتراضية.
+        <translation>Будуць выкарыстаны налады па змаўчанні.
 
-سيبدأ التطبيق في بضع ثوان.</translation>
+Праграма запусціцца праз некалькі секунд.</translation>
     </message>
 </context>
 <context>
@@ -5445,7 +5388,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectsList.cpp" line="51"/>
         <source>no changes</source>
-        <translation>لا تغييرات</translation>
+        <translation>няма зменаў</translation>
     </message>
 </context>
 <context>
@@ -5453,47 +5396,47 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="35"/>
         <source>Renew</source>
-        <translation>تجديد</translation>
+        <translation>Падоўжыць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="64"/>
         <source>Cancel</source>
-        <translation>إلغاء</translation>
+        <translation>Скасаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="78"/>
         <source>Close</source>
-        <translation>أغلاق</translation>
+        <translation>Закрыць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="88"/>
         <source>for %1 rubles</source>
-        <translation>لـ%1 روبل</translation>
+        <translation>за %1 рублёў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="122"/>
         <source>1 month</source>
-        <translation>شهر واحد</translation>
+        <translation>1 месяц</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="123"/>
         <source>2 month</source>
-        <translation>شهران</translation>
+        <translation>2 месяцы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="124"/>
         <source>3 month</source>
-        <translation>3 أشهر</translation>
+        <translation>3 месяцы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="125"/>
         <source>6 month (6% discount)</source>
-        <translation>٦ أشهر (خصم ٦٪)</translation>
+        <translation>6 месяцаў (зніжка 6%)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Account/RenewSubscriptionDialog.cpp" line="126"/>
         <source>12 month (12% discount)</source>
-        <translation>١٢ شهرًا (خصم ١٢٪)</translation>
+        <translation>12 месяцаў (зніжка 12%)</translation>
     </message>
 </context>
 <context>
@@ -5501,12 +5444,12 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.cpp" line="18"/>
         <source>Add</source>
-        <translation>أضف</translation>
+        <translation>Дадаць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchItemDialog.cpp" line="36"/>
         <source>Insert into &quot;%1&quot;</source>
-        <translation>إدراج في &quot;%1&quot;</translation>
+        <translation>Уставіць у &quot;%1&quot;</translation>
     </message>
 </context>
 <context>
@@ -5514,42 +5457,42 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="320"/>
         <source>Find All Characters from Script</source>
-        <translation>البحث عن جميع الشخصيت في النص</translation>
+        <translation>Знайсці ўсіх персанажаў сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="350"/>
         <source>Find All Locations from Script</source>
-        <translation>البحث عن جميع المواقع في النص</translation>
+        <translation>Знайсці ўсе лакацыі ў сцэнарыі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="738"/>
         <source>Save mind map</source>
-        <translation>حفظ مايند ماب</translation>
+        <translation>Захаваць інтэлект-карту</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="738"/>
         <source>PNG files (*.png)</source>
-        <translation>ملفات بي ان جي (* .png)</translation>
+        <translation>Файлы PNG (*.png)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="791"/>
         <source>Character name</source>
-        <translation>أسم الشخصية</translation>
+        <translation>Імя персанажа</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="793"/>
         <source>Location name</source>
-        <translation>اسم الموقع</translation>
+        <translation>Назва лакацыі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="962"/>
         <source>Choose image</source>
-        <translation>اختر صورة</translation>
+        <translation>Выберыце выяву</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.cpp" line="963"/>
         <source>Images (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</source>
-        <translation>الصور (* .png * .jpeg * .jpg * .bmp * .tiff * .tif * .gif)</translation>
+        <translation>Выявы (*.png *.jpeg *.jpg *.bmp *.tiff *.tif *.gif)</translation>
     </message>
 </context>
 <context>
@@ -5557,62 +5500,62 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="99"/>
         <source>Cards.png</source>
-        <translation>بطاقات.png</translation>
+        <translation>Карткі.png</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="100"/>
         <source>Save cards</source>
-        <translation>حفظ البطاقات</translation>
+        <translation>Захаваць карткі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="100"/>
         <source>PNG files (*.png)</source>
-        <translation>ملفات بي ان جي (* .png)</translation>
+        <translation>Файлы PNG (*.png)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="218"/>
         <source>Draft</source>
-        <translation>مسودة</translation>
+        <translation>Чарнавік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="223"/>
         <source>Script</source>
-        <translation>النص</translation>
+        <translation>Сцэнарый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="229"/>
         <source>Add new card</source>
-        <translation>أضف بطاقة جديدة</translation>
+        <translation>Дадаць новую картку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="232"/>
         <source>Remove selected card</source>
-        <translation>حذف البطاقة المحددة</translation>
+        <translation>Выдаліць абраную картку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="235"/>
         <source>Sort cards</source>
-        <translation>فرز البطاقات</translation>
+        <translation>Сартаваць карткі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="249"/>
         <source>Search cards</source>
-        <translation>البحث في البطاقات</translation>
+        <translation>Шукаць карткі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="253"/>
         <source>Save cards to file</source>
-        <translation>حفظ البطاقات في ملف</translation>
+        <translation>Захаваць карткі ў файл</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="256"/>
         <source>Print cards</source>
-        <translation>طباعة البطاقات</translation>
+        <translation>Раздрукаваць карткі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="260"/>
         <source>On/off Fullscreen Mode</source>
-        <translation>تشغيل / إيقاف وضعية الشاشة الكاملة</translation>
+        <translation>Уключыць/выключыць поўнаэкранны рэжым</translation>
     </message>
 </context>
 <context>
@@ -5620,12 +5563,12 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioFastFormatWidget.cpp" line="58"/>
         <source>↑ Prev</source>
-        <translation>↑ السابق</translation>
+        <translation>↑ Папярэдні</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioFastFormatWidget.cpp" line="79"/>
         <source>↓ Next</source>
-        <translation>↓ التالي</translation>
+        <translation>↓ Наступны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioFastFormatWidget.cpp" line="136"/>
@@ -5639,47 +5582,47 @@ The application will start in few seconds.</source>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="19"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="34"/>
         <source>Add</source>
-        <translation>أضف</translation>
+        <translation>Дадаць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="32"/>
         <source>Add Scene</source>
-        <translation>أضف مشهد</translation>
+        <translation>Дадаць сцэну</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
         <source>Add Folder</source>
-        <translation>أضف مجلد</translation>
+        <translation>Дадаць папку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="33"/>
         <source>Add Act</source>
-        <translation>أضف فصل</translation>
+        <translation>Дадаць акт</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="40"/>
         <source>Edit Scene</source>
-        <translation>تحرير مشهد</translation>
+        <translation>Змяніць сцэну</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="41"/>
         <source>Edit Act</source>
-        <translation>تحرير فصل</translation>
+        <translation>Змяніць акт</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="42"/>
         <source>Save</source>
-        <translation>حفظ</translation>
+        <translation>Захаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="145"/>
         <source>Scene</source>
-        <translation>مشهد</translation>
+        <translation>Сцэна</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.cpp" line="146"/>
         <source>Folder</source>
-        <translation>مجلد</translation>
+        <translation>Папка</translation>
     </message>
 </context>
 <context>
@@ -5687,121 +5630,117 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="228"/>
         <source>Convert to scene</source>
-        <translation>تحويل إلى مشهد</translation>
+        <translation>Пераўтварыць у сцэну</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="230"/>
         <source>Convert to folder</source>
-        <translation>تحويل إلى مجلد</translation>
+        <translation>Пераўтварыць у папку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="254"/>
         <source>Clear all colors</source>
-        <translation>إمسح كل الألوان</translation>
-    </message>
-    <message>
-        <source>Color %1</source>
-        <translation type="vanished">اللون ٪١</translation>
+        <translation>Ачысціць усе колеры</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="271"/>
         <source>Main color</source>
-        <translation type="unfinished"></translation>
+        <translation>Асноўны колер</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="272"/>
         <source>Additional color %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Дадатковы колер %1</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="274"/>
         <source>Clear</source>
-        <translation>إمسح</translation>
+        <translation>Ачысціць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="295"/>
         <source>Add color</source>
-        <translation>أضف لون</translation>
+        <translation>Дадаць колер</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="313"/>
         <source>Create After</source>
-        <translation>إنشاء بعد</translation>
+        <translation>Стварыць пасля</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="314"/>
         <source>Remove</source>
-        <translation>حذف</translation>
+        <translation>Выдаліць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="377"/>
         <source>Draft:</source>
-        <translation>مسودة:</translation>
+        <translation>Чарнавік:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="379"/>
         <source>Scenes:</source>
-        <translation>مشاهد:</translation>
+        <translation>Сцэн:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="381"/>
         <source>Scenes Count</source>
-        <translation>عدد المشاهد</translation>
+        <translation>Колькасць сцэн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="385"/>
         <source>Add Scenario Item After Selected</source>
-        <translation>إضافة عنصر سيناريو بعد المحدد</translation>
+        <translation>Дадаць элемент сцэнарыя пасля вылучанага</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="388"/>
         <source>Remove Selected Scenario Item</source>
-        <translation>حذف عنصر السيناريو المحدد</translation>
+        <translation>Выдаліць вылучаны элемент сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="393"/>
         <source>Show/hide additional panels</source>
-        <translation>إظهار / إخفاء اللوحات الإضافية</translation>
+        <translation>Паказаць/схаваць дадатковыя панэлі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="401"/>
         <source>Draft</source>
-        <translation>مسودة</translation>
+        <translation>Чарнавік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="403"/>
         <source>Show/hide draft</source>
-        <translation>إظهار / إخفاء المسودة</translation>
+        <translation>Паказаць/схаваць чарнавік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="406"/>
         <source>Scene description</source>
-        <translation>وصف المشهد</translation>
+        <translation>Апісанне сцэны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="407"/>
         <source>Show/hide scene note</source>
-        <translation>إظهار / إخفاء ملاحظات المشهد</translation>
+        <translation>Паказаць/схаваць апісанне сцэны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="411"/>
         <source>Script bookmarks</source>
-        <translation>الأشارت المرجعية الخاصة بالنص</translation>
+        <translation>Закладкі сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="412"/>
         <source>Show/hide script bookmarks</source>
-        <translation>إظهار / إخفاء الإشارات المرجعية</translation>
+        <translation>Паказаць/схаваць закладкі сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="416"/>
         <source>Script dictionaries</source>
-        <translation>قواميس النص</translation>
+        <translation>Слоўнікі сцэнарыя</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="417"/>
         <source>Show/hide script dictionaries</source>
-        <translation>إظهار / إخفاء قواميس النص</translation>
+        <translation>Паказаць/схаваць слоўнікі сцэнарыя</translation>
     </message>
 </context>
 <context>
@@ -5809,42 +5748,42 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="205"/>
         <source>Comment</source>
-        <translation>تعليق</translation>
+        <translation>Каментарый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="271"/>
         <source>Review</source>
-        <translation>مراجعة</translation>
+        <translation>Рэцэнзаванне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="276"/>
         <source>Change text color</source>
-        <translation>تغيير لون الكتابة</translation>
+        <translation>Змяніць колер тэксту</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="280"/>
         <source>Change text background</source>
-        <translation>تغيير خلفية الكتابة</translation>
+        <translation>Змяніць колер фону тэксту</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="284"/>
         <source>Highlight text</source>
-        <translation>ظلل الكتابة</translation>
+        <translation>Вылучыць тэкст маркерам</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="288"/>
         <source>Add comment</source>
-        <translation>أضف تعليق</translation>
+        <translation>Дадаць каментарый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="292"/>
         <source>Mark as done</source>
-        <translation>منجز</translation>
+        <translation>Пазначыць як выпраўленае</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="294"/>
         <source>Clear</source>
-        <translation>إمسح</translation>
+        <translation>Ачысціць</translation>
     </message>
 </context>
 <context>
@@ -5852,28 +5791,28 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="131"/>
         <source>Edit</source>
-        <translation>تعديل</translation>
+        <translation>Рэдагаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="132"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="217"/>
         <source>Reply</source>
-        <translation>الرد</translation>
+        <translation>Адказаць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="133"/>
         <source>Done</source>
-        <translation>منجز</translation>
+        <translation>Выпраўлена</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="136"/>
         <source>Remove</source>
-        <translation>حذف</translation>
+        <translation>Выдаліць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="198"/>
         <source>Comment</source>
-        <translation>تعليق</translation>
+        <translation>Каментарый</translation>
     </message>
 </context>
 <context>
@@ -5881,12 +5820,12 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="109"/>
         <source>Copy scene description to the script</source>
-        <translation>انسخ وصف المشهد إلى النص</translation>
+        <translation>Скапіраваць апісанне сцэны ў сцэнарый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioSceneDescription/ScenarioSceneDescription.cpp" line="118"/>
         <source>Description of:</source>
-        <translation>وصف ل:</translation>
+        <translation>Апісанне:</translation>
     </message>
 </context>
 <context>
@@ -5894,17 +5833,17 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="575"/>
         <source>Remove bookmark</source>
-        <translation>حذف إشارة مرجعية</translation>
+        <translation>Выдаліць закладку</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="580"/>
         <source>Add bookmark</source>
-        <translation>إضافة إشارة مرجعية</translation>
+        <translation>Дадаць закладку</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScenarioTextEdit/ScenarioTextEdit.cpp" line="655"/>
         <source>Change scene number</source>
-        <translation>تغيير رقم المشهد</translation>
+        <translation>Змяніць нумар сцэны</translation>
     </message>
 </context>
 <context>
@@ -5912,61 +5851,57 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="120"/>
         <source>DRAFT</source>
-        <translation>مسودة</translation>
+        <translation>ЧАРНАВІК</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="533"/>
         <source>Undo</source>
-        <translation>الغاء</translation>
+        <translation>Адмяніць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="534"/>
         <source>Redo</source>
-        <translation>إعادة</translation>
+        <translation>Паўтарыць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="536"/>
         <source>Find and replace</source>
-        <translation>ابحث واستبدل</translation>
+        <translation>Пошук і замена</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="736"/>
         <source>Outline mode</source>
-        <translation>وضعية الموجز</translation>
+        <translation>Рэжым аўтлайна</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="739"/>
         <source>Current Text Block Style</source>
-        <translation>نمط كتلة الكتابة الحالية</translation>
+        <translation>Фармат бягучага блока тэксту</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="745"/>
         <source>Undo last action</source>
-        <translation>الغاء الإجراء الأخير</translation>
+        <translation>Скасаваць апошняе дзеянне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="748"/>
         <source>Redo last action</source>
-        <translation>إعادة الإجراء الأخير</translation>
+        <translation>Паўтарыць апошняе дзеянне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="752"/>
         <source>Search and Replace</source>
-        <translation>بحث واستبدال</translation>
+        <translation>Пошук і замена</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="757"/>
         <source>Text Fast Format</source>
-        <translation>تنسيق سريع للكتابة</translation>
+        <translation>Хуткае фарматаванне тэксту</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioTextEditWidget.cpp" line="762"/>
         <source>Duration from Start to Cursor Position | Full Duration</source>
-        <translation>المدة من البداية إلى موضع المؤشر | المدة الكاملة</translation>
-    </message>
-    <message>
-        <source>Lock/unlock scene numbers</source>
-        <translation type="vanished">قفل / فتح أرقام المشاهد</translation>
+        <translation>Хранаметраж ад пачатку да бягучай пазіцыі курсора | Поўны хранаметраж</translation>
     </message>
 </context>
 <context>
@@ -5974,17 +5909,17 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="50"/>
         <source>Bookmarks</source>
-        <translation>إشارات مرجعية</translation>
+        <translation>Закладкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="53"/>
         <source>Edit selected bookmark</source>
-        <translation>تحرير الإشارة المرجعية المحددة</translation>
+        <translation>Рэдагаваць абраную закладку</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptBookmarks/ScriptBookmarks.cpp" line="56"/>
         <source>Remove selected bookmark</source>
-        <translation>حذف الإشارة المرجعية المحددة</translation>
+        <translation>Выдаліць абраную закладку</translation>
     </message>
 </context>
 <context>
@@ -5992,37 +5927,37 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="39"/>
         <source>Scene intros</source>
-        <translation>مقدمات المشهد</translation>
+        <translation>Тып лакацыі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="40"/>
         <source>Scene times</source>
-        <translation>أوقات المشهد</translation>
+        <translation>Час сцэны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="41"/>
         <source>Scene days</source>
-        <translation>أيام المشهد</translation>
+        <translation>Дзень сцэны</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="42"/>
         <source>Character states</source>
-        <translation>حالات الشخصية</translation>
+        <translation>Стан персанажа</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="43"/>
         <source>Transitions</source>
-        <translation>الانتقالات</translation>
+        <translation>Пераход</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="46"/>
         <source>Add dictionary item</source>
-        <translation>إضافة عنصر القاموس</translation>
+        <translation>Дадаць элемент слоўніка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="49"/>
         <source>Remove selected item</source>
-        <translation>حذف العنصر المحدد</translation>
+        <translation>Выдаліць абраны элемент</translation>
     </message>
 </context>
 <context>
@@ -6030,7 +5965,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionsList.cpp" line="65"/>
         <source>started by</source>
-        <translation>بدأ ب</translation>
+        <translation>пачатая</translation>
     </message>
 </context>
 <context>
@@ -6038,7 +5973,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScriptZenModeControls.cpp" line="83"/>
         <source>Typewriter sound</source>
-        <translation>صوت الآلة الكاتبة</translation>
+        <translation>Гук друкарскай машынкі</translation>
     </message>
 </context>
 <context>
@@ -6046,261 +5981,262 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="131"/>
         <source>System</source>
-        <translation>النظام</translation>
+        <translation>Сістэмная</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="136"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="839"/>
         <source>Russian</source>
-        <translation>الروسية</translation>
+        <translation>руская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="141"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="843"/>
         <source>Spanish</source>
-        <translation>الأسبانية</translation>
+        <translation>іспанская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="146"/>
         <source>English</source>
-        <translation>الإنجليزية</translation>
+        <translation>англійская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="151"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="823"/>
         <source>French</source>
-        <translation>فرنسي</translation>
+        <translation>французская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="156"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="832"/>
         <source>Kazakh</source>
-        <translation>الكازاخستانية</translation>
+        <translation>казахская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="161"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="847"/>
         <source>Ukrainian</source>
-        <translation>الأوكرانية</translation>
+        <translation>украінская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="166"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="825"/>
         <source>German</source>
-        <translation>ألمانية</translation>
+        <translation>нямецкая</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="171"/>
         <source>Portuguese</source>
-        <translation>البرتغالية</translation>
+        <translation>партугальская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="176"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="822"/>
         <source>Farsi</source>
-        <translation>الفارسية</translation>
+        <translation>фарсі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="181"/>
         <source>Chinese</source>
-        <translation>الصينية</translation>
+        <translation>кітайская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="186"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="828"/>
         <source>Hebrew</source>
-        <translation>العبرية</translation>
+        <translation>іўрыт</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="191"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="835"/>
         <source>Polish</source>
-        <translation>البولندية</translation>
+        <translation>польская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="196"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="846"/>
         <source>Turkish</source>
-        <translation>التركية</translation>
+        <translation>турэцкая</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="201"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="829"/>
         <source>Hungarian</source>
-        <translation>الهنغارية</translation>
+        <translation>венгерская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="206"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="831"/>
         <source>Italian</source>
-        <translation>الإيطالية</translation>
+        <translation>італьянская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="211"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="815"/>
         <source>Azerbaijani</source>
-        <translation>الأذربيجانية</translation>
+        <translation>азербайджанская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="216"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="845"/>
         <source>Telugu</source>
-        <translation>التيلجو</translation>
+        <translation>тэлугу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="221"/>
         <source>Brazilian Portuguese</source>
-        <translation>البرتغالية البرازيلية</translation>
+        <translation>бразільская партугальская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="226"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="842"/>
         <source>Slovenian</source>
-        <translation>السلوفينية</translation>
+        <translation>славенская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="231"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="844"/>
         <source>Swedish</source>
-        <translation>السويدية</translation>
+        <translation>шведская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="236"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="819"/>
         <source>Dutch</source>
-        <translation>الهولندية</translation>
+        <translation>нідэрландская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="241"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="840"/>
         <source>Serbian</source>
-        <translation>الصربية</translation>
+        <translation>сербская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="246"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="812"/>
         <source>Arabic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="256"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="824"/>
-        <source>Galician</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="646"/>
-        <source>Choose backups saving folder</source>
-        <translation>اختر مجلد حفظ النسخ الاحتياطية</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="813"/>
-        <source>Armenian (Eastern)</source>
-        <translation>الأرمينية (الشرقية)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="814"/>
-        <source>Armenian (Western)</source>
-        <translation>الأرمينية (الغربية)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="816"/>
-        <source>Belorussian</source>
-        <translation>البيلاروسية</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="817"/>
-        <source>Catalan</source>
-        <translation>الكاتالونية</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="820"/>
-        <source>English (GB)</source>
-        <translation>الإنجليزية (المملكة المتحدة)</translation>
-    </message>
-    <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="821"/>
-        <source>English (US)</source>
-        <translation>الإنجليزية (الولايات المتحدة)</translation>
+        <translation>арабская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="251"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="826"/>
         <source>Greek</source>
-        <translation>اليونانية</translation>
+        <translation>грэчаская</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="256"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="824"/>
+        <source>Galician</source>
+        <translation>галійская</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="646"/>
+        <source>Choose backups saving folder</source>
+        <translation>Выберыце папку захавання рэзервовых копій</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="813"/>
+        <source>Armenian (Eastern)</source>
+        <translation>армянская (усходнеармянская)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="814"/>
+        <source>Armenian (Western)</source>
+        <translation>армянская (заходнеармянская)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="816"/>
+        <source>Belorussian</source>
+        <translation>беларуская</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="817"/>
+        <source>Catalan</source>
+        <translation>каталанская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="818"/>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>дацкая</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="820"/>
+        <source>English (GB)</source>
+        <translation>англійская (ВБ)</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="821"/>
+        <source>English (US)</source>
+        <translation>англійская (ЗША)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="827"/>
         <source>Greek (Polythonic)</source>
-        <translation>اليونانية (مجسمة)</translation>
+        <translation>грэчаская (палітанічная)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="830"/>
         <source>Indonesian</source>
-        <translation type="unfinished"></translation>
+        <translation>інданезійская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="833"/>
         <source>Lithuanian</source>
-        <translation type="unfinished"></translation>
+        <translation>літоўская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="834"/>
         <source>Macedonian</source>
-        <translation>المقدونية</translation>
+        <translation>македонская</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="836"/>
         <source>Portuguese (Brazil)</source>
-        <translation>البرتغالية (البرازيل).</translation>
+        <translation>партугальская (Бразілія)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="837"/>
         <source>Portuguese (Portugal)</source>
-        <translation>البرتغالية (البرتغال)</translation>
+        <translation>партугальская (Партугалія)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="838"/>
         <source>Russian with Yo</source>
-        <translation>الروسية مع يو (السيريلية)</translation>
+        <translation>руская з Ё</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="841"/>
         <source>Serbian (Latin script)</source>
-        <translation>الصربية (نص لاتيني)</translation>
+        <translation>сербская (лацінка)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="864"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="871"/>
         <source>Common</source>
-        <translation>مشترك</translation>
+        <translation>Агульнае</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="865"/>
         <source>Modules</source>
-        <translation>الوحدات</translation>
+        <translation>Модулі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="872"/>
         <source>Editing</source>
-        <translation>التحرير</translation>
+        <translation>Рэдагаванне</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="873"/>
         <source>Shortcuts</source>
-        <translation>اختصارات</translation>
+        <translation>Гарачыя клавішы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="907"/>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
 but if you work with no terminations it saves project every %1 minutes.</source>
-        <translation>يعمل الحفظ التلقائي بدقة عالية. يحفظ المشروع كل ٣ ثوانٍ إذا لم تستخدم الماوس أو لوحة المفاتيح ،
-ولكن إذا كنت تعمل بدون إنهاء فإنه يحفظ المشروع كل٪ ١ دقيقة.</translation>
+        <translation>Аўтазахаванне працуе вельмі дакладна. Яно захоўвае праект кожныя 3 секунды, 
+калі вы не выкарыстоўваеце мыш або клавіятуру, але калі вы працуеце 
+бесперапынна, яно захоўвае праект кожныя %1 хвілін.</translation>
     </message>
 </context>
 <context>
@@ -6308,7 +6244,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.cpp" line="38"/>
         <source>Share</source>
-        <translation>شارك</translation>
+        <translation>Падзяліцца</translation>
     </message>
 </context>
 <context>
@@ -6316,117 +6252,117 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="78"/>
         <source>Statistics</source>
-        <translation>الإحصائيات</translation>
+        <translation>Статыстыка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="166"/>
         <source>Preparing report</source>
-        <translation>تحضير التقرير</translation>
+        <translation>Падрыхтоўка справаздачы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="166"/>
         <source>Please wait. Preparing report to preview can take few minutes.</source>
-        <translation>برجاء الإنتظار. يمكن أن يستغرق إعداد التقرير للمعاينة بضع دقائق.</translation>
+        <translation>Трошкі пачакайце. Падрыхтоўка справаздачы можа доўжыцца некалькі хвілін.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="261"/>
         <source>Report.pdf</source>
-        <translation>التقرير pdf</translation>
+        <translation>Справаздача.pdf</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="262"/>
         <source>Save report</source>
-        <translation>احفظ التقرير</translation>
+        <translation>Захаваць справаздачу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="262"/>
         <source>PDF files (*.pdf)</source>
-        <translation>ملفات بي دي اف (* .pdf)</translation>
+        <translation>Файлы PDF (*.pdf)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="283"/>
         <source>Plot.png</source>
-        <translation>اللوحة بي ان جي</translation>
+        <translation>Графік.png</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="284"/>
         <source>Save plot</source>
-        <translation>حفظ اللوحة</translation>
+        <translation>Захаваць графік</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="284"/>
         <source>PNG files (*.png)</source>
-        <translation>ملفات بي ان جي (* .png)</translation>
+        <translation>Файлы PNG (*.png)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="302"/>
         <source>Report settings</source>
-        <translation>إعدادات التقرير</translation>
+        <translation>Налады справаздачы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="305"/>
         <source>Print preview</source>
-        <translation>معاينة قبل الطباعة</translation>
+        <translation>Перадпрагляд</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="307"/>
         <source>Save report to file</source>
-        <translation>حفظ التقرير في الملف</translation>
+        <translation>Захаваць справаздачу ў файл</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="309"/>
         <source>Update current report</source>
-        <translation>تحديث التقرير الحالي</translation>
+        <translation>Абнавіць справаздачу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="316"/>
         <source>Reports</source>
-        <translation>التقارير</translation>
+        <translation>Справаздачы</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="318"/>
         <source>Summary statistics</source>
-        <translation>ملخص الإحصائيات</translation>
+        <translation>Сумарная статыстыка</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="322"/>
         <source>Scene report</source>
-        <translation>تقرير المشاهد</translation>
+        <translation>Спіс сцэн</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="326"/>
         <source>Location report</source>
-        <translation>تقرير المواقع</translation>
+        <translation>Спіс лакацый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="330"/>
         <source>Cast report</source>
-        <translation>تقرير الممثلين</translation>
+        <translation>Спіс персанажаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="334"/>
         <source>Characters dialogues</source>
-        <translation>حوارات الشخصيات</translation>
+        <translation>Рэплікі персанажаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="343"/>
         <source>Plots</source>
-        <translation>حبكات</translation>
+        <translation>Графікі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="345"/>
         <source>Story structure analysis</source>
-        <translation>تحليل هيكل القصة</translation>
+        <translation>Структурны аналіз гісторыі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="349"/>
         <source>Characters activity</source>
-        <translation>أنشطة الشخصيات</translation>
+        <translation>Актыўнасць персанажаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="440"/>
         <source>Duration, minutes</source>
-        <translation>المدة والدقائق</translation>
+        <translation>Хранаметраж, хвілін</translation>
     </message>
 </context>
 <context>
@@ -6434,7 +6370,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.cpp" line="98"/>
         <source>Unnamed Template</source>
-        <translation>نموذج بدون اسم</translation>
+        <translation>Шаблон без назвы</translation>
     </message>
 </context>
 <context>
@@ -6442,7 +6378,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsSettings.cpp" line="71"/>
         <source>Back to the tools list</source>
-        <translation>العودة إلى قائمة الأدوات</translation>
+        <translation>Вярнуцца да спісу інструментаў</translation>
     </message>
 </context>
 <context>
@@ -6450,37 +6386,37 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="51"/>
         <source>Choose tool from list</source>
-        <translation>اختر أداة من القائمة</translation>
+        <translation>Абярыце інструмент са спісу</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="94"/>
         <source>Didn&apos;t find any backups for the current project</source>
-        <translation>لم يتم العثور على أي نسخ احتياطية للمشروع الحالي</translation>
+        <translation>Не ўдалося знайсці ніводнай рэзервовай копіі для бягучага праекта</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="112"/>
         <source>Tools</source>
-        <translation>الأدوات</translation>
+        <translation>Інструменты</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="115"/>
         <source>Tool settings</source>
-        <translation>إعدادات الأدوات</translation>
+        <translation>Налады інструментаў</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="117"/>
         <source>Restore script</source>
-        <translation>استعادة النص</translation>
+        <translation>Аднавіць сцэнарый</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="123"/>
         <source>Restore script from backup</source>
-        <translation>استعادة النص من النسخة الاحتياطية</translation>
+        <translation>Аднавіць сцэнарый з рэзервовай копіі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Tools/ToolsView.cpp" line="126"/>
         <source>Compare script versions</source>
-        <translation>قارن بين الإصدارات المختلفة للنص</translation>
+        <translation>Параўнаць версіі сцэнарыяў</translation>
     </message>
 </context>
 <context>
@@ -6488,22 +6424,22 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="39"/>
         <source>New version %1 is available</source>
-        <translation>يتوفر الإصدار الجديد٪ ١</translation>
+        <translation>Новая версія %1 даступная для ўсталёўкі</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="44"/>
         <source>Download</source>
-        <translation>تحميل</translation>
+        <translation>Спампаваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="56"/>
         <source>Install</source>
-        <translation>تثبيت</translation>
+        <translation>Усталяваць</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/UpdateDialog.cpp" line="61"/>
         <source>&lt;p&gt;Error during download update.&lt;/p&gt;&lt;p&gt;You can try to reload update or load it manually from &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;official website&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt; خطأ أثناء تنزيل التحديث. &lt;/ p&gt; &lt;p&gt; يمكنك محاولة إعادة تحميل التحديث أو تحميله يدويًا من &lt;a href=&quot;٪1&quot; style=&quot;color:#2b78da؛&quot;&gt; موقع الويب الرسمي &lt;/a&gt; . &lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Памылка пры спампоўцы абнаўлення.&lt;/p&gt;&lt;p&gt;Вы можаце паспрабаваць перазагрузіць абнаўленне альбо спампаваць яго ўручную з &lt;a href=&quot;%1&quot; style=&quot;color:#2b78da;&quot;&gt;афіцыйнага сайта&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -6511,7 +6447,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../../libs/webloader/src/WebLoader.cpp" line="311"/>
         <source>Sorry, we have some error while loading. Error is: %1</source>
-        <translation>عذرا ، لدينا بعض الأخطاء أثناء التحميل. الخطأ:٪ ١</translation>
+        <translation>На жаль, падчас загрузкі ў нас узнікла памылка. Памылка: %1</translation>
     </message>
 </context>
 </TS>
