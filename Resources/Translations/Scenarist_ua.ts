@@ -4609,7 +4609,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     </message>
     <message>
         <source>Choose file for new project</source>
-        <translation>Виберіть файл для нового проекту</translation>
+        <translation type="vanished">Виберіть файл для нового проекту</translation>
     </message>
     <message>
         <source>Choose file to import</source>
@@ -4618,6 +4618,10 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <source>New Project</source>
         <translation>Новий Проект</translation>
+    </message>
+    <message>
+        <source>Choose folder for new project</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5329,7 +5333,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <source>Belorussian</source>
-        <translation>Беларускі</translation>
+        <translation type="vanished">Беларускі</translation>
     </message>
     <message>
         <source>English (GB)</source>
@@ -5475,6 +5479,10 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     </message>
     <message>
         <source>Danish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Belarusian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

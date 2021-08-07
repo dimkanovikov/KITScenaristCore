@@ -4568,7 +4568,7 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     </message>
     <message>
         <source>Choose file for new project</source>
-        <translation>Escolha o arquivo para o novo projeto</translation>
+        <translation type="vanished">Escolha o arquivo para o novo projeto</translation>
     </message>
     <message>
         <source>Choose file to import</source>
@@ -4577,6 +4577,10 @@ Por favor, faça o download de uma nova versão deste &lt;a href = &quot;https:/
     <message>
         <source>New Project</source>
         <translation>Novo projeto</translation>
+    </message>
+    <message>
+        <source>Choose folder for new project</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5292,7 +5296,7 @@ A aplicação vai iniciar em poucos segundos.</translation>
     </message>
     <message>
         <source>Belorussian</source>
-        <translation>Bielorrusso</translation>
+        <translation type="vanished">Bielorrusso</translation>
     </message>
     <message>
         <source>English (GB)</source>
@@ -5430,6 +5434,10 @@ quando você estiver trabalhando ele salvará o projeto a cada %1 minutos.</tran
     </message>
     <message>
         <source>Danish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Belarusian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
