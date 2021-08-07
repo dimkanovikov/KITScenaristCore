@@ -56,5 +56,6 @@
         <file>Translations/Scenarist_da.qm</file>
         <file>Translations/qtbase_sl.qm</file>
         <file>Translations/Scenarist_be.qm</file>
+        <file>Translations/qtbase_be.qm</file>
     </qresource>
 </RCC>
