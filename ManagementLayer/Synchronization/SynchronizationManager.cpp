@@ -95,6 +95,8 @@ namespace {
     const QUrl URL_SCENARIO_CHANGE_LIST = QUrl("https://kitscenarist.ru/api/projects/scenario/change/list/");
     const QUrl URL_SCENARIO_CHANGE_LOAD = QUrl("https://kitscenarist.ru/api/projects/scenario/change/");
     const QUrl URL_SCENARIO_CHANGE_SAVE = QUrl("https://kitscenarist.ru/api/projects/scenario/change/save/");
+    const QUrl URL_SCENARIO_CHANGE_LOCK = QUrl("https://kitscenarist.ru/api/projects/scenario/change/lock/");
+    const QUrl URL_SCENARIO_CHANGE_UNLOCK = QUrl("https://kitscenarist.ru/api/projects/scenario/change/unlock/");
     const QUrl URL_SCENARIO_CURSORS = QUrl("https://kitscenarist.ru/api/projects/scenario/cursor/");
     //
     const QUrl URL_SCENARIO_DATA_LIST = QUrl("https://kitscenarist.ru/api/projects/data/list/");
@@ -141,6 +143,7 @@ namespace {
     const QString KEY_SCENARIO_IS_DRAFT = "scenario_is_draft";
     const QString KEY_FROM_LAST_MINUTES = "from_last_minutes";
     const QString KEY_CURSOR_POSITION = "cursor_position";
+    const QString KEY_LOCK_KEY = "lock_key";
     /** @{ */
 
     /**
@@ -1142,6 +1145,30 @@ void SynchronizationManager::aboutWorkSyncScenario()
         }
 
         //
+        // Определим список собственных изменений для отправки
+        //
+        const QList<QPair<QString, QString>> newChanges =
+                StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime);
+
+        //
+        // Захватываем возможность внесения изменений в сценарий
+        //
+        if (!newChanges.isEmpty()) {
+            NetworkRequest loader;
+            loader.setRequestMethod(NetworkRequestMethod::Post);
+            loader.clearRequestAttributes();
+            loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
+            loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
+            loader.addRequestAttribute(KEY_LOCK_KEY, QDateTime::currentDateTime().toString("yyyyMMddhhmmsszzz"));
+            loader.addRequestAttribute(KEY_SCENARIO_IS_DRAFT, false);
+            QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_LOCK);
+            QXmlStreamReader changesReader(response);
+            if (!isOperationSucceed(changesReader)) {
+                return;
+            }
+        }
+
+        //
         // В первую очередь необходимо применить загруженные с сервера изменения, в случае, если
         // изменения текущего пользователя будут конфликтовать с изменениями соавтора, которые уже
         // в облаке, то изменения текущего откатываются до момента нормализации состояния сценария
@@ -1257,8 +1284,6 @@ void SynchronizationManager::aboutWorkSyncScenario()
             //
             // Отправляем
             //
-            const QList<QPair<QString, QString>> newChanges =
-                    StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime);
             const bool changesUploaded = uploadScenarioChanges(newChanges);
 
             //
@@ -1266,6 +1291,23 @@ void SynchronizationManager::aboutWorkSyncScenario()
             //
             if (changesUploaded) {
                 m_lastChangesSyncDatetime = currentChangesSyncDatetime;
+            }
+        }
+
+        //
+        // Захватываем возможность внесения изменений в сценарий
+        //
+        if (!newChanges.isEmpty()) {
+            NetworkRequest loader;
+            loader.setRequestMethod(NetworkRequestMethod::Post);
+            loader.clearRequestAttributes();
+            loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
+            loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
+            loader.addRequestAttribute(KEY_SCENARIO_IS_DRAFT, false);
+            QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_UNLOCK);
+            QXmlStreamReader changesReader(response);
+            if (!isOperationSucceed(changesReader)) {
+                return;
             }
         }
     }
