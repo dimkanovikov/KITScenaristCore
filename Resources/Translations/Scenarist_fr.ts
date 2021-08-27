@@ -1248,7 +1248,7 @@ Português: Ricardo Graça, Ronaldo German
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="881"/>
         <source>Main color</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur de fond</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="882"/>
