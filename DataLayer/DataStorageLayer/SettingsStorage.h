@@ -57,6 +57,7 @@ namespace DataStorageLayer
 		/** @{ */
 		void saveApplicationStateAndGeometry(QWidget* _widget);
 		void loadApplicationStateAndGeometry(QWidget* _widget);
+        void resetApplicationStateAndGeometry();
 		/** @} */
 
         /**

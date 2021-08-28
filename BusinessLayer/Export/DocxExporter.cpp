@@ -721,7 +721,7 @@ void DocxExporter::writeStyles(QtZipWriter* _zip) const
             "<w:rFonts w:asciiTheme=\"minorHAnsi\" w:eastAsiaTheme=\"minorEastAsia\" w:hAnsiTheme=\"minorHAnsi\" w:cstheme=\"minorBidi\"/>"
             "<w:sz w:val=\"22\"/>"
             "<w:szCs w:val=\"22\"/>"
-            "<w:lang w:val=\"" + languageCode + "\" w:eastAsia=\"" + languageCode + "\" w:bidi=\"ar-SA\"/>"
+            "<w:lang w:val=\"" + languageCode + "\" w:eastAsia=\"" + languageCode + "\" w:bidi=\"" + (QLocale().language() == QLocale::Hebrew ? "he-IL" : "ar-SA") + "\"/>"
             "</w:rPr>"
             "</w:rPrDefault>"
             "<w:pPrDefault><w:pPr><w:spacing w:after=\"200\" w:line=\"276\" w:lineRule=\"auto\"/></w:pPr></w:pPrDefault>"

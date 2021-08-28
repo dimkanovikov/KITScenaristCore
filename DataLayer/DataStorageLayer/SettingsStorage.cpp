@@ -545,6 +545,11 @@ void SettingsStorage::loadApplicationStateAndGeometry(QWidget* _widget)
     m_appSettings.endGroup(); // STATE_AND_GEOMETRY_KEY
 }
 
+void SettingsStorage::resetApplicationStateAndGeometry()
+{
+    m_appSettings.remove(STATE_AND_GEOMETRY_KEY);
+}
+
 QString SettingsStorage::documentFolderPath(const QString& _key)
 {
     QString folderPath = value(_key, ApplicationSettings);
