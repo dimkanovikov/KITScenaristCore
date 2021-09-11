@@ -1700,7 +1700,7 @@ O projeto não foi sincronizado.</translation>
         <source>New session for you account started at other device.
 
 Project didn&apos;t synchronized.</source>
-        <translation>Uma nova sessão para sua conta foi iniciada em outro dispositivo.
+        <translation type="vanished">Uma nova sessão para sua conta foi iniciada em outro dispositivo.
 
 O projeto não foi sincronizado.</translation>
     </message>
@@ -2022,6 +2022,12 @@ O projeto não foi sincronizado.</translation>
 You can no longer edit files from the backups folder. Files in this folder used only for content recovery. Please use another folder to save and store the files you are working on.
 
 Now, you should copy your file from the backups folder outside via file browser, or via the &quot;Menu -&gt; Save current project as...&quot; option.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new session for your account started in another copy of the application on the current device.
+
+Project didn&apos;t synchronized.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2346,6 +2352,18 @@ Now, you should copy your file from the backups folder outside via file browser,
     </message>
     <message>
         <source>HIDPI scaling option will be applied after application restart.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings resetting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you really want to reset all application settings to default?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restarting the application.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3319,6 +3337,14 @@ Temos também o editor de texto do roteiro. Este editor tem várias funções au
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Cantarell&apos;;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Go back</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
