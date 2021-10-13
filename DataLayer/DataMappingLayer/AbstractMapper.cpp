@@ -73,18 +73,14 @@ void AbstractMapper::refresh(DomainObjectsItemModel* _model, const QString& _fil
     foreach (DomainObject* domainObject, _model->toList()) {
         if (!updatedObjectsIds.contains(domainObject->id())) {
             //
-            // ... из списка для обновления
-            //
-            _model->remove(domainObject);
-            //
             // ... из карты загруженных объектов
             //
             m_loadedObjectsMap.remove(domainObject->id());
             //
-            // ... сам объект
+            // ... из списка для обновления (в этот момент удалится и сам объект)
             //
-            delete domainObject;
-            domainObject = 0;
+            _model->remove(domainObject);
+            domainObject = nullptr;
         }
     }
 }

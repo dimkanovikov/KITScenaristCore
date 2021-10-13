@@ -73,8 +73,8 @@ void ScriptVersionStorage::updateScriptVersion(ScriptVersion* _scriptVersion)
 
 void ScriptVersionStorage::removeScriptVersion(ScriptVersion* _scriptVersion)
 {
-    all()->remove(_scriptVersion);
     MapperFacade::scriptVersionMapper()->remove(_scriptVersion);
+    all()->remove(_scriptVersion);
 }
 
 void ScriptVersionStorage::clear()

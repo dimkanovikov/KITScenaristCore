@@ -178,7 +178,7 @@ void DomainObjectsItemModel::remove(DomainObject* domainObject)
 {
     const int index = m_domainObjects.indexOf(domainObject);
     beginRemoveRows(QModelIndex(), index, index);
-    m_domainObjects.removeOne( domainObject );
+    m_domainObjects.removeOne(domainObject);
     endRemoveRows();
 }
 
