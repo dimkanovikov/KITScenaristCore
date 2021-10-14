@@ -106,13 +106,13 @@ void ResearchStorage::removeResearch(Research* _research)
             //
             // ... удалим из локального списка и базы данных
             //
-            MapperFacade::researchMapper()->remove(research);
             all()->remove(research);
             if (characters()->contains(research)) {
                 characters()->remove(research);
             } else if (locations()->contains(research)) {
                 locations()->remove(research);
             }
+            MapperFacade::researchMapper()->remove(research);
         }
     }
 }

@@ -1453,10 +1453,10 @@ void ScenarioDocument::load(const QString& _scenario)
     // Очищаем модель и документ
     //
     {
-        aboutContentsChange(0, m_document->characterCount(), 0);
         QTextCursor cursor(m_document);
         cursor.select(QTextCursor::Document);
         cursor.deleteChar();
+        aboutContentsChange(0, m_document->characterCount(), 0);
     }
 
     //
