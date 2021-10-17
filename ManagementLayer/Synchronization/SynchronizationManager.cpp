@@ -1145,6 +1145,12 @@ void SynchronizationManager::aboutWorkSyncScenario()
         }
 
         //
+        // Запоминаем время синхронизации изменений сценария, которое сохраним, в случае успеха
+        //
+        const QString currentChangesSyncDatetime =
+                QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
+
+        //
         // Определим список собственных изменений для отправки
         //
         const QList<QPair<QString, QString>> newChanges =
@@ -1275,12 +1281,6 @@ void SynchronizationManager::aboutWorkSyncScenario()
         // удалось успешно накатить
         //
         {
-            //
-            // Запоминаем время синхронизации изменений сценария
-            //
-            const QString currentChangesSyncDatetime =
-                    QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
-
             //
             // Отправляем
             //
