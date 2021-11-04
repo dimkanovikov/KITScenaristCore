@@ -30,6 +30,14 @@ namespace {
             myOption.displayAlignment = Qt::AlignCenter;
             QStyledItemDelegate::paint(_painter, myOption, _index);
         }
+
+        void initStyleOption(QStyleOptionViewItem * option, const QModelIndex & index) const
+        {
+             QStyledItemDelegate::initStyleOption(option, index);
+
+             if( option->state & QStyle::State_Selected )
+                  option->font.setBold(true);
+        }
     };
 
     const int COMPLETER_MAX_ITEMS = 3;
@@ -54,7 +62,7 @@ namespace {
             m_popup->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
             const QString styleSheet =
                     QString("QListView { show-decoration-selected: 0; border-top: %1px solid #215da8; }"
-                            "QListView::item, QListView::item:selected { text-align: center; height: %2px; "
+                            "QListView::item, QListView::item:selected { font-weight: normal; height: %2px; "
                             "border: none; border-bottom: %3px solid palette(highlighted-text); "
                             "background-color: palette(highlight); color: palette(highlighted-text); }")
                     .arg(UIUtils::statusbarHeight())
@@ -107,10 +115,47 @@ namespace {
          * @brief Переопределяем, чтобы скрывать декорации, во время закрытия попапа
          */
         bool eventFilter(QObject* _watched, QEvent* _event) {
-            if (_event->type() == QEvent::KeyPress
-                || (_watched == m_popup && _event->type() == QEvent::Hide)) {
+            bool needToClose = false;
+            if (_event->type() == QEvent::KeyPress) {
+                auto keyEvent = static_cast<QKeyEvent*>(_event);
+                switch (keyEvent->key()) {
+                    case Qt::Key_Enter:
+                    case Qt::Key_Return: {
+                        emit activated(currentIndex().data().toString());
+                        needToClose = true;
+                        break;
+                    }
+
+                    case Qt::Key_Up: {
+                        if (currentRow() > 0) {
+                            m_popup->selectionModel()->select(currentIndex(), QItemSelectionModel::Clear);
+                            setCurrentRow(currentRow() - 1);
+                            m_popup->selectionModel()->select(currentIndex(), QItemSelectionModel::Select);
+                        }
+                        break;
+                    }
+
+                    case Qt::Key_Down: {
+                        if (currentRow() < completionCount() - 1) {
+                            m_popup->selectionModel()->select(currentIndex(), QItemSelectionModel::Clear);
+                            setCurrentRow(currentRow() + 1);
+                            m_popup->selectionModel()->select(currentIndex(), QItemSelectionModel::Select);
+                        }
+                        break;
+                    }
+
+                    default: {
+                        break;
+                    }
+                }
+            } else if (_watched == m_popup && _event->type() == QEvent::Hide) {
+                needToClose = true;
+            }
+
+            if (needToClose) {
                 closeCompleter();
             }
+
             return QCompleter::eventFilter(_watched, _event);
         }
 
