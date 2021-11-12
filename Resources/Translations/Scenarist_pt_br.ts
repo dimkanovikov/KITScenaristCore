@@ -5466,6 +5466,10 @@ quando você estiver trabalhando ele salvará o projeto a cada %1 minutos.</tran
         <source>Belarusian</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Cambodian</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInterface::ShareDialog</name>

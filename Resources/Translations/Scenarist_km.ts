@@ -21,7 +21,7 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="50"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This software is distributed under &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; license, source code available on &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;កម្មវិធីនេះត្រូវបានចែកចាយក្រោមអាជ្ញាប័ណ្ណ&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; ប្រភពកូដអាចរកបាននៅ&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;កម្មវិធីនេះត្រូវបានចែកចាយក្រោមអាជ្ញាប័ណ្ណ&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/blob/develop/LICENSE&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GNU GPL3&lt;/span&gt;&lt;/a&gt; ប្រភពកូដអាចរកបាននៅ &lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2b78da;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/AboutDialog.ui" line="73"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../../3rd_party/Widgets/AcceptebleLineEdit/AcceptebleLineEdit.cpp" line="98"/>
         <source>was changed from &lt;b&gt;%1&lt;/b&gt; to &lt;b&gt;%2&lt;/b&gt;. Apply changes?</source>
-        <translation>ត្រូវបានផ្លាស់ប្តូរពី&lt;b&gt;%1&lt;/b&gt; ទៅ &lt;b&gt;%2&lt;/b&gt;. តើអ្នកចង់ផ្លាស់ប្តូរទេ?</translation>
+        <translation>ត្រូវបានផ្លាស់ប្តូរពី &lt;b&gt;%1&lt;/b&gt; ទៅ &lt;b&gt;%2&lt;/b&gt;. តើអ្នកចង់ផ្លាស់ប្តូរទេ?</translation>
     </message>
 </context>
 <context>
@@ -146,12 +146,12 @@
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="15"/>
         <source>INT</source>
-        <translation>INT</translation>
+        <translation>ក្នុង</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="16"/>
         <source>EXT</source>
-        <translation>EXT</translation>
+        <translation>ក្រៅ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="17"/>
@@ -161,12 +161,12 @@
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="18"/>
         <source>INT./EXT</source>
-        <translation>INT./EXT</translation>
+        <translation>ក្នុង./ក្រៅ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Export/FountainExporter.cpp" line="19"/>
         <source>INT/EXT</source>
-        <translation>INT/EXT</translation>
+        <translation>ក្នុង/ក្រៅ</translation>
     </message>
 </context>
 <context>
@@ -174,12 +174,12 @@
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="36"/>
         <source>INT</source>
-        <translation>INT</translation>
+        <translation>ក្នុង</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="37"/>
         <source>EXT</source>
-        <translation>INT</translation>
+        <translation>ក្រៅ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="38"/>
@@ -189,12 +189,12 @@
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="39"/>
         <source>INT./EXT</source>
-        <translation>INT</translation>
+        <translation>ក្នុង./ក្រៅ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="40"/>
         <source>INT/EXT</source>
-        <translation>INT/EXT</translation>
+        <translation>ក្នុង/ក្រៅ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="41"/>
@@ -334,7 +334,7 @@
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="175"/>
         <source>Pages</source>
-        <translation>ទព័រ</translation>
+        <translation>ទំព័រ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="182"/>
@@ -344,7 +344,7 @@
     <message>
         <location filename="../../BusinessLayer/Counters/CountersFacade.cpp" line="189"/>
         <source>Symbols</source>
-        <translation>សញ្ញា</translation>
+        <translation>និមិត្តសញ្ញា</translation>
     </message>
 </context>
 <context>
@@ -409,7 +409,7 @@
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="123"/>
         <source>Logline</source>
-        <translation>ប្រយោគនៃគំនិតសំខាន់នៃរឿង</translation>
+        <translation>ប្រយោគពណ៌នារឿង</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Research/ResearchModel.cpp" line="131"/>
@@ -516,7 +516,7 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="80"/>
         <source>Scene Description</source>
-        <translation>ការពណ៌នានៃឆាក</translation>
+        <translation>ការពណ៌នាឆាក</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="81"/>
@@ -662,17 +662,17 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="669"/>
         <source>International screenplay standard template for A4 page size.</source>
-        <translation>គំរូស្តង់ដានៃនាដកថាអន្តរជាតិសម្រាប់ទំហំទំព័រ A4.</translation>
+        <translation>គំរូស្តង់ដារនៃនាដកថាអន្តរជាតិសម្រាប់ទំហំទំព័រ A4.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="674"/>
         <source>International screenplay standard template for Letter page size.</source>
-        <translation>គំរូស្តង់ដានៃនាដកថាអន្តរជាតិសម្រាប់ទំហំទំព័រ Letter.</translation>
+        <translation>គំរូស្តង់ដារនៃនាដកថាអន្តរជាតិសម្រាប់ទំហំទំព័រ Letter.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="679"/>
         <source>Russian and CIS screenplay standard template.</source>
-        <translation>គំរូងស្តង់ដានៃនាដកថារ៉ុស្ស៊ី និង CIS.</translation>
+        <translation>គំរូងស្តង់ដារនៃនាដកថារ៉ុស្ស៊ី និង CIS.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="684"/>
@@ -687,7 +687,7 @@
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="694"/>
         <source>Hebrew screenplay standard template.</source>
-        <translation>គំរូស្តង់ដានៃនាដកថាបែបហេប្រឺ.</translation>
+        <translation>គំរូស្តង់ដារនៃនាដកថាបែបហេប្រឺ.</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScenarioTemplate.cpp" line="699"/>
@@ -754,12 +754,12 @@
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="34"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation>CONT&apos;D</translation>
+        <translation>បន្ត</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/ScenarioDocument/ScriptTextCorrector.cpp" line="39"/>
         <source>MORE</source>
-        <translation>ផ្សេងទៀត</translation>
+        <translation>បន្ថែមទៀត</translation>
     </message>
 </context>
 <context>
@@ -831,7 +831,7 @@
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="166"/>
         <source>Characters with/without spaces</source>
-        <translation>តួអង្គដែលមាន/មិនមានចន្លោះ</translation>
+        <translation>តួអង្គដែលមានចន្លោះ/មិនមានចន្លោះ</translation>
     </message>
     <message>
         <location filename="../../BusinessLayer/Statistics/Reports/SummaryReport.cpp" line="177"/>
@@ -999,7 +999,7 @@
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="897"/>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="936"/>
         <source>Tag</source>
-        <translation>ភ្ជាប់សញ្ញាថេក</translation>
+        <translation>សញ្ញាថេក</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/CardsEdit/CardsScene.cpp" line="926"/>
@@ -1125,33 +1125,33 @@
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="456"/>
         <source>INT</source>
-        <translation>INT</translation>
+        <translation>ក្នុង</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="460"/>
         <source>EXT</source>
-        <translation>EXT</translation>
+        <translation>ក្រៅ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="464"/>
         <source>INT./EXT</source>
-        <translation>INT./EXT</translation>
+        <translation>ក្នុង./ក្រៅ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="472"/>
         <source>DAY</source>
-        <translation>ថ្ងៃ</translation>
+        <translation>ពេលថ្ងៃ</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="476"/>
         <source>NIGHT</source>
-        <translation>យប់</translation>
+        <translation>ពេលយប់</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="480"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="745"/>
         <source>MORNING</source>
-        <translation>ព្រឹក</translation>
+        <translation>ពេលព្រឹក</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="484"/>
@@ -1162,7 +1162,7 @@
         <location filename="../../DataLayer/Database/Database.cpp" line="488"/>
         <location filename="../../DataLayer/Database/Database.cpp" line="749"/>
         <source>EVENING</source>
-        <translation>ល្ងាច</translation>
+        <translation>ពេលល្ងាច</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="492"/>
@@ -1212,7 +1212,7 @@
         <location filename="../../DataLayer/Database/Database.cpp" line="533"/>
         <source>CONT&apos;D</source>
         <extracomment>Continued</extracomment>
-        <translation>CONT&apos;D</translation>
+        <translation>បន្ត</translation>
     </message>
     <message>
         <location filename="../../DataLayer/Database/Database.cpp" line="541"/>
@@ -1302,7 +1302,7 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="32"/>
         <source>Export Scenario</source>
-        <translation>នាំចេញជាសេណារ៉ីយ៉ូ</translation>
+        <translation>នាំចេញសេណារីយ៉ូ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.ui" line="132"/>
@@ -1439,7 +1439,7 @@
     <message>
         <location filename="../../../../libs/fileformats/format_manager.cpp" line="107"/>
         <source>All Supported Files</source>
-        <translation>ទម្រង់ឯកសារដែលត្រូវគ្នាទាំងអស់</translation>
+        <translation>ឯកសារទាំងអស់ដែលត្រឹមត្រូវតាមទម្រង់</translation>
     </message>
 </context>
 <context>
@@ -1448,7 +1448,7 @@
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="255"/>
         <location filename="../../BusinessLayer/Import/FountainImporter.cpp" line="398"/>
         <source>END OF </source>
-        <translation>END OF </translation>
+        <translation>ចុងបញ្ចប់នៃ </translation>
     </message>
 </context>
 <context>
@@ -1639,7 +1639,7 @@
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="233"/>
         <source>Detect language from system locale</source>
-        <translation>រកមើលភាសាក្នុងកុំព្យូទ័រ</translation>
+        <translation>រកមើលភាសាក្នុងម៉ាស៊ីនកុំព្យូទ័រ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/LanguageDialog.ui" line="254"/>
@@ -1834,7 +1834,7 @@ Now, you should copy your file from the backups folder outside via file browser,
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1059"/>
         <source>Change project name</source>
-        <translation>ផ្លាស់ប្តូរឈ្មោះគម្រោង</translation>
+        <translation>ប្តូរឈ្មោះគម្រោង</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1060"/>
@@ -1859,7 +1859,7 @@ Now, you should copy your file from the backups folder outside via file browser,
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1156"/>
         <source>Connection active</source>
-        <translation>ការភ្ជាប់អ៊ីនធឺណិសកម្ម</translation>
+        <translation>ការភ្ជាប់អ៊ីនធឺណិតសកម្ម</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1162"/>
@@ -2056,7 +2056,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1798"/>
         <source>Loading Scenario</source>
-        <translation>កំពុងតែទាំញ សេណារីយ៉ូ</translation>
+        <translation>កំពុងតែទាញ សេណារីយ៉ូ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1798"/>
@@ -2178,7 +2178,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2148"/>
         <source>Print preview script</source>
-        <translation>បោះពុម្ពស្រ្គីបសម្រាប់ពិនិត្យ</translation>
+        <translation>ពិនិត្យស្រ្គីបមុនបោះពុម្ព</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2153"/>
@@ -2208,7 +2208,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2590"/>
         <source>Read only</source>
-        <translation>Read only</translation>
+        <translation>អានបានត្រឹមតែអាន</translation>
     </message>
 </context>
 <context>
@@ -2274,7 +2274,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="405"/>
         <source>File format not supported</source>
-        <translation>ទម្រង់ឯកសារមិនត្រូមត្រូវ</translation>
+        <translation>ទម្រង់ឯកសារមិនត្រឹមត្រូវ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Import/ImportManager.cpp" line="406"/>
@@ -2336,7 +2336,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="28"/>
         <source>Redactor</source>
-        <translation>អ្នករៀបចំឡើងវិញ</translation>
+        <translation>អ្នកកែសម្រួល</translation>
     </message>
     <message>
         <location filename="../../ManagementLayer/Project/Project.cpp" line="29"/>
@@ -2369,7 +2369,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="681"/>
         <source>Remove</source>
-        <translation>លុប</translation>
+        <translation>លុបចេញ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="688"/>
@@ -2389,7 +2389,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Research/ResearchManager.cpp" line="975"/>
         <source>Unnamed image</source>
-        <translation>រូបភាពដែលឥតឈ្មោះ</translation>
+        <translation>រូបភាពអត់មានឈ្មោះ</translation>
     </message>
 </context>
 <context>
@@ -2428,7 +2428,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="804"/>
         <source>Script changes conflict detected</source>
-        <translation>ការផ្លាស់ប្តូរស្រ្គីបដែលមានទំនាស់ត្រូវបានលុប</translation>
+        <translation>ទំនាស់ក្នុងការផ្លាស់ប្តូរស្រ្គីបត្រូវបានរកឃើញ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Scenario/ScenarioManager.cpp" line="805"/>
@@ -2513,7 +2513,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="384"/>
         <source>Dictionary loading</source>
-        <translation>វចនានុក្រមកំពុងតែទាញ</translation>
+        <translation>កំពុងតែទាញវចនានុក្រម</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="384"/>
@@ -2576,7 +2576,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/Settings/SettingsManager.cpp" line="1131"/>
         <source>Shortcut</source>
-        <translation>Shortcut</translation>
+        <translation>ប៊ូតុងកាត់</translation>
     </message>
 </context>
 <context>
@@ -2592,12 +2592,12 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="302"/>
         <source>Undo</source>
-        <translation>ត្រលប់ក្រោយ</translation>
+        <translation>មិនធ្វើវិញ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="305"/>
         <source>Redo</source>
-        <translation>បកទៅមុខ</translation>
+        <translation>ធ្វើវិញ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/StartUp/StartUpManager.cpp" line="362"/>
@@ -2706,7 +2706,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="331"/>
         <source>Print preview script</source>
-        <translation>បោះពុម្ពស្រ្គីបសម្រាប់ពិនិត្យ</translation>
+        <translation>ពិនិត្យស្រ្គីបមុនបោះពុម្ព</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="348"/>
@@ -2746,7 +2746,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="615"/>
         <source>Account is active until:</source>
-        <translation>គណនីសកម្មរហូដល់:</translation>
+        <translation>គណនីសកម្មរហូតដល់:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="625"/>
@@ -2766,7 +2766,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="677"/>
         <source>Renew subscription</source>
-        <translation>ធ្វើការជាវសាជាថ្មី</translation>
+        <translation>ជាវសាជាថ្មី</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Application/MenuView.ui" line="694"/>
@@ -2847,7 +2847,7 @@ Project didn&apos;t synchronized.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="519"/>
         <source>Light theme</source>
-        <translation>ផ្ទាំងរូបរាងដែលភ្លឺ</translation>
+        <translation>ផ្ទាំងរូបរាងភ្លឺ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="552"/>
@@ -3105,7 +3105,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="129"/>
         <source>Change project name</source>
-        <translation>ដូចឈ្មោះគម្រោង</translation>
+        <translation>ប្តូរឈ្មោះគម្រោង</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ProjectsList/ProjectFileWidget.ui" line="152"/>
@@ -3412,7 +3412,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="147"/>
         <source>Footer:</source>
-        <translation>បឋមកថា:</translation>
+        <translation>បាតទំព័រ:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="154"/>
@@ -3438,7 +3438,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="212"/>
         <source>Header:</source>
-        <translation>បឋមកថា:</translation>
+        <translation>ក្បាលទំព័រ:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="221"/>
@@ -3478,7 +3478,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="329"/>
         <source>Scenario author.</source>
-        <translation>អ្នកនពន្ធសេណារីយ៉ូ.</translation>
+        <translation>អ្នកនិពន្ធសេណារីយ៉ូ.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="339"/>
@@ -3573,7 +3573,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="708"/>
         <source>Add research materials such as text, web pages and images to the tree. Use toolbar buttons and context menu for adding or removing research materials in the tree.</source>
-        <translation>បន្ថែមឯកសារស្រាវជ្រាវដូចជា អត្ថបទ គេហទំព័រ និងរូបភាពទៅដើមឈើ។ ប្រើប៊ូតុងរបារឧបករណ៍និងម៉ឺនុយបរិបទសម្រាប់បន្ថែមឬដកសម្ភារៈស្រាវជ្រាវចេញពីដើម.</translation>
+        <translation>បន្ថែមឯកសារស្រាវជ្រាវដូចជា អត្ថបទ គេហទំព័រ និងរូបភាពទៅកាន់មែកធាង។ ប្រើប៊ូតុងរបារឧបករណ៍និងម៉ឺនុយបរិបទសម្រាប់បន្ថែមឬដកសម្ភារៈស្រាវជ្រាវចេញពីមែកធាង.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="732"/>
@@ -3583,7 +3583,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="745"/>
         <source>Folders let you group research data in hierarchy.</source>
-        <translation>ប្រអប់សម្រាប់ដាក់ឯកសារដែលអនុញ្ញាតឱ្យអ្នកទុកទិន្នន័យនៃការស្រាវជ្រាវជាក្រុមជារចនាសម្ព័ន្ធ.</translation>
+        <translation>ប្រអប់សម្រាប់ដាក់ឯកសារអនុញ្ញាតឱ្យអ្នកទុកទិន្នន័យនៃការស្រាវជ្រាវជារចនាសម្ព័ន្ធ.</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="758"/>
@@ -3673,7 +3673,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1264"/>
         <source>Undo last action</source>
-        <translation>ថយក្រោយនូវសកម្មភាពចុងក្រោយ</translation>
+        <translation>មិនធ្វើវិញនូវសកម្មភាពចុងក្រោយ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1267"/>
@@ -3754,7 +3754,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1459"/>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1462"/>
         <source>Save mind map as image file</source>
-        <translation>រក្សាទុកបំបែកគំនិតជារូបភាព</translation>
+        <translation>រក្សាទុកការបំបែកគំនិតជារូបភាព</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Research/ResearchView.ui" line="1505"/>
@@ -3785,7 +3785,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="341"/>
         <location filename="../../../../libs/fileformats/rtf_reader.cpp" line="345"/>
         <source>Not a supported RTF file.</source>
-        <translation>មិនមែនជាឯកសារ RTF ដែលត្រូវទេ.</translation>
+        <translation>មិនមែនជាឯកសារ RTF ដែលត្រឹមត្រូវទេ.</translation>
     </message>
 </context>
 <context>
@@ -3811,12 +3811,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="80"/>
         <source>Heading (used in text and in cards if the name empty):</source>
-        <translation>ក្បាល (ប្រើក្នុងអក្សរនិងកាតប្រសិនបើឈ្មោះទទេ):</translation>
+        <translation>ក្បាល (ប្រើក្នុងអក្សរនិងក្នុងកាតប្រសិនបើឈ្មោះទទេ):</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioItemDialog/ScenarioItemDialog.ui" line="87"/>
         <source>Name (human-readable name of the scene, used in cards):</source>
-        <translation>ឈ្មោះ (ឈ្មោះដែលមនុស្សអាចអានបាននៃឆាកប្រើក្នុងកាត):</translation>
+        <translation>ឈ្មោះ (ឈ្មោះឆាកដែលមនុស្សអាចអានបាន, ប្រើក្នុងកាត):</translation>
     </message>
 </context>
 <context>
@@ -3829,12 +3829,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="78"/>
         <source>Title</source>
-        <translation>ឈ្មោះ</translation>
+        <translation>ចំណងជើង</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="91"/>
         <source>Description</source>
-        <translation>ពណ៌នា</translation>
+        <translation>ការពណ៌នា</translation>
     </message>
     <message>
         <location filename="../../UserInterfaceLayer/ScriptVersions/ScriptVersionWidget.ui" line="113"/>
@@ -3902,7 +3902,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="159"/>
         <source>Replace with...</source>
-        <translation>ជំនួយ​ដោយ...</translation>
+        <translation>ជំនួស​ដោយ...</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="162"/>
@@ -3926,7 +3926,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="51"/>
         <source>Settings</source>
-        <translation>កំណត់</translation>
+        <translation>ការកំណត់</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="80"/>
@@ -3961,7 +3961,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="130"/>
         <source>Chronometry/Counters</source>
-        <translation>ព្រឹត្តិការណ៍រឿង/បញ្ជរ</translation>
+        <translation>ព្រឹត្តិការណ៍រឿង/ការរាប់</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="139"/>
@@ -3971,7 +3971,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="151"/>
         <source>Reset Settings</source>
-        <translation>កំណត់ការកំណត់ឡើងវិញ</translation>
+        <translation>កំណត់ឡើងវិញ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="227"/>
@@ -4006,7 +4006,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="353"/>
         <source>Save Backups</source>
-        <translation>រក្សាទុកការបម្រុងទុក</translation>
+        <translation>រក្សាទុក ឯកសារបម្រុង</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="398"/>
@@ -4031,7 +4031,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="440"/>
         <source>Two Panel Mode (F2)</source>
-        <translation>ម៉ូដពីរផ្ទាង (F2)</translation>
+        <translation>ម៉ូដពីរផ្ទាំង (F2)</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="450"/>
@@ -4071,7 +4071,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="579"/>
         <source>Default font for text documents:</source>
-        <translation>ពុម្ពអក្សរលំនាំដើមសម្រាប់ឯកសារអត្ថបទ:</translation>
+        <translation>ពុម្ពអក្សរលំនាំដើមសម្រាប់ឯកសារជាអក្សរ:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="593"/>
@@ -4126,7 +4126,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="948"/>
         <source>Highlight Current Line</source>
-        <translation>បន្លិចចេញបន្ទាត់បច្ចុប្បន្ន</translation>
+        <translation>រំលេចចេញបន្ទាត់បច្ចុប្បន្ន</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="978"/>
@@ -4146,7 +4146,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1406"/>
         <source>Noneprintable text:</source>
-        <translation>អត្ថបទដែលមិនអាចបោះពុម្ពបាន:</translation>
+        <translation>អក្សរដែលមិនបោះពុម្ពចេញ:</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1542"/>
@@ -4161,7 +4161,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1559"/>
         <source>Highlight blocks</source>
-        <translation>បន្លិចឱ្យចេញប្លុក</translation>
+        <translation>រំលេចឱ្យចេញប្លុក</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1573"/>
@@ -4171,7 +4171,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1593"/>
         <source>Use open bracket in dialogue for jump to parenthetical</source>
-        <translation>ប្រើសញ្ញាវង់ដង្កៀបនៅក្នុងការសន្ទនាដើម្បីលោតទៅចំណុចវង់ក្រចក</translation>
+        <translation>ប្រើសញ្ញាដង្កៀបនៅក្នុងការសន្ទនាដើម្បីលោតទៅចំណុចវង់ក្រចក</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1616"/>
@@ -4246,7 +4246,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1873"/>
         <source>Scene synopsis</source>
-        <translation>ឆាកសង្ខេប</translation>
+        <translation>សេចក្តីសង្ខេបនៃឆាក</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="1897"/>
@@ -4293,7 +4293,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2129"/>
         <source>Characters Chronometry</source>
-        <translation>ព្រឹត្តិការណ៍រឿងរបស់ តួអក្សរ</translation>
+        <translation>ព្រឹត្តិការណ៍រឿងរបស់ តួអង្គ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2173"/>
@@ -4326,7 +4326,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2269"/>
         <source>Seconds per
 50 characters</source>
-        <translation>១វិនាទីក្នុងមួយ
+        <translation>១វិនាទីក្នុង
 ៥០ តួអក្សរ</translation>
     </message>
     <message>
@@ -4344,7 +4344,7 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2429"/>
         <source>Counters</source>
-        <translation>បញ្ជរ</translation>
+        <translation>ការរាប់</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.ui" line="2443"/>
@@ -4452,7 +4452,7 @@ Paragraph</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="44"/>
         <source>Redactor</source>
-        <translation>អ្នករៀបចំឡើងវិញ</translation>
+        <translation>អ្នកកែសម្រួល</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Project/ShareDialog.ui" line="49"/>
@@ -4470,12 +4470,12 @@ Paragraph</source>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="184"/>
         <source>Redo previously undone action</source>
-        <translation>ធ្វើឡើងវិញនូវសកម្មភាពដែលមិនបានធ្វើពីមុន</translation>
+        <translation>ធ្វើឡើងវិញនូវសកម្មភាពដែលមិនបានធ្វើរួចរាល់ពីមុន</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="194"/>
         <source>Make text bold</source>
-        <translation>ធ្វើឱ្យអក្សរឱ្យដិត</translation>
+        <translation>ធ្វើអក្សរឱ្យដិត</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="198"/>
@@ -4485,12 +4485,12 @@ Paragraph</source>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="202"/>
         <source>Make text underline</source>
-        <translation>ធ្វើឱ្យអក្សរឱ្យមានបន្ទាត់ពីក្រោម</translation>
+        <translation>ធ្វើអក្សរឱ្យមានបន្ទាត់ពីក្រោម</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="205"/>
         <source>Change text color</source>
-        <translation>ផ្លាស់ប្តូរពណ៌អត្ថបទ</translation>
+        <translation>ផ្លាស់ប្តូរពណ៌អក្សរ</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SimpleTextEditor/SimpleTextEditorWidget.cpp" line="208"/>
@@ -4513,7 +4513,7 @@ Paragraph</source>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="46"/>
         <source>Add to dictionary</source>
-        <translation>បន្ថែមទៅវចនានុក្រម</translation>
+        <translation>បន្ថែមចូលវចនានុក្រម</translation>
     </message>
     <message>
         <location filename="../../3rd_party/Widgets/SpellCheckTextEdit/SpellCheckTextEdit.cpp" line="152"/>
@@ -4679,7 +4679,7 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="165"/>
         <source>Extended view</source>
-        <translation>ទិដ្ឋភាពបន្ថែម</translation>
+        <translation>ព័ត៌មានបន្ថែម</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="175"/>
@@ -4739,17 +4739,17 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="316"/>
         <source>Scene Duration</source>
-        <translation>រយៈពេលឆាក</translation>
+        <translation>រយៈពេលនៃឆាក</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="326"/>
         <source>Action Duration</source>
-        <translation>រយៈពេលសកម្មភាព</translation>
+        <translation>រយៈពេលនៃសកម្មភាព</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="336"/>
         <source>Dialogues Duration</source>
-        <translation>រយៈពេលសន្ទនា</translation>
+        <translation>រយៈពេលនៃការសន្ទនា</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="346"/>
@@ -4759,7 +4759,7 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsSettings.ui" line="356"/>
         <source>Dialogues Count</source>
-        <translation>ចំនួនការសន្ទនា</translation>
+        <translation>ចំនួននៃការសន្ទនា</translation>
     </message>
 </context>
 <context>
@@ -4894,7 +4894,7 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="484"/>
         <source>Underline</source>
-        <translation>គូសបញ្ជាក់ពីក្រោម</translation>
+        <translation>គូសបន្ទាត់ពីក្រោម</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="493"/>
@@ -4919,7 +4919,7 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="516"/>
         <source>Fixed</source>
-        <translation>បានជួសជុល</translation>
+        <translation>ថេរ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/TemplateDialog.ui" line="527"/>
@@ -5089,7 +5089,7 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="278"/>
         <source>Highlight</source>
-        <translation>បន្លិចចេញ</translation>
+        <translation>រំលេចចេញ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.ui" line="294"/>
@@ -5124,7 +5124,7 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="246"/>
         <source>Save palette to file</source>
-        <translation>រក្សាទុកក្ដារលាយទៅឯកសារ</translation>
+        <translation>រក្សាទុកក្ដារលាយជាឯកសារ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="306"/>
@@ -5134,7 +5134,7 @@ the best program for creating stories!</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="373"/>
         <source>Save style sheet to file</source>
-        <translation>រក្សាទុកសន្លឹករចនាប័ទ្មទៅឯកសារ</translation>
+        <translation>រក្សាទុកសន្លឹករចនាប័ទ្មជាឯកសារ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/_tools/UIConfigurator.cpp" line="384"/>
@@ -5269,7 +5269,7 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="259"/>
         <source>Choose file to export research</source>
-        <translation>ជ្រើសរើសឯកសារដើម្បីនាំចេញការស្រាវជ្រាវ</translation>
+        <translation>ជ្រើសរើសឯកសារដើម្បីនាំការស្រាវជ្រាវចេញ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="261"/>
@@ -5280,12 +5280,12 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="320"/>
         <source>Choose file to export scenario</source>
-        <translation>ជ្រើសរើសឯកសារដើម្បីនាំចេញសេណារីយ៉ូ</translation>
+        <translation>ជ្រើសរើសឯកសារដើម្បីនាំសេណារីយ៉ូចេញ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="370"/>
         <source>Rewrite</source>
-        <translation>សរសេរឡើងវិញ</translation>
+        <translation>ជំនួសឯកសារចាស់</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Export/ExportDialog.cpp" line="370"/>
@@ -5569,7 +5569,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="253"/>
         <source>Save cards to file</source>
-        <translation>រក្សាទុកកាតទៅឯកសារ</translation>
+        <translation>រក្សាទុកកាតជាឯកសារ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="256"/>
@@ -5579,7 +5579,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioCards/ScenarioCardsView.cpp" line="260"/>
         <source>On/off Fullscreen Mode</source>
-        <translation>បើក/បិទរបៀបពេញអេក្រង់</translation>
+        <translation>បើក/បិទម៉ូដពេញអេក្រង់</translation>
     </message>
 </context>
 <context>
@@ -5694,7 +5694,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="314"/>
         <source>Remove</source>
-        <translation>យកចេញ</translation>
+        <translation>លុបចេញ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="377"/>
@@ -5719,7 +5719,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="388"/>
         <source>Remove Selected Scenario Item</source>
-        <translation>យករបស់របរចេញពីសេណារីយ៉ូដែលបានជ្រើសរើសចេញ</translation>
+        <translation>យករបស់របរចេញពីសេណារីយ៉ូដែលបានជ្រើសរើស</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioNavigator/ScenarioNavigator.cpp" line="393"/>
@@ -5792,7 +5792,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="284"/>
         <source>Highlight text</source>
-        <translation>បន្លិចលេចអក្សរ</translation>
+        <translation>រំលេចអក្សរ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewPanel.cpp" line="288"/>
@@ -5831,7 +5831,7 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="136"/>
         <source>Remove</source>
-        <translation>យកចេញ</translation>
+        <translation>លុបចេញ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScenarioTextEdit/ScenarioReviewView.cpp" line="198"/>
@@ -5971,17 +5971,17 @@ The application will start in few seconds.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="43"/>
         <source>Transitions</source>
-        <translation>បម្លាប់ប្តូរ</translation>
+        <translation>ការផ្លាស់ប្តូរ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="46"/>
         <source>Add dictionary item</source>
-        <translation>បន្ថែមរបស់របរវចនានុក្រម</translation>
+        <translation>បន្ថែមពាក្យចូលវចនានុក្រម</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Scenario/ScriptDictionaries/ScriptDictionaries.cpp" line="49"/>
         <source>Remove selected item</source>
-        <translation>លុបរបស់របរដែលបានជ្រើសរើស</translation>
+        <translation>លុបពាក្យដែលបានជ្រើសរើស</translation>
     </message>
 </context>
 <context>
@@ -6009,13 +6009,13 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="136"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="849"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="854"/>
         <source>Russian</source>
         <translation>ភាសារុស្ស៊ី</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="141"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="853"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="858"/>
         <source>Spanish</source>
         <translation>ភាសាអេស្ប៉ាញ</translation>
     </message>
@@ -6026,25 +6026,25 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="151"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="833"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="838"/>
         <source>French</source>
         <translation>បារាំង</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="156"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="842"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="847"/>
         <source>Kazakh</source>
         <translation>ភាសាកាហ្សាក់ស្ថាន</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="161"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="857"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="862"/>
         <source>Ukrainian</source>
         <translation>ភាសាអ៊ុយក្រែន</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="166"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="835"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="840"/>
         <source>German</source>
         <translation>ភាសាអាឡឺម៉ង់</translation>
     </message>
@@ -6055,7 +6055,7 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="176"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="832"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="837"/>
         <source>Farsi</source>
         <translation>ភាសាហ្វាស៊ី</translation>
     </message>
@@ -6066,43 +6066,43 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="186"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="838"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="843"/>
         <source>Hebrew</source>
         <translation>ភាសាហេព្រើរ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="191"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="845"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="850"/>
         <source>Polish</source>
         <translation>ភាសាប៉ូឡូញ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="196"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="856"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="861"/>
         <source>Turkish</source>
         <translation>ភាសាទួរគី</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="201"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="839"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="844"/>
         <source>Hungarian</source>
         <translation>ភាសាហុងគ្រី</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="206"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="841"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="846"/>
         <source>Italian</source>
         <translation>ភាសាអ៊ីតាលី</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="211"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="825"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="830"/>
         <source>Azerbaijani</source>
         <translation>ភាសាអាស៊ែបៃហ្សង់</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="216"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="855"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="860"/>
         <source>Telugu</source>
         <translation>ភាសាតេលូហ្គូ</translation>
     </message>
@@ -6113,151 +6113,156 @@ The application will start in few seconds.</source>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="226"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="852"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="857"/>
         <source>Slovenian</source>
         <translation>ភាសាស្លូវេនី</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="231"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="854"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="859"/>
         <source>Swedish</source>
         <translation>ភាសាស៊ុយអែត</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="236"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="829"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="834"/>
         <source>Dutch</source>
         <translation>ភាសាហូឡង់</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="241"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="850"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="855"/>
         <source>Serbian</source>
         <translation>ភាសាស៊ែប៊ី</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="246"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="822"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="827"/>
         <source>Arabic</source>
         <translation>ភាសាអារ៉ាប់</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="251"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="836"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="841"/>
         <source>Greek</source>
         <translation>ភាសាក្រិក</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="256"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="834"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="839"/>
         <source>Galician</source>
         <translation>ភាសាហ្គាលីស</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="261"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="828"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="833"/>
         <source>Danish</source>
         <translation>ភាសាដាណឺម៉ាក</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="266"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="826"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="831"/>
         <source>Belarusian</source>
         <translation>ភាសាបេឡារុស្ស</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="656"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="271"/>
+        <source>Cambodian</source>
+        <translation>ភាសាខ្មែរ</translation>
+    </message>
+    <message>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="661"/>
         <source>Choose backups saving folder</source>
         <translation>ជ្រើសរើសប្រអប់ផ្ទុកឯកសារដើម្បីរក្សាទុកឯកសារបម្រុង</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="823"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="828"/>
         <source>Armenian (Eastern)</source>
         <translation>ភាសាអាមេនី (ខាងកើត)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="824"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="829"/>
         <source>Armenian (Western)</source>
         <translation>ភាសាអាមេនី (លោកខាងលិច)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="827"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="832"/>
         <source>Catalan</source>
         <translation>ភាសាកាតាឡាន</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="830"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="835"/>
         <source>English (GB)</source>
         <translation>ភាសាអង់គ្លេស (GB)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="831"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="836"/>
         <source>English (US)</source>
         <translation>ភាសាអង់គ្លេស (អាមេរិក)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="837"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="842"/>
         <source>Greek (Polythonic)</source>
         <translation>ភាសាក្រិក (ពហុភាសា)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="840"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="845"/>
         <source>Indonesian</source>
         <translation>ភាសាឥណ្ឌូនេស៊ី</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="843"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="848"/>
         <source>Lithuanian</source>
         <translation>ភាសាលីទុយអានី</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="844"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="849"/>
         <source>Macedonian</source>
         <translation>ភាសាម៉ាសេដូនៀ</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="846"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="851"/>
         <source>Portuguese (Brazil)</source>
         <translation>ភាសាព័រទុយហ្គាល់ (ប្រេស៊ីល)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="847"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="852"/>
         <source>Portuguese (Portugal)</source>
         <translation>ភាសាព័រទុយហ្គាល់ (ព័រទុយហ្គាល់)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="848"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="853"/>
         <source>Russian with Yo</source>
         <translation>ភាសារុស្សីជាមួយ Yo</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="851"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="856"/>
         <source>Serbian (Latin script)</source>
         <translation>ភាសាស៊ែប៊ី (អក្សរឡាតាំង)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="874"/>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="881"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="879"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="886"/>
         <source>Common</source>
         <translation>ទូទៅ</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="875"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="880"/>
         <source>Modules</source>
         <translation>បែបបទ</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="882"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="887"/>
         <source>Editing</source>
         <translation>ការកែសម្រួល</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="883"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="888"/>
         <source>Shortcuts</source>
-        <translation>ប៊ុយតុងកាត់</translation>
+        <translation>ប៊ូតុងកាត់</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="917"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Settings/SettingsView.cpp" line="922"/>
         <source>Autosave works very accuracy. It saves project every 3 seconds if you don&apos;t use mouse or keyboard, 
 but if you work with no terminations it saves project every %1 minutes.</source>
         <translation>ការរក្សាទុកដោយស្វ័យប្រវត្តិ ដំណើរការដោយភាពត្រឹមត្រូវណាស់។ វារក្សាទុកគម្រោងរៀងរាល់ ៣ វិនាទីប្រសិនបើអ្នកមិនប្រើកណ្តុរឬក្តារចុច
@@ -6322,7 +6327,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="302"/>
         <source>Report settings</source>
-        <translation>រាយការណ៍ការកំណត់</translation>
+        <translation>ការកំណត់រាយការណ៍</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="305"/>
@@ -6332,7 +6337,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="307"/>
         <source>Save report to file</source>
-        <translation>រក្សាទុករបាយការណ៍ទៅឯកសារ</translation>
+        <translation>រក្សាទុករបាយការណ៍ជាឯកសារ</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/Statistics/StatisticsView.cpp" line="309"/>
@@ -6472,7 +6477,7 @@ but if you work with no terminations it saves project every %1 minutes.</source>
     <message>
         <location filename="../../../../libs/webloader/src/WebLoader.cpp" line="311"/>
         <source>Sorry, we have some error while loading. Error is: %1</source>
-        <translation>សូមអភ័យទោស យើងមានបញ្ហាខ្លះពេលកំពុងផ្ទុក។ កំហុសគឺ: %1</translation>
+        <translation>សូមអភ័យទោស យើងមានបញ្ហាខ្លះពេលកំពុងទាញ។ កំហុសគឺ: %1</translation>
     </message>
 </context>
 </TS>
