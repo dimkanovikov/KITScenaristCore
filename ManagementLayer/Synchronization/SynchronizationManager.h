@@ -188,6 +188,16 @@ namespace ManagementLayer
          */
         void fakeLogin();
 
+        /**
+         * @brief Ожидаем завершения выполнения всех операций
+         */
+        void wait();
+
+        /**
+         * @brief Перезапуск работы менеджера после ожидания и остановки
+         */
+        void restart();
+
     signals:
         /**
          * @brief Авторизация пройдена успешно
@@ -388,6 +398,20 @@ namespace ManagementLayer
          * @brief Активно ли соединение с интернетом
          */
         InternetStatus m_internetConnectionStatus = Undefined;
+
+        /**
+         * @brief Состояние менеджера синхронизации - выполняет ли он какую-либо из операций
+         *        и находится ли он в состоянии ожидания завершения всех операций
+         */
+        struct {
+            struct {
+                bool inFullDataSync = false;
+                bool inFullScriptSync = false;
+                bool inWorkDataSync = false;
+                bool inWorkScriptSync = false;
+            } progress;
+            bool isWaiting = false;
+        } m_status;
     };
 }
 

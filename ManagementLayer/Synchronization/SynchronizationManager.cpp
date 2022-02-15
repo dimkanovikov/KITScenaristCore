@@ -32,6 +32,7 @@
 #include <QDebug>
 #include <QDesktopServices>
 #include <QEventLoop>
+#include <QScopedValueRollback>
 #include <QTimer>
 #include <QXmlStreamReader>
 
@@ -949,165 +950,182 @@ void SynchronizationManager::prepareToFullSynchronization()
 
 void SynchronizationManager::aboutFullSyncScenario()
 {
+    if (!isCanSync()) {
+        return;
+    }
+
+    //
+    // Если менеджер ожидает завершения выполнения синхронизации, то не запускаем новую операцию
+    //
+    if (m_status.isWaiting) {
+        return;
+    }
+
+    //
+    // Не допускаем множественного выполнения функции
+    //
     const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
     if (!canRun) {
         return;
     }
 
-    if (isCanSync()) {
-        //
-        // Запоминаем время синхронизации изменений сценария
-        // Если синхронизировать данные удастся, то будем использовать это время для отправки
-        // изменений произведённых с этого момента
-        //
-        const QString lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
-        const qint64 lastChangesLoadDatetime = QDateTime::currentMSecsSinceEpoch();
+    //
+    // На время выолнения фиксируем информацию о том, что выполняется синхронизация
+    //
+    const QScopedValueRollback<bool> progressLocker(m_status.progress.inFullScriptSync, true);
 
-        //
-        // Получить список патчей проекта
-        //
-        NetworkRequest loader;
-        loader.setRequestMethod(NetworkRequestMethod::Post);
-        loader.clearRequestAttributes();
-        loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
-        loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
-        QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_LIST);
+    //
+    // Запоминаем время синхронизации изменений сценария
+    // Если синхронизировать данные удастся, то будем использовать это время для отправки
+    // изменений произведённых с этого момента
+    //
+    const QString lastChangesSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
+    const qint64 lastChangesLoadDatetime = QDateTime::currentMSecsSinceEpoch();
 
-
-        QXmlStreamReader changesReader(response);
-        if (!isOperationSucceed(changesReader)) {
-            return;
-        }
+    //
+    // Получить список патчей проекта
+    //
+    NetworkRequest loader;
+    loader.setRequestMethod(NetworkRequestMethod::Post);
+    loader.clearRequestAttributes();
+    loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
+    loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
+    QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_LIST);
 
 
-        //
-        // ... считываем изменения (uuid)
-        //
-        QList<QPair<QString, QString>> remoteChanges;
-        while (!changesReader.atEnd()) {
-            changesReader.readNextStartElement();
-            if (changesReader.name() == "change") {
-                QPair<QString, QString> change = { changesReader.attributes().value(SCENARIO_CHANGE_UUID).toString(),
-                                                   changesReader.attributes().value(SCENARIO_CHANGE_DATETIME).toString() };
-                if (!change.first.isEmpty() && !change.second.isEmpty()) {
-                    remoteChanges.append(change);
-                }
+    QXmlStreamReader changesReader(response);
+    if (!isOperationSucceed(changesReader)) {
+        return;
+    }
+
+
+    //
+    // ... считываем изменения (uuid)
+    //
+    QList<QPair<QString, QString>> remoteChanges;
+    while (!changesReader.atEnd()) {
+        changesReader.readNextStartElement();
+        if (changesReader.name() == "change") {
+            QPair<QString, QString> change = { changesReader.attributes().value(SCENARIO_CHANGE_UUID).toString(),
+                                               changesReader.attributes().value(SCENARIO_CHANGE_DATETIME).toString() };
+            if (!change.first.isEmpty() && !change.second.isEmpty()) {
+                remoteChanges.append(change);
             }
         }
+    }
 
 
+    //
+    // Сформируем список изменений сценария хранящихся локально
+    //
+    QList<QPair<QString, QString>> localChanges = StorageFacade::scenarioChangeStorage()->uuids();
+    //
+    // ... обрабатываем крайний случай, если пользователь сделал изменения, они не успели синхронизироваться
+    //     и пропал интернет, таким образом они не смогут быть извлечены из БД, но могут из списка текущих правок
+    //     + сюда же относится кейс, когда не включено автосохранение, и есть накопленные, но не сохранённые
+    //       изменения от других пользователей, чтобы они повторно не применились
+    //
+    for (const auto& uuid : StorageFacade::scenarioChangeStorage()->newUuids()) {
+        if (!localChanges.contains(uuid)) {
+            localChanges.append(uuid);
+        }
+    }
+    //
+    // ... отфильтруем изменения, которых в облаке ещё нет
+    //
+    QList<QPair<QString,QString>> changesForUpload;
+    for (const auto& change : localChanges) {
         //
-        // Сформируем список изменений сценария хранящихся локально
+        // ... отправлять нужно, если такого изменения нет на сайте
         //
-        QList<QPair<QString, QString>> localChanges = StorageFacade::scenarioChangeStorage()->uuids();
-        //
-        // ... обрабатываем крайний случай, если пользователь сделал изменения, они не успели синхронизироваться
-        //     и пропал интернет, таким образом они не смогут быть извлечены из БД, но могут из списка текущих правок
-        //     + сюда же относится кейс, когда не включено автосохранение, и есть накопленные, но не сохранённые
-        //       изменения от других пользователей, чтобы они повторно не применились
-        //
-        for (const auto& uuid : StorageFacade::scenarioChangeStorage()->newUuids()) {
-            if (!localChanges.contains(uuid)) {
-                localChanges.append(uuid);
+        const bool needUpload = !remoteChanges.contains(change);
+
+        if (needUpload) {
+            changesForUpload.append(change);
+        }
+    }
+
+    //
+    // Скачать все изменения, которых ещё нет
+    //
+    {
+        QStringList changesForDownload;
+        for (const auto& change : remoteChanges) {
+            //
+            // ... сохранять нужно, если такого изменения нет в локальной БД
+            //
+            const bool needDownload = !localChanges.contains(change);
+
+            if (needDownload) {
+                changesForDownload.append(QString("%1#%2").arg(change.first, change.second));
             }
         }
         //
-        // ... отфильтруем изменения, которых в облаке ещё нет
+        // ... скачиваем
         //
-        QList<QPair<QString,QString>> changesForUpload;
-        for (const auto& change : localChanges) {
-            //
-            // ... отправлять нужно, если такого изменения нет на сайте
-            //
-            const bool needUpload = !remoteChanges.contains(change);
-
-            if (needUpload) {
-                changesForUpload.append(change);
+        const QList<QHash<QString, QString> > changes =
+                downloadScenarioChanges(changesForDownload.join(";"));
+        //
+        // ... применять будет пачками
+        //
+        QList<QString> cleanPatches;
+        QList<QString> draftPatches;
+        QHash<QString, QString> change;
+        foreach (change, changes) {
+            if (change.isEmpty()) {
+                continue;
             }
+
+            if (change.value(SCENARIO_CHANGE_IS_DRAFT).toInt()) {
+                draftPatches.append(change.value(SCENARIO_CHANGE_REDO_PATCH));
+            } else {
+                cleanPatches.append(change.value(SCENARIO_CHANGE_REDO_PATCH));
+            }
+        }
+        //
+        // ... применяем
+        //     в этот момент, список идентификаторов для отправки может быть изменён. Это будет
+        //     зависеть от того, удастся ли их слить с версией, находящейся на сервере или нет
+        //
+        if (!cleanPatches.isEmpty()) {
+            emit applyPatchesRequested(cleanPatches, IS_CLEAN, changesForUpload);
+        }
+        if (!draftPatches.isEmpty()) {
+            emit applyPatchesRequested(draftPatches, IS_DRAFT, changesForUpload);
         }
 
         //
-        // Скачать все изменения, которых ещё нет
+        // ... добавляем
         //
-        {
-            QStringList changesForDownload;
-            for (const auto& change : remoteChanges) {
-                //
-                // ... сохранять нужно, если такого изменения нет в локальной БД
-                //
-                const bool needDownload = !localChanges.contains(change);
-
-                if (needDownload) {
-                    changesForDownload.append(QString("%1#%2").arg(change.first, change.second));
-                }
-            }
-            //
-            // ... скачиваем
-            //
-            const QList<QHash<QString, QString> > changes =
-                    downloadScenarioChanges(changesForDownload.join(";"));
-            //
-            // ... применять будет пачками
-            //
-            QList<QString> cleanPatches;
-            QList<QString> draftPatches;
-            QHash<QString, QString> change;
-            foreach (change, changes) {
-                if (change.isEmpty()) {
-                    continue;
-                }
-
-                if (change.value(SCENARIO_CHANGE_IS_DRAFT).toInt()) {
-                    draftPatches.append(change.value(SCENARIO_CHANGE_REDO_PATCH));
-                } else {
-                    cleanPatches.append(change.value(SCENARIO_CHANGE_REDO_PATCH));
-                }
-            }
-            //
-            // ... применяем
-            //     в этот момент, список идентификаторов для отправки может быть изменён. Это будет
-            //     зависеть от того, удастся ли их слить с версией, находящейся на сервере или нет
-            //
-            if (!cleanPatches.isEmpty()) {
-                emit applyPatchesRequested(cleanPatches, IS_CLEAN, changesForUpload);
-            }
-            if (!draftPatches.isEmpty()) {
-                emit applyPatchesRequested(draftPatches, IS_DRAFT, changesForUpload);
+        foreach (change, changes) {
+            if (change.isEmpty()) {
+                continue;
             }
 
-            //
-            // ... добавляем
-            //
-            foreach (change, changes) {
-                if (change.isEmpty()) {
-                    continue;
-                }
-
-                DataStorageLayer::StorageFacade::scenarioChangeStorage()->append(
-                    change.value(SCENARIO_CHANGE_UUID), change.value(SCENARIO_CHANGE_DATETIME),
-                    change.value(SCENARIO_CHANGE_USERNAME), change.value(SCENARIO_CHANGE_UNDO_PATCH),
-                    change.value(SCENARIO_CHANGE_REDO_PATCH), change.value(SCENARIO_CHANGE_IS_DRAFT).toInt());
-            }
-
-            //
-            // ... сохраняем
-            //
-            DataStorageLayer::StorageFacade::scenarioChangeStorage()->store();
+            DataStorageLayer::StorageFacade::scenarioChangeStorage()->append(
+                change.value(SCENARIO_CHANGE_UUID), change.value(SCENARIO_CHANGE_DATETIME),
+                change.value(SCENARIO_CHANGE_USERNAME), change.value(SCENARIO_CHANGE_UNDO_PATCH),
+                change.value(SCENARIO_CHANGE_REDO_PATCH), change.value(SCENARIO_CHANGE_IS_DRAFT).toInt());
         }
 
+        //
+        // ... сохраняем
+        //
+        DataStorageLayer::StorageFacade::scenarioChangeStorage()->store();
+    }
 
-        //
-        // Отправить на сайт все изменения, которых там нет
-        //
-        const bool changesUploaded = uploadScenarioChanges(changesForUpload);
 
-        //
-        // Обновляем время последней синхронизации, если изменения были отправлены
-        //
-        if (changesUploaded) {
-            m_lastChangesSyncDatetime = lastChangesSyncDatetime;
-            m_lastChangesLoadDatetime = lastChangesLoadDatetime;
-        }
+    //
+    // Отправить на сайт все изменения, которых там нет
+    //
+    const bool changesUploaded = uploadScenarioChanges(changesForUpload);
+
+    //
+    // Обновляем время последней синхронизации, если изменения были отправлены
+    //
+    if (changesUploaded) {
+        m_lastChangesSyncDatetime = lastChangesSyncDatetime;
+        m_lastChangesLoadDatetime = lastChangesLoadDatetime;
     }
 }
 
@@ -1116,226 +1134,423 @@ void SynchronizationManager::aboutWorkSyncScenario()
     //
     // Синхроинизируем, если есть такая возможность и закончена полная синхронизация
     //
-    if (isCanSync()) {
-        //
-        // Защитимся от множественных вызовов
-        //
-        const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
-        if (!canRun) {
-            return;
-        }
+    if (!isCanSync()) {
+        return;
+    }
+
+    //
+    // Если менеджер ожидает завершения выполнения синхронизации, то не запускаем новую операцию
+    //
+    if (m_status.isWaiting) {
+        return;
+    }
+
+    //
+    // Не допускаем множественного выполнения функции
+    //
+    const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
+    if (!canRun) {
+        return;
+    }
 
 #ifdef Q_OS_MAC
-        if (skipIfModal()) {
-            return;
-        }
+    if (skipIfModal()) {
+        return;
+    }
 #endif
 
-        //
-        // Если сценарий ещё не был полностью синхронизирован, делаем это
-        //
-        if (m_lastChangesSyncDatetime.isEmpty()) {
-            aboutFullSyncScenario();
+    //
+    // На время выолнения фиксируем информацию о том, что выполняется синхронизация
+    //
+    const QScopedValueRollback<bool> progressLocker(m_status.progress.inWorkScriptSync, true);
+
+    //
+    // Если сценарий ещё не был полностью синхронизирован, делаем это
+    //
+    if (m_lastChangesSyncDatetime.isEmpty()) {
+        aboutFullSyncScenario();
+    }
+    //
+    // Если синхронизироваться так и не удалось, прерываем выполнение до следующего раза
+    //
+    if (m_lastChangesSyncDatetime.isEmpty()) {
+        return;
+    }
+
+    //
+    // Запоминаем время синхронизации изменений сценария, которое сохраним, в случае успеха
+    //
+    const QString currentChangesSyncDatetime =
+            QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
+
+    //
+    // Определим список собственных изменений для отправки
+    //
+    const QList<QPair<QString, QString>> newChanges =
+            StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime);
+
+    //
+    // Захватываем возможность внесения изменений в сценарий
+    //
+    if (!newChanges.isEmpty()) {
+        NetworkRequest loader;
+        loader.setRequestMethod(NetworkRequestMethod::Post);
+        loader.clearRequestAttributes();
+        loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
+        loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
+        loader.addRequestAttribute(KEY_LOCK_KEY, QDateTime::currentDateTime().toString("yyyyMMddhhmmsszzz"));
+        loader.addRequestAttribute(KEY_SCENARIO_IS_DRAFT, false);
+        QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_LOCK);
+        QXmlStreamReader changesReader(response);
+        if (!isOperationSucceed(changesReader)) {
+            return;
         }
-        //
-        // Если синхронизироваться так и не удалось, прерываем выполнение до следующего раза
-        //
-        if (m_lastChangesSyncDatetime.isEmpty()) {
+    }
+
+    //
+    // В первую очередь необходимо применить загруженные с сервера изменения, в случае, если
+    // изменения текущего пользователя будут конфликтовать с изменениями соавтора, которые уже
+    // в облаке, то изменения текущего откатываются до момента нормализации состояния сценария
+    //
+    // Загружаем и применяем изменения от других пользователей за последние lastMimutes минут,
+    // но как минимум за две минуты, если последние изменения были получены не так давно
+    //
+    {
+        const qint64 currentChangesLoadDatetime = QDateTime::currentMSecsSinceEpoch();
+        const int lastMinutes = 2 + (currentChangesLoadDatetime - m_lastChangesLoadDatetime) / 1000 / 60;
+
+        NetworkRequest loader;
+        loader.setRequestMethod(NetworkRequestMethod::Post);
+        loader.clearRequestAttributes();
+        loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
+        loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
+        loader.addRequestAttribute(KEY_FROM_LAST_MINUTES, lastMinutes);
+        QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_LIST);
+
+        QXmlStreamReader changesReader(response);
+        if (!isOperationSucceed(changesReader)) {
             return;
         }
 
         //
-        // Запоминаем время синхронизации изменений сценария, которое сохраним, в случае успеха
+        // ... считываем uuid'ы новых изменений
         //
-        const QString currentChangesSyncDatetime =
-                QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
-
-        //
-        // Определим список собственных изменений для отправки
-        //
-        const QList<QPair<QString, QString>> newChanges =
-                StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime);
-
-        //
-        // Захватываем возможность внесения изменений в сценарий
-        //
-        if (!newChanges.isEmpty()) {
-            NetworkRequest loader;
-            loader.setRequestMethod(NetworkRequestMethod::Post);
-            loader.clearRequestAttributes();
-            loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
-            loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
-            loader.addRequestAttribute(KEY_LOCK_KEY, QDateTime::currentDateTime().toString("yyyyMMddhhmmsszzz"));
-            loader.addRequestAttribute(KEY_SCENARIO_IS_DRAFT, false);
-            QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_LOCK);
-            QXmlStreamReader changesReader(response);
-            if (!isOperationSucceed(changesReader)) {
-                return;
+        QList<QPair<QString, QString>> remoteChanges;
+        while (!changesReader.atEnd()) {
+            changesReader.readNextStartElement();
+            if (changesReader.name() == "change") {
+                QPair<QString, QString> change = { changesReader.attributes().value("id").toString(),
+                                                   changesReader.attributes().value("datetime").toString() };
+                if (!change.first.isEmpty() && !change.second.isEmpty()) {
+                    remoteChanges.append(change);
+                }
             }
         }
 
         //
-        // В первую очередь необходимо применить загруженные с сервера изменения, в случае, если
-        // изменения текущего пользователя будут конфликтовать с изменениями соавтора, которые уже
-        // в облаке, то изменения текущего откатываются до момента нормализации состояния сценария
+        // ... скачиваем все изменения, которых ещё нет
         //
-        // Загружаем и применяем изменения от других пользователей за последние lastMimutes минут,
-        // но как минимум за две минуты, если последние изменения были получены не так давно
+        QStringList changesForDownload;
+        foreach (const auto& change, remoteChanges) {
+            //
+            // ... сохранять нужно, если такого изменения нет
+            //
+            const bool needDownload =
+                    !DataStorageLayer::StorageFacade::scenarioChangeStorage()->contains(change.first,
+                                                                                        change.second);
+
+            if (needDownload) {
+                changesForDownload.append(QString("%1#%2").arg(change.first, change.second));
+            }
+        }
         //
-        {
-            const qint64 currentChangesLoadDatetime = QDateTime::currentMSecsSinceEpoch();
-            const int lastMinutes = 2 + (currentChangesLoadDatetime - m_lastChangesLoadDatetime) / 1000 / 60;
-
-            NetworkRequest loader;
-            loader.setRequestMethod(NetworkRequestMethod::Post);
-            loader.clearRequestAttributes();
-            loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
-            loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
-            loader.addRequestAttribute(KEY_FROM_LAST_MINUTES, lastMinutes);
-            QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_LIST);
-
-            QXmlStreamReader changesReader(response);
-            if (!isOperationSucceed(changesReader)) {
-                return;
-            }
-
-            //
-            // ... считываем uuid'ы новых изменений
-            //
-            QList<QPair<QString, QString>> remoteChanges;
-            while (!changesReader.atEnd()) {
-                changesReader.readNextStartElement();
-                if (changesReader.name() == "change") {
-                    QPair<QString, QString> change = { changesReader.attributes().value("id").toString(),
-                                                       changesReader.attributes().value("datetime").toString() };
-                    if (!change.first.isEmpty() && !change.second.isEmpty()) {
-                        remoteChanges.append(change);
-                    }
+        // ... скачиваем
+        //
+        const QList<QHash<QString, QString> > changes = downloadScenarioChanges(changesForDownload.join(";"));
+        QHash<QString, QString> change;
+        //
+        // ... применяем
+        //
+        foreach (change, changes) {
+            if (!change.isEmpty()) {
+                if (StorageFacade::scenarioChangeStorage()->contains(change.value(SCENARIO_CHANGE_UUID),
+                                                                     change.value(SCENARIO_CHANGE_DATETIME))) {
+                    continue;
                 }
+
+                const int newChangesSize =
+                        StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime).size();
+                emit applyPatchRequested(change.value(SCENARIO_CHANGE_REDO_PATCH),
+                                         change.value(SCENARIO_CHANGE_IS_DRAFT).toInt(), newChangesSize);
             }
-
-            //
-            // ... скачиваем все изменения, которых ещё нет
-            //
-            QStringList changesForDownload;
-            foreach (const auto& change, remoteChanges) {
-                //
-                // ... сохранять нужно, если такого изменения нет
-                //
-                const bool needDownload =
-                        !DataStorageLayer::StorageFacade::scenarioChangeStorage()->contains(change.first,
-                                                                                            change.second);
-
-                if (needDownload) {
-                    changesForDownload.append(QString("%1#%2").arg(change.first, change.second));
+        }
+        //
+        // ... сохраняем
+        //
+        foreach (change, changes) {
+            if (!change.isEmpty()) {
+                if (StorageFacade::scenarioChangeStorage()->contains(change.value(SCENARIO_CHANGE_UUID),
+                                                                     change.value(SCENARIO_CHANGE_DATETIME))) {
+                    continue;
                 }
-            }
-            //
-            // ... скачиваем
-            //
-            const QList<QHash<QString, QString> > changes = downloadScenarioChanges(changesForDownload.join(";"));
-            QHash<QString, QString> change;
-            //
-            // ... применяем
-            //
-            foreach (change, changes) {
-                if (!change.isEmpty()) {
-                    if (StorageFacade::scenarioChangeStorage()->contains(change.value(SCENARIO_CHANGE_UUID),
-                                                                         change.value(SCENARIO_CHANGE_DATETIME))) {
-                        continue;
-                    }
 
-                    const int newChangesSize =
-                            StorageFacade::scenarioChangeStorage()->newUuids(m_lastChangesSyncDatetime).size();
-                    emit applyPatchRequested(change.value(SCENARIO_CHANGE_REDO_PATCH),
-                                             change.value(SCENARIO_CHANGE_IS_DRAFT).toInt(), newChangesSize);
-                }
-            }
-            //
-            // ... сохраняем
-            //
-            foreach (change, changes) {
-                if (!change.isEmpty()) {
-                    if (StorageFacade::scenarioChangeStorage()->contains(change.value(SCENARIO_CHANGE_UUID),
-                                                                         change.value(SCENARIO_CHANGE_DATETIME))) {
-                        continue;
-                    }
-
-                    StorageFacade::scenarioChangeStorage()->append(
-                        change.value(SCENARIO_CHANGE_UUID), change.value(SCENARIO_CHANGE_DATETIME),
-                        change.value(SCENARIO_CHANGE_USERNAME), change.value(SCENARIO_CHANGE_UNDO_PATCH),
-                        change.value(SCENARIO_CHANGE_REDO_PATCH), change.value(SCENARIO_CHANGE_IS_DRAFT).toInt());
-                }
-            }
-
-            //
-            // Если удалось получить изменения, обновим время последней успешной синхронизации
-            //
-            if (!changes.isEmpty()) {
-                m_lastChangesLoadDatetime = currentChangesLoadDatetime;
+                StorageFacade::scenarioChangeStorage()->append(
+                    change.value(SCENARIO_CHANGE_UUID), change.value(SCENARIO_CHANGE_DATETIME),
+                    change.value(SCENARIO_CHANGE_USERNAME), change.value(SCENARIO_CHANGE_UNDO_PATCH),
+                    change.value(SCENARIO_CHANGE_REDO_PATCH), change.value(SCENARIO_CHANGE_IS_DRAFT).toInt());
             }
         }
 
         //
-        // Отправляем новые изменения только после того, как все изменения полученные с облака
-        // удалось успешно накатить
+        // Если удалось получить изменения, обновим время последней успешной синхронизации
         //
-        {
-            //
-            // Отправляем
-            //
-            const bool changesUploaded = uploadScenarioChanges(newChanges);
-
-            //
-            // Обновляем время последней синхронизации, если изменения были отправлены
-            //
-            if (changesUploaded) {
-                m_lastChangesSyncDatetime = currentChangesSyncDatetime;
-            }
+        if (!changes.isEmpty()) {
+            m_lastChangesLoadDatetime = currentChangesLoadDatetime;
         }
+    }
+
+    //
+    // Отправляем новые изменения только после того, как все изменения полученные с облака
+    // удалось успешно накатить
+    //
+    {
+        //
+        // Отправляем
+        //
+        const bool changesUploaded = uploadScenarioChanges(newChanges);
 
         //
-        // Захватываем возможность внесения изменений в сценарий
+        // Обновляем время последней синхронизации, если изменения были отправлены
         //
-        if (!newChanges.isEmpty()) {
-            NetworkRequest loader;
-            loader.setRequestMethod(NetworkRequestMethod::Post);
-            loader.clearRequestAttributes();
-            loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
-            loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
-            loader.addRequestAttribute(KEY_SCENARIO_IS_DRAFT, false);
-            QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_UNLOCK);
-            QXmlStreamReader changesReader(response);
-            if (!isOperationSucceed(changesReader)) {
-                return;
-            }
+        if (changesUploaded) {
+            m_lastChangesSyncDatetime = currentChangesSyncDatetime;
+        }
+    }
+
+    //
+    // Захватываем возможность внесения изменений в сценарий
+    //
+    if (!newChanges.isEmpty()) {
+        NetworkRequest loader;
+        loader.setRequestMethod(NetworkRequestMethod::Post);
+        loader.clearRequestAttributes();
+        loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
+        loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
+        loader.addRequestAttribute(KEY_SCENARIO_IS_DRAFT, false);
+        QByteArray response = loader.loadSync(URL_SCENARIO_CHANGE_UNLOCK);
+        QXmlStreamReader changesReader(response);
+        if (!isOperationSucceed(changesReader)) {
+            return;
         }
     }
 }
 
 void SynchronizationManager::aboutFullSyncData()
 {
+    if (!isCanSync()) {
+        return;
+    }
+
+    //
+    // Если менеджер ожидает завершения выполнения синхронизации, то не запускаем новую операцию
+    //
+    if (m_status.isWaiting) {
+        return;
+    }
+
+    //
+    // Не допускаем множественного выполнения функции
+    //
     const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
     if (!canRun) {
         return;
     }
 
-    if (isCanSync()) {
+    //
+    // На время выолнения фиксируем информацию о том, что выполняется синхронизация
+    //
+    const QScopedValueRollback<bool> progressLocker(m_status.progress.inFullDataSync, true);
+
+    //
+    // Запоминаем время синхронизации изменений сценария
+    // Если синхронизировать данные удастся, то будем использовать это время для отправки
+    // изменений произведённых с этого момента
+    //
+    const QString lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
+    const qint64 lastDataLoadDatetime = QDateTime::currentMSecsSinceEpoch();
+
+    //
+    // Получить список всех изменений данных на сервере
+    //
+    NetworkRequest loader;
+    loader.setRequestMethod(NetworkRequestMethod::Post);
+    loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
+    loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
+    QByteArray response = loader.loadSync(URL_SCENARIO_DATA_LIST);
+
+    QXmlStreamReader changesReader(response);
+    if (!isOperationSucceed(changesReader)) {
+        return;
+    }
+
+    //
+    // ... считываем изменения (uuid)
+    //
+    QList<QString> remoteChanges;
+    changesReader.readNextStartElement();
+    changesReader.readNextStartElement(); // changes
+    while (!changesReader.atEnd()) {
+        changesReader.readNextStartElement();
+        if (changesReader.name() == "change") {
+            const QString changeUuid = changesReader.attributes().value("id").toString();
+            if (!changeUuid.isEmpty()) {
+                remoteChanges.append(changeUuid);
+            }
+        }
+    }
+
+    //
+    // Сформируем список изменений сценария хранящихся локально
+    //
+    QList<QString> localChanges = StorageFacade::databaseHistoryStorage()->history(QString());
+
+    //
+    // Отправить на сайт все версии, которых на сайте нет
+    //
+    {
+        QList<QString> changesForUpload;
+        foreach (const QString& changeUuid, localChanges) {
+            //
+            // ... отправлять нужно, если такого изменения нет на сайте
+            //
+            const bool needUpload = !remoteChanges.contains(changeUuid);
+
+            if (needUpload) {
+                changesForUpload.append(changeUuid);
+            }
+        }
         //
-        // Запоминаем время синхронизации изменений сценария
-        // Если синхронизировать данные удастся, то будем использовать это время для отправки
-        // изменений произведённых с этого момента
+        // ... отправляем
         //
-        const QString lastDataSyncDatetime = QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
-        const qint64 lastDataLoadDatetime = QDateTime::currentMSecsSinceEpoch();
+        uploadScenarioData(changesForUpload);
+    }
+
+
+    //
+    // Сохранить в локальной БД все изменения, которых в ней нет
+    //
+    {
+        QStringList changesForDownloadAndSave;
+        foreach (const QString& changeUuid, remoteChanges) {
+            //
+            // ... сохранять нужно, если такого изменения нет в локальной БД
+            //
+            bool needSave = !localChanges.contains(changeUuid);
+
+            if (needSave) {
+                changesForDownloadAndSave.append(changeUuid);
+            }
+        }
+        //
+        // ... скачиваем и сохраняем
+        //
+        downloadAndSaveScenarioData(changesForDownloadAndSave.join(";"));
+    }
+
+    //
+    // Синхронизация удалась, запомним её время
+    //
+    m_lastDataSyncDatetime = lastDataSyncDatetime;
+    m_lastDataLoadDatetime = lastDataLoadDatetime;
+}
+
+void SynchronizationManager::aboutWorkSyncData()
+{
+    //
+    // Синхроинизируем, если есть такая возможность и закончена полная синхронизация
+    //
+    if (!isCanSync()) {
+        return;
+    }
+
+    //
+    // Если менеджер ожидает завершения выполнения синхронизации, то не запускаем новую операцию
+    //
+    if (m_status.isWaiting) {
+        return;
+    }
+
+    //
+    // Не допускаем множественного выполнения функции
+    //
+    const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
+    if (!canRun) {
+        return;
+    }
+
+#ifdef Q_OS_MAC
+    if (skipIfModal()) {
+        return;
+    }
+#endif
+
+    //
+    // На время выолнения фиксируем информацию о том, что выполняется синхронизация
+    //
+    const QScopedValueRollback<bool> progressLocker(m_status.progress.inWorkDataSync, true);
+
+    //
+    // Если данные ещё не были полностью синхронизирован, делаем это
+    //
+    if (m_lastDataSyncDatetime.isEmpty()) {
+        aboutFullSyncData();
+    }
+    //
+    // Если синхронизироваться так и не удалось, прерываем выполнение до следующего раза
+    //
+    if (m_lastDataSyncDatetime.isEmpty()) {
+        return;
+    }
+
+    //
+    // Отправляем новые изменения
+    //
+    {
+        //
+        // Запоминаем время синхронизации изменений данных сценария
+        //
+        const QString currentDataSyncDatetime =
+                QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
 
         //
-        // Получить список всех изменений данных на сервере
+        // Отправляем
         //
+        const QList<QString> newChanges =
+                StorageFacade::databaseHistoryStorage()->history(m_lastDataSyncDatetime);
+        const bool dataUploaded = uploadScenarioData(newChanges);
+
+        //
+        // Обновляем время последней синхронизации, если данные были отправлены
+        //
+        if (dataUploaded) {
+            m_lastDataSyncDatetime = currentDataSyncDatetime;
+        }
+    }
+
+    //
+    // Загружаем и применяем изменения от других пользователей за последние lastMimutes минут,
+    // но как минимум за две минуты, если последние изменения были получены не так давно
+    //
+    {
+        const qint64 currentDataLoadDatetime = QDateTime::currentMSecsSinceEpoch();
+        const int lastMinutes = 2 + (currentDataLoadDatetime - m_lastDataLoadDatetime) / 1000 / 60;
+
         NetworkRequest loader;
         loader.setRequestMethod(NetworkRequestMethod::Post);
+        loader.clearRequestAttributes();
         loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
         loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
+        loader.addRequestAttribute(KEY_FROM_LAST_MINUTES, lastMinutes);
         QByteArray response = loader.loadSync(URL_SCENARIO_DATA_LIST);
 
         QXmlStreamReader changesReader(response);
@@ -1344,11 +1559,9 @@ void SynchronizationManager::aboutFullSyncData()
         }
 
         //
-        // ... считываем изменения (uuid)
+        // ... считываем uuid'ы новых изменений
         //
         QList<QString> remoteChanges;
-        changesReader.readNextStartElement();
-        changesReader.readNextStartElement(); // changes
         while (!changesReader.atEnd()) {
             changesReader.readNextStartElement();
             if (changesReader.name() == "change") {
@@ -1360,180 +1573,30 @@ void SynchronizationManager::aboutFullSyncData()
         }
 
         //
-        // Сформируем список изменений сценария хранящихся локально
+        // ... скачиваем все изменения, которых ещё нет
         //
-        QList<QString> localChanges = StorageFacade::databaseHistoryStorage()->history(QString());
-
-        //
-        // Отправить на сайт все версии, которых на сайте нет
-        //
-        {
-            QList<QString> changesForUpload;
-            foreach (const QString& changeUuid, localChanges) {
-                //
-                // ... отправлять нужно, если такого изменения нет на сайте
-                //
-                const bool needUpload = !remoteChanges.contains(changeUuid);
-
-                if (needUpload) {
-                    changesForUpload.append(changeUuid);
-                }
-            }
+        QStringList changesForDownload;
+        foreach (const QString& changeUuid, remoteChanges) {
             //
-            // ... отправляем
+            // ... сохранять нужно, если такого изменения нет
             //
-            uploadScenarioData(changesForUpload);
-        }
+            const bool needDownload =
+                    !DataStorageLayer::StorageFacade::databaseHistoryStorage()->contains(changeUuid);
 
-
-        //
-        // Сохранить в локальной БД все изменения, которых в ней нет
-        //
-        {
-            QStringList changesForDownloadAndSave;
-            foreach (const QString& changeUuid, remoteChanges) {
-                //
-                // ... сохранять нужно, если такого изменения нет в локальной БД
-                //
-                bool needSave = !localChanges.contains(changeUuid);
-
-                if (needSave) {
-                    changesForDownloadAndSave.append(changeUuid);
-                }
-            }
-            //
-            // ... скачиваем и сохраняем
-            //
-            downloadAndSaveScenarioData(changesForDownloadAndSave.join(";"));
-        }
-
-        //
-        // Синхронизация удалась, запомним её время
-        //
-        m_lastDataSyncDatetime = lastDataSyncDatetime;
-        m_lastDataLoadDatetime = lastDataLoadDatetime;
-    }
-}
-
-void SynchronizationManager::aboutWorkSyncData()
-{
-    //
-    // Синхроинизируем, если есть такая возможность и закончена полная синхронизация
-    //
-    if (isCanSync()) {
-        //
-        // Защитимся от множественных вызовов
-        //
-        const auto canRun = RunOnce::tryRun(Q_FUNC_INFO);
-        if (!canRun) {
-            return;
-        }
-
-#ifdef Q_OS_MAC
-        if (skipIfModal()) {
-            return;
-        }
-#endif
-
-        //
-        // Если данные ещё не были полностью синхронизирован, делаем это
-        //
-        if (m_lastDataSyncDatetime.isEmpty()) {
-            aboutFullSyncData();
-        }
-        //
-        // Если синхронизироваться так и не удалось, прерываем выполнение до следующего раза
-        //
-        if (m_lastDataSyncDatetime.isEmpty()) {
-            return;
-        }
-
-        //
-        // Отправляем новые изменения
-        //
-        {
-            //
-            // Запоминаем время синхронизации изменений данных сценария
-            //
-            const QString currentDataSyncDatetime =
-                    QDateTime::currentDateTimeUtc().toString("yyyy-MM-dd hh:mm:ss:zzz");
-
-            //
-            // Отправляем
-            //
-            const QList<QString> newChanges =
-                    StorageFacade::databaseHistoryStorage()->history(m_lastDataSyncDatetime);
-            const bool dataUploaded = uploadScenarioData(newChanges);
-
-            //
-            // Обновляем время последней синхронизации, если данные были отправлены
-            //
-            if (dataUploaded) {
-                m_lastDataSyncDatetime = currentDataSyncDatetime;
+            if (needDownload) {
+                changesForDownload.append(changeUuid);
             }
         }
+        //
+        // ... скачиваем и сохраняем
+        //
+        downloadAndSaveScenarioData(changesForDownload.join(";"));
 
         //
-        // Загружаем и применяем изменения от других пользователей за последние lastMimutes минут,
-        // но как минимум за две минуты, если последние изменения были получены не так давно
+        // Если удалось получить изменения, обновим время последней успешной синхронизации
         //
-        {
-            const qint64 currentDataLoadDatetime = QDateTime::currentMSecsSinceEpoch();
-            const int lastMinutes = 2 + (currentDataLoadDatetime - m_lastDataLoadDatetime) / 1000 / 60;
-
-            NetworkRequest loader;
-            loader.setRequestMethod(NetworkRequestMethod::Post);
-            loader.clearRequestAttributes();
-            loader.addRequestAttribute(KEY_SESSION_KEY, m_sessionKey);
-            loader.addRequestAttribute(KEY_PROJECT, ProjectsManager::currentProject().id());
-            loader.addRequestAttribute(KEY_FROM_LAST_MINUTES, lastMinutes);
-            QByteArray response = loader.loadSync(URL_SCENARIO_DATA_LIST);
-
-            QXmlStreamReader changesReader(response);
-            if (!isOperationSucceed(changesReader)) {
-                return;
-            }
-
-            //
-            // ... считываем uuid'ы новых изменений
-            //
-            QList<QString> remoteChanges;
-            while (!changesReader.atEnd()) {
-                changesReader.readNextStartElement();
-                if (changesReader.name() == "change") {
-                    const QString changeUuid = changesReader.attributes().value("id").toString();
-                    if (!changeUuid.isEmpty()) {
-                        remoteChanges.append(changeUuid);
-                    }
-                }
-            }
-
-            //
-            // ... скачиваем все изменения, которых ещё нет
-            //
-            QStringList changesForDownload;
-            foreach (const QString& changeUuid, remoteChanges) {
-                //
-                // ... сохранять нужно, если такого изменения нет
-                //
-                const bool needDownload =
-                        !DataStorageLayer::StorageFacade::databaseHistoryStorage()->contains(changeUuid);
-
-                if (needDownload) {
-                    changesForDownload.append(changeUuid);
-                }
-            }
-            //
-            // ... скачиваем и сохраняем
-            //
-            downloadAndSaveScenarioData(changesForDownload.join(";"));
-
-            //
-            // Если удалось получить изменения, обновим время последней успешной синхронизации
-            //
-            if (!changesForDownload.isEmpty()) {
-                m_lastDataLoadDatetime = currentDataLoadDatetime;
-            }
+        if (!changesForDownload.isEmpty()) {
+            m_lastDataLoadDatetime = currentDataLoadDatetime;
         }
     }
 }
@@ -1675,6 +1738,23 @@ void SynchronizationManager::fakeLogin()
                                            SettingsStorage::ApplicationSettings).toULongLong();
         emit subscriptionInfoLoaded(m_isSubscriptionActive, dateTransform(date), usedSpace, availableSpace);
     }
+}
+
+void SynchronizationManager::wait()
+{
+    m_status.isWaiting = true;
+
+    while (m_status.progress.inFullDataSync
+           || m_status.progress.inFullScriptSync
+           || m_status.progress.inWorkDataSync
+           || m_status.progress.inWorkScriptSync) {
+        QApplication::processEvents();
+    }
+}
+
+void SynchronizationManager::restart()
+{
+    m_status.isWaiting = false;
 }
 
 bool SynchronizationManager::isOperationSucceed(QXmlStreamReader& _responseReader)
