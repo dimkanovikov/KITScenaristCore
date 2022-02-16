@@ -540,17 +540,6 @@ QMenu* ScenarioTextEdit::createContextMenu(const QPoint& _pos, QWidget* _parent)
     QMenu* menu = CompletableTextEdit::createContextMenu(_pos, _parent);
 
     //
-    // Удаляем некоторые возможности для режима только чтения
-    //
-    if (isReadOnly()) {
-        for (auto action : menu->actions()) {
-            if (action->text() == QWidgetTextControl::tr("&Copy")) {
-                action->setVisible(false);
-            }
-        }
-    }
-
-    //
     // Добавляем действия рецензирования в меню
     //
     if (!m_reviewContextMenuActions.isEmpty() && textCursor().hasSelection()) {
@@ -822,6 +811,7 @@ void ScenarioTextEdit::keyPressEvent(QKeyEvent* _event)
 #endif
 
     if (isReadOnly()) {
+        CompletableTextEdit::keyPressEvent(_event);
         return;
     }
 
