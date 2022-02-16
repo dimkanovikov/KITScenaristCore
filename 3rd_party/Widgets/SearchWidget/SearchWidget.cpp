@@ -160,7 +160,6 @@ void SearchWidget::initView(bool _showTypesCombo)
     m_replaceText->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 
     m_replaceOne->setText(tr("Replace"));
-    m_replaceAll->setFixedWidth(50);
     m_replaceAll->setText(tr("All"));
 
     QHBoxLayout* layout = new QHBoxLayout;

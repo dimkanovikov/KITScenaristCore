@@ -4742,7 +4742,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../../3rd_party/Widgets/SearchWidget/SearchWidget.cpp" line="164"/>
         <source>All</source>
-        <translation>Alle ersetzen</translation>
+        <translation>Alle</translation>
     </message>
 </context>
 <context>
