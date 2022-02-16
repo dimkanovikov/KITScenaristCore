@@ -5053,7 +5053,7 @@ el mejor programa para crear historias!</translation>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="373"/>
         <source>Projects from kitscenarist.ru</source>
-        <translation>Projecttos desde kitscenarist.ru</translation>
+        <translation>Proyecto desde kitscenarist.ru</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/UserInterfaceLayer/StartUp/StartUpView.ui" line="267"/>
