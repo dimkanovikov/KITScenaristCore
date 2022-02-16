@@ -145,14 +145,15 @@ void ScriptBookmarksModel::removeBookmark(int _position)
     }
 
     const int bookmarkRow = bookmarksIter.value();
-    beginRemoveRows(QModelIndex(), bookmarkRow, bookmarkRow);
-    m_bookmarks.removeAt(bookmarksIter.value());
+    m_bookmarks.removeAt(bookmarkRow);
+
     bookmarksIter = m_bookmarksMap.erase(bookmarksIter);
-    //
     while (bookmarksIter != m_bookmarksMap.end()) {
         *bookmarksIter -= 1;
         ++bookmarksIter;
     }
+
+    beginRemoveRows(QModelIndex(), bookmarkRow, bookmarkRow);
     endRemoveRows();
 }
 
