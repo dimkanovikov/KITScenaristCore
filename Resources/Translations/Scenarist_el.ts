@@ -1747,17 +1747,17 @@ Türkçe: Recep Burak Yak
 <context>
     <name>ManagementLayer::ApplicationManager</name>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="115"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="110"/>
         <source> - changed</source>
         <translation> - άλλαξε</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="351"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="350"/>
         <source>File format not supported</source>
         <translation>Η μορφή αρχείου δεν υποστηρίζεται</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="352"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="351"/>
         <source>Microsoft &lt;b&gt;DOC&lt;/b&gt; files are not supported. You need save it to &lt;b&gt;DOCX&lt;/b&gt; file and reimport.</source>
         <translation>Αρχεία DOC της Microsoft δεν υποστηρίζονται. Πρέπει να το αποθηκεύσετε ως DOCX και να το επανεισάγετε.</translation>
     </message>
@@ -1777,64 +1777,64 @@ Türkçe: Recep Burak Yak
         <translation>Δεν μπορεί να γίνει εγγραφή στο αρχείο. Ελέξτε τις άδειες εγγραφής στον επιλεγμένο φάκελο. Παρακαλώ επιλέξτε άλλο φάκελο.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="463"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="464"/>
         <source>Create project error</source>
         <translation>Σφάλμα κατά τη δημιουργία έργου</translation>
     </message>
     <message>
         <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="507"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="835"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="935"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1048"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="837"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="939"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1058"/>
         <source>Can&apos;t open project file</source>
         <translation>Δεν μπορεί να ανοίξει το αρχείο του έργου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="547"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="546"/>
         <source>Choose file to save project</source>
         <translation>Επιλογή αρχείου για αποθήκευση έργου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="549"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="813"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="547"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="816"/>
         <source>Scenarist project files (*%1)</source>
         <translation>Αρχεία έργου Scenarist (*%1)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="608"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="703"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="724"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="606"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="706"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="730"/>
         <source>Saving error</source>
         <translation>Σφάλμα κατά την αποθήκευση</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="609"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="607"/>
         <source>Can&apos;t save project as &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Please check permissions and retry.</source>
         <translation>Το έργο δεν μπορεί να αποθηκευθεί ως &lt;b&gt;%1&lt;/b&gt;.&lt;br/&gt; Παρακαλώ ελέγξτε τις άδειες και ξαναπροσπαθήστε.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="704"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="707"/>
         <source>Can&apos;t write your changes to the project. There is a internal database error: %1 Please check, if this file exists and if you have permissions to write. Retry (to save)?</source>
         <translation>Δεν μπορούν να εγγραφούν οι αλλαγές σας στο έργο. Υπάρχει σφάλμα στην εσωτερική βάση δεδομένων. %1 Παρακαλώ ελέγξτε, αν το αρχείο υπάρχει και αν έχετε άδεια εγγραφής. Θέλετε να ξαναπροσπαθήσετε;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="725"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="731"/>
         <source>Can&apos;t write your changes to project located at &lt;b&gt;%1&lt;/b&gt;, because the file doesn&apos;t exist. Please move the file back and retry saving. Retry saving</source>
         <translation>Δεν μπορούν να εγγραφούν οι αλλαγές σας στο έργο που βρίσκεται στο &lt;b&gt;%1&lt;/b&gt;, γιατί το αρχείο δεν υπάρχει. Παρακαλώ επαναφέρετε το αρχείο στη θέση του και ξαναπροσπαθήστε. Θέλετε να ξαναπροσπαθήσετε;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="811"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="815"/>
         <source>Choose project file to open</source>
         <translation>Επιλογή αρχείου έργου για άνοιγμα</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="836"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="936"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="839"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="941"/>
         <source>Ignore and try to open project?</source>
         <translation>Αγνόηση και προσπάθεια για άνοιγμα ξανά;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="956"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="964"/>
         <source>The file you open located in the backups folder.
 
 You can no longer edit files from the backups folder. Files in this folder used only for content recovery. Please use another folder to save and store the files you are working on.
@@ -1843,125 +1843,125 @@ Now, you should copy your file from the backups folder outside via file browser,
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="963"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="973"/>
         <source>A file will be opened in read-only mode</source>
         <translation>Το αρχείο θα ανοίξει σε λειτουργία μόνο για ανάγνωση</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="950"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="956"/>
         <source>If you want to edit a file, please check it&apos;s permissions for your account.</source>
         <translation>Αν θέλετε να επεξεργαστείτε ένα αρχείο, παρακαλώ ελέγξτε τις άδειες του λογαριασμού σας.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="976"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="987"/>
         <source>Are you sure to hide project &lt;b&gt;%1&lt;/b&gt; from recent?</source>
         <translation>Θέλετε σίγουρα να κρύψετε το έργο &lt;b&gt;%1&lt;/b&gt; από τα πρόσφατα;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="995"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1001"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1005"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1012"/>
         <source>Moving project to the cloud failed</source>
         <translation>Απέτυχε η μετακίνηση του αρχείου στο νέφος</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="996"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1006"/>
         <source>For moving projects to the cloud you should be logged in the KIT Scenarist cloud service.</source>
         <translation>Για τη μετακίνηση έργων στο νέφος πρέπει να είστε συνδεδεμένοι στην υπηρεσία νέφους του KIT Scenarist.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1002"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1013"/>
         <source>For moving projects to the cloud your subscription in the KIT Scenarist cloud service should be active.</source>
         <translation>Για τη μετακίνηση έργων στο νέφος πρέπει η συνδρομή σας στην υπηρεσία νέφους του KIT Scenarist να είναι ενεργή.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1059"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1069"/>
         <source>Change project name</source>
         <translation>Αλλαγή ονόματος έργου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1060"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1069"/>
         <source>Enter new name for project</source>
         <translation>Εισαγωγή νέου ονόματος για το έργο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1092"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1104"/>
         <source>Are you sure to remove project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Θέλετε σίγουρα να αφαιρέσετε το έργο &lt;b&gt;%1&lt;/b&gt;;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1107"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1121"/>
         <source>Are you sure to remove your subscription to project &lt;b&gt;%1&lt;/b&gt;?</source>
         <translation>Θέλετε σίγουρα να αφαιρέσετε τη συνδρομή σας στο έργο &lt;b&gt;%1&lt;/b&gt;;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1134"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1152"/>
         <source>Are you sure to remove subscription of user &lt;b&gt;%1&lt;/b&gt; to project &lt;b&gt;%2&lt;/b&gt;?</source>
         <translation>Θέλετε σίγουρα να αφαιρέσετε τη συνδρομή του χρήστη &lt;b&gt;%1&lt;/b&gt; στο έργο &lt;b&gt;%2&lt;/b&gt;;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1156"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1174"/>
         <source>Connection active</source>
         <translation>Σύνδεση ενεργή</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1162"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1180"/>
         <source>Project synchronized</source>
         <translation>Το έργο συγχρονίστηκε</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1175"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1193"/>
         <source>Connection inactive</source>
         <translation>Σύνδεση ανενεργή</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1176"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1194"/>
         <source>Project didn&apos;t synchronized</source>
         <translation>Το έργο δε συγχρονίστηκε</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1219"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1237"/>
         <source>Modified</source>
         <translation>Τροποποιήθηκε</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1247"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1265"/>
         <source>Network error</source>
         <translation>Σφάλμα δικτύου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1249"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1267"/>
         <source>Project didn&apos;t synchronized.</source>
         <translation>Το έργο δε συγχρονίστηκε.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1269"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1287"/>
         <source>Incorrect username or password.</source>
         <translation>Λάθος όνομα χρήστη ή συνθηματικό</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1280"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1298"/>
         <source>Saved password is incorrect. Looks like you changed the password. Please, enter the new password.</source>
         <translation>Το αποθηκευμένο συνθηματικό είναι λανθασμένο. Φαίνεται πως έχετε αλλάξει συνθηματικό. Παρακαλώ, εισάγετε το νέο συνθηματικό.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1290"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1309"/>
         <source>Subscription ended</source>
         <translation>Η συνδρομή σας έληξε</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1291"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1310"/>
         <source>Buyed subscription period is finished.
 
 Project didn&apos;t synchronized.</source>
         <translation>Η περίοδος της επί πληρωμή συνδρομής έληξε. Το έργο δεν συγχρονίστηκε.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1303"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1322"/>
         <source>Network Error</source>
         <translation>Σφάλμα δικτύου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1304"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1323"/>
         <source>Can&apos;t load all data from service correctly. Please check your internet connection and refresh synchronization.
 
 Project didn&apos;t synchronized.</source>
@@ -1970,7 +1970,7 @@ Project didn&apos;t synchronized.</source>
 Το έργο δεν συγχρονίστηκε.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1317"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1336"/>
         <source>Session closed</source>
         <translation>Η συνεδρία έκλεισε</translation>
     </message>
@@ -1983,30 +1983,30 @@ Project didn&apos;t synchronized.</source>
 Το έργο δε συγχρονίστηκε.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1318"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1337"/>
         <source>The new session for your account started in another copy of the application on the current device.
 
 Project didn&apos;t synchronized.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1328"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1348"/>
         <source>Share error</source>
         <translation>Σφάλμα κοινοποίησης</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1329"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1349"/>
         <source>You can&apos;t share project with yourself.</source>
         <translation>Δεν μπορείτε να μοιραστείτε το έργο με τον εαυτό σας.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1338"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1349"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1358"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1370"/>
         <source>Project not available</source>
         <translation>Το έργο δεν είναι διαθέσιμο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1339"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1359"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner subscription is ended.
 
 Project didn&apos;t synchronized.</source>
@@ -2015,7 +2015,7 @@ Project didn&apos;t synchronized.</source>
 Το έργο δε συγχρονίστηκε.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1350"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1371"/>
         <source>Current project is not available for syncronization now, because project&apos;s owner closed access to project for you.
 
 Project didn&apos;t synchronized.</source>
@@ -2024,12 +2024,12 @@ Project didn&apos;t synchronized.</source>
 Το έργο δε συγχρονίστηκε.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1360"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1382"/>
         <source>Sync not available</source>
         <translation>Ο συγχρονισμός δεν είναι διαθέσιμος</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1361"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1383"/>
         <source>You have exhausted all available for the use of space on a server.
 
 Project didn&apos;t synchronized.</source>
@@ -2038,12 +2038,12 @@ Project didn&apos;t synchronized.</source>
 Το έργο δε συγχρονίστηκε.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1371"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1393"/>
         <source>Project sync not available</source>
         <translation>Ο συγχρονισμός έργου δεν είναι διαθέσιμος</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1372"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1394"/>
         <source>You have outdated version of the application. Please install latest app version for restoring access to the project.
 
 Project didn&apos;t synchronized.</source>
@@ -2052,209 +2052,209 @@ Project didn&apos;t synchronized.</source>
 Το έργο δε συγχρονίστηκε.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1382"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1405"/>
         <source>Email already exist</source>
         <translation>Το ηλ-ταχ. υπάρχει ήδη</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1391"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1414"/>
         <source>Password too weak</source>
         <translation>Πολύ αδύναμο συνθηματικό</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1400"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1423"/>
         <source>Invalid old password</source>
         <translation>Λανθασμένο παλιό συνθηματικό</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1409"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1432"/>
         <source>Wrong validation code</source>
         <translation>Λάθος κωδικός επαλήθευσης</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1418"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1441"/>
         <source>Wrong email</source>
         <translation>Λάθος ηλ-ταχ.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1427"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1450"/>
         <source>Unknown Error</source>
         <translation>Άγνωστο σφάλμα</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1495"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1520"/>
         <source>Exit from Application</source>
         <translation>Έξοδος από την εφαρμογή</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1495"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1521"/>
         <source>Closing Database Connections and remove temporary files.</source>
         <translation>Κλείσιμο των Συνδέσεων στη Βάση Δεδομένων και αφαίρεση των προσωρινών αρχείων.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1769"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1808"/>
         <source>Save project changes?</source>
         <translation>Αποθήκευση αλλαγών στο έργο;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1770"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1808"/>
         <source>Project was modified. Save changes?</source>
         <translation>Το έργο τροποποιήθηκε. Αποθήκευση αλλαγών;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1798"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1836"/>
         <source>Loading Scenario</source>
         <translation>Φόρτωση Σεναρίου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1798"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1836"/>
         <source>Please wait. Loading can take few minutes.</source>
         <translation>Παρακαλώ περιμένετε. Η φόρτωση μπορεί να πάρει λίγα λεπτά.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1858"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1897"/>
         <source>Sync scenario with cloud service.</source>
         <translation>Συγχρονισμός σεναρίου με την υπηρεσία νέφους.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1880"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1919"/>
         <source>Import</source>
         <translation>Εισαγωγή</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1880"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="1919"/>
         <source>Please wait. Import can take few minutes.</source>
         <translation>Παρακαλώ περιμένετε. Η εισαγωγή μπορεί να πάρει λίγα λεπτά.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2008"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2057"/>
         <source>Menu</source>
         <translation>Μενού</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2017"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2066"/>
         <source>New window</source>
         <translation>Νέο παράθυρο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2032"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2043"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2081"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2096"/>
         <source>Start</source>
         <translation>Έναρξη</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2033"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2044"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2082"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2097"/>
         <source>Research</source>
         <translation>Έρευνα</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2034"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2045"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2085"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2100"/>
         <source>Cards</source>
         <translation>Κάρτες</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2035"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2046"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2086"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2102"/>
         <source>Scenario</source>
         <translation>Σενάριο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2036"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2047"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2088"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2104"/>
         <source>Statistics</source>
         <translation>Στατιστική</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2037"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2048"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2090"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2105"/>
         <source>Tools</source>
         <translation>Εργαλεία</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2038"/>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2049"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2091"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2107"/>
         <source>Settings</source>
         <translation>Ρυθμίσεις</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2127"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2185"/>
         <source>File</source>
         <translation>Αρχείο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2128"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2186"/>
         <source>Edit</source>
         <translation>Επεξεργασία</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2133"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2191"/>
         <source>New</source>
         <translation>Νέο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2134"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2192"/>
         <source>Open</source>
         <translation>Άνοιγμα</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2135"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2193"/>
         <source>Save</source>
         <translation>Αποθήκευση</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2138"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2196"/>
         <source>Save as...</source>
         <translation>Αποθήκευση ως...</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2142"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2200"/>
         <source>New script version...</source>
         <translation>Νέα έκδοση σεναρίου...</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2144"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2202"/>
         <source>Import...</source>
         <translation>Εισαγωγή...</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2146"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2204"/>
         <source>Export to...</source>
         <translation>Εξαγωγή σε...</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2148"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2206"/>
         <source>Print preview script</source>
         <translation>Εκτύπωση προεπισκόπησης σεναρίου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2153"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2211"/>
         <source>Two panel mode</source>
         <translation>Λειτουργία δύο παραθύρων</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2564"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2683"/>
         <source>KIT Scenarist</source>
         <translation>KIT Scenarist</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2580"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2699"/>
         <source>on local computer</source>
         <translation>στον τοπικό υπολογιστή</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2581"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2700"/>
         <source>in cloud</source>
         <translation>στο νέφος</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2587"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2706"/>
         <source>%1[*] - KIT Scenarist</source>
         <translation>%1[*] - KIT Scenarist</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2590"/>
+        <location filename="../../../scenarist-desktop/ManagementLayer/ApplicationManager.cpp" line="2709"/>
         <source>Read only</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2893,37 +2893,37 @@ Project didn&apos;t synchronized.</source>
         <translation>&lt;a href=&quot;https://github.com/dimkanovikov/KITScenarist/wiki/How-to-add-the-translation-of-KIT-Scenarist-to-your-native-language-or-improve-one-of-existing%3F&quot; style=&quot;color:#2b78da;&quot;&gt;Δεν βρήκατε την αγαπημένη σας γλώσσα. Διαβάστε πώς μπορείτε να την προσθέσετε μόνοι σας.&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="407"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="414"/>
         <source>Choose application theme</source>
         <translation>Επιλογή θέματος εφαρμογής</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="420"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="427"/>
         <source>Dark theme</source>
         <translation>Σκούρο Θέμα</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="449"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="456"/>
         <source>Theme is convenient for work with sufficient light.</source>
         <translation>Το θέμα αυτό βολεύει στη δουλειά υπό επαρκή φωτισμό.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="484"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="491"/>
         <source>Theme is more suitable for work in dimly lit rooms, and also in the evening or at night.</source>
         <translation>Το θέμα αυτό βολεύει στη δουλειά υπό χαμηλό φωτισμό, καθώς επίσης το απόγευμα ή το βράδυ.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="519"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="526"/>
         <source>Light theme</source>
         <translation>Φωτεινό Θέμα</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="552"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="559"/>
         <source>Use research module</source>
         <translation>Χρήση εξαρτήματος έρευνας</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="562"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="569"/>
         <source>You can collect all the necessary materials for the project in one place. In it, you can save basic information about the script, such as its name, logline, synopsis, and also fill in the title page of the script.
 
 Here you can manage lists of characters and locations. Create new ones, add descriptions, photos, rename and organize them.
@@ -2936,17 +2936,17 @@ Also, in research tab you can store a variety of materials (text documents, imag
 Επίσης, στην καρτέλα έρευνας μπορείτε να αποθηκεύσετε ποικιλία υλικού (έγγραφα κειμένου, εικόνες, συνδέσμους σε ιστοσελίδες και χάρτες μυαλού) που σχετίζεται με το έργο σας, οργανώνοντάς τα με βολικό τρόπο.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="583"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="590"/>
         <source>Research</source>
         <translation>Έρευνα</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="627"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="634"/>
         <source>Cards</source>
         <translation>Κάρτες</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="634"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="641"/>
         <source>Cards module allows you to see the script in the form of cards placed on the corkboard, thus providing a visual way to work with structure.
 
 You can add colors and stamp to cards, move, and group them, and all changes made with cards are displayed in the text of the script.</source>
@@ -2955,17 +2955,17 @@ You can add colors and stamp to cards, move, and group them, and all changes mad
 Μπορείτε να προσθέσετε χρώματα και στάμπες στις κάρτες, να τις μετακινήσετε, να τις ομαδοποιήσετε, και όλες οι αλλαγές που γίνονται με τις κάρτες φαίνονται στο κείμενο του σεναρίου.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="668"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="675"/>
         <source>Use cards module</source>
         <translation>Χρήση εξαρτήματος καρτών</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="702"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="709"/>
         <source>Script</source>
         <translation>Σενάριο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="709"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="716"/>
         <source>Script module allows you to work with screenplay.
 
 Module includes the script navigator. It is a list of scenes. Clicking the mouse on the scene from the list will display the text of the selected scene on the screen.
@@ -2978,109 +2978,109 @@ And the text editor of the script. The editor has many auxiliary functions that 
 Επίσης περιλαμβάνεται και ο επεξεργαστής κειμένου. Ο επεξεργαστής έχει πολλές βοηθητικές λειτουργίες που απλοποιούν την εισαγωγή κειμένου σε σύμπνοια με τα πρότυπα της σεναριογραφίας και επίσης σας επιτρέπει να αναζητήσετε στο κείμενο του σεναρίου και να αφήσετε σημειώσεις στο κείμενο.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="745"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="752"/>
         <source>Use script module</source>
         <translation>Χρήση εξαρτήματος σεναρίου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1187"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1194"/>
         <source>Arabic screenplay standard template.</source>
         <translation>Αραβικό πρότυπο σεναρίου.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1206"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1213"/>
         <source>Arabic screenplay</source>
         <translation>Αραβικό σενάριο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1221"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1228"/>
         <source>Choose script template</source>
         <translation>Επιλογή προτύπου σεναρίου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1081"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1088"/>
         <source>Russian screenplay with Courier Prime</source>
         <translation>Ρωσικό σενάριο με Courier Prime</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1123"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1130"/>
         <source>Russian screenplay</source>
         <translation>Ρωσικό σενάριο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1014"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1021"/>
         <source>International screenplay standard template for A4 page size.</source>
         <translation>Διεθνές πρότυπο σεναρίου για σελίδα A4.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1094"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1101"/>
         <source>Final Draft screenplay (A4)</source>
         <translation>Σενάριο Final Draft (A4)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="944"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="951"/>
         <source>International screenplay standard template for Letter page size.</source>
         <translation>Διεθνές πρότυπο σεναρίου για σελίδα τύπου Letter.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="931"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="938"/>
         <source>Chinese screenplay</source>
         <translation>Κινέζικο σενάριο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1168"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1175"/>
         <source>Chinese screenplay standard template.</source>
         <translation>Κινέζικο πρότυπο σεναρίου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="815"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="822"/>
         <source>Hebrew screenplay</source>
         <translation>Εβραϊκό σενάριο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="912"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="919"/>
         <source>Russian and CIS screenplay standard template with Courier Prime font instead of Courier New.</source>
         <translation>Ρωσικό και CIS πρότυπο σεναρίου με Courier Prime αντί της Courier New.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1046"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1053"/>
         <source>Hebrew screenplay standard template.</source>
         <translation>Εβραϊκό πρότυπο σεναρίου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1033"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1040"/>
         <source>Final Draft screenplay (Letter)</source>
         <translation>Σενάριο Final Draft (Letter)</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="979"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="986"/>
         <source>Russian and CIS screenplay standard template.</source>
         <translation>Ρωσικό και CIS πρότυπο σεναρίου</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1277"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1284"/>
         <source>The statistics module allows you to get detailed production reports on the script, as well as look at the graphs of the characters&apos; activity throughout the script and the dynamics of the scenes.</source>
         <translation>Το εξάρτημα στατιστικής σας επιτρέπει να λάβετε αναλυτικές αναφορές παραγωγής στο σενάριό σας, όπως επίσης και να κοιτάξετε τα γραφήματα της δράσης των χαρακτήρων στη διάρκεια του σεναρίου και τις δυναμικές των σκηνών.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1294"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1301"/>
         <source>Statistics</source>
         <translation>Στατιστικά</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1307"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1314"/>
         <source>Use statistics module</source>
         <translation>Χρήση εξαρτήματος στατιστικής</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1337"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1344"/>
         <source>Thank you. The most common application settings were configured.
 
 The application will start in few seconds.</source>
         <translation>Ευχαριστούμε. Οι πιο κοινές ρυθμίσεις της εφαρμογής τέθηκαν.</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1356"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.ui" line="1363"/>
         <source>Starting application</source>
         <translation>Εκκίνηση εφαρμογής</translation>
     </message>
@@ -5473,17 +5473,17 @@ Please, download new version by this &lt;a href=&quot;https://kitscenarist.ru/en
 <context>
     <name>UserInterface::OnboardingView</name>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="231"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="234"/>
         <source>Next</source>
         <translation>Επόμενο</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="265"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="268"/>
         <source>Finish</source>
         <translation>Τέλος</translation>
     </message>
     <message>
-        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="283"/>
+        <location filename="../../../scenarist-desktop/UserInterfaceLayer/Onboarding/OnboardingView.cpp" line="286"/>
         <source>Will be used default settings.
 
 The application will start in few seconds.</source>
