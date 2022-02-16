@@ -84,6 +84,10 @@ void SearchWidget::aboutReplaceAll()
 
     const QString replaceText = m_replaceText->text();
     const QString searchText = m_searchText->text();
+    if (replaceText == searchText) {
+        return;
+    }
+
     const int diffSize = replaceText.size() - searchText.size();
     aboutFindNext();
     QTextCursor cursor = m_editor->textCursor();
@@ -91,15 +95,15 @@ void SearchWidget::aboutReplaceAll()
     int firstCursorPosition = cursor.selectionStart();
     while (cursor.hasSelection()) {
         cursor.insertText(replaceText);
-        aboutFindNext();
-        cursor = m_editor->textCursor();
 
         //
-        // Корректируем начальную позицию поиска, для корректного завершения при втором проходе по документу
+        // Корректируем начальную позицию поиска, для корректного завершения при втором проходе
+        // по документу
         //
-        if (cursor.selectionStart() < firstCursorPosition) {
         firstCursorPosition += diffSize;
-        }
+
+        aboutFindNext();
+        cursor = m_editor->textCursor();
 
         //
         // Прерываем случай, когда пользователь пытается заменить слово без учёта регистра
@@ -107,7 +111,7 @@ void SearchWidget::aboutReplaceAll()
         // но т.к. поиск производится без учёта регистра, он зацикливается
         //
         if (cursor.selectionStart() == firstCursorPosition) {
-        break;
+            break;
         }
     }
     cursor.endEditBlock();
