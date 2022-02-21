@@ -52,7 +52,8 @@ void ProjectsList::setModel(QAbstractItemModel* _model, bool _isRemote)
                                     : editDateTime.toString("dd.MM.yyyy hh:mm:ss"));
 #else
             const QString projectPath = projectIndex.data(Qt::StatusTipRole).toString();
-            project->setProjectInfo(projectPath);
+            const QDateTime editDateTime = projectIndex.data(Qt::WhatsThisRole).toDateTime();
+            project->setProjectInfo(QString("%1 [%2]").arg(projectPath, editDateTime.toString("dd.MM.yyyy hh:mm")));
 #endif
             const bool isOwner = projectIndex.data(Qt::UserRole + 1).toBool();
             project->configureOptions(_isRemote, isOwner);
